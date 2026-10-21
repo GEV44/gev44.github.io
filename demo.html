@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live demo: 24/7 assistant for a small business</title>
+<meta name="description" content="Try the assistant Gevorg Hovhannisyan builds for restaurants, clinics and hotels. It answers only from the business's own info, books, and hands the rest to the owner.">
+<style>
+  :root{--bg:#eef2f7;--card:#fff;--me:#dcf8c6;--bot:#fff;--ink:#1f2937;--mut:#6b7280;--acc:#1a56db;--ok:#16a34a}
+  *{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Segoe UI,Helvetica,Arial,sans-serif;color:var(--ink)}
+  .wrap{max-width:980px;margin:0 auto;padding:16px}
+  header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px}
+  h1{font-size:20px;margin:0}h1 small{display:block;font-weight:400;color:var(--mut);font-size:13px;margin-top:4px}
+  .pick{display:flex;gap:8px;flex-wrap:wrap}.pick button{border:1px solid #cbd5e1;background:#fff;border-radius:20px;padding:6px 12px;cursor:pointer;font-size:13px}
+  .pick button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+  .grid{display:grid;grid-template-columns:1fr 320px;gap:14px}@media(max-width:800px){.grid{grid-template-columns:1fr}}
+  .chat{background:var(--card);border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,.06);display:flex;flex-direction:column;height:72vh;min-height:460px}
+  .top{padding:12px 16px;border-bottom:1px solid #eee;display:flex;gap:10px;align-items:center}.top .av{width:38px;height:38px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;font-weight:700}
+  .top b{display:block}.top span{font-size:12px;color:var(--ok)}
+  .log{flex:1;overflow:auto;padding:14px;background:#e5ddd5 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" opacity=".06"><circle cx="20" cy="20" r="2"/></svg>')}
+  .m{max-width:82%;padding:9px 12px;border-radius:12px;margin:6px 0;font-size:15px;line-height:1.45;white-space:pre-wrap;box-shadow:0 1px 1px rgba(0,0,0,.08)}
+  .m.me{background:var(--me);margin-left:auto;border-bottom-right-radius:4px}.m.bot{background:var(--bot);border-bottom-left-radius:4px}
+  .m .tag{display:block;font-size:11px;color:var(--mut);margin-top:4px}
+  .sug{display:flex;gap:6px;flex-wrap:wrap;padding:8px 12px;border-top:1px solid #eee}.sug button{font-size:12px;border:1px solid #cbd5e1;background:#f8fafc;border-radius:14px;padding:5px 10px;cursor:pointer}
+  form.in{display:flex;gap:8px;padding:10px 12px;border-top:1px solid #eee}form.in input{flex:1;border:1px solid #cbd5e1;border-radius:20px;padding:10px 14px;font-size:15px}form.in button{border:0;background:var(--acc);color:#fff;border-radius:20px;padding:0 16px;cursor:pointer}
+  aside{background:var(--card);border-radius:16px;padding:14px 16px;box-shadow:0 2px 10px rgba(0,0,0,.06);font-size:14px}
+  aside h3{margin:0 0 8px;font-size:15px}aside ul{padding-left:18px;margin:0 0 12px}aside li{margin:4px 0}
+  .owner{background:#f3f6fb;border-radius:12px;padding:10px 12px;font-size:13px;min-height:70px}.owner b{color:var(--acc)}
+  .cta{display:block;margin-top:12px;background:var(--acc);color:#fff;text-align:center;border-radius:12px;padding:10px;text-decoration:none;font-weight:600}
+  footer{color:var(--mut);font-size:12px;margin-top:14px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1 id="ttl">Live demo: an assistant that answers your customers 24/7<small id="sub">Answers only from the business's own info. Books. Hands the rest to the owner. Try it.</small></h1>
+    <div class="pick">
+      <button data-biz="restaurant" class="on">🍽 Restaurant</button><button data-biz="dental">🦷 Dental clinic</button><button data-biz="hotel">🏨 Hotel</button>
+      <button data-lang="en" class="on">EN</button><button data-lang="ru">RU</button><button data-lang="hy">HY</button>
+    </div>
+  </header>
+  <div class="grid">
+    <div class="chat">
+      <div class="top"><div class="av" id="av">R</div><div><b id="bname">Trattoria Nino</b><span id="online">● online, answers in seconds</span></div></div>
+      <div class="log" id="log"></div>
+      <div class="sug" id="sug"></div>
+      <form class="in" id="f"><input id="q" autocomplete="off" placeholder="Ask anything..."><button>➤</button></form>
+    </div>
+    <aside>
+      <h3 id="h_how">How it works</h3>
+      <ul id="how"></ul>
+      <h3 id="h_owner">What the owner receives</h3>
+      <div class="owner" id="owner"></div>
+      <a class="cta" id="cta" href="https://t.me/hovhannisyan77">Want one for your business? Write me on Telegram</a>
+    </aside>
+  </div>
+  <footer id="foot">Built by Gevorg Hovhannisyan · gev44.github.io · $49 setup, 2 days, you test it before paying</footer>
+</div>
+<script>
+const T={
+ en:{sub:"Answers only from the business's own info. Books. Hands the rest to the owner. Try it.",how:["Answers from a short list of facts the owner gives me (prices, hours, rules). Nothing invented.","When it does not know, it says so and forwards the question to the owner.","Bookings land in the owner's Google Sheet with a notification.","Works on a website, WhatsApp, Telegram or Instagram, in several languages."],h_how:"How it works",h_owner:"What the owner receives",owner_empty:"Nothing yet. Ask something the assistant can't know, or make a booking.",cta:"Want one for your business? Write me on Telegram",ph:"Ask anything...",unknown:"Good question, I don't have that in my notes. I've sent it to the owner, they'll reply to you here shortly. Anything else I can help with?",fwd:"🔔 Question forwarded to owner: ",booked:"Done ✅ I've noted it. The owner will confirm shortly here.",askname:"Sure. What name should I put it under, and a phone number?",askwhen:"For when? (day and time)",bk:"📅 New booking: ",hi:"Hi! I'm the assistant of {b}. I can tell you prices, hours, how to book, and I'll pass anything else to the owner. What would you like to know?"},
+ ru:{sub:"Отвечает только по данным бизнеса. Записывает. Остальное передаёт владельцу. Попробуйте.",how:["Отвечает по короткому списку фактов от владельца (цены, часы, правила). Ничего не выдумывает.","Чего не знает, так и говорит и пересылает вопрос владельцу.","Записи попадают в Google Таблицу владельца с уведомлением.","Работает на сайте, в WhatsApp, Telegram или Instagram, на нескольких языках."],h_how:"Как это работает",h_owner:"Что получает владелец",owner_empty:"Пока ничего. Спросите то, чего помощник знать не может, или запишитесь.",cta:"Хотите такого для своего бизнеса? Напишите мне в Telegram",ph:"Спросите что угодно...",unknown:"Хороший вопрос, у меня этого нет в заметках. Я передал его владельцу, он ответит вам здесь. Чем ещё помочь?",fwd:"🔔 Вопрос переслан владельцу: ",booked:"Готово ✅ Записал. Владелец скоро подтвердит здесь.",askname:"Конечно. На какое имя и какой телефон?",askwhen:"На когда? (день и время)",bk:"📅 Новая запись: ",hi:"Здравствуйте! Я помощник {b}. Подскажу цены, часы, как записаться, а остальное передам владельцу. Что вас интересует?"},
+ hy:{sub:"Պատասխանում է միայն բիզնեսի տվյալներով։ Գրանցում է։ Մնացածը փոխանցում է տիրոջը։ Փորձեք։",how:["Պատասխանում է տիրոջ տված կարճ փաստերով (գներ, ժամեր, կանոններ)։ Ոչինչ չի հորինում։","Ինչ չգիտի, ասում է և հարցն ուղարկում տիրոջը։","Գրանցումները ընկնում են տիրոջ Google աղյուսակ՝ ծանուցումով։","Աշխատում է կայքում, WhatsApp, Telegram կամ Instagram, մի քանի լեզվով։"],h_how:"Ինչպես է աշխատում",h_owner:"Ինչ է ստանում տերը",owner_empty:"Դեռ ոչինչ։ Հարցրեք մի բան, որ օգնականը չի կարող իմանալ, կամ գրանցվեք։",cta:"Ուզո՞ւմ եք նման օգնական Ձեր բիզնեսի համար։ Գրեք ինձ Telegram-ում",ph:"Հարցրեք ինչ ուզում եք...",unknown:"Լավ հարց է, իմ նշումներում դա չկա։ Ուղարկեցի տիրոջը, նա շուտով կպատասխանի այստեղ։ Էլ ինչո՞վ օգնեմ։",fwd:"🔔 Հարցը փոխանցվեց տիրոջը․ ",booked:"Պատրաստ է ✅ Գրանցեցի։ Տերը շուտով կհաստատի այստեղ։",askname:"Իհարկե։ Ո՞ւմ անունով և ո՞ր հեռախոսով։",askwhen:"Ե՞րբ։ (օր և ժամ)",bk:"📅 Նոր գրանցում․ ",hi:"Բարև Ձեզ։ Ես {b}-ի օգնականն եմ։ Կասեմ գները, ժամերը, ինչպես գրանցվել, մնացածը կփոխանցեմ տիրոջը։ Ի՞նչ է Ձեզ հետաքրքրում։"}
+};
+// each business: name, suggested questions, and facts = [keywords (any language), answer] per language
+const BIZ={
+ restaurant:{name:{en:"Trattoria Nino",ru:"Траттория Нино",hy:"Տրատորիա Նինո"},av:"🍽",
+  sug:{en:["Are you open now?","Table for 4 tonight","Do you deliver?","Vegan options?","Parking?"],ru:["Вы сейчас открыты?","Столик на 4 вечером","Есть доставка?","Веганские блюда?","Где парковаться?"],hy:["Հիմա բա՞ց եք","Սեղան 4 հոգու համար երեկոյան","Առաքում կա՞","Վեգան ուտեստներ կա՞ն","Կայանատեղի՞"]},
+  facts:[
+   {k:"open hours время часы работаете открыт ժամ բաց",en:"We're open every day 12:00–23:00, kitchen until 22:30.",ru:"Работаем каждый день 12:00–23:00, кухня до 22:30.",hy:"Բաց ենք ամեն օր 12:00–23:00, խոհանոցը՝ մինչև 22:30։"},
+   {k:"table book reserve reservation столик бронь забронировать сեղան ամրագր",book:true,en:"Happy to book a table. ",ru:"С радостью забронирую столик. ",hy:"Սիրով կամրագրեմ սեղան։ "},
+   {k:"deliver delivery доставка առաքում",en:"Yes, delivery within 5 km, 30–45 min, free from 8 000 AMD; otherwise 700 AMD.",ru:"Да, доставка в радиусе 5 км, 30–45 минут, бесплатно от 8 000 ֏, иначе 700 ֏.",hy:"Այո, առաքում 5 կմ շառավղով, 30–45 րոպե, անվճար 8 000 ֏-ից, այլապես 700 ֏։"},
+   {k:"menu price prices cost average меню цена цены средний чек գին մենյու",en:"Pasta 3 500–5 500 AMD, pizza 3 200–5 800, mains 6 000–9 500. Average bill about 9 000 AMD per person.",ru:"Паста 3 500–5 500 ֏, пицца 3 200–5 800, горячее 6 000–9 500. Средний чек около 9 000 ֏.",hy:"Պաստա 3 500–5 500 ֏, պիցցա 3 200–5 800, հիմնական ուտեստներ 6 000–9 500։ Միջին հաշիվը մոտ 9 000 ֏։"},
+   {k:"vegan vegetarian веган вегетарианск վեգան բուսակեր",en:"Yes: 4 vegan pastas, a vegan pizza and 3 salads. Tell the waiter about allergies, we cook to order.",ru:"Да: 4 веганские пасты, веганская пицца и 3 салата. Об аллергиях скажите официанту, готовим под заказ.",hy:"Այո՝ 4 վեգան պաստա, վեգան պիցցա և 3 աղցան։ Ալերգիայի մասին ասեք մատուցողին, պատրաստում ենք պատվերով։"},
+   {k:"parking park парковка կայան",en:"Free parking for guests in the yard behind the building, entrance from Tumanyan street.",ru:"Бесплатная парковка для гостей во дворе за зданием, въезд с улицы Туманяна.",hy:"Հյուրերի համար անվճար կայանատեղի շենքի հետևի բակում, մուտքը Թումանյան փողոցից։"},
+   {k:"address where location адрес где находитесь հասցե որտեղ",en:"Tumanyan 12, Yerevan, next to the Opera. Map: maps.app/example",ru:"Туманяна 12, Ереван, рядом с Оперой.",hy:"Թումանյան 12, Երևան, Օպերայի կողքին։"},
+   {k:"kids children child детск дети երեխա մանկ",en:"Yes, high chairs and a kids' menu (2 200–2 800 AMD).",ru:"Да, есть детские стулья и детское меню (2 200–2 800 ֏).",hy:"Այո, մանկական աթոռներ և մանկական մենյու (2 200–2 800 ֏)։"},
+   {k:"card pay payment cash карта оплата наличные վճար քարտ",en:"Cards, cash and Idram accepted.",ru:"Принимаем карты, наличные и Idram.",hy:"Ընդունում ենք քարտ, կանխիկ և Idram։"},
+   {k:"event birthday party group банкет день рождения компания группа ծննդյան խնջույք",en:"Groups up to 40 in the back hall, set menus from 12 000 AMD per person. I'll pass the date to the owner for a quote.",ru:"Группы до 40 человек в заднем зале, сет-меню от 12 000 ֏ на человека. Передам дату владельцу для расчёта.",hy:"Մինչև 40 հոգանոց խմբեր հետևի սրահում, սեթ մենյու 12 000 ֏-ից։ Ամսաթիվը կփոխանցեմ տիրոջը՝ գնահատելու համար։"}
+  ]},
+ dental:{name:{en:"Smile Dental Clinic",ru:"Клиника Smile Dental",hy:"Smile ատամնաբուժարան"},av:"🦷",
+  sug:{en:["How much is a cleaning?","Book a check-up","Do you do implants?","Hours on Saturday?","Is it painful?"],ru:["Сколько стоит чистка?","Записаться на осмотр","Делаете импланты?","Работаете в субботу?","Это больно?"],hy:["Մաքրումն ի՞նչ արժե","Գրանցվել ստուգման","Իմպլանտ անո՞ւմ եք","Շաբաթ օրն աշխատո՞ւմ եք","Ցավո՞ւմ է"]},
+  facts:[
+   {k:"hours open saturday sunday время работаете суббота воскресенье ժամ շաբաթ կիրակի",en:"Mon–Fri 9:00–20:00, Saturday 10:00–16:00, Sunday closed.",ru:"Пн–пт 9:00–20:00, суббота 10:00–16:00, воскресенье выходной.",hy:"Երկ–ուրբ 9:00–20:00, շաբաթ 10:00–16:00, կիրակի փակ է։"},
+   {k:"price cost cleaning hygiene whitening filling сколько стоит цена чистка отбеливание пломба գին մաքրում սպիտակեցում պլոմբ",en:"Check-up 5 000 AMD, hygiene cleaning 15 000, filling 18 000–30 000, whitening 60 000. Exact price after the free first look.",ru:"Осмотр 5 000 ֏, гигиеническая чистка 15 000, пломба 18 000–30 000, отбеливание 60 000. Точная цена после бесплатного первичного осмотра.",hy:"Ստուգում 5 000 ֏, հիգիենիկ մաքրում 15 000, պլոմբ 18 000–30 000, սպիտակեցում 60 000։ Ճշգրիտ գինը՝ անվճար առաջին զննումից հետո։"},
+   {k:"book appointment visit запис записаться приём осмотр գրանց ընդունելություն",book:true,en:"Let's book you in. ",ru:"Давайте запишу вас. ",hy:"Եկեք գրանցեմ Ձեզ։ "},
+   {k:"implant implants импланты имплант իմպլանտ",en:"Yes, implants from 180 000 AMD (Osstem) to 320 000 (Straumann), crown included in the quote. Free consultation with Dr. Arman.",ru:"Да, импланты от 180 000 ֏ (Osstem) до 320 000 (Straumann), коронка включена в расчёт. Консультация у доктора Армана бесплатная.",hy:"Այո, իմպլանտներ 180 000 ֏-ից (Osstem) մինչև 320 000 (Straumann), թագը ներառված է։ Խորհրդատվությունը դոկտոր Արմանի մոտ անվճար է։"},
+   {k:"pain painful hurt anesthesia больно боль анестезия ցավ անզգայաց",en:"Treatment is done under local anesthesia; most patients feel pressure, not pain. Tell the doctor if you're anxious, we take it slow.",ru:"Лечение под местной анестезией, большинство чувствует давление, а не боль. Если волнуетесь, скажите врачу, сделаем всё не спеша.",hy:"Բուժումն անում ենք տեղային անզգայացմամբ, մեծամասնությունը զգում է ճնշում, ոչ ցավ։ Եթե անհանգստանում եք, ասեք բժշկին։"},
+   {k:"address where адрес где հասցե որտեղ",en:"Komitas 25, Yerevan, 2nd floor. Parking in front.",ru:"Комитаса 25, Ереван, 2 этаж. Парковка перед входом.",hy:"Կոմիտաս 25, Երևան, 2-րդ հարկ։ Կայանատեղի մուտքի դիմաց։"},
+   {k:"kids children child детск դети երեխա մանկ",en:"Yes, we treat children from 3 years; Dr. Lilit is a paediatric dentist.",ru:"Да, лечим детей с 3 лет, доктор Лилит детский стоматолог.",hy:"Այո, բուժում ենք երեխաների 3 տարեկանից, դոկտոր Լիլիթը մանկական ատամնաբույժ է։"},
+   {k:"insurance страховка ապահովագր",en:"We work with Ingo Armenia and Rosgosstrakh Armenia; bring your policy number.",ru:"Работаем с Ingo Armenia и Росгосстрах Армения, возьмите номер полиса.",hy:"Աշխատում ենք Ingo Armenia-ի և Ռոսգոսստրախ Արմենիայի հետ, վերցրեք պոլիսի համարը։"},
+   {k:"card pay payment installment карта оплата рассрочка վճար քարտ ապառիկ",en:"Cards and cash; 0% installment for 6 months on treatments over 100 000 AMD.",ru:"Карты и наличные; рассрочка 0% на 6 месяцев при лечении от 100 000 ֏.",hy:"Քարտ և կանխիկ, 0% ապառիկ 6 ամսով 100 000 ֏-ից բարձր բուժման դեպքում։"}
+  ]},
+ hotel:{name:{en:"Hotel Ararat View",ru:"Отель Ararat View",hy:"Հյուրանոց Ararat View"},av:"🏨",
+  sug:{en:["Price for a double room?","Check-in time?","Airport transfer?","Is breakfast included?","Book 2 nights"],ru:["Цена двухместного номера?","Время заезда?","Трансфер из аэропорта?","Завтрак включён?","Забронировать 2 ночи"],hy:["Երկտեղանոց սենյակի գի՞նը","Մուտքի ժա՞մը","Օդանավակայանից տրանսֆե՞ր","Նախաճաշը ներառվա՞ծ է","Ամրագրել 2 գիշեր"]},
+  facts:[
+   {k:"price cost rate room double single цена стоимость номер двухместный одноместный գին սենյակ",en:"Standard double 28 000 AMD/night, single 22 000, family room 42 000. Breakfast included. Prices are per room.",ru:"Стандарт двухместный 28 000 ֏/ночь, одноместный 22 000, семейный 42 000. Завтрак включён. Цены за номер.",hy:"Ստանդարտ երկտեղանոց 28 000 ֏/գիշեր, մեկտեղանոց 22 000, ընտանեկան 42 000։ Նախաճաշը ներառված է։"},
+   {k:"check-in checkin check in checkout check-out заезд выезд время մուտք ելք",en:"Check-in from 14:00, check-out until 12:00. Early check-in is free if the room is ready; luggage storage any time.",ru:"Заезд с 14:00, выезд до 12:00. Ранний заезд бесплатно, если номер готов; хранение багажа в любое время.",hy:"Մուտքը 14:00-ից, ելքը մինչև 12:00։ Վաղ մուտքն անվճար է, եթե սենյակը պատրաստ է, ուղեբեռի պահեստ՝ ցանկացած ժամի։"},
+   {k:"transfer airport taxi трансфер аэропорт такси տրանսֆեր օդանավակայան տաքսի",en:"Airport transfer 7 000 AMD per car (up to 3 people), any hour. Send your flight number and I'll arrange it.",ru:"Трансфер из аэропорта 7 000 ֏ за машину (до 3 человек), круглосуточно. Пришлите номер рейса, организую.",hy:"Օդանավակայանից տրանսֆեր 7 000 ֏ մեքենայի համար (մինչև 3 հոգի), շուրջօրյա։ Ուղարկեք թռիչքի համարը, կկազմակերպեմ։"},
+   {k:"breakfast included завтрак включ նախաճաշ",en:"Yes, buffet breakfast 7:30–10:30 is included in every rate.",ru:"Да, завтрак-буфет 7:30–10:30 включён в любой тариф.",hy:"Այո, բուֆետ նախաճաշը 7:30–10:30 ներառված է բոլոր սակագներում։"},
+   {k:"book reserve reservation nights night бронь забронировать ночи ночь ամրագր գիշեր",book:true,en:"Let's book it. ",ru:"Давайте забронирую. ",hy:"Եկեք ամրագրեմ։ "},
+   {k:"wifi internet wi-fi вайфай интернет ինտերնետ",en:"Free fast Wi-Fi in all rooms and the terrace.",ru:"Бесплатный быстрый Wi-Fi во всех номерах и на террасе.",hy:"Անվճար արագ Wi-Fi բոլոր սենյակներում և տերասում։"},
+   {k:"cancel cancellation refund отмена отменить возврат չեղարկ",en:"Free cancellation up to 48 hours before arrival; later, the first night is charged.",ru:"Бесплатная отмена за 48 часов до заезда, позже удерживается первая ночь.",hy:"Անվճար չեղարկում ժամանումից 48 ժամ առաջ, հետո գանձվում է առաջին գիշերը։"},
+   {k:"pets dog cat животные собака кошка կենդանի շուն կատու",en:"Small pets are welcome, 3 000 AMD per night.",ru:"Небольшие питомцы приветствуются, 3 000 ֏ за ночь.",hy:"Փոքր կենդանիները ողջունելի են, 3 000 ֏ գիշերվա համար։"},
+   {k:"parking park парковка կայան",en:"Free private parking, 10 spots, first come first served.",ru:"Бесплатная парковка, 10 мест, в порядке очереди.",hy:"Անվճար կայանատեղի, 10 տեղ, հերթականությամբ։"}
+  ]}
+};
+BIZ.surgeon={name:{en:"Dr. Gor Amirbekyan, plastic surgeon",ru:"Доктор Гор Амирбекян, пластический хирург",hy:"Դոկտոր Գոռ Ամիրբեկյան, պլաստիկ վիրաբույժ"},av:"🩺",
+  sug:{en:["Consultation price?","Book a consultation","Do you do rhinoplasty?","Recovery after blepharoplasty?","Where are you located?"],ru:["Сколько стоит консультация?","Записаться на консультацию","Делаете ринопластику?","Восстановление после блефаропластики?","Где вы находитесь?"],hy:["Խորհրդատվության գի՞նը","Գրանցվել խորհրդատվության","Ռինոպլաստիկա անո՞ւմ եք","Վերականգնումը բլեֆարոպլաստիկայից հետո","Որտե՞ղ եք գտնվում"]},
+  facts:[
+   {k:"consultation price cost консультация стоит цена խորհրդատվություն գին արժե",en:"The first consultation is with Dr. Amirbekyan personally; price and duration are confirmed by the clinic when you book. I'll pass your request on right away.",ru:"Первичная консультация у доктора Амирбекяна лично; цену и длительность клиника подтверждает при записи. Передам ваш запрос сразу.",hy:"Առաջին խորհրդատվությունն անցկացնում է անձամբ դոկտոր Ամիրբեկյանը․ գինն ու տևողությունը կլինիկան հաստատում է գրանցման ժամանակ։ Ձեր հարցումն անմիջապես կփոխանցեմ։"},
+   {k:"book appointment consultation visit запис записаться приём գրանց ընդունելություն այց",book:true,en:"Of course, let's book your consultation. ",ru:"Конечно, запишу вас на консультацию. ",hy:"Իհարկե, գրանցեմ Ձեզ խորհրդատվության։ "},
+   {k:"rhinoplasty nose ринопластика нос ռինոպլաստիկա քիթ",en:"Yes, rhinoplasty (including revision cases) is one of the main procedures. The exact plan, price and recovery time are discussed at the consultation after an examination.",ru:"Да, ринопластика (включая повторные случаи) — одна из основных операций. Точный план, цена и сроки восстановления обсуждаются на консультации после осмотра.",hy:"Այո, ռինոպլաստիկան (ներառյալ կրկնակի դեպքերը) հիմնական վիրահատություններից է։ Ճշգրիտ պլանը, գինը և վերականգնման ժամկետը քննարկվում են խորհրդատվության ժամանակ՝ զննումից հետո։"},
+   {k:"blepharoplasty eyelid recovery блефаропластика веки восстановление բլեֆարոպլաստիկա կոպ վերականգն",en:"Blepharoplasty recovery: swelling and bruising mostly settle within 7 to 10 days, stitches are removed around day 5 to 7, and you can usually return to work after a week. The doctor gives you personal instructions.",ru:"Восстановление после блефаропластики: отёк и синяки в основном проходят за 7–10 дней, швы снимают на 5–7 день, к работе обычно можно вернуться через неделю. Врач даёт личные рекомендации.",hy:"Բլեֆարոպլաստիկայից հետո՝ այտուցն ու կապտուկները հիմնականում անցնում են 7-10 օրում, կարերը հանում են 5-7-րդ օրը, աշխատանքի սովորաբար կարելի է վերադառնալ մեկ շաբաթից։ Բժիշկը տալիս է անհատական ցուցումներ։"},
+   {k:"breast augmentation lift implant грудь маммопластика импланты կրծք մամոպլաստիկա",en:"Breast surgery (augmentation, lift, reduction) is performed. Implant type, size and price are chosen together with the doctor at the consultation.",ru:"Операции на груди (увеличение, подтяжка, уменьшение) выполняются. Тип импланта, размер и цена подбираются вместе с врачом на консультации.",hy:"Կրծքի վիրահատությունները (մեծացում, ձգում, փոքրացում) կատարվում են։ Իմպլանտի տեսակը, չափը և գինը ընտրվում են բժշկի հետ խորհրդատվության ժամանակ։"},
+   {k:"liposuction abdominoplasty tummy body липосакция абдоминопластика живот լիպոսակցիա աբդոմինոպլաստիկա",en:"Yes: liposuction and abdominoplasty (tummy tuck) are done, often combined. The doctor decides the approach after an examination.",ru:"Да: липосакция и абдоминопластика выполняются, часто в комбинации. Подход врач определяет после осмотра.",hy:"Այո՝ լիպոսակցիա և աբդոմինոպլաստիկա կատարվում են, հաճախ համակցված։ Մոտեցումը բժիշկը որոշում է զննումից հետո։"},
+   {k:"address where location clinic адрес где находитесь клиника հասցե որտեղ կլինիկա",en:"Dr. Amirbekyan receives at NEW-MED Clinic, 58 Abovyan Street, Yerevan (city centre). Phone for questions: +374 94 06 08 90 or +374 91 53 88 83.",ru:"Доктор Амирбекян принимает в клинике NEW-MED, ул. Абовяна 58, Ереван (центр). Телефон для вопросов: +374 94 06 08 90 или +374 91 53 88 83.",hy:"Դոկտոր Ամիրբեկյանն ընդունում է NEW-MED կլինիկայում՝ Աբովյան 58, Երևան (կենտրոն)։ Հարցերի համար՝ +374 94 06 08 90 կամ +374 91 53 88 83։"},
+   {k:"phone call number телефон позвонить номер հեռախոս զանգ համար",en:"You can call +374 94 06 08 90 or +374 91 53 88 83. Or tell me here what you need and I'll pass it to the doctor.",ru:"Можно позвонить по +374 94 06 08 90 или +374 91 53 88 83. Или напишите здесь, что нужно, я передам доктору.",hy:"Կարող եք զանգել +374 94 06 08 90 կամ +374 91 53 88 83։ Կամ գրեք այստեղ, ինչ է պետք, կփոխանցեմ բժշկին։"},
+   {k:"doctor experience who qualification education доктор опыт кто квалификация образование բժիշկ փորձ ով որակավորում",en:"Dr. Gor Amirbekyan, M.D., Ph.D., plastic and microsurgeon. Head of the Plastic & Microsurgery Service at NEW-MED Clinic since 2018, surgeon at Heratsi Hospital No. 1, assistant lecturer at Yerevan State Medical University, author of 10 scientific papers.",ru:"Доктор Гор Амирбекян, к.м.н., пластический и микрохирург. Руководитель службы пластической и микрохирургии клиники NEW-MED с 2018 года, хирург больницы Гераци №1, ассистент кафедры ЕГМУ, автор 10 научных работ.",hy:"Դոկտոր Գոռ Ամիրբեկյան, բ.գ.թ., պլաստիկ և միկրովիրաբույժ։ NEW-MED կլինիկայի պլաստիկ և միկրովիրաբուժության ծառայության ղեկավար 2018-ից, Հերացի թիվ 1 հիվանդանոցի վիրաբույժ, ԵՊԲՀ դասախոս, 10 գիտական աշխատանքի հեղինակ։"},
+   {k:"reconstructive skin cancer scar defect реконструктивн рак кожи рубец дефект վերականգնող մաշկի քաղցկեղ սպի",en:"Yes, reconstructive microsurgery is a core specialty: closing soft-tissue defects after skin cancer removal (the doctor's Ph.D. topic), scar revision and post-trauma reconstruction.",ru:"Да, реконструктивная микрохирургия — профильное направление: закрытие дефектов мягких тканей после удаления рака кожи (тема диссертации доктора), коррекция рубцов, реконструкция после травм.",hy:"Այո, վերականգնողական միկրովիրաբուժությունը հիմնական ուղղություն է՝ մաշկի քաղցկեղի հեռացումից հետո դեֆեկտների փակում (բժշկի ատենախոսության թեման), սպիների շտկում, վնասվածքից հետո վերականգնում։"},
+   {k:"hours open time working часы время работы ժամ բաց",en:"Consultations are by appointment on weekdays at NEW-MED Clinic. Tell me a convenient day and time and I'll check it with the clinic.",ru:"Консультации по записи в будние дни в клинике NEW-MED. Назовите удобный день и время, я уточню в клинике.",hy:"Խորհրդատվությունները նախնական գրանցմամբ են՝ աշխատանքային օրերին, NEW-MED կլինիկայում։ Ասեք հարմար օր և ժամ, կճշտեմ կլինիկայի հետ։"},
+   {k:"anesthesia pain hospital stay наркоз больно стационар անզգայաց ցավ ստացիոնար",en:"Operations are done under general or local anesthesia depending on the procedure; most patients go home the same or next day. Details at the consultation.",ru:"Операции проводятся под общей или местной анестезией в зависимости от процедуры; большинство пациентов уходят домой в тот же или на следующий день.",hy:"Վիրահատությունները կատարվում են ընդհանուր կամ տեղային անզգայացմամբ՝ կախված միջամտությունից․ հիվանդների մեծ մասը տուն է գնում նույն կամ հաջորդ օրը։"},
+   {k:"photos results before after фото результаты до после լուսանկար արդյունք",en:"Before/after photos are shown at the consultation in person, with the patients' consent. Some examples are on the doctor's Instagram @dr.goramirbekyan.",ru:"Фото до/после показывают на консультации лично, с согласия пациентов. Часть примеров есть в Instagram доктора @dr.goramirbekyan.",hy:"Մինչ/հետո լուսանկարները ցույց են տալիս խորհրդատվության ժամանակ՝ հիվանդների համաձայնությամբ։ Օրինակներ կան բժշկի Instagram-ում՝ @dr.goramirbekyan։"}
+  ]};
+const Q=new URLSearchParams(location.search);
+let biz=BIZ[Q.get("biz")]?Q.get("biz"):"restaurant",lang=["en","ru","hy"].includes(Q.get("lang"))?Q.get("lang"):"en",pending=null;
+if(Q.get("name")){const nm=Q.get("name").replace(/_/g," ").slice(0,60);["en","ru","hy"].forEach(l=>BIZ[biz].name[l]=nm);document.getElementById("ttl").firstChild.textContent={en:"Trial assistant for "+nm,ru:"Пробный помощник для "+nm,hy:"Փորձնական օգնական՝ "+nm}[lang]+" "}
+const $=s=>document.querySelector(s),log=$("#log"),owner=$("#owner");let ownerItems=[];
+function norm(s){return s.toLowerCase().replace(/[^\p{L}\p{N}\s-]/gu," ").split(/\s+/).filter(w=>w.length>2)}
+function stem(w){return w.slice(0,Math.max(4,w.length-2))}
+function answer(q){
+  const f=BIZ[biz].facts,qs=norm(q).map(stem);let best=null,bs=0;
+  for(const x of f){const ks=norm(x.k).map(stem);let s=0;for(const w of qs)for(const k of ks)if(k.startsWith(w)||w.startsWith(k))s++;if(s>bs){bs=s;best=x}}
+  return bs?best:null;
+}
+function add(t,who,tag){const d=document.createElement("div");d.className="m "+who;d.textContent=t;if(tag){const s=document.createElement("span");s.className="tag";s.textContent=tag;d.appendChild(s)}log.appendChild(d);log.scrollTop=log.scrollHeight}
+function toOwner(t){ownerItems.unshift(t);owner.innerHTML=ownerItems.slice(0,5).map(x=>"<div>"+x.replace(/</g,"&lt;")+"</div>").join("")}
+function reply(q){
+  const t=T[lang];
+  if(pending){ if(pending.step===1){pending.who=q;pending.step=2;setTimeout(()=>add(t.askwhen,"bot"),400);return}
+    toOwner(t.bk+pending.who+" · "+q+" · "+BIZ[biz].name[lang]);pending=null;setTimeout(()=>add(t.booked,"bot","→ Google Sheet + notification to owner"),500);return }
+  const a=answer(q);
+  if(!a){toOwner(t.fwd+q);setTimeout(()=>add(t.unknown,"bot","→ forwarded to owner, nothing invented"),500);return}
+  if(a.book){pending={step:1};setTimeout(()=>add(a[lang]+t.askname,"bot"),400);return}
+  setTimeout(()=>add(a[lang],"bot","from the owner's notes"),450)
+}
+function render(){
+  const t=T[lang],b=BIZ[biz];$("#sub").textContent=t.sub;$("#h_how").textContent=t.h_how;$("#h_owner").textContent=t.h_owner;$("#cta").textContent=t.cta;$("#q").placeholder=t.ph;
+  $("#how").innerHTML=t.how.map(x=>"<li>"+x+"</li>").join("");$("#bname").textContent=b.name[lang];$("#av").textContent=b.av;
+  $("#sug").innerHTML=b.sug[lang].map(x=>'<button type="button">'+x+"</button>").join("");
+  log.innerHTML="";ownerItems=[];owner.textContent=t.owner_empty;pending=null;
+  if(biz==="surgeon"){const g=document.createElement("div");g.style.cssText="display:flex;gap:6px;margin:0 0 10px";["slide-1.0cb9dbbe","slide-2.3967d13b","slide-3.83cf25dc"].forEach(s=>{const im=document.createElement("img");im.src="https://dr.amirbekyan.com/static/media/"+s+".webp";im.alt="dr.amirbekyan.com";im.style.cssText="width:33%;height:90px;object-fit:cover;border-radius:10px";g.appendChild(im)});log.appendChild(g);
+    const n=document.createElement("div");n.className="m bot";n.textContent={en:"Photos and information: dr.amirbekyan.com · Facebook: Dr. Gor Amirbekyan · Instagram @dr.goramirbekyan",ru:"Фото и информация: dr.amirbekyan.com · Facebook: Dr. Gor Amirbekyan · Instagram @dr.goramirbekyan",hy:"Լուսանկարներ և տեղեկություն՝ dr.amirbekyan.com · Facebook՝ Dr. Gor Amirbekyan · Instagram՝ @dr.goramirbekyan"}[lang];log.appendChild(n)}
+  add(t.hi.replace("{b}",b.name[lang]),"bot");
+  document.querySelectorAll("[data-biz]").forEach(x=>x.classList.toggle("on",x.dataset.biz===biz));document.querySelectorAll("[data-lang]").forEach(x=>x.classList.toggle("on",x.dataset.lang===lang));
+}
+document.querySelectorAll("[data-biz]").forEach(x=>x.onclick=()=>{biz=x.dataset.biz;render()});
+document.querySelectorAll("[data-lang]").forEach(x=>x.onclick=()=>{lang=x.dataset.lang;render()});
+$("#sug").onclick=e=>{if(e.target.tagName==="BUTTON"){add(e.target.textContent,"me");reply(e.target.textContent)}};
+$("#f").onsubmit=e=>{e.preventDefault();const v=$("#q").value.trim();if(!v)return;$("#q").value="";add(v,"me");reply(v)};
+if(/^ru/.test(navigator.language))lang="ru";else if(/^hy/.test(navigator.language))lang="hy";
+render();
+</script>
+</body>
+</html>

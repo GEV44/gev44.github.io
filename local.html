@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="hy"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gevorg · AI assistants for business — Yerevan</title>
+<meta name="description" content="AI assistant that answers your clients 24/7 in Armenian, Russian and English. 19,000 AMD, live in 48 hours, pay after you see it work.">
+<style>
+:root{--bg:#f6f8fb;--fg:#15202b;--mut:#5b6b7b;--acc:#1a8f4a;--card:#fff;--line:#e3e8ef}
+@media (prefers-color-scheme:dark){:root{--bg:#0f141a;--fg:#e8eef4;--mut:#9aabbc;--card:#17202a;--line:#263241}}
+*{box-sizing:border-box}body{margin:0;font-family:Segoe UI,system-ui,Arial,sans-serif;background:var(--bg);color:var(--fg);line-height:1.5}
+.w{max-width:980px;margin:0 auto;padding:0 16px}header{padding:56px 0 28px}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 14px}.sub{font-size:18px;color:var(--mut);max-width:640px}
+.cta{display:inline-block;background:var(--acc);color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:600;margin:16px 10px 0 0}
+.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.lang{float:right;margin-top:14px}.lang button{border:1px solid var(--line);background:var(--card);color:var(--fg);padding:5px 10px;border-radius:6px;cursor:pointer}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:26px 0}
+.c{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}.c h3{margin:0 0 6px}.p{font-size:22px;font-weight:700;color:var(--acc)}
+.steps li{margin:6px 0}footer{color:var(--mut);padding:40px 0;font-size:14px}
+img.demo{width:100%;max-width:320px;border-radius:16px;box-shadow:0 8px 24px #0002}
+.hero{display:flex;gap:30px;align-items:center;flex-wrap:wrap}.hero>div{flex:1;min-width:280px}
+</style></head><body><div class="w">
+<div class="lang"><button onclick="L('hy')">ՀԱՅ</button> <button onclick="L('ru')">РУС</button> <button onclick="L('en')">ENG</button></div>
+<header class="hero"><div>
+<h1 data-t="h1"></h1><p class="sub" data-t="sub"></p>
+<a class="cta" href="https://t.me/hovhannisyan77" data-t="cta1"></a><a class="cta ghost" href="https://www.fiverr.com/ghovhannisyan00" data-t="cta2"></a>
+</div><div><img class="demo" src="demo.png" alt="demo chat"></div></header>
+<div class="g" id="offers"></div>
+<div class="c"><h3 data-t="howh"></h3><ol class="steps" id="steps"></ol></div>
+<footer>Gevorg Hovhannisyan · AI & automation engineer · Yerevan · B.Sc. Informatics & Applied Mathematics (YSU) · ML Engineer (ACA)</footer>
+</div><script>
+const T={
+hy:{h1:"AI օգնական, որը 24/7 պատասխանում է Ձեր հաճախորդներին",sub:"Հայերեն, ռուսերեն և անգլերեն՝ Telegram-ում և Ձեր կայքում։ Գներ, ժամեր, ամրագրում — ակնթարթորեն։ Վճարում եք միայն այն բանից հետո, երբ տեսնում եք, որ աշխատում է։",cta1:"Գրել Telegram-ով",cta2:"Fiverr պրոֆիլ",howh:"Ինչպես է աշխատում",
+steps:["Լրացնում եք 5 րոպեանոց հարցաթերթիկ (10 հաճախ տրվող հարց)","48 ժամում ցույց եմ տալիս Ձեր աշխատող օգնականը","Հավանեցիք — վճարում եք, միացնում ենք Telegram/կայք/Instagram bio","Անպատասխան հարցերը գալիս են Ձեզ Telegram-ով"],
+o:[["AI FAQ օգնական","19,000 ֏","Telegram + կայքի կոճակ, 3 լեզու, 15 հարց"],["Ամրագրման բոտ","15,000 ֏","Գրանցում → Google Sheets + ծանուցում Ձեզ"],["Կայք + AI օգնական","39,000 ֏","1 էջանոց արագ կայք, քարտեզ, կոնտակտներ, բոտ"],["Ամսական սպասարկում","6,000 ֏/ամիս","Պատասխանների թարմացում, վերահսկում"]]},
+ru:{h1:"AI-ассистент, который 24/7 отвечает вашим клиентам",sub:"На армянском, русском и английском — в Telegram и на сайте. Цены, часы, запись — мгновенно. Оплата только после того, как увидите, что всё работает.",cta1:"Написать в Telegram",cta2:"Профиль Fiverr",howh:"Как это работает",
+steps:["Заполняете анкету за 5 минут (10 частых вопросов)","Через 48 часов показываю работающего ассистента","Нравится — оплачиваете, подключаем Telegram/сайт/Instagram","Вопросы без ответа приходят вам в Telegram"],
+o:[["AI FAQ-ассистент","19 000 ֏","Telegram + кнопка на сайте, 3 языка, 15 вопросов"],["Бот для записи","15 000 ֏","Запись → Google Sheets + уведомление вам"],["Сайт + AI-ассистент","39 000 ֏","Быстрый одностраничник, карта, контакты, бот"],["Поддержка","6 000 ֏/мес","Обновление ответов, мониторинг"]]},
+en:{h1:"An AI assistant that answers your customers 24/7",sub:"In Armenian, Russian and English — on Telegram and your website. Prices, hours, bookings — instantly. You pay only after you see it working.",cta1:"Message on Telegram",cta2:"Fiverr profile",howh:"How it works",
+steps:["Fill a 5-minute form (your 10 most common questions)","In 48 hours I show you your working assistant","Like it — you pay, we connect Telegram / website / Instagram bio","Unanswered questions are forwarded to you on Telegram"],
+o:[["AI FAQ assistant","19,000 AMD (~$49)","Telegram + website button, 3 languages, 15 Q&A"],["Booking bot","15,000 AMD (~$39)","Booking → Google Sheets + alert to you"],["Website + AI assistant","39,000 AMD (~$99)","Fast one-page site, map, contacts, bot"],["Monthly care","6,000 AMD/mo","Answer updates, monitoring"]]}};
+function L(l){const t=T[l];document.documentElement.lang=l;
+document.querySelectorAll("[data-t]").forEach(e=>e.textContent=t[e.dataset.t]);
+document.getElementById("offers").innerHTML=t.o.map(o=>`<div class="c"><h3>${o[0]}</h3><div class="p">${o[1]}</div><div>${o[2]}</div></div>`).join("");
+document.getElementById("steps").innerHTML=t.steps.map(s=>`<li>${s}</li>`).join("");
+try{localStorage.setItem("l",l)}catch(e){}}
+let s="hy";try{s=localStorage.getItem("l")||(navigator.language||"hy").slice(0,2)}catch(e){}L(T[s]?s:"hy");
+</script></body></html>
