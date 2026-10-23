@@ -101,8 +101,8 @@ document.querySelectorAll("[data-biz]").forEach(x=>x.onclick=()=>{biz=x.dataset.
 document.querySelectorAll("[data-lang]").forEach(x=>x.onclick=()=>{lang=x.dataset.lang;render()});
 $("#sug").onclick=e=>{if(e.target.tagName==="BUTTON"){add(e.target.textContent,"me");reply(e.target.textContent)}};
 $("#f").onsubmit=e=>{e.preventDefault();const v=$("#q").value.trim();if(!v)return;$("#q").value="";add(v,"me");reply(v)};
-
+if(!Q.get("lang")){}
 render();
 </script>
-</body>
+<script>if(new URLSearchParams(location.search).get("embed")){document.querySelector("header").style.display="none";document.querySelector("aside").style.display="none";document.querySelector("#foot").style.display="none";const g=document.querySelector(".grid");g.style.display="block";const w=document.querySelector(".wrap");w.style.padding="0";w.style.maxWidth="none";const c=document.querySelector(".chat");c.style.height="100vh";c.style.borderRadius="0";c.style.border="0";}</script></body>
 </html>
