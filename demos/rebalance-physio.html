@@ -101,7 +101,7 @@ document.querySelectorAll("[data-biz]").forEach(x=>x.onclick=()=>{biz=x.dataset.
 document.querySelectorAll("[data-lang]").forEach(x=>x.onclick=()=>{lang=x.dataset.lang;render()});
 $("#sug").onclick=e=>{if(e.target.tagName==="BUTTON"){add(e.target.textContent,"me");reply(e.target.textContent)}};
 $("#f").onsubmit=e=>{e.preventDefault();const v=$("#q").value.trim();if(!v)return;$("#q").value="";add(v,"me");reply(v)};
-
+if(!Q.get("lang")){}
 render();
 </script>
 </body>
