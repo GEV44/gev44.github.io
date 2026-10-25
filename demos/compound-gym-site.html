@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compound Gym · website concept</title>
+<meta name="description" content="A private, non-crowded strength and performance gym at 7523 South Fwy, Houston, with 24/7 member access, infrared saunas and elite equipment.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--a:#d62828;--ink:#14161a;--mute:#5b6270;--line:#e6e8ec;--bg:#ffffff;--soft:#f6f7f9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
+a{color:inherit}.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.concept{background:#14161a;color:#cfd3da;font-size:13px;text-align:center;padding:7px 12px}
+.concept b{color:#fff}
+nav{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-weight:800;font-size:19px;letter-spacing:-.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.links{display:flex;gap:22px;font-size:15px;color:var(--mute)}.links a{text-decoration:none}.links a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--a);color:#fff;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:10px;border:0;cursor:pointer;font-size:15px;font-family:inherit}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.hero{padding:72px 0 56px;background:linear-gradient(180deg,var(--soft),#fff)}
+.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.08;letter-spacing:-1px;margin:0 0 16px;max-width:780px}
+.hero p{font-size:19px;color:var(--mute);max-width:640px;margin:0 0 28px}
+.badge{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-size:14px;margin:0 0 22px}
+.badge .st{color:#f5a623;letter-spacing:1px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:64px 0}section.alt{background:var(--soft)}
+h2{font-size:32px;letter-spacing:-.5px;margin:0 0 10px}.lead{color:var(--mute);margin:0 0 30px;max-width:640px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--mute);font-size:15px}
+.dot{width:38px;height:38px;border-radius:10px;background:color-mix(in srgb,var(--a) 13%,#fff);color:var(--a);display:grid;place-items:center;font-weight:800;margin:0 0 14px}
+.svc{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.svc .card{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.price{white-space:nowrap;font-weight:600;color:var(--a);font-size:15px}
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
+.team{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}.team span{background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:15px}td{padding:9px 0;border-bottom:1px solid var(--line)}td:last-child{text-align:right;color:var(--mute)}
+.map{width:100%;height:260px;border:0;border-radius:16px;margin:14px 0 0;background:#e9ecef}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:0 0 10px}
+summary{cursor:pointer;font-weight:600}details p{margin:10px 0 0;color:var(--mute)}
+.book{text-align:center}.book h2{margin-bottom:8px}
+footer{padding:28px 0 90px;font-size:13px;color:var(--mute);border-top:1px solid var(--line)}
+#fab{position:fixed;right:20px;bottom:20px;z-index:20;box-shadow:0 10px 30px rgba(0,0,0,.18);border-radius:99px;padding:14px 22px}
+#panel{position:fixed;right:20px;bottom:86px;width:min(420px,calc(100vw - 40px));height:min(640px,calc(100vh - 120px));background:#fff;border-radius:18px;
+box-shadow:0 20px 60px rgba(0,0,0,.25);overflow:hidden;display:none;z-index:20;border:1px solid var(--line)}
+#panel iframe{width:100%;height:100%;border:0}
+@media (max-width:820px){.links{display:none}.grid3,.svc,.two{grid-template-columns:1fr}.hero{padding:48px 0 40px}}
+</style>
+</head>
+<body>
+<div class="concept"><b>Website concept</b> prepared for Compound Gym by Gevorg Hovhannisyan, from the information on compound-gym.com. Not the official site.</div>
+<nav><div class="wrap"><div class="logo">Compound Gym</div>
+<div class="links"><a href="#services">Services</a><a href="#about">About us</a><a href="#visit">Visit us</a><a href="#faq">FAQ</a></div>
+<button class="btn" onclick="openChat()">Join or get a day pass</button></div></nav>
+<header class="hero"><div class="wrap">
+<div class="badge"><span class="st">★★★★★</span><b>5.0</b> · 777 Google reviews</div>
+<h1>Houston&#x27;s strength facility, open 24/7</h1><p>A private, non-crowded strength and performance gym at 7523 South Fwy, Houston, with 24/7 member access, infrared saunas and elite equipment.</p>
+<div class="cta"><button class="btn" onclick="openChat()">Join or get a day pass</button><a class="btn ghost" href="tel:(832)986-4290">Call (832) 986-4290</a></div>
+</div></header>
+<section><div class="wrap"><div class="grid3"><div class="card"><div class="dot">✓</div><h3>Open 24/7</h3><p>Members train any hour of any day with a digital key; the front desk is staffed during set hours.</p></div><div class="card"><div class="dot">✓</div><h3>Infrared saunas</h3><p>Sauna access is included with every membership and every day pass.</p></div><div class="card"><div class="dot">✓</div><h3>Free parking</h3><p>Free parking right at the facility, easy to reach from Third Ward, Sunnyside and the Medical Center.</p></div></div></div></section>
+<section class="alt" id="services"><div class="wrap"><h2>Services</h2><p class="lead">What we do, as listed on our site.</p><div class="svc"><div class="card"><div><h3>Monthly membership</h3><p>24/7 access, no contract, cancel any time with 30 days&#x27; notice.</p></div><div class="price">$60/month + $100 sign-up fee</div></div><div class="card"><div><h3>Annual membership</h3><p>24/7 access, no sign-up fee, priority support.</p></div><div class="price">$600/year ($50/mo)</div></div><div class="card"><div><h3>Day pass</h3><p>One visit with all equipment and the infrared sauna.</p></div><div class="price">$20</div></div><div class="card"><div><h3>3-day pass</h3><p>Three consecutive days of 24/7 access.</p></div><div class="price">$30</div></div><div class="card"><div><h3>Week pass</h3><p>Seven consecutive days of 24/7 access.</p></div><div class="price">$50</div></div><div class="card"><div><h3>Month pass</h3><p>30 consecutive days, no auto-renewal.</p></div><div class="price">$100</div></div><div class="card"><div><h3>Personal training</h3><p>1-on-1 or online coaching inside the gym, 60-minute sessions. Free 1-hour intro session.</p></div></div></div></div></section>
+<section id="about"><div class="wrap two"><div><h2>About us</h2><p class="lead" style="margin-bottom:0">Compound Gym describes itself as Houston&#x27;s premier facility for serious athletes: a private training space with a friendly, ego-free community and world-class equipment. From competition prep to everyday training, the aim is simple: lift together and improve.</p></div>
+<div class="card"><h3>Opening hours</h3><table><tr><td>Access</td><td>24/7 for members</td></tr><tr><td>Staffed Mon-Fri</td><td>8:00am-10:00pm</td></tr><tr><td>Staffed Sat</td><td>8:00am-8:00pm</td></tr><tr><td>Staffed Sun</td><td>10:00am-5:00pm</td></tr></table></div></div></section>
+<section class="alt" id="visit"><div class="wrap"><h2>Visit us</h2><p class="lead">7523 South Fwy, Houston, TX 77021 · (832) 986-4290</p>
+<iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Compound%20Gym%2C%207523%20South%20Fwy%2C%20Houston%2C%20TX%2077021&output=embed"></iframe></div></section>
+<section id="faq"><div class="wrap"><h2>FAQ</h2><p class="lead">Quick answers to what people ask us most.</p><details><summary>What&#x27;s included with every membership?</summary><p>24/7 facility access, all lifting equipment, infrared sauna access and a private, non-crowded training environment.</p></details><details><summary>Can I cancel my monthly membership?</summary><p>Yes. The monthly plan has no contract and can be cancelled any time with 30 days&#x27; notice. 6-month and annual plans are prepaid and non-refundable.</p></details><details><summary>How does 24/7 access work?</summary><p>Once your membership is active, the GymMaster app opens the door. You can also pick up a physical key fob during staffed hours.</p></details><details><summary>Can I bring a guest?</summary><p>Yes. Every Friday from 8am-10pm, members can bring 1 guest for free.</p></details><details><summary>Can I see the gym before signing up?</summary><p>New visitors can buy a day pass after hours by scanning the QR code at the entrance and following the steps in the app.</p></details></div></section>
+<section class="alt book"><div class="wrap"><h2>Ready when you are</h2><p class="lead" style="margin:0 auto 22px">Ask a question or book in under a minute, day or night.</p><button class="btn" onclick="openChat()">Join or get a day pass</button></div></section>
+<footer><div class="wrap">Concept by Gevorg Hovhannisyan (AI assistants & websites for local businesses). All information is taken from compound-gym.com; the assistant answers from the same facts and hands anything else to the team.</div></footer>
+<button id="fab" class="btn" onclick="toggleChat()">💬 Ask us anything</button>
+<div id="panel"></div>
+<script>
+let loaded=false;
+function toggleChat(){const p=document.getElementById('panel');if(!loaded){p.innerHTML='<iframe src="compound-gym.html?embed=1" title="assistant"></iframe>';loaded=true}p.style.display=p.style.display==='block'?'none':'block'}
+function openChat(){const p=document.getElementById('panel');if(p.style.display!=='block')toggleChat()}
+</script>
+</body>
+</html>
