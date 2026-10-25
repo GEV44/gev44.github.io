@@ -131,7 +131,7 @@ BIZ.surgeon={name:{en:"Dr. Gor Amirbekyan, plastic surgeon",ru:"Доктор Г�
   ]};
 const Q=new URLSearchParams(location.search);
 let biz=BIZ[Q.get("biz")]?Q.get("biz"):"restaurant",lang=["en","ru","hy"].includes(Q.get("lang"))?Q.get("lang"):"en",pending=null;
-if(Q.get("name")){const nm=Q.get("name").replace(/_/g," ").slice(0,60);["en","ru","hy"].forEach(l=>BIZ[biz].name[l]=nm);document.getElementById("ttl").firstChild.textContent={en:"Trial assistant for "+nm,ru:"Пробный помощник для "+nm,hy:"Փորձնական օգնական՝ "+nm}[lang]+" "}
+if(Q.get("name")){document.querySelectorAll("[data-biz]").forEach(b=>b.style.display="none");document.querySelector("#foot").style.display="none";const nm=Q.get("name").replace(/_/g," ").slice(0,60);["en","ru","hy"].forEach(l=>BIZ[biz].name[l]=nm);document.getElementById("ttl").firstChild.textContent={en:"Trial assistant for "+nm,ru:"Пробный помощник для "+nm,hy:"Փորձնական օգնական՝ "+nm}[lang]+" "}
 const $=s=>document.querySelector(s),log=$("#log"),owner=$("#owner");let ownerItems=[];
 function norm(s){return s.toLowerCase().replace(/[^\p{L}\p{N}\s-]/gu," ").split(/\s+/).filter(w=>w.length>2)}
 function stem(w){return w.slice(0,Math.max(4,w.length-2))}
