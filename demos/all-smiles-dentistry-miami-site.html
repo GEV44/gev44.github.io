@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>All Smiles Dentistry Miami | Dr. Bianca Gonzalez, Downtown Miami</title>
+<meta name="description" content="All Smiles Dentistry Miami: general, cosmetic and emergency dentistry in Downtown Miami with Dr. Bianca Gonzalez. Hablamos espanol.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Sorts+Mill+Goudy:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#cda274;--gold2:#a9814f;--teal:#9acfc9;--teal2:#2f6f69;--cream:#f6f1eb;--char:#1b1d1d;--mute:#686868;--white:#fff;--line:#e6dccf;
+--a:#2f6f69;--ab:#fff;--ai:#1b1d1d;--al:#e6dccf;--abot:#f6f1eb;--af:'Outfit',system-ui,sans-serif;--ar:999px;--ap:22px;--am:#fdfaf6}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:300 17px/1.65 'Outfit',system-ui,sans-serif;background:var(--cream);color:var(--char);overflow-x:hidden}
+h1,h2,h3{font-family:'Sorts Mill Goudy',Georgia,serif;font-weight:400;line-height:1.12}
+a{color:inherit}
+.wrap{width:min(1100px,100% - 32px);margin:0 auto}
+.alert{background:var(--char);color:#f1e6d6;font-size:14px;text-align:center;padding:9px 14px;letter-spacing:.02em}
+.alert b{color:var(--gold);font-weight:500}
+header.nav{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:10px}
+.brand{text-decoration:none;line-height:1.1}
+.brand b{display:block;font:400 24px 'Sorts Mill Goudy',serif;color:var(--teal2)}
+.brand small{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold2)}
+.links{display:none;gap:22px;font-size:14.5px}
+.links a{text-decoration:none;color:var(--mute)}.links a:hover{color:var(--teal2)}
+.pill{display:inline-block;background:var(--gold);color:#fff;text-decoration:none;border:0;cursor:pointer;font:500 14.5px 'Outfit';padding:11px 20px;border-radius:999px;white-space:nowrap}
+.pill:hover{background:var(--gold2)}
+.pill.ghost{background:transparent;color:var(--teal2);border:1px solid var(--teal2)}
+.pill.ghost:hover{background:var(--teal2);color:#fff}
+@media(max-width:420px){.brand b{font-size:20px}.pill{padding:10px 14px;font-size:13.5px}}
+@media(min-width:900px){.links{display:flex}}
+/* hero: centered with arch */
+.hero{padding:46px 0 0;text-align:center;background:linear-gradient(#fff,var(--cream))}
+.hero .tag{font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold2)}
+.hero h1{font-size:clamp(40px,8.5vw,84px);margin:14px auto 16px;max-width:15em;color:var(--char)}
+.hero h1 i{color:var(--teal2)}
+.hero p.lead{max-width:36em;margin:0 auto 24px;color:#4b4b47;font-size:18.5px}
+.hero .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.arches{display:flex;justify-content:center;align-items:flex-end;gap:12px;margin-top:40px;padding:0 12px}
+.arch{border-radius:200px 200px 0 0;flex:1;max-width:210px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:16px;color:#fff;font:italic 400 18px 'Sorts Mill Goudy',serif;text-align:center}
+.arch:nth-child(1){height:150px;background:var(--teal)}
+.arch:nth-child(2){height:210px;background:var(--gold)}
+.arch:nth-child(3){height:260px;background:var(--teal2)}
+.arch:nth-child(4){height:210px;background:var(--gold)}
+.arch:nth-child(5){height:150px;background:var(--teal)}
+@media(max-width:560px){.arch:nth-child(1),.arch:nth-child(5){display:none}.arch{font-size:15px}}
+/* facts strip */
+.strip{background:var(--char);color:#eadfce}
+.strip .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.strip div{padding:20px 10px;text-align:center;border-right:1px solid #333;border-bottom:1px solid #333}
+.strip b{display:block;font:400 28px 'Sorts Mill Goudy',serif;color:var(--gold)}
+.strip small{font-size:13px;letter-spacing:.04em}
+@media(min-width:760px){.strip .wrap{grid-template-columns:repeat(4,1fr)}.strip div{border-bottom:0}.strip div:last-child{border-right:0}}
+section{padding:64px 0}
+.h2{text-align:center;max-width:40em;margin:0 auto 34px}
+.h2 span{font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold2)}
+.h2 h2{font-size:clamp(32px,6vw,52px);margin:8px 0 10px;color:var(--teal2)}
+.h2 p{color:var(--mute)}
+/* services tabs (css-only) */
+.svc-wrap input{position:absolute;opacity:0;pointer-events:none}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:22px}
+.tabs label{border:1px solid var(--gold);color:var(--gold2);padding:9px 18px;border-radius:999px;cursor:pointer;font-size:14.5px}
+#s1:checked~.tabs label[for=s1],#s2:checked~.tabs label[for=s2],#s3:checked~.tabs label[for=s3],#s4:checked~.tabs label[for=s4],#s5:checked~.tabs label[for=s5]{background:var(--teal2);border-color:var(--teal2);color:#fff}
+.panel{display:none;background:var(--white);border:1px solid var(--line);border-radius:26px;padding:26px}
+#s1:checked~.p1,#s2:checked~.p2,#s3:checked~.p3,#s4:checked~.p4,#s5:checked~.p5{display:block}
+.panel h3{font-size:28px;color:var(--teal2);margin-bottom:6px}
+.panel>p{color:#4b4b47;margin-bottom:14px}
+.items{display:grid;gap:10px}
+.items div{border-left:2px solid var(--gold);padding:4px 0 4px 14px}
+.items b{font-weight:500;display:block}
+.items span{font-size:15px;color:var(--mute)}
+@media(min-width:760px){.items{grid-template-columns:1fr 1fr}.panel{padding:34px}}
+/* specials */
+.specials{background:var(--teal2);color:#fff}
+.specials .h2 h2{color:#fff}.specials .h2 span{color:var(--teal)}.specials .h2 p{color:#cfe6e3}
+.cards{display:grid;gap:16px;max-width:760px;margin:0 auto}
+.cardx{background:var(--cream);color:var(--char);border-radius:26px;padding:26px;display:grid;gap:8px;position:relative;border:3px double var(--gold)}
+.cardx .price{font:400 54px/1 'Sorts Mill Goudy',serif;color:var(--teal2)}
+.cardx .price sup{font-size:24px;color:var(--gold2)}
+.cardx h3{font-size:26px}
+.cardx ul{list-style:none;color:#4b4b47;font-size:16px}
+.cardx li:before{content:"\2713\00a0";color:var(--gold2)}
+@media(min-width:760px){.cards{grid-template-columns:3fr 2fr}}
+/* doctor + team */
+.doc{display:grid;gap:26px;align-items:center}
+.portrait{aspect-ratio:4/5;max-width:340px;margin:0 auto;border-radius:200px 200px 24px 24px;background:linear-gradient(160deg,var(--teal),var(--gold));display:grid;place-items:center;color:#fff;font:italic 400 88px 'Sorts Mill Goudy',serif;width:100%}
+.doc h2{font-size:clamp(32px,5.5vw,46px);color:var(--teal2)}
+.doc .cred{color:var(--gold2);letter-spacing:.06em;font-size:14px;margin:4px 0 12px}
+.vals{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.vals span{border:1px solid var(--gold);color:var(--gold2);padding:5px 14px;border-radius:999px;font-size:14px}
+.team{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.team div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px}
+.team b{display:block;font-weight:500}.team small{color:var(--mute)}
+@media(min-width:820px){.doc{grid-template-columns:.8fr 1.2fr;gap:50px}}
+/* visit */
+.visit{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.vgrid{display:grid;gap:22px}
+.box{background:var(--cream);border-radius:24px;padding:26px}
+.box h3{font-size:26px;color:var(--teal2);margin-bottom:8px}
+.hrs{width:100%;border-collapse:collapse;margin:6px 0}
+.hrs td{padding:7px 0;border-bottom:1px solid var(--line)}.hrs td:last-child{text-align:right;font-weight:500}
+.park{background:var(--gold);color:#fff;border-radius:24px;padding:26px}
+.park h3{font-size:26px;margin-bottom:6px}
+@media(min-width:820px){.vgrid{grid-template-columns:1fr 1fr 1fr}}
+.faq{max-width:760px;margin:0 auto}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:500;color:var(--teal2)}
+.faq p{margin-top:8px;color:#4b4b47;font-size:16px}
+footer{background:var(--char);color:#cdbfa9;padding:34px 0;font-size:14.5px;text-align:center}
+footer a{color:var(--gold)}
+footer .demo{margin-top:14px;font-size:13px;color:#8d8576}
+.as-btn{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--a);color:var(--at,#fff);font:600 15px/1 var(--af);padding:13px 18px;border-radius:var(--ar,999px);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.as-btn.hide{display:none}
+.as-ic{font-size:18px;line-height:1}
+.as-panel{position:fixed;right:12px;bottom:12px;z-index:70;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));display:none;flex-direction:column;background:var(--ab,#fff);color:var(--ai,#222);border:1px solid var(--al,#ddd);border-radius:var(--ap,16px);box-shadow:0 18px 50px rgba(0,0,0,.35);overflow:hidden;font:15px/1.45 var(--af)}
+.as-panel.open{display:flex}
+.as-h{display:flex;justify-content:space-between;align-items:flex-start;padding:14px 16px;background:var(--a);color:var(--at,#fff)}
+.as-h b{display:block;font-size:16px}.as-h small{opacity:.85;font-size:12.5px}
+.as-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+.as-m{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;background:var(--am,transparent)}
+.as-b{max-width:86%;padding:9px 12px;border-radius:12px;white-space:pre-line;word-wrap:break-word;font-size:14.5px}
+.as-b.bot{align-self:flex-start;background:var(--abot,#eee);color:var(--ai,#222)}
+.as-b.me{align-self:flex-end;background:var(--a);color:var(--at,#fff)}
+.as-c{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px 2px;max-height:104px;overflow-y:auto}
+.as-c button{border:1px solid var(--a);background:transparent;color:var(--a);border-radius:999px;padding:6px 11px;font:600 13px/1.2 var(--af);cursor:pointer}
+.as-c button:hover{background:var(--a);color:var(--at,#fff)}
+.as-f{display:flex;gap:6px;padding:8px 12px}
+.as-f input{flex:1;min-width:0;border:1px solid var(--al,#ccc);border-radius:10px;padding:10px;font:15px var(--af);background:#fff;color:#222}
+.as-f button{border:0;background:var(--a);color:var(--at,#fff);border-radius:10px;padding:0 14px;font:600 14px var(--af);cursor:pointer}
+.as-n{font-size:11.5px;opacity:.65;padding:0 14px 10px}
+@media(max-width:480px){.as-panel{right:0;bottom:0;width:100vw;height:86vh;border-radius:16px 16px 0 0}}
+
+</style>
+</head>
+<body>
+<div class="alert">&iexcl;Hablamos espa&ntilde;ol! &nbsp;&middot;&nbsp; <b>Accepting dental emergencies &amp; walk-ins</b> &nbsp;&middot;&nbsp; We validate parking</div>
+<header class="nav"><div class="wrap">
+<a class="brand" href="#top"><b>All Smiles Dentistry</b><small>Miami</small></a>
+<nav class="links"><a href="#services">Services</a><a href="#specials">Specials</a><a href="#doctor">Dr. Gonzalez</a><a href="#visit">Visit</a><a href="#faq">FAQ</a></nav>
+<a class="pill" href="#" data-assist="book">Book online</a>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+<span class="tag">Dentist in Downtown Miami, FL 33131</span>
+<h1>Beautiful smiles that <i>last a lifetime</i></h1>
+<p class="lead">Dr. Bianca Gonzalez and the team combine science and artistry to redesign your smile, with personalized, gentle care in the Chase bank building at SE 2nd Avenue.</p>
+<div class="cta"><a class="pill" href="#" data-assist="book">Request an appointment</a><a class="pill ghost" href="tel:+13053716064">Call 305-371-6064</a></div>
+<div class="arches"><div class="arch">Cosmetic</div><div class="arch">Implants</div><div class="arch">Your smile</div><div class="arch">Invisalign</div><div class="arch">Emergency</div></div>
+</div></div>
+<div class="strip"><div class="wrap">
+<div><b>4.9</b><small>404 Google reviews</small></div>
+<div><b>2017</b><small>Dr. Gonzalez, DMD, Pitt Dental Medicine</small></div>
+<div><b>$155</b><small>New patient special</small></div>
+<div><b>Free</b><small>Validated parking</small></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+<div class="h2"><span>Our services</span><h2>Comprehensive care, one office</h2><p>From routine check-ups to full smile makeovers, with the latest technology and a team that explains every step.</p></div>
+<div class="svc-wrap">
+<input type="radio" name="s" id="s1" checked><input type="radio" name="s" id="s2"><input type="radio" name="s" id="s3"><input type="radio" name="s" id="s4"><input type="radio" name="s" id="s5">
+<div class="tabs"><label for="s1">General</label><label for="s2">Cosmetic</label><label for="s3">Implants</label><label for="s4">Surgery &amp; Botox</label><label for="s5">Technology</label></div>
+<div class="panel p1"><h3>General dentistry</h3><p>Everyday care to keep your smile healthy, including emergency visits during office hours.</p>
+<div class="items"><div><b>Dental check-up</b><span>Recommended every six months, or more often if Dr. Gonzalez advises.</span></div><div><b>Types of teeth cleaning</b><span>Cleanings to suit your needs.</span></div><div><b>Tooth fillings</b></div><div><b>Tooth extraction</b></div><div><b>Nightguards</b></div><div><b>Mouthguards</b></div><div><b>Emergency dentistry</b><span>Severe toothaches, broken or knocked-out teeth, abscesses, mouth or jaw injuries are prioritized.</span></div></div></div>
+<div class="panel p2"><h3>Cosmetic dentistry</h3><p>Dr. Gonzalez uniquely combines science and artistry to redesign your smile.</p>
+<div class="items"><div><b>Smile makeover</b></div><div><b>Teeth whitening</b><span>In-office whitening is on special.</span></div><div><b>Porcelain veneers</b></div><div><b>Dental crowns</b></div><div><b>Tooth bonding</b></div><div><b>Dentures</b></div><div><b>Invisalign</b><span>Clear removable aligners that gradually straighten teeth without braces.</span></div></div></div>
+<div class="panel p3"><h3>Dental implants</h3><p>Artificial teeth that look and function like natural ones, placed on a titanium post.</p>
+<div class="items"><div><b>Single tooth implants</b></div><div><b>Full mouth implants</b></div><div><b>All-on-X</b></div></div></div>
+<div class="panel p4"><h3>Oral surgery &amp; Botox</h3><p>Surgical and aesthetic treatments, always after a consultation with the doctor.</p>
+<div class="items"><div><b>Wisdom teeth surgery</b></div><div><b>Bone grafting</b></div><div><b>PRF treatment</b></div><div><b>Botox for TMJ</b></div><div><b>Botox aesthetics</b></div></div></div>
+<div class="panel p5"><h3>Dental technology</h3><p>State-of-the-art tools for accurate diagnoses and enhanced comfort.</p>
+<div class="items"><div><b>Digital X-rays</b></div><div><b>Laser dentistry</b></div><div><b>Intraoral camera</b></div></div></div>
+</div>
+</div></section>
+
+<section class="specials" id="specials"><div class="wrap">
+<div class="h2"><span>Specials</span><h2>Start with a clear picture</h2></div>
+<div class="cards">
+<div class="cardx"><h3>New patient special</h3><div class="price"><sup>$</sup>155</div><ul><li>Exam</li><li>Panoramic radiograph</li><li>Bitewing radiographs</li><li>Full mouth probing</li></ul><small style="color:var(--mute)">Does not include cleaning.</small></div>
+<div class="cardx"><h3>In-office whitening</h3><div class="price"><sup>$</sup>500</div><p style="color:#4b4b47">Professional in-office teeth whitening.</p></div>
+</div>
+</div></section>
+
+<section id="doctor"><div class="wrap doc">
+<div class="portrait" aria-hidden="true">BG</div>
+<div>
+<span style="font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold2)">Meet your dentist</span>
+<h2>Dr. Bianca Gonzalez, DMD</h2>
+<div class="cred">University of Florida &middot; University of Pittsburgh School of Dental Medicine, 2017</div>
+<p>Dr. Gonzalez grew up in Miami and came home to practice after graduating in 2017. She is an active member of the Florida Dental Association, the American Dental Association and the Academy of General Dentistry, and believes strongly in continuous learning. In her spare time she enjoys traveling and playing tennis.</p>
+<div class="vals"><span>Compassion</span><span>Excellence</span><span>Integrity</span></div>
+<p style="font-style:italic;font-family:'Sorts Mill Goudy',serif;font-size:21px;color:var(--teal2)">"We love empowering smiles through personalized care, innovative treatments, and a commitment to excellence in dental health."</p>
+<div class="team"><div><b>Roxy</b><small>Front desk coordinator</small></div><div><b>Shanifer</b><small>Treatment planning / financial coordinator</small></div><div><b>Fiorela</b><small>Hygienist</small></div><div><b>Nancy</b><small>Dental assistant</small></div></div>
+</div>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap">
+<div class="h2"><span>Visit us</span><h2>Downtown, with parking validated</h2></div>
+<div class="vgrid">
+<div class="box"><h3>Office hours</h3><table class="hrs"><tr><td>Monday</td><td>8:30 am - 5:00 pm</td></tr><tr><td>Tuesday</td><td>8:30 am - 5:00 pm</td></tr><tr><td>Wednesday</td><td>8:30 am - 5:00 pm</td></tr><tr><td>Thursday</td><td>8:30 am - 5:00 pm</td></tr></table><p style="font-size:14.5px;color:var(--mute)">Friday to Sunday are not listed on the website; ask the team.</p></div>
+<div class="box"><h3>Find us</h3><p><b style="font-weight:500">150 SE 2nd Ave, Suite 604</b><br>Miami, FL 33131</p><p style="margin-top:8px">At the corner of S.E. 2nd Street and 2nd Avenue in Downtown Miami, inside the Chase bank building. We serve Downtown, Brickell, Key Biscayne, Bayside and the Port of Miami.</p><p style="margin-top:8px">305-371-6064<br>office@miamidental.net</p></div>
+<div class="park"><h3>Parking validation</h3><p>We validate parking across the street in the James Knight Parking Authority Garage (Miami Parking Authority Knight Center Garage), so you can focus on your treatment.</p></div>
+</div>
+</div></section>
+
+<section id="faq"><div class="wrap faq">
+<div class="h2"><span>Questions</span><h2>Good to know</h2></div>
+<details><summary>What should I expect at my first visit?</summary><p>Dr. Gonzalez conducts a comprehensive oral examination, with X-rays if necessary, discusses your dental history and concerns, and creates a personalized treatment plan.</p></details>
+<details><summary>How often should I get a check-up?</summary><p>Every six months is recommended; Dr. Gonzalez may suggest more frequent visits depending on your needs.</p></details>
+<details><summary>Do you accept my insurance?</summary><p>All Smiles is an out-of-network provider but accepts most insurances, and the team handles claim filing, verification and paperwork. Call to verify your specific coverage.</p></details>
+<details><summary>What if I have dental anxiety?</summary><p>The team is trained to provide a calming experience, and sedation options are available.</p></details>
+<details><summary>How do I book?</summary><p>Call 305-371-6064 or use the online appointment request.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+<b style="color:#fff;font-weight:500;font-size:17px">All Smiles Dentistry Miami</b><br>150 SE 2nd Ave, Suite 604, Miami, FL 33131 &middot; 305-371-6064 &middot; <a href="mailto:office@miamidental.net">office@miamidental.net</a>
+<div class="demo">Demo &middot; prepared by Gevorg Hovhannisyan</div>
+</div></footer>
+
+<script>
+/* Assistant core: knowledge base + fuzzy matcher + booking flow. Client-side only, sends nothing. */
+var Assistant=(function(){
+function norm(s){return String(s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9à-ɏ\s]/g,' ').replace(/\s+/g,' ').trim();}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[],c;if(Math.abs(m-n)>2)return 9;
+ for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;
+ for(i=1;i<=m;i++)for(j=1;j<=n;j++){c=a[i-1]===b[j-1]?0:1;d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);}
+ return d[m][n];}
+function tokScore(t,s){
+ if(t===s)return s.length+2;
+ if(s.length>=3&&t.indexOf(s)===0&&t.length-s.length<=4)return s.length+1;
+ if(t.length>=4&&s.indexOf(t)===0&&s.length-t.length<=3)return t.length;
+ if(s.length>=5&&t.length>=4){var L=Math.min(t.length,s.length);var e=lev(t.slice(0,Math.max(L,s.length-1)),s);if(e<=1||(s.length>=8&&lev(t,s)<=2))return s.length-1;}
+ return 0;}
+function build(C){
+ var KB=C.KB;
+ function score(q,e){
+  var qn=norm(q),toks=qn.split(' '),best=0,hits=0;
+  for(var i=0;i<e.k.length;i++){
+   var k=norm(e.k[i]),sc=0;
+   if(k.indexOf(' ')>-1){if((' '+qn+' ').indexOf(' '+k+' ')>-1)sc=k.length+4;else{
+     var kt=k.split(' ').filter(function(w){return w.length>=4;}),ok=0;for(var a=0;a<kt.length;a++){var b=0;for(var j=0;j<toks.length;j++)b=Math.max(b,tokScore(toks[j],kt[a])>0?1:0);ok+=b;}
+     if(kt.length>=2&&ok===kt.length)sc=k.length+1;}}
+   else{for(var j2=0;j2<toks.length;j2++){sc=Math.max(sc,tokScore(toks[j2],k));}}
+   if(sc>0){hits++;best=Math.max(best,sc);}
+  }
+  return best+(hits>1?hits*0.5:0);}
+ function find(q){
+  var bestE=null,bs=0;
+  for(var i=0;i<KB.length;i++){var s=score(q,KB[i]);if(KB[i].lowPri)s=s*0.9;if(s>bs){bs=s;bestE=KB[i];}}
+  return bs>=3.3?bestE:null;}
+ return {find:find,norm:norm,KB:KB};}
+
+function ui(C,M){
+ var d=document,st={step:-1,data:{}};
+ var btn=d.createElement('button');btn.className='as-btn';btn.setAttribute('aria-label',C.btnLabel||'Chat');btn.innerHTML='<span class="as-ic">'+(C.icon||'?')+'</span><span class="as-bt">'+(C.btnText||'Ask us')+'</span>';
+ var p=d.createElement('div');p.className='as-panel';p.setAttribute('role','dialog');
+ p.innerHTML='<div class="as-h"><div><b>'+C.title+'</b><small>'+C.sub+'</small></div><button class="as-x" aria-label="Close">&times;</button></div><div class="as-m"></div><div class="as-c"></div><form class="as-f"><input type="text" autocomplete="off" placeholder="'+C.placeholder+'"><button type="submit">'+(C.sendLabel||'Send')+'</button></form><div class="as-n">'+C.note+'</div>';
+ d.body.appendChild(btn);d.body.appendChild(p);
+ var m=p.querySelector('.as-m'),c=p.querySelector('.as-c'),f=p.querySelector('form'),inp=f.querySelector('input');
+ function say(t,who){var e=d.createElement('div');e.className='as-b '+(who||'bot');e.textContent=t;m.appendChild(e);m.scrollTop=m.scrollHeight;}
+ function chips(a){c.innerHTML='';(a||[]).forEach(function(t){var b=d.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){send(t);};c.appendChild(b);});}
+ function ask(){var s=C.flow[st.step];say(s.ask);chips(s.chips||(s.optional?['Skip']:[]));inp.placeholder=s.ph||C.placeholder;}
+ function startFlow(){st={step:0,data:{}};say(C.flowIntro);ask();}
+ function finish(){var L=[];C.flow.forEach(function(s){if(st.data[s.id])L.push(s.label+': '+st.data[s.id]);});st.step=-1;say(C.doneMsg+'\n\n'+L.join('\n'));chips(C.chipsAfter||C.chips0);inp.placeholder=C.placeholder;}
+ function stepIn(t){var s=C.flow[st.step],v=t.trim();
+  if(/^(cancel|stop|exit|quit|back)$/i.test(v)||v===(C.cancelWord||'Cancel')){st.step=-1;say(C.cancelMsg);chips(C.chips0);return;}
+  if(s.optional&&/^skip$/i.test(v))v='';
+  else if(s.kind==='phone'&&(v.replace(/\D/g,'').length<7)){say(C.badPhone);return;}
+  else if(s.kind==='email'&&!/^\S+@\S+\.\S+$/.test(v)){say(C.badEmail);return;}
+  else if(!v&&!s.optional){say(C.needValue);return;}
+  st.data[s.id]=v;st.step++;if(st.step>=C.flow.length)finish();else ask();}
+ function send(t){t=String(t).trim();if(!t)return;say(t,'me');inp.value='';
+  if(st.step>=0){stepIn(t);return;}
+  var e=M.find(t);
+  if(!e){say(C.fallback);chips(C.chips0);return;}
+  if(e.book){startFlow();return;}
+  say(e.a);chips(e.c||C.chips0);}
+ f.onsubmit=function(ev){ev.preventDefault();send(inp.value);};
+ function open(o){p.classList.toggle('open',o);btn.classList.toggle('hide',o);if(o&&!m.children.length){say(C.greet);chips(C.chips0);}if(o)setTimeout(function(){inp.focus();},50);}
+ btn.onclick=function(){open(true);};p.querySelector('.as-x').onclick=function(){open(false);};
+ window.openAssistant=function(w){open(true);if(w&&st.step<0)send(w==='book'?(C.bookChip||'Book'):w);};
+ d.addEventListener('click',function(ev){var t=ev.target.closest&&ev.target.closest('[data-assist]');if(t){ev.preventDefault();window.openAssistant(t.getAttribute('data-assist'));}});
+}
+return {build:build,ui:ui,init:function(C){var M=build(C);if(typeof document!=='undefined')ui(C,M);return M;}};
+})();
+if(typeof module!=='undefined')module.exports=Assistant;
+
+var CFG={
+title:'All Smiles assistant',sub:'Hablamos español · Downtown Miami',icon:'✨',btnText:'Ask All Smiles',
+placeholder:'Ask about services, hours, insurance...',note:'Demo assistant. It cannot diagnose or give clinical advice; questions about treatment go to Dr. Gonzalez.',
+greet:'Hello, and welcome to All Smiles Dentistry Miami! ¡Hola! I can answer questions about our services, hours, parking and insurance, or take an appointment request for the team. I cannot give clinical advice or diagnose; Dr. Gonzalez answers those.',
+fallback:'I do not have that detail and would rather not guess. The team can help: 305-371-6064 or office@miamidental.net. I can also take an appointment request.',
+chips0:['Book appointment','Hours','Services','Specials','Insurance','Parking','Emergency'],
+chipsAfter:['Hours','Services','Parking'],bookChip:'Book appointment',
+flowIntro:'Of course! A few quick questions, then I pass your request to the team (type "cancel" any time).',
+doneMsg:'Thank you! Your appointment request has been sent to the All Smiles team. They will call or write to confirm a time.',
+cancelMsg:'No problem, request cancelled.',cancelWord:'Cancel',badPhone:'Please type a phone number the team can call, at least 7 digits.',badEmail:'Please type a valid e-mail.',needValue:'Please type an answer, or write "cancel" to stop.',
+flow:[
+{id:'name',label:'Name',ask:'What is your full name?'},
+{id:'phone',label:'Phone',ask:'What phone number can the team reach you on?',kind:'phone'},
+{id:'new',label:'Patient',ask:'Are you a new or existing patient?',chips:['New patient','Existing patient']},
+{id:'reason',label:'Reason',ask:'What is the visit for?',chips:['Check-up and cleaning','New patient special ($155)','Emergency / pain','Whitening','Invisalign','Implants','Veneers / cosmetic','Other']},
+{id:'ins',label:'Insurance',ask:'Which insurance do you have, if any? (the team will verify)',optional:true},
+{id:'when',label:'Preferred time',ask:'Which day and time suit you? (Mon-Thu 8:30 am-5 pm)',ph:'e.g. Tuesday afternoon'}
+],
+KB:[
+{id:'hi',lowPri:1,k:['hello','hi','hey','hola','buenas','good morning','good afternoon'],a:'Hello! ¡Hola! How can I help you today?',c:['Book appointment','Hours','Services']},
+{id:'book',book:1,k:['book','booking','appointment','appointments','schedule','make an appointment','reserve','request an appointment','cita','new patient','apointment','appoinment','see the dentist','visit'],a:''},
+{id:'hours',k:['hours','open','opening','closed','close','closing','what time','when are you','time','friday','saturday','sunday','weekend','monday','horario','houres','oppen','late'],a:'The website lists office hours Monday to Thursday, 8:30 am to 5:00 pm. It does not list Friday, Saturday or Sunday, so please call 305-371-6064 to confirm those days.',c:['Book appointment','Emergency']},
+{id:'loc',k:['where','address','location','located','directions','find you','chase','bank building','suite','downtown','brickell','key biscayne','bayside','port of miami','se 2nd','adress','locaton','map','how to get'],a:'We are at 150 SE 2nd Ave, Suite 604, Miami, FL 33131, at the corner of S.E. 2nd Street and 2nd Avenue in Downtown Miami, inside the Chase bank building. We serve Downtown, Brickell, Key Biscayne, Bayside and the Port of Miami.',c:['Parking','Hours']},
+{id:'park',k:['parking','park','validate','validation','garage','valet','knight','james knight','car','parkin','estacionamiento'],a:'We validate parking at the Miami Parking Authority Knight Center Garage (James Knight Parking Center), across the street from the office.',c:['Location','Book appointment']},
+{id:'phone',k:['phone','call','number','telephone','contact','email','e mail','mail','reach','telefono','whatsapp','text'],a:'Phone: 305-371-6064. E-mail: office@miamidental.net. You can also use the online appointment request on the website.',c:['Book appointment','Hours']},
+{id:'svc',k:['services','service','offer','what do you do','treatments','treatment','procedures','servises','sevices','what do you offer','servicios'],a:'We offer general dentistry (check-ups, fillings, extractions, night and mouth guards, cleanings), cosmetic dentistry (smile makeover, whitening, veneers, crowns, bonding, dentures, Invisalign), emergency dentistry, dental implants, Botox, oral surgery and advanced technology.',c:['Cosmetic','Implants','Invisalign','Whitening','Wisdom teeth','Botox']},
+{id:'gen',k:['general','checkup','check up','check-up','cleaning','cleanings','filling','fillings','cavity','cavities','extraction','extractions','nightguard','nightguards','night guard','mouthguard','mouthguards','mouth guard','exam','limpieza','claning','chekup'],a:'General dentistry includes dental check-ups (recommended every six months), types of teeth cleaning, tooth fillings, tooth extraction, nightguards and mouthguards. Which treatment you need is for Dr. Gonzalez to decide at your exam.',c:['Book appointment','Specials']},
+{id:'cosm',k:['cosmetic','smile makeover','makeover','veneer','veneers','porcelain','crown','crowns','bonding','denture','dentures','esthetic','aesthetic','smile design','hollywood smile','veneres','cosmtic'],a:'Cosmetic dentistry includes smile makeovers, teeth whitening, porcelain veneers, dental crowns, tooth bonding, dentures and Invisalign. Dr. Gonzalez combines science and artistry to redesign your smile; she will recommend what suits you at a consultation.',c:['Book appointment','Whitening','Invisalign']},
+{id:'white',k:['whitening','whiten','white teeth','bleaching','bleach','blanqueamiento','whitning','teeth whitening','brighter'],a:'We offer professional teeth whitening, and in-office whitening is listed as a special on the website at $500. The team can confirm the current offer.',c:['Specials','Book appointment']},
+{id:'invis',k:['invisalign','braces','aligners','clear aligners','straighten','straight teeth','orthodontic','orthodontics','crooked','alineadores','invisaling'],a:'We offer Invisalign: clear, removable aligners that gradually straighten teeth without braces. Dr. Gonzalez starts with a thorough examination to see if it is right for you.',c:['Book appointment','Cosmetic']},
+{id:'impl',k:['implant','implants','missing tooth','missing teeth','all on x','all on 4','all-on-x','full mouth','single tooth','titanium','implantes','implnts'],a:'We place dental implants: single tooth implants, full mouth implants and All-on-X. An implant is a titanium post placed in the jaw that holds an artificial tooth. Whether you are a candidate is a question for Dr. Gonzalez at a consultation.',c:['Book appointment','Bone grafting']},
+{id:'surg',k:['wisdom','wisdom teeth','bone graft','bone grafting','prf','oral surgery','surgery','sinus','muelas','wisdon'],a:'Oral surgery services include wisdom teeth surgery, bone grafting and PRF treatment. Dr. Gonzalez will explain the plan after an examination.',c:['Book appointment','Implants']},
+{id:'botox',k:['botox','tmj','jaw','jaw pain','aesthetics botox','wrinkles','facial','bruxism','grinding','bottox'],a:'We offer Botox for TMJ and Botox aesthetics. For questions about whether it is right for you, Dr. Gonzalez will advise at a consultation.',c:['Book appointment','Services']},
+{id:'tech',k:['technology','xray','x ray','xrays','digital x rays','laser','laser dentistry','intraoral','camera','intraoral camera','equipment','technolgy','radiograph'],a:'We use digital X-rays, laser dentistry and an intraoral camera for accurate diagnoses and comfortable treatment.',c:['Services','Book appointment']},
+{id:'emer',k:['emergency','emergencies','urgent','walk in','walk ins','walk-in','walkin','toothache','tooth ache','pain','broken tooth','knocked out','chipped','abscess','swelling','bleeding','hurts','hurt','emergencia','emergancy','dolor'],a:'We accept dental emergencies and walk-ins during office hours and prioritize cases like severe toothaches, broken or knocked-out teeth, abscesses and mouth or jaw injuries. I cannot assess symptoms; please call 305-371-6064 right away. If you have trouble breathing or swallowing, or severe swelling, go to an emergency room.',c:['Phone and e-mail','Location']},
+{id:'special',k:['special','specials','promotion','promo','offer deal','deal','discount','coupon','155','new patient special','oferta','speical'],a:'New patient special: $155 for an exam, panoramic radiograph, bitewing radiographs and full mouth probing (does not include cleaning). In-office whitening: $500. Please confirm current specials with the team.',c:['Book appointment','Whitening']},
+{id:'ins',k:['insurance','insurances','insured','in network','out of network','coverage','covered','delta','cigna','aetna','metlife','claim','claims','payment','payments','pay','financing','seguro','insurence','insurnce','plan'],a:'We are an out-of-network provider but accept most insurances. The team handles claim filing, insurance verification and paperwork. To verify your specific coverage, call 305-371-6064. I do not have details on payment plans or financing.',c:['Book appointment','Phone and e-mail']},
+{id:'price',k:['price','prices','cost','costs','how much','fee','fees','expensive','estimate','quote','precio','prise','cuanto'],a:'Besides the two specials (new patient $155, in-office whitening $500), the website does not publish prices. Treatment costs depend on your plan, so the treatment planning coordinator will give you an estimate; call 305-371-6064.',c:['Specials','Insurance']},
+{id:'doc',k:['doctor','dr','gonzalez','bianca','who is','who will','meet','team','staff','hygienist','roxy','shanifer','fiorela','nancy','dr gonzalez','dentista'],a:'Dr. Bianca Gonzalez, DMD, grew up in Miami and graduated from the University of Pittsburgh School of Dental Medicine in 2017. The team includes Roxy (front desk coordinator), Shanifer (treatment planning and financial coordinator), Fiorela (hygienist) and Nancy (dental assistant).',c:['Book appointment','First visit']},
+{id:'first',k:['first visit','first time','new patient visit','what to expect','expect','first appointment','primera visita','new here'],a:'At your first visit Dr. Gonzalez does a comprehensive oral examination, with X-rays if necessary, discusses your dental history and concerns, and creates a personalized treatment plan.',c:['Book appointment','Specials']},
+{id:'anx',k:['anxiety','anxious','nervous','scared','afraid','fear','sedation','sedate','phobia','gentle','ansiedad','nervioso'],a:'Dental anxiety is common. The team is trained to provide a calming, reassuring experience, and sedation options are available. Dr. Gonzalez can explain them before your visit.',c:['Book appointment','Phone and e-mail']},
+{id:'span',k:['spanish','espanol','español','habla','hablan','hablamos','language','languages'],a:'¡Hablamos español! Our website welcomes Spanish-speaking patients. You can call 305-371-6064 and ask for a Spanish speaker.',c:['Book appointment','Hours']},
+{id:'rev',k:['reviews','review','rating','rated','stars','reputation','google','recommend'],a:'All Smiles Dentistry Miami has a 4.9 rating from 404 Google reviews.',c:['Doctor','Book appointment']},
+{id:'vals',k:['about','philosophy','values','compassion','story','why choose','why you','practice'],a:'The practice is built on three values: Compassion, Excellence and Integrity, with the latest technology and personalized, gentle care from Dr. Gonzalez and the team.',c:['Doctor','Services']},
+{id:'thanks',lowPri:1,k:['thanks','thank you','thx','gracias','great','perfect','bye','goodbye'],a:'You are very welcome! ¡De nada!',c:['Book appointment','Hours']}
+]};
+var __M=Assistant.init(CFG);
+</script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>City Gym Darlinghurst | Demo</title>
+<meta name="description" content="A one-page demo of City Gym, Crown Street Darlinghurst, with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0a0a0a;--paper:#f4f2ee;--red:#d31f36;--red2:#c1022f;--mid:#2a2a2a;--grey:#8b8b8b;
+--w-font:'Space Grotesk',system-ui,sans-serif;--w-acc:#d31f36;--w-acc-ink:#fff;--w-r:0;--w-r2:0;--w-bg:#0a0a0a;--w-ink:#f4f2ee;--w-line:#333;--w-head:#d31f36;--w-head-ink:#fff;--w-bot:#232323;--w-bot-ink:#f4f2ee;--w-chip:#f4f2ee;--w-in:#161616}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--ink);color:var(--paper);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.anton{font-family:'Anton',Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;font-weight:400}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+/* top bar */
+.bar{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.94);backdrop-filter:blur(8px);border-bottom:2px solid var(--red)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+.logo{font-family:'Anton';font-size:26px;letter-spacing:.04em;text-decoration:none;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.logo i{display:inline-block;width:14px;height:14px;background:var(--red);transform:rotate(45deg)}
+.bar nav{display:none;gap:22px;font-size:14px;text-transform:uppercase;letter-spacing:.08em}
+.bar nav a{text-decoration:none;opacity:.85}.bar nav a:hover{opacity:1;color:var(--red)}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font:700 14px/1 'Space Grotesk';text-transform:uppercase;letter-spacing:.1em;padding:14px 22px;border:0;cursor:pointer}
+.btn:hover{background:#fff;color:var(--ink)}
+.btn.o{background:transparent;border:2px solid var(--paper)}
+.btn.o:hover{background:var(--paper);color:var(--ink)}
+@media(min-width:860px){.bar nav{display:flex}}
+/* hero */
+.hero{position:relative;padding:48px 0 0;border-bottom:1px solid #222;overflow:hidden}
+.hero .tag{display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:6px 10px;margin-bottom:18px}
+.hero h1{font-size:clamp(64px,19vw,230px);line-height:.86;margin-left:-4px}
+.hero h1 span{display:block}
+.hero h1 .o{color:transparent;-webkit-text-stroke:2px var(--paper)}
+.hero p.lead{max-width:560px;font-size:18px;margin:26px 0 26px;color:#d6d3cd}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:46px}
+.badge{position:absolute;right:-30px;top:90px;width:190px;height:190px;border-radius:50%;background:var(--red);color:#fff;display:none;align-items:center;justify-content:center;text-align:center;font-family:'Anton';text-transform:uppercase;font-size:22px;line-height:1.05;transform:rotate(12deg);padding:30px}
+@media(min-width:860px){.badge{display:flex;right:40px;top:120px;width:220px;height:220px;font-size:26px}}
+.ticker{background:var(--red);color:#fff;white-space:nowrap;overflow:hidden;border-top:2px solid #000;border-bottom:2px solid #000}
+.ticker div{display:inline-block;padding:12px 0;font-family:'Anton';font-size:22px;text-transform:uppercase;letter-spacing:.06em;animation:tk 28s linear infinite}
+.ticker span{margin:0 22px}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none}}
+/* sections */
+section{padding:72px 0;border-bottom:1px solid #222}
+.eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:10px}
+h2{font-family:'Anton';font-weight:400;text-transform:uppercase;font-size:clamp(38px,8vw,84px);line-height:.95;margin-bottom:22px}
+.two{display:grid;gap:34px}
+@media(min-width:860px){.two{grid-template-columns:1fr 1fr;gap:60px;align-items:start}}
+.paper{background:var(--paper);color:var(--ink)}
+.paper .eyebrow{color:var(--red2)}
+/* story */
+.stat{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:#000;margin-top:26px}
+.stat div{background:#171717;padding:20px}
+.stat b{display:block;font-family:'Anton';font-size:44px;line-height:1;color:var(--red)}
+.stat small{font-size:13px;color:#bdb9b2;text-transform:uppercase;letter-spacing:.08em}
+.quote{border-left:4px solid var(--red);padding:6px 0 6px 18px;font-size:19px;color:#e8e5df;margin:18px 0}
+/* classes */
+.cls{list-style:none;border-top:2px solid var(--ink)}
+.cls li{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:start;padding:20px 0;border-bottom:1px solid #c9c5bd;transition:background .2s}
+.cls li:hover{background:#ebe7e0}
+.cls .n{font-family:'Anton';font-size:28px;color:var(--red2)}
+.cls h3{font-family:'Anton';font-weight:400;text-transform:uppercase;font-size:28px;line-height:1}
+.cls p{font-size:15px;color:#3b3a37;margin-top:6px;max-width:640px}
+.cls button{background:var(--ink);color:#fff;border:0;padding:10px 14px;font:700 12px 'Space Grotesk';text-transform:uppercase;letter-spacing:.1em;cursor:pointer;align-self:center}
+.cls button:hover{background:var(--red)}
+@media(max-width:560px){.cls li{grid-template-columns:34px 1fr}.cls button{grid-column:2;justify-self:start}}
+.spaces{display:grid;gap:12px;margin-top:34px}
+@media(min-width:700px){.spaces{grid-template-columns:repeat(4,1fr)}}
+.spaces div{background:var(--ink);color:var(--paper);padding:22px;min-height:150px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.spaces div::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(255,255,255,.04) 14px 15px)}
+.spaces b{font-family:'Anton';font-size:26px;text-transform:uppercase;font-weight:400;position:relative}
+.spaces small{position:relative;font-size:13px;color:#bdb9b2}
+/* weights */
+.brands{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.brands span{border:1px solid #444;padding:9px 14px;font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.08em}
+.big{font-family:'Anton';font-size:clamp(90px,26vw,260px);line-height:.85;color:transparent;-webkit-text-stroke:2px var(--red)}
+/* coaches */
+.coaches{columns:2;column-gap:22px;margin-top:20px;font-family:'Anton';font-size:22px;text-transform:uppercase;line-height:1.55;color:#e6e2dc}
+@media(min-width:700px){.coaches{columns:4}}
+.coaches li{list-style:none;break-inside:avoid;border-bottom:1px solid #2c2c2c;padding:2px 0}
+/* eatery */
+.eat{background:var(--red);color:#fff}
+.eat .eyebrow{color:#fff;opacity:.85}
+.eat .times{display:grid;gap:2px;background:rgba(0,0,0,.25);margin-top:22px;max-width:420px}
+.eat .times div{display:flex;justify-content:space-between;padding:12px 16px;background:rgba(0,0,0,.18)}
+/* hours table */
+.hours{width:100%;border-collapse:collapse;max-width:520px}
+.hours td{padding:14px 0;border-bottom:1px solid #333;font-size:18px}
+.hours td:last-child{text-align:right;font-family:'Anton';font-size:22px;letter-spacing:.03em}
+/* faq */
+details{border-bottom:1px solid #c9c5bd;padding:18px 0}
+summary{cursor:pointer;font-family:'Anton';font-size:24px;text-transform:uppercase;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--red2)}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:10px;max-width:680px;color:#3b3a37}
+/* join */
+.join{background:var(--ink);text-align:left;padding:90px 0}
+.join h2{font-size:clamp(44px,12vw,150px)}
+.join form{display:grid;gap:10px;max-width:560px;margin-top:24px}
+.join input,.join select{background:#161616;border:1px solid #3a3a3a;color:#fff;padding:14px;font:16px 'Space Grotesk'}
+footer{padding:44px 0 90px;font-size:14px;color:#bdb9b2}
+footer .cols{display:grid;gap:20px}
+@media(min-width:760px){footer .cols{grid-template-columns:2fr 1fr 1fr}}
+footer b{color:#fff}
+.demo{margin-top:30px;padding-top:18px;border-top:1px solid #2a2a2a;font-size:13px;color:#8e8a84}
+#ab{position:fixed;right:16px;bottom:16px;z-index:90;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--w-acc);color:var(--w-acc-ink);font:600 15px/1 var(--w-font);padding:14px 18px;border-radius:var(--w-r);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+#ab svg{width:20px;height:20px;flex:none}
+#ap{position:fixed;right:16px;bottom:80px;z-index:91;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 110px));background:var(--w-bg);color:var(--w-ink);border-radius:var(--w-r2,16px);box-shadow:0 18px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--w-font);border:1px solid var(--w-line)}
+#ap.on{display:flex}
+#ap header{background:var(--w-head);color:var(--w-head-ink);padding:12px 14px;display:flex;align-items:center;gap:10px}
+#ap header b{font-size:15px;display:block}#ap header small{opacity:.8;font-size:12px}
+#ap header div{flex:1;min-width:0}
+#ax{background:transparent;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1;padding:4px 8px}
+#am{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word}
+.m.b{background:var(--w-bot);color:var(--w-bot-ink);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--w-acc);color:var(--w-acc-ink);align-self:flex-end;border-bottom-right-radius:4px}
+.m a{color:inherit;text-decoration:underline}
+#ac{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+#ac button{border:1px solid var(--w-acc);background:transparent;color:var(--w-chip,var(--w-ink));font:500 13px var(--w-font);padding:6px 11px;border-radius:99px;cursor:pointer}
+#ac button:hover{background:var(--w-acc);color:var(--w-acc-ink)}
+#af{display:flex;gap:6px;padding:10px;border-top:1px solid var(--w-line)}
+#ai{flex:1;min-width:0;border:1px solid var(--w-line);background:var(--w-in,transparent);color:inherit;border-radius:10px;padding:10px 12px;font:16px var(--w-font)}
+#af button{border:0;background:var(--w-acc);color:var(--w-acc-ink);border-radius:10px;padding:0 16px;font:600 14px var(--w-font);cursor:pointer}
+#ap .note{font-size:11px;opacity:.65;text-align:center;padding:0 10px 8px}
+@media(max-width:480px){#ap{right:8px;bottom:72px;width:calc(100vw - 16px)}#ab span{display:none}#ab{padding:14px}}
+
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+<a class="logo" href="#top"><i></i>City Gym</a>
+<nav aria-label="Main"><a href="#story">Our story</a><a href="#classes">Classes</a><a href="#weights">Weights</a><a href="#coaches">Coaches</a><a href="#eatery">Eatery</a><a href="#visit">Visit</a></nav>
+<a class="btn" href="#join" data-ask="Enquire now">Join now</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<span class="tag">Darlinghurst &middot; Since 1978</span>
+<h1 class="anton"><span>City</span><span class="o">Gym</span></h1>
+<div class="badge">From<br>$24.95<br>p/w</div>
+<p class="lead">Australia&rsquo;s most iconic and inclusive gym. Olympic champions and everyday fitness enthusiasts train on the same floor, under the guidance of expert coaches.</p>
+<div class="cta"><a class="btn" href="#join" data-ask="Enquire now">Get a free pass*</a><a class="btn o" href="#classes">See the classes</a></div>
+</div>
+<div class="ticker" aria-hidden="true"><div><span>Open 24 hours</span>&bull;<span>Unlimited classes</span>&bull;<span>Weights</span>&bull;<span>Reformer Pilates</span>&bull;<span>City Spin</span>&bull;<span>Eatery</span>&bull;<span>Open 24 hours</span>&bull;<span>Unlimited classes</span>&bull;<span>Weights</span>&bull;<span>Reformer Pilates</span>&bull;<span>City Spin</span>&bull;<span>Eatery</span>&bull;</div></div>
+</div>
+
+<section id="story"><div class="wrap two">
+<div><div class="eyebrow">Our story</div><h2>Opened in 1978. Still the standard.</h2>
+<p class="quote">&ldquo;You could find yourself shoulder-pressing beside Arnold Schwarzenegger, Tom Platz and Dorian Yates.&rdquo;</p>
+<p style="color:#d6d3cd">City Gym opened in 1978, the same year as the first Sydney Gay and Lesbian Mardi Gras protest. Through the 70s and 80s it became the cultural and social hub for the LGBTQI+ community, a haven for minorities, outsiders and all gender identities, and a mecca for the sporting elite that never became pretentious or intimidating.</p></div>
+<div><p style="color:#d6d3cd">Today that spirit is the same: a warm, inclusive atmosphere where weightlifters, yogis and group-class regulars share one supportive gym.</p>
+<div class="stat"><div><b>1978</b><small>Doors opened</small></div><div><b>150+</b><small>Pieces of equipment</small></div><div><b>21</b><small>Coaches on the site</small></div><div><b>24h</b><small>Open from Monday 4 am</small></div></div></div>
+</div></section>
+
+<section id="classes" class="paper"><div class="wrap">
+<div class="eyebrow">Unlimited classes</div><h2>Pick your sweat</h2>
+<p style="max-width:640px;margin-bottom:26px">HIIT, dynamic strength, boxing, cycling, Reformer Pilates, step and several yoga styles. Every class has a free try.</p>
+<ol class="cls">
+<li><span class="n">01</span><div><h3>City Spin</h3><p>High-energy indoor cycling on state-of-the-art bikes with immersive beats and elite trainers. Sprints, climbs, all fitness levels.</p></div><button data-ask="Tell me about City Spin">Ask</button></li>
+<li><span class="n">02</span><div><h3>Reformer Pilates</h3><p>Resistance, support and endless possibilities on the reformer, for lean, balanced muscle and better flexibility.</p></div><button data-ask="Reformer Pilates">Ask</button></li>
+<li><span class="n">03</span><div><h3>City HIIT</h3><p>Bursts of intense exercise with short recovery periods: more metabolism, strength and endurance in minimal time.</p></div><button data-ask="City HIIT">Ask</button></li>
+<li><span class="n">04</span><div><h3>Mat Pilates</h3><p>Mat-based strengthening and lengthening: core strength, stability, posture, breath control and flexibility, for all levels.</p></div><button data-ask="Mat Pilates">Ask</button></li>
+<li><span class="n">05</span><div><h3>City Strength</h3><p>Build a more robust and resilient you, whether you want to lift more or be stronger in everyday life.</p></div><button data-ask="City Strength class">Ask</button></li>
+<li><span class="n">06</span><div><h3>City Box</h3><p>High-intensity boxing with experienced instructors. Build endurance, sculpt your physique, learn the craft.</p></div><button data-ask="City Box">Ask</button></li>
+<li><span class="n">07</span><div><h3>Livestrong</h3><p>For mature adults: muscle tone, mobility and balance, and preventing age-related muscle loss in a supportive setting.</p></div><button data-ask="Livestrong">Ask</button></li>
+</ol>
+<div class="spaces">
+<div><b>Mind &amp; Body</b><small>Newly refurbished, botanical, calm. Yoga and meditation.</small></div>
+<div><b>Functional</b><small>A hub of fitness innovation.</small></div>
+<div><b>Cardio Theatre</b><small>Cutting-edge cardio equipment.</small></div>
+<div><b>Booty Section</b><small>Dedicated glute-focused workout area.</small></div>
+</div>
+</div></section>
+
+<section id="weights"><div class="wrap two">
+<div><div class="big" aria-hidden="true">150+</div></div>
+<div><div class="eyebrow">The weights floor</div><h2>Classics and cutting edge</h2>
+<p style="color:#d6d3cd">A fusion of time-tested classics and the latest strength and power machines. Each piece is maintained, refurbished and personally serviced by Billy himself. Olympic lifting platforms for squatting, and a curated selection from globally acclaimed brands.</p>
+<div class="brands"><span>Calgym</span><span>Cybex</span><span>Eleiko</span><span>Hammer Strength</span><span>Ivanko</span><span>Life Fitness</span><span>Matrix</span><span>Nautilus</span></div></div>
+</div></section>
+
+<section id="coaches" class="paper"><div class="wrap">
+<div class="eyebrow">Coaches</div><h2>Transformational leaders</h2>
+<p style="max-width:700px">Not just fitness instructors. Whether you want to shed weight, build a strong physique, improve endurance or gain lean muscle, the team is there. Full bios are on the City Gym website.</p>
+<ul class="coaches">
+<li>Andreas Lundin</li><li>Basil Nassis</li><li>Ben Halpin</li><li>Campbell Bannerman</li><li>David Driscoll</li><li>Dennis Zimmerman</li><li>Glen Ryan</li><li>James Edson</li><li>James Stillone</li><li>Jes Murphy</li><li>Joe Kavangh</li><li>Ken Karikas</li><li>Lap Win</li><li>Maria Andriano</li><li>Ming Sun</li><li>Paul Haslam</li><li>Rawdon Dubois</li><li>Simon Di Natale</li><li>Stefan Ianev</li><li>Steve Curran</li><li>Zuzana (Zuzu) Mesarosova</li>
+</ul>
+</div></section>
+
+<section id="eatery" class="eat"><div class="wrap two">
+<div><div class="eyebrow">The Eatery</div><h2>Your nutrition partner</h2>
+<p style="max-width:520px;font-size:18px">Delicious, macro-balanced, clean meals at an economical price. A shake bar for pre- and post-workout, juices, and meal plans where every bite supports your goals.</p></div>
+<div><div class="times"><div><span>Mon &ndash; Fri</span><b>6 am &ndash; 8 pm</b></div><div><span>Saturday</span><b>6 am &ndash; 4 pm</b></div><div><span>Sunday</span><b>6 am &ndash; 2 pm</b></div></div></div>
+</div></section>
+
+<section id="visit"><div class="wrap two">
+<div><div class="eyebrow">Visit</div><h2>107&ndash;113 Crown Street</h2>
+<p style="color:#d6d3cd;margin-bottom:18px">Darlinghurst NSW 2010<br><a href="tel:0293606247">02 9360 6247</a><br><a href="mailto:reception@citygym.com.au">reception@citygym.com.au</a><br><a href="mailto:sales@citygym.com.au">sales@citygym.com.au</a></p></div>
+<div><table class="hours" aria-label="Gym hours"><tr><td>Monday &ndash; Friday</td><td>24 hours</td></tr><tr><td>Saturday</td><td>6 am &ndash; 10 pm</td></tr><tr><td>Sunday</td><td>6 am &ndash; 10 pm</td></tr></table>
+<p style="font-size:13px;color:#8e8a84;margin-top:10px">Open from Monday 4:00 am. Exact weekend times: the team will confirm.</p></div>
+</div></section>
+
+<section id="faq" class="paper"><div class="wrap">
+<div class="eyebrow">Questions</div><h2>Quick answers</h2>
+<details><summary>Is there a free pass?</summary><p>Yes, the website offers a free pass (for Australian residents only) and a free try of each class.</p></details>
+<details><summary>How much is membership?</summary><p>From $24.95 per week. The team confirms the plan details when you enquire.</p></details>
+<details><summary>Are classes included?</summary><p>Unlimited classes are part of the offer: City Spin, Reformer Pilates, City HIIT, Mat Pilates, City Strength, City Box and Livestrong.</p></details>
+<details><summary>I can&rsquo;t book a class. Who helps?</summary><p>Existing members can call or see City Gym reception.</p></details>
+<details><summary>Is it beginner friendly?</summary><p>City Gym describes itself as an inclusive gym for all backgrounds and levels, with coaches to guide you.</p></details>
+</div></section>
+
+<section class="join" id="join"><div class="wrap">
+<div class="eyebrow">Begin your journey</div><h2>Get a free pass</h2>
+<p style="max-width:520px;color:#d6d3cd">Tell the assistant what you are after and it will line up a membership or free-pass enquiry for the team.</p>
+<p style="margin-top:22px"><a class="btn" href="#" data-ask="Enquire now">Start enquiry</a></p>
+</div></section>
+</main>
+
+<footer><div class="wrap"><div class="cols">
+<div><b>City Gym</b><br>107&ndash;113 Crown Street, Darlinghurst NSW 2010<br>*Free pass available for Australian residents only.</div>
+<div><b>Contact</b><br>02 9360 6247<br>reception@citygym.com.au</div>
+<div><b>Group fitness</b><br>groupfitness@citygym.com.au<br>sales@citygym.com.au</div>
+</div>
+<p class="demo">Demo &middot; prepared by Gevorg Hovhannisyan</p></div></footer>
+
+<button id="ab" type="button" aria-expanded="false" aria-controls="ap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L3 21l1.8-6.1A8 8 0 1 1 21 12z"/></svg><span>Ask City Gym</span></button>
+<div id="ap" role="dialog" aria-label="City Gym assistant"><header><div><b>City Gym assistant</b><small>Answers 24/7 &middot; passes enquiries to the team</small></div><button id="ax" type="button" aria-label="Close">&times;</button></header>
+<div id="am" aria-live="polite"></div><div id="ac"></div>
+<form id="af" autocomplete="off"><input id="ai" type="text" placeholder="Type your question" aria-label="Your question"><button type="submit">Send</button></form>
+<div class="note">Demo preview. Nothing you type here is sent anywhere.</div></div>
+<script>
+var CFG={
+name:'City Gym assistant',
+greeting:'G’day! I’m the City Gym assistant. Ask me about opening hours, classes, the free pass, the weights floor, coaches or the eatery. I can also pass a membership or free-pass enquiry to the team.',
+thanks:'Any time. Anything else about the club?',
+chips:['Opening hours','Classes','Free pass','Membership price','Enquire now'],
+fallback:'I don’t have that detail, so I won’t guess. The team at reception can confirm it: <a href="tel:0293606247">02 9360 6247</a> or <a href="mailto:reception@citygym.com.au">reception@citygym.com.au</a>. Or tap <b>Enquire now</b> and I’ll pass it on.',
+medical:'\\b(injur|injury|pain|hurt|surgery|pregnan|medical|doctor|physio|rehab|diagnos|medication|heart|diabet|medical condition)',
+medicalAnswer:'I can’t give health or medical advice. Please check with your doctor first, then talk to the coaches or reception about training around it: <a href="tel:0293606247">02 9360 6247</a>.',
+flow:{
+ trigger:'(enquire|enquiry|enquir|sign up|signup|join now|join up|become a member|book (a )?(tour|pass|trial|class)|claim (a )?(free )?pass|request (a )?(free )?pass)',
+ chip:'Enquire now',
+ cancel:'No worries, cancelled. Reception is on 02 9360 6247 whenever you are ready.',
+ steps:[
+  {key:'what',label:'Interested in',q:'Great. What are you after?',opts:['Free pass','Membership','Try a class','Personal training'],free:true},
+  {key:'when',label:'Best day',q:'Which day would you like to come in?',opts:['Weekday','Weekend','Not sure yet'],free:true},
+  {key:'name',label:'Name',q:'Your name?'},
+  {key:'phone',label:'Phone',q:'And a phone number for the team to reach you?',type:'phone'}
+ ],
+ done:'Done. Your enquiry has been sent to the City Gym team, who will confirm details by phone:{summary}<br><br><small>(Demo preview: nothing is actually sent.)</small>'
+},
+kb:[
+{id:'hours',k:['hours','open','opening','close','closing','24','twenty four','late','early','weekend','sunday','saturday','monday','time'],a:'<b>Gym hours:</b> open 24 hours from Monday 4:00 am through the week, and 6:00 am to 10:00 pm on Saturday and Sunday. The team can confirm exact weekend times: <a href="tel:0293606247">02 9360 6247</a>.'},
+{id:'where',k:['where','address','location','find','crown street','darlinghurst','directions','map','parking','park'],a:'<b>City Gym</b> is at 107–113 Crown Street, Darlinghurst NSW 2010. Phone <a href="tel:0293606247">02 9360 6247</a>. I don’t have parking details; reception can tell you.'},
+{id:'price',k:['price','cost','membership','fee','weekly','week','per week','how much','pricing','rate','pw','$24.95','cheap','afford'],a:'Memberships start <b>from $24.95 per week</b> according to the website. For the exact plan, joining terms and any extras, the team will confirm.',flow:1},
+{id:'free',k:['free pass','free','trial','try','test','guest pass','pass'],a:'There is a <b>free pass</b> on offer (the site says it is available for Australian residents only). Tap <b>Enquire now</b> and I’ll send your details to the team. You can also <b>try a class for free</b> from the class list.',flow:1},
+{id:'classes',k:['class','group fitness','group','timetable','schedule','unlimited','session'],a:'<b>Unlimited classes</b> are part of membership. The list: City Spin, Reformer Pilates, City HIIT, Mat Pilates, City Strength, City Box and Livestrong. The live timetable is on the City Gym site; if you can’t book, call reception.',c:['Reformer Pilates','Spin classes','Free pass','Enquire now']},
+{id:'spin',w:2,k:['spin','cycling','cycle','bike','bikes','indoor cycling'],a:'<b>City Spin</b> is indoor cycling with state-of-the-art bikes, sprints and climbs, for all fitness levels. You can book a class or try one for free.'},
+{id:'pilates',w:2,k:['pilates','reformer','mat pilates','reformer pilates'],a:'There are two: <b>Reformer Pilates</b> (resistance and support on the reformer machine, for lean balanced muscle) and <b>Mat Pilates</b> (core strength, posture, breath control and flexibility, for all levels).'},
+{id:'hiit',w:2,k:['hiit','interval','high intensity','cardio class'],a:'<b>City HIIT</b> is bursts of intense exercise with short recovery periods, to boost metabolism, strength and endurance in minimal time.'},
+{id:'box',w:2,k:['box','boxing','boxer','punch'],a:'<b>City Box</b> is a high-intensity boxing class with experienced instructors, building endurance while you learn the craft of boxing.'},
+{id:'strength',w:2,k:['city strength','strength class','lifting class','build strength'],a:'<b>City Strength</b> is a class for building more robust, resilient strength, whether you want to lift more or move better in daily life.'},
+{id:'livestrong',w:2,k:['livestrong','mature','older','senior','seniors','age','elderly','over 50','over 60','muscle loss'],a:'<b>Livestrong</b> is tailored for mature adults: it works on muscle tone, mobility, balance and preventing age-related muscle loss in a supportive environment.'},
+{id:'yoga',w:2,k:['yoga','meditation','mind body','mindful','stretch','flexibility','serene','sanctuary'],a:'The <b>Mind &amp; Body</b> studio is newly refurbished: yoga, meditation, Pilates and holistic workouts in a calm, botanical space.'},
+{id:'lesmills',k:['les mills','lesmills','bodypump','launch'],a:'The site says City Gym is partnering with <b>Les Mills Fitness</b> to bring more high-energy classes. For which Les Mills classes are running now, the team will confirm.'},
+{id:'weights',k:['weights','weight','free weights','dumbbell','barbell','machines','equipment','squat','olympic','lifting','platform','rack','strength floor','powerlifting','bodybuilding'],a:'The <b>weights floor</b> has 150+ pieces from brands including Hammer Strength, Life Fitness, Cybex, Nautilus, Matrix, Eleiko barbells and Olympic lifting platforms, Ivanko dumbbells and Calgym. Equipment is maintained by Billy himself.'},
+{id:'cardio',k:['cardio','treadmill','running','run','rower','rowing','elliptical','cardio theatre'],a:'The <b>Cardio Theatre</b> has cutting-edge cardio equipment. For the exact machines, the team will confirm.'},
+{id:'functional',k:['functional','functional training','studio','sled','turf','kettlebell','conditioning'],a:'The <b>Functional Training</b> studio is a hub of fitness innovation. I don’t have its full equipment list, so reception can confirm what’s in there.'},
+{id:'booty',k:['booty','glute','glutes','hip thrust','bum'],a:'The <b>Booty Section</b> is a dedicated glute-focused workout area, new at City Gym.'},
+{id:'coaches',k:['coach','coaches','trainer','trainers','personal training','personal trainer','pt','one on one','instructor','andreas','zuzana','basil','simon'],a:'City Gym has <b>21 coaches</b> listed on the site, including Andreas Lundin, Basil Nassis, Ben Halpin, Campbell Bannerman, Maria Andriano, Simon Di Natale and Zuzana (Zuzu) Mesarosova. Each has a bio on the Coaches page. Session rates aren’t published, so the team will confirm.',flow:1},
+{id:'eatery',k:['eatery','food','meal','meals','eat','shake','shakes','protein','juice','juices','nutrition','menu','macro','cafe','meal plan','smoothie','fuel'],a:'The <b>Eatery</b> serves macro-balanced meals, protein shakes and juices at an economical price, plus meal plans. Hours: Mon–Fri 6 am–8 pm, Sat 6 am–4 pm, Sun 6 am–2 pm.'},
+{id:'history',k:['history','story','1978','founded','opened','iconic','mardi gras','legacy','bill moore','who owns','established','old'],a:'City Gym opened in <b>1978</b>. Co-founder Bill Moore made it an all-inclusive haven, a hub for Sydney’s LGBTQI+ community through the early Mardi Gras years, and a training ground for Olympic champions and world-class bodybuilders.'},
+{id:'inclusive',k:['inclusive','gay','lgbt','lgbtq','lgbtqi','queer','trans','welcome','safe','friendly','diverse','judge','beginner','beginners','newbie','nervous','intimidating','first time'],a:'City Gym calls itself <b>Australia’s most iconic and inclusive gym</b>: people of all backgrounds, genders and levels train side by side. Beginners are welcome, and the coaches can help you start.'},
+{id:'contact',k:['contact','phone','call','email','e-mail','reception','sales','reach','number','speak','talk','human','group fitness email'],a:'<b>Reception</b> 02 9360 6247 · <a href="mailto:reception@citygym.com.au">reception@citygym.com.au</a><br>Sales: <a href="mailto:sales@citygym.com.au">sales@citygym.com.au</a><br>Group fitness: <a href="mailto:groupfitness@citygym.com.au">groupfitness@citygym.com.au</a>'},
+{id:'cancel',w:2,k:['cancel','cancellation','freeze','pause','hold','contract','lock in','lock-in','terms','conditions','joining fee','refund'],a:'Cancellation, freezing and joining terms are in the <b>Terms &amp; Conditions</b> on the City Gym site. I don’t want to paraphrase the legal part wrong, so reception will confirm.'},
+{id:'rules',k:['code of conduct','rules','etiquette','behaviour','behavior','dress','towel','phone use','photos','filming'],a:'The <b>Code of Conduct</b> is published on the City Gym site. For anything specific, reception can help.'},
+{id:'shower',k:['shower','showers','locker','lockers','change room','changeroom','towel hire','sauna','steam','pool','spa','kids','creche','childcare'],a:'I don’t have facilities information (showers, lockers and so on) on file, so the team will confirm: <a href="tel:0293606247">02 9360 6247</a>.'},
+{id:'book',k:['book class','booking','reserve','unable to book','cant book','sign in','app','member login'],a:'Classes are booked through the City Gym timetable page. If you’re an existing member and can’t book, the site says to call or see reception.'}
+]};
+
+/* assistant engine: client-side, keyword + fuzzy matching */
+function AssistantEngine(CFG){
+  var STOP={the:1,a:1,an:1,is:1,are:1,do:1,does:1,you:1,your:1,i:1,me:1,my:1,we:1,of:1,to:1,for:1,and:1,or:1,can:1,how:1,what:1,where:1,when:1,which:1,it:1,on:1,in:1,at:1,there:1,have:1,has:1,be:1,am:1,get:1,please:1,hi:1,hello:1,u:1,ur:1,much:1,about:1,with:1,that:1,this:1,any:1,some:1,would:1,like:1,want:1,need:1,tell:1,know:1,if:1,so:1};
+  function norm(s){return String(s).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9$ ]+/g,' ').replace(/\s+/g,' ').trim();}
+  function stem(w){
+    if(w.length<4)return w;
+    if(/ies$/.test(w))w=w.slice(0,-3)+'y';
+    else if(/(sses|xes|ches|shes)$/.test(w))w=w.slice(0,-2);
+    else if(/s$/.test(w)&&!/ss$/.test(w))w=w.slice(0,-1);
+    if(w.length>5&&/ing$/.test(w))w=w.slice(0,-3);
+    else if(w.length>4&&/ed$/.test(w))w=w.slice(0,-2);
+    if(w.length>3&&/e$/.test(w))w=w.slice(0,-1);
+    if(w.length>3&&/(.)\1$/.test(w)&&!/(ss|ll)$/.test(w))w=w.slice(0,-1);
+    return w;
+  }
+  var STOPS={};(function(){for(var sk in STOP)STOPS[stem(sk)]=1;})();
+  function toks(s,keepStop){return norm(s).split(' ').filter(function(x){return x&&(keepStop||!STOP[x]);}).map(stem);}
+  function lev(a,b){
+    if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;
+    var p=[],i,j;for(j=0;j<=n;j++)p[j]=j;
+    for(i=1;i<=m;i++){var c=[i];for(j=1;j<=n;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a.charAt(i-1)===b.charAt(j-1)?0:1));}p=c;}
+    return p[n];
+  }
+  function has(qt,k){
+    var best=0;
+    for(var i=0;i<qt.length;i++){
+      var d=lev(qt[i],k);
+      if(d===0)return 2;
+      if(k.length>=5&&qt[i].length>=4&&d<=(k.length>=9?2:1))best=Math.max(best,1.5);
+      else if(k.length>=4&&qt[i].length>=4&&k.length<5&&d===1&&qt[i].charAt(0)===k.charAt(0))best=Math.max(best,1.1);
+      else if(k.length>=5&&qt[i].length>=5&&(qt[i].indexOf(k)===0||k.indexOf(qt[i])===0)&&Math.abs(k.length-qt[i].length)<=3)best=Math.max(best,1.5);
+      else if(k.length===3&&qt[i].length>=5&&qt[i].length<=5&&qt[i].indexOf(k)===0)best=Math.max(best,1.5);
+    }
+    return best;
+  }
+  function score(e,qt,qa){
+    var s=0,seen={};
+    for(var i=0;i<e.k.length;i++){
+      var kt=toks(e.k[i],true),id=kt.join(' ');
+      if(!id.replace(/ /g,'')||seen[id])continue;seen[id]=1;
+      if(kt.length===1){s+=has(STOPS[kt[0]]?qa:qt,kt[0]);}
+      else if(kt.every(function(x){return STOPS[x]})){var al=true;for(var j2=0;j2<kt.length;j2++){if(!has(qa,kt[j2])){al=false;break;}}if(al)s+=1.5;}
+      else{var all=true,tot=0;for(var j=0;j<kt.length;j++){var hh=has(qa,kt[j]);if(!hh){all=false;break;}tot+=hh;}
+        if(all)s+=tot*0.9+1;}
+    }
+    return s*(e.w||1);
+  }
+  var MED=CFG.medical?new RegExp(CFG.medical,'i'):null;
+  function find(q){
+    var qt=toks(q),qa=toks(q,true);
+    if(!qt.length)return null;
+    var best=null,bs=0;
+    for(var i=0;i<CFG.kb.length;i++){var sc=score(CFG.kb[i],qt,qa);if(sc>bs){bs=sc;best=CFG.kb[i];}}
+    return bs>=1.5?best:null;
+  }
+  var flow=null;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function stepMsg(){var st=CFG.flow.steps[flow.i];return {a:st.q,chips:st.opts||[],flow:true};}
+  function startFlow(){flow={i:0,d:{}};return stepMsg();}
+  function inFlow(q){
+    var st=CFG.flow.steps[flow.i],v=q.trim();
+    if(/^(cancel|stop|exit|quit|nevermind|never mind)$/i.test(v)){flow=null;return {a:CFG.flow.cancel||'No problem, cancelled.',chips:CFG.chips};}
+    if(st.opts){var m=null,nv=norm(v);for(var i=0;i<st.opts.length;i++){var on=norm(st.opts[i]);if(on===nv||(nv.length>2&&(on.indexOf(nv)>=0||nv.indexOf(on)>=0))||lev(on,nv)<=1){m=st.opts[i];break;}}
+      if(!m&&!st.free)return {a:'Please pick one of the options below, or type <b>cancel</b>.',chips:st.opts,flow:true};
+      if(m)v=m;}
+    if(st.type==='phone'&&v.replace(/\D/g,'').length<6)return {a:'That does not look like a phone number. Could you type it again, with area code?',chips:[],flow:true};
+    if(st.type==='email'&&!/^\S+@\S+\.\S+$/.test(v))return {a:'Please type a valid e-mail address (name@example.com).',chips:[],flow:true};
+    if(v.length<1)return {a:st.q,chips:st.opts||[],flow:true};
+    flow.d[st.key]=v;flow.i++;
+    if(flow.i<CFG.flow.steps.length)return stepMsg();
+    var d=flow.d;flow=null;
+    var sum='';for(var k=0;k<CFG.flow.steps.length;k++){var s=CFG.flow.steps[k];sum+='<br>&bull; '+s.label+': <b>'+esc(d[s.key])+'</b>';}
+    return {a:CFG.flow.done.replace('{summary}',sum),chips:CFG.chips,sent:d};
+  }
+  function ask(q){
+    if(flow)return inFlow(q);
+    var qn=norm(q);
+    if(MED&&MED.test(qn))return {a:CFG.medicalAnswer,chips:CFG.chips,id:'medical'};
+    if(CFG.flow.trigger&&new RegExp(CFG.flow.trigger,'i').test(qn))return startFlow();
+    var e=find(q);
+    if(e){var r={a:e.a,chips:e.c||CFG.chips,id:e.id};if(e.flow)r.chips=[CFG.flow.chip].concat(r.chips).slice(0,4);return r;}
+    if(/^(hi|hello|hey|hiya|good (morning|afternoon|evening)|g day)\b/.test(qn))return {a:CFG.greeting,chips:CFG.chips,id:'greet'};
+    if(/^(thanks|thank you|thx|cheers|ta|great|ok|okay)\b/.test(qn))return {a:CFG.thanks||'Happy to help!',chips:CFG.chips,id:'thanks'};
+    return {a:CFG.fallback,chips:CFG.chips,id:'fallback'};
+  }
+  return {dbg:function(q){var qt=toks(q),qa=toks(q,true);return CFG.kb.map(function(e){return [e.id,score(e,qt,qa)]}).filter(function(x){return x[1]>0}).sort(function(a,b){return b[1]-a[1]}).slice(0,4)},ask:ask,startFlow:startFlow,inFlow:function(){return !!flow;},reset:function(){flow=null;}};
+}
+if(typeof module!=='undefined')module.exports={AssistantEngine:AssistantEngine};
+
+(function(){
+  if(typeof document==='undefined'||typeof CFG==='undefined')return;
+  var eng=AssistantEngine(CFG),$=function(i){return document.getElementById(i)};
+  var btn=$('ab'),panel=$('ap'),msgs=$('am'),chips=$('ac'),form=$('af'),inp=$('ai'),started=false;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function add(cls,html){var d=document.createElement('div');d.className='m '+cls;d.innerHTML=html;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
+  function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b);});}
+  function send(t){t=String(t||'').trim();if(!t)return;add('u',esc(t));chips.innerHTML='';
+    var r=eng.ask(t);setTimeout(function(){add('b',r.a);setChips(r.chips);},260);}
+  function open(){panel.classList.add('on');btn.setAttribute('aria-expanded','true');
+    if(!started){started=true;add('b',CFG.greeting);setChips(CFG.chips);}setTimeout(function(){inp.focus()},50);}
+  function close(){panel.classList.remove('on');btn.setAttribute('aria-expanded','false');}
+  btn.onclick=function(){panel.classList.contains('on')?close():open()};
+  $('ax').onclick=close;
+  form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';send(v);};
+  window.openAssistant=open;window.askAssistant=function(t){open();send(t)};
+  var els=document.querySelectorAll('[data-ask]');for(var i=0;i<els.length;i++){(function(el){el.addEventListener('click',function(ev){ev.preventDefault();window.askAssistant(el.getAttribute('data-ask'))})})(els[i]);}
+})();
+
+</script>
+</body>
+</html>

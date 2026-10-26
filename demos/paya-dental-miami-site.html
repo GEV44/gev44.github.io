@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paya Dental - Hialeah and Miami (concept page)</title>
+<meta name="description" content="Concept one-page version of the Paya Dental website with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#c2a74e;--gold2:#a98d33;--ink:#1c1a1d;--cream:#f9f6f1;--sand:#e8e3da;--mute:#838184;--line:#e1dbcf}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:16px;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Cormorant',Georgia,serif;font-weight:600;line-height:1.1;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.top{background:var(--ink);color:#e9e4d6;font-size:13px;padding:8px 0}
+.top .wrap{display:flex;gap:6px 22px;flex-wrap:wrap;justify-content:center}
+.top a{text-decoration:none;color:var(--gold)}
+header.nav{position:sticky;top:0;z-index:30;background:rgba(249,246,241,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Cormorant',serif;font-size:28px;font-weight:700;text-decoration:none;letter-spacing:.02em}
+.logo i{color:var(--gold);font-style:normal}
+.nav nav{display:none;gap:26px;font-size:14px;font-weight:500}
+.nav nav a{text-decoration:none;color:#444}
+.nav nav a:hover{color:var(--gold2)}
+.btn{display:inline-block;background:var(--ink);color:#fff;padding:12px 22px;border-radius:2px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid var(--ink);cursor:pointer;font-family:inherit;transition:.2s}
+.btn:hover{background:var(--gold2);border-color:var(--gold2)}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.btn.gold:hover{background:var(--ink);color:var(--gold);border-color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.hero{padding:44px 0 56px}
+.hero .wrap{display:grid;gap:34px}
+.kick{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-bottom:14px}
+.hero h1{font-size:clamp(42px,9vw,78px)}
+.hero h1 em{color:var(--gold2);font-style:italic;font-weight:500}
+.hero p.lead{font-size:18px;color:#4a474b;margin:20px 0 26px;max-width:520px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.pts{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:26px;font-size:13px;color:#555}
+.pts span:before{content:"";display:inline-block;width:7px;height:7px;background:var(--gold);border-radius:50%;margin-right:8px}
+.offices{background:#fff;border:1px solid var(--line);padding:26px;position:relative}
+.offices:before{content:"";position:absolute;inset:8px;border:1px solid var(--sand);pointer-events:none}
+.offices h3{font-size:26px;margin-bottom:4px}
+.offices .o{padding:16px 0;border-top:1px solid var(--line);position:relative;z-index:1}
+.offices h3+.o{border-top:0}
+.offices b{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
+.offices .o p{font-size:14px;color:#555}
+.offices .o a.t{font-weight:700;text-decoration:none;font-size:18px}
+section{padding:60px 0}
+.sh{max-width:620px;margin-bottom:34px}
+.sh h2{font-size:clamp(34px,6vw,50px)}
+.sh p{color:#5a575b;margin-top:10px}
+.welcome{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.welcome .wrap{display:grid;gap:26px}
+.pillars{display:grid;gap:14px}
+.pil{border-left:3px solid var(--gold);padding:4px 0 4px 16px}
+.pil b{font-family:'Cormorant',serif;font-size:22px;display:block}
+.pil span{font-size:14px;color:#5a575b}
+.svc{display:grid;gap:22px}
+.grp{background:#fff;border:1px solid var(--line);padding:24px}
+.grp h3{font-size:26px;padding-bottom:12px;border-bottom:2px solid var(--gold);margin-bottom:8px}
+.grp ul{list-style:none}
+.grp li{padding:11px 0;border-bottom:1px solid var(--sand);font-size:14px}
+.grp li:last-child{border:0}
+.grp li b{display:block;font-size:15px}
+.grp li span{color:#6a676b;font-size:13.5px}
+.feature{background:var(--ink);color:#f0ebdd;border-radius:2px;padding:30px 24px;margin-top:22px;display:grid;gap:18px}
+.feature h3{font-size:34px;color:#fff}
+.feature h3 em{color:var(--gold)}
+.steps{display:grid;gap:12px;counter-reset:s}
+.steps div{counter-increment:s;padding-left:46px;position:relative;font-size:14px;color:#d9d3c3}
+.steps div:before{content:"0" counter(s);position:absolute;left:0;top:-2px;font-family:'Cormorant',serif;font-size:26px;color:var(--gold)}
+.steps b{display:block;color:#fff}
+.visit .wrap{display:grid;gap:22px}
+.card{background:var(--cream);border:1px solid var(--line);padding:24px}
+.card h3{font-size:26px;margin-bottom:8px}
+.card ul{margin:10px 0 0 18px;font-size:14px;color:#555}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tags span{border:1px solid var(--gold);color:var(--gold2);padding:5px 12px;font-size:12.5px;font-weight:600;border-radius:20px}
+.team{background:var(--sand)}
+.docs{display:grid;gap:16px;margin-bottom:26px}
+.doc{background:var(--cream);border:1px solid var(--line);padding:24px}
+.doc small{letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:var(--gold2);font-weight:700}
+.doc h3{font-size:30px;margin:6px 0 8px}
+.doc p{font-size:14px;color:#555}
+.staff{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;font-size:14px}
+.staff div{border-top:1px solid #cfc7b6;padding-top:8px}
+.staff b{display:block;font-size:14.5px}
+.staff span{color:#6a676b;font-size:12.5px}
+.hours{display:grid;gap:22px}
+.hc{background:#fff;border:1px solid var(--line);padding:26px}
+.hc h3{font-size:30px}
+.hc address{font-style:normal;color:#555;font-size:14.5px;margin:6px 0 12px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:14px}
+td{padding:8px 0;border-bottom:1px solid var(--sand)}
+td:last-child{text-align:right;font-weight:600}
+.hc .l{display:block;font-size:14px;margin:3px 0;color:#444}
+.rev{background:#fff;border-top:1px solid var(--line)}
+.rv{display:grid;gap:16px}
+.rv blockquote{border-left:3px solid var(--gold);padding:6px 0 6px 18px;font-family:'Cormorant',serif;font-size:21px;line-height:1.3}
+.rv cite{display:block;font-family:'Plus Jakarta Sans';font-style:normal;font-size:12.5px;color:var(--mute);margin-top:6px}
+details{background:#fff;border:1px solid var(--line);margin-bottom:10px}
+summary{padding:16px 18px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:10px;font-size:15px}
+summary:after{content:"+";color:var(--gold2);font-size:22px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{padding:0 18px 16px;font-size:14.5px;color:#555}
+.cta-band{background:var(--gold);color:var(--ink);text-align:center;padding:54px 0}
+.cta-band h2{font-size:clamp(34px,7vw,56px)}
+.cta-band p{margin:10px auto 22px;max-width:520px}
+footer{background:var(--ink);color:#bdb7a7;font-size:13.5px;padding:34px 0 90px}
+footer .wrap{display:grid;gap:14px}
+footer a{color:var(--gold);text-decoration:none}
+.demo{border-top:1px solid #38343a;padding-top:14px;color:#8d8794}
+@media(min-width:760px){
+.nav nav{display:flex}
+.hero .wrap{grid-template-columns:1.25fr .9fr;align-items:center;gap:50px}
+.welcome .wrap{grid-template-columns:1fr 1fr;align-items:center;gap:50px}
+.svc{grid-template-columns:repeat(3,1fr)}
+.feature{grid-template-columns:1fr 1.2fr;padding:40px;align-items:center}
+.visit .wrap{grid-template-columns:repeat(3,1fr)}
+.docs{grid-template-columns:1fr 1fr}
+.staff{grid-template-columns:repeat(4,1fr)}
+.hours{grid-template-columns:1fr 1fr}
+.rv{grid-template-columns:1fr 1fr 1fr}
+footer .wrap{grid-template-columns:1fr 1fr}
+.demo{grid-column:1/-1}
+}
+/* assistant */
+.ga-fab{position:fixed;right:16px;bottom:16px;z-index:60;background:var(--ink);color:var(--gold);border:2px solid var(--gold);border-radius:40px;padding:12px 18px;display:flex;gap:8px;align-items:center;font:600 14px 'Plus Jakarta Sans',sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.ga-fab.ga-off{display:none}
+.ga-panel{position:fixed;z-index:70;right:0;bottom:0;width:100%;height:min(560px,86vh);background:var(--cream);border:1px solid var(--line);display:flex;flex-direction:column;box-shadow:0 -10px 40px rgba(0,0,0,.25)}
+.ga-panel[hidden]{display:none}
+@media(min-width:520px){.ga-panel{right:18px;bottom:18px;width:380px;border-radius:4px}}
+.ga-head{background:var(--ink);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+.ga-head b{font-family:'Cormorant',serif;font-size:22px;display:block;color:var(--gold)}
+.ga-head small{font-size:12px;color:#bdb7a7}
+.ga-x{background:none;border:0;color:#fff;font-size:28px;cursor:pointer;line-height:1}
+.ga-log{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:9px}
+.ga-m{max-width:88%;padding:10px 13px;font-size:14px;line-height:1.5;white-space:pre-line;border-radius:3px}
+.ga-bot{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.ga-me{background:var(--gold);color:var(--ink);align-self:flex-end;font-weight:500}
+.ga-chips{display:flex;gap:6px;flex-wrap:wrap;padding:6px 12px;max-height:104px;overflow:auto}
+.ga-chips button{background:#fff;border:1px solid var(--gold);color:var(--ink);padding:6px 11px;border-radius:20px;font:500 12.5px 'Plus Jakarta Sans',sans-serif;cursor:pointer}
+.ga-chips button:hover{background:var(--gold)}
+.ga-form{display:flex;border-top:1px solid var(--line)}
+.ga-in{flex:1;border:0;padding:14px;font:15px 'Plus Jakarta Sans',sans-serif;background:#fff;min-width:0}
+.ga-send{border:0;background:var(--ink);color:var(--gold);width:54px;font-size:18px;cursor:pointer}
+</style></head>
+<body>
+<div class="top"><div class="wrap"><span>Two offices: Hialeah and Miami (7th Street)</span><span>Hialeah <a href="tel:+17865024467">(786) 502-4467</a></span><span>Miami <a href="tel:+13055415103">(305) 541-5103</a></span></div></div>
+<header class="nav"><div class="wrap"><a class="logo" href="#top">Paya<i>.</i>Dental</a>
+<nav><a href="#services">Services</a><a href="#visit">Plan your visit</a><a href="#team">Our team</a><a href="#hours">Locations</a><a href="#faq">FAQ</a></nav>
+<a class="btn gold" href="#" data-ga="book">Book now</a></div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+<div><div class="kick">Dental care in Miami &amp; Hialeah</div>
+<h1>A healthier smile starts with <em>care you can trust</em></h1>
+<p class="lead">From preventive visits to restorative and cosmetic treatments, Paya Dental offers personalized care for the whole family at our Hialeah and Miami offices.</p>
+<div class="cta"><a class="btn" href="#" data-ga="book">Schedule an appointment</a><a class="btn ghost" href="#" data-ga="chat">Ask the assistant</a></div>
+<div class="pts"><span>Personalized attention</span><span>Bilingual team: English and Spanish</span><span>Insurance and financing options</span></div></div>
+<aside class="offices"><h3>Find your office</h3>
+<div class="o"><b>Hialeah</b><p>2851 W 68th Street, Hialeah, FL 33018</p><a class="t" href="tel:+17865024467">(786) 502-4467</a></div>
+<div class="o"><b>Miami (7th Street)</b><p>2143 NW 7th Street, Miami, FL 33125</p><a class="t" href="tel:+13055415103">(305) 541-5103</a></div></aside>
+</div></section>
+
+<section class="welcome"><div class="wrap">
+<div class="sh" style="margin:0"><div class="kick">Welcome to Paya Dental</div><h2>Dental care centered around you</h2><p>We believe a dental visit should feel personal, comfortable and informative. Our team listens to your needs, explains your treatment options, and helps you make confident decisions about your oral health.</p></div>
+<div class="pillars"><div class="pil"><b>Patient-centric approach</b><span>We treat our patients like family, with personalized care and attention.</span></div><div class="pil"><b>Professional excellence</b><span>Our team continuously enhances its skills to provide superior dental care.</span></div><div class="pil"><b>Integrity and trust</b><span>We serve our patients with integrity, from first call to follow-up.</span></div></div>
+</div></section>
+
+<section id="services"><div class="wrap">
+<div class="sh"><div class="kick">Services</div><h2>Treatments for every stage of your smile</h2><p>Find the dental care that fits your needs, from routine visits to specialized treatment.</p></div>
+<div class="svc">
+<div class="grp"><h3>General</h3><ul><li><b>Dental cleanings</b><span>Prevent cavities, gum disease and bad breath.</span></li><li><b>Dental fillings</b><span>Restore decayed teeth and protect long-term oral health.</span></li><li><b>Tooth extractions</b><span>Gentle, comfortable extractions when a tooth cannot be saved.</span></li><li><b>Wisdom teeth removal</b><span>Relief from wisdom tooth pain and discomfort.</span></li></ul></div>
+<div class="grp"><h3>Restorative</h3><ul><li><b>Dental implants</b><span>Durable, natural-looking replacement for missing teeth.</span></li><li><b>All-on-Four</b><span>A full arch supported by implants.</span></li><li><b>Crowns and porcelain crowns</b><span>Restore shape, strength and appearance.</span></li><li><b>Bridges</b><span>Fill the gaps left by missing teeth.</span></li><li><b>Dentures and overdentures</b><span>Full, partial and implant-supported.</span></li></ul></div>
+<div class="grp"><h3>Cosmetic and more</h3><ul><li><b>Invisalign</b><span>Removable, nearly invisible alternative to braces.</span></li><li><b>Veneers</b><span>Improve color, shape and size of teeth.</span></li><li><b>Zoom whitening</b><span>Professional stain removal and brightening.</span></li><li><b>Endodontics</b><span>Root canal therapy to relieve pain and save teeth.</span></li><li><b>Orthodontics and PRP</b><span>Braces, Invisalign and Platelet Rich Plasma.</span></li></ul></div>
+</div>
+<div class="feature"><div><div class="kick" style="color:var(--gold)">Dental implants</div><h3>Led by Dr. Paya and Dr. Trujillo: <em>implants, step by step</em></h3><p style="margin-top:10px;font-size:14.5px;color:#d9d3c3">Single tooth implants, All-on-Four, implant-supported dentures and full-mouth reconstruction. Same-day implants may be available for qualifying patients.</p></div>
+<div class="steps"><div><b>Consultation and 3D imaging</b>We assess your oral health and plan placement.</div><div><b>Implant placement</b>A biocompatible titanium implant goes into the jawbone.</div><div><b>Healing</b>The implant fuses with the bone over a few months.</div><div><b>Abutment and crown</b>A custom crown, bridge or denture completes the smile.</div></div></div>
+</div></section>
+
+<section id="visit" class="visit" style="background:#fff;border-top:1px solid var(--line)"><div class="wrap">
+<div class="sh" style="grid-column:1/-1;margin-bottom:0"><div class="kick">Plan your visit</div><h2>Everything you need before your appointment</h2></div>
+<div class="card"><h3>Insurance and financing</h3><p style="font-size:14px;color:#555">We accept many plans and offer ways to spread the cost.</p><div class="tags"><span>Aetna</span><span>Cigna</span><span>Delta Dental</span><span>MetLife</span><span>Medicaid</span></div><p style="font-size:13px;color:#777;margin-top:12px">Contact your office to confirm your coverage. Financing: CareCredit and Sunbit.</p></div>
+<div class="card"><h3>Your first visit</h3><p style="font-size:14px;color:#555">A thorough exam and a consultation about your options. Please bring:</p><ul><li>A valid photo ID</li><li>Your dental insurance card</li><li>Any previous dental records</li><li>Your completed new patient form</li></ul></div>
+<div class="card"><h3>Patient forms</h3><p style="font-size:14px;color:#555">Download the new patient form, complete it and bring it to your visit.</p><div class="tags"><span>English PDF</span><span>Espa&ntilde;ol PDF</span></div></div>
+</div></section>
+
+<section id="team" class="team"><div class="wrap">
+<div class="sh"><div class="kick">Meet our doctors</div><h2>The people behind your care</h2></div>
+<div class="docs"><div class="doc"><small>Founder and dentist</small><h3>Dr. Anabel Paya</h3><p>Graduated from Nova University in 2015 and opened the first Paya Dental office in Hialeah in 2016. Training includes implants, Invisalign, tooth extraction, phlebotomy, Botox and fillers.</p></div>
+<div class="doc"><small>Dentist</small><h3>Dr. Yelisset Trujillo</h3><p>Leads care alongside Dr. Paya, including dental implant treatment.</p></div></div>
+<div class="staff"><div><b>Stephanie</b><span>Assistant manager</span></div><div><b>Nancy</b><span>Office manager</span></div><div><b>Aily</b><span>Treatment coordinator</span></div><div><b>Gaby</b><span>Billing and coding</span></div><div><b>Denisse</b><span>Front desk</span></div><div><b>Lily</b><span>Front desk</span></div><div><b>Araceli</b><span>Hygienist</span></div><div><b>Saritza</b><span>Hygienist</span></div><div><b>Ida</b><span>Dental assistant</span></div><div><b>Yanet</b><span>Dental assistant</span></div><div><b>Yoander</b><span>Dental assistant</span></div></div>
+</div></section>
+
+<section id="hours"><div class="wrap">
+<div class="sh"><div class="kick">Locations and hours</div><h2>Two offices, one standard of care</h2><p>Each location keeps its own schedule. Call the office you plan to visit to schedule or ask about availability.</p></div>
+<div class="hours">
+<div class="hc"><h3>Hialeah</h3><address>2851 W 68th Street, Hialeah, FL 33018</address><table><tr><td>Mon, Wed, Thu, Fri</td><td>8:30 AM - 3:30 PM</td></tr><tr><td>Tuesday</td><td>9:00 AM - 5:00 PM</td></tr><tr><td>Saturday (two per month)</td><td>8:30 AM - 1:30 PM</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table><a class="l" href="tel:+17865024467">(786) 502-4467</a><a class="l" href="mailto:hialeah@payadental.com">hialeah@payadental.com</a></div>
+<div class="hc"><h3>Miami (7th Street)</h3><address>2143 NW 7th Street, Miami, FL 33125</address><table><tr><td>Monday - Friday</td><td>8:30 AM - 4:30 PM</td></tr><tr><td>Saturday and Sunday</td><td>Closed</td></tr></table><a class="l" href="tel:+13055415103">(305) 541-5103</a><a class="l" href="mailto:littlehavana@payadental.com">littlehavana@payadental.com</a></div>
+</div></div></section>
+
+<section class="rev"><div class="wrap">
+<div class="sh"><div class="kick">Patient testimonials</div><h2>What patients have shared</h2></div>
+<div class="rv"><blockquote>Great staff! Great energy! Really happy with the outcome of every visit.<cite>Danial V., Paya Dental patient</cite></blockquote><blockquote>Very professional and understanding. They removed two wisdom teeth and the staff showed me compassion.<cite>Danielle I., Paya Dental patient</cite></blockquote><blockquote>I have been a patient here for 3 years and my experience is always the same: excellent.<cite>Erica P., Paya Dental patient</cite></blockquote><blockquote>Very good attention, kindness and professionalism in the entire clinic work team.<cite>Ana Maria S., Paya Dental patient</cite></blockquote><blockquote>I like going to Paya Dental, everyone there is very professional and friendly.<cite>Jacqueline M., Paya Dental patient</cite></blockquote><blockquote>Excellent customer service, very informative and helpful.<cite>N. Cano, Paya Dental patient</cite></blockquote></div>
+</div></section>
+
+<section id="faq"><div class="wrap" style="max-width:780px">
+<div class="sh"><div class="kick">FAQ</div><h2>Quick answers</h2></div>
+<details><summary>Which insurance plans do you accept?</summary><p>Many plans, including Aetna, Cigna, Delta Dental and MetLife. Medicaid is accepted; contact your location to confirm your coverage.</p></details>
+<details><summary>Can I pay over time?</summary><p>Yes. Financing is available through CareCredit and Sunbit.</p></details>
+<details><summary>Do you speak Spanish?</summary><p>Yes, the team is bilingual and the new patient form is available in English and Spanish.</p></details>
+<details><summary>What should I bring to my first visit?</summary><p>A valid photo ID, your dental insurance card, any previous dental records and your completed new patient form.</p></details>
+<details><summary>What are your office hours?</summary><p>Hialeah: Mon, Wed, Thu, Fri 8:30 AM - 3:30 PM, Tuesday 9:00 AM - 5:00 PM, two Saturdays a month 8:30 AM - 1:30 PM. Miami (7th Street): Monday to Friday 8:30 AM - 4:30 PM. Please call to confirm availability.</p></details>
+<details><summary>Do you offer same-day implants?</summary><p>Same-day implants may be available for qualifying patients. The doctors decide after a consultation and 3D imaging.</p></details>
+<details><summary>Is the whole family welcome?</summary><p>Yes, Paya Dental provides personalized, high-quality dental care for the whole family in Hialeah and Miami.</p></details>
+<details><summary>I am in pain. What should I do?</summary><p>Please call the office right away so the team can advise you. This page and its assistant cannot give medical advice or diagnoses. For a life-threatening emergency, call 911.</p></details>
+<details><summary>How much does treatment cost?</summary><p>Prices are not listed online. The team will explain costs and options for your treatment; call your office.</p></details>
+</div></section>
+
+<div class="cta-band"><div class="wrap"><h2>Ready to take the next step for your smile?</h2><p>Choose your preferred Paya Dental location and contact our team to schedule a visit.</p><a class="btn" href="#" data-ga="book">Book appointment</a></div></div>
+</main>
+
+<footer><div class="wrap">
+<div><b style="color:#fff">Hialeah</b><br>2851 W 68th Street, Hialeah, FL 33018<br><a href="tel:+17865024467">(786) 502-4467</a></div>
+<div><b style="color:#fff">Miami (7th Street)</b><br>2143 NW 7th Street, Miami, FL 33125<br><a href="tel:+13055415103">(305) 541-5103</a></div>
+<div class="demo">Demo &middot; prepared by Gevorg Hovhannisyan. Concept page built from the public Paya Dental website; the assistant sends nothing.</div>
+</div></footer>
+
+<script>
+function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4){w=w.replace(/(ing|ed|es|s)$/,'');}return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b){if(a===b)return 0;if(Math.abs(a.length-b.length)>2)return 9;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[b.length];}
+function tokHit(t,k){if(t===k)return 1;if(t.length>=5&&k.length>=5&&(t.indexOf(k)===0||k.indexOf(t)===0))return .9;var m=t.length>=7?2:(t.length>=4?1:0);if(m&&lev(t,k)<=m)return .8;return 0;}
+function match(kb,q){var qt=toks(q),qn=' '+norm(q)+' ',best=null,bs=0;
+ for(var e=0;e<kb.length;e++){var sc=0,ks=kb[e].k;
+  for(var i=0;i<ks.length;i++){var kn=norm(ks[i]);if(!kn)continue;
+   if(kn.indexOf(' ')>-1){if(qn.indexOf(' '+kn+' ')>-1||qn.indexOf(kn)>-1)sc+=3;else{var kt=toks(kn),h=0;for(var a=0;a<kt.length;a++)for(var b=0;b<qt.length;b++)if(tokHit(qt[b],kt[a])){h++;break;}if(h===kt.length)sc+=2.5;}}
+   else{var k1=stem(kn),bh=0;for(var b2=0;b2<qt.length;b2++){var th=tokHit(qt[b2],k1);if(th>bh)bh=th;}sc+=bh*2;}}
+  if(sc>bs){bs=sc;best=kb[e];}}
+ return bs>=1.6?best:null;}
+if(typeof module!=='undefined')module.exports={match:match,norm:norm};
+
+window.gaMatch=match;
+var HIA='Hialeah: 2851 W 68th Street, Hialeah, FL 33018, (786) 502-4467.';
+var MIA='Miami (7th Street): 2143 NW 7th Street, Miami, FL 33125, (305) 541-5103.';
+var BIZ={fabIcon:'вњЁ',fabLabel:'Ask Paya Dental',title:'Paya Dental assistant',sub:'Answers from our website, 24/7',ph:'Ask about hours, insurance, services...',
+hello:'Hi! I am the Paya Dental virtual assistant. I can answer questions about our offices, hours, services and insurance, or start an appointment request for the team. I cannot give medical advice or diagnoses.',
+chips:['Office hours','Insurance and financing','Dental implants','Book an appointment','Where are you located?','Do you speak Spanish?'],
+again:'Sorry, I did not catch that. Could you rephrase?',
+miss:'I do not have that information yet, so I will not guess. Our team can confirm it: Hialeah (786) 502-4467 or Miami 7th Street (305) 541-5103. I can also take an appointment request.',
+bookRe:/(book|appointment|cita|reserve|see a dentist|make an app)/i,
+kb:[
+{k:['hours','open','opening','close','closing','what time','saturday','sunday','weekend','horario','schedule hours'],a:'Hialeah: Mon, Wed, Thu, Fri 8:30 AM-3:30 PM; Tue 9:00 AM-5:00 PM; Sat (two Saturdays a month) 8:30 AM-1:30 PM; Sun closed.\nMiami (7th Street): Mon-Fri 8:30 AM-4:30 PM; Sat and Sun closed.\nPlease call the office to confirm availability.'},
+{k:['where','location','locations','address','directions','offices','office','find you','hialeah','7th street','little havana','park','parking'],a:HIA+'\n'+MIA+'\nI do not have parking details; the office can tell you.'},
+{k:['phone','call','number','telephone','contact','email','e-mail','reach'],a:HIA+'\n'+MIA+'\nEmail: hialeah@payadental.com (Hialeah) or littlehavana@payadental.com (Miami).'},
+{k:['insurance','insurances','plans','aetna','cigna','delta','metlife','medicaid','coverage','covered','accept','seguro'],a:'We accept many insurance plans, including Aetna, Cigna, Delta Dental and MetLife. Medicaid is accepted too; please contact your office to confirm your specific coverage. Bring your insurance card to your first visit.'},
+{k:['financing','payment plan','payment plans','carecredit','care credit','sunbit','monthly payments','pay over time','afford','pay'],a:'Financing is available through CareCredit and Sunbit (flexible monthly payment plans). The team can explain the options for your treatment.'},
+{k:['price','prices','cost','how much','fee','fees','quote','estimate','cheap','precio','free consultation'],a:'Prices are not published on our website, so I will not guess. The team can give you details after your visit or consultation; call (786) 502-4467 (Hialeah) or (305) 541-5103 (Miami).'},
+{k:['service','services','treatments','offer','what do you do','procedures'],a:'General: cleanings, fillings, extractions, wisdom teeth removal.\nRestorative: implants, All-on-Four, bridges, crowns, porcelain crowns, full and partial dentures, implant overdentures.\nCosmetic: Invisalign, veneers, Zoom whitening.\nOther: endodontics (root canals), orthodontics, PRP.',chips:['Dental implants','Invisalign','Teeth whitening','Book an appointment']},
+{k:['implant','implants','missing tooth','missing teeth','titanium','same day implants'],a:'We offer dental implants: single-tooth implants, All-on-Four full arches, implant-supported dentures and full-mouth reconstruction. The process starts with a consultation and 3D imaging. Same-day implants may be available for qualifying patients; the doctors decide after examining you.',chips:['All-on-Four','Book an appointment','Insurance and financing']},
+{k:['all on four','all-on-four','all on 4','all-on-4','full arch','full mouth'],a:'All-on-Four is a full arch of teeth supported by four implants. Whether it fits you is decided by the doctors after an examination. Would you like to request a consultation?',go:1},
+{k:['invisalign','clear aligners','aligners','braces','orthodontics','orthodontic','straighten','crooked'],a:'We offer Invisalign (removable, nearly invisible) and orthodontics with traditional braces and Invisalign. A consultation will show which option suits you.'},
+{k:['whitening','whiten','zoom','bleaching','brighten','stains'],a:'We offer professional Zoom teeth whitening that removes stains and brightens your smile.'},
+{k:['veneer','veneers','cosmetic','smile makeover'],a:'Veneers are thin, custom-made shells that improve the color, shape and size of teeth. Cosmetic services also include Invisalign and Zoom whitening.'},
+{k:['cleaning','cleanings','checkup','check up','exam','preventive','hygienist','hygiene'],a:'We offer thorough dental cleanings to help prevent cavities, gum disease and bad breath, with hygienists on the team. Your first visit includes a thorough examination and consultation.'},
+{k:['filling','fillings','cavity','cavities','decay'],a:'We offer dental fillings to restore decayed teeth. I cannot tell whether you need one; the dentist will examine you.'},
+{k:['extraction','extractions','pull','pulled','wisdom','wisdom teeth','remove tooth'],a:'We offer gentle tooth extractions and wisdom teeth removal. For pain or swelling please call the office so the team can advise.'},
+{k:['root canal','root canals','endodontics','endodontic','infected'],a:'Endodontics (root canal therapy) relieves tooth pain and saves infected teeth. Only a dentist can say if you need one, so please book an examination.'},
+{k:['crown','crowns','bridge','bridges','cap','porcelain'],a:'We offer dental crowns, all-porcelain crowns and dental bridges to restore or replace teeth.'},
+{k:['denture','dentures','false teeth','overdenture','overdentures','partial'],a:'We offer full and partial dentures and implant overdentures (dentures that attach to implants for a more stable fit).'},
+{k:['prp','platelet','plasma','healing','recovery'],a:'PRP (Platelet Rich Plasma) uses your body\'s natural healing to support faster recovery after treatment. The doctors can tell you if it applies to your case.'},
+{k:['first visit','new patient','new patients','forms','form','paperwork','bring','pdf','what to expect'],a:'For your first visit please bring a valid photo ID, your dental insurance card, any previous dental records and your completed new patient form (PDF in English or Spanish, on our website). The visit includes an exam and a consultation about your options.'},
+{k:['spanish','espanol','habla','bilingual','language','english'],a:'Yes, our team is bilingual (English and Spanish), and the new patient form is available in both languages. Hablamos espanol.'},
+{k:['doctor','doctors','dentist','dentists','paya','trujillo','who','team','staff','founder','anabel'],a:'Dr. Anabel Paya (founder and dentist) and Dr. Yelisset Trujillo (dentist) lead care, supported by hygienists, dental assistants and a front-desk team. Dr. Paya graduated from Nova University in 2015 and opened the first office in Hialeah in 2016.'},
+{k:['kids','children','child','family','pediatric','baby','teen'],a:'Paya Dental offers care for the whole family. For age-specific questions, please ask the team: (786) 502-4467 or (305) 541-5103.'},
+{k:['emergency','pain','hurts','toothache','swelling','bleeding','urgent','broken','knocked'],a:'I cannot give medical advice. If you have severe pain, swelling or an injury, please call the office right away: Hialeah (786) 502-4467 or Miami (305) 541-5103. For a life-threatening emergency call 911.'},
+{k:['hello','hi','hey','good morning','good afternoon','hola'],a:'Hello! How can I help you today? You can ask about hours, insurance, services or request an appointment.'},
+{k:['thanks','thank you','thx','gracias'],a:'You are welcome! Anything else I can help with?'}
+],
+flow:[
+{id:'loc',q:'Which office would you prefer?',opts:['Hialeah','Miami (7th Street)']},
+{id:'svc',q:'What is the visit for?',opts:['Cleaning or checkup','Implants','Invisalign or braces','Other / not sure']},
+{id:'pt',q:'Are you a new or existing patient?',opts:['New patient','Existing patient']},
+{id:'when',q:'What day and time would suit you? (for example: Tuesday morning)'},
+{id:'name',q:'Your full name?',re:/\S{2,}/},
+{id:'phone',q:'A phone number the team can call to confirm?',re:/\d[\d\s().+-]{6,}/,err:'Please enter a valid phone number.'}],
+flowSum:[['Office','loc'],['Reason','svc'],['Patient','pt'],['Preferred time','when'],['Name','name'],['Phone','phone']],
+done:'Thank you! Your request is ready for the team, who will contact you to confirm the appointment. (This is a demo: nothing was actually sent.) Please note availability depends on the office schedule.',
+after:['Office hours','Insurance and financing','First visit']};
+
+(function(){var B=window.BIZ,$=function(s){return document.querySelector(s)};
+var fab=document.createElement('button');fab.className='ga-fab';fab.setAttribute('aria-label',B.fabLabel);fab.innerHTML='<span class="ga-fab-i">'+B.fabIcon+'</span><span class="ga-fab-t">'+B.fabLabel+'</span>';
+var pn=document.createElement('div');pn.className='ga-panel';pn.hidden=true;
+pn.innerHTML='<div class="ga-head"><div><b>'+B.title+'</b><small>'+B.sub+'</small></div><button class="ga-x" aria-label="Close">&times;</button></div><div class="ga-log" role="log" aria-live="polite"></div><div class="ga-chips"></div><form class="ga-form"><input class="ga-in" autocomplete="off" placeholder="'+B.ph+'"><button class="ga-send" aria-label="Send">&#10148;</button></form>';
+document.body.appendChild(fab);document.body.appendChild(pn);
+var log=pn.querySelector('.ga-log'),chips=pn.querySelector('.ga-chips'),inp=pn.querySelector('.ga-in'),form=pn.querySelector('.ga-form');
+var flow=null,step=0,data={},started=false;
+function say(t,me){var d=document.createElement('div');d.className='ga-m '+(me?'ga-me':'ga-bot');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a,fn){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){fn?fn(c):ask(c)};chips.appendChild(b);});}
+function home(){setChips(B.chips);}
+function open(){pn.hidden=false;fab.classList.add('ga-off');if(!started){started=true;say(B.hello);home();}inp.focus();}
+fab.onclick=open;pn.querySelector('.ga-x').onclick=function(){pn.hidden=true;fab.classList.remove('ga-off');};
+window.gaOpen=function(f){open();if(f)startFlow();};
+function startFlow(){flow=B.flow;step=0;data={};say(flow[0].q);setChips(flow[0].opts,answer);}
+function answer(v){if(!flow)return;var s=flow[step];if(s.re&&!s.re.test(v)){say(s.err||B.again);return;}
+ say(v,1);data[s.id]=v;step++;if(step>=flow.length){flow=null;var sum=B.flowSum.map(function(r){return r[0]+': '+(data[r[1]]||'-')}).join('\n');say(B.done+'\n\n'+sum);setChips(B.after||B.chips.slice(0,3));return;}
+ say(flow[step].q);setChips(flow[step].opts,answer);}
+function ask(q){if(flow){answer(q);return;}say(q,1);
+ if(/^(book|appointment|reserve|schedule|request)/i.test(q)||B.bookRe.test(q)){startFlow();return;}
+ var m=window.gaMatch(B.kb,q);
+ if(m){say(m.a);if(m.go){setTimeout(startFlow,350);} else setChips(m.chips||B.chips.slice(0,4));}
+ else{say(B.miss);setChips(B.chips.slice(0,4));}}
+form.onsubmit=function(e){e.preventDefault();var v=inp.value.trim();if(!v)return;inp.value='';if(flow)answer(v);else ask(v);};
+document.querySelectorAll('[data-ga]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();window.gaOpen(a.getAttribute('data-ga')==='book');});});
+})();
+
+</script>
+</body></html>

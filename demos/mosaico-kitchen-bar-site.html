@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mosaico Kitchen + Bar | Brickell, Miami</title>
+<meta name="description" content="Mosaico Kitchen + Bar: breakfast, lunch, dinner and cocktails on the first floor of Hotel Indigo Miami Brickell.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--con:#d8d4cc;--con2:#bdb8ae;--blk:#141414;--ink:#1c1c1c;--indigo:#3a3fd6;--copper:#c9702e;--paper:#efece6;--a:#3a3fd6;--ab:#efece6;--ai:#1c1c1c;--al:#141414;--abot:#d8d4cc;--af:'Space Mono',ui-monospace,monospace;--ar:0;--ap:0;--am:#e6e2da}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.55 'Archivo',system-ui,sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
+a{color:inherit}
+.mono{font-family:'Space Mono',monospace}
+h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;letter-spacing:-.02em}
+.wrap{width:min(1180px,100% - 28px);margin:0 auto}
+/* header */
+header.top{position:sticky;top:0;z-index:40;background:var(--blk);color:var(--paper);border-bottom:3px solid var(--indigo)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:10px}
+.brand{font:900 21px 'Archivo';letter-spacing:.14em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.tiles{display:grid;grid-template-columns:repeat(3,9px);gap:2px}
+.tiles i{width:9px;height:9px;display:block;background:var(--indigo)}
+.tiles i:nth-child(2n){background:var(--copper)}.tiles i:nth-child(3n){background:var(--con)}
+.menu-links{display:none;gap:20px;font:700 12px 'Space Mono';text-transform:uppercase;letter-spacing:.08em}
+.menu-links a{text-decoration:none;opacity:.8}.menu-links a:hover{opacity:1;color:#9ea2ff}
+.rsv{background:var(--copper);color:#fff;text-decoration:none;font:700 12px 'Space Mono';text-transform:uppercase;padding:9px 13px;letter-spacing:.06em}
+@media(min-width:900px){.menu-links{display:flex}}
+/* hero */
+.hero{background:var(--con);border-bottom:3px solid var(--blk);position:relative;overflow:hidden}
+.hero .wrap{display:grid;gap:0}
+.hero-l{padding:36px 0 30px}
+.hero .kick{font:700 12px 'Space Mono';text-transform:uppercase;letter-spacing:.1em;border:2px solid var(--blk);display:inline-block;padding:4px 8px;margin-bottom:18px;background:var(--paper)}
+.hero h1{font-size:clamp(54px,15.5vw,150px);color:var(--blk)}
+.hero h1 span{color:var(--indigo)}
+.hero p.lead{max-width:30em;margin:20px 0 22px;font-size:18px}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.b{display:inline-block;border:2px solid var(--blk);background:var(--blk);color:var(--paper);text-decoration:none;font:700 13px 'Space Mono';text-transform:uppercase;letter-spacing:.07em;padding:13px 18px;cursor:pointer}
+.b.alt{background:transparent;color:var(--blk)}
+.b:hover{background:var(--indigo);border-color:var(--indigo);color:#fff}
+.mosaic{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-top:3px solid var(--blk)}
+.mosaic div{aspect-ratio:1;border-right:3px solid var(--blk)}
+.mosaic div:last-child{border-right:0}
+.m1{background:var(--indigo)}.m2{background:var(--copper)}.m3{background:var(--blk)}.m4{background:var(--paper)}.m5{background:#8f93ff}.m6{background:var(--con2)}
+.hours-box{background:var(--blk);color:var(--paper);padding:20px;margin-bottom:28px}
+.hours-box h3{font-size:24px;margin-bottom:12px;color:#9ea2ff}
+.hr{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid #444;font:400 13.5px 'Space Mono'}
+.hr b{font-weight:700;color:#fff}
+.hr span:last-child{text-align:right}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1.5fr 1fr;gap:34px;align-items:end}.hero-l{padding:70px 0 60px}.hours-box{margin-bottom:60px}}
+/* sections */
+section{padding:60px 0;border-bottom:3px solid var(--blk)}
+.shead{display:grid;gap:10px;margin-bottom:30px}
+.shead .num{font:700 13px 'Space Mono';color:var(--indigo)}
+.shead h2{font-size:clamp(42px,9vw,92px)}
+.shead p{max-width:36em;font-size:17px}
+/* about / design */
+.about{display:grid;gap:30px}
+.quote{border:3px solid var(--blk);padding:22px;background:var(--con);position:relative}
+.quote:before{content:"";position:absolute;right:-3px;top:-3px;width:46px;height:46px;background:linear-gradient(135deg,var(--copper) 50%,transparent 50%)}
+.quote h3{font-size:30px;margin-bottom:10px}
+.facts{display:grid;gap:0;border:3px solid var(--blk)}
+.facts div{padding:16px 18px;border-top:3px solid var(--blk)}.facts div:first-child{border-top:0}
+.facts b{display:block;font:700 12px 'Space Mono';text-transform:uppercase;color:var(--indigo);margin-bottom:2px}
+@media(min-width:900px){.about{grid-template-columns:1.1fr 1fr}}
+/* menu tabs */
+.tabs input{position:absolute;opacity:0;pointer-events:none}
+.tabbar{display:flex;border:3px solid var(--blk);margin-bottom:0;flex-wrap:wrap}
+.tabbar label{flex:1 1 50%;text-align:center;padding:14px 8px;font:700 13px 'Space Mono';text-transform:uppercase;cursor:pointer;background:var(--paper);border-right:3px solid var(--blk)}
+.tabbar label:last-child{border-right:0}
+#t-d:checked~.tabbar label[for=t-d],#t-l:checked~.tabbar label[for=t-l]{background:var(--blk);color:var(--paper)}
+.pane{display:none;border:3px solid var(--blk);border-top:0;padding:8px 18px 24px;background:#f7f5f0}
+#t-d:checked~.p-d,#t-l:checked~.p-l{display:block}
+.msec{margin-top:24px}
+.msec h4{font-size:26px;color:var(--indigo);border-bottom:3px solid var(--blk);padding-bottom:6px;margin-bottom:6px}
+.mi{display:grid;grid-template-columns:1fr auto;gap:0 14px;padding:9px 0;border-bottom:1px dashed var(--con2)}
+.mn{font-weight:800;text-transform:uppercase;font-size:15px}
+.mp{font:700 15px 'Space Mono'}
+.md{grid-column:1/-1;font-size:14px;color:#4a4a46;margin-top:2px}
+@media(min-width:900px){.pane{columns:2;column-gap:44px}.msec{break-inside:avoid}}
+.fine{font:400 12px/1.5 'Space Mono';margin-top:14px;color:#55554f}
+/* day parts */
+.dp{display:grid;gap:0;border:3px solid var(--blk)}
+.dp>div{padding:20px;border-top:3px solid var(--blk)}.dp>div:first-child{border-top:0}
+.dp h3{font-size:34px;margin-bottom:6px}
+.dp .t{font:700 14px 'Space Mono'}
+.dp>div:nth-child(1){background:var(--con)}.dp>div:nth-child(2){background:#aeb1ff}.dp>div:nth-child(3){background:var(--blk);color:var(--paper)}.dp>div:nth-child(4){background:var(--copper);color:#fff}
+@media(min-width:900px){.dp{grid-template-columns:repeat(4,1fr)}.dp>div{border-top:0;border-left:3px solid var(--blk)}.dp>div:first-child{border-left:0}}
+/* services row */
+.ways{display:grid;gap:0;border:3px solid var(--blk)}
+.way{padding:24px;border-top:3px solid var(--blk);background:var(--paper)}.way:first-child{border-top:0}
+.way h3{font-size:30px;margin-bottom:8px}
+.way .b{margin-top:14px}
+@media(min-width:900px){.ways{grid-template-columns:repeat(3,1fr)}.way{border-top:0;border-left:3px solid var(--blk)}.way:first-child{border-left:0}}
+/* visit + faq */
+.visit{display:grid;gap:26px}
+.addr{font:700 22px/1.3 'Archivo';text-transform:uppercase}
+.faq details{border:3px solid var(--blk);margin-bottom:-3px;background:var(--paper)}
+.faq summary{padding:15px 16px;cursor:pointer;font:700 14px 'Space Mono';text-transform:uppercase;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";float:right}
+.faq details[open] summary{background:var(--blk);color:var(--paper)}
+.faq details[open] summary:after{content:"-"}
+.faq p{padding:14px 16px}
+@media(min-width:900px){.visit{grid-template-columns:1fr 1fr}}
+footer{background:var(--blk);color:var(--paper);padding:34px 0 40px;font:13px/1.7 'Space Mono'}
+footer .big{font:900 34px 'Archivo';letter-spacing:.1em;margin-bottom:8px}
+footer a{color:#9ea2ff}
+footer .demo{margin-top:16px;border-top:1px solid #444;padding-top:14px;color:#aaa}
+.as-btn{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--a);color:var(--at,#fff);font:600 15px/1 var(--af);padding:13px 18px;border-radius:var(--ar,999px);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.as-btn.hide{display:none}
+.as-ic{font-size:18px;line-height:1}
+.as-panel{position:fixed;right:12px;bottom:12px;z-index:70;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));display:none;flex-direction:column;background:var(--ab,#fff);color:var(--ai,#222);border:1px solid var(--al,#ddd);border-radius:var(--ap,16px);box-shadow:0 18px 50px rgba(0,0,0,.35);overflow:hidden;font:15px/1.45 var(--af)}
+.as-panel.open{display:flex}
+.as-h{display:flex;justify-content:space-between;align-items:flex-start;padding:14px 16px;background:var(--a);color:var(--at,#fff)}
+.as-h b{display:block;font-size:16px}.as-h small{opacity:.85;font-size:12.5px}
+.as-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+.as-m{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;background:var(--am,transparent)}
+.as-b{max-width:86%;padding:9px 12px;border-radius:12px;white-space:pre-line;word-wrap:break-word;font-size:14.5px}
+.as-b.bot{align-self:flex-start;background:var(--abot,#eee);color:var(--ai,#222)}
+.as-b.me{align-self:flex-end;background:var(--a);color:var(--at,#fff)}
+.as-c{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px 2px;max-height:104px;overflow-y:auto}
+.as-c button{border:1px solid var(--a);background:transparent;color:var(--a);border-radius:999px;padding:6px 11px;font:600 13px/1.2 var(--af);cursor:pointer}
+.as-c button:hover{background:var(--a);color:var(--at,#fff)}
+.as-f{display:flex;gap:6px;padding:8px 12px}
+.as-f input{flex:1;min-width:0;border:1px solid var(--al,#ccc);border-radius:10px;padding:10px;font:15px var(--af);background:#fff;color:#222}
+.as-f button{border:0;background:var(--a);color:var(--at,#fff);border-radius:10px;padding:0 14px;font:600 14px var(--af);cursor:pointer}
+.as-n{font-size:11.5px;opacity:.65;padding:0 14px 10px}
+@media(max-width:480px){.as-panel{right:0;bottom:0;width:100vw;height:86vh;border-radius:16px 16px 0 0}}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="#top"><span class="tiles"><i></i><i></i><i></i><i></i><i></i><i></i></span>MOSAICO</a>
+<nav class="menu-links"><a href="#about">About</a><a href="#menu">Menu</a><a href="#hours">Hours</a><a href="#events">Events</a><a href="#visit">Visit</a></nav>
+<a class="rsv" href="#" data-assist="book">Reserve</a>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+<div class="hero-l">
+<span class="kick">Kitchen + Bar &middot; Brickell, Miami</span>
+<h1>Mosaico <span>Kitchen</span> + Bar</h1>
+<p class="lead">Unique, bold flavors and daring cocktails on the first floor of Hotel Indigo Miami Brickell, inside a Brutalist room designed by Angel Sanchez of Sanchez Colman. Breakfast, lunch and dinner under Chef Andres Revoredo.</p>
+<div class="cta"><a class="b" href="#" data-assist="book">Reserve a table</a><a class="b alt" href="#menu">Read the menu</a></div>
+</div>
+<aside class="hours-box" id="hours">
+<h3>Open daily</h3>
+<div class="hr"><b>Breakfast</b><span>Mon-Sat 7:00-11:30 am</span></div>
+<div class="hr"><b>Sunday brunch</b><span>7:00 am-2:30 pm</span></div>
+<div class="hr"><b>Lunch</b><span>Mon-Sun 11:30 am-2:30 pm</span></div>
+<div class="hr"><b>Dinner</b><span>Sun-Thu 5:30-10:30 pm<br>Fri-Sat 5:30-11:30 pm</span></div>
+<div class="hr"><b>Happy hour</b><span>Weekdays 5:00-7:00 pm</span></div>
+</aside>
+</div>
+<div class="mosaic"><div class="m1"></div><div class="m2"></div><div class="m3"></div><div class="m4"></div><div class="m5"></div><div class="m6"></div></div>
+</div>
+
+<section id="about"><div class="wrap">
+<div class="shead"><span class="num">01 / ABOUT</span><h2>More than a meal</h2></div>
+<div class="about">
+<div><p style="font-size:18px;margin-bottom:14px">Step into the world of culinary wonder at Mosaico, a gastronomic destination in Brickell. Each bite promises an exploration of unique, bold flavors, and the cocktail bar serves daring concoctions of spirits, fruits and mixes designed to pair with the menu.</p>
+<p style="margin-bottom:14px">There is also an impressive selection of fine wines, sparkling varieties, bottled beers and premium liquors to complete the evening.</p>
+<p>The restaurant is a tribute to the history of Miami's Brickell region. Its architecture and aesthetic echo the legacy of the Tequesta people, the area's inhabitants for over 2,000 years, while the interior philosophy embraces Brutalism: raw, clean materials like concrete, steel, glass and wood, with structural elements in plain sight.</p></div>
+<div class="quote"><h3>Design that you can eat in</h3><p>"Beautifully merging modernity with nature and a hint of coziness": the avant-garde interior was curated by Angel Sanchez of Sanchez Colman. Come for brunch with the family, a dinner for two, or a lunch with colleagues.</p></div>
+</div>
+<div class="facts" style="margin-top:30px">
+<div><b>Where</b>First floor, Hotel Indigo Miami Brickell | Atwell Suites</div>
+<div><b>Address</b>145 SW 11th St, Miami, Florida 33130</div>
+<div><b>Rating</b>4.8 stars from 367 Google reviews</div>
+</div>
+</div></section>
+
+<section id="menu" style="background:var(--con)"><div class="wrap">
+<div class="shead"><span class="num">02 / MENU</span><h2>Lunch + dinner</h2><p>Menus as published on the restaurant's site. Breakfast, cocktails, drinks and desserts have their own menus; the team can share them.</p></div>
+<div class="tabs">
+<input type="radio" name="t" id="t-d" checked><input type="radio" name="t" id="t-l">
+<div class="tabbar"><label for="t-d">Dinner</label><label for="t-l">Lunch</label></div>
+<div class="pane p-d"><div class="msec"><h4>Starters</h4>
+<div class="mi"><span class="mn">Shrimp Cocktail*</span><span class="mp">$14</span><span class="md">4 shrimps with cocktail sauce</span></div>
+<div class="mi"><span class="mn">Tequeños</span><span class="mp">$14</span><span class="md">cheese wellington, rose alioli (6 units)</span></div>
+<div class="mi"><span class="mn">Croquetas</span><span class="mp">$14</span><span class="md">goat cheese, chicken and serrano ham (6 units)</span></div>
+<div class="mi"><span class="mn">Lobster Bisque</span><span class="mp">$14</span><span class="md">New England style</span></div>
+<div class="mi"><span class="mn">Tabla Mary Brickell</span><span class="mp">$24</span><span class="md">charcuterie board, cold cuts, serrano ham, manchego, olives, artisan bread</span></div>
+<div class="mi"><span class="mn">Tuna Tartare*</span><span class="mp">$20</span><span class="md">avocado, sesame oil, chives, ginger, sriracha and plantain chips</span></div>
+<div class="mi"><span class="mn">Tropical Ceviche*</span><span class="mp">$20</span><span class="md">shrimp and white fish, canchas infused with passion fruit</span></div>
+</div>
+<div class="msec"><h4>Salads</h4>
+<div class="mi"><span class="mn">Caesar Salad*</span><span class="mp">$16</span><span class="md">romaine, house made caesar and croutons, shaved parmesan (+$8 chicken or shrimp)</span></div>
+<div class="mi"><span class="mn">Caprese Salad</span><span class="mp">$18</span><span class="md">heirloom tomatoes, fresh mozzarella, basil, balsamic, e.v. olive oil</span></div>
+<div class="mi"><span class="mn">Indigo Chicken Salad</span><span class="mp">$22</span><span class="md">chicken, spring mix, honey-cilantro dressing</span></div>
+</div>
+<div class="msec"><h4>Burgers &amp; Sandwiches</h4>
+<div class="mi"><span class="mn">Impossible Burger</span><span class="mp">$22</span><span class="md">made from plants, with french fries</span></div>
+<div class="mi"><span class="mn">Indigo Burger*</span><span class="mp">$22</span><span class="md">prime meat, arugula, tomatoes, pickled onions, brioche bun with french fries</span></div>
+<div class="mi"><span class="mn">8th Street Cuban Sandwich</span><span class="mp">$22</span><span class="md">black forest ham, roasted pork, swiss cheese, pickles, mustard with french fries</span></div>
+<div class="mi"><span class="mn">Grilled Chicken Sandwich</span><span class="mp">$22</span><span class="md">grilled chicken breast, lettuce, tomatoes, garlic alioli, baguette with french fries</span></div>
+</div>
+<div class="msec"><h4>Pizzas</h4>
+<div class="mi"><span class="mn">Luz Margherita Pizza</span><span class="mp">$22</span><span class="md">fresh tomato, mozzarella, basil, olive oil</span></div>
+<div class="mi"><span class="mn">Pepperoni Pizza</span><span class="mp">$23</span><span class="md">fresh tomato, mozzarella, olive oil, italian pepperoni</span></div>
+<div class="mi"><span class="mn">Serrano Pizza</span><span class="mp">$24</span><span class="md">shaved manchego cheese, serrano ham, micro arugula</span></div>
+</div>
+<div class="msec"><h4>Pastas</h4>
+<div class="mi"><span class="mn">Lasagne di Nonna</span><span class="mp">$24</span><span class="md">chef special lasagna</span></div>
+<div class="mi"><span class="mn">Bucatini al Pomodoro</span><span class="mp">$22</span><span class="md">tomatoes, onion, e.v. olive oil and fresh basil (+$7 chicken or shrimp)</span></div>
+<div class="mi"><span class="mn">Pietro al Salmon*</span><span class="mp">$28</span><span class="md">penne, rose creamy tomato sauce, smoked salmon, dill and parmigiano reggiano</span></div>
+</div>
+<div class="msec"><h4>Entrees</h4>
+<div class="mi"><span class="mn">Salmon Tropical</span><span class="mp">$30</span><span class="md">salmon filet with basmati rice and sweet plantains</span></div>
+<div class="mi"><span class="mn">Mediterranean Salmon</span><span class="mp">$30</span><span class="md">salmon filet with basmati rice and roasted vegetables, lemon/dijon mustard</span></div>
+<div class="mi"><span class="mn">Tuna Steak*</span><span class="mp">$34</span><span class="md">filet of fish, roasted vegetables in sesame oil with basmati rice</span></div>
+<div class="mi"><span class="mn">Fish of the Day*</span><span class="mp">$34</span><span class="md">filet of fish, roasted vegetables and mushroom risotto</span></div>
+<div class="mi"><span class="mn">Organic Chicken Breast</span><span class="mp">$28</span><span class="md">free range chicken, arugula salad, cherry tomatoes, shaved parmesan with basmati rice</span></div>
+<div class="mi"><span class="mn">Churrasco*</span><span class="mp">$32</span><span class="md">grilled churrasco, chimichurri sauce with french fries</span></div>
+<div class="mi"><span class="mn">Filet Mignon*</span><span class="mp">$48</span><span class="md">pan seared 8 oz filet, barolo reduction sauce, mashed potatoes, spinach</span></div>
+</div>
+<div class="msec"><h4>Sides</h4>
+<div class="mi"><span class="mn">Roasted Vegetables</span><span class="mp">$7</span><span class="md">olive oil</span></div>
+<div class="mi"><span class="mn">French Fries</span><span class="mp">$7</span><span class="md">potato strips (+$3 parmesan truffle fries)</span></div>
+<div class="mi"><span class="mn">Plantains</span><span class="mp">$7</span><span class="md">deep fried</span></div>
+<div class="mi"><span class="mn">Mashed Potato</span><span class="mp">$7</span><span class="md">yukon potatoes, salt, butter, milk, nutmeg</span></div>
+<div class="mi"><span class="mn">Basmati Rice</span><span class="mp">$7</span><span class="md">delicate fragrant long-grain rice</span></div>
+<div class="mi"><span class="mn">Funghi Risotto</span><span class="mp">$9</span><span class="md">arborio rice, mushrooms</span></div>
+</div><p class="fine">*Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase the risk of food-borne illness, especially if you have certain medical conditions. Several menu items contain fish, shellfish, eggs, milk, soy and gluten. Inform your server if you have a food allergy.</p></div>
+<div class="pane p-l"><div class="msec"><h4>Starters</h4>
+<div class="mi"><span class="mn">Soup of the Day</span><span class="mp">$12</span></div>
+<div class="mi"><span class="mn">Tuna Tartare*</span><span class="mp">$16</span><span class="md">avocado, sesame oil, chives, ginger, sriracha and plantain chips</span></div>
+<div class="mi"><span class="mn">Tropical Ceviche*</span><span class="mp">$16</span><span class="md">shrimp and white fish infused with passion fruit</span></div>
+</div>
+<div class="msec"><h4>Salads</h4>
+<div class="mi"><span class="mn">Caesar Salad*</span><span class="mp">$14</span><span class="md">romaine, house made caesar and croutons, anchovies, parmesan (+$7 chicken or shrimp)</span></div>
+<div class="mi"><span class="mn">Caprese Salad</span><span class="mp">$14</span><span class="md">heirloom tomatoes, fresh mozzarella, basil, balsamic, e.v. olive oil</span></div>
+<div class="mi"><span class="mn">Indigo Chicken Salad</span><span class="mp">$18</span><span class="md">chicken, spring mix, cherry tomatoes, honey-cilantro dressing</span></div>
+</div>
+<div class="msec"><h4>Burgers &amp; Sandwiches</h4>
+<div class="mi"><span class="mn">Impossible Burger</span><span class="mp">$16</span><span class="md">made from plants, with french fries</span></div>
+<div class="mi"><span class="mn">Indigo Burger*</span><span class="mp">$16</span><span class="md">prime meat, arugula, tomatoes, pickled onions, brioche bun with french fries</span></div>
+<div class="mi"><span class="mn">8th Street Cuban Sandwich</span><span class="mp">$16</span><span class="md">black forest ham, roasted pork, swiss cheese, pickles, mustard with french fries</span></div>
+<div class="mi"><span class="mn">Grilled Chicken Sandwich</span><span class="mp">$16</span><span class="md">grilled chicken breast, lettuce, tomatoes, garlic alioli, baguette with french fries</span></div>
+</div>
+<div class="msec"><h4>Pizzas</h4>
+<div class="mi"><span class="mn">Luz Margherita Pizza</span><span class="mp">$16</span><span class="md">fresh tomato, mozzarella, basil, olive oil</span></div>
+<div class="mi"><span class="mn">Pepperoni Pizza</span><span class="mp">$17</span><span class="md">fresh tomato, mozzarella, olive oil, italian pepperoni</span></div>
+<div class="mi"><span class="mn">Serrano Pizza</span><span class="mp">$18</span><span class="md">shaved manchego cheese, serrano ham, micro arugula</span></div>
+</div>
+<div class="msec"><h4>Pastas</h4>
+<div class="mi"><span class="mn">Lasagne di Nonna</span><span class="mp">$18</span><span class="md">chef special lasagna</span></div>
+<div class="mi"><span class="mn">Bucatini al Pomodoro</span><span class="mp">$18</span><span class="md">tomatoes, onion, e.v. olive oil and fresh basil (+$7 chicken or shrimp)</span></div>
+<div class="mi"><span class="mn">Pietro al Salmon*</span><span class="mp">$22</span><span class="md">penne, rose creamy tomato sauce, smoked salmon, dill and parmigiano reggiano</span></div>
+</div>
+<div class="msec"><h4>Entrees</h4>
+<div class="mi"><span class="mn">Salmon Tropical</span><span class="mp">$24</span><span class="md">salmon filet with basmati rice and sweet plantains</span></div>
+<div class="mi"><span class="mn">Mediterranean Salmon</span><span class="mp">$24</span><span class="md">salmon filet with basmati rice and roasted vegetables</span></div>
+<div class="mi"><span class="mn">Fish of the Day*</span><span class="mp">$28</span><span class="md">filet of fish, roasted vegetables and mushroom risotto</span></div>
+<div class="mi"><span class="mn">Organic Chicken Breast</span><span class="mp">$22</span><span class="md">free range chicken, arugula salad, cherry tomatoes, shaved parmesan</span></div>
+<div class="mi"><span class="mn">Churrasco*</span><span class="mp">$26</span><span class="md">grilled churrasco, chimichurri sauce with french fries</span></div>
+<div class="mi"><span class="mn">Lunch Filet Mignon*</span><span class="mp">$28</span><span class="md">pan seared petite filet, barolo reduction sauce, mashed potatoes, spinach</span></div>
+</div>
+<div class="msec"><h4>Sides &amp; drinks</h4>
+<div class="mi"><span class="mn">Roasted Vegetables / Fries / Plantains / Mashed Potato / Basmati Rice</span><span class="mp">$7</span></div>
+<div class="mi"><span class="mn">Funghi Risotto</span><span class="mp">$9</span></div>
+<div class="mi"><span class="mn">Coffee</span><span class="mp">$5</span><span class="md">americano, cortadito, cappuccino, espresso, iced coffee</span></div>
+<div class="mi"><span class="mn">Juice</span><span class="mp">$5</span><span class="md">orange, apple, cranberry</span></div>
+<div class="mi"><span class="mn">Sodas</span><span class="mp">$4</span></div>
+<div class="mi"><span class="mn">Bottled water</span><span class="mp">$4</span><span class="md">and up; sparkling Saratoga from $8</span></div>
+</div><p class="fine">*Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase the risk of food-borne illness. Inform your server if you have a food allergy.</p></div>
+</div>
+</div></section>
+
+<section id="events"><div class="wrap">
+<div class="shead"><span class="num">03 / WAYS TO ENJOY</span><h2>Dine, host, order</h2></div>
+<div class="ways">
+<div class="way"><h3>Reserve a table</h3><p>Tables are booked through OpenTable on the restaurant's site. Tell the assistant the date, time and party size and it passes your request to the team.</p><a class="b" href="#" data-assist="book">Start a request</a></div>
+<div class="way"><h3>Plan an event</h3><p>In the heart of Brickell, Mosaico is the perfect place to host your next event, with special nights prepared by Chef Andres Revoredo.</p><a class="b alt" href="#" data-assist="events">Ask about events</a></div>
+<div class="way"><h3>Order online</h3><p>Online ordering is available for pickup or delivery. The site lists a $15 minimum, a $3 delivery fee and delivery in up to 60 minutes.</p><a class="b alt" href="#" data-assist="ordering">Ordering details</a></div>
+</div>
+</div></section>
+
+<section id="day" style="background:var(--con)"><div class="wrap">
+<div class="shead"><span class="num">04 / THE DAY</span><h2>From 7 am to late</h2></div>
+<div class="dp">
+<div><h3>Breakfast</h3><div class="t">Mon-Sat 7:00-11:30 am</div><p style="margin-top:8px">Hearty plates such as the Bistec "A caballo" (grilled skirt steak, fried farm egg, breakfast potatoes) and berry fluffy pancakes.</p></div>
+<div><h3>Lunch</h3><div class="t">Daily 11:30 am-2:30 pm</div><p style="margin-top:8px">Burgers, pizzas, pastas, salads and entrees; Sunday brunch runs 7:00 am-2:30 pm.</p></div>
+<div><h3>Dinner</h3><div class="t">Sun-Thu to 10:30 pm &middot; Fri-Sat to 11:30 pm</div><p style="margin-top:8px">Where the flavors of the Caribbean and the Mediterranean meet: Tropical Salmon, Lobster Bisque, Tuna Tartare.</p></div>
+<div><h3>Happy hour</h3><div class="t">Weekdays 5:00-7:00 pm</div><p style="margin-top:8px">At the cocktail bar: bold combinations of liquors, fruits and mixes.</p></div>
+</div>
+</div></section>
+
+<section id="visit"><div class="wrap">
+<div class="shead"><span class="num">05 / VISIT</span><h2>Find Mosaico</h2></div>
+<div class="visit">
+<div><p class="addr">145 SW 11th St<br>Miami, Florida 33130</p><p style="margin:12px 0">First floor of Hotel Indigo Miami Brickell | Atwell Suites.</p><p class="mono" style="font-size:14px">Phone: +1 (305) 860-3874<br>E-mail: contact@mosaicokitchenandbar.com</p><p style="margin-top:16px"><a class="b" href="#" data-assist="book">Reserve a table</a></p></div>
+<div class="faq">
+<details><summary>How do I book a table?</summary><p>The restaurant takes reservations through OpenTable. Here you can leave a request and the team will follow up.</p></details>
+<details><summary>Is there a vegan option?</summary><p>The Impossible Burger is made from plants. For allergies and other dietary needs, please tell your server.</p></details>
+<details><summary>Do you deliver?</summary><p>Yes, online ordering offers pickup and delivery, with a $15 minimum and a $3 delivery fee, up to 60 minutes.</p></details>
+<details><summary>Is parking available?</summary><p>The site does not say, so the team will confirm when you ask.</p></details>
+</div>
+</div>
+</div></section>
+
+<footer><div class="wrap">
+<div class="big">MOSAICO</div>
+Kitchen + Bar &middot; 145 SW 11th St, Miami, FL 33130 &middot; +1 (305) 860-3874 &middot; <a href="mailto:contact@mosaicokitchenandbar.com">contact@mosaicokitchenandbar.com</a>
+<div class="demo">Demo &middot; prepared by Gevorg Hovhannisyan</div>
+</div></footer>
+
+<script>
+/* Assistant core: knowledge base + fuzzy matcher + booking flow. Client-side only, sends nothing. */
+var Assistant=(function(){
+function norm(s){return String(s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9à-ɏ\s]/g,' ').replace(/\s+/g,' ').trim();}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[],c;if(Math.abs(m-n)>2)return 9;
+ for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;
+ for(i=1;i<=m;i++)for(j=1;j<=n;j++){c=a[i-1]===b[j-1]?0:1;d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);}
+ return d[m][n];}
+function tokScore(t,s){
+ if(t===s)return s.length+2;
+ if(s.length>=3&&t.indexOf(s)===0&&t.length-s.length<=4)return s.length+1;
+ if(t.length>=4&&s.indexOf(t)===0&&s.length-t.length<=3)return t.length;
+ if(s.length>=5&&t.length>=4){var L=Math.min(t.length,s.length);var e=lev(t.slice(0,Math.max(L,s.length-1)),s);if(e<=1||(s.length>=8&&lev(t,s)<=2))return s.length-1;}
+ return 0;}
+function build(C){
+ var KB=C.KB;
+ function score(q,e){
+  var qn=norm(q),toks=qn.split(' '),best=0,hits=0;
+  for(var i=0;i<e.k.length;i++){
+   var k=norm(e.k[i]),sc=0;
+   if(k.indexOf(' ')>-1){if((' '+qn+' ').indexOf(' '+k+' ')>-1)sc=k.length+4;else{
+     var kt=k.split(' ').filter(function(w){return w.length>=4;}),ok=0;for(var a=0;a<kt.length;a++){var b=0;for(var j=0;j<toks.length;j++)b=Math.max(b,tokScore(toks[j],kt[a])>0?1:0);ok+=b;}
+     if(kt.length>=2&&ok===kt.length)sc=k.length+1;}}
+   else{for(var j2=0;j2<toks.length;j2++){sc=Math.max(sc,tokScore(toks[j2],k));}}
+   if(sc>0){hits++;best=Math.max(best,sc);}
+  }
+  return best+(hits>1?hits*0.5:0);}
+ function find(q){
+  var bestE=null,bs=0;
+  for(var i=0;i<KB.length;i++){var s=score(q,KB[i]);if(KB[i].lowPri)s=s*0.9;if(s>bs){bs=s;bestE=KB[i];}}
+  return bs>=3.3?bestE:null;}
+ return {find:find,norm:norm,KB:KB};}
+
+function ui(C,M){
+ var d=document,st={step:-1,data:{}};
+ var btn=d.createElement('button');btn.className='as-btn';btn.setAttribute('aria-label',C.btnLabel||'Chat');btn.innerHTML='<span class="as-ic">'+(C.icon||'?')+'</span><span class="as-bt">'+(C.btnText||'Ask us')+'</span>';
+ var p=d.createElement('div');p.className='as-panel';p.setAttribute('role','dialog');
+ p.innerHTML='<div class="as-h"><div><b>'+C.title+'</b><small>'+C.sub+'</small></div><button class="as-x" aria-label="Close">&times;</button></div><div class="as-m"></div><div class="as-c"></div><form class="as-f"><input type="text" autocomplete="off" placeholder="'+C.placeholder+'"><button type="submit">'+(C.sendLabel||'Send')+'</button></form><div class="as-n">'+C.note+'</div>';
+ d.body.appendChild(btn);d.body.appendChild(p);
+ var m=p.querySelector('.as-m'),c=p.querySelector('.as-c'),f=p.querySelector('form'),inp=f.querySelector('input');
+ function say(t,who){var e=d.createElement('div');e.className='as-b '+(who||'bot');e.textContent=t;m.appendChild(e);m.scrollTop=m.scrollHeight;}
+ function chips(a){c.innerHTML='';(a||[]).forEach(function(t){var b=d.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){send(t);};c.appendChild(b);});}
+ function ask(){var s=C.flow[st.step];say(s.ask);chips(s.chips||(s.optional?['Skip']:[]));inp.placeholder=s.ph||C.placeholder;}
+ function startFlow(){st={step:0,data:{}};say(C.flowIntro);ask();}
+ function finish(){var L=[];C.flow.forEach(function(s){if(st.data[s.id])L.push(s.label+': '+st.data[s.id]);});st.step=-1;say(C.doneMsg+'\n\n'+L.join('\n'));chips(C.chipsAfter||C.chips0);inp.placeholder=C.placeholder;}
+ function stepIn(t){var s=C.flow[st.step],v=t.trim();
+  if(/^(cancel|stop|exit|quit|back)$/i.test(v)||v===(C.cancelWord||'Cancel')){st.step=-1;say(C.cancelMsg);chips(C.chips0);return;}
+  if(s.optional&&/^skip$/i.test(v))v='';
+  else if(s.kind==='phone'&&(v.replace(/\D/g,'').length<7)){say(C.badPhone);return;}
+  else if(s.kind==='email'&&!/^\S+@\S+\.\S+$/.test(v)){say(C.badEmail);return;}
+  else if(!v&&!s.optional){say(C.needValue);return;}
+  st.data[s.id]=v;st.step++;if(st.step>=C.flow.length)finish();else ask();}
+ function send(t){t=String(t).trim();if(!t)return;say(t,'me');inp.value='';
+  if(st.step>=0){stepIn(t);return;}
+  var e=M.find(t);
+  if(!e){say(C.fallback);chips(C.chips0);return;}
+  if(e.book){startFlow();return;}
+  say(e.a);chips(e.c||C.chips0);}
+ f.onsubmit=function(ev){ev.preventDefault();send(inp.value);};
+ function open(o){p.classList.toggle('open',o);btn.classList.toggle('hide',o);if(o&&!m.children.length){say(C.greet);chips(C.chips0);}if(o)setTimeout(function(){inp.focus();},50);}
+ btn.onclick=function(){open(true);};p.querySelector('.as-x').onclick=function(){open(false);};
+ window.openAssistant=function(w){open(true);if(w&&st.step<0)send(w==='book'?(C.bookChip||'Book'):w);};
+ d.addEventListener('click',function(ev){var t=ev.target.closest&&ev.target.closest('[data-assist]');if(t){ev.preventDefault();window.openAssistant(t.getAttribute('data-assist'));}});
+}
+return {build:build,ui:ui,init:function(C){var M=build(C);if(typeof document!=='undefined')ui(C,M);return M;}};
+})();
+if(typeof module!=='undefined')module.exports=Assistant;
+
+var CFG={
+title:'Mosaico assistant',sub:'Menu, hours, reservations',icon:'▦',btnText:'Ask Mosaico',
+placeholder:'Ask about menu, hours, reservations...',note:'Demo assistant. Allergies: always tell your server.',
+greet:'Welcome to Mosaico. I can answer questions about our menu, hours, events and ordering, or take a table request for the team.',
+fallback:'I do not have that detail, and I would rather not guess. The team can confirm: +1 (305) 860-3874 or contact@mosaicokitchenandbar.com. I can also take a table request.',
+chips0:['Reserve a table','Hours','Menu','Happy hour','Events','Order online','Location'],
+chipsAfter:['Hours','Menu','Location'],bookChip:'Reserve a table',
+flowIntro:'Gladly. A few quick details and I pass your request to the team (type "cancel" any time).',
+doneMsg:'Done! Your table request has been sent to the Mosaico team. They will confirm it with you (reservations are also bookable on OpenTable).',
+cancelMsg:'No problem, request cancelled.',cancelWord:'Cancel',badPhone:'Please type a phone number the team can reach, at least 7 digits.',badEmail:'Please type a valid e-mail.',needValue:'Please type an answer, or write "cancel" to stop.',
+flow:[
+{id:'date',label:'Date',ask:'Which date would you like?',ph:'e.g. Friday, Nov 7'},
+{id:'meal',label:'Meal',ask:'Which meal?',chips:['Breakfast','Sunday brunch','Lunch','Dinner','Happy hour']},
+{id:'time',label:'Time',ask:'What time? (Dinner is served from 5:30 pm)',ph:'e.g. 7:30 pm'},
+{id:'size',label:'Party size',ask:'For how many guests?',chips:['1-2','3-4','5-6','7+']},
+{id:'name',label:'Name',ask:'Name for the reservation?'},
+{id:'phone',label:'Phone',ask:'Phone number for confirmation?',kind:'phone'},
+{id:'note',label:'Note',ask:'Occasion or allergies the team should know about?',optional:true}
+],
+KB:[
+{id:'hi',lowPri:1,k:['hello','hi','hey','good evening','good morning'],a:'Hello and welcome to Mosaico! What can I help you with?',c:['Reserve a table','Hours','Menu']},
+{id:'book',book:1,k:['reserve','reservation','reservations','book','booking','table','book a table','opentable','open table','tables for','reservaton','resevation'],a:''},
+{id:'hours',k:['hours','open','opening','close','closing','closed','time','times','what time','when do you','schedule','late','sunday','saturday','weekend','houres','oppen'],a:'Breakfast: Mon-Sat 7:00-11:30 am. Sunday brunch: 7:00 am-2:30 pm. Lunch: daily 11:30 am-2:30 pm. Dinner: Sun-Thu 5:30-10:30 pm, Fri-Sat 5:30-11:30 pm. Happy hour: weekdays 5:00-7:00 pm.',c:['Reserve a table','Happy hour']},
+{id:'bfast',k:['breakfast','sunday brunch','brunch','morning','pancakes','eggs','bistec','a caballo','early','7 am','bruch','brekfast'],a:'Breakfast is served Mon-Sat 7:00-11:30 am and Sunday brunch runs 7:00 am-2:30 pm. The site highlights the Bistec "A caballo" (6 oz grilled skirt steak, fried farm egg, breakfast potatoes), scrambled eggs with serrano ham and berry fluffy pancakes with maplewood. The full breakfast menu is on the site\'s menu page, and the team can confirm details.',c:['Hours','Reserve a table']},
+{id:'happy',k:['happy hour','happy','cocktail hour','specials','drink specials','discount','deal'],a:'Happy hour is on weekdays from 5:00 to 7:00 pm. For what is on offer, please ask the team.',c:['Cocktails','Reserve a table']},
+{id:'cock',k:['cocktail','cocktails','bar','drinks','drink','wine','wines','beer','beers','liquor','spirits','sparkling','champagne','cocktales','coktail','alcohol'],a:'The cocktail bar serves daring concoctions of spirits, fruits and mixes designed to pair with the menu, plus fine wines, sparkling varieties, bottled beers and premium liquors. The drinks menu is on the site; the team can share the current list.',c:['Happy hour','Hours']},
+{id:'menu',k:['menu','food','eat','serve','serving','dishes','what do you serve','cuisine','kitchen','lunch','dinner','starter','starters','appetizer','appetizers','entree','entrees','mains','specialties','menue','meniu'],a:'Dinner (5:30 pm on): starters like Tuna Tartare, Tropical Ceviche, Lobster Bisque and Croquetas; salads; burgers and sandwiches; pizzas; pastas; entrees such as Salmon Tropical, Churrasco and Filet Mignon; sides. Lunch (11:30 am-2:30 pm) has a similar menu. See the Menu section above for every dish and price.',c:['Pizza and pasta','Seafood','Vegan options','Dessert','Hours']},
+{id:'pizza',k:['pizza','pizzas','pasta','pastas','lasagna','lasagne','bucatini','margherita','pepperoni','serrano','italian','salmon pasta','pietro'],a:'Pizzas: Luz Margherita, Pepperoni and Serrano (manchego, serrano ham, micro arugula). Pastas: Lasagne di Nonna, Bucatini al Pomodoro and Pietro al Salmon. Dinner prices are $22-24 for pizza and $22-28 for pasta; lunch is lower (see the menu).',c:['Menu','Reserve a table']},
+{id:'sea',k:['seafood','fish','salmon','tuna','shrimp','ceviche','lobster','bisque','tartare','sushi','fish of the day','seafod'],a:'Seafood: Shrimp Cocktail, Tuna Tartare, Tropical Ceviche, Lobster Bisque, Salmon Tropical, Mediterranean Salmon, Tuna Steak and the Fish of the Day.',c:['Menu','Allergies']},
+{id:'meat',k:['steak','filet','mignon','churrasco','beef','burger','burgers','chicken','cuban','sandwich','sandwiches','meat','indigo burger','ham'],a:'Meat and sandwiches: Filet Mignon (8 oz, barolo reduction), Churrasco with chimichurri, Organic Chicken Breast, the Indigo Burger, the 8th Street Cuban Sandwich and the Grilled Chicken Sandwich.',c:['Menu','Reserve a table']},
+{id:'vegan',k:['vegan','vegan burger','vegetarian','plant based','plant','impossible','veggie','meatless','no meat','vegitarian'],a:'The Impossible Burger is made from plants. Several dishes (Caprese Salad, Bucatini al Pomodoro, Margherita pizza, roasted vegetables) are described without meat, but please tell your server about your diet so the kitchen can confirm.',c:['Menu','Allergies']},
+{id:'allergy',k:['allergy','allergies','allergic','gluten','gluten free','nut','nuts','dairy','lactose','celiac','dietary','shellfish','kosher','halal','alergy','alergic'],a:'Several menu items contain fish, shellfish, eggs, milk, soy and gluten. Please inform your server about any food allergy. I do not have a full allergen chart, so for gluten-free, nut-free or other needs the team will confirm.',c:['Menu','Reserve a table']},
+{id:'dess',k:['dessert','desserts','sweet','cake','cheesecake','flan','ice cream','chocolate','postre','deserts'],a:'There is a desserts menu on the site. The online menu lists items such as Basque Cheesecake, Pistachio Cheesecake, Doña Ana\'s Flan and a Chocolate Layer Cake; the team will confirm what is available.',c:['Menu','Hours']},
+{id:'events',k:['event','events','party','private','celebration','birthday','wedding','corporate','group','large group','banquet','host','special night','anniversary','evnts','privat'],a:'Mosaico welcomes events in the heart of Brickell, with special nights prepared by Chef Andres Revoredo. For dates, capacity and menus, leave a request and the team will get back to you; the e-mail is contact@mosaicokitchenandbar.com.',c:['Reserve a table','Phone and e-mail']},
+{id:'order',k:['order','ordering','delivery','deliver','pickup','pick up','takeout','take out','to go','online order','minimum','delivery fee','room service','ordring','delievery'],a:'Online ordering is available for pickup or delivery. The site lists a $15.00 minimum order, a $3.00 delivery fee and delivery in up to 60 minutes. Note that online-order prices on the site can differ from the in-restaurant menu, so the team can confirm.',c:['Menu','Phone and e-mail']},
+{id:'loc',k:['where','address','location','located','directions','find you','hotel','indigo','atwell','brickell','street','sw 11th','map','adress','locaton','how to get'],a:'We are on the first floor of Hotel Indigo Miami Brickell | Atwell Suites, 145 SW 11th St, Miami, Florida 33130.',c:['Parking','Hours']},
+{id:'park',k:['parking','park','valet','garage','car','uber','metro','metromover'],a:'The site does not list parking details, so the team will confirm. You can ask at +1 (305) 860-3874.',c:['Phone and e-mail','Location']},
+{id:'phone',k:['phone','call','number','telephone','contact','email','e mail','mail','reach','whatsapp','phon'],a:'Phone: +1 (305) 860-3874. E-mail: contact@mosaicokitchenandbar.com.',c:['Reserve a table','Hours']},
+{id:'design',k:['design','interior','architecture','brutalism','brutalist','decor','ambiance','atmosphere','angel sanchez','sanchez colman','tequesta','concrete','history','about','story','vibe'],a:'The interior was curated by Angel Sanchez of Sanchez Colman and embraces Brutalism: raw, clean concrete, steel, glass and wood. The aesthetic echoes the legacy of the Tequesta people, who lived in the Brickell area for over 2,000 years.',c:['Chef','Menu']},
+{id:'chef',k:['chef','revoredo','andres','cook','cooks','who cooks','head chef'],a:'The kitchen is led by Chef Andres Revoredo, who prepares the special nights at Mosaico.',c:['Menu','Events']},
+{id:'price',k:['price','prices','cost','how much','expensive','cheap','affordable','pricey','budget','prise','dollar'],a:'Menu prices are shown in the Menu section. For example, at dinner pizzas are $22-24, pastas $22-28 and entrees $28-48; lunch dishes are lower. Prices on the site can change, so the team can confirm.',c:['Menu','Reserve a table']},
+{id:'kids',k:['kids','children','child','family','family friendly','baby','high chair','stroller','pets','dog','dogs'],a:'The site mentions a family brunch as a good fit for the room, but does not give details on kids\' menus or pets, so the team will confirm.',c:['Phone and e-mail','Reserve a table']},
+{id:'thanks',lowPri:1,k:['thanks','thank you','thx','great','perfect','bye','goodbye'],a:'My pleasure! See you at Mosaico.',c:['Reserve a table','Hours']}
+]};
+var __M=Assistant.init(CFG);
+</script>
+</body>
+</html>

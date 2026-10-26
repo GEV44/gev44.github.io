@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clinic4U Dental Clinic, Castle Street Dublin 2</title>
+<meta name="description" content="Family dental and beauty clinic at 3 Castle Street, Dublin 2. Emergency dentist, implants, orthodontics, hygiene, PRSI benefit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#68ccd1;--teal-d:#2a8f96;--ink:#0c3a3f;--ink2:#134e54;--cream:#f6f3ec;--paper:#fffdf8;--coral:#e8745a;--line:#d9d3c4;--mut:#5b6b6d;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Sora',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:16px;overflow-x:hidden}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3,.serif{font-family:'Cardo',Georgia,serif;font-weight:700;line-height:1.12}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.topbar{background:var(--ink);color:#d8f0f1;font-size:13px;padding:8px 0}
+.topbar .wrap{display:flex;gap:6px 22px;flex-wrap:wrap;justify-content:space-between}
+.topbar b{color:var(--teal)}
+header.nav{position:sticky;top:0;z-index:40;background:rgba(246,243,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:'Cardo',serif;font-size:25px;font-weight:700}
+.logo i{width:34px;height:34px;border-radius:50% 50% 50% 8px;background:var(--teal);display:grid;place-items:center;font-style:normal;color:var(--ink);font-size:18px}
+.logo em{color:var(--teal-d);font-style:normal}
+nav.links{display:none;gap:22px;font-size:14px}
+nav.links a{text-decoration:none;padding:6px 2px;border-bottom:2px solid transparent}
+nav.links a:hover{border-color:var(--teal)}
+.btn{display:inline-block;background:var(--ink);color:#fff;padding:12px 22px;border-radius:40px;text-decoration:none;font-weight:600;font-size:14px;border:0;cursor:pointer;font-family:inherit}
+.btn.teal{background:var(--teal);color:var(--ink)}
+.btn.coral{background:var(--coral);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.hero{padding:34px 0 20px}
+.hero-grid{display:grid;gap:28px}
+.kicker{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-d);font-weight:600;margin-bottom:12px}
+.hero h1{font-size:clamp(38px,9vw,70px);letter-spacing:-.01em}
+.hero h1 span{background:linear-gradient(transparent 62%,var(--teal) 62%)}
+.hero p.lead{font-size:17px;color:var(--mut);max-width:520px;margin:18px 0 24px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.hero-card{background:var(--ink);color:#e7f6f6;border-radius:28px;padding:26px;position:relative;overflow:hidden}
+.hero-card:before{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:var(--teal);opacity:.22}
+.hero-card h3{font-size:24px;color:#fff;margin-bottom:12px}
+.hrs{list-style:none;font-size:15px}
+.hrs li{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.2)}
+.hrs li:last-child{border:0}
+.hrs b{color:var(--teal)}
+.tag{display:inline-block;background:var(--coral);color:#fff;border-radius:30px;padding:3px 12px;font-size:12px;font-weight:600;margin-bottom:12px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:26px}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.stat b{font-family:'Cardo',serif;font-size:34px;display:block;color:var(--teal-d)}
+.stat small{color:var(--mut);font-size:13px;line-height:1.3;display:block}
+section{padding:54px 0}
+.sec-h{margin-bottom:26px;max-width:640px}
+.sec-h h2{font-size:clamp(30px,6vw,46px)}
+.sec-h p{color:var(--mut);margin-top:10px}
+.svc-grid{display:grid;gap:14px}
+.svc{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px;transition:.2s}
+.svc:hover{border-color:var(--teal-d);transform:translateY(-3px)}
+.svc .n{font-family:'Cardo',serif;font-size:14px;color:var(--teal-d);font-weight:700}
+.svc h3{font-size:21px;margin:4px 0 6px}
+.svc p{font-size:14px;color:var(--mut)}
+.svc .ask{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--ink);cursor:pointer;text-decoration:underline;text-decoration-color:var(--teal);text-underline-offset:4px;background:none;border:0;font-family:inherit;padding:0}
+.band{background:var(--ink);color:#e7f6f6}
+.prsi{display:grid;gap:22px;align-items:center}
+.prsi .big{font-family:'Cardo',serif;font-size:clamp(70px,22vw,140px);color:var(--teal);line-height:.9}
+.prsi h2{color:#fff;font-size:clamp(28px,5vw,40px)}
+.team{display:grid;gap:16px}
+.doc{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:8px;align-content:start}
+.doc .av{width:56px;height:56px;border-radius:50%;background:var(--teal);display:grid;place-items:center;font-family:'Cardo',serif;font-size:22px;font-weight:700}
+.doc h3{font-size:22px}
+.doc .role{color:var(--teal-d);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.doc p{font-size:14px;color:var(--mut)}
+.doc ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.doc li{font-size:12px;background:var(--paper);border-radius:20px;padding:3px 11px;border:1px solid var(--line)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab{border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:30px;padding:8px 16px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.tab.on{background:var(--ink);color:#fff}
+.plist{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:8px 20px}
+.pgrp{padding:14px 0;border-bottom:1px solid var(--line)}
+.pgrp:last-child{border:0}
+.pgrp h4{font-family:'Cardo',serif;font-size:18px;color:var(--teal-d);margin-bottom:6px}
+.prow{display:flex;justify-content:space-between;gap:14px;font-size:14px;padding:5px 0}
+.prow span:last-child{font-weight:600;white-space:nowrap}
+.note{font-size:12px;color:var(--mut);margin-top:12px}
+.faq details{background:var(--cream);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;padding:0 18px}
+.faq summary{cursor:pointer;padding:15px 0;font-weight:600;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faq summary:after{content:"+";color:var(--teal-d);font-size:20px;line-height:1}
+.faq details[open] summary:after{content:"\2212"}
+.faq details p{padding:0 0 16px;color:var(--mut);font-size:14px}
+.contact{display:grid;gap:16px}
+.ccard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.ccard h3{font-size:22px;margin-bottom:10px}
+.ccard p{font-size:15px;margin:5px 0}
+.ccard a{color:var(--teal-d);font-weight:600}
+footer{background:var(--ink);color:#a9d1d3;padding:28px 0 90px;font-size:13px;text-align:center}
+footer b{color:#fff}
+#aw-btn{position:fixed;right:16px;bottom:16px;z-index:90;background:var(--coral);color:#fff;border:0;border-radius:40px;padding:14px 20px;font-family:inherit;font-weight:600;font-size:14px;cursor:pointer;box-shadow:0 8px 24px rgba(12,58,63,.35)}
+#aw{position:fixed;right:12px;bottom:12px;z-index:100;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:var(--paper);border-radius:22px;box-shadow:0 18px 60px rgba(12,58,63,.4);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--line)}
+#aw.open{display:flex}
+.aw-h{background:var(--ink);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+.aw-h b{font-family:'Cardo',serif;font-size:19px}
+.aw-h small{display:block;color:var(--teal);font-size:11px}
+.aw-h button{background:none;border:0;color:#fff;font-size:24px;cursor:pointer;line-height:1}
+#aw-log{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:9px;background:var(--cream)}
+.m{max-width:86%;padding:10px 13px;border-radius:16px;font-size:14px;line-height:1.5;white-space:pre-line}
+.m.b{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--teal);color:var(--ink);align-self:flex-end;border-bottom-right-radius:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 0;background:var(--cream);max-height:96px;overflow-y:auto}
+.chip{border:1.5px solid var(--teal-d);background:#fff;color:var(--ink);border-radius:20px;padding:6px 12px;font-size:12.5px;font-family:inherit;cursor:pointer}
+.chip:hover{background:var(--teal)}
+.aw-f{display:flex;gap:8px;padding:10px 12px;background:var(--cream)}
+.aw-f input{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:30px;padding:10px 14px;font-family:inherit;font-size:14px;background:#fff}
+.aw-f button{border:0;background:var(--ink);color:#fff;border-radius:30px;padding:0 18px;font-family:inherit;font-weight:600;cursor:pointer}
+@media(min-width:760px){
+nav.links{display:flex}
+.hero-grid{grid-template-columns:1.25fr .85fr;align-items:center}
+.stats{grid-template-columns:repeat(4,1fr)}
+.svc-grid{grid-template-columns:repeat(3,1fr)}
+.team{grid-template-columns:repeat(3,1fr)}
+.prsi{grid-template-columns:.7fr 1.3fr}
+.contact{grid-template-columns:1fr 1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span><b>Emergency dentist</b> &middot; call 01 476 3949 or 087 397 7779</span><span>Mon&ndash;Sat 10:00&ndash;18:00 &middot; Sun 10:00&ndash;16:00</span></div></div>
+<header class="nav"><div class="wrap">
+<a class="logo" href="#top"><i>&#10022;</i>Clinic<em>4U</em></a>
+<nav class="links"><a href="#services">Dental</a><a href="#beauty">Beauty</a><a href="#team">Team</a><a href="#prices">Prices</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<button class="btn teal" onclick="AW.open('book')">Book now</button>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap hero-grid">
+<div>
+<span class="kicker">Family dental &amp; beauty &middot; Castle Street, Dublin 2</span>
+<h1>Your first choice <span>emergency dentist</span> in Dublin.</h1>
+<p class="lead">A family dental practice in the heart of Dublin, caring for patients of all ages with general and cosmetic treatment. About 20 years of experience, 50k patients seen, and staff who speak your language.</p>
+<div class="cta-row"><button class="btn coral" onclick="AW.open('book')">Book an appointment</button><a class="btn ghost" href="tel:014763949">Call 01 476 3949</a></div>
+</div>
+<aside class="hero-card">
+<span class="tag">Open on Sundays</span>
+<h3>Clinic hours</h3>
+<ul class="hrs"><li><span>Monday &ndash; Saturday</span><b>10:00 &ndash; 18:00</b></li><li><span>Sunday</span><b>10:00 &ndash; 16:00</b></li><li><span>Bank holidays</span><b>11:00 &ndash; 18:00</b></li></ul>
+<p style="font-size:13px;margin-top:12px;color:#a9d1d3">3 Castle Street, Dublin 2, D02 F950</p>
+</aside>
+</div>
+<div class="wrap"><div class="stats">
+<div class="stat"><b>20</b><small>years of experience and continued practice</small></div>
+<div class="stat"><b>50k</b><small>patients visited our clinics so far</small></div>
+<div class="stat"><b>100</b><small>treatments in our offer</small></div>
+<div class="stat"><b>4.8</b><small>Google rating from 375 reviews</small></div>
+</div></div>
+</div>
+
+<section id="services"><div class="wrap">
+<div class="sec-h"><span class="kicker">Dental</span><h2>Everything for the whole family, under one roof</h2><p>Tap a card to ask the assistant how we handle it.</p></div>
+<div class="svc-grid" id="svcgrid"></div>
+</div></section>
+
+<section class="band" id="prsi"><div class="wrap prsi">
+<div class="big">&euro;15</div>
+<div><span class="kicker" style="color:var(--teal)">PRSI Dental Benefit</span><h2>Free exam and a &euro;15 scale &amp; polish, if you qualify</h2>
+<p style="margin:12px 0 18px;color:#c4e3e4">Have you claimed your Dental Treatment Benefit under the PRSI scheme? We check and confirm whether you are eligible for your free exam and a dental cleaning at &euro;15.</p>
+<button class="btn teal" onclick="AW.ask('PRSI benefit')">Ask about PRSI</button></div>
+</div></section>
+
+<section id="beauty"><div class="wrap">
+<div class="sec-h"><span class="kicker">Beauty</span><h2>Facial aesthetics, done by a dental surgeon</h2><p>Lip fillers, anti-wrinkle injections and Profhilo, for women and men. Aesthetic treatments are performed by oral surgeon Dr Laura Oponowicz, qualified through the Irish Aesthetic Academy.</p></div>
+<div class="svc-grid">
+<div class="svc"><span class="n">01</span><h3>Lip enhancement</h3><p>Hyaluronic acid fillers. About 20 minutes; results last 6&ndash;8 months. 0.5 ml &euro;195, 1 ml &euro;295, 2 ml &euro;500.</p></div>
+<div class="svc"><span class="n">02</span><h3>Anti-wrinkle injections</h3><p>For women and for men. 1 area &euro;180, 2 areas &euro;295, 3 areas &euro;325.</p></div>
+<div class="svc"><span class="n">03</span><h3>Profhilo</h3><p>Has its own page on the Clinic4U site. The team will advise you at a consultation.</p><button class="ask" onclick="AW.ask('Profhilo')">Ask the assistant</button></div>
+</div>
+</div></section>
+
+<section id="team" style="background:var(--paper);border-block:1px solid var(--line)"><div class="wrap">
+<div class="sec-h"><span class="kicker">Meet the team</span><h2>Specialists, not just generalists</h2></div>
+<div class="team">
+<div class="doc"><div class="av">LO</div><span class="role">Oral surgery &amp; implantology</span><h3>Dr Laura Oponowicz</h3><p>Graduated with honours from the University of Madrid in 2018, then a Master's in Oral Surgery, Implantology and Dental Prosthesis in Madrid. Also trained in facial aesthetics at the Irish Aesthetic Academy (2019).</p><ul><li>Implant surgery</li><li>Surgical extractions</li><li>Facial aesthetics</li><li>Clear aligners</li></ul></div>
+<div class="doc"><div class="av">SB</div><span class="role">Dental surgery specialist</span><h3>Dr Sani Bello Dangaji</h3><p>Qualified in 2005 (Donetsk State Medical University) with a specialisation in oral and maxillofacial surgery. Practising in Ireland since 2022.</p><ul><li>Wisdom teeth</li><li>Impacted teeth</li><li>Implants</li></ul></div>
+<div class="doc"><div class="av">HS</div><span class="role">Orthodontist</span><h3>Dr Hadil Saidam</h3><p>Orthodontic specialist at Clinic4U since 2022, a graduate of Grigore T. Popa University, Romania, with three years of hospital training.</p><ul><li>Metal &amp; ceramic braces</li><li>Clear aligners</li><li>Removable appliances</li></ul></div>
+</div>
+</div></section>
+
+<section id="prices"><div class="wrap">
+<div class="sec-h"><span class="kicker">Price list</span><h2>Clear prices, published</h2><p>Fees from the current Clinic4U price list. Many treatments are eligible for a 20% reduction with the Med 2 tax form.</p></div>
+<div class="tabs" id="ptabs"></div>
+<div class="plist" id="plist"></div>
+<p class="note">Fees vary with case complexity; a detailed estimate follows your consultation and diagnostic assessment. Pay later with Humm instalments.</p>
+</div></section>
+
+<section id="faq" style="background:var(--paper);border-block:1px solid var(--line)"><div class="wrap">
+<div class="sec-h"><span class="kicker">FAQ</span><h2>Quick answers</h2></div>
+<div class="faq" id="faqbox"></div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<div class="sec-h"><span class="kicker">Find us</span><h2>Castle Street, in the heart of Dublin</h2></div>
+<div class="contact">
+<div class="ccard"><h3>Visit</h3><p>Clinic4U<br>3 Castle Street<br>Dublin 2, D02 F950</p><p>Parking options are available near the clinic.</p></div>
+<div class="ccard"><h3>Call or write</h3><p><a href="tel:014763949">01 476 3949</a></p><p><a href="tel:0873977779">087 397 7779</a> (also on WhatsApp)</p><p><a href="mailto:clinic4u.ie@gmail.com">clinic4u.ie@gmail.com</a></p></div>
+<div class="ccard"><h3>Hours</h3><p>Mon&ndash;Sat 10:00&ndash;18:00<br>Sunday 10:00&ndash;16:00<br>Bank holidays 11:00&ndash;18:00</p><p>Website languages: English, Portugu&ecirc;s, Polski, &#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;, Espa&ntilde;ol.</p></div>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap"><p><b>Clinic4U</b> &middot; 3 Castle Street, Dublin 2 &middot; 01 476 3949</p><p style="margin-top:6px">Demo &middot; prepared by Gevorg Hovhannisyan</p></div></footer>
+
+<button id="aw-btn" onclick="AW.open()">&#128172; Ask Clinic4U</button>
+<div id="aw" role="dialog" aria-label="Clinic4U assistant">
+<div class="aw-h"><div><b>Clinic4U assistant</b><small>Answers 24/7 &middot; the team confirms everything</small></div><button onclick="AW.close()" aria-label="Close">&times;</button></div>
+<div id="aw-log"></div>
+<div class="chips" id="aw-chips"></div>
+<form class="aw-f" id="aw-form"><input id="aw-in" autocomplete="off" placeholder="Type your question..."><button>Send</button></form>
+</div>
+<script>
+/*KB-START*/
+var PRICES=[
+ {tab:"General",groups:[
+  {t:"Examinations & X-rays",r:[["Child examination","Free"],["Small X-ray","€30"],["Full mouth X-ray (OPG)","€50"],["Cephalometric X-ray","€80"],["Emergency appointment","€80"],["CBCT scan","€150"]]},
+  {t:"Dental hygiene",r:[["PRSI scale & polish","€15"],["Scale & polish","€90"],["Cleaning, polishing & AirSanding","€120"],["Teeth whitening (home kit)","€280"],["Whitening (in-clinic)","€350"],["Periodontal treatment (per quadrant)","€150"]]},
+  {t:"Fillings & restorations",r:[["Zinc oxide medication filling","€60"],["Temporary filling","€80"],["Back tooth filling","from €150"],["Front tooth filling","from €120"],["Composite bonding","from €280"],["Ceramic veneer","€650"],["Inlay / onlay","€750"],["Post and core","€250"]]},
+  {t:"Root canal treatment",r:[["Specialist root canal consultation","€50"],["Emergency root canal treatment","from €250"],["Front tooth","from €550"],["Premolar","from €650"],["Molar","from €750"],["Microscopic: anterior / premolar / molar","from €500 / 700 / 900"],["Retreatment: anterior / premolar / molar","from €650 / 800 / 1000"]]},
+  {t:"Crowns & bridges",r:[["Crown recementation","€80"],["Temporary crown","€200"],["Metal-porcelain crown","from €750"],["Zirconia / e.max / Empress crown","€850"],["Bridge (per crown)","€850"],["Maryland bridge","€1200"]]},
+  {t:"Tooth extraction",r:[["Oral surgery specialist consultation","€50"],["Milk tooth extraction","from €80"],["Simple extraction","€150"],["Surgical extraction","from €250"],["Non-surgical wisdom tooth removal","from €300"],["Surgical wisdom tooth removal","from €350"]]},
+  {t:"Dentures",r:[["Add 1 tooth to existing denture","€200"],["Quick denture repair","€150"],["Repair with impressions","€200"],["Acrylic temporary 1-tooth denture","from €250"],["Flexible dentures","from €800"],["Metal frame / cobalt-chrome","from €1000"],["Full upper and lower dentures","from €1500"]]}
+ ]},
+ {tab:"Orthodontics",groups:[
+  {t:"Consultation & records",r:[["Ortho consultation","€50"],["Ortho records (scans + photos)","€100"],["OPG + cephalometric exam","€100"]]},
+  {t:"Braces & retainers",r:[["Fixed retainer (per arch)","from €200"],["Removable retainer (per arch)","€150"],["Fixed retainer repair","€50–100"],["Re-bonding one bracket","€30"],["Control visit, removable appliances","€60"],["Removing braces + retainers (per arch)","€250"],["Clear braces, one arch","€300"],["Clear braces, two arches","€700"],["Metal braces bonding","from €600"],["Functional appliance","€800"]]},
+  {t:"Clear aligners",r:[["Mild case","from €4000"],["Moderate case","from €4300"],["Complex case","from €4600"]]}
+ ]},
+ {tab:"Implants & surgery",groups:[
+  {t:"Implant surgery",r:[["Surgical specialist consultation","€50"],["Single tooth implant","from €850"],["Implant crown","from €850"],["2nd stage surgery (per quadrant)","€80"],["Bone grafting","from €450"],["Sinus lift (closed)","from €500"],["Lateral sinus tissue & grafting","from €1200"],["PRF (platelet rich fibrin)","from €1200"],["Apicectomy / root & surgery","from €300"],["Frenectomy","from €400"],["Root end surgery","from €700"]]}
+ ]},
+ {tab:"Beauty",groups:[
+  {t:"Facial aesthetics",r:[["Anaesthetic injection","€50"],["Anti-wrinkle, 1 area","€180"],["Anti-wrinkle, 2 areas","€295"],["Anti-wrinkle, 3 areas","€325"],["Lip enhancement 0.5 ml","€195"],["Lip enhancement 1 ml","€295"],["Lip enhancement 2 ml","€500"]]}
+ ]}
+];
+var SERVICES=[
+ ["General dentistry","Check-ups and a plan for keeping your whole mouth healthy.","general dentistry"],
+ ["Dental hygiene","Scale & polish, AirSanding and professional whitening.","hygiene"],
+ ["Fillings & restorations","Front and back fillings, bonding, veneers, inlays.","fillings"],
+ ["Root canal treatment","Emergency, standard and microscopic root canals.","root canal"],
+ ["Dental implants","Single tooth to full-arch, with Dr Laura or Dr Sani.","implants"],
+ ["Orthodontics","Braces, retainers and clear aligners with Dr Hadil.","braces"],
+ ["Crowns, bridges & veneers","Colour-matched restorations for repaired teeth.","crowns"],
+ ["Tooth extraction","Simple, surgical and wisdom teeth, with post-care advice.","extraction"],
+ ["Dentures","Full, partial and flexible dentures, plus repairs.","dentures"]
+];
+var FAQ=[
+ ["Do you offer emergency dental care?","Yes, for patients of all ages with fast response times. Call 01 476 3949 or 087 397 7779."],
+ ["Do you treat children?","Yes. We care for patients of all ages, and a child examination is free."],
+ ["Can I book online?","Yes, through the Book Online page of the Clinic4U website, or by phone."],
+ ["What should I bring to my first appointment?","Your ID, any relevant medical history and a list of current medications."],
+ ["Is there parking?","Yes, there are parking options near the clinic."],
+ ["Do you speak other languages?","Yes, the staff can communicate in several languages, and the website is available in English, Português, Polski, Русский and Español."],
+ ["Are your procedures painful?","We use modern techniques and anaesthesia to keep every procedure as comfortable as possible."],
+ ["How often should I see a dentist?","Every six months for a check-up and cleaning is recommended."],
+ ["How long does a crown take?","Typically two visits over a couple of weeks."],
+ ["Can I pay in instalments?","Yes, you can pay later with Humm and split your payments."]
+];
+var CONTACT="Clinic4U, 3 Castle Street, Dublin 2, D02 F950.\nPhone: 01 476 3949 or 087 397 7779 (WhatsApp on the mobile).\nEmail: clinic4u.ie@gmail.com";
+var HOURS="Monday to Saturday 10:00-18:00\nSunday 10:00-16:00\nBank holidays 11:00-18:00";
+var BOOKHINT="Want me to start a booking request? Tap \"Book a visit\".";
+function pr(tab,g){var o="";PRICES.forEach(function(p){p.groups.forEach(function(x){if(x.t.toLowerCase().indexOf(g)>-1){x.r.forEach(function(r){o+=r[0]+": "+r[1]+"\n"})}})});return o.trim()}
+var INTENTS=[
+ {id:"medical",kw:["swollen","swelling","bleeding","bleed","infection","infected","diagnose","diagnosis","pregnant","pregnancy","allergy","allergic","medication","medicine","antibiotic","abscess","fever","symptom","what is wrong","is it serious","cancer","lump","numb","loose tooth","knocked out","broken tooth","cracked"],
+  a:"I can't give medical advice or diagnose, that has to come from a dentist. For anything urgent, call 01 476 3949 or 087 397 7779 right away, and the team will advise you. If you have trouble breathing or swallowing, or severe swelling of the face, call 999 or 112.",chips:["Emergency dentist","Book a visit"]},
+ {id:"emergency",kw:["emergency","urgent","urgently","asap","toothache","tooth ache","pain tonight","right now","today appointment","same day","walk in","walk ins","walk-in","immediately"],
+  a:"Yes, Clinic4U offers emergency dental care for patients of all ages, with fast response times. Call 01 476 3949 or 087 397 7779 straight away. An emergency appointment is €80 (examination fee on the price list), and an emergency root canal starts from €250.",chips:["Opening hours","Where are you?","Book a visit"]},
+ {id:"hours",kw:["hours","open","opening","close","closing","when are you","what time","schedule","timetable","working time"],
+  a:"Opening hours:\n"+HOURS,chips:["Open on Sunday?","Where are you?","Book a visit"]},
+ {id:"sunday",kw:["sunday","sundays","weekend","saturday","sat"],a:"Yes, we are open on Sundays 10:00-16:00, and Monday to Saturday 10:00-18:00.",chips:["Bank holidays","Book a visit"]},
+ {id:"bankhol",kw:["bank holiday","bank holidays","holiday","holidays","public holiday","christmas","easter"],a:"On bank holidays the clinic is open 11:00-18:00. For a specific date, the team will confirm.",chips:["Opening hours","Book a visit"]},
+ {id:"location",kw:["where","address","location","located","find you","directions","map","castle street","dublin 2","how to get","bus","luas","city centre","centre","street"],
+  a:"We are at 3 Castle Street, Dublin 2, D02 F950, in Dublin city centre. There are parking options near the clinic.",chips:["Parking","Phone number","Opening hours"]},
+ {id:"parking",kw:["parking","park","car","drive"],a:"Yes, there are convenient parking options near the clinic. The team can tell you the nearest one when you book.",chips:["Where are you?","Book a visit"]},
+ {id:"phone",kw:["phone","call","telephone","number","contact","reach","whatsapp","mobile","email","e-mail","mail","write to"],
+  a:CONTACT,chips:["Opening hours","Book a visit"]},
+ {id:"languages",kw:["language","languages","english","russian","polish","portuguese","spanish","speak","polski","russkiy","espanol","portugues"],
+  a:"Our staff can communicate in several languages, and the Clinic4U website is available in English, Português, Polski, Русский and Español. Tell the team which language you prefer when booking.",chips:["Book a visit"]},
+ {id:"kids",kw:["child","children","kid","kids","baby","toddler","teen","milk tooth","paediatric","pediatric"],
+  a:"Yes, we treat patients of all ages. A child examination is free, and a milk tooth extraction starts from €80 if it is needed.",chips:["Book a visit","Prices"]},
+ {id:"prsi",kw:["prsi","dental benefit","treatment benefit","dtbs","social insurance","free exam","free examination"],
+  a:"If you qualify for the PRSI Dental Treatment Benefit, you get a free exam and a scale & polish for €15. The team checks and confirms your eligibility, there is a PRSI form on the Clinic4U site (it asks for your PPS number, so give it to the clinic only).",chips:["Prices","Book a visit"]},
+ {id:"med2",kw:["med 2","med2","tax relief","tax form","tax refund","reduction","20%","discount","revenue"],
+  a:"Many treatments, such as fillings, root canals, crowns, bridges, extractions and orthodontics, are eligible for a 20% reduction with the Med 2 tax form. Ask the team how to use it.",chips:["Prices","Payment plans"]},
+ {id:"humm",kw:["humm","instalment","instalments","installment","installments","pay later","payment plan","payment plans","finance","financing","split payment","afford","pay in parts","card","cash","pay","payment"],
+  a:"You can pay later with Humm and split the cost of treatment into instalments. Ask the team for the details that apply to your treatment.",chips:["Prices","Book a visit"]},
+ {id:"price",kw:["price","prices","cost","costs","how much","fee","fees","pricing","charge","expensive","cheap","affordable","rates","price list","quote","estimate"],
+  a:"Our price list is published on the site (see the Prices section). A few common ones:\nChild exam: free\nSmall X-ray: €30\nScale & polish: €90\nSimple extraction: €150\nSingle tooth implant: from €850\n\nFees vary with complexity, and you get a detailed estimate after the consultation. Which treatment are you interested in?",chips:["Implants","Braces","Whitening","Root canal"]},
+ {id:"implants",kw:["implant","implants","missing tooth","missing teeth","titanium","all on","full set","sinus lift","bone graft","bone grafting"],
+  a:"Dental implants are a long-term solution for missing teeth: a titanium post goes into the jawbone and is topped with a crown. Our implant surgery is led by Dr Laura Oponowicz and Dr Sani Bello Dangaji.\n"+pr("","implant surgery").split("\n").slice(0,5).join("\n")+"\nThe surgical specialist consultation is €50.",chips:["Prices","Book a visit"]},
+ {id:"ortho",kw:["braces","brace","orthodontic","orthodontics","orthodontist","aligner","aligners","invisalign","clear aligners","retainer","retainers","crooked","crowded","straighten","straight teeth","bite"],
+  a:"Dr Hadil Saidam is our orthodontist, offering metal and ceramic braces, removable appliances, retainers and clear aligners for all ages. The ortho consultation is €50. Clear aligners start from €4000 (mild case), metal braces bonding from €600. Eligible for the Med 2 20% reduction.",chips:["Prices","Book a visit"]},
+ {id:"whitening",kw:["whitening","whiten","white teeth","whiter","bleaching","bleach","stains","yellow","airsanding","air sanding","cosmetic"],
+  a:"Teeth whitening is safe and done under the supervision of a dental professional. Home kit €280, in-clinic whitening €350. Cleaning, polishing & AirSanding is €120.",chips:["Hygiene","Book a visit"]},
+ {id:"hygiene",kw:["hygiene","hygienist","scale","polish","scaling","cleaning","clean","plaque","tartar","gum","gums","periodontal","gum disease","checkup","check-up","check up","exam","examination"],
+  a:"A hygiene visit includes professional cleaning to remove plaque and tartar, polishing, and a check-up. Scale & polish €90 (€15 with PRSI benefit if you qualify), cleaning, polishing & AirSanding €120. Periodontal treatment is €150 per quadrant. We recommend a visit every six months.",chips:["PRSI benefit","Book a visit"]},
+ {id:"root",kw:["root canal","root canals","rootcanal","endodontic","pulp","nerve","retreatment","microscopic"],
+  a:"A root canal removes infected pulp, cleans the canals and seals them. Specialist consultation €50; front tooth from €550, premolar from €650, molar from €750; emergency root canal from €250. Microscopic and retreatment options also exist. Fees depend on complexity.",chips:["Emergency dentist","Book a visit"]},
+ {id:"extraction",kw:["extraction","extract","extractions","pull","remove tooth","wisdom","wisdom tooth","wisdom teeth","impacted","tooth removal","removal"],
+  a:"We do simple extractions (€150), surgical extractions (from €250) and wisdom tooth removal (non-surgical from €300, surgical from €350). Dr Sani Bello Dangaji focuses on wisdom and impacted teeth. Post-care instructions are provided. Consultation with the oral surgery specialist is €50.",chips:["Book a visit","Prices"]},
+ {id:"fillings",kw:["filling","fillings","cavity","cavities","decay","caries","composite","bonding","restoration","restorations","inlay","onlay","tooth coloured","white filling"],
+  a:"Fillings are the first line of defence against tooth decay. We can also replace old fillings with newer, tooth-coloured ones. Front tooth fillings from €120, back tooth from €150, composite bonding from €280.",chips:["Prices","Book a visit"]},
+ {id:"crowns",kw:["crown","crowns","bridge","bridges","veneer","veneers","cap","caps","zirconia","emax","e.max","porcelain"],
+  a:"Crowns cover a single damaged tooth, bridges replace missing teeth by anchoring to neighbours, and veneers are thin shells for the front of teeth. A crown typically takes two visits over a couple of weeks. Zirconia/e.max crown €850, metal-porcelain from €750, ceramic veneer €650.",chips:["Prices","Book a visit"]},
+ {id:"dentures",kw:["denture","dentures","false teeth","partial","plate","flexible denture","repair denture"],
+  a:"We make full, partial and flexible dentures and repair existing ones. Quick repairs €150, flexible dentures from €800, full upper and lower from €1500.",chips:["Prices","Book a visit"]},
+ {id:"xray",kw:["xray","x-ray","x ray","opg","cbct","scan","cephalometric","radiograph"],
+  a:"Small X-ray €30, full mouth X-ray (OPG) €50, cephalometric X-ray €80, CBCT scan €150.",chips:["Prices","Book a visit"]},
+ {id:"lips",kw:["lip","lips","filler","fillers","dermal","lip filler","lip enhancement"],
+  a:"Lip enhancement with hyaluronic acid fillers takes about 20 minutes and lasts 6-8 months. 0.5 ml €195, 1 ml €295, 2 ml €500. Performed by oral surgeon Dr Laura Oponowicz, trained at the Irish Aesthetic Academy.",chips:["Anti-wrinkle","Book a visit"]},
+ {id:"wrinkle",kw:["wrinkle","wrinkles","anti-wrinkle","antiwrinkle","botox","injections","injection","frown","forehead","lines","anti ageing","anti aging","men beauty","for men","for women"],
+  a:"Anti-wrinkle injections are available for women and for men: 1 area €180, 2 areas €295, 3 areas €325. The team will advise on suitability at a consultation.",chips:["Lip fillers","Book a visit"]},
+ {id:"profhilo",kw:["profhilo","skin booster","skin","hydration","beauty","aesthetic","aesthetics","facial"],
+  a:"Profhilo and other facial aesthetics are offered by Dr Laura Oponowicz. Pricing for Profhilo is not on the list I have, the team will confirm it. Anti-wrinkle and lip filler prices are published.",chips:["Lip fillers","Anti-wrinkle","Book a visit"]},
+ {id:"team",kw:["doctor","doctors","who","team","staff","laura","sani","hadil","surgeon","specialist","experience","qualified","qualification","oponowicz","dangaji","saidam"],
+  a:"The clinic team:\nDr Laura Oponowicz, oral surgery & implantology, also facial aesthetics.\nDr Sani Bello Dangaji, dental surgery specialist (wisdom and impacted teeth, implants).\nDr Hadil Saidam, orthodontist.\nAbout 20 years of experience and 50k patients seen.",chips:["Implants","Braces","Book a visit"]},
+ {id:"pain",kw:["pain","painful","hurt","hurts","anaesthesia","anesthesia","anesthetic","anaesthetic","scared","afraid","fear","nervous","anxious","comfortable","gentle"],
+  a:"We aim to make every procedure as comfortable as possible, using modern techniques and anaesthesia, with gentle care. If you are anxious, tell the team when you book so they can plan for you.",chips:["Book a visit","Team"]},
+ {id:"first",kw:["first visit","first appointment","bring","what to bring","new patient","register","registration","id","documents","first time"],
+  a:"For your first appointment please bring your ID, any relevant medical history and a list of your current medications.",chips:["Book a visit","Opening hours"]},
+ {id:"frequency",kw:["how often","every six months","regular","six months","routine"],a:"Visit the dentist every six months for check-ups and cleaning, and brush twice daily, floss and use mouthwash at home.",chips:["Hygiene","Book a visit"]},
+ {id:"general",kw:["general dentistry","dental care","dental services","services","treatments","what do you offer"],
+  a:"We offer general dentistry, hygiene, fillings and restorations, root canal treatment, implants, orthodontics, crowns/bridges/veneers, extractions and dentures, plus facial aesthetics (lip fillers, anti-wrinkle, Profhilo).",chips:["Implants","Braces","Whitening","Prices"]},
+ {id:"book",kw:["book","booking","appointment","appointments","reserve","reservation","schedule me","make an appointment","see a dentist","register me","visit"],
+  a:"Happy to help. Tap \"Book a visit\" and I will take a few details for the team.",chips:["Book a visit"],action:"book"},
+ {id:"hello",kw:["hello","hi","hey","good morning","good evening","good afternoon","hiya","dia duit"],a:"Hello! I am the Clinic4U assistant. I can answer questions about treatments, prices, hours and location, or start a booking request for the team.",chips:["Book a visit","Prices","Opening hours","Emergency dentist"]},
+ {id:"thanks",kw:["thanks","thank you","thx","cheers","grand","great"],a:"You are welcome! Anything else I can help with?",chips:["Book a visit","Opening hours"]}
+];
+function norm(s){return String(s).toLowerCase().replace(/[’']/g,"'").replace(/[^a-z0-9%Ѐ-ӿ' -]+/g," ").replace(/\s+/g," ").trim()}
+function stem(w){w=w.replace(/'s$/,"");if(w.length>5&&/ies$/.test(w))return w.slice(0,-3)+"y";if(w.length>5&&/ing$/.test(w))return w.slice(0,-3);if(w.length>4&&/(ed|es)$/.test(w))return w.slice(0,-2);if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))return w.slice(0,-1);return w}
+function lev(a,b){if(a===b)return 0;if(a.length===b.length){var df=[];for(var z=0;z<a.length;z++)if(a[z]!==b[z])df.push(z);if(df.length===2&&df[1]===df[0]+1&&a[df[0]]===b[df[1]]&&a[df[1]]===b[df[0]])return 1}var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;var p=[],i,j;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var c=[i];for(j=1;j<=n;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1))}p=c}return p[n]}
+function tokMatch(t,k){if(t===k)return 1;var st=stem(t),sk=stem(k);if(st===sk)return 1;if(t.length>=5&&k.length>=5){var d=Math.min(lev(st,sk),lev(t,k));if(d<=1)return .85;if(st.length>=8&&d<=2)return .7}return 0}
+function score(q,it){var s=0,toks=q.split(" ");it.kw.forEach(function(k){var nk=norm(k);if(nk.indexOf(" ")>-1){if((" "+q+" ").indexOf(" "+nk+" ")>-1){s+=2.2;return}var parts=nk.split(" "),ok=0;parts.forEach(function(p){if(toks.some(function(t){return tokMatch(t,p)>=.85}))ok++});if(ok===parts.length)s+=1.6;return}
+ var best=0;toks.forEach(function(t){var m=tokMatch(t,nk);if(m>best)best=m});if(best){s+=(nk.length>=4?1.2:.9)*best}});return s}
+function answer(raw){var q=norm(raw);if(!q)return null;var best=null,bs=0;INTENTS.forEach(function(it){var s=score(q,it);if(it.id==="medical"&&s>0)s+=1.5;if(it.id==="price")s*=.45;if(s>bs+.001){bs=s;best=it}});if(best&&bs>=0.8)return best;return null}
+/*KB-END*/
+var AW=(function(){
+var log=document.getElementById("aw-log"),chips=document.getElementById("aw-chips"),inp=document.getElementById("aw-in"),box=document.getElementById("aw"),btn=document.getElementById("aw-btn");
+var flow=null,data={},started=false;
+var BASE=["Book a visit","Emergency dentist","Prices","Opening hours","Where are you?","PRSI benefit"];
+function esc(t){return String(t).replace(/[&<>]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
+function say(t,who){var d=document.createElement("div");d.className="m "+(who||"b");d.innerHTML=esc(t);log.appendChild(d);log.scrollTop=log.scrollHeight}
+function setChips(a){chips.innerHTML="";(a||BASE).forEach(function(c){var b=document.createElement("button");b.type="button";b.className="chip";b.textContent=c;b.onclick=function(){handle(c)};chips.appendChild(b)})}
+function open(mode){box.classList.add("open");btn.style.display="none";if(!started){started=true;say("Hello! I am the Clinic4U assistant. I know our treatments, price list, hours and team, and I can take a booking request for the team. I do not give medical advice.");setChips()}if(mode==="book")startBook();setTimeout(function(){inp.focus()},50)}
+function close(){box.classList.remove("open");btn.style.display=""}
+var STEPS=["service","who","day","time","name","phone","confirm"];
+function startBook(){flow="service";data={};say("Let's set up your visit. What is it for?");setChips(["Check-up","Hygiene / cleaning","Emergency / pain","Implants","Braces / aligners","Wisdom tooth / extraction","Lip fillers / anti-wrinkle","Not sure"].concat(["Cancel"]))}
+function bookStep(t){
+ if(/^cancel|stop|nevermind|never mind/i.test(t)){flow=null;say("No problem, nothing was sent. Ask me anything else.");setChips();return}
+ if(flow==="service"){data.service=t;flow="who";say("Who is the appointment for?");setChips(["Adult","Child","Family / several people","Cancel"]);return}
+ if(flow==="who"){data.who=t;flow="day";say("Which day suits you best? The clinic is open Mon-Sat 10:00-18:00 and Sunday 10:00-16:00.");setChips(["This week","Next week","Weekend","As soon as possible","Cancel"]);return}
+ if(flow==="day"){data.day=t;flow="time";say("And what time of day?");setChips(["Morning","Midday","Afternoon","Any time","Cancel"]);return}
+ if(flow==="time"){data.time=t;flow="name";say("Your full name, please?");setChips(["Cancel"]);return}
+ if(flow==="name"){data.name=t;flow="phone";say("A phone number (or WhatsApp) the team can reach you on?");setChips(["Cancel"]);return}
+ if(flow==="phone"){if(!/\d{6,}/.test(t.replace(/[\s()+-]/g,""))){say("That doesn't look like a phone number. Could you type it again, for example 087 123 4567?");return}
+  data.phone=t;flow="confirm";say("Please check:\n- Visit: "+data.service+"\n- For: "+data.who+"\n- Day: "+data.day+"\n- Time: "+data.time+"\n- Name: "+data.name+"\n- Phone: "+data.phone+"\n\nShall I send this to the team?");setChips(["Yes, send it","Change something","Cancel"]);return}
+ if(flow==="confirm"){if(/^(yes|send|ok|sure|correct|confirm)/i.test(t)){flow=null;say("Done, your request has been sent to the team (demo: nothing is actually sent). They will call to confirm the exact time. For anything urgent, ring 01 476 3949 or 087 397 7779.");setChips(["Opening hours","Prices","Where are you?"])}else{startBook()}return}
+}
+function handle(t){t=String(t).trim();if(!t)return;say(t,"u");
+ if(flow){bookStep(t);return}
+ if(/^book a visit$/i.test(t)){startBook();return}
+ var it=answer(t);
+ if(it){say(it.a);if(it.action==="book"){setChips(["Book a visit","Not now"])}else setChips(it.chips);return}
+ say("I don't have that detail, so I won't guess. The team will confirm it: call 01 476 3949 or 087 397 7779, or email clinic4u.ie@gmail.com. I can also take a booking request for them.");setChips(["Book a visit","Opening hours","Prices"])}
+document.getElementById("aw-form").addEventListener("submit",function(e){e.preventDefault();var v=inp.value;inp.value="";handle(v)});
+function ask(q){open();handle(q)}
+return {open:open,close:close,ask:ask}})();
+(function(){
+var g=document.getElementById("svcgrid");SERVICES.forEach(function(s,i){var d=document.createElement("div");d.className="svc";d.innerHTML='<span class="n">'+(i<9?"0":"")+(i+1)+'</span><h3>'+s[0].replace(/&/g,"&amp;")+'</h3><p>'+s[1]+'</p><button class="ask" type="button">Ask the assistant</button>';d.querySelector("button").onclick=function(){AW.ask(s[2])};g.appendChild(d)});
+var tb=document.getElementById("ptabs"),pl=document.getElementById("plist");
+function show(i){[].forEach.call(tb.children,function(b,j){b.className="tab"+(j===i?" on":"")});pl.innerHTML=PRICES[i].groups.map(function(gr){return '<div class="pgrp"><h4>'+gr.t.replace(/&/g,"&amp;")+'</h4>'+gr.r.map(function(r){return '<div class="prow"><span>'+r[0].replace(/&/g,"&amp;")+'</span><span>'+r[1]+'</span></div>'}).join("")+'</div>'}).join("")}
+PRICES.forEach(function(p,i){var b=document.createElement("button");b.className="tab";b.type="button";b.textContent=p.tab;b.onclick=function(){show(i)};tb.appendChild(b)});show(0);
+document.getElementById("faqbox").innerHTML=FAQ.map(function(f){return "<details><summary>"+f[0]+"</summary><p>"+f[1]+"</p></details>"}).join("");
+})();
+</script>
+</body></html>

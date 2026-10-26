@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cream Melbourne, Fitzroy | Demo</title>
+<meta name="description" content="A one-page demo of Cream Melbourne, hair salon on Brunswick Street Fitzroy, with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f6efe2;--cream2:#efe5d2;--ink:#2b2924;--soft:#6b665b;--olive:#3f5a35;--olive2:#2e4527;--blush:#e9cdb8;--line:#d9ccb3;
+--w-font:'Jost',system-ui,sans-serif;--w-acc:#3f5a35;--w-acc-ink:#fff;--w-r:99px;--w-r2:22px;--w-bg:#fbf7ee;--w-ink:#2b2924;--w-line:#d9ccb3;--w-head:#2e4527;--w-head-ink:#f6efe2;--w-bot:#efe5d2;--w-bot-ink:#2b2924;--w-in:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',system-ui,sans-serif;font-weight:400;background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+header.top{padding:18px 0;border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{font-family:'Cormorant Garamond';font-size:34px;font-weight:500;letter-spacing:.2em;text-decoration:none;text-transform:uppercase}
+.brand small{display:block;font-family:'Jost';font-size:10px;letter-spacing:.34em;color:var(--soft);margin-top:-4px}
+nav.m{display:none;gap:26px;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+nav.m a{text-decoration:none;color:var(--soft)}nav.m a:hover{color:var(--olive)}
+.pill{display:inline-block;background:var(--olive);color:#fff;text-decoration:none;border:0;border-radius:99px;padding:13px 26px;font:500 13px 'Jost';letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.pill:hover{background:var(--olive2)}
+.pill.ghost{background:transparent;color:var(--olive);border:1px solid var(--olive)}
+.pill.ghost:hover{background:var(--olive);color:#fff}
+@media(min-width:900px){nav.m{display:flex}}
+.hero{padding:54px 0 70px}
+.hero .wrap{display:grid;gap:40px}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1.15fr .85fr;align-items:center}}
+.kick{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--olive);margin-bottom:16px;display:flex;gap:10px;align-items:center}
+.kick::before{content:"";width:34px;height:1px;background:var(--olive)}
+.hero h1{font-family:'Cormorant Garamond';font-weight:500;font-size:clamp(46px,9vw,92px);line-height:.98;margin-bottom:22px}
+.hero h1 em{font-style:italic;color:var(--olive)}
+.hero p.l{font-size:18px;color:var(--soft);max-width:520px;margin-bottom:28px}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px}
+.arch{position:relative;aspect-ratio:4/5;max-width:380px;width:100%;margin:0 auto;border-radius:999px 999px 18px 18px;background:linear-gradient(170deg,var(--blush) 0%,#f0dcc8 55%,var(--cream2) 100%);overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding:26px}
+.arch svg{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.arch .cap{position:relative;background:rgba(246,239,226,.92);border-radius:14px;padding:14px 18px;text-align:center;font-size:13px;line-height:1.4}
+.arch .cap b{display:block;font-family:'Cormorant Garamond';font-size:30px;font-weight:600;color:var(--olive);line-height:1}
+.award{background:var(--olive2);color:var(--cream);padding:18px 0;text-align:center;font-size:13px;letter-spacing:.2em;text-transform:uppercase}
+.award span{margin:0 14px;opacity:.9;white-space:nowrap}
+section{padding:78px 0}
+section h2{font-family:'Cormorant Garamond';font-weight:500;font-size:clamp(36px,6vw,58px);line-height:1.04;margin-bottom:16px}
+section h2 em{font-style:italic;color:var(--olive)}
+.lead{color:var(--soft);max-width:620px;font-size:17px}
+.center{text-align:center}.center .lead{margin:0 auto}
+.welcome .wrap{display:grid;gap:30px}
+@media(min-width:900px){.welcome .wrap{grid-template-columns:.9fr 1.1fr;gap:70px}}
+.welcome p+p{margin-top:14px}
+.dropcap::first-letter{font-family:'Cormorant Garamond';font-size:76px;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--olive)}
+.menu{background:var(--cream2)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 10px}
+.tabs button{border:1px solid var(--olive);background:transparent;color:var(--olive);border-radius:99px;padding:9px 18px;font:500 13px 'Jost';letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--olive);color:#fff}
+.lvl{font-size:13px;color:var(--soft);margin-bottom:22px}
+.pricegrid{display:grid;gap:22px}
+@media(min-width:800px){.pricegrid{grid-template-columns:1fr 1fr}}
+.card{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:24px}
+.card h3{font-family:'Cormorant Garamond';font-weight:600;font-size:28px;margin-bottom:8px;color:var(--olive2)}
+.card ul{list-style:none}
+.card li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dotted var(--line);font-size:15px}
+.card li:last-child{border:0}
+.card li b{font-weight:500;white-space:nowrap}
+.card p.s{font-size:13px;color:var(--soft);margin-top:10px}
+.fee{margin-top:22px;font-size:13px;color:var(--soft);max-width:680px}
+.steps{display:grid;gap:26px;margin-top:38px}
+@media(min-width:800px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps div{border-top:1px solid var(--olive);padding-top:16px}
+.steps h3{font-family:'Cormorant Garamond';font-size:28px;font-weight:600;margin-bottom:6px}
+.steps p{font-size:15px;color:var(--soft)}
+.exp{background:var(--olive2);color:var(--cream)}
+.exp h2 em{color:var(--blush)}
+.exp .lead{color:#d9d3c1}
+.exp .grid{display:grid;gap:20px;margin-top:34px}
+@media(min-width:800px){.exp .grid{grid-template-columns:repeat(3,1fr)}}
+.exp .grid div{border:1px solid rgba(246,239,226,.25);border-radius:16px;padding:22px}
+.exp .grid b{font-family:'Cormorant Garamond';font-size:26px;display:block;margin-bottom:6px;font-weight:600}
+.exp .grid span{font-size:15px;color:#d9d3c1}
+.brands{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.brands span{padding:8px 16px;border:1px solid rgba(246,239,226,.35);border-radius:99px;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.visit .wrap{display:grid;gap:40px}
+@media(min-width:900px){.visit .wrap{grid-template-columns:1fr 1fr}}
+.hrs{width:100%;max-width:420px;border-collapse:collapse}
+.hrs td{padding:11px 0;border-bottom:1px solid var(--line);font-size:16px}
+.hrs td:last-child{text-align:right}
+.hrs tr.today td{color:var(--olive);font-weight:600}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;font-family:'Cormorant Garamond';font-size:25px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";color:var(--olive)}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin-top:8px;color:var(--soft);max-width:680px}
+.cta{background:var(--blush);text-align:center}
+.cta h2{margin-bottom:10px}
+footer{padding:36px 0 92px;font-size:13px;color:var(--soft);text-align:center;border-top:1px solid var(--line)}
+footer .demo{margin-top:8px}
+#ab{position:fixed;right:16px;bottom:16px;z-index:90;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--w-acc);color:var(--w-acc-ink);font:600 15px/1 var(--w-font);padding:14px 18px;border-radius:var(--w-r);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+#ab svg{width:20px;height:20px;flex:none}
+#ap{position:fixed;right:16px;bottom:80px;z-index:91;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 110px));background:var(--w-bg);color:var(--w-ink);border-radius:var(--w-r2,16px);box-shadow:0 18px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--w-font);border:1px solid var(--w-line)}
+#ap.on{display:flex}
+#ap header{background:var(--w-head);color:var(--w-head-ink);padding:12px 14px;display:flex;align-items:center;gap:10px}
+#ap header b{font-size:15px;display:block}#ap header small{opacity:.8;font-size:12px}
+#ap header div{flex:1;min-width:0}
+#ax{background:transparent;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1;padding:4px 8px}
+#am{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word}
+.m.b{background:var(--w-bot);color:var(--w-bot-ink);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--w-acc);color:var(--w-acc-ink);align-self:flex-end;border-bottom-right-radius:4px}
+.m a{color:inherit;text-decoration:underline}
+#ac{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+#ac button{border:1px solid var(--w-acc);background:transparent;color:var(--w-chip,var(--w-ink));font:500 13px var(--w-font);padding:6px 11px;border-radius:99px;cursor:pointer}
+#ac button:hover{background:var(--w-acc);color:var(--w-acc-ink)}
+#af{display:flex;gap:6px;padding:10px;border-top:1px solid var(--w-line)}
+#ai{flex:1;min-width:0;border:1px solid var(--w-line);background:var(--w-in,transparent);color:inherit;border-radius:10px;padding:10px 12px;font:16px var(--w-font)}
+#af button{border:0;background:var(--w-acc);color:var(--w-acc-ink);border-radius:10px;padding:0 16px;font:600 14px var(--w-font);cursor:pointer}
+#ap .note{font-size:11px;opacity:.65;text-align:center;padding:0 10px 8px}
+@media(max-width:480px){#ap{right:8px;bottom:72px;width:calc(100vw - 16px)}#ab span{display:none}#ab{padding:14px}}
+
+html,body{overflow-x:clip;max-width:100%}.arch svg{max-width:100%}</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="#top">Cream<small>Melbourne &middot; Fitzroy</small></a>
+<nav class="m" aria-label="Main"><a href="#welcome">Welcome</a><a href="#pricing">Pricing</a><a href="#experience">Experience</a><a href="#visit">Visit</a><a href="#faq">FAQ</a></nav>
+<a class="pill" href="#" data-ask="Request a booking">Book online</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<div class="kick">Hair salon &middot; Fitzroy since 2002</div>
+<h1>A peaceful oasis <em>above</em> Brunswick Street</h1>
+<p class="l">We believe in breaking the mould of everyday styling. Come in, sit down, and leave with hair you adore and feel confident managing.</p>
+<div class="row"><a class="pill" href="#" data-ask="Request a booking">Request a booking</a><a class="pill ghost" href="#pricing">See pricing</a></div>
+</div>
+<div class="arch" aria-hidden="true">
+<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="#3f5a35" stroke-width="1.2"><path d="M-20 120 C80 60 140 220 220 150 S360 60 430 140"/><path d="M-20 160 C80 100 140 260 220 190 S360 100 430 180"/><path d="M-20 200 C80 140 140 300 220 230 S360 140 430 220"/><path d="M-20 240 C80 180 140 340 220 270 S360 180 430 260"/><path d="M-20 280 C80 220 140 380 220 310 S360 220 430 300"/><path d="M-20 320 C80 260 140 420 220 350 S360 260 430 340"/></g></svg>
+<div class="cap"><b>4.9 / 5</b>Google reviews<br>Voted among Melbourne&rsquo;s best</div>
+</div>
+</div>
+<div class="award" style="margin-top:56px"><span>Top / Best Hair Salons in Melbourne</span><span>June 2026</span><span>March 2026</span><span>2024</span><span>2023</span></div>
+</div>
+
+<section id="welcome" class="welcome"><div class="wrap">
+<div><div class="kick">Welcome</div><h2>Who did <em>your</em> hair?</h2><p class="lead">Our friendly team makes sure your visit is unforgettable and has everyone asking that question.</p></div>
+<div><p class="dropcap">Welcome to Cream Melbourne. We&rsquo;re privileged to be in the heart of bohemian Fitzroy, offering a peaceful oasis above the bustling Brunswick Street. Our philosophy is to understand your individual preferences and create a look that complements your unique features and fits your lifestyle.</p>
+<p>Since 2002 our salon has been built on excellence in hairdressing and a dedication to the best possible customer experience. The team shares a vision of continuous self-education, to stay up to date with the latest trends, treatments and services. Excellence is our culture.</p></div>
+</div></section>
+
+<section id="pricing" class="menu"><div class="wrap">
+<div class="kick">Pricing</div><h2>Choose your <em>stylist level</em></h2>
+<p class="lead">Prices follow the level of stylist you book. Pick a level to see every service at that level.</p>
+<div class="tabs" role="group" aria-label="Stylist level"><button type="button" data-lv="0" aria-pressed="true">Principal</button><button type="button" data-lv="1" aria-pressed="false">Advanced</button><button type="button" data-lv="2" aria-pressed="false">Senior</button><button type="button" data-lv="3" aria-pressed="false">Emerging</button></div>
+<p class="lvl" id="lvl"></p>
+<div class="pricegrid" id="pg"></div>
+<p class="fee">A small $3 Green Service Fee is added to each visit to support Cream&rsquo;s Sustainable Salons accreditation. Colour correction and bridal hair are price on application. Prices as published on the Cream website; the team confirms your quote at consultation.</p>
+<div class="steps">
+<div><h3>Consultation</h3><p>We love to listen. We get to know your hair, what has worked, what hasn&rsquo;t, and how to get you back to feeling like a million bucks. Complimentary consultations are available through the week.</p></div>
+<div><h3>We value your time</h3><p>Book online with the stylist you prefer. An SMS reminder arrives a couple of days before; confirm or cancel with a quick text back.</p></div>
+<div><h3>Total relaxation</h3><p>Turn up, sit down, let us take care of the rest.</p></div>
+</div>
+</div></section>
+
+<section id="experience" class="exp"><div class="wrap">
+<div class="kick" style="color:var(--blush)">The Cream experience</div><h2>Coffee, a <em>Spritz</em>, and time for you</h2>
+<p class="lead">Enjoy a barista-style coffee or a freshly made Spritz while we pamper you silly. Complimentary snacks and beverages come with your session.</p>
+<div class="grid">
+<div><b>Colour specialists</b><span>Foils, balayage, solid colour, scalp bleach and colour correction. Olaplex is recommended during the service to protect your hair.</span></div>
+<div><b>Between visits</b><span>Take-home products and customised care packs, perfect as a gift for a special friend.</span></div>
+<div><b>Sustainable salon</b><span>Hair, foils and colour tubes diverted from landfill, hair donated for children&rsquo;s wigs, up to 95% of salon waste recycled.</span></div>
+</div>
+<div class="brands"><span>Pureology</span><span>ELEVEN</span><span>Redken</span><span>EVO</span><span>Olaplex</span></div>
+</div></section>
+
+<section id="visit" class="visit"><div class="wrap">
+<div><div class="kick">Visit</div><h2>Level 1, <em>296 Brunswick St</em></h2>
+<p class="lead" style="margin-bottom:16px">Fitzroy VIC 3065. Enter off Johnston Street, a stone&rsquo;s throw from the CBD.</p>
+<p><a href="tel:0394151717">(03) 9415 1717</a><br><a href="mailto:mail@cream.melbourne">mail@cream.melbourne</a></p>
+<p style="font-size:14px;color:var(--soft);margin-top:14px">Parking is on-street (Brunswick Street near Johnston Street) or the small metered Coles carpark on Johnston Street.</p></div>
+<div><table class="hrs" id="hrs" aria-label="Opening hours"><tr><td>Monday</td><td>10am &ndash; 9pm</td></tr><tr><td>Tuesday</td><td>10am &ndash; 9pm</td></tr><tr><td>Wednesday</td><td>10am &ndash; 6pm</td></tr><tr><td>Thursday</td><td>10am &ndash; 9pm</td></tr><tr><td>Friday</td><td>10am &ndash; 6pm</td></tr><tr><td>Saturday</td><td>Closed</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table></div>
+</div></section>
+
+<section id="faq" class="faq" style="background:var(--cream2)"><div class="wrap">
+<div class="kick">Good to know</div><h2>Questions we <em>hear often</em></h2>
+<details><summary>How long will my appointment take?</summary><p>For new clients we allow 3&frac12; hours for a cut and a basic colour. Colour correction or long, thick hair takes longer, so give the team as much information as you can when booking.</p></details>
+<details><summary>Can I book a consultation first?</summary><p>Yes, and for anything beyond a simple refresh it is recommended. Consultations are complimentary.</p></details>
+<details><summary>Can I request a specific stylist?</summary><p>Yes. Choose a stylist when you book, or tell the team what you are after and they will match you.</p></details>
+<details><summary>How often should I get a haircut?</summary><p>Every 6&ndash;8 weeks keeps the shape sharp. Solid colour regrowth is typically every 4&ndash;6 weeks; balayage every 8&ndash;12 weeks.</p></details>
+<details><summary>Do you offer buy now, pay later?</summary><p>Cream lists Afterpay and Zip. The team can confirm other payment options.</p></details>
+</div></section>
+
+<section class="cta"><div class="wrap">
+<h2>Ready for hair you <em>adore</em>?</h2>
+<p class="lead" style="margin-bottom:22px">Ask the assistant anything, or leave a booking request and the team will confirm.</p>
+<a class="pill" href="#" data-ask="Request a booking">Request a booking</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">Cream Melbourne &middot; Level 1, 296 Brunswick Street, Fitzroy VIC 3065 &middot; (03) 9415 1717
+<div class="demo">Demo &middot; prepared by Gevorg Hovhannisyan</div></div></footer>
+
+<button id="ab" type="button" aria-expanded="false" aria-controls="ap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L3 21l1.8-6.1A8 8 0 1 1 21 12z"/></svg><span>Ask Cream</span></button>
+<div id="ap" role="dialog" aria-label="Cream assistant"><header><div><b>Cream assistant</b><small>Answers 24/7 &middot; passes requests to the team</small></div><button id="ax" type="button" aria-label="Close">&times;</button></header>
+<div id="am" aria-live="polite"></div><div id="ac"></div>
+<form id="af" autocomplete="off"><input id="ai" type="text" placeholder="Type your question" aria-label="Your question"><button type="submit">Send</button></form>
+<div class="note">Demo preview. Nothing you type here is sent anywhere.</div></div>
+<script>
+(function(){
+var P=[
+{t:'Cut & Finish',r:[['Restyle',[182,174,171,128]],['Long',[145,133,128,102]],['Short',[109,106,101,91]]],s:'Fringe trim $25. Curly cut from $168. Every cut includes a finish.'},
+{t:'Styling',r:[['Blow dry, short',[75,70,65,50]],['Blow dry, long',[84,79,75,55]],['Blow dry, thick or extra long',[95,90,85,65]]],s:'Post-colour blow dry from $65. Hair up from $108. Bridal hair up: price on application.'},
+{t:'Solid colour regrowth',r:[['4–6 weeks',[161,153,145,126]],['6–8 weeks',[172,167,154,142]],['More than 8 weeks',[184,176,169,148]],['T-section',[96,90,87,85]]],s:'Toner from $95. Scalp bleach regrowth with toner from $343 (Principal). Colour correction: price on application.'},
+{t:'Foils & balayage, with toner',r:[['Part line foils',[273,263,250,229]],['½ head',[346,340,330,293]],['¾ head',[383,367,350,330]],['Full head',[430,424,414,367]]],s:'A colour consultation is recommended for a big lightening change.'},
+{t:'Treatments & keratin',r:[['Olaplex 1 and 2','from $53'],['Evo Top Drop','$26'],['Keratin, short','from $412'],['Keratin, medium','from $500'],['Keratin, long','from $570']],s:'Keratin is priced by hair length. Olaplex is recommended during colouring.'}
+];
+var names=['Principal','Advanced','Senior','Emerging'],lv=0,pg=document.getElementById('pg'),lb=document.getElementById('lvl');
+function draw(){
+ lb.textContent='Showing '+names[lv]+' Stylist prices.';
+ pg.innerHTML=P.map(function(c){return '<div class="card"><h3>'+c.t+'</h3><ul>'+c.r.map(function(x){var v=x[1];return '<li><span>'+x[0]+'</span><b>'+(typeof v==='string'?v:'$'+v[lv])+'</b></li>'}).join('')+'</ul><p class="s">'+c.s+'</p></div>'}).join('');
+}
+var bs=document.querySelectorAll('.tabs button');
+for(var i=0;i<bs.length;i++)bs[i].onclick=function(){lv=+this.getAttribute('data-lv');for(var j=0;j<bs.length;j++)bs[j].setAttribute('aria-pressed',j===lv?'true':'false');draw()};
+draw();
+try{var d=(new Date().getDay()+6)%7,rows=document.querySelectorAll('#hrs tr');if(rows[d])rows[d].className='today';}catch(e){}
+})();
+var CFG={
+name:'Cream assistant',
+greeting:'Hello and welcome to Cream, above Brunswick Street in Fitzroy. I can answer questions about services, prices by stylist level, hours, consultations and parking, or start a booking request for the team.',
+thanks:'Lovely. Anything else about your visit?',
+chips:['Opening hours','Cut prices','Colour prices','Free consultation','Request a booking'],
+fallback:'I don’t have that detail, and I won’t guess. The Cream team will confirm: <a href="tel:0394151717">(03) 9415 1717</a> or <a href="mailto:mail@cream.melbourne">mail@cream.melbourne</a>. Or tap <b>Request a booking</b> and I’ll pass your note on.',
+medical:'\\b(allerg|scalp condition|dermatit|eczema|psoriasis|alopecia|chemo|pregnan|medication|medical|doctor|rash|infection)',
+medicalAnswer:'For anything medical or skin-related, please check with your doctor first. Your stylist can then talk it through with you at a consultation: <a href="tel:0394151717">(03) 9415 1717</a>.',
+flow:{
+ trigger:'(book|booking|appointment|reserve|reservation|make an appointment|request a booking|come in|see a stylist|schedule)',
+ chip:'Request a booking',
+ cancel:'No problem, cancelled. You can book online or call (03) 9415 1717 any time.',
+ steps:[
+  {key:'service',label:'Service',q:'Lovely. What would you like to book?',opts:['Cut & Finish','Colour','Foils / Balayage','Blow dry / Styling','Keratin','Consultation'],free:true},
+  {key:'level',label:'Stylist level',q:'Do you have a stylist level in mind? Prices depend on it.',opts:['Principal','Advanced','Senior','Emerging','No preference'],free:true},
+  {key:'day',label:'Preferred day',q:'Which day suits you? We are open Mon, Tue and Thu 10am–9pm, Wed and Fri 10am–6pm.',opts:['Monday','Tuesday','Wednesday','Thursday','Friday'],free:true},
+  {key:'name',label:'Name',q:'Your name?'},
+  {key:'phone',label:'Phone',q:'And a mobile number so the team can confirm by SMS or call?',type:'phone'}
+ ],
+ done:'Thank you. Your booking request has been passed to the Cream team, who will confirm the time with you:{summary}<br><br><small>(Demo preview: nothing is actually sent.)</small>'
+},
+kb:[
+{id:'hours',k:['hours','open','opening','close','closing','closed','saturday','sunday','weekend','monday','tuesday','wednesday','thursday','friday','late','evening','time'],a:'<b>Opening hours:</b><br>Mon 10am–9pm · Tue 10am–9pm · Wed 10am–6pm<br>Thu 10am–9pm · Fri 10am–6pm<br>Sat and Sun closed.'},
+{id:'where',k:['where','address','location','find','brunswick street','johnston street','entrance','fitzroy','level 1','map','directions','upstairs','cbd'],a:'<b>Cream</b> is on Level 1, 296 Brunswick Street, Fitzroy VIC 3065. The entrance is via Johnston Street, and the salon sits above the bustle of Brunswick Street.'},
+{id:'parking',w:2,k:['park','parking','car','carpark','coles','drive','street parking'],a:'Parking is limited to on-street. The salon suggests Brunswick Street near the corner of Johnston Street, or the small metered Coles carpark on Johnston Street.'},
+{id:'contact',k:['contact','phone','call','email','e-mail','number','reach','speak','mail','ring','text','sms'],a:'<a href="tel:0394151717">(03) 9415 1717</a> · <a href="mailto:mail@cream.melbourne">mail@cream.melbourne</a>'},
+{id:'cut',w:2,k:['cut','haircut','trim','restyle','finish','cut and finish','short hair','long hair','fringe','bangs','curly','curl','curls'],a:'<b>Cut &amp; Finish</b> (Principal / Advanced / Senior / Emerging):<br>Restyle $182 / $174 / $171 / $128<br>Long $145 / $133 / $128 / $102<br>Short $109 / $106 / $101 / $91<br>Fringe trim $25 · Curly cut from $168. Every cut includes a finish. Jaw-length or longer counts as long.',flow:1},
+{id:'blow',w:2,k:['blow dry','blowdry','blow','blowout','style','styling','hair up','updo','bridal','wedding','formal','event'],a:'<b>Styling:</b> Blow dry short $75 / $70 / $65 / $50, long $84 / $79 / $75 / $55, thick or extra long $95 / $90 / $85 / $65 (Principal / Advanced / Senior / Emerging). Post-colour blow dry from $65. Hair up from $108. Bridal hair up is price on application.',flow:1},
+{id:'colour',w:2,k:['colour','color','dye','regrowth','root','roots','solid colour','tint','t section','tsection','grey','gray','toner','scalp bleach','bleach'],a:'<b>Solid colour regrowth</b> (Principal / Advanced / Senior / Emerging):<br>4–6 weeks $161 / $153 / $145 / $126<br>6–8 weeks $172 / $167 / $154 / $142<br>8+ weeks $184 / $176 / $169 / $148<br>T-section $96 / $90 / $87 / $85 · Toner from $95. Scalp bleach with toner starts from about $343. Solid colour with 8–10 foils and toner starts from $298 (Principal).',flow:1},
+{id:'foils',w:2,k:['foil','foils','balayage','highlight','highlights','blonde','blond','lighten','lightening','ombre','half head','full head','part line'],a:'<b>Foils &amp; balayage with toner</b> (Principal / Advanced / Senior / Emerging):<br>Part line $273 / $263 / $250 / $229<br>½ head $346 / $340 / $330 / $293<br>¾ head $383 / $367 / $350 / $330<br>Full head $430 / $424 / $414 / $367. For a big lightening change a consultation comes first.',flow:1},
+{id:'correction',w:2,k:['correction','colour correction','color correction','fix my colour','botched','box dye','orange','brassy','wrong colour','bad dye','another salon'],a:'<b>Colour correction</b> is one of Cream’s specialities, quoted on application after a consultation because it depends on your hair’s history. Bring photos and be upfront about past colour, including home dye.',flow:1},
+{id:'treatment',w:2,k:['treatment','treatments','olaplex','evo','top drop','damaged','dry','repair','conditioning','bond','frizz','keratin','smoothing'],a:'<b>Treatments:</b> Olaplex 1 and 2 from $53 · Evo Top Drop $26.<br><b>Keratin</b> by length: short from $412, medium from $500, long from $570. Olaplex is recommended during colouring to protect the hair.'},
+{id:'price',k:['price','prices','pricing','cost','how much','rate','rates','fee','charge','expensive','cheap','quote'],a:'Prices depend on the service and the stylist level (Principal, Advanced, Senior or Emerging), and are on the Pricing page. Tell me the service (cut, colour, foils, blow dry, keratin) and I’ll give you the numbers. A $3 Green Service Fee is added to each visit.',c:['Cut prices','Colour prices','Foils prices','Keratin']},
+{id:'greenfee',k:['green fee','green service fee','$3','extra fee','surcharge','sustainable fee','recycle','recycling','waste'],a:'A small <b>$3 Green Service Fee</b> is added to each visit to support Cream’s Sustainable Salons accreditation (hair, foils and colour tubes diverted from landfill, with up to 95% of salon waste recycled).'},
+{id:'sustain',k:['sustainable','sustainability','eco','environment','green','wigs','donate','donating','accredited','landfill'],a:'Cream is accredited through <b>Sustainable Salons</b>: hair, foils and colour tubes are diverted from landfill into reuse, including hair donated for children’s wigs. Up to 95% of salon waste is recycled.'},
+{id:'consult',k:['consultation','consult','free consultation','complimentary','advice','talk first','chat','assess','quote first'],a:'<b>Consultations are complimentary</b>, available throughout the week. Your stylist looks at condition and colour history, agrees a realistic plan with timing and cost, before any service starts. Recommended for anything beyond a simple refresh.',flow:1},
+{id:'stylist',k:['stylist','stylists','team','hairdresser','who','principal','director','senior','emerging','advanced','level','levels','request stylist','choose'],a:'Cream’s team is structured by level: Director, Principal, Advanced, Senior and Emerging Stylist, reflected in pricing. When you book you can choose a stylist by name, or tell the team what you want and they will match you.',flow:1},
+{id:'duration',w:2,k:['how long','duration','take','takes','length of appointment','hours long','long does','time needed','3 and a half','three and a half'],a:'As a general rule new clients are given <b>3½ hours for a cut and colour</b> (basic colour). Colour correction or long or thick hair needs longer, so tell the team as much as you can when booking.'},
+{id:'frequency',w:2,k:['how often','often','regrowth weeks','every','maintenance','low maintenance','upkeep','refresh','grow out'],a:'Cuts are best every <b>6–8 weeks</b>. Solid colour or root regrowth every <b>4–6 weeks</b>. Balayage every <b>8–12 weeks</b>, with an optional toner refresh every 4–6 weeks in between.'},
+{id:'darktoblonde',k:['dark to blonde','go blonde','blonde in one','one visit','one appointment','lift','darker'],a:'Sometimes, but it depends on how dark your hair is and its condition. For darker bases it is often safer to lift over two or more visits. A free consultation will tell you what is realistic.',flow:1},
+{id:'products',k:['product','products','shampoo','conditioner','take home','pureology','eleven','redken','olaplex products','retail','purple shampoo','toning shampoo','brand','brands'],a:'Take-home products include <b>Pureology, ELEVEN, Redken, EVO and Olaplex</b>, individually or as customised care packs (a good gift). Your stylist can recommend a toning shampoo for your shade.'},
+{id:'voucher',k:['voucher','vouchers','gift','gift voucher','gift card','present','birthday','christmas'],a:'Gift vouchers are available on the Cream site, and take-home care packs also make a good gift.'},
+{id:'bnpl',w:2,k:['afterpay','zip','zippay','buy now pay later','pay later','instalments','installments','payment','card','eftpos','cash'],a:'Cream lists <b>Afterpay and Zip</b> (buy now, pay later). For other payment methods, the team will confirm.'},
+{id:'coffee',k:['coffee','spritz','drink','drinks','snack','snacks','tea','refreshment','relax','pamper','barista','wine'],a:'Sit down and relax: a barista-style coffee or a freshly made Spritz, plus complimentary snacks and beverages come with your session.'},
+{id:'reminder',k:['reminder','sms','confirm','confirmation','cancel','reschedule','change booking','change appointment','cancellation','late'],a:'Online bookings get an SMS reminder a couple of days before; replying confirms or cancels. For the cancellation policy and changes, the team will confirm: <a href="tel:0394151717">(03) 9415 1717</a>.'},
+{id:'about',k:['about','history','since 2002','2002','story','founded','established','awards','voted','best salon','reviews','rating','google','review'],a:'Cream has been in Fitzroy since <b>2002</b>. It holds a <b>4.9 / 5</b> Google rating and has been voted among Melbourne’s top and best hair salons (most recently June 2026, according to the site).'},
+{id:'kids',k:['kids','child','children','boy','girl','baby','teen','men','mens','male','man','women','womens','barber','beard'],a:'The price list on the site is by service and stylist level, not by gender. For children or men’s cuts and any special rates, the team will confirm.'}
+]};
+
+/* assistant engine: client-side, keyword + fuzzy matching */
+function AssistantEngine(CFG){
+  var STOP={the:1,a:1,an:1,is:1,are:1,do:1,does:1,you:1,your:1,i:1,me:1,my:1,we:1,of:1,to:1,for:1,and:1,or:1,can:1,how:1,what:1,where:1,when:1,which:1,it:1,on:1,in:1,at:1,there:1,have:1,has:1,be:1,am:1,get:1,please:1,hi:1,hello:1,u:1,ur:1,much:1,about:1,with:1,that:1,this:1,any:1,some:1,would:1,like:1,want:1,need:1,tell:1,know:1,if:1,so:1};
+  function norm(s){return String(s).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9$ ]+/g,' ').replace(/\s+/g,' ').trim();}
+  function stem(w){
+    if(w.length<4)return w;
+    if(/ies$/.test(w))w=w.slice(0,-3)+'y';
+    else if(/(sses|xes|ches|shes)$/.test(w))w=w.slice(0,-2);
+    else if(/s$/.test(w)&&!/ss$/.test(w))w=w.slice(0,-1);
+    if(w.length>5&&/ing$/.test(w))w=w.slice(0,-3);
+    else if(w.length>4&&/ed$/.test(w))w=w.slice(0,-2);
+    if(w.length>3&&/e$/.test(w))w=w.slice(0,-1);
+    if(w.length>3&&/(.)\1$/.test(w)&&!/(ss|ll)$/.test(w))w=w.slice(0,-1);
+    return w;
+  }
+  var STOPS={};(function(){for(var sk in STOP)STOPS[stem(sk)]=1;})();
+  function toks(s,keepStop){return norm(s).split(' ').filter(function(x){return x&&(keepStop||!STOP[x]);}).map(stem);}
+  function lev(a,b){
+    if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;
+    var p=[],i,j;for(j=0;j<=n;j++)p[j]=j;
+    for(i=1;i<=m;i++){var c=[i];for(j=1;j<=n;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a.charAt(i-1)===b.charAt(j-1)?0:1));}p=c;}
+    return p[n];
+  }
+  function has(qt,k){
+    var best=0;
+    for(var i=0;i<qt.length;i++){
+      var d=lev(qt[i],k);
+      if(d===0)return 2;
+      if(k.length>=5&&qt[i].length>=4&&d<=(k.length>=9?2:1))best=Math.max(best,1.5);
+      else if(k.length>=4&&qt[i].length>=4&&k.length<5&&d===1&&qt[i].charAt(0)===k.charAt(0))best=Math.max(best,1.1);
+      else if(k.length>=5&&qt[i].length>=5&&(qt[i].indexOf(k)===0||k.indexOf(qt[i])===0)&&Math.abs(k.length-qt[i].length)<=3)best=Math.max(best,1.5);
+      else if(k.length===3&&qt[i].length>=5&&qt[i].length<=5&&qt[i].indexOf(k)===0)best=Math.max(best,1.5);
+    }
+    return best;
+  }
+  function score(e,qt,qa){
+    var s=0,seen={};
+    for(var i=0;i<e.k.length;i++){
+      var kt=toks(e.k[i],true),id=kt.join(' ');
+      if(!id.replace(/ /g,'')||seen[id])continue;seen[id]=1;
+      if(kt.length===1){s+=has(STOPS[kt[0]]?qa:qt,kt[0]);}
+      else if(kt.every(function(x){return STOPS[x]})){var al=true;for(var j2=0;j2<kt.length;j2++){if(!has(qa,kt[j2])){al=false;break;}}if(al)s+=1.5;}
+      else{var all=true,tot=0;for(var j=0;j<kt.length;j++){var hh=has(qa,kt[j]);if(!hh){all=false;break;}tot+=hh;}
+        if(all)s+=tot*0.9+1;}
+    }
+    return s*(e.w||1);
+  }
+  var MED=CFG.medical?new RegExp(CFG.medical,'i'):null;
+  function find(q){
+    var qt=toks(q),qa=toks(q,true);
+    if(!qt.length)return null;
+    var best=null,bs=0;
+    for(var i=0;i<CFG.kb.length;i++){var sc=score(CFG.kb[i],qt,qa);if(sc>bs){bs=sc;best=CFG.kb[i];}}
+    return bs>=1.5?best:null;
+  }
+  var flow=null;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function stepMsg(){var st=CFG.flow.steps[flow.i];return {a:st.q,chips:st.opts||[],flow:true};}
+  function startFlow(){flow={i:0,d:{}};return stepMsg();}
+  function inFlow(q){
+    var st=CFG.flow.steps[flow.i],v=q.trim();
+    if(/^(cancel|stop|exit|quit|nevermind|never mind)$/i.test(v)){flow=null;return {a:CFG.flow.cancel||'No problem, cancelled.',chips:CFG.chips};}
+    if(st.opts){var m=null,nv=norm(v);for(var i=0;i<st.opts.length;i++){var on=norm(st.opts[i]);if(on===nv||(nv.length>2&&(on.indexOf(nv)>=0||nv.indexOf(on)>=0))||lev(on,nv)<=1){m=st.opts[i];break;}}
+      if(!m&&!st.free)return {a:'Please pick one of the options below, or type <b>cancel</b>.',chips:st.opts,flow:true};
+      if(m)v=m;}
+    if(st.type==='phone'&&v.replace(/\D/g,'').length<6)return {a:'That does not look like a phone number. Could you type it again, with area code?',chips:[],flow:true};
+    if(st.type==='email'&&!/^\S+@\S+\.\S+$/.test(v))return {a:'Please type a valid e-mail address (name@example.com).',chips:[],flow:true};
+    if(v.length<1)return {a:st.q,chips:st.opts||[],flow:true};
+    flow.d[st.key]=v;flow.i++;
+    if(flow.i<CFG.flow.steps.length)return stepMsg();
+    var d=flow.d;flow=null;
+    var sum='';for(var k=0;k<CFG.flow.steps.length;k++){var s=CFG.flow.steps[k];sum+='<br>&bull; '+s.label+': <b>'+esc(d[s.key])+'</b>';}
+    return {a:CFG.flow.done.replace('{summary}',sum),chips:CFG.chips,sent:d};
+  }
+  function ask(q){
+    if(flow)return inFlow(q);
+    var qn=norm(q);
+    if(MED&&MED.test(qn))return {a:CFG.medicalAnswer,chips:CFG.chips,id:'medical'};
+    if(CFG.flow.trigger&&new RegExp(CFG.flow.trigger,'i').test(qn))return startFlow();
+    var e=find(q);
+    if(e){var r={a:e.a,chips:e.c||CFG.chips,id:e.id};if(e.flow)r.chips=[CFG.flow.chip].concat(r.chips).slice(0,4);return r;}
+    if(/^(hi|hello|hey|hiya|good (morning|afternoon|evening)|g day)\b/.test(qn))return {a:CFG.greeting,chips:CFG.chips,id:'greet'};
+    if(/^(thanks|thank you|thx|cheers|ta|great|ok|okay)\b/.test(qn))return {a:CFG.thanks||'Happy to help!',chips:CFG.chips,id:'thanks'};
+    return {a:CFG.fallback,chips:CFG.chips,id:'fallback'};
+  }
+  return {dbg:function(q){var qt=toks(q),qa=toks(q,true);return CFG.kb.map(function(e){return [e.id,score(e,qt,qa)]}).filter(function(x){return x[1]>0}).sort(function(a,b){return b[1]-a[1]}).slice(0,4)},ask:ask,startFlow:startFlow,inFlow:function(){return !!flow;},reset:function(){flow=null;}};
+}
+if(typeof module!=='undefined')module.exports={AssistantEngine:AssistantEngine};
+
+(function(){
+  if(typeof document==='undefined'||typeof CFG==='undefined')return;
+  var eng=AssistantEngine(CFG),$=function(i){return document.getElementById(i)};
+  var btn=$('ab'),panel=$('ap'),msgs=$('am'),chips=$('ac'),form=$('af'),inp=$('ai'),started=false;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function add(cls,html){var d=document.createElement('div');d.className='m '+cls;d.innerHTML=html;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
+  function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b);});}
+  function send(t){t=String(t||'').trim();if(!t)return;add('u',esc(t));chips.innerHTML='';
+    var r=eng.ask(t);setTimeout(function(){add('b',r.a);setChips(r.chips);},260);}
+  function open(){panel.classList.add('on');btn.setAttribute('aria-expanded','true');
+    if(!started){started=true;add('b',CFG.greeting);setChips(CFG.chips);}setTimeout(function(){inp.focus()},50);}
+  function close(){panel.classList.remove('on');btn.setAttribute('aria-expanded','false');}
+  btn.onclick=function(){panel.classList.contains('on')?close():open()};
+  $('ax').onclick=close;
+  form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';send(v);};
+  window.openAssistant=open;window.askAssistant=function(t){open();send(t)};
+  var els=document.querySelectorAll('[data-ask]');for(var i=0;i<els.length;i++){(function(el){el.addEventListener('click',function(ev){ev.preventDefault();window.askAssistant(el.getAttribute('data-ask'))})})(els[i]);}
+})();
+
+</script>
+</body>
+</html>

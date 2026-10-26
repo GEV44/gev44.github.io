@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dentist Melbourne Clinic, Bourke Street | Demo</title>
+<meta name="description" content="A one-page demo of Dentist Melbourne Clinic, Melbourne CBD, open 7 days, with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2a45;--navy2:#143a5e;--aqua:#1fb5c4;--aqua2:#0f93a1;--mint:#e4f6f7;--bg:#f5fafb;--ink:#14283a;--soft:#51677a;--line:#d3e3e8;--amber:#f5b942;
+--w-font:'DM Sans',system-ui,sans-serif;--w-acc:#0f93a1;--w-acc-ink:#fff;--w-r:14px;--w-r2:18px;--w-bg:#fff;--w-ink:#14283a;--w-line:#d3e3e8;--w-head:#0d2a45;--w-head-ink:#fff;--w-bot:#e4f6f7;--w-bot-ink:#14283a;--w-in:#f5fafb}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.serif{font-family:'DM Serif Display',Georgia,serif;font-weight:400}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.strip{background:var(--navy);color:#cfe6ee;font-size:13px;padding:8px 0}
+.strip .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 18px}
+.strip b{color:#fff}
+.strip i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#38d39f;margin-right:6px}
+header.nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:34px;height:34px;flex:none}
+.brand b{font-family:'DM Serif Display';font-weight:400;font-size:21px;line-height:1.05;color:var(--navy)}
+.brand small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--aqua2);font-family:'DM Sans'}
+nav.m{display:none;gap:22px;font-size:15px;font-weight:500}
+nav.m a{text-decoration:none;color:var(--soft)}nav.m a:hover{color:var(--aqua2)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--aqua2);color:#fff;text-decoration:none;border:0;border-radius:12px;padding:13px 22px;font:700 15px 'DM Sans';cursor:pointer}
+.btn:hover{background:var(--navy)}
+.btn.w{background:#fff;color:var(--navy)}.btn.w:hover{background:var(--amber)}
+.btn.o{background:transparent;border:2px solid #fff;color:#fff}.btn.o:hover{background:#fff;color:var(--navy)}
+@media(min-width:900px){nav.m{display:flex}}
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 70%);color:#fff;padding:56px 0 78px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(31,181,196,.35),transparent 65%)}
+.hero .wrap{display:grid;gap:36px;position:relative;z-index:1}
+@media(min-width:960px){.hero .wrap{grid-template-columns:1.1fr .9fr;align-items:center}}
+.hero .pill{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.12);border-radius:99px;padding:6px 14px;font-size:13px;margin-bottom:18px}
+.hero h1{font-family:'DM Serif Display';font-weight:400;font-size:clamp(40px,7.5vw,72px);line-height:1.02;margin-bottom:18px}
+.hero h1 em{font-style:italic;color:#7fe3ee}
+.hero p.l{font-size:18px;color:#cfe6ee;max-width:520px;margin-bottom:26px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.tickets{display:grid;gap:12px}
+.tk{background:#fff;color:var(--ink);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;align-items:center;position:relative}
+.tk::before,.tk::after{content:"";position:absolute;left:104px;width:16px;height:16px;border-radius:50%;background:var(--navy2)}
+.tk::before{top:-8px}.tk::after{bottom:-8px}
+.tk .pr{font-family:'DM Serif Display';font-size:42px;line-height:1;color:var(--aqua2);padding-right:16px;border-right:2px dashed var(--line);min-width:96px}
+.tk b{display:block;font-size:16px}
+.tk small{color:var(--soft);font-size:13px;line-height:1.35;display:block}
+.tk s{color:#8aa0ad}
+.tk .go{grid-column:1/-1;font-size:13px;font-weight:700;color:var(--aqua2);background:none;border:0;text-align:left;cursor:pointer;padding:4px 0 0}
+section{padding:72px 0}
+.kick{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--aqua2);margin-bottom:8px}
+h2{font-family:'DM Serif Display';font-weight:400;font-size:clamp(32px,5vw,50px);line-height:1.06;margin-bottom:14px;color:var(--navy)}
+.lead{color:var(--soft);max-width:620px;font-size:17px}
+.bento{display:grid;gap:14px;margin-top:34px}
+@media(min-width:700px){.bento{grid-template-columns:repeat(6,1fr)}.bento .a{grid-column:span 3}.bento .b{grid-column:span 2}.bento .c{grid-column:span 4}}
+.bx{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:8px;transition:transform .2s,box-shadow .2s}
+.bx:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(13,42,69,.1)}
+.bx .ic{width:42px;height:42px;border-radius:12px;background:var(--mint);display:flex;align-items:center;justify-content:center;color:var(--aqua2)}
+.bx .ic svg{width:22px;height:22px}
+.bx h3{font-family:'DM Serif Display';font-weight:400;font-size:24px;color:var(--navy)}
+.bx p{font-size:15px;color:var(--soft)}
+.bx button{margin-top:auto;align-self:flex-start;background:none;border:0;color:var(--aqua2);font:700 14px 'DM Sans';cursor:pointer;padding:6px 0}
+.bx.dark{background:var(--navy);border-color:var(--navy);color:#cfe6ee}.bx.dark h3{color:#fff}.bx.dark p{color:#b7d3de}.bx.dark .ic{background:rgba(255,255,255,.12);color:#7fe3ee}.bx.dark button{color:#7fe3ee}
+.medi{background:var(--mint)}
+.medi .wrap{display:grid;gap:30px}
+@media(min-width:900px){.medi .wrap{grid-template-columns:1fr 1fr;align-items:center}}
+.medi .big{font-family:'DM Serif Display';font-size:clamp(70px,16vw,150px);line-height:.9;color:var(--aqua2)}
+.elig{list-style:none;margin-top:14px;display:grid;gap:8px}
+.elig li{background:#fff;border-radius:12px;padding:10px 14px;font-size:15px;display:flex;gap:10px;align-items:flex-start}
+.elig li::before{content:"\2713";color:var(--aqua2);font-weight:700}
+.week{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px}
+@media(min-width:700px){.week{grid-template-columns:repeat(7,1fr)}}
+.week div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 8px;text-align:center}
+.week b{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.week span{font-family:'DM Serif Display';font-size:20px;color:var(--navy)}
+.week div.today{background:var(--navy);border-color:var(--navy)}.week div.today b{color:#7fe3ee}.week div.today span{color:#fff}
+.loc{display:grid;gap:24px;margin-top:30px}
+@media(min-width:800px){.loc{grid-template-columns:1fr 1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px}
+.card h3{font-family:'DM Serif Display';font-weight:400;font-size:26px;color:var(--navy);margin-bottom:8px}
+.how{counter-reset:s;list-style:none;display:grid;gap:14px;margin-top:6px}
+.how li{counter-increment:s;display:flex;gap:14px;align-items:flex-start}
+.how li::before{content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;background:var(--aqua2);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-top:10px}
+summary{cursor:pointer;font-weight:700;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"+";color:var(--aqua2);font-size:20px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:8px;color:var(--soft)}
+.cta{background:var(--navy);color:#fff;text-align:center}
+.cta h2{color:#fff}.cta .lead{margin:0 auto 22px;color:#b7d3de}
+footer{background:#081a2c;color:#8fa9ba;font-size:13px;padding:30px 0 90px}
+footer .demo{margin-top:8px;color:#a9c0cd}
+#ab{position:fixed;right:16px;bottom:16px;z-index:90;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--w-acc);color:var(--w-acc-ink);font:600 15px/1 var(--w-font);padding:14px 18px;border-radius:var(--w-r);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+#ab svg{width:20px;height:20px;flex:none}
+#ap{position:fixed;right:16px;bottom:80px;z-index:91;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 110px));background:var(--w-bg);color:var(--w-ink);border-radius:var(--w-r2,16px);box-shadow:0 18px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--w-font);border:1px solid var(--w-line)}
+#ap.on{display:flex}
+#ap header{background:var(--w-head);color:var(--w-head-ink);padding:12px 14px;display:flex;align-items:center;gap:10px}
+#ap header b{font-size:15px;display:block}#ap header small{opacity:.8;font-size:12px}
+#ap header div{flex:1;min-width:0}
+#ax{background:transparent;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1;padding:4px 8px}
+#am{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word}
+.m.b{background:var(--w-bot);color:var(--w-bot-ink);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--w-acc);color:var(--w-acc-ink);align-self:flex-end;border-bottom-right-radius:4px}
+.m a{color:inherit;text-decoration:underline}
+#ac{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+#ac button{border:1px solid var(--w-acc);background:transparent;color:var(--w-chip,var(--w-ink));font:500 13px var(--w-font);padding:6px 11px;border-radius:99px;cursor:pointer}
+#ac button:hover{background:var(--w-acc);color:var(--w-acc-ink)}
+#af{display:flex;gap:6px;padding:10px;border-top:1px solid var(--w-line)}
+#ai{flex:1;min-width:0;border:1px solid var(--w-line);background:var(--w-in,transparent);color:inherit;border-radius:10px;padding:10px 12px;font:16px var(--w-font)}
+#af button{border:0;background:var(--w-acc);color:var(--w-acc-ink);border-radius:10px;padding:0 16px;font:600 14px var(--w-font);cursor:pointer}
+#ap .note{font-size:11px;opacity:.65;text-align:center;padding:0 10px 8px}
+@media(max-width:480px){#ap{right:8px;bottom:72px;width:calc(100vw - 16px)}#ab span{display:none}#ab{padding:14px}}
+
+</style>
+</head>
+<body>
+<div class="strip"><div class="wrap"><span><i></i><b>Open 7 days</b> &middot; 9am &ndash; 6pm</span><span>Suite 302, 620 Bourke Street, Melbourne</span><a href="tel:0399982636"><b>(03) 9998 2636</b></a></div></div>
+<header class="nav"><div class="wrap">
+<a class="brand" href="#top"><svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="11" fill="#0f93a1"/><path d="M12 12c3-2 5 0 8 0s5-2 8 0c2 4-1 8-2 13-.5 3-2 5-3 0-.6-2-1-4-3-4s-2.4 2-3 4c-1 5-2.500 3-3 0-1-5-4-9-2-13z" fill="#fff"/></svg><span><b>Dentist Melbourne<br>Clinic</b></span></a>
+<nav class="m" aria-label="Main"><a href="#offers">Offers</a><a href="#services">Services</a><a href="#kids">Children</a><a href="#visit">Visit</a><a href="#faq">FAQ</a></nav>
+<a class="btn" href="#" data-ask="Book appointment">Book appointment</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<span class="pill">Melbourne CBD &middot; Open 7 days</span>
+<h1>Dental care in the CBD, <em>every day of the week</em></h1>
+<p class="l">General and family dentistry, cosmetic work, implants, aligners and same-day emergency care. Treatment is explained clearly, and nothing starts without your consent.</p>
+<div class="row"><a class="btn w" href="#" data-ask="Book appointment">Book appointment</a><a class="btn o" href="#offers">See online offers</a></div>
+</div>
+<div class="tickets" id="offers">
+<div class="tk"><div class="pr">$60</div><div><b>Dental check-up</b><small><s>$80</s> &middot; mention the promotion when booking</small></div><button class="go" data-ask="Check-up price">Ask about this offer &rarr;</button></div>
+<div class="tk"><div class="pr">$99</div><div><b>Hygiene &amp; clean</b><small><s>$223</s> &middot; new patients, weekdays only</small></div><button class="go" data-ask="Hygiene and clean">Ask about this offer &rarr;</button></div>
+<div class="tk"><div class="pr">$449</div><div><b>Zoom! teeth whitening</b><small><s>$899</s> &middot; 50% off</small></div><button class="go" data-ask="Teeth whitening">Ask about this offer &rarr;</button></div>
+</div>
+</div></div>
+
+<section id="services"><div class="wrap">
+<div class="kick">Services</div><h2>Everything under one roof</h2>
+<p class="lead">From a routine check-up to a complete smile makeover. A selection of what the clinic offers:</p>
+<div class="bento">
+<div class="bx a dark"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 8v8M8 12h8"/><circle cx="12" cy="12" r="9"/></svg></span><h3>Emergency dentist</h3><p>Urgent care within clinic hours, with several spots kept free every day and a same-day response for urgent needs.</p><button data-ask="Emergency dentist">Ask about emergencies &rarr;</button></div>
+<div class="bx a"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.500 6 .7-4.500 4 1.300 5.800L12 16l-5.300 3 1.300-5.800-4.500-4 6-.7z"/></svg></span><h3>Cosmetic dentistry</h3><p>Porcelain veneers, whitening and more, to enhance the beauty of your smile.</p><button data-ask="Cosmetic dentistry">Ask &rarr;</button></div>
+<div class="bx b"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 9c0-3 2-5 4-5 1.500 0 2 .8 3 .8S13.500 4 15 4c2 0 4 2 4 5 0 4-2 5-2 9 0 2-1 3-2 3s-1.500-2-3-2-2 2-3 2-2-1-2-3c0-4-2-5-2-9z"/></svg></span><h3>Crowns</h3><p>Ceramic, mainly zirconia, built to last 15+ years. CEREC same-day crowns also listed.</p><button data-ask="Dental crowns">Ask &rarr;</button></div>
+<div class="bx b"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v7M9 7h6M8 10h8l-1 11h-6z"/></svg></span><h3>Implants</h3><p>Replace a single tooth or a complete upper or lower arch.</p><button data-ask="Dental implants">Ask &rarr;</button></div>
+<div class="bx b"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12h16M7 9v6M12 9v6M17 9v6"/></svg></span><h3>Aligners &amp; braces</h3><p>Invisalign and clear aligners, or traditional braces.</p><button data-ask="Clear aligners">Ask &rarr;</button></div>
+<div class="bx c"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><h3>Teeth whitening, root canal treatment &amp; general care</h3><p>Whitening with the latest technology, root canal therapy to avoid extraction, and general and family dentistry. Whether you need a particular treatment is for the dentist to decide at an appointment.</p><button data-ask="Root canal treatment">Ask about root canals &rarr;</button></div>
+</div>
+</div></section>
+
+<section id="kids" class="medi"><div class="wrap">
+<div><div class="big" aria-hidden="true">$1,000</div></div>
+<div><div class="kick">Children</div><h2>Medicare dental benefit for children</h2>
+<p class="lead">Up to $1,000 per child from Medicare (a Medicare letter is needed). A child is eligible if they are:</p>
+<ul class="elig"><li>aged between 2 and 17</li><li>eligible for Medicare</li><li>part of a family receiving Family Tax Benefit A, or receiving a payment such as Youth Allowance, Abstudy, Disability Support Pension, Parenting Payment or Special Benefit</li></ul>
+<p style="margin-top:16px"><button class="btn" data-ask="Children's dental benefit">Ask about the benefit</button></p></div>
+</div></section>
+
+<section id="visit"><div class="wrap">
+<div class="kick">Visit</div><h2>Open every day, 9am to 6pm</h2>
+<div class="week" id="wk"><div><b>Mon</b><span>9&ndash;6</span></div><div><b>Tue</b><span>9&ndash;6</span></div><div><b>Wed</b><span>9&ndash;6</span></div><div><b>Thu</b><span>9&ndash;6</span></div><div><b>Fri</b><span>9&ndash;6</span></div><div><b>Sat</b><span>9&ndash;6</span></div><div><b>Sun</b><span>9&ndash;6</span></div></div>
+<div class="loc">
+<div class="card"><h3>Find us</h3><p>Suite 302<br>620 Bourke Street<br>Melbourne VIC 3000</p><p style="margin-top:10px"><a href="tel:0399982636">(03) 9998 2636</a><br><a href="mailto:dentistmelbourneclinic@gmail.com">dentistmelbourneclinic@gmail.com</a></p></div>
+<div class="card"><h3>How booking works</h3><ol class="how"><li>Tell the assistant what you need and a good day.</li><li>The team calls to confirm a time.</li><li>Your dentist explains the treatment before anything starts.</li></ol></div>
+</div></div></section>
+
+<section id="faq" style="background:#fff"><div class="wrap">
+<div class="kick">FAQ</div><h2>Good to know</h2>
+<details><summary>Do I need to mention an offer when booking?</summary><p>Yes. The online offers say to mention the special when you book. The $99 hygiene &amp; clean is for new patients on weekdays and cannot be combined with other offers.</p></details>
+<details><summary>What does the $99 clean include?</summary><p>A standard hygiene cleaning. Deep scaling and gum treatments are not included.</p></details>
+<details><summary>Who can use the children&rsquo;s benefit?</summary><p>Children aged 2&ndash;17 who are Medicare-eligible and in a family receiving Family Tax Benefit A or certain government payments. Eligibility is assessed at the start of each year.</p></details>
+<details><summary>Is there an emergency service?</summary><p>Yes, during clinic hours. Several spots are reserved every day. Call the clinic and describe the situation to the team.</p></details>
+<details><summary>Is the website available in Chinese?</summary><p>Yes, the clinic website has a Chinese version.</p></details>
+</div></section>
+
+<section class="cta"><div class="wrap">
+<h2>Ready when you are</h2>
+<p class="lead">Ask the assistant a question, or leave an appointment request and the team will call you.</p>
+<a class="btn w" href="#" data-ask="Book appointment">Book appointment</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">Dentist Melbourne Clinic &middot; Suite 302, 620 Bourke Street, Melbourne VIC 3000 &middot; (03) 9998 2636<br>Offers as published on the clinic&rsquo;s website; availability confirmed by the team. This assistant gives no medical advice.
+<div class="demo">Demo &middot; prepared by Gevorg Hovhannisyan</div></div></footer>
+
+<button id="ab" type="button" aria-expanded="false" aria-controls="ap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L3 21l1.8-6.1A8 8 0 1 1 21 12z"/></svg><span>Ask the clinic</span></button>
+<div id="ap" role="dialog" aria-label="Clinic assistant"><header><div><b>Clinic assistant</b><small>Answers 24/7 &middot; no medical advice</small></div><button id="ax" type="button" aria-label="Close">&times;</button></header>
+<div id="am" aria-live="polite"></div><div id="ac"></div>
+<form id="af" autocomplete="off"><input id="ai" type="text" placeholder="Type your question" aria-label="Your question"><button type="submit">Send</button></form>
+<div class="note">Demo preview. Nothing you type here is sent anywhere.</div></div>
+<script>
+try{var d=(new Date().getDay()+6)%7,c=document.querySelectorAll('#wk div');if(c[d])c[d].className='today';}catch(e){}
+var CFG={
+name:'Clinic assistant',
+greeting:'Hello, and welcome to Dentist Melbourne Clinic on Bourke Street. I can tell you about our services, current online offers, opening hours and the children’s Medicare benefit, or take an appointment request for the team. I can’t give medical advice; for that our dentists will help.',
+thanks:'You’re welcome. Anything else I can help with?',
+chips:['Opening hours','Special offers','Emergency dentist','Children’s dental benefit','Book appointment'],
+fallback:'I don’t have that information, and I don’t want to guess. The clinic team will confirm: <a href="tel:0399982636">(03) 9998 2636</a> or <a href="mailto:dentistmelbourneclinic@gmail.com">dentistmelbourneclinic@gmail.com</a>. Or tap <b>Book appointment</b> and I’ll pass your request on.',
+medical:'\\b(pain\\b|painful|ache\\b|toothache|hurt|hurts|swell|swollen|swelling|bleed|bleeding|infect|infection|abscess|antibiotic|antibiotics|diagnos|fever|medication|medicine|painkiller|allerg|pregnan|breastfeed|numbness|sensitive|sensitivity|loose|chipped|broken|cracked|knocked|wisdom|cavity|decay|gum disease|is it normal|should i worry|what is wrong|safe for me)',
+medicalAnswer:'I can’t give medical advice or tell what is causing a symptom; that needs a dentist. If you are in pain or had an accident, please <b>call (03) 9998 2636</b>: the clinic keeps emergency spots every day and responds the same day within clinic hours (9am–6pm, 7 days). For severe swelling, trouble breathing or swallowing, or heavy bleeding, call 000.',
+flow:{
+ trigger:'(book|booking|appointment|reserve|schedule|make an appointment|see a dentist|see the dentist|come in|new patient|lock the special|lock in)',
+ chip:'Book appointment',
+ cancel:'No problem, cancelled. You can call the clinic on (03) 9998 2636 any time.',
+ steps:[
+  {key:'service',label:'Reason',q:'Happy to help. What is the appointment for?',opts:['Check-up','Hygiene & clean','Teeth whitening','Clear aligners / Invisalign','Crown or implant','Emergency / urgent','Other'],free:true},
+  {key:'patient',label:'Patient',q:'Is this for a new patient or an existing patient?',opts:['New patient','Existing patient','Child (2–17)'],free:true},
+  {key:'day',label:'Preferred day',q:'Which day suits you? The clinic is open 7 days, 9am–6pm.',opts:['Weekday','Saturday','Sunday','Any day'],free:true},
+  {key:'name',label:'Name',q:'Your name?'},
+  {key:'phone',label:'Phone',q:'And a phone number so the team can call to confirm a time?',type:'phone'}
+ ],
+ done:'Thank you. Your appointment request has been passed to the Dentist Melbourne Clinic team, who will call to confirm a time:{summary}<br><br><small>(Demo preview: nothing is actually sent.)</small>'
+},
+kb:[
+{id:'hours',k:['hours','open','opening','close','closing','closed','saturday','sunday','weekend','monday','friday','late','7 days','seven days','every day','daily','time','public holiday'],a:'<b>Open 7 days a week, 9am – 6pm</b> (Monday to Sunday). I don’t have public holiday hours, so the team will confirm: <a href="tel:0399982636">(03) 9998 2636</a>.'},
+{id:'where',k:['where','address','location','find','bourke street','620 bourke','suite 302','cbd','melbourne cbd','directions','map','parking','park','tram','train','station','floor','level'],a:'<b>Suite 302, 620 Bourke Street, Melbourne VIC 3000</b> (Melbourne CBD). Phone <a href="tel:0399982636">(03) 9998 2636</a>. I don’t have parking or transport details; the team will confirm.'},
+{id:'contact',k:['contact','phone','call','email','e-mail','number','reach','speak','talk','mail','ring'],a:'<a href="tel:0399982636">(03) 9998 2636</a> · <a href="mailto:dentistmelbourneclinic@gmail.com">dentistmelbourneclinic@gmail.com</a>'},
+{id:'offers',w:2,k:['offer','offers','special','specials','discount','discounts','deal','deals','promotion','promo','promotions','cheap','save','online special','lock the special'],a:'<b>Current online offers</b> (per the website):<br>• $60 dental check-up (normal $80)<br>• $99 hygiene &amp; clean (normal $223), new patients, weekdays<br>• $449 Zoom! teeth whitening (normal $899)<br>• $999 dental crown (normal $1,600)<br>• $4,999 clear aligners (limited to 10 candidates)<br>• $1,000 Medicare benefit for children<br>Please mention the special when booking. Offers can change, so the team confirms availability.',c:['Check-up price','Teeth whitening','Clear aligners','Book appointment']},
+{id:'checkup',w:2,k:['check up','checkup','check-up','exam','examination','$60','general dentist','general dentistry','family dentistry','family','routine'],a:'The <b>dental check-up</b> is currently offered online at <b>$60</b> (normal price $80). Mention the promotion when booking; the offer says “limited time only”.',flow:1},
+{id:'hygiene',w:2,k:['hygiene','clean','cleaning','scale','scaling','hygienist','polish','$99','scale and clean'],a:'<b>Hygiene &amp; clean: $99</b> (normal $223), for new patients and weekdays only. It is a standard hygiene cleaning; deep scaling and gum treatments are not included. Mention the special when booking.',flow:1},
+{id:'whitening',w:2,k:['whitening','whiten','white','bleach','zoom','brighten','teeth colour','shade','$449'],a:'<b>Zoom! teeth whitening: $449</b> (50% off the normal $899). Terms on the site: patient must be over 18, results vary, veneers, fillings and crowns will not change colour, and it is not suitable during pregnancy or breastfeeding.',flow:1},
+{id:'aligners',w:2,k:['aligner','aligners','clear aligner','clear aligners','invisalign','straighten','straight teeth','invisible braces','crooked','gap','gaps','$4999','$4,999','orthodontic'],a:'<b>Clear aligners: $4,999</b> with two years of unlimited trays guaranteed result; the first consultation, 3D scanning, skeletal analysis and treatment plan are included. Limited to 10 candidates. Invisalign is also offered; it suits mild to moderate cases, and the dentist decides on suitability.',flow:1},
+{id:'braces',w:2,k:['braces','brace','metal braces','wires','brackets','orthodontics','orthodontist'],a:'Dental braces are offered (the metal brackets-and-wires type). Whether they or aligners suit you is a decision for the dentist at a consultation; the team can book it.',flow:1},
+{id:'crowns',w:2,k:['crown','crowns','cap','caps','bridge','zirconia','ceramic','cerec','same day crown','same-day','$999'],a:'<b>Dental crowns:</b> the clinic prefers ceramic (mainly zirconia) crowns, which can last 15+ years. Online offer: <b>$999</b> per crown (normal $1,600). <b>CEREC same-day crowns</b> are also listed; the team will confirm availability.',flow:1},
+{id:'implants',w:2,k:['implant','implants','missing tooth','missing teeth','replace tooth','denture','dentures','tooth replacement','arch'],a:'<b>Dental implants</b> cover replacing a single tooth up to a complete upper or lower arch. Pricing is not published, so the dentist will give a quote after an assessment.',flow:1},
+{id:'rootcanal',w:2,k:['root canal','rootcanal','endodontic','root treatment','save tooth','save my tooth'],a:'<b>Root canal treatment</b> is offered in-house, and the clinic says it prevents tooth loss, usually finished with a crown. Whether you need one is for a dentist to decide; the team can book an appointment.',flow:1},
+{id:'cosmetic',w:2,k:['cosmetic','veneer','veneers','porcelain','smile makeover','smile','bonding','aesthetic','look better'],a:'<b>Cosmetic dentistry</b> includes porcelain veneers, teeth whitening, crowns and more, to enhance the beauty of your smile. A dentist will plan it with you at a consultation.',flow:1},
+{id:'emergency',w:2,k:['emergency','urgent','same day','same-day','after hours','out of hours','lost filling','lost a filling','asap','today','right now'],a:'<b>Emergency dentist:</b> the clinic provides urgent care within clinic hours (9am–6pm, 7 days) and keeps several spots free every day, with a same-day response for urgent needs. Call <a href="tel:0399982636">(03) 9998 2636</a>. I can’t assess symptoms; the dentist will.'},
+{id:'children',w:2,k:['child','children','kid','kids','medicare','bulk bill','bulk billing','cdbs','child dental benefit','$1000','$1,000','school','son','daughter','family tax','government'],a:'<b>Children’s dental benefit:</b> Medicare supports up to <b>$1,000 per child</b> (a Medicare letter is needed). A child is eligible if aged 2–17, Medicare-eligible, and part of a family receiving Family Tax Benefit A or certain government payments (Youth Allowance, Abstudy, Disability Support Pension, Parenting Payment, Special Benefit). Eligibility is assessed each year.',c:['Book appointment','Opening hours','Special offers']},
+{id:'price',k:['price','prices','pricing','cost','how much','fee','fees','charge','quote','afford','expensive','payment plan','afterpay','zip','instalment','instalments','health fund','health insurance','insurance','hicaps','rebate','private health'],a:'Published prices are on the offers page: check-up $60, hygiene &amp; clean $99, Zoom! whitening $449, crown $999, clear aligners $4,999. Other treatments, health fund rebates and payment plans are quoted by the team: <a href="tel:0399982636">(03) 9998 2636</a>.',c:['Special offers','Book appointment']},
+{id:'dentists',k:['dentist','dentists','doctor','team','who','experience','experienced','qualified','staff','specialist','specialists'],a:'The site describes a team of well-rounded dentists covering general and family dentistry, cosmetic work, veneers, whitening, implants and emergency care. Names and qualifications are not published on the site, so the team will confirm.'},
+{id:'language',k:['chinese','mandarin','cantonese','language','languages','speak','english','中文','translator','interpreter'],a:'The clinic website is available in <b>English and Chinese</b> (中文). Which languages the dentists and staff speak is something the team will confirm.'},
+{id:'process',w:2,k:['consent','explain','explained','transparent','transparency','procedure','what to expect','first visit','first time','nervous','anxious','scared','fear','afraid','sedation','gentle'],a:'The clinic says it keeps the process transparent: treatment is explained and nothing is started without your consent. For anxiety or sedation options, the dentist will talk it through; the team will confirm.'},
+{id:'privacy',k:['privacy','data','personal information','confidential','records','policy'],a:'The clinic has a Privacy Policy on its website. For anything about your records, please contact the team.'},
+{id:'reviews',k:['review','reviews','rating','rated','testimonial','testimonials','google','reputation','recommend'],a:'Patient reviews are on the clinic’s Reviews page and on Google, where the clinic is rated about 4.8 from 333 reviews.'},
+{id:'cancel',k:['cancel','cancellation','reschedule','change appointment','move appointment','late','no show'],a:'For changes or cancellations, please call the clinic: <a href="tel:0399982636">(03) 9998 2636</a>. I don’t have the cancellation policy.'}
+]};
+
+/* assistant engine: client-side, keyword + fuzzy matching */
+function AssistantEngine(CFG){
+  var STOP={the:1,a:1,an:1,is:1,are:1,do:1,does:1,you:1,your:1,i:1,me:1,my:1,we:1,of:1,to:1,for:1,and:1,or:1,can:1,how:1,what:1,where:1,when:1,which:1,it:1,on:1,in:1,at:1,there:1,have:1,has:1,be:1,am:1,get:1,please:1,hi:1,hello:1,u:1,ur:1,much:1,about:1,with:1,that:1,this:1,any:1,some:1,would:1,like:1,want:1,need:1,tell:1,know:1,if:1,so:1};
+  function norm(s){return String(s).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9$ ]+/g,' ').replace(/\s+/g,' ').trim();}
+  function stem(w){
+    if(w.length<4)return w;
+    if(/ies$/.test(w))w=w.slice(0,-3)+'y';
+    else if(/(sses|xes|ches|shes)$/.test(w))w=w.slice(0,-2);
+    else if(/s$/.test(w)&&!/ss$/.test(w))w=w.slice(0,-1);
+    if(w.length>5&&/ing$/.test(w))w=w.slice(0,-3);
+    else if(w.length>4&&/ed$/.test(w))w=w.slice(0,-2);
+    if(w.length>3&&/e$/.test(w))w=w.slice(0,-1);
+    if(w.length>3&&/(.)\1$/.test(w)&&!/(ss|ll)$/.test(w))w=w.slice(0,-1);
+    return w;
+  }
+  var STOPS={};(function(){for(var sk in STOP)STOPS[stem(sk)]=1;})();
+  function toks(s,keepStop){return norm(s).split(' ').filter(function(x){return x&&(keepStop||!STOP[x]);}).map(stem);}
+  function lev(a,b){
+    if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;
+    var p=[],i,j;for(j=0;j<=n;j++)p[j]=j;
+    for(i=1;i<=m;i++){var c=[i];for(j=1;j<=n;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a.charAt(i-1)===b.charAt(j-1)?0:1));}p=c;}
+    return p[n];
+  }
+  function has(qt,k){
+    var best=0;
+    for(var i=0;i<qt.length;i++){
+      var d=lev(qt[i],k);
+      if(d===0)return 2;
+      if(k.length>=5&&qt[i].length>=4&&d<=(k.length>=9?2:1))best=Math.max(best,1.5);
+      else if(k.length>=4&&qt[i].length>=4&&k.length<5&&d===1&&qt[i].charAt(0)===k.charAt(0))best=Math.max(best,1.1);
+      else if(k.length>=5&&qt[i].length>=5&&(qt[i].indexOf(k)===0||k.indexOf(qt[i])===0)&&Math.abs(k.length-qt[i].length)<=3)best=Math.max(best,1.5);
+      else if(k.length===3&&qt[i].length>=5&&qt[i].length<=5&&qt[i].indexOf(k)===0)best=Math.max(best,1.5);
+    }
+    return best;
+  }
+  function score(e,qt,qa){
+    var s=0,seen={};
+    for(var i=0;i<e.k.length;i++){
+      var kt=toks(e.k[i],true),id=kt.join(' ');
+      if(!id.replace(/ /g,'')||seen[id])continue;seen[id]=1;
+      if(kt.length===1){s+=has(STOPS[kt[0]]?qa:qt,kt[0]);}
+      else if(kt.every(function(x){return STOPS[x]})){var al=true;for(var j2=0;j2<kt.length;j2++){if(!has(qa,kt[j2])){al=false;break;}}if(al)s+=1.5;}
+      else{var all=true,tot=0;for(var j=0;j<kt.length;j++){var hh=has(qa,kt[j]);if(!hh){all=false;break;}tot+=hh;}
+        if(all)s+=tot*0.9+1;}
+    }
+    return s*(e.w||1);
+  }
+  var MED=CFG.medical?new RegExp(CFG.medical,'i'):null;
+  function find(q){
+    var qt=toks(q),qa=toks(q,true);
+    if(!qt.length)return null;
+    var best=null,bs=0;
+    for(var i=0;i<CFG.kb.length;i++){var sc=score(CFG.kb[i],qt,qa);if(sc>bs){bs=sc;best=CFG.kb[i];}}
+    return bs>=1.5?best:null;
+  }
+  var flow=null;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function stepMsg(){var st=CFG.flow.steps[flow.i];return {a:st.q,chips:st.opts||[],flow:true};}
+  function startFlow(){flow={i:0,d:{}};return stepMsg();}
+  function inFlow(q){
+    var st=CFG.flow.steps[flow.i],v=q.trim();
+    if(/^(cancel|stop|exit|quit|nevermind|never mind)$/i.test(v)){flow=null;return {a:CFG.flow.cancel||'No problem, cancelled.',chips:CFG.chips};}
+    if(st.opts){var m=null,nv=norm(v);for(var i=0;i<st.opts.length;i++){var on=norm(st.opts[i]);if(on===nv||(nv.length>2&&(on.indexOf(nv)>=0||nv.indexOf(on)>=0))||lev(on,nv)<=1){m=st.opts[i];break;}}
+      if(!m&&!st.free)return {a:'Please pick one of the options below, or type <b>cancel</b>.',chips:st.opts,flow:true};
+      if(m)v=m;}
+    if(st.type==='phone'&&v.replace(/\D/g,'').length<6)return {a:'That does not look like a phone number. Could you type it again, with area code?',chips:[],flow:true};
+    if(st.type==='email'&&!/^\S+@\S+\.\S+$/.test(v))return {a:'Please type a valid e-mail address (name@example.com).',chips:[],flow:true};
+    if(v.length<1)return {a:st.q,chips:st.opts||[],flow:true};
+    flow.d[st.key]=v;flow.i++;
+    if(flow.i<CFG.flow.steps.length)return stepMsg();
+    var d=flow.d;flow=null;
+    var sum='';for(var k=0;k<CFG.flow.steps.length;k++){var s=CFG.flow.steps[k];sum+='<br>&bull; '+s.label+': <b>'+esc(d[s.key])+'</b>';}
+    return {a:CFG.flow.done.replace('{summary}',sum),chips:CFG.chips,sent:d};
+  }
+  function ask(q){
+    if(flow)return inFlow(q);
+    var qn=norm(q);
+    if(MED&&MED.test(qn))return {a:CFG.medicalAnswer,chips:CFG.chips,id:'medical'};
+    if(CFG.flow.trigger&&new RegExp(CFG.flow.trigger,'i').test(qn))return startFlow();
+    var e=find(q);
+    if(e){var r={a:e.a,chips:e.c||CFG.chips,id:e.id};if(e.flow)r.chips=[CFG.flow.chip].concat(r.chips).slice(0,4);return r;}
+    if(/^(hi|hello|hey|hiya|good (morning|afternoon|evening)|g day)\b/.test(qn))return {a:CFG.greeting,chips:CFG.chips,id:'greet'};
+    if(/^(thanks|thank you|thx|cheers|ta|great|ok|okay)\b/.test(qn))return {a:CFG.thanks||'Happy to help!',chips:CFG.chips,id:'thanks'};
+    return {a:CFG.fallback,chips:CFG.chips,id:'fallback'};
+  }
+  return {dbg:function(q){var qt=toks(q),qa=toks(q,true);return CFG.kb.map(function(e){return [e.id,score(e,qt,qa)]}).filter(function(x){return x[1]>0}).sort(function(a,b){return b[1]-a[1]}).slice(0,4)},ask:ask,startFlow:startFlow,inFlow:function(){return !!flow;},reset:function(){flow=null;}};
+}
+if(typeof module!=='undefined')module.exports={AssistantEngine:AssistantEngine};
+
+(function(){
+  if(typeof document==='undefined'||typeof CFG==='undefined')return;
+  var eng=AssistantEngine(CFG),$=function(i){return document.getElementById(i)};
+  var btn=$('ab'),panel=$('ap'),msgs=$('am'),chips=$('ac'),form=$('af'),inp=$('ai'),started=false;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function add(cls,html){var d=document.createElement('div');d.className='m '+cls;d.innerHTML=html;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
+  function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b);});}
+  function send(t){t=String(t||'').trim();if(!t)return;add('u',esc(t));chips.innerHTML='';
+    var r=eng.ask(t);setTimeout(function(){add('b',r.a);setChips(r.chips);},260);}
+  function open(){panel.classList.add('on');btn.setAttribute('aria-expanded','true');
+    if(!started){started=true;add('b',CFG.greeting);setChips(CFG.chips);}setTimeout(function(){inp.focus()},50);}
+  function close(){panel.classList.remove('on');btn.setAttribute('aria-expanded','false');}
+  btn.onclick=function(){panel.classList.contains('on')?close():open()};
+  $('ax').onclick=close;
+  form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';send(v);};
+  window.openAssistant=open;window.askAssistant=function(t){open();send(t)};
+  var els=document.querySelectorAll('[data-ask]');for(var i=0;i<els.length;i++){(function(el){el.addEventListener('click',function(ev){ev.preventDefault();window.askAssistant(el.getAttribute('data-ask'))})})(els[i]);}
+})();
+
+</script>
+</body>
+</html>

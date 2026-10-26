@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welcome Beauty Miami (concept page)</title>
+<meta name="description" content="Concept one-page version of the Welcome Beauty Miami website with a built-in concierge assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bz:#9b7b37;--bz2:#c9a45c;--bg:#141414;--bg2:#1c1c1e;--bg3:#25252a;--tx:#ece7dc;--mu:#9a958a;--ln:#34343a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:300 15.5px/1.7 'Montserrat',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;line-height:1.08}
+a{color:inherit}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+.ticker{background:var(--bz);color:#141414;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;text-align:center;padding:7px 10px}
+header{position:sticky;top:0;z-index:30;background:rgba(20,20,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--ln)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:62px}
+.lg{font-family:'Cormorant Garamond',serif;font-size:25px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+.lg b{color:var(--bz2);font-weight:600}
+nav{display:none;gap:24px;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+nav a{text-decoration:none;color:var(--mu)}
+nav a:hover{color:var(--bz2)}
+.bt{display:inline-block;border:1px solid var(--bz2);color:var(--bz2);padding:11px 24px;font:500 12px 'Montserrat',sans-serif;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;transition:.25s}
+.bt:hover,.bt.f{background:var(--bz2);color:#141414}
+.bt.f:hover{background:transparent;color:var(--bz2)}
+.hero{text-align:center;padding:74px 0 70px;background:radial-gradient(ellipse at 50% 0,#2a2418 0,transparent 62%)}
+.ey{font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--bz2);margin-bottom:20px}
+.hero h1{font-size:clamp(46px,11vw,96px);font-weight:300}
+.hero h1 i{color:var(--bz2)}
+.hero p{max-width:560px;margin:22px auto 30px;color:#c8c2b4;font-size:16.5px}
+.hero .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.rate{display:inline-flex;gap:12px;align-items:center;margin-top:34px;border:1px solid var(--ln);padding:10px 20px;font-size:13px;color:var(--mu)}
+.rate b{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--bz2);font-weight:600}
+section{padding:64px 0}
+.ct{text-align:center;max-width:620px;margin:0 auto 34px}
+.ct h2{font-size:clamp(34px,6.5vw,52px)}
+.ct p{color:var(--mu);margin-top:10px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 12px;justify-content:flex-start;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;background:transparent;border:1px solid var(--ln);color:var(--mu);padding:10px 18px;font:500 11.5px 'Montserrat',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border-radius:30px}
+.tabs button.on{background:var(--bz);border-color:var(--bz);color:#fff}
+.pane{display:none;background:var(--bg2);border:1px solid var(--ln);padding:28px 24px;margin-top:6px}
+.pane.on{display:grid;gap:20px}
+.pane h3{font-size:34px;color:var(--bz2)}
+.pane p{color:#bdb7a9;max-width:520px}
+.pane ul{list-style:none;display:grid;gap:8px;grid-template-columns:1fr 1fr;font-size:14px}
+.pane li{border-bottom:1px solid var(--ln);padding:8px 0}
+.pop{display:inline-block;background:var(--bz);color:#fff;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:3px 10px;margin-bottom:8px}
+.mem{background:linear-gradient(135deg,#2a2418,#17140d);border-top:1px solid var(--bz);border-bottom:1px solid var(--bz)}
+.mem .w{display:grid;gap:26px;text-align:center}
+.mem h2{font-size:clamp(36px,7vw,60px)}
+.mem h2 i{color:var(--bz2)}
+.pr{font-family:'Cormorant Garamond',serif;font-size:64px;color:var(--bz2);line-height:1}
+.pr small{font-size:16px;color:var(--mu);font-family:'Montserrat';letter-spacing:.1em}
+.perks{display:grid;gap:12px;text-align:left;max-width:520px;margin:0 auto;font-size:14.5px}
+.perks div{padding-left:26px;position:relative}
+.perks div:before{content:"\2726";position:absolute;left:0;color:var(--bz2)}
+.fine{font-size:12.5px;color:var(--mu);max-width:560px;margin:0 auto}
+.space{display:grid;gap:14px}
+.sp{border:1px solid var(--ln);padding:26px;background:var(--bg2);position:relative;overflow:hidden}
+.sp:after{content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;border:1px solid var(--bz);border-radius:50%;opacity:.5}
+.sp b{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;display:block;margin-bottom:4px}
+.sp span{color:var(--mu);font-size:14px}
+.mn{display:grid;gap:22px}.mn div{border-top:1px solid var(--bz);padding-top:14px}.mn h3{font-size:28px;color:var(--bz2);margin-bottom:6px}.mn p{color:#bdb7a9;font-size:14.5px;margin-bottom:8px}
+.wy{display:grid;gap:14px}.wy div{border:1px solid var(--ln);padding:20px;background:var(--bg2)}.wy b{display:block;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:24px;color:var(--bz2)}.wy span{font-size:14px;color:#bdb7a9}
+.rev{background:var(--bg2);border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.rg{display:grid;gap:16px}
+.rq{border:1px solid var(--ln);padding:22px;background:var(--bg)}
+.rq p{font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.35;color:#ddd6c5}
+.rq cite{display:block;margin-top:10px;font-style:normal;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--bz2)}
+.visit{display:grid;gap:18px}
+.vc{border:1px solid var(--ln);padding:28px;text-align:center;background:var(--bg2)}
+.vc h3{font-size:30px;color:var(--bz2);margin-bottom:8px}
+.vc p{color:#bdb7a9;font-size:14.5px}
+.vc a.ln{display:block;color:var(--tx);text-decoration:none;margin:3px 0}
+details{border-bottom:1px solid var(--ln)}
+summary{padding:18px 4px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;font-family:'Cormorant Garamond',serif;font-size:22px}
+summary:after{content:"+";color:var(--bz2)}
+details[open] summary:after{content:"\2212"}
+details p{padding:0 4px 18px;color:#bdb7a9;font-size:14.5px}
+footer{text-align:center;padding:44px 20px 100px;border-top:1px solid var(--ln);font-size:13px;color:var(--mu)}
+footer .lg{display:block;margin-bottom:10px;color:var(--tx)}
+footer .demo{margin-top:16px;font-size:12px}
+@media(min-width:760px){
+nav{display:flex}
+.pane.on{grid-template-columns:1.1fr 1fr;align-items:start;padding:36px}
+.space{grid-template-columns:repeat(3,1fr)}
+.rg{grid-template-columns:repeat(3,1fr)}.mn{grid-template-columns:repeat(3,1fr);gap:30px}.wy{grid-template-columns:repeat(4,1fr)}
+.visit{grid-template-columns:repeat(3,1fr)}
+.mem .w{grid-template-columns:1fr 1fr;text-align:left;align-items:center}
+.mem .perks{margin:0}
+}
+/* concierge */
+.ga-fab{position:fixed;right:16px;bottom:16px;z-index:60;background:var(--bz);color:#fff;border:0;border-radius:4px;padding:13px 20px;display:flex;gap:9px;align-items:center;font:500 12px 'Montserrat',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.5)}
+.ga-fab.ga-off{display:none}
+.ga-panel{position:fixed;z-index:70;right:0;bottom:0;width:100%;height:min(580px,88vh);background:var(--bg2);border:1px solid var(--bz);display:flex;flex-direction:column;box-shadow:0 -10px 50px rgba(0,0,0,.6)}
+.ga-panel[hidden]{display:none}
+@media(min-width:520px){.ga-panel{right:18px;bottom:18px;width:376px}}
+.ga-head{padding:16px;border-bottom:1px solid var(--ln);display:flex;justify-content:space-between;align-items:center;background:var(--bg)}
+.ga-head b{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:var(--bz2);display:block;letter-spacing:.04em}
+.ga-head small{font-size:11.5px;color:var(--mu);letter-spacing:.06em}
+.ga-x{background:none;border:0;color:var(--tx);font-size:28px;cursor:pointer;line-height:1}
+.ga-log{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.ga-m{max-width:88%;padding:10px 14px;font-size:13.5px;line-height:1.55;white-space:pre-line}
+.ga-bot{background:var(--bg3);align-self:flex-start;border-left:2px solid var(--bz2)}
+.ga-me{background:var(--bz);color:#fff;align-self:flex-end}
+.ga-chips{display:flex;gap:6px;flex-wrap:wrap;padding:6px 12px;max-height:104px;overflow:auto}
+.ga-chips button{background:transparent;border:1px solid var(--bz);color:var(--bz2);padding:6px 12px;font:500 11.5px 'Montserrat',sans-serif;letter-spacing:.06em;cursor:pointer;border-radius:30px}
+.ga-chips button:hover{background:var(--bz);color:#fff}
+.ga-form{display:flex;border-top:1px solid var(--ln)}
+.ga-in{flex:1;border:0;padding:15px;font:14.5px 'Montserrat',sans-serif;background:var(--bg);color:var(--tx);min-width:0}
+.ga-in:focus{outline:none}
+.ga-send{border:0;background:var(--bz);color:#fff;width:54px;font-size:17px;cursor:pointer}
+</style></head>
+<body>
+<div class="ticker">Where self-care meets perfection &middot; Downtown Miami</div>
+<header><div class="w"><a class="lg" href="#top">Welcome <b>Beauty</b></a>
+<nav><a href="#services">Services</a><a href="#member">Membership</a><a href="#space">Our space</a><a href="#visit">Visit</a><a href="#faq">FAQ</a></nav>
+<a class="bt" href="#" data-ga="book">Book</a></div></header>
+
+<main id="top">
+<section class="hero"><div class="w">
+<div class="ey">Beauty &amp; wellness &middot; Miami</div>
+<h1>Discover the best in <i>beauty</i> and wellness</h1>
+<p>Explore personalized beauty services to help you look and feel your best, from facials to hair treatments, for women and men alike.</p>
+<div class="row"><a class="bt f" href="#" data-ga="book">Book appointment now</a><a class="bt" href="#services">Explore services</a></div>
+<div class="rate"><b>4.8</b><span>Google rating &middot; about 390 reviews</span></div>
+</div></section>
+
+<section id="services"><div class="w">
+<div class="ct"><div class="ey">Our services</div><h2>Elevate your beauty and confidence</h2><p>Body waxing and facials to hair styling and massages, delivered by an expert team.</p></div>
+<div class="tabs" id="tabs"><button class="on" data-t="p0">Waxing</button><button data-t="p1">Tanning</button><button data-t="p2">Hair</button><button data-t="p3">Facials</button><button data-t="p4">Brows &amp; Lashes</button><button data-t="p5">Nails</button><button data-t="p6">Massage</button></div>
+<div class="pane on" id="p0"><div><span class="pop">Most popular</span><h3>Body Wax</h3><p>Experience smooth, hair-free skin with our expert body waxing services for both women and men. Our gentle technique ensures lasting results with minimal discomfort.</p></div><ul><li>Brazilian waxing</li><li>Full bikini</li><li>Legs</li><li>Arms</li><li>And more</li></ul></div>
+<div class="pane" id="p1"><div><h3>Tanning</h3><p>Achieve a flawless glow. Whether you prefer the Brazilian technique, bed tanning or a quick spray tan, we finish with a natural, even tone that suits your skin.</p></div><ul><li>Brazilian technique</li><li>Bed tanning</li><li>Spray tan</li><li>W Member plan</li></ul></div>
+<div class="pane" id="p2"><div><h3>Hair &amp; Styling</h3><p>Transform your look with professional hair services, from Brazilian keratin treatments to smoothing and straightening, haircuts, coloring and extensions.</p></div><ul><li>Brazilian keratin</li><li>Smooth &amp; straighten</li><li>Haircuts</li><li>Coloring</li><li>Tape extensions</li><li>Keratin extensions</li><li>Microlinks</li></ul></div>
+<div class="pane" id="p3"><div><h3>Facials</h3><p>Revitalize your skin with specialized facial treatments tailored to you.</p></div><ul><li>Deep cleaning</li><li>Micro needling</li><li>BB Glow</li></ul></div>
+<div class="pane" id="p4"><div><h3>Eyebrows &amp; Lashes</h3><p>Enhance your features with expert eyebrow and lash services.</p></div><ul><li>Micropigmentation (eyebrows and lips)</li><li>Microblading</li><li>Eyebrow design</li><li>Lash lifting</li><li>Lash extensions</li></ul></div>
+<div class="pane" id="p5"><div><h3>Manicure &amp; Pedicure</h3><p>Indulge in premium nail services to keep your hands and feet looking fabulous.</p></div><ul><li>Manicure and pedicure</li><li>Classic</li><li>French</li><li>Gel (shellac)</li><li>Builder hard (structure gel)</li><li>Nail extensions</li></ul></div>
+<div class="pane" id="p6"><div><h3>Massages</h3><p>Relax and rejuvenate with our soothing massage and body services.</p></div><ul><li>Lipo cavitation</li><li>Radio frequency + lipolaser</li><li>Lymphatic massage</li><li>Relax massage</li></ul></div>
+</div></section>
+
+<section id="member" class="mem"><div class="w">
+<div><div class="ey">Memberships</div><h2>W Member <i>Tanning</i></h2><p style="color:#c8c2b4;margin:12px 0 20px">The Welcome Beauty VIP membership: a sun-kissed glow every month.</p><div class="pr">$100<small> / MONTH</small></div></div>
+<div><div class="perks"><div>2 tanning sessions per month</div><div>Each session lasts up to 10 minutes, customized to your skin type and safety guidelines</div><div>10% off on all additional services</div></div><p class="fine" style="margin:18px 0 20px;text-align:left">Sessions must be scheduled in advance. Appointments not cancelled at least 12 hours ahead count as used. Sessions do not roll over to the following month.</p><a class="bt f" href="#" data-ga="chat">Ask about membership</a></div>
+</div></section>
+
+<section id="why"><div class="w"><div class="ct"><div class="ey">Why guests return</div><h2>Personal, calm, thorough</h2></div>
+<div class="wy"><div><b>For women and men</b><span>Personalized care for everyone, including body waxing for both.</span></div><div><b>Time taken over details</b><span>Guests mention stylists and technicians who take their time and discuss exactly what they want.</span></div><div><b>A luxurious welcome</b><span>Guests describe being greeted with a smile and offered water or coffee.</span></div><div><b>Many specialties</b><span>Tanning, hair, facials, brows, nails and massage in one Downtown Miami address.</span></div></div></div></section>
+<section id="space"><div class="w">
+<div class="ct"><div class="ey">Our space</div><h2>A warm welcome awaits</h2><p>Designed for comfort, with nail stations, a pedicure spa and spaces for facials and tanning.</p></div>
+<div class="space"><div class="sp"><b>Your private retreat</b><span>A space designed for comfort and calm.</span></div><div class="sp"><b>Precision at every station</b><span>Nails, flawless every time, and a pedicure spa experience.</span></div><div class="sp"><b>Where beauty meets elegance</b><span>Facials to rejuvenate and glow, hair to transform.</span></div></div>
+</div></section>
+
+<section id="menu" style="background:var(--bg2);border-top:1px solid var(--ln)"><div class="w">
+<div class="ct"><div class="ey">The full menu</div><h2>Everything under one roof</h2><p>A quick overview of what the team offers. Ask the concierge for details on any service.</p></div>
+<div class="mn">
+<div><h3>Body &amp; tanning</h3><p>Body waxing for women and men: Brazilian, full bikini, legs, arms and more.</p><p>Tanning with the Brazilian technique, bed tanning or spray tan, and the W Member monthly plan.</p></div>
+<div><h3>Hair</h3><p>Haircuts, coloring, smoothing and straightening, Brazilian keratin treatments.</p><p>Extensions: tape, keratin and microlinks.</p></div>
+<div><h3>Face</h3><p>Facials: deep cleaning, micro needling and BB Glow.</p><p>Eyebrows and lashes: micropigmentation for eyebrows and lips, microblading, eyebrow design, lash lifting and lash extensions.</p></div>
+<div><h3>Hands &amp; feet</h3><p>Manicure and pedicure with classic, French, gel (shellac), builder hard (structure gel) and nail extensions.</p></div>
+<div><h3>Massage &amp; body care</h3><p>Lipo cavitation, radio frequency with lipolaser, lymphatic massage and relax massage.</p></div>
+<div><h3>How booking works</h3><p>Book online, message on WhatsApp or call 305-372-1449. Tell us the service and a day that suits you, and the team confirms the exact time.</p></div>
+</div></div></section>
+
+<section class="rev"><div class="w">
+<div class="ct"><div class="ey">Guest reviews</div><h2>Rated excellent</h2><p>Based on about 390 Google reviews.</p></div>
+<div class="rg"><div class="rq"><p>Everytime I come into this salon I feel taken care of.</p><cite>Ashley R., Google</cite></div><div class="rq"><p>Absolutely loved my experience here. The place gave such a luxurious vibe. My Brazilian tan came out beautiful.</p><cite>Lin S., Google</cite></div><div class="rq"><p>Alberto was amazing! Color turned out exactly as I wanted. They really take their time with you.</p><cite>Sophia W., Google</cite></div><div class="rq"><p>Raphael is the perfect stylist for blonde hair. His attention to detail and passion for hair really shines through.</p><cite>Halley T., Google</cite></div><div class="rq"><p>Gabi is very professional. Highly recommended.</p><cite>Yulia L., Google</cite></div><div class="rq"><p>Best of all the prices are very fair for the level of service you get, and everyone there is so sweet.</p><cite>Ashley R., Google</cite></div><div class="rq"><p>Excelente experiencia! El servicio de bronceado es muy bueno. Me he realizado varias sesiones y desde la primera se nota un color hermoso y uniforme.</p><cite>Alisson A., Google</cite></div><div class="rq"><p>Una experiencia maravillosa con Tata haciendo mi bronceado.</p><cite>Yely A., Google</cite></div><div class="rq"><p>Gabby took her time on the details with my pedicure. Everyone there is so sweet.</p><cite>Ashley R., Google</cite></div></div>
+</div></section>
+
+<section id="visit"><div class="w">
+<div class="ct"><div class="ey">Visit us</div><h2>Get in touch</h2><p>We are here to help you book appointments, answer your questions and provide more information about our services.</p></div>
+<div class="visit"><div class="vc"><h3>Address</h3><p>117 NE 2nd Ave<br>Downtown Miami, FL 33132</p></div><div class="vc"><h3>Call or WhatsApp</h3><a class="ln" href="tel:+13053721449">305-372-1449</a><p style="margin-top:8px">Opening hours are confirmed by the team.</p></div><div class="vc"><h3>Write to us</h3><a class="ln" href="mailto:welcomebeautymiami@gmail.com">welcomebeautymiami@gmail.com</a><a class="ln" href="mailto:Info@welcomebeauty.us">Info@welcomebeauty.us</a><p style="margin-top:8px">Instagram @welcome.beautymiami</p></div></div>
+</div></section>
+
+<section id="faq"><div class="w" style="max-width:760px">
+<div class="ct"><h2>Good to know</h2></div>
+<details><summary>Which waxing areas do you offer?</summary><p>Brazilian waxing, full bikini, legs, arms and more, for women and men.</p></details>
+<details><summary>Which hair extensions do you offer?</summary><p>Tape, keratin and microlinks. The stylist will recommend what suits your hair.</p></details>
+<details><summary>What facials are available?</summary><p>Deep cleaning, micro needling and BB Glow. For skin concerns the team advises in person.</p></details>
+<details><summary>Which eyebrow and lash services do you have?</summary><p>Micropigmentation (eyebrows and lips), microblading, eyebrow design, lash lifting and lash extensions.</p></details>
+<details><summary>Where exactly are you?</summary><p>117 NE 2nd Ave, Downtown Miami, FL 33132.</p></details>
+<details><summary>Do you accept walk-ins?</summary><p>This is not stated on the website. Please call or WhatsApp 305-372-1449 to check availability before you come.</p></details>
+<details><summary>Is there parking nearby?</summary><p>We do not have parking details here; the team can advise on the best option near 117 NE 2nd Ave.</p></details>
+<details><summary>What is the cancellation policy?</summary><p>For the tanning membership, sessions must be scheduled in advance and appointments not cancelled at least 12 hours ahead count as used. For other services, ask the team.</p></details>
+<details><summary>Do you offer gift cards?</summary><p>This is not listed on the website. The team can tell you; call 305-372-1449.</p></details>
+<details><summary>Can I get a tan and another service in one visit?</summary><p>Tell us what you would like when you book and the team will plan the visit. Members get 10% off additional services.</p></details>
+<details><summary>How do I book?</summary><p>Book online, message on WhatsApp or call 305-372-1449. The assistant can also collect your request for the team.</p></details>
+<details><summary>Do you serve men as well?</summary><p>Yes, our team provides personalized care for women and men alike, including body waxing.</p></details>
+<details><summary>What tanning options are there?</summary><p>The Brazilian technique, bed tanning and spray tan, plus the monthly W Member plan.</p></details>
+<details><summary>How does the tanning membership work?</summary><p>Two sessions per month of up to 10 minutes, 10% off additional services. Schedule in advance; sessions do not roll over; late cancellations count as used.</p></details>
+<details><summary>What are your opening hours?</summary><p>Not listed on the website. Please call or WhatsApp 305-372-1449 and the team will confirm.</p></details>
+<details><summary>What do services cost?</summary><p>Prices are confirmed by the team when you book. The tanning membership is $100 per month.</p></details>
+</div></section>
+<section style="text-align:center;background:linear-gradient(135deg,#2a2418,#17140d);border-top:1px solid var(--bz)"><div class="w"><div class="ey">Ready when you are</div><h2 style="font-size:clamp(34px,7vw,56px);margin-bottom:12px">Welcome Beauty: where self-care meets perfection</h2><p style="color:#c8c2b4;max-width:520px;margin:0 auto 24px">Choose your service, pick a day, and the team confirms your appointment. Questions first? The concierge is one tap away, any time of day.</p><a class="bt f" href="#" data-ga="book">Request an appointment</a></div></section>
+</main>
+
+<footer><nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin-bottom:18px;font-size:12px;letter-spacing:.14em;text-transform:uppercase"><a href="#services">Services</a><a href="#member">Membership</a><a href="#menu">Full menu</a><a href="#why">Why Welcome</a><a href="#visit">Visit</a><a href="#faq">FAQ</a></nav><a class="lg" href="#top">Welcome <b>Beauty</b></a>117 NE 2nd Ave &middot; Downtown Miami, FL 33132 &middot; 305-372-1449
+<div class="demo">Demo &middot; prepared by Gevorg Hovhannisyan. Concept page built from the public Welcome Beauty website; the assistant sends nothing.</div></footer>
+
+<script>
+document.querySelectorAll('#tabs button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#tabs button').forEach(function(x){x.classList.remove('on')});document.querySelectorAll('.pane').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on');};});
+function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4){w=w.replace(/(ing|ed|es|s)$/,'');}return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b){if(a===b)return 0;if(Math.abs(a.length-b.length)>2)return 9;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[b.length];}
+function tokHit(t,k){if(t===k)return 1;if(t.length>=5&&k.length>=5&&(t.indexOf(k)===0||k.indexOf(t)===0))return .9;var m=t.length>=7?2:(t.length>=4?1:0);if(m&&lev(t,k)<=m)return .8;return 0;}
+function match(kb,q){var qt=toks(q),qn=' '+norm(q)+' ',best=null,bs=0;
+ for(var e=0;e<kb.length;e++){var sc=0,ks=kb[e].k;
+  for(var i=0;i<ks.length;i++){var kn=norm(ks[i]);if(!kn)continue;
+   if(kn.indexOf(' ')>-1){if(qn.indexOf(' '+kn+' ')>-1||qn.indexOf(kn)>-1)sc+=3;else{var kt=toks(kn),h=0;for(var a=0;a<kt.length;a++)for(var b=0;b<qt.length;b++)if(tokHit(qt[b],kt[a])){h++;break;}if(h===kt.length)sc+=2.5;}}
+   else{var k1=stem(kn),bh=0;for(var b2=0;b2<qt.length;b2++){var th=tokHit(qt[b2],k1);if(th>bh)bh=th;}sc+=bh*2;}}
+  if(sc>bs){bs=sc;best=kb[e];}}
+ return bs>=1.6?best:null;}
+if(typeof module!=='undefined')module.exports={match:match,norm:norm};
+
+window.gaMatch=match;
+var ADDR='117 NE 2nd Ave, Downtown Miami, FL 33132';
+var BIZ={fabIcon:'✦',fabLabel:'Chat with Welcome',title:'Welcome Beauty concierge',sub:'Ask anything, book in a minute',ph:'Ask about services, tanning, booking...',
+hello:'Welcome! I am the Welcome Beauty virtual concierge. I can tell you about our services, tanning memberships and location, or collect an appointment request for the team. Which would you like?',
+chips:['Book an appointment','Tanning options','Waxing','Hair services','Facials','Nails','W Member tanning','Where are you?'],
+again:'Sorry, I did not get that. Could you say it another way?',
+miss:'I do not have that detail yet and I would rather not guess. The team will confirm it: call or WhatsApp 305-372-1449, or email welcomebeautymiami@gmail.com. I can also take an appointment request.',
+bookRe:/(book|appointment|reserve|reservation|make an app|sign me up|set up a visit)/i,
+kb:[
+{k:['hours','open','opening','close','closing','what time','weekend','sunday','saturday','late'],a:'Our opening hours are not listed on the website, so I will not guess. Please call or WhatsApp 305-372-1449 and the team will confirm. You can also book a time online.',chips:['Book an appointment','Where are you?']},
+{k:['where','location','address','directions','downtown','find you','located','map','street','miami'],a:'Welcome Beauty is in Downtown Miami: '+ADDR+'. I do not have parking details; the team can tell you.'},
+{k:['phone','call','number','whatsapp','whats app','text','contact','email','e-mail','instagram','reach'],a:'Phone and WhatsApp: 305-372-1449.\nEmail: welcomebeautymiami@gmail.com (or Info@welcomebeauty.us).\nInstagram: @welcome.beautymiami.'},
+{k:['online booking','book online','squire','website booking'],a:'Online booking is available through our booking page. I can also collect your request and pass it to the team.',go:1},
+{k:['services','service','menu','offer','what do you do','treatments','list'],a:'We offer: body waxing (women and men), tanning (Brazilian technique, bed and spray), hair and styling, facials, eyebrows and lashes, manicure and pedicure, and massages. Memberships are available for tanning.',chips:['Waxing','Tanning options','Hair services','Facials','Nails','Massages']},
+{k:['wax','waxing','brazilian wax','bikini','legs','arms','hair removal','depilacion','depilation','full bikini'],a:'Body waxing for women and men: Brazilian waxing, full bikini, legs, arms and more, with a gentle technique and minimal discomfort. It is one of our most popular services.'},
+{k:['tan','tanning','bronzing','bronceado','spray tan','spray','bed tanning','tanning bed','brazilian tan','glow'],a:'Tanning: the Brazilian technique, bed tanning, or a quick spray tan, finished to suit your skin tone. We also have a monthly tanning membership.',chips:['W Member tanning','Book an appointment']},
+{k:['member','membership','memberships','w member','vip','monthly','subscription','join'],a:'W Member Tanning (Welcome Beauty VIP membership) is $100 per month: 2 tanning sessions per month, each up to 10 minutes and customized to your skin type, plus 10% off all additional services. Sessions must be scheduled in advance, do not roll over to the next month, and appointments not cancelled at least 12 hours ahead count as used.'},
+{k:['cancel','cancellation','cancelling','reschedule','late','no show','policy','policies','refund'],a:'For the tanning membership: sessions must be scheduled in advance, and appointments not cancelled at least 12 hours ahead are counted as used. For other services, please ask the team via 305-372-1449.'},
+{k:['hair','hairstyle','styling','stylist','haircut','cut','blowout','color','colour','coloring','highlights','blonde','balayage'],a:'Hair and styling: haircuts, coloring, smoothing and straightening, Brazilian keratin treatments and extensions. Tell the team what look you want and they will plan it with you.',chips:['Hair extensions','Keratin','Book an appointment']},
+{k:['keratin','smooth','straighten','straightening','brazilian blowout','frizz'],a:'We offer Brazilian keratin treatments and smoothing and straightening services. The stylist will recommend what suits your hair.'},
+{k:['extension','extensions','tape','microlinks','micro links','keratin extensions'],a:'Hair extensions available: tape-in, keratin and microlinks.'},
+{k:['facial','facials','skin','skincare','deep cleaning','micro needling','microneedling','bb glow','acne','face'],a:'Facials: deep cleaning, micro needling and BB Glow. For skin concerns, the team will advise in person; I cannot diagnose skin conditions.'},
+{k:['eyebrow','eyebrows','brow','brows','microblading','micropigmentation','lip','lips','lash','lashes','eyelash','lash lift','lifting','lash extensions','eyelashes'],a:'Eyebrows and lashes: micropigmentation (eyebrows and lips), microblading, eyebrow design, lash lifting and lash extensions.'},
+{k:['nail','nails','manicure','pedicure','mani','pedi','gel','shellac','french','acrylic','builder','structure gel','nail extensions'],a:'Nails: manicure and pedicure, classic, French, gel (shellac), builder hard (structure gel) and nail extensions.'},
+{k:['massage','massages','lipo','cavitation','lymphatic','radio frequency','lipolaser','relax','body contouring','spa'],a:'Massages and body treatments: lipo cavitation, radio frequency with lipolaser, lymphatic massage and relax massage.'},
+{k:['can men','for men','do you take men','men','man','male','guys','women','woman','ladies','gender'],a:'Our team provides personalized care for women and men alike, including body waxing for both.'},
+{k:['price','prices','cost','how much','rate','rates','fee','pricing','cheap','precio'],a:'Service prices are not listed on the website, so I will not guess; the team will confirm when you book. The tanning membership is $100 per month.'},
+{k:['walk in','walk-in','walkin','without appointment','drop in'],a:'I do not know if walk-ins are accepted. Please call or WhatsApp 305-372-1449 to check availability.'},
+{k:['review','reviews','rating','rated','good','best','recommend','reputation'],a:'Welcome Beauty is rated 4.8 on Google from about 390 reviews, with guests praising the stylists, the tanning and the welcoming service.'},
+{k:['parking','park','garage','valet'],a:'I do not have parking details. The team can tell you the best option near '+ADDR+'.'},
+{k:['gift','gift card','voucher','present'],a:'I do not have gift card information. Please ask the team on 305-372-1449.'},
+{k:['hello','hi','hey','good morning','good afternoon','hola'],a:'Hello! What can I help you with today?'},
+{k:['thanks','thank you','thx','gracias'],a:'You are welcome! Anything else?'}
+],
+flow:[
+{id:'svc',q:'What would you like to book?',opts:['Tanning','Waxing','Hair','Facial','Brows or lashes','Nails','Massage','Not sure']},
+{id:'day',q:'Which day suits you best? (for example: Friday)'},
+{id:'tm',q:'Morning, afternoon or evening?',opts:['Morning','Afternoon','Evening']},
+{id:'name',q:'Your name?',re:/\S{2,}/},
+{id:'phone',q:'Best phone or WhatsApp number to confirm?',re:/\d[\d\s().+-]{6,}/,err:'Please enter a valid phone number.'}],
+flowSum:[['Service','svc'],['Day','day'],['Time of day','tm'],['Name','name'],['Phone','phone']],
+done:'Thank you! Your request is ready for the Welcome Beauty team, who will confirm the exact time with you. (This is a demo: nothing was actually sent.)',
+after:['Tanning options','W Member tanning','Where are you?']};
+
+(function(){var B=window.BIZ,$=function(s){return document.querySelector(s)};
+var fab=document.createElement('button');fab.className='ga-fab';fab.setAttribute('aria-label',B.fabLabel);fab.innerHTML='<span class="ga-fab-i">'+B.fabIcon+'</span><span class="ga-fab-t">'+B.fabLabel+'</span>';
+var pn=document.createElement('div');pn.className='ga-panel';pn.hidden=true;
+pn.innerHTML='<div class="ga-head"><div><b>'+B.title+'</b><small>'+B.sub+'</small></div><button class="ga-x" aria-label="Close">&times;</button></div><div class="ga-log" role="log" aria-live="polite"></div><div class="ga-chips"></div><form class="ga-form"><input class="ga-in" autocomplete="off" placeholder="'+B.ph+'"><button class="ga-send" aria-label="Send">&#10148;</button></form>';
+document.body.appendChild(fab);document.body.appendChild(pn);
+var log=pn.querySelector('.ga-log'),chips=pn.querySelector('.ga-chips'),inp=pn.querySelector('.ga-in'),form=pn.querySelector('.ga-form');
+var flow=null,step=0,data={},started=false;
+function say(t,me){var d=document.createElement('div');d.className='ga-m '+(me?'ga-me':'ga-bot');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a,fn){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){fn?fn(c):ask(c)};chips.appendChild(b);});}
+function home(){setChips(B.chips);}
+function open(){pn.hidden=false;fab.classList.add('ga-off');if(!started){started=true;say(B.hello);home();}inp.focus();}
+fab.onclick=open;pn.querySelector('.ga-x').onclick=function(){pn.hidden=true;fab.classList.remove('ga-off');};
+window.gaOpen=function(f){open();if(f)startFlow();};
+function startFlow(){flow=B.flow;step=0;data={};say(flow[0].q);setChips(flow[0].opts,answer);}
+function answer(v){if(!flow)return;var s=flow[step];if(s.re&&!s.re.test(v)){say(s.err||B.again);return;}
+ say(v,1);data[s.id]=v;step++;if(step>=flow.length){flow=null;var sum=B.flowSum.map(function(r){return r[0]+': '+(data[r[1]]||'-')}).join('\n');say(B.done+'\n\n'+sum);setChips(B.after||B.chips.slice(0,3));return;}
+ say(flow[step].q);setChips(flow[step].opts,answer);}
+function ask(q){if(flow){answer(q);return;}say(q,1);
+ if(/^(book|appointment|reserve|schedule|request)/i.test(q)||B.bookRe.test(q)){startFlow();return;}
+ var m=window.gaMatch(B.kb,q);
+ if(m){say(m.a);if(m.go){setTimeout(startFlow,350);} else setChips(m.chips||B.chips.slice(0,4));}
+ else{say(B.miss);setChips(B.chips.slice(0,4));}}
+form.onsubmit=function(e){e.preventDefault();var v=inp.value.trim();if(!v)return;inp.value='';if(flow)answer(v);else ask(v);};
+document.querySelectorAll('[data-ga]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();window.gaOpen(a.getAttribute('data-ga')==='book');});});
+})();
+
+</script>
+</body></html>
