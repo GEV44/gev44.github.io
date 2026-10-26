@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tangible Wellness | 24/7 Gym on Thomas Road, Phoenix</title>
+<meta name="description" content="Demo page for Tangible Wellness: locally owned 24/7 members-only gym and BodyWorks Spa near 16th Street and Thomas Road, Phoenix.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#272c63;--ink:#14173d;--cy:#23c0df;--cy2:#0bbcd4;--bg:#f3f6fb;--line:#d9e0ee;--aw-ac:#23c0df;--aw-on:#14173d;--aw-bg:#fff;--aw-tx:#14173d;--aw-hd:#272c63;--aw-hdt:#fff;--aw-bot:#e8eef9;--aw-font:Inter,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.55 Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden}
+h1,h2,h3,.dsp{font-family:Archivo,Impact,sans-serif;font-stretch:80%;text-transform:uppercase;letter-spacing:.01em;line-height:.95}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:40;background:#fff;border-bottom:3px solid var(--cy)}
+.hb{display:flex;align-items:center;justify-content:space-between;gap:12px;height:60px}
+.hb img{height:24px;width:auto;max-width:62vw;display:block}
+.hb nav{display:none;gap:22px;font-weight:600;font-size:14px}
+.hb nav a{text-decoration:none;color:var(--navy)}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--cy);color:var(--ink);font:800 15px Archivo,sans-serif;font-stretch:85%;text-transform:uppercase;letter-spacing:.04em;padding:13px 22px;text-decoration:none;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+.btn.dk{background:var(--navy);color:#fff}
+.btn.ln{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px #fff;clip-path:none;padding:11px 20px}
+.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden;padding:46px 0 0}
+.hero:before{content:"24/7";position:absolute;right:-12px;top:-20px;font:900 190px/1 Archivo,sans-serif;font-stretch:62%;color:#ffffff0d;pointer-events:none}
+.stat{display:inline-flex;align-items:center;gap:8px;background:#ffffff14;border:1px solid #ffffff2a;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
+.dot{width:9px;height:9px;border-radius:50%;background:#3ee08f;box-shadow:0 0 0 4px #3ee08f33}
+.dot.off{background:var(--cy);box-shadow:0 0 0 4px #23c0df33}
+.hero h1{font-size:clamp(46px,13vw,104px);margin:18px 0 14px;max-width:11ch}
+.hero h1 em{font-style:normal;color:var(--cy)}
+.hero p.lead{max-width:520px;color:#c9d0ee;font-size:18px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 38px}
+.strip{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #ffffff24}
+.strip div{padding:18px 14px;border-right:1px solid #ffffff24;border-bottom:1px solid #ffffff24}
+.strip b{display:block;font:800 30px Archivo,sans-serif;font-stretch:75%;color:var(--cy)}
+.strip span{font-size:13px;color:#c9d0ee}
+section{padding:58px 0}
+.kick{font:700 12px Inter;letter-spacing:.18em;text-transform:uppercase;color:var(--cy2);margin-bottom:8px}
+h2{font-size:clamp(34px,8vw,58px);margin-bottom:14px;color:var(--navy)}
+.sub{max-width:620px;color:#444a73;margin-bottom:28px}
+.tiers{display:grid;gap:14px}
+.tier{background:#fff;border:2px solid var(--line);padding:22px;position:relative}
+.tier.hot{border-color:var(--cy);box-shadow:8px 8px 0 var(--navy)}
+.tier h3{font-size:24px;color:var(--navy)}
+.price{font:900 52px Archivo,sans-serif;font-stretch:70%;margin:8px 0 2px;color:var(--ink)}
+.price small{font:500 14px Inter;color:#6a7091}
+.tier ul{list-style:none;padding:0;margin:14px 0 18px;font-size:15px}
+.tier li{padding:6px 0 6px 24px;position:relative;border-top:1px dashed var(--line)}
+.tier li:before{content:"";position:absolute;left:2px;top:13px;width:11px;height:6px;border-left:3px solid var(--cy2);border-bottom:3px solid var(--cy2);transform:rotate(-45deg)}
+.fine{font-size:13px;color:#59608a;margin-top:16px;max-width:760px}
+.dark{background:var(--navy);color:#fff}
+.dark h2{color:#fff}.dark .sub{color:#c9d0ee}
+.rooms{display:grid;gap:14px}
+.card{background:#ffffff0f;border:1px solid #ffffff26;padding:20px}
+.card h3{font-size:22px;color:var(--cy);margin-bottom:8px}
+.card p{color:#d5daf2;font-size:15px}
+.big{display:flex;align-items:baseline;gap:10px;margin-bottom:22px}
+.big b{font:900 80px Archivo,sans-serif;font-stretch:62%;color:var(--cy);line-height:.85}
+.big span{font-weight:600;color:#c9d0ee}
+.trainers{display:grid;gap:12px}
+.tr{background:#fff;border-left:6px solid var(--cy);padding:16px 18px}
+.tr h3{font-size:22px;color:var(--navy);margin-bottom:4px}
+.tr small{display:block;color:#59608a;font-size:13px;margin-top:6px}
+.tr p{font-size:15px}
+.spa{display:grid;gap:10px}
+.spa div{background:#fff;padding:14px 16px;border:1px solid var(--line)}
+.spa b{display:block;color:var(--navy);font-size:16px}
+.spa span{font-size:14px;color:#4b5179}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.chips span{background:#fff;border:1px solid var(--line);padding:7px 13px;font-weight:600;font-size:14px;color:var(--navy)}
+details{background:#fff;border:1px solid var(--line);margin-bottom:8px}
+summary{cursor:pointer;padding:15px 18px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary:after{content:"+";font-size:22px;line-height:1;color:var(--cy2)}
+details[open] summary:after{content:"\2212"}
+details p{padding:0 18px 16px;color:#444a73}
+.loc{display:grid;gap:18px}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:9px 0;border-bottom:1px solid #ffffff2a}
+.hours td:last-child{text-align:right;font-weight:600}
+.loc a{color:var(--cy)}
+footer{background:var(--ink);color:#9aa2cf;padding:28px 0 90px;font-size:13px}
+.hl{color:var(--cy);font-weight:600}
+@media(min-width:760px){
+ .hb nav{display:flex}
+ .tiers{grid-template-columns:repeat(3,1fr)}
+ .rooms{grid-template-columns:repeat(3,1fr)}
+ .trainers{grid-template-columns:repeat(2,1fr)}
+ .spa{grid-template-columns:repeat(2,1fr)}
+ .strip{grid-template-columns:repeat(4,1fr)}
+ .loc{grid-template-columns:1fr 1fr}
+ .hero:before{font-size:320px;right:20px}
+}
+
+.steps{display:grid;gap:0;counter-reset:s;margin-top:6px}
+.steps div{counter-increment:s;padding:16px 0 16px 62px;position:relative;border-top:1px solid #ffffff2a;color:#d5daf2}
+.steps div:before{content:counter(s);position:absolute;left:0;top:10px;font:900 44px Archivo,sans-serif;font-stretch:62%;color:var(--cy)}
+.steps b{display:block;color:#fff;font-size:17px}
+.quotes{display:grid;gap:14px}
+.q{background:#fff;padding:22px;border-top:5px solid var(--navy);font-size:15.5px;color:#2c3160}
+.q cite{display:block;margin-top:12px;font:700 13px Inter;font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--cy2)}
+.partners{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.partners span{border:2px solid var(--navy);color:var(--navy);font:800 15px Archivo,sans-serif;font-stretch:80%;text-transform:uppercase;padding:9px 16px;letter-spacing:.04em}
+@media(min-width:760px){.quotes{grid-template-columns:repeat(3,1fr)}.steps{grid-template-columns:repeat(3,1fr)}.steps div{border-top:0;border-left:1px solid #ffffff2a;padding:6px 18px 6px 70px}}
+.aw-fab{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 18px;background:var(--aw-ac);color:var(--aw-on);font:600 15px/1 var(--aw-font);box-shadow:0 8px 24px rgba(0,0,0,.28);cursor:pointer}
+.aw-fi{font-size:18px}.aw-fab.on{display:none}
+.aw-panel{position:fixed;right:12px;bottom:12px;z-index:61;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));display:flex;flex-direction:column;background:var(--aw-bg);color:var(--aw-tx);border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.35);overflow:hidden;font:15px/1.45 var(--aw-font)}
+.aw-panel[hidden]{display:none}
+.aw-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:var(--aw-hd);color:var(--aw-hdt)}
+.aw-head b{display:block;font-size:16px}.aw-head small{opacity:.8;font-size:12px}
+.aw-x{background:none;border:0;color:inherit;font-size:28px;line-height:1;cursor:pointer;padding:0 4px}
+.aw-log{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px}
+.aw-m{max-width:86%;padding:9px 13px;border-radius:14px;word-wrap:break-word}
+.aw-m.bot{background:var(--aw-bot);align-self:flex-start;border-bottom-left-radius:4px}
+.aw-m.me{background:var(--aw-ac);color:var(--aw-on);align-self:flex-end;border-bottom-right-radius:4px}
+.aw-m a{color:inherit;text-decoration:underline}
+.aw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px;max-height:112px;overflow-y:auto}
+.aw-chip{border:1px solid var(--aw-ac);background:transparent;color:var(--aw-tx);border-radius:999px;padding:6px 12px;font:500 13px var(--aw-font);cursor:pointer}
+.aw-chip:hover{background:var(--aw-ac);color:var(--aw-on)}
+.aw-form{display:flex;gap:6px;padding:8px 12px;border-top:1px solid rgba(128,128,128,.25)}
+.aw-form input{flex:1;min-width:0;border:1px solid rgba(128,128,128,.4);border-radius:999px;padding:10px 14px;font:16px var(--aw-font);background:transparent;color:inherit}
+.aw-go{border:0;border-radius:50%;width:42px;height:42px;background:var(--aw-ac);color:var(--aw-on);cursor:pointer;font-size:16px}
+.aw-note{font-size:11px;text-align:center;opacity:.6;padding:0 8px 8px}
+
+</style>
+</head>
+<body>
+<header><div class="wrap hb">
+ <a href="#top" aria-label="Tangible Wellness"><img src="img/tangible-wellness-logo.svg" alt="Tangible Wellness"></a>
+ <nav><a href="#memberships">Memberships</a><a href="#space">The space</a><a href="#spa">BodyWorks Spa</a><a href="#trainers">Trainers</a><a href="#visit">Visit</a></nav>
+ <a class="btn" href="#" data-ask="pass">Free 3-day pass</a>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+ <span class="stat"><i class="dot" id="dot"></i><span id="status">Open 24/7 for members</span></span>
+ <h1>Your gym. <em>Never crowded.</em></h1>
+ <p class="lead">A locally owned, members-only gym at 16th Street and Thomas Road in Phoenix. Strength, cardio, recovery and a spa under one roof, with no cancellation fees.</p>
+ <div class="cta"><a class="btn" href="#" data-ask="pass">Try it free for 3 days</a><a class="btn ln" href="#memberships">See memberships</a></div>
+</div>
+<div class="wrap"><div class="strip">
+ <div><b>24/7</b><span>secure member access</span></div>
+ <div><b>15,000</b><span>sq. ft. of gym floor</span></div>
+ <div><b>10+</b><span>years locally owned</span></div>
+ <div><b>300+</b><span>member reviews</span></div>
+</div></div></div>
+
+<section id="memberships"><div class="wrap">
+ <div class="kick">Memberships</div>
+ <h2>Pick your level</h2>
+ <p class="sub">All memberships are month-to-month with no cancellation fees. Every membership has a $35 start-up fee and a $25 quarterly maintenance fee that supports gym upgrades.</p>
+ <div class="tiers">
+  <div class="tier"><h3>Basic</h3><div class="price">$39.95<small> / month</small></div>
+   <ul><li>24/7 gym access</li><li>Cardio and strength equipment</li><li>Cancel anytime, no fees</li><li>Yearly option: $525/yr</li></ul>
+   <a class="btn dk" href="#" data-ask="pass">Start with a free pass</a></div>
+  <div class="tier hot"><h3>Enhanced</h3><div class="price">$99.95<small> / month total</small></div>
+   <ul><li>Basic membership plus the $59.95 Wellness Add-On</li><li>Vitamin D Lounge, InBody, Red Light, BioCharger</li><li>CureWave Laser, PEMF mat, LightWave</li><li>One session of each per day</li></ul>
+   <a class="btn" href="#" data-ask="pass">Ask about Enhanced</a></div>
+  <div class="tier"><h3>Premium</h3><div class="price">$199<small> / month</small></div>
+   <ul><li>Everything in Enhanced</li><li>1 free BodyWorks Spa treatment per month</li><li>No rollovers; extra treatments $99 each</li><li>Month-to-month</li></ul>
+   <a class="btn dk" href="#" data-ask="consult">Book a free consult</a></div>
+ </div>
+ <p class="fine">Just visiting? 1-day, 14-day and 30-day passes also come with 24/7 access. ID verification is required for all memberships and day passes: you get a link by email and text, and access activates once it is done. ClassPass, Wellhub and insurance memberships are listed on their site.</p>
+</div></section>
+
+<section class="dark" id="space"><div class="wrap">
+ <div class="kick" style="color:var(--cy)">The space</div>
+ <div class="big"><b>15K</b><span>sq. ft. with room to breathe</span></div>
+ <h2>Basics done best</h2>
+ <p class="sub">Members-only access means you rarely wait for a machine. The floor is split into different rooms, and the equipment list keeps improving.</p>
+ <div class="rooms">
+  <div class="card"><h3>Train your way</h3><p>Strength, cardio and recovery in one spot, with covered parking behind the building.</p></div>
+  <div class="card"><h3>Extras on site</h3><p>Vitamin D Lounge, Red Light Therapy, BioCharger, InBody 580 and InBody Touch body composition testing, plus ready-to-eat BrentoBox meals from the lobby fridge.</p></div>
+  <div class="card"><h3>Merch with a point</h3><p>Every item is printed on demand and 100% of proceeds go to a different cause each month.</p></div>
+ </div>
+</div></section>
+
+
+<section class="dark"><div class="wrap">
+ <div class="kick" style="color:var(--cy)">Getting started</div>
+ <h2>Three steps in</h2>
+ <div class="steps">
+  <div><b>Grab the free 3-day pass</b>Try everything the gym offers, no commitment.</div>
+  <div><b>Verify your ID</b>You get a link by email and text. Access activates once it is done.</div>
+  <div><b>Train on your schedule</b>Come at 5am or midnight. The gym is open to members around the clock.</div>
+ </div>
+</div></section>
+<section><div class="wrap">
+ <div class="kick">Members say</div>
+ <h2>A gym worth keeping quiet</h2>
+ <p class="sub">300+ member reviews. A few lines from their own site.</p>
+ <div class="quotes">
+  <div class="q">&ldquo;Awesome place to work out because it is never terribly crowded. The combined availability of drinks, snacks, nice showers and tanning beds makes the membership really worth it.&rdquo;<cite>David Walker</cite></div>
+  <div class="q">&ldquo;It is a very safe and queer-friendly space. It&rsquo;s never crowded, always super clean, and the space is broken up into different rooms.&rdquo;<cite>Elizabeth Chung</cite></div>
+  <div class="q">&ldquo;I&rsquo;ve been a member at Tangible Wellness for at least 7 years now. I recently tried the CureWave laser treatment on my knees. WOW!&rdquo;<cite>Henry Melendrez</cite></div>
+ </div>
+</div></section>
+<section id="trainers"><div class="wrap">
+ <div class="kick">Personal training</div>
+ <h2>Train with who you want</h2>
+ <p class="sub">The trainers are independent professionals who work out of the gym. Each sets their own specialties and rates, so pricing depends on the trainer.</p>
+ <div class="trainers">
+  <div class="tr"><h3>David Forbes</h3><p>Consistency, intensity and smart programming, from first steps to stage.</p><small>Semi-private training, physique contest prep, weight loss, muscle growth</small></div>
+  <div class="tr"><h3>Joe LaGraffe</h3><p>Coaching-focused approach built on 10+ years in public education.</p><small>NASM certified, nutritional coaching, sustainable habits, goal-based programming</small></div>
+  <div class="tr"><h3>Melissa Freeman</h3><p>Certified trainer, neurokinetic therapist and stretch therapist.</p><small>1-on-1, strength, mobility, pain-free performance</small></div>
+  <div class="tr"><h3>Noah Bernard</h3><p>A nurse and trainer focused on long, healthy lives.</p><small>NASM certified, nutrition, blood pressure and weight management, virtual and hybrid, Hyrox and CrossFit style</small></div>
+  <div class="tr"><h3>Ricardo</h3><p>Meets you where you are and guides you forward.</p><small>Small group, online, 1-on-1, nutrition and lifestyle coaching</small></div>
+  <div class="tr"><h3>Samuel Jim&eacute;nez</h3><p>Smart, supportive training sessions in English and Spanish.</p><small>1-on-1, strength and conditioning, beginner foundations, weight loss</small></div>
+ </div>
+</div></section>
+
+
+<section><div class="wrap">
+ <div class="kick">Extra services</div>
+ <h2>Beyond the weights</h2>
+ <p class="sub">Staffed-hours services, included in Enhanced and Premium memberships where noted.</p>
+ <div class="spa">
+  <div><b>Vitamin D Lounge</b><span>A full-body dose of vitamin D in a lay-down bed or a stand-up unit (both level 4). Included in Enhanced memberships.</span></div>
+  <div><b>Red Light Therapy</b><span>Targeted red light for inflammation, muscle healing and glow. Included in Enhanced and Premium.</span></div>
+  <div><b>BioCharger</b><span>An energy-based wellness device for cellular recovery, focus and vitality. Included in Enhanced and Premium.</span></div>
+  <div><b>InBody Testing</b><span>Muscle, fat and water analysis on the InBody 580 and the new InBody Touch, synced to the InBody app so you can track progress. Call for details and pricing.</span></div>
+  <div><b>CureWave Laser Therapy</b><span>FDA-cleared, non-invasive therapy for pain relief and soft tissue recovery, located inside BodyWorks Spa.</span></div>
+  <div><b>Meal prep fridge</b><span>High-protein, ready-to-eat meals in the lobby. No prep required.</span></div>
+ </div>
+</div></section>
+<section id="spa" style="background:#e6edf8"><div class="wrap">
+ <div class="kick">BodyWorks Spa</div>
+ <h2>Recover. Glow.</h2>
+ <p class="sub">No needles, no downtime. Spa Director Chris Scheimann picks every treatment based on the science and builds a plan around your goals. The first consult is free.</p>
+ <div class="spa">
+  <div><b>High-Intensity PEMF Therapy</b><span>Deep electromagnetic pulses for pain relief and faster recovery.</span></div>
+  <div><b>Lux Uplift</b><span>A non-surgical facelift effect, no needles.</span></div>
+  <div><b>PRX T33</b><span>No-peel biorevitalization to brighten and tighten skin.</span></div>
+  <div><b>Pelvic Floor Tightening</b><span>Restore core function and confidence.</span></div>
+  <div><b>CureWave Laser Therapy</b><span>FDA-cleared, non-invasive pain relief and soft tissue recovery.</span></div>
+  <div><b>Body Sculpting</b><span>Electromagnetic and RF energy in about 30 minutes.</span></div>
+  <div><b>ABI LightWave Therapy and Masks</b><span>Light-based care for tired skin.</span></div>
+  <div><b>Red Light and Whole Body Vibration</b><span>Supports fat loss, circulation and recovery.</span></div>
+ </div>
+ <p style="margin-top:22px"><a class="btn" href="#" data-ask="consult">Schedule a free consult</a></p>
+</div></section>
+
+<section><div class="wrap">
+ <div class="kick">Good to know</div>
+ <h2>Questions</h2>
+ <details><summary>Is there a free trial?</summary><p>Yes. The free 3-day pass lets you try everything the gym offers with no commitment.</p></details>
+ <details><summary>Can I cancel any time?</summary><p>Memberships are month-to-month with no cancellation fees. The start-up fee and the quarterly maintenance fee still apply.</p></details>
+ <details><summary>When is someone at the front desk?</summary><p>Members get access 24/7. Non-members can reach staff Monday to Friday 8am to 9pm and Saturday 8am to 4pm.</p></details>
+ <details><summary>What does the Wellness Add-On include?</summary><p>One daily session each of Vitamin D Lounge, InBody Scanner, Red Light Therapy, BioCharger, CureWave Laser, High-Intensity PEMF Mat and LightWave Therapy, for $59.95 a month on top of Basic.</p></details>
+ <details><summary>Is the gym crowded?</summary><p>Rarely. Access is members-only, and the 15,000 sq. ft. floor is divided into different rooms.</p></details>
+ <details><summary>Is it a chain?</summary><p>No. Tangible Wellness is locally owned and has been operating for over 10 years.</p></details>
+ <details><summary>Are the trainers on staff?</summary><p>They are independent trainers who work out of the gym, each with their own rates.</p></details>
+</div></section>
+
+
+<section style="background:#e6edf8"><div class="wrap">
+ <div class="kick">Neighbors</div>
+ <h2>Local partners</h2>
+ <p class="sub">Tangible Wellness works with other Phoenix businesses.</p>
+ <div class="partners"><span>BodyWorks Spa</span><span>BrentoBox Meals</span><span>LifeSync Wellness</span><span>Luminary Health</span><span>Ortho Chiropractic</span><span>Studio Kette</span></div>
+</div></section>
+<section class="dark" id="visit"><div class="wrap loc">
+ <div><div class="kick" style="color:var(--cy)">Visit</div><h2>Thomas &amp; 16th</h2>
+  <p style="color:#d5daf2;margin-bottom:10px">1500 East Thomas Road, Phoenix, AZ, near the corner of 16th Street and Thomas Road. Covered parking in the rear.</p>
+  <p><a class="hl" href="tel:+16028330169">(602) 833-0169</a> &middot; <a class="hl" href="mailto:fitnesscenter@tangiblewellness.org">fitnesscenter@tangiblewellness.org</a></p></div>
+ <div><table class="hours"><tr><td>Members</td><td>24/7</td></tr><tr><td>Staffed Mon&ndash;Fri</td><td>8am &ndash; 9pm</td></tr><tr><td>Staffed Saturday</td><td>8am &ndash; 4pm</td></tr></table>
+  <p style="margin-top:20px"><a class="btn" href="#" data-ask="pass">Get my free pass</a></p></div>
+</div></section>
+
+<section style="background:var(--cy);padding:44px 0"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+ <div><h2 style="color:var(--ink);margin:0 0 6px">Locally owned. Phoenix proud.</h2><p style="color:var(--ink);font-weight:500;max-width:520px">Come see why members want to keep the gym all to themselves. The first three days are on the house, no strings attached, and the team is a call away at (602) 833-0169.</p></div>
+ <a class="btn dk" href="#" data-ask="pass">Request my free pass</a>
+</div></section>
+<footer><div class="wrap">Demo &middot; prepared by Gevorg Hovhannisyan</div></footer>
+
+<script>
+function createEngine(CFG){
+  var STOP={a:1,an:1,the:1,is:1,are:1,do:1,does:1,you:1,your:1,i:1,my:1,me:1,we:1,of:1,to:1,in:1,on:1,at:1,it:1,and:1,or:1,for:1,can:1,how:1,what:1,there:1,have:1,has:1,get:1,with:1,if:1,be:1,any:1,about:1,tell:1,please:1,want:1,would:1,like:1,much:1,this:1,that:1};
+  function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[’']/g,'').replace(/[^a-z0-9$\s]/g,' ').replace(/\s+/g,' ').trim();}
+  function stem(w){
+    if(w.length>4&&/ies$/.test(w))return w.slice(0,-3)+'y';
+    if(w.length>5&&/ing$/.test(w))return w.slice(0,-3);
+    if(w.length>4&&/ed$/.test(w))return w.slice(0,-2);
+    if(w.length>4&&/es$/.test(w))return w.slice(0,-2);
+    if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))return w.slice(0,-1);
+    return w;}
+  function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;
+    for(i=1;i<=m;i++)for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
+      if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1);}
+    return d[m][n];}
+  function toks(s){return norm(s).split(' ').filter(Boolean);}
+  function tmatch(qt,kt){
+    if(qt===kt)return 1;
+    var a=stem(qt),b=stem(kt);
+    if(a===b)return .95;
+    if(b.length>=5&&a.length>=5&&(a.indexOf(b)===0||b.indexOf(a)===0)&&Math.abs(a.length-b.length)<=3)return .8;
+    var L=Math.min(a.length,b.length);
+    if(L>=5){var dd=lev(a,b);if(dd<=1)return .85;if(L>=8&&dd<=2)return .7;}
+    return 0;}
+  function score(qts,kw){
+    var kts=toks(kw);if(!kts.length)return 0;var tot=0;
+    for(var i=0;i<kts.length;i++){var best=0;for(var j=0;j<qts.length;j++){var m=tmatch(qts[j],kts[i]);if(m>best)best=m;}
+      if(best===0)return 0;tot+=best;}
+    return tot*(1+0.35*(kts.length-1))*(kts.length>1?1.2:1);}
+  function match(q){
+    q=String(q).replace(/how much/ig,'price');
+    var qts=toks(q).filter(function(w){return !STOP[w];});
+    if(!qts.length)qts=toks(q);
+    var best=null,bs=0;
+    for(var i=0;i<CFG.kb.length;i++){var e=CFG.kb[i],s=0;
+      var sum=0;for(var k=0;k<e.k.length;k++){var v=score(qts,e.k[k]);sum+=v;if(v>s)s=v;}s+=0.3*(sum-s);
+      s*=(e.w||1);
+      if(s>bs){bs=s;best=e;}}
+    return bs>=0.8?best:null;}
+  return {match:match,norm:norm,CFG:CFG};
+}
+function mountUI(E){
+  var C=E.CFG,d=document;
+  function el(t,c,h){var x=d.createElement(t);if(c)x.className=c;if(h!=null)x.innerHTML=h;return x;}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  var fab=el('button','aw-fab','<span class="aw-fi">'+(C.fabIcon||'?')+'</span><span class="aw-fl">'+esc(C.fabLabel||'Ask us')+'</span>');
+  fab.setAttribute('aria-label',C.fabLabel||'Ask us');
+  var panel=el('div','aw-panel');panel.setAttribute('role','dialog');panel.hidden=true;
+  var head=el('div','aw-head','<div><b>'+esc(C.title)+'</b><small>'+esc(C.sub)+'</small></div>');
+  var x=el('button','aw-x','&times;');x.setAttribute('aria-label','Close');head.appendChild(x);
+  var log=el('div','aw-log');log.setAttribute('aria-live','polite');
+  var chips=el('div','aw-chips');
+  var form=el('form','aw-form');var inp=el('input');inp.type='text';inp.placeholder=C.placeholder||'Type a question';inp.setAttribute('aria-label','Message');inp.autocomplete='off';
+  var go=el('button','aw-go','&#10148;');go.type='submit';go.setAttribute('aria-label','Send');form.appendChild(inp);form.appendChild(go);
+  var note=el('div','aw-note',esc(C.note||'Demo assistant. Nothing is sent anywhere.'));
+  panel.appendChild(head);panel.appendChild(log);panel.appendChild(chips);panel.appendChild(form);panel.appendChild(note);
+  d.body.appendChild(fab);d.body.appendChild(panel);
+  var flow=null,data={},opened=false;
+  function say(t,me){var m=el('div','aw-m '+(me?'me':'bot'));m.innerHTML=me?esc(t):t;log.appendChild(m);log.scrollTop=log.scrollHeight;}
+  function setChips(list){chips.innerHTML='';list.forEach(function(c){var b=el('button','aw-chip',esc(c.label||c));b.type='button';
+    b.onclick=function(){send(c.label||c,c);};chips.appendChild(b);});}
+  function home(){setChips(C.chips);}
+  function startFlow(id){flow={f:C.flows[id],i:0};data={};ask();}
+  function ask(){var s=flow.f.steps[flow.i];say(s.ask);
+    if(s.options){setChips(s.options.concat([{label:'Cancel',cancel:1}]));inp.placeholder='Or type here';}
+    else{setChips([{label:'Cancel',cancel:1}]);inp.placeholder=s.ph||'Type here';}}
+  function stepIn(v){
+    var s=flow.f.steps[flow.i];
+    if(s.check&&!s.check(v)){say(s.err||'Could you check that and try again?');return;}
+    data[s.key]=v;flow.i++;
+    if(flow.i>=flow.f.steps.length){var out=flow.f.done(data);flow=null;say(out);inp.placeholder=C.placeholder||'';setChips(C.after||C.chips);}
+    else ask();}
+  function send(t,chip){
+    t=String(t).trim();if(!t)return;
+    say(t,1);
+    if((chip&&chip.cancel)||(flow&&/^(cancel|stop|never ?mind|exit)$/i.test(t))){flow=null;say('No problem, nothing was sent.');inp.placeholder=C.placeholder||'';home();return;}
+    if(flow){setTimeout(function(){stepIn(t);},250);return;}
+    setTimeout(function(){
+      var e=E.match(t);
+      if(e){say(e.a);if(e.flow){setTimeout(function(){startFlow(e.flow);},350);}else if(e.chips)setChips(e.chips);else home();}
+      else{say(C.fallback);home();}
+    },280);}
+  function open(){panel.hidden=false;fab.classList.add('on');if(!opened){opened=true;say(C.greeting);home();}setTimeout(function(){inp.focus();},50);}
+  function close(){panel.hidden=true;fab.classList.remove('on');}
+  fab.onclick=function(){panel.hidden?open():close();};x.onclick=close;
+  form.onsubmit=function(ev){ev.preventDefault();var v=inp.value;inp.value='';send(v);};
+  d.querySelectorAll('[data-ask]').forEach(function(b){b.addEventListener('click',function(ev){ev.preventDefault();open();var f=b.getAttribute('data-ask');if(C.flows[f]){say(b.textContent.trim(),1);startFlow(f);}else send(f);});});
+}
+function startAssistant(CFG){var E=createEngine(CFG);if(typeof document!=='undefined'){mountUI(E);}return E;}
+if(typeof module!=='undefined'&&typeof document==='undefined'){module.exports={createEngine:createEngine};}
+
+</script>
+<script>
+(function(){
+ try{var p=new Intl.DateTimeFormat('en-US',{timeZone:'America/Phoenix',weekday:'short',hour:'numeric',hour12:false}).formatToParts(new Date());
+  var wd=p.find(function(x){return x.type==='weekday'}).value,h=parseInt(p.find(function(x){return x.type==='hour'}).value,10)%24;
+  var staffed=(['Mon','Tue','Wed','Thu','Fri'].indexOf(wd)>-1&&h>=8&&h<21)||(wd==='Sat'&&h>=8&&h<16);
+  document.getElementById('status').textContent=staffed?'Open now for members. Front desk is staffed.':'Open now for members. Front desk is closed.';
+  if(!staffed)document.getElementById('dot').className='dot off';}catch(e){}
+})();
+var phoneOk=function(v){return /(\d.*){7,}/.test(v)||/@/.test(v);};
+startAssistant({
+ title:'Tangible Wellness assistant',sub:'Gym, spa and trainers',fabLabel:'Ask Tangible',fabIcon:'💬',
+ greeting:'Hi! I can answer questions about memberships, hours, trainers and the BodyWorks Spa, or set up a free 3-day pass request.',
+ placeholder:'Ask about memberships, hours...',
+ fallback:'I do not have that detail. The team can confirm it at (602) 833-0169 or fitnesscenter@tangiblewellness.org.',
+ chips:['Free 3-day pass','Membership prices','Hours','Personal trainers','BodyWorks Spa','Where are you?'],
+ after:['Hours','Membership prices','Where are you?'],
+ kb:[
+  {k:['free pass','3 day pass','trial','try gym','test drive','free trial','try for free','visit once'],a:'The free 3-day pass lets you try everything the gym offers with no commitment. ID verification is required before access activates. Want me to set up a request?',flow:'pass'},
+  {w:.9,k:['price','cost','membership','basic','monthly','fee','rate','pricing','plans','join'],a:'Basic is $39.95 a month (24/7 access, cardio and strength). Enhanced is $99.95 a month total with the $59.95 Wellness Add-On. Premium is $199 a month and adds 1 free BodyWorks Spa treatment monthly. All have a $35 start-up fee and a $25 quarterly maintenance fee.',chips:['Free 3-day pass','Cancel anytime?','Wellness add-on']},
+  {k:['wellness add on','add on','addon','enhanced','vitamin d','lounge','tanning','red light','biocharger','inbody','body composition','laser','pemf','lightwave','recovery'],a:'The Wellness Add-On is $59.95 a month on top of Basic ($99.95 total). It gives one daily session each of Vitamin D Lounge, InBody, Red Light Therapy, BioCharger, CureWave Laser, High-Intensity PEMF Mat and LightWave Therapy.'},
+  {k:['cancel','cancellation','contract','commitment','month to month','lock','freeze','quit'],a:'Memberships are month-to-month with no cancellation fees. The start-up and quarterly maintenance fees still apply. Cancellation details are on their cancellations form, and the team can help.'},
+  {k:['hour','open','close','closing','when','time','24 7','twenty four','late','night','weekend','saturday','sunday','holiday'],a:'Members have 24/7 access. The front desk is staffed Monday to Friday 8am to 9pm and Saturday 8am to 4pm. For Sunday or holiday staffing, the team will confirm.'},
+  {k:['where','address','location','direction','parking','park','find you','thomas','16th','map','phoenix'],a:'1500 East Thomas Road, Phoenix, AZ, near 16th Street and Thomas Road. There is covered parking behind the building.'},
+  {k:['phone','call','number','email','contact','reach','text'],a:'Call (602) 833-0169 or email fitnesscenter@tangiblewellness.org. Staffed hours are Mon-Fri 8am-9pm and Sat 8am-4pm.'},
+  {k:['trainer','training','coach','personal trainer','pt','one on one','1 on 1','lift','weight loss','physique','bodybuilding'],a:'Six independent trainers work out of the gym: David Forbes, Joe LaGraffe, Melissa Freeman, Noah Bernard, Ricardo and Samuel Jimenez (bilingual English/Spanish). They set their own rates, so pricing depends on the trainer.',flow:'trainer'},
+  {k:['spa','bodyworks','treatment','facial','skin','lux uplift','prx','pelvic','sculpt','massage','consult','consultation','chris','anti aging','face'],a:'BodyWorks Spa offers non-invasive treatments: High-Intensity PEMF, Lux Uplift, PRX T33, Pelvic Floor Tightening, CureWave Laser, Body Sculpting, ABI LightWave and Red Light with Whole Body Vibration. Spa Director Chris Scheimann offers a free consult. For medical questions the team will advise you.',flow:'consult'},
+  {k:['premium','199','free treatment','included treatment','extra treatment'],a:'Premium is $199 a month: everything in Enhanced plus 1 BodyWorks Spa treatment a month (no rollovers). Extra treatments are $99 each.'},
+  {k:['crowd','busy','crowded','wait','machine','equipment','space','size','square','big','quiet','clean'],a:'It is a 15,000 sq. ft. members-only gym that rarely gets crowded, with the floor split into different rooms and a growing selection of machines and weights.'},
+  {k:['day pass','one day','14 day','30 day','visitor','guest','just visiting','tourist'],a:'Visitors can get a 1-day, 14-day or 30-day pass with 24/7 access. The team will confirm current pass pricing. ID verification applies.'},
+  {k:['id','verification','verify','sign up','signup','activate','access','fob'],a:'ID verification is required for all memberships and day passes. After signing up you receive a verification link by email and text, and access activates once it is complete.'},
+  {k:['classpass','wellhub','insurance','silver sneakers','corporate','partner'],a:'ClassPass, Wellhub and insurance memberships are listed on their memberships pages. The team will confirm which applies to you.'},
+  {k:['food','meal','snack','vending','brentobox','protein','drink','shower','towel','locker'],a:'Ready-to-eat high-protein BrentoBox meals are in the lobby fridge. Locker and shower details: the team will confirm.'},
+  {k:['merch','shirt','hoodie','donate','charity'],a:'Merch is printed on demand and 100% of proceeds go to a different cause each month.'},
+  {k:['hello','hi','hey','good morning','thanks','thank'],a:'Happy to help! What would you like to know?'}
+ ],
+ flows:{
+  pass:{steps:[
+   {key:'name',ask:'Great. What is your name?',check:function(v){return v.length>1;}},
+   {key:'when',ask:'When would you like to start?',options:['Today','This week','Next week']},
+   {key:'goal',ask:'What is your main goal?',options:['Build strength','Lose weight','Recovery','Just exploring']},
+   {key:'contact',ask:'Best phone or email for the team?',check:phoneOk,err:'Please add a phone number or an email.'}],
+   done:function(d){return 'Thanks '+d.name+'! Your free 3-day pass request ('+d.goal.toLowerCase()+', starting '+d.when.toLowerCase()+') was sent to the team. They will reach you at '+d.contact+' and send the ID verification link. (Demo: nothing was actually sent.)';}},
+  consult:{steps:[
+   {key:'name',ask:'Happy to set up a free BodyWorks consult. Your name?',check:function(v){return v.length>1;}},
+   {key:'area',ask:'What interests you most?',options:['Pain and recovery','Skin and face','Body sculpting','Not sure yet']},
+   {key:'contact',ask:'Best phone or email?',check:phoneOk,err:'Please add a phone number or an email.'}],
+   done:function(d){return 'Thanks '+d.name+'! Your consult request ('+d.area.toLowerCase()+') was sent to the spa team, who will confirm a time at '+d.contact+'. (Demo: nothing was actually sent.)';}},
+  trainer:{steps:[
+   {key:'name',ask:'Want an intro to a trainer? Your name?',check:function(v){return v.length>1;}},
+   {key:'focus',ask:'What would you like to work on?',options:['Strength','Weight loss','Mobility and pain','Contest prep','Beginner']},
+   {key:'contact',ask:'Best phone or email?',check:phoneOk,err:'Please add a phone number or an email.'}],
+   done:function(d){return 'Thanks '+d.name+'! The team will match you with a trainer for '+d.focus.toLowerCase()+' and reach you at '+d.contact+'. Rates vary by trainer. (Demo: nothing was actually sent.)';}}
+ }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Beauty Atelier by Tanya · Салон красоты в центре Еревана</title>
+<meta name="description" content="Beauty Atelier by Tanya: волосы, ногти, ресницы и макияж на проспекте Саят-Нова, 27. Ежедневно с 10:00 до 20:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Jost:wght@300;400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{
+  --ink:#0e0c0c;--ink2:#1d1a1a;--bone:#f4efe9;--paper:#fffdfa;--mute:#6f6862;--line:#d9d1c8;
+  --rose:#c9a79b;--rose-d:#9a6f62;
+  --h:'Anton','Arial Narrow',Impact,sans-serif;--b:'Jost',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--b);background:var(--paper);color:var(--ink);line-height:1.55;overflow-x:hidden;font-weight:400}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
+.h{font-family:var(--h);font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:.95}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--rose-d);font-weight:500}
+.btn{display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--ink);background:var(--ink);color:var(--bone);padding:15px 26px;font:500 14px/1 var(--b);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:.2s}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bone)}
+.btn.light{background:var(--bone);color:var(--ink);border-color:var(--bone)}
+.btn.light:hover{background:transparent;color:var(--bone)}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:40;background:var(--ink);color:var(--bone)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{height:40px;width:auto}
+.brand small{display:none;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#bdb3aa}
+.nav{display:none;gap:26px;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.nav a{text-decoration:none;color:#d8cfc6}
+.nav a:hover{color:#fff}
+.top .btn{padding:11px 16px;font-size:12px}
+@media(min-width:900px){.nav{display:flex}.brand small{display:block}.top .btn{padding:12px 22px}}
+
+/* hero: split, giant type */
+.hero{display:grid;grid-template-columns:1fr;background:var(--bone)}
+.hero-t{padding:48px 20px 34px;max-width:680px}
+.hero h1{font-size:clamp(54px,15vw,138px);margin:14px 0 18px}
+.hero h1 span{display:block}
+.hero h1 .o{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.hero p.lead{font-size:18px;max-width:34ch;color:#3a3532;font-weight:300}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero-s{background:var(--ink);color:var(--bone);padding:30px 20px;display:grid;gap:18px;align-content:end}
+.hero-s .k{font-family:var(--h);font-size:44px;line-height:1;color:var(--rose)}
+.hero-s .row{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:baseline;border-bottom:1px solid #3a3434;padding-bottom:16px}
+.hero-s .row:last-child{border:0;padding:0}
+.hero-s p{font-size:14px;color:#cfc6bd}
+@media(min-width:900px){
+  .hero{grid-template-columns:1.5fr 1fr;min-height:560px}
+  .hero-t{padding:86px 20px 70px max(20px,calc((100vw - 1180px)/2 + 20px));max-width:none}
+  .hero-s{padding:70px 40px}
+}
+
+/* marquee */
+.mq{background:var(--rose);color:var(--ink);overflow:hidden;white-space:nowrap;border-block:1.5px solid var(--ink)}
+.mq div{display:inline-block;padding:13px 0;animation:mq 38s linear infinite;font-family:var(--h);text-transform:uppercase;font-size:22px;letter-spacing:.03em}
+.mq i{font-style:normal;margin:0 22px;opacity:.5}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.mq div{animation:none}}
+
+section{padding:68px 0}
+.sec-h{display:flex;flex-direction:column;gap:10px;margin-bottom:34px}
+.sec-h h2{font-size:clamp(40px,9vw,76px)}
+
+/* services as numbered rows */
+.svc{border-top:1.5px solid var(--ink)}
+.svc-i{border-bottom:1px solid var(--line)}
+.svc-b{display:grid;grid-template-columns:44px 1fr 34px;align-items:center;gap:6px;width:100%;background:none;border:0;text-align:left;padding:22px 0;cursor:pointer;font:inherit;color:inherit}
+.svc-b .n{font-family:var(--h);font-size:20px;color:var(--rose-d)}
+.svc-b .t{font-family:var(--h);text-transform:uppercase;font-size:clamp(22px,5.2vw,38px);line-height:1.05}
+.svc-b .p{font-size:26px;line-height:1;text-align:right;transition:.2s}
+.svc-i.open .p{transform:rotate(45deg)}
+.svc-d{display:none;padding:0 0 24px 50px;max-width:62ch;color:#4b4541}
+.svc-i.open .svc-d{display:block}
+.svc-d .btn{margin-top:14px;padding:12px 18px;font-size:12px}
+.svc-note{margin-top:22px;font-size:14px;color:var(--mute)}
+
+/* about */
+.about{background:var(--ink);color:var(--bone)}
+.about .eyebrow{color:var(--rose)}
+.about-g{display:grid;gap:36px}
+.about h2{font-size:clamp(40px,9vw,76px);margin:10px 0 18px}
+.about p{color:#d8cfc6;max-width:58ch;margin-bottom:14px;font-weight:300;font-size:17px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#3a3434;border:1px solid #3a3434}
+.stat{background:var(--ink);padding:22px 18px}
+.stat b{display:block;font-family:var(--h);font-weight:400;font-size:46px;line-height:1;color:var(--rose)}
+.stat span{font-size:13px;color:#bdb3aa}
+@media(min-width:900px){.about-g{grid-template-columns:1.3fr 1fr;align-items:center;gap:70px}}
+
+/* team */
+.team{display:grid;gap:14px}
+.tm{border:1.5px solid var(--ink);padding:24px 22px;background:var(--paper)}
+.tm .h{font-size:30px;margin-bottom:8px}
+.tm p{font-size:15px;color:#4b4541}
+@media(min-width:760px){.team{grid-template-columns:repeat(3,1fr)}}
+
+/* shop */
+.shop{background:var(--bone)}
+.prods{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+.pr{background:var(--paper);border:1px solid var(--line);padding:18px 16px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-height:170px}
+.pr b{font-weight:500;font-size:15px;line-height:1.3}
+.pr small{display:block;color:var(--mute);font-size:12px;margin-top:4px}
+.pr .pp{font-family:var(--h);font-size:24px;color:var(--rose-d)}
+@media(min-width:760px){.prods{grid-template-columns:repeat(4,1fr)}}
+
+/* visit */
+.visit-g{display:grid;gap:34px}
+.vl{display:grid;gap:0;border-top:1.5px solid var(--ink)}
+.vl div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);font-size:16px}
+.vl dt{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--rose-d);padding-top:3px}
+.vl a{text-decoration-color:var(--rose)}
+.visit h2{font-size:clamp(40px,9vw,76px);margin:10px 0 24px}
+.mapbox{background:var(--ink);color:var(--bone);padding:34px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:30px;min-height:240px}
+.mapbox .h{font-size:clamp(34px,7vw,52px)}
+@media(min-width:900px){.visit-g{grid-template-columns:1.1fr 1fr;gap:70px}}
+
+/* faq */
+.faq{background:var(--bone)}
+.fq{border-top:1.5px solid var(--ink)}
+.fq details{border-bottom:1px solid var(--line);padding:18px 0}
+.fq summary{cursor:pointer;font-weight:500;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.fq summary::-webkit-details-marker{display:none}
+.fq summary:after{content:"+";font-size:24px;line-height:1;color:var(--rose-d)}
+.fq details[open] summary:after{content:"–"}
+.fq p{margin-top:10px;color:#4b4541;max-width:64ch}
+
+footer{background:var(--ink);color:#bdb3aa;padding:34px 0 90px;font-size:13px}
+footer .wrap{display:flex;flex-direction:column;gap:8px}
+footer a{color:var(--rose)}
+
+/* assistant */
+#ba-fab{position:fixed;right:16px;bottom:16px;z-index:60;background:var(--rose);color:var(--ink);border:1.5px solid var(--ink);padding:14px 20px;font:600 13px/1 var(--b);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;box-shadow:5px 5px 0 var(--ink)}
+#ba-fab:active{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ink)}
+#ba-pan{position:fixed;z-index:70;right:0;bottom:0;width:100%;height:min(82vh,620px);background:var(--paper);border:1.5px solid var(--ink);display:none;flex-direction:column;box-shadow:0 0 0 100vmax rgba(14,12,12,.35)}
+#ba-pan.on{display:flex}
+@media(min-width:520px){#ba-pan{right:16px;bottom:16px;width:380px;height:600px;box-shadow:8px 8px 0 var(--ink)}}
+.ba-hd{background:var(--ink);color:var(--bone);display:flex;justify-content:space-between;align-items:center;padding:12px 14px}
+.ba-hd b{font-family:var(--h);font-weight:400;text-transform:uppercase;font-size:19px;letter-spacing:.03em;display:block;line-height:1.1}
+.ba-hd small{font-size:11px;color:#bdb3aa}
+.ba-x{background:none;border:0;color:var(--bone);font-size:26px;line-height:1;cursor:pointer;padding:4px 8px}
+#ba-log{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--bone)}
+.m{max-width:88%;padding:10px 13px;font-size:15px;line-height:1.45;white-space:pre-line}
+.m.b{background:var(--paper);border:1px solid var(--line);align-self:flex-start}
+.m.u{background:var(--ink);color:var(--bone);align-self:flex-end}
+.chips{display:flex;flex-wrap:wrap;gap:7px;padding:2px 0}
+.chips button{background:var(--paper);border:1.2px solid var(--ink);padding:8px 12px;font:500 13px/1 var(--b);cursor:pointer;color:var(--ink)}
+.chips button:hover{background:var(--ink);color:var(--bone)}
+.ba-in{display:flex;border-top:1.5px solid var(--ink)}
+.ba-in input{flex:1;min-width:0;border:0;padding:15px 14px;font:16px var(--b);background:var(--paper);outline:none}
+.ba-in button{background:var(--ink);color:var(--bone);border:0;padding:0 18px;font:500 13px var(--b);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.ba-ft{font-size:11px;color:var(--mute);text-align:center;padding:5px;background:var(--paper)}
+</style>
+</head>
+<body>
+
+<header class="top">
+ <div class="wrap">
+  <a class="brand" href="#top" aria-label="Beauty Atelier by Tanya">
+   <img src="img/beauty-atelier-logo.png" alt="Beauty Atelier by Tanya" width="78" height="40">
+   <small>Салон красоты · Ереван</small>
+  </a>
+  <nav class="nav"><a href="#services">Услуги</a><a href="#about">О салоне</a><a href="#shop">Магазин</a><a href="#visit">Контакты</a><a href="#faq">Вопросы</a></nav>
+  <a class="btn light" href="#visit" data-open-ba>Записаться</a>
+ </div>
+</header>
+
+<main id="top">
+<div class="hero">
+ <div class="hero-t">
+  <div class="eyebrow">Проспект Саят-Нова, 27 · центр Еревана</div>
+  <h1 class="h"><span>Волосы.</span><span class="o">Ногти.</span><span>Ресницы.</span></h1>
+  <p class="lead">Салон Тани с 2021 года: окрашивание и укладка, маникюр, педикюр, макияж и уход. Всё в одном месте, в двух шагах от центра.</p>
+  <div class="cta">
+   <a class="btn" href="#" data-open-ba>Записаться</a>
+   <a class="btn ghost" href="#services">Все услуги</a>
+  </div>
+ </div>
+ <aside class="hero-s">
+  <div class="row"><span class="k">4.8</span><p>рейтинг в Google, более 300 отзывов</p></div>
+  <div class="row"><span class="k">20+</span><p>лет международного опыта у Тани, основателя салона</p></div>
+  <div class="row"><span class="k">10–20</span><p>открыто каждый день, без выходных</p></div>
+ </aside>
+</div>
+
+<div class="mq" aria-hidden="true"><div>
+Классическое наращивание ресниц<i>/</i>Балаяж<i>/</i>Окрашивание L'OREAL MATRIX<i>/</i>Укладка на браш<i>/</i>Педикюр гель-лак<i>/</i>Ботокс для волос<i>/</i>Мелирование<i>/</i>Гель-лак маникюр<i>/</i>
+Классическое наращивание ресниц<i>/</i>Балаяж<i>/</i>Окрашивание L'OREAL MATRIX<i>/</i>Укладка на браш<i>/</i>Педикюр гель-лак<i>/</i>Ботокс для волос<i>/</i>Мелирование<i>/</i>Гель-лак маникюр<i>/</i>
+</div></div>
+
+<section id="services">
+ <div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Услуги</span><h2 class="h">Что мы делаем</h2></div>
+  <div class="svc" id="svc"></div>
+  <p class="svc-note">Стоимость и длительность каждой процедуры команда называет при записи. Спросите ассистента в правом нижнем углу или позвоните: +374 33 225050.</p>
+ </div>
+</section>
+
+<section class="about" id="about">
+ <div class="wrap about-g">
+  <div>
+   <span class="eyebrow">О салоне</span>
+   <h2 class="h">Салон, который сделала Таня</h2>
+   <p>Beauty Atelier by Tanya открылся в 2021 году на проспекте Саят-Нова. Его основала стилист Таня, за плечами у которой более 20 лет работы за границей.</p>
+   <p>В салоне работают парикмахеры, мастера маникюра и косметологи. Интерьер с авангардным искусством, спокойная атмосфера в самом центре, куда легко добраться.</p>
+   <p>Цель простая: помочь каждой клиентке почувствовать себя уверенно и красиво.</p>
+  </div>
+  <div class="stats">
+   <div class="stat"><b>2021</b><span>год открытия</span></div>
+   <div class="stat"><b>20+</b><span>лет опыта у Тани</span></div>
+   <div class="stat"><b>300+</b><span>отзывов в Google</span></div>
+   <div class="stat"><b>4.8</b><span>средняя оценка</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="team">
+ <div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Команда</span><h2 class="h">Три направления</h2></div>
+  <div class="team">
+   <div class="tm"><div class="h">Парикмахеры</div><p>Окрашивание, балаяж, мелирование, укладка на браш, ботокс для волос.</p></div>
+   <div class="tm"><div class="h">Мастера ногтей</div><p>Маникюр и педикюр с покрытием гель-лаком.</p></div>
+   <div class="tm"><div class="h">Эстетисты</div><p>Уход за кожей, макияж и наращивание ресниц.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="shop" id="shop">
+ <div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Онлайн-магазин</span><h2 class="h">Уход для дома</h2></div>
+  <div class="prods">
+   <div class="pr"><div><b>Маска SPANISH COCKTAIL, 500 г</b><small>Love Potion</small></div><div class="pp">20 000 AMD</div></div>
+   <div class="pr"><div><b>Парфюм для волос ONE FOUR THREE, 100 мл</b><small>Love Potion</small></div><div class="pp">12 000 AMD</div></div>
+   <div class="pr"><div><b>Шампунь и кондиционер MARSHMALLOW, 2×500 мл</b><small>Love Potion</small></div><div class="pp">26 000 AMD</div></div>
+   <div class="pr"><div><b>Набор MARACUYA для домашнего ухода, 3×300 мл</b><small>Natureza Cosmeticos</small></div><div class="pp">30 000 AMD</div></div>
+  </div>
+  <p class="svc-note">Цены на товары указаны так, как они опубликованы на сайте салона. Наличие и доставку подтверждает команда.</p>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <div class="wrap visit-g">
+  <div>
+   <span class="eyebrow">Контакты</span>
+   <h2 class="h">Приходите</h2>
+   <dl class="vl">
+    <div><dt>Адрес</dt><dd>проспект Саят-Нова, 27, Ереван</dd></div>
+    <div><dt>Часы</dt><dd>каждый день с 10:00 до 20:00</dd></div>
+    <div><dt>Телефон</dt><dd><a href="tel:+37433225050">+374 33 225050</a></dd></div>
+    <div><dt>Почта</dt><dd><a href="mailto:info@beautyatelier.am">info@beautyatelier.am</a></dd></div>
+    <div><dt>Instagram</dt><dd>@beauty_atelier_bytanya</dd></div>
+   </dl>
+  </div>
+  <div class="mapbox">
+   <div class="h">Саят-Нова 27<br>центр Еревана</div>
+   <div><a class="btn light" href="#" data-open-ba>Записаться онлайн</a></div>
+  </div>
+ </div>
+</section>
+
+<section class="faq" id="faq">
+ <div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Вопросы</span><h2 class="h">Коротко о главном</h2></div>
+  <div class="fq">
+   <details><summary>Когда вы работаете?</summary><p>Каждый день с 10:00 до 20:00.</p></details>
+   <details><summary>Где находится салон?</summary><p>Проспект Саят-Нова, 27, в центре Еревана.</p></details>
+   <details><summary>Сколько стоят услуги?</summary><p>На сайте цены на процедуры не опубликованы. Стоимость называет команда при записи: +374 33 225050 или info@beautyatelier.am.</p></details>
+   <details><summary>Как записаться?</summary><p>Через онлайн-запись на сайте салона, по телефону или через ассистента на этой странице: он соберёт пожелания и передаст их команде.</p></details>
+   <details><summary>Можно ли купить уходовую косметику?</summary><p>Да, у салона есть онлайн-магазин: маски, шампуни, парфюм для волос и наборы для домашнего ухода. Оплата в магазине: банковская карта, PayPal или офлайн.</p></details>
+   <details><summary>На каких языках сайт салона?</summary><p>На английском, русском и армянском.</p></details>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div>© Beauty Atelier by Tanya · проспект Саят-Нова, 27, Ереван</div>
+  <div>Демо · подготовил Gevorg Hovhannisyan</div>
+ </div>
+</footer>
+
+<button id="ba-fab" aria-label="Открыть чат-ассистента">Спросить / записаться</button>
+<div id="ba-pan" role="dialog" aria-label="Ассистент Beauty Atelier">
+ <div class="ba-hd"><div><b>Ассистент салона</b><small>Beauty Atelier by Tanya</small></div><button class="ba-x" id="ba-x" aria-label="Закрыть">×</button></div>
+ <div id="ba-log" aria-live="polite"></div>
+ <form class="ba-in" id="ba-f"><input id="ba-i" placeholder="Ваш вопрос…" autocomplete="off" aria-label="Сообщение"><button>Отправить</button></form>
+ <div class="ba-ft">Ассистент отвечает по данным сайта салона. Заявка ничего не отправляет.</div>
+</div>
+
+<script>
+/*KB-START*/
+var SERVICES=[
+ {id:'lashes',n:'Классическое наращивание ресниц',k:'ресниц ресница наращивание ресниц lash lashes eyelash extension',d:'Классическое наращивание ресниц есть в списке услуг. Подробности, время процедуры и стоимость назовёт команда при записи.'},
+ {id:'balayage',n:'Балаяж',k:'балаяж балаж balayage',d:'Балаяж: мягкое окрашивание с плавным переходом цвета. Длительность и стоимость зависят от длины и исходного цвета, их назовёт мастер.'},
+ {id:'roots',n:'Окрашивание корней L\'OREAL MATRIX',k:'корн отросш roots root color',d:'Окрашивание корней красителем L\'OREAL MATRIX.'},
+ {id:'color',n:'Окрашивание волос L\'OREAL MATRIX',k:'окрашивание окраска покраска покрас красить краска покрасить color colour dye',d:'Окрашивание волос красителем L\'OREAL MATRIX.'},
+ {id:'blow',n:'Укладка на браш',k:'укладка укладк браш блоу blow dry blowdry брашинг',d:'Укладка на браш (blow dry).'},
+ {id:'pedi',n:'Педикюр (гель-лак)',k:'педикюр педикур pedicure ногти ног ноги',d:'Педикюр с покрытием гель-лаком.'},
+ {id:'botox',n:'Ботокс для волос',k:'ботокс ботекс botox выпрямлен кератин',d:'Ботокс для волос. Мастер подберёт подходящий вариант, подробности и стоимость назовёт команда.'},
+ {id:'highl',n:'Мелирование',k:'мелирован мелир highlights осветлен',d:'Мелирование. Стоимость зависит от длины и густоты волос, её назовёт мастер.'},
+ {id:'mani',n:'Гель-лак маникюр',k:'маникюр манікюр маник manicure гель лак гельлак gel polish ногти ногтей',d:'Маникюр с покрытием гель-лаком.'}
+];
+var KB=[
+ {id:'hours',k:'часы график работаете работает работа открыт открыты закрыт до скольки во сколько режим выходной выходные воскресенье суббота когда hours open schedule closed time',a:'Мы открыты каждый день с 10:00 до 20:00.'},
+ {id:'addr',k:'адрес где находитесь находится добраться добр проезд локация расположен центр саят нова address where location find directions map',a:'Проспект Саят-Нова, 27, центр Еревана.'},
+ {id:'phone',k:'телефон позвонить звонить номер связаться контакт почта email мейл phone call contact whatsapp вотсап',a:'Телефон: +374 33 225050\nПочта: info@beautyatelier.am\nInstagram: @beauty_atelier_bytanya'},
+ {id:'price',k:'цена цены стоимость сколько стоит стоят прайс почем дорого price prices cost much',a:'Цены на процедуры на сайте салона не опубликованы, поэтому точную сумму я называть не буду. Её подтвердит команда при записи: +374 33 225050. Могу собрать заявку, и мастер ответит с ценой.'},
+ {id:'services',k:'услуги услуг что делаете что умеете список меню процедуры services menu offer',a:'В салоне делают:\n• классическое наращивание ресниц\n• балаяж\n• окрашивание волос и корней L\'OREAL MATRIX\n• укладку на браш\n• мелирование\n• ботокс для волос\n• маникюр и педикюр с гель-лаком\nТакже на сайте упомянуты макияж и уход за кожей.'},
+ {id:'about',k:'таня тани тане основатель владелец история опыт кто салон открылись открыт 2021 about tanya founder owner',a:'Салон основала в 2021 году стилист Таня. У неё более 20 лет международного опыта. Салон на проспекте Саят-Нова, внутри авангардное искусство и спокойная атмосфера.'},
+ {id:'team',k:'мастер мастера мастеров команда парикмахер парикмахеры стилист косметолог эстетист специалист кто работает team staff stylist',a:'В салоне работают парикмахеры, мастера маникюра и эстетисты. К кому именно записаться, подскажет команда при подтверждении заявки.'},
+ {id:'makeup',k:'макияж макияж визаж make up makeup',a:'Макияж есть в списке направлений салона на сайте. Какие варианты и сколько времени нужно, уточнит команда при записи.'},
+ {id:'skin',k:'кожа кожи лицо уход чистка косметолог skincare skin facial',a:'На сайте сказано, что в салоне есть уход за кожей с эстетистами. Список процедур на сайте не приведён, его назовёт команда.'},
+ {id:'shop',k:'магазин купить товар товары косметика шампунь кондиционер маска парфюм набор продукт продажа shop buy product mask shampoo perfume',a:'У салона есть онлайн-магазин:\n• Маска SPANISH COCKTAIL 500 г: 20 000 AMD\n• Парфюм для волос ONE FOUR THREE 100 мл: 12 000 AMD\n• Шампунь и кондиционер MARSHMALLOW 2×500 мл: 26 000 AMD\n• Набор MARACUYA 3×300 мл: 30 000 AMD\nНаличие подтверждает команда.'},
+ {id:'deliv',k:'доставка доставить отправить курьер возврат вернуть shipping delivery return',a:'Условия доставки и возврата для магазина у салона есть, но точные детали лучше подтвердить у команды: +374 33 225050.'},
+ {id:'pay',k:'оплата оплатить платить карта карточка карты наличные paypal пейпал pay payment card cash',a:'В магазине салона указаны способы оплаты: банковская карта, PayPal и офлайн. Как платить за процедуры в салоне, подтвердит команда.'},
+ {id:'rating',k:'рейтинг отзывы отзыв оценка google гугл reviews rating stars',a:'На сайте салона указано: 4.8 в Google, более 300 отзывов.'},
+ {id:'lang',k:'язык языки english русский армянский говорите по-русски по-английски russian armenian hayeren speak language',a:'Сайт салона есть на английском, русском и армянском. На каком языке общаются мастера, лучше уточнить у команды при записи.'},
+ {id:'cancel',k:'отмена отменить перенос перенести опоздать опоздание предоплата депозит cancel reschedule late deposit',a:'Правила переноса и отмены на сайте не указаны. Это подтвердит команда: +374 33 225050.'},
+ {id:'men',k:'мужчин мужская мужской мужчина стрижка стричь парень дети ребенок детей kids men man haircut child',a:'На сайте нет информации о мужских и детских услугах. Лучше спросить команду: +374 33 225050.'},
+ {id:'bridal',k:'свадьба свадебный невеста вечер прическа выпускной wedding bride bridal event',a:'Про свадебные и вечерние услуги на сайте информации нет, поэтому уточнит команда: +374 33 225050.'},
+ {id:'insta',k:'инстаграм инста instagram insta соцсети facebook фейсбук фото галерея работы gallery',a:'Instagram салона: @beauty_atelier_bytanya. Галерея работ есть на сайте салона.'},
+ {id:'hi',k:'привет здравствуйте здрасте добрый день вечер hello hi hey',a:'Здравствуйте! Я отвечаю на вопросы о салоне и могу собрать заявку на запись. С чего начнём?'},
+ {id:'thx',k:'спасибо благодарю thanks thank you спс',a:'Пожалуйста! Если что-то ещё понадобится, спрашивайте.'}
+];
+var CHIPS=['Услуги','Часы работы','Адрес','Цены','Записаться'];
+function norm(s){return (s||'').toLowerCase().replace(/ё/g,'е').replace(/[^a-zа-я0-9Ա-֏\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.length>5?w.slice(0,Math.max(4,w.length-2)):w;}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(!m)return n;if(!n)return m;var p=[],i,j;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var c=[i];for(j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[n];}
+function wordScore(w,kw){
+  if(w===kw)return 3;
+  var sw=stem(w),sk=stem(kw);
+  if(w.length>=4&&kw.length>=4&&(sw===sk||kw.indexOf(sw)===0||w.indexOf(sk)===0))return 2.2;
+  if(w.length>=5&&kw.length>=5&&lev(w,kw)<=(w.length>=8?2:1))return 1.6;
+  return 0;
+}
+function score(q,keys){
+  var qw=norm(q).split(' ').filter(Boolean),ks=keys.split(' '),tot=0,qn=' '+norm(q)+' ';
+  qw.forEach(function(w){var best=0;ks.forEach(function(k){var s=wordScore(w,k);if(s>best)best=s;});tot+=best;});
+  return tot;
+}
+function bookIntent(q){
+  var n=norm(q);
+  if(/отмен|перенес|cancel|reschedul/.test(n))return false;
+  return /запис|записат|забронир|бронь|бронир|прием|приём|окошк|свободн|book|appointment|reserve|reservation/.test(n)||score(q,'записаться записаться запишите забронировать бронь book appointment')>=2.2;
+}
+function findService(q){
+  var best=null,bs=0;
+  SERVICES.forEach(function(s){var sc=score(q,s.k);if(sc>bs){bs=sc;best=s;}});
+  return bs>=2?best:null;
+}
+function answer(q){
+  if(bookIntent(q))return {book:true};
+  var best=null,bs=0,svc=findService(q);
+  KB.forEach(function(e){var sc=score(q,e.k);if(sc>bs){bs=sc;best=e;}});
+  if(svc&&(bs<4||/услуг|процедур|делаете/.test(norm(q))===false)&&!(best&&bs>=5.5&&best.id!=='services')){
+    if(/цен|стоим|сколько|сколк|прайс|почем|price|cost|much/.test(norm(q)))return {text:svc.n+': цена на сайте не опубликована, её назовёт мастер или команда при записи (+374 33 225050).',chips:['Записаться','Услуги']};
+    return {text:svc.d,chips:['Записаться','Услуги','Цены']};
+  }
+  if(best&&bs>=2.2){
+    var ch=['Записаться'];
+    if(best.id==='services')ch=['Цены','Записаться'];
+    if(best.id==='price')ch=['Записаться','Услуги'];
+    return {text:best.a,chips:ch};
+  }
+  return {text:'Этого я не нашёл на сайте салона, поэтому не буду гадать. Команда ответит точно: +374 33 225050 или info@beautyatelier.am. Могу собрать заявку на запись.',chips:['Записаться','Услуги','Часы работы']};
+}
+/*KB-END*/
+
+/*UI-START*/
+(function(){
+ if(typeof document==='undefined')return;
+ var fab=document.getElementById('ba-fab'),pan=document.getElementById('ba-pan'),log=document.getElementById('ba-log'),f=document.getElementById('ba-f'),inp=document.getElementById('ba-i');
+ var flow=null,data={},started=false;
+ function msg(t,c){var d=document.createElement('div');d.className='m '+c;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+ function chips(a){
+  if(!a||!a.length)return;
+  var w=document.createElement('div');w.className='chips';
+  a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){w.remove();user(t);};w.appendChild(b);});
+  log.appendChild(w);log.scrollTop=log.scrollHeight;
+ }
+ function bot(t,c){setTimeout(function(){msg(t,'b');chips(c);},260);}
+ function open(){pan.classList.add('on');fab.style.display='none';if(!started){started=true;bot('Здравствуйте! Я помогу с вопросами о Beauty Atelier by Tanya и соберу заявку на запись. Что вас интересует?',CHIPS);}setTimeout(function(){inp.focus({preventScroll:true});},50);}
+ function close(){pan.classList.remove('on');fab.style.display='';}
+ fab.onclick=open;document.getElementById('ba-x').onclick=close;
+ Array.prototype.forEach.call(document.querySelectorAll('[data-open-ba]'),function(a){a.onclick=function(e){e.preventDefault();open();if(!flow)startBook();};});
+ var TIMES=['10:00–13:00','13:00–16:00','16:00–20:00'];
+ function startBook(){flow='svc';data={};bot('Отлично, оформим заявку. Какая услуга интересует?',SERVICES.map(function(s){return s.n.replace(" L'OREAL MATRIX",'');}).concat(['Пока не знаю']));}
+ function step(t){
+  var n=norm(t);
+  if(/отмен|стоп|не надо|cancel/.test(n)){flow=null;bot('Хорошо, заявку отменил. Спрашивайте дальше.',CHIPS);return;}
+  if(flow==='svc'){
+    var s=findService(t);
+    data.svc=s?s.n:(/не знаю|подскаж/.test(n)?'нужна консультация':t);
+    flow='when';bot('Когда вам удобно прийти? Мы работаем ежедневно с 10:00 до 20:00.',['Сегодня','Завтра','В выходные','На этой неделе']);
+  }else if(flow==='when'){data.when=t;flow='time';bot('В какое время удобнее?',TIMES);}
+  else if(flow==='time'){data.time=t;flow='name';bot('Как вас зовут?');}
+  else if(flow==='name'){data.name=t;flow='phone';bot('Оставьте номер телефона или Telegram, чтобы команда могла подтвердить время.');}
+  else if(flow==='phone'){
+    if(!/\d{6,}|@/.test(t.replace(/[\s\-()+]/g,''))){bot('Не вижу номера. Напишите телефон в формате +374 XX XXXXXX или ник в Telegram.');return;}
+    data.phone=t;flow='done';
+    bot('Заявка готова:\n• Услуга: '+data.svc+'\n• День: '+data.when+'\n• Время: '+data.time+'\n• Имя: '+data.name+'\n• Контакт: '+data.phone+'\n\nПередано команде салона. Мастер свяжется, чтобы подтвердить время и стоимость.',['Услуги','Адрес']);
+    setTimeout(function(){flow=null;},0);
+  }
+ }
+ function user(t){
+  t=(t||'').trim();if(!t)return;msg(t,'u');
+  if(flow&&flow!=='done'){step(t);return;}
+  var r=answer(t);
+  if(r.book){startBook();return;}
+  bot(r.text,r.chips);
+ }
+ f.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';user(v);};
+
+ /* services accordion */
+ var box=document.getElementById('svc');
+ var more={lashes:'Классическое наращивание ресниц. Подробности и стоимость назовёт команда.',balayage:'Балаяж: мягкий переход цвета. Длительность и стоимость зависят от волос, их назовёт мастер.',roots:'Окрашивание корней красителем L\'OREAL MATRIX.',color:'Окрашивание волос красителем L\'OREAL MATRIX в центре Еревана.',blow:'Укладка на браш.',pedi:'Педикюр с покрытием гель-лаком.',botox:'Ботокс для волос. Подберём вариант под ваши волосы.',highl:'Мелирование. Стоимость зависит от длины и густоты волос.',mani:'Маникюр с покрытием гель-лаком.'};
+ SERVICES.forEach(function(s,i){
+  var d=document.createElement('div');d.className='svc-i';
+  d.innerHTML='<button class="svc-b" aria-expanded="false"><span class="n">'+('0'+(i+1)).slice(-2)+'</span><span class="t"></span><span class="p">+</span></button><div class="svc-d"><p></p><a class="btn ghost" href="#" data-svc="'+i+'">Записаться</a></div>';
+  d.querySelector('.t').textContent=s.n;d.querySelector('p').textContent=more[s.id];
+  d.querySelector('.svc-b').onclick=function(){var o=d.classList.toggle('open');this.setAttribute('aria-expanded',o);};
+  d.querySelector('[data-svc]').onclick=function(e){e.preventDefault();open();flow='when';data={svc:s.n};bot('Запишем вас на: '+s.n+'. Когда удобно прийти? Мы работаем ежедневно с 10:00 до 20:00.',['Сегодня','Завтра','В выходные','На этой неделе']);};
+  box.appendChild(d);
+ });
+})();
+/*UI-END*/
+</script>
+</body>
+</html>

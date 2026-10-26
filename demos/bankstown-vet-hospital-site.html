@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bankstown Veterinary Hospital | Demo</title>
+<meta name="description" content="Demo page with an assistant for Bankstown Veterinary Hospital.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2a201c;--ink2:#4a3c35;--terra:#bf836d;--terra-d:#9c5f4a;--cream:#faf3ec;--sand:#f0e4d8;--sage:#7d8b74;--line:#e3d3c4;--white:#fff;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Figtree,system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55;font-size:16px;overflow-x:hidden}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:700;line-height:1.15;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header{background:var(--ink);position:sticky;top:0;z-index:30}
+.hd{display:flex;align-items:center;gap:14px;height:68px}
+.logo{display:flex;align-items:center;background:var(--ink);border-radius:10px}
+.logo img{height:46px;width:auto;display:block}
+nav{margin-left:auto;display:none;gap:22px;font-size:15px}
+nav a{color:#e9dccf;text-decoration:none;font-weight:500}
+nav a:hover{color:var(--terra)}
+.btn{display:inline-block;background:var(--terra);color:#fff;border:0;border-radius:999px;padding:12px 22px;font:600 15px Figtree,sans-serif;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--terra-d)}
+.btn.o{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.hd .btn{margin-left:auto;padding:9px 16px;font-size:14px}
+@media(min-width:820px){nav{display:flex}.hd .btn{margin-left:0}}
+.hero{padding:34px 0 40px}
+.hg{display:grid;gap:26px}
+.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-d);font-weight:700;margin-bottom:10px}
+.hero h1{font-size:clamp(34px,8vw,60px);margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--terra-d)}
+.hero p.lead{font-size:18px;color:var(--ink2);max-width:520px;margin-bottom:22px}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:6px 14px;margin-bottom:18px}
+.dot{width:10px;height:10px;border-radius:50%;background:#b9a99b}
+.dot.on{background:#4a9a5a;box-shadow:0 0 0 4px #4a9a5a33}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.hrs h3{font-size:22px;margin-bottom:12px}
+.hrs table{width:100%;border-collapse:collapse;font-size:15px}
+.hrs td{padding:8px 0;border-bottom:1px dashed var(--line)}
+.hrs td:last-child{text-align:right;font-weight:600}
+.hrs tr.today td{color:var(--terra-d)}
+.hrs small{display:block;margin-top:12px;color:var(--ink2);font-size:13.5px}
+@media(min-width:820px){.hg{grid-template-columns:1.25fr .9fr;align-items:center;gap:48px}.hero{padding:64px 0}}
+section{padding:46px 0}
+h2{font-size:clamp(26px,5vw,38px);margin-bottom:10px}
+.sub{color:var(--ink2);max-width:620px;margin-bottom:26px}
+.day{background:var(--ink);color:#f3e8dc;border-radius:var(--r);padding:24px 20px}
+.day h2{color:#fff}.day .sub{color:#d9c8b8}
+.bar{display:flex;height:54px;border-radius:12px;overflow:hidden;font-size:12px;font-weight:600;text-align:center;margin:18px 0 8px}
+.bar div{display:flex;align-items:center;justify-content:center;padding:0 4px}
+.b1{flex:2;background:var(--terra);color:#fff}.b2{flex:5;background:#463830;color:#e9dccf}.b3{flex:3;background:var(--terra);color:#fff}
+.ticks{display:flex;font-size:12px;color:#bda996}.ticks span:nth-child(1){flex:2}.ticks span:nth-child(2){flex:5}.ticks span:nth-child(3){flex:3}.ticks span:last-child{flex:0}
+.day p.n{margin-top:16px;font-size:15px;color:#e9dccf}
+.sg{display:grid;gap:12px;grid-template-columns:1fr}
+.sv{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.sv b{font-family:Fraunces,serif;font-size:18px;display:block;margin-bottom:4px}
+.sv span{font-size:14.5px;color:var(--ink2)}
+.sv i{display:inline-block;font-style:normal;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sage);margin-bottom:6px}
+@media(min-width:620px){.sg{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.sg{grid-template-columns:repeat(3,1fr)}}
+.two{display:grid;gap:16px}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr}}
+.site h3{font-size:22px;margin-bottom:6px}
+.site p{font-size:15px;color:var(--ink2);margin-top:6px}
+.site a.tel{font-weight:700;color:var(--terra-d);text-decoration:none;font-size:20px;display:inline-block;margin-top:8px}
+.tag{display:inline-block;font-size:12px;font-weight:700;background:var(--sand);color:var(--terra-d);padding:3px 10px;border-radius:999px;margin-bottom:10px}
+.team{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:560px){.team{grid-template-columns:1fr 1fr}}@media(min-width:900px){.team{grid-template-columns:repeat(3,1fr)}}
+.vet{background:var(--sand);border-radius:14px;padding:16px 18px}
+.vet b{display:block;font-family:Fraunces,serif;font-size:18px}
+.vet span{font-size:14px;color:var(--ink2);display:block}
+.vet.own{background:var(--terra);color:#fff}.vet.own span{color:#fff}
+.puppy{background:var(--terra);color:#fff;border-radius:var(--r);padding:28px 22px}
+.puppy h2{color:#fff}.puppy p{max-width:640px}
+.pg{display:grid;gap:12px;margin-top:20px}
+@media(min-width:700px){.pg{grid-template-columns:1fr 1fr}}
+.pg div{background:#ffffff22;border-radius:14px;padding:14px 16px;font-size:15px}
+.pg b{display:block;font-size:17px}
+.puppy .btn{background:var(--ink);margin-top:18px}
+ul.ck{list-style:none;margin-top:8px}ul.ck li{padding:7px 0 7px 26px;position:relative;font-size:15px;border-bottom:1px dashed var(--line)}
+ul.ck li:before{content:"";position:absolute;left:2px;top:14px;width:10px;height:10px;border-radius:50%;background:var(--sage)}
+details{background:var(--white);border:1px solid var(--line);border-radius:14px;margin-bottom:10px}
+summary{cursor:pointer;padding:15px 18px;font-weight:600;list-style:none;position:relative;padding-right:44px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:18px;top:11px;font-size:22px;color:var(--terra-d)}
+details[open] summary:after{content:"\2212"}
+details p{padding:0 18px 16px;color:var(--ink2);font-size:15px}
+footer{background:var(--ink);color:#d9c8b8;padding:30px 0 96px;font-size:14px;margin-top:30px}
+footer b{color:#fff}footer .demo{margin-top:14px;color:#a8957f;font-size:13px}
+/* assistant */
+#fab{position:fixed;right:16px;bottom:16px;z-index:50;background:var(--terra);color:#fff;border:0;border-radius:999px;padding:14px 20px;font:700 15px Figtree,sans-serif;box-shadow:0 6px 22px #0004;cursor:pointer;display:flex;gap:8px;align-items:center}
+#fab:hover{background:var(--terra-d)}
+#pn{position:fixed;right:16px;bottom:16px;z-index:60;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 32px));background:var(--white);border-radius:20px;box-shadow:0 10px 40px #0005;display:none;flex-direction:column;overflow:hidden}
+#pn.open{display:flex}
+.ph{background:var(--ink);color:#fff;padding:13px 16px;display:flex;align-items:center;gap:10px}
+.ph b{font-family:Fraunces,serif;font-size:16px}.ph small{display:block;font-size:12px;color:#d9c8b8}
+.ph button{margin-left:auto;background:none;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1}
+#ms{flex:1;overflow-y:auto;padding:14px;background:var(--cream);display:flex;flex-direction:column;gap:9px}
+.m{max-width:86%;padding:10px 13px;border-radius:14px;font-size:14.5px;line-height:1.45;word-wrap:break-word}
+.m.b{background:var(--white);border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--terra);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+#ch{display:flex;gap:7px;flex-wrap:wrap;padding:8px 12px 2px;background:var(--cream)}
+#ch button{background:var(--white);border:1px solid var(--terra);color:var(--terra-d);border-radius:999px;padding:6px 12px;font:600 13px Figtree,sans-serif;cursor:pointer}
+#ch button:hover{background:var(--terra);color:#fff}
+#fm{display:flex;gap:8px;padding:10px 12px;background:var(--cream);border-top:1px solid var(--line)}
+#fm input{flex:1;min-width:0;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font:15px Figtree,sans-serif;background:#fff}
+#fm button{background:var(--ink);color:#fff;border:0;border-radius:999px;padding:0 16px;font:600 14px Figtree,sans-serif;cursor:pointer}
+.sum{background:var(--sand);border-radius:10px;padding:8px 10px;margin-top:6px;font-size:13.5px}
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+<a class="logo" href="#top" aria-label="Bankstown Veterinary Hospital"><img src="img/bankstown-vet-hospital-logo.png" alt="Bankstown Veterinary Hospital" width="92" height="41"></a>
+<nav><a href="#hours">Hours</a><a href="#services">Services</a><a href="#sites">Two hospitals</a><a href="#team">Vets</a><a href="#puppy">Puppy school</a><a href="#faq">Questions</a></nav>
+<a class="btn" href="#" data-open="book">Book a visit</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap hg">
+<div>
+<div class="badge"><span class="dot" id="dot"></span><span id="open">Checking hours</span></div>
+<div class="eyebrow">Your vet hospital in Bankstown since 1948</div>
+<h1>Your pet. <em>Your decision.</em></h1>
+<p class="lead">Five vets caring for dogs, cats, rabbits and guinea pigs at 14 Marshall Street. We explain the options and you choose, with no pressure to buy what your pet does not need.</p>
+<div class="cta"><a class="btn" href="#" data-open="book">Book a visit</a><a class="btn o" href="tel:+61297901101">Call 9790 1101</a></div>
+</div>
+<div class="card hrs" id="hours"><h3>Hospital hours</h3>
+<table>
+<tr data-d="1,2,3,4,5"><td>Monday to Friday</td><td>9am to 7pm</td></tr>
+<tr data-d="6"><td>Saturday</td><td>9am to 2pm</td></tr>
+<tr data-d="0"><td>Sunday and public holidays</td><td>Closed</td></tr>
+</table>
+<small>Consults by appointment: Mon to Fri 9 to 11am and 4 to 7pm, Saturday 9am to 2pm. Phones answered from 30 minutes before opening.</small>
+</div>
+</div></div>
+
+<section style="padding-top:0"><div class="wrap"><div class="day">
+<h2>Why there are no consults at lunchtime</h2>
+<p class="sub">It is not a gap in the diary. It is when the hospital does its other work.</p>
+<div class="bar"><div class="b1">Consults</div><div class="b2">Surgery, procedures, recovery and notes</div><div class="b3">Consults</div></div>
+<div class="ticks"><span>9am</span><span>11am</span><span>4pm</span><span></span></div>
+<p class="n">Between 11am and 4pm on weekdays the counter stays open for sales and order pickups. When the surgery list is light, extra consult slots are released, so it is worth checking the live booking page or calling.</p>
+</div></div></section>
+
+<section id="services"><div class="wrap">
+<h2>What the hospital looks after</h2>
+<p class="sub">Everything below is done in-house at Bankstown unless the vets refer you to a specialist.</p>
+<div class="sg">
+<div class="sv"><i>Everyday</i><b>Health checks</b><span>Every vaccination includes an annual health check, for dogs, cats, rabbits and guinea pigs.</span></div>
+<div class="sv"><i>Everyday</i><b>Vaccinations</b><span>Dog and cat vaccinations with SMS and email reminders.</span></div>
+<div class="sv"><i>Everyday</i><b>Microchipping</b><span>Usually done during a routine consult and linked to the NSW Pet Registry.</span></div>
+<div class="sv"><i>Prevention</i><b>Fleas, ticks and worms</b><span>Flea and tick control, intestinal worming and heartworm prevention.</span></div>
+<div class="sv"><i>Prevention</i><b>Dentistry and dental cleans</b><span>Professional cleans, booked by phone so the right time is set aside.</span></div>
+<div class="sv"><i>Prevention</i><b>Seniors care</b><span>Health assessments, screening tests and plans for chronic conditions.</span></div>
+<div class="sv"><i>Hospital</i><b>Surgery</b><span>Desexing, soft tissue, orthopaedic and eye surgery, with hospitalisation and recovery care.</span></div>
+<div class="sv"><i>Hospital</i><b>X-ray, ultrasound, blood tests</b><span>Radiography, ultrasonography and clinical pathology on site.</span></div>
+<div class="sv"><i>Hospital</i><b>Behaviour and referrals</b><span>Behavioural management and referral to specialists when a case needs one.</span></div>
+</div>
+</div></section>
+
+<section id="sites" style="background:var(--sand)"><div class="wrap">
+<h2>One team, two hospitals</h2>
+<p class="sub">Same vets, nurses and systems at both. Pick whichever is closer, or whoever has a time that suits.</p>
+<div class="two">
+<div class="card site"><span class="tag">This hospital</span><h3>Bankstown</h3><p>14 Marshall Street, Bankstown NSW 2200. Street parking, two driveway spaces and three timed spaces out front.</p><p>Mon to Fri 9am to 7pm, Sat 9am to 2pm.</p><a class="tel" href="tel:+61297901101">9790 1101</a></div>
+<div class="card site"><span class="tag">Sister hospital</span><h3>Boundary Road, Peakhurst</h3><p>1/121 Boundary Rd, Peakhurst NSW 2210. Parking in front and an underground car park down the driveway.</p><p>Mon to Fri 9 to 11am and 4 to 7pm, Sat 9am to 12pm.</p><a class="tel" href="tel:+61295849608">9584 9608</a></div>
+</div>
+</div></section>
+
+<section id="team"><div class="wrap">
+<h2>The vets</h2>
+<p class="sub">Book online by choosing your favourite vet and seeing the days they work.</p>
+<div class="team">
+<div class="vet own"><b>Dr Bryant Nguyen</b><span>Principal veterinarian and owner</span><span>English, Vietnamese</span></div>
+<div class="vet"><b>Dr Stefan Tang</b><span>Veterinarian</span><span>English, Cantonese, Mandarin</span></div>
+<div class="vet"><b>Dr Stephen Koh</b><span>Veterinarian</span><span>English</span></div>
+<div class="vet"><b>Dr Nicholas Wu</b><span>Veterinarian</span><span>English, Mandarin</span></div>
+<div class="vet"><b>Dr Emily Casey</b><span>Veterinarian</span><span>English</span></div>
+<div class="vet"><b>Chris Gallen</b><span>Practice and business manager</span></div>
+</div>
+</div></section>
+
+<section id="puppy" style="padding-top:0"><div class="wrap"><div class="puppy">
+<h2>Puppy Pre-School</h2>
+<p>A five-week course for puppies aged 8 to 16 weeks. Puppies can join after their first vaccination, in small classes of at most five.</p>
+<div class="pg">
+<div><b>Bankstown, Wednesdays 7pm</b>Starts 14 Oct and 18 Nov 2026. Call trainer Marion on 0497 424 467.</div>
+<div><b>Peakhurst, Tuesdays</b>Starts 20 Oct and 24 Nov 2026. Call trainer Jenny on 0475 588 001.</div>
+</div>
+<a class="btn" href="#" data-ask="Tell me about puppy school">Ask the assistant</a>
+</div></div></section>
+
+<section><div class="wrap two">
+<div class="card"><h2 style="font-size:26px">New here?</h2>
+<p style="color:var(--ink2);font-size:15px">New clients are welcome by phone or online. Bring what you have:</p>
+<ul class="ck"><li>Vaccination records</li><li>Desexing history</li><li>Current medications</li><li>Recent blood tests, imaging or specialist reports</li><li>Insurance details</li></ul></div>
+<div class="card"><h2 style="font-size:26px">Paying and insurance</h2>
+<p style="color:var(--ink2);font-size:15px">Visa, Mastercard, EFTPOS, cash and mobile payments, due at the time of service. VetPay finance may be available for approved clients. Surgery needs a deposit and the vet gives an estimate first. Insured? Pay, then claim from your insurer; the hospital supplies itemised invoices and paperwork.</p></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+<h2>Quick answers</h2><p class="sub">The assistant in the corner knows these too.</p>
+<details><summary>Do I need an appointment?</summary><p>Yes, consultations are by appointment, which keeps waiting times down and gives each pet the right amount of time. Book online any time or phone 9790 1101.</p></details>
+<details><summary>What if I need to cancel?</summary><p>Please give 24 hours notice for consults and 48 hours for surgery or procedures. Late cancellations and no-shows are charged a failed appointment fee.</p></details>
+<details><summary>Can the vet diagnose over the phone?</summary><p>No. Without examining your pet an accurate diagnosis and treatment plan is not possible, so the team will ask you to bring your pet in.</p></details>
+<details><summary>What if it is an emergency after hours?</summary><p>The hospital does not provide overnight monitoring. Call SASH Alexandria 8913 4000, Sydney Uni Vet Teaching Hospital 9351 3437, Animal Referral Hospital 9758 8666 or VSOS Miranda 8376 8787.</p></details>
+<details><summary>Does my pet have a history of aggression?</summary><p>Please tell the team when booking. The time may be adjusted or extra staff allocated for everyone's safety.</p></details>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<b>Bankstown Veterinary Hospital</b><br>14 Marshall Street, Bankstown NSW 2200 · 9790 1101
+<div class="demo">Demo · prepared by Gevorg Hovhannisyan</div>
+</div></footer>
+
+<button id="fab" aria-label="Open assistant"><span>&#128062;</span> Ask us</button>
+<div id="pn" role="dialog" aria-label="Assistant">
+<div class="ph"><div><b>Bankstown Vet assistant</b><small>Answers from the hospital's website</small></div><button id="x" aria-label="Close">&times;</button></div>
+<div id="ms" aria-live="polite"></div>
+<div id="ch"></div>
+<form id="fm"><input id="in" autocomplete="off" placeholder="Type your question" aria-label="Your question"><button>Send</button></form>
+</div>
+
+<script>
+var KB=[
+{id:'hours',k:'hours open opening close closing time times when saturday sunday weekend monday friday weekday holiday public late early today now',a:'Hospital hours: Monday to Friday 9am to 7pm, Saturday 9am to 2pm. Closed Sunday and public holidays.<br>Consulting hours (appointments): Mon to Fri 9 to 11am and 4 to 7pm, Saturday 9am to 2pm. We take calls from 30 minutes before opening.',c:['Why no midday appointments?','Book a visit','Emergency']},
+{id:'midday',k:'midday lunch 1pm 2pm 3pm 11 4 afternoon between surgery surgeries gap noon why cant counter pickup closed during',a:'Between 11am and 4pm on weekdays the vets are in surgery and procedures, writing notes and looking after patients. The counter stays open for sales and order pickups. If the schedule is light, extra consult slots are released, so check online or call 9790 1101.',c:['Book a visit','Opening hours']},
+{id:'phone',k:'phone call number telephone ring contact reach speak talk mobile',a:'Bankstown: <b>9790 1101</b>. Sister hospital at Peakhurst (Boundary Road): <b>9584 9608</b>.',c:['Where are you?','Book a visit']},
+{id:'where',k:'where address location find directions street marshall parking park car map suburb bankstown near',a:'14 Marshall Street, Bankstown NSW 2200. There is street parking, two spaces in the driveway and three timed spaces in front for clients.',c:['Opening hours','Peakhurst hospital']},
+{id:'sister',k:'peakhurst boundary road sister second other branch hospital location',a:'Our sister hospital, Boundary Road Veterinary Hospital, is at 1/121 Boundary Rd, Peakhurst NSW 2210, phone 9584 9608. Same vets, nurses and systems at both. Peakhurst hours: Mon to Fri 9 to 11am and 4 to 7pm, Sat 9am to 12pm.',c:['Book a visit','Meet the vets']},
+{id:'book',k:'book booking appointment appointments reserve schedule make online visit consult consultation vet slot available availability',a:'You can book live online any time of day or night: pick your favourite vet, see real times and get an instant email confirmation. For surgery, dental procedures, admissions and some diagnostics please phone 9790 1101. I can also take your details here and pass them to the team.',c:['Start a booking','Cancellation policy','Emergency']},
+{id:'cancel',k:'cancel cancellation reschedule change notice noshow fee late failed policy miss missed hours',a:'We ask for 24 hours notice for consultations and 48 hours for surgery or procedures. Late cancellations and no-shows are charged a failed appointment fee, and repeated ones may need prepayment. To change a booking use the link in your confirmation email or phone 9790 1101.',c:['Book a visit','Payment options']},
+{id:'emergency',k:'emergency urgent urgently afterhours after hours night overnight hit poisoned bleeding collapsed seizure dying injured accident critical',a:'During opening hours call us straight away on <b>9790 1101</b>. Outside hours we do not run overnight care, please go to: SASH Alexandria 8913 4000, Sydney Uni Vet Teaching Hospital (Camperdown) 9351 3437, Animal Referral Hospital (Homebush West) 9758 8666, or VSOS Miranda 8376 8787.',c:['Opening hours','Phone number']},
+{id:'species',k:'species animals rabbit rabbits guinea pig pigs bird birds parrot reptile lizard snake exotic ferret hamster treat',a:'The team cares for dogs, cats, rabbits and guinea pigs. For any other animal, please phone 9790 1101 so the team can confirm.',c:['Book a visit','Services']},
+{id:'services',k:'services offer treat do provide care healthcare what list surgery',a:'Health checks, dog and cat vaccinations, dentistry and dental cleans, X-ray and ultrasound, in-house blood tests, behaviour help, seniors care, chronic conditions, microchipping, worming, heartworm, flea and tick control, desexing, soft tissue, orthopaedic and eye surgery, hospitalisation and specialist referrals.',c:['Desexing','Vaccinations','Dental clean']},
+{id:'vacc',k:'vaccination vaccinations vaccine vaccinate vaccinated booster shots injection jab c3 c5 annual checkup check health',a:'We vaccinate dogs and cats, and every vaccination includes an annual health check. Bring any previous vaccination records. Your pet gets SMS and email reminders for important healthcare such as vaccinations.',c:['New client info','Book a visit']},
+{id:'desex',k:'desex desexing desexed neuter neutering spay spey speying castration castrate sterilise sterilize',a:'Desexing is one of our most common surgeries for dogs, cats and rabbits. Most pets come in during the morning and go home the same day. Timing depends on species, breed and size (often around 4 to 6 months for cats and small to medium dogs), and the vet will talk it through. A deposit is required when booking surgery.',c:['Book a visit','Payment options']},
+{id:'dental',k:'dental dentistry teeth tooth clean cleaning scale gum breath tartar plaque mouth',a:'We offer professional dental cleans and dentistry for dogs and cats. Dental procedures are booked by phone on 9790 1101 so the team can set aside the right time. Whether your pet needs one is a question for the vet at a consult.',c:['Book a visit','Payment options']},
+{id:'xray',k:'xray x-ray radiography ultrasound ultrasonography scan blood test pathology lab diagnostic imaging',a:'We have radiography (X-ray), ultrasonography and clinical pathology (blood tests and more) in the hospital. Some diagnostics need to be booked by phone.',c:['Book a visit','Phone number']},
+{id:'micro',k:'microchip microchipping chip chipped register registry id identification lost',a:'Microchipping is a quick procedure usually done during a routine consultation. The chip number links to your details on the NSW Pet Registry.',c:['Book a visit']},
+{id:'senior',k:'senior seniors old older elderly ageing aging arthritis chronic joint age',a:'We run senior health assessments, screening tests and tailored plans for ageing pets and chronic conditions. As a guide, small dogs count as seniors from about 8 to 10 years and large dogs from about 6 to 7. Your vet will advise on your own pet.',c:['Book a visit']},
+{id:'parasite',k:'flea fleas tick ticks worm worms worming heartworm parasite parasites prevention intestinal',a:'We offer flea and tick control, intestinal worming and heartworm prevention. The team will recommend what suits your pet at a visit.',c:['Book a visit']},
+{id:'puppy',k:'puppy puppies preschool pre-school school class classes training socialisation course dog train trainer marion jenny',a:'Puppy Pre-School is a five-week course for puppies aged 8 to 16 weeks, joining after their first vaccination, with a maximum of five puppies. It costs $200 per puppy. Bankstown classes run Wednesdays at 7pm (next starts 14 Oct and 18 Nov 2026): call trainer Marion on 0497 424 467. Peakhurst runs Tuesdays (20 Oct and 24 Nov): call Jenny on 0475 588 001.',c:['Book a visit','New client info']},
+{id:'board',k:'boarding board holiday holidays away travel stay kennel cattery hotel',a:'We board cats in the hospital, each with an igloo to feel safe, a wet and dry diet (or your own food) and medication if needed. Cats must be fully vaccinated within the past 12 months. Availability and rates: please phone 9790 1101.',c:['Phone number','Vaccinations']},
+{id:'pay',k:'pay payment payments card cash eftpos visa mastercard afterpay zip vetpay finance plan instalment installments account accounts deposit cost costs price prices much expensive afford quote estimate fees charge',a:'We accept Visa, Mastercard, EFTPOS, cash and mobile payments. Payment is due at the time of service. We do not offer accounts, Afterpay or Zip, but VetPay finance may be available for approved clients. Surgeries need a deposit. The vet gives an estimate before treatment. For a price on a specific service please phone the team on 9790 1101.',c:['Pet insurance','Book a visit']},
+{id:'insurance',k:'insurance insured claim claims insurer gapOnly reimbursement invoice',a:'Pay at the time of treatment, then claim from your insurer. We provide itemised invoices and any supporting paperwork or history your insurer asks for. We do not take part in GapOnly.',c:['Payment options']},
+{id:'newclient',k:'new first client bring register registration records history welcome',a:'New clients are welcome by phone or online. Please bring vaccination records, desexing history, current medications, any recent tests or reports and insurance details. A deposit may be needed for new-client online bookings. The first visit is a thorough consult and the vet explains options before anything is done.',c:['Start a booking','Payment options']},
+{id:'team',k:'vet vets veterinarian doctor doctors dr team staff who nguyen bryant stefan tang stephen koh nicholas wu emily casey darlene lam owner language speak vietnamese mandarin cantonese chinese english manager chris',a:'Dr Bryant Nguyen is the principal vet and owner (English and Vietnamese). The vets are Dr Stefan Tang (English, Cantonese, Mandarin), Dr Stephen Koh, Dr Nicholas Wu (English, Mandarin) and Dr Emily Casey. Dr Darlene Lam is on maternity leave. Chris Gallen is the practice manager.',c:['Book a visit','Peakhurst hospital']},
+{id:'refill',k:'refill refills medication medications prescription script repeat food order renewal',a:'Medication refills and food requests go through the Requests page on the website. The vet may need to see your pet before renewing a prescription, and generally no more than 6 months of medication can be prescribed without an examination.',c:['Phone number','Book a visit']},
+{id:'phonediag',k:'diagnose diagnosis advice symptoms sick unwell vomiting vomit diarrhoea limping scratching itchy lump coughing eating dose medicine safe ate chocolate swallowed',a:'I cannot give medical advice, and the vets cannot diagnose over the phone, because your pet needs to be examined. Please book a consult or phone 9790 1101. If it looks urgent, call right now.',c:['Book a visit','Emergency']},
+{id:'aggr',k:'aggressive aggression bite bites nervous anxious scared fearful stressed handling muzzle',a:'Please tell us when booking if your pet has shown aggression or needs special handling. We may adjust the time or add staff to keep everyone safe.',c:['Book a visit']},
+{id:'philo',k:'upsell philosophy decision unnecessary private corporate independent history since 1948 award awards',a:'Bankstown Veterinary Hospital has served the area since 1948 and is a privately owned practice. Its approach is "Your Pet. Your Decision": the vets explain options and do not push unnecessary treatment.',c:['Meet the vets','Book a visit']},
+{id:'hello',k:'hello hi hey hola yo good morning evening help',a:'Hello! I can help with opening hours, booking, services, puppy school, payments and emergencies.',c:['Opening hours','Book a visit','Puppy school','Emergency']},
+{id:'thanks',k:'thanks thank you cheers great ok okay bye goodbye',a:'You are welcome! Anything else I can help with?',c:['Opening hours','Book a visit']}
+];
+var ALIAS={'oppening':'opening','openning':'opening','appoinment':'appointment','apointment':'appointment','appointmant':'appointment','vacination':'vaccination','vaccin':'vaccination','vacinate':'vaccinate','emergancy':'emergency','emergeny':'emergency','boardin':'boarding','insurence':'insurance','hrs':'hours','puppys':'puppy','kitten':'cat','kittens':'cat','doggy':'dog','pup':'puppy','chiping':'microchipping','cancle':'cancel','cancell':'cancel','microchiping':'microchipping'};
+function norm(s){return String(s).toLowerCase().replace(/[^a-z0-9\s\-]/g,' ').replace(/-/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(ALIAS[w])w=ALIAS[w];if(w.length>4&&/ies$/.test(w))return w.slice(0,-3)+'y';if(w.length>4&&/es$/.test(w)&&!/(ces|ses)$/.test(w))w=w.slice(0,-2);else if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))w=w.slice(0,-1);if(w.length>5&&/ing$/.test(w))w=w.slice(0,-3);else if(w.length>4&&/ed$/.test(w))w=w.slice(0,-2);return w;}
+function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[b.length];}
+var IDX=KB.map(function(e){var m={};norm(e.k).split(' ').forEach(function(w){if(w)m[stem(w)]=1;});return{e:e,m:m,ks:Object.keys(m)};});
+var DF={};IDX.forEach(function(x){x.ks.forEach(function(k){DF[k]=(DF[k]||0)+1;});});
+var STOP={the:1,a:1,an:1,is:1,are:1,do:1,you:1,i:1,my:1,can:1,to:1,of:1,for:1,and:1,in:1,it:1,me:1,we:1,your:1,what:1,how:1,there:1,have:1,get:1,on:1,at:1,be:1,or:1,with:1,should:1,does:1,if:1};
+function match(q){var t=norm(q).split(' ').filter(function(w){return w&&!STOP[w];}).map(stem);if(!t.length)return null;var best=null,bs=0;
+IDX.forEach(function(x){var s=0;t.forEach(function(w){if(x.m[w]){s+=DF[w]===1?(w.length>=8?4:3):2;return;}if(w.length>=5){for(var i=0;i<x.ks.length;i++){var k=x.ks[i];if(k.length>=5&&lev(w,k)<=(w.length>7?2:1)){s+=1.5;return;}}}});
+if(s>bs){bs=s;best=x.e;}});return bs>=1.5?best:null;}
+if(typeof module!=='undefined')module.exports={match:match,KB:KB};
+
+(function(){
+var $=function(s){return document.querySelector(s)};
+var ms=$('#ms'),ch=$('#ch'),inp=$('#in'),pn=$('#pn'),fab=$('#fab');
+/* open now badge, Sydney time */
+function syd(){try{var p=new Intl.DateTimeFormat('en-AU',{timeZone:'Australia/Sydney',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()),o={};p.forEach(function(x){o[x.type]=x.value});var d={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[o.weekday];return{d:d,m:(+o.hour%24)*60+ +o.minute}}catch(e){return null}}
+function badge(){var t=syd();if(!t){$('#open').textContent='Mon to Fri 9am to 7pm, Sat 9am to 2pm';return}
+var open=(t.d>=1&&t.d<=5&&t.m>=540&&t.m<1140)||(t.d===6&&t.m>=540&&t.m<840);
+$('#dot').className='dot'+(open?' on':'');$('#open').textContent=open?'Open now (Sydney time)':'Closed right now (Sydney time)';
+document.querySelectorAll('.hrs tr').forEach(function(r){if(r.getAttribute('data-d').split(',').indexOf(String(t.d))>-1)r.className='today'})}
+badge();
+/* chat */
+function add(h,c){var d=document.createElement('div');d.className='m '+c;d.innerHTML=h;ms.appendChild(d);ms.scrollTop=ms.scrollHeight;return d}
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function chips(a){ch.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){say(t)};ch.appendChild(b)})}
+var HOME=['Opening hours','Book a visit','Puppy school','Emergency','Payment options'];
+var flow=null,data={};
+var ROUTE={'opening hours':'hours','why no midday appointments?':'midday','where are you?':'where','peakhurst hospital':'sister','cancellation policy':'cancel','payment options':'pay','pet insurance':'insurance','new client info':'newclient','meet the vets':'team','phone number':'phone','puppy school':'puppy','services':'services','desexing':'desex','vaccinations':'vacc','dental clean':'dental','emergency':'emergency','call to book surgery':'book'};
+function byId(id){for(var i=0;i<KB.length;i++)if(KB[i].id===id)return KB[i]}
+function reply(e){add(e.a,'b');chips(e.c||HOME)}
+var STEPS=[
+{k:'pet',q:'Lovely, let us set up a booking request. What is your pet\'s name?',t:true},
+{k:'species',q:'Is {pet} a dog, cat, rabbit or guinea pig?',c:['Dog','Cat','Rabbit','Guinea pig','Other']},
+{k:'reason',q:'What is the visit for?',c:['Check-up or vaccination','Desexing or surgery','Dental','Not well','Something else']},
+{k:'day',q:'Which day suits you? Consults run Mon to Fri 9 to 11am and 4 to 7pm, Saturday 9am to 2pm.',c:['Weekday morning','Weekday evening','Saturday','Any time']},
+{k:'who',q:'Is {pet} already a patient with us?',c:['Yes','No, new client']},
+{k:'name',q:'Your name?',t:true},
+{k:'phone',q:'Best phone number for the team to reach you?',t:true}
+];
+function startFlow(){flow=0;data={};ask()}
+function ask(){var s=STEPS[flow];add(s.q.replace('{pet}',data.pet||'your pet'),'b');if(s.c)chips(s.c);else ch.innerHTML='';inp.placeholder=s.t?'Type here':'Or type your answer';inp.focus()}
+function stepIn(v){var s=STEPS[flow];if(s.k==='phone'&&!/\d{6,}/.test(v.replace(/\D/g,'').length>=6?'123456':'x')){add('Please include a phone number the team can call.','b');return}
+data[s.k]=v;
+if(s.k==='species'&&/^other$/i.test(v)){add('The team cares for dogs, cats, rabbits and guinea pigs. For other animals please phone 9790 1101 so they can confirm.','b')}
+if(s.k==='reason'&&/surgery|dental/i.test(v)){add('Surgery and dental visits are booked by phone so the right time and resources are set aside, but I will pass your details on too.','b')}
+if(s.k==='reason'&&/not well/i.test(v)){add('I cannot say what is wrong, only the vet can after examining {pet}. If it looks urgent, call 9790 1101 right now.'.replace('{pet}',data.pet||'your pet'),'b')}
+flow++;if(flow>=STEPS.length){done();return}ask()}
+function done(){flow=null;ch.innerHTML='';inp.placeholder='Type your question';
+add('Thank you '+esc(data.name)+'! Your request has been <b>sent to the team</b>.<div class="sum">Pet: '+esc(data.pet)+' ('+esc(data.species)+')<br>Visit: '+esc(data.reason)+'<br>When: '+esc(data.day)+'<br>Client: '+esc(data.who)+'<br>Phone: '+esc(data.phone)+'</div>The team will confirm a time with you. Online booking is also open any time.','b');chips(HOME)}
+function say(t){t=String(t).trim();if(!t)return;add(esc(t),'u');
+if(flow!==null){if(/^(cancel|stop|exit|nevermind)$/i.test(t)){flow=null;add('No problem, I have cleared that.','b');chips(HOME);return}stepIn(t);return}
+var l=t.toLowerCase();
+if(l==='book a visit'||l==='start a booking'){var e0=byId('book');add(e0.a,'b');setTimeout(function(){startFlow()},350);return}
+if(ROUTE[l]){reply(byId(ROUTE[l]));return}
+var e=/how much|price|cost|fee|charge/i.test(t)?byId('pay'):match(t);if(e){if(e.id==='book'&&/\b(book|make|want|need|like)\b/i.test(t)){add(e.a,'b');setTimeout(startFlow,350);return}reply(e)}else{add('I do not have that in the hospital\'s information, so I will not guess. The team will confirm: call <b>9790 1101</b> (Mon to Fri 9am to 7pm, Sat 9am to 2pm).','b');chips(HOME)}}
+function open(){pn.classList.add('open');fab.style.display='none';if(!ms.children.length){add('Hi! I am the Bankstown Veterinary Hospital assistant. I answer from the hospital\'s own information and can take your booking request. I cannot give medical advice.','b');chips(HOME)}inp.focus()}
+fab.onclick=open;$('#x').onclick=function(){pn.classList.remove('open');fab.style.display='flex'};
+$('#fm').onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';say(v)};
+document.querySelectorAll('[data-open]').forEach(function(a){a.onclick=function(e){e.preventDefault();open();say('Start a booking')}});
+document.querySelectorAll('[data-ask]').forEach(function(a){a.onclick=function(e){e.preventDefault();open();say(a.getAttribute('data-ask'))}});
+})();
+</script>
+</body>
+</html>

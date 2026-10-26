@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cris Beauty Salon | Hair, Nails and Brows in Brickell</title>
+<meta name="description" content="Demo page for Cris Beauty Salon: hair, nails, brows and private events in Brickell, Miami.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#2d889b;--soft:#6a98a0;--cream:#fbfcf7;--sage:#e8ede5;--sage2:#d7dfd2;--ink:#1f3b42;--gold:#b99863;--aw-ac:#2d889b;--aw-on:#fff;--aw-bg:#fbfcf7;--aw-tx:#1f3b42;--aw-hd:#1f3b42;--aw-hdt:#fff;--aw-bot:#e8ede5;--aw-font:Jost,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.65 Jost,system-ui,sans-serif;font-weight:400;color:var(--ink);background:var(--cream);overflow-x:hidden}
+h1,h2,h3,.cg{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.05}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:0;z-index:40;background:#fbfcf7ee;backdrop-filter:blur(8px);border-bottom:1px solid var(--sage2)}
+.hb{display:flex;align-items:center;justify-content:space-between;height:66px;gap:10px}
+.hb img{height:44px;width:auto;display:block}
+.hb nav{display:none;gap:24px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.hb nav a{text-decoration:none}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--teal);color:#fff;font:500 14px Jost;letter-spacing:.12em;text-transform:uppercase;padding:14px 26px;text-decoration:none;border-radius:2px}
+.btn.o{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.btn.sm{padding:10px 18px;font-size:13px}
+.hero{text-align:center;padding:56px 0 40px;background:radial-gradient(ellipse at 50% 0,#e8ede5 0,transparent 70%)}
+.eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--teal);font-weight:500}
+.hero h1{font-size:clamp(58px,17vw,138px);font-style:italic;font-weight:500;margin:10px 0 6px;color:var(--teal);letter-spacing:-.02em}
+.hero .tag{font:500 clamp(20px,5vw,28px)/1.3 'Cormorant Garamond',serif;max-width:560px;margin:0 auto 22px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.hero .where{margin-top:24px;font-size:14px;color:#4f6a70;letter-spacing:.04em}
+.week{padding:6px 0 52px}
+.wk{display:flex;gap:8px;overflow-x:auto;padding:4px 0 10px;scrollbar-width:thin}
+.wk button{flex:none;min-width:64px;border:1px solid var(--sage2);background:#fff;padding:10px 12px;font:500 13px Jost;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;color:var(--ink)}
+.wk button[aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.wk button.td:after{content:" \2022";color:var(--gold)}
+.deal{background:#fff;border:1px solid var(--sage2);padding:26px;display:grid;gap:16px}
+.deal .it{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:14px;border-bottom:1px dotted var(--soft)}
+.deal .it:last-child{border:0;padding:0}
+.deal b{font:600 24px 'Cormorant Garamond',serif}
+.deal .pr{font:600 28px 'Cormorant Garamond',serif;color:var(--teal);white-space:nowrap}
+.deal .pr s{font-size:17px;color:#889;margin-right:8px;font-weight:500}
+.deal small{display:block;color:#5d767c;font-size:14px;line-height:1.4}
+.fine{font-size:13px;color:#5d767c;margin-top:12px}
+section{padding:56px 0}
+h2{font-size:clamp(36px,8vw,56px);margin:8px 0 12px;font-weight:500}
+h2 em{color:var(--teal)}
+.sub{max-width:600px;color:#4a646a;margin-bottom:26px}
+.menu{display:grid;gap:0;border-top:1px solid var(--ink)}
+.mc{padding:28px 0;border-bottom:1px solid var(--ink)}
+.mc h3{font-size:34px;font-style:italic;color:var(--teal);margin-bottom:6px;font-weight:500}
+.mc p{font-size:15.5px;color:#4a646a;margin-bottom:12px;max-width:520px}
+.mc ul{list-style:none;padding:0;columns:1;font-size:16px}
+.mc li{padding:5px 0;break-inside:avoid;border-bottom:1px dotted var(--sage2)}
+.mc a.t{display:inline-block;margin-top:14px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--teal)}
+.sage{background:var(--sage)}
+.cris{display:grid;gap:26px;align-items:center}
+.mono{aspect-ratio:1;max-width:260px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;text-align:center;padding:20px;margin:0 auto;font:500 20px/1.3 'Cormorant Garamond',serif;border:8px solid var(--sage);box-shadow:0 0 0 1px var(--ink)}
+.mono b{display:block;font:600 64px/1 'Cormorant Garamond',serif;color:var(--gold)}
+.quote{font:italic 500 26px/1.3 'Cormorant Garamond',serif;margin:18px 0;color:var(--teal)}
+.facts{display:grid;gap:8px;margin-top:16px}
+.facts span{padding-left:22px;position:relative;font-size:15.5px}
+.facts span:before{content:"";position:absolute;left:0;top:11px;width:10px;height:1px;background:var(--teal)}
+.ev{display:grid;gap:12px}
+.ev div{background:#fff;padding:22px;border:1px solid var(--sage2)}
+.ev b{font:600 26px 'Cormorant Garamond',serif;display:block;font-style:italic;color:var(--teal)}
+.ev span{font-size:15px;color:#4a646a}
+.chair{background:var(--ink);color:#fff;text-align:center}
+.chair h2{color:#fff}.chair .sub{color:#c4d3d6;margin-left:auto;margin-right:auto}
+.chair .big{font:500 72px/1 'Cormorant Garamond',serif;color:var(--gold)}
+.chair ul{list-style:none;padding:0;display:grid;gap:4px;max-width:520px;margin:16px auto 24px;text-align:left;font-size:15.5px}
+.chair li:before{content:"\2014\00a0";color:var(--gold)}
+.hrs{width:100%;border-collapse:collapse;font-size:16px}
+.hrs td{padding:11px 0;border-bottom:1px dotted var(--soft)}
+.hrs td:last-child{text-align:right;font-weight:500}
+.hrs tr.today td{color:var(--teal);font-weight:600}
+.cols{display:grid;gap:30px}
+details{border-bottom:1px solid var(--sage2)}
+summary{cursor:pointer;padding:18px 0;font:600 22px 'Cormorant Garamond',serif;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary:after{content:"+";color:var(--teal);font-size:24px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{padding:0 0 18px;color:#4a646a;font-size:16px}
+footer{background:var(--ink);color:#a9bec2;padding:28px 0 90px;font-size:13px;text-align:center}
+@media(min-width:800px){
+ .hb nav{display:flex}
+ .menu{grid-template-columns:repeat(3,1fr);border-top:0;gap:0}
+ .mc{padding:8px 24px 28px;border:0;border-left:1px solid var(--ink)}
+ .mc:first-child{border-left:0;padding-left:0}
+ .deal{grid-template-columns:1fr 1fr}
+ .cris{grid-template-columns:260px 1fr;gap:56px}
+ .ev{grid-template-columns:repeat(4,1fr)}
+ .cols{grid-template-columns:1fr 1fr}
+}
+
+.vis{display:grid;gap:0;counter-reset:v;border-top:1px solid var(--ink)}
+.vis div{counter-increment:v;padding:22px 0 22px 64px;position:relative;border-bottom:1px solid var(--sage2)}
+.vis div:before{content:counter(v);position:absolute;left:0;top:14px;font:italic 500 48px 'Cormorant Garamond',serif;color:var(--teal)}
+.vis b{display:block;font:600 24px 'Cormorant Garamond',serif}
+.vis span{font-size:15.5px;color:#4a646a}
+.ext{display:grid;gap:12px;margin-top:8px}
+.ext div{background:#fff;border:1px solid var(--sage2);padding:20px}
+.ext b{display:block;font:600 24px 'Cormorant Garamond',serif;color:var(--teal);font-style:italic}
+.ext span{font-size:15px;color:#4a646a}
+@media(min-width:800px){.ext{grid-template-columns:repeat(3,1fr)}.vis{grid-template-columns:repeat(3,1fr);border-top:0}.vis div{border:0;border-left:1px solid var(--ink);padding:6px 20px 6px 66px}.vis div:before{top:0}}
+.aw-fab{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 18px;background:var(--aw-ac);color:var(--aw-on);font:600 15px/1 var(--aw-font);box-shadow:0 8px 24px rgba(0,0,0,.28);cursor:pointer}
+.aw-fi{font-size:18px}.aw-fab.on{display:none}
+.aw-panel{position:fixed;right:12px;bottom:12px;z-index:61;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));display:flex;flex-direction:column;background:var(--aw-bg);color:var(--aw-tx);border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.35);overflow:hidden;font:15px/1.45 var(--aw-font)}
+.aw-panel[hidden]{display:none}
+.aw-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:var(--aw-hd);color:var(--aw-hdt)}
+.aw-head b{display:block;font-size:16px}.aw-head small{opacity:.8;font-size:12px}
+.aw-x{background:none;border:0;color:inherit;font-size:28px;line-height:1;cursor:pointer;padding:0 4px}
+.aw-log{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px}
+.aw-m{max-width:86%;padding:9px 13px;border-radius:14px;word-wrap:break-word}
+.aw-m.bot{background:var(--aw-bot);align-self:flex-start;border-bottom-left-radius:4px}
+.aw-m.me{background:var(--aw-ac);color:var(--aw-on);align-self:flex-end;border-bottom-right-radius:4px}
+.aw-m a{color:inherit;text-decoration:underline}
+.aw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px;max-height:112px;overflow-y:auto}
+.aw-chip{border:1px solid var(--aw-ac);background:transparent;color:var(--aw-tx);border-radius:999px;padding:6px 12px;font:500 13px var(--aw-font);cursor:pointer}
+.aw-chip:hover{background:var(--aw-ac);color:var(--aw-on)}
+.aw-form{display:flex;gap:6px;padding:8px 12px;border-top:1px solid rgba(128,128,128,.25)}
+.aw-form input{flex:1;min-width:0;border:1px solid rgba(128,128,128,.4);border-radius:999px;padding:10px 14px;font:16px var(--aw-font);background:transparent;color:inherit}
+.aw-go{border:0;border-radius:50%;width:42px;height:42px;background:var(--aw-ac);color:var(--aw-on);cursor:pointer;font-size:16px}
+.aw-note{font-size:11px;text-align:center;opacity:.6;padding:0 8px 8px}
+
+</style>
+</head>
+<body>
+<header><div class="wrap hb">
+ <a href="#top" aria-label="Cris Beauty Salon"><img src="img/cris-beauty-salon-logo.webp" alt="Cris Beauty Salon" width="56" height="44"></a>
+ <nav><a href="#week">This week</a><a href="#menu">Services</a><a href="#cris">About Cris</a><a href="#events">Events</a><a href="#visit">Visit</a></nav>
+ <a class="btn sm" href="#" data-ask="book">Book</a>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+ <div class="eyebrow">Hair &middot; Nails &middot; Brows &middot; Brickell, Miami</div>
+ <h1>Feel beautiful</h1>
+ <p class="tag">Expert hair, nail and eyebrow services in a calm, welcoming space, led by Cris herself.</p>
+ <div class="cta"><a class="btn" href="#" data-ask="book">Book an appointment</a><a class="btn o" href="#week">See this week&rsquo;s deals</a></div>
+ <p class="where">1170 SW 2nd Ave, Miami &nbsp;&middot;&nbsp; 866-528-8870 &nbsp;&middot;&nbsp; Open 7 days</p>
+</div></div>
+
+<div class="week" id="week"><div class="wrap">
+ <div class="eyebrow">This week at Cris</div>
+ <h2>Deals by <em>day</em></h2>
+ <div class="wk" id="wk" role="tablist"></div>
+ <div class="deal" id="deal"></div>
+ <p class="fine">Deals valid until October 31, 2026. First visit? Take 10% off any service, no limit. Halloween nail designs are 10% off too.</p>
+</div></div>
+
+<section id="menu"><div class="wrap">
+ <div class="eyebrow">The menu</div>
+ <h2>What we <em>do</em></h2>
+ <p class="sub">Every service is tailored to you. Ask the team for current pricing, or tell the assistant what you have in mind.</p>
+ <div class="menu">
+  <div class="mc"><h3>Hair</h3><p>From precision cuts and color to smoothing treatments, with formaldehyde-free keratin.</p>
+   <ul><li>Women&rsquo;s haircut</li><li>Blowdry and styling</li><li>Highlights and balayage</li><li>Roots touch up</li><li>Keratin treatment</li><li>Hair hydration treatments</li><li>Hair straightening</li><li>Hair loss volume reducer</li><li>Extensions: tape-in, I-tip, weft</li></ul></div>
+  <div class="mc"><h3>Nails</h3><p>Precise, long-lasting manicures and pedicures in a calm space.</p>
+   <ul><li>Russian manicure</li><li>Russian pedicure</li><li>Gel manicure and pedicure</li><li>Dry gel manicure</li><li>Regular manicure and pedicure</li><li>Spa pedicure</li><li>Nail art and custom design</li><li>Paraffin hand treatment</li><li>Dazzle Dry manicure</li></ul></div>
+  <div class="mc"><h3>Brows &amp; lashes</h3><p>Polished brows and defined lashes that frame your face.</p>
+   <ul><li>Eyebrow waxing and shaping</li><li>Eyebrow lamination and tint</li><li>Keratin lash lift</li><li>Eyelash tinting</li><li>Gentle waxing for sensitive skin</li></ul></div>
+ </div>
+</div></section>
+
+
+<section><div class="wrap">
+ <div class="eyebrow">Extensions</div>
+ <h2>Three ways to add <em>length</em></h2>
+ <p class="sub">Every extensions visit begins with a consultation to choose the right type for your hair and goals, followed by a color match, application, blending and aftercare tips.</p>
+ <div class="ext">
+  <div><b>Tape-in</b><span>Semi-permanent wefts with medical-grade adhesive that lie flat against the scalp. Good for volume, length or highlights, and they last 6 to 8 weeks with proper care.</span></div>
+  <div><b>I-tip</b><span>Individual strands attached with microbeads or micro-rings, with no heat or glue. Secure, reusable and made for long-term wear.</span></div>
+  <div><b>Weft</b><span>Wide sections sewn, glued or clipped to your natural hair. A fast way to get volume and length for an event-ready look.</span></div>
+ </div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+ <div class="eyebrow">A visit with Cris</div>
+ <h2>What to <em>expect</em></h2>
+ <div class="vis">
+  <div><b>Hair color</b><span>A personal consultation, custom tone selection, hand-painted highlights, toner, a deep hydration treatment and a blow-dry.</span></div>
+  <div><b>Keratin</b><span>Hair analysis, detox shampoo, a formaldehyde-free keratin, blow-dry and flat iron, then aftercare recommendations.</span></div>
+  <div><b>Russian manicure</b><span>Nail and cuticle assessment, dry cuticle work, shaping and prep, then polish for a finish that stays shiny.</span></div>
+ </div>
+</div></section>
+<section class="sage" id="cris"><div class="wrap cris">
+ <div class="mono"><div><b>16+</b>years of experience</div></div>
+ <div>
+  <div class="eyebrow">Meet Cris</div>
+  <h2>Beauty as an <em>experience</em></h2>
+  <p>Risleyda, known by everyone as Cris, grew up between the Dominican Republic and Puerto Rico and found her passion for beauty early. She has trained in Puerto Rico, Miami, New York and Germany, and runs the salon on care, detail and staying ahead of trends.</p>
+  <p class="quote">&ldquo;When you feel beautiful, calm, and cared for&hellip; that&rsquo;s real beauty.&rdquo;</p>
+  <div class="facts"><span>Formaldehyde-free keratin smoothing</span><span>Russian manicures that last up to 3 weeks</span><span>Brow lamination with tint, lasting up to 4 weeks</span><span>Balayage that grows out softly for 3 to 4 months</span></div>
+ </div>
+</div></section>
+
+<section id="events"><div class="wrap">
+ <div class="eyebrow">Private events</div>
+ <h2>The whole salon, <em>just for you</em></h2>
+ <p class="sub">Reserve the salon exclusively for your group: professional hair and makeup, manicures and pedicures, champagne and refreshments, all at your schedule.</p>
+ <div class="ev">
+  <div><b>Bridal party</b><span>The ultimate glam session for the bride and her tribe.</span></div>
+  <div><b>Girls&rsquo; night out</b><span>Start your night with a glow, together.</span></div>
+  <div><b>Quincea&ntilde;era</b><span>Royal treatment for the birthday girl and her court.</span></div>
+  <div><b>Fashion events</b><span>Runway-ready styling for crews and creators.</span></div>
+ </div>
+ <p style="margin-top:24px"><a class="btn" href="#" data-ask="event">Reserve an event</a></p>
+</div></section>
+
+<section class="chair"><div class="wrap">
+ <div class="eyebrow" style="color:var(--gold)">For stylists and nail artists</div>
+ <h2>Rent a chair in Brickell</h2>
+ <div class="big">$1,125<small style="font-size:22px;color:#c4d3d6"> / month</small></div>
+ <ul><li>Bright, modern, fully furnished workstation</li><li>Reception and waiting area, private restroom</li><li>High-speed Wi-Fi and electricity included</li><li>Coffee, water and sparkling wine for your clients</li><li>Steps from Brickell Metrorail Station</li></ul>
+ <a class="btn" style="background:var(--gold)" href="#" data-ask="chair">Ask about renting</a>
+</div></section>
+
+<section id="visit"><div class="wrap cols">
+ <div>
+  <div class="eyebrow">Visit</div>
+  <h2>Brickell, <em>Miami</em></h2>
+  <p>1170 SW 2nd Ave, Miami, FL 33130</p>
+  <p style="margin:8px 0 14px"><a href="tel:+18665288870" style="color:var(--teal);font-weight:500">866-528-8870</a><br><a href="mailto:contact@crisbeautysalonmiami.com">contact@crisbeautysalonmiami.com</a></p>
+  <p class="fine">Gift cards and salon products are also available. Ask the team for details.</p>
+ </div>
+ <div><table class="hrs" id="hrs">
+  <tr data-d="1"><td>Monday</td><td>9 AM &ndash; 8 PM</td></tr><tr data-d="2"><td>Tuesday</td><td>9 AM &ndash; 8 PM</td></tr><tr data-d="3"><td>Wednesday</td><td>9 AM &ndash; 8 PM</td></tr><tr data-d="4"><td>Thursday</td><td>9 AM &ndash; 8 PM</td></tr><tr data-d="5"><td>Friday</td><td>9 AM &ndash; 8 PM</td></tr><tr data-d="6"><td>Saturday</td><td>9 AM &ndash; 7 PM</td></tr><tr data-d="0"><td>Sunday</td><td>9 AM &ndash; 5 PM</td></tr></table></div>
+</div></section>
+
+<section class="sage"><div class="wrap">
+ <div class="eyebrow">Questions</div>
+ <h2>Before you <em>book</em></h2>
+ <details><summary>What is a Russian manicure?</summary><p>A dry technique that uses a professional electric file to clean and refine the cuticle area without water. It gives a cleaner finish that typically lasts 2 to 3 weeks.</p></details>
+ <details><summary>Are your keratin treatments safe?</summary><p>The salon uses a formaldehyde-free formula that smooths and reduces frizz without the harsh fumes of traditional formulas.</p></details>
+ <details><summary>How long does balayage last?</summary><p>Between 3 and 4 months, depending on your hair type and care, since it grows out without harsh lines.</p></details>
+ <details><summary>How long do hair extensions last?</summary><p>Tape-in extensions last 6 to 8 weeks with proper care. I-tip extensions are reusable and need no glue or heat. Wefts are sewn, glued or clipped in for quick volume.</p></details>
+ <details><summary>Is there a first-visit offer?</summary><p>Yes: 10% off any service on your first visit, no limit, valid until October 31, 2026.</p></details>
+ <div style="margin-top:28px;font:italic 500 24px/1.4 'Cormorant Garamond',serif;color:var(--teal)">&ldquo;Cris is truly the BEST in Miami! From the moment you sit in her chair, you know your hair is in the most skilled and caring hands.&rdquo;<div style="font:500 13px Jost;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-top:8px;font-style:normal">Daraliz Collado</div></div>
+</div></section>
+<div style="background:var(--teal);color:#fff;text-align:center;padding:40px 18px"><div class="cg" style="font-size:36px;font-style:italic;font-weight:500">It is not just beauty. It is how you experience it.</div><p style="margin:10px 0 18px;color:#e4f2f5">Book a visit, ask about this week&rsquo;s deals, or plan a private event with the whole salon to yourselves.</p><a class="btn" style="background:#fff;color:var(--teal)" href="#" data-ask="book">Book an appointment</a></div>
+<footer><div class="wrap">Demo &middot; prepared by Gevorg Hovhannisyan</div></footer>
+
+<script>
+function createEngine(CFG){
+  var STOP={a:1,an:1,the:1,is:1,are:1,do:1,does:1,you:1,your:1,i:1,my:1,me:1,we:1,of:1,to:1,in:1,on:1,at:1,it:1,and:1,or:1,for:1,can:1,how:1,what:1,there:1,have:1,has:1,get:1,with:1,if:1,be:1,any:1,about:1,tell:1,please:1,want:1,would:1,like:1,much:1,this:1,that:1};
+  function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[’']/g,'').replace(/[^a-z0-9$\s]/g,' ').replace(/\s+/g,' ').trim();}
+  function stem(w){
+    if(w.length>4&&/ies$/.test(w))return w.slice(0,-3)+'y';
+    if(w.length>5&&/ing$/.test(w))return w.slice(0,-3);
+    if(w.length>4&&/ed$/.test(w))return w.slice(0,-2);
+    if(w.length>4&&/es$/.test(w))return w.slice(0,-2);
+    if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))return w.slice(0,-1);
+    return w;}
+  function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;
+    for(i=1;i<=m;i++)for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
+      if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1);}
+    return d[m][n];}
+  function toks(s){return norm(s).split(' ').filter(Boolean);}
+  function tmatch(qt,kt){
+    if(qt===kt)return 1;
+    var a=stem(qt),b=stem(kt);
+    if(a===b)return .95;
+    if(b.length>=5&&a.length>=5&&(a.indexOf(b)===0||b.indexOf(a)===0)&&Math.abs(a.length-b.length)<=3)return .8;
+    var L=Math.min(a.length,b.length);
+    if(L>=5){var dd=lev(a,b);if(dd<=1)return .85;if(L>=8&&dd<=2)return .7;}
+    return 0;}
+  function score(qts,kw){
+    var kts=toks(kw);if(!kts.length)return 0;var tot=0;
+    for(var i=0;i<kts.length;i++){var best=0;for(var j=0;j<qts.length;j++){var m=tmatch(qts[j],kts[i]);if(m>best)best=m;}
+      if(best===0)return 0;tot+=best;}
+    return tot*(1+0.35*(kts.length-1))*(kts.length>1?1.2:1);}
+  function match(q){
+    q=String(q).replace(/how much/ig,'price');
+    var qts=toks(q).filter(function(w){return !STOP[w];});
+    if(!qts.length)qts=toks(q);
+    var best=null,bs=0;
+    for(var i=0;i<CFG.kb.length;i++){var e=CFG.kb[i],s=0;
+      var sum=0;for(var k=0;k<e.k.length;k++){var v=score(qts,e.k[k]);sum+=v;if(v>s)s=v;}s+=0.3*(sum-s);
+      s*=(e.w||1);
+      if(s>bs){bs=s;best=e;}}
+    return bs>=0.8?best:null;}
+  return {match:match,norm:norm,CFG:CFG};
+}
+function mountUI(E){
+  var C=E.CFG,d=document;
+  function el(t,c,h){var x=d.createElement(t);if(c)x.className=c;if(h!=null)x.innerHTML=h;return x;}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  var fab=el('button','aw-fab','<span class="aw-fi">'+(C.fabIcon||'?')+'</span><span class="aw-fl">'+esc(C.fabLabel||'Ask us')+'</span>');
+  fab.setAttribute('aria-label',C.fabLabel||'Ask us');
+  var panel=el('div','aw-panel');panel.setAttribute('role','dialog');panel.hidden=true;
+  var head=el('div','aw-head','<div><b>'+esc(C.title)+'</b><small>'+esc(C.sub)+'</small></div>');
+  var x=el('button','aw-x','&times;');x.setAttribute('aria-label','Close');head.appendChild(x);
+  var log=el('div','aw-log');log.setAttribute('aria-live','polite');
+  var chips=el('div','aw-chips');
+  var form=el('form','aw-form');var inp=el('input');inp.type='text';inp.placeholder=C.placeholder||'Type a question';inp.setAttribute('aria-label','Message');inp.autocomplete='off';
+  var go=el('button','aw-go','&#10148;');go.type='submit';go.setAttribute('aria-label','Send');form.appendChild(inp);form.appendChild(go);
+  var note=el('div','aw-note',esc(C.note||'Demo assistant. Nothing is sent anywhere.'));
+  panel.appendChild(head);panel.appendChild(log);panel.appendChild(chips);panel.appendChild(form);panel.appendChild(note);
+  d.body.appendChild(fab);d.body.appendChild(panel);
+  var flow=null,data={},opened=false;
+  function say(t,me){var m=el('div','aw-m '+(me?'me':'bot'));m.innerHTML=me?esc(t):t;log.appendChild(m);log.scrollTop=log.scrollHeight;}
+  function setChips(list){chips.innerHTML='';list.forEach(function(c){var b=el('button','aw-chip',esc(c.label||c));b.type='button';
+    b.onclick=function(){send(c.label||c,c);};chips.appendChild(b);});}
+  function home(){setChips(C.chips);}
+  function startFlow(id){flow={f:C.flows[id],i:0};data={};ask();}
+  function ask(){var s=flow.f.steps[flow.i];say(s.ask);
+    if(s.options){setChips(s.options.concat([{label:'Cancel',cancel:1}]));inp.placeholder='Or type here';}
+    else{setChips([{label:'Cancel',cancel:1}]);inp.placeholder=s.ph||'Type here';}}
+  function stepIn(v){
+    var s=flow.f.steps[flow.i];
+    if(s.check&&!s.check(v)){say(s.err||'Could you check that and try again?');return;}
+    data[s.key]=v;flow.i++;
+    if(flow.i>=flow.f.steps.length){var out=flow.f.done(data);flow=null;say(out);inp.placeholder=C.placeholder||'';setChips(C.after||C.chips);}
+    else ask();}
+  function send(t,chip){
+    t=String(t).trim();if(!t)return;
+    say(t,1);
+    if((chip&&chip.cancel)||(flow&&/^(cancel|stop|never ?mind|exit)$/i.test(t))){flow=null;say('No problem, nothing was sent.');inp.placeholder=C.placeholder||'';home();return;}
+    if(flow){setTimeout(function(){stepIn(t);},250);return;}
+    setTimeout(function(){
+      var e=E.match(t);
+      if(e){say(e.a);if(e.flow){setTimeout(function(){startFlow(e.flow);},350);}else if(e.chips)setChips(e.chips);else home();}
+      else{say(C.fallback);home();}
+    },280);}
+  function open(){panel.hidden=false;fab.classList.add('on');if(!opened){opened=true;say(C.greeting);home();}setTimeout(function(){inp.focus();},50);}
+  function close(){panel.hidden=true;fab.classList.remove('on');}
+  fab.onclick=function(){panel.hidden?open():close();};x.onclick=close;
+  form.onsubmit=function(ev){ev.preventDefault();var v=inp.value;inp.value='';send(v);};
+  d.querySelectorAll('[data-ask]').forEach(function(b){b.addEventListener('click',function(ev){ev.preventDefault();open();var f=b.getAttribute('data-ask');if(C.flows[f]){say(b.textContent.trim(),1);startFlow(f);}else send(f);});});
+}
+function startAssistant(CFG){var E=createEngine(CFG);if(typeof document!=='undefined'){mountUI(E);}return E;}
+if(typeof module!=='undefined'&&typeof document==='undefined'){module.exports={createEngine:createEngine};}
+
+</script>
+<script>
+(function(){
+ var D=[
+  {d:'Mon',n:1,l:'Monday',it:[['Russian manicure','$85','$125','Premium treatment, Monday only'],['Dazzle Dry manicure','$39.99','','Dry in as little as 5 minutes, no lamp. Monday only'],['Blowdry','$55*','','Short hair. Monday and Wednesday. *Extra for long hair']]},
+  {d:'Tue',n:2,l:'Tuesday',it:[['BFF Tuesday: two Express Mani Gel','$100','$130','Book in advance with your BFF and save $30']]},
+  {d:'Wed',n:3,l:'Wednesday',it:[['Express Mani Gel','$55','$65','Wednesday only'],['Blowdry','$55*','','Short hair. Monday and Wednesday. *Extra for long hair']]},
+  {d:'Thu',n:4,l:'Thursday',it:[['Dry gel mani and regular pedi','$85','','Thursday only']]},
+  {d:'Fri',n:5,l:'Friday',it:[['First visit','10% off','','Any service, no limit']]},
+  {d:'Sat',n:6,l:'Saturday',it:[['First visit','10% off','','Any service, no limit']]},
+  {d:'Sun',n:0,l:'Sunday',it:[['First visit','10% off','','Any service, no limit']]}];
+ var wk=document.getElementById('wk'),dl=document.getElementById('deal'),now=-1;
+ try{now=new Date(new Date().toLocaleString('en-US',{timeZone:'America/New_York'})).getDay();}catch(e){}
+ function show(o){dl.innerHTML=o.it.map(function(i){return '<div class="it"><div><b>'+i[0]+'</b><small>'+i[3]+'</small></div><div class="pr">'+(i[2]?'<s>'+i[2]+'</s>':'')+i[1]+'</div></div>';}).join('');
+  [].forEach.call(wk.children,function(b){b.setAttribute('aria-selected',b.textContent.indexOf(o.d)===0?'true':'false');});}
+ D.forEach(function(o){var b=document.createElement('button');b.type='button';b.textContent=o.d;b.setAttribute('role','tab');if(o.n===now)b.className='td';b.onclick=function(){show(o);};wk.appendChild(b);});
+ show(D.filter(function(o){return o.n===now})[0]||D[0]);
+ var r=document.querySelector('#hrs tr[data-d="'+now+'"]');if(r)r.className='today';
+})();
+var okC=function(v){return /(\d.*){7,}/.test(v)||/@/.test(v);};
+var nm=function(v){return v.length>1;};
+startAssistant({
+ title:'Cris Beauty Salon',sub:'Hair, nails and brows in Brickell',fabLabel:'Ask Cris',fabIcon:'✨',
+ greeting:'Hi, welcome to Cris Beauty Salon! I can help with services, hours, this week’s deals, private events or booking a visit.',
+ placeholder:'Ask about services, hours...',
+ fallback:'I do not have that detail. The team can confirm it at 866-528-8870 or contact@crisbeautysalonmiami.com.',
+ chips:['Book an appointment','This week’s deals','Hours','Russian manicure','Private events','Where are you?'],
+ after:['Hours','This week’s deals','Where are you?'],
+ kb:[
+  {k:['book','appointment','reserve','schedule','availability','available','slot','cita'],a:'Of course. I can take your request and pass it to the team, who confirm the time.',flow:'book'},
+  {k:['deal','deals','offer','special','promo','promotion','coupon','discount','sale','cheap','weekly','today'],a:'This week: Monday Russian manicure $85 (was $125) and Dazzle Dry manicure $39.99; Tuesday BFF deal, two Express Mani Gel for $100 (was $130); Wednesday Express Mani Gel $55 (was $65); Thursday dry gel mani and regular pedi $85; blowdry $55 for short hair on Monday and Wednesday. Valid until October 31, 2026.',chips:['First visit discount','Book an appointment']},
+  {k:['first visit','first time','new client','new customer','10 off','ten percent','halloween'],a:'First visit? You get 10% off any service, no limit, valid until October 31, 2026. Halloween nail designs are also 10% off.',flow:'book'},
+  {w:.9,k:['price','cost','pricing','rate','fee','charge','expensive'],a:'Regular service prices are set with the team, so please call 866-528-8870 to confirm. Current deals: Russian manicure $85 on Mondays, Express Mani Gel $55 on Wednesdays, short-hair blowdry $55 on Monday and Wednesday.'},
+  {k:['hour','open','close','closing','when','time','saturday','sunday','weekend','late','early','monday','tuesday','wednesday','thursday','friday'],a:'Monday to Friday 9 AM to 8 PM, Saturday 9 AM to 7 PM, Sunday 9 AM to 5 PM.'},
+  {k:['where','address','location','direction','parking','park','metrorail','metro','brickell','map','find','near'],a:'1170 SW 2nd Ave, Miami, FL 33130 in Brickell, steps from Brickell Metrorail Station. Street parking is available nearby.'},
+  {k:['phone','call','number','email','contact','reach','text','whatsapp'],a:'Call 866-528-8870 or email contact@crisbeautysalonmiami.com.'},
+  {k:['russian','russian manicure','russian pedicure','dry manicure','cuticle','electric file'],a:'A Russian manicure is a dry technique with an electric file that refines the cuticle area without water. It is precise and typically lasts 2 to 3 weeks. Russian pedicures are offered too.',flow:'book'},
+  {k:['manicure','pedicure','nail','nails','gel','polish','mani','pedi','dazzle','paraffin','nail art','spa pedicure'],a:'Nails: Russian, gel, dry gel, regular and spa manicures and pedicures, Dazzle Dry (dry in as little as 5 minutes), nail art, cuticle care and paraffin hand treatment.',flow:'book'},
+  {k:['keratin','smoothing','frizz','formaldehyde','brazilian','straightening','straighten','hair botox'],a:'The salon offers keratin smoothing with a formaldehyde-free formula, plus hair straightening and hydration treatments.',flow:'book'},
+  {k:['balayage','highlight','highlights','color','colour','dye','roots','root touch up','toner','blonde'],a:'Color services include highlights, balayage and roots touch up. Balayage typically lasts 3 to 4 months. Cris will plan the shade with you.',flow:'book'},
+  {k:['haircut','cut','trim','blowdry','blow dry','blowout','style','styling','wash'],a:'Women’s haircuts, blowdry and styling are available. Blowdry is $55 for short hair on Mondays and Wednesdays (extra for long hair). For regular haircut pricing, the team will confirm at 866-528-8870.',flow:'book'},
+  {k:['extension','extensions','tape','tape in','i tip','itip','weft','length','volume'],a:'Extensions come in tape-in (6 to 8 weeks), I-tip (reusable, no glue or heat) and weft. Your visit starts with a consultation and color match.',flow:'book'},
+  {k:['hair loss','thinning','volume reducer','hydration','hydrating','treatment','damaged','dry hair','repair'],a:'The salon offers deep hydration treatments and a hair loss volume reducer. For your specific hair, Cris will advise at a consultation.'},
+  {k:['eyebrow','eyebrows','brow','brows','lamination','tint','wax','waxing','lash','lashes','lash lift','tinting'],a:'Brows and lashes: waxing and shaping, brow lamination with tint (lasting up to 4 weeks), keratin lash lift and eyelash tinting. Gentle waxing is available for sensitive skin.',flow:'book'},
+  {k:['event','party','bridal','bride','wedding','quinceanera','quince','girls night','buyout','group','bachelorette','champagne','makeup','private'],a:'You can reserve the whole salon for your group: hair and makeup, nails, champagne and refreshments. Bridal parties, quinceaneras, girls’ nights and fashion events are welcome.',flow:'event'},
+  {k:['chair','rent','rental','station','booth','stylist','space','freelance','suite','lease'],a:'Chair rental is $1,125 per month: a furnished workstation, reception area, private restroom, Wi-Fi and electricity included, steps from Brickell Metrorail.',flow:'chair'},
+  {k:['gift','gift card','voucher','present'],a:'Gift cards are available. The team will confirm amounts and how to purchase.'},
+  {k:['product','products','shampoo','retail'],a:'The salon sells beauty products. The team will confirm what is in stock.'},
+  {k:['cris','owner','stylist who','about','experience','risleyda','trained'],a:'Cris (Risleyda) has over 16 years in the industry and trained in Puerto Rico, Miami, New York and Germany.'},
+  {k:['service','services','menu','offer','what do you do','treatments'],a:'Hair (cuts, color, balayage, keratin, extensions), nails (Russian, gel, spa), brows and lashes, private events and chair rental.'},
+  {k:['cancel','cancellation','reschedule','late','deposit','policy','walk in','walkin'],a:'For cancellations, deposits and walk-ins, the team will confirm the policy at 866-528-8870.'},
+  {k:['hello','hi','hey','hola','thanks','thank','gracias'],a:'Happy to help! What would you like to know?'}
+ ],
+ flows:{
+  book:{steps:[
+   {key:'name',ask:'Lovely. What is your name?',check:nm},
+   {key:'svc',ask:'Which service?',options:['Hair','Nails','Brows or lashes','A few things']},
+   {key:'when',ask:'When suits you best?',options:['Weekday daytime','Weekday evening','Saturday','Sunday']},
+   {key:'first',ask:'Is this your first visit? (First visit means 10% off.)',options:['First visit','I am a regular']},
+   {key:'contact',ask:'Best phone or email for the team?',check:okC,err:'Please add a phone number or an email.'}],
+   done:function(d){return 'Thank you '+d.name+'! Your request ('+d.svc.toLowerCase()+', '+d.when.toLowerCase()+', '+d.first.toLowerCase()+') was sent to the team. They will confirm a time at '+d.contact+'. (Demo: nothing was actually sent.)';}},
+  event:{steps:[
+   {key:'name',ask:'A private event, how fun. Your name?',check:nm},
+   {key:'kind',ask:'What are you celebrating?',options:['Bridal party','Quinceanera','Girls’ night out','Fashion event','Other']},
+   {key:'size',ask:'About how many guests?',options:['2 to 5','6 to 10','11 to 20','More than 20']},
+   {key:'date',ask:'Preferred date or month?',ph:'e.g. mid December',check:nm},
+   {key:'contact',ask:'Best phone or email?',check:okC,err:'Please add a phone number or an email.'}],
+   done:function(d){return 'Thank you '+d.name+'! Your '+d.kind.toLowerCase()+' request ('+d.size+' guests, '+d.date+') was sent to the team. They will check the date and plan the services with you at '+d.contact+'. (Demo: nothing was actually sent.)';}},
+  chair:{steps:[
+   {key:'name',ask:'Interested in renting a chair? Your name?',check:nm},
+   {key:'craft',ask:'What do you do?',options:['Hair stylist','Colorist','Nail artist','Brows or lashes','Other']},
+   {key:'contact',ask:'Best phone or email for the owner?',check:okC,err:'Please add a phone number or an email.'}],
+   done:function(d){return 'Thank you '+d.name+'! Your inquiry ('+d.craft.toLowerCase()+') was sent to the salon, who will contact you at '+d.contact+' about availability. (Demo: nothing was actually sent.)';}}
+ }
+});
+</script>
+</body>
+</html>
