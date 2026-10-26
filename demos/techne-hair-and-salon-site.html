@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TECHNE Hair and Salon | Demo</title>
+<meta name="description" content="Japanese hair salon in Vancouver at 27 W 2nd Ave. Cuts, colour, perms and treatments.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#161412;--bg2:#1f1c19;--ln:#3a342d;--cu:#b88355;--cu2:#d6a273;--tx:#efe7dc;--mut:#b9ad9d;--nv:#2b5672}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.65 "Jost",system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;margin:0 0 .4em;line-height:1.1}
+h1{font-size:clamp(42px,11vw,96px);letter-spacing:.02em}h2{font-size:clamp(32px,7vw,52px)}h3{font-size:26px}
+a{color:var(--cu2)}
+.w{max-width:1080px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:40;background:rgba(22,20,18,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--ln)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:1080px;margin:0 auto;padding:8px 16px}
+.chip{display:inline-flex;background:#0e0d0c;border:1px solid var(--ln);border-radius:12px;padding:5px 9px}
+.chip img{height:40px;width:auto;display:block}
+.hd nav{display:none;gap:22px;font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+.hd nav a{color:var(--tx);text-decoration:none}
+.btn{display:inline-block;background:var(--cu);color:#1b1612;border:0;border-radius:2px;padding:12px 20px;font:600 14px "Jost",sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.btn.o{background:transparent;color:var(--tx);border:1px solid var(--cu)}
+@media(min-width:900px){.hd nav{display:flex}}
+.hero{text-align:center;padding:64px 16px 56px;border-bottom:1px solid var(--ln);background:radial-gradient(60% 60% at 50% 0%,#2a2118 0%,var(--bg) 100%)}
+.hero .tag{letter-spacing:.35em;font-size:12px;text-transform:uppercase;color:var(--cu2)}
+.hero h1 em{font-style:italic;color:var(--cu2);display:block;font-size:.5em;letter-spacing:.06em}
+.hero p{max-width:560px;margin:14px auto 0;color:var(--mut);font-size:18px}
+.hero .cta{margin-top:24px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.bar{display:grid;gap:1px;background:var(--ln);border-bottom:1px solid var(--ln)}
+.bar div{background:var(--bg2);padding:16px;text-align:center;font-size:15px}
+.bar b{display:block;font-family:"Cormorant Garamond",serif;font-size:22px;color:var(--cu2)}
+@media(min-width:760px){.bar{grid-template-columns:repeat(3,1fr)}}
+section{padding:60px 0}
+.lab{letter-spacing:.3em;font-size:12px;text-transform:uppercase;color:var(--cu);margin-bottom:10px}
+.sg{display:grid;gap:14px}
+@media(min-width:700px){.sg{grid-template-columns:1fr 1fr}}@media(min-width:1000px){.sg{grid-template-columns:repeat(3,1fr)}}
+.st{background:var(--bg2);border:1px solid var(--ln);border-left:3px solid var(--cu);padding:20px;display:flex;flex-direction:column;gap:4px}
+.st .rl{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cu2)}
+.st p{margin:.2em 0 .6em;color:var(--mut);font-size:16px}
+.st a{font-size:14px;word-break:break-all}.st a.bk{margin-top:auto;padding-top:8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:13px;text-decoration:none}
+.menu{background:#f1e9dc;color:#2a241d}
+.menu h2,.menu h3{color:#2a241d}.menu .lab{color:#8b5a2f}
+.mgs{display:grid;gap:30px}
+@media(min-width:860px){.mgs{grid-template-columns:1fr 1fr;gap:30px 56px}}
+.row{display:flex;align-items:baseline;gap:8px;padding:4px 0;font-size:16px}
+.row i{flex:1;border-bottom:1px dotted #8b7d6a;transform:translateY(-4px);min-width:10px}
+.row b{font-weight:600;text-align:right;max-width:58%}
+.mn{font-size:14px;color:#5d5346;margin:8px 0 0;line-height:1.5}
+.mh{max-width:660px;color:#5d5346}
+.disc{display:grid;gap:12px;margin-top:34px}
+@media(min-width:760px){.disc{grid-template-columns:repeat(3,1fr)}}
+.disc div{border:1px solid #cdbfa9;padding:16px;background:#f8f2e8}
+.disc b{display:block;font-family:"Cormorant Garamond",serif;font-size:24px;color:#8b5a2f}
+.two{display:grid;gap:28px}
+@media(min-width:860px){.two{grid-template-columns:1fr 1fr}}
+.hrs div{display:flex;justify-content:space-between;border-bottom:1px solid var(--ln);padding:10px 0}
+details{border-bottom:1px solid var(--ln);padding:14px 0}summary{cursor:pointer;font-weight:500;font-size:18px}details p{color:var(--mut);margin:.5em 0 0}
+footer{border-top:1px solid var(--ln);padding:34px 0 96px;color:var(--mut);font-size:15px;text-align:center}
+footer .demo{margin-top:16px;font-size:13px}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;color:#000;padding:8px;z-index:99}
+</style>
+<style>:root{--wa:#b88355;--wa2:#7a4c24;--wt:#1b1612;--wo:#2b5672;--wp:#fbf7f1;--wl:#efe7dc;--wb:#ddd0bf;--wi:#26201a;--wf:"Jost",system-ui,sans-serif}
+#aiBtn{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:13px 18px;background:var(--wa);color:var(--wt);font:600 15px/1 var(--wf);cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+#aiBtn:focus-visible,#aiPanel button:focus-visible,#aiIn:focus-visible{outline:3px solid var(--wo);outline-offset:2px}
+#aiBtn svg{width:20px;height:20px;fill:currentColor}
+#aiPanel{position:fixed;right:16px;bottom:78px;z-index:61;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 110px));background:var(--wp);color:var(--wi);border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden;font:15px/1.45 var(--wf)}
+#aiPanel[hidden]{display:none}
+.aih{background:var(--wa);color:var(--wt);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.aih b{display:block;font-size:15px}.aih small{opacity:.85;font-size:12px}
+#aiX{background:transparent;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer;padding:2px 8px}
+#aiLog{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--wl)}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-line;word-wrap:break-word}
+.m.b{background:var(--wp);border:1px solid var(--wb);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--wa);color:var(--wt);align-self:flex-end;border-bottom-right-radius:4px}
+#aiChips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 12px 4px;max-height:96px;overflow:auto;background:var(--wp)}
+#aiChips button{border:1px solid var(--wa);background:transparent;color:var(--wa2);border-radius:999px;padding:6px 11px;font:600 13px/1.1 var(--wf);cursor:pointer}
+#aiChips button:hover{background:var(--wa);color:var(--wt)}
+#aiForm{display:flex;gap:6px;padding:8px 12px;background:var(--wp)}
+#aiIn{flex:1;min-width:0;border:1px solid var(--wb);border-radius:10px;padding:10px;font:16px var(--wf);background:#fff;color:#111}
+#aiForm button{border:0;background:var(--wa);color:var(--wt);border-radius:10px;padding:0 14px;font:600 14px var(--wf);cursor:pointer}
+.aif{font-size:11px;opacity:.7;padding:0 12px 8px;background:var(--wp)}
+@media(max-width:420px){#aiPanel{right:8px;width:calc(100vw - 16px);bottom:72px}}
+</style>
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="hd">
+<a class="chip" href="#top" aria-label="TECHNE Hair and Salon"><img src="img/techne-hair-and-salon-logo.png" alt="TECHNE Hair and Salon" width="38" height="40"></a>
+<nav aria-label="Main"><a href="#stylists">Stylists</a><a href="#price">Price</a><a href="#visit">Contact</a><a href="#faq">Questions</a></nav>
+<a class="btn" href="#visit" data-ai="Book an appointment">Book</a>
+</div></header>
+<main id="main">
+<div class="hero" id="top">
+<div class="tag">Japanese hair salon &middot; Vancouver</div>
+<h1>TECHNE<em>&ldquo;Just feeling&rdquo;</em></h1>
+<p>A unique yet practical hairstyle fit that makes you want to smile. Let us create a look that captures your inner self, and make every day your best hair day.</p>
+<div class="cta"><a class="btn" href="#" data-ai="Book an appointment">Book an appointment</a><a class="btn o" href="#price">See the price list</a></div>
+</div>
+<div class="bar"><div><b>Mon to Sat 10am to 7pm</b>Sunday 10am to 5pm</div><div><b>27 W 2nd Ave.</b>Vancouver BC V5Y 1B3</div><div><b>604-876-8762</b>cut@technehair.com</div></div>
+
+<section id="svc" style="border-bottom:1px solid var(--ln)"><div class="w">
+<div class="lab">Services</div><h2>What you can book</h2>
+<div class="sg">
+<article class="st"><div class="rl">Cut</div><h3>Cuts for men and women</h3><p>Priced by stylist level and including shampoo, blow and eyebrow cut. Bangs cut and touch-up cut are available, and kids get a discount by age.</p><a class="bk" href="#" data-ai="cut prices">Ask about cuts</a></article>
+<article class="st"><div class="rl">Colour</div><h3>Colour, bleach and highlights</h3><p>Roots re-touch, single process, bleach, highlights and balayage, toner, with Olaplex care on bleach and highlights.</p><a class="bk" href="#" data-ai="colour prices">Ask about colour</a></article>
+<article class="st"><div class="rl">Perm</div><h3>Perms and straightening</h3><p>Body perm, point perm, nuance wave, digital perm, hard wave and Japanese straight perm, all with solutions from Japan.</p><a class="bk" href="#" data-ai="perm prices">Ask about perms</a></article>
+<article class="st"><div class="rl">Treatment</div><h3>Hoyu and Olaplex care</h3><p>A Hoyu 3-step treatment, with or without a home pack, or a stand-alone Olaplex treatment.</p><a class="bk" href="#" data-ai="treatment prices">Ask about treatments</a></article>
+<article class="st"><div class="rl">Style</div><h3>Hair sets, up-dos and bridal</h3><p>Up-do, half up, bridal up-do with a rehearsal, styling and arranging. New customers contact the salon before booking.</p><a class="bk" href="#" data-ai="bridal updo">Ask about styling</a></article>
+<article class="st"><div class="rl">Discounts</div><h3>Rebook, refer, birthday</h3><p>5% off your next appointment when you rebook in the salon, 10% off referrals for both of you, and 10% off in your birthday month.</p><a class="bk" href="#" data-ai="discounts">Ask about discounts</a></article>
+</div></div></section>
+
+<section id="stylists"><div class="w">
+<div class="lab">Stylists</div><h2>Seven stylists, trained in Japan and Vancouver</h2>
+<p style="max-width:680px;color:var(--mut)">Masaki Zen is the owner and director, with over 28 years of experience in Japan and Canada. Next to him, six senior stylists, each with a speciality you can ask for by name.</p>
+<div class="sg" style="margin-top:22px"><article class="st"><div class="rl">Owner and director</div><h3>Masaki Zen</h3><p>Over 28 years of experience in Japan and Canada. His cuts are in demand, so please reserve in advance with your desired date and time.</p><a class="bk" href="#" data-ai="book with Masaki">Ask to book</a></article><article class="st"><div class="rl">Senior stylist</div><h3>Kei</h3><p>Eighteen-plus years between Kobe and Vancouver. Listens first, advises, and aims for long-lasting styles that are easy at home. Strong with men's fade cuts, women's short hair and Japanese hair straightening, plus a relaxing shampoo and massage.</p><a href="https://www.instagram.com/kei_techne/" rel="noopener">@kei_techne</a><a class="bk" href="#" data-ai="book with Kei">Ask to book</a></article><article class="st"><div class="rl">Senior stylist</div><h3>Riie</h3><p>More than twenty years in the craft, starting in Japan, in Vancouver since 2015. Balanced across perm, colour and natural wavy hair, and happy to take on a challenge.</p><a href="https://www.instagram.com/hairstylist_riie/" rel="noopener">@hairstylist_riie</a><a class="bk" href="#" data-ai="book with Riie">Ask to book</a></article><article class="st"><div class="rl">Senior stylist</div><h3>Sayaka</h3><p>Fifteen-plus years in Vancouver, from Yokohama, trained at a beauty school in Shibuya, Tokyo. Personalised styles, with the consultation as a big part of the work.</p><a href="https://www.instagram.com/saya0105/" rel="noopener">@saya0105</a><a class="bk" href="#" data-ai="book with Sayaka">Ask to book</a></article><article class="st"><div class="rl">Senior stylist</div><h3>Lui</h3><p>Specialises in bleach, highlights and balayage, with minimal damage and colour that suits your lifestyle and is easy to care for at home.</p><a href="https://www.instagram.com/libra_ryushiro/" rel="noopener">@libra_ryushiro</a><a class="bk" href="#" data-ai="book with Lui">Ask to book</a></article><article class="st"><div class="rl">Senior stylist</div><h3>Kana</h3><p>Has worked in Japan, New Zealand and Australia. Women's layer cuts, bobs, men's fade cuts, and a real love of perms.</p><a href="https://www.instagram.com/___0_7_0_6._/" rel="noopener">@___0_7_0_6._</a><a class="bk" href="#" data-ai="book with Kana">Ask to book</a></article><article class="st"><div class="rl">Senior stylist</div><h3>Shoko</h3><p>About fifteen years in Japan and Vancouver. Highlight colouring, layered styles, bobs and short hair including men's, with careful shampoo and head massage.</p><a href="https://www.instagram.com/shaoko_hair_/" rel="noopener">@shaoko_hair_</a><a class="bk" href="#" data-ai="book with Shoko">Ask to book</a></article></div>
+</div></section>
+
+<section class="menu" id="price"><div class="w">
+<div class="lab">Price</div><h2>The salon menu</h2>
+<p class="mh">Prices may change without prior notice and may vary depending on the length of the hair. This is the salon&rsquo;s published list; the team confirms your exact figure.</p>
+<div class="mgs" style="margin-top:26px"><div class="mg"><h3>Cut</h3><div class="row"><span>Director, men</span><i></i><b>$70</b></div><div class="row"><span>Director, women</span><i></i><b>$85</b></div><div class="row"><span>Senior Stylist, men</span><i></i><b>$65</b></div><div class="row"><span>Senior Stylist, women</span><i></i><b>$80</b></div><div class="row"><span>Top Stylist, men</span><i></i><b>$60</b></div><div class="row"><span>Top Stylist, women</span><i></i><b>$75</b></div><div class="row"><span>Bangs cut</span><i></i><b>$18</b></div><div class="row"><span>Eyebrow cut</span><i></i><b>$8</b></div><div class="row"><span>Touch-up cut (option, no shampoo)</span><i></i><b>$35</b></div><p class="mn">Includes shampoo, blow and eyebrow cut. Kids 17 to 15: 15% off, 12 to 7: 20% off, 6 to 1: 40% off (no shampoo).</p></div><div class="mg"><h3>Colour</h3><div class="row"><span>Re-touch (roots only)</span><i></i><b>$90+</b></div><div class="row"><span>Re-touch (grey hair)</span><i></i><b>$95+</b></div><div class="row"><span>Single process</span><i></i><b>$110</b></div><div class="row"><span>Bleach S / M / L / SL</span><i></i><b>$145 / $150 / $165 / $180+</b></div><div class="row"><span>Highlight / Balayage</span><i></i><b>$170+</b></div><div class="row"><span>Partial highlights</span><i></i><b>$15+</b></div><div class="row"><span>Toner (with colour $30)</span><i></i><b>$40</b></div><div class="row"><span>Double process</span><i></i><b>inquiry</b></div><p class="mn">Bleach and highlights come with Olaplex care. Olaplex care +$25 to $30; with bleach +$10. Single colour plus highlight: $10 off. Half head highlights 15% off, section colour 30% off. Hair length: medium +$10, long +$20, super long +$30 and up. Shampoo and blow are not included.</p></div><div class="mg"><h3>Perm</h3><div class="row"><span>Body perm</span><i></i><b>$115</b></div><div class="row"><span>Point perm</span><i></i><b>$85+</b></div><div class="row"><span>Bangs perm (incl. bangs cut)</span><i></i><b>$65</b></div><div class="row"><span>Nuance wave</span><i></i><b>$125+</b></div><div class="row"><span>Digital perm</span><i></i><b>$245+</b></div><div class="row"><span>Hard wave (spiral)</span><i></i><b>$210+</b></div><div class="row"><span>Japanese straight perm</span><i></i><b>$255+</b></div><div class="row"><span>Bangs only (incl. bangs cut)</span><i></i><b>$90</b></div><p class="mn">All solutions from Japan. Hair length: medium +$10, long +$20, super long +$30 and up. Shampoo and blow are not included.</p></div><div class="mg"><h3>Treatment</h3><div class="row"><span>Hoyu 3-step, short / medium</span><i></i><b>$50</b></div><div class="row"><span>Hoyu 3-step with home pack</span><i></i><b>$70</b></div><div class="row"><span>Hoyu 3-step, long</span><i></i><b>$60</b></div><div class="row"><span>Hoyu long with home pack</span><i></i><b>$80</b></div><div class="row"><span>Olaplex stand-alone, short / medium</span><i></i><b>$55</b></div><div class="row"><span>Olaplex stand-alone, long</span><i></i><b>$65</b></div><p class="mn">Shampoo and blow are not included.</p></div><div class="mg"><h3>Style</h3><div class="row"><span>Up-do</span><i></i><b>$60+</b></div><div class="row"><span>Half up</span><i></i><b>$50+</b></div><div class="row"><span>Bridal up-do (90 min)</span><i></i><b>$125</b></div><div class="row"><span>Bridal rehearsal</span><i></i><b>$60</b></div><div class="row"><span>Styling (arrange) S, M</span><i></i><b>$35</b></div><div class="row"><span>Styling (arrange) L</span><i></i><b>$40</b></div><div class="row"><span>Shampoo and blow, short</span><i></i><b>$30</b></div><div class="row"><span>Shampoo and blow, medium</span><i></i><b>$35</b></div><div class="row"><span>Shampoo and blow, long</span><i></i><b>$40</b></div><div class="row"><span>Shampoo and blow, SL and up</span><i></i><b>$45</b></div><div class="row"><span>Only shampoo</span><i></i><b>$20</b></div><div class="row"><span>Only blow / only iron, M</span><i></i><b>$30</b></div><div class="row"><span>Only blow / only iron, L</span><i></i><b>$35</b></div><p class="mn">Iron with blow: S +$5, M and L +$10. New customers please contact the salon before booking a bridal or hair set.</p></div>
+<div class="mg"><h3>Products</h3><p class="mn" style="font-size:16px;color:#2a241d">OLAPLEX: protects and repairs damaged hair, split ends and frizz by re-linking broken bonds. Also a highly moisturising, reparative shampoo for hair that is easy to manage, shiny and healthier with each use.</p></div>
+</div>
+<div class="disc"><div><b>5% next visit</b>Rebook your next appointment in the salon and get 5% off it.</div><div><b>10% referral</b>Refer a friend: 10% off for both the guest and the referrer.</div><div><b>10% birthday</b>Any time during your birthday month.</div></div>
+</div></section>
+
+<section id="visit"><div class="w two">
+<div><div class="lab">Visit</div><h2>Find us on West 2nd</h2>
+<p>27 W 2nd Ave., Vancouver BC V5Y 1B3, Canada<br>Phone <a href="tel:+16048768762">604-876-8762</a><br><a href="mailto:cut@technehair.com">cut@technehair.com</a><br>Instagram <a href="https://www.instagram.com/technehairandsalon/" rel="noopener">@technehairandsalon</a></p>
+<p><a class="btn" href="#" data-ai="Book an appointment">Send a booking enquiry</a></p>
+<p style="color:var(--mut);font-size:15px">Online booking is available on the salon site. For bridal or hair-set appointments, new customers please contact the salon before booking.</p></div>
+<div class="hrs"><div class="lab">Business hours</div><div><span>Monday to Saturday</span><b>10am to 7pm</b></div><div><span>Sunday</span><b>10am to 5pm</b></div></div>
+</div></section>
+
+<section id="faq" style="background:var(--bg2)"><div class="w" style="max-width:820px">
+<div class="lab">Good to know</div><h2>Quick questions</h2>
+<details><summary>Do I need an appointment with Zen?</summary><p>Yes. Because of popular demand for his cuts, reserve in advance with your desired date and time.</p></details>
+<details><summary>What is included in a cut?</summary><p>Shampoo, blow and eyebrow cut. For colour, perm and treatment services, shampoo and blow are an additional charge.</p></details>
+<details><summary>Is there a kids discount?</summary><p>Ages 17 to 15 get 15% off, 12 to 7 get 20% off, and 6 to 1 get 40% off (no shampoo).</p></details>
+<details><summary>Where do the perm solutions come from?</summary><p>All solutions are from Japan. Ask about body perm, point perm, nuance wave, digital perm, hard wave or Japanese straight perm.</p></details>
+<details><summary>Can I protect my colour-treated hair?</summary><p>Bleach and highlight services come with Olaplex care, and Hoyu and Olaplex treatments are on the menu. Your stylist advises what suits your hair.</p></details>
+<details><summary>What if I am new to the salon and want a bridal up-do?</summary><p>The salon asks new customers to contact them before booking. The bridal up-do is 90 minutes and the rehearsal is a separate appointment.</p></details>
+<details><summary>What are your hours?</summary><p>Monday to Saturday 10am to 7pm, Sunday 10am to 5pm.</p></details>
+<details><summary>Can I book online?</summary><p>Yes, online booking is available on the salon site, or you can phone 604-876-8762.</p></details>
+</div></section>
+</main>
+<footer><div class="w">TECHNE Hair and Salon &middot; 27 W 2nd Ave., Vancouver BC V5Y 1B3 &middot; 604-876-8762<div class="demo">Demo &middot; prepared by Gevorg Hovhannisyan</div></div></footer>
+<button id="aiBtn" type="button" aria-expanded="false" aria-controls="aiPanel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg><span>Ask TECHNE</span></button><div id="aiPanel" hidden role="dialog" aria-label="Assistant"><div class="aih"><div><b>TECHNE Hair and Salon</b><small>Ask a question or request a visit</small></div><button id="aiX" type="button" aria-label="Close">&times;</button></div><div id="aiLog" aria-live="polite"></div><div id="aiChips"></div><form id="aiForm"><input id="aiIn" autocomplete="off" placeholder="Type your question" aria-label="Your question"><button type="submit">Send</button></form><div class="aif">Demo assistant. It answers only from this website and sends nothing.</div></div>
+<script>
+var AI={};
+AI.norm=function(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()};
+AI.stem=function(w){return w.length>4?w.replace(/(ing|ed|es|s|ly)$/,''):w};
+AI.lev=function(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i]}for(j=1;j<=n;j++){d[0][j]=j}for(i=1;i<=m;i++){for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1))}}return d[m][n]};
+AI.tm=function(t,k){if(t===k)return 1;if(t.length>=4&&k.length>=4){if(Math.min(t.length,k.length)>=4&&(t.indexOf(k)===0||k.indexOf(t)===0)&&Math.abs(t.length-k.length)<=3)return .85;if(t.length>=5&&k.length>=5){var d=AI.lev(t,k);if(d<=(k.length>=8?2:1))return .8}}return 0};
+AI.toks=function(q){return AI.norm(q).split(' ').filter(Boolean).map(AI.stem)};
+AI.score=function(q,e){var qt=AI.toks(q),s=0,seen={};e.k.forEach(function(kw){var ws=AI.toks(kw),key=ws.join(' ');if(seen[key])return;seen[key]=1;var tot=0,ok=true;ws.forEach(function(w){var b=0;qt.forEach(function(t){var m=AI.tm(t,w);if(m>b)b=m});if(!b)ok=false;tot+=b});if(ok)s+=tot*(ws.length>1?1.4:(e.book?0.7:1))});return s};
+AI.best=function(KB,q){var b=null,bs=0,n=null,ns=0;KB.forEach(function(e){var s=AI.score(q,e);if(s>bs){bs=s;b=e}if(!e.g&&s>ns){ns=s;n=e}});if(b&&b.g&&ns>=0.8)return n;return bs>=0.8?b:null};
+window.AICFG={"hello": "Hello, welcome to TECHNE. I can tell you about our stylists, prices, hours and services, or take a booking enquiry.", "chips": ["Book an appointment", "Prices", "Stylists", "Opening hours", "Perm", "Colour"], "KB": [{"k": ["hours", "open", "opening", "close", "closing", "time", "what time", "sunday", "saturday", "weekend", "monday", "late", "evening"], "a": "Business hours: Monday to Saturday 10am to 7pm, Sunday 10am to 5pm."}, {"k": ["address", "where", "location", "located", "directions", "find you", "map", "street", "2nd ave", "second avenue", "mount pleasant", "near", "neighbourhood"], "a": "TECHNE Hair and Salon is at 27 W 2nd Ave., Vancouver BC V5Y 1B3, Canada."}, {"k": ["phone", "call", "number", "telephone", "contact", "email", "e-mail", "reach", "instagram", "insta"], "a": "Phone 604-876-8762, e-mail cut@technehair.com, Instagram @technehairandsalon."}, {"k": ["online booking", "book online", "online", "website booking", "app"], "a": "Online booking is available on the salon site (Book Online). I can also take an enquiry here and the salon will get back to you.", "c": ["Book an appointment", "Prices", "Stylists"]}, {"g": true, "k": ["stylist", "stylists", "who", "hairdresser", "hairstylist", "zen", "director", "kei", "riie", "rie", "sayaka", "saya", "lui", "kana", "shoko", "team", "staff", "masaki"], "a": "Seven stylists: Masaki Zen (owner and director, 28+ years in Japan and Canada, book him in advance), and senior stylists Kei, Riie, Sayaka, Lui, Kana and Shoko, most with experience in Japan and Vancouver. Ask me about any of them by name.", "c": ["Book an appointment", "Prices", "Perm", "Colour"]}, {"k": ["kei"], "a": "Kei has over 18 years of experience in Japan (Kobe) and Vancouver. Good at men's fade cuts, women's short hair and Japanese hair straightening, with a relaxing shampoo and massage. Instagram @kei_techne."}, {"k": ["riie", "rie"], "a": "Riie began her career over 20 years ago in Japan and moved to Vancouver in 2015. She enjoys perm, hair colour and natural wavy hair. Instagram @hairstylist_riie."}, {"k": ["sayaka", "saya", "yokohama"], "a": "Sayaka has over 15 years of experience in Vancouver, originally from Yokohama, trained at a beauty school in Shibuya, Tokyo. Consultations are a big part of her work. Instagram @saya0105."}, {"k": ["lui", "balayage", "highlight", "highlights", "bleach", "blonde"], "a": "Lui specialises in bleach colouring, including highlights and balayage, aiming for minimal damage. Highlight and balayage starts from $170+ (with Olaplex care); bleach is $145 to $180+ depending on length. Prices may change without notice and vary with hair length.", "c": ["Book an appointment", "Colour prices"]}, {"k": ["kana"], "a": "Kana has worked as a hairstylist in Japan, New Zealand and Australia. She specialises in women's layer cuts, bobs and men's fade cuts, and loves perms. Instagram @___0_7_0_6._"}, {"k": ["shoko"], "a": "Shoko has about 15 years in the industry in Japan and Vancouver. She enjoys highlight colouring, layered styles, bobs and short hair including men's hair, and is good at shampoo and head massage. Instagram @shaoko_hair_"}, {"k": ["zen", "masaki", "owner", "director"], "a": "Masaki Zen is the owner and director with over 28 years of experience in Japan and Canada. His cuts are popular, so please reserve in advance with your date and time. Director cut: men $70, women $85. Prices may change without notice and vary with hair length.", "c": ["Book an appointment"]}, {"g": true, "k": ["price", "prices", "cost", "how much", "fee", "fees", "rate", "rates", "pricing", "expensive", "menu", "charge"], "a": "Cuts include shampoo, blow and eyebrow cut: Director men $70 / women $85, Senior Stylist men $65 / women $80, Top Stylist men $60 / women $75. Colour starts at $90+ (roots), perms from $85+, treatments from $50, shampoo and blow from $30. Prices may change without notice and vary with hair length. Ask about a specific service for more.", "c": ["Cut prices", "Colour prices", "Perm prices", "Treatment prices"]}, {"k": ["cut", "haircut", "hair cut", "trim", "bangs", "fringe", "eyebrow", "touch up cut", "men cut", "women cut", "fade"], "a": "Cut prices (include shampoo, blow and eyebrow cut): Director men $70 / women $85; Senior Stylist men $65 / women $80; Top Stylist men $60 / women $75. Bangs cut $18, eyebrow cut $8, touch-up cut $35 (no shampoo). Prices may change without notice and vary with hair length.", "c": ["Book an appointment", "Kids discount"]}, {"k": ["kid", "kids", "child", "children", "teen", "youth", "son", "daughter", "baby", "boy", "girl"], "a": "Kids discounts on cuts: ages 17 to 15 get 15% off, 12 to 7 get 20% off, and 6 to 1 get 40% off (no shampoo).", "c": ["Book an appointment", "Cut prices"]}, {"k": ["colour", "color", "dye", "roots", "retouch", "re touch", "grey", "gray", "single process", "toner", "double process", "tint"], "a": "Colour: re-touch (roots only) $90+, grey hair re-touch $95+, single process $110, bleach $145 to $180+ with Olaplex care, highlight or balayage $170+, toner $40 (or $30 with colour). Medium length +$10, long +$20, super long +$30 and up. Shampoo and blow are extra. Double process by enquiry. Prices may change without notice and vary with hair length.", "c": ["Book an appointment", "Perm prices"]}, {"k": ["perm", "permanent wave", "wave", "curl", "curls", "digital perm", "spiral", "hard wave", "nuance", "body perm", "point perm", "straight perm", "japanese straight", "straightening", "straighten", "straightener", "smoothing", "keratin"], "a": "Perms: body perm $115, point perm $85+, bangs perm $65 (includes bangs cut), nuance wave $125+, digital perm $245+, hard wave (spiral) $210+, Japanese straight perm $255+, bangs only $90. All solutions come from Japan. Shampoo and blow are extra. Prices may change without notice and vary with hair length.", "c": ["Book an appointment", "Treatment prices"]}, {"k": ["treatment", "treatments", "olaplex", "hoyu", "damage", "damaged", "repair", "conditioning", "conditioner", "mask", "hair pack", "home pack"], "a": "Treatments: Hoyu 3-step treatment short or medium $50 (with home pack $70), long $60 (with home pack $80). Olaplex stand-alone treatment short or medium $55, long $65. Shampoo and blow are extra. The salon also sells Olaplex products. Prices may change without notice and vary with hair length.", "c": ["Book an appointment", "Colour prices"]}, {"k": ["style", "styling", "updo", "up do", "hair set", "half up", "bride", "bridal", "wedding", "prom", "event", "party", "arrange", "blow", "blowdry", "blow dry", "shampoo", "iron"], "a": "Styling: up-do $60+, half up $50+, bridal up-do $125 (90 minutes) with a rehearsal at $60, styling (arrange) $35 to $40, shampoo and blow $30 to $45 and up. New customers: please contact the salon before booking a bridal or hair-set appointment. Prices may change without notice and vary with hair length.", "c": ["Book an appointment", "Phone"]}, {"k": ["discount", "discounts", "promo", "coupon", "referral", "refer", "birthday", "deal", "offer", "save", "loyalty", "next appointment"], "a": "Discounts: 5% off your next appointment if you rebook in the salon, 10% off for referrals (both guest and referrer), and 10% off during your birthday month.", "c": ["Book an appointment", "Prices"]}, {"k": ["japanese", "japan", "japanese salon", "japanese style", "from japan", "asian"], "a": "TECHNE is a Japanese hair salon in Vancouver. Its stylists trained in Japan and Vancouver, and its perm solutions come from Japan. The salon concept is a unique yet practical hairstyle that makes you want to smile."}, {"k": ["concept", "philosophy", "just feeling", "standard", "about", "welcome"], "a": "TECHNE'S standard is \"JUST FEELING\". The concept: a unique yet practical hairstyle fit that makes you want to smile, so every day is your best hair day."}, {"k": ["parking", "park", "transit", "skytrain", "bus", "accessible", "wheelchair", "stairs"], "a": "I do not have parking, transit or accessibility details from the website. The salon will confirm."}, {"k": ["cancel", "cancellation", "reschedule", "late fee", "no show", "walk in", "walk-in", "walkin", "drop in", "without appointment", "payment", "card", "cash", "tip", "gift card", "gift"], "a": "The website does not say about walk-ins, cancellations, payment methods or gift cards. The salon will confirm."}, {"k": ["book", "booking", "appointment", "appointments", "reserve", "reservation", "schedule", "enquiry", "inquiry", "request", "want to book", "book a", "make an appointment", "book appointment", "can i book"], "book": true}, {"k": ["hello", "hi", "hey", "good morning", "good afternoon", "help", "thanks", "thank you"], "a": "Hello. Ask me about stylists, prices, hours, perms, colour or treatments, or request an appointment.", "c": ["Book an appointment", "Prices", "Stylists", "Opening hours"]}], "flow": {"intro": "Happy to take an enquiry for the salon. Online booking is also on the site (Book Online). This is a request, not a confirmed slot.", "steps": [{"label": "Service", "q": "What would you like?", "chips": ["Cut", "Colour", "Perm or straightening", "Treatment", "Styling or updo", "Not sure yet"]}, {"label": "Stylist", "q": "Do you have a stylist in mind?", "chips": ["Zen (director)", "Kei", "Riie", "Sayaka", "Lui", "Kana", "Shoko", "No preference"]}, {"label": "Day", "q": "Which day suits you? Open Mon to Sat 10am to 7pm, Sun 10am to 5pm.", "chips": ["Weekday", "Saturday", "Sunday", "Flexible"]}, {"label": "Time", "q": "Roughly what time?", "chips": ["Morning", "Afternoon", "Evening", "Flexible"]}, {"label": "Name", "q": "Your name?"}, {"label": "Phone", "q": "The best phone number to reach you?", "phone": true}], "done": "Thank you. Your enquiry has been sent to the TECHNE team, who will contact you to confirm. Note: new customers should contact the salon before booking a bridal or hair set.\n(This is a demo, so nothing was actually sent.)"}, "fallback": "I do not have that from the website, so I will not guess. The salon will confirm it: call 604-876-8762 or send an enquiry here."};
+(function(){
+var C=window.AICFG,$=function(i){return document.getElementById(i)};
+var btn=$('aiBtn'),panel=$('aiPanel'),log=$('aiLog'),chips=$('aiChips'),form=$('aiForm'),inp=$('aiIn');
+var flow=null,ans=[],opened=false;
+function add(t,w){var d=document.createElement('div');d.className='m '+w;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b)})}
+function ask(){var s=C.flow.steps[flow];add(s.q,'b');setChips((s.chips||[]).concat(['Cancel']))}
+function startFlow(){flow=0;ans=[];add(C.flow.intro,'b');ask()}
+function finish(){var L=C.flow.steps.map(function(s,i){return s.label+': '+ans[i]}).join('\n');add(C.flow.done+'\n\n'+L,'b');flow=null;setChips(C.chips)}
+function send(t){t=String(t).trim();if(!t)return;add(t,'u');
+if(flow!==null){
+if(/^(cancel|stop|exit|nevermind|never mind|quit)$/.test(AI.norm(t))){flow=null;add('No problem, I cancelled that. Anything else I can help with?','b');setChips(C.chips);return}
+var e0=/\?\s*$/.test(t)?AI.best(C.KB,t):null;
+if(e0&&!e0.book){add(e0.a,'b');ask();return}
+var s=C.flow.steps[flow];
+if(s.phone&&t.replace(/\D/g,'').length<6){add('That does not look like a phone number. Could you type it again?','b');return}
+ans[flow]=t;flow++;if(flow>=C.flow.steps.length)finish();else ask();return}
+var e=AI.best(C.KB,t);
+if(e&&e.book){startFlow();return}
+if(e){add(e.a,'b');setChips(e.c||C.chips);return}
+add(C.fallback,'b');setChips(C.chips)}
+function open(){panel.hidden=false;btn.setAttribute('aria-expanded','true');if(!opened){opened=true;add(C.hello,'b');setChips(C.chips)}setTimeout(function(){inp.focus()},50)}
+function close(){panel.hidden=true;btn.setAttribute('aria-expanded','false')}
+btn.onclick=function(){panel.hidden?open():close()};
+$('aiX').onclick=close;
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden)close()});
+form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';send(v)};
+document.querySelectorAll('[data-ai]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();open();var q=a.getAttribute('data-ai');if(q)send(q)})});
+})();
+</script>
+</body></html>

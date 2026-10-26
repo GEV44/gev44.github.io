@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Condesa | Homemade Mexican Cuisine in Downtown Phoenix</title>
+<meta name="description" content="Condesa, homemade Mexican cuisine on N Central Ave in downtown Phoenix. Demo page with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f6efe3;--paper:#fffaf1;--rose:#cb9b96;--rose2:#e8c9c4;--gold:#e1b53a;--ink:#17120f;--sage:#6f9a73;--mut:#6d625a;--w-a:#e1b53a;--w-ink:#17120f;--w-bg:#fffaf1;--w-bb:#efe3d2;--w-tx:#17120f;--w-ln:#dccdb8;--w-r:22px;--w-f:'Figtree',Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font:17px/1.6 'Figtree',Arial,sans-serif;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(1080px,100% - 32px);margin:0 auto}
+h1,h2,h3{font-family:'Caprasimo',Georgia,serif;font-weight:400;line-height:1.05}
+/* top bar */
+.top{background:var(--ink);color:var(--cream);font-size:14px;text-align:center;padding:7px 12px}
+.top b{color:var(--gold)}
+header{position:sticky;top:0;z-index:40;background:rgba(246,239,227,.95);backdrop-filter:blur(6px);border-bottom:2px solid var(--ink)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0}
+.brand img{height:54px;width:auto}
+nav{display:none;gap:20px;font-weight:600;font-size:15px}
+nav a{text-decoration:none}
+nav a:hover{color:var(--rose)}
+.pill{display:inline-block;background:var(--ink);color:var(--cream);padding:11px 20px;border-radius:999px;text-decoration:none;font-weight:700;font-size:15px;border:2px solid var(--ink);cursor:pointer}
+.pill:hover{background:var(--gold);color:var(--ink)}
+.pill.alt{background:transparent;color:var(--ink)}
+.pill.alt:hover{background:var(--ink);color:var(--cream)}
+.pill.sm{padding:8px 14px;font-size:14px}
+/* hero */
+.hero{padding:34px 0 20px;position:relative}
+.hg{display:grid;gap:26px;align-items:center}
+.arch{position:relative;background:var(--rose);border-radius:260px 260px 28px 28px;padding:54px 28px 30px;text-align:center;border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink)}
+.arch img{width:min(260px,70%);margin:0 auto;filter:none}
+.arch p{font-family:'Caprasimo',serif;font-size:21px;margin-top:10px}
+.dots{position:absolute;top:18px;left:50%;transform:translateX(-50%);display:flex;gap:8px}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--ink)}
+.hero h1{font-size:clamp(40px,10vw,76px);margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--rose);-webkit-text-stroke:0}
+.hero p.lead{font-size:19px;max-width:520px;color:#3b312b}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.badges span{background:var(--paper);border:2px solid var(--ink);border-radius:999px;padding:4px 12px;font-weight:600;font-size:14px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+/* hours strip */
+.week{margin:30px 0 0;display:grid;grid-template-columns:repeat(7,1fr);gap:4px;background:var(--ink);padding:4px;border-radius:16px}
+.day{background:var(--paper);border-radius:12px;padding:10px 2px;text-align:center;font-size:12px;line-height:1.25}
+.day b{display:block;font-size:13px;letter-spacing:.04em}
+.day.on{background:var(--gold)}
+.day.off{background:#cfc4b3;color:#5b5148}
+.day small{display:block;margin-top:4px;font-weight:600}
+.wnote{font-size:14px;color:var(--mut);margin-top:8px}
+/* happy hour */
+.hh{background:var(--gold);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:44px 0;margin-top:34px;position:relative;overflow:hidden}
+.hh:before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:var(--rose);opacity:.55}
+.hhg{display:grid;gap:22px;position:relative}
+.hh h2{font-size:clamp(34px,8vw,58px)}
+.hh .when{font-weight:700;margin:8px 0 14px}
+.hh ul{list-style:none;display:grid;gap:6px}
+.hh li{display:flex;justify-content:space-between;gap:12px;border-bottom:2px dotted rgba(23,18,15,.45);padding:5px 0;font-weight:600}
+.hh li span:last-child{font-family:'Caprasimo',serif}
+.hh .col h3{font-size:24px;margin-bottom:8px}
+.hh .conf{font-size:14px;margin-top:14px}
+/* menu */
+section{padding:56px 0}
+.k{font-weight:700;color:var(--sage);text-transform:uppercase;letter-spacing:.14em;font-size:13px;margin-bottom:8px}
+h2.t{font-size:clamp(34px,7vw,54px);margin-bottom:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 12px}
+.tabs button,.diet button{font:700 15px 'Figtree',sans-serif;border:2px solid var(--ink);background:var(--paper);color:var(--ink);padding:8px 16px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--ink);color:var(--cream)}
+.diet{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:18px;font-size:14px}
+.diet button{padding:5px 12px;font-size:13px;border-color:var(--sage)}
+.diet button[aria-pressed=true]{background:var(--sage);color:#fff}
+.sec{margin-bottom:26px}
+.sec h3{font-size:26px;margin-bottom:4px;display:flex;align-items:center;gap:10px}
+.sec h3:after{content:"";flex:1;height:2px;background:var(--ink);opacity:.2}
+.sec .sub{font-size:14px;color:var(--mut);margin-bottom:8px}
+.items{display:grid;gap:10px}
+.it{background:var(--paper);border:2px solid var(--ink);border-radius:16px;padding:14px 16px}
+.it b{font-size:18px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.it p{font-size:15px;color:#4b4039;margin-top:2px}
+.tg{font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px;background:var(--sage);color:#fff;letter-spacing:.04em}
+.tg.v{background:var(--gold);color:var(--ink)}
+.tg.gf{background:var(--rose);color:var(--ink)}
+.legend{font-size:14px;color:var(--mut);margin-top:6px}
+.legend span{margin-right:12px}
+.fine{font-size:13px;color:var(--mut);margin-top:16px;max-width:640px}
+/* story */
+.story{background:var(--paper);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.sg{display:grid;gap:22px}
+.walk{display:flex;align-items:center;gap:10px;margin:18px 0;font-weight:700}
+.walk i{flex:1;height:0;border-top:3px dashed var(--ink);position:relative}
+.walk i:after{content:"\25B6";position:absolute;right:-4px;top:-13px;font-size:14px}
+.walk span{background:var(--rose);border:2px solid var(--ink);border-radius:12px;padding:5px 10px;font-size:14px}
+.ladies{display:flex;flex-wrap:wrap;gap:8px}
+.ladies span{background:var(--rose2);border:2px solid var(--ink);padding:4px 14px;border-radius:999px;font-family:'Caprasimo',serif;font-size:17px}
+/* order */
+.ord{display:grid;gap:12px;margin-top:14px}
+.oc{border:2px solid var(--ink);border-radius:20px;padding:20px;background:var(--cream);box-shadow:5px 5px 0 var(--ink)}
+.oc h3{font-size:24px;margin-bottom:6px}
+.oc p{font-size:15px;margin-bottom:12px;color:#40362f}
+/* visit */
+.visit{background:var(--ink);color:var(--cream)}
+.vg{display:grid;gap:22px}
+.visit h2{color:var(--gold)}
+.visit a{color:var(--gold)}
+.visit p{margin:4px 0}
+.hrs{list-style:none;max-width:340px}
+.hrs li{display:flex;justify-content:space-between;border-bottom:1px solid #3a322c;padding:6px 0}
+footer{background:var(--ink);color:#b9aea3;font-size:14px;padding:18px 0 90px;border-top:1px solid #3a322c}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px}
+@media (min-width:760px){
+nav{display:flex}
+.hg{grid-template-columns:1fr 1fr;gap:48px}
+.hhg{grid-template-columns:1.1fr 1fr 1fr}
+.items{grid-template-columns:1fr 1fr}
+.sg{grid-template-columns:1fr 1fr;gap:48px}
+.ord{grid-template-columns:repeat(3,1fr)}
+.vg{grid-template-columns:1fr 1fr}
+.day{font-size:14px;padding:14px 4px}
+}
+</style>
+</head>
+<body>
+<div class="top">Open Tuesday to Saturday from <b>5 PM</b> &middot; 130 N Central Ave, downtown Phoenix</div>
+<header>
+<div class="wrap hd">
+<a class="brand" href="#top" aria-label="Condesa"><img src="img/condesa-phoenix-logo.png" alt="Condesa logo" width="70" height="54"></a>
+<nav aria-label="Main"><a href="#menu">Menu</a><a href="#happy">Happy hour</a><a href="#story">Our story</a><a href="#order">Order</a><a href="#visit">Visit</a></nav>
+<a class="pill sm" href="#" data-gw="book">Book a table</a>
+</div>
+</header>
+<main id="top">
+<section class="hero" style="padding-bottom:0">
+<div class="wrap">
+<div class="hg">
+<div class="arch"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/condesa-phoenix-logo.png" alt="Condesa" width="260" height="202"><p>Mexican cuisine in downtown PHX</p></div>
+<div>
+<h1>Homemade recipes for <em>everyone.</em></h1>
+<p class="lead">Brought to you with so much love by the ladies of Crescent Ballroom and Cocina 10, now in their own space, a 5-minute walk from where it all started.</p>
+<div class="badges"><span>Vegan and vegetarian options</span><span>Table service</span><span>Gluten-free marked</span></div>
+<div class="btns"><a class="pill" href="#" data-gw="book">Book a table</a><a class="pill alt" href="#menu">See the menu</a><a class="pill alt" href="#" data-gw="chat">Ask a question</a></div>
+</div>
+</div>
+<div class="week" role="table" aria-label="Opening hours">
+<div class="day off" role="cell"><b>MON</b><small>closed</small></div>
+<div class="day on" role="cell"><b>TUE</b>5P&ndash;11P</div>
+<div class="day on" role="cell"><b>WED</b>5P&ndash;11P</div>
+<div class="day on" role="cell"><b>THU</b>5P&ndash;11P</div>
+<div class="day on" role="cell"><b>FRI</b>5P&ndash;2A</div>
+<div class="day on" role="cell"><b>SAT</b>5P&ndash;2A</div>
+<div class="day off" role="cell"><b>SUN</b><small>closed</small></div>
+</div>
+<p class="wnote">Hours as listed on condesaphx.com. The site also mentions that lunch is back; please confirm lunch times with the team.</p>
+</div>
+</section>
+
+<div class="hh" id="happy">
+<div class="wrap hhg">
+<div><h2>Happy hour</h2><div class="when">Wednesday to Sunday, 4 to 6 pm</div><p>$2 off all draft beers and house wines, plus cocktails and small plates at happy hour prices.</p><p class="conf">The regular hours open at 5 PM Tuesday to Saturday, so confirm the exact happy hour days with the team.</p></div>
+<div class="col"><h3>Drinks</h3><ul><li><span>Red Sangria</span><span>$7</span></li><li><span>Cuba Libre</span><span>$7</span></li><li><span>Casa Blanco</span><span>$7</span></li><li><span>Rosa Old Fashioned</span><span>$7</span></li><li><span>Mojito de Pepino</span><span>$7</span></li><li><span>Draft beer, house wine</span><span>$2 off</span></li></ul></div>
+<div class="col"><h3>Bites</h3><ul><li><span>Chips and salsa</span><span>$2</span></li><li><span>Veggie tostada</span><span>$4</span></li><li><span>Tinga tostada</span><span>$4</span></li><li><span>Poquito bean and cheese burrito</span><span>$4</span></li><li><span>Taco Apson</span><span>$4</span></li><li><span>Elote</span><span>$6</span></li><li><span>Papas fritas, cheesy bean dip, molletes</span><span>$7</span></li></ul></div>
+</div>
+</div>
+
+<section id="menu">
+<div class="wrap">
+<div class="k">The menu</div>
+<h2 class="t">Hecho en casa</h2>
+<div class="tabs" role="tablist" aria-label="Menu sections"><button role="tab" aria-selected="true" data-t="food">Food</button><button role="tab" aria-selected="false" data-t="drinks">Cocktails</button><button role="tab" aria-selected="false" data-t="more">Beer, wine, soft drinks</button></div>
+<div class="diet" id="diet"><span>Show:</span><button type="button" aria-pressed="false" data-f="vg">Vegan</button><button type="button" aria-pressed="false" data-f="v">Vegetarian</button><button type="button" aria-pressed="false" data-f="gf">Gluten-free</button></div>
+<div id="mn"></div>
+<p class="legend"><span><b>vg</b> vegan</span><span><b>v</b> vegetarian</span><span><b>gf</b> gluten-free</span></p>
+<p class="fine">An automatic gratuity of 20% is added to parties of 8 or more. These items may be served raw or undercooked; consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase the risk of foodborne illness. For allergies, please speak with the team.</p>
+</div>
+</section>
+
+<section id="story" class="story">
+<div class="wrap sg">
+<div>
+<div class="k">Our story</div>
+<h2 class="t">From Cocina 10 to Condesa</h2>
+<p>After 13 amazing years at Crescent Ballroom, the restaurant Cocina 10 moved into a new space and named it Condesa. You asked for lunch, and it is back: the team serves lunch, dinner and all your favorites.</p>
+<div class="walk"><span>Crescent Ballroom</span><i></i><span>Condesa</span></div>
+<p>Still want a burrito and donuts while you catch a band? Condesa at Crescent is still there. For the full experience with table service, come to the new spot.</p>
+</div>
+<div>
+<div class="k">The kitchen</div>
+<h2 class="t" style="font-size:30px">Recipes cooked by</h2>
+<div class="ladies"><span>Angela</span><span>Maria</span><span>Karina</span><span>Christine</span></div>
+<p style="margin-top:16px">Tacos on house-made corn or flour tortillas, burritos that can turn into bowls, a Sonoran dog wrapped in bacon, and an Apson taco from Tucson. A kids menu and dulces too.</p>
+<p style="margin-top:10px">Events? Write to <a href="mailto:info@condesaphx.com"><b>info@condesaphx.com</b></a>.</p>
+</div>
+</div>
+</section>
+
+<section id="order">
+<div class="wrap">
+<div class="k">Not tonight? Fine</div>
+<h2 class="t">Order from home</h2>
+<div class="ord">
+<div class="oc"><h3>Takeout</h3><p>Order online straight from the kitchen.</p><a class="pill sm" href="https://order.toasttab.com/online/crescent-ballroom-culinary-130-n-central-avenue" target="_blank" rel="noopener">Order takeout</a></div>
+<div class="oc"><h3>UberEats</h3><p>Delivery through UberEats.</p><a class="pill sm alt" href="https://www.ubereats.com/store/condesa-phoenix/vH2FeXw2XI-3OC_JCcGf7A?diningMode=DELIVERY" target="_blank" rel="noopener">Open UberEats</a></div>
+<div class="oc"><h3>DoorDash</h3><p>Delivery through DoorDash.</p><a class="pill sm alt" href="https://www.doordash.com/store/condesa-phoenix-34258957/78037552/?utm_source=mx_share" target="_blank" rel="noopener">Open DoorDash</a></div>
+</div>
+</div>
+</section>
+
+<section id="visit" class="visit">
+<div class="wrap vg">
+<div>
+<div class="k" style="color:var(--rose)">Visit</div>
+<h2 class="t">Come to Condesa</h2>
+<p>130 N Central Ave, Suite 102<br>Phoenix, AZ 85004</p>
+<p style="margin-top:12px"><a href="tel:6028925550">602-892-5550</a><br><a href="mailto:info@condesaphx.com">info@condesaphx.com</a></p>
+<p style="margin-top:14px"><a class="pill sm" style="background:var(--gold);color:var(--ink);border-color:var(--gold)" href="https://maps.app.goo.gl/syVuXyYv3wTBrpFQ6" target="_blank" rel="noopener">Directions</a> <a class="pill sm alt" style="color:var(--cream);border-color:var(--cream)" href="#" data-gw="book">Book a table</a></p>
+</div>
+<div>
+<h3 style="color:var(--rose);font-size:26px;margin-bottom:8px">Hours</h3>
+<ul class="hrs"><li><span>Monday</span><span>closed</span></li><li><span>Tuesday</span><span>5 PM &ndash; 11 PM</span></li><li><span>Wednesday</span><span>5 PM &ndash; 11 PM</span></li><li><span>Thursday</span><span>5 PM &ndash; 11 PM</span></li><li><span>Friday</span><span>5 PM &ndash; 2 AM</span></li><li><span>Saturday</span><span>5 PM &ndash; 2 AM</span></li><li><span>Sunday</span><span>closed</span></li></ul>
+</div>
+</div>
+</section>
+</main>
+<footer><div class="wrap"><span>Condesa &middot; Mexican cuisine in downtown Phoenix</span><span>Demo &middot; prepared by Gevorg Hovhannisyan</span></div></footer>
+<script>
+var MENU={food:[
+{h:"Tapas",i:[["Chips & salsa","tortilla chips, chicharrones de harina, house tomatillo salsa, chile de arbol salsa, salsa fresca","vg"],["Elote","roasted corn on the cob, chipotle aioli, cotija cheese, tapatio, lime, chili powder","v gf"],["Papas fritas","basket of fries, side ketchup, side chipotle aioli. Add asada + cheese +$5","v gf"],["Molletes","fresh toasted bolillo bun, refried beans, oaxaca + cheddar mix, pico de gallo, cilantro. Add barbacoa +$4",""],["Ceviche","shrimp ceviche with cucumber, tomato, avocado, serrano peppers, two corn tostadas","gf"],["Cheesy bean dip","refried beans, cheddar + oaxaca mix, chile de arbol salsa, cotija, pico de gallo, cilantro, homemade chips, corn tortillas","v"],["Quesadilla","flour tortilla, oaxaca + cheddar mix, side of sour cream","v"],["Chips & guacamole","avocado, jalapeno, garlic, onions, lime juice, topped with pico de gallo","v gf"],["Nachos","baked tortilla chips, refried beans, oaxaca + cheddar, cilantro, cotija, guacamole, pico de gallo, sour cream","v gf"]]},
+{h:"Tacos",s:"Served on your choice of home-made corn (gf) or flour tortillas",i:[["Al Pastor","marinated pork, sliced pineapple, cilantro, diced onions",""],["Barbacoa","braised beef, cilantro, diced onions",""],["Carne Asada","carne asada, onion, cilantro, salsa fresca",""],["Pollo Asado","grilled chicken, salsa fresca, cilantro, diced onions",""],["Veggie","mexican squash, corn, poblanos, onion, garlic, cabbage, cilantro, chile de arbol salsa","vg"],["Camaron","shrimp, chipotle aioli slaw, cilantro, diced onions",""],["Apson (Especial de Tucson)","carne asada, chicken or veggie mix, sauteed jalapenos and onions, melted oaxaca cheese, salsa fresca, cilantro",""]]},
+{h:"Ensaladas",s:"Add protein +$4 (carne asada, barbacoa, al pastor, pollo asado or veggies) | six shrimp +$7",i:[["Sonoran Caesar","romaine hearts, red bell pepper, roasted corn, avocado, black beans, homemade caesar dressing, tortilla strips, cotija, cilantro","v gf"],["Roasted corn salad","grilled corn, avocado, mint, basil, jalapeno, cilantro, cotija, pepitas, tortilla strips, shallot vinaigrette","v gf"],["Ensalada de Pepino","cucumber, tomato, red bell pepper, onion, scallions, mint, chile de arbol lime dressing","v"]]},
+{h:"Burritos + bowls",s:"Add protein +$4 | six shrimp +$7 | enchilada style (verde or rojo) +$3 | as a bowl: no tortilla, with beans, rice, onion, cilantro (GF)",i:[["Crescent Bean & Cheese","refried pinto beans, oaxaca + cheddar cheese","v"],["Vegetable","mexican squash, corn, poblanos, onion, garlic, rice, refried beans","vg"],["Barbacoa","angus beef marinaded in guajillo pepper sauce, braised in banana leaves, onion, cilantro, refried beans",""],["Pollo Asado","marinated chicken breast, guacamole, rice, pico de gallo",""],["Carne Asada","carne asada, rice, guacamole, pico de gallo",""],["Al Pastor","marinated pork, sliced pineapple, black beans, red onion, cilantro",""],["California","carne asada, papas fritas, cheese, guacamole, pico de gallo, sour cream",""],["El Camaron","six blackened shrimp, black beans, chipotle aioli slaw, rice, pico de gallo",""]]},
+{h:"Entrees",i:[["Sonoran Dog","all beef hot dog wrapped in peppered bacon, mayo, refried beans, onion, jalapeno, mustard, tomato, toasted bun, papas fritas, chipotle aioli",""],["Salsa Verde Enchiladas","three cheese enchiladas with salsa verde, sour cream, cilantro. Add chicken +$4","v gf"],["Empanada de Chile Relleno","roasted poblano stuffed with oaxaca and cheddar, tomato, onion, garlic, fried in corn masa with nogada sauce","v"],["Asada plate","8oz arrachera steak or 8 camarones grandes, beans, rice, grilled vegetables, 2 corn or flour tortillas","gf"]]},
+{h:"Kids menu",i:[["Baby Quesadillas","two 5\" flour tortillas, oaxaca + cheddar cheese","v"],["Poquito Bean and Cheese Burrito","refried pinto beans, oaxaca + cheddar","v"],["Hot dog & fries","plain hot dog on a bun, seasoned fries, ketchup",""],["Kids taco plate","two chicken tacos on flour tortillas, pico de gallo, oaxaca + cheddar",""]]},
+{h:"Dulces",i:[["Fruit Cart Bowl","mango, jicama, watermelon, pineapple with lime and tajin","vg"],["Churro style donuts","baked mini donuts tossed in house churro sugar","v"],["Chimis de Fresa","strawberry compote in flour tortillas, fried, cinnamon + sugar, nutella drizzle, ice cream","v"],["Concha Bread Pudding","made with fresh conchas, ice cream and nutella drizzle","v"]]}
+],drinks:[
+{h:"Condesa cocktails",i:[["Como La Flor","hibiscus brandy, aperitivo, house red wine, prickly pear jelly, citrus",""],["Old Pueblo","mezcal, whiskey, vermouth, mesquite, ancho chili",""],["Tinta Roja","pisco, amaro, violette, pine nut, citrus, rosemary",""],["Blue Agave","blanco tequila, citron, vermouth, agave, grapefruit bitters",""],["La Fresita","condesa gin, elderflower, triple sec, strawberry, soda",""],["Salsa Verde","mezcal, lime cordial, herbal, tomatillo-cilantro, citrus, spice",""],["Carajillo","licor 43, espresso liqueur, abuelita fernet, coffee",""],["Michi","choice beer, spicy mix, lime, chili salt",""],["Casa Blanca Margarita","tequila, triple sec, citrus, simple. Flavors: classic, jalapeno, strawberry",""]]},
+{h:"Zero proof",i:[["Dolce Vita","house n/a tequila, aperitif, syrup",""],["In Bloom","house n/a tequila, aperitif, hibiscus, pina, citrus",""],["Honey, I do","house n/a tequila, honeydew, elderflower, coconut, leches, anise (contains dairy)",""],["La Reina","house n/a tequila, grapefruit, aperitif, spice",""]]}
+],more:[
+{h:"Beer",i:[["Draft","2 Towns Prickly Paradise, Coors Banquet, Kirin Ichiban, Oak Creek Nut Brown, Pedalhouse Beach Cruiser, Mother Road Tower Station, Mudshark Full Moon, Pacifico, Wren House Big Spills Pils, Wren House Spellbinder",""],["Bottles and cans","Amstel Light, Bohemia Pilsner, Carta Blanca, Coors Light, Corona, Dos Equis XX Lager and Amber, Modelo Especial, Negra Modelo, Guinness Draught, La Cumbre Elevated IPA, Tecate, Topo Chico Hard Seltzer, Wren House Valley Beer",""],["Non-alcoholic","Athletic Run Wild IPA, Dos Equis XX Salt & Lime, Lagunitas Hop Water, Guinness 0.0",""]]},
+{h:"Wine",i:[["White","Forlorn Hopes Queen of the Sierra, August Kesseler R Kabinett (riesling), Manuel Moldes Afelio (albarino)",""],["Red","Vinteros Bravos Pipeno (cinsault), Guaname (red blend)",""],["Sparkling, skin contact","Conquilla Cava Brut, Forlorn Hopes orange and rose",""]]},
+{h:"Soft drinks",i:[["Agua fresca","cucumber mint","vg"],["Cafe con leche","hot coffee with milk",""],["Champurrado","hot chocolate with masa",""],["Tepache","De La Calle grapefruit lime soda",""],["Also","iced tea, sodas, ginger beer, Mexican Coke, Squirt, Sedona water",""]]}
+]};
+(function(){var cur='food',fl=null,box=document.getElementById('mn');
+function tag(t){return t.split(' ').filter(Boolean).map(function(x){return '<span class="tg '+x+'">'+x+'</span>';}).join('');}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function draw(){var h='';MENU[cur].forEach(function(sec){var it=sec.i.filter(function(x){return !fl||(' '+x[2]+' ').indexOf(' '+fl+' ')>=0||(fl==='v'&&x[2].indexOf('vg')>=0);});if(!it.length)return;
+h+='<div class="sec"><h3>'+esc(sec.h)+'</h3>'+(sec.s?'<div class="sub">'+esc(sec.s)+'</div>':'')+'<div class="items">'+it.map(function(x){return '<div class="it"><b>'+esc(x[0])+' '+tag(x[2])+'</b><p>'+esc(x[1])+'</p></div>';}).join('')+'</div></div>';});
+box.innerHTML=h||'<p>Nothing in this section matches that filter. Try another section.</p>';}
+document.querySelectorAll('.tabs button').forEach(function(b){b.onclick=function(){document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected','false');});b.setAttribute('aria-selected','true');cur=b.dataset.t;draw();};});
+document.querySelectorAll('#diet button').forEach(function(b){b.onclick=function(){var on=b.getAttribute('aria-pressed')==='true';document.querySelectorAll('#diet button').forEach(function(x){x.setAttribute('aria-pressed','false');});if(!on){b.setAttribute('aria-pressed','true');fl=b.dataset.f;}else fl=null;draw();};});
+draw();})();
+(function(root){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>5)w=w.replace(/(ing|ed)$/,'');if(w.length>3&&!/ss$/.test(w))w=w.replace(/s$/,'');return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++)d[i]=[i];for(j=1;j<=n;j++)d[0][j]=j;
+for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function close(a,b){if(a===b)return true;var L=Math.max(a.length,b.length);if(L<5||Math.abs(a.length-b.length)>2)return false;return lev(a,b)<=(L>=9?2:1);}
+function scoreEntry(qs,qt,e){var best=0;e.k.forEach(function(p){var pn=norm(p);if(!pn)return;
+if((' '+qs+' ').indexOf(' '+pn+' ')>=0){best=Math.max(best,5+pn.split(' ').length);return;}
+var pt=toks(p),hit=0;pt.forEach(function(t){if(qt.some(function(x){return close(x,t);}))hit++;});
+if(hit===pt.length)best=Math.max(best,2+hit);});return best;}
+function find(CFG,q){var qs=norm(q),qt=toks(q),b=null,bs=0;
+CFG.kb.forEach(function(e){var s=scoreEntry(qs,qt,e);if(s>bs){bs=s;b=e;}});return bs>=3?b:null;}
+function reply(CFG,q){var e=find(CFG,q);if(!e)return{a:CFG.fallback,miss:true};return{a:e.a,flow:!!e.flow,entry:e};}
+var api={norm:norm,find:find,reply:reply};
+if(typeof module!=='undefined')module.exports=api;
+if(typeof document==='undefined')return;
+root.GevWidget=function(CFG){
+var css='#gw-b{position:fixed;right:16px;bottom:16px;z-index:9999;border:0;border-radius:999px;padding:13px 18px;background:var(--w-a);color:var(--w-ink);font:700 15px var(--w-f);cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.28);display:flex;gap:8px;align-items:center}'+
+'#gw-p{position:fixed;right:16px;bottom:78px;z-index:9999;width:min(370px,calc(100vw - 32px));height:min(540px,calc(100vh - 110px));background:var(--w-bg);color:var(--w-tx);border-radius:var(--w-r);box-shadow:0 14px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--w-f);border:1px solid var(--w-ln)}#gw-p.on{display:flex}'+
+'#gw-h{background:var(--w-a);color:var(--w-ink);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}#gw-h small{display:block;font-weight:400;opacity:.8;font-size:12px}#gw-x{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}'+
+'#gw-m{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}.gw-i{max-width:86%;padding:9px 12px;border-radius:14px;white-space:pre-line;word-wrap:break-word}.gw-bot{background:var(--w-bb);align-self:flex-start;border-bottom-left-radius:4px}.gw-me{background:var(--w-a);color:var(--w-ink);align-self:flex-end;border-bottom-right-radius:4px}'+
+'#gw-c{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}#gw-c button{border:1px solid var(--w-a);background:transparent;color:var(--w-tx);border-radius:999px;padding:6px 11px;font:13px var(--w-f);cursor:pointer}#gw-c button:hover{background:var(--w-a);color:var(--w-ink)}'+
+'#gw-f{display:flex;gap:6px;padding:10px;border-top:1px solid var(--w-ln)}#gw-f input{flex:1;min-width:0;border:1px solid var(--w-ln);border-radius:10px;padding:10px;font:15px var(--w-f);background:#fff;color:#111}#gw-f button{border:0;background:var(--w-a);color:var(--w-ink);border-radius:10px;padding:0 14px;font:700 14px var(--w-f);cursor:pointer}';
+var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
+var b=document.createElement('button');b.id='gw-b';b.type='button';b.innerHTML='<span aria-hidden="true">'+(CFG.icon||'&#128172;')+'</span><span>'+CFG.btn+'</span>';
+var p=document.createElement('div');p.id='gw-p';p.setAttribute('role','dialog');p.setAttribute('aria-label',CFG.title);
+p.innerHTML='<div id="gw-h"><div>'+CFG.title+'<small>'+CFG.sub+'</small></div><button id="gw-x" type="button" aria-label="Close">&times;</button></div><div id="gw-m"></div><div id="gw-c"></div><form id="gw-f"><input id="gw-t" autocomplete="off" placeholder="'+CFG.ph+'" aria-label="'+CFG.ph+'"><button type="submit">'+CFG.send+'</button></form>';
+document.body.appendChild(b);document.body.appendChild(p);
+var M=p.querySelector('#gw-m'),C=p.querySelector('#gw-c'),T=p.querySelector('#gw-t'),flow=null,opened=false;
+function say(t,me){var d=document.createElement('div');d.className='gw-i '+(me?'gw-me':'gw-bot');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight;}
+function chips(a){C.innerHTML='';(a||[]).forEach(function(x){var c=document.createElement('button');c.type='button';c.textContent=x;c.onclick=function(){handle(x);};C.appendChild(c);});}
+function ask(){var s=CFG.flow.steps[flow.i];say(s.q);chips((s.chips||[]).concat([CFG.flow.cancel]));}
+function startFlow(){flow={i:0,d:[]};ask();}
+function stepOk(s,v){if(s.t==='phone')return v.replace(/\D/g,'').length>=7;if(s.t==='num')return /\d/.test(v);return v.length>0;}
+function handle(v){v=v.trim();if(!v)return;say(v,true);T.value='';
+if(flow){if(norm(v)===norm(CFG.flow.cancel)||/^(cancel|stop)$/.test(norm(v))){flow=null;say(CFG.flow.cancelled);chips(CFG.chips);return;}
+var s=CFG.flow.steps[flow.i];if(!stepOk(s,v)){say(s.err||CFG.flow.err);ask();return;}
+flow.d.push(s.l+': '+v);flow.i++;if(flow.i>=CFG.flow.steps.length){say(CFG.flow.done+'\n\n'+flow.d.join('\n'));flow=null;chips(CFG.chips);}else ask();return;}
+var r=reply(CFG,v);if(r.flow){say(r.a);startFlow();return;}say(r.a);chips(r.entry&&r.entry.chips?r.entry.chips:CFG.chips);}
+function open(){p.classList.add('on');if(!opened){opened=true;say(CFG.greet);chips(CFG.chips);}T.focus();}
+b.onclick=function(){p.classList.contains('on')?p.classList.remove('on'):open();};
+p.querySelector('#gw-x').onclick=function(){p.classList.remove('on');};
+p.querySelector('#gw-f').onsubmit=function(e){e.preventDefault();handle(T.value);};
+root.__gwBook=function(){open();if(!flow){say(CFG.flow.start);startFlow();}};
+document.querySelectorAll('[data-gw]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();open();if(el.dataset.gw==='book'&&!flow){say(CFG.flow.start,false);startFlow();}});});
+};
+})(typeof window!=='undefined'?window:this);
+
+var CFG={
+title:"Condesa Host Stand",sub:"Answers from the Condesa website",btn:"Ask Condesa",icon:"&#127790;",ph:"Hours, menu, vegan options, reservations...",send:"Send",
+greet:"Hola. I can answer questions about Condesa's hours, menu, vegan and gluten-free options, happy hour, takeout and reservations, using what is on the website. For allergies or anything I do not know, the team confirms.",
+chips:["Hours","Vegan options","Happy hour","Tacos","Takeout and delivery","Book a table"],
+fallback:"I do not have that on the website, and I would rather not guess. The team can confirm: 602-892-5550 or info@condesaphx.com. Want to send a table request instead?",
+kb:[
+{k:["book a table","reserve","reservation","reservations","book","table","table for","make a reservation","booking","save a table","party of"],a:"Let me take your details for the team. A few quick questions.",flow:true},
+{k:["hours","open","opening hours","what time","close","closing","when are you open","late","late night","kitchen hours","dinner"],a:"Hours as listed on the site:\nMonday: closed\nTuesday to Thursday: 5 PM to 11 PM\nFriday and Saturday: 5 PM to 2 AM\nSunday: closed\nThe site also says lunch is back, but no lunch hours are listed, so please confirm lunch with the team.",chips:["Happy hour","Book a table","Where are you?"]},
+{k:["monday","sunday","closed","open on monday","open on sunday","open sunday","open monday"],a:"The site lists Monday and Sunday as closed. Tuesday to Saturday it is open from 5 PM.",chips:["Hours","Book a table"]},
+{k:["lunch","brunch","breakfast","midday","noon"],a:"The site says lunch is back, and that Condesa serves lunch, dinner and your favorites. The listed opening hours start at 5 PM though, so I would confirm lunch times with the team: 602-892-5550."},
+{k:["happy hour","happy","deal","deals","special","specials","discount","cheap drinks","half off"],a:"Happy hour is listed as Wednesday to Sunday, 4 to 6 pm: $2 off all draft beers and house wines, red sangria, Cuba Libre, Casa Blanco, Rosa Old Fashioned and Mojito de Pepino at $7, plus small plates such as chips and salsa at $2 and tostadas at $4. The regular hours list a 5 PM opening on Tuesday to Saturday, so please confirm the exact days and times with the team.",chips:["Book a table","Hours"]},
+{k:["vegan","vegans","vegan options","plant based","plant-based","no meat","dairy free","vegetarian","veggie","vegetarian options","meatless"],a:"The site marks vegan (vg) and vegetarian (v) dishes. Vegan: chips and salsa, veggie taco, vegetable burrito, fruit cart bowl. Vegetarian includes elote, papas fritas, molletes, cheesy bean dip, quesadilla, chips and guacamole, nachos, salads, bean and cheese burrito, salsa verde enchiladas, empanada de chile relleno and several desserts. For strict vegan prep and allergies, please ask the team.",chips:["Gluten free","Allergies","Tacos"]},
+{k:["gluten","gluten free","gluten-free","gf","celiac","coeliac","wheat"],a:"Gluten-free (gf) items are marked on the menu, for example elote, papas fritas, ceviche, chips and guacamole, nachos, salads, salsa verde enchiladas and the asada plate. Tacos can be served on house-made corn (gf) or flour tortillas, and any burrito can be a bowl (GF). For celiac or strict needs, please speak to the team.",chips:["Allergies","Tacos"]},
+{k:["allergy","allergies","allergic","nut","nuts","peanut","shellfish","dairy","lactose","intolerance","cross contamination","dietary"],a:"I cannot confirm allergy safety from a website. Please tell the team when you book or call 602-892-5550 so the kitchen can advise.",chips:["Book a table"]},
+{k:["taco","tacos","al pastor","barbacoa","carne asada","pollo asado","camaron","shrimp taco","apson","veggie taco","tortilla","tortillas","corn tortilla","flour tortilla"],a:"Tacos on the site: Al Pastor (marinated pork, pineapple), Barbacoa (braised beef), Carne Asada, Pollo Asado, Veggie (vg), Camaron (shrimp with chipotle aioli slaw) and Apson (the Tucson special, with melted oaxaca cheese). Served on house-made corn (gf) or flour tortillas.",chips:["Burritos","Vegan options","Appetizers"]},
+{k:["burrito","burritos","bowl","bowls","california burrito","enchilada style"],a:"Burritos and bowls: Crescent Bean & Cheese (v), Vegetable (vg), Barbacoa, Pollo Asado, Carne Asada, Al Pastor, California and El Camaron. Any burrito can be a bowl without the tortilla. Add protein is +$4 (six shrimp +$7), enchilada style +$3.",chips:["Tacos","Vegan options"]},
+{k:["menu","food","food menu","what do you serve","what do you have","eat","dishes","cuisine","mexican","homemade","recipes","starters","appetizer","appetizers","tapas","small plates","snacks","guacamole","elote","nachos","queso","salsa","chips"],a:"Food menu sections on the site: Tapas (chips and salsa, elote, papas fritas, molletes, ceviche, cheesy bean dip, quesadilla, chips and guacamole, nachos), Tacos, Ensaladas, Burritos and Bowls, Entrees, Kids menu and Dulces. It is homemade Mexican cuisine with vegan and vegetarian options.",chips:["Tacos","Entrees","Desserts","Vegan options"]},
+{k:["entree","entrees","main","mains","enchiladas","asada plate","steak","arrachera","sonoran dog","hot dog","chile relleno","empanada","plate"],a:"Entrees: Sonoran Dog (all beef hot dog wrapped in bacon), Salsa Verde Enchiladas (v/gf, add chicken +$4), Empanada de Chile Relleno (v) and the Asada Plate (8oz arrachera steak or 8 large shrimp, with beans, rice and grilled vegetables).",chips:["Tacos","Desserts"]},
+{k:["salad","salads","ensalada","ensaladas","caesar","light"],a:"Ensaladas: Sonoran Caesar (v/gf), Roasted Corn Salad (v/gf) and Ensalada de Pepino (v). You can add protein (+$4) or six shrimp (+$7)."},
+{k:["dessert","desserts","dulces","sweet","donut","donuts","churro","churros","bread pudding","chimi","fruit"],a:"Dulces: Fruit Cart Bowl (vg), Churro style donuts (v), Chimis de Fresa (strawberry, nutella, ice cream) and Concha Bread Pudding (v)."},
+{k:["kid","kids","children","child","kids menu","family","toddler","baby"],a:"There is a kids menu: Baby Quesadillas, Poquito Bean and Cheese Burrito, hot dog and fries, and a kids taco plate with two chicken tacos."},
+{k:["drink","drinks","cocktail","cocktails","margarita","margaritas","mezcal","tequila","bar","alcohol","old pueblo","carajillo","gin","pisco"],a:"The cocktail list includes Como La Flor, Old Pueblo, Tinta Roja, Blue Agave, La Fresita, Salsa Verde, Carajillo, Michi and the Casa Blanca Margarita (classic, jalapeno or strawberry). There are beers on draft, bottles and cans, wines and soft drinks too.",chips:["Zero proof","Beer and wine","Happy hour"]},
+{k:["zero proof","non alcoholic","non-alcoholic","no alcohol","mocktail","mocktails","n/a","sober","na beer","alcohol free","dry"],a:"Zero Proof drinks: Dolce Vita, In Bloom, Honey I Do and La Reina. There are also non-alcoholic beers and soft drinks such as agua fresca, tepache, champurrado and cafe con leche."},
+{k:["beer","beers","wine","wines","draft","tap","cider","lager","ipa","sangria"],a:"Beer: ten drafts (for example Pacifico, Kirin Ichiban, Wren House Spellbinder), plus bottles and cans. Wine: whites, reds, sparkling and skin contact, by the bottle list on the site. Happy hour takes $2 off drafts and house wines."},
+{k:["takeout","take out","to go","pickup","pick up","order online","order","delivery","doordash","ubereats","uber eats","deliver","carry out"],a:"You can order takeout online (the site links to Toast), or order delivery through UberEats or DoorDash.",chips:["Book a table","Hours"]},
+{k:["where","address","location","directions","find you","map","central","130","downtown","near","parking","park","garage","crescent","how to get"],a:"Condesa is at 130 N Central Ave, Phoenix, AZ 85004, in downtown Phoenix, a 5-minute walk from Crescent Ballroom. The site recommends a parking garage and has a Directions button, but I do not have the garage name here.",chips:["Hours","Book a table"]},
+{k:["crescent","crescent ballroom","cocina 10","cocina","history","story","about","who are you","moved","moving","new space","concert","show","band","bands"],a:"After 13 years at Crescent Ballroom, the restaurant Cocina 10 moved to a new space a 5-minute walk away and became Condesa. You can still get a burrito and donuts during shows at Condesa at Crescent, but the full Condesa experience with table service is at the new spot."},
+{k:["event","events","private","private event","party","group","large group","big group","catering","buyout","celebration","birthday","gratuity","tip","service charge"],a:"For information or to book an event, contact info@condesaphx.com. For parties of 8 or more, an automatic 20% gratuity is added."},
+{k:["phone","phone number","call","telephone","number","contact","email","e-mail","mail","reach","talk to someone"],a:"Phone: 602-892-5550\nE-mail: info@condesaphx.com (also for events)\nAddress: 130 N Central Ave, Phoenix, AZ 85004"},
+{k:["instagram","social","social media","follow"],a:"Condesa is on Instagram as condesaphoenix."},
+{k:["price","prices","cost","how much","expensive","budget","pricing"],a:"Main dishes do not have prices on the website. It shows add-on prices (for example protein +$4, six shrimp +$7) and happy hour prices. For menu prices, please ask the team: 602-892-5550."},
+{k:["dress code","dress","wifi","wi-fi","dog","dogs","pet","pets","patio","outdoor","wheelchair","accessible","accessibility","live music","music","bike"],a:"That is not on the website, so I will not guess. The team can confirm: 602-892-5550 or info@condesaphx.com."},
+{k:["hello","hi","hey","hola","good evening","good afternoon"],a:"Hola. Ask me about hours, the menu, vegan options, happy hour or booking a table."},
+{k:["thanks","thank you","gracias","thx","cheers"],a:"De nada. We hope to see you at Condesa."}
+],
+flow:{start:"Let us put together a table request.",cancel:"Cancel",cancelled:"No problem, nothing was sent. Ask me anything else.",err:"Please type an answer so the team can reach you.",
+steps:[
+{l:"Party size",q:"How many guests?",chips:["2","3","4","5-6","8 or more"],t:"num",err:"Please give a number of guests."},
+{l:"Date",q:"Which date? (Tuesday to Saturday, the site lists no service on Monday or Sunday)",chips:["This Friday","This Saturday","Next week"]},
+{l:"Time",q:"What time?",chips:["5:30 PM","7:00 PM","8:30 PM","10:00 PM"]},
+{l:"Name",q:"The name for the table?"},
+{l:"Phone",q:"A phone number for confirmation?",t:"phone",err:"That does not look like a phone number. Please include the digits."},
+{l:"Notes",q:"Anything the team should know, like a birthday, vegan or gluten-free needs? Type none if not.",chips:["None","Vegan guests","Gluten-free needs","Birthday"]}
+],
+done:"Done. Your table request has been sent to the team, and they will confirm by phone. Details:"}
+};
+
+
+GevWidget(CFG);
+</script>
+</body>
+</html>

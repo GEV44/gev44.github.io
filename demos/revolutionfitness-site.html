@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Revolution Fitness | Small group personal training, Dublin</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#171716;--ink2:#222221;--line:#34343300;--bone:#f4f4f1;--mut:#b9b9b4;--red:#ee203c;--blue:#1863dc;--as-a:#ee203c;--as-ai:#fff;--as-font:'Barlow',system-ui,sans-serif;--as-hb:#171716;--as-hc:#fff;--as-bg:#fff;--as-ink:#171716;--as-bb:#efefea;--as-r:6px;--as-fr:4px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',system-ui,sans-serif;background:var(--ink);color:var(--bone);line-height:1.55;font-size:17px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+h1,h2,h3,.cond{font-family:'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:.98}
+.bar{position:sticky;top:0;z-index:50;background:rgba(23,23,22,.96);border-bottom:1px solid #2d2d2b;backdrop-filter:blur(6px)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px}
+.logo{height:38px;width:auto}
+.bar nav{display:none;gap:22px;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-weight:600;letter-spacing:.06em;font-size:16px}
+.bar nav a{text-decoration:none;color:var(--mut)}.bar nav a:hover{color:#fff}
+.btn{display:inline-block;background:var(--red);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:17px;padding:12px 20px;border-radius:3px;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{background:#ff3a54}
+.btn.ghost{background:transparent;border:2px solid #555;color:#fff}.btn.ghost:hover{border-color:#fff;background:transparent}
+.hero{padding:46px 0 30px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-120px;top:-40px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(238,32,60,.28),transparent 68%);pointer-events:none}
+.kick{font-family:'Barlow Condensed';text-transform:uppercase;letter-spacing:.14em;color:var(--red);font-weight:700;font-size:15px;margin-bottom:10px}
+.hero h1{font-size:clamp(46px,13vw,112px);font-weight:800;margin-bottom:16px}
+.hero h1 span{color:var(--red)}
+.hero p.lead{max-width:600px;color:#d8d8d3;font-size:18px;margin-bottom:22px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#2d2d2b;margin-top:34px;border:1px solid #2d2d2b}
+.stats div{background:var(--ink);padding:16px 14px}
+.stats b{display:block;font-family:'Barlow Condensed';font-size:40px;font-weight:800;color:#fff;line-height:1}
+.stats span{font-size:14px;color:var(--mut)}
+section{padding:54px 0}
+.light{background:var(--bone);color:var(--ink)}
+.light .kick{color:var(--red)}
+h2{font-size:clamp(34px,8vw,60px);font-weight:800;margin-bottom:12px}
+.sub{max-width:620px;color:var(--mut);margin-bottom:28px}
+.light .sub{color:#55554f}
+.progs{display:grid;gap:14px}
+.prog{border:1px solid #3a3a38;padding:22px 20px;position:relative;background:var(--ink2)}
+.prog .n{font-family:'Barlow Condensed';font-size:64px;font-weight:800;color:#2f2f2d;position:absolute;right:14px;top:2px;line-height:1}
+.prog h3{font-size:34px;margin-bottom:8px;color:#fff}
+.prog p{color:#cfcfca;max-width:460px}
+.prog.hot{background:var(--red);border-color:var(--red)}.prog.hot .n{color:rgba(255,255,255,.25)}.prog.hot p{color:#fff}
+.tag{display:inline-block;margin-top:12px;font-family:'Barlow Condensed';text-transform:uppercase;letter-spacing:.08em;font-weight:700;font-size:14px;border:1px solid currentColor;padding:2px 8px}
+.pillars{display:grid;gap:0;border-top:3px solid var(--ink)}
+.pillar{padding:22px 0;border-bottom:1px solid #cfcfc8;display:grid;gap:6px}
+.pillar .cond{font-size:30px;color:var(--ink)}
+.pillar h3{font-size:36px}
+.pillar p{color:#47473f;max-width:640px}
+.path{display:grid;gap:14px;counter-reset:s;list-style:none}
+.path li{counter-increment:s;padding:18px 18px 18px 74px;border:1px solid #3a3a38;position:relative;background:var(--ink2)}
+.path li:before{content:counter(s);position:absolute;left:16px;top:10px;font-family:'Barlow Condensed';font-weight:800;font-size:52px;color:var(--red)}
+.path b{font-family:'Barlow Condensed';text-transform:uppercase;font-size:24px;display:block;color:#fff}
+.path span{color:#bdbdb7}
+.price{display:grid;gap:16px}
+.pbox{background:#fff;border:2px solid var(--ink);padding:24px 20px}
+.pbox .big{font-family:'Barlow Condensed';font-size:68px;font-weight:800;line-height:1;color:var(--ink)}
+.pbox small{display:block;color:#55554f;margin-top:4px}
+.pbox.red{background:var(--ink);color:#fff;border-color:var(--ink)}.pbox.red .big{color:#fff}.pbox.red small{color:var(--mut)}
+.note{font-size:14px;color:#6b6b63;margin-top:10px}
+.team{display:grid;gap:0;border-top:1px solid #3a3a38}
+.team div{display:grid;grid-template-columns:1fr;gap:2px;padding:16px 0;border-bottom:1px solid #3a3a38}
+.team b{font-family:'Barlow Condensed';text-transform:uppercase;font-size:26px;color:#fff;letter-spacing:.02em}
+.team em{font-style:normal;color:var(--red);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.08em}
+.team p{color:#c3c3be;font-size:16px;max-width:640px}
+.stories{display:grid;gap:12px}
+.stories blockquote{background:#fff;border-left:5px solid var(--red);padding:18px;color:var(--ink)}
+.stories q{display:block;font-family:'Barlow Condensed';font-size:26px;font-weight:700;text-transform:uppercase;line-height:1.05;quotes:none;margin-bottom:8px}
+.stories cite{font-style:normal;font-size:15px;color:#4a4a43}
+details{border-bottom:1px solid #3a3a38;padding:14px 0}
+summary{cursor:pointer;font-family:'Barlow Condensed';text-transform:uppercase;font-weight:700;font-size:22px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--red);font-size:28px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{color:#c9c9c4;margin-top:8px;max-width:680px}
+.locs{display:grid;gap:12px;margin:20px 0}
+.loc{border:2px solid var(--ink);padding:16px 18px;background:#fff}
+.loc b{font-family:'Barlow Condensed';text-transform:uppercase;font-size:28px;display:block}
+.loc span{color:#55554f;font-size:15px}
+.contact{display:grid;gap:6px;font-size:18px}
+footer{background:#0e0e0d;padding:30px 0 90px;color:#8d8d87;font-size:14px}
+footer .wrap{display:grid;gap:8px}
+@media(min-width:760px){.bar nav{display:flex}.stats{grid-template-columns:repeat(4,1fr)}.progs{grid-template-columns:repeat(3,1fr)}.pillars{grid-template-columns:repeat(3,1fr);column-gap:30px;border-top:0}.pillar{border-top:3px solid var(--ink);border-bottom:0}.path{grid-template-columns:repeat(4,1fr)}.path li{padding:70px 16px 18px}.path li:before{left:16px;top:8px}.price{grid-template-columns:1fr 1fr}.stories{grid-template-columns:repeat(3,1fr)}.locs{grid-template-columns:repeat(3,1fr)}.team div{grid-template-columns:260px 1fr;gap:20px;align-items:baseline}.team em{display:block}}
+.as-root{position:fixed;right:16px;bottom:16px;z-index:9999;font-family:var(--as-font,system-ui,sans-serif);font-size:15px;line-height:1.45}
+.as-fab{display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--as-a);color:var(--as-ai,#fff);padding:12px 18px;border-radius:var(--as-fr,999px);box-shadow:0 8px 24px rgba(0,0,0,.28);font:inherit;font-weight:700;margin-left:auto}
+.as-fab-i{font-size:18px}
+.as-open .as-fab{display:none}
+.as-panel{position:fixed;right:12px;bottom:12px;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));display:flex;flex-direction:column;background:var(--as-bg,#fff);color:var(--as-ink,#111);border-radius:var(--as-r,16px);box-shadow:0 18px 50px rgba(0,0,0,.35);overflow:hidden;border:1px solid var(--as-bd,rgba(0,0,0,.1))}
+.as-panel[hidden]{display:none}
+.as-h{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 14px;background:var(--as-hb,var(--as-a));color:var(--as-hc,#fff)}
+.as-h b{display:block;font-size:16px}.as-h small{opacity:.85;font-size:12px}
+.as-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+.as-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--as-lg,transparent)}
+.as-m{max-width:88%;padding:9px 12px;border-radius:12px;word-wrap:break-word}
+.as-bot{background:var(--as-bb,#f1f1f1);align-self:flex-start;border-bottom-left-radius:3px}
+.as-me{background:var(--as-a);color:var(--as-ai,#fff);align-self:flex-end;border-bottom-right-radius:3px}
+.as-m a{color:inherit;font-weight:700}
+.as-sum{margin:6px 0;padding-left:18px}
+.as-chips{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px}
+.as-chips button{border:1px solid var(--as-a);background:transparent;color:var(--as-ink,#111);border-radius:999px;padding:6px 11px;font:inherit;font-size:13px;cursor:pointer}
+.as-chips button:hover{background:var(--as-a);color:var(--as-ai,#fff)}
+.as-f{display:flex;gap:6px;padding:10px 12px;border-top:1px solid var(--as-bd,rgba(0,0,0,.1))}
+.as-in{flex:1;min-width:0;border:1px solid var(--as-bd,#ccc);background:var(--as-in,#fff);color:inherit;border-radius:10px;padding:10px;font:inherit;font-size:16px}
+.as-s{border:0;background:var(--as-a);color:var(--as-ai,#fff);border-radius:10px;padding:0 14px;cursor:pointer;font-size:16px}
+
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+<a href="#top" aria-label="Revolution Fitness"><img class="logo" src="img/revolutionfitness-logo.png" alt="Revolution Fitness" width="95" height="38"></a>
+<nav><a href="#programs">Programs</a><a href="#method">Method</a><a href="#start">Start</a><a href="#team">Team</a><a href="#faq">FAQ</a><a href="#find">Find us</a></nav>
+<a class="btn" href="#" data-ask="book a consultation">Arrange a call</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<p class="kick">Small group personal training &middot; Dublin</p>
+<h1>Welcome to the <span>last gym</span> you'll ever join</h1>
+<p class="lead">One-size-fits-all will not work for your goals. It all starts with a No Sweat Online Consultation: what you have done before, what worked, what did not, and a plan you can keep up.</p>
+<div class="cta"><a class="btn" href="#" data-ask="book a consultation">Book your consultation</a><a class="btn ghost" href="#programs">See the programs</a></div>
+<div class="stats">
+<div><b>3x</b><span>sessions a week, about 45 minutes</span></div>
+<div><b>2012</b><span>year founder James started RevFit</span></div>
+<div><b>2+ yrs</b><span>average membership term</span></div>
+<div><b>3</b><span>gyms: Cabra / Ashtown, Churchtown, Killiney</span></div>
+</div>
+</div></div>
+
+<section id="programs"><div class="wrap">
+<p class="kick">Pick your starting point</p>
+<h2>The right program for you</h2>
+<p class="sub">Every new member begins with the 28 Day Intro Challenge, then moves on to the year-round program that fits.</p>
+<div class="progs">
+<div class="prog hot"><span class="n">01</span><h3>Sweat</h3><p>Where most members start. New to training, back after a break, or only 45 minutes 2-3 times a week? A full-body strength and cardio workout.</p><span class="tag">28 Day Intro Challenge</span></div>
+<div class="prog"><span class="n">02</span><h3>Strength</h3><p>For men and women who want to throw barbells around and get strong fast. Learn correct technique as a beginner, or add to your total as a powerlifter.</p></div>
+<div class="prog"><span class="n">03</span><h3>Transformation</h3><p>A complete lifestyle overhaul. Six weeks to lose as much weight as possible, six more to learn how to keep it off.</p></div>
+</div>
+<p style="margin-top:18px;color:var(--mut);max-width:620px">The 28 Day Intro Challenge comes with a guarantee: lose at least 3-5kg and get 10-20% stronger and fitter, or receive double your money back.</p>
+</div></section>
+
+<section class="light" id="method"><div class="wrap">
+<p class="kick">The 3 Pillars Method</p>
+<h2>Fitness for busy people with busy lives</h2>
+<p class="sub">If you have 45 minutes 2-3 times a week and know how to turn on an oven, you can follow the plan.</p>
+<div class="pillars">
+<div class="pillar"><span class="cond">Pillar 1</span><h3>Exercise</h3><p>With a trainer 3 days a week. Live heart-rate tracking with MyZone shows your zone and effort, so you work hard enough without blowing up, and you see your own progress.</p></div>
+<div class="pillar"><span class="cond">Pillar 2</span><h3>Nutrition</h3><p>A custom meal plan built around your body, schedule and tastes, adjusted weekly. Prefer not to cook? Approved meal prep partner Parallel Meals can do it for you.</p></div>
+<div class="pillar"><span class="cond">Pillar 3</span><h3>Accountability</h3><p>A personal accountability coach you can contact any time, with weekly check-ins and a monthly review of your targets and progress.</p></div>
+</div>
+</div></section>
+
+<section id="start"><div class="wrap">
+<p class="kick">Your pathway</p>
+<h2>Four steps to start</h2>
+<ol class="path">
+<li><b>Apply</b><span>Fill out the consultation form and press send.</span></li>
+<li><b>Chat</b><span>Work out which option will be best for you.</span></li>
+<li><b>28 Day Intro</b><span>Start the new member intro program.</span></li>
+<li><b>Achieve</b><span>Look and feel fantastic.</span></li>
+</ol>
+</div></section>
+
+<section class="light"><div class="wrap">
+<p class="kick">What it costs</p>
+<h2>Priced for coaching, not for drop-ins</h2>
+<div class="price">
+<div class="pbox red"><div class="big">&euro;197</div><b class="cond" style="font-size:26px">28 Day Intro Challenge</b><small>How every new member gets started.</small></div>
+<div class="pbox"><div class="big">~&euro;43</div><b class="cond" style="font-size:26px">per week afterwards</b><small>About &euro;180 a month, training 3-4 times a week with your own accountability coach.</small></div>
+</div>
+<p class="note">Figures as published on the Revolution Fitness site. The team confirms current pricing on your call.</p>
+</div></section>
+
+<section id="team"><div class="wrap">
+<p class="kick">The coaches</p>
+<h2>We know your name</h2>
+<p class="sub">Membership is capped so the coaches know you, your story and your goals.</p>
+<div class="team">
+<div><b>James Hanley</b><p><em>Founder</em> Left accountancy in 2012 to start RevFit. Competed nationally and internationally in powerlifting.</p></div>
+<div><b>Luke Curran</b><p><em>Gym manager, senior coach</em> Over a decade of coaching. Handles program modifications for members with injuries or limitations.</p></div>
+<div><b>Niall Callery</b><p><em>Senior coach</em> Gained serious muscle and strength after retiring from football, and knows how to build a program that does it.</p></div>
+<div><b>Martin McVicker</b><p><em>Nutrition coach</em> Created the FRESH Start Nutrition Coaching Program.</p></div>
+<div><b>Emma Lawlor</b><p><em>Coach</em> Years of in-person and online coaching. The chatty one in the gym.</p></div>
+</div>
+</div></section>
+
+<section class="light"><div class="wrap">
+<p class="kick">Success stories</p>
+<h2>Real members</h2>
+<div class="stories">
+<blockquote><q>"It's about the mental headspace for me"</q><cite>Louise lost 15kg and loved getting stronger.</cite></blockquote>
+<blockquote><q>"I've lost over 10kg of fat and gained muscle"</q><cite>Derek can run around with his little girls again.</cite></blockquote>
+<blockquote><q>"My bones are stronger and I've toned up"</q><cite>Bernie started at 60 and now lifts 20kg kettlebells.</cite></blockquote>
+</div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+<p class="kick">Questions</p>
+<h2>Frequently asked</h2>
+<details><summary>Will I be fit enough to start?</summary><p>Absolutely. Whatever your fitness and strength level, your workouts are designed and tailored to match.</p></details>
+<details><summary>I have a bad back, knee, hip or shoulder. Can you help?</summary><p>The site says Revolution Fitness has a reputation as a gym of last resort for people dealing with injuries, from minor sprains to spinal fusion surgery, as well as members who are post stroke or have MS.</p></details>
+<details><summary>How long are sessions and how often can I train?</summary><p>About 45 minutes, 3 times a week. You can train up to 4 times a week.</p></details>
+<details><summary>Will you tell me what to eat?</summary><p>Yes. You are shown what to eat, how to cook and how to shop, or you can order the week's meals from Parallel Meals.</p></details>
+<details><summary>Can I pay by the class, or just do my own thing?</summary><p>No. The coaching, accountability and group make the results, so there are no drop-ins. If you want to do your own thing, the team will recommend somewhere local.</p></details>
+<details><summary>Will I get too big?</summary><p>You will not turn into a mass-monster unless that is what you want. It takes a lot of effort at the dinner table and a lot of heavy lifting.</p></details>
+</div></section>
+
+<section class="light" id="find"><div class="wrap">
+<p class="kick">Find us</p>
+<h2>Three gyms in Dublin</h2>
+<div class="locs">
+<div class="loc"><b>Cabra / Ashtown</b><span>Dublin 11</span></div>
+<div class="loc"><b>Churchtown</b><span>Dublin 14</span></div>
+<div class="loc"><b>Killiney</b><span>Co. Dublin</span></div>
+</div>
+<div class="contact">
+<div>Unit 2A Ballyboggan Business Centre, Ballyboggan Road, Glasnevin, Dublin 11</div>
+<div><a href="tel:+353830120403">+353 83 012 0403</a></div>
+<div><a href="mailto:info@revolutionfitness.ie">info@revolutionfitness.ie</a></div>
+</div>
+<p style="margin-top:22px"><a class="btn" href="#" data-ask="book a consultation">Arrange a call</a></p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<img class="logo" src="img/revolutionfitness-logo.png" alt="Revolution Fitness" width="95" height="38">
+<div>Demo &middot; prepared by Gevorg Hovhannisyan</div>
+</div></footer>
+
+<script>
+function createMatcher(kb){
+  function norm(s){return String(s).toLowerCase().replace(/['’`]/g,'').replace(/[^a-z0-9à-ÿ ]+/g,' ').replace(/\s+/g,' ').trim();}
+  function stem(w){
+    if(w.length>4&&/ies$/.test(w))return w.slice(0,-3)+'y';
+    if(w.length>5&&/ing$/.test(w))return w.slice(0,-3);
+    if(w.length>4&&/ed$/.test(w))return w.slice(0,-2);
+    if(w.length>3&&/es$/.test(w)&&!/ss$/.test(w))return w.slice(0,-2);
+    if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))return w.slice(0,-1);
+    return w;
+  }
+  function lev(a,b){
+    if(Math.abs(a.length-b.length)>2)return 9;
+    var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;
+    for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));}p=c;}
+    return p[b.length];
+  }
+  var STOP={a:1,an:1,the:1,is:1,are:1,do:1,does:1,i:1,you:1,we:1,my:1,me:1,to:1,of:1,for:1,and:1,or:1,can:1,in:1,it:1,at:1,on:1,your:1,have:1,how:1,what:1,there:1,any:1,get:1,with:1,be:1,about:1,please:1,u:1,im:1,want:1,would:1,like:1,need:1,this:1,that:1};
+  var idx=kb.map(function(e){
+    return {e:e,ph:e.k.map(norm),st:e.k.map(function(k){return norm(k).split(' ').map(stem);})};
+  });
+  function answer(q){
+    var n=norm(q);if(!n)return null;
+    var toks=n.split(' ').filter(function(t){return t&&!STOP[t];}).map(stem);
+    var best=null,bs=0;
+    idx.forEach(function(it){
+      var s=0;
+      it.ph.forEach(function(p,pi){
+        if(p.length>3&&(' '+n+' ').indexOf(' '+p+' ')>-1){s+=3+(p.split(' ').length-1);return;}
+        var ks=it.st[pi];
+        ks.forEach(function(k){
+          if(k.length<3&&toks.indexOf(k)<0)return;
+          var bt=0;
+          toks.forEach(function(t){
+            if(t===k)bt=Math.max(bt,2);
+            else if(k.length>=5&&t.length>=4&&(t.indexOf(k)===0||k.indexOf(t)===0)&&Math.min(t.length,k.length)>=4)bt=Math.max(bt,1.6);
+            else if(k.length>=5&&lev(t,k)<=1)bt=Math.max(bt,1.8);
+            else if(k.length>=8&&lev(t,k)<=2)bt=Math.max(bt,1.2);
+          });
+          s+=bt/(ks.length>1?1.4:1);
+        });
+      });
+      if(s>0)s+=it.e.w||0;
+      if(s>bs){bs=s;best=it.e;}
+    });
+    return bs>=1.6?best:null;
+  }
+  return {answer:answer,norm:norm};
+}
+function mountAssistant(cfg){
+  var M=createMatcher(cfg.kb);
+  var root=document.createElement('div');root.className='as-root';
+  root.innerHTML='<button class="as-fab" aria-label="'+cfg.fabLabel+'" aria-expanded="false"><span class="as-fab-i">'+cfg.fabIcon+'</span><span class="as-fab-t">'+cfg.fabText+'</span></button>'+
+  '<section class="as-panel" role="dialog" aria-label="'+cfg.title+'" hidden><header class="as-h"><div><b>'+cfg.title+'</b><small>'+cfg.sub+'</small></div><button class="as-x" aria-label="Close">&times;</button></header><div class="as-log" aria-live="polite"></div><div class="as-chips"></div><form class="as-f" autocomplete="off"><input class="as-in" type="text" placeholder="'+cfg.ph+'" aria-label="'+cfg.ph+'"><button class="as-s" aria-label="Send">&#10148;</button></form></section>';
+  document.body.appendChild(root);
+  var fab=root.querySelector('.as-fab'),panel=root.querySelector('.as-panel'),log=root.querySelector('.as-log'),chips=root.querySelector('.as-chips'),form=root.querySelector('.as-f'),inp=root.querySelector('.as-in');
+  var flow=null,data={},started=false;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function say(h,who){var d=document.createElement('div');d.className='as-m as-'+who;d.innerHTML=h;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function setChips(arr){chips.innerHTML='';arr.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){handle(c);};chips.appendChild(b);});}
+  function open(){panel.hidden=false;fab.setAttribute('aria-expanded','true');root.classList.add('as-open');if(!started){started=true;say(cfg.hello,'bot');setChips(cfg.chips);}inp.focus();}
+  function close(){panel.hidden=true;fab.setAttribute('aria-expanded','false');root.classList.remove('as-open');}
+  fab.onclick=function(){panel.hidden?open():close();};
+  root.querySelector('.as-x').onclick=close;
+  window.openAssistant=function(q){open();if(q)handle(q);};
+  function startFlow(){flow=0;data={};ask();}
+  function ask(){
+    var st=cfg.steps[flow];say(typeof st.q==='function'?st.q(data):st.q,'bot');
+    setChips((st.choices||[]).concat(['Cancel']));
+    inp.placeholder=st.ph||cfg.ph;
+  }
+  function stepIn(t){
+    if(/^(cancel|stop|quit|back off|never ?mind)$/i.test(t.trim())){flow=null;say('No problem, nothing was sent. '+cfg.afterCancel,'bot');setChips(cfg.chips);inp.placeholder=cfg.ph;return;}
+    var st=cfg.steps[flow],v=t.trim();
+    if(st.choices){var m=st.choices.filter(function(c){return M.norm(c)===M.norm(v)||M.norm(c).indexOf(M.norm(v))===0&&M.norm(v).length>2;});if(m.length)v=m[0];else if(!st.free){say('Please pick one of the options below.','bot');return;}}
+    if(st.check&&!st.check(v)){say(st.err,'bot');return;}
+    data[st.key]=v;flow++;
+    if(flow>=cfg.steps.length){
+      var rows=cfg.steps.map(function(s){return '<li><b>'+esc(s.label)+':</b> '+esc(data[s.key])+'</li>';}).join('');
+      say('<b>'+cfg.doneTitle+'</b><ul class="as-sum">'+rows+'</ul>'+cfg.doneText,'bot');
+      flow=null;setChips(cfg.chips);inp.placeholder=cfg.ph;return;
+    }
+    ask();
+  }
+  function handle(t){
+    if(!t||!t.trim())return;
+    say(esc(t),'me');inp.value='';
+    if(flow!==null){stepIn(t);return;}
+    if(cfg.bookRe.test(t)){startFlow();return;}
+    var e=M.answer(t);
+    if(e){say(e.a,'bot');setChips((e.next||cfg.chips).slice(0,4).concat(e.book===false?[]:[cfg.bookChip]).filter(function(x,i,a){return a.indexOf(x)===i;}));}
+    else{say(cfg.fallback,'bot');setChips(cfg.chips);}
+  }
+  form.onsubmit=function(ev){ev.preventDefault();handle(inp.value);};
+  document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-ask]');if(a){ev.preventDefault();window.openAssistant(a.getAttribute('data-ask'));}});
+}
+if(typeof module!=='undefined')module.exports={createMatcher:createMatcher};
+
+var CONTACT='Phone <a href="tel:+353830120403">+353 83 012 0403</a> or <a href="mailto:info@revolutionfitness.ie">info@revolutionfitness.ie</a>.';
+var KB=[
+{k:['price','cost','how much','fee','fees','membership price','pay','payment','expensive','cheap','afford','euro','monthly','per week','weekly cost'],a:'You start with the <b>28 Day Intro Challenge for &euro;197</b>. After that most members spend about <b>&euro;43 a week (&euro;180 a month)</b> on coaching and accountability, training 3-4 times a week. That is what the site says today, and the team will confirm the current figure on your call.',w:1},
+{k:['how long is the program','how long are the programs','program last','28 day','28 days','guarantee results','guaranteed','intro challenge','introductory','guarantee','double your money','money back','lose 3','trial','try it first','first month','new member offer'],a:'The <b>28 Day Intro Challenge</b> is how every new member starts. The site says you can lose at least 3-5kg and get 10-20% stronger and fitter in 28 days, or get <b>double your money back</b>. "Not a quick fix, just a quick start." After that, most members move on to SWEAT or STRENGTH, a year-round progressive program.'},
+{k:['personal training','small group','programs','program','programme','programmes','options','what do you offer','classes','training types','plans'],a:'There are three main routes: <b>SWEAT</b> (full-body strength and cardio, where most members start), <b>STRENGTH</b> (barbell training) and <b>TRANSFORMATION</b> (a 12-week lifestyle overhaul for fast results). Everyone begins with the 28 Day Intro Challenge.',next:['SWEAT','STRENGTH','Fast results']},
+{k:['sweat','sweat program','full body','cardio','45 minutes','returning','lay off','layoff','new to training sweat'],a:'<b>SWEAT</b> is where most members start. It suits you if you are new to training, coming back after a break, or can give 45 minutes 2-3 times a week and want a full-body strength and cardio workout.',w:1.2},
+{k:['strength','strength program','barbell','powerlifting','powerlifter','lift heavy','squat','deadlift','bench','get strong'],a:'<b>STRENGTH</b> is for men and women who want to throw barbells around and get strong fast. A beginner learns correct technique, an experienced powerlifter works on their total. James, the founder, competed nationally and internationally in powerlifting.',w:1.2},
+{k:['transformation','transformation program','fast results','quick results','lose weight fast','weight loss','lose weight','fat loss','slim','diet plan fast','12 week','six weeks'],a:'The <b>TRANSFORMATION</b> program is the fast one. The first 6 weeks go on losing as much weight as possible, the next 6 weeks on learning how to keep it off for good.',w:1.2},
+{k:['consultation','no sweat','arrange a call','call me','chat','get started','how to start','start here','how do i join','join','sign up','signup','apply','first step','pathway','process','steps'],a:'It starts with a <b>No Sweat Online Consultation</b>: 1) fill in the form, 2) have a chat to pick the right option, 3) do the 28 Day Intro Challenge, 4) look and feel fantastic. I can pass your details to the team right now.',next:['Book a consultation']},
+{k:['injury','injuries','injured','bad back','back pain','knee','hip','shoulder','neck','surgery','spinal','stroke','ms','neurological','limitation','pain','physio','disability'],a:'The site says Revolution Fitness has a reputation as "a gym of last resort" for people dealing with injuries: from minor sprains to spinal fusion surgery, neck and shoulder issues, and members who are post stroke or have MS. Your coach plans around what you tell them. I cannot give medical advice, so mention your injury on the call and the coaches will take it from there.'},
+{k:['how often','how long','session length','sessions','times a week','frequency','duration','minutes','3x','three times','four times','schedule'],a:'The aim is about <b>45 minutes, 3 times a week</b>. You can train up to 4 times a week. The most successful members average about 2.75 sessions a week across 12 months, so missing the odd one is fine.'},
+{k:['nutrition','diet','eat','food','meal','meals','cook','cooking','meal plan','parallel meals','meal prep','fresh start','macros','calories','shopping'],a:'Nutrition is one of the 3 pillars. The coaches make you a custom meal plan around your body, schedule and food preferences and adjust it weekly. They also teach you to cook and shop for it. If you would rather not cook, <b>Parallel Meals</b>, their approved meal prep partner, can provide your meals to collect at the gym or have delivered. Martin McVicker runs the FRESH Start Nutrition Coaching Program.'},
+{k:['myzone','heart rate','heart rate monitor','monitor','tracking','track progress','progress','zones','calorie burn'],a:'Every session is done with <b>MyZone</b> live heart-rate monitoring, so you work hard enough to progress without burning out. Your coach calibrates your monitor before your first session, and you review targets and progress with your accountability coach each month.'},
+{k:['accountability','accountability coach','check in','check-in','motivation','support','message coach','encouragement'],a:'Pillar 3 is <b>accountability</b>: a personal accountability coach you can contact whenever you need help, tips or encouragement. They check in weekly, celebrate your wins and keep you on track.'},
+{k:['whats included','included','include','in membership','pillars','3 pillars','three pillars','method','3-3-30','approach','different','why revolution','why revfit'],a:'The <b>3 Pillars Method</b>: <b>Exercise</b> (with a trainer 3 days a week, with MyZone tracking), <b>Nutrition</b> (custom meal plan, adjusted weekly) and <b>Accountability</b> (personal coach, weekly check-ins). Membership is capped, so the coaches know your name, your story and your goals.'},
+{k:['drop in','drop-in','dropin','pay per class','pay by the class','single class','one off','day pass','casual','pay as you go'],a:'No drop-ins or pay-per-class. The site explains that the coaching time is invested in members, so everyone joins a program. If you want a plain open-gym membership, the team say they will happily recommend somewhere local instead.'},
+{k:['own thing','do my own','open gym','free weights only','self guided','myself','on my own','solo'],a:'Revolution Fitness is group personal training with a coach at every session. If you want to just show up and do your own thing, the site says it is not the gym for you, and they will point you somewhere local.'},
+{k:['beginner','will i manage','able for it','never been','never trained','fit enough','out of shape','unfit','old','older','age','60','overweight','nervous','intimidating','scared','first time','shy','new to gym'],a:'Yes, you can start at any level. The site says workouts are designed to match whatever fitness and strength level you have. Bernie started at 60 after 10 years without exercise, and now lifts 20kg kettlebells. The coaches know when you are coming for your first session and have everything ready.'},
+{k:['big','bulk','bulky','muscle','too big','mass','toned','tone up','tone','get muscle','gain muscle'],a:'The site is direct about it: you will not turn into a mass-monster unless that is what you want. It takes serious effort at the dinner table and a lot of heavy lifting over a long time.'},
+{k:['strict diet','restrictive','junk','cheat','weekend','alcohol'],a:'It is your choice. For really fast results, probably yes. For sustainable results, probably not: most members eat fairly well in the week, relax at the weekend and still see good results.'},
+{k:['locations','location','where','address','branch','branches','cabra','ashtown','churchtown','killiney','glasnevin','dublin','d11','d14','near','directions','map','find you'],a:'There are three gyms: <b>Cabra / Ashtown (D11)</b>, <b>Churchtown (D14)</b> and <b>Killiney</b>. The contact page lists Unit 2A, Ballyboggan Business Centre, Ballyboggan Road, Glasnevin, Dublin 11. The team will confirm the exact address and parking for the gym you choose.'},
+{k:['email address','contact','phone','call','email','e-mail','number','telephone','reach','whatsapp','message','talk to someone','speak'],a:'You can reach the team on '+CONTACT+' Or I can pass your details on and they will call you.'},
+{k:['hours','opening hours','open','opening times','timetable','time table','class times','what time','early','evening','morning','weekend','saturday','sunday','late','closed','when'],a:'The timetable page lists sessions, but I could not read the exact times, so I will not guess. The team will confirm the sessions at your gym, and I can pass on the time you prefer.'},
+{k:['team','coach','coaches','trainer','trainers','staff','who','james','hanley','luke','curran','niall','callery','martin','mcvicker','emma','lawlor','founder','owner','manager'],a:'The team: <b>James Hanley</b> (founder, started RevFit in 2012, ex-accountant and national-level powerlifter), <b>Luke Curran</b> (gym manager and most senior coach, handles injury modifications), <b>Niall Callery</b> (senior coach), <b>Martin McVicker</b> (nutrition coach) and <b>Emma Lawlor</b> (coach).'},
+{k:['reviews','results','success','stories','testimonials','louise','derek','bernie','before after','real people','members'],a:'Success stories on the site: Louise lost 15kg, Derek lost over 10kg of fat and gained muscle (and can keep up with his daughters again), Bernie started at 60 and knocked 20 years off her metabolic age. The average member stays well over 2 years.'},
+{k:['contract','cancel','cancellation','freeze','pause','holiday','minimum term','commitment','notice','lock in','joining fee'],a:'The site does not publish contract or cancellation terms, so I will not guess. The team will explain them on your consultation call.'},
+{k:['parking','shower','showers','changing','locker','lockers','towel','kids','children','teen','teenager','under 18','creche','childcare','pregnant','pregnancy','wheelchair','access','equipment','kit','wear','bring'],a:'That detail is not on the website, so I will not guess. The team will confirm it, and I can add the question to your enquiry.'},
+{k:['online','virtual','remote','zoom','video call'],a:'The first step, the <b>No Sweat Online Consultation</b>, is done online. Training itself is in person at one of the gyms.'},
+{k:['hello','hi','hey','hiya','good morning','good evening','howdy'],a:'Hi! Ask me about the programs, the 28 Day Intro Challenge, injuries or locations, or let me set up a consultation request.',book:true},
+{k:['thanks','thank you','cheers','great','perfect','ok thanks'],a:'Any time. If you want, I can pass your details to the team for a consultation call.'}
+];
+var STEPS=[
+{key:'loc',label:'Gym',q:'Great. Which gym is closest to you?',choices:['Cabra Ashtown','Churchtown','Killiney']},
+{key:'goal',label:'Main goal',q:'What is your main goal?',choices:['Lose weight','Get stronger','Train around an injury','Not sure yet']},
+{key:'name',label:'Name',q:'What is your name?',ph:'First name',check:function(v){return v.length>1;},err:'Please enter your name.'},
+{key:'phone',label:'Phone',q:function(d){return 'Thanks, '+d.name+'. What phone number should the team call?';},ph:'Phone number',check:function(v){return v.replace(/\D/g,'').length>=7;},err:'That does not look like a phone number. Please include the digits.'},
+{key:'when',label:'Best time to call',q:'When is the best time for a call?',choices:['Morning','Afternoon','Evening'],free:true}
+];
+var CFG={kb:KB,steps:STEPS,fabLabel:'Ask Revolution Fitness',fabIcon:'&#9889;',fabText:'Ask a coach',title:'RevFit assistant',sub:'Answers from this website',ph:'Ask about programs, prices, injuries...',
+hello:'Hi, I can answer questions about Revolution Fitness from this website, or set up a No Sweat consultation request. What would you like to know?',
+chips:['Prices','28 Day Intro Challenge','I have an injury','Locations'],bookChip:'Book a consultation',bookRe:/\b(book|booking|reserve|enquir|enquiry|consultation request|request a call|call me back|arrange)\b/i,
+fallback:'I could not find that on the website, so the team will have to confirm it. You can reach them on '+CONTACT+' Or ask me about programs, prices, injuries or locations.',
+doneTitle:'Request sent to the team',doneText:'<p>This is a demo, so nothing is actually sent. On the live site, the team would receive this and contact you to arrange your No Sweat Online Consultation.</p>',afterCancel:'Ask me anything else.'};
+
+mountAssistant(CFG);
+</script>
+</body>
+</html>

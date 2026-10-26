@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Miami Iron Gym | Go Hard or Go Home</title>
+<meta name="description" content="Miami Iron Gym on Coral Way: open 24 hours, old-school hardcore training, IFBB and NPC trainers. Demo page with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#fcb315;--gold2:#c98a00;--bk:#0a0a0a;--c1:#141414;--c2:#1d1d1d;--c3:#2a2a2a;--tx:#ece7dc;--mut:#9b958a;--w-a:#fcb315;--w-ink:#0a0a0a;--w-bg:#161616;--w-bb:#262626;--w-tx:#ece7dc;--w-ln:#3a3a3a;--w-r:6px;--w-f:'Barlow',Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bk);color:var(--tx);font:17px/1.55 'Barlow',Arial,sans-serif;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 32px);margin:0 auto}
+h1,h2,h3{font-family:'Anton',Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.02em;line-height:1}
+.cond{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-weight:600}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.94);backdrop-filter:blur(6px);border-bottom:3px solid var(--gold)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0}
+.logo{display:flex;align-items:center;background:#0a0a0a;padding:2px 6px;border-radius:4px}
+.logo img{height:52px;width:auto}
+nav{display:none;gap:22px}
+nav a{text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:15px;color:var(--tx)}
+nav a:hover{color:var(--gold)}
+.btn{display:inline-block;background:var(--gold);color:#0a0a0a;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:12px 22px;border:0;cursor:pointer;text-decoration:none;font-size:16px;clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+.btn:hover{background:#ffd04d}
+.btn.ghost{background:transparent;color:var(--gold);border:2px solid var(--gold);clip-path:none}
+.btn.ghost:hover{background:var(--gold);color:#000}
+.hd .btn{padding:9px 14px;font-size:14px}
+/* hero */
+.hero{position:relative;padding:48px 0 0;background:radial-gradient(ellipse at 80% 0,#2b2208 0,transparent 55%),var(--bk);overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 22px,rgba(252,179,21,.035) 22px 44px);pointer-events:none}
+.tag{display:inline-block;border:2px solid var(--gold);color:var(--gold);padding:4px 12px;margin-bottom:18px;font-size:14px}
+.hero h1{font-size:clamp(54px,17vw,168px);line-height:.88}
+.hero h1 span{color:var(--gold);display:block}
+.hero p.lead{max-width:560px;margin:22px 0 26px;font-size:19px;color:#d8d2c5}
+.cta{display:flex;flex-wrap:wrap;gap:12px;position:relative;z-index:2}
+.hz{height:18px;margin-top:44px;background:repeating-linear-gradient(-45deg,var(--gold) 0 18px,#0a0a0a 18px 36px)}
+.tick{background:var(--gold);color:#0a0a0a;overflow:hidden;white-space:nowrap;border-bottom:3px solid #0a0a0a}
+.tick div{display:inline-block;padding:10px 0;animation:mq 26s linear infinite;font-family:'Anton',sans-serif;font-size:22px;letter-spacing:.06em;text-transform:uppercase}
+.tick span{margin:0 22px}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.tick div{animation:none}}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--c3);margin-top:0}
+.stat{background:var(--c1);padding:22px 16px;text-align:left}
+.stat b{display:block;font-family:'Anton',sans-serif;font-weight:400;font-size:46px;color:var(--gold);line-height:1}
+.stat span{color:var(--mut);font-size:14px}
+/* sections */
+section{padding:64px 0}
+.kick{color:var(--gold);font-size:14px;margin-bottom:10px}
+h2{font-size:clamp(36px,8vw,64px);margin-bottom:22px}
+.why{display:grid;gap:2px;background:var(--c3);border:2px solid var(--c3)}
+.why article{background:var(--c1);padding:26px 22px;position:relative}
+.why article i{font-style:normal;position:absolute;right:16px;top:8px;font-family:'Anton',sans-serif;font-size:64px;color:#1f1f1f}
+.why h3{font-size:28px;color:var(--gold);margin-bottom:10px}
+.why p{color:#cfc9bc;position:relative}
+/* pricing */
+.price{background:var(--c1);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold)}
+.tix{display:grid;gap:18px;margin-top:10px}
+.tk{position:relative;background:var(--c2);padding:26px 22px 22px;border:2px dashed #4a4a4a}
+.tk.hot{border:2px solid var(--gold);background:linear-gradient(180deg,#2a2208,var(--c2))}
+.tk .badge{position:absolute;top:-13px;left:16px;background:var(--gold);color:#000;padding:3px 10px;font-size:13px}
+.tk h3{font-size:32px}
+.tk .amt{font-family:'Anton',sans-serif;font-size:64px;line-height:1;color:var(--gold);margin:10px 0 0}
+.tk .amt sup{font-size:26px;vertical-align:top;position:relative;top:8px}
+.tk .per{color:var(--mut);margin-bottom:14px}
+.tk ul{list-style:none;border-top:1px solid #3a3a3a;padding-top:12px}
+.tk li{padding:3px 0 3px 22px;position:relative;font-size:16px}
+.tk li:before{content:"";position:absolute;left:0;top:11px;width:10px;height:10px;background:var(--gold);transform:rotate(45deg)}
+.note{margin-top:22px;color:var(--mut);font-size:15px}
+.perk{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.perk span{background:#0a0a0a;border:1px solid var(--gold);color:var(--gold);padding:6px 12px;font-size:14px}
+/* trainers */
+.dogs{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.dog{background:linear-gradient(160deg,#2c2c2c,#1a1a1a);border:2px solid #3b3b3b;padding:20px 14px 16px;text-align:center;position:relative;border-radius:34px 34px 8px 8px}
+.dog:before{content:"";position:absolute;top:9px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--bk);border:2px solid #555}
+.dog b{display:block;font-family:'Anton',sans-serif;font-weight:400;font-size:26px;text-transform:uppercase;margin-top:12px;letter-spacing:.04em}
+.dog small{display:block;color:var(--gold);font-family:'Barlow Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-weight:600;font-size:12px;margin-top:4px}
+.pros{margin-top:22px;border-left:5px solid var(--gold);padding:6px 0 6px 18px;max-width:700px;color:#d8d2c5}
+/* rules */
+.rules{background:var(--c1)}
+.rl{list-style:none;counter-reset:r;display:grid;gap:0;border-top:1px solid #333}
+.rl li{counter-increment:r;display:grid;grid-template-columns:54px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid #333;align-items:baseline}
+.rl li:before{content:counter(r,decimal-leading-zero);font-family:'Anton',sans-serif;color:var(--gold);font-size:30px;line-height:1}
+.rl b{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:21px;display:block}
+.rl span{color:#bdb7aa;font-size:16px}
+/* faq */
+details{border-bottom:1px solid #333;padding:4px 0}
+summary{cursor:pointer;list-style:none;padding:16px 36px 16px 0;position:relative;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:21px;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:4px;top:10px;color:var(--gold);font-size:30px;font-family:'Anton',sans-serif}
+details[open] summary:after{content:"\2013"}
+details p{padding:0 0 16px;color:#cfc9bc;max-width:720px}
+/* visit */
+.visit{background:linear-gradient(180deg,var(--bk),#1a1405)}
+.vg{display:grid;gap:24px}
+.card{background:var(--c2);border:2px solid #3a3a3a;padding:24px}
+.card h3{font-size:26px;color:var(--gold);margin-bottom:12px}
+.card p{margin:4px 0;color:#d8d2c5}
+.card a{color:var(--gold)}
+.big{font-family:'Anton',sans-serif;font-size:clamp(30px,8vw,54px);color:var(--gold);line-height:1.05;text-transform:uppercase}
+footer{border-top:3px solid var(--gold);padding:26px 0 90px;color:var(--mut);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+@media (min-width:700px){
+nav{display:flex}
+.stats{grid-template-columns:repeat(4,1fr)}
+.why{grid-template-columns:repeat(2,1fr)}
+.tix{grid-template-columns:repeat(2,1fr)}
+.dogs{grid-template-columns:repeat(4,1fr)}
+.vg{grid-template-columns:1.3fr 1fr}
+.rl{grid-template-columns:repeat(2,1fr);column-gap:40px}
+}
+@media (min-width:1000px){.tix{grid-template-columns:repeat(4,1fr)}.why{grid-template-columns:repeat(4,1fr)}}
+/* calc + clock */
+.calc{margin-top:34px;background:#0a0a0a;border:2px solid var(--gold);padding:22px}
+.calc h3{font-size:28px;color:var(--gold);margin-bottom:6px}
+.calc p.s{color:var(--mut);font-size:15px;margin-bottom:14px}
+.calc .row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.calc .row button{background:transparent;border:2px solid #555;color:var(--tx);padding:8px 14px;font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.calc .row button[aria-pressed=true]{background:var(--gold);color:#000;border-color:var(--gold)}
+.res{display:grid;gap:8px}
+.res div{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 12px;background:var(--c2);border-left:5px solid #555}
+.res div.best{border-left-color:var(--gold);background:#2a2208}
+.res b{font-family:'Anton',sans-serif;font-weight:400;font-size:26px;color:var(--gold)}
+.res span{font-family:'Barlow Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase;font-size:17px}
+.clock{background:var(--c1);padding:46px 0}
+.clk{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;margin-top:8px}
+.clk div{background:var(--gold);color:#000;text-align:center;padding:12px 0;font-family:'Anton',sans-serif;font-size:19px}
+.clk div:nth-child(odd){background:#e3a00f}
+.clkn{margin-top:14px;color:#cfc9bc;max-width:640px}
+@media (min-width:700px){.clk{grid-template-columns:repeat(12,1fr)}.res{grid-template-columns:repeat(3,1fr)}}
+.fit{display:grid;gap:18px;margin-top:6px}
+.fit>div{padding:24px;border:2px solid #3a3a3a;background:var(--c1)}
+.fit>div:first-child{border-color:var(--gold)}
+.fit h3{font-size:28px;margin-bottom:12px}
+.fit>div:first-child h3{color:var(--gold)}
+.fit ul{list-style:none}
+.fit li{padding:6px 0 6px 26px;position:relative;border-bottom:1px solid #2c2c2c;color:#d8d2c5}
+.fit li:before{content:"+";position:absolute;left:0;top:3px;font-family:'Anton',sans-serif;color:var(--gold);font-size:22px}
+.fit>div:last-child li:before{content:"3";color:#777}
+@media (min-width:700px){.fit{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap hd">
+<a class="logo" href="#top" aria-label="Miami Iron Gym"><img src="img/miami-iron-gym-logo.png" alt="Miami Iron Gym logo" width="72" height="52"></a>
+<nav aria-label="Main"><a href="#why">Why MIG</a><a href="#trainers">Trainers</a><a href="#membership">Membership</a><a href="#rules">Rules</a><a href="#visit">Contact</a></nav>
+<a class="btn" href="#visit" data-gw="book">Visit request</a>
+</div>
+</header>
+<main id="top">
+<section class="hero">
+<div class="wrap">
+<span class="tag cond">Coral Way, Miami &middot; Open 24 hours</span>
+<h1>Go hard<span>or go home.</span></h1>
+<p class="lead">Not a big and flashy health club. A no frills, old-school, hardcore gym where you earn respect by putting in the work, and where nobody tells you that you are grunting too loud.</p>
+<div class="cta"><a class="btn" href="#membership">See memberships</a><a class="btn ghost" href="#" data-gw="chat">Ask the front desk</a></div>
+</div>
+<div class="hz"></div>
+</section>
+<div class="tick" aria-hidden="true"><div><span>Open 24 hours</span><span>&#9670;</span><span>No excuses</span><span>&#9670;</span><span>Heavy weights</span><span>&#9670;</span><span>Grunting allowed</span><span>&#9670;</span><span>IFBB pros &amp; NPC competitors</span><span>&#9670;</span><span>Open 24 hours</span><span>&#9670;</span><span>No excuses</span><span>&#9670;</span><span>Heavy weights</span><span>&#9670;</span><span>Grunting allowed</span><span>&#9670;</span><span>IFBB pros &amp; NPC competitors</span><span>&#9670;</span></div></div>
+<div class="stats">
+<div class="stat"><b>24/7</b><span>Doors open, every day</span></div>
+<div class="stat"><b>8</b><span>Trainers on the roster</span></div>
+<div class="stat"><b>10</b><span>House rules, no exceptions</span></div>
+<div class="stat"><b>0</b><span>Weight-size limits</span></div>
+</div>
+
+<section id="why">
+<div class="wrap">
+<div class="kick cond">Why MIG is your home</div>
+<h2>Built for people who train</h2>
+<div class="why">
+<article><i>01</i><h3>Open 24/7</h3><p>We are open 24 hours a day. At Miami Iron you still have no excuses.</p></article>
+<article><i>02</i><h3>Trainers</h3><p>Many of the trainers are IFBB pros and NPC competitors. They also specialize in getting you prepped for your next bodybuilding or fitness competition.</p></article>
+<article><i>03</i><h3>Atmosphere</h3><p>No one is here to socialize or text. The lifters, the pictures on the wall and the graffiti artwork are all there for one reason: a hardcore environment that pushes you past your limits.</p></article>
+<article><i>04</i><h3>Heavy weights</h3><p>The limitations other gyms put on weight sizes are gone. You will not hear noise complaints here.</p></article>
+</div>
+</div>
+</section>
+
+<section class="clock" aria-label="Opening hours">
+<div class="wrap">
+<div class="kick cond">Opening hours</div>
+<h2 style="margin-bottom:12px">Every hour is gym hour</h2>
+<div class="clk" aria-hidden="true"><div>12a</div><div>1a</div><div>2a</div><div>3a</div><div>4a</div><div>5a</div><div>6a</div><div>7a</div><div>8a</div><div>9a</div><div>10a</div><div>11a</div><div>12p</div><div>1p</div><div>2p</div><div>3p</div><div>4p</div><div>5p</div><div>6p</div><div>7p</div><div>8p</div><div>9p</div><div>10p</div><div>11p</div></div>
+<p class="clkn">Open 24 hours a day, 7 days a week. Shift work, a 3 a.m. deadlift, a Sunday night session: the door is open and the iron is heavy.</p>
+</div>
+</section>
+
+<section id="trainers" style="background:var(--c1)">
+<div class="wrap">
+<div class="kick cond">Train alongside the best</div>
+<h2>The roster</h2>
+<div class="dogs">
+<div class="dog"><b>Alan</b><small>Trainer</small></div>
+<div class="dog"><b>Dario</b><small>Trainer</small></div>
+<div class="dog"><b>Ivan</b><small>Trainer</small></div>
+<div class="dog"><b>Oswald</b><small>Trainer</small></div>
+<div class="dog"><b>Ricky</b><small>Trainer</small></div>
+<div class="dog"><b>Stan</b><small>Trainer</small></div>
+<div class="dog"><b>Tony</b><small>Trainer</small></div>
+<div class="dog"><b>Yuri</b><small>Trainer</small></div>
+</div>
+<p class="pros">Many of our trainers are IFBB pros and NPC competitors who can get you ready for your next bodybuilding or fitness show. Rates and availability: ask the front desk.</p>
+</div>
+</section>
+
+<section id="fit" style="padding-top:20px">
+<div class="wrap">
+<div class="kick cond">The honest version</div>
+<h2>Is Miami Iron for you?</h2>
+<div class="fit">
+<div><h3>You will feel at home if</h3><ul><li>You are a dedicated gym goer, bodybuilder or competitor with serious ambitions</li><li>You want heavy weights with no size limits</li><li>You train at odd hours and need the doors open 24/7</li><li>You like a gym where grunting is normal</li><li>You want a trainer who competes at IFBB or NPC level</li></ul></div>
+<div><h3>It is not trying to be</h3><ul><li>A big and flashy health and fitness club</li><li>A weekend warrior, cardio-all-day environment</li><li>A place to text on the bench or socialize on a machine</li><li>A gym with noise complaints about heavy lifting</li></ul></div>
+</div>
+</div>
+</section>
+
+<section id="membership" class="price">
+<div class="wrap">
+<div class="kick cond">You still have no excuses</div>
+<h2>Membership</h2>
+<div class="tix">
+<div class="tk"><h3>Iron</h3><div class="amt"><sup>$</sup>55</div><div class="per cond">per month</div><ul><li>$20 one-time gym fee</li><li>Pay for membership monthly</li><li>24 hour access to the gym</li></ul></div>
+<div class="tk hot"><span class="badge cond">Most popular</span><h3>Legend</h3><div class="amt"><sup>$</sup>380</div><div class="per cond">per year</div><ul><li>Pay annually and save</li><li>24 hour access to the gym</li></ul></div>
+<div class="tk"><h3>Iron Plus</h3><div class="amt"><sup>$</sup>125</div><div class="per cond">for 3 months</div><ul><li>$20 one-time gym fee</li><li>Pay every 3 months</li><li>24 hour access to the gym</li></ul></div>
+<div class="tk"><h3>Day pass</h3><div class="amt"><sup>$</sup>25</div><div class="per cond">one-time access</div><ul><li>Available 24 hours a day</li><li>One-time use, no in and out</li></ul></div>
+</div>
+<div class="calc">
+<h3>How long will you train?</h3>
+<p class="s">A quick comparison using only the listed prices (plus tax, rounded up to whole billing periods). It adds the one-time gym fee where the site lists one.</p>
+<div class="row" id="mo" role="group" aria-label="Months"><button type="button" aria-pressed="false" data-m="1">1 month</button><button type="button" aria-pressed="false" data-m="3">3 months</button><button type="button" aria-pressed="false" data-m="6">6 months</button><button type="button" aria-pressed="true" data-m="12">12 months</button></div>
+<div class="res" id="res"></div>
+</div>
+<p class="note">All memberships plus tax. Prices as listed on miamiirongym.com.</p>
+<div class="perk"><span class="cond">Military, police and fire fighters: discount with proper ID at sign up</span><span class="cond">No sign up fees or hidden costs, per the site</span></div>
+</div>
+</section>
+
+<section id="rules" class="rules">
+<div class="wrap">
+<div class="kick cond">House rules</div>
+<h2>Ten rules. Read them.</h2>
+<ol class="rl">
+<li><div><b>Respect each other</b><span>If you want respect then you give respect.</span></div></li>
+<li><div><b>Respect the equipment</b><span>This is your home, treat it as such.</span></div></li>
+<li><div><b>Pick up after yourself</b><span>Re-rack your weights. Your momma does not work here.</span></div></li>
+<li><div><b>No texting</b><span>Do not take up a machine or bench texting or socializing. Others are here to put in work.</span></div></li>
+<li><div><b>Support and encourage each other</b><span>This is your Iron family.</span></div></li>
+<li><div><b>Grunting is allowed</b><span>No one will tell you that you are training too loud. We encourage hard work.</span></div></li>
+<li><div><b>Drop your weights, do not slam them</b><span>There is a difference. Respect the equipment.</span></div></li>
+<li><div><b>Train, do not work out</b><span>Make every session count. Come to put in work and get results.</span></div></li>
+<li><div><b>No curling in the squat rack</b><span>Use the equipment for what it is intended for.</span></div></li>
+<li><div><b>Enjoy yourself</b><span>This gym was made for you. Train hard and have fun.</span></div></li>
+</ol>
+</div>
+</section>
+
+<section id="faq">
+<div class="wrap">
+<div class="kick cond">Quick answers</div>
+<h2>Before you come in</h2>
+<details><summary>Are these the only plans?</summary><p>Previous specials and deals have existed. To stay up to date on new and upcoming specials, follow the gym on social media.</p></details>
+<details><summary>Are there any discounts?</summary><p>Discounts are available for Military, Police and Fire Fighters who show proper ID at the time of sign up.</p></details>
+<details><summary>How much is a daily pass?</summary><p>$25 plus tax, one-time access, available 24 hours a day. One-time use, no in and out.</p></details>
+<details><summary>Are there any sign up fees?</summary><p>The site says there are no sign up fees or hidden costs. IRON and IRON PLUS list a $20 one-time gym fee.</p></details>
+<details><summary>What are the gym's hours of operation?</summary><p>Miami Iron Gym is open 24 hours a day, 7 days a week.</p></details>
+<details><summary>Anything not covered here?</summary><p>Parking, cancellation terms, equipment lists and locker details are not on the website. The front desk will confirm them, or ask the assistant in the corner.</p></details>
+</div>
+</section>
+
+<section id="visit" class="visit">
+<div class="wrap">
+<div class="kick cond">Come in</div>
+<h2>Find us</h2>
+<div class="vg">
+<div class="card"><h3>9660 Coral Way</h3><div class="big">Miami, FL 33165</div><p style="margin-top:14px">Open 24 hours, 7 days a week.</p><p><a href="tel:7863324025">786-332-4025</a></p><p><a href="mailto:info@miamiirongym.com">info@miamiirongym.com</a></p><p style="margin-top:16px"><a class="btn" href="https://www.google.com/maps/dir//Miami+Iron+Gym,+9660+Coral+Way,+Miami,+FL+33165" target="_blank" rel="noopener" style="color:#000">Get directions</a></p></div>
+<div class="card"><h3>Leave a visit request</h3><p>Pick a plan, leave a number, tell the team when you are coming. The assistant in the corner takes it step by step.</p><p style="margin-top:14px"><a class="btn ghost" href="#" data-gw="book">Start request</a></p><p style="margin-top:14px;font-size:14px;color:var(--mut)">Also on Instagram @miamiirongym, Facebook and YouTube.</p></div>
+</div>
+</div>
+</section>
+</main>
+<footer><div class="wrap"><span>Miami Iron Gym &middot; Respect the old school</span><span>Demo &middot; prepared by Gevorg Hovhannisyan</span></div></footer>
+<script>
+(function(){var r=document.getElementById('res'),bs=document.querySelectorAll('#mo button');
+function go(m){var a=[['Iron',55*m+20],['Iron Plus',125*Math.ceil(m/3)+20],['Legend',380*Math.ceil(m/12)]],mn=Math.min.apply(null,a.map(function(x){return x[1];}));
+r.innerHTML=a.map(function(x){return '<div'+(x[1]===mn?' class="best"':'')+'><span>'+x[0]+'</span><b>$'+x[1]+'</b></div>';}).join('');}
+bs.forEach(function(b){b.onclick=function(){bs.forEach(function(x){x.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');go(+b.dataset.m);};});go(12);})();
+(function(root){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>5)w=w.replace(/(ing|ed)$/,'');if(w.length>3&&!/ss$/.test(w))w=w.replace(/s$/,'');return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++)d[i]=[i];for(j=1;j<=n;j++)d[0][j]=j;
+for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function close(a,b){if(a===b)return true;var L=Math.max(a.length,b.length);if(L<5||Math.abs(a.length-b.length)>2)return false;return lev(a,b)<=(L>=9?2:1);}
+function scoreEntry(qs,qt,e){var best=0;e.k.forEach(function(p){var pn=norm(p);if(!pn)return;
+if((' '+qs+' ').indexOf(' '+pn+' ')>=0){best=Math.max(best,5+pn.split(' ').length);return;}
+var pt=toks(p),hit=0;pt.forEach(function(t){if(qt.some(function(x){return close(x,t);}))hit++;});
+if(hit===pt.length)best=Math.max(best,2+hit);});return best;}
+function find(CFG,q){var qs=norm(q),qt=toks(q),b=null,bs=0;
+CFG.kb.forEach(function(e){var s=scoreEntry(qs,qt,e);if(s>bs){bs=s;b=e;}});return bs>=3?b:null;}
+function reply(CFG,q){var e=find(CFG,q);if(!e)return{a:CFG.fallback,miss:true};return{a:e.a,flow:!!e.flow,entry:e};}
+var api={norm:norm,find:find,reply:reply};
+if(typeof module!=='undefined')module.exports=api;
+if(typeof document==='undefined')return;
+root.GevWidget=function(CFG){
+var css='#gw-b{position:fixed;right:16px;bottom:16px;z-index:9999;border:0;border-radius:999px;padding:13px 18px;background:var(--w-a);color:var(--w-ink);font:700 15px var(--w-f);cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.28);display:flex;gap:8px;align-items:center}'+
+'#gw-p{position:fixed;right:16px;bottom:78px;z-index:9999;width:min(370px,calc(100vw - 32px));height:min(540px,calc(100vh - 110px));background:var(--w-bg);color:var(--w-tx);border-radius:var(--w-r);box-shadow:0 14px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--w-f);border:1px solid var(--w-ln)}#gw-p.on{display:flex}'+
+'#gw-h{background:var(--w-a);color:var(--w-ink);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}#gw-h small{display:block;font-weight:400;opacity:.8;font-size:12px}#gw-x{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}'+
+'#gw-m{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}.gw-i{max-width:86%;padding:9px 12px;border-radius:14px;white-space:pre-line;word-wrap:break-word}.gw-bot{background:var(--w-bb);align-self:flex-start;border-bottom-left-radius:4px}.gw-me{background:var(--w-a);color:var(--w-ink);align-self:flex-end;border-bottom-right-radius:4px}'+
+'#gw-c{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}#gw-c button{border:1px solid var(--w-a);background:transparent;color:var(--w-tx);border-radius:999px;padding:6px 11px;font:13px var(--w-f);cursor:pointer}#gw-c button:hover{background:var(--w-a);color:var(--w-ink)}'+
+'#gw-f{display:flex;gap:6px;padding:10px;border-top:1px solid var(--w-ln)}#gw-f input{flex:1;min-width:0;border:1px solid var(--w-ln);border-radius:10px;padding:10px;font:15px var(--w-f);background:#fff;color:#111}#gw-f button{border:0;background:var(--w-a);color:var(--w-ink);border-radius:10px;padding:0 14px;font:700 14px var(--w-f);cursor:pointer}';
+var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
+var b=document.createElement('button');b.id='gw-b';b.type='button';b.innerHTML='<span aria-hidden="true">'+(CFG.icon||'&#128172;')+'</span><span>'+CFG.btn+'</span>';
+var p=document.createElement('div');p.id='gw-p';p.setAttribute('role','dialog');p.setAttribute('aria-label',CFG.title);
+p.innerHTML='<div id="gw-h"><div>'+CFG.title+'<small>'+CFG.sub+'</small></div><button id="gw-x" type="button" aria-label="Close">&times;</button></div><div id="gw-m"></div><div id="gw-c"></div><form id="gw-f"><input id="gw-t" autocomplete="off" placeholder="'+CFG.ph+'" aria-label="'+CFG.ph+'"><button type="submit">'+CFG.send+'</button></form>';
+document.body.appendChild(b);document.body.appendChild(p);
+var M=p.querySelector('#gw-m'),C=p.querySelector('#gw-c'),T=p.querySelector('#gw-t'),flow=null,opened=false;
+function say(t,me){var d=document.createElement('div');d.className='gw-i '+(me?'gw-me':'gw-bot');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight;}
+function chips(a){C.innerHTML='';(a||[]).forEach(function(x){var c=document.createElement('button');c.type='button';c.textContent=x;c.onclick=function(){handle(x);};C.appendChild(c);});}
+function ask(){var s=CFG.flow.steps[flow.i];say(s.q);chips((s.chips||[]).concat([CFG.flow.cancel]));}
+function startFlow(){flow={i:0,d:[]};ask();}
+function stepOk(s,v){if(s.t==='phone')return v.replace(/\D/g,'').length>=7;if(s.t==='num')return /\d/.test(v);return v.length>0;}
+function handle(v){v=v.trim();if(!v)return;say(v,true);T.value='';
+if(flow){if(norm(v)===norm(CFG.flow.cancel)||/^(cancel|stop)$/.test(norm(v))){flow=null;say(CFG.flow.cancelled);chips(CFG.chips);return;}
+var s=CFG.flow.steps[flow.i];if(!stepOk(s,v)){say(s.err||CFG.flow.err);ask();return;}
+flow.d.push(s.l+': '+v);flow.i++;if(flow.i>=CFG.flow.steps.length){say(CFG.flow.done+'\n\n'+flow.d.join('\n'));flow=null;chips(CFG.chips);}else ask();return;}
+var r=reply(CFG,v);if(r.flow){say(r.a);startFlow();return;}say(r.a);chips(r.entry&&r.entry.chips?r.entry.chips:CFG.chips);}
+function open(){p.classList.add('on');if(!opened){opened=true;say(CFG.greet);chips(CFG.chips);}T.focus();}
+b.onclick=function(){p.classList.contains('on')?p.classList.remove('on'):open();};
+p.querySelector('#gw-x').onclick=function(){p.classList.remove('on');};
+p.querySelector('#gw-f').onsubmit=function(e){e.preventDefault();handle(T.value);};
+root.__gwBook=function(){open();if(!flow){say(CFG.flow.start);startFlow();}};
+document.querySelectorAll('[data-gw]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();open();if(el.dataset.gw==='book'&&!flow){say(CFG.flow.start,false);startFlow();}});});
+};
+})(typeof window!=='undefined'?window:this);
+
+var CFG={
+title:"MIG Front Desk",sub:"Answers from the Miami Iron Gym website",btn:"Ask the gym",icon:"&#127947;",ph:"Ask about hours, plans, trainers...",send:"Send",
+greet:"Welcome to Miami Iron Gym. Ask me about hours, membership plans, the day pass, trainers or the gym rules. I only know what is on this site, so anything else goes to the front desk.",
+chips:["Opening hours","Membership plans","Day pass","Trainers","Gym rules","Visit the gym"],
+fallback:"I do not have that one from the website, and I would rather not guess. The front desk can confirm it: 786-332-4025 or info@miamiirongym.com. Want to leave a visit request instead?",
+kb:[
+{k:["book","visit the gym","sign up","signup","join","join the gym","become a member","come in","tour","request a visit","enquiry","enquire","register"],a:"Happy to set that up. A few quick questions and I will pass it to the team.",flow:true},
+{k:["hours","open","opening hours","what time","close","closing","24 hours","24/7","overnight","midnight","late night","early morning","holiday","sunday","weekend"],a:"Miami Iron Gym is open 24 hours a day, 7 days a week. For holiday schedules, ask the front desk at 786-332-4025.",chips:["Membership plans","Day pass","Where are you?"]},
+{k:["price","prices","cost","how much","fee","fees","rates","membership","memberships","membership plans","pricing","monthly","subscription"],a:"Memberships listed on the site (all plus tax):\n- IRON: $55 per month, plus a $20 one-time gym fee\n- IRON PLUS: $125 for 3 months, plus a $20 one-time gym fee\n- LEGEND: $380 per year (marked Most Popular)\n- DAY PASS: $25, one-time access\nAll plans include 24 hour access.",chips:["Discounts","Day pass","Visit the gym"]},
+{k:["iron plus","three months","3 months","quarterly","every 3 months"],a:"IRON PLUS is $125 for 3 months, paid every 3 months, plus the $20 one-time gym fee and tax. 24 hour access included."},
+{k:["legend","annual","yearly","per year","year","pay annually","best value","cheapest"],a:"LEGEND is $380 per year, plus tax. You pay annually and save, and it is marked as the most popular plan. It includes 24 hour access."},
+{k:["iron plan","iron monthly","month to month","per month","55"],a:"IRON is $55 per month plus tax, with a $20 one-time gym fee. You pay monthly and get 24 hour access."},
+{k:["day pass","daily pass","day","one day","drop in","drop-in","guest","try","trial","one time","visitor","tourist","single visit","in and out"],a:"The day pass is $25 plus tax, one-time access, available 24 hours a day. It is one-time use with no in and out.",chips:["Membership plans","Visit the gym"]},
+{k:["discount","discounts","military","police","fire fighter","firefighter","veteran","first responder","deal","special","specials","promo","promotion","offer","coupon"],a:"Discounts are available for Military, Police and Fire Fighters who show proper ID at sign up. Specials come and go, so the gym asks you to follow its social media for new deals."},
+{k:["sign up fee","signup fee","hidden","hidden costs","joining fee","enrollment","enrolment","gym fee","one time fee","registration fee"],a:"The site says there are no sign up fees or hidden costs. Separately, IRON and IRON PLUS list a $20 one-time gym fee. If you want the total for a specific plan, the front desk can confirm it."},
+{k:["trainer","trainers","coach","coaches","personal trainer","personal training","pt","ifbb","npc","pro","pros","staff","who trains"],a:"The site lists trainers Alan, Dario, Ivan, Oswald, Ricky, Stan, Tony and Yuri. Many of them are IFBB PROS and NPC competitors. For rates and availability, ask the front desk.",chips:["Competition prep","Visit the gym"]},
+{k:["competition","competitor","bodybuilding","bodybuilder","contest","prep","show prep","stage","compete","physique"],a:"Many of the trainers are IFBB PROS and NPC competitors, and the site says they specialize in getting you prepped for your next bodybuilding or fitness competition."},
+{k:["rules","rule","etiquette","allowed","not allowed","dress code"],a:"The gym lists 10 rules, including: respect each other, respect the equipment, re-rack your weights, no texting on machines or benches, grunting is allowed, drop your weights but do not slam them, and no curling in the squat rack. Ask me about any one of them.",chips:["Grunting","Heavy weights","Texting"]},
+{k:["grunt","grunting","noise","loud","noisy","scream","yell","shout"],a:"Grunting is allowed. The site says nobody will tell you that you are training too loud, and there are no noise complaints about heavy lifting."},
+{k:["heavy","heavy weights","weights","weight limit","limit","limits","deadlift","drop weights","dumbbell","dumbbells","barbell","equipment","machines","squat rack","rack","racks","bench"],a:"The gym removed the limits other gyms put on weight sizes. For the exact equipment list, such as racks, platforms or dumbbell range, the front desk can tell you what is on the floor.",chips:["Gym rules","Visit the gym"]},
+{k:["texting","phones","socializing","selfie","selfies","cellphone"],a:"Rule 4: no texting. Do not take up a machine or bench texting or socializing, since others are there to work."},
+{k:["style","atmosphere","vibe","old school","hardcore","about","who are you","what kind of gym","beginner","beginners","newbie","new","first time","serious","casual","intimidating"],a:"Miami Iron Gym calls itself a no frills, old-school, hardcore gym. The site welcomes dedicated gym goers, bodybuilders and competitors with serious ambitions. Whether it suits a complete beginner is a good question for the front desk."},
+{k:["where","address","location","directions","map","find you","coral way","parking","park","how to get","near"],a:"9660 Coral Way, Miami, FL 33165. The site has a Get Directions button that opens the map. I do not have parking details from the website, so the front desk can confirm those.",chips:["Opening hours","Phone number"]},
+{k:["phone","phone number","call","telephone","number","contact","email","e-mail","mail","reach","talk to someone","front desk","message"],a:"Phone: 786-332-4025\nE-mail: info@miamiirongym.com\nAddress: 9660 Coral Way, Miami, FL 33165"},
+{k:["instagram","facebook","youtube","social","social media","follow"],a:"The gym is on Instagram (@miamiirongym), Facebook and YouTube. Follow them to see new specials as they come."},
+{k:["cancel","cancellation","cancellation policy","cancelation","freeze","pause","contract","commitment","refund","transfer"],a:"The website does not say anything about cancellation, freezing or contracts, so I will not guess. Please ask the front desk: 786-332-4025."},
+{k:["class","classes","cardio","sauna","shower","showers","locker","lockers","towel","towels","water","supplements","smoothie","pool","wifi","age","kids","child","children","teen","minimum age"],a:"That detail is not on the website, so I would rather not guess. The front desk will confirm it: 786-332-4025 or info@miamiirongym.com."},
+{k:["hello","hi","hey","good morning","good evening","yo","sup"],a:"Hey. Ask me about hours, plans, the day pass, trainers or the rules."},
+{k:["thanks","thank you","thx","cheers","appreciate"],a:"Any time. See you on the floor."}
+],
+flow:{start:"Let us get you a visit request.",cancel:"Cancel",cancelled:"No problem, nothing was sent. Ask me anything else.",err:"Please type an answer so the team can reach you.",
+steps:[
+{l:"Interested in",q:"What are you interested in?",chips:["IRON monthly","IRON PLUS 3 months","LEGEND annual","Day pass","Trainer or competition prep"]},
+{l:"Name",q:"Your name?"},
+{l:"Phone",q:"Best phone number for the front desk to reach you?",t:"phone",err:"That does not look like a phone number. Please include the digits."},
+{l:"Planning to come",q:"When are you planning to come in? (the gym is open 24 hours)",chips:["Today","Tomorrow","This week","Not sure yet"]}
+],
+done:"Done. Your visit request has been sent to the team, and they will get back to you. Details:"}
+};
+
+
+GevWidget(CFG);
+</script>
+</body>
+</html>
