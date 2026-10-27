@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Physioveda Medical Center · Physiotherapy in Dubai</title>
+<meta name="description" content="Demo page for Physioveda Medical Center, Al Wasl and Al Karama, Dubai.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fffaf0;--sand:#f6ecd8;--bark:#2b1d12;--moss:#4f8f2f;--leaf:#83c556;--ember:#f16d41;--ruby:#ce080b;--mute:#5f5142;--line:#e8dcc2;--cwa:#4f8f2f;--cwat:#fff;--cwf:'Montserrat',system-ui,sans-serif;--cwr:999px;--cwr2:22px;--cwm:#fbf5e8;--cwbot:#fff;--cwbg:#fffaf0;--cwt:#2b1d12;--cwb:#e8dcc2;--cwchip:#3d7a22}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Montserrat',system-ui,sans-serif;background:var(--cream);color:var(--bark);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.12}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+.top{background:var(--bark);color:#f3e8d1;font-size:12.5px}
+.top .wrap{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;padding-top:7px;padding-bottom:7px}
+.top a{color:#f3e8d1}
+header{background:var(--cream);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+.hb{display:flex;align-items:center;justify-content:space-between;height:70px;gap:10px}
+.logo{background:#fff;border:1px solid var(--line);border-radius:12px;padding:5px 9px;display:flex;align-items:center}
+.logo img{height:46px;width:auto;display:block}
+nav{display:none;gap:22px;font-size:14px;font-weight:500}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--moss)}
+.btn{display:inline-block;background:var(--moss);color:#fff;font:600 14px 'Montserrat';padding:12px 22px;border-radius:999px;text-decoration:none;border:0;cursor:pointer}
+.btn.w{background:#fff;color:var(--bark);border:1px solid var(--line)}
+.btn.e{background:var(--ember)}
+@media(min-width:860px){nav{display:flex}}
+/* hero centred */
+.hero{text-align:center;padding:54px 0 30px;background:radial-gradient(circle at 18% 20%,rgba(131,197,86,.28),transparent 42%),radial-gradient(circle at 85% 10%,rgba(241,109,65,.2),transparent 40%),var(--cream)}
+.hero small{display:inline-block;font:600 12px 'Montserrat';letter-spacing:.16em;text-transform:uppercase;color:var(--moss);background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px}
+.hero h1{font-size:clamp(34px,8vw,64px);max-width:820px;margin:18px auto 14px}
+.hero h1 em{font-style:italic;color:var(--ember)}
+.hero p{max-width:620px;margin:0 auto;color:var(--mute);font-size:17px}
+.hero .ctas{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:26px}
+.trust{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:36px auto 0;max-width:860px}
+.trust div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 10px}
+.trust b{display:block;font:700 20px 'Fraunces';color:var(--moss)}
+.trust span{font-size:12.5px;color:var(--mute)}
+@media(min-width:760px){.trust{grid-template-columns:repeat(5,1fr)}}
+section{padding:54px 0}
+.eyebrow{font:600 12px 'Montserrat';letter-spacing:.16em;text-transform:uppercase;color:var(--ember);margin-bottom:8px}
+h2{font-size:clamp(27px,5vw,42px);margin-bottom:14px}
+.lead{color:var(--mute);max-width:640px;margin-bottom:24px}
+/* clinics */
+.clin{display:grid;gap:14px}
+.cl{background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px;position:relative}
+.cl h3{font-size:24px;margin-bottom:4px}
+.cl p{color:var(--mute);font-size:15px;margin-top:6px}
+.cl .hr{display:inline-block;margin-top:12px;background:var(--sand);border-radius:99px;padding:6px 12px;font-weight:600;font-size:13px}
+.st{position:absolute;top:18px;right:18px;font:700 11px 'Montserrat';letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:99px;background:#eee;color:#555}
+.st.on{background:#e3f4d6;color:#2f6a14}
+.st.off{background:#fde3dc;color:#a13a1a}
+@media(min-width:760px){.clin{grid-template-columns:1fr 1fr}}
+/* services as rows */
+.sv{background:var(--sand)}
+.rows{display:grid;gap:0;border-top:1px solid #d9c9a6}
+.row{display:grid;grid-template-columns:1fr;gap:4px;padding:18px 0;border-bottom:1px solid #d9c9a6}
+.row h3{font-size:21px}
+.row p{color:var(--mute);font-size:15px}
+.row i{font-style:normal;font:600 12px 'Montserrat';color:var(--moss);letter-spacing:.06em;text-transform:uppercase}
+@media(min-width:760px){.row{grid-template-columns:260px 1fr;gap:22px;align-items:baseline}}
+/* ppcm */
+.pp{display:grid;gap:26px}
+.flow{display:grid;gap:12px;counter-reset:n}
+.fs{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 16px 16px 62px;position:relative}
+.fs:before{counter-increment:n;content:counter(n);position:absolute;left:14px;top:14px;width:34px;height:34px;border-radius:50%;background:var(--ember);color:#fff;display:grid;place-items:center;font:700 16px 'Fraunces'}
+.fs b{display:block;font:600 17px 'Fraunces'}
+.fs p{color:var(--mute);font-size:14.5px}
+.pb{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.pb span{background:#fff;border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-size:14px}
+@media(min-width:860px){.pp{grid-template-columns:1fr 1fr;align-items:start}}
+/* home */
+.home{background:var(--bark);color:#f3e8d1}
+.home h2{color:#fff}.home .lead{color:#d8cbb0}
+.home .grid{display:grid;gap:12px}
+.home .tile{border:1px solid #4a3a2a;border-radius:20px;padding:18px}
+.home .tile b{display:block;font:600 18px 'Fraunces';color:var(--leaf);margin-bottom:4px}
+.home .tile p{font-size:14.5px;color:#d8cbb0}
+@media(min-width:760px){.home .grid{grid-template-columns:repeat(3,1fr)}}
+/* reviews */
+.rv{display:grid;gap:14px}
+.r{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px}
+.r p{font-size:15.5px;font-family:'Fraunces',serif}
+.r b{display:block;margin-top:10px;font-size:13px;color:var(--moss);font-family:'Montserrat'}
+@media(min-width:760px){.rv{grid-template-columns:1fr 1fr}}
+.ins{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.ins span{border:1px dashed #b9a67f;border-radius:10px;padding:8px 14px;font-weight:600;font-size:14px;background:#fff}
+details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:10px}
+summary{cursor:pointer;font:600 17px 'Fraunces';list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--ember);font-size:22px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{margin-top:8px;color:var(--mute);font-size:15px}
+.cta{background:linear-gradient(120deg,var(--moss),#3d7a22);color:#fff;border-radius:28px;padding:34px 22px;text-align:center}
+.cta h2{color:#fff}
+.cta p{max-width:520px;margin:0 auto 18px;color:#e6f2dc}
+footer{padding:26px 0 90px;font-size:13px;color:var(--mute);border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between}
+.cw{position:fixed;right:14px;bottom:14px;z-index:99;font-family:var(--cwf,inherit);font-size:15px;color:var(--cwt,#111)}
+.cw-fab{display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--cwa);color:var(--cwat,#fff);padding:12px 16px;border-radius:var(--cwr,999px);font:600 14px var(--cwf,inherit);box-shadow:0 6px 22px rgba(0,0,0,.28)}
+.cw.open .cw-fab{display:none}
+.cw-p{position:fixed;right:10px;bottom:10px;width:min(380px,calc(100vw - 20px));height:min(560px,calc(100vh - 20px));background:var(--cwbg,#fff);border-radius:var(--cwr2,16px);box-shadow:0 14px 50px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--cwb,rgba(0,0,0,.1))}
+.cw-p[hidden]{display:none}
+.cw-h{background:var(--cwa);color:var(--cwat,#fff);padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+.cw-h small{display:block;opacity:.85;font-size:12px;margin-top:2px}
+.cw-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer}
+.cw-m{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--cwm,#f6f6f6)}
+.cw-b{max-width:86%;padding:9px 12px;border-radius:12px;line-height:1.4;font-size:14px}
+.cw-b.bot{background:var(--cwbot,#fff);align-self:flex-start;border:1px solid var(--cwb,rgba(0,0,0,.08))}
+.cw-b.me{background:var(--cwa);color:var(--cwat,#fff);align-self:flex-end}
+.cw-b a{color:inherit;text-decoration:underline}
+.cw-s{margin:6px 0 4px;padding-left:16px;font-size:13px}
+.cw-c{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px;background:var(--cwbg,#fff);border-top:1px solid var(--cwb,rgba(0,0,0,.08));max-height:96px;overflow:auto}
+.cw-c button{border:1px solid var(--cwa);background:transparent;color:var(--cwchip,var(--cwa));border-radius:999px;padding:5px 10px;font:500 12.5px var(--cwf,inherit);cursor:pointer}
+.cw-f{display:flex;border-top:1px solid var(--cwb,rgba(0,0,0,.08));background:var(--cwbg,#fff)}
+.cw-f input{flex:1;border:0;padding:12px;font:15px var(--cwf,inherit);min-width:0;background:transparent;color:inherit;outline:0}
+.cw-f button{border:0;background:var(--cwa);color:var(--cwat,#fff);padding:0 16px;font:600 14px var(--cwf,inherit);cursor:pointer}
+
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><span>Physiotherapy in Dubai · DHA-licensed team</span><span>Call or WhatsApp <a href="tel:8008332">800 8332</a></span></div></div>
+<header>
+ <div class="wrap hb">
+  <a class="logo" href="#top"><img src="img/physioveda-logo.png" alt="Physioveda Medical Center logo" height="46"></a>
+  <nav><a href="#clinics">Clinics</a><a href="#services">Services</a><a href="#ppcm">Posture</a><a href="#home">Home visits</a><a href="#faq">FAQ</a></nav>
+  <a class="btn" href="#clinics" data-cw="book">Book a session</a>
+ </div>
+</header>
+
+<main id="top">
+<div class="hero">
+ <div class="wrap">
+  <small>Helping patients since 2019</small>
+  <h1>Move away from pain, <em>back to the things you love</em></h1>
+  <p>DHA-licensed physiotherapists with personalised plans built on evidence-based practice. Two clinics in Dubai, at Al Wasl (Jumeirah) and Al Karama, plus visits at home.</p>
+  <div class="ctas"><a class="btn" href="#clinics" data-cw="book">Request an appointment</a><a class="btn w" href="tel:8008332">Call 800 8332</a></div>
+  <div class="trust"><div><b>2019</b><span>helping patients since</span></div><div><b>DHA</b><span>licensed physiotherapists</span></div><div><b>2</b><span>clinics, Al Wasl and Al Karama</span></div><div><b>Same-day</b><span>bookings available</span></div><div><b>Insurance</b><span>covered, ask about your plan</span></div></div>
+ </div>
+</div>
+
+<section id="clinics">
+ <div class="wrap">
+  <div class="eyebrow">Two clinics, different hours</div>
+  <h2>Pick the door that is open when you are</h2>
+  <p class="lead">Al Wasl is closed on Sundays. Al Karama is open every day until 9pm.</p>
+  <div class="clin">
+   <div class="cl"><span class="st" id="s1">Hours</span><h3>Al Wasl (Jumeirah)</h3><p>Villa 181 B, Al Wasl Rd, near Al Ghazal Mall, Al Bada'a, Dubai</p><span class="hr">Mon to Sat · 8am to 8pm</span></div>
+   <div class="cl"><span class="st" id="s2">Hours</span><h3>Al Karama</h3><p>Kanoo Group Building, 201, next to ADCB Metro, Al Karama, Dubai</p><span class="hr">Every day · 9am to 9pm</span></div>
+  </div>
+  <p class="lead" style="margin:16px 0 0;font-size:13px">"Open now" is calculated from the listed hours in Dubai time. Please call to confirm on public holidays.</p>
+ </div>
+</section>
+
+<section class="sv" id="services">
+ <div class="wrap">
+  <div class="eyebrow">What we treat</div>
+  <h2>Services from the Physioveda site</h2>
+  <div class="rows">
+   <div class="row"><h3>Musculoskeletal &amp; Sports Physiotherapy</h3><p>Targeted rehabilitation for joint pain, muscle injuries, stiffness and movement limitations to get you back to full strength.</p></div>
+   <div class="row"><h3>Back, Neck, Joint Pain &amp; Sciatica</h3><p>Each has its own treatment page. The clinic aims at the root cause of discomfort for lasting improvement rather than temporary relief.</p></div>
+   <div class="row"><h3>Post-Surgery Rehabilitation</h3><p>Safe, structured recovery programmes after orthopedic, spinal and other surgeries to support healing and regain function.</p></div>
+   <div class="row"><h3>Stroke &amp; Neurological Rehabilitation</h3><p>Specialised support with a focus on balance, coordination and independence.</p></div>
+   <div class="row"><h3>Women's Health Physiotherapy</h3><p>Pelvic health, postnatal recovery and pelvic floor therapy, plus prenatal and postnatal physiotherapy.</p></div>
+   <div class="row"><h3>Sports Massage</h3><p>Deep tissue work for tension, stiffness and recovery. Useful for athletes, runners, gym-goers and for anyone with tight muscles or body aches.</p></div>
+   <div class="row"><h3>Lymphatic Drainage, Taping, Plantar Fasciitis</h3><p>Gentle lymph-flow massage, kinesiotaping (myofascial taping) and plantar fasciitis care are also listed.</p></div>
+   <div class="row"><h3>General Practitioner, Al Karama</h3><p>Dr Udo, a DHA-licensed GP: routine check-ups, preventive care, chronic conditions and minor procedures.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="ppcm">
+ <div class="wrap pp">
+  <div>
+   <div class="eyebrow">Signature programme</div>
+   <h2>PPCM: Physioveda Posture Correction Matrix</h2>
+   <p class="lead">A posture rehabilitation system built from more than 20 years of clinical physiotherapy experience. It looks at posture, movement patterns and muscle imbalance together.</p>
+   <div class="pb"><span>Rounded shoulders</span><span>Forward head posture</span><span>Kyphosis</span><span>Lordosis</span><span>Scoliosis</span><span>Uneven shoulders or hips</span></div>
+  </div>
+  <div class="flow">
+   <div class="fs"><b>Assessment</b><p>Detailed posture and movement analysis to find imbalances and pain triggers.</p></div>
+   <div class="fs"><b>Personalised plan</b><p>Hands-on therapy, spinal mobilisation and targeted techniques tailored to you.</p></div>
+   <div class="fs"><b>Strengthening</b><p>Exercises to build core, back and postural muscles for better alignment.</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap pp">
+  <div>
+   <div class="eyebrow">Why Physioveda</div>
+   <h2>What makes the approach different</h2>
+   <p class="lead">From the clinic's own description of how it works.</p>
+   <div class="flow">
+    <div class="fs"><b>Patient-first</b><p>You are at the centre of your recovery plan, with goals and progress guiding each step.</p></div>
+    <div class="fs"><b>Data-driven techniques</b><p>Manual therapy, exercise prescription, shockwave therapy and more.</p></div>
+    <div class="fs"><b>Holistic rehabilitation</b><p>Pain management, functional restoration and preventive care.</p></div>
+    <div class="fs"><b>Multi-disciplinary support</b><p>Links with medical specialists, orthopedics and wellness services under one roof.</p></div>
+   </div>
+  </div>
+  <div>
+   <div class="eyebrow">Sports massage</div>
+   <h2>Who it is for</h2>
+   <p class="lead">Sports massage helps more than athletes. A short consultation about your concerns, fitness level and any injuries comes first, then the treatment is tailored.</p>
+   <div class="pb"><span>Athletes and gym-goers</span><span>Runners and cyclists</span><span>CrossFit and HIIT</span><span>Physically demanding jobs</span><span>Tight muscles</span><span>Body aches</span><span>Muscle spasms</span></div>
+   <p class="lead" style="margin-top:16px;font-size:14px">Typical session flow described on the site: warm-up strokes, then deeper techniques such as trigger point release, stretching and focused deep tissue work.</p>
+  </div>
+ </div>
+</section>
+
+<section class="home" id="home">
+ <div class="wrap">
+  <div class="eyebrow" style="color:var(--leaf)">At your door</div>
+  <h2>Physiotherapy at home in Dubai</h2>
+  <p class="lead">For clinically suitable patients who find travelling hard because of pain, surgery, weakness or reduced mobility. Coverage is across major communities in Dubai, subject to area and availability.</p>
+  <div class="grid">
+   <div class="tile"><b>Assessment first</b><p>A clinical and functional assessment, then a plan around your condition, mobility and routine.</p></div>
+   <div class="tile"><b>One to one</b><p>Focused time with a DHA-licensed therapist, with progress reviewed as your needs change.</p></div>
+   <div class="tile"><b>Home and clinic</b><p>Flexible rehabilitation setting, with continuity between home visits and the clinic.</p></div>
+  </div>
+  <p style="margin-top:20px"><a class="btn e" href="#" data-cw="book">Request a home visit</a></p>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="eyebrow">What patients say</div>
+  <h2>From Google reviews on the site</h2>
+  <div class="rv">
+   <div class="r"><p>"The doctor is detecting the cause and not the symptoms, that makes it very special."</p><b>Mathias Koester · Google review</b></div>
+   <div class="r"><p>"I joined this clinic for posture correction and through the 10 sessions I realized the potential of my body."</p><b>Divya Rai · Google review</b></div>
+  </div>
+ </div>
+</section>
+
+<section style="background:var(--sand)">
+ <div class="wrap">
+  <div class="eyebrow">Insurance</div>
+  <h2>Covered by insurance</h2>
+  <p class="lead">The site shows these insurer logos. Whether your specific plan applies is something the team confirms.</p>
+  <div class="ins"><span>NextCare</span><span>ADNIC</span><span>NAS</span><span>Neuron</span><span>Almadallah</span><span>FMC</span></div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="eyebrow">Areas of specialty</div>
+  <h2>Conditions and care on the site</h2>
+  <div class="pb"><span>Back pain</span><span>Neck pain</span><span>Joint pain</span><span>Sciatica</span><span>Scoliosis</span><span>Plantar fasciitis</span><span>Kinesiotaping</span><span>Lymphatic drainage</span><span>Pain management</span><span>Elderly care at home</span><span>Post-surgery rehab</span><span>Stroke rehab</span><span>Pelvic floor therapy</span><span>Postnatal recovery</span></div>
+  <p class="lead" style="margin-top:14px;font-size:14px">Not sure where your problem fits? Ask the assistant or call 800 8332. A physiotherapist makes the clinical call, not this page.</p>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap">
+  <div class="eyebrow">Good to know</div>
+  <h2>Questions people ask</h2>
+  <details><summary>Can I book on the same day?</summary><p>Same-day bookings are listed as available. Call or WhatsApp 800 8332 or leave a request with the assistant.</p></details>
+  <details><summary>Which clinic is open on Sunday?</summary><p>Al Karama is open every day, 9am to 9pm. Al Wasl is open Monday to Saturday, 8am to 8pm.</p></details>
+  <details><summary>Do you treat children or elderly patients?</summary><p>The site mentions elderly care at home. For children, please ask the team.</p></details>
+  <details><summary>How much is a session?</summary><p>Prices are not published on the site. The team will confirm by phone or WhatsApp.</p></details>
+  <details><summary>Is there parking?</summary><p>Parking is not described on the site. One patient review mentions limited parking, so please ask before you travel.</p></details>
+  <details><summary>Do you treat stroke or neurological conditions?</summary><p>Yes, stroke and neurological rehabilitation is listed, with a focus on balance, coordination and independence.</p></details>
+  <details><summary>What happens at the first visit?</summary><p>Care starts with an assessment, then an individual plan, and progress is reviewed as your needs change. For posture correction that means a detailed posture and movement analysis; for sports massage, a short consultation about your concerns, fitness level and injuries.</p></details>
+  <details><summary>Do you do home visits for massage as well?</summary><p>The sports massage page says professional sports massage at home is offered. Area coverage and availability are confirmed by the team.</p></details>
+  <details><summary>Are the therapists licensed?</summary><p>The site states the physiotherapists are DHA-licensed, with experience across musculoskeletal, sports, neurological and post-surgical conditions.</p></details>
+  <details><summary>Who founded the clinic?</summary><p>Physioveda was founded by a physiotherapist to offer patient-focused, evidence-based care with empathy as well as expertise. The mission is to enhance quality of life through safe, effective and ethical treatments.</p></details>
+  <details><summary>Can you tell me what is wrong before I come?</summary><p>No. Diagnosis needs a physiotherapist's assessment. The assistant does not give medical advice.</p></details>
+ </div>
+</section>
+
+<section style="padding-top:10px">
+ <div class="wrap"><div class="cta"><h2>Ready when you are</h2><p>Leave your preferred clinic and time. The team confirms by phone or WhatsApp.</p><a class="btn w" href="#" data-cw="book">Request an appointment</a></div></div>
+</section>
+</main>
+<footer><div class="wrap"><span>Demo · prepared by Gevorg Hovhannisyan</span><span>Facts taken from physioveda.ae</span></div></footer>
+<script>
+(function(){try{var d=new Date(Date.now()+(new Date().getTimezoneOffset()*60000)+4*3600000),day=d.getDay(),h=d.getHours()+d.getMinutes()/60;
+function set(id,on){var e=document.getElementById(id);e.textContent=on?'Open now':'Closed now';e.className='st '+(on?'on':'off');}
+set('s1',day!==0&&h>=8&&h<20);set('s2',h>=9&&h<21);}catch(e){}})();
+var CFG={
+fabLabel:"Ask Physioveda",fabIcon:"🌿",title:"Physioveda Assistant",sub:"Answers and appointment requests",ph:"Ask about services, hours, locations...",send:"Send",
+greet:"Hello! I can help with Physioveda services, our two clinics, opening hours and booking a session. I can't diagnose or give medical advice, our physiotherapists do that at your assessment.",
+chips:["Opening hours","Locations","Back pain","Home physiotherapy","Posture correction","Insurance","Book a session"],
+fallback:"I don't have that on the site. Please call or WhatsApp <b>800 8332</b> and the team will confirm.",
+kb:[
+{id:"hours",k:["hours","opening","open","close","closing","when are you","what time","sunday","saturday","weekend","friday","late","evening"],a:"<b>Al Wasl (Jumeirah):</b> Monday to Saturday, 8am to 8pm.<br><b>Al Karama:</b> every day, 9am to 9pm.<br>Same-day bookings are available."},
+{id:"locations",k:["where","address","location","locations","branch","branches","clinic","directions","map","find you","jumeirah","al wasl","karama","al karama","ghazal","metro","adcb","kanoo"],a:"Two clinics:<br><b>Al Wasl (Jumeirah):</b> Villa 181 B, Al Wasl Rd near Al Ghazal Mall, Al Bada'a, Dubai.<br><b>Al Karama:</b> Kanoo Group Building, 201, next to ADCB Metro, Al Karama, Dubai."},
+{id:"parking",k:["parking","park","car","taxi"],a:"Parking details aren't on the site, and one patient review mentions limited parking. Please ask the team about the clinic you plan to visit."},
+{id:"phone",k:["phone","call","whatsapp","telephone","number","contact","email","reach","toll free","800"],a:"Call or WhatsApp <b><a href='tel:8008332'>800 8332</a></b>, or email admin@physioveda.ae. You can also use the Book Online form on the site."},
+{id:"back",k:["back pain","back","lower back","spine","spinal","disc","backache"],a:"<b>Back pain</b> has its own treatment page on the site. The physiotherapists look for the cause rather than only the symptoms, with hands-on therapy, exercise and rehab. I can't tell you what's causing your pain, that needs an assessment."},
+{id:"neck",k:["neck","neck pain","shoulder","stiff neck","headache","headaches"],a:"<b>Neck pain</b> is a listed service. Posture, desk work and muscle tension are common contributors the clinic addresses. A therapist will assess your case."},
+{id:"joint",k:["joint","joint pain","knee","hip","ankle","arthritis","elbow","wrist","stiffness","stiff"],a:"<b>Joint pain</b> is a listed service, covering joint pain, muscle injuries, stiffness and movement limits as part of musculoskeletal and sports physiotherapy."},
+{id:"sciatica",k:["sciatica","sciatic","leg pain","nerve pain","numbness","tingling"],a:"<b>Sciatica</b> treatment is a listed service. Please book an assessment so a physiotherapist can look at your specific case."},
+{id:"sports",k:["sports physiotherapy","sports injury","athlete","athletes","runner","runners","gym","sport","sports","muscle injury","strain","sprain"],a:"<b>Sports physiotherapy</b>: rehab for joint pain, muscle injuries, stiffness and movement limitations, to get you back to full strength."},
+{id:"massage",k:["massage","sports massage","deep tissue","tension","knots","trigger point","masseur","therapist"],a:"<b>Sports massage</b> (deep tissue) helps with muscle tension, soreness and recovery. It is also useful for non-athletes with tight muscles or body aches. A short consultation comes first. Home sessions are also offered."},
+{id:"posture",k:["posture","ppcm","correction","desk","slouch","rounded shoulders","kyphosis","scoliosis","hunched","ergonomics"],a:"<b>Posture Correction (PPCM)</b>, the Physioveda Posture Correction Matrix, was developed from 20+ years of clinical experience. It starts with posture and movement assessment, then hands-on therapy, strengthening and follow-up. The clinic also lists scoliosis treatment."},
+{id:"home",k:["home","home visit","homecare","home care","at home","house","visit me","elderly","bedridden","mobility"],a:"<b>Home physiotherapy</b>: DHA-licensed physiotherapists visit clinically suitable patients across major communities in Dubai, after a clinical and functional assessment. Coverage depends on area and availability. Book by call or WhatsApp on 800 8332."},
+{id:"post",k:["post surgery","surgery","operation","operated","rehab","rehabilitation","recovery","orthopedic","orthopaedic","replacement"],a:"<b>Post-surgery rehabilitation</b>: structured recovery programmes after orthopedic, spinal and other surgeries to support healing and regain function."},
+{id:"neuro",k:["stroke","neuro","neurological","balance","coordination","paralysis","parkinson"],a:"<b>Stroke & neurological rehabilitation</b>: specialised support focused on balance, coordination and independence."},
+{id:"women",k:["women","pelvic","pelvic floor","postnatal","prenatal","pregnant","pregnancy","after birth","women's health","baby"],a:"<b>Women's health physiotherapy</b> covers pelvic health, postnatal recovery and pelvic floor therapy. The site also lists prenatal and postnatal physiotherapy."},
+{id:"lymph",k:["lymphatic","lymph","drainage","swelling","lymphedema","fluid"],a:"<b>Lymphatic drainage</b> is a gentle, rhythmic massage to support lymph flow and reduce swelling, for example after surgery. Whether it suits you is a clinical decision, please ask the team."},
+{id:"foot",k:["plantar","plantar fasciitis","heel","foot","feet"],a:"<b>Plantar fasciitis</b> is a listed service. Book an assessment so a physiotherapist can advise."},
+{id:"tape",k:["kinesiotaping","taping","tape","kinesio","myofascial"],a:"<b>Kinesiotaping</b> (myofascial taping) is a therapeutic technique listed among the clinic's services."},
+{id:"shock",k:["shockwave","shock wave","manual therapy","exercise","technique","techniques"],a:"Techniques mentioned on the site include manual therapy, exercise prescription and shockwave therapy, with plans built around your goals and recovery progress."},
+{id:"gp",k:["gp","doctor","general practitioner","check up","checkup","udo","medical","physician"],a:"A <b>General Practitioner</b> service is listed at Al Karama with Dr Udo (DHA-licensed): check-ups, preventive care, chronic conditions and minor procedures. Please confirm availability with the team."},
+{id:"insurance",k:["insurance","insured","covered","nextcare","adnic","neuron","nas","fmc","almadallah","cover","coverage","cashless","claim"],a:"The site says treatment is <b>covered by insurance</b>, and shows logos of insurers such as NextCare, ADNIC, NAS, Neuron, Almadallah and FMC. Your exact plan and co-pay need confirming with the team on 800 8332."},
+{id:"price",k:["price","prices","cost","how much","fee","fees","charge","rates","aed","dirham","pay","payment","refund","cancel","cancellation"],a:"Prices aren't published on the site, and there's a Refund and Returns policy page. The team will confirm costs and policies on 800 8332."},
+{id:"first",k:["first","new patient","assessment","what to expect","never","how long","duration"],a:"Care starts with an assessment, then an individual plan, and progress is reviewed as your needs change. Session length and number aren't listed, the team will advise."},
+{id:"doctors",k:["therapists","licensed","dha","qualified","experience","founder","about","since","who are","team","staff"],a:"Physioveda has helped patients since 2019. The therapists are <b>DHA-licensed</b> and treat musculoskeletal, sports, neurological and post-surgical conditions with evidence-based care."},
+{id:"hi",k:["hi","hello","hey","salam","thanks","thank"],a:"Hello! Ask me about services, hours, locations or booking."}
+],
+flow:{trig:["book","appointment","appoint","reserve","schedule","consultation","sign up","enquire","enquiry"],cancel:"Cancel",cancelMsg:"No problem. Anything else?",
+opener:"Happy to set up a request.",
+steps:[
+{key:"loc",label:"Where",q:"Which clinic, or would you like a home visit?",chips:["Al Wasl (Jumeirah)","Al Karama","Home visit","Not sure","Cancel"],ok:function(t){return t.length>1;},err:"Please choose a clinic or home visit."},
+{key:"svc",label:"Service",q:"What would you like to book?",chips:["Physiotherapy","Sports massage","Posture correction","Back or neck pain","Post-surgery rehab","Women's health","Other","Cancel"],ok:function(t){return t.length>1;},err:"Please pick or type a service."},
+{key:"day",label:"Day",q:"Which day? Same-day bookings are available.",chips:["Today","Tomorrow","This week","Next week","Cancel"],ok:function(t){return t.length>1;},err:"Please tell me a day."},
+{key:"time",label:"Time",q:"What time suits you? Al Wasl: Mon to Sat 8am to 8pm. Al Karama: daily 9am to 9pm.",chips:["Morning","Afternoon","Evening","Cancel"],ok:function(t){return t.length>1;},err:"Please tell me roughly when."},
+{key:"name",label:"Name",q:"Your name?",chips:["Cancel"],ok:function(t){return t.length>1;},err:"Please type your name."},
+{key:"phone",label:"Phone / WhatsApp",q:"Phone or WhatsApp number for confirmation?",chips:["Cancel"],ph:"Phone number",ok:function(t){return t.replace(/\D/g,'').length>=7;},err:"That doesn't look like a phone number."}
+],
+done:"Thank you, your request is <b>sent to the team</b> (demo: nothing is actually sent). They will confirm by phone or WhatsApp.",note:"<br>You can also call 800 8332."}
+};
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.length>4?w.replace(/(ings|ing|ies|ied|ed|es|s|ly)$/,''):w;}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>1)return 9;var p=[],i,j;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var c=[i];for(j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[n];}
+function mkMatcher(CFG){
+  var kb=CFG.kb.map(function(e){return {id:e.id,a:e.a,k:e.k.map(function(x){var n=norm(x);return {n:n,multi:n.indexOf(' ')>0,s:n.split(' ').map(stem)};})};});
+  function score(q){
+    var nq=norm(q),toks=nq.split(' ').filter(Boolean),st=toks.map(stem),best=null,bs=0;
+    kb.forEach(function(e){var sc=0;
+      e.k.forEach(function(k){
+        if(k.multi){ if((' '+nq+' ').indexOf(' '+k.n+' ')>=0) sc+=3; else if(k.s.every(function(w){return st.some(function(t){return t===w||(w.length>4&&lev(t,w)<=1);});})) sc+=2.5; return;}
+        var w=k.s[0],hit=0;
+        st.forEach(function(t,i){ if(t===w) hit=Math.max(hit,2); else if(w.length>=5&&t.length>=5&&lev(t,w)<=1) hit=Math.max(hit,1.6); else if(w.length>=6&&t.length>=5&&(w.indexOf(t.slice(0,5))===0||t.indexOf(w.slice(0,5))===0)&&lev(t.slice(0,6),w.slice(0,6))<=1) hit=Math.max(hit,1.2); });
+        sc+=hit;});
+      if(sc>bs){bs=sc;best=e;}
+    });
+    return bs>=1.5?best:null;
+  }
+  function isBook(q){var nq=norm(q);return (CFG.flow.trig||[]).some(function(x){return nq.indexOf(norm(x))>=0;});}
+  return {answer:function(q){var e=score(q);return e?{id:e.id,a:e.a}:null;},isBook:isBook,norm:norm};
+}
+function initWidget(CFG){
+  var M=mkMatcher(CFG),$=function(s){return document.querySelector(s);};
+  var root=document.createElement('div');root.className='cw';
+  root.innerHTML='<button class="cw-fab" aria-label="'+CFG.fabLabel+'"><span class="cw-fab-i">'+CFG.fabIcon+'</span><span class="cw-fab-t">'+CFG.fabLabel+'</span></button><div class="cw-p" hidden><div class="cw-h"><div><b>'+CFG.title+'</b><small>'+CFG.sub+'</small></div><button class="cw-x" aria-label="Close">&times;</button></div><div class="cw-m" aria-live="polite"></div><div class="cw-c"></div><form class="cw-f"><input type="text" autocomplete="off" placeholder="'+CFG.ph+'"><button type="submit">'+CFG.send+'</button></form></div>';
+  document.body.appendChild(root);
+  var P=root.querySelector('.cw-p'),Mg=root.querySelector('.cw-m'),Ch=root.querySelector('.cw-c'),In=root.querySelector('input'),fl=null,opened=false;
+  function add(t,me){var d=document.createElement('div');d.className='cw-b '+(me?'me':'bot');if(me)d.textContent=t;else d.innerHTML=t;Mg.appendChild(d);Mg.scrollTop=Mg.scrollHeight;}
+  function chips(list){Ch.innerHTML='';list.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){say(c);};Ch.appendChild(b);});}
+  function startFlow(){fl={i:0,d:{}};ask();}
+  function ask(){var s=CFG.flow.steps[fl.i];add(s.q);chips(s.chips||[CFG.flow.cancel]);In.placeholder=s.ph||CFG.ph;}
+  function say(t){t=t.trim();if(!t)return;add(t,1);In.value='';
+    if(fl){ if(norm(t)===norm(CFG.flow.cancel)){fl=null;add(CFG.flow.cancelMsg);chips(CFG.chips);return;}
+      var s=CFG.flow.steps[fl.i];
+      if(s.ok&&!s.ok(t)){add(s.err);return;}
+      fl.d[s.key]=t;fl.i++;
+      if(fl.i<CFG.flow.steps.length){ask();return;}
+      var sum=CFG.flow.steps.map(function(x){return '<li><b>'+x.label+':</b> '+fl.d[x.key].replace(/</g,'&lt;')+'</li>';}).join('');
+      add(CFG.flow.done+'<ul class="cw-s">'+sum+'</ul>'+CFG.flow.note);fl=null;chips(CFG.chips);In.placeholder=CFG.ph;return;}
+    if(M.isBook(t)){startFlow();return;}
+    var r=M.answer(t);
+    setTimeout(function(){add(r?r.a:CFG.fallback);chips(CFG.chips);},250);
+  }
+  function open(){P.hidden=false;root.classList.add('open');if(!opened){opened=true;add(CFG.greet);chips(CFG.chips);}In.focus();}
+  root.querySelector('.cw-fab').onclick=function(){P.hidden?open():(P.hidden=true,root.classList.remove('open'));};
+  root.querySelector('.cw-x').onclick=function(){P.hidden=true;root.classList.remove('open');};
+  root.querySelector('form').onsubmit=function(e){e.preventDefault();say(In.value);};
+  document.querySelectorAll('[data-cw]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();open();if(b.dataset.cw==='book'&&!fl){add(CFG.flow.opener||'');startFlow();}else if(b.dataset.cw==='ask'&&!fl){say(b.textContent.replace(/[→←»+]/g,'').trim());}});});
+}
+
+initWidget(CFG);
+</script>
+</body>
+</html>

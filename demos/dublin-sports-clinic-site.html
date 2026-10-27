@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dublin Sports Clinic · Strength for life</title>
+<meta name="description" content="Demo page for Dublin Sports Clinic, Dublin 2: physiotherapy, sports therapy, massage and training.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0b0b0b;--coal:#191919;--steel:#313131;--ash:#d4d4d4;--lime:#d6fb00;--red:#d94729;--paper:#f2f2ee;--cwa:#d6fb00;--cwat:#0b0b0b;--cwf:'Inter',system-ui,sans-serif;--cwr:4px;--cwr2:6px;--cwm:#141414;--cwbot:#242424;--cwbg:#191919;--cwt:#f2f2ee;--cwb:#333;--cwchip:#d6fb00}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--ink);color:var(--paper);line-height:1.55;overflow-x:hidden}
+h1,h2,h3,.k{font-family:'Kanit',sans-serif;text-transform:uppercase;letter-spacing:.01em}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(11,11,11,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--steel)}
+.hb{display:flex;align-items:center;justify-content:space-between;gap:10px;height:62px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.chip{width:46px;height:46px;background:#000;border:1px solid var(--steel);display:grid;place-items:center;flex:none}
+.chip img{width:40px;height:40px;object-fit:contain;display:block}
+.bn{font:600 15px/1 'Kanit';text-transform:uppercase;letter-spacing:.06em}
+.bn small{display:block;font:400 10px 'Inter';letter-spacing:.14em;color:var(--ash);margin-top:4px}
+nav{display:none;gap:22px;font:500 13px 'Kanit';text-transform:uppercase;letter-spacing:.08em}
+nav a{text-decoration:none;color:var(--ash)}nav a:hover{color:var(--lime)}
+.btn{display:inline-block;background:var(--lime);color:#0b0b0b;font:600 14px 'Kanit';text-transform:uppercase;letter-spacing:.08em;padding:11px 18px;text-decoration:none;border:0;cursor:pointer;clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+.btn.o{background:transparent;color:var(--lime);box-shadow:inset 0 0 0 2px var(--lime);clip-path:none}
+@media(min-width:880px){nav{display:flex}}
+/* hero */
+.hero{overflow:hidden;position:relative;padding:54px 0 44px;background:repeating-linear-gradient(115deg,#0b0b0b 0 38px,#101010 38px 76px)}
+.hero:before{content:"";position:absolute;right:-60px;top:0;bottom:0;width:36%;background:var(--lime);transform:skewX(-14deg);opacity:.95}
+.hero .wrap{position:relative}
+.tag{display:inline-block;background:#000;color:var(--lime);font:500 12px 'Kanit';letter-spacing:.2em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--lime)}
+.hero h1{font-size:clamp(44px,12vw,104px);line-height:.92;font-weight:800;margin:16px 0 14px;max-width:760px}
+.hero h1 em{font-style:normal;color:var(--lime);display:block}
+.hero p{max-width:480px;color:#e7e7e1;font-size:17px}
+.hero .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px;border-top:1px solid var(--steel);background:#000;max-width:560px}
+.stats div{padding:14px 12px;border-right:1px solid var(--steel)}
+.stats div:last-child{border:0}
+.stats b{display:block;font:700 26px 'Kanit';color:var(--lime)}
+.stats span{font-size:12px;color:var(--ash)}
+/* two tracks */
+section{padding:60px 0}
+.sh{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:26px;border-bottom:2px solid var(--lime);padding-bottom:10px}
+.sh h2{font-size:clamp(30px,6vw,52px);line-height:1;font-weight:700}
+.sh span{font:400 12px 'Kanit';letter-spacing:.2em;color:var(--lime);text-transform:uppercase}
+.tracks{display:grid;gap:14px}
+.track{background:var(--coal);padding:22px;border-left:6px solid var(--lime);position:relative}
+.track.t2{border-left-color:var(--red)}
+.track h3{font-size:30px;font-weight:700;margin-bottom:8px}
+.track p{color:#cfcfc8}
+.track ul{list-style:none;margin-top:14px;display:grid;gap:8px}
+.track li{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;background:#101010;border:1px solid var(--steel);font:500 15px 'Kanit';text-transform:uppercase;letter-spacing:.04em;cursor:pointer}
+.track li:hover{border-color:var(--lime)}
+.track li i{font-style:normal;color:var(--lime)}
+@media(min-width:760px){.tracks{grid-template-columns:1fr 1fr}}
+/* service detail */
+.band{background:var(--paper);color:#111}
+.band .sh{border-color:#111}.band .sh span{color:#111}
+.det{display:grid;gap:16px}
+.card{background:#fff;border:2px solid #111;padding:20px;box-shadow:6px 6px 0 #111}
+.card h3{font-size:22px;font-weight:700;margin-bottom:6px}
+.card p{color:#333;font-size:15px}
+.card small{display:block;margin-top:10px;font:500 11px 'Kanit';letter-spacing:.16em;text-transform:uppercase;color:#6a6a00}
+.card.l{background:var(--lime)}
+@media(min-width:760px){.det{grid-template-columns:repeat(3,1fr)}}
+/* who */
+.quotes{display:grid;gap:14px}
+.q{background:var(--coal);padding:22px;position:relative}
+.q:before{content:"\201C";position:absolute;top:-6px;left:14px;font:800 80px 'Kanit';color:var(--lime);line-height:1}
+.q p{padding-top:28px;font-size:16px;color:#e9e9e2}
+.q b{display:block;margin-top:12px;font:600 15px 'Kanit';text-transform:uppercase;letter-spacing:.06em;color:var(--lime)}
+.q span{font-size:13px;color:var(--ash)}
+@media(min-width:860px){.quotes{grid-template-columns:repeat(3,1fr)}}
+/* classes */
+.cls{display:flex;flex-wrap:wrap;gap:8px}
+.cls span{border:1px solid var(--steel);padding:8px 12px;font:500 14px 'Kanit';text-transform:uppercase;letter-spacing:.05em;background:#101010}
+.cls span:nth-child(3n){border-color:var(--lime);color:var(--lime)}
+.note{margin-top:14px;color:var(--ash);font-size:14px}
+/* team */
+.team{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.m{background:var(--coal);padding:14px;border-top:3px solid var(--steel)}
+.m:nth-child(-n+2){border-top-color:var(--lime)}
+.m b{display:block;font:600 17px/1.15 'Kanit';text-transform:uppercase}
+.m em{font-style:normal;font-size:12px;color:var(--lime);letter-spacing:.08em}
+.m span{display:block;font-size:13px;color:var(--ash);margin-top:6px}
+@media(min-width:760px){.team{grid-template-columns:repeat(4,1fr)}}
+/* steps + faq */
+.steps{display:grid;gap:0;counter-reset:s}
+.st{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--steel)}
+.st:before{counter-increment:s;content:counter(s,decimal-leading-zero);font:800 34px 'Kanit';color:var(--lime);line-height:1}
+.st b{font:600 18px 'Kanit';text-transform:uppercase}
+.st p{color:var(--ash);font-size:15px}
+details{border-bottom:1px solid var(--steel);padding:14px 0}
+summary{cursor:pointer;font:500 18px 'Kanit';text-transform:uppercase;letter-spacing:.03em;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--lime);font-size:24px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{margin-top:8px;color:#cfcfc8;font-size:15px;max-width:720px}
+.two{display:grid;gap:30px}
+@media(min-width:860px){.two{grid-template-columns:1fr 1fr}}
+/* visit */
+.visit{background:var(--lime);color:#0b0b0b}
+.visit .grid{display:grid;gap:18px}
+.visit h2{font-size:clamp(34px,7vw,64px);line-height:.95;font-weight:800}
+.visit .box{background:#0b0b0b;color:var(--paper);padding:22px}
+.visit .box b{font:600 13px 'Kanit';letter-spacing:.18em;color:var(--lime);text-transform:uppercase;display:block;margin-top:12px}
+.visit .box b:first-child{margin-top:0}
+.visit .box p{font-size:16px}
+.visit .box a{color:var(--lime)}
+@media(min-width:800px){.visit .grid{grid-template-columns:1.2fr 1fr;align-items:end}}
+footer{background:#000;padding:22px 0 90px;font-size:13px;color:#9a9a94;border-top:1px solid var(--steel)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between}
+.cw{position:fixed;right:14px;bottom:14px;z-index:99;font-family:var(--cwf,inherit);font-size:15px;color:var(--cwt,#111)}
+.cw-fab{display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--cwa);color:var(--cwat,#fff);padding:12px 16px;border-radius:var(--cwr,999px);font:600 14px var(--cwf,inherit);box-shadow:0 6px 22px rgba(0,0,0,.28)}
+.cw.open .cw-fab{display:none}
+.cw-p{position:fixed;right:10px;bottom:10px;width:min(380px,calc(100vw - 20px));height:min(560px,calc(100vh - 20px));background:var(--cwbg,#fff);border-radius:var(--cwr2,16px);box-shadow:0 14px 50px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--cwb,rgba(0,0,0,.1))}
+.cw-p[hidden]{display:none}
+.cw-h{background:var(--cwa);color:var(--cwat,#fff);padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+.cw-h small{display:block;opacity:.85;font-size:12px;margin-top:2px}
+.cw-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer}
+.cw-m{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--cwm,#f6f6f6)}
+.cw-b{max-width:86%;padding:9px 12px;border-radius:12px;line-height:1.4;font-size:14px}
+.cw-b.bot{background:var(--cwbot,#fff);align-self:flex-start;border:1px solid var(--cwb,rgba(0,0,0,.08))}
+.cw-b.me{background:var(--cwa);color:var(--cwat,#fff);align-self:flex-end}
+.cw-b a{color:inherit;text-decoration:underline}
+.cw-s{margin:6px 0 4px;padding-left:16px;font-size:13px}
+.cw-c{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px;background:var(--cwbg,#fff);border-top:1px solid var(--cwb,rgba(0,0,0,.08));max-height:96px;overflow:auto}
+.cw-c button{border:1px solid var(--cwa);background:transparent;color:var(--cwchip,var(--cwa));border-radius:999px;padding:5px 10px;font:500 12.5px var(--cwf,inherit);cursor:pointer}
+.cw-f{display:flex;border-top:1px solid var(--cwb,rgba(0,0,0,.08));background:var(--cwbg,#fff)}
+.cw-f input{flex:1;border:0;padding:12px;font:15px var(--cwf,inherit);min-width:0;background:transparent;color:inherit;outline:0}
+.cw-f button{border:0;background:var(--cwa);color:var(--cwat,#fff);padding:0 16px;font:600 14px var(--cwf,inherit);cursor:pointer}
+
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap hb">
+  <a class="brand" href="#top"><span class="chip"><img src="img/dublin-sports-clinic-logo.png" alt="Dublin Sports Clinic logo" width="40" height="40"></span><span class="bn">Dublin Sports Clinic<small>Strength for life</small></span></a>
+  <nav><a href="#therapy">Therapy</a><a href="#training">Training</a><a href="#team">Team</a><a href="#faq">FAQ</a><a href="#visit">Visit</a></nav>
+  <a class="btn" href="#visit" data-cw="book">Book</a>
+ </div>
+</header>
+
+<main id="top">
+<div class="hero">
+ <div class="wrap">
+  <span class="tag">Dublin 2 · Physio + Training Gym</span>
+  <h1>Move better.<em>Feel better. Perform better.</em></h1>
+  <p>A physiotherapy clinic and training gym in Dublin city centre, built for motivated people who want to progress. Everyday.</p>
+  <div class="ctas"><a class="btn" href="#visit" data-cw="book">Request an appointment</a><a class="btn o" href="#therapy">See therapy and training</a></div>
+  <div class="stats"><div><b>7am</b><span>opens, Mon to Fri</span></div><div><b>8pm</b><span>closes, Mon to Fri</span></div><div><b>7</b><span>clinicians and coaches</span></div></div>
+ </div>
+</div>
+
+<section id="therapy">
+ <div class="wrap">
+  <div class="sh"><h2>Two ways in</h2><span>Therapy · Training</span></div>
+  <div class="tracks">
+   <div class="track">
+    <h3>Therapy</h3>
+    <p>Injury management, recovery and better health. Treatment that goes after the root cause, then rehab so it stays fixed.</p>
+    <ul>
+     <li data-cw="ask">Chartered Physiotherapy <i>&rarr;</i></li>
+     <li data-cw="ask">Physical &amp; Sports Therapy <i>&rarr;</i></li>
+     <li data-cw="ask">Sports Massage <i>&rarr;</i></li>
+     <li data-cw="ask">Dry Needling <i>&rarr;</i></li>
+    </ul>
+   </div>
+   <div class="track t2" id="training">
+    <h3>Training</h3>
+    <p>Your training journey starts here: movement skills first, then strength, with coaches who can also read an injury.</p>
+    <ul>
+     <li data-cw="ask">Personal Training <i>&rarr;</i></li>
+     <li data-cw="ask">Small Group Training <i>&rarr;</i></li>
+     <li data-cw="ask">Performance Training <i>&rarr;</i></li>
+     <li data-cw="ask">Pre/Post Natal Training <i>&rarr;</i></li>
+     <li data-cw="ask">Group Training <i>&rarr;</i></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="band">
+ <div class="wrap">
+  <div class="sh"><h2>What you get</h2><span>From the clinic</span></div>
+  <div class="det">
+   <div class="card l"><h3>Physiotherapy</h3><p>Low back and neck pain through to joint, muscle, tendon and ligament sprains. Chartered physios skilled in hands-on treatment and rehab programmes built on evidence and experience. Pre and post surgery and pre/post natal rehab too.</p><small>They liaise with orthopaedic surgeons, GPs and sports medicine physicians</small></div>
+   <div class="card"><h3>Physical &amp; Sports Therapy</h3><p>Soft tissue and trigger point therapy combined with mobility and progressive rehab. Return-to-play rehab for long-term or recurring injuries, and recovery support before and after events.</p><small>Athletes and weekend warriors alike</small></div>
+   <div class="card"><h3>Sports Massage &amp; Dry Needling</h3><p>Deep hands-on work to release tension and cut recovery time, also useful against the tension of long periods of sitting. Dry needling targets trigger points and may not suit everyone, so the team advises on the right treatment.</p><small>Get back to training faster</small></div>
+   <div class="card"><h3>Personal &amp; Small Group</h3><p>One to one sessions built around your goals and what your body needs. Small group or semi-private for up to 6 people brings the push of a group with personal attention. All abilities.</p><small>Recovering, new to the gym, or chasing a goal</small></div>
+   <div class="card l"><h3>Performance Training</h3><p>Athletic development to find your personal best. The coaching team have performed at the highest level in their own sports, and plans connect gym work with field work, for individual or team sports.</p><small>Returning from injury or raising your game</small></div>
+   <div class="card"><h3>Pre/Post Natal</h3><p>Guided strength training through pregnancy, focusing on low back, hips and pelvic floor. After birth, corrective exercise and pelvic floor strengthening whether you had a vaginal delivery or a C-section.</p><small>Coaches and physios address any concerns</small></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap two">
+  <div>
+   <div class="sh"><h2>Who one to one is for</h2><span>Training</span></div>
+   <div class="cls"><span>Recovering from injury</span><span>Injury prevention</span><span>Health concerns</span><span>New to gym training</span><span>Learning complex exercises</span><span>Performance demands</span><span>A specific goal</span><span>Managing weight</span><span>Building consistency</span></div>
+   <p class="note">Every plan starts by assessing weaknesses and imbalances, then builds a solid foundation. The aim is longevity: skills and confidence to train wherever you are.</p>
+  </div>
+  <div>
+   <div class="sh"><h2>Movement first</h2><span>Our method</span></div>
+   <div class="steps">
+    <div class="st"><div><b>Assess</b><p>Movement skills, weaknesses and imbalances are looked at before anything heavy.</p></div></div>
+    <div class="st"><div><b>Build</b><p>Fundamentals of athletic training, strength and function of the body, with expert coaching.</p></div></div>
+    <div class="st"><div><b>Last</b><p>Self-management strategies and education so injuries do not come back and training lasts for life.</p></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="sh"><h2>In their words</h2><span>Athletes train here</span></div>
+  <div class="quotes">
+   <div class="q"><p>The greatest compliment I can pay the team is that I managed to play 65 consecutive games for Dublin across a 4 and a half year period.</p><b>Dean Rock</b><span>Dublin Senior Football</span></div>
+   <div class="q"><p>DSC has not only that environment in a great facility, but the knowledge of high performance that Fiona, Paul and the team bring.</p><b>Greta Streimikyte</b><span>Athlete and Paralympian</span></div>
+   <div class="q"><p>I've been training in the Dublin Sports Clinic since 2016 and I couldn't recommend this place more.</p><b>James McCarthy</b><span>Captain, Dublin Senior Football Team</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="band" style="padding-top:50px">
+ <div class="wrap two">
+  <div>
+   <div class="sh"><h2>Training through pregnancy</h2><span>Pre natal</span></div>
+   <p style="margin-bottom:12px;color:#333">Structured, guided strength training that keeps low back, hips and pelvic floor strong. The site lists these benefits of exercising while pregnant:</p>
+   <div class="cls" style="--b:#111"><span style="background:#fff;border-color:#111">Lower risk of gestational diabetes and pre-eclampsia</span><span style="background:#fff;border-color:#111">Fewer musculoskeletal issues such as pelvic girdle dysfunction</span><span style="background:#fff;border-color:#111">Shorter active labour</span><span style="background:#fff;border-color:#111">Quicker recovery postpartum</span><span style="background:#fff;border-color:#111">Lower risk of pre-term labour</span></div>
+   <p class="note" style="color:#444">General information from the clinic's site, not medical advice. Check with your own clinician.</p>
+  </div>
+  <div>
+   <div class="sh"><h2>Class feedback</h2><span>Members on the site</span></div>
+   <div style="display:grid;gap:10px">
+    <div class="card" style="box-shadow:4px 4px 0 #111;padding:14px"><p>"Went for a 5k run after the class and for the first time in a long time my muscles felt switched on and the run felt pain free."</p><small>S&amp;C for Runners</small></div>
+    <div class="card" style="box-shadow:4px 4px 0 #111;padding:14px"><p>"Came into the class feeling tired and achy, left it feeling energised and pain free."</p><small>Lunchtime Conditioning</small></div>
+    <div class="card" style="box-shadow:4px 4px 0 #111;padding:14px"><p>"Always coming up with something new."</p><small>MetCon</small></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section style="background:var(--coal)">
+ <div class="wrap two">
+  <div>
+   <div class="sh"><h2>Group classes</h2><span>No two sessions the same</span></div>
+   <div class="cls"><span>Functional Strength</span><span>Kettlebell Met Con</span><span>Lunchtime Conditioning</span><span>S&amp;C for Runners</span><span>Mobility</span><span>Total Body Conditioning</span><span>Strength</span><span>MetCon</span></div>
+   <p class="note">Class names from member reviews on the site. Ask the team for the current timetable.</p>
+  </div>
+  <div id="team">
+   <div class="sh"><h2>The team</h2><span>7 people</span></div>
+   <div class="team">
+    <div class="m"><b>Paul Oppermann</b><em>MSc NSRT OLY</em><span>Co-founder</span></div>
+    <div class="m"><b>Fiona Oppermann</b><em>MSc Dip.ITEC DNT</em><span>Co-founder</span></div>
+    <div class="m"><b>Orla Magorrian</b><em>MSc MISCP CSCS</em><span>Chartered Physiotherapist</span></div>
+    <div class="m"><b>Ellie Hartnett</b><em>BSc MISCP</em><span>Chartered Physiotherapist</span></div>
+    <div class="m"><b>Evan Comerford</b><em>MSc ATT</em><span>Chartered Physiotherapist and Athletic Therapist</span></div>
+    <div class="m"><b>Peter Mathews</b><em>ANMPT NSRT</em><span>Physical Therapist, S&amp;C Coach</span></div>
+    <div class="m"><b>Aoife Gillen</b><em>BSc ANMPT CSCS</em><span>S&amp;C Coach, Physical Therapist</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap two">
+  <div>
+   <div class="sh"><h2>How it works</h2><span>Getting started</span></div>
+   <div class="steps">
+    <div class="st"><div><b>Tell us what you need</b><p>Injury, a training goal, or both. Pick a service or say "not sure".</p></div></div>
+    <div class="st"><div><b>We confirm a time</b><p>Online booking is coming soon. Until then the team confirms by phone or message, Mon to Fri 7am to 8pm.</p></div></div>
+    <div class="st"><div><b>Assessment first</b><p>Therapy starts by finding the root cause. Training starts with movement skills, weaknesses and imbalances.</p></div></div>
+   </div>
+  </div>
+  <div id="faq">
+   <div class="sh"><h2>FAQ</h2><span>Quick answers</span></div>
+   <details><summary>What are your opening hours?</summary><p>Monday to Friday, 7am to 8pm. Weekend hours are not listed, please ask the team.</p></details>
+   <details><summary>Is it only for athletes?</summary><p>No. Athletes and non-athletes alike. One to one training suits beginners, and the gym team says all abilities and levels are catered for.</p></details>
+   <details><summary>Can I book online?</summary><p>Online booking for training and therapy is listed as coming soon. For now, contact the clinic directly by phone or through the contact form.</p></details>
+   <details><summary>Do I need a referral?</summary><p>Not stated on the site. The physios work closely with orthopaedic surgeons, GPs and sports medicine physicians. Please ask the team.</p></details>
+   <details><summary>I have never trained in a gym. Is that fine?</summary><p>Yes. One to one training is a good way to learn how to train properly and build confidence in a safe, motivating environment. The coaches tailor sessions to your lifestyle and cater for all abilities.</p></details>
+   <details><summary>Do you work with team sport players?</summary><p>Yes. Performance Training suits individual or team sports, and the site features Dublin senior footballers who train with the clinic.</p></details>
+   <details><summary>Do you offer dry needling?</summary><p>Yes. Trigger point dry needling is often used alongside physiotherapy and physical therapy to reduce pain, increase movement and restore strength. It may not suit everyone, so the team advises on the most suitable course of treatment.</p></details>
+   <details><summary>How much does it cost?</summary><p>Prices are not published on the site. The team will confirm when you get in touch.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <div class="wrap grid">
+  <div><span class="tag" style="background:#0b0b0b">Come and see us</span><h2 style="margin-top:14px">Dublin 2.<br>Right in the city centre.</h2><p style="margin-top:14px;max-width:420px;font-size:17px">Request an appointment through the assistant, or call the clinic.</p><p style="margin-top:18px"><button class="btn" style="background:#0b0b0b;color:#d6fb00" data-cw="book">Request an appointment</button></p></div>
+  <div class="box">
+   <b>Address</b><p>24-26 South Cumberland Street,<br>Dublin 2 D02PY84</p>
+   <b>Phone</b><p><a href="tel:+35315517343">01 5517343</a></p>
+   <b>Opening hours</b><p>Mon to Fri: 7am to 8pm</p>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="wrap"><span>Demo · prepared by Gevorg Hovhannisyan</span><span>Facts taken from dublinsportsclinic.ie</span></div></footer>
+<script>
+var CFG={
+fabLabel:"Ask DSC",fabIcon:"💬",title:"Dublin Sports Clinic",sub:"Questions and appointment requests",ph:"Ask about therapy, training, hours...",send:"Send",
+greet:"Hi, I'm the Dublin Sports Clinic assistant. Ask me about physio, therapy, training or how to get an appointment. I can't give medical advice, the clinicians do that.",
+chips:["Opening hours","Where are you?","Physiotherapy","Sports massage","Group classes","Pre/post natal","Book an appointment"],
+fallback:"I don't have that one on the site. The team can confirm: call 01 5517343 (Mon to Fri, 7am to 8pm) or use the contact form.",
+kb:[
+{id:"hours",k:["hours","opening","open","close","closing","when are you","what time","weekend","saturday","sunday"],a:"We're open <b>Mon to Fri, 7am to 8pm</b>. Weekend hours aren't listed, the team can confirm."},
+{id:"address",k:["where","address","location","located","find you","directions","street","eircode","city centre","dublin 2","parking","luas","bus"],a:"Dublin Sports Clinic is at <b>24-26 South Cumberland Street, Dublin 2, D02PY84</b>, in Dublin city centre. Parking and transport details aren't on the site, the team can help."},
+{id:"phone",k:["phone","call","telephone","number","contact","email","reach","message"],a:"Call <b><a href='tel:+35315517343'>01 5517343</a></b> or use the contact form on the Contact page. Phone lines follow the Mon to Fri 7am to 8pm opening hours."},
+{id:"physio",k:["physio","physiotherapy","physiotherapist","chartered","injury","injured","pain","back pain","neck","sprain","tendon","ligament","muscle","joint","rehab","rehabilitation","surgery","operation","sore","hurt","knee","shoulder","ankle"],a:"Our <b>Chartered Physiotherapists</b> treat low back and neck pain, joint, muscle, tendon and ligament sprains, and also do pre/post surgery and pre/post natal rehab. They look for the root cause and build a rehab plan around it. For what is wrong with you specifically, a clinician will assess you."},
+{id:"therapy",k:["sports therapy","physical therapy","physical and sports therapy","soft tissue","trigger point","return to play","therapist","therapy"],a:"<b>Physical & Sports Therapy</b>: soft tissue and trigger point work combined with mobility and progressive rehab, including return-to-play rehab for long-term or recurring injuries."},
+{id:"massage",k:["massage","sports massage","tension","knots","tight","tightness","masseur"],a:"<b>Sports Massage</b> is deep hands-on soft tissue work to release tension, improve movement and cut recovery time. It also helps with tension from long periods of sitting."},
+{id:"needling",k:["dry needling","needling","needle","needles","acupuncture"],a:"<b>Dry needling</b> puts an acupuncture needle into myofascial trigger points ('knots'). It's often used with physio or physical therapy and may not suit everyone, so the team advises on the right treatment."},
+{id:"pt",k:["personal training","personal trainer","one to one","1 to 1","1:1","pt","coach"],a:"<b>Personal Training</b> is fully individual, based around your goals. It suits recovery or injury prevention, beginners, learning complex lifts, weight management or building consistency."},
+{id:"smallgroup",k:["small group","semi private","semi-private","semiprivate","six people"],a:"<b>Small Group Training</b> is semi-private for up to 6 people: personal-training attention with the motivation of a group."},
+{id:"classes",k:["class","classes","group","group training","hiit","kettlebell","mobility","runners","running","metcon","conditioning","strength","lunchtime","timetable"],a:"<b>Group Training</b>: classes led by our coaches, no two sessions the same. Class names include Functional Strength, Kettlebell Met Con, Lunchtime Conditioning, S&C for Runners, Mobility and Total Body Conditioning. For the current timetable please ask the team."},
+{id:"performance",k:["performance","athlete","athletic","athletes","sport","sports","gaelic","football","gaa","team sport","elite","compete","competition"],a:"<b>Performance Training</b> is athletic development for any sport, individual or team, combining gym work with field work. Our coaches have performed at the highest level in their sports, and players from the Dublin senior football team train here."},
+{id:"natal",k:["pregnant","pregnancy","prenatal","pre natal","postnatal","post natal","baby","pelvic floor","mum","mums","mama","c section","birth","expecting","postpartum"],a:"<b>Pre/Post Natal Training</b>: guided strength training through pregnancy and corrective exercise and pelvic floor work after birth, vaginal or C-section. Coaches and physios will address any concerns. For anything medical, please check with your clinician."},
+{id:"team",k:["team","who are","meet the","who works","staff","founder","founders","paul","fiona","orla","peter","pete","aoife","ellie","evan","oppermann","physios","coaches"],a:"The team: <b>Paul Oppermann</b> and <b>Fiona Oppermann</b> (co-founders), <b>Orla Magorrian</b>, <b>Ellie Hartnett</b> and <b>Evan Comerford</b> (chartered physios, Evan also an athletic therapist), <b>Peter Mathews</b> and <b>Aoife Gillen</b> (physical therapists and S&C coaches)."},
+{id:"price",k:["price","prices","cost","how much","fee","fees","rate","charge","insurance","voucher","membership","pay","payment"],a:"Prices and insurance details aren't published on the site. The team will confirm on <b>01 5517343</b>."},
+{id:"first",k:["first","new","beginner","never","daunting","nervous","assessment","assess","starting","what to expect"],a:"New to us? Training starts with assessing movement skills, weaknesses and imbalances, then building a base. One to one is great if a gym feels daunting. Therapy starts with an assessment to find the root cause."},
+{id:"referral",k:["gp","referral","referred","doctor","surgeon","orthopaedic","consultant","medical"],a:"Our physios work closely with orthopaedic surgeons, GPs and sports medicine physicians. Whether you need a referral isn't on the site, please ask the team."},
+{id:"online",k:["online","app","zoom","digital","remote"],a:"Online booking for training and therapy is listed as <b>coming soon</b>. For now, book via phone or the contact form. I can take your request, just say 'book'."},
+{id:"hi",k:["hi","hello","hey","hiya","thanks","thank"],a:"Hi! Ask me about therapy, training, hours or booking."}
+],
+flow:{trig:["book","appointment","appoint","reserve","schedule","sign up","enquire","enquiry"],cancel:"Cancel",cancelMsg:"No problem. Anything else?",
+opener:"Let's set up your request.",
+steps:[
+{key:"svc",label:"Service",q:"Which service?",chips:["Physiotherapy","Physical & sports therapy","Sports massage","Dry needling","Personal training","Small group training","Performance training","Pre/post natal","Group class","Not sure","Cancel"],ok:function(t){return t.length>1;},err:"Please pick or type a service."},
+{key:"when",label:"Preferred time",q:"When suits you? The clinic is open Mon to Fri, 7am to 8pm.",chips:["Early morning","Lunchtime","After work","Flexible","Cancel"],ok:function(t){return t.length>1;},err:"Please tell me roughly when."},
+{key:"name",label:"Name",q:"Your name?",chips:["Cancel"],ok:function(t){return t.length>1;},err:"Please type your name."},
+{key:"contact",label:"Phone or email",q:"Best phone number or email for the team to reach you?",chips:["Cancel"],ph:"Phone or email",ok:function(t){return /@/.test(t)||t.replace(/\D/g,'').length>=7;},err:"That doesn't look like a phone number or email."}
+],
+done:"Thanks, request <b>sent to the team</b> (demo: nothing is actually sent). They'll confirm the time with you.",note:"<br>You can also call 01 5517343."}
+};
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.length>4?w.replace(/(ings|ing|ies|ied|ed|es|s|ly)$/,''):w;}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>1)return 9;var p=[],i,j;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var c=[i];for(j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[n];}
+function mkMatcher(CFG){
+  var kb=CFG.kb.map(function(e){return {id:e.id,a:e.a,k:e.k.map(function(x){var n=norm(x);return {n:n,multi:n.indexOf(' ')>0,s:n.split(' ').map(stem)};})};});
+  function score(q){
+    var nq=norm(q),toks=nq.split(' ').filter(Boolean),st=toks.map(stem),best=null,bs=0;
+    kb.forEach(function(e){var sc=0;
+      e.k.forEach(function(k){
+        if(k.multi){ if((' '+nq+' ').indexOf(' '+k.n+' ')>=0) sc+=3; else if(k.s.every(function(w){return st.some(function(t){return t===w||(w.length>4&&lev(t,w)<=1);});})) sc+=2.5; return;}
+        var w=k.s[0],hit=0;
+        st.forEach(function(t,i){ if(t===w) hit=Math.max(hit,2); else if(w.length>=5&&t.length>=5&&lev(t,w)<=1) hit=Math.max(hit,1.6); else if(w.length>=6&&t.length>=5&&(w.indexOf(t.slice(0,5))===0||t.indexOf(w.slice(0,5))===0)&&lev(t.slice(0,6),w.slice(0,6))<=1) hit=Math.max(hit,1.2); });
+        sc+=hit;});
+      if(sc>bs){bs=sc;best=e;}
+    });
+    return bs>=1.5?best:null;
+  }
+  function isBook(q){var nq=norm(q);return (CFG.flow.trig||[]).some(function(x){return nq.indexOf(norm(x))>=0;});}
+  return {answer:function(q){var e=score(q);return e?{id:e.id,a:e.a}:null;},isBook:isBook,norm:norm};
+}
+function initWidget(CFG){
+  var M=mkMatcher(CFG),$=function(s){return document.querySelector(s);};
+  var root=document.createElement('div');root.className='cw';
+  root.innerHTML='<button class="cw-fab" aria-label="'+CFG.fabLabel+'"><span class="cw-fab-i">'+CFG.fabIcon+'</span><span class="cw-fab-t">'+CFG.fabLabel+'</span></button><div class="cw-p" hidden><div class="cw-h"><div><b>'+CFG.title+'</b><small>'+CFG.sub+'</small></div><button class="cw-x" aria-label="Close">&times;</button></div><div class="cw-m" aria-live="polite"></div><div class="cw-c"></div><form class="cw-f"><input type="text" autocomplete="off" placeholder="'+CFG.ph+'"><button type="submit">'+CFG.send+'</button></form></div>';
+  document.body.appendChild(root);
+  var P=root.querySelector('.cw-p'),Mg=root.querySelector('.cw-m'),Ch=root.querySelector('.cw-c'),In=root.querySelector('input'),fl=null,opened=false;
+  function add(t,me){var d=document.createElement('div');d.className='cw-b '+(me?'me':'bot');if(me)d.textContent=t;else d.innerHTML=t;Mg.appendChild(d);Mg.scrollTop=Mg.scrollHeight;}
+  function chips(list){Ch.innerHTML='';list.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){say(c);};Ch.appendChild(b);});}
+  function startFlow(){fl={i:0,d:{}};ask();}
+  function ask(){var s=CFG.flow.steps[fl.i];add(s.q);chips(s.chips||[CFG.flow.cancel]);In.placeholder=s.ph||CFG.ph;}
+  function say(t){t=t.trim();if(!t)return;add(t,1);In.value='';
+    if(fl){ if(norm(t)===norm(CFG.flow.cancel)){fl=null;add(CFG.flow.cancelMsg);chips(CFG.chips);return;}
+      var s=CFG.flow.steps[fl.i];
+      if(s.ok&&!s.ok(t)){add(s.err);return;}
+      fl.d[s.key]=t;fl.i++;
+      if(fl.i<CFG.flow.steps.length){ask();return;}
+      var sum=CFG.flow.steps.map(function(x){return '<li><b>'+x.label+':</b> '+fl.d[x.key].replace(/</g,'&lt;')+'</li>';}).join('');
+      add(CFG.flow.done+'<ul class="cw-s">'+sum+'</ul>'+CFG.flow.note);fl=null;chips(CFG.chips);In.placeholder=CFG.ph;return;}
+    if(M.isBook(t)){startFlow();return;}
+    var r=M.answer(t);
+    setTimeout(function(){add(r?r.a:CFG.fallback);chips(CFG.chips);},250);
+  }
+  function open(){P.hidden=false;root.classList.add('open');if(!opened){opened=true;add(CFG.greet);chips(CFG.chips);}In.focus();}
+  root.querySelector('.cw-fab').onclick=function(){P.hidden?open():(P.hidden=true,root.classList.remove('open'));};
+  root.querySelector('.cw-x').onclick=function(){P.hidden=true;root.classList.remove('open');};
+  root.querySelector('form').onsubmit=function(e){e.preventDefault();say(In.value);};
+  document.querySelectorAll('[data-cw]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();open();if(b.dataset.cw==='book'&&!fl){add(CFG.flow.opener||'');startFlow();}else if(b.dataset.cw==='ask'&&!fl){say(b.textContent.replace(/[→←»+]/g,'').trim());}});});
+}
+
+initWidget(CFG);
+</script>
+</body>
+</html>
