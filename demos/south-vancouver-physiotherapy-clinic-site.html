@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>South Vancouver Physiotherapy Clinic · Marine Drive, Vancouver</title>
+<meta name="description" content="Demo page for South Vancouver Physiotherapy Clinic with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#3b79b3;--navy:#1f4670;--sky:#eaf2fa;--orange:#e08a1e;--ink:#1d2b3a;--mute:#5b6b7b;--line:#d8e2ec;--wf:'DM Sans',system-ui,sans-serif;
+--wa:#3b79b3;--wbg:#fff;--wfg:#1d2b3a;--wl:#d8e2ec;--wb:#eaf2fa;--wc:#1f4670;--wr:12px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--wf);color:var(--ink);background:#fff;line-height:1.55;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.w{max-width:1080px;margin:0 auto;padding:0 18px}
+.top{position:sticky;top:0;z-index:20;background:#fff;border-bottom:3px solid var(--orange)}
+.top .w{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px}
+.top img{height:44px;width:auto;max-width:55vw;object-fit:contain}.top .w>*{min-width:0}@media(max-width:400px){.call{padding:8px 10px;font-size:13px}}
+.call{background:var(--navy);color:#fff;text-decoration:none;font-weight:700;padding:9px 14px;border-radius:8px;font-size:14px;white-space:nowrap}
+.hero{background:linear-gradient(180deg,var(--sky),#fff);padding:34px 0 26px}
+.hero .w{display:grid;gap:26px}
+.hero h1{font:400 clamp(30px,7vw,50px)/1.1 'DM Serif Display',serif;color:var(--navy)}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p.lead{margin:14px 0 20px;font-size:17px;color:var(--mute);max-width:540px}
+.btn{display:inline-block;background:var(--orange);color:#fff;font-weight:700;text-decoration:none;padding:13px 22px;border-radius:10px;border:0;font:700 16px var(--wf);cursor:pointer}
+.btn.o{background:transparent;color:var(--navy);border:2px solid var(--navy);margin-left:8px}
+.pay{display:grid;gap:10px}
+.pay div{background:#fff;border:1px solid var(--line);border-left:6px solid var(--blue);border-radius:10px;padding:12px 14px}
+.pay div:nth-child(2){border-left-color:var(--orange)}
+.pay b{display:block;color:var(--navy)}
+.pay span{font-size:14px;color:var(--mute)}
+.proof{background:var(--navy);color:#fff;text-align:center;padding:12px 18px;font-size:15px}
+.proof b{color:#ffc470}
+section{padding:42px 0}
+h2{font:400 clamp(26px,5vw,36px)/1.15 'DM Serif Display',serif;color:var(--navy);margin-bottom:6px}
+.sub{color:var(--mute);margin-bottom:22px;max-width:620px}
+.sv{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.sv a{display:block;text-decoration:none;background:var(--sky);border-radius:10px;padding:14px 12px;font-weight:700;color:var(--navy);font-size:14.5px;border-bottom:3px solid transparent}
+.sv a:hover{border-bottom-color:var(--orange)}
+.sv small{display:block;font-weight:400;color:var(--mute);font-size:12.5px;margin-top:2px}
+.team{background:var(--sky)}
+.tm{display:grid;gap:10px}
+.tm div{background:#fff;border-radius:10px;padding:13px 15px;display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+.tm b{color:var(--navy)}
+.tm span{color:var(--mute);font-size:14px}
+.note{margin-top:16px;font-size:14px;color:var(--mute)}
+.visit{display:grid;gap:22px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+td{padding:9px 4px;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right;font-weight:700}
+tr.today td{background:#fff4e3}
+.card{border:1px solid var(--line);border-radius:12px;padding:18px}
+.card h3{color:var(--navy);margin-bottom:8px;font-size:18px}
+.card p{margin-bottom:8px;font-size:15px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#bbb;margin-right:6px}
+.dot.on{background:#2fa66a}
+details{border-bottom:1px solid var(--line);padding:12px 0}
+summary{cursor:pointer;font-weight:700;color:var(--navy)}
+details p{margin-top:8px;color:var(--mute)}
+.cta{background:var(--navy);color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta p{margin:6px auto 18px;max-width:520px;color:#cfe0f1}
+footer{padding:22px 0 90px;text-align:center;font-size:13px;color:var(--mute)}
+@media(min-width:760px){.hero .w{grid-template-columns:1.3fr 1fr;align-items:center}.sv{grid-template-columns:repeat(4,1fr)}.tm{grid-template-columns:repeat(2,1fr)}.visit{grid-template-columns:1fr 1fr}}
+.cond{background:#fff;border-top:1px solid var(--line)}
+.cg{display:grid;gap:12px}
+.card ul{padding-left:18px;font-size:14.5px;color:var(--mute)}
+.card li{margin-bottom:3px}
+.how{background:var(--sky)}
+.st{list-style:none;counter-reset:s;display:grid;gap:12px}
+.st li{counter-increment:s;background:#fff;border-radius:12px;padding:16px 16px 16px 62px;position:relative;font-size:15px;color:var(--mute)}
+.st li:before{content:counter(s);position:absolute;left:16px;top:14px;width:34px;height:34px;border-radius:50%;background:var(--orange);color:#fff;font:400 20px/34px 'DM Serif Display',serif;text-align:center}
+.st b{color:var(--navy)}
+@media(min-width:760px){.cg{grid-template-columns:repeat(2,1fr)}.st{grid-template-columns:repeat(3,1fr)}}
+#asst{position:fixed;right:14px;bottom:14px;z-index:50;font-family:var(--wf,system-ui,sans-serif)}
+#a-fab{display:flex;align-items:center;gap:8px;background:var(--wa);color:var(--wat,#fff);border:0;border-radius:var(--wr,999px);padding:13px 18px;font:600 15px var(--wf,system-ui);cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.3);transition:transform .15s}
+#a-fab:hover{transform:translateY(-2px)}
+#asst.open #a-fab{display:none}
+#a-panel{position:fixed;right:10px;bottom:10px;width:min(380px,calc(100vw - 20px));height:min(560px,calc(100vh - 20px));background:var(--wbg);color:var(--wfg);border:1px solid var(--wl);border-radius:18px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+#a-panel[hidden]{display:none}
+#a-panel header{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--wa);color:var(--wat,#fff)}
+#a-panel header small{display:block;opacity:.85;font-size:12px}
+#a-x{background:none;border:0;color:inherit;font-size:26px;cursor:pointer;line-height:1}
+#a-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;font-size:14px;line-height:1.45}
+.m.b{background:var(--wb);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--wa);color:var(--wat,#fff);align-self:flex-end;border-bottom-right-radius:4px}
+.m ul{padding-left:18px;margin-top:6px}
+#a-chips{display:flex;gap:6px;flex-wrap:wrap;padding:0 12px 8px;max-height:96px;overflow-y:auto}
+#a-chips button{background:transparent;color:var(--wc);border:1px solid var(--wl);border-radius:99px;padding:6px 11px;font:500 13px var(--wf,system-ui);cursor:pointer}
+#a-f{display:flex;gap:6px;padding:10px;border-top:1px solid var(--wl)}
+#a-i{flex:1;min-width:0;background:var(--wbg);border:1px solid var(--wl);color:var(--wfg);border-radius:99px;padding:10px 14px;font:16px var(--wf,system-ui)}
+#a-f button{background:var(--wa);color:var(--wat,#fff);border:0;border-radius:50%;width:42px;height:42px;cursor:pointer}
+#a-fab:focus-visible,#a-chips button:focus-visible,#a-i:focus-visible{outline:3px solid var(--wc);outline-offset:2px}
+@media print{#asst{display:none}}
+
+</style></head><body>
+<header class="top"><div class="w"><img src="img/south-vancouver-physiotherapy-clinic-logo.png" alt="South Vancouver Physiotherapy Clinic" width="420" height="95"><a class="call" href="tel:6042827110">Call 604-282-7110</a></div></header>
+
+<div class="hero"><div class="w"><div>
+<h1>Physiotherapy and massage on <em>Marine Drive</em></h1>
+<p class="lead">Everyday aches, car accident and work injuries, post-op and sports rehab, for all ages. Registered physiotherapists and a registered massage therapist, inside the South Vancouver Medical Clinic.</p>
+<button class="btn" id="bk">Book an appointment</button><a class="btn o" href="#visit">Hours and location</a></div>
+<div class="pay"><div><b>ICBC claims</b><span>Direct billing for authorized treatments. The team works with your doctor and your adjuster.</span></div><div><b>WorkSafeBC claims</b><span>Approved provider in the WorkSafeBC Physiotherapy Network; direct billing for accepted claims.</span></div><div><b>Extended health</b><span>Direct billing is possible in many cases, otherwise you submit your receipts yourself.</span></div></div></div></div>
+<div class="proof"><b>4.9 stars</b> with over 135 Google reviews · Mon to Fri 8am to 8pm · Sat 9am to 3pm</div>
+
+<section id="services"><div class="w"><h2>What we treat</h2><p class="sub">Services listed on the clinic site. Tap one and the assistant will tell you what the site says.</p>
+<div class="sv" id="svc">
+<a href="#" data-q="manual physical therapy">Manual Physical Therapy<small>Hands-on joint and tissue work</small></a>
+<a href="#" data-q="exercise therapy">Exercise Therapy<small>Posture, gait, balance</small></a>
+<a href="#" data-q="active rehab">Active Rehabilitation<small>Kinesiologist-led, physio supervised</small></a>
+<a href="#" data-q="sports physio">Sports Physiotherapy<small>Sprains, strains, ligaments</small></a>
+<a href="#" data-q="post op rehab">Post-Op Rehab<small>Knee, shoulder, spine, hips</small></a>
+<a href="#" data-q="massage">Massage Therapy<small>Registered massage therapist</small></a>
+<a href="#" data-q="acupuncture">Acupuncture in Physio<small>Part of physiotherapy care</small></a>
+<a href="#" data-q="traction">Spinal Traction<small>Decompression</small></a>
+<a href="#" data-q="ultrasound laser">Ultrasound, Laser, Electrotherapy<small>Therapeutic modalities</small></a>
+<a href="#" data-q="taping">Kinesio and Athletic Taping<small>Support during recovery</small></a>
+<a href="#" data-q="orthotics">Custom Orthotics<small>Foot and gait support</small></a>
+<a href="#" data-q="icbc">ICBC and WorkSafeBC<small>Direct billing, claim support</small></a>
+</div></div></section>
+
+<section class="team"><div class="w"><h2>The team</h2><p class="sub">Six clinicians, listed as on the clinic site.</p>
+<div class="tm"><div><b>Jonathan Heilbrunn</b><span>Registered Physiotherapist</span></div><div><b>Trevor O&rsquo;Malley</b><span>Registered Physiotherapist</span></div><div><b>Ronak Kapadia</b><span>Registered Physiotherapist</span></div><div><b>Vijay Kolli</b><span>Registered Physiotherapist</span></div><div><b>Vincent Choi</b><span>Bachelor in Kinesiology</span></div><div><b>Shiori Mizoguchi</b><span>Registered Massage Therapist · English and Japanese</span></div></div>
+<p class="note">A first visit starts with a full assessment, then an individual treatment plan.</p></div></section>
+
+<section id="visit"><div class="w visit"><div><h2>Visit</h2><p class="sub"><span class="dot" id="dot"></span><span id="openState">Hours</span></p>
+<table id="hrs"><tr data-d="1"><td>Monday</td><td>8am to 8pm</td></tr><tr data-d="2"><td>Tuesday</td><td>8am to 8pm</td></tr><tr data-d="3"><td>Wednesday</td><td>8am to 8pm</td></tr><tr data-d="4"><td>Thursday</td><td>8am to 8pm</td></tr><tr data-d="5"><td>Friday</td><td>8am to 8pm</td></tr><tr data-d="6"><td>Saturday</td><td>9am to 3pm</td></tr><tr data-d="0"><td>Sunday</td><td>Not listed</td></tr></table></div>
+<div class="card"><h3>Find us</h3><p>2nd floor of the Real Canadian Superstore, 10-350 SE Marine Drive, Vancouver, B.C., V5X 2S5.</p><p>Elevator access from inside the store; disabled parking close to the Superstore front door.</p><p>Canada Line: Marine Drive station. Buses stop on Marine Drive close by.</p><p><b>604-282-7110</b> · contact@southvanphysio.com</p></div></div></section>
+
+<section class="cond"><div class="w"><h2>Conditions the clinic sees</h2><p class="sub">Taken from the individual service pages. The clinicians decide what applies to you.</p>
+<div class="cg"><div class="card"><h3>Massage therapy</h3><ul><li>Back pain and sciatica</li><li>Whiplash injuries</li><li>Numbness and tingling</li><li>Shoulder, elbow and wrist pain</li><li>Hip, knee and leg pain</li><li>Neck pain and headaches</li><li>Post-surgical pain and scar tissue</li><li>Stress and anxiety</li></ul></div>
+<div class="card"><h3>Sports physiotherapy</h3><ul><li>Sprains, strains, dislocations</li><li>Ligament tears</li><li>Concussion and whiplash</li><li>Ankle sprains</li><li>Groin pulls</li></ul></div>
+<div class="card"><h3>Post-op rehab</h3><ul><li>ACL reconstruction, meniscectomy</li><li>Rotator cuff repair, sub-acromial decompression</li><li>Carpal tunnel release</li><li>Discectomy, laminectomy</li><li>Hip and knee replacement</li></ul></div>
+<div class="card"><h3>Active rehabilitation</h3><ul><li>Strength, flexibility, joint stability</li><li>Range of motion</li><li>Posture and chronic pain management</li><li>Recovery after motor vehicle accidents</li></ul></div></div></div></section>
+
+<section class="how"><div class="w"><h2>How a car accident or work claim runs</h2><p class="sub">The same three steps for ICBC and WorkSafeBC, as described on the clinic site.</p>
+<ol class="st"><li><b>First visit.</b> A comprehensive assessment of your injury. For work injuries the physio asks about your job, how it happened and what it limits.</li><li><b>Plan.</b> Your physiotherapist explains your condition, advises on when and how much to move, and sets out an individual plan.</li><li><b>Billing.</b> The clinic bills ICBC or WorkSafeBC directly for authorized or accepted claims and works with your doctor and adjuster.</li></ol></div></section>
+
+<section class="cond"><div class="w"><h2>Extended health: what to have ready</h2><p class="sub">Two ways the clinic can handle your private plan, from the Insurance page.</p>
+<div class="cg"><div class="card"><h3>Option 1: direct billing</h3><p>In many cases the clinic bills part or all of the treatment cost straight to your benefits plan through your extended medical insurer.</p><p>Some plans have restrictions and the clinic may not be able to bill online. If an online claim is denied, rejected or suspended, the patient covers that day&rsquo;s cost.</p></div><div class="card"><h3>Option 2: you claim</h3><p>After therapy you submit your receipts and documentation to your insurer yourself for reimbursement. Check your own benefits first.</p></div><div class="card"><h3>Have ready</h3><ul><li>Name of your extended health insurer</li><li>ID number and policy number</li><li>Your relationship to the policyholder</li><li>Date of your injury</li><li>Physician referral, if you have one</li></ul></div><div class="card"><h3>Also accepted</h3><ul><li>ICBC, for authorized treatments</li><li>WorkSafeBC, for accepted claims</li><li>MSP, RCMP</li><li>National Defence and Veterans Affairs</li></ul></div></div></div></section>
+
+<section><div class="w"><h2>Before you come</h2>
+<details><summary>How do I book?</summary><p>Click Book Appointment, register on the site once, then book online, paperwork free. New and existing patients use the same page.</p></details>
+<details><summary>What do I need for extended health insurance?</summary><p>Your insurer name, ID and policy number, your relationship to the policyholder, the date of injury and a physician referral if you have one.</p></details>
+<details><summary>What if I need to cancel?</summary><p>Appointments must be cancelled at least 24 hours in advance. Cancellation and no-show fees apply without notice.</p></details>
+<details><summary>Is the clinic accessible?</summary><p>Yes. Spaces for clients with disabilities are close to the front door of the Superstore, and there is elevator access from inside the store up to the 2nd floor.</p></details>
+<details><summary>What happens at the first visit after a car accident?</summary><p>The physiotherapist completes a comprehensive assessment of your injury, educates you about your condition, advises on when and how much to move, and develops an individualized treatment plan. The sooner treatment starts after an accident, the better, according to the clinic.</p></details>
+<details><summary>Can the clinic help with the insurance paperwork?</summary><p>The site says they understand that insurance claims can be confusing and will help you through the process, working with you, your doctor and your adjuster.</p></details>
+<details><summary>How do I get there by transit?</summary><p>The closest SkyTrain stop is Marine Drive on the Canada Line, and many buses stop on Marine Drive very close to the Superstore where the clinic is located. The clinic site suggests planning your trip with the TransLink trip planner.</p></details>
+<details><summary>What is active rehabilitation?</summary><p>A personalized exercise program performed by a kinesiologist and supervised by a physiotherapist. It helps restore normal muscle function and control, and teaches you to exercise independently for long-term success.</p></details>
+<details><summary>Who pays?</summary><p>Fees are paid by the patient unless coverage is approved and confirmed by your private plan, ICBC, MSP, WorkSafeBC, RCMP, National Defence or Veterans Affairs.</p></details></div></section>
+
+<section class="cond"><div class="w"><h2>What patients write</h2><p class="sub">Quotes shown on the clinic&rsquo;s own service pages.</p>
+<div class="cg"><div class="card"><p>&ldquo;Trevor was my physio, and helped me regain mobility in my neck after the car crash. He was excellent!&rdquo;</p><small>Alex Tokiwa · ICBC page</small></div><div class="card"><p>&ldquo;I went to heal an injured shoulder from work. It was a great decision as I felt drastic improvement only after 1 session.&rdquo;</p><small>Jeremy G. · WorkSafeBC page</small></div><div class="card"><p>&ldquo;Really enjoyed active rehab with Kevin - who made the exercises easier to incorporate in my daily life.&rdquo;</p><small>Cho W. · Active rehab page</small></div><div class="card"><p>&ldquo;These guys are awesome! I highly recommend them for physiotherapy and rehabilitation.&rdquo;</p><small>Joboy V. · Home page</small></div></div></div></section>
+
+<section class="cta"><div class="w"><h2>Start your recovery</h2><p>Tell the assistant what you need and it will pass your request to the team.</p><button class="btn" id="bk2">Request an appointment</button></div></section>
+<footer><div class="w">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+<div id="asst"></div>
+<script>
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ers|er|es|ed|s)$/,''):w.replace(/s$/,'')}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem)}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++)d[i]=[i];for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[m][n]}
+function makeMatcher(kb){
+  var idx=kb.map(function(e){return{e:e,k:e.k.split(',').map(function(x){return x.trim()}).filter(Boolean).map(function(p){return{p:norm(p),t:toks(p)}})}});
+  return function(q){
+    var nq=' '+norm(q)+' ',qt=toks(q),best=null,bs=0;
+    idx.forEach(function(it){var s=0;
+      it.k.forEach(function(kw){
+        if(kw.t.length>1&&nq.indexOf(' '+kw.p+' ')>=0){s+=3;return}
+        var all=kw.t.length>1;var hit=0;
+        kw.t.forEach(function(t){qt.forEach(function(w){
+          if(w===t)hit+=2;else if(t.length>=5&&w.length>=4&&lev(w,t)<=(t.length>=8?2:1))hit+=1.5;
+        })});
+        if(all){if(hit>=kw.t.length*1.5)s+=hit}else s+=hit;
+      });
+      if(it.e.hi)s*=2;if(s>bs){bs=s;best=it.e}
+    });
+    return bs>=1.5?best:null;
+  }
+}
+function buildWidget(cfg){
+  var match=makeMatcher(cfg.kb),root=document.getElementById('asst');
+  root.innerHTML='<button id="a-fab" aria-label="'+cfg.fab+'"><span>'+cfg.fabIcon+'</span><b>'+cfg.fab+'</b></button><section id="a-panel" hidden><header><div><strong>'+cfg.title+'</strong><small>'+cfg.sub+'</small></div><button id="a-x" aria-label="Close">&times;</button></header><div id="a-log" aria-live="polite"></div><div id="a-chips"></div><form id="a-f"><input id="a-i" autocomplete="off" placeholder="'+cfg.ph+'"><button>&#10148;</button></form></section>';
+  var log=root.querySelector('#a-log'),chips=root.querySelector('#a-chips'),inp=root.querySelector('#a-i'),panel=root.querySelector('#a-panel'),flow=null,data={};
+  function say(t,who){var d=document.createElement('div');d.className='m '+who;d.innerHTML=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+  function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){handle(c)};chips.appendChild(b)})}
+  function home(){setChips(cfg.chips)}
+  function ask(){var s=cfg.flow.steps[flow];say(s.q,'b');if(s.opts)setChips(s.opts);else{chips.innerHTML='';inp.placeholder=s.ph||cfg.ph;inp.focus()}}
+  function startFlow(){flow=0;data={};say(cfg.flow.intro,'b');ask()}
+  function handle(t){
+    t=t.trim();if(!t)return;say(t.replace(/</g,'&lt;'),'u');inp.value='';
+    if(flow!==null){
+      if(/^(cancel|stop|back|exit|menu)$/i.test(t)){flow=null;say(cfg.flow.cancel,'b');home();return}
+      var s=cfg.flow.steps[flow];data[s.key]=t;flow++;
+      if(flow>=cfg.flow.steps.length){var sum=cfg.flow.steps.map(function(x){return '<li><b>'+x.label+':</b> '+String(data[x.key]).replace(/</g,'&lt;')+'</li>'}).join('');say(cfg.flow.done+'<ul>'+sum+'</ul>','b');flow=null;inp.placeholder=cfg.ph;home()}else ask();
+      return}
+    if(cfg.flow.trigger.test(t)){startFlow();return}
+    var m=match(t);
+    if(m){say(m.a,'b');setChips(m.next||cfg.chips)}else{say(cfg.fallback,'b');home()}
+  }
+  root.querySelector('#a-f').onsubmit=function(e){e.preventDefault();handle(inp.value)};
+  root.querySelector('#a-fab').onclick=function(){panel.hidden=false;root.classList.add('open');if(!log.children.length){say(cfg.greet,'b');home()}inp.focus()};
+  root.querySelector('#a-x').onclick=function(){panel.hidden=true;root.classList.remove('open')};
+}
+
+
+var CFG={
+fab:'Ask the clinic',fabIcon:'&#128172;',title:'South Vancouver Physiotherapy',sub:'Quick answers from the clinic site',ph:'Ask about ICBC, hours, booking...',
+greet:'Hi! I know the basics of South Vancouver Physiotherapy Clinic: hours, location, ICBC and WorkSafeBC billing, extended health, services and booking. I cannot give medical advice, the clinicians do that. What would you like to know?',
+fallback:'I do not have that detail, so I will not guess. The team will confirm it: call 604-282-7110 or email contact@southvanphysio.com. Or ask me about hours, ICBC, WorkSafeBC, insurance or booking.',
+chips:['Opening hours','ICBC claim','WorkSafeBC','Extended health','Services','Where are you','Book an appointment'],
+kb:[
+{k:'opening hours,hours,open,opens,close,closing,closed,when open,what time,weekend,saturday,sunday,monday,friday,evening,late,early,8am,8pm,holiday hours,holiday',a:'Opening hours: <b>Monday to Friday 8am to 8pm</b> and <b>Saturday 9am to 3pm</b>. Sunday is not listed. Holiday hours are posted on the clinic site, so the team will confirm those.',next:['Where are you','Book an appointment']},
+{k:'where,location,address,find you,directions,map,marine drive,superstore,real canadian superstore,medical clinic,floor,elevator,lift,located,how to get',a:'We are on the <b>2nd floor of the Real Canadian Superstore, 10-350 SE Marine Drive, Vancouver, V5X 2S5</b>, inside the South Vancouver Medical Clinic. There is elevator access from inside the store.',next:['Parking','Transit','Opening hours']},
+{k:'parking,park,car,drive,driving,disabled,disability,accessible,accessibility,wheelchair,mobility',a:'Spaces for clients with disabilities are close to the front door of the Superstore, and there is elevator access up to the clinic.',next:['Transit','Where are you']},
+{k:'transit,skytrain,sky train,train,bus,canada line,marine drive station,translink,public transport,subway',a:'The closest SkyTrain stop is <b>Marine Drive on the Canada Line</b>, and many buses stop on Marine Drive very close to the Superstore.',next:['Where are you','Opening hours']},
+{k:'icbc,bill icbc,icbc direct,car accident,car crash,crash,mva,motor vehicle,whiplash,collision,adjuster,claim number,accident',a:'ICBC covers physiotherapy for drivers, passengers or pedestrians injured in a motor vehicle accident. The clinic <b>bills ICBC directly for authorized treatments</b> and works with your doctor and your adjuster. Starting early is advised on the site. A claim number and adjuster details are what the team will ask for.',next:['WorkSafeBC','Book an appointment','Extended health']},
+{k:'worksafe,worksafebc,wcb,work injury,workplace,injured at work,work related,work claim,workers compensation,compensation',a:'The clinic is an <b>approved provider in the WorkSafeBC Physiotherapy Network (WCB)</b> and can bill WorkSafeBC directly for your accepted claim. Your physio asks about your work and how the injury happened, then plans your return to work.',next:['ICBC claim','Book an appointment']},
+{k:'insurance,extended health,extended healthcare,benefits,coverage,covered,direct bill,direct billing,private insurance,plan,policy,sun life,manulife,blue cross,reimburse,reimbursement,receipt,receipts,claim',a:'In many cases the clinic can <b>direct bill part or all of the cost to your extended health plan</b>. Otherwise you pay and submit your receipts for reimbursement. Plans differ, so check with your insurer and the clinic before you come in. Bring your insurer name, ID and policy number, your relationship to the policyholder, the injury date and a referral if you have one.',next:['Who pays','Cancellation','Book an appointment']},
+{k:'who pays,payment,pay,msp,rcmp,veteran,veterans,national defense,national defence,paid by,fees,fee,cost,how much,price,prices,rates',a:'Fees are paid by the patient unless coverage is approved and confirmed by your private plan, ICBC, MSP, WorkSafeBC, RCMP, National Defence or Veterans Affairs. Session fees are not listed on the site, so the team will confirm them.',next:['Extended health','Book an appointment']},
+{k:'cancel,cancellation,cancelation,cancelling,reschedule,no show,no-show,miss appointment,late cancel,24 hours,notice',a:'Appointments must be <b>cancelled at least 24 hours in advance</b>. Cancellation and no-show fees apply to those who do not give appropriate notice.',next:['Book an appointment','Opening hours']},
+{k:'services,service,treatments,what services,services offered,therapies,all services',a:'Services on the site: sports physiotherapy, manual physical therapy, exercise therapy, active rehabilitation, post-op rehab, massage therapy, acupuncture in physiotherapy, spinal traction, ultrasound, laser and electrotherapy, kinesio and athletic taping, custom orthotics, plus ICBC and WorkSafeBC care.',next:['Massage','Sports physio','Post-op rehab']},
+{k:'manual physical therapy,manual therapy,manipulation,mobilization,mobilisation,joint,hands on,physical therapy,physiotherapy treatment,assess,assessment,first visit,first appointment,what to expect',a:'Treatment can include exercise therapy, postural, gait, balance and co-ordination re-training, and manual mobilization or manipulation of tissues and joints. At the first visit the physiotherapist does a full assessment, explains your condition and builds an individual plan. For anything medical, the clinicians answer that in person.',next:['Book an appointment','Team','Extended health']},
+{k:'exercise therapy,exercise,exercises,posture,gait,balance,coordination,co-ordination,strength',a:'<b>Exercise therapy</b> is part of physiotherapy here, together with posture, gait, balance and co-ordination re-training.',next:['Active rehab','Services']},
+{k:'active rehab,active rehabilitation,rehab,rehabilitation,kinesiologist,kinesiology,kevin,vincent,exercise program,home exercise',a:'<b>Active rehabilitation</b> is a personalized exercise program performed by a kinesiologist and supervised by a physiotherapist. It aims to improve strength, flexibility, joint stability, range of motion and posture, and to teach you to exercise independently.',next:['ICBC claim','Book an appointment']},
+{k:'sports,sport,athlete,athletic,sprain,strain,ligament,ankle,groin,concussion,dislocation,return to sport,game',a:'<b>Sports physiotherapy</b> covers sports injuries such as sprains, strains, dislocations, ligament tears, ankle sprains and groin pulls, with an individual plan to return to pre-injury status.',next:['Taping','Book an appointment']},
+{k:'post op,post-op,postop,surgery,surgical,after surgery,acl,meniscus,rotator cuff,carpal tunnel,discectomy,laminectomy,knee replacement,hip replacement,replacement,operation',a:'<b>Post-op rehab</b> is tailored to your type of surgery, for example ACL reconstruction, meniscectomy, rotator cuff repair, carpal tunnel release, discectomy, laminectomy, and hip or knee replacement. Always follow your surgeon on timing, the team will confirm specifics.',next:['Book an appointment','Services']},
+{k:'massage,rmt,registered massage,massage therapy,swedish,myofascial,relaxation,deep tissue,stress,shiori,knots,tight muscles',a:'<b>Massage therapy</b> is done by registered massage therapist Shiori Mizoguchi, who offers Swedish massage, myofascial release, joint mobilization, PNF stretching and relaxation massage, tailored to you. She speaks English and Japanese.',next:['Book an appointment','Team']},
+{k:'acupuncture,needles,needling,dry needling',a:'<b>Acupuncture in physiotherapy</b> is listed among the services. Who offers it and when, the team will confirm.',next:['Services','Book an appointment']},
+{k:'traction,spinal traction,decompression,spine,back,disc',a:'<b>Spinal traction (decompression)</b> is listed among the services. Whether it fits your situation is a decision for the clinicians, not me.',next:['Book an appointment','Services']},
+{k:'ultrasound,laser,electrotherapy,electro,tens,modalities,machine',a:'<b>Ultrasound, laser and electrotherapy</b> are listed among the services. The clinician decides if they suit your treatment.',next:['Services']},
+{k:'taping,tape,kinesio,kinesiology tape,athletic tape',a:'<b>Kinesio and athletic taping</b> is on the services list.',next:['Sports physio','Services']},
+{k:'orthotics,orthotic,insoles,custom orthotics,foot,feet,flat feet,shoe',a:'<b>Custom orthotics</b> are on the services list. Costs and coverage the team will confirm.',next:['Extended health','Book an appointment']},
+{k:'team,staff,who,physiotherapists,physios,physio,physiotherapist,work there,therapists,jonathan,trevor,ronak,vijay,vincent,shiori,doctor,registered',a:'The team: <b>Jonathan Heilbrunn, Trevor O&rsquo;Malley, Ronak Kapadia and Vijay Kolli</b> (registered physiotherapists), <b>Vincent Choi</b> (Bachelor in Kinesiology) and <b>Shiori Mizoguchi</b> (registered massage therapist).',next:['Book an appointment','Services']},
+{k:'book,booking,online booking,appointment,schedule,register,paperwork,new patient,jane,make appointment',a:'Online: click Book Appointment on the clinic site, register once, then book paperwork free. I can also take your request for the team right here.',next:['Book an appointment','Opening hours']},
+{k:'contact,phone,call,number,telephone,email,mail,reach,speak to someone,talk to,fax',a:'Call <b>604-282-7110</b> or email <b>contact@southvanphysio.com</b>.',next:['Book an appointment','Opening hours']},
+{k:'referral,doctor referral,gp,need referral,do i need a referral,physician',a:'A physician referral is listed as something to provide <b>if you have one</b> for extended health. Whether you need one for your case, the team will confirm.',next:['Extended health','Book an appointment']},
+{k:'diagnose,diagnosis,pain,hurts,hurt,injury,symptoms,numbness,tingling,sciatica,headache,neck,shoulder,knee,which treatment,should i,is it serious,medical advice,swelling',a:'I cannot assess pain or injuries, that is for the physiotherapists at your first assessment. The site lists back pain, sciatica, whiplash, numbness and tingling, shoulder, hip, knee and neck problems among what the clinic sees. I can take your request so the team can find you a time.',next:['Book an appointment','Opening hours']},
+{k:'language,languages,japanese,english,speak',a:'Registered massage therapist Shiori Mizoguchi speaks English and Japanese. Other languages are not listed, so the team will confirm.',next:['Team']},
+{k:'reviews,review,rating,ratings,stars,google,reputation,recommend',a:'The site shows <b>4.9 stars</b> with over 135 Google reviews, and patient comments on active rehab, sports and car accident care.',next:['Book an appointment']},
+{k:'hello,hi,hey,good morning,good evening,hello there',a:'Hello! Ask me about hours, ICBC, WorkSafeBC, insurance or booking.',next:['Opening hours','ICBC claim']},
+{k:'thanks,thank you,cheers,great,perfect,ok thanks',a:'Anytime. If you want an appointment, I can take your details for the team.',next:['Book an appointment']}
+],
+flow:{trigger:/^(book\b|i (want|would like|need|d like) to book|reserve|request|make an appointment|set up|enquire|inquire)/i,
+intro:'Let us set up an appointment request. A few quick questions.',cancel:'No problem, cancelled.',
+steps:[
+{key:'type',label:'Visit type',q:'What kind of visit?',opts:['Physiotherapy','Massage therapy','Active rehab','Post-op rehab','Sports physio']},
+{key:'cover',label:'Who pays',q:'How will it be covered?',opts:['ICBC claim','WorkSafeBC claim','Extended health','Self-pay','Not sure']},
+{key:'new',label:'Patient',q:'Are you a new or existing patient?',opts:['New patient','Existing patient']},
+{key:'when',label:'Preferred day and time',q:'When suits you? Mon to Fri 8am to 8pm, Sat 9am to 3pm.',ph:'e.g. Thursday evening'},
+{key:'name',label:'Name',q:'Your name?',ph:'Name'},
+{key:'phone',label:'Phone or email',q:'Best phone number or email?',ph:'Phone or email'}],
+done:'Done, sent to the team. They will confirm the time with you. (This is a demo: nothing is actually sent.) Your details:'}
+};
+buildWidget(CFG);
+['bk','bk2'].forEach(function(id){document.getElementById(id).onclick=function(){document.getElementById('a-fab').click();setTimeout(function(){var i=document.getElementById('a-i');i.value='Book an appointment';document.getElementById('a-f').dispatchEvent(new Event('submit',{cancelable:true}))},50)}});
+document.querySelectorAll('#svc a').forEach(function(a){a.onclick=function(e){e.preventDefault();document.getElementById('a-fab').click();setTimeout(function(){var i=document.getElementById('a-i');i.value=a.dataset.q;document.getElementById('a-f').dispatchEvent(new Event('submit',{cancelable:true}))},50)}});
+(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'America/Vancouver',weekday:'short',hour:'numeric',hour12:false}).formatToParts(new Date()),w=p.find(function(x){return x.type=='weekday'}).value,h=+p.find(function(x){return x.type=='hour'}).value%24,d={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[w],o=(d>=1&&d<=5)?(h>=8&&h<20):(d==6?(h>=9&&h<15):false);document.getElementById('dot').className='dot'+(o?' on':'');document.getElementById('openState').textContent=(o?'Open now':'Closed now')+' · Vancouver time';document.querySelectorAll('#hrs tr').forEach(function(r){if(r.dataset.d==String(d))r.className='today'})}catch(e){}})();
+
+</script></body></html>

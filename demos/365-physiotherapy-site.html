@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>365 Physiotherapy · Santry, Swords and home visits, Dublin</title>
+<meta name="description" content="Demo page for 365 Physiotherapy with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--pur:#5d2f86;--dp:#2c1445;--tq:#3fbad2;--tqs:#e5f6fa;--lav:#f4eff9;--ink:#25193a;--mute:#645a75;--line:#e2d9ec;--wf:'Outfit',system-ui,sans-serif;
+--wa:#5d2f86;--wbg:#fff;--wfg:#25193a;--wl:#e2d9ec;--wb:#f4eff9;--wc:#5d2f86;--wr:999px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--wf);color:var(--ink);background:var(--lav);line-height:1.55;overflow-x:hidden}
+img{max-width:100%;display:block}
+.w{max-width:1060px;margin:0 auto;padding:0 18px}
+header.top{background:var(--dp);position:sticky;top:0;z-index:20}
+header.top .w{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:8px;padding-bottom:8px}
+.chip{background:#fff;border-radius:10px;padding:5px 10px;display:flex}
+.chip img{height:36px;width:auto}
+.call{background:var(--tq);color:var(--dp);text-decoration:none;font-weight:700;padding:9px 14px;border-radius:99px;font-size:14px;white-space:nowrap}
+.hero{background:var(--dp);color:#fff;padding:36px 0 0}
+.hero h1{font:600 clamp(30px,7.5vw,52px)/1.08 'Lora',serif;max-width:720px}
+.hero h1 em{color:var(--tq);font-style:italic}
+.hero p.lead{margin:14px 0 8px;color:#d9cce9;font-size:17px;max-width:600px}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 26px}
+.facts span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:6px 12px;font-size:13.5px}
+.tabs{display:flex;gap:4px;overflow-x:auto}
+.tabs button{flex:1;min-width:112px;background:rgba(255,255,255,.1);color:#fff;border:0;border-radius:14px 14px 0 0;padding:13px 10px;font:600 15px var(--wf);cursor:pointer}
+.tabs button[aria-selected=true]{background:#fff;color:var(--pur)}
+.pane{background:#fff;color:var(--ink);padding:20px 18px 24px;display:none}
+.pane.on{display:block}
+.pane .row{display:grid;gap:18px}
+.pane h3{font:600 22px 'Lora',serif;color:var(--pur);margin-bottom:6px}
+.pane p{margin-bottom:8px;font-size:15.5px}
+.pane small{color:var(--mute)}
+.hrs{width:100%;border-collapse:collapse;font-size:15px}
+.hrs td{padding:8px 0;border-bottom:1px solid var(--line)}
+.hrs td:last-child{text-align:right;font-weight:600}
+.hrs tr.today td{background:var(--tqs)}
+.btn{display:inline-block;background:var(--pur);color:#fff;text-decoration:none;border:0;border-radius:99px;padding:13px 22px;font:600 16px var(--wf);cursor:pointer;margin-top:6px}
+.btn.t{background:var(--tq);color:var(--dp)}
+section{padding:40px 0}
+h2{font:600 clamp(25px,5vw,34px)/1.15 'Lora',serif;color:var(--dp);margin-bottom:6px}
+.sub{color:var(--mute);margin-bottom:20px;max-width:620px}
+.cg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.cg a{background:#fff;border-radius:14px;padding:15px 12px;text-decoration:none;font-weight:600;font-size:15px;color:var(--pur);border-bottom:4px solid var(--tq)}
+.cg a:hover{background:var(--tqs)}
+.sv{display:grid;gap:10px}
+.sv div{background:#fff;border-radius:14px;padding:15px 16px;border-left:5px solid var(--pur)}
+.sv b{display:block;color:var(--dp)}
+.sv span{font-size:14.5px;color:var(--mute)}
+.fees{background:var(--dp);color:#fff}
+.fees h2{color:#fff}
+.fees .sub{color:#cdbfe0}
+.fg{display:grid;gap:12px}
+.fc{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:18px}
+.fc h3{font:600 18px var(--wf);color:var(--tq);margin-bottom:8px}
+.fc div{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.2)}
+.fc div:last-of-type{border:0}
+.note{margin-top:14px;font-size:14px;color:#cdbfe0}
+.tm{display:grid;gap:10px}
+.tm div{background:#fff;border-radius:14px;padding:14px 16px}
+.tm b{display:block;color:var(--dp);font-size:17px}
+.tm em{font-style:normal;color:var(--pur);font-size:14px;font-weight:600}
+.tm span{display:block;color:var(--mute);font-size:14px}
+details{background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:8px}
+summary{cursor:pointer;font-weight:600;color:var(--pur)}
+details p{margin-top:8px;color:var(--mute);font-size:15px}
+.cta{background:var(--tq);text-align:center}
+.cta h2{color:var(--dp)}
+.cta p{max-width:520px;margin:6px auto 16px;color:#134653}
+.cta .btn{background:var(--dp)}
+footer{padding:22px 0 90px;text-align:center;font-size:13px;color:var(--mute)}
+@media(min-width:760px){.pane .row{grid-template-columns:1.2fr 1fr}.cg{grid-template-columns:repeat(5,1fr)}.sv{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:repeat(3,1fr)}.tm{grid-template-columns:repeat(2,1fr)}}
+#asst{position:fixed;right:14px;bottom:14px;z-index:50;font-family:var(--wf,system-ui,sans-serif)}
+#a-fab{display:flex;align-items:center;gap:8px;background:var(--wa);color:var(--wat,#fff);border:0;border-radius:var(--wr,999px);padding:13px 18px;font:600 15px var(--wf,system-ui);cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.3);transition:transform .15s}
+#a-fab:hover{transform:translateY(-2px)}
+#asst.open #a-fab{display:none}
+#a-panel{position:fixed;right:10px;bottom:10px;width:min(380px,calc(100vw - 20px));height:min(560px,calc(100vh - 20px));background:var(--wbg);color:var(--wfg);border:1px solid var(--wl);border-radius:18px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+#a-panel[hidden]{display:none}
+#a-panel header{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--wa);color:var(--wat,#fff)}
+#a-panel header small{display:block;opacity:.85;font-size:12px}
+#a-x{background:none;border:0;color:inherit;font-size:26px;cursor:pointer;line-height:1}
+#a-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;font-size:14px;line-height:1.45}
+.m.b{background:var(--wb);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--wa);color:var(--wat,#fff);align-self:flex-end;border-bottom-right-radius:4px}
+.m ul{padding-left:18px;margin-top:6px}
+#a-chips{display:flex;gap:6px;flex-wrap:wrap;padding:0 12px 8px;max-height:96px;overflow-y:auto}
+#a-chips button{background:transparent;color:var(--wc);border:1px solid var(--wl);border-radius:99px;padding:6px 11px;font:500 13px var(--wf,system-ui);cursor:pointer}
+#a-f{display:flex;gap:6px;padding:10px;border-top:1px solid var(--wl)}
+#a-i{flex:1;min-width:0;background:var(--wbg);border:1px solid var(--wl);color:var(--wfg);border-radius:99px;padding:10px 14px;font:16px var(--wf,system-ui)}
+#a-f button{background:var(--wa);color:var(--wat,#fff);border:0;border-radius:50%;width:42px;height:42px;cursor:pointer}
+#a-fab:focus-visible,#a-chips button:focus-visible,#a-i:focus-visible{outline:3px solid var(--wc);outline-offset:2px}
+@media print{#asst{display:none}}
+
+</style></head><body>
+<header class="top"><div class="w"><div class="chip"><img src="img/365-physiotherapy-logo.png" alt="365 Physiotherapy" width="100" height="36"></div><a class="call" href="tel:+353830985073">+353 83 098 5073</a></div></header>
+
+<div class="hero"><div class="w">
+<h1>Chartered physiotherapy in <em>Santry and Swords</em>, or at your door</h1>
+<p class="lead">CORU-registered chartered physiotherapists for back and neck pain, sports injuries, post-op rehab and older-adult care. No GP referral needed, and evening and weekend slots.</p>
+<div class="facts"><span>4.9 on Google · 151 reviews</span><span>Same-day often available</span><span>Mon to Fri until 9pm</span></div>
+<div class="tabs" role="tablist" id="tabs"><button role="tab" aria-selected="true" data-t="s">Santry clinic</button><button role="tab" aria-selected="false" data-t="w">Swords clinic</button><button role="tab" aria-selected="false" data-t="h">Home visits</button></div>
+</div>
+<div style="background:#fff">
+<div class="w"><div class="pane on" id="p-s"><div class="row"><div><h3>Santry, Dublin 9</h3><p>256 Swords Road, Santry, Dublin 9, D09 RX73. A few minutes from Omni Park Shopping Centre.</p><p>Bus stop 231 on Swords Road (buses 1, 16, 41). A parking slot is in front of the clinic.</p><button class="btn" data-bk="Santry">Book at Santry</button></div><table class="hrs" data-hrs><tr data-d="1,2,3,4,5"><td>Monday to Friday</td><td>9am to 9pm</td></tr><tr data-d="6"><td>Saturday</td><td>9am to 5pm</td></tr><tr data-d="0"><td>Sunday</td><td>Home visits only</td></tr></table></div></div>
+<div class="pane" id="p-w"><div class="row"><div><h3>Swords, Co. Dublin</h3><p>Clinic Rooms 3 and 4, 2nd Floor, Broadmeadow Hall, Applewood Close, Swords, K67 Y5F2. Close to Airside Retail Park and Swords Business Campus.</p><p>Ring the 365 Physiotherapy buzzer at the main entrance, then take the lift to the 2nd floor. Bus stop 4922 (41X, 500, 503).</p><button class="btn" data-bk="Swords">Book at Swords</button></div><table class="hrs" data-hrs><tr data-d="1,2,3,4,5"><td>Monday to Friday</td><td>9am to 9pm</td></tr><tr data-d="6"><td>Saturday</td><td>9am to 5pm</td></tr><tr data-d="0"><td>Sunday</td><td>Home visits only</td></tr></table></div></div>
+<div class="pane" id="p-h"><div class="row"><div><h3>Physio where you are</h3><p>At home, in nursing homes and in day-care centres across North Dublin: Swords, Malahide, Portmarnock, Donabate, Rush, Lusk, Dublin 9, 11 and 15. Other areas: ask.</p><p>Give 48 hours&rsquo; notice where possible. You get a phone call and a clear quote first.</p><button class="btn" data-bk="Home visit">Ask for a home visit</button></div><div><p><b>Who visits</b></p><p>Dimple Chovishya leads home and nursing home visits. Shahul Hameed does evening visits in Dublin 15, 11 and nearby.</p></div></div></div></div></div></div>
+
+<section><div class="w"><h2>Where does it hurt?</h2><p class="sub">The clinic site has a page for each area. Tap one and the assistant tells you how the clinic handles it.</p>
+<div class="cg" id="cg"><a href="#" data-q="neck pain headache">Neck pain and headache</a><a href="#" data-q="shoulder pain">Shoulder pain</a><a href="#" data-q="elbow pain">Elbow pain</a><a href="#" data-q="wrist hand pain">Wrist and hand pain</a><a href="#" data-q="upper mid back pain">Upper and mid back</a><a href="#" data-q="low back pain sciatica">Low back and sciatica</a><a href="#" data-q="hip pain">Hip pain</a><a href="#" data-q="knee pain">Knee pain</a><a href="#" data-q="ankle foot pain">Ankle and foot</a><a href="#" data-q="sports injuries">Sports injuries</a></div></div></section>
+
+<section style="padding-top:0"><div class="w"><h2>Services</h2><p class="sub">Clinic and home services as listed on the clinic site.</p>
+<div class="sv"><div><b>Musculoskeletal physiotherapy</b><span>Acute and overuse injuries of muscles and joints, with a home exercise programme.</span></div><div><b>Sports injury rehabilitation</b><span>Adults and children: assessment, manual therapy, exercise and sport-specific rehab.</span></div><div><b>Post-operative rehabilitation</b><span>Progressive exercise after orthopaedic surgery, and pre-op physio when time allows.</span></div><div><b>Dry needling</b><span>Dry needling physiotherapy.</span></div><div><b>Exercise therapy and prescription</b><span>Strength, fitness and flexibility programmes.</span></div><div><b>Therapeutic ultrasound</b><span>Ultrasound physiotherapy, alongside interferential and electrical stimulation.</span></div><div><b>Aged care, balance and falls prevention</b><span>Home visit service.</span></div><div><b>Neurological and orthopaedic rehab</b><span>Home visit service, plus pain management and physio after hospital discharge.</span></div></div></div></section>
+
+<section class="fees"><div class="w"><h2>Fees</h2><p class="sub">As published on the clinic site. Pay by cash or card after each appointment and get a receipt for your insurer.</p>
+<div class="fg"><div class="fc"><h3>Online</h3><div><span>Initial</span><b>&euro;55</b></div><div><span>Follow-up</span><b>&euro;45</b></div></div><div class="fc"><h3>In clinic</h3><div><span>Initial</span><b>&euro;65</b></div><div><span>Follow-up</span><b>&euro;65</b></div></div><div class="fc"><h3>Home visit</h3><div><span>Initial</span><b>&euro;110 to &euro;130</b></div><div><span>Follow-up</span><b>&euro;100 to &euro;120</b></div></div></div>
+<p class="note">Home visit fee depends on location and complexity. The booking page says the standard session fee becomes &euro;70 from 1 November 2026; earlier bookings stay at the current rate. Cancel at least 24 hours ahead or 50% of the fee applies; 48 hours for home visits.</p></div></section>
+
+<section><div class="w"><h2>The team</h2><p class="sub">CORU-registered chartered physiotherapists, members of the Irish Society of Chartered Physiotherapists.</p>
+<div class="tm"><div><b>Thirupal Ragi</b><em>Founder and Clinical Director</em><span>BSc, BPT, MISCP · Santry and Swords</span></div><div><b>Shahul Hameed</b><em>Senior Chartered Physiotherapist</em><span>BPT, MISCP · Swords clinic · 25+ years&rsquo; experience</span></div><div><b>Dimple Chovishya</b><em>Chartered Physiotherapist</em><span>BPT, MPT, MISCP · Home visits and nursing homes</span></div><div><b>Joble Mercy Joseph</b><em>Chartered Physiotherapist</em><span>BPT, MISCP · Swords clinic</span></div><div><b>Venkateswari Ragi</b><em>Physiotherapy Assistant</em><span>Swords clinic</span></div></div></div></section>
+
+<section style="padding-top:0"><div class="w"><h2>When to see a physio</h2><p class="sub">From the clinic FAQ. Not sure? The clinic invites you to get in touch and ask.</p>
+<div class="sv"><div><b>After an injury</b><span>At work, in a car accident or playing sport; bruising, swelling, stiffness or a deformity.</span></div><div><b>Aches, pins and needles</b><span>Muscle or joint pain, numbness, weakness or joints giving way.</span></div><div><b>Pain that lingers</b><span>Lasting longer than a week, restricting daily activities, or waking you every night.</span></div><div><b>Getting back to it</b><span>Returning to work or sport after injury or surgery, strength, fitness and balance advice, or pain after having a baby.</span></div></div></div></section>
+
+<section style="padding-top:0"><div class="w"><h2>Good to know</h2>
+<details><summary>Do I need a GP referral?</summary><p>No. If you have referral letters or scan reports (MRI, X-ray), bring a copy for your file.</p></details>
+<details><summary>Can I come the same day?</summary><p>Often, yes, most days, but it is not guaranteed. Call or book online to check today&rsquo;s availability. Sundays are home visits only.</p></details>
+<details><summary>How long is the first visit?</summary><p>Generally 20 to 40 minutes. The physiotherapist can give a closer estimate by phone.</p></details>
+<details><summary>Insurance and medical card?</summary><p>Major Irish insurers refund treatment by a chartered physiotherapist, but check your policy first. You pay at the end of the visit and claim with the receipt; the clinic does not bill insurers directly. The medical card is not accepted.</p></details>
+<details><summary>Do you treat children?</summary><p>Yes. A parent needs to be in the treatment room.</p></details></div></section>
+
+<section class="cta"><div class="w"><h2>Book your assessment</h2><p>Tell the assistant which clinic and when, and your request goes to the team.</p><button class="btn" id="bk2">Request an appointment</button></div></section>
+<footer><div class="w">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+<div id="asst"></div>
+<script>
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ers|er|es|ed|s)$/,''):w.replace(/s$/,'')}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem)}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++)d[i]=[i];for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[m][n]}
+function makeMatcher(kb){
+  var idx=kb.map(function(e){return{e:e,k:e.k.split(',').map(function(x){return x.trim()}).filter(Boolean).map(function(p){return{p:norm(p),t:toks(p)}})}});
+  return function(q){
+    var nq=' '+norm(q)+' ',qt=toks(q),best=null,bs=0;
+    idx.forEach(function(it){var s=0;
+      it.k.forEach(function(kw){
+        if(kw.t.length>1&&nq.indexOf(' '+kw.p+' ')>=0){s+=3;return}
+        var all=kw.t.length>1;var hit=0;
+        kw.t.forEach(function(t){qt.forEach(function(w){
+          if(w===t)hit+=2;else if(t.length>=5&&w.length>=4&&lev(w,t)<=(t.length>=8?2:1))hit+=1.5;
+        })});
+        if(all){if(hit>=kw.t.length*1.5)s+=hit}else s+=hit;
+      });
+      if(it.e.hi)s*=2;if(s>bs){bs=s;best=it.e}
+    });
+    return bs>=1.5?best:null;
+  }
+}
+function buildWidget(cfg){
+  var match=makeMatcher(cfg.kb),root=document.getElementById('asst');
+  root.innerHTML='<button id="a-fab" aria-label="'+cfg.fab+'"><span>'+cfg.fabIcon+'</span><b>'+cfg.fab+'</b></button><section id="a-panel" hidden><header><div><strong>'+cfg.title+'</strong><small>'+cfg.sub+'</small></div><button id="a-x" aria-label="Close">&times;</button></header><div id="a-log" aria-live="polite"></div><div id="a-chips"></div><form id="a-f"><input id="a-i" autocomplete="off" placeholder="'+cfg.ph+'"><button>&#10148;</button></form></section>';
+  var log=root.querySelector('#a-log'),chips=root.querySelector('#a-chips'),inp=root.querySelector('#a-i'),panel=root.querySelector('#a-panel'),flow=null,data={};
+  function say(t,who){var d=document.createElement('div');d.className='m '+who;d.innerHTML=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+  function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){handle(c)};chips.appendChild(b)})}
+  function home(){setChips(cfg.chips)}
+  function ask(){var s=cfg.flow.steps[flow];say(s.q,'b');if(s.opts)setChips(s.opts);else{chips.innerHTML='';inp.placeholder=s.ph||cfg.ph;inp.focus()}}
+  function startFlow(){flow=0;data={};say(cfg.flow.intro,'b');ask()}
+  function handle(t){
+    t=t.trim();if(!t)return;say(t.replace(/</g,'&lt;'),'u');inp.value='';
+    if(flow!==null){
+      if(/^(cancel|stop|back|exit|menu)$/i.test(t)){flow=null;say(cfg.flow.cancel,'b');home();return}
+      var s=cfg.flow.steps[flow];data[s.key]=t;flow++;
+      if(flow>=cfg.flow.steps.length){var sum=cfg.flow.steps.map(function(x){return '<li><b>'+x.label+':</b> '+String(data[x.key]).replace(/</g,'&lt;')+'</li>'}).join('');say(cfg.flow.done+'<ul>'+sum+'</ul>','b');flow=null;inp.placeholder=cfg.ph;home()}else ask();
+      return}
+    if(cfg.flow.trigger.test(t)){startFlow();return}
+    var m=match(t);
+    if(m){say(m.a,'b');setChips(m.next||cfg.chips)}else{say(cfg.fallback,'b');home()}
+  }
+  root.querySelector('#a-f').onsubmit=function(e){e.preventDefault();handle(inp.value)};
+  root.querySelector('#a-fab').onclick=function(){panel.hidden=false;root.classList.add('open');if(!log.children.length){say(cfg.greet,'b');home()}inp.focus()};
+  root.querySelector('#a-x').onclick=function(){panel.hidden=true;root.classList.remove('open')};
+}
+
+
+var CFG={
+fab:'Ask the clinic',fabIcon:'&#128172;',title:'365 Physiotherapy',sub:'Quick answers from the clinic site',ph:'Ask about fees, hours, insurance...',
+greet:'Hi! I know the basics of 365 Physiotherapy: the Santry and Swords clinics, home visits, hours, fees, insurance and booking. I cannot give medical advice, the physiotherapists do that at assessment. What would you like to know?',
+fallback:'I do not have that detail, so I will not guess. The team will confirm it: call +353 83 098 5073 or email contact@365physiotherapy.ie. Or ask me about hours, fees, insurance, home visits or booking.',
+chips:['Opening hours','Fees','Insurance','Home visits','Santry clinic','Swords clinic','Book an appointment'],
+kb:[
+{k:'opening hours,hours,open,opens,close,closing,closed,when open,what time,weekend,saturday,sunday,monday,friday,evening,late,after work,after 6pm,9pm,9am,bank holiday',a:'Both clinics are open <b>Monday to Friday 9am to 9pm</b> and <b>Saturday 9am to 5pm</b>. <b>Sunday is home visits only.</b> Bank holiday hours are not on the site, so the team will confirm those.',next:['Santry clinic','Swords clinic','Book an appointment']},
+{k:'santry,dublin 9,swords road,omni park,omni,d09,256 swords road,santry clinic,main clinic',a:'<b>Santry clinic:</b> 256 Swords Road, Santry, Dublin 9, D09 RX73, a few minutes from Omni Park Shopping Centre. Bus stop 231 on Swords Road (buses 1, 16, 41). There is a parking slot in front of the clinic.',next:['Swords clinic','Opening hours','Book an appointment']},
+{k:'swords,swords clinic,broadmeadow,broadmeadow hall,applewood,applewood close,airside,k67,buzzer,lift,second floor,2nd floor',a:'<b>Swords clinic:</b> Clinic Rooms 3 and 4, 2nd Floor, Broadmeadow Hall, Applewood Close, Swords, Co. Dublin, K67 Y5F2. Ring the 365 Physiotherapy buzzer at the main entrance, then take the lift to the 2nd floor. Bus stop 4922 (41X, 500, 503).',next:['Santry clinic','Opening hours','Book an appointment']},
+{k:'where,location,address,find you,directions,map,located,which clinic,clinics,locations,how to get,bus,buses,transport',a:'Two clinics: <b>Santry</b> (256 Swords Road, Dublin 9) and <b>Swords</b> (Broadmeadow Hall, Applewood Close). Same opening hours at both. Home visits cover North Dublin too.',next:['Santry clinic','Swords clinic','Home visits']},
+{k:'parking,park,car park,car,drive,driving',a:'At the Santry clinic there is a <b>parking slot in front of the clinic</b> for clients. Parking at Swords is not on the site, so the team will confirm.',next:['Santry clinic','Swords clinic']},
+{k:'fees,fee,price,prices,cost,costs,how much,rates,charge,charges,pay how much,expensive,session fee,initial consultation fee,follow up fee,follow-up',a:'Published fees: <b>in clinic</b> initial &euro;65, follow-up &euro;65. <b>Online</b> initial &euro;55, follow-up &euro;45. <b>Home visit</b> initial &euro;110 to &euro;130, follow-up &euro;100 to &euro;120, depending on location and complexity. The booking page says the standard session fee becomes <b>&euro;70 from 1 November 2026</b>; earlier bookings keep the current rate.',next:['Insurance','Cancellation','Book an appointment']},
+{k:'insurance,insurer,insured,vhi,laya,irish life,aviva,health insurance,private health,refund,refunds,reimburse,reimbursement,receipt,receipts,claim,coverage,covered,direct bill,billing,pre authorise,pre-authorise',a:'All major Irish health insurers refund treatment by a chartered physiotherapist, but check your policy first, some pre-authorise. You <b>pay at the end of each appointment</b> and get a receipt to send to your insurer. The clinic does <b>not bill insurers directly</b>.',next:['Fees','Medical card','Book an appointment']},
+{k:'medical card,gms,hse,public,free,state,medical cards',a:'No. 365 Physiotherapy is a private practice and does <b>not accept the medical card</b>, which covers physiotherapy through the public HSE system. Most major private insurers do cover chartered physiotherapy.',next:['Insurance','Fees']},
+{k:'payment,pay,card,cash,how to pay,paying,after appointment,visa,contactless',a:'You pay by <b>cash or card after each appointment</b> unless you agreed otherwise with your physiotherapist, and you get a receipt for tax or insurance.',next:['Fees','Insurance']},
+{k:'cancel,cancellation fee,cancelation fee,cancellation,cancelation,cancelling,reschedule,rescheduling,no show,no-show,dna,miss appointment,late cancel,notice,24 hours,48 hours',a:'Give <b>24 hours&rsquo; notice</b> to cancel or reschedule. With less than 24 hours you pay 50% of the session fee, a missed appointment with no contact is the full fee. <b>Home visits need 48 hours&rsquo; notice</b>, with the full fee for late changes.',next:['Fees','Book an appointment']},
+{k:'referral,gp,doctor,referal,gp letter,do i need,need a referral,physician,letter,scan,mri,x-ray,xray,scans',a:'<b>No GP referral is needed.</b> If you have referral letters or scan reports (MRI, X-ray), bring a copy for your file.',next:['Book an appointment','First visit']},
+{k:'same day,same-day,today,urgent,asap,soon,availability,available,walk in,walk-in,quick,emergency',a:'<b>Same-day appointments</b> are often available most days, but cannot be guaranteed. Call +353 83 098 5073 or use online booking to check today. Sunday is home visits only.',next:['Book an appointment','Opening hours']},
+{k:'first visit,first appointment,initial,initial consultation,how long,how long does,duration,what to expect,assessment,bring,what to bring,how many appointments,how many sessions,sessions',a:'An initial consultation generally takes <b>20 to 40 minutes</b>. Bring any referral, scans or notes, and think about what caused the injury, when it started and how it changes with activity. How many sessions you need depends on your assessment, your physio will explain it and reassess every visit.',next:['Fees','Book an appointment']},
+{k:'home visit,home visits,home,house,nursing home,nursing homes,day care,day-care,retirement,residential,at home,come to me,come to my house,mobile,elderly,older,aged care,falls,balance',a:'<b>Home visits</b> run across North Dublin: Swords, Malahide, Portmarnock, Donabate, Rush, Lusk, Dublin 9, 11 and 15, including nursing homes and day-care centres. Please give 48 hours&rsquo; notice. You get a phone call and a clear quote first. Fees: initial &euro;110 to &euro;130, follow-up &euro;100 to &euro;120. Aged care, balance and falls prevention is part of the service.',next:['Fees','Who visits','Book an appointment']},
+{k:'who visits,dimple,dimple chovishya,home physio,who does home visits',a:'<b>Dimple Chovishya</b> leads the home visit and nursing home service, and <b>Shahul Hameed</b> does evening home visits in Dublin 15, Dublin 11 and nearby.',next:['Home visits','Team']},
+{k:'team,staff,physiotherapists,owner,who owns,boss,director,therapists,thirupal,ragi,shahul,hameed,joble,venkateswari,founder,qualified,qualification,coru,chartered,iscp,registered,who works',a:'The team: <b>Thirupal Ragi</b> (founder and clinical director, Santry and Swords), <b>Shahul Hameed</b> (senior chartered physiotherapist, Swords), <b>Dimple Chovishya</b> (home visits and nursing homes), <b>Joble Mercy Joseph</b> (Swords) and <b>Venkateswari Ragi</b> (physiotherapy assistant, Swords). The physiotherapists are CORU registered and chartered.',next:['Home visits','Book an appointment']},
+{k:'children,child,kids,kid,son,daughter,baby,teen,teenager,paediatric,pediatric,under 18,young',a:'<b>Yes, children are treated.</b> A parent needs to be present in the treatment room. There is also a page on children&rsquo;s sports injuries and rehabilitation.',next:['Sports injuries','Book an appointment']},
+{k:'sports,sport,sports injury,sports injuries,athlete,runner,running,football,gaa,rugby,acl,tendonitis,tendinitis,shin splints,tennis elbow,plantar fasciitis,runner knee,sprain,strain,rotator cuff,dislocation,fracture',a:'<b>Sports injury rehabilitation</b> for adults and children: assessment, manual therapy, exercise therapy, sport-specific rehab and modalities. The site lists sprains and strains, rotator cuff injuries, ACL tears, tendonitis, plantar fasciitis, shin splints, tennis elbow, runner&rsquo;s knee, and fractures and dislocations.',next:['Post-op rehab','Book an appointment']},
+{k:'post op,post-op,postop,post operative,surgery,surgical,after surgery,pre op,pre-op,orthopaedic,orthopedic,knee replacement,hip replacement,replacement,discharge,hospital,operation,rehab,rehabilitation',a:'<b>Post-operative rehabilitation</b> is a progressive exercise programme built around your surgery to restore strength, flexibility and function. Pre-op physio is possible if time allows. Always follow your consultant on when to start, physio after hospital discharge is also offered as a home service.',next:['Home visits','Book an appointment']},
+{k:'online,online consultation,online appointment,online session,video,zoom,remote,virtual,teams',a:'<b>Online</b> sessions are listed in the fees: initial &euro;55, follow-up &euro;45. How an online session runs (video platform and so on) is not on the site, so the team will confirm.',next:['Fees','Book an appointment']},
+{k:'dry needling,needling,needles,acupuncture',a:'<b>Dry needling physiotherapy</b> is on the clinic services list. Whether it suits you is for the physiotherapist to decide at assessment.',next:['Services','Book an appointment']},
+{k:'ultrasound,therapeutic ultrasound,interferential,electrical stimulation,machine,electrotherapy',a:'<b>Therapeutic ultrasound physiotherapy</b> is on the services list, and sports rehab can use ultrasound, interferential therapy and electrical stimulation. The physio decides what fits.',next:['Services']},
+{k:'exercise,exercise therapy,exercise prescription,strength,fitness,flexibility,programme,program,home exercise,weight loss',a:'<b>Exercise therapy and prescription</b> is a service, and your physio can give you a home exercise programme to speed recovery. The site also lists advice on exercise, strength and fitness among reasons to visit.',next:['Services','Book an appointment']},
+{k:'services,service,treatments,what services,services offered,therapies,all services,musculoskeletal,muscle,joint',a:'Clinic services: musculoskeletal physiotherapy, sports injury rehabilitation, post-operative rehabilitation, dry needling, exercise therapy and prescription, children&rsquo;s sports injuries and therapeutic ultrasound. Home visits add aged care and falls prevention, neurological and orthopaedic rehab, pain management and physio after hospital discharge.',next:['Home visits','Fees','Book an appointment']},
+{k:'neck,headache,headaches,neck pain,whiplash,shoulder,shoulder pain,elbow,wrist,hand,carpal tunnel,back,back pain,low back,lower back,upper back,mid back,sciatica,si joint,hip,knee,ankle,foot,feet,pain,hurts,hurt,injury,numbness,tingling,pins and needles,swelling,stiffness',a:'The site has a page for neck and headache, shoulder, elbow, wrist and hand, upper and mid back, low back and sciatica, hip, knee, ankle and foot, and sports injuries. I cannot assess your pain, the physiotherapist does that at your first visit. If pain wakes you at night, keeps getting worse or brings numbness or weakness, the site suggests contacting the clinic.',next:['First visit','Book an appointment','Same day']},
+{k:'massage,massage therapist,masseuse,tense muscles,relaxation',a:'The FAQ says a specific pain or injury is best seen by a physiotherapist first, who can refer on to a massage therapist if appropriate. For general tired or tense muscles a massage therapist may be the first stop. Availability of massage, the team will confirm.',next:['Book an appointment','Contact']},
+{k:'book,booking,online booking,appointment,schedule,make an appointment,reserve,slot',a:'Book online on the clinic site, or call <b>+353 83 098 5073</b> or <b>+353 1 513 0603</b>. I can also take your request here and pass it to the team.',next:['Book an appointment','Same day','Opening hours']},
+{k:'contact,phone,call,number,telephone,landline,email,mail,reach,speak to someone,talk to,whatsapp,whats app,message',a:'Mobile and WhatsApp: <b>+353 83 098 5073</b>. Landline: <b>+353 1 513 0603</b>. Email: <b>contact@365physiotherapy.ie</b>.',next:['Book an appointment','Opening hours']},
+{k:'occupational therapy,occupational therapist,ot,housing adaptation,housing grant,una,mcentee',a:'The site recommends an independent occupational therapist, Una McEntee, who does home assessments and housing adaptation grant reports. She runs her own practice and is not 365 Physiotherapy staff. Her number is on the About page, the team will confirm details.',next:['Contact','Team']},
+{k:'reviews,review,rating,ratings,stars,google,reputation,recommend,testimonials',a:'365 Physiotherapy has <b>4.9 stars on Google from 151 reviews</b>. The clinic site also has a testimonials page.',next:['Book an appointment']},
+{k:'hello,hi,hey,good morning,good evening,hello there',a:'Hello! Ask me about hours, fees, insurance, home visits or booking.',next:['Opening hours','Fees']},
+{k:'thanks,thank you,cheers,great,perfect,ok thanks',a:'Anytime. If you want an appointment, I can take your details for the team.',next:['Book an appointment']}
+],
+flow:{trigger:/^(book\b|i (want|would like|need|d like) to book|reserve|request|make an appointment|set up|enquire|inquire)/i,
+intro:'Let us set up an appointment request. A few quick questions.',cancel:'No problem, cancelled.',
+steps:[
+{key:'where',label:'Where',q:'Which would you like?',opts:['Santry clinic','Swords clinic','Home visit','Online']},
+{key:'area',label:'Area of concern',q:'Which area is it about? (I only pass it on, the physio assesses it.)',opts:['Back or neck','Shoulder or arm','Hip, knee or foot','Sports injury','After surgery','Other']},
+{key:'when',label:'Preferred day and time',q:'When suits you? Mon to Fri 9am to 9pm, Sat 9am to 5pm (home visits also Sunday).',ph:'e.g. Wednesday after 6pm'},
+{key:'name',label:'Name',q:'Your name?',ph:'Name'},
+{key:'phone',label:'Phone or email',q:'Best phone number or email?',ph:'Phone or email'}],
+done:'Done, sent to the team. They will confirm the time with you. (This is a demo: nothing is actually sent.) Your details:'}
+};
+buildWidget(CFG);
+function ask365(txt){document.getElementById('a-fab').click();setTimeout(function(){var i=document.getElementById('a-i');i.value=txt;document.getElementById('a-f').dispatchEvent(new Event('submit',{cancelable:true}))},50)}
+document.getElementById('bk2').onclick=function(){ask365('Book an appointment')};
+document.querySelectorAll('[data-bk]').forEach(function(b){b.onclick=function(){ask365('Book an appointment')}});
+document.querySelectorAll('#cg a').forEach(function(a){a.onclick=function(e){e.preventDefault();ask365(a.dataset.q)}});
+document.querySelectorAll('#tabs button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});['s','w','h'].forEach(function(k){document.getElementById('p-'+k).className='pane'+(k===b.dataset.t?' on':'')})}});
+(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Dublin',weekday:'short'}).format(new Date()).slice(0,3),d={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[p];document.querySelectorAll('[data-hrs] tr').forEach(function(r){if(r.dataset.d.split(',').indexOf(String(d))>=0)r.className='today'})}catch(e){}})();
+
+</script></body></html>
