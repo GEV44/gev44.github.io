@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en-IE"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Archview Physiotherapy, Ranelagh Dublin 6 · Demo</title>
+<meta name="description" content="Demo page with a booking assistant for Archview Physiotherapy Pain and Sports Injury Clinic, Ranelagh, Dublin 6.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Figtree:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#231f20;--cy:#20bae4;--cyd:#0a7c9f;--gr:#94c03d;--gd:#5c8512;--bg:#f3fafc;--deep:#0e2c37;--line:#d6e6ec;--mut:#4e5d63}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:400 16px/1.6 Figtree,system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+img{max-width:100%}a{color:var(--cyd)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.12;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.top{background:var(--deep);color:#d9f1f8;font-size:13px}
+.top .wrap{display:flex;gap:6px 18px;flex-wrap:wrap;justify-content:space-between;padding-top:7px;padding-bottom:7px}
+.top a{color:#fff;font-weight:700;text-decoration:none}
+header.h{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header.h .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:11px;padding-bottom:11px}
+.brand img{display:block;height:23px;width:auto;max-width:56vw}
+nav.n{display:none;gap:18px;font-weight:700;font-size:14.5px}
+nav.n a{color:var(--ink);text-decoration:none}nav.n a:hover{color:var(--cyd)}
+.btn{display:inline-block;border:0;border-radius:99px;background:var(--cy);color:#06222b;font:800 15px Figtree,sans-serif;padding:12px 20px;text-decoration:none;cursor:pointer}
+.btn.g{background:var(--gr)}.btn.o{background:transparent;border:2px solid var(--ink);color:var(--ink)}
+.btn.sm{padding:9px 15px;font-size:14px}
+.hero{position:relative;background:linear-gradient(160deg,#eaf8fd 0%,#f7fcf0 100%);overflow:hidden;padding:38px 0 46px}
+.hero:before{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--cy),#7ad7f1);opacity:.28}
+.hero:after{content:"";position:absolute;left:-60px;bottom:-110px;width:240px;height:240px;border-radius:50%;background:var(--gr);opacity:.22}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:26px}
+.kick{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:99px;padding:4px 13px;font-size:13px;font-weight:700;color:var(--cyd)}
+.hero h1{font-size:clamp(31px,8.2vw,56px);font-weight:800;margin:14px 0 14px;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--cyd)}
+.hero p.lead{font-size:17.5px;max-width:34em;color:#2f3d43;margin:0 0 20px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 8px;text-align:center}
+.stat b{display:block;font:800 26px Fraunces,serif;color:var(--cyd)}.stat span{font-size:12.5px;color:var(--mut);line-height:1.3;display:block}
+section{padding:46px 0}
+.eyebrow{font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gd)}
+h2{font-size:clamp(26px,6vw,38px);font-weight:800;margin:6px 0 12px}
+.sub{color:var(--mut);max-width:40em;margin:0 0 24px}
+.indiba{background:var(--deep);color:#e4f5fa}
+.indiba h2{color:#fff}.indiba .eyebrow{color:var(--gr)}
+.indiba .grid2{display:grid;gap:22px}
+.pill{display:inline-block;margin:0 6px 8px 0;padding:6px 13px;border-radius:99px;background:rgba(32,186,228,.16);border:1px solid rgba(32,186,228,.5);font-size:13.5px;font-weight:700;color:#bfeefc}
+.pill.l{background:#eaf8fd;border-color:#b8e6f4;color:#0a5f7a}
+.note{font-size:13.5px;color:#9fc3cf;margin-top:10px}
+.tx{display:grid;gap:10px;grid-template-columns:1fr}
+.tx a{display:flex;gap:12px;align-items:flex-start;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:14px;padding:13px 14px;background:#fff}
+.tx a:hover{border-color:var(--cy);box-shadow:0 4px 14px rgba(32,186,228,.18)}
+.tx i{flex:0 0 30px;height:30px;border-radius:9px;background:var(--bg);display:grid;place-items:center;font:800 13px Fraunces,serif;color:var(--cyd);font-style:normal}
+.tx b{display:block;font-size:16px}.tx span{font-size:14px;color:var(--mut);line-height:1.4;display:block}
+.team{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.who{border-left:4px solid var(--gr);background:var(--bg);border-radius:0 12px 12px 0;padding:10px 12px}
+.who b{display:block;font-size:15px;line-height:1.25}.who span{font-size:12.5px;color:var(--mut);line-height:1.3;display:block;margin-top:2px}
+.who.lead{grid-column:1/-1;border-left-color:var(--cy)}
+.fees{background:var(--bg)}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;font-size:14.5px}
+th,td{padding:10px 9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--deep);color:#fff;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase}
+td.p,th.p{text-align:right;white-space:nowrap;width:56px}
+tr.grp td{background:#e7f6fb;font-weight:800;color:var(--cyd);font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+.two{display:grid;gap:14px}
+.card{border:1px solid var(--line);border-radius:18px;padding:18px;background:#fff}
+.card h3{font-size:21px;margin-bottom:8px}.card p{margin:0 0 10px;color:#33444b}
+.card.c2{background:linear-gradient(160deg,#f7fcf0,#fff);border-color:#d7e9b4}
+.faq details{border:1px solid var(--line);border-radius:12px;margin-bottom:8px;background:#fff}
+.faq summary{cursor:pointer;font-weight:700;padding:13px 15px;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faq summary::after{content:"+";color:var(--cyd);font-weight:800}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:0;padding:0 15px 14px;color:#33444b}
+.visit{background:var(--deep);color:#e4f5fa}
+.visit h2{color:#fff}.visit a{color:#9ee4f8}
+.vgrid{display:grid;gap:14px}
+.vbox{background:rgba(255,255,255,.07);border-radius:16px;padding:16px}
+.vbox h3{font-size:18px;color:#fff;margin-bottom:6px}
+.hrs{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed rgba(255,255,255,.18);padding:5px 0}
+footer{padding:22px 0 90px;font-size:13px;color:var(--mut);text-align:center;border-top:1px solid var(--line)}
+#a-fab{position:fixed;right:14px;bottom:14px;z-index:40;background:var(--gr);color:#1b2a05;border:0;border-radius:99px;padding:14px 20px;font:800 15px Figtree,sans-serif;box-shadow:0 8px 24px rgba(14,44,55,.35);cursor:pointer}
+#a-panel{position:fixed;right:10px;bottom:70px;z-index:41;width:min(380px,calc(100vw - 20px));height:min(540px,calc(100vh - 90px));background:#fff;border-radius:18px;box-shadow:0 18px 50px rgba(14,44,55,.4);display:none;flex-direction:column;overflow:hidden}
+#a-panel.open{display:flex}
+.a-h{background:var(--deep);color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.a-h b{font:800 16px Fraunces,serif;display:block}.a-h small{color:#9fc3cf;font-size:12px}
+#a-x{background:none;border:0;color:#fff;font-size:24px;cursor:pointer;line-height:1}
+#a-log{flex:1;overflow:auto;padding:12px;background:#f1f9fc}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;margin-bottom:8px;font-size:14.5px;line-height:1.45}
+.m.b{background:#fff;border:1px solid var(--line)}.m.u{background:var(--cyd);color:#fff;margin-left:auto}
+.m a{font-weight:700}
+#a-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px 0;background:#fff;max-height:96px;overflow:auto}
+#a-chips button{border:1.5px solid var(--cy);background:#fff;border-radius:99px;padding:5px 11px;font:700 12.5px Figtree,sans-serif;cursor:pointer;color:var(--ink)}
+#a-chips button:hover{background:#e7f6fb}
+#a-form{display:flex;gap:6px;padding:10px;background:#fff}
+#a-form input{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:10px;padding:10px;font:15px Figtree,sans-serif}
+#a-form button{background:var(--deep);color:#fff;border:0;border-radius:10px;padding:0 15px;font-weight:700;cursor:pointer}
+@media(min-width:760px){
+ nav.n{display:flex}.hero .wrap{grid-template-columns:1.35fr 1fr;align-items:center;gap:40px}
+ .stats{grid-template-columns:1fr;gap:12px}.stat{display:flex;align-items:center;gap:14px;text-align:left;padding:14px 18px}.stat b{font-size:34px;min-width:64px}
+ .indiba .grid2{grid-template-columns:1.1fr .9fr}.tx{grid-template-columns:1fr 1fr}.team{grid-template-columns:repeat(3,1fr)}
+ .two{grid-template-columns:1fr 1fr}.vgrid{grid-template-columns:1fr 1fr 1fr}section{padding:64px 0}
+ th,td{padding:12px 14px}td.p,th.p{width:90px}
+}
+</style></head><body>
+<div class="top"><div class="wrap"><span>Now open 7 days a week, by appointment</span><span>Call <a href="tel:+35314913228">(01) 491 3228</a></span></div></div>
+<header class="h"><div class="wrap">
+<a class="brand" href="#top" aria-label="Archview Physiotherapy"><img src="img/archview-physio-dublin-logo.svg" alt="Archview Physiotherapy Dublin" width="370" height="44"></a>
+<nav class="n"><a href="#indiba">INDIBA</a><a href="#treatments">Treatments</a><a href="#team">Team</a><a href="#fees">Fees</a><a href="#faq">FAQ</a><a href="#visit">Visit</a></nav>
+<a class="btn sm" href="#" data-ask="Request an appointment">Request</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<div><span class="kick">Ranelagh, Dublin 6 · since 2008</span>
+<h1>Physiotherapy for <em>sports injuries</em> and chronic pain, seven days a week.</h1>
+<p class="lead">A team of physiotherapists and neuromuscular massage therapists, CORU and ISCP registered, working hands-on with exercise, dry needling and INDIBA&reg; radiofrequency.</p>
+<div class="cta"><a class="btn" href="#" data-ask="Request an appointment">Request an appointment</a><a class="btn o" href="https://archviewclinic.ie/book-online" rel="noopener">Online booking</a></div></div>
+<div class="stats"><div class="stat"><b>4.9</b><span>rated by clients, out of 5</span></div><div class="stat"><b>7</b><span>days open, Mon to Sun</span></div><div class="stat"><b>1st</b><span>clinic in Ireland with INDIBA&reg;</span></div></div>
+</div></div>
+
+<section class="indiba" id="indiba"><div class="wrap grid2">
+<div><span class="eyebrow">What sets the clinic apart</span>
+<h2>INDIBA&reg; radiofrequency, first in Ireland</h2>
+<p>INDIBA&reg; Active uses a 448 kHz radiofrequency to support the body's natural repair, easing pain and inflammation. It is used alongside manual therapy and dry needling, and Archview describes sessions as comfortable and non-invasive with no downtime.</p>
+<p class="note">Contraindications listed on the clinic site include pacemakers, pregnancy (discuss with your therapist), cancer and active infection. Your therapist decides if it suits you.</p></div>
+<div><p style="margin:0 0 10px;font-weight:700;color:#fff">Used at the clinic for</p>
+<span class="pill">Physiotherapy</span><span class="pill">Sports injuries</span><span class="pill">Massage</span><span class="pill">Women's pelvic health</span><span class="pill">Neck and back pain</span><span class="pill">Tendinopathy</span><span class="pill">Post-surgical scarring</span><span class="pill">Sprains</span>
+<p style="margin-top:12px"><a class="btn g sm" href="#" data-ask="What is INDIBA?">Ask about INDIBA</a></p></div>
+</div></section>
+
+<section id="treatments"><div class="wrap">
+<span class="eyebrow">Treatments</span><h2>Twelve ways to get you moving</h2>
+<p class="sub">Every Archview therapist is certified in dry needling, and it is included in the cost of all treatments and massages.</p>
+<div class="tx">
+<a href="https://archviewclinic.ie/treatments/physiotherapy/"><i>01</i><div><b>Physiotherapy</b><span>Evidence-based assessment, manual therapy and targeted exercise.</span></div></a>
+<a href="https://archviewclinic.ie/treatments/indiba-radiofrequency-therapy/"><i>02</i><div><b>INDIBA&reg; Radiofrequency</b><span>CE and FDA approved, used by elite athletes worldwide.</span></div></a>
+<a href="https://archviewclinic.ie/treatments/musculoskeletal-physiotherapy/"><i>03</i><div><b>Musculoskeletal</b><span>Joint, muscle and tendon problems, acute or persistent.</span></div></a>
+<a href="https://archviewclinic.ie/treatments/sports-physiotherapy/"><i>04</i><div><b>Sports physiotherapy</b><span>From injury to return to sport.</span></div></a>
+<a href="https://archviewclinic.ie/treatments/migraines-and-headaches/"><i>05</i><div><b>Migraine and headache</b><span>Physiotherapy for headache and migraine.</span></div></a>
+<a href="https://archviewclinic.ie/treatments/pre-post-operative-physiotherapy/"><i>06</i><div><b>Pre and post-operative</b><span>Rehab before and after surgery.</span></div></a>
+<a href="https://archviewclinic.ie/treatments/womens-health-physiotherapy/"><i>07</i><div><b>Women's health</b><span>Pelvic floor, pelvic girdle and post-partum care. The specialist is currently on maternity leave.</span></div></a>
+<a href="https://archviewclinic.ie/treatments/neurology-physiotherapy/"><i>08</i><div><b>Neurology physiotherapy</b><span>Rehabilitation for neurological conditions.</span></div></a>
+<a href="https://archviewclinic.ie/treatments/dry-needling/"><i>09</i><div><b>Dry needling</b><span>Fine sterile needles into trigger points to release muscle pain and tension.</span></div></a>
+<a href="https://archviewclinic.ie/treatments/massage-therapy/"><i>10</i><div><b>Massage therapy</b><span>Neuromuscular, sports, pregnancy, holistic and Indian head massage.</span></div></a>
+<a href="https://archviewclinic.ie/treatments/laser-therapy/"><i>11</i><div><b>Laser therapy</b><span>Low-level laser for pain relief and healing.</span></div></a>
+<a href="https://archviewclinic.ie/treatments/insoles-orthotics/"><i>12</i><div><b>Insoles and orthotics</b><span>Foot biomechanics assessment, Vasyli insoles or custom orthotics.</span></div></a>
+</div>
+<p style="margin:22px 0 8px;font-weight:800">Commonly treated, as listed on the clinic site</p>
+<div><span class="pill l">Neck and back pain</span><span class="pill l">Sports and overuse injuries</span><span class="pill l">Shoulder, hip, knee and ankle pain</span><span class="pill l">Tendinopathy</span><span class="pill l">Muscle spasm and tears</span><span class="pill l">Sprains</span><span class="pill l">Bursitis</span><span class="pill l">Arthritis</span><span class="pill l">Headaches</span><span class="pill l">Desk-related pain</span><span class="pill l">Post-operative rehab</span><span class="pill l">Chronic pain</span><span class="pill l">Pelvic pain</span></div>
+<p style="font-size:13.5px;color:var(--mut);margin:6px 0 0">Not sure where your problem fits? A physiotherapist will assess it at your first visit. This page cannot diagnose.</p>
+</div></section>
+
+<section id="team" style="background:#fff;padding-top:8px"><div class="wrap">
+<span class="eyebrow">The team</span><h2>People you will meet</h2>
+<p class="sub">Physiotherapists are CORU registered. Massage therapists are registered with ANMT or IMTA. The clinic's team page shows each registration.</p>
+<div class="team">
+<div class="who lead"><b>Lynsey McGovern</b><span>Clinical Lead, CORU registered physiotherapist and Managing Director</span></div>
+<div class="who"><b>Toni Teggin</b><span>Senior physical therapist and Clinical Manager</span></div>
+<div class="who"><b>Dalton Zenak Sierra</b><span>Senior MSK and sports physio, strength and conditioning coach</span></div>
+<div class="who"><b>Vigneshwaran Sambathkumar</b><span>Senior MSK and sports physio, strength and conditioning coach</span></div>
+<div class="who"><b>Ayusha Bora</b><span>Senior MSK and sports physiotherapist</span></div>
+<div class="who"><b>Vijit Mishra</b><span>Senior MSK and sports physiotherapist</span></div>
+<div class="who"><b>Edwina Lynn</b><span>Senior MSK and sports physiotherapist</span></div>
+<div class="who"><b>Martina Tomas</b><span>Senior massage and neuromuscular physical therapist, ANMT</span></div>
+<div class="who"><b>Christopher Downey</b><span>Senior massage and neuromuscular physical therapist, IMTA and ANMT</span></div>
+</div></div></section>
+
+<section class="fees" id="fees"><div class="wrap">
+<span class="eyebrow">Fees</span><h2>What a session costs</h2>
+<p class="sub">By appointment only. Weekday and weekend rates as published on the clinic's Fees page.</p>
+<table><thead><tr><th>Service</th><th class="p">Week</th><th class="p">Wknd</th></tr></thead><tbody>
+<tr class="grp"><td colspan="3">Physiotherapy</td></tr>
+<tr><td>Physiotherapy, 30 min</td><td class="p">&euro;80</td><td class="p">&euro;85</td></tr>
+<tr><td>Physiotherapy, 60 min</td><td class="p">&euro;160</td><td class="p">&euro;170</td></tr>
+<tr><td>INDIBA&reg; physio, 30 min</td><td class="p">&euro;80</td><td class="p">&euro;85</td></tr>
+<tr><td>INDIBA&reg; physio, 60 min</td><td class="p">&euro;160</td><td class="p">&euro;170</td></tr>
+<tr class="grp"><td colspan="3">Physical therapy with Toni Teggin</td></tr>
+<tr><td>Physical therapy, 30 min</td><td class="p">&euro;65</td><td class="p">&euro;70</td></tr>
+<tr><td>Physical therapy, 55 min</td><td class="p">&euro;90</td><td class="p">&euro;95</td></tr>
+<tr class="grp"><td colspan="3">Massage therapy</td></tr>
+<tr><td>Neuromuscular massage, 30 min</td><td class="p">&euro;65</td><td class="p">&euro;70</td></tr>
+<tr><td>Neuromuscular, sports, pregnancy, holistic or Indian head massage, 55 min</td><td class="p">&euro;90</td><td class="p">&euro;95</td></tr>
+<tr><td>INDIBA&reg; massage, 55 min</td><td class="p">&euro;140</td><td class="p">&euro;150</td></tr>
+<tr class="grp"><td colspan="3">Products</td></tr>
+<tr><td>Customised orthotics incl. assessment</td><td class="p" colspan="2">&euro;480</td></tr>
+<tr><td>Vasyli insoles</td><td class="p" colspan="2">&euro;100</td></tr>
+</tbody></table>
+<p style="font-size:14px;color:var(--mut);margin:14px 0 0">Sessions are covered by all major health insurers, so check your policy. Income-tax payers may claim 20% back through Revenue's Med 1.</p>
+</div></section>
+
+<section><div class="wrap two">
+<div class="card"><h3>Telehealth physio</h3><p>Video consultations with a physiotherapist from home or anywhere. It suits many neck, back, shoulder, hip, knee and ankle problems and rehab progressions. If hands-on treatment is needed, they guide you into the clinic.</p><p style="font-size:14px">You need a camera device, a stable connection and a small space to move.</p><a class="btn sm" href="#" data-ask="Telehealth">Ask about telehealth</a></div>
+<div class="card c2"><h3>Ergonomics Club</h3><p>For desk-related back and neck pain. Archview partners with KOS Ergonomics to look at the workstation behind the symptoms as well as treating the pain itself.</p><a class="btn g sm" href="#" data-ask="Ergonomics Club">Ask about Ergonomics Club</a></div>
+</div></section>
+
+<section class="faq" id="faq" style="padding-top:8px"><div class="wrap">
+<span class="eyebrow">Good to know</span><h2>Quick answers</h2>
+<details><summary>Can I book outside office hours?</summary><p>Yes. The online booking system lets patients book, cancel and rebook outside office hours.</p></details>
+<details><summary>What is the cancellation policy?</summary><p>24 hours' notice is requested. A late cancellation or reschedule less than 6 hours before costs &euro;40, and a no-show is charged the full fee. Emergencies are understood.</p></details>
+<details><summary>Is dry needling extra?</summary><p>No. All therapists dry needle, and it is included in the cost of treatments and massages.</p></details>
+<details><summary>Do you treat women's health issues?</summary><p>The clinic offers women's health physiotherapy, but its specialist is currently on maternity leave. Ask the team about current availability.</p></details>
+<details><summary>Do you see patients on weekends?</summary><p>Yes, Saturday and Sunday 9am to 5pm, by appointment.</p></details>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap">
+<span class="eyebrow" style="color:var(--gr)">Visit</span><h2>49 Ranelagh Road, Dublin 6</h2>
+<div class="vgrid" style="margin-top:18px">
+<div class="vbox"><h3>Opening hours</h3><div class="hrs"><span>Mon to Fri</span><b>8am to 8pm</b></div><div class="hrs"><span>Sat and Sun</span><b>9am to 5pm</b></div><p style="font-size:13.5px;margin:8px 0 0;color:#b7dbe6">By appointment only</p></div>
+<div class="vbox"><h3>Find us</h3><p style="margin:0">49 Ranelagh Road, Ranelagh,<br>Dublin 6, D06YY30</p><p style="margin:8px 0 0"><a href="https://www.google.com/maps/search/?api=1&amp;query=Archview+Physiotherapy+49+Ranelagh+Road+Dublin+6">Open in Maps</a></p></div>
+<div class="vbox"><h3>Contact</h3><p style="margin:0"><a href="tel:+35314913228">(01) 491 3228</a><br><a href="mailto:info@archviewclinic.ie">info@archviewclinic.ie</a></p></div>
+</div></div></section>
+</main>
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="a-fab" type="button" aria-label="Open assistant">Ask Archview</button>
+<div id="a-panel" role="dialog" aria-label="Archview assistant"><div class="a-h"><div><b>Archview assistant</b><small>Demo. Sends nothing.</small></div><button id="a-x" type="button" aria-label="Close">&times;</button></div>
+<div id="a-log"></div><div id="a-chips"></div>
+<form id="a-form"><input id="a-in" autocomplete="off" placeholder="Type your question"><button type="submit">Send</button></form></div>
+<script>
+/* assistant engine: client-side only, sends nothing */
+(function(g){
+function norm(s){return String(s).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.replace(/(ing|ings|ed|es|s|ly)$/,function(m,x,o){return w.length-m.length>=3?'':m;});}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;var d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function tokens(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function tokScore(qt,kw){var k=stem(norm(kw));if(!k)return 0;
+ if(k.indexOf(' ')>-1){var parts=k.split(' ');var ok=parts.every(function(p){return qt.some(function(t){return t===p||(p.length>3&&lev(t,p)<=1);});});return ok?parts.length*2.2:0;}
+ for(var i=0;i<qt.length;i++){var t=qt[i];if(t===k)return 2;if(k.length>4&&t.length>4&&(k.indexOf(t)===0||t.indexOf(k)===0)&&Math.abs(k.length-t.length)<=3)return 1.6;var tol=k.length>=8?2:(k.length>=5?1:0);if(tol&&lev(t,k)<=tol)return 1.5;}
+ return 0;}
+function match(q,kb){var qt=tokens(q),best=null,bs=0;kb.forEach(function(e){var s=0;e.k.forEach(function(kw){s+=tokScore(qt,kw);});s*=(e.w||1);if(s>bs){bs=s;best=e;}});return bs>=1.5?best:null;}
+g.AsstEngine={norm:norm,match:match,lev:lev};
+if(typeof document==='undefined')return;
+g.AsstInit=function(C){
+ var $=function(i){return document.getElementById(i)};
+ var fab=$('a-fab'),pan=$('a-panel'),log=$('a-log'),inp=$('a-in'),chips=$('a-chips'),form=$('a-form');
+ var flow=null,data={};
+ function add(t,who){var d=document.createElement('div');d.className='m '+who;if(who==='b')d.innerHTML=t;else d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+ function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){say(c)};chips.appendChild(b);});}
+ function startFlow(){flow={i:0};data={};ask();}
+ function ask(){var s=C.flow[flow.i];add(s.q,'b');setChips(s.opts?s.opts.concat([C.cancel]):[C.cancel]);inp.placeholder=s.opts?C.pickHint:C.typeHint;}
+ function say(t){t=String(t).trim();if(!t)return;add(t,'u');inp.value='';
+  if(flow){if(norm(t)===norm(C.cancel)){flow=null;add(C.cancelled,'b');setChips(C.chips);return;}
+   var s=C.flow[flow.i];var v=t;if(s.opts){var f=null;s.opts.forEach(function(o){if(norm(o)===norm(t)||(norm(t).length>2&&norm(o).indexOf(norm(t))>-1))f=o;});if(!f){add(C.pickAgain,'b');return;}v=f;}
+   if(s.check&&!s.check(v)){add(s.err,'b');return;}
+   data[s.key]=v;flow.i++;if(flow.i<C.flow.length){ask();}else{var sum=C.flow.map(function(x){return '<b>'+x.label+':</b> '+esc(data[x.key]);}).join('<br>');flow=null;add(C.done(sum),'b');setChips(C.chips);inp.placeholder=C.typeHint;}return;}
+  if(C.bookRe.test(norm(t))&&!(C.noBook&&C.noBook.test(norm(t)))){startFlow();return;}
+  var m=match(t,C.kb);if(m){add(m.a,'b');if(m.book){}}else add(C.fallback,'b');setChips(C.chips);}
+ function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+ fab.onclick=function(){pan.classList.toggle('open');if(pan.classList.contains('open')&&!log.children.length){add(C.hello,'b');setChips(C.chips);}};
+ $('a-x').onclick=function(){pan.classList.remove('open')};
+ form.onsubmit=function(e){e.preventDefault();say(inp.value);};
+ window.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-ask]');if(t){e.preventDefault();pan.classList.add('open');if(!log.children.length){add(C.hello,'b');}say(t.getAttribute('data-ask'));}});
+};
+})(typeof window!=='undefined'?window:globalThis);
+
+
+(function(){
+var T='<a href="tel:+35314913228">(01) 491 3228</a>';
+var CONF='The team will confirm that: call '+T+' or email info@archviewclinic.ie.';
+var kb=[
+{k:['hours','open','opening','close','closing','late','early','evening','when','time','times'],a:'Mon to Fri 8am to 8pm, Sat and Sun 9am to 5pm. The clinic is now open 7 days a week, by appointment only.'},
+{k:['sunday','saturday','weekend','weekends'],a:'Yes, Saturday and Sunday 9am to 5pm, by appointment. Weekend session rates are slightly higher than weekday ones, see the Fees section.'},
+{k:['where','address','location','directions','find','ranelagh','dublin','parking','luas','map'],a:'49 Ranelagh Road, Ranelagh, Dublin 6, D06YY30. I do not have parking or transport details, so the team will confirm: '+T+'.'},
+{k:['phone','call','number','contact','email','mail','reach','telephone'],a:'Call '+T+' or email info@archviewclinic.ie.'},
+{k:['fees','fee','price','prices','cost','costs','how much','charge','rates','rate','pay','payment'],a:'Physiotherapy is &euro;80 for 30 minutes and &euro;160 for 60 minutes on weekdays, &euro;85 and &euro;170 at weekends. Physical therapy with Toni Teggin is &euro;65 or &euro;90 on weekdays. Massage is &euro;65 for 30 minutes and &euro;90 for 55. See the full Fees table on this page.'},
+{k:['massage','neuromuscular','sports massage','pregnancy massage','holistic','indian head','relaxation','deep tissue'],a:'Massage options are neuromuscular, neck and back, sports, Indian head, pregnancy and holistic massage, with an INDIBA massage as well. They are &euro;90 for 55 minutes on weekdays and &euro;95 at weekends, and &euro;65 or &euro;70 for 30 minutes of neuromuscular massage.'},
+{k:['indiba','radiofrequency','radio frequency','rf','448','nadal'],a:'INDIBA Active is a radiofrequency therapy that supports the body\'s natural repair and eases pain and inflammation. Archview was the first clinic in Ireland to offer it. It is used with physiotherapy, sports injuries, massage and women\'s pelvic health. Whether it suits you is for your therapist to decide.'},
+{k:['indiba safe','contraindication','contraindications','pacemaker','pregnant','pregnancy','cancer','infection'],a:'The clinic lists these as contraindications for INDIBA: pacemakers or implanted electronic devices that cannot be removed, pregnancy (discuss with your therapist), cancer and malignancy, active infection and thrombophlebitis. Please tell your therapist about any of these.'},
+{k:['dry needling','dry needle','dry','acupuncture','trigger point','sterile needles'],a:'Dry needling uses very thin sterile needles in muscle trigger points to ease pain and tension. All the clinic\'s therapists are certified and it is included in the cost of treatments and massages.'},
+{k:['laser','cold laser','lllt'],a:'Low-level laser therapy uses light energy for pain relief, less inflammation and faster healing. The clinic uses it for things like neck, back, shoulder, knee and ankle pain, tendinitis and arthritis pain. Your therapist advises if it fits your case.'},
+{k:['insurance','insurer','insured','health insurance','vhi','laya','irish life','rebate','claim','claiming','reclaim','med 1','med1','tax'],a:'Physiotherapy sessions are covered by all major health insurers, but each policy differs, so check with yours. The clinic lists each therapist\'s registered body on the team page. Income-tax payers may also claim tax relief of 20% through Med 1 with Revenue.'},
+{k:['cancel','cancle','cancellation','cancelation','reschedule','postpone','no show','noshow','notice','late'],a:'The clinic asks for 24 hours\' notice. Cancelling or rescheduling less than 6 hours before costs &euro;40, and a no-show is charged the full fee. Emergencies are understood. Online booking lets you cancel and rebook outside office hours.'},
+{k:['telehealth','online','video','remote','zoom','virtual','from home','distance'],a:'Yes, Telehealth physiotherapy is a secure video consultation with one of the physiotherapists. You need a camera device, a stable connection and room to move. If hands-on treatment is needed, they will guide you into the clinic.'},
+{k:['ergonomics','desk','workstation','office','posture','sitting','kos'],a:'The Ergonomics Club is for desk-related back and neck pain. Archview works with KOS Ergonomics to look at your workstation as well as treating the symptoms.'},
+{k:['orthotics','orthotic','insoles','insole','vasyli','foot','feet','flat feet','arch'],a:'A foot biomechanics assessment checks whether insoles or orthotics could help. Customised orthotics are &euro;480 including assessment, Vasyli insoles &euro;100. A physiotherapist makes the call after assessing you.'},
+{k:['team','therapist','therapists','physio','physios','physiotherapist','physiotherapists','who','lynsey','mcgovern','toni','teggin','dalton','vigneshwaran','ayusha','vijit','edwina','martina','christopher','downey','staff','doctor'],a:'Lynsey McGovern is Clinical Lead and Managing Director, Toni Teggin is Clinical Manager. Physiotherapists include Dalton Zenak Sierra, Vigneshwaran Sambathkumar, Ayusha Bora, Vijit Mishra and Edwina Lynn. Massage therapists are Martina Tomas and Christopher Downey. Physiotherapists are CORU registered.'},
+{w:1.8,k:['women','womens','pelvic','pelvic floor','postnatal','post partum','postpartum','prenatal','menopause','incontinence','diastasis','c section'],a:'The clinic offers women\'s health physiotherapy for pelvic floor, pelvic girdle pain and post-partum recovery, but its specialist is currently on maternity leave. Please ask the team about current availability: '+T+'.'},
+{k:['sports','sport','athlete','athletes','running','runner','gaa','rugby','football','return to sport','strength','conditioning'],a:'Sports physiotherapy covers injuries from first treatment through to return to sport. Dalton Zenak Sierra and Vigneshwaran Sambathkumar are also strength and conditioning coaches.'},
+{k:['headache','headaches','migraine','migraines'],a:'The clinic has a Migraine and Headache Physiotherapy treatment. I cannot judge any symptoms, so please talk to a therapist about your case.'},
+{k:['surgery','operation','post op','postop','pre op','preop','operative','rehab','rehabilitation','replacement'],a:'There is pre and post-operative physiotherapy for rehab around surgery. Your therapist will plan it with you.'},
+{k:['neuro','neurology','neurological','stroke','parkinsons','ms'],a:'The clinic lists Neurology Physiotherapy among its treatments. For details on a specific condition, the team will confirm: '+T+'.'},
+{k:['treatments','treatment','services','service','offered','everything'],a:'Physiotherapy, INDIBA radiofrequency, musculoskeletal and sports physiotherapy, migraine and headache, pre and post-operative, women\'s health, neurology, dry needling, massage, laser therapy, insoles and orthotics, plus Telehealth and the Ergonomics Club.'},
+{k:['how long','duration','minutes','30 minute','60 minute','length','session'],a:'Physiotherapy sessions are 30 or 60 minutes. Physical therapy is 30 or 55 minutes, and most massages 55 minutes.'},
+{k:['registered','coru','iscp','qualified','qualification','qualifications','evidence','experience','established','since','history','2008'],a:'The clinic opened in 2008 in Ranelagh. Its physiotherapists are CORU and ISCP registered and work in an evidence-based way, combining manual therapy, exercise and specialist tools.'},
+{k:['referral','refer','gp','doctor referral','letter'],a:'The clinic site does not mention referrals, so the team will confirm: '+T+'.'},
+{k:['careers','jobs','hiring','vacancy','vacancies'],a:'The clinic site has a Careers page.'},
+{k:['review','reviews','rating','rated','reputation','recommended'],a:'The clinic describes itself as rated 4.9 out of 5 by its clients.'},
+{w:.6,k:['pain','shoulder','knee','hip','ankle','neck','back','injury','injured','sore','hurt','hurts','sprain','strain'],a:'The clinic treats neck and back pain, shoulder, hip, knee and ankle problems, sprains, tendon and muscle injuries. I cannot tell what is behind your pain, so a physiotherapist will assess it. <a href="#" data-ask="Request an appointment">Request an appointment</a>.'},
+{k:['hi','hello','hey','thanks','thank','good morning'],a:'Hello. Ask about hours, fees, INDIBA, insurance or telehealth, or request an appointment.'}
+];
+var C={noBook:/(how much|price|cost|fee|hours|open|cancel|when can|insurance|claim|online|telehealth|video|remote|virtual|zoom)/,kb:kb,bookRe:/\b(book|booking|appointment|appointments|schedule|reserve|request|apointment|apointments|boking|slot)\b/,
+hello:'Hi, I am the demo assistant for Archview Physiotherapy in Ranelagh. I answer from the clinic\'s site and can take an appointment request. I cannot give medical advice or diagnose.',
+chips:['Request an appointment','Opening hours','Fees','What is INDIBA?','Insurance','Telehealth'],
+fallback:'I do not have that. '+CONF+' For anything about your symptoms please speak to a physiotherapist.',
+cancel:'Cancel',cancelled:'No problem, request cancelled.',pickHint:'Tap an option',typeHint:'Type your question',pickAgain:'Please tap one of the options.',
+flow:[
+{key:'svc',label:'Appointment',q:'What would you like to book?',opts:['Physiotherapy','INDIBA session','Massage','Physical therapy','Telehealth','Insoles or orthotics','Not sure']},
+{key:'area',label:'Area',q:'Which area is the appointment for?',opts:['Neck','Back','Shoulder','Hip','Knee','Foot or ankle','Other']},
+{key:'visit',label:'Visit type',q:'Have you been to Archview before?',opts:['First visit','I am a returning patient']},
+{key:'day',label:'Days',q:'Which days suit you?',opts:['Weekdays','Weekend','Either']},
+{key:'tod',label:'Time of day',q:'What time of day?',opts:['Morning','Afternoon','Evening (weekdays)']},
+{key:'who',label:'Therapist',q:'Do you want a particular therapist?',opts:['Any','Lynsey McGovern','Toni Teggin','Dalton Zenak Sierra','Other, I will say']},
+{key:'name',label:'Your name',q:'Your name?'},
+{key:'phone',label:'Phone',q:'Best phone number?',check:function(v){return v.replace(/\D/g,'').length>=7},err:'Please enter a phone number with at least 7 digits.'}],
+done:function(s){return 'Thank you. Your request is with the team (demo: nothing was really sent).<br>'+s+'<br>Please do not share medical details here. The team will confirm a time and answer anything about your symptoms.';}};
+if(typeof document!=='undefined')AsstInit(C);else globalThis.__C=C;
+})();
+
+</script></body></html>

@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M Prive Salon · Gastown, Vancouver</title>
+<meta name="description" content="Balayage, precision cuts and Korean Head Spa in Gastown. Demo page with a booking assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#121110;--cream:#f5f0e8;--sand:#e6dccd;--bronze:#9b7a4c;--mute:#6d655b;--line:#d5c9b8;
+--ai-a:#121110;--ai-at:#f5f0e8;--ai-bg:#fffdf9;--ai-bg2:#f5f0e8;--ai-bot:#fff;--ai-bd:#d5c9b8;--ai-t:#121110;--ai-f:'Jost',system-ui,sans-serif;--ai-r:2px;--ai-r2:2px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font:300 17px/1.65 'Jost',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+.cap{font:500 11.5px/1 'Jost',sans-serif;letter-spacing:.32em;text-transform:uppercase;color:var(--bronze)}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.05;letter-spacing:-.01em}
+header{position:sticky;top:0;z-index:50;background:rgba(245,240,232,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0}
+.logo{height:46px;width:auto}
+nav{display:none;gap:26px;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:400}
+nav a{text-decoration:none}nav a:hover{color:var(--bronze)}
+.btn{display:inline-block;border:1px solid var(--ink);background:var(--ink);color:var(--cream);padding:13px 22px;font:500 12.5px/1 'Jost',sans-serif;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--bronze);border-color:var(--bronze)}
+.btn.ghost{background:transparent;color:var(--ink)}.btn.ghost:hover{background:var(--ink);color:var(--cream)}
+@media(min-width:860px){nav{display:flex}}
+.hero{padding:44px 0 36px;border-bottom:1px solid var(--line)}
+.hero-g{display:grid;gap:30px}
+.hero h1{font-size:clamp(46px,12.5vw,118px);margin:16px 0 20px}
+.hero h1 em{font-style:italic;color:var(--bronze);font-weight:400}
+.hero p.lead{max-width:34em;font-size:18px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.plate{border:1px solid var(--ink);padding:22px;background:var(--sand);align-self:end}
+.plate .row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px}
+.plate .row:last-child{border:0}
+.plate b{font-weight:500}
+@media(min-width:860px){.hero{padding:76px 0 60px}.hero-g{grid-template-columns:1.6fr 1fr;gap:60px}}
+.strip{background:var(--ink);color:var(--cream);overflow:hidden;white-space:nowrap;padding:14px 0;font:400 12px/1 'Jost',sans-serif;letter-spacing:.34em;text-transform:uppercase}
+.strip span{display:inline-block;padding-right:40px;animation:mv 28s linear infinite}
+@keyframes mv{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.strip span{animation:none}}
+section{padding:60px 0}
+.sh{display:grid;gap:10px;margin-bottom:34px}
+.sh h2{font-size:clamp(36px,8vw,64px)}
+.sh p{max-width:36em;color:var(--mute)}
+.menu{display:grid;gap:34px}
+@media(min-width:860px){.menu{grid-template-columns:1fr 1fr;gap:20px 70px}}
+.grp h3{font-size:30px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px solid var(--ink);padding-bottom:8px}
+.grp h3 small{font:400 11px 'Jost',sans-serif;letter-spacing:.25em;text-transform:uppercase;color:var(--bronze)}
+.it{display:flex;align-items:baseline;gap:8px;padding:9px 0;font-size:16px}
+.it .n{flex:0 1 auto}
+.it .d{flex:1 1 20px;border-bottom:1px dotted var(--mute);min-width:12px;transform:translateY(-4px)}
+.it .p{flex:none;font-weight:500;white-space:nowrap}
+.it .t{display:block;font-size:13px;color:var(--mute)}
+.note{font-size:14px;color:var(--mute);margin-top:10px}
+.spa{background:var(--ink);color:var(--cream)}
+.spa .cap{color:#c9a876}
+.spa-g{display:grid;gap:36px}
+@media(min-width:860px){.spa-g{grid-template-columns:1.1fr 1fr;gap:70px;align-items:center}}
+.spa h2{font-size:clamp(40px,9vw,76px);margin:14px 0 18px}
+.spa p{color:#d9d1c4;margin-bottom:14px}
+.price-card{border:1px solid #4a443c;padding:6px 22px}
+.price-card .it{border-bottom:1px solid #35302a;padding:16px 0}
+.price-card .it:last-child{border:0}
+.price-card .d{border-color:#6b6357}
+.price-card .t{color:#b3a999}
+.stats{display:flex;gap:30px;flex-wrap:wrap;margin-top:22px}
+.stats div{font:400 12px 'Jost';letter-spacing:.18em;text-transform:uppercase;color:#b3a999}
+.stats strong{display:block;font:500 38px 'Cormorant Garamond',serif;color:var(--cream);letter-spacing:0}
+.team{display:grid;gap:22px}
+@media(min-width:760px){.team{grid-template-columns:1fr 1fr;gap:34px}}
+.card{border:1px solid var(--line);background:#fbf8f3;padding:30px 26px}
+.card .mono{font:italic 400 76px/1 'Cormorant Garamond',serif;color:var(--sand);margin-bottom:8px}
+.card h3{font-size:42px;letter-spacing:.04em}
+.card .role{margin:6px 0 14px;font:500 11.5px 'Jost';letter-spacing:.22em;text-transform:uppercase;color:var(--bronze)}
+.card p{color:#4b443c;font-size:16px;margin-bottom:10px}
+.space{background:var(--sand)}
+.space-g{display:grid;gap:30px}
+@media(min-width:860px){.space-g{grid-template-columns:1fr 1fr;gap:70px}}
+.big{font:500 clamp(70px,20vw,170px)/.9 'Cormorant Garamond',serif;color:var(--ink);letter-spacing:-.03em}
+.big small{display:block;font:400 12px 'Jost';letter-spacing:.3em;text-transform:uppercase;color:var(--mute);margin-top:12px}
+.prods{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:14px}
+.pr{border:1px solid var(--line);padding:16px;background:#fbf8f3;display:flex;flex-direction:column;justify-content:space-between;gap:10px;min-height:104px}
+.pr b{font-weight:400;font-size:15px;line-height:1.3}
+.pr span{font:500 20px 'Cormorant Garamond',serif;color:var(--bronze)}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font:500 22px 'Cormorant Garamond',serif;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--bronze);font-size:26px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{color:#4b443c;margin-top:8px;max-width:44em}
+.visit-g{display:grid;gap:30px}
+@media(min-width:860px){.visit-g{grid-template-columns:1fr 1fr 1fr;gap:44px}}
+.visit h3{font-size:30px;margin-bottom:10px}
+.visit p,.visit li{font-size:16px;list-style:none}
+.hrs li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:7px 0}
+footer{background:var(--ink);color:#b9b0a1;padding:30px 0 90px;font-size:14px}
+footer .wrap{display:flex;flex-direction:column;gap:6px}
+footer b{color:var(--cream);font-weight:400}
+</style>
+<style>#ai-fab{position:fixed;right:16px;bottom:16px;z-index:90;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--ai-a);color:var(--ai-at);font:600 14px/1 var(--ai-f);padding:14px 18px;border-radius:var(--ai-r);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#ai-fab svg{width:20px;height:20px;flex:none}
+#ai-box{position:fixed;right:16px;bottom:78px;z-index:91;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 110px));background:var(--ai-bg);color:var(--ai-t);border-radius:var(--ai-r2);box-shadow:0 18px 50px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--ai-f);border:1px solid var(--ai-bd)}
+#ai-box.open{display:flex}
+.ai-h{background:var(--ai-a);color:var(--ai-at);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ai-h b{display:block;font-size:15px}.ai-h small{opacity:.8;font-size:12px}
+#ai-x{background:transparent;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+#ai-msgs{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--ai-bg2)}
+.ai-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.ai-m.bot{align-self:flex-start;background:var(--ai-bot);border:1px solid var(--ai-bd)}
+.ai-m.me{align-self:flex-end;background:var(--ai-a);color:var(--ai-at)}
+.ai-m a{color:inherit;text-decoration:underline}
+.ai-m small{opacity:.7}
+.ai-dots i{display:inline-block;width:6px;height:6px;margin:0 2px;border-radius:50%;background:currentColor;opacity:.4;animation:aid 1s infinite}
+.ai-dots i:nth-child(2){animation-delay:.15s}.ai-dots i:nth-child(3){animation-delay:.3s}
+@keyframes aid{50%{opacity:1}}
+#ai-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 12px;border-top:1px solid var(--ai-bd);background:var(--ai-bg);max-height:96px;overflow-y:auto}
+.ai-chip{border:1px solid var(--ai-a);color:var(--ai-a);background:transparent;border-radius:999px;padding:6px 11px;font:13px var(--ai-f);cursor:pointer}
+.ai-chip:hover{background:var(--ai-a);color:var(--ai-at)}
+#ai-form{display:flex;gap:6px;padding:8px 12px 12px;background:var(--ai-bg)}
+#ai-in{flex:1;min-width:0;border:1px solid var(--ai-bd);border-radius:10px;padding:10px;font:15px var(--ai-f);background:var(--ai-bg2);color:var(--ai-t)}
+#ai-form button{border:0;background:var(--ai-a);color:var(--ai-at);border-radius:10px;padding:0 14px;font:600 14px var(--ai-f);cursor:pointer}
+@media(max-width:480px){#ai-box{right:8px;left:8px;width:auto;bottom:74px}}
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+<a href="#top" aria-label="M Prive Salon"><img class="logo" src="img/m-prive-salon-logo.png" alt="M Prive Salon &amp; Spa" width="123" height="44"></a>
+<nav><a href="#services">Services</a><a href="#headspa">Head Spa</a><a href="#team">Team</a><a href="#visit">Visit</a></nav>
+<a class="btn" href="#" onclick="aiOpen('Book an appointment');return false">Book</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap hero-g">
+<div>
+<span class="cap">Gastown · Vancouver · Salon &amp; Spa</span>
+<h1>Balayage,<br>precision cuts <em>&amp;&nbsp;Korean Head Spa.</em></h1>
+<p class="lead">A team of international master stylists in a 4,100 sq ft open space that mixes vintage and urban design, in the heart of historic Gastown. Colour, cut and scalp care are all done here at 50 Powell Street.</p>
+<div class="cta"><a class="btn" href="#" onclick="aiOpen('Book an appointment');return false">Request an appointment</a><a class="btn ghost" href="#services">See the menu</a></div>
+</div>
+<aside class="plate" aria-label="Salon hours">
+<span class="cap">Salon hours</span>
+<div class="row" style="margin-top:12px"><span>Monday</span><b>Closed</b></div>
+<div class="row"><span>Tuesday to Friday</span><b>11am – 7pm</b></div>
+<div class="row"><span>Saturday</span><b>11am – 6pm</b></div>
+<div class="row"><span>Sunday</span><b>11am – 5pm</b></div>
+</aside>
+</div></div>
+<div class="strip" aria-hidden="true"><span>Balayage · Airtouch blonding · Precision cuts · Korean protein treatment · Keratin smoothing · Hair botox · Scalp facial · Extensions · Men's cuts &amp; beard · Gastown ·</span><span>Balayage · Airtouch blonding · Precision cuts · Korean protein treatment · Keratin smoothing · Hair botox · Scalp facial · Extensions · Men's cuts &amp; beard · Gastown ·</span></div>
+
+<section id="services"><div class="wrap">
+<div class="sh"><span class="cap">The menu</span><h2>Services &amp; prices</h2><p>Listed as published on the salon's own services page. A “+” means the price starts there and depends on hair length and density.</p></div>
+<div class="menu">
+<div class="grp"><h3>Cut &amp; Style <small>Hair</small></h3>
+<div class="it"><span class="n">Ladies cut + blowout<span class="t">1.5 hr</span></span><i class="d"></i><span class="p">$120+</span></div>
+<div class="it"><span class="n">Wash &amp; blow out<span class="t">45 min</span></span><i class="d"></i><span class="p">$70+</span></div>
+<div class="it"><span class="n">Curls / flat iron, add-on<span class="t">15 min</span></span><i class="d"></i><span class="p">$10+</span></div>
+<div class="it"><span class="n">Men's cut, short<span class="t">45 min</span></span><i class="d"></i><span class="p">$60+</span></div>
+<div class="it"><span class="n">Men's cut, long<span class="t">60 min</span></span><i class="d"></i><span class="p">$70+</span></div>
+<div class="it"><span class="n">Men's cut + all-over colour<span class="t">1 hr 30 min</span></span><i class="d"></i><span class="p">$150+</span></div>
+<div class="it"><span class="n">Men's cut + beard<span class="t">1 hr 30 min</span></span><i class="d"></i><span class="p">$100+</span></div>
+</div>
+<div class="grp"><h3>Colour <small>Blonde &amp; balayage</small></h3>
+<div class="it"><span class="n">Full highlights<span class="t">4+ hr</span></span><i class="d"></i><span class="p">$400+</span></div>
+<div class="it"><span class="n">Airtouch global blonding<span class="t">5+ hr</span></span><i class="d"></i><span class="p">$500+</span></div>
+<div class="it"><span class="n">Partial highlights<span class="t">3+ hr</span></span><i class="d"></i><span class="p">$300+</span></div>
+<div class="it"><span class="n">All-over colour<span class="t">2+ hr</span></span><i class="d"></i><span class="p">$200+</span></div>
+<div class="it"><span class="n">Balayage / creative colour<span class="t">4+ hr</span></span><i class="d"></i><span class="p">$400+</span></div>
+<div class="it"><span class="n">Airtouch balayage<span class="t">5+ hr</span></span><i class="d"></i><span class="p">$500+</span></div>
+<div class="it"><span class="n">Regrowth touch-up<span class="t">1.5+ hr · under 2 months / 3 cm</span></span><i class="d"></i><span class="p">$150+</span></div>
+<div class="it"><span class="n">Toner / base break<span class="t">1+ hr</span></span><i class="d"></i><span class="p">$120+</span></div>
+<div class="it"><span class="n">Colour correction<span class="t">6+ hr · prior consultation required</span></span><i class="d"></i><span class="p">from $500+</span></div>
+</div>
+<div class="grp"><h3>Texture <small>Treatment / perm</small></h3>
+<div class="it"><span class="n">Korean protein treatment<span class="t">0.5 hr · add-on only</span></span><i class="d"></i><span class="p">$50+</span></div>
+<div class="it"><span class="n">Cezanne keratin smoothing<span class="t">3.5 hr</span></span><i class="d"></i><span class="p">$400+</span></div>
+<div class="it"><span class="n">Hair botox treatment<span class="t">3.5 hr</span></span><i class="d"></i><span class="p">$400+</span></div>
+</div>
+<div class="grp"><h3>Extensions <small>By consultation</small></h3>
+<div class="it"><span class="n">Hair extensions<span class="t">Consultation required</span></span><i class="d"></i><span class="p">$270+</span></div>
+<p class="note">After the consultation the length and colour of the extension hair are chosen. A full deposit for the hair is required, and installation follows after one business week.</p>
+</div>
+</div>
+</div></section>
+
+<section class="spa" id="headspa"><div class="wrap spa-g">
+<div>
+<span class="cap">Odjibik · Scalp facial</span>
+<h2>Korean<br>Head Spa</h2>
+<p>M Prive is the fifth Odjibik scalp-facial location, the first in Vancouver. The idea behind it is simple: beautiful hair starts from a healthy scalp, the way a garden grows from healthy soil. It is a facial for your scalp, with the same care a facialist gives your face.</p>
+<p>Odjibik opened in Yorkville, Toronto in 2013 and now has four locations around the Greater Toronto Area.</p>
+<div class="stats"><div><strong>2013</strong>Odjibik opens</div><div><strong>5,000+</strong>Toronto clients</div><div><strong>5th</strong>location, Vancouver</div></div>
+</div>
+<div class="price-card">
+<div class="it"><span class="n">Scalp facial for her<span class="t">1 hr, rough dry</span></span><i class="d"></i><span class="p">$120</span></div>
+<div class="it"><span class="n">Scalp facial + blow-dry for her<span class="t">1.5 hr</span></span><i class="d"></i><span class="p">$160</span></div>
+<div class="it"><span class="n">Scalp facial for him<span class="t">1 hr</span></span><i class="d"></i><span class="p">$110</span></div>
+<div style="padding:18px 0"><a class="btn" style="background:var(--cream);color:var(--ink)" href="#" onclick="aiOpen('Book a head spa');return false">Book a head spa</a></div>
+</div>
+</div></section>
+
+<section id="team"><div class="wrap">
+<div class="sh"><span class="cap">The chairs</span><h2>Master stylists</h2><p>International training, brought to Gastown. Ask the assistant about either of them, or request one by name when you book.</p></div>
+<div class="team">
+<article class="card"><div class="mono">F</div><h3>FABIANO</h3><div class="role">Master stylist · Brazilian tech · Makeup artistry</div>
+<p>Born and raised in São Paulo, Brazil, with more than a decade behind the chair. He works in colour, precision cuts for men and women, keratin smoothing, styling and professional makeup.</p>
+<p>His specialties include making textured hair more manageable and building blonde tones with precision. With makeup too, a full makeover can happen in one visit.</p></article>
+<article class="card"><div class="mono">F</div><h3>FERIT</h3><div class="role">Master stylist · Blonde · Balayage master</div>
+<p>From Istanbul, Türkiye, with over 20 years of experience at some of the city's top salons. Naturally dark, thick hair is common there, so he has developed methods for strong blonde results even on challenging textures.</p>
+<p>His work spans highlights, balayage and precision haircuts, customised to each client.</p></article>
+</div>
+</div></section>
+
+<section class="space"><div class="wrap space-g">
+<div class="big">4,100<small>square feet, one open room</small></div>
+<div><span class="cap">The salon</span><h2 style="font-size:clamp(34px,7vw,56px);margin:12px 0 16px">Vintage meets urban, in historic Gastown.</h2>
+<p>The brief from founder Andrew Kim was a truly upscale, trendy salon where “luxury” means excellence beyond simply expensive. The team is treated as “internal clients”, supported to develop trendy styles and techniques, so the “external clients” get the best of it.</p></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="sh"><span class="cap">At the salon</span><h2>Take-home care</h2><p>Products shown on the salon's site, including the Odjibik scalp line.</p></div>
+<div class="prods">
+<div class="pr"><b>Superfine Hair Spray</b><span>$52</span></div>
+<div class="pr"><b>Royal Blowout Heat Styling Spray</b><span>$86</span></div>
+<div class="pr"><b>Old Lust Nourishing Hair Oil</b><span>$70</span></div>
+<div class="pr"><b>Gold Lust Transformative Masque</b><span>$82</span></div>
+<div class="pr"><b>Gold Lust Repair &amp; Restore Conditioner</b><span>$65</span></div>
+<div class="pr"><b>Gold Lust Repair &amp; Restore Shampoo</b><span>$61</span></div>
+<div class="pr"><b>Root Activator Scalp Serum 50 ml</b><span>$50</span></div>
+<div class="pr"><b>Root Rejuvenating Shampoo 250 ml</b><span>$30</span></div>
+</div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<div class="sh"><span class="cap">Good to know</span><h2>Questions</h2></div>
+<details><summary>How do I book?</summary><p>Use the Book Appointment button on the salon's website, call (604) 566-6565, text (647) 965-3232, or send a DM to @mprivesalon. Or tell the assistant here what you are after and it will pass a request to the team.</p></details>
+<details><summary>Can I get extensions in one visit?</summary><p>Extensions start with a consultation. The length and colour of the hair is chosen afterwards, a full deposit for the extension hair is required, and the installation happens after one business week.</p></details>
+<details><summary>I want a big colour change. Where do I start?</summary><p>Colour correction (6+ hours, from $500+) requires a consultation first. Balayage and highlights are done by the colour team, and Ferit is the balayage master.</p></details>
+<details><summary>Where do I park?</summary><p>Metered street parking in Gastown is usually limited to 2 hours. Two public lots have no time limit: Advanced Parking Lot #171 at 80 Powell St (about 100 metres from the salon) and EasyPark Lot #31 at 160 Water St (about 8 minutes on foot).</p></details>
+<details><summary>Are you hiring?</summary><p>The salon is recruiting stylists, from senior stylists on tiered commission to new talent with in-salon training. Send a resume to mprivesalon@gmail.com and a DM on Instagram @mprivesalon.</p></details>
+</div></section>
+
+<section id="visit" style="background:var(--sand)"><div class="wrap visit-g visit">
+<div><span class="cap">Find us</span><h3 style="margin-top:12px">50 Powell St.</h3><p>Gastown<br>Vancouver, BC V6A 1E7<br>Canada</p></div>
+<div><span class="cap">Reach us</span><h3 style="margin-top:12px">Call, text or DM</h3><p>Phone <a href="tel:+16045666565">(604) 566-6565</a><br>Text (647) 965-3232<br>Instagram @mprivesalon<br>mprivesalon@gmail.com</p></div>
+<div><span class="cap">Hours</span><ul class="hrs" style="margin-top:12px"><li><span>Mon</span><b>Closed</b></li><li><span>Tue – Fri</span><b>11am – 7pm</b></li><li><span>Sat</span><b>11am – 6pm</b></li><li><span>Sun</span><b>11am – 5pm</b></li></ul></div>
+</div></section>
+</main>
+<footer><div class="wrap"><b>M Prive Salon &amp; Spa</b><span>Demo · prepared by Gevorg Hovhannisyan</span></div></footer>
+
+<button id="ai-fab" type="button" aria-expanded="false" aria-controls="ai-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span>Ask or book</span></button>
+<div id="ai-box" role="dialog" aria-label="M Prive Salon assistant"><div class="ai-h"><div><b>M Prive Salon</b><small>Demo assistant · replies instantly</small></div><button id="ai-x" type="button" aria-label="Close">&times;</button></div><div id="ai-msgs" aria-live="polite"></div><div id="ai-chips"></div><form id="ai-form" autocomplete="off"><input id="ai-in" type="text" placeholder="Ask a question" aria-label="Your question"><button type="submit">Send</button></form></div>
+
+<script>/*ENGINE*/
+function makeEngine(CFG){
+var STOP={a:1,an:1,the:1,is:1,are:1,do:1,does:1,you:1,your:1,i:1,my:1,me:1,we:1,to:1,of:1,for:1,in:1,on:1,at:1,it:1,and:1,or:1,can:1,u:1,there:1,have:1,has:1,be:1,with:1,this:1,that:1,what:1,how:1,about:1,please:1,any:1,get:1,much:1};
+var IRR=CFG.irr||{};
+function stem(w){
+  if(IRR[w])return IRR[w];
+  if(w.length>5&&/ies$/.test(w))w=w.slice(0,-3)+'y';
+  else if(w.length>5&&/(ing)$/.test(w))w=w.slice(0,-3);
+  else if(w.length>4&&/(ed)$/.test(w))w=w.slice(0,-2);
+  else if(w.length>4&&/es$/.test(w))w=w.slice(0,-2);
+  else if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))w=w.slice(0,-1);
+  if(w.length>4&&/e$/.test(w))w=w.slice(0,-1);
+  if(IRR[w])return IRR[w];
+  return w;
+}
+function toks(q){
+  var t=String(q).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9à-ÿ$ ]+/g,' ').split(/\s+/).filter(Boolean);
+  return t.filter(function(w){return !STOP[w]}).map(stem).filter(function(w){return !STOP[w]&&w.length>0});
+}
+function lev(a,b){
+  if(a===b)return 0;
+  var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;
+  var d=[],i,j;for(i=0;i<=m;i++){d[i]=[i]}for(j=0;j<=n;j++)d[0][j]=j;
+  for(i=1;i<=m;i++)for(j=1;j<=n;j++){
+    var c=a[i-1]===b[j-1]?0:1;
+    d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);
+    if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1);
+  }
+  return d[m][n];
+}
+function wordHit(t,k){
+  if(t===k)return 1;
+  if(k.length>=4&&t.length>=4&&(t.indexOf(k)===0||k.indexOf(t)===0)&&Math.abs(t.length-k.length)<=3)return 0.9;
+  if(k.length>=4&&t[0]===k[0]){var l=lev(t,k);if(k.length>=8&&l<=2)return 0.9;if(l<=1)return 0.9}
+  return 0;
+}
+function kwScore(tk,kw){
+  var kt=toks(kw);if(!kt.length)return 0;
+  var sum=0;
+  for(var i=0;i<kt.length;i++){
+    var best=0;for(var j=0;j<tk.length;j++){var h=wordHit(tk[j],kt[i]);if(h>best)best=h}
+    if(!best)return 0;sum+=best;
+  }
+  return sum*(kt.length>1?1.6:1)*(1+Math.min(kt[0].length,9)/30);
+}
+function answer(q){
+  var tk=toks(q);var best=null,bs=0;
+  if(!tk.length)return null;
+  for(var i=0;i<CFG.kb.length;i++){
+    var e=CFG.kb[i],s=0;
+    for(var j=0;j<e.k.length;j++){var v=kwScore(tk,e.k[j]);if(v>s)s=v}
+    if(e.p)s*=e.p;
+    if(s>bs){bs=s;best=e}
+  }
+  return bs>=0.85?best:null;
+}
+return {answer:answer,toks:toks,lev:lev};
+}
+/*ENDENGINE*/
+(function(){
+var CFG={"kb": [{"id": "book", "k": ["book", "appointment", "reserve", "schedule", "make a booking", "come in", "get in"], "a": "Happy to help with a request. A few quick questions first.", "act": "book", "p": 1.2}, {"id": "hours", "k": ["hours", "open", "close", "opening times", "when are you open", "closing", "sunday", "saturday", "monday", "weekend", "late"], "a": "Tuesday to Friday 11am to 7pm, Saturday 11am to 6pm, Sunday 11am to 5pm. Closed on Mondays."}, {"id": "address", "k": ["address", "where", "location", "find you", "directions", "powell", "gastown", "located", "street", "get there"], "a": "M Prive Salon is at 50 Powell St., Gastown, Vancouver, BC V6A 1E7."}, {"id": "parking", "k": ["parking", "park", "car", "lot", "metered", "easypark"], "a": "Metered street parking in Gastown is usually up to 2 hours. Two public lots have no time limit: Advanced Parking Lot #171 at 80 Powell St (about 100 m from the salon) and EasyPark Lot #31 at 160 Water St (about an 8 minute walk)."}, {"id": "phone", "k": ["phone", "call", "number", "text", "contact", "email", "instagram", "dm", "reach", "whatsapp"], "a": "Phone (604) 566-6565, text (647) 965-3232, Instagram DM @mprivesalon, or mprivesalon@gmail.com."}, {"id": "prices", "k": ["price", "prices", "cost", "how much", "pricing", "rates", "expensive", "menu", "fee", "charge"], "p": 0.9, "a": "Starting prices from the salon's menu: ladies cut + blowout $120+, wash & blow out $70+, men's cut $60+, balayage / creative colour $400+, full highlights $400+, keratin smoothing $400+, scalp facial from $110. The &quot;+&quot; means the final price depends on hair length and density. Ask about any service for details.", "chips": ["Colour prices", "Cut prices", "Head Spa", "Book an appointment"]}, {"id": "cut", "k": ["haircut", "cut", "trim", "blowout", "blow out", "blow dry", "blowdry", "style", "styling", "wash", "ladies", "women", "curls", "flat iron"], "a": "Ladies cut + blowout is $120+ (1.5 hr), wash & blow out $70+ (45 min), and curls / flat iron as an add-on $10+ (15 min)."}, {"id": "men", "k": ["men", "mens", "man", "male", "beard", "gentleman", "guy", "barber"], "p": 1.3, "a": "Men's cut short $60+ (45 min), men's cut long $70+ (60 min), men's cut + beard $100+ (1.5 hr), men's cut + all-over colour $150+ (1.5 hr). Scalp facial for him is $110 (1 hr)."}, {"id": "colour", "k": ["colour", "color", "dye", "highlights", "all over", "root", "roots", "toner", "toning", "base break", "regrowth", "touch up", "creative colour", "fashion colour"], "a": "Colour menu: full highlights $400+ (4+ hr), partial highlights $300+ (3+ hr), all-over colour $200+ (2+ hr), regrowth touch-up $150+ (1.5+ hr, for under 2 months / 3 cm), toner / base break $120+ (1+ hr). Colour correction is from $500+ and needs a consultation first."}, {"id": "balayage", "k": ["balayage", "blonde", "blond", "airtouch", "global blonding", "sun kissed", "lighten", "bleach", "ombre", "babylights"], "a": "Balayage / creative colour is $400+ (4+ hr). Airtouch balayage and Airtouch global blonding are $500+ (5+ hr). Balayage is hand-painted for a natural, sun-kissed blend, and Ferit is the team's blonde and balayage master."}, {"id": "correction", "k": ["color correction", "colour correction", "correct", "fix my colour", "fix my color", "orange", "brassy", "went wrong", "box dye"], "a": "Colour correction is from $500+ and takes 6+ hours. A consultation is required before booking it, so the team can see your hair first."}, {"id": "keratin", "k": ["keratin", "smoothing", "frizz", "straighten", "straightening", "brazilian", "botox", "hair botox", "cezanne", "protein", "korean protein"], "a": "Cezanne keratin smoothing and hair botox are each $400+ (3.5 hr). The Korean protein treatment is a $50+ add-on (30 min) and is add-on only. Keratin smoothing tames frizz and can last up to four months, according to the salon's keratin page."}, {"id": "headspa", "k": ["head spa", "headspa", "scalp", "scalp facial", "odjibik", "korean head spa", "massage", "dandruff", "hair loss", "thinning"], "a": "The Korean Head Spa is an Odjibik scalp facial: scalp facial for her $120 (1 hr, rough dry), with blow-dry for her $160 (1.5 hr), for him $110 (1 hr). The salon is the fifth Odjibik location. For specific scalp concerns, the team will advise in person."}, {"id": "extensions", "k": ["extension", "extensions", "hair extensions", "clip in", "weft", "tape in", "length"], "a": "Hair extensions start with a consultation (from $270+). Afterwards the length and colour of the hair is chosen, a full deposit for the extension hair is required, and installation happens after one business week."}, {"id": "team", "k": ["team", "stylist", "stylists", "who", "staff", "hairdresser", "masters", "master stylist", "who does"], "a": "Two master stylists are featured: Fabiano (Brazilian tech, colour, precision cuts, keratin, makeup) and Ferit (blonde and balayage master). You can request one by name when you book.", "chips": ["Tell me about Fabiano", "Tell me about Ferit"]}, {"id": "fabiano", "k": ["fabiano", "brazil", "brazilian tech", "makeup", "make up", "makeover"], "a": "Fabiano is from Sao Paulo, Brazil, with more than a decade behind the chair. He does colour, precision cuts for men and women, keratin smoothing, styling and professional makeup, so a full makeover can happen in one visit."}, {"id": "ferit", "k": ["ferit", "istanbul", "turkey", "turkiye", "turkish", "dark hair", "thick hair"], "a": "Ferit is from Istanbul with over 20 years of experience. He specialises in blonde, balayage, highlights and precision cuts, including strong blonde results on dark, thick hair."}, {"id": "about", "k": ["about", "story", "founder", "andrew", "kim", "history", "who owns", "owner", "started"], "a": "Founder Andrew Kim opened the first Odjibik scalp facial salon in Yorkville, Toronto in 2013, then opened M Prive in Gastown as an upscale, urban salon with the fifth Odjibik location inside it."}, {"id": "space", "k": ["space", "salon", "interior", "sqft", "square feet", "size", "vibe", "atmosphere", "design", "decor"], "a": "M Prive is a 4,100 sq ft open space mixing vintage and urban design in historic Gastown."}, {"id": "products", "k": ["product", "products", "shampoo", "conditioner", "serum", "oil", "spray", "masque", "mask", "retail", "buy", "shop", "derma roller", "brush"], "a": "Products at the salon include Superfine Hair Spray $52, Royal Blowout Heat Styling Spray $86, Old Lust Hair Oil $70, Gold Lust Masque $82, Gold Lust Conditioner $65 and Shampoo $61, Root Activator Scalp Serum $50 and Root Rejuvenating Shampoo $30."}, {"id": "duration", "k": ["how long", "duration", "take", "hours long", "time does", "takes"], "a": "Typical times from the menu: cut + blowout 1.5 hr, balayage 4+ hr, Airtouch 5+ hr, regrowth touch-up 1.5+ hr, keratin or hair botox 3.5 hr, scalp facial 1 to 1.5 hr."}, {"id": "jobs", "k": ["job", "jobs", "hiring", "career", "work for", "join", "vacancy", "apply", "recruit", "commission", "hiring stylist", "hire"], "p": 1.2, "a": "The salon is recruiting senior stylists (tiered commission starting at 50%) and new talent (in-salon training). Send a resume to mprivesalon@gmail.com and DM @mprivesalon on Instagram."}, {"id": "hi", "k": ["hi", "hello", "hey", "good morning", "good afternoon", "good evening", "hola"], "a": "Hello! I can help with prices, hours, the team, the Head Spa, or a booking request."}, {"id": "thanks", "k": ["thanks", "thank you", "thx", "cheers", "great", "perfect", "awesome"], "a": "You are welcome! Anything else?"}], "chips": ["Book an appointment", "Prices", "Hours", "Head Spa", "Where are you?"], "greet": "Hi, I am the assistant for M Prive Salon in Gastown. Ask about services, prices, stylists or hours, or request an appointment.", "fallback": "I do not have that detail from the salon, so the team will need to confirm it. You can call (604) 566-6565 or text (647) 965-3232.", "medical": "allerg|pregnan|rash|eczema|psoriasis|dermatitis|infection|medical|medication|sensitive skin", "medicalMsg": "I cannot advise on skin or health questions. Please mention it to the stylist or call (604) 566-6565 so the team can talk it through with you first.", "irr": {"men": "men", "mens": "men", "colour": "color", "colours": "color", "coloring": "color", "colouring": "color", "ladies": "ladi", "women": "woman", "womens": "woman"}, "doneTitle": "Request sent to the team", "doneMsg": "Thank you. The team will confirm the time with you by phone or message.", "flow": [{"key": "svc", "label": "Service", "q": "What would you like to book?", "chips": ["Cut & style", "Colour / balayage", "Keratin / texture", "Korean Head Spa", "Extensions consult", "Not sure yet"]}, {"key": "who", "label": "Stylist", "q": "Do you have a preferred stylist?", "chips": ["Fabiano", "Ferit", "No preference"]}, {"key": "when", "label": "Preferred time", "q": "Which day and time suits you? (Open Tue to Fri 11am to 7pm, Sat 11am to 6pm, Sun 11am to 5pm.)", "ph": "e.g. Saturday afternoon"}, {"key": "name", "label": "Name", "q": "Your name?", "t": "name", "err": "Please type your name."}, {"key": "contact", "label": "Contact", "q": "Best phone number or email for the team to confirm?", "t": "contact", "err": "Please enter a phone number or an email address."}]};
+var E=makeEngine(CFG);
+var $=function(i){return document.getElementById(i)};
+var box=$('ai-box'),msgs=$('ai-msgs'),chips=$('ai-chips'),form=$('ai-form'),inp=$('ai-in'),fab=$('ai-fab');
+var flow=null,data={},opened=false;
+function add(who,html,isHtml){
+  var d=document.createElement('div');d.className='ai-m '+who;
+  if(isHtml)d.innerHTML=html;else d.textContent=html;
+  msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d;
+}
+function setChips(list){
+  chips.innerHTML='';
+  (list||[]).forEach(function(c){
+    var b=document.createElement('button');b.type='button';b.className='ai-chip';b.textContent=c;
+    b.onclick=function(){send(c)};chips.appendChild(b);
+  });
+}
+function bot(html,ch){
+  var t=add('bot','<span class="ai-dots"><i></i><i></i><i></i></span>',true);
+  setTimeout(function(){t.innerHTML=html;msgs.scrollTop=msgs.scrollHeight;setChips(ch||CFG.chips)},380);
+}
+function startFlow(){
+  flow={i:0};data={};
+  askStep();
+}
+function askStep(){
+  var s=CFG.flow[flow.i];
+  setTimeout(function(){},0);
+  var t=add('bot',s.q,false);
+  setChips(s.chips?s.chips.concat(['Cancel']):['Cancel']);
+  inp.placeholder=s.ph||'Type your answer';
+}
+function valid(s,v){
+  if(s.t==='phone')return v.replace(/\D/g,'').length>=7;
+  if(s.t==='name')return v.trim().length>=2;
+  if(s.t==='contact')return /@/.test(v)||v.replace(/\D/g,'').length>=7;
+  return v.trim().length>=1;
+}
+function finish(){
+  var s='<b>'+CFG.doneTitle+'</b><br>';
+  CFG.flow.forEach(function(st){s+=esc(st.label)+': '+esc(data[st.key]||'-')+'<br>'});
+  s+='<br>'+CFG.doneMsg+'<br><small>(Demo: nothing is actually sent.)</small>';
+  flow=null;inp.placeholder='Ask a question';
+  bot(s,CFG.chips);
+}
+function esc(x){return String(x).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function send(text){
+  text=String(text||'').trim();if(!text)return;
+  add('me',text,false);inp.value='';
+  if(/^(cancel|stop|never ?mind|quit|exit)$/i.test(text)&&flow){flow=null;inp.placeholder='Ask a question';bot('No problem, I cancelled that request. Anything else?');return}
+  if(flow){
+    var s=CFG.flow[flow.i];
+    if(!valid(s,text)){add('bot',s.err||'Sorry, I did not catch that. Please try again.',false);return}
+    data[s.key]=text;flow.i++;
+    if(flow.i>=CFG.flow.length){finish();return}
+    askStep();return;
+  }
+  if(CFG.medical&&new RegExp(CFG.medical,'i').test(text)){bot(CFG.medicalMsg);return}
+  var e=E.answer(text);
+  if(!e){bot(CFG.fallback);return}
+  if(e.act==='book'){add('bot',e.a,false);startFlow();return}
+  bot(e.a,e.chips);
+}
+function open(o){
+  box.classList.toggle('open',o);fab.setAttribute('aria-expanded',o);
+  if(o&&!opened){opened=true;bot(CFG.greet)}
+  if(o)setTimeout(function(){inp.focus()},50);
+}
+fab.onclick=function(){open(!box.classList.contains('open'))};
+$('ai-x').onclick=function(){open(false)};
+form.onsubmit=function(ev){ev.preventDefault();send(inp.value)};
+window.aiOpen=function(t){open(true);if(t)setTimeout(function(){send(t)},450)};
+window.__engine=E;
+})();
+</script>
+</body>
+</html>

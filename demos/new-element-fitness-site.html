@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>New Element Fitness · More than a Gym, Milltown D6</title>
+<meta name="description" content="Demo page for New Element Fitness, Milltown, Dublin 6.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#101215;--bg2:#171a1f;--card:#1d2127;--line:#2b313a;--tx:#eef1f5;--mut:#9aa4b2;--blue:#2080e8;--blue2:#5aa8ff;--hot:#ff5a1f;--r:14px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden;-webkit-text-size-adjust:100%}
+a{color:inherit}
+h1,h2,h3,.cond{font-family:'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:.95}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+.chip{display:inline-block;background:#fff;border-radius:10px;padding:6px 10px;line-height:0}
+.chip.dark{background:#15181c;border:1px solid var(--line)}
+.chip img{height:38px;width:auto;display:block}
+/* top bar */
+.top{position:sticky;top:0;z-index:20;background:rgba(16,18,21,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:9px;padding-bottom:9px}
+.top nav{display:none;gap:22px;font-size:14px;color:var(--mut)}
+.top nav a{text-decoration:none}.top nav a:hover{color:#fff}
+.call{background:var(--blue);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:9px 14px;border-radius:999px;white-space:nowrap}
+@media(min-width:820px){.top nav{display:flex}}
+/* hero */
+.hero{position:relative;padding:54px 0 40px;background:radial-gradient(900px 420px at 85% -10%,rgba(32,128,232,.35),transparent 60%),radial-gradient(600px 300px at 0% 100%,rgba(255,90,31,.14),transparent 60%)}
+.hero .tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.dot{width:9px;height:9px;border-radius:50%;background:#777}.dot.on{background:#2ee59d;box-shadow:0 0 0 4px rgba(46,229,157,.18)}
+.hero h1{font-size:clamp(58px,17vw,148px);font-weight:800;margin:18px 0 8px}
+.hero h1 em{font-style:normal;color:var(--blue2)}
+.hero p.lead{max-width:560px;color:#c8d0db;font-size:18px}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{display:inline-block;border:0;cursor:pointer;font:600 15px Inter;text-decoration:none;padding:14px 22px;border-radius:999px}
+.btn.p{background:var(--hot);color:#fff}.btn.g{background:transparent;color:#fff;border:1px solid #475060}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:34px}
+.facts div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px}
+.facts b{display:block;font:700 30px 'Barlow Condensed';color:var(--blue2);text-transform:uppercase}
+.facts span{font-size:13px;color:var(--mut)}
+@media(min-width:760px){.facts{grid-template-columns:repeat(4,1fr)}}
+/* sections */
+section{padding:56px 0}
+.k{font:600 12px Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--blue2)}
+h2{font-size:clamp(40px,9vw,68px);margin:8px 0 14px;font-weight:800}
+.sub{color:var(--mut);max-width:620px}
+/* tickets */
+.tix{display:grid;gap:14px;margin-top:28px}
+.tk{position:relative;background:linear-gradient(160deg,#20262e,#171b20);border:1px solid var(--line);border-radius:var(--r);padding:22px;overflow:hidden}
+.tk::after{content:"";position:absolute;right:-14px;top:50%;width:28px;height:28px;margin-top:-14px;background:var(--bg);border-radius:50%;border:1px solid var(--line)}
+.tk h3{font-size:26px;color:var(--mut);font-weight:700}
+.tk .pr{font:800 70px 'Barlow Condensed';line-height:1;margin:8px 0}
+.tk .pr small{font-size:30px;vertical-align:top;margin-right:2px;color:var(--blue2)}
+.tk p{color:var(--mut);font-size:14px}
+.tk.best{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue) inset}
+.tk .flag{position:absolute;top:12px;right:34px;background:var(--hot);font-size:11px;font-weight:700;padding:3px 9px;border-radius:99px;letter-spacing:.06em}
+@media(min-width:760px){.tix{grid-template-columns:repeat(3,1fr)}}
+/* paths */
+.paths{background:var(--bg2);border-block:1px solid var(--line)}
+.row{display:grid;grid-template-columns:56px 1fr;gap:6px 14px;padding:22px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border:0}
+.row .n{font:800 52px 'Barlow Condensed';color:#2c3440;grid-row:span 2}
+.row h3{font-size:30px}
+.row p{color:var(--mut);font-size:15px}
+.row .who{font-size:13px;color:var(--blue2)}
+/* transform */
+.tf{display:grid;gap:22px;margin-top:26px}
+.stat{display:flex;gap:10px;flex-wrap:wrap}
+.stat div{flex:1 1 90px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;text-align:center}
+.stat b{display:block;font:800 46px 'Barlow Condensed';color:var(--hot);line-height:1}
+.stat span{font-size:12px;color:var(--mut)}
+ul.ck{list-style:none;padding:0;display:grid;gap:8px}
+ul.ck li{padding-left:28px;position:relative;color:#d4dae3}
+ul.ck li::before{content:"";position:absolute;left:0;top:7px;width:14px;height:8px;border-left:3px solid var(--blue2);border-bottom:3px solid var(--blue2);transform:rotate(-45deg)}
+.tf>*{min-width:0}.ba{display:flex;gap:8px;overflow-x:auto;max-width:100%;min-width:0;padding-bottom:6px;margin-top:6px;scroll-snap-type:x mandatory}
+.ba span{flex:0 0 auto;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:14px}
+.ba b{color:#2ee59d}
+@media(min-width:800px){.tf{grid-template-columns:1fr 1fr}}
+/* reviews */
+.rv{display:grid;gap:12px;margin-top:24px}
+.rv blockquote{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;font-size:15px;color:#d4dae3}
+.rv cite{display:block;margin-top:10px;font-style:normal;font-size:13px;color:var(--mut)}
+.rv cite::before{content:"\2605\2605\2605\2605\2605  ";color:#fcb900;letter-spacing:2px}
+@media(min-width:800px){.rv{grid-template-columns:repeat(3,1fr)}}
+/* visit */
+.visit{display:grid;gap:20px}
+.hrs{width:100%;border-collapse:collapse}
+.hrs td{padding:12px 0;border-bottom:1px solid var(--line)}
+.hrs td:last-child{text-align:right;font-weight:600}
+.hrs tr.today td{color:var(--blue2)}
+.addr{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.addr p{margin:6px 0;color:#d4dae3}
+@media(min-width:800px){.visit{grid-template-columns:1fr 1fr}}
+/* faq */
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--blue2);font-size:22px;line-height:1}
+details[open] summary::after{content:"\2013"}
+details p{color:var(--mut);margin-top:10px;font-size:15px}
+.band{background:linear-gradient(100deg,var(--blue),#1553a8);text-align:center;padding:50px 0}
+.band h2{margin:0 0 10px}.band p{margin-bottom:20px;color:#dbe8ff}
+footer{padding:26px 0 90px;color:var(--mut);font-size:13px;text-align:center}
+/* assistant */
+#asst{position:fixed;right:14px;bottom:14px;z-index:50;font-family:Inter,sans-serif}
+#a-fab{display:flex;align-items:center;gap:8px;background:var(--hot);color:#fff;border:0;border-radius:999px;padding:13px 18px;font:600 15px Inter;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+#asst.open #a-fab{display:none}
+#a-panel{position:fixed;right:10px;bottom:10px;width:min(380px,calc(100vw - 20px));height:min(560px,calc(100vh - 20px));background:#14171b;border:1px solid #3a4350;border-radius:18px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+#a-panel[hidden]{display:none}
+#a-panel header{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--blue);color:#fff}
+#a-panel header small{display:block;opacity:.85;font-size:12px}
+#a-x{background:none;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1}
+#a-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;font-size:14px;line-height:1.45}
+.m.b{background:#242a32;align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--blue);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.m ul{padding-left:18px;margin-top:6px}
+#a-chips{display:flex;gap:6px;flex-wrap:wrap;padding:0 12px 8px;max-height:96px;overflow-y:auto}
+#a-chips button{background:transparent;color:var(--blue2);border:1px solid #38506f;border-radius:99px;padding:6px 11px;font:500 13px Inter;cursor:pointer}
+#a-f{display:flex;gap:6px;padding:10px;border-top:1px solid var(--line)}
+#a-i{flex:1;min-width:0;background:#0d0f12;border:1px solid var(--line);color:#fff;border-radius:99px;padding:10px 14px;font:16px Inter}
+#a-f button{background:var(--hot);color:#fff;border:0;border-radius:50%;width:42px;height:42px;cursor:pointer}
+
+/* finder */
+.fd{display:grid;gap:10px;margin-top:22px}
+.fd button.o{text-align:left;background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;font:500 16px Inter;cursor:pointer;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.fd button.o::after{content:"92";color:var(--blue2)}
+.fd button.o.sel{border-color:var(--hot);background:#241b17}
+.res{margin-top:16px;background:linear-gradient(140deg,#1b2a40,#171b20);border:1px solid var(--blue);border-radius:var(--r);padding:20px;display:none}
+.res.show{display:block}
+.res h3{font-size:34px;color:#fff}.res p{color:#c8d0db;margin:8px 0 14px}
+@media(min-width:800px){.fd{grid-template-columns:1fr 1fr}}
+/* timeline */
+.tl{margin-top:22px;display:grid;gap:8px}
+.tl .d{display:grid;grid-template-columns:44px 1fr;gap:10px;align-items:center;font-size:13px;color:var(--mut)}
+.tl .bar{position:relative;height:22px;background:#1a1e23;border-radius:6px;overflow:hidden}
+.tl .bar i{position:absolute;top:0;bottom:0;background:linear-gradient(90deg,var(--blue),var(--blue2));border-radius:6px}
+.tl .sc{display:grid;grid-template-columns:44px 1fr;gap:10px;font-size:11px;color:#667}
+.tl .sc div{display:flex;justify-content:space-between}
+/* steps */
+.st{counter-reset:s;display:grid;gap:12px;margin-top:22px}
+.st div{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 16px 62px;position:relative}
+.st div::before{content:counter(s);position:absolute;left:16px;top:10px;font:800 36px 'Barlow Condensed';color:var(--hot)}
+.st b{display:block;margin-bottom:2px}.st span{color:var(--mut);font-size:14px}
+@media(min-width:800px){.st{grid-template-columns:repeat(4,1fr)}.st div{padding:52px 16px 16px}.st div::before{top:8px}}
+
+.btn,.call,#a-fab{transition:transform .15s,filter .15s}
+.btn:hover,.call:hover,#a-fab:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.btn:focus-visible,.call:focus-visible,summary:focus-visible,.fd button:focus-visible,#a-fab:focus-visible,#a-chips button:focus-visible{outline:3px solid var(--blue2);outline-offset:2px}
+.tk{transition:transform .2s,border-color .2s}.tk:hover{transform:translateY(-4px);border-color:var(--blue2)}
+.row{transition:background .2s}.row:hover{background:rgba(32,128,232,.06)}
+.tick{overflow:hidden;white-space:nowrap;border-block:1px solid var(--line);background:#0c0e10;padding:11px 0;font:700 20px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.06em;color:#556}
+.tick div{display:inline-block;padding-left:100%;animation:tk 32s linear infinite}
+.tick b{color:var(--blue2);margin:0 18px}
+@keyframes tk{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.tick div{animation:none;padding-left:18px}html{scroll-behavior:auto}*{transition:none!important}}
+@media print{.top,#asst,.band{display:none}body{background:#fff;color:#000}}
+</style></head><body>
+<header class="top"><div class="wrap">
+<a href="#top" class="chip dark" aria-label="New Element Fitness"><img src="img/new-element-fitness-logo.png" alt="New Element Fitness" width="83" height="38"></a>
+<nav><a href="#plans">Memberships</a><a href="#paths">Training</a><a href="#transform">Transformation</a><a href="#visit">Visit</a><a href="#faq">FAQ</a></nav>
+<a class="call" href="tel:+35314446956">Call (01) 444 6956</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<span class="tag"><i class="dot" id="dot"></i><span id="openState">Milltown, Dublin 6</span></span>
+<h1>More than<br>a <em>gym.</em></h1>
+<p class="lead">Qualified trainers with Sport &amp; Exercise Science degrees, a large range of equipment, and a team that knows your name. Milltown, Dublin 6.</p>
+<div class="ctas"><a class="btn p" href="#plans">See memberships</a><a class="btn g" href="#visit">Hours &amp; location</a></div>
+<div class="facts">
+<div><b>6am</b><span>Weekday opening</span></div>
+<div><b>&euro;45</b><span>Monthly, contract free</span></div>
+<div><b>36</b><span>PT sessions in the 12 week program</span></div>
+<div><b>Free</b><span>Parking before 11am &amp; after 4pm</span></div>
+</div></div></div>
+
+<div class="tick" aria-hidden="true"><div>Milltown, Dublin 6<b>/</b>Open 6am to 9pm weekdays<b>/</b>Contract free monthly<b>/</b>12 week transformation<b>/</b>Online coaching<b>/</b>Free parking before 11am and after 4pm<b>/</b>Sports science staff</div></div>
+<section id="find"><div class="wrap">
+<div class="k">Not sure where to start?</div><h2>Which one fits you?</h2>
+<p class="sub">Tap what sounds like you. This only points you to the right option on this page.</p>
+<div class="fd" id="fd">
+<button class="o" data-r="t">I want to lose weight or change my body</button>
+<button class="o" data-r="g">I just want a good gym to train in</button>
+<button class="o" data-r="p">I want a trainer next to me, but not for 12 weeks</button>
+<button class="o" data-r="o">I cannot get to Milltown regularly</button>
+</div>
+<div class="res" id="res" aria-live="polite"></div>
+</div></section>
+<section id="plans"><div class="wrap">
+<div class="k">Gym memberships</div><h2>Pick how you pay</h2>
+<p class="sub">Three ways to join. The 6 month and annual options are free from sign-up fee.</p>
+<div class="tix">
+<div class="tk"><h3>Pay monthly</h3><div class="pr"><small>&euro;</small>45</div><p>Contract free. Cancel the commitment, keep the habit.</p></div>
+<div class="tk best"><span class="flag">6 MONTHS</span><h3>6 months</h3><div class="pr"><small>&euro;</small>250</div><p>Free from sign-up fee.</p></div>
+<div class="tk"><h3>Annual</h3><div class="pr"><small>&euro;</small>450</div><p>Free from sign-up fee. A full year covered.</p></div>
+</div></div></section>
+
+<section id="paths" class="paths"><div class="wrap">
+<div class="k">Training</div><h2>Four ways to train here</h2>
+<div class="row"><div class="n">01</div><h3>Gym floor</h3><p>A large range of equipment for all fitness needs. Members say it is clean and they are never waiting for a machine.</p></div>
+<div class="row"><div class="n">02</div><h3>Personal training</h3><p>One to one with qualified staff who hold Sport &amp; Exercise Science degrees.</p></div>
+<div class="row"><div class="n">03</div><h3>Body transformation</h3><p>The premium plan: 12 weeks, 36 sessions, custom meal plans and a direct WhatsApp group.</p></div>
+<div class="row"><div class="n">04</div><h3>Online coaching</h3><p>For those who cannot make it to the gym. Zoom consultation, weekly check-ins, a program from Niall or Ken.</p></div>
+</div></section>
+
+<section id="transform"><div class="wrap">
+<div class="k">12 week body transformation</div><h2>Your turn.</h2>
+<p class="sub">Designed by the gym sports scientists. Over the past 5 years the program has helped numerous people change how they look and feel.</p>
+<div class="tf">
+<div>
+<div class="stat"><div><b>12</b><span>weeks</span></div><div><b>3</b><span>sessions / week</span></div><div><b>36</b><span>PT sessions</span></div></div>
+<ul class="ck" style="margin-top:20px">
+<li>Progress monitored and tracked every workout</li>
+<li>Custom meal plans, plus how to track food yourself</li>
+<li>Direct WhatsApp group for questions outside the gym</li>
+<li>Men and women of all fitness levels</li>
+</ul></div>
+<div><div class="k" style="margin-bottom:8px">Member results on the site</div>
+<div class="ba"><span><b>-45lbs</b> Kelsey</span><span><b>-29lbs</b> Artem</span><span><b>-36lbs</b> Patricia</span><span><b>-110lbs</b> Conor, 10 months</span><span><b>-26lbs</b> Emmet</span></div>
+<p class="sub" style="font-size:14px;margin-top:10px">Results are the members' own and vary person to person.</p></div>
+</div>
+<div class="k" style="margin-top:34px">How the online program works</div>
+<div class="st">
+<div><b>Fill out the form</b><span>Share your goals, then set up a Zoom consultation.</span></div>
+<div><b>Weekly check-ins</b><span>Every week, so you see early whether you are on track.</span></div>
+<div><b>Expert team</b><span>Your sessions are designed by Niall or Ken, your choice.</span></div>
+<div><b>Community</b><span>Join hundreds of members who have transformed.</span></div>
+</div>
+</div></section>
+
+<section class="paths"><div class="wrap">
+<div class="k">Members say</div><h2>Straight from the floor</h2>
+<div class="rv">
+<blockquote>The insight and knowledge of the staff is fantastic, put together with their willingness to help me achieve my goals.<cite>Conor Hughes</cite></blockquote>
+<blockquote>It is clean, I am never waiting on a machine and the atmosphere is great.<cite>Nicky Mc Marlow</cite></blockquote>
+<blockquote>If you have any questions on exercise or nutrition they are always happy to help.<cite>Kelly Farrell</cite></blockquote>
+<blockquote>Such a nice personal touch and friendly environment. They are more than happy to help with my training or nutrition whenever I need it.<cite>Gavin Murphy</cite></blockquote>
+<blockquote>The knowledge of the instructors is clearly second to none, and there is always plenty of equipment for everyone.<cite>Carl Gaffney</cite></blockquote>
+<blockquote>Both Niall and Ken really know their stuff. The setup is professional, clean and friendly.<cite>Jamie Barry</cite></blockquote>
+</div></div></section>
+
+<section id="visit"><div class="wrap">
+<div class="k">Visit</div><h2>Come in and look around</h2>
+<div class="visit">
+<table class="hrs" id="hrs"><tr data-d="1,2,3,4,5"><td>Monday to Friday</td><td>6am to 9pm</td></tr><tr data-d="6,0"><td>Saturday and Sunday</td><td>10am to 6pm</td></tr></table>
+<div class="tl" style="grid-column:1/-1"><div class="sc"><span></span><div><span>6am</span><span>10am</span><span>2pm</span><span>6pm</span><span>9pm</span></div></div>
+<div class="d">Mon&ndash;Fri<div class="bar"><i style="left:0;width:100%"></i></div></div>
+<div class="d">Sat&ndash;Sun<div class="bar"><i style="left:26.7%;width:53.3%"></i></div></div>
+<p class="sub" style="font-size:13px">Bar scale: 6am to 9pm. Free parking before 11am and after 4pm.</p></div>
+<div class="addr"><b>New Element Fitness</b>
+<p>Unit 1, Mount St. Annes<br>Miltown Road, Miltown<br>Dublin 6</p>
+<p>Phone: <a href="tel:+35314446956">+353 1 444 6956</a></p>
+<p>Free parking before 11am and after 4pm.</p></div>
+</div></div></section>
+
+<section id="faq" class="paths"><div class="wrap">
+<div class="k">Questions</div><h2>Quick answers</h2>
+<details><summary>Is there a contract?</summary><p>The monthly membership is contract free. The 6 month and annual options are free from sign-up fee.</p></details>
+<details><summary>I have never trained before. Is that fine?</summary><p>Yes. The programs are for all fitness levels, and members mention how friendly and helpful the trainers are.</p></details>
+<details><summary>Who designs the training?</summary><p>Niall and Ken, both sports scientists. The staff hold Sport &amp; Exercise Science degrees.</p></details>
+<details><summary>What if I cannot get to the gym?</summary><p>Online Personal Training: a goals form, a Zoom consultation, weekly check-ins and a program from Niall or Ken.</p></details>
+<details><summary>Where exactly are you?</summary><p>Unit 1, Mount St. Annes, Miltown Road, Miltown, Dublin 6.</p></details>
+<details><summary>Can I join and pay monthly?</summary><p>Yes. Pay monthly is &euro;45 and contract free. Six months is &euro;250 and annual is &euro;450.</p></details>
+<details><summary>Is there anything on nutrition?</summary><p>The 12 week transformation includes custom meal plans and teaches you to track your food. Members also say the staff happily answer nutrition questions.</p></details>
+<details><summary>Bank holiday hours, trials, day passes?</summary><p>These are not on the website, so the team will confirm them. Call (01) 444 6956.</p></details>
+</div></section>
+
+<div class="band"><div class="wrap"><h2>Ready when you are</h2><p>Tell the assistant when suits you and the team will confirm.</p><button class="btn p" id="bk">Book a visit</button></div></div>
+</main>
+<footer><div class="wrap">Demo &middot; prepared by Gevorg Hovhannisyan</div></footer>
+<div id="asst"></div>
+<script>
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ers|er|es|ed|s)$/,''):w.replace(/s$/,'')}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem)}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++)d[i]=[i];for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[m][n]}
+function makeMatcher(kb){
+  var idx=kb.map(function(e){return{e:e,k:e.k.split(',').map(function(x){return x.trim()}).filter(Boolean).map(function(p){return{p:norm(p),t:toks(p)}})}});
+  return function(q){
+    var nq=' '+norm(q)+' ',qt=toks(q),best=null,bs=0;
+    idx.forEach(function(it){var s=0;
+      it.k.forEach(function(kw){
+        if(kw.t.length>1&&nq.indexOf(' '+kw.p+' ')>=0){s+=3;return}
+        var all=kw.t.length>1;var hit=0;
+        kw.t.forEach(function(t){qt.forEach(function(w){
+          if(w===t)hit+=2;else if(t.length>=5&&w.length>=4&&lev(w,t)<=(t.length>=8?2:1))hit+=1.5;
+        })});
+        if(all){if(hit>=kw.t.length*1.5)s+=hit}else s+=hit;
+      });
+      if(it.e.hi)s*=2;if(s>bs){bs=s;best=it.e}
+    });
+    return bs>=1.5?best:null;
+  }
+}
+function buildWidget(cfg){
+  var match=makeMatcher(cfg.kb),root=document.getElementById('asst');
+  root.innerHTML='<button id="a-fab" aria-label="'+cfg.fab+'"><span>'+cfg.fabIcon+'</span><b>'+cfg.fab+'</b></button><section id="a-panel" hidden><header><div><strong>'+cfg.title+'</strong><small>'+cfg.sub+'</small></div><button id="a-x" aria-label="Close">&times;</button></header><div id="a-log" aria-live="polite"></div><div id="a-chips"></div><form id="a-f"><input id="a-i" autocomplete="off" placeholder="'+cfg.ph+'"><button>&#10148;</button></form></section>';
+  var log=root.querySelector('#a-log'),chips=root.querySelector('#a-chips'),inp=root.querySelector('#a-i'),panel=root.querySelector('#a-panel'),flow=null,data={};
+  function say(t,who){var d=document.createElement('div');d.className='m '+who;d.innerHTML=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+  function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){handle(c)};chips.appendChild(b)})}
+  function home(){setChips(cfg.chips)}
+  function ask(){var s=cfg.flow.steps[flow];say(s.q,'b');if(s.opts)setChips(s.opts);else{chips.innerHTML='';inp.placeholder=s.ph||cfg.ph;inp.focus()}}
+  function startFlow(){flow=0;data={};say(cfg.flow.intro,'b');ask()}
+  function handle(t){
+    t=t.trim();if(!t)return;say(t.replace(/</g,'&lt;'),'u');inp.value='';
+    if(flow!==null){
+      if(/^(cancel|stop|back|exit|menu)$/i.test(t)){flow=null;say(cfg.flow.cancel,'b');home();return}
+      var s=cfg.flow.steps[flow];data[s.key]=t;flow++;
+      if(flow>=cfg.flow.steps.length){var sum=cfg.flow.steps.map(function(x){return '<li><b>'+x.label+':</b> '+String(data[x.key]).replace(/</g,'&lt;')+'</li>'}).join('');say(cfg.flow.done+'<ul>'+sum+'</ul>','b');flow=null;inp.placeholder=cfg.ph;home()}else ask();
+      return}
+    if(cfg.flow.trigger.test(t)){startFlow();return}
+    var m=match(t);
+    if(m){say(m.a,'b');setChips(m.next||cfg.chips)}else{say(cfg.fallback,'b');home()}
+  }
+  root.querySelector('#a-f').onsubmit=function(e){e.preventDefault();handle(inp.value)};
+  root.querySelector('#a-fab').onclick=function(){panel.hidden=false;root.classList.add('open');if(!log.children.length){say(cfg.greet,'b');home()}inp.focus()};
+  root.querySelector('#a-x').onclick=function(){panel.hidden=true;root.classList.remove('open')};
+}
+
+var CFG={
+fab:'Ask the gym',fabIcon:'&#128172;',title:'New Element Fitness',sub:'Quick answers, Milltown D6',ph:'Ask about hours, plans, parking...',
+greet:'Hi! I know the New Element Fitness basics: opening hours, memberships, the 12 week transformation, online coaching and where we are. What would you like to know?',
+fallback:'I do not have that detail yet, so I will not guess. The team will confirm it: call (01) 444 6956 or use the contact form. Or ask me about hours, memberships, parking or the transformation program.',
+chips:['Opening hours','Membership prices','12 week transformation','Online coaching','Parking','Book a visit'],
+kb:[
+{k:'opening hours,hours,open,opens,close,closing,closed,when open,what time,weekend,saturday,sunday,monday,friday,early,late,6am,9pm,bank holiday,holiday',a:'Opening hours: <b>Monday to Friday 6am to 9pm</b>, <b>Saturday and Sunday 10am to 6pm</b>. Bank holiday hours are not on the site, so the team will confirm those.',next:['Membership prices','Parking','Book a visit']},
+{k:'membership,memberships,member,join,joining,price,prices,cost,how much,fee,fees,pay monthly,monthly,6 months,six months,annual,year,yearly,contract,sign up fee,signup,joining fee,cheap,rates',a:'Gym memberships: <b>Pay monthly &euro;45, contract free</b>. <b>6 months &euro;250</b> and <b>Annual &euro;450</b>, both free from sign-up fee.',next:['Book a visit','Opening hours','Parking']},
+{k:'transformation,body transformation,12 week,twelve week,weight loss,lose weight,fat loss,slim,results,before and after,build muscle,muscle,program,programme,premium',a:'The <b>12 Week Body Transformation Program</b> is the premium personal training plan: <b>36 personal training sessions</b> (3 per week), custom meal plans, progress tracked every workout and a direct WhatsApp group for questions. It is for men and women of all fitness levels. Price is not published, so the team will confirm it.',next:['Online coaching','Who are the trainers','Book a visit']},
+{k:'online,online train,online coaching,online personal training,remote,zoom,check in,check-in,distance,from home,cannot make it,cant make it,abroad,virtual',a:'<b>Online Personal Training</b> is for people who cannot get to the gym: you fill in a goals form, then book a Zoom consultation. You get a weekly check-in and a program designed by Niall or Ken, whichever you prefer.',next:['12 week transformation','Who are the trainers']},
+{k:'parking,park,car,drive,driving,free parking,where to park',a:'There is <b>free parking before 11am and after 4pm</b>.',next:['Opening hours','Where are you']},
+{k:'where,location,address,find you,directions,map,milltown,miltown,dublin,luas,bus,how to get,located',a:'We are at <b>Unit 1, Mount St. Annes, Miltown Road, Miltown, Dublin 6</b>.',next:['Parking','Opening hours','Contact']},
+{k:'contact,phone,call,number,telephone,email,mail,reach,speak to someone,talk to',a:'Call <b>(01) 444 6956</b> (+353 1 444 6956) or use the contact form on the website. Email: info@newelementfitness.com.',next:['Book a visit','Opening hours']},
+{k:'trainer,trainers,staff,team,coach,coaches,niall,ken,qualified,qualification,degree,sports scientist,instructor,instructors,who are',a:'Training is led by <b>Niall and Ken</b>, both sports scientists, and the staff hold Sport and Exercise Science degrees.',next:['12 week transformation','Online coaching']},
+{k:'personal training,personal trainer,pt,one to one,1 to 1,private session,session,sessions,train with',a:'Personal training is available in the gym, and the 12 week transformation is the premium version. Single session prices are not on the site I have, so the team will confirm them.',next:['12 week transformation','Book a visit']},
+{k:'equipment,machines,weights,dumbbells,cardio,facilities,facility,gym floor,racks,crowded,busy,wait,clean',a:'The gym has a large range of equipment for all fitness needs. Members say it is clean and that there is rarely a wait for machines. For a specific piece of kit, the team will confirm.',next:['Book a visit','Membership prices']},
+{k:'beginner,beginners,new to gym,first time,never been,start,starting,nervous,complete beginner,not fit,out of shape',a:'Beginners are welcome: the programs are for all fitness levels and members mention how friendly and helpful the trainers are. A visit is the easiest way to start.',next:['Book a visit','12 week transformation']},
+{k:'shop,buy,supplement,supplements,protein,merch,store',a:'The website has a Shop page. What is in stock is not something I can see, so the team will confirm.',next:['Contact']},
+{k:'class,classes,group class,yoga,spin,timetable,schedule',a:'I do not see group classes listed on the site, so I will not guess. The team will confirm what is on.',next:['Contact','Opening hours']},
+{k:'shower,showers,locker,lockers,changing room,towel,sauna',a:'Facilities like showers and lockers are not listed on the site, so the team will confirm.',next:['Contact']},
+{k:'freeze,cancel,cancellation,pause,notice,student,discount,offer,trial,free trial,day pass,drop in',a:'I do not have details on trials, day passes, discounts or cancellation, and I will not guess. The team will confirm: (01) 444 6956.',next:['Membership prices','Book a visit']},
+{k:'nutrition,meal plan,meal plans,diet,food,eating,calories,macros,track food',a:'The 12 week transformation includes <b>custom meal plans</b> and teaches you how to track and monitor your food yourself for long term results. Members also say the staff are happy to answer nutrition questions.',next:['12 week transformation','Book a visit']},
+{k:'whatsapp,whats app,group chat,message trainer,support outside,questions outside',a:'On the transformation program the team sets up a <b>direct WhatsApp group</b> so you can ask questions outside the gym.',next:['12 week transformation']},
+{k:'women,woman,ladies,female,men,male,age,older,kids,children,teen,teenager,under 18,senior',a:'The transformation program is for men and women of all fitness levels. Age limits and under 18 rules are not on the site, so the team will confirm.',next:['Contact','Book a visit']},
+{k:'review,reviews,rating,ratings,reputation,testimonials,good gym,recommend',a:'Members describe the gym as clean, friendly and knowledgeable, with no waiting for machines. You can read member reviews on the home page.',next:['Book a visit','Membership prices']},
+{k:'payment,pay,card,cash,direct debit,debit,how to pay,invoice',a:'Membership options are pay monthly, 6 months or annual. How payment is taken is not on the site, so the team will confirm.',next:['Membership prices','Contact']},
+{k:'sign up fee,signup fee,joining fee,registration fee,admin fee',a:'The 6 month (&euro;250) and annual (&euro;450) memberships are <b>free from sign-up fee</b>. For the monthly plan the team will confirm any fee.',next:['Membership prices']},
+{k:'progress,tracking,measure,measurements,weigh in,weigh-in,check progress',a:'On the transformation program, progress is monitored and tracked every workout. Online clients get a check-in every week.',next:['12 week transformation','Online coaching']},
+{k:'hello,hi,hey,good morning,good evening',a:'Hello! Ask me about hours, memberships, parking or the transformation program.',next:['Opening hours','Membership prices']},
+{k:'thanks,thank you,cheers,great,perfect',a:'Anytime. If you want to visit, I can take your details for the team.',next:['Book a visit']}
+],
+flow:{trigger:/\b(book|booking|visit|tour|appointment|enquir|enquiry|inquiry|sign me|join now|come in|come by)/i,
+intro:'Let us set up a visit. A few quick questions.',cancel:'No problem, cancelled.',
+steps:[
+{key:'goal',label:'Interested in',q:'What are you interested in?',opts:['Gym membership','12 week transformation','Online coaching','Personal training']},
+{key:'goalnote',label:'Main goal',q:'What is your main goal? (lose weight, build muscle, get fitter, other)',ph:'Your goal'},
+{key:'when',label:'Preferred day and time',q:'When would you like to come in? Weekdays 6am to 9pm, weekends 10am to 6pm.',ph:'e.g. Tuesday 7pm'},
+{key:'name',label:'Name',q:'Your name?',ph:'Name'},
+{key:'phone',label:'Phone or email',q:'Best phone number or email?',ph:'Phone or email'}],
+done:'Done, sent to the team. They will confirm the time with you. (This is a demo: nothing is actually sent.) Your details:'}
+};
+
+buildWidget(CFG);
+document.getElementById('bk').onclick=function(){document.getElementById('a-fab').click();setTimeout(function(){var i=document.getElementById('a-i');i.value='Book a visit';document.getElementById('a-f').dispatchEvent(new Event('submit',{cancelable:true}))},50)};
+
+(function(){var R={t:['The 12 Week Body Transformation','36 personal training sessions, custom meal plans and a WhatsApp group, built by the gym sports scientists. Price is not published: the team will confirm it.'],g:['Gym membership','Pay monthly &euro;45 (contract free), 6 months &euro;250 or annual &euro;450. Opening 6am to 9pm on weekdays.'],p:['Personal training','One to one with Niall, Ken or the team. Session prices are not on the site, so the team will confirm them.'],o:['Online personal training','A goals form, a Zoom consultation, weekly check-ins and a program from Niall or Ken.']};
+var res=document.getElementById('res'),bs=document.querySelectorAll('#fd .o');bs.forEach(function(b){b.onclick=function(){bs.forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');var r=R[b.dataset.r];res.innerHTML='<h3>'+r[0]+'</h3><p>'+r[1]+'</p><button class="btn p" data-bk=1>Book a visit</button>';res.className='res show';res.querySelector('[data-bk]').onclick=function(){document.getElementById('bk').click()}}})})();
+(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Dublin',weekday:'short',hour:'numeric',hour12:false}).formatToParts(new Date()),w=p.find(function(x){return x.type=='weekday'}).value,h=+p.find(function(x){return x.type=='hour'}).value%24,d={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[w],wk=d>0&&d<6,o=wk?(h>=6&&h<21):(h>=10&&h<18);document.getElementById('dot').className='dot'+(o?' on':'');document.getElementById('openState').textContent=(o?'Open now':'Closed now')+' · Milltown, Dublin 6';document.querySelectorAll('#hrs tr').forEach(function(r){if(r.dataset.d.split(',').indexOf(String(d))>=0)r.className='today'})}catch(e){}})();
+</script></body></html>

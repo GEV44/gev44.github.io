@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chatham Dental, Dublin city centre (demo)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#506e6e;--sage2:#77a8a8;--mist:#f5f6f6;--ink:#151515;--mu:#5d6b6b;--ln:#dfe5e5;--sand:#efece6;
+--wa-a:#506e6e;--wa-font:'Hanken Grotesk',system-ui,sans-serif;--wa-r:18px;--wa-log:#f1f4f4}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.55 'Hanken Grotesk',system-ui,sans-serif;color:var(--ink);background:#fff;-webkit-text-size-adjust:100%;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.w{max-width:1080px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(30px,6vw,46px);margin-bottom:10px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:600 15px/1 'Hanken Grotesk',sans-serif;padding:14px 22px;border-radius:999px;text-decoration:none;background:var(--ink);color:#fff}
+.btn.sage{background:var(--sage)}
+.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+/* header */
+.top{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--ln)}
+.top .w{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.logo{height:38px;width:auto}
+.nav{display:none;gap:26px;font-size:14px;font-weight:500}
+.nav a{text-decoration:none;color:var(--mu)}.nav a:hover{color:var(--ink)}
+.top .btn{padding:11px 18px;font-size:14px}
+@media(min-width:820px){.nav{display:flex}.logo{height:44px}}
+/* hero */
+.hero{padding:34px 0 18px}
+.hero .w{display:grid;gap:26px}
+.hero h1{font-size:clamp(44px,12vw,92px);margin:12px 0 14px}
+.hero h1 em{color:var(--sage);font-style:italic}
+.hero p.lead{font-size:18px;color:var(--mu);max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.card{background:var(--mist);border-radius:22px;padding:22px}
+.status{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px}
+.dot{width:10px;height:10px;border-radius:50%;background:#9aa;display:inline-block}
+.dot.on{background:#2e9e6b;box-shadow:0 0 0 4px rgba(46,158,107,.18)}
+.hrs{list-style:none;margin-top:12px}
+.hrs li{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--ln);font-size:15px}
+.hrs li:last-child{border:0}
+.hrs b{font-weight:600}
+.addr{margin-top:14px;font-size:14px;color:var(--mu)}
+@media(min-width:860px){.hero .w{grid-template-columns:1.35fr .8fr;align-items:end;gap:44px}.hero{padding:64px 0 30px}}
+/* wishes */
+.wish{padding:22px 0 8px}
+.wish h3{font-size:26px;margin-bottom:12px}
+.chipsrow{display:flex;flex-wrap:wrap;gap:8px}
+.chipsrow button{font:500 14px 'Hanken Grotesk',sans-serif;border:1.5px solid var(--sage);color:var(--sage);background:#fff;padding:10px 15px;border-radius:999px;cursor:pointer}
+.chipsrow button:hover{background:var(--sage);color:#fff}
+/* steps */
+.steps{background:var(--sage);color:#fff;margin-top:34px;padding:46px 0}
+.steps h2{color:#fff}
+.steps .eyebrow{color:#cfe3e3}
+.stl{display:grid;gap:14px;margin-top:22px;counter-reset:s}
+.stl div{border-top:1px solid rgba(255,255,255,.35);padding-top:14px;counter-increment:s}
+.stl div:before{content:"0" counter(s);font-family:'Instrument Serif',serif;font-size:34px;color:#cfe3e3;display:block;line-height:1}
+.stl b{display:block;font-size:13px;letter-spacing:.12em;margin:8px 0 4px}
+.stl span{color:#e6f0f0}
+.free{margin-top:22px;background:rgba(255,255,255,.12);border-radius:16px;padding:14px 16px;font-size:15px}
+@media(min-width:760px){.stl{grid-template-columns:repeat(3,1fr);gap:26px}}
+/* treatments */
+.sec{padding:52px 0 8px}
+.tl{list-style:none;margin-top:20px;border-top:1.5px solid var(--ink)}
+.tl li{display:grid;grid-template-columns:34px 1fr;gap:6px 10px;padding:16px 0;border-bottom:1px solid var(--ln)}
+.tl i{font:italic 18px 'Instrument Serif',serif;color:var(--sage)}
+.tl h3{font-size:26px}
+.tl p{grid-column:2;color:var(--mu);font-size:15px}
+/* fees */
+.fees{background:var(--sand);padding:50px 0;margin-top:46px}
+.acc{margin-top:18px;display:grid;gap:8px}
+details{background:#fff;border-radius:14px;padding:0 16px}
+summary{cursor:pointer;padding:15px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--sage);font-size:20px;line-height:1}
+details[open] summary:after{content:"\2212"}
+.fl{list-style:none;padding-bottom:12px}
+.fl li{display:flex;justify-content:space-between;gap:14px;padding:8px 0;border-top:1px solid var(--ln);font-size:15px}
+.fl li span:last-child{font-weight:600;white-space:nowrap;text-align:right}
+.note{font-size:13px;color:var(--mu);margin-top:12px}
+.pay{display:grid;gap:12px;margin-top:20px}
+.pay div{background:#fff;border-radius:14px;padding:16px;font-size:15px}
+.pay b{display:block;margin-bottom:3px}
+@media(min-width:760px){.pay{grid-template-columns:repeat(3,1fr)}}
+/* team */
+.team{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;margin-top:20px}
+.team div{padding:13px 0;border-top:1px solid var(--ln)}
+.team b{display:block;font-weight:600;font-size:15px}
+.team span{font-size:13px;color:var(--mu)}
+.team .pr{grid-column:1/-1;border-top:1.5px solid var(--ink)}
+.team .pr b{font:400 26px 'Instrument Serif',serif}
+@media(min-width:760px){.team{grid-template-columns:repeat(3,1fr)}}
+/* visit */
+.visit{display:grid;gap:18px;margin-top:20px}
+.visit .card p{margin:6px 0;font-size:15px}
+.visit h3{font-size:24px;margin-bottom:6px}
+@media(min-width:760px){.visit{grid-template-columns:1fr 1fr}}
+/* faq */
+.faq{display:grid;gap:8px;margin-top:18px}
+.faq details{background:var(--mist)}
+.faq p{padding:0 0 15px;color:var(--mu);font-size:15px}
+.rv{display:grid;gap:12px;margin-top:18px}
+blockquote{background:var(--mist);border-left:4px solid var(--sage2);border-radius:0 16px 16px 0;padding:16px 18px}
+blockquote p{font:italic 22px/1.25 'Instrument Serif',serif}
+cite{display:block;margin-top:8px;font:600 13px 'Hanken Grotesk',sans-serif;color:var(--mu);font-style:normal}
+@media(min-width:760px){.rv{grid-template-columns:repeat(3,1fr)}}
+footer{margin-top:60px;background:var(--ink);color:#cfd6d6;padding:30px 0 90px;font-size:14px}
+footer a{color:#fff}
+.ft{display:flex;flex-direction:column;gap:6px}
+.wa-fab{position:fixed;right:14px;bottom:14px;z-index:90;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--wa-a);color:var(--wa-on,#fff);font:600 14px/1 var(--wa-font);padding:13px 16px;border-radius:var(--wa-fr,999px);box-shadow:0 8px 24px rgba(0,0,0,.22)}
+.wa-fab-ic{font-size:18px;line-height:1}
+.wa-hide{display:none}
+.wa-panel{position:fixed;right:12px;bottom:12px;z-index:100;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));display:none;flex-direction:column;background:var(--wa-bg,#fff);color:var(--wa-ink,#222);border-radius:var(--wa-r,16px);box-shadow:0 16px 48px rgba(0,0,0,.3);overflow:hidden;font:15px/1.45 var(--wa-font)}
+.wa-open{display:flex}
+.wa-head{background:var(--wa-a);color:var(--wa-on,#fff);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.wa-head b{display:block;font-size:15px}.wa-head small{opacity:.85;font-size:12px}
+.wa-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+.wa-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--wa-log,#f6f6f6)}
+.wa-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.wa-bot{background:#fff;color:#222;align-self:flex-start;border:1px solid rgba(0,0,0,.07)}
+.wa-bot a{color:var(--wa-link,var(--wa-a))}
+.wa-me{background:var(--wa-a);color:var(--wa-on,#fff);align-self:flex-end}
+.wa-sum{margin:6px 0;padding-left:18px}.wa-sum li{margin:2px 0}
+.wa-bot small{opacity:.65}
+.wa-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;max-height:104px;overflow:auto;border-top:1px solid rgba(0,0,0,.07);background:var(--wa-bg,#fff)}
+.wa-chip{border:1px solid var(--wa-a);color:var(--wa-a);background:transparent;border-radius:999px;padding:6px 11px;font:13px var(--wa-font);cursor:pointer}
+.wa-chip:hover{background:var(--wa-a);color:var(--wa-on,#fff)}
+.wa-form{display:flex;gap:6px;padding:8px 10px 10px;background:var(--wa-bg,#fff)}
+.wa-in{flex:1;min-width:0;border:1px solid rgba(0,0,0,.2);border-radius:999px;padding:10px 14px;font:16px var(--wa-font);color:#222;background:#fff}
+.wa-go{border:0;background:var(--wa-a);color:var(--wa-on,#fff);width:42px;border-radius:50%;font-size:16px;cursor:pointer}
+@media(max-width:420px){.wa-fab-t{display:none}.wa-fab{padding:14px}}
+
+</style></head><body>
+
+<header class="top"><div class="w">
+<a href="#"><img class="logo" src="img/chatham-dental-dublin-logo.svg" alt="Chatham Dental" width="109" height="45"></a>
+<nav class="nav"><a href="#treatments">Treatments</a><a href="#fees">Fees</a><a href="#team">Team</a><a href="#visit">Visit</a><a href="#faq">FAQ</a></nav>
+<button class="btn sage" data-wa="book">Book now</button>
+</div></header>
+
+<section class="hero"><div class="w">
+<div>
+<div class="eyebrow">Dental clinic &middot; Dublin city centre</div>
+<h1>A smile plan made <em>around you.</em></h1>
+<p class="lead">General dentistry, Invisalign&reg;, composite bonding, whitening and facial aesthetics at 4 Chatham Street, in a warm and welcoming practice. Same-day emergency appointments whenever possible.</p>
+<div class="cta"><button class="btn" data-wa="book">Book an appointment</button><a class="btn line" href="tel:016729595">Call 01 672 9595</a></div>
+</div>
+<aside class="card">
+<div class="status"><span class="dot" id="dot"></span><span id="st">Opening hours</span></div>
+<ul class="hrs"><li><b>Monday to Thursday</b><span>08:00 - 19:00</span></li><li><b>Friday</b><span>08:00 - 16:00</span></li><li><b>Weekends</b><span>Closed</span></li></ul>
+<p class="addr">4 Chatham Street, Dublin, D02 R223<br>3 min from St. Stephen's Green Luas</p>
+</aside>
+</div></section>
+
+<section class="wish"><div class="w">
+<h3>I would like to&hellip;</h3>
+<div class="chipsrow">
+<button data-q="Straighten my teeth">Straighten my teeth</button><button data-q="Have whiter teeth">Have whiter teeth</button><button data-q="Fix my chipped teeth">Fix chipped teeth</button><button data-q="Fix gaps between my teeth">Close gaps</button><button data-q="Replace silver fillings">Replace silver fillings</button><button data-q="Replace my veneers">Replace veneers</button><button data-q="I have a dental emergency">I'm in pain</button>
+</div>
+</div></section>
+
+<section class="steps"><div class="w">
+<div class="eyebrow">The process</div>
+<h2>A 3 step smile makeover journey</h2>
+<div class="stl">
+<div><b>CONSULTATION</b><span>Share your goals and receive a customised treatment plan.</span></div>
+<div><b>TREATMENT</b><span>Dedicated to improving the health and brilliance of your smile.</span></div>
+<div><b>AFTERCARE</b><span>Keep your smile stunning with dental care and lasting results.</span></div>
+</div>
+<p class="free">Consultations for <b>Invisalign&reg;</b>, <b>fixed braces</b> and <b>composite bonding / cosmetic</b> work are free.</p>
+</div></section>
+
+<section class="sec" id="treatments"><div class="w">
+<div class="eyebrow">Treatments</div>
+<h2>Designed around your smile</h2>
+<ul class="tl">
+<li><i>01</i><h3>General dentistry</h3><p>Check-ups, fillings, crowns, root canal treatment, extractions and preventive care for long-term oral health.</p></li>
+<li><i>02</i><h3>Hygiene</h3><p>Scale and polish, airflow polish and deep cleans. You can book a hygienist directly, without seeing a dentist first.</p></li>
+<li><i>03</i><h3>Cosmetic dentistry</h3><p>Composite bonding, porcelain veneers, teeth whitening and gum contouring.</p></li>
+<li><i>04</i><h3>Invisalign&reg; and orthodontics</h3><p>Clear aligners without brackets or wires, fixed braces and retainers. Dr Aleena Bhatti is a Platinum Invisalign&reg; provider.</p></li>
+<li><i>05</i><h3>Facial aesthetics</h3><p>Anti-wrinkle and masseter treatments, Profhilo, gummy smile and lip flip.</p></li>
+</ul>
+</div></section>
+
+<section class="fees" id="fees"><div class="w">
+<div class="eyebrow">Fee guide</div>
+<h2>Private fees, published</h2>
+<p style="color:var(--mu);max-width:34em">Taken from the practice's fee page. The team confirms the exact plan and cost at your consultation.</p>
+<div class="acc">
+<details open><summary>Exams and consultations</summary><ul class="fl"><li><span>Exam (incl. X-rays)</span><span>&euro;80</span></li><li><span>Exam with PRSI</span><span>Free</span></li><li><span>Emergency consultation (incl. X-rays)</span><span>&euro;50</span></li><li><span>Child exam (under 18)</span><span>&euro;50</span></li><li><span>Invisalign&reg;, braces, bonding consultation</span><span>Free</span></li></ul></details>
+<details><summary>Hygiene</summary><ul class="fl"><li><span>Scale and polish</span><span>&euro;90</span></li><li><span>Scale and polish with PRSI</span><span>&euro;15</span></li><li><span>Airflow polish</span><span>&euro;15</span></li><li><span>Deep clean (per quadrant)</span><span>&euro;150</span></li></ul></details>
+<details><summary>Fillings, crowns, root canal</summary><ul class="fl"><li><span>White filling</span><span>from &euro;150</span></li><li><span>Ceramic crown / onlay</span><span>from &euro;850</span></li><li><span>Routine extraction</span><span>&euro;150</span></li><li><span>Anterior root canal</span><span>&euro;550</span></li><li><span>Molar root canal</span><span>&euro;850</span></li></ul></details>
+<details><summary>Cosmetic</summary><ul class="fl"><li><span>Composite bonding (per tooth)</span><span>&euro;195-&euro;395</span></li><li><span>Porcelain veneer (per tooth)</span><span>&euro;850</span></li><li><span>Teeth whitening</span><span>&euro;275</span></li></ul></details>
+<details><summary>Invisalign&reg; and braces</summary><ul class="fl"><li><span>Invisalign&reg;</span><span>&euro;4,495</span></li><li><span>Invisalign&reg; Lite</span><span>&euro;3,895</span></li><li><span>Fixed braces</span><span>from &euro;4,495</span></li><li><span>Vivera retainers (set of 3)</span><span>&euro;500</span></li></ul></details>
+<details><summary>Facial aesthetics</summary><ul class="fl"><li><span>Anti-wrinkle, 1 area</span><span>&euro;215</span></li><li><span>Masseter treatment</span><span>&euro;480</span></li><li><span>Profhilo (per session)</span><span>&euro;250</span></li><li><span>Lip flip</span><span>&euro;185</span></li></ul></details>
+</div>
+<p class="note">Selected items only. Full list on the practice's own fees page.</p>
+<div class="pay">
+<div><b>Spread the cost</b>Humm Finance, with interest-free options on some plans.</div>
+<div><b>0% direct debit</b>Monthly payments to the clinic for Invisalign&reg; and fixed braces.</div>
+<div><b>Insurance and PRSI</b>Most major insurers accepted, direct with VHI. PRSI entitlement for a subsidised exam and hygiene visit.</div>
+</div>
+</div></section>
+
+<section class="sec" id="team"><div class="w">
+<div class="eyebrow">Team</div>
+<h2>Who you will meet</h2>
+<div class="team">
+<div class="pr"><b>Dr Aleena Bhatti</b><span>Principal Dentist &middot; Platinum Invisalign&reg; provider</span></div>
+<div><b>Dr Kate Frawley</b><span>Dentist</span></div>
+<div><b>Dr Fiachra &Oacute; Corrag&aacute;in</b><span>Dentist</span></div>
+<div><b>Dr Alison Browne</b><span>Dentist</span></div>
+<div><b>Dr Greice Zanotti</b><span>Dentist</span></div>
+<div><b>Dr Holly Porter</b><span>Dentist</span></div>
+<div><b>Lauren Barr</b><span>Dental hygienist</span></div>
+<div><b>Cara Morris</b><span>Practice manager</span></div>
+<div><b>Emma Cummins</b><span>Reception</span></div>
+<div><b>Megan Cruikshanks</b><span>Dental nurse</span></div>
+<div><b>Lauren Bennett</b><span>Dental nurse</span></div>
+<div><b>Hana Sarcevic</b><span>Dental nurse</span></div>
+</div>
+</div></section>
+
+<section class="sec" id="visit"><div class="w">
+<div class="eyebrow">Visit</div>
+<h2>Find us on Chatham Street</h2>
+<div class="visit">
+<div class="card"><h3>Getting here</h3><p>3 minutes on foot from the St. Stephen's Green Luas stop (Green Line).</p><p>Buses 15, 27, 65B, 69 and 7 stop nearby on Dawson Street.</p><p>Look for Neary's pub; the practice is above Amuri restaurant.</p></div>
+<div class="card"><h3>Contact</h3><p>4 Chatham Street, Dublin, D02 R223</p><p><a href="tel:016729595">01 672 9595</a></p><p><a href="mailto:hello@chathamdental.ie">hello@chathamdental.ie</a></p><div class="cta"><button class="btn sage" data-wa="book">Request an appointment</button></div></div>
+</div>
+</div></section>
+
+<section class="sec" id="reviews"><div class="w">
+<div class="eyebrow">Patients say &middot; Google 5.0</div>
+<h2>In their words</h2>
+<div class="rv">
+<blockquote><p>Every appointment was so quick and always on time.</p><cite>Lilian T, after Invisalign&reg;</cite></blockquote>
+<blockquote><p>The team here is excellent and so accommodating with appointments.</p><cite>Ashley M</cite></blockquote>
+<blockquote><p>Always spotless clean and appointments are always on time, no waiting around.</p><cite>Kathy F, parent of two braces patients</cite></blockquote>
+</div>
+</div></section>
+
+<section class="sec" id="faq"><div class="w">
+<div class="eyebrow">Good to know</div>
+<h2>Common questions</h2>
+<div class="faq">
+<details><summary>What happens at my first appointment?</summary><p>Your dentist discusses your needs and concerns, you can ask questions, and you receive a personalised treatment plan, printed or by email.</p></details>
+<details><summary>How often should I visit?</summary><p>At least twice a year for a dentist and a hygienist. Your dentist will recommend what suits you.</p></details>
+<details><summary>How long does Invisalign&reg; or braces take?</summary><p>Most patients wear them for 6-18 months. You get a clear estimate at the consultation.</p></details>
+<details><summary>Do you offer emergency care?</summary><p>Yes. Same-day emergency appointments whenever possible. Call the practice and the team will do their best to see you quickly.</p></details>
+<details><summary>What if I am not happy with the result?</summary><p>The practice has a satisfaction guarantee and will work with you to make it right.</p></details>
+</div>
+</div></section>
+
+<footer><div class="w ft"><b style="color:#fff">Chatham Dental</b><span>4 Chatham Street, Dublin, D02 R223 &middot; 01 672 9595</span><span>Demo · prepared by Gevorg Hovhannisyan</span></div></footer>
+<script>
+(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Dublin',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()),g={};p.forEach(function(x){g[x.type]=x.value;});
+var d=g.weekday,m=(+g.hour)*60+(+g.minute),close=(d==='Fri')?16*60:19*60,wk=['Mon','Tue','Wed','Thu','Fri'].indexOf(d)>-1,on=wk&&m>=480&&m<close;
+document.getElementById('dot').className='dot'+(on?' on':'');document.getElementById('st').textContent=on?'Open now, until '+(close/60)+':00':'Closed right now';}catch(e){}})();
+</script>
+
+<script>var WA_CONFIG={"title": "Chatham Dental", "sub": "Ask about hours, fees or booking", "fabIcon": "💬", "fabLabel": "Ask a question", "placeholder": "Type your question", "greeting": "Hi, welcome to Chatham Dental on Chatham Street. Ask me about opening hours, fees, Invisalign, payment plans or how to get here, or request an appointment.", "chips": ["Book now", "Opening hours", "Fees", "Invisalign", "Payment plans", "Emergency", "Getting here"], "fallback": "I do not have that on the website, so the team will confirm it. Call <a href=\"tel:016729595\">01 672 9595</a> or request an appointment and they will get back to you.", "flowIntro": "Let us get your appointment request started.", "cancelMsg": "No problem, nothing was saved.", "again": "Request another", "doneMsg": "Thanks. Your request was sent to the team, who will contact you to confirm a time:", "flow": [{"label": "Patient", "q": "Have you visited Chatham Dental before?", "options": ["New patient", "Existing patient"]}, {"label": "Reason", "q": "What would you like to come in for?", "options": ["Check-up", "Hygiene visit", "Invisalign consultation", "Composite bonding or whitening", "Emergency", "Something else"]}, {"label": "Day", "q": "Which day suits you?", "options": ["Monday to Thursday", "Friday", "No preference"]}, {"label": "Time", "q": "What time of day?", "options": ["Early (from 8am)", "Lunchtime", "After work (Mon to Thu, to 7pm)", "No preference"]}, {"label": "Name", "q": "What is your name?"}, {"label": "Phone", "q": "What is the best phone number to reach you?", "type": "phone"}], "kb": [{"k": ["hello", "hi", "hey", "good morning", "good afternoon"], "a": "Hello, welcome to Chatham Dental. I can help with opening hours, fees, treatments, payment plans, directions or booking."}, {"k": ["thanks", "thank you", "thx", "cheers", "great", "perfect"], "a": "You are welcome. Tap \"Book now\" whenever you would like the team to find you a time."}, {"k": ["book", "booking", "appointment", "schedule", "reserve", "make an appointment", "see a dentist", "come in", "book now", "register"], "action": "book"}, {"k": ["hours", "open", "opening", "close", "closing", "what time", "weekend", "saturday", "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "late", "evening", "early", "opening hours"], "a": "Opening hours: Monday to Thursday 08:00 - 19:00, Friday 08:00 - 16:00, closed at weekends."}, {"k": ["address", "where", "location", "located", "directions", "find you", "map", "street", "chatham street", "dublin", "getting here"], "a": "4 Chatham Street, Dublin, D02 R223, in the city centre, beside Neary's pub and above Amuri restaurant."}, {"k": ["luas", "bus", "buses", "transport", "public transport", "tram", "stephens green", "dawson", "walk", "how do i get", "get there", "how to get"], "a": "It is a 3 minute walk from the St. Stephen's Green Luas stop (Green Line). Buses 15, 27, 65B, 69 and 7 stop nearby on Dawson Street."}, {"k": ["parking", "park", "car", "drive", "driving"], "a": "Parking is not mentioned on the website, so the team will confirm. Public transport is close: St. Stephen's Green Luas is a 3 minute walk."}, {"k": ["phone", "call", "number", "email", "contact", "reach", "ring", "telephone"], "a": "Call <a href=\"tel:016729595\">01 672 9595</a> or email <a href=\"mailto:hello@chathamdental.ie\">hello@chathamdental.ie</a>."}, {"k": ["treatments", "services", "offer", "dentistry", "general dentistry"], "a": "Treatments: general dentistry, hygiene, cosmetic dentistry, orthodontics, Invisalign and facial aesthetics. Ask me about any of them."}, {"k": ["invisalign", "aligner", "aligners", "clear aligners", "straighten", "straight", "crooked", "platinum"], "a": "Invisalign is offered with a free consultation. Dr Aleena Bhatti is a Platinum Invisalign provider. The private fee is 4,495 euro (Lite 3,895). Treatment usually takes 6 to 18 months, and the team gives you a clear estimate at the consultation."}, {"k": ["braces", "fixed braces", "orthodontic", "orthodontics", "retainer", "retainers", "angel aligners"], "a": "Fixed braces start from 4,495 euro, with a free consultation. Most patients wear braces or aligners for 6 to 18 months. Retainers are available, for example a set of 3 Vivera retainers at 500 euro."}, {"k": ["whitening", "whitning", "whiten", "whiter", "bleach", "bleaching", "white teeth"], "a": "Professional teeth whitening is 275 euro. Results can last from a few months up to a couple of years depending on diet and habits."}, {"k": ["bonding", "composite", "composite bonding", "chipped", "chip", "gap", "gaps", "broken", "worn"], "a": "Composite bonding repairs chips and gaps and is 195 to 395 euro per tooth. The consultation is free."}, {"k": ["veneer", "veneers", "porcelain"], "a": "Porcelain veneers are 850 euro per tooth. Veneers typically last 10 to 15 years with proper care."}, {"k": ["silver", "amalgam", "fillings", "filling", "cavity", "cavities", "decay", "white filling"], "a": "White fillings start from 150 euro. For a specific tooth, a dentist needs to see you; tap Book now."}, {"k": ["crown", "crowns", "onlay", "onlays", "bridge", "bridges", "cap"], "a": "Ceramic crowns and onlays start from 850 euro, and bridges are 800 to 1,500 euro. A dentist will advise what suits your tooth."}, {"k": ["root canal", "root", "endodontic", "extraction", "extractions", "wisdom", "pulled"], "a": "Root canal treatment is 550 euro for front teeth, 650 for premolars and 850 for molars. A routine extraction is 150 euro and a surgical one 150 to 250. A dentist will assess you first."}, {"k": ["hygiene", "hygienist", "clean", "cleaning", "scale", "polish", "airflow", "deep clean", "gums", "gum"], "a": "Scale and polish is 90 euro, or 15 euro with PRSI. You can book a hygienist directly without seeing a dentist first. Most people benefit from a clean every 6 months."}, {"k": ["facial", "aesthetics", "botox", "wrinkle", "wrinkles", "anti wrinkle", "masseter", "profhilo", "lip flip", "gummy", "filler"], "a": "Facial aesthetics: anti-wrinkle from 215 euro for 1 area, masseter treatment 480, Profhilo 250 per session, gummy smile 215 and lip flip 185."}, {"k": ["emergency", "urgent", "same day", "same-day", "pain", "toothache", "swelling", "asap", "hurts", "bleeding"], "a": "Same-day emergency appointments are offered whenever possible. Call <a href=\"tel:016729595\">01 672 9595</a> and the team will do their best to see you quickly. An emergency consultation with X-rays is 50 euro."}, {"k": ["price", "prices", "cost", "costs", "much", "fee", "fees", "pricing", "quote", "expensive", "charge", "private fees"], "a": "The fee guide is on this page. For example: exam with X-rays 80 euro, scale and polish 90, white filling from 150, whitening 275. The team confirms the exact cost of your plan."}, {"k": ["free", "free consultation", "consultation", "consult", "no charge"], "a": "Consultations for Invisalign, fixed braces and composite bonding or cosmetic work are free."}, {"k": ["exam", "check up", "checkup", "check-up", "first visit", "first appointment", "new patient", "first time", "expect", "what to expect"], "a": "At your first visit the dentist discusses your needs, you can ask questions, and you get a personalised treatment plan, printed or by email. An exam with X-rays is 80 euro, free with PRSI."}, {"k": ["payment", "payments", "pay", "instalment", "instalments", "installment", "installments", "payment plan", "payment plans", "afford", "finance", "financing", "humm", "direct debit", "monthly"], "a": "Two options: Humm Finance to spread the cost of treatments, with interest-free options on some plans, and 0% monthly direct debit to the clinic for Invisalign and fixed braces."}, {"k": ["insurance", "vhi", "prsi", "laya", "irish life", "health insurance", "insurer", "claim", "cover", "covered", "dental insurance"], "a": "Most major dental insurers are accepted and the practice works directly with VHI. You can also use your PRSI entitlement for a subsidised exam and hygiene visit."}, {"k": ["child", "children", "kid", "kids", "son", "daughter", "family", "teen", "under 18"], "a": "A child exam (under 18) is 50 euro and a child scale and polish is 50 euro. Tap Book now and add it in the reason."}, {"k": ["team", "dentist", "dentists", "doctor", "doctors", "who", "aleena", "kate", "staff", "hygienist name"], "a": "The dentists are Dr Aleena Bhatti (principal dentist), Dr Kate Frawley, Dr Fiachra O Corragain, Dr Alison Browne, Dr Greice Zanotti and Dr Holly Porter. Lauren Barr is the hygienist."}, {"k": ["nervous", "im nervous", "nervous about", "scared of", "scared", "afraid", "anxious", "anxiety", "fear", "phobia", "worried", "hurt", "painful"], "a": "Tell the team when you book so they can plan for it. Patient reviews mention being put at ease. For hygiene visits, numbing gel can be used if your gums are sensitive."}, {"k": ["guarantee", "satisfied", "unhappy", "not happy", "complaint", "feedback"], "a": "The practice has a satisfaction guarantee: if you are not happy with the outcome, the team will work with you to make it right. Feedback goes to feedback@chathamdental.ie."}, {"k": ["jobs", "job", "vacancy", "vacancies", "career", "careers", "work for you", "join"], "a": "There is a Join Our Team page on the practice website. Email hello@chathamdental.ie."}]};</script>
+<script>/* assistant engine + widget (client-side only) */
+function waNorm(s){return String(s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function waStem(w){
+  if(w.length>4){
+    if(/ies$/.test(w))return w.slice(0,-3)+'y';
+    if(/ing$/.test(w)&&w.length>5)return w.slice(0,-3);
+    if(/ed$/.test(w)&&w.length>5)return w.slice(0,-2);
+    if(/es$/.test(w)&&w.length>5)return w.slice(0,-2);
+    if(/s$/.test(w)&&!/ss$/.test(w))return w.slice(0,-1);
+  }
+  return w;
+}
+function waLev(a,b){
+  if(Math.abs(a.length-b.length)>2)return 9;
+  var d=[],i,j;
+  for(i=0;i<=a.length;i++){d[i]=[i];}
+  for(j=0;j<=b.length;j++)d[0][j]=j;
+  for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++){
+    var c=a[i-1]===b[j-1]?0:1;
+    d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);
+    if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1);
+  }
+  return d[a.length][b.length];
+}
+function waWordEq(u,k){
+  if(u===k)return true;
+  var m=Math.min(u.length,k.length);
+  if(m<6)return false;
+  var d=waLev(u,k);
+  return d<=1||(m>=9&&d<=2);
+}
+function waMatcher(KB){
+  var idx=KB.map(function(e){var seen={},keys=[];(e.k||[]).forEach(function(p){var ph=waNorm(p).split(' ').map(function(w){return waStem(w);}),id=ph.join(' ');if(!seen[id]){seen[id]=1;keys.push(ph);}});return {e:e,keys:keys};});
+  return function(q){
+    var ws=waNorm(q).split(' ').filter(Boolean).map(waStem);
+    var best=null,bs=0;
+    idx.forEach(function(it){
+      var s=0;
+      it.keys.forEach(function(ph){
+        var all=ph.every(function(kw){return ws.some(function(u){return waWordEq(u,kw);});});
+        if(all)s+=ph.length*2+Math.min(ph.join('').length,10)/10;
+      });
+      if(s>bs){bs=s;best=it.e;}
+    });
+    return bs>=2?best:null;
+  };
+}
+if(typeof module!=='undefined')module.exports={waMatcher:waMatcher,waNorm:waNorm};
+
+(function(){
+  if(typeof document==='undefined'||typeof WA_CONFIG==='undefined')return;
+  var C=WA_CONFIG,match=waMatcher(C.kb);
+  var el=function(t,c,h){var n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n;};
+  var fab=el('button','wa-fab','<span class="wa-fab-ic" aria-hidden="true">'+C.fabIcon+'</span><span class="wa-fab-t">'+C.fabLabel+'</span>');
+  fab.setAttribute('aria-label',C.fabLabel);
+  var panel=el('div','wa-panel');panel.setAttribute('role','dialog');panel.setAttribute('aria-label',C.title);
+  var head=el('div','wa-head','<div><b>'+C.title+'</b><small>'+C.sub+'</small></div>');
+  var close=el('button','wa-x','×');close.setAttribute('aria-label','Close');head.appendChild(close);
+  var log=el('div','wa-log');log.setAttribute('aria-live','polite');
+  var chips=el('div','wa-chips');
+  var form=el('form','wa-form');
+  var inp=el('input','wa-in');inp.type='text';inp.placeholder=C.placeholder;inp.setAttribute('aria-label',C.placeholder);inp.autocomplete='off';
+  var go=el('button','wa-go','➜');go.type='submit';go.setAttribute('aria-label','Send');
+  form.appendChild(inp);form.appendChild(go);
+  panel.appendChild(head);panel.appendChild(log);panel.appendChild(chips);panel.appendChild(form);
+  document.body.appendChild(fab);document.body.appendChild(panel);
+  var flow=null,data={},started=false;
+  function say(html,me){var m=el('div','wa-m '+(me?'wa-me':'wa-bot'));if(me)m.textContent=html;else m.innerHTML=html;log.appendChild(m);log.scrollTop=log.scrollHeight;}
+  function setChips(list,fn){chips.innerHTML='';(list||[]).forEach(function(t){var b=el('button','wa-chip');b.type='button';b.textContent=t;b.onclick=function(){fn(t);};chips.appendChild(b);});}
+  function home(){setChips(C.chips,ask);}
+  function ask(t){say(t,true);reply(t);}
+  function reply(t){
+    if(flow){step(t);return;}
+    var e=match(t);
+    if(e&&e.action==='book'){startFlow();return;}
+    if(e){say(e.a);home();return;}
+    say(C.fallback);home();
+  }
+  function startFlow(){flow={i:-1};data={};say(C.flowIntro);next();}
+  function next(){
+    flow.i++;
+    if(flow.i>=C.flow.length){finish();return;}
+    var s=C.flow[flow.i];say(s.q);
+    if(s.options){setChips(s.options,function(o){say(o,true);step(o);});}else{setChips(['Cancel'],function(){say('Cancel',true);cancel();});}
+  }
+  function cancel(){flow=null;say(C.cancelMsg);home();}
+  function step(v){
+    if(/^(cancel|stop|never ?mind)$/i.test(v.trim())){cancel();return;}
+    var s=C.flow[flow.i];
+    if(s.type==='phone'&&!/^[+\d][\d\s\-()]{6,}$/.test(v.trim())){say('That does not look like a phone number. Could you type it again?');return;}
+    if(s.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())){say('That does not look like an email address. Could you type it again?');return;}
+    data[s.label]=v.trim();next();
+  }
+  function finish(){
+    var rows=Object.keys(data).map(function(k){return '<li><b>'+k+':</b> '+data[k].replace(/</g,'&lt;')+'</li>';}).join('');
+    say(C.doneMsg+'<ul class="wa-sum">'+rows+'</ul><small>Demo: nothing is actually sent.</small>');
+    flow=null;setChips([C.again],function(){say(C.again,true);startFlow();});
+  }
+  function open(){panel.classList.add('wa-open');fab.classList.add('wa-hide');if(!started){started=true;say(C.greeting);home();}setTimeout(function(){inp.focus();},50);}
+  function shut(){panel.classList.remove('wa-open');fab.classList.remove('wa-hide');}
+  fab.onclick=open;close.onclick=shut;
+  form.onsubmit=function(ev){ev.preventDefault();var v=inp.value.trim();if(!v)return;inp.value='';say(v,true);reply(v);};
+  document.querySelectorAll('[data-wa]').forEach(function(b){b.addEventListener('click',function(ev){ev.preventDefault();open();if(b.getAttribute('data-wa')==='book'&&!flow){say('I want to book',true);startFlow();}});});
+})();
+</script>
+<script>
+(function(){var f=document.querySelector('.wa-fab'),i=document.querySelector('.wa-in'),fm=document.querySelector('.wa-form');
+document.querySelectorAll('[data-q]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();if(!f||!i||!fm)return;f.click();i.value=b.getAttribute('data-q');fm.dispatchEvent(new Event('submit',{cancelable:true}));});});})();
+</script>
+</body>
+</html>

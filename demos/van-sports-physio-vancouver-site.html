@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-CA"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Van Sports &amp; Physiotherapy, Downtown Vancouver · Demo</title>
+<meta name="description" content="Demo page with an enquiry assistant for Van Sports and Physiotherapy, 625 Howe St, Downtown Vancouver.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1b2a6b;--nd:#111a47;--lime:#8dc63f;--lt:#b6e85a;--ink:#141a3a;--bg:#f4f8ea;--line:#dbe3c8;--mut:#4b5575}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:400 16px/1.6 Barlow,system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+a{color:var(--navy)}img{max-width:100%}
+h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;line-height:1;margin:0;letter-spacing:.01em}
+.wrap{max-width:1060px;margin:0 auto;padding:0 16px}
+header.h{position:sticky;top:0;z-index:30;background:#fff;border-bottom:4px solid var(--lime)}
+header.h .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:6px;padding-bottom:6px}
+.brand img{display:block;height:44px;width:auto}
+.hcall{display:flex;gap:8px;align-items:center}
+.hcall a.tel{display:none;font:700 17px 'Barlow Condensed',sans-serif;text-decoration:none;color:var(--navy);letter-spacing:.03em}
+nav.n{display:none;gap:16px;font-weight:700;font-size:14.5px;text-transform:uppercase;letter-spacing:.04em}
+nav.n a{text-decoration:none;color:var(--ink)}nav.n a:hover{color:var(--navy);text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:3px}
+.btn{display:inline-block;border:0;background:var(--lime);color:var(--nd);font:800 16px 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.06em;padding:12px 20px;text-decoration:none;cursor:pointer;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.btn.n{background:var(--navy);color:#fff}.btn.w{background:#fff;color:var(--navy)}
+.btn.sm{padding:9px 16px;font-size:14.5px}
+.hero{position:relative;background:var(--navy);color:#fff;overflow:hidden;padding:44px 0 54px}
+.hero:before{content:"";position:absolute;right:-12%;top:-20%;width:58%;height:150%;background:var(--lime);transform:skewX(-18deg);opacity:.95}
+.hero:after{content:"";position:absolute;right:30%;top:-20%;width:6%;height:150%;background:var(--lt);transform:skewX(-18deg);opacity:.5}
+.hero .wrap{position:relative;z-index:2}
+.tag{display:inline-block;background:#fff;color:var(--navy);font:800 14px 'Barlow Condensed',sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px}
+.hero h1{font-size:clamp(46px,13.5vw,98px);font-weight:800;margin:14px 0 14px;max-width:8.2em}
+.hero h1 span{color:var(--lt)}
+.hero p{font-size:18px;max-width:27em;margin:0 0 22px;color:#e4e9ff}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px}
+.hero .box{margin-top:26px;display:inline-block;background:rgba(17,26,71,.92);border-left:6px solid var(--lime);padding:12px 16px;max-width:100%}
+.hero .box b{font:800 22px 'Barlow Condensed',sans-serif;letter-spacing:.04em;color:var(--lt);display:block}
+.hero .box span{font-size:14.5px;color:#dbe1ff}
+.strip{background:var(--lime);color:var(--nd);padding:14px 0}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center;font:800 17px 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.06em}
+section{padding:48px 0}
+.eyebrow{font:800 15px 'Barlow Condensed',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#587d1b}
+h2{font-size:clamp(34px,8.5vw,56px);font-weight:800;margin:4px 0 14px;color:var(--navy)}
+.sub{color:var(--mut);max-width:38em;margin:0 0 22px}
+.icbc{background:var(--bg)}
+.icbc .g{display:grid;gap:14px}
+.big{background:var(--navy);color:#fff;padding:20px;border-bottom:6px solid var(--lime)}
+.big b{display:block;font:800 clamp(54px,16vw,84px)/0.9 'Barlow Condensed',sans-serif;color:var(--lt)}
+.big span{display:block;font-size:15px;color:#dbe1ff;margin-top:6px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 0}
+.chip{background:#fff;border:2px solid var(--navy);padding:3px 11px;font:700 14px Barlow,sans-serif;color:var(--navy)}
+.chip.l{border-color:var(--line);color:#33405f;font-weight:500;font-size:13.5px}
+.svc{display:grid;gap:10px}
+.svc div{display:flex;gap:12px;border:2px solid var(--navy);padding:12px 14px;background:#fff;position:relative}
+.svc div:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--lime)}
+.svc b{display:block;font:800 21px 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.02em;color:var(--navy);margin-left:8px}
+.svc span{display:block;font-size:14.5px;color:#39446a;margin-left:8px;line-height:1.4}
+.steps{display:grid;gap:12px}
+.st{display:flex;gap:14px;align-items:flex-start;border:2px solid var(--navy);padding:14px;background:#fff}
+.st>b{flex:0 0 52px;height:52px;background:var(--lime);color:var(--nd);display:grid;place-items:center;font:800 34px 'Barlow Condensed',sans-serif;transform:skewX(-10deg)}
+.st h3{font-size:24px;color:var(--navy);margin-bottom:4px}.st p{margin:0;font-size:15px;color:#2d3760}
+.team{display:grid;gap:12px}
+.tm{display:flex;gap:14px;align-items:center;border-bottom:2px solid var(--line);padding:10px 0}
+.tm i{flex:0 0 46px;height:46px;background:var(--navy);color:var(--lt);display:grid;place-items:center;font:800 20px 'Barlow Condensed',sans-serif;font-style:normal;transform:skewX(-10deg)}
+.tm b{font:800 21px 'Barlow Condensed',sans-serif;text-transform:uppercase;display:block;line-height:1.1}
+.tm span{font-size:14px;color:var(--mut);display:block;line-height:1.35}
+.rates{background:var(--nd);color:#fff}
+.rates h2{color:#fff}.rates .eyebrow{color:var(--lt)}
+.rt{max-width:640px}
+.rt .r{display:flex;align-items:baseline;gap:8px;padding:8px 0}
+.rt .r span:first-child{flex:0 1 auto}
+.rt .r em{flex:1;border-bottom:2px dotted rgba(255,255,255,.3);min-width:10px;transform:translateY(-4px)}
+.rt .r b{font:800 22px 'Barlow Condensed',sans-serif;color:var(--lt);white-space:nowrap}
+.rt h3{font-size:23px;color:var(--lt);margin:22px 0 4px;letter-spacing:.06em}
+.rt small{display:block;color:#b9c3f0;font-size:13.5px;margin-top:4px}
+.q{display:grid;gap:12px}
+.q blockquote{margin:0;border-left:6px solid var(--lime);background:var(--bg);padding:14px 16px;font-size:15.5px;color:#26305a}
+.q cite{display:block;margin-top:6px;font:700 14px Barlow,sans-serif;color:var(--navy);font-style:normal}
+details{border:2px solid var(--navy);margin-bottom:8px;background:#fff}
+summary{cursor:pointer;font:800 20px 'Barlow Condensed',sans-serif;text-transform:uppercase;padding:11px 14px;list-style:none;display:flex;justify-content:space-between;gap:10px;color:var(--navy)}
+summary::after{content:"+";color:#587d1b}details[open] summary::after{content:"\2212"}
+details p{margin:0;padding:0 14px 13px;color:#2d3760}
+.visit{background:var(--navy);color:#fff}
+.visit h2{color:#fff}.visit .eyebrow{color:var(--lt)}.visit a{color:var(--lt)}
+.vg{display:grid;gap:14px}
+.vb{background:rgba(255,255,255,.08);padding:16px;border-top:5px solid var(--lime)}
+.vb h3{font-size:22px;color:#fff;margin-bottom:6px}
+footer{padding:22px 0 92px;font-size:13px;color:var(--mut);text-align:center;border-top:4px solid var(--lime)}
+#a-fab{position:fixed;right:14px;bottom:14px;z-index:40;background:var(--lime);color:var(--nd);border:0;padding:13px 20px;font:800 17px 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.06em;box-shadow:0 8px 22px rgba(17,26,71,.45);cursor:pointer;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);padding-left:24px;padding-right:24px}
+#a-panel{position:fixed;right:10px;bottom:70px;z-index:41;width:min(380px,calc(100vw - 20px));height:min(540px,calc(100vh - 90px));background:#fff;border:3px solid var(--navy);box-shadow:8px 8px 0 var(--lime);display:none;flex-direction:column;overflow:hidden}
+#a-panel.open{display:flex}
+.a-h{background:var(--navy);color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.a-h b{font:800 21px 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.04em;display:block}.a-h small{color:#b9c3f0;font-size:12px}
+#a-x{background:none;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1}
+#a-log{flex:1;overflow:auto;padding:12px;background:var(--bg)}
+.m{max-width:88%;padding:9px 12px;margin-bottom:8px;font-size:14.5px;line-height:1.45}
+.m.b{background:#fff;border:1px solid var(--line);border-left:4px solid var(--lime)}.m.u{background:var(--navy);color:#fff;margin-left:auto}
+.m a{font-weight:700}
+#a-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px 0;background:#fff;max-height:96px;overflow:auto}
+#a-chips button{border:2px solid var(--navy);background:#fff;padding:4px 11px;font:700 13px Barlow,sans-serif;cursor:pointer;color:var(--navy)}
+#a-chips button:hover{background:var(--lime)}
+#a-form{display:flex;gap:6px;padding:10px;background:#fff}
+#a-form input{flex:1;min-width:0;border:2px solid var(--navy);padding:9px;font:15px Barlow,sans-serif}
+#a-form button{background:var(--navy);color:#fff;border:0;padding:0 16px;font:800 16px 'Barlow Condensed',sans-serif;text-transform:uppercase;cursor:pointer}
+@media(min-width:780px){
+ nav.n{display:flex}.hcall a.tel{display:inline}.brand img{height:52px}
+ .hero{padding:72px 0 84px}.icbc .g{grid-template-columns:.8fr 1.2fr;align-items:stretch;gap:24px}
+ .svc{grid-template-columns:1fr 1fr 1fr}.steps{grid-template-columns:1fr 1fr 1fr}.team{grid-template-columns:1fr 1fr}.q{grid-template-columns:1fr 1fr 1fr}.vg{grid-template-columns:1fr 1fr 1fr}section{padding:68px 0}
+}
+</style></head><body>
+<header class="h"><div class="wrap">
+<a class="brand" href="#top" aria-label="Van Sports and Physiotherapy"><img src="img/van-sports-physio-vancouver-logo.png" alt="Van Sports &amp; Physiotherapy" width="172" height="44"></a>
+<nav class="n"><a href="#icbc">ICBC</a><a href="#services">Services</a><a href="#team">Team</a><a href="#rates">Rates</a><a href="#visit">Visit</a></nav>
+<div class="hcall"><a class="tel" href="tel:+16046618878">(604) 661-8878</a><a class="btn sm" href="#" data-ask="Request an appointment">Book</a></div></div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<span class="tag">Downtown Vancouver · 625 Howe St</span>
+<h1>Get you back <span>to your game.</span></h1>
+<p>One-on-one sports physio assessments and treatment, from the acute injury to the return-to-sport stage. Couch athletes, weekend warriors and top-notch athletes all welcome.</p>
+<div class="cta"><a class="btn" href="#" data-ask="Request an appointment">Request an appointment</a><a class="btn w" href="https://vansportsphysio.janeapp.com" rel="noopener">Book online</a></div>
+<div class="box"><b>Mon to Fri, 7am to 7pm</b><span>Call (604) 661-8878 or text (778) 244-7788</span></div>
+</div></div>
+<div class="strip"><div class="wrap"><span>ICBC direct billing</span><span>WorkSafeBC</span><span>MSP</span><span>Extended health</span></div></div>
+
+<section class="icbc" id="icbc"><div class="wrap">
+<span class="eyebrow">Car accident? Claims?</span><h2>Direct billing, less paperwork</h2>
+<div class="g">
+<div class="big"><b>$0</b><span>out of pocket for ICBC clients within 12 weeks of the accident, with 25 visits automatically approved for direct billing</span></div>
+<div><p style="margin:0 0 10px;font-size:17px">No doctor referral is needed for ICBC injury therapy, and beyond 12 weeks the clinic contacts ICBC for approval of further treatment.</p>
+<p style="margin:0 0 6px;font-weight:700">Direct billing also covers</p>
+<div class="chips"><span class="chip">WorkSafeBC</span><span class="chip">MSP</span><span class="chip">RCMP</span><span class="chip">Veterans Affairs (DVA)</span></div>
+<p style="margin:16px 0 6px;font-weight:700">Select employer plans, including</p>
+<div class="chips"><span class="chip l">Canada Life</span><span class="chip l">Manulife</span><span class="chip l">Sun Life</span><span class="chip l">Pacific Blue Cross</span><span class="chip l">Medavie Blue Cross</span><span class="chip l">Green Shield Canada</span><span class="chip l">Desjardins</span><span class="chip l">Great-West Life</span><span class="chip l">Empire Life</span><span class="chip l">TELUS AdjudiCare</span><span class="chip l">+ more on the clinic site</span></div>
+<p style="font-size:14px;color:var(--mut);margin:12px 0 0">Coverage differs between policies, so check your plan or ask HR about percentage covered and co-pay.</p>
+<p style="margin:14px 0 0"><a class="btn n sm" href="#" data-ask="Does the clinic direct bill ICBC?">Ask about billing</a></p></div>
+</div></div></section>
+
+<section style="padding-bottom:10px"><div class="wrap">
+<span class="eyebrow">How it works</span><h2>Three steps to moving again</h2>
+<div class="steps">
+<div class="st"><b>1</b><div><h3>Book</h3><p>Online through the clinic's booking page, by phone at (604) 661-8878, or by text at (778) 244-7788.</p></div></div>
+<div class="st"><b>2</b><div><h3>Assessment</h3><p>One-on-one with your therapist: how your body is moving now, what is behind the pain, and what you want to get back to.</p></div></div>
+<div class="st"><b>3</b><div><h3>Plan and loading</h3><p>Hands-on treatment plus exercises that load the body progressively, so you return to sport and life with confidence.</p></div></div>
+</div></div></section>
+
+<section id="services"><div class="wrap">
+<span class="eyebrow">What we do</span><h2>Treatments and services</h2>
+<p class="sub">The clinic's site says the effects of physiotherapy can show within the first week, and a full return to function or sport generally takes 2 weeks to 6 months depending on the injury.</p>
+<div class="svc">
+<div><span><b>Physiotherapy</b><span>Assessment and treatment to find the cause and build a plan.</span></span></div>
+<div><span><b>Manual therapy</b><span>Joint mobilization and manipulation, soft tissue release.</span></span></div>
+<div><span><b>Shockwave therapy</b><span>Non-surgical acoustic waves for chronic or acute tendon and soft tissue pain.</span></span></div>
+<div><span><b>IMS</b><span>Intra-muscular stimulation for chronic pain of neuropathic origin. Offered by some therapists only.</span></span></div>
+<div><span><b>Medical acupuncture</b><span>Fine needle treatment with a certified therapist.</span></span></div>
+<div><span><b>Exercise and Stott Pilates</b><span>Staged exercise prescription for rehab and re-injury prevention.</span></span></div>
+<div><span><b>Custom orthotics</b><span>Foot assessment and custom inserts.</span></span></div>
+<div><span><b>Athletic taping</b><span>Athletic taping and K-tape.</span></span></div>
+<div><span><b>Electrotherapy</b><span>Electrotherapy and modalities alongside hands-on care.</span></span></div>
+<div><span><b>Osteopathy</b><span>Osteopathic practitioner on the team.</span></span></div>
+<div><span><b>Massage (RMT)</b><span>Registered massage therapy.</span></span></div>
+<div><span><b>e-Rehab</b><span>Physio over video when an in-person visit is not possible.</span></span></div>
+<div><span><b>Bike fitting</b><span>1.5 to 2 hours with a physio. For current clinic clients only.</span></span></div>
+<div><span><b>ICBC and WorkSafeBC</b><span>Injury claims therapy, active rehabilitation, accepted claims.</span></span></div>
+<div><span><b>Repetitive injuries</b><span>Plus sports injuries, from running to golf.</span></span></div>
+</div></div></section>
+
+<section id="team" style="background:var(--bg)"><div class="wrap">
+<span class="eyebrow">The therapists</span><h2>Who you will see</h2>
+<div class="team">
+<div class="tm"><i>AB</i><div><b>Alen Birac</b><span>Registered physiotherapist. Orthopaedic and concussion injuries, TMJ disorders. Fluent in Serbian and Croatian.</span></div></div>
+<div class="tm"><i>KM</i><div><b>Kim McArthur Yae</b><span>Registered physiotherapist</span></div></div>
+<div class="tm"><i>YL</i><div><b>Yvonne Law</b><span>Registered physiotherapist, knee and shoulder, IMS. Currently on maternity leave.</span></div></div>
+<div class="tm"><i>FB</i><div><b>Fabio Bocchetti</b><span>Osteopathic practitioner</span></div></div>
+<div class="tm"><i>AS</i><div><b>Dr. Alex Sattar</b><span>Doctor of Chiropractic. Spinal manipulation, sports injuries, pregnancy and paediatric care.</span></div></div>
+<div class="tm"><i>CM</i><div><b>Collin McArthur</b><span>Registered massage therapist</span></div></div>
+</div></div></section>
+
+<section class="rates" id="rates"><div class="wrap">
+<span class="eyebrow">Rates</span><h2>What it costs</h2>
+<div class="rt">
+<h3>Physiotherapy</h3>
+<div class="r"><span>Assessment</span><em></em><b>$133</b></div>
+<div class="r"><span>Treatment</span><em></em><b>$108</b></div>
+<div class="r"><span>Shockwave, initial</span><em></em><b>$133</b></div>
+<div class="r"><span>Shockwave, follow-up</span><em></em><b>$108</b></div>
+<div class="r"><span>Bike fitting (1.5 to 2 h)</span><em></em><b>$300</b></div>
+<div class="r"><span>Home visit</span><em></em><b>$185</b></div>
+<small>ICBC within 12 weeks: $0 out of pocket. WorkSafeBC accepted claims: $0, call for details. MSP assessment $110, then a user fee for subsequent visits.</small>
+<h3>Osteopathy (plus GST)</h3>
+<div class="r"><span>Assessment or follow-up, 60 min</span><em></em><b>$150</b></div>
+<div class="r"><span>Follow-up, 45 min</span><em></em><b>$135</b></div>
+<h3>Massage therapy (plus GST)</h3>
+<div class="r"><span>RMT, 60 min</span><em></em><b>$135</b></div>
+<div class="r"><span>RMT, 45 min</span><em></em><b>$115</b></div>
+<small>ICBC RMT assessment $0, subsequent visits $5.25. Rates as shown on the clinic's Rates page.</small>
+</div></div></section>
+
+<section><div class="wrap">
+<span class="eyebrow">From the clinic's testimonials</span><h2>What patients say</h2>
+<div class="q">
+<blockquote>Different injuries in my knee and hip have improved notably with the treatment. She is very clear in explaining what is happening with your body.<cite>Laura</cite></blockquote>
+<blockquote>Worked with me to get to the root cause opposed to quick fixes. Communication is always fantastic with incredibly quick response times.<cite>Claire</cite></blockquote>
+<blockquote>Seeing a couple of physios and massage therapists, Van Sports was the last and best solution.<cite>Mahkia</cite></blockquote>
+</div></div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<span class="eyebrow">Good to know</span><h2>Quick answers</h2>
+<details><summary>Do I need a doctor referral?</summary><p>Not for ICBC injury therapy, according to the clinic's site. For anything else the team will confirm.</p></details>
+<details><summary>Can I text the clinic?</summary><p>Yes. The site lists a text line at (778) 244-7788 next to the main number, (604) 661-8878.</p></details>
+<details><summary>Can I do physio over video?</summary><p>Yes, e-Rehab (tele-rehabilitation) runs by video conferencing when an in-person visit is not possible.</p></details>
+<details><summary>Is bike fitting open to anyone?</summary><p>The clinic's site says bike fitting is for current clients of the clinic only.</p></details>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap">
+<span class="eyebrow">Visit</span><h2>625 Howe St #521</h2>
+<div class="vg" style="margin-top:16px">
+<div class="vb"><h3>Hours</h3><p style="margin:0">Monday to Friday<br><b style="font:800 24px 'Barlow Condensed',sans-serif">7am to 7pm</b></p></div>
+<div class="vb"><h3>Find us</h3><p style="margin:0">625 Howe St #521,<br>Vancouver, BC V6C 2T6</p><p style="margin:8px 0 0"><a href="https://www.google.com/maps/search/?api=1&amp;query=Van+Sports+and+Physiotherapy+625+Howe+St+Vancouver">Open in Maps</a></p></div>
+<div class="vb"><h3>Contact</h3><p style="margin:0"><a href="tel:+16046618878">(604) 661-8878</a><br>Text <a href="sms:+17782447788">(778) 244-7788</a><br><a href="mailto:info@vansportsphysio.com">info@vansportsphysio.com</a></p></div>
+</div></div></section>
+</main>
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="a-fab" type="button" aria-label="Open assistant">Ask the clinic</button>
+<div id="a-panel" role="dialog" aria-label="Clinic assistant"><div class="a-h"><div><b>Van Sports assistant</b><small>Demo. Sends nothing.</small></div><button id="a-x" type="button" aria-label="Close">&times;</button></div>
+<div id="a-log"></div><div id="a-chips"></div>
+<form id="a-form"><input id="a-in" autocomplete="off" placeholder="Type your question"><button type="submit">Send</button></form></div>
+<script>
+/* assistant engine: client-side only, sends nothing */
+(function(g){
+function norm(s){return String(s).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.replace(/(ing|ings|ed|es|s|ly)$/,function(m,x,o){return w.length-m.length>=3?'':m;});}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;var d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function tokens(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function tokScore(qt,kw){var k=stem(norm(kw));if(!k)return 0;
+ if(k.indexOf(' ')>-1){var parts=k.split(' ');var ok=parts.every(function(p){return qt.some(function(t){return t===p||(p.length>3&&lev(t,p)<=1);});});return ok?parts.length*2.2:0;}
+ for(var i=0;i<qt.length;i++){var t=qt[i];if(t===k)return 2;if(k.length>4&&t.length>4&&(k.indexOf(t)===0||t.indexOf(k)===0)&&Math.abs(k.length-t.length)<=3)return 1.6;var tol=k.length>=8?2:(k.length>=5?1:0);if(tol&&lev(t,k)<=tol)return 1.5;}
+ return 0;}
+function match(q,kb){var qt=tokens(q),best=null,bs=0;kb.forEach(function(e){var s=0;e.k.forEach(function(kw){s+=tokScore(qt,kw);});s*=(e.w||1);if(s>bs){bs=s;best=e;}});return bs>=1.5?best:null;}
+g.AsstEngine={norm:norm,match:match,lev:lev};
+if(typeof document==='undefined')return;
+g.AsstInit=function(C){
+ var $=function(i){return document.getElementById(i)};
+ var fab=$('a-fab'),pan=$('a-panel'),log=$('a-log'),inp=$('a-in'),chips=$('a-chips'),form=$('a-form');
+ var flow=null,data={};
+ function add(t,who){var d=document.createElement('div');d.className='m '+who;if(who==='b')d.innerHTML=t;else d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+ function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){say(c)};chips.appendChild(b);});}
+ function startFlow(){flow={i:0};data={};ask();}
+ function ask(){var s=C.flow[flow.i];add(s.q,'b');setChips(s.opts?s.opts.concat([C.cancel]):[C.cancel]);inp.placeholder=s.opts?C.pickHint:C.typeHint;}
+ function say(t){t=String(t).trim();if(!t)return;add(t,'u');inp.value='';
+  if(flow){if(norm(t)===norm(C.cancel)){flow=null;add(C.cancelled,'b');setChips(C.chips);return;}
+   var s=C.flow[flow.i];var v=t;if(s.opts){var f=null;s.opts.forEach(function(o){if(norm(o)===norm(t)||(norm(t).length>2&&norm(o).indexOf(norm(t))>-1))f=o;});if(!f){add(C.pickAgain,'b');return;}v=f;}
+   if(s.check&&!s.check(v)){add(s.err,'b');return;}
+   data[s.key]=v;flow.i++;if(flow.i<C.flow.length){ask();}else{var sum=C.flow.map(function(x){return '<b>'+x.label+':</b> '+esc(data[x.key]);}).join('<br>');flow=null;add(C.done(sum),'b');setChips(C.chips);inp.placeholder=C.typeHint;}return;}
+  if(C.bookRe.test(norm(t))&&!(C.noBook&&C.noBook.test(norm(t)))){startFlow();return;}
+  var m=match(t,C.kb);if(m){add(m.a,'b');if(m.book){}}else add(C.fallback,'b');setChips(C.chips);}
+ function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+ fab.onclick=function(){pan.classList.toggle('open');if(pan.classList.contains('open')&&!log.children.length){add(C.hello,'b');setChips(C.chips);}};
+ $('a-x').onclick=function(){pan.classList.remove('open')};
+ form.onsubmit=function(e){e.preventDefault();say(inp.value);};
+ window.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-ask]');if(t){e.preventDefault();pan.classList.add('open');if(!log.children.length){add(C.hello,'b');}say(t.getAttribute('data-ask'));}});
+};
+})(typeof window!=='undefined'?window:globalThis);
+
+
+(function(){
+var T='<a href="tel:+16046618878">(604) 661-8878</a>';
+var CONF='The team will confirm that: call '+T+', text (778) 244-7788 or email info@vansportsphysio.com.';
+var kb=[
+{k:['hours','open','opening','close','closing','late','early','evening','when','time','times'],a:'Monday to Friday, 7am to 7pm. I do not see weekend hours listed on the clinic site, so for Saturday or Sunday the team will confirm: '+T+'.'},
+{k:['saturday','sunday','weekend','weekends'],a:'The clinic site lists Monday to Friday, 7am to 7pm. For weekends the team will confirm: '+T+'.'},
+{k:['where','address','location','directions','find','howe','downtown','vancouver','parking','skytrain','map','building','suite'],a:'625 Howe St #521, Vancouver, BC V6C 2T6, in Downtown Vancouver. For parking or transit details the team will confirm: '+T+'.'},
+{k:['phone','call','number','contact','email','mail','reach','telephone','text','sms','fax'],a:'Call '+T+', text (778) 244-7788, or email info@vansportsphysio.com. The fax is (604) 661-8868.'},
+{k:['rates','rate','price','prices','cost','costs','fee','fees','how much','charge','expensive'],a:'Physiotherapy assessment is $133 and a treatment $108. Shockwave is $133 initial and $108 follow-up. Osteopathy is $150 for 60 minutes and massage (RMT) $135 for 60 minutes, both plus GST. ICBC within 12 weeks is $0 out of pocket. See the Rates section for the full list.'},
+{k:['icbc','car accident','accident','crash','mva','motor vehicle','whiplash','collision','claim number'],a:'ICBC clients with a claim number within 12 weeks of the accident are direct billed, with 25 visits automatically approved and $0 out of pocket. No doctor referral is needed. After 12 weeks the clinic contacts ICBC for approval of further treatment.'},
+{k:['worksafebc','worksafe','wcb','work injury','workers compensation','work related'],a:'WorkSafeBC accepted claims are direct billed with $0 out of pocket. For details on your claim please call '+T+'.'},
+{k:['msp','medical services plan','bc residents','user fee','surcharge'],a:'MSP is accepted: the MSP assessment is $110, and subsequent visits carry a small user fee. The rates page and the billing page quote slightly different user fees, so the team will confirm the exact amount: '+T+'.'},
+{k:['insurance','insurer','insured','benefits','extended','extended health','coverage','covered','direct billing','direct bill','bill','billing','manulife','sun life','sunlife','canada life','blue cross','pacific blue cross','green shield','desjardins','great west','telus','adjudicare','rcmp','veterans','dva','employer','plan'],a:'Direct billing covers ICBC, MSP, WorkSafeBC, RCMP and Veterans Affairs, plus select employer plans such as Canada Life, Manulife, Sun Life, Pacific Blue Cross, Medavie Blue Cross, Green Shield Canada and Desjardins. Coverage varies by policy, so check your percentage and co-pay with your plan or HR.'},
+{k:['shockwave','shock wave','tendon','plantar','fasciitis','tendinopathy','acoustic'],a:'Shockwave therapy is a non-surgical treatment using high energy acoustic waves for chronic or acute pain and tissue regeneration. It is $133 for the initial session and $108 for follow-ups. A registered therapist will tell you if it suits your case.'},
+{k:['ims','intramuscular','intra muscular','gunn','dry needling','needling','neuropathic'],a:'IMS (intra-muscular stimulation) uses fine sterile needles for chronic pain of neuropathic origin. Only some therapists offer it, so the team will confirm who: '+T+'.'},
+{k:['acupuncture','acupuncturist','medical acupuncture'],a:'Medical acupuncture is on the services list. Certified therapists such as Yvonne Law hold Acupuncture Canada certification. The team will confirm who is currently available: '+T+'.'},
+{k:['osteopathy','osteopath','osteopathic','fabio','bocchetti'],a:'Fabio Bocchetti is the osteopathic practitioner. Osteopathy is $150 for 60 minutes and $135 for 45 minutes, plus GST.'},
+{k:['massage','rmt','registered massage','collin','mcarthur','relaxation','deep tissue'],a:'Collin McArthur is a registered massage therapist. RMT is $135 for 60 minutes and $115 for 45 minutes, plus GST. For ICBC clients the RMT assessment is $0 and subsequent visits $5.25.'},
+{k:['chiropractor','chiropractic','chiro','alex','sattar','spinal','manipulation','adjustment','cupping'],a:'Dr. Alex Sattar is a Doctor of Chiropractic. His listed services include spinal manipulation, joint mobilization, soft tissue work, cupping, rehab exercises, sports injuries, pregnancy and post-pregnancy care, and paediatric care. For his rates and availability the team will confirm: '+T+'.'},
+{k:['team','therapist','therapists','physio','physios','physiotherapist','physiotherapists','who','alen','birac','kim','yvonne','law','staff','practitioner','practitioners'],a:'Registered physiotherapists Alen Birac, Kim McArthur Yae and Yvonne Law (currently on maternity leave), osteopathic practitioner Fabio Bocchetti, chiropractor Dr. Alex Sattar and registered massage therapist Collin McArthur.'},
+{k:['concussion','tmj','jaw','orthopaedic','orthopedic'],a:'Alen Birac works with orthopaedic and concussion injuries and has additional training in concussion management and TMJ disorders. I cannot assess symptoms, so please book an assessment or call '+T+'.'},
+{w:1.6,k:['orthotics','orthotic','insoles','foot','feet','flat feet','arch'],a:'Custom orthotics are on the services list. The site does not list a price for them, so the team will confirm: '+T+'.'},
+{k:['taping','tape','ktape','k tape','kinesio','athletic taping'],a:'The clinic offers athletic taping and K-tape.'},
+{k:['bike','bike fit','bike fitting','cycling','cyclist','saddle'],a:'Bike fitting takes 1.5 to 2 hours with a physio and costs $300. The clinic site says it is for current clients of the clinic only.'},
+{w:3,k:['erehab','e rehab','telehealth','online','video','virtual','remote','from home','distance','zoom','tele'],a:'Yes, e-Rehab (tele-rehabilitation) is physio by video conferencing when an in-person visit is not possible. Home visits are also listed at $185, and the team will give details: '+T+'.'},
+{k:['home visit','house call','mobile'],a:'Home visits are listed at $185. Please call '+T+' for details.'},
+{k:['pilates','stott','exercise','exercises','prescription','rehab','rehabilitation','strength','gym'],a:'Exercise prescription and Stott Pilates are offered: staged exercises chosen by your physiotherapist for your needs, to help recovery and lower the risk of re-injury.'},
+{k:['electrotherapy','modalities','ultrasound','tens','electrical'],a:'Electrotherapy and modalities are used alongside hands-on treatment and exercise.'},
+{k:['manual','manual therapy','mobilization','mobilisation','soft tissue','release','massage therapy'],a:'Manual therapy includes joint mobilization and manipulation plus soft tissue mobilization and release.'},
+{k:['sports','sport','athlete','athletes','running','runner','golf','ski','skiing','return to sport','game'],a:'Sports injury rehab covers everything from the acute injury to return-to-sport. The aim is to get you back to your game safely, with exercises that load the body progressively.'},
+{k:['how long','recovery','results','improve','weeks','timeline','heal','healing'],a:'The clinic site says the effects of physiotherapy can show within the first week, and a full return to function or sport generally takes 2 weeks to 6 months depending on the injury. Your therapist will give you a plan for your case.'},
+{k:['referral','refer','doctor','gp','physician','prescription letter'],a:'No doctor referral is needed for ICBC injury therapy. For other cases the team will confirm: '+T+'.'},
+{k:['cancel','cancle','cancellation','cancelation','reschedule','postpone','no show','noshow','notice'],a:'I do not see a cancellation policy on the clinic site, so the team will confirm: '+T+'.'},
+{k:['services','service','treatments','treatment','offer','offers','offered','everything'],a:'Physiotherapy, manual therapy, shockwave, IMS, medical acupuncture, exercise and Stott Pilates, custom orthotics, athletic taping and K-tape, electrotherapy, osteopathy, massage (RMT), chiropractic, e-Rehab, bike fitting and ICBC, WorkSafeBC and MSP care.'},
+{k:['pain','hurt','hurts','injury','injured','sore','sprain','strain','knee','shoulder','neck','back','hip','ankle','repetitive'],w:.6,a:'The clinic treats sports and repetitive injuries and a range of joint and muscle problems. I cannot tell what is behind your pain, so a physiotherapist will assess it. <a href="#" data-ask="Request an appointment">Request an appointment</a>.'},
+{k:['covid','mask','masks','screen','symptoms','sick'],a:'The clinic has a COVID-19 policy: staff and clients with symptoms should not come in, and virtual appointments are offered where appropriate.'},
+{k:['review','reviews','rating','rated','google','testimonials','reputation'],a:'The clinic shows a 5.0 Google rating and a Patient Testimonials page.'},
+{k:['hi','hello','hey','thanks','thank','good morning'],a:'Hello. Ask about ICBC, direct billing, rates, hours or services, or request an appointment.'}
+];
+var C={noBook:/(how much|price|cost|fee|hours|open|cancel|when can|insurance|claim|online|video|remote|virtual|icbc|bill|bike|home visit)/,kb:kb,bookRe:/\b(book|booking|appointment|appointments|schedule|reserve|request|apointment|apointments|boking|slot)\b/,
+hello:'Hi, I am the demo assistant for Van Sports and Physiotherapy. I answer from the clinic\'s site and can take an appointment request. I cannot give medical advice or diagnose.',
+chips:['Request an appointment','ICBC claims','Direct billing','Rates','Hours','Shockwave'],
+fallback:'I do not have that. '+CONF+' For anything about your injury please speak to a therapist.',
+cancel:'Cancel',cancelled:'No problem, request cancelled.',pickHint:'Tap an option',typeHint:'Type your question',pickAgain:'Please tap one of the options.',
+flow:[
+{key:'why',label:'Reason',q:'What is the visit about?',opts:['Car accident (ICBC)','Work injury (WorkSafeBC)','Sports injury','Pain or repetitive injury','Shockwave','Osteopathy','Massage (RMT)','Chiropractic','Other']},
+{key:'pay',label:'How it is paid',q:'How will it be covered?',opts:['ICBC','WorkSafeBC','MSP','Extended health benefits','Pay myself','Not sure']},
+{key:'visit',label:'Visit type',q:'Have you been to Van Sports before?',opts:['First visit','Returning client']},
+{key:'day',label:'Days',q:'Which weekdays suit you?',opts:['Monday','Tuesday','Wednesday','Thursday','Friday','Any weekday']},
+{key:'tod',label:'Time of day',q:'What time of day?',opts:['Early (7am to 10am)','Midday','Afternoon','Evening (to 7pm)']},
+{key:'who',label:'Therapist',q:'Do you want a particular therapist?',opts:['Any','Alen Birac','Kim McArthur Yae','Fabio Bocchetti','Dr. Alex Sattar','Collin McArthur']},
+{key:'name',label:'Your name',q:'Your name?'},
+{key:'phone',label:'Phone',q:'Best phone number?',check:function(v){return v.replace(/\D/g,'').length>=7},err:'Please enter a phone number with at least 7 digits.'}],
+done:function(s){return 'Thank you. Your request is with the team (demo: nothing was really sent).<br>'+s+'<br>Please do not share medical details here. The team will confirm a time and answer anything about your injury.';}};
+if(typeof document!=='undefined')AsstInit(C);else globalThis.__C=C;
+})();
+
+</script></body></html>

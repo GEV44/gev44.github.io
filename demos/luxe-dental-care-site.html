@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Luxe Dental Care · Family dentist, North Melbourne</title>
+<meta name="description" content="Comfortable, personalised and affordable family dentistry in North Melbourne. Demo page with a booking assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#2b2b63;--navy2:#1d1d47;--gold:#b08d3c;--gold2:#e9d9ae;--ivory:#fbf9f4;--paper:#fff;--ink:#25253f;--mute:#62627d;--line:#e4dfd0;
+--ai-a:#2b2b63;--ai-at:#fff;--ai-bg:#fff;--ai-bg2:#fbf9f4;--ai-bot:#fff;--ai-bd:#e4dfd0;--ai-t:#25253f;--ai-f:'Source Sans 3',system-ui,sans-serif;--ai-r:14px;--ai-r2:22px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--ink);font:400 17px/1.62 'Source Sans 3',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.18;color:var(--navy)}
+img{max-width:100%;display:block}
+a{color:var(--navy)}
+.wrap{width:min(1080px,100% - 32px);margin-inline:auto}
+.eyebrow{font:700 12px/1 'Source Sans 3';letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+header{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0}
+.logo{height:52px;width:auto}
+nav{display:none;gap:22px;font:600 15px 'Source Sans 3'}
+nav a{text-decoration:none;color:var(--ink)}nav a:hover{color:var(--gold)}
+.btn{display:inline-block;background:var(--navy);color:#fff;border:0;border-radius:999px;padding:13px 24px;font:700 15px/1 'Source Sans 3';text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--gold)}
+.btn.gold{background:var(--gold)}.btn.gold:hover{background:var(--navy)}
+.btn.line{background:transparent;color:var(--navy);border:2px solid var(--navy)}.btn.line:hover{background:var(--navy);color:#fff}
+@media(min-width:900px){nav{display:flex}}
+.hero{text-align:center;padding:54px 0 40px;background:radial-gradient(circle at 50% 0,#f1ead7 0,var(--ivory) 62%)}
+.hero h1{font-size:clamp(34px,7.6vw,64px);max-width:15em;margin:16px auto 16px}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero p.lead{max-width:36em;margin:0 auto;font-size:19px;color:#3b3b57}
+.hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.ribbon{margin:38px auto 0;max-width:760px;background:var(--navy);color:#fff;border-radius:22px;padding:24px 22px;display:grid;gap:8px;position:relative;text-align:center}
+.ribbon .eyebrow{color:var(--gold2)}
+.ribbon h2{color:#fff;font-size:clamp(26px,5.4vw,38px)}
+.ribbon h2 em{color:var(--gold2)}
+.ribbon p{color:#d9d9ef;font-size:15.5px}
+.ribbon small{color:#a9a9cc;font-size:12.5px;line-height:1.4}
+.trio{display:grid;gap:12px;margin-top:22px}
+@media(min-width:760px){.trio{grid-template-columns:repeat(3,1fr)}}
+.trio div{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:left}
+.trio b{display:block;font:600 18px 'Playfair Display';color:var(--navy);margin-bottom:4px}
+.trio span{font-size:15px;color:var(--mute)}
+section{padding:56px 0}
+.center{text-align:center}
+.center .sh{margin-inline:auto}
+.sh{max-width:38em;margin-bottom:26px}
+.sh h2{font-size:clamp(28px,5.6vw,42px);margin:10px 0}
+.sh p{color:var(--mute)}
+.cats{display:grid;gap:22px}
+@media(min-width:800px){.cats{grid-template-columns:1fr 1fr 1fr}}
+.cat{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px}
+.cat h3{font-size:21px;margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--gold2)}
+.cat ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.cat li{background:var(--ivory);border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:14.5px}
+.cat p{font-size:15px;color:var(--mute);margin-top:12px}
+.kids{background:var(--navy2);color:#e8e8f6}
+.kids h2,.kids h3{color:#fff}
+.kids-g{display:grid;gap:28px;align-items:center}
+@media(min-width:860px){.kids-g{grid-template-columns:1.2fr 1fr;gap:56px}}
+.kids p{color:#cfcfe8;margin-bottom:10px}
+.cap{background:var(--gold);color:#1d1d47;border-radius:22px;padding:26px;text-align:center}
+.cap strong{display:block;font:700 clamp(44px,12vw,68px)/1 'Playfair Display';color:#1d1d47}
+.cap span{font-weight:600}
+.cap small{display:block;margin-top:8px;font-size:13.5px;line-height:1.4}
+.team{display:grid;gap:16px}
+@media(min-width:620px){.team{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.team{grid-template-columns:repeat(3,1fr)}}
+.mem{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;gap:16px}
+.av{flex:none;width:58px;height:58px;border-radius:50%;background:var(--navy);color:var(--gold2);display:grid;place-items:center;font:600 22px 'Playfair Display'}
+.mem h3{font-size:19px;margin-bottom:2px}
+.mem .r{font-weight:600;color:var(--gold);font-size:14.5px}
+.mem .n{font-size:12.5px;color:var(--mute);letter-spacing:.04em}
+.mem p{font-size:14.5px;color:var(--mute);margin-top:6px}
+.pay{display:grid;gap:14px}
+@media(min-width:800px){.pay{grid-template-columns:repeat(4,1fr)}}
+.pay div{background:var(--paper);border-top:4px solid var(--gold);border-radius:12px;padding:18px;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pay b{display:block;font:600 18px 'Playfair Display';color:var(--navy);margin-bottom:4px}
+.pay span{font-size:15px;color:var(--mute)}
+.faq{max-width:820px;margin-inline:auto}
+.faq details{background:var(--paper);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;padding:0 18px}
+.faq summary{cursor:pointer;font:600 18px 'Playfair Display';color:var(--navy);padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";color:var(--gold);font-size:26px;line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq p{padding-bottom:16px;color:#46465f}
+.visit{display:grid;gap:22px}
+@media(min-width:860px){.visit{grid-template-columns:1fr 1fr 1fr}}
+.vc{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px}
+.vc h3{font-size:21px;margin-bottom:10px}
+.vc dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px}
+.vc dt{color:var(--mute)}.vc dd{text-align:right;font-weight:600}
+.areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.areas span{background:var(--gold2);color:var(--navy2);border-radius:999px;padding:6px 14px;font-weight:600;font-size:14.5px}
+footer{background:var(--navy2);color:#b8b8d6;padding:28px 0 96px;font-size:14.5px;text-align:center}
+footer b{color:#fff}
+</style>
+<style>#ai-fab{position:fixed;right:16px;bottom:16px;z-index:90;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--ai-a);color:var(--ai-at);font:600 14px/1 var(--ai-f);padding:14px 18px;border-radius:var(--ai-r);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#ai-fab svg{width:20px;height:20px;flex:none}
+#ai-box{position:fixed;right:16px;bottom:78px;z-index:91;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 110px));background:var(--ai-bg);color:var(--ai-t);border-radius:var(--ai-r2);box-shadow:0 18px 50px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--ai-f);border:1px solid var(--ai-bd)}
+#ai-box.open{display:flex}
+.ai-h{background:var(--ai-a);color:var(--ai-at);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ai-h b{display:block;font-size:15px}.ai-h small{opacity:.8;font-size:12px}
+#ai-x{background:transparent;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+#ai-msgs{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--ai-bg2)}
+.ai-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.ai-m.bot{align-self:flex-start;background:var(--ai-bot);border:1px solid var(--ai-bd)}
+.ai-m.me{align-self:flex-end;background:var(--ai-a);color:var(--ai-at)}
+.ai-m a{color:inherit;text-decoration:underline}
+.ai-m small{opacity:.7}
+.ai-dots i{display:inline-block;width:6px;height:6px;margin:0 2px;border-radius:50%;background:currentColor;opacity:.4;animation:aid 1s infinite}
+.ai-dots i:nth-child(2){animation-delay:.15s}.ai-dots i:nth-child(3){animation-delay:.3s}
+@keyframes aid{50%{opacity:1}}
+#ai-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 12px;border-top:1px solid var(--ai-bd);background:var(--ai-bg);max-height:96px;overflow-y:auto}
+.ai-chip{border:1px solid var(--ai-a);color:var(--ai-a);background:transparent;border-radius:999px;padding:6px 11px;font:13px var(--ai-f);cursor:pointer}
+.ai-chip:hover{background:var(--ai-a);color:var(--ai-at)}
+#ai-form{display:flex;gap:6px;padding:8px 12px 12px;background:var(--ai-bg)}
+#ai-in{flex:1;min-width:0;border:1px solid var(--ai-bd);border-radius:10px;padding:10px;font:15px var(--ai-f);background:var(--ai-bg2);color:var(--ai-t)}
+#ai-form button{border:0;background:var(--ai-a);color:var(--ai-at);border-radius:10px;padding:0 14px;font:600 14px var(--ai-f);cursor:pointer}
+@media(max-width:480px){#ai-box{right:8px;left:8px;width:auto;bottom:74px}}
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+<a href="#top" aria-label="Luxe Dental Care"><img class="logo" src="img/luxe-dental-care-logo.png" alt="Luxe Dental Care" width="136" height="52"></a>
+<nav><a href="#services">Services</a><a href="#kids">Kids</a><a href="#team">Team</a><a href="#faq">FAQ</a><a href="#visit">Visit</a></nav>
+<a class="btn" href="#" onclick="aiOpen('Book an appointment');return false">Book</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<span class="eyebrow">North Melbourne · Carlton · Parkville</span>
+<h1>Dental care that is <em>comfortable, personalised</em> and affordable.</h1>
+<p class="lead">Luxe Dental Care looks after the whole family from the medical district of North Melbourne, with a focus on family and cosmetic dentistry in a modern, relaxed clinic.</p>
+<div class="cta"><a class="btn gold" href="#" onclick="aiOpen('Book an appointment');return false">Book an appointment</a><a class="btn line" href="tel:+61390416384">Call (03) 9041 6384</a></div>
+<div class="ribbon"><span class="eyebrow">Offer</span><h2>No Gap check-up &amp; clean, or <em>$270</em> without a health fund</h2><p>Comprehensive exam, scale and clean, fluoride treatment, x-rays if required, clinical photos and treatment planning.</p><small>*No Gap applies to the check-up and clean only, and the No Gap payment is taken only if your private health fund coverage is more than $180.</small></div>
+<div class="trio">
+<div><b>Affordable dental</b><span>Cost-affordable care that is made to be accessible for everyone.</span></div>
+<div><b>Online booking</b><span>Book at a time that suits you through the clinic's online booking system, any time of day.</span></div>
+<div><b>Same-day appointments</b><span>Check the availability: if the clinic is free on the day, you can often be fitted in.</span></div>
+</div>
+</div></div>
+
+<section id="services"><div class="wrap">
+<div class="sh center"><span class="eyebrow">Services</span><h2>One clinic for the whole family</h2><p>General, children's, cosmetic and specialist treatments, from a routine clean to implants.</p></div>
+<div class="cats">
+<div class="cat"><h3>Everyday dentistry</h3><ul><li>Check up &amp; clean</li><li>General dentistry</li><li>Dental fillings</li><li>Tooth extractions</li><li>Gum disease treatment</li><li>Root canal treatment</li><li>Dentistry for children</li><li>Emergency dentistry</li></ul><p>Examinations and cleans plus restorations, fillings, extractions and more. Emergencies get priority, with same-day appointments where possible and after-hours emergency services.</p></div>
+<div class="cat"><h3>Smile &amp; straightening</h3><ul><li>Teeth whitening</li><li>Veneers</li><li>Invisible braces</li><li>Traditional braces</li><li>Crowns &amp; bridges</li></ul><p>Whitening uses the Philips Zoom! system, after a free consultation. Invisible braces are Spark aligners, planned from a digital 3D scan.</p></div>
+<div class="cat"><h3>Restore &amp; protect</h3><ul><li>Dental implants</li><li>Custom dentures</li><li>Custom-fitted mouthguards</li><li>Teeth grinding (bruxism)</li><li>Snoring &amp; sleep apnoea</li><li>Sleep dentistry</li></ul><p>Implant suitability is assessed with a thorough examination including x-rays and a CT scan. Sleep dentistry uses general anaesthesia with a certified anaesthetist monitoring you.</p></div>
+</div>
+</div></section>
+
+<section class="kids" id="kids"><div class="wrap kids-g">
+<div><span class="eyebrow">Children</span><h2 style="margin:10px 0 14px;font-size:clamp(28px,5.6vw,42px)">Dentistry for kids of all ages</h2>
+<p>From infants and toddlers to young children, tweens and teens. The team goes the extra mile so young patients feel comfortable, safe and even excited about their visits.</p>
+<p>The clinic takes part in Medicare's Child Dental Benefits Schedule (CDBS), which covers eligible children aged 2 to 17. Eligibility depends on your family receiving Family Tax Benefit Part A or a relevant government payment.</p></div>
+<div class="cap"><span>CDBS benefit cap</span><strong>$1,095</strong><span>over two calendar years</span><small>For eligible children aged 2 to 17. Ask the team to check eligibility.</small></div>
+</div></section>
+
+<section style="background:#fff;border-block:1px solid var(--line)"><div class="wrap">
+<div class="sh center"><span class="eyebrow">Why Luxe</span><h2>Boutique dental without the price tag</h2><p>The clinic offers high-quality general and specialist dental services at prices that will not break the bank, equipped with the latest dental technology so that treatment is efficient, precise and comfortable.</p></div>
+<div class="trio" style="margin-top:0">
+<div><b>Patient-centred</b><span>The team takes the time to understand your unique needs and tailors the treatment to suit you, whether you are in for a routine check-up or something complex.</span></div>
+<div><b>For the whole family</b><span>Routine examinations and cleans, restorations and extractions for adults, and specialised care for children of all ages, so a positive first visit leads to a lifetime of healthy teeth.</span></div>
+<div><b>Close to the city</b><span>The clinic serves Carlton, Parkville, Flagstaff Gardens and anyone across the Melbourne CBD, with tram stops, buses and North Melbourne Station nearby.</span></div>
+</div>
+</div></section>
+
+<section id="team"><div class="wrap">
+<div class="sh"><span class="eyebrow">Your team</span><h2>Meet the clinicians</h2></div>
+<div class="team">
+<div class="mem"><div class="av">VL</div><div><h3>Vivian Lee</h3><div class="r">Founder · Oral Health Therapist</div><p>More than 15 years in dentistry, passionate about paediatric care and about the prevention and treatment of gum disease.</p></div></div>
+<div class="mem"><div class="av">LI</div><div><h3>Dr Lina Idarraga</h3><div class="r">Principal Dentist</div><div class="n">AHPRA DEN0002329870</div><p>Graduated in 2005 with a Bachelor of Dental Science (Honours). Principal Dentist at Luxe since 2020, with a passion for cosmetic dentistry.</p></div></div>
+<div class="mem"><div class="av">JR</div><div><h3>Dr Jessica Tatiana Rios</h3><div class="r">Dentist</div><div class="n">AHPRA DEN0002641307</div></div></div>
+<div class="mem"><div class="av">CZ</div><div><h3>Dr Cathy Zeng</h3><div class="r">Dentist</div><div class="n">AHPRA DEN0002594984</div></div></div>
+<div class="mem"><div class="av">DP</div><div><h3>Dr Daniel Park</h3><div class="r">Dentist</div><div class="n">AHPRA DEN0002584404</div></div></div>
+</div>
+</div></section>
+
+<section style="background:#f4efe1"><div class="wrap">
+<div class="sh center"><span class="eyebrow">Paying for care</span><h2>Ways to make it manageable</h2></div>
+<div class="pay">
+<div><b>Health funds</b><span>All insurance plans accepted, with onsite HICAPS for claims.</span></div>
+<div><b>Humm payment plans</b><span>Spread the cost interest-free* with pre-approval of up to $5,000 through the Humm app.</span></div>
+<div><b>Government programs</b><span>Child Dental Benefits Schedule and Oral Health Care Vouchers accepted.</span></div>
+<div><b>Cards</b><span>All major credit cards accepted, including Amex.</span></div>
+</div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+<div class="sh center"><span class="eyebrow">FAQ</span><h2>Good questions</h2></div>
+<div class="faq">
+<details><summary>How does the No Gap offer work?</summary><p>It applies to the check-up and clean for patients with private health insurance. If your fund coverage exceeds $180 you pay nothing out of pocket. Without a health fund, a comprehensive check-up and clean including x-rays and fluoride is $270.</p></details>
+<details><summary>How do I book?</summary><p>Online through the booking system on the clinic's website at any hour, or call (03) 9041 6384 during business hours. The team also offers same-day appointments when there is availability.</p></details>
+<details><summary>What if I need to cancel or reschedule?</summary><p>Please call (03) 9041 6384 as soon as possible and give at least 24 hours' notice so the slot can go to another patient. You can also reschedule through the online booking system.</p></details>
+<details><summary>What should I do in a dental emergency?</summary><p>Call (03) 9041 6384 straight away for severe tooth pain, a broken tooth or an infection. The clinic prioritises emergencies and aims for same-day appointments, and offers after-hours emergency services.</p></details>
+<details><summary>Am I suitable for dental implants?</summary><p>The dentists examine you, with x-rays and a CT scan, to assess jawbone density and oral health. If extra procedures such as bone grafting are needed, they will talk you through the options at the consultation.</p></details>
+<details><summary>Do you offer payment plans?</summary><p>Yes: Humm (interest-free*, up to $5,000 pre-approval), onsite HICAPS, all major credit cards and government programs such as the CDBS.</p></details>
+</div>
+</div></section>
+
+<section id="visit" style="padding-top:0"><div class="wrap visit">
+<div class="vc"><h3>Find the clinic</h3><p>Suite 3 Level 1<br>33 Flemington Road<br>North Melbourne VIC 3051</p><p style="margin-top:10px;font-size:15px;color:var(--mute)">On-street parking and several nearby parking facilities. Tram stops and bus routes are close, and North Melbourne Station is a short walk.</p><div class="areas"><span>Carlton</span><span>Parkville</span><span>Flagstaff Gardens</span><span>Melbourne CBD</span></div></div>
+<div class="vc"><h3>Opening hours</h3><dl><dt>Monday</dt><dd>9:00 AM – 5:00 PM</dd><dt>Tuesday</dt><dd>9:00 AM – 5:00 PM</dd><dt>Wednesday</dt><dd>9:00 AM – 5:00 PM</dd><dt>Thursday</dt><dd>10:00 AM – 6:00 PM</dd><dt>Friday</dt><dd>9:00 AM – 5:00 PM</dd><dt>Sat / Sun</dt><dd>Closed</dd></dl></div>
+<div class="vc"><h3>Get in touch</h3><p><a href="tel:+61390416384" style="font-weight:700;font-size:20px">(03) 9041 6384</a></p><p style="margin-top:6px"><a href="mailto:info@luxedentalcare.com.au">info@luxedentalcare.com.au</a></p><p style="margin:12px 0 14px;font-size:15px;color:var(--mute)">For non-urgent questions, email and the team will reply as soon as possible.</p><a class="btn gold" href="#" onclick="aiOpen('Book an appointment');return false">Book an appointment</a></div>
+</div></section>
+</main>
+<footer><div class="wrap"><b>Luxe Dental Care</b><br>Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="ai-fab" type="button" aria-expanded="false" aria-controls="ai-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span>Ask or book</span></button>
+<div id="ai-box" role="dialog" aria-label="Luxe Dental Care assistant"><div class="ai-h"><div><b>Luxe Dental Care</b><small>Booking assistant · demo</small></div><button id="ai-x" type="button" aria-label="Close">&times;</button></div><div id="ai-msgs" aria-live="polite"></div><div id="ai-chips"></div><form id="ai-form" autocomplete="off"><input id="ai-in" type="text" placeholder="Ask a question" aria-label="Your question"><button type="submit">Send</button></form></div>
+
+<script>/*ENGINE*/
+function makeEngine(CFG){
+var STOP={a:1,an:1,the:1,is:1,are:1,do:1,does:1,you:1,your:1,i:1,my:1,me:1,we:1,to:1,of:1,for:1,in:1,on:1,at:1,it:1,and:1,or:1,can:1,u:1,there:1,have:1,has:1,be:1,with:1,this:1,that:1,what:1,how:1,about:1,please:1,any:1,get:1,much:1};
+var IRR=CFG.irr||{};
+function stem(w){
+  if(IRR[w])return IRR[w];
+  if(w.length>5&&/ies$/.test(w))w=w.slice(0,-3)+'y';
+  else if(w.length>5&&/(ing)$/.test(w))w=w.slice(0,-3);
+  else if(w.length>4&&/(ed)$/.test(w))w=w.slice(0,-2);
+  else if(w.length>4&&/es$/.test(w))w=w.slice(0,-2);
+  else if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))w=w.slice(0,-1);
+  if(w.length>4&&/e$/.test(w))w=w.slice(0,-1);
+  if(IRR[w])return IRR[w];
+  return w;
+}
+function toks(q){
+  var t=String(q).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9à-ÿ$ ]+/g,' ').split(/\s+/).filter(Boolean);
+  return t.filter(function(w){return !STOP[w]}).map(stem).filter(function(w){return !STOP[w]&&w.length>0});
+}
+function lev(a,b){
+  if(a===b)return 0;
+  var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;
+  var d=[],i,j;for(i=0;i<=m;i++){d[i]=[i]}for(j=0;j<=n;j++)d[0][j]=j;
+  for(i=1;i<=m;i++)for(j=1;j<=n;j++){
+    var c=a[i-1]===b[j-1]?0:1;
+    d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);
+    if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1);
+  }
+  return d[m][n];
+}
+function wordHit(t,k){
+  if(t===k)return 1;
+  if(k.length>=4&&t.length>=4&&(t.indexOf(k)===0||k.indexOf(t)===0)&&Math.abs(t.length-k.length)<=3)return 0.9;
+  if(k.length>=4&&t[0]===k[0]){var l=lev(t,k);if(k.length>=8&&l<=2)return 0.9;if(l<=1)return 0.9}
+  return 0;
+}
+function kwScore(tk,kw){
+  var kt=toks(kw);if(!kt.length)return 0;
+  var sum=0;
+  for(var i=0;i<kt.length;i++){
+    var best=0;for(var j=0;j<tk.length;j++){var h=wordHit(tk[j],kt[i]);if(h>best)best=h}
+    if(!best)return 0;sum+=best;
+  }
+  return sum*(kt.length>1?1.6:1)*(1+Math.min(kt[0].length,9)/30);
+}
+function answer(q){
+  var tk=toks(q);var best=null,bs=0;
+  if(!tk.length)return null;
+  for(var i=0;i<CFG.kb.length;i++){
+    var e=CFG.kb[i],s=0;
+    for(var j=0;j<e.k.length;j++){var v=kwScore(tk,e.k[j]);if(v>s)s=v}
+    if(e.p)s*=e.p;
+    if(s>bs){bs=s;best=e}
+  }
+  return bs>=0.85?best:null;
+}
+return {answer:answer,toks:toks,lev:lev};
+}
+/*ENDENGINE*/
+(function(){
+var CFG={"kb": [{"id": "book", "k": ["book", "appointment", "schedule", "reserve", "make a booking", "see a dentist", "come in", "check up", "checkup", "clean", "cleaning", "same day"], "a": "Sure, I can pass a request to the team. A few quick questions.", "act": "book", "p": 1.2}, {"id": "hours", "k": ["hours", "open", "close", "opening", "when are you open", "thursday", "friday", "monday", "saturday", "sunday", "weekend", "late", "early"], "a": "Monday, Tuesday, Wednesday and Friday 9:00 AM to 5:00 PM. Thursday 10:00 AM to 6:00 PM. Closed Saturday and Sunday."}, {"id": "address", "k": ["address", "where", "location", "directions", "flemington", "north melbourne", "located", "find you", "street", "suite", "get there", "carlton", "parkville", "cbd", "flagstaff"], "a": "Luxe Dental Care is at Suite 3 Level 1, 33 Flemington Road, North Melbourne VIC 3051, in the medical district. It serves Carlton, Parkville, Flagstaff Gardens and the Melbourne CBD."}, {"id": "parking", "k": ["parking", "park", "car", "tram", "train", "bus", "public transport", "station", "transport"], "a": "There is on-street parking and several nearby parking facilities. Tram stops and bus routes are close, and North Melbourne Station is a short walk away."}, {"id": "phone", "k": ["phone", "call", "number", "email", "contact", "reach", "talk to someone", "speak"], "a": "Call (03) 9041 6384 or email info@luxedentalcare.com.au for non-urgent questions."}, {"id": "nogap", "k": ["no gap", "nogap", "gap", "270", "check up and clean", "checkup and clean", "free check up", "offer", "special", "deal"], "a": "No Gap offer: your check-up and clean costs nothing out of pocket if your private health fund coverage is more than $180. Without a health fund it is $270. It includes a comprehensive examination, scale and clean, fluoride treatment, x-rays if required, clinical photos and treatment planning.", "p": 1.2}, {"id": "fund", "k": ["health fund", "insurance", "bupa", "medibank", "hcf", "nib", "ahm", "hicaps", "private health", "cover", "rebate", "claim", "fund"], "a": "All health fund and insurance plans are accepted, and HICAPS is available on site so claims can be made on the spot. If you cannot see your fund listed, call (03) 9041 6384 and the team will help."}, {"id": "payment", "k": ["payment", "pay", "humm", "payment plan", "payment plans", "afford", "interest free", "instalments", "installments", "afterpay", "credit card", "amex", "card", "cost", "price", "how much", "fee"], "a": "Payment options: all major credit cards including Amex, onsite HICAPS, and Humm payment plans (interest-free*, pre-approval up to $5,000 through the Humm app). Government programs like the Child Dental Benefits Schedule are accepted too. For a price on a particular treatment the dentist will quote after an examination."}, {"id": "kids", "k": ["kid", "kids", "child", "children", "cdbs", "child dental benefit", "baby", "toddler", "teen", "paediatric", "pediatric", "son", "daughter", "medicare"], "a": "Yes, the clinic treats kids of all ages, from infants to teens. It participates in Medicare's Child Dental Benefits Schedule: eligible children aged 2 to 17 have a benefit cap of $1,095 over two calendar years. Eligibility depends on your family receiving Family Tax Benefit Part A or a relevant government payment."}, {"id": "whitening", "k": ["whitening", "whiten", "bleaching", "zoom", "white teeth", "stains", "brighter", "yellow teeth", "in chair"], "a": "Teeth whitening uses the Philips Zoom! system. There is a free consultation first to check you are a suitable candidate, and the in-chair treatment can show a big improvement in one session."}, {"id": "braces", "k": ["braces", "invisible braces", "aligners", "spark", "straighten", "straightening", "crooked", "invisalign", "orthodontic", "smilestyler", "traditional braces"], "a": "Both invisible braces (Spark aligners, planned from a digital 3D intra-oral scan) and traditional braces are offered. A consultation covers your goals and whether you are a suitable candidate."}, {"id": "implants", "k": ["implant", "implants", "missing tooth", "missing teeth", "bone graft", "bone grafting", "ct scan"], "a": "Dental implants replace missing teeth long term. Suitability is assessed with an examination including x-rays and a CT scan to look at jawbone density. If bone grafting is needed, the dentists will discuss it with you at the consultation."}, {"id": "crowns", "k": ["crown", "crowns", "bridge", "bridges", "veneer", "veneers", "denture", "dentures", "false teeth"], "a": "The clinic offers dental crowns and bridges (only implemented if required after a thorough examination), veneers and custom dentures."}, {"id": "fillings", "k": ["filling", "fillings", "cavity", "cavities", "root canal", "extraction", "extractions", "pull out", "gum disease", "gums"], "a": "Fillings, root canal treatment, tooth extractions and gum disease treatment are all offered. What you need is decided by the dentist at an examination."}, {"id": "emergency", "k": ["emergency", "urgent", "asap", "right away", "broken tooth", "knocked out", "after hours", "abscess"], "a": "For a dental emergency call (03) 9041 6384 straight away. The clinic prioritises emergencies, aims for same-day appointments and offers after-hours emergency services. In a life-threatening situation call 000.", "p": 1.2}, {"id": "sleep", "k": ["sleep dentistry", "anaesthesia", "anesthesia", "general anaesthesia", "put to sleep", "sedation", "anxious", "anxiety", "scared", "nervous", "snoring", "apnoea", "apnea", "grinding", "bruxism", "mouthguard", "mouth guard"], "p": 1.3, "a": "Sleep dentistry uses general anaesthesia with a certified anaesthetist monitoring you, for people with severe anxiety or who need extensive work in one sitting. The clinic also offers custom-fitted mouthguards, bruxism (teeth grinding) treatment and help for snoring and sleep apnoea."}, {"id": "cancel", "k": ["cancel", "reschedule", "change my appointment", "move my appointment", "cancellation", "notice"], "a": "Please call (03) 9041 6384 as soon as possible and give at least 24 hours' notice so the slot can go to another patient. You can also reschedule via the online booking system."}, {"id": "team", "k": ["team", "dentists", "who is", "who", "staff", "doctor", "lina", "vivian", "jessica", "cathy", "daniel", "therapist", "principal"], "a": "The team: Vivian Lee (founder, oral health therapist, 15+ years), Dr Lina Idarraga (principal dentist since 2020), Dr Jessica Tatiana Rios, Dr Cathy Zeng and Dr Daniel Park."}, {"id": "about", "k": ["about", "story", "boutique", "philosophy", "why choose", "modern", "technology", "affordable"], "a": "Luxe Dental Care aims to give every patient a comfortable, personalised and affordable experience: boutique-quality general and specialist dentistry at prices that will not break the bank, with the latest dental technology in a modern, relaxed clinic."}, {"id": "hi", "k": ["hi", "hello", "hey", "good morning", "good afternoon", "gday", "g'day"], "a": "Hello! I can help with hours, the No Gap offer, payment options, services or a booking request."}, {"id": "thanks", "k": ["thanks", "thank you", "thx", "cheers", "great", "perfect", "awesome"], "a": "You are welcome! Anything else I can help with?"}], "chips": ["Book an appointment", "No Gap offer", "Opening hours", "Payment plans", "Kids dental"], "greet": "Hi, I am the booking assistant for Luxe Dental Care in North Melbourne. Ask me about hours, the No Gap offer, payments or services, or request an appointment.", "fallback": "I do not have that detail, so the team will need to confirm it. You can call (03) 9041 6384 or email info@luxedentalcare.com.au.", "medical": "pain|hurt|ache|swell|swollen|bleed|infect|fever|numb|diagnos|is it normal|should i worry|sensitiv|pus|loose tooth|jaw|medication|pregnan|antibiotic|allerg", "medicalMsg": "I cannot give medical or dental advice, or tell what is wrong from here. Please call the clinic on (03) 9041 6384 so the dentists can help. If it is an emergency out of hours, the team offers after-hours emergency services, and for anything life-threatening call 000.", "irr": {"teeth": "tooth", "children": "child", "kids": "kid", "paediatric": "pediatric", "anaesthesia": "anesthesia", "colour": "color"}, "doneTitle": "Appointment request sent to the team", "doneMsg": "Thank you. The team will contact you to confirm a time.", "flow": [{"key": "who", "label": "Patient", "q": "Who is the appointment for?", "chips": ["Myself (adult)", "My child", "Whole family"]}, {"key": "why", "label": "Reason", "q": "What would you like to book?", "chips": ["Check-up & clean", "Whitening", "Invisible braces", "Implant consult", "Emergency", "Something else"]}, {"key": "fund", "label": "Health fund", "q": "Do you have private health cover?", "chips": ["Yes, private health", "No", "CDBS for my child"]}, {"key": "when", "label": "Preferred time", "q": "Which day and time suits you? (Mon, Tue, Wed, Fri 9-5, Thu 10-6.)", "ph": "e.g. Thursday afternoon"}, {"key": "name", "label": "Name", "q": "Your name?", "t": "name", "err": "Please type your name."}, {"key": "contact", "label": "Contact", "q": "Best phone number or email for the team to confirm?", "t": "contact", "err": "Please enter a phone number or an email address."}]};
+var E=makeEngine(CFG);
+var $=function(i){return document.getElementById(i)};
+var box=$('ai-box'),msgs=$('ai-msgs'),chips=$('ai-chips'),form=$('ai-form'),inp=$('ai-in'),fab=$('ai-fab');
+var flow=null,data={},opened=false;
+function add(who,html,isHtml){
+  var d=document.createElement('div');d.className='ai-m '+who;
+  if(isHtml)d.innerHTML=html;else d.textContent=html;
+  msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d;
+}
+function setChips(list){
+  chips.innerHTML='';
+  (list||[]).forEach(function(c){
+    var b=document.createElement('button');b.type='button';b.className='ai-chip';b.textContent=c;
+    b.onclick=function(){send(c)};chips.appendChild(b);
+  });
+}
+function bot(html,ch){
+  var t=add('bot','<span class="ai-dots"><i></i><i></i><i></i></span>',true);
+  setTimeout(function(){t.innerHTML=html;msgs.scrollTop=msgs.scrollHeight;setChips(ch||CFG.chips)},380);
+}
+function startFlow(){
+  flow={i:0};data={};
+  askStep();
+}
+function askStep(){
+  var s=CFG.flow[flow.i];
+  setTimeout(function(){},0);
+  var t=add('bot',s.q,false);
+  setChips(s.chips?s.chips.concat(['Cancel']):['Cancel']);
+  inp.placeholder=s.ph||'Type your answer';
+}
+function valid(s,v){
+  if(s.t==='phone')return v.replace(/\D/g,'').length>=7;
+  if(s.t==='name')return v.trim().length>=2;
+  if(s.t==='contact')return /@/.test(v)||v.replace(/\D/g,'').length>=7;
+  return v.trim().length>=1;
+}
+function finish(){
+  var s='<b>'+CFG.doneTitle+'</b><br>';
+  CFG.flow.forEach(function(st){s+=esc(st.label)+': '+esc(data[st.key]||'-')+'<br>'});
+  s+='<br>'+CFG.doneMsg+'<br><small>(Demo: nothing is actually sent.)</small>';
+  flow=null;inp.placeholder='Ask a question';
+  bot(s,CFG.chips);
+}
+function esc(x){return String(x).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function send(text){
+  text=String(text||'').trim();if(!text)return;
+  add('me',text,false);inp.value='';
+  if(/^(cancel|stop|never ?mind|quit|exit)$/i.test(text)&&flow){flow=null;inp.placeholder='Ask a question';bot('No problem, I cancelled that request. Anything else?');return}
+  if(flow){
+    var s=CFG.flow[flow.i];
+    if(!valid(s,text)){add('bot',s.err||'Sorry, I did not catch that. Please try again.',false);return}
+    data[s.key]=text;flow.i++;
+    if(flow.i>=CFG.flow.length){finish();return}
+    askStep();return;
+  }
+  if(CFG.medical&&new RegExp(CFG.medical,'i').test(text)){bot(CFG.medicalMsg);return}
+  var e=E.answer(text);
+  if(!e){bot(CFG.fallback);return}
+  if(e.act==='book'){add('bot',e.a,false);startFlow();return}
+  bot(e.a,e.chips);
+}
+function open(o){
+  box.classList.toggle('open',o);fab.setAttribute('aria-expanded',o);
+  if(o&&!opened){opened=true;bot(CFG.greet)}
+  if(o)setTimeout(function(){inp.focus()},50);
+}
+fab.onclick=function(){open(!box.classList.contains('open'))};
+$('ai-x').onclick=function(){open(false)};
+form.onsubmit=function(ev){ev.preventDefault();send(inp.value)};
+window.aiOpen=function(t){open(true);if(t)setTimeout(function(){send(t)},450)};
+window.__engine=E;
+})();
+</script>
+</body>
+</html>

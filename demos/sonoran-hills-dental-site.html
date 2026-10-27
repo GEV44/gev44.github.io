@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sonoran Hills Dental · Dr. Collin Ito, Phoenix AZ</title>
+<meta name="description" content="Family and cosmetic dentistry in Ahwatukee, Phoenix with Dr. Collin Ito. Demo page with a patient assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3347;--steel:#445e77;--sky:#e7eff6;--sand:#f6efe4;--clay:#c5683a;--ink:#22303d;--mute:#5d6b79;--line:#d6dee6;--white:#fff;
+--ai-a:#445e77;--ai-at:#fff;--ai-bg:#fff;--ai-bg2:#eef3f8;--ai-bot:#fff;--ai-bd:#d6dee6;--ai-t:#22303d;--ai-f:'Lora',Georgia,serif;--ai-r:999px;--ai-r2:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font:400 17px/1.65 'Lora',Georgia,serif;overflow-x:hidden}
+h1,h2,h3,h4,.mont{font-family:'Montserrat',system-ui,sans-serif;line-height:1.15;color:var(--navy)}
+a{color:var(--steel)}
+img{max-width:100%;display:block}
+.wrap{width:min(1100px,100% - 32px);margin-inline:auto}
+.top{background:var(--navy);color:#dbe5ee;font:500 13px/1.4 'Montserrat',sans-serif}
+.top .wrap{display:flex;justify-content:space-between;gap:6px 20px;flex-wrap:wrap;padding:8px 0}
+.top a{color:#fff;text-decoration:none;font-weight:700}
+header{background:var(--white);border-bottom:3px solid var(--steel)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0}
+.chip{background:#fff;border-radius:12px;padding:2px 4px;display:inline-flex}
+.logo{height:62px;width:auto}
+nav{display:none;gap:22px;font:600 14px 'Montserrat',sans-serif}
+nav a{text-decoration:none;color:var(--navy)}nav a:hover{color:var(--clay)}
+.btn{display:inline-block;background:var(--clay);color:#fff;border:0;border-radius:10px;padding:13px 20px;font:700 14px/1 'Montserrat',sans-serif;text-decoration:none;cursor:pointer}
+.btn:hover{background:#a95228}
+.btn.alt{background:transparent;color:var(--navy);border:2px solid var(--navy)}.btn.alt:hover{background:var(--navy);color:#fff}
+@media(min-width:900px){nav{display:flex}}
+.hero{background:linear-gradient(180deg,var(--sky),#fff);padding:46px 0 52px}
+.hero-g{display:grid;gap:34px}
+.tag{display:inline-block;background:var(--sand);color:var(--clay);font:700 12px 'Montserrat';letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.hero h1{font-size:clamp(34px,7.4vw,58px);margin:14px 0 14px;font-weight:800}
+.hero p.lead{font-size:19px;color:#33414f;max-width:33em}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.doc{background:var(--navy);color:#fff;border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:12px}
+.doc h3{color:#fff;font-size:22px}
+.doc .role{font:600 12px 'Montserrat';letter-spacing:.1em;text-transform:uppercase;color:#f0b99b}
+.doc p{color:#d6e0ea;font-size:16px}
+.doc .sig{border-top:1px solid #3d566e;padding-top:12px;font-style:italic;color:#fff}
+@media(min-width:900px){.hero-g{grid-template-columns:1.35fr 1fr;align-items:center;gap:56px}.hero{padding:70px 0 80px}}
+section{padding:58px 0}
+.sh{margin-bottom:28px;max-width:40em}
+.sh h2{font-size:clamp(28px,5.6vw,40px);margin:10px 0 10px;font-weight:800}
+.sh p{color:var(--mute)}
+.steps{display:grid;gap:16px;counter-reset:s}
+@media(min-width:800px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{border:2px solid var(--line);border-radius:16px;padding:22px;position:relative;background:#fff}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:-16px;left:18px;background:var(--clay);color:#fff;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font:800 15px 'Montserrat'}
+.step h3{font-size:18px;margin:6px 0 6px}
+.step p{font-size:15.5px;color:var(--mute)}
+.svc{display:grid;gap:14px}
+@media(min-width:700px){.svc{grid-template-columns:1fr 1fr}}
+.tile{display:flex;gap:16px;background:var(--sky);border-radius:16px;padding:20px}
+.tile svg{flex:none;width:44px;height:44px;color:var(--steel)}
+.tile h3{font-size:18px;margin-bottom:4px}
+.tile p{font-size:15.5px;color:#44525f}
+.band{background:var(--navy);color:#e4ecf3}
+.band h2,.band h3{color:#fff}
+.band .sh p{color:#b9c8d6}
+.pay{display:grid;gap:14px}
+@media(min-width:800px){.pay{grid-template-columns:repeat(3,1fr)}}
+.pc{background:#2a425a;border-radius:16px;padding:22px}
+.pc .big{font:800 40px 'Montserrat';color:#f0b99b;line-height:1}
+.pc h3{font-size:17px;margin:8px 0 6px}
+.pc p{font-size:15px;color:#c9d6e2}
+.plist{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.plist span{background:#2a425a;border-radius:999px;padding:6px 14px;font:600 13px 'Montserrat'}
+.team{display:grid;gap:0;border-top:2px solid var(--line)}
+.tr{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line);padding:16px 4px;align-items:baseline;flex-wrap:wrap}
+.tr b{font:700 18px 'Montserrat';color:var(--navy)}
+.tr span{color:var(--mute);font-size:15.5px}
+.quotes{display:grid;gap:16px}
+@media(min-width:800px){.quotes{grid-template-columns:1fr 1fr}}
+blockquote{background:var(--sand);border-radius:16px;padding:22px;font-size:16px;font-style:italic}
+blockquote cite{display:block;margin-top:10px;font:700 13px 'Montserrat';font-style:normal;color:var(--clay)}
+.faq details{border-bottom:1px solid var(--line);padding:15px 0}
+.faq summary{cursor:pointer;font:700 17px 'Montserrat';color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";color:var(--clay);font-size:24px;line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq p{margin-top:8px;color:#44525f}
+.visit{display:grid;gap:26px}
+@media(min-width:800px){.visit{grid-template-columns:1fr 1fr;gap:50px}}
+.hrs{width:100%;border-collapse:collapse;font-size:16px}
+.hrs td{padding:9px 4px;border-bottom:1px solid var(--line)}
+.hrs td:last-child{text-align:right;font-weight:600}
+.hrs tr.cl td{color:var(--mute)}
+.addr{font-size:19px}
+.addr a{font-weight:600}
+footer{background:var(--navy);color:#b9c8d6;padding:28px 0 96px;font-size:14.5px}
+footer .wrap{display:flex;flex-direction:column;gap:4px}
+</style>
+<style>#ai-fab{position:fixed;right:16px;bottom:16px;z-index:90;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--ai-a);color:var(--ai-at);font:600 14px/1 var(--ai-f);padding:14px 18px;border-radius:var(--ai-r);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#ai-fab svg{width:20px;height:20px;flex:none}
+#ai-box{position:fixed;right:16px;bottom:78px;z-index:91;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 110px));background:var(--ai-bg);color:var(--ai-t);border-radius:var(--ai-r2);box-shadow:0 18px 50px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--ai-f);border:1px solid var(--ai-bd)}
+#ai-box.open{display:flex}
+.ai-h{background:var(--ai-a);color:var(--ai-at);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ai-h b{display:block;font-size:15px}.ai-h small{opacity:.8;font-size:12px}
+#ai-x{background:transparent;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+#ai-msgs{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--ai-bg2)}
+.ai-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.ai-m.bot{align-self:flex-start;background:var(--ai-bot);border:1px solid var(--ai-bd)}
+.ai-m.me{align-self:flex-end;background:var(--ai-a);color:var(--ai-at)}
+.ai-m a{color:inherit;text-decoration:underline}
+.ai-m small{opacity:.7}
+.ai-dots i{display:inline-block;width:6px;height:6px;margin:0 2px;border-radius:50%;background:currentColor;opacity:.4;animation:aid 1s infinite}
+.ai-dots i:nth-child(2){animation-delay:.15s}.ai-dots i:nth-child(3){animation-delay:.3s}
+@keyframes aid{50%{opacity:1}}
+#ai-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 12px;border-top:1px solid var(--ai-bd);background:var(--ai-bg);max-height:96px;overflow-y:auto}
+.ai-chip{border:1px solid var(--ai-a);color:var(--ai-a);background:transparent;border-radius:999px;padding:6px 11px;font:13px var(--ai-f);cursor:pointer}
+.ai-chip:hover{background:var(--ai-a);color:var(--ai-at)}
+#ai-form{display:flex;gap:6px;padding:8px 12px 12px;background:var(--ai-bg)}
+#ai-in{flex:1;min-width:0;border:1px solid var(--ai-bd);border-radius:10px;padding:10px;font:15px var(--ai-f);background:var(--ai-bg2);color:var(--ai-t)}
+#ai-form button{border:0;background:var(--ai-a);color:var(--ai-at);border-radius:10px;padding:0 14px;font:600 14px var(--ai-f);cursor:pointer}
+@media(max-width:480px){#ai-box{right:8px;left:8px;width:auto;bottom:74px}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><span>4909 E Chandler Blvd Ste 501, Phoenix, AZ 85048</span><span>Call <a href="tel:+14807859191">(480) 785-9191</a> · We welcome new patients</span></div></div>
+<header><div class="wrap hd">
+<a class="chip" href="#top" aria-label="Sonoran Hills Dental"><img class="logo" src="img/sonoran-hills-dental-logo.png" alt="Sonoran Hills Dental" width="108" height="62"></a>
+<nav><a href="#first">New patients</a><a href="#services">Services</a><a href="#cost">Insurance &amp; payment</a><a href="#team">Team</a><a href="#visit">Hours</a></nav>
+<a class="btn" href="#" onclick="aiOpen('Book an appointment');return false">Request a visit</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap hero-g">
+<div>
+<span class="tag">Ahwatukee · Phoenix, AZ</span>
+<h1>Your dentist in Phoenix who never pushes treatment.</h1>
+<p class="lead">Dr. Collin Ito lives and works in this community and builds long-term relationships with his patients. The focus of the whole team is to lay out the best options for your needs, and not to make you feel pushed toward treatment.</p>
+<div class="cta"><a class="btn" href="#" onclick="aiOpen('Book an appointment');return false">Request a visit</a><a class="btn alt" href="tel:+14807859191">Call (480) 785-9191</a></div>
+</div>
+<aside class="doc">
+<span class="role">Your dentist</span>
+<h3>Dr. Collin Ito, DMD</h3>
+<p>General, family, cosmetic, pediatric and emergency dentistry. DMD from Tufts University in Boston, undergraduate degree in Zoology from Weber State University.</p>
+<p class="sig">Some patients have been seeing Dr. Ito and his team for over 20 years.</p>
+</aside>
+</div></div>
+
+<section id="first"><div class="wrap">
+<div class="sh"><span class="tag">New patients</span><h2>Your first visit, made easy</h2><p>The office aims to keep the first appointment relaxed, with scheduling that prevents long waits.</p></div>
+<div class="steps">
+<div class="step"><h3>Call or request a time</h3><p>Reach the team at (480) 785-9191 or send a request through this page. They will confirm a time with you.</p></div>
+<div class="step"><h3>Fill in the forms at home</h3><p>The new patient forms are online so you can complete them at your own pace, which also saves time in registration.</p></div>
+<div class="step"><h3>Come in and meet the team</h3><p>The staff greets you with a smile and helps you and your family with any paperwork. Questions are always welcome.</p></div>
+</div>
+</div></section>
+
+<section id="services" style="background:#f7fafc"><div class="wrap">
+<div class="sh"><span class="tag">Dentistry</span><h2>What the practice offers</h2><p>A general practice serving patients of all ages, with cosmetic options for the smile you want.</p></div>
+<div class="svc">
+<div class="tile"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 4l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/><path d="M38 28l1.5 4 4 1.5-4 1.5L38 39l-1.5-4-4-1.5 4-1.5z"/></svg><div><h3>Teeth whitening</h3><p>Two options: in-office Opalescence Boost for results in under an hour, or custom trays for whitening at home after a consultation with Dr. Ito.</p></div></div>
+<div class="tile"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6c5-3 9 0 12 0s7-3 12 0c3 7 0 14-3 20-2 5-2 15-6 15-3 0-3-9-3-12s0-3-3-3-3 0-3 3-0 12-3 12c-4 0-4-10-6-15-3-6-6-13-3-20z"/></svg><div><h3>Cosmetic dentistry</h3><p>Options for whatever your situation is, so you can enjoy the benefits of a great smile. A cosmetic portfolio is on the practice's site.</p></div></div>
+<div class="tile"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14c0-5 4-8 14-8s14 3 14 8v6c0 6-4 10-14 10S10 26 10 20z"/><path d="M18 30v12M30 30v12"/></svg><div><h3>Porcelain crowns &amp; bridges</h3><p>Natural-looking, resilient replacements for a damaged tooth.</p></div></div>
+<div class="tile"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h16v10H16zM20 14v8M28 14v8M18 22h12M20 26l2 4-2 4 2 4-2 4M28 26l-2 4 2 4-2 4 2 4"/></svg><div><h3>Implant restorations</h3><p>Dr. Ito works with area oral surgeons for the implant placement, then designs, creates and attaches your replacement teeth.</p></div></div>
+<div class="tile"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="18"/><path d="M15 24l6 6 12-12"/></svg><div><h3>Tooth-colored fillings</h3><p>Natural fillings that match your teeth.</p></div></div>
+<div class="tile"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6v36M6 24h36"/><circle cx="24" cy="24" r="18"/></svg><div><h3>Family &amp; emergency care</h3><p>Check-ups for every age, pediatric dentistry, and emergency dentistry. In an emergency, call the office at (480) 785-9191.</p></div></div>
+</div>
+</div></section>
+
+<section class="band" id="cost"><div class="wrap">
+<div class="sh"><span class="tag">Insurance &amp; payment</span><h2>Making optimal care manageable</h2><p>The practice's financial policy is built around making the cost of care as easy as possible.</p></div>
+<div class="pay">
+<div class="pc"><div class="big">10%</div><h3>Self-pay discount</h3><p>For patients not using dental insurance or discounted fee plans.</p></div>
+<div class="pc"><div class="big">5%</div><h3>Pre-pay discount</h3><p>When you pay by cash, check or credit card before treatment begins, for out-of-pocket expenses of $1,000 or more.</p></div>
+<div class="pc"><div class="big">PPO</div><h3>Insurance welcome</h3><p>All PPO dental plans are accepted and the office is in network with many. Call to check your plan. The team verifies coverage for you.</p></div>
+</div>
+<div class="plist"><span>Cash</span><span>Check</span><span>Visa</span><span>MasterCard</span><span>Apple Pay</span><span>PayPal, 6 months interest-free</span><span>CareCredit financing</span><span>In-office Savings Plan</span></div>
+</div></section>
+
+<section id="team"><div class="wrap">
+<div class="sh"><span class="tag">The team</span><h2>People you will meet</h2></div>
+<div class="team">
+<div class="tr"><b>Dr. Collin Ito</b><span>Dentist · general, family, cosmetic, pediatric, emergency</span></div>
+<div class="tr"><b>Jennifer Dahman, RDH</b><span>Registered Dental Hygienist</span></div>
+<div class="tr"><b>Summer Warner, RDH</b><span>Registered Dental Hygienist</span></div>
+<div class="tr"><b>Grace Rosas</b><span>Certified Dental Assistant</span></div>
+<div class="tr"><b>Kristin Ito</b><span>Office Manager</span></div>
+<div class="tr"><b>Charity Scruggs</b><span>Patient Care Coordinator, Insurance Specialist</span></div>
+<div class="tr"><b>Melody Bearman</b><span>Patient Care Coordinator</span></div>
+</div>
+</div></section>
+
+<section style="background:#f7fafc"><div class="wrap">
+<div class="sh"><span class="tag">From the practice's site</span><h2>What patients say</h2></div>
+<div class="quotes">
+<blockquote>“I have been seeing Dr. Ito and his staff for over 20 years. Dr. Ito and his staff always go the extra mile in providing a safe and positive experience.”<cite>Steve B.</cite></blockquote>
+<blockquote>“All of the staff there from the receptionist to the dental assistants to Dr. Ito were professional and caring. Why take a chance?”<cite>Mark P.</cite></blockquote>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="sh"><span class="tag">How the practice works</span><h2>Stability, and the right partners</h2><p>The practice's strength is personal relationships and stability. Dr. Ito also has strong relationships with the specialists and the dental lab the practice works with, so that you get the best quality for your dental health.</p></div>
+<div class="svc">
+<div class="tile"><div><h3>Estimates before treatment</h3><p>Quotes for recommended services show the total fee (usually a discounted fee set by your insurance company) and an estimate of what your plan is likely to cover. The balance is your estimated patient portion. Estimates can differ from the final insurance payment, since the insurance company makes the final decision when it processes the claim.</p></div></div>
+<div class="tile"><div><h3>Patient resources</h3><p>New patient forms, payment options and savings plan information are all published for patients to read at home. The practice also has a Refer Us page, because it grows through referrals from long-time, happy patients, and some patients drive from miles away to keep coming.</p></div></div>
+</div>
+</div></section>
+
+<section class="faq"><div class="wrap">
+<div class="sh"><span class="tag">Quick answers</span><h2>Before you call</h2></div>
+<details><summary>Do you take my insurance?</summary><p>The practice accepts all PPO dental plans and is in network with many of them. Call (480) 785-9191 and the team will check your plan and your coverage for you.</p></details>
+<details><summary>What if I do not have insurance?</summary><p>The in-office Sonoran Hills Dental Savings Plan makes insurance-style discounts available, and there is a 10% self-pay discount for patients not using insurance or discounted fee plans.</p></details>
+<details><summary>Can I pay monthly?</summary><p>Yes, third-party financing is available through CareCredit, and PayPal offers 6 months interest-free payment options. Your patient portion is due at the time of service.</p></details>
+<details><summary>How do implants work here?</summary><p>The implant placement itself is done with an oral surgeon the practice partners with. Dr. Ito and the team then design, create and attach your replacement teeth or bridge once you have healed.</p></details>
+<details><summary>What whitening options do you have?</summary><p>In-office Opalescence Boost (results in less than an hour, chemically activated with no hot light) or custom trays for use at home, made after a consultation.</p></details>
+</div></section>
+
+<section id="visit" style="background:var(--sand)"><div class="wrap visit">
+<div>
+<div class="sh" style="margin-bottom:14px"><span class="tag" style="background:#fff">Hours</span><h2>Visit the office</h2></div>
+<table class="hrs"><tbody>
+<tr><td>Monday</td><td>11 AM – 4 PM</td></tr>
+<tr><td>Tuesday</td><td>9 AM – 6 PM</td></tr>
+<tr><td>Wednesday</td><td>9 AM – 6 PM</td></tr>
+<tr><td>Thursday</td><td>9 AM – 6 PM</td></tr>
+<tr><td>Friday</td><td>8 AM – 4 PM</td></tr>
+<tr class="cl"><td>Saturday</td><td>Closed</td></tr>
+<tr class="cl"><td>Sunday</td><td>Closed</td></tr>
+</tbody></table>
+</div>
+<div class="addr">
+<p class="mont" style="font-weight:700;color:var(--navy);margin-bottom:6px">Sonoran Hills Dental</p>
+<p>4909 E Chandler Blvd Ste 501<br>Phoenix, AZ 85048</p>
+<p style="margin-top:14px"><a href="tel:+14807859191">(480) 785-9191</a><br><a href="mailto:admin@sonoranhillsdental.com">admin@sonoranhillsdental.com</a></p>
+<div class="cta"><a class="btn" href="#" onclick="aiOpen('Book an appointment');return false">Request a visit</a></div>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap"><b class="mont" style="color:#fff">Sonoran Hills Dental</b><span>Demo · prepared by Gevorg Hovhannisyan</span></div></footer>
+
+<button id="ai-fab" type="button" aria-expanded="false" aria-controls="ai-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span>Questions? Ask us</span></button>
+<div id="ai-box" role="dialog" aria-label="Sonoran Hills Dental assistant"><div class="ai-h"><div><b>Sonoran Hills Dental</b><small>Patient assistant · demo</small></div><button id="ai-x" type="button" aria-label="Close">&times;</button></div><div id="ai-msgs" aria-live="polite"></div><div id="ai-chips"></div><form id="ai-form" autocomplete="off"><input id="ai-in" type="text" placeholder="Ask a question" aria-label="Your question"><button type="submit">Send</button></form></div>
+
+<script>/*ENGINE*/
+function makeEngine(CFG){
+var STOP={a:1,an:1,the:1,is:1,are:1,do:1,does:1,you:1,your:1,i:1,my:1,me:1,we:1,to:1,of:1,for:1,in:1,on:1,at:1,it:1,and:1,or:1,can:1,u:1,there:1,have:1,has:1,be:1,with:1,this:1,that:1,what:1,how:1,about:1,please:1,any:1,get:1,much:1};
+var IRR=CFG.irr||{};
+function stem(w){
+  if(IRR[w])return IRR[w];
+  if(w.length>5&&/ies$/.test(w))w=w.slice(0,-3)+'y';
+  else if(w.length>5&&/(ing)$/.test(w))w=w.slice(0,-3);
+  else if(w.length>4&&/(ed)$/.test(w))w=w.slice(0,-2);
+  else if(w.length>4&&/es$/.test(w))w=w.slice(0,-2);
+  else if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))w=w.slice(0,-1);
+  if(w.length>4&&/e$/.test(w))w=w.slice(0,-1);
+  if(IRR[w])return IRR[w];
+  return w;
+}
+function toks(q){
+  var t=String(q).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9à-ÿ$ ]+/g,' ').split(/\s+/).filter(Boolean);
+  return t.filter(function(w){return !STOP[w]}).map(stem).filter(function(w){return !STOP[w]&&w.length>0});
+}
+function lev(a,b){
+  if(a===b)return 0;
+  var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;
+  var d=[],i,j;for(i=0;i<=m;i++){d[i]=[i]}for(j=0;j<=n;j++)d[0][j]=j;
+  for(i=1;i<=m;i++)for(j=1;j<=n;j++){
+    var c=a[i-1]===b[j-1]?0:1;
+    d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);
+    if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1);
+  }
+  return d[m][n];
+}
+function wordHit(t,k){
+  if(t===k)return 1;
+  if(k.length>=4&&t.length>=4&&(t.indexOf(k)===0||k.indexOf(t)===0)&&Math.abs(t.length-k.length)<=3)return 0.9;
+  if(k.length>=4&&t[0]===k[0]){var l=lev(t,k);if(k.length>=8&&l<=2)return 0.9;if(l<=1)return 0.9}
+  return 0;
+}
+function kwScore(tk,kw){
+  var kt=toks(kw);if(!kt.length)return 0;
+  var sum=0;
+  for(var i=0;i<kt.length;i++){
+    var best=0;for(var j=0;j<tk.length;j++){var h=wordHit(tk[j],kt[i]);if(h>best)best=h}
+    if(!best)return 0;sum+=best;
+  }
+  return sum*(kt.length>1?1.6:1)*(1+Math.min(kt[0].length,9)/30);
+}
+function answer(q){
+  var tk=toks(q);var best=null,bs=0;
+  if(!tk.length)return null;
+  for(var i=0;i<CFG.kb.length;i++){
+    var e=CFG.kb[i],s=0;
+    for(var j=0;j<e.k.length;j++){var v=kwScore(tk,e.k[j]);if(v>s)s=v}
+    if(e.p)s*=e.p;
+    if(s>bs){bs=s;best=e}
+  }
+  return bs>=0.85?best:null;
+}
+return {answer:answer,toks:toks,lev:lev};
+}
+/*ENDENGINE*/
+(function(){
+var CFG={"kb": [{"id": "book", "k": ["book", "appointment", "schedule", "reserve", "visit", "see the dentist", "come in", "make an appointment", "cleaning", "checkup", "check up", "exam"], "a": "Happy to set up a request. A few quick questions.", "act": "book", "p": 1.2}, {"id": "hours", "k": ["hours", "open", "close", "opening", "when are you open", "friday", "monday", "saturday", "sunday", "weekend", "late", "early", "lunch"], "a": "Monday 11 AM to 4 PM, Tuesday to Thursday 9 AM to 6 PM, Friday 8 AM to 4 PM. Closed Saturday and Sunday."}, {"id": "address", "k": ["address", "where", "location", "directions", "chandler", "ahwatukee", "located", "find you", "street", "map", "get there"], "a": "Sonoran Hills Dental is at 4909 E Chandler Blvd Ste 501, Phoenix, AZ 85048, in the Ahwatukee area."}, {"id": "phone", "k": ["phone", "call", "number", "email", "contact", "reach", "talk to someone", "speak"], "a": "Call (480) 785-9191 or email admin@sonoranhillsdental.com."}, {"id": "insurance", "k": ["insurance", "ppo", "in network", "network", "delta", "cigna", "aetna", "metlife", "coverage", "covered", "dental plan", "accept my"], "a": "The practice accepts all PPO dental plans and is in network with many of them. Call (480) 785-9191 and the team will verify your coverage. Quotes show the total fee and an estimate of what your plan is likely to cover, and the final decision is made by your insurance company."}, {"id": "noins", "k": ["no insurance", "uninsured", "without insurance", "dont have insurance", "savings plan", "membership", "discount plan", "self pay", "self-pay", "cash discount"], "a": "Without insurance you can use the in-office Sonoran Hills Dental Savings Plan, and there is a 10% self-pay discount for patients not using insurance or discounted fee plans. There is also a 5% pre-pay discount when you pay before treatment for out-of-pocket expenses of $1,000 or more.", "p": 1.3}, {"id": "payment", "k": ["payment", "pay", "financing", "carecredit", "care credit", "monthly", "payments", "paypal", "apple pay", "credit card", "visa", "mastercard", "cash", "check", "afford", "cost", "price", "how much"], "a": "Accepted: cash, check, Visa, MasterCard, Apple Pay and PayPal (6 months interest-free options through PayPal). Monthly financing is available through CareCredit, with no annual fees or pre-payment penalties. Your patient portion is due at the time of service. For a price on a specific treatment, the team will give you a quote after an exam."}, {"id": "newpatient", "k": ["new patient", "first visit", "first time", "forms", "paperwork", "new patient form", "register", "registration", "special", "new patient special"], "a": "New patients are welcome. The new patient forms are available online so you can fill them in at home before your visit, which saves time at the office. The staff will also help you with any paperwork. There is a New Patient Special too; the team can tell you the details when you call."}, {"id": "whitening", "k": ["whitening", "whiten", "bleaching", "bleach", "opalescence", "white teeth", "stains", "trays", "brighten", "yellow teeth"], "a": "Two options: in-office Opalescence Boost (results in less than an hour, chemically activated, no hot light) or custom trays for whitening at home, made after a consultation with Dr. Ito."}, {"id": "implants", "k": ["implant", "implants", "missing tooth", "missing teeth", "denture", "bridge", "bridges", "replace tooth", "restoration"], "a": "For implants, the placement is done with an oral surgeon the practice partners with. Dr. Ito and the team then design, create and attach your replacement teeth or bridge. A consultation will tell you which approach fits."}, {"id": "crowns", "k": ["crown", "crowns", "porcelain", "veneer", "veneers", "cap"], "a": "The practice provides porcelain crowns and bridges that replace a damaged tooth with a natural-looking, resilient one."}, {"id": "fillings", "k": ["filling", "fillings", "cavity", "cavities", "tooth colored", "composite", "white filling"], "a": "Tooth-colored fillings are available, designed to match your natural teeth. Whether you need one is something Dr. Ito decides at an exam."}, {"id": "cosmetic", "k": ["cosmetic", "smile makeover", "smile", "portfolio", "before and after", "straight", "look"], "a": "Cosmetic dentistry here includes whitening, porcelain crowns and tooth-colored fillings. There is a cosmetic portfolio on the practice's website."}, {"id": "drito", "k": ["dr ito", "ito", "collin", "colin", "doctor", "dentist", "who is", "education", "tufts", "dmd", "background"], "a": "Dr. Collin Ito lives and works in the community. He holds a DMD from Tufts University and a Zoology degree from Weber State University, and practices general, family, cosmetic, pediatric and emergency dentistry. It matters to him that patients do not feel pushed to do treatment."}, {"id": "team", "k": ["team", "staff", "hygienist", "assistant", "who works", "jennifer", "summer", "grace", "kristin", "charity", "melody", "office manager"], "a": "The team: Jennifer Dahman, RDH and Summer Warner, RDH (hygienists), Grace Rosas (certified dental assistant), Kristin Ito (office manager), and Charity Scruggs and Melody Bearman (patient care coordinators; Charity is also the insurance specialist)."}, {"id": "kids", "k": ["kid", "kids", "child", "children", "pediatric", "family", "baby", "teen", "son", "daughter", "toddler"], "a": "The practice serves patients of all ages, and Dr. Ito's areas include family and pediatric dentistry. Call (480) 785-9191 to ask about a child's first visit."}, {"id": "emergency", "k": ["emergency", "urgent", "same day", "asap", "right away", "broken tooth", "knocked out", "chipped"], "a": "Emergency dentistry is part of what Dr. Ito offers. Please call (480) 785-9191 right away so the team can see what they can do. If it is a life-threatening situation, call 911.", "p": 1.2}, {"id": "referral", "k": ["referral", "refer", "recommend", "reviews", "review", "rate us"], "a": "The practice grows largely through referrals from long-time patients. There is a Refer Us page and a way to leave a review on their website."}, {"id": "estimate", "k": ["estimate", "quote", "out of pocket", "patient portion", "claim", "claims", "bill", "billing", "balance"], "a": "Quotes for recommended services show the total fee (usually a discounted fee set by your insurance company) and an estimate of what your plan is likely to cover. The balance is your estimated patient portion, due at the time of service. The practice submits the claim for you, but the insurance company makes the final decision, so the estimate can differ from the final payment."}, {"id": "specialist", "k": ["specialist", "oral surgeon", "surgeon", "lab", "dental lab", "referral to", "wisdom teeth"], "a": "Dr. Ito has strong relationships with the specialists and the dental lab the practice works with, for example oral surgeons for implant placement. For anything specific to you, the team will guide you at your visit."}, {"id": "approach", "k": ["pushy", "pressure", "pushed", "honest", "integrity", "second opinion", "trust", "philosophy", "approach", "options"], "a": "It is really important to Dr. Ito that patients do not feel pushed to do treatment. The team's focus is to offer the best options for your dental needs and let you decide."}, {"id": "longterm", "k": ["years", "established", "experience", "how long have you", "stable", "stability", "reputation"], "a": "The practice describes its strength as personal relationships and stability. Some patients have been seeing Dr. Ito and his staff for more than 20 years."}, {"id": "hi", "k": ["hi", "hello", "hey", "good morning", "good afternoon", "howdy"], "a": "Hello! I can help with hours, insurance, new patient info, services, or a visit request."}, {"id": "thanks", "k": ["thanks", "thank you", "thx", "great", "perfect", "awesome"], "a": "You are welcome! Anything else I can help with?"}], "chips": ["Request a visit", "Insurance", "Office hours", "New patient forms", "Whitening"], "greet": "Hi, I am the patient assistant for Sonoran Hills Dental. I can answer questions about hours, insurance, new patient info and services, or send a visit request to the team.", "fallback": "I do not have that detail, so the team will need to confirm it. You can call (480) 785-9191 or email admin@sonoranhillsdental.com.", "medical": "pain|hurt|ache|swell|swollen|bleed|infect|abscess|fever|numb|diagnos|is it normal|should i worry|sensitiv|wisdom|pus|loose tooth|jaw|medication|pregnan|antibiotic", "medicalMsg": "I cannot give medical or dental advice, and I cannot tell what is wrong from here. Please call the office at (480) 785-9191 so the team can see you. If you have trouble breathing or swallowing or serious facial swelling, call 911 or go to an ER.", "irr": {"teeth": "tooth", "children": "child", "kids": "kid", "colin": "collin"}, "doneTitle": "Visit request sent to the team", "doneMsg": "Thank you. The team will call or email you to confirm a time.", "flow": [{"key": "type", "label": "Patient", "q": "Are you a new patient or already a patient?", "chips": ["New patient", "Existing patient"]}, {"key": "why", "label": "Reason", "q": "What is the visit for?", "chips": ["Cleaning & exam", "Whitening", "Crown or filling", "Implant restoration", "Emergency", "Other"]}, {"key": "ins", "label": "Coverage", "q": "How will you be paying?", "chips": ["PPO insurance", "No insurance", "Not sure"]}, {"key": "when", "label": "Preferred time", "q": "Which day and time would you like? (Mon 11-4, Tue-Thu 9-6, Fri 8-4.)", "ph": "e.g. Wednesday morning"}, {"key": "name", "label": "Name", "q": "Your name?", "t": "name", "err": "Please type your name."}, {"key": "contact", "label": "Contact", "q": "Best phone number or email for the team to confirm?", "t": "contact", "err": "Please enter a phone number or an email address."}]};
+var E=makeEngine(CFG);
+var $=function(i){return document.getElementById(i)};
+var box=$('ai-box'),msgs=$('ai-msgs'),chips=$('ai-chips'),form=$('ai-form'),inp=$('ai-in'),fab=$('ai-fab');
+var flow=null,data={},opened=false;
+function add(who,html,isHtml){
+  var d=document.createElement('div');d.className='ai-m '+who;
+  if(isHtml)d.innerHTML=html;else d.textContent=html;
+  msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d;
+}
+function setChips(list){
+  chips.innerHTML='';
+  (list||[]).forEach(function(c){
+    var b=document.createElement('button');b.type='button';b.className='ai-chip';b.textContent=c;
+    b.onclick=function(){send(c)};chips.appendChild(b);
+  });
+}
+function bot(html,ch){
+  var t=add('bot','<span class="ai-dots"><i></i><i></i><i></i></span>',true);
+  setTimeout(function(){t.innerHTML=html;msgs.scrollTop=msgs.scrollHeight;setChips(ch||CFG.chips)},380);
+}
+function startFlow(){
+  flow={i:0};data={};
+  askStep();
+}
+function askStep(){
+  var s=CFG.flow[flow.i];
+  setTimeout(function(){},0);
+  var t=add('bot',s.q,false);
+  setChips(s.chips?s.chips.concat(['Cancel']):['Cancel']);
+  inp.placeholder=s.ph||'Type your answer';
+}
+function valid(s,v){
+  if(s.t==='phone')return v.replace(/\D/g,'').length>=7;
+  if(s.t==='name')return v.trim().length>=2;
+  if(s.t==='contact')return /@/.test(v)||v.replace(/\D/g,'').length>=7;
+  return v.trim().length>=1;
+}
+function finish(){
+  var s='<b>'+CFG.doneTitle+'</b><br>';
+  CFG.flow.forEach(function(st){s+=esc(st.label)+': '+esc(data[st.key]||'-')+'<br>'});
+  s+='<br>'+CFG.doneMsg+'<br><small>(Demo: nothing is actually sent.)</small>';
+  flow=null;inp.placeholder='Ask a question';
+  bot(s,CFG.chips);
+}
+function esc(x){return String(x).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function send(text){
+  text=String(text||'').trim();if(!text)return;
+  add('me',text,false);inp.value='';
+  if(/^(cancel|stop|never ?mind|quit|exit)$/i.test(text)&&flow){flow=null;inp.placeholder='Ask a question';bot('No problem, I cancelled that request. Anything else?');return}
+  if(flow){
+    var s=CFG.flow[flow.i];
+    if(!valid(s,text)){add('bot',s.err||'Sorry, I did not catch that. Please try again.',false);return}
+    data[s.key]=text;flow.i++;
+    if(flow.i>=CFG.flow.length){finish();return}
+    askStep();return;
+  }
+  if(CFG.medical&&new RegExp(CFG.medical,'i').test(text)){bot(CFG.medicalMsg);return}
+  var e=E.answer(text);
+  if(!e){bot(CFG.fallback);return}
+  if(e.act==='book'){add('bot',e.a,false);startFlow();return}
+  bot(e.a,e.chips);
+}
+function open(o){
+  box.classList.toggle('open',o);fab.setAttribute('aria-expanded',o);
+  if(o&&!opened){opened=true;bot(CFG.greet)}
+  if(o)setTimeout(function(){inp.focus()},50);
+}
+fab.onclick=function(){open(!box.classList.contains('open'))};
+$('ai-x').onclick=function(){open(false)};
+form.onsubmit=function(ev){ev.preventDefault();send(inp.value)};
+window.aiOpen=function(t){open(true);if(t)setTimeout(function(){send(t)},450)};
+window.__engine=E;
+})();
+</script>
+</body>
+</html>

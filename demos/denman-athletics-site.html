@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Denman Athletics · Stronger Together</title>
+<meta name="description" content="Strength-focused small group personal training, conditioning, InBody and VALD performance testing in Vancouver's West End.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0e2233;--navy2:#16344d;--sky:#53ace9;--sky2:#5ac8fa;--mist:#f2f3f5;--white:#fff;--sun:#e8d833;--ink:#1c2b38;--mute:#5b6b79;--line:#dbe2e8;--r:20px;--hd:"Poppins",system-ui,sans-serif;--bd:"Roboto",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--bd);color:var(--ink);background:var(--mist);line-height:1.6;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:1100px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--hd);line-height:1.12;letter-spacing:-.01em}
+h2{font-size:clamp(28px,6vw,46px);font-weight:700;margin:8px 0 12px}
+.tag{display:inline-block;font:600 12px var(--hd);letter-spacing:.14em;text-transform:uppercase;color:var(--sky);background:rgba(83,172,233,.12);padding:6px 12px;border-radius:99px}
+.lead{color:var(--mute);max-width:640px;font-size:17px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px var(--hd);padding:13px 22px;border-radius:99px;background:var(--sky);color:var(--navy);text-decoration:none;border:0;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(83,172,233,.4)}
+.btn.line{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}
+.btn.dk{background:var(--navy);color:#fff}
+/* header */
+header.top{position:sticky;top:0;z-index:30;background:rgba(14,34,51,.96);backdrop-filter:blur(8px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:10px}
+.logo{display:flex;align-items:center;background:var(--navy2);border-radius:14px;padding:6px 10px;border:1px solid rgba(255,255,255,.1)}
+.logo img{height:40px;width:40px;object-fit:contain}
+.top nav{display:none}
+.top .cta{font:600 14px var(--hd);background:var(--sky);color:var(--navy);padding:10px 16px;border-radius:99px;text-decoration:none}
+@media(min-width:900px){.top nav{display:flex;gap:26px}.top nav a{color:#cfe3f3;text-decoration:none;font:500 14px var(--hd)}.top nav a:hover{color:var(--sky2)}}
+/* hero */
+.hero{background:var(--navy);color:#fff;padding:40px 0 0;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(83,172,233,.35),transparent 68%)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(40px,11vw,88px);font-weight:800;margin:16px 0 14px}
+.hero h1 em{font-style:normal;color:var(--sky2)}
+.hero p{color:#bcd3e5;font-size:18px;max-width:560px;margin-bottom:24px}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.12);border-radius:var(--r) var(--r) 0 0;overflow:hidden}
+.stats div{background:var(--navy2);padding:18px 16px}
+.stats b{display:block;font:700 28px var(--hd);color:var(--sky2)}
+.stats span{font-size:13px;color:#bcd3e5}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+section{padding:62px 0}
+/* services bento */
+.bento{display:grid;gap:14px;margin-top:28px}
+@media(min-width:820px){.bento{grid-template-columns:repeat(6,1fr)}.b1{grid-column:span 4}.b2{grid-column:span 2}.b3,.b4{grid-column:span 3}}
+.bx{background:#fff;border-radius:var(--r);padding:24px;border:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.bx h3{font-size:22px}
+.bx p{color:var(--mute);font-size:15.5px}
+.bx .k{font:600 12px var(--hd);letter-spacing:.12em;text-transform:uppercase;color:var(--sky)}
+.bx.dark{background:var(--navy);color:#fff;border-color:var(--navy)}
+.bx.dark p{color:#bcd3e5}
+.bx.sun{background:var(--sun);border-color:var(--sun)}
+.bx.sun p{color:#3a3a12}.bx.sun .k{color:#5b5410}
+.bx ul{list-style:none;display:grid;gap:6px;margin-top:6px}
+.bx li{position:relative;padding-left:24px;font-size:15px}
+.bx li:before{content:"";position:absolute;left:0;top:7px;width:12px;height:12px;border-radius:50%;background:var(--sky)}
+/* trial timeline */
+.trial{background:#fff}
+.tl{margin-top:30px;display:grid;gap:0;position:relative}
+.tl .st{display:grid;grid-template-columns:44px 1fr;gap:14px;padding-bottom:22px;position:relative}
+.tl .st:before{content:"";position:absolute;left:21px;top:44px;bottom:0;width:2px;background:var(--line)}
+.tl .st:last-child:before{display:none}
+.dot{width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font:700 16px var(--hd)}
+.st h3{font-size:19px;margin-top:2px}
+.st p{color:var(--mute);font-size:15.5px;margin-top:2px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.pills span{background:var(--mist);border:1px solid var(--line);padding:8px 14px;border-radius:99px;font:500 14px var(--hd)}
+@media(min-width:900px){.tl{grid-template-columns:repeat(4,1fr);gap:20px}.tl .st{grid-template-columns:1fr;padding-bottom:0}.tl .st:before{left:44px;right:-20px;top:21px;bottom:auto;width:auto;height:2px}}
+/* testing */
+.test{background:var(--navy);color:#fff}
+.test h2{color:#fff}.test .lead{color:#bcd3e5}
+.gear3{display:grid;gap:14px;margin-top:28px}
+@media(min-width:820px){.gear3{grid-template-columns:repeat(3,1fr)}}
+.gear3 div{border:1px solid rgba(255,255,255,.18);border-radius:var(--r);padding:22px;background:rgba(255,255,255,.04)}
+.gear3 b{font:700 20px var(--hd);color:var(--sky2);display:block;margin-bottom:6px}
+.gear3 p{color:#bcd3e5;font-size:15px}
+.quote{margin-top:26px;font:600 clamp(20px,4vw,30px) var(--hd);color:#fff;max-width:720px}
+.quote span{color:var(--sun)}
+/* team */
+.team{display:grid;gap:14px;margin-top:28px}
+@media(min-width:760px){.team{grid-template-columns:1fr 1fr}}
+.pp{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;grid-template-columns:56px 1fr;gap:6px 14px;align-items:start}
+.av{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 18px var(--hd);color:var(--navy);background:linear-gradient(135deg,var(--sky2),var(--sky))}
+.pp.f .av{background:var(--sun)}
+.pp h3{font-size:18px}
+.pp small{display:block;font:600 12px var(--hd);letter-spacing:.1em;text-transform:uppercase;color:var(--sky);margin:2px 0 6px}
+.pp p{font-size:14.5px;color:var(--mute)}
+.pp div{min-width:0}
+/* rules & hours */
+.two{display:grid;gap:18px;margin-top:28px}
+@media(min-width:820px){.two{grid-template-columns:1fr 1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.card h3{font-size:21px;margin-bottom:12px}
+table{width:100%;border-collapse:collapse}
+td{padding:10px 0;border-bottom:1px solid var(--line);font-size:16px}
+td:last-child{text-align:right;font-weight:700;font-family:var(--hd)}
+tr:last-child td{border-bottom:0}
+.card ul{list-style:none;display:grid;gap:10px}
+.card li{padding-left:24px;position:relative;font-size:15.5px;color:#34495a}
+.card li:before{content:"";position:absolute;left:0;top:8px;width:10px;height:10px;border-radius:3px;background:var(--sky)}
+.note{margin-top:12px;font-size:13.5px;color:var(--mute)}
+/* faq */
+.faq{max-width:820px;margin-top:24px;display:grid;gap:10px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.faq summary{cursor:pointer;font:600 16.5px var(--hd);list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";color:var(--sky);font-size:24px;line-height:1}
+.faq details[open] summary:after{content:"\2212"}
+.faq p{margin-top:10px;color:var(--mute);font-size:15.5px}
+/* contact */
+.visit{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff}
+.visit h2{color:#fff}
+.vg{display:grid;gap:20px;margin-top:22px}
+@media(min-width:820px){.vg{grid-template-columns:1.1fr 1fr}}
+.vg p{color:#bcd3e5;font-size:17px;margin-bottom:16px}
+.vc{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:var(--r);padding:22px}
+.vc div{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12);overflow-wrap:anywhere}
+.vc div:last-child{border-bottom:0}
+.vc small{display:block;font:600 11px var(--hd);letter-spacing:.14em;text-transform:uppercase;color:var(--sky2)}
+.vc a{color:#fff}
+footer{background:#08141f;color:#8da4b6;padding:24px 0 90px;font-size:14px}
+/* widget */
+.dbw-fab{position:fixed;right:14px;bottom:14px;z-index:60;display:flex;align-items:center;gap:8px;background:var(--sky);color:var(--navy);border:0;padding:12px 18px;border-radius:99px;font:600 15px var(--hd);cursor:pointer;box-shadow:0 10px 28px rgba(14,34,51,.35)}
+.dbw-fab-i{display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--navy);color:var(--sky2);align-items:center;justify-content:center;font-size:13px}
+.dbw-p{position:fixed;right:10px;bottom:72px;z-index:61;width:calc(100vw - 20px);max-width:380px;height:min(540px,calc(100vh - 92px));background:#fff;border-radius:22px;box-shadow:0 20px 60px rgba(14,34,51,.35);display:flex;flex-direction:column;overflow:hidden}
+.dbw-p[hidden]{display:none}
+.dbw-p header{background:var(--navy);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:13px 16px}
+.dbw-p header b{font:600 16px var(--hd);display:block}
+.dbw-p header small{font-size:12px;color:#9fc2dc}
+.dbw-x{background:none;border:0;color:#fff;font-size:28px;line-height:1;cursor:pointer}
+.dbw-m{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;background:var(--mist)}
+.dbw-b{max-width:88%;padding:10px 13px;border-radius:16px;font-size:14.5px;line-height:1.45;white-space:pre-wrap;overflow-wrap:anywhere}
+.dbw-b.bot{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.dbw-b.me{background:var(--sky);color:var(--navy);align-self:flex-end;border-bottom-right-radius:4px;font-weight:500}
+.dbw-c{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 4px;background:var(--mist);max-height:104px;overflow-y:auto}
+.dbw-c button{font:500 13px var(--hd);border:1px solid var(--sky);color:var(--navy);background:#fff;padding:6px 12px;border-radius:99px;cursor:pointer}
+.dbw-c button:hover{background:var(--sky)}
+.dbw-f{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:#fff}
+.dbw-f input{flex:1;min-width:0;border:1px solid var(--line);border-radius:99px;padding:11px 15px;font:15px var(--bd);outline:none}
+.dbw-f input:focus{border-color:var(--sky)}
+.dbw-f button{border:0;background:var(--navy);color:#fff;border-radius:99px;padding:0 18px;font:600 14px var(--hd);cursor:pointer}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+ <a class="logo" href="#top" aria-label="Denman Athletics"><img src="img/denman-athletics-logo.png" alt="Denman Athletics" width="40" height="40"></a>
+ <nav><a href="#offer">What we offer</a><a href="#trial">6-week trial</a><a href="#testing">Testing</a><a href="#team">Team</a><a href="#faq">FAQ</a><a href="#visit">Visit</a></nav>
+ <a class="cta" href="#trial">Start here</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+ <span class="tag" style="background:rgba(90,200,250,.16);color:var(--sky2)">West End, Vancouver</span>
+ <h1>Stronger <em>together.</em></h1>
+ <p>Strength-focused training in small groups of up to five, in the heart of the West End. Real coaching, measurable progress and a community that welcomes every level.</p>
+ <div class="row"><a class="btn" href="#trial">See the 6-week trial</a><button class="btn line" onclick="openBot()">Ask a coach</button></div>
+ <div class="stats"><div><b>5</b><span>people max in each SGPT pod</span></div><div><b>3 + 2</b><span>strength and conditioning sessions a week on the trial</span></div><div><b>6 am</b><span>weekday opening time</span></div><div><b>VALD</b><span>performance testing on site</span></div></div>
+</div></div>
+
+<section id="offer"><div class="wrap">
+ <span class="tag">What we offer</span>
+ <h2>Four ways to get stronger</h2>
+ <p class="lead">Functional strength and conditioning designed to build real-world strength and endurance.</p>
+ <div class="bento">
+  <div class="bx dark b1"><span class="k">Strength</span><h3>Small Group Personal Training</h3><p>Personalized workouts for up to 5 people, led by a coach. Individual attention with group camaraderie, built around functional movements and weight training.</p><ul><li>Personal coaching and accountability</li><li>Tailored to individual goals</li><li>Through the trial or a membership</li></ul></div>
+  <div class="bx b2"><span class="k">Cardio and strength</span><h3>Conditioning sessions</h3><p>High-intensity, full-body work for endurance, strength and overall fitness. Drop-ins welcome.</p></div>
+  <div class="bx sun b3"><span class="k">Body composition</span><h3>InBody assessment</h3><p>A 3D full-body scan of muscle, fat and hydration levels, so your training is tailored to your body's makeup.</p></div>
+  <div class="bx b4"><span class="k">Data</span><h3>Performance testing</h3><p>VALD equipment gives clear insights into your strength, movement and progress. Nutritional advice is available too.</p></div>
+ </div>
+</div></section>
+
+<section id="trial" class="trial"><div class="wrap">
+ <span class="tag">New to Denman?</span>
+ <h2>Start with the 6-week trial</h2>
+ <p class="lead">The first step for strength and conditioning is the trial. It shows you how the pods work and gives your coach time to learn your goals.</p>
+ <div class="tl">
+  <div class="st"><div class="dot">1</div><div><h3>Enrol in the trial</h3><p>Reach out through the site, call or visit. Ask about the SGPT trial offer.</p></div></div>
+  <div class="st"><div class="dot">2</div><div><h3>Meet your coach</h3><p>A consultation covers your experience, goals and any injuries, so the workouts fit where you are.</p></div></div>
+  <div class="st"><div class="dot">3</div><div><h3>Train 3 + 2</h3><p>Strength three times a week in the SGPT pods, plus two conditioning sessions each week.</p></div></div>
+  <div class="st"><div class="dot">4</div><div><h3>Check in, then choose</h3><p>Regular check-ins keep you on track. Afterwards pick a membership online, in the MindBody app, or by calling the gym.</p></div></div>
+ </div>
+ <div class="pills"><span>VALD testing access</span><span>InBody assessments</span><span>Book on the website or MindBody</span><span>Beginners welcome</span></div>
+</div></section>
+
+<section id="testing" class="test"><div class="wrap">
+ <span class="tag" style="background:rgba(90,200,250,.16);color:var(--sky2)">Performance testing</span>
+ <h2>If you are not measuring, you are guessing</h2>
+ <p class="lead">The testing suite is built on the VALD range: Force Frame, ForceDecks and NordBord. The numbers become the baseline for individual programming, for athletes and fitness enthusiasts alike.</p>
+ <div class="gear3">
+  <div><b>Analyse</b><p>Force plates and muscular testing give detailed feedback on strength, power, balance and flexibility.</p></div>
+  <div><b>Prevent</b><p>Movement patterns and muscular imbalances point to injury risk factors before they become problems.</p></div>
+  <div><b>Personalize</b><p>Your data drives a program matched to your level and goals, reviewed with your coach.</p></div>
+ </div>
+ <p class="quote">"I feel appropriately challenged by the coaches every day." <span>Success stories</span></p>
+</div></section>
+
+<section id="team"><div class="wrap">
+ <span class="tag">Our team</span>
+ <h2>The people behind Denman</h2>
+ <p class="lead">All trainers hold relevant certifications and years of experience in the field.</p>
+ <div class="team">
+  <article class="pp f"><div class="av">DH</div><div><h3>David Henderson</h3><small>Founder</small><p>Over 14 years as a personal trainer and coach, from clients with physical and developmental disabilities to professional athletes. West End resident for 8 years.</p></div></article>
+  <article class="pp f"><div class="av">AH</div><div><h3>Aimee Henderson</h3><small>Founder and general manager</small><p>15 years in psychology and behaviour change. Takes a holistic view of physical, mental, social and nutritional wellbeing.</p></div></article>
+  <article class="pp"><div class="av">RU</div><div><h3>Rachael Urosevic</h3><small>Head coach</small><p>Fifteen years of competitive basketball, coaching since 2014. CF-L2 and CF-OLY Level 1, and a trail runner.</p></div></article>
+  <article class="pp"><div class="av">MP</div><div><h3>Matheus Perucci</h3><small>Personal trainer and group coach</small><p>From Rio de Janeiro. Physical Education degree, CrossFit Level 2, 10+ years in strength and conditioning.</p></div></article>
+  <article class="pp"><div class="av">LS</div><div><h3>Luke Stroud</h3><small>Personal trainer and group coach</small><p>NASM certified, 8+ years of experience and a psychology degree. Former competitive kickboxer.</p></div></article>
+  <article class="pp"><div class="av">NR</div><div><h3>Nicole Rooney</h3><small>Operations manager</small><p>Keeps everything running smoothly behind the scenes and listens closely to member feedback.</p></div></article>
+ </div>
+</div></section>
+
+<section style="background:#fff"><div class="wrap">
+ <span class="tag">Plan your visit</span>
+ <h2>Hours and house rules</h2>
+ <div class="two">
+  <div class="card"><h3>Opening hours</h3><table><tr><td>Monday - Friday</td><td>6 am - 8 pm</td></tr><tr><td>Saturday</td><td>8 am - 1 pm</td></tr><tr><td>Sunday</td><td>8 am - 12 pm</td></tr></table><p class="note">The site lists Saturday as 8 am - 4 pm on one page. The team confirms the current Saturday hours.</p></div>
+  <div class="card"><h3>Good to know</h3><ul><li>Arrive 10 minutes early to settle in and warm up.</li><li>Nobody is admitted more than 2 minutes after the start time.</li><li>Leave belongings outside the studio. Only water bottles and towels go in; small face towels are provided.</li><li>Street parking is paid 9 am - 10 pm. Free spots on Barclay and Denman depending on the time.</li></ul></div>
+ </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+ <span class="tag">FAQ</span>
+ <h2>Questions, answered</h2>
+ <div class="faq">
+  <details><summary>Can I come if I am new to training?</summary><p>Yes. Beginners are always welcome. You start with a consultation, where a coach talks through your experience, goals and any injuries, and adjusts the workout to match.</p></details>
+  <details><summary>Can I drop in?</summary><p>Conditioning classes: yes. SGPT strength sessions: no, they are only available through the trial or a membership so you can train consistently and see measurable progress.</p></details>
+  <details><summary>How do I book a session?</summary><p>Once you have the trial or a membership, book in advance through the website or the MindBody app, where the schedule is shown.</p></details>
+  <details><summary>What is the cancellation policy?</summary><p>24 hours for both SGPT and conditioning. Cancel or reschedule with 24 hours or more notice for a full credit back; later cancels are charged as if attended. Cancel online in MindBody under My Info, My Schedule.</p></details>
+  <details><summary>How do waitlists work?</summary><p>If a session is full, add your name to the waitlist. If a spot opens, you are added automatically and receive an e-mail confirmation. Remove yourself if you can no longer attend.</p></details>
+  <details><summary>How often should I train?</summary><p>For progress, consistency matters: the coaches recommend three times per week, adjusted for your goals, lifestyle and any injuries.</p></details>
+  <details><summary>What should I bring?</summary><p>Come dressed for a workout with a water bottle and a small towel.</p></details>
+ </div>
+</div></section>
+
+<section id="visit" class="visit"><div class="wrap">
+ <span class="tag" style="background:rgba(90,200,250,.16);color:var(--sky2)">Visit</span>
+ <h2>Come say hello on Denman Street</h2>
+ <div class="vg">
+  <div><p>Ask about the SGPT trial offer, book an InBody assessment or a performance test. Or let the assistant pass an enquiry to the team in under a minute.</p><button class="btn" onclick="openBot()">Send an enquiry</button></div>
+  <div class="vc"><div><small>Address</small>206-911 Denman St., Vancouver, BC V6G 2L9</div><div><small>Phone</small><a href="tel:+16044235532">+1 (604) 423-5532</a></div><div><small>E-mail</small><a href="mailto:contact@denmanathletics.ca">contact@denmanathletics.ca</a></div><div><small>Instagram</small>@denmanathletics</div></div>
+ </div>
+</div></section>
+</main>
+<footer><div class="wrap">Denman Athletics · 206-911 Denman St., Vancouver<br>Demo · prepared by Gevorg Hovhannisyan</div></footer>
+<script>
+var Bot=(function(){
+var STOP="the a an is are do does did you your i me my we our to of for in on at it its be can could would will with and or if this that what whats how about there any have has get got am im please hi hello hey just some".split(" ");
+function norm(s){return String(s).toLowerCase().replace(/[’']/g,"").replace(/[^a-z0-9Ѐ-ӿ ]+/g," ").replace(/\s+/g," ").trim();}
+function stem(w){if(w.length>4)w=w.replace(/(ings|ing|ers|er|ed|es|s)$/,"");if(w.length>3)w=w.replace(/e$/,"");return w;}
+function lev(a,b){if(Math.abs(a.length-b.length)>1)return 9;var m=[],i,j;for(i=0;i<=a.length;i++){m[i]=[i];}for(j=1;j<=b.length;j++)m[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return m[a.length][b.length];}
+function sim(t,k){if(t==k)return 1;var n=Math.min(t.length,k.length);if(n>=4&&(t.indexOf(k)==0||k.indexOf(t)==0))return .8;if(n>=4&&lev(t,k)<=1)return .65;if(n>=6&&lev(t,k)<=2)return .5;return 0;}
+function toks(q){var r=[],w=norm(q).split(" ");for(var i=0;i<w.length;i++){if(w[i]&&STOP.indexOf(w[i])<0)r.push(stem(w[i]));}return r;}
+function prep(kb){for(var i=0;i<kb.length;i++){kb[i]._k=toks(kb[i].k);}return kb;}
+function best(kb,q){var t=toks(q),top=null,sc=0,i,j,l;if(!t.length)return null;for(i=0;i<kb.length;i++){var s=0;for(j=0;j<kb[i]._k.length;j++){var m=0;for(l=0;l<t.length;l++){var v=sim(t[l],kb[i]._k[j]);if(v>m)m=v;}s+=m;}s*=(kb[i].w||1);if(s>sc){sc=s;top=kb[i];}}return sc>=.8?top:null;}
+function hasBook(words,q){var t=toks(q),i,j;for(i=0;i<t.length;i++)for(j=0;j<words.length;j++)if(sim(t[i],stem(words[j]))>=.8)return true;return false;}
+function create(cfg){
+ cfg.kb=prep(cfg.kb);var st={step:-1,data:{}};
+ function reply(q){
+  var n=norm(q);
+  if(st.step>=0){
+   if(/^(cancel|stop|exit|nevermind|never mind)$/.test(n)){st.step=-1;st.data={};return {t:cfg.cancelMsg,chips:cfg.chips};}
+   var s=cfg.flow[st.step];
+   if(q.indexOf("?")>0||(q.indexOf("?")==q.length-1&&q.length>1)){var e=best(cfg.kb,q);if(e)return {t:e.a+"\n\n"+s.q,chips:s.chips||[]};}
+   st.data[s.id]=q.trim();st.step++;
+   if(st.step>=cfg.flow.length){var d=st.data;st.step=-1;st.data={};return {t:cfg.done(d),chips:cfg.chips,done:d};}
+   var nx=cfg.flow[st.step];return {t:nx.q,chips:nx.chips||[]};
+  }
+  if(cfg.greet&&/^(hi|hello|hey|hola|yo|good (morning|afternoon|evening))\b/.test(n)&&n.split(" ").length<4)return {t:cfg.hello,chips:cfg.chips};
+  if(hasBook(cfg.book,q)&&!(cfg.noBook&&cfg.noBook.test(n))){st.step=0;st.data={};return {t:cfg.flowIntro+"\n\n"+cfg.flow[0].q,chips:cfg.flow[0].chips||[]};}
+  var e=best(cfg.kb,q);
+  if(e)return {t:e.a,chips:e.chips||cfg.chips};
+  return {t:cfg.fallback,chips:cfg.chips};
+ }
+ function mount(){
+  var d=document,root=d.createElement("div");root.className="dbw";
+  root.innerHTML='<button class="dbw-fab" aria-label="'+cfg.fabLabel+'" aria-expanded="false"><span class="dbw-fab-i">'+cfg.fabIcon+'</span><span class="dbw-fab-t">'+cfg.fabText+'</span></button><section class="dbw-p" hidden role="dialog" aria-label="'+cfg.title+'"><header><div><b>'+cfg.title+'</b><small>'+cfg.sub+'</small></div><button class="dbw-x" aria-label="Close">&times;</button></header><div class="dbw-m" aria-live="polite"></div><div class="dbw-c"></div><form class="dbw-f"><input type="text" autocomplete="off" placeholder="'+cfg.ph+'" aria-label="'+cfg.ph+'"><button type="submit">'+cfg.send+'</button></form></section>';
+  d.body.appendChild(root);
+  var fab=root.querySelector(".dbw-fab"),p=root.querySelector(".dbw-p"),m=root.querySelector(".dbw-m"),c=root.querySelector(".dbw-c"),f=root.querySelector("form"),inp=root.querySelector("input"),opened=false;
+  function add(t,me){var b=d.createElement("div");b.className="dbw-b "+(me?"me":"bot");b.textContent=t;m.appendChild(b);m.scrollTop=m.scrollHeight;}
+  function chips(a){c.innerHTML="";(a||[]).forEach(function(x){var b=d.createElement("button");b.type="button";b.textContent=x;b.onclick=function(){say(x);};c.appendChild(b);});}
+  function say(x){add(x,true);var r=reply(x);setTimeout(function(){add(r.t,false);chips(r.chips);},220);}
+  function open(){p.hidden=false;root.classList.add("open");fab.setAttribute("aria-expanded","true");if(!opened){opened=true;add(cfg.hello,false);chips(cfg.chips);}setTimeout(function(){inp.focus();},50);}
+  function close(){p.hidden=true;root.classList.remove("open");fab.setAttribute("aria-expanded","false");}
+  fab.onclick=function(){p.hidden?open():close();};root.querySelector(".dbw-x").onclick=close;
+  f.onsubmit=function(e){e.preventDefault();var v=inp.value.trim();if(!v)return;inp.value="";say(v);};
+  window.openBot=open;
+ }
+ return {reply:reply,mount:mount,state:st};
+}
+var api={create:create,norm:norm};
+if(typeof module!=="undefined")module.exports=api;
+return api;})();
+
+var CFG={
+title:"Denman assistant",sub:"Demo · answers from your site",fabLabel:"Open Denman Athletics assistant",fabIcon:"&#10003;",fabText:"Ask a coach",ph:"Ask about the trial, hours, parking...",send:"Send",
+hello:"Hi, welcome to Denman Athletics. I can answer questions about the 6-week SGPT trial, conditioning sessions, InBody and VALD testing, hours and parking, or take an enquiry for the team.",
+cancelMsg:"No problem, nothing was sent. What else can I help with?",
+chips:["6-week trial","Opening hours","Meet the coaches","Parking","Enquire now"],
+greet:true,
+book:["book","enquire","enquiry","appointment","reserve","schedule","enrol","enroll","trial","tour"],
+noBook:/(what is|whats|how does|how do|work|include|cancel|policy|late|where|address|parking|open|close|hour|time|cost|price|much)/,
+flowIntro:"Happy to pass an enquiry to the team. Five quick questions.",
+flow:[
+{id:"want",q:"What are you interested in?",chips:["SGPT 6-week trial","Conditioning drop-in","InBody assessment","Performance testing","Not sure yet"]},
+{id:"exp",q:"How much training experience do you have?",chips:["Brand new","Some experience","Experienced"]},
+{id:"note",q:"Anything the coaches should know, such as goals or past injuries? Type no if nothing. (A coach will talk this through with you in your consultation.)"},
+{id:"when",q:"When would you like to come in? Opening hours: Mon-Fri 6 am-8 pm, Sat 8 am-1 pm, Sun 8 am-12 pm.",chips:["Weekday early","Weekday midday","Weekday evening","Saturday","Sunday"]},
+{id:"name",q:"Your name?"},
+{id:"email",q:"E-mail or phone for the team to reach you?"}],
+done:function(d){return "Thanks "+d.name+". Sent to the team: "+d.want+", "+d.exp.toLowerCase()+", "+d.when.toLowerCase()+". They will reply to "+d.email+" to confirm. (Demo: nothing is actually sent.)";},
+fallback:"I do not have that on the site, so I would rather not guess. The team will confirm: call (604) 423-5532 or write contact@denmanathletics.ca.",
+kb:[
+{k:"hours open close opening time early morning evening weekend saturday sunday monday friday",a:"Opening hours: Mon-Fri 6 am-8 pm, Sat 8 am-1 pm, Sun 8 am-12 pm. The site shows Saturday as 8 am-4 pm on one page, so the team will confirm Saturday hours.",chips:["Where are you?","6-week trial"]},
+{k:"address location located where find street denman vancouver west end map",a:"Denman Athletics is at 206-911 Denman St., Vancouver, BC V6G 2L9, in the heart of the West End.",chips:["Parking","Opening hours"]},
+{k:"phone call number contact email reach talk instagram",a:"Phone: +1 (604) 423-5532. E-mail: contact@denmanathletics.ca. Instagram: @denmanathletics.",chips:["Enquire now","Opening hours"]},
+{k:"parking park car street free barclay",a:"There is street parking outside the gym. It is paid between 9 am and 10 pm. Some free spots are available on Barclay and Denman Street depending on the time of day.",chips:["Where are you?","What to bring"]},
+{w:1.4,k:"trial 6-week six week enrol sign-up",a:"The first step is the 6-week trial: strength train three times a week in the SGPT pods plus two conditioning sessions a week, with access to VALD performance testing and InBody assessments and regular check-ins with a coach. After the trial you choose a membership on the website or in the MindBody app, or call the gym to pick one. The trial price is not on the site, so the team will confirm.",chips:["What is SGPT?","Membership after trial","Enquire now"]},
+{k:"sgpt small group personal training pod strength five 5 people",a:"SGPT is Small Group Personal Training: dynamic strength-focused workouts for up to 5 people, led by a coach, blending functional movements and weight training with personal attention and group energy. It is only available through the trial or a membership, so there are no drop-ins for SGPT.",chips:["6-week trial","Drop-in"]},
+{k:"conditioning session class hiit cardio endurance full-body fitness",a:"Conditioning sessions focus on cardiovascular endurance, strength and overall fitness through high-intensity, full-body exercises. You can drop in to conditioning classes.",chips:["Drop-in","6-week trial"]},
+{k:"drop in dropin single visit casual",a:"Conditioning sessions: yes, you can drop in. SGPT strength sessions: no, they are only through the trial or a membership so that progress is measurable.",chips:["6-week trial","Conditioning"]},
+{k:"inbody body composition scan muscle fat hydration weigh measure",a:"The InBody assessment is a 3D full-body composition scan showing muscle, fat and hydration levels, used to tailor your training. You can book one from the Offerings menu on the site.",chips:["Performance testing","Enquire now"]},
+{k:"performance testing vald force frame forcedeck nordbord metrics athlete test",a:"Performance testing uses the VALD suite (Force Frame, ForceDecks and NordBord) to measure strength, movement and progress, giving baseline data for individual programming. Their line: if you are not measuring, you are guessing.",chips:["InBody","Enquire now"]},
+{k:"coach coaches trainer trainers team staff who certified qualification",a:"The coaches are Rachael Urosevic (head coach), Matheus Perucci and Luke Stroud, with founders David and Aimee Henderson and operations manager Nicole Rooney. The site states all trainers hold relevant certifications.",chips:["David Henderson","Rachael","Beginner?"]},
+{k:"david henderson founder owner",a:"David Henderson is the founder: a personal trainer and coach with over 14 years of experience, from clients with physical and developmental disabilities to professional athletes, and a West End resident for the past 8 years.",chips:["Meet the coaches"]},
+{k:"aimee henderson manager psychology behaviour general",a:"Aimee Henderson is co-founder and general manager, with 15 years of expertise in psychology and behaviour change. For general enquiries about the gym she is the person to ask.",chips:["Meet the coaches"]},
+{k:"rachael urosevic head coach crossfit basketball olympic",a:"Rachael Urosevic is the head coach: 15 years of competitive basketball, coaching since 2014, CF-L2 and CF-OLY Level 1 certified, and a trail runner.",chips:["Meet the coaches"]},
+{k:"matheus perucci brazil rio surf klokov",a:"Matheus Perucci is a personal trainer and group coach from Rio de Janeiro with a Physical Education degree, CrossFit Level 2 and 10+ years in strength and conditioning.",chips:["Meet the coaches"]},
+{k:"luke stroud nasm kickboxer hyrox marathon psychology",a:"Luke Stroud is a NASM certified personal trainer and group coach with 8+ years of experience, a psychology degree and a background in competitive kickboxing.",chips:["Meet the coaches"]},
+{w:1.5,k:"beginner new never experience novice start scared intimidated first-timer begginer beginer begin old",a:"Beginners are always welcome. When you sign up you have a consultation with a coach about your experience, goals and any injuries, so the workout is adjusted to where you are.",chips:["6-week trial","Enquire now"]},
+{k:"cancel cancellation late reschedule refund credit notice",a:"Conditioning and SGPT sessions both have a 24-hour cancellation policy: cancel or reschedule 24 hours or more ahead for a full credit back. Later cancels are charged as if attended. Cancel online in MindBody under My Info, My Schedule.",chips:["Waitlist","Booking sessions"]},
+{k:"waitlist wait list full spot",a:"If a session is full, click it and add your name to the waitlist. If a spot opens you are added automatically and get an e-mail confirmation. Remove yourself if you can no longer attend, because being added inside the cancellation window counts as a late cancel.",chips:["Cancellation policy"]},
+{k:"mindbody app schedule timetable book session booking online",a:"Once you have the trial or a membership, you book sessions in advance on the website or in the MindBody app, where the SGPT and conditioning schedule is also shown.",chips:["6-week trial","Cancellation policy"]},
+{k:"bring wear towel water bottle clothes locker belongings bag shower",a:"Come dressed for a workout with a water bottle and a small towel; small face towels are provided. Personal belongings stay outside the studio; only water bottles and towels go in.",chips:["Arrive early?","Parking"]},
+{w:1.3,k:"late arrive arrival early minutes start run running session",a:"Arrive 10 minutes before the session to settle in and warm up. If you are not there at the start, a standby guest may be offered your spot, and nobody is admitted after 2 minutes past the start time.",chips:["Waitlist","What to bring"]},
+{k:"often frequency week many times train recommend",a:"The recommendation is training consistently 3 times a week if you want to make progress. Your goals, lifestyle and any injuries also matter, so the coaches will tailor it.",chips:["6-week trial"]},
+{k:"price cost fee membership much rate pricing monthly pay afford",a:"Trial and membership prices are not published on the site, so I will not guess. After the 6-week trial you choose a membership on the website or MindBody, or the team can help on (604) 423-5532.",chips:["6-week trial","Enquire now"]},
+{k:"nutrition diet food advice eating meal",a:"Besides training, Denman offers body composition assessments and nutritional advice. Ask a coach for details about what is included.",chips:["InBody","Enquire now"]},
+{k:"knee back shoulder ankle hip injury pain hurt doctor medical condition surgery pregnant diagnose",a:"I cannot give medical or injury advice. Tell the coaches about injuries and conditions in your consultation so they adapt the workout, or call the gym on (604) 423-5532.",chips:["Beginner?","Enquire now"]},
+{k:"review testimonial story success result feedback",a:"The site has video success stories. Members say things like: Training is really personal to you and your fitness journey, and I feel appropriately challenged by the coaches every day.",chips:["6-week trial"]},
+{k:"what services offer offerings do you have",a:"Denman offers Small Group Personal Training (up to 5 people), conditioning sessions, InBody body composition assessments, VALD performance testing and nutritional advice.",chips:["SGPT","Conditioning","InBody","Performance testing"]}
+]};
+
+
+Bot.create(CFG).mount();
+</script>
+</body>
+</html>

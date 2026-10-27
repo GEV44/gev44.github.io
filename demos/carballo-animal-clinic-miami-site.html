@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carballo Animal Clinic, Miami (demo)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#005b88;--deep:#003955;--cy:#1bbbd1;--cy2:#00b3cc;--ink:#201e2c;--mu:#52606b;--cream:#f6f1e7;--ln:#dde6ea;--sky:#e8f6f9;
+--wa-a:#005b88;--wa-font:'Nunito Sans',system-ui,sans-serif;--wa-r:20px;--wa-log:#eaf5f8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.55 'Nunito Sans',system-ui,sans-serif;color:var(--ink);background:#fff;-webkit-text-size-adjust:100%;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.w{max-width:1100px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:'Bitter',Georgia,serif;line-height:1.12}
+h2{font-size:clamp(26px,5.4vw,38px);color:var(--deep);margin-bottom:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;font:700 15px/1 'Nunito Sans',sans-serif;padding:14px 20px;border-radius:12px;text-decoration:none;background:var(--cy);color:var(--deep)}
+.btn.navy{background:var(--navy);color:#fff}
+.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.6)}
+.top{background:#fff;border-bottom:3px solid var(--cy);position:sticky;top:0;z-index:40}
+.top .w{display:flex;align-items:center;justify-content:space-between;gap:10px;height:66px}
+.logo{height:40px;width:auto}
+.top .tel{font-weight:800;color:var(--navy);text-decoration:none;font-size:15px;white-space:nowrap}
+.nav{display:none;gap:22px;font-size:14px;font-weight:700}
+.nav a{text-decoration:none;color:var(--navy)}
+@media(min-width:880px){.nav{display:flex}.logo{height:46px}}
+.hero{background:linear-gradient(160deg,var(--deep),var(--navy) 70%);color:#fff;padding:34px 0 44px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;border-radius:50%;border:34px solid rgba(27,187,209,.22)}
+.hero .w{position:relative;z-index:1;display:grid;gap:26px}
+.hero h1{font-size:clamp(34px,8.4vw,60px);font-weight:800;margin-bottom:12px}
+.hero h1 span{color:var(--cy)}
+.hero p{font-size:18px;color:#d6edf5;max-width:32em}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.board{background:#fff;color:var(--ink);border-radius:18px;padding:18px 18px 14px;box-shadow:0 14px 34px rgba(0,0,0,.25)}
+.board h3{font-size:19px;color:var(--navy);display:flex;align-items:center;justify-content:space-between;gap:8px}
+.pill{font:800 11px 'Nunito Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border-radius:99px;background:#e3e8ea;color:#556}
+.pill.on{background:#d9f5e6;color:#17703f}
+.board table{width:100%;border-collapse:collapse;margin-top:8px}
+.board td{padding:8px 0;border-bottom:1px dashed var(--ln);font-size:15px}
+.board tr:last-child td{border:0}
+.board td:last-child{text-align:right;font-weight:700}
+.board tr.today td{color:var(--navy);background:var(--sky)}
+.emg{margin-top:10px;font-size:13px;color:var(--mu)}
+@media(min-width:860px){.hero .w{grid-template-columns:1.3fr 1fr;align-items:center;gap:46px}.hero{padding:62px 0 70px}}
+.sec{padding:50px 0 6px}
+.lead{color:var(--mu);max-width:38em}
+.sv{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.sv div{background:var(--sky);border-radius:14px;padding:14px 13px;font-weight:700;font-size:14.5px;color:var(--deep);border-bottom:4px solid var(--cy)}
+.sv small{display:block;font-weight:400;color:var(--mu);font-size:13px;margin-top:2px}
+@media(min-width:760px){.sv{grid-template-columns:repeat(4,1fr)}}
+.flow{display:grid;gap:10px;margin-top:18px}
+.flow div{position:relative;background:var(--sky);border-radius:14px;padding:16px 16px 16px 58px}
+.flow i{position:absolute;left:14px;top:14px;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font:700 15px 'Bitter',serif;display:grid;place-items:center;font-style:normal}
+.flow b{display:block;color:var(--deep);font:700 17px 'Bitter',serif;margin-bottom:2px}
+.flow span{font-size:15px;color:var(--mu)}
+@media(min-width:760px){.flow{grid-template-columns:1fr 1fr}}
+.lab{background:var(--cream);margin-top:48px;padding:46px 0}
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:20px 0}
+.stats div{background:#fff;border-radius:14px;padding:14px 8px;text-align:center}
+.stats b{display:block;font:800 clamp(24px,7vw,40px) 'Bitter',serif;color:var(--navy)}
+.stats span{font-size:12.5px;color:var(--mu);line-height:1.25;display:block}
+.dx{columns:1;column-gap:24px;list-style:none;margin-top:6px}
+.dx li{break-inside:avoid;padding:10px 0;border-top:1px solid #e1d9c6;font-size:15px}
+.dx b{color:var(--deep)}
+@media(min-width:760px){.dx{columns:2}}
+.two{display:grid;gap:14px;margin-top:20px}
+.two>div{border:2px solid var(--ln);border-radius:16px;padding:18px}
+.two h3{font-size:20px;color:var(--navy);margin-bottom:8px}
+.two ul{list-style:none}
+.two li{padding:5px 0 5px 22px;position:relative;font-size:15px}
+.two li:before{content:"";position:absolute;left:3px;top:13px;width:9px;height:9px;border-radius:50%;background:var(--cy)}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr}}
+.spec{display:grid;gap:10px;margin-top:18px}
+.spec div{background:var(--deep);color:#fff;border-radius:16px;padding:18px}
+.spec b{font:700 19px 'Bitter',serif;color:var(--cy);display:block;margin-bottom:4px}
+.spec span{color:#cde6ee;font-size:14.5px}
+@media(min-width:760px){.spec{grid-template-columns:repeat(3,1fr)}}
+.team{display:grid;grid-template-columns:1fr;gap:10px;margin-top:20px}
+.pp{display:flex;gap:12px;align-items:center;background:#fff;border:2px solid var(--ln);border-radius:14px;padding:12px 14px}
+.av{flex:none;width:46px;height:46px;border-radius:50%;background:var(--navy);color:#fff;font:700 16px 'Bitter',serif;display:grid;place-items:center}
+.pp.s .av{background:var(--cy);color:var(--deep)}
+.pp b{display:block;font-size:15.5px}
+.pp span{font-size:13px;color:var(--mu)}
+@media(min-width:700px){.team{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.team{grid-template-columns:repeat(3,1fr)}}
+.shop{margin-top:50px;background:var(--sky);border-radius:18px;padding:22px;display:grid;gap:10px}
+.shop h3{color:var(--navy);font-size:22px}
+.faq{display:grid;gap:8px;margin-top:16px}
+details{background:#fff;border:2px solid var(--ln);border-radius:12px;padding:0 15px}
+summary{cursor:pointer;padding:14px 0;font-weight:700;color:var(--deep);list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--cy2);font-size:22px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{padding:0 0 14px;color:var(--mu);font-size:15px}
+.rv{display:grid;gap:10px;margin-top:16px}
+blockquote{background:var(--cream);border-radius:16px;padding:16px 18px;border-left:5px solid var(--cy)}
+blockquote p{font:600 17px/1.35 'Bitter',serif;color:var(--deep)}
+cite{display:block;margin-top:8px;font:700 13px 'Nunito Sans',sans-serif;color:var(--mu);font-style:normal}
+.tips{display:grid;gap:10px;margin-top:16px}
+.tips div{border:2px dashed var(--cy);border-radius:14px;padding:14px 16px;font-size:15px;color:var(--mu)}
+.tips b{display:block;color:var(--navy);font:700 17px 'Bitter',serif;margin-bottom:3px}
+@media(min-width:760px){.rv{grid-template-columns:repeat(3,1fr)}.tips{grid-template-columns:1fr 1fr}}
+.visit{margin-top:50px;background:var(--navy);color:#fff;padding:34px 0}
+.visit .w{display:grid;gap:16px}
+.visit h2{color:#fff}
+.visit a{color:#fff}
+.visit p{margin:3px 0}
+footer{background:var(--ink);color:#c6cdd2;padding:24px 0 92px;font-size:14px}
+footer .w{display:flex;flex-direction:column;gap:5px}
+@media(min-width:760px){.visit .w{grid-template-columns:1fr 1fr}}
+.wa-fab{position:fixed;right:14px;bottom:14px;z-index:90;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--wa-a);color:var(--wa-on,#fff);font:600 14px/1 var(--wa-font);padding:13px 16px;border-radius:var(--wa-fr,999px);box-shadow:0 8px 24px rgba(0,0,0,.22)}
+.wa-fab-ic{font-size:18px;line-height:1}
+.wa-hide{display:none}
+.wa-panel{position:fixed;right:12px;bottom:12px;z-index:100;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));display:none;flex-direction:column;background:var(--wa-bg,#fff);color:var(--wa-ink,#222);border-radius:var(--wa-r,16px);box-shadow:0 16px 48px rgba(0,0,0,.3);overflow:hidden;font:15px/1.45 var(--wa-font)}
+.wa-open{display:flex}
+.wa-head{background:var(--wa-a);color:var(--wa-on,#fff);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.wa-head b{display:block;font-size:15px}.wa-head small{opacity:.85;font-size:12px}
+.wa-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+.wa-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--wa-log,#f6f6f6)}
+.wa-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.wa-bot{background:#fff;color:#222;align-self:flex-start;border:1px solid rgba(0,0,0,.07)}
+.wa-bot a{color:var(--wa-link,var(--wa-a))}
+.wa-me{background:var(--wa-a);color:var(--wa-on,#fff);align-self:flex-end}
+.wa-sum{margin:6px 0;padding-left:18px}.wa-sum li{margin:2px 0}
+.wa-bot small{opacity:.65}
+.wa-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;max-height:104px;overflow:auto;border-top:1px solid rgba(0,0,0,.07);background:var(--wa-bg,#fff)}
+.wa-chip{border:1px solid var(--wa-a);color:var(--wa-a);background:transparent;border-radius:999px;padding:6px 11px;font:13px var(--wa-font);cursor:pointer}
+.wa-chip:hover{background:var(--wa-a);color:var(--wa-on,#fff)}
+.wa-form{display:flex;gap:6px;padding:8px 10px 10px;background:var(--wa-bg,#fff)}
+.wa-in{flex:1;min-width:0;border:1px solid rgba(0,0,0,.2);border-radius:999px;padding:10px 14px;font:16px var(--wa-font);color:#222;background:#fff}
+.wa-go{border:0;background:var(--wa-a);color:var(--wa-on,#fff);width:42px;border-radius:50%;font-size:16px;cursor:pointer}
+@media(max-width:420px){.wa-fab-t{display:none}.wa-fab{padding:14px}}
+
+</style></head><body>
+
+<header class="top"><div class="w">
+<a href="#"><img class="logo" src="img/carballo-animal-clinic-miami-logo.png" alt="Carballo Animal Clinic" width="182" height="40"></a>
+<nav class="nav"><a href="#services">Services</a><a href="#lab">In-house lab</a><a href="#team">Team</a><a href="#owners">Owners</a><a href="#faq">FAQ</a><a href="#visit">Visit</a></nav>
+<a class="tel" href="tel:3055529121">(305) 552-9121</a>
+</div></header>
+
+<section class="hero"><div class="w">
+<div>
+<h1>Enhancing the health and well-being of <span>your best friend.</span></h1>
+<p>A full-service veterinary clinic on SW 8th Street, with an in-house IDEXX lab, digital X-rays, laser therapy and surgery under one roof, built and equipped in 2008.</p>
+<div class="cta"><button class="btn" data-wa="book">Make an appointment</button><a class="btn ghost" href="tel:3055529121">Call (305) 552-9121</a></div>
+</div>
+<aside class="board">
+<h3>Hours of operation <span class="pill" id="pill">Hours</span></h3>
+<table id="hrs"><tr data-d="1"><td>Mon</td><td>9:00am - 7:00pm</td></tr><tr data-d="2"><td>Tue</td><td>9:00am - 5:00pm</td></tr><tr data-d="3"><td>Wed</td><td>9:00am - 7:00pm</td></tr><tr data-d="4"><td>Thu</td><td>9:00am - 5:00pm</td></tr><tr data-d="5"><td>Fri</td><td>9:00am - 4:00pm</td></tr><tr data-d="6"><td>Sat</td><td>9:00am - 3:00pm</td></tr><tr data-d="0"><td>Sun</td><td>Closed</td></tr></table>
+<p class="emg">Emergencies are treated during regular hours. After hours, call the clinic for the information you need for your pet's emergency.</p>
+</aside>
+</div></section>
+
+<section class="sec" id="services"><div class="w">
+<h2>What we take care of</h2>
+<p class="lead">Principal services, as listed by the clinic.</p>
+<div class="sv">
+<div>Annual check-up exam</div><div>Immunizations and wellness care</div><div>Fleas, ticks and heartworm prevention</div><div>Nutritional counseling</div>
+<div>In-house diagnostic tests</div><div>Digital X-rays</div><div>Elective and general surgeries</div><div>General dentistry</div>
+<div>Laser treatments</div><div>Pain management</div><div>Stem cell and platelet rich plasma therapy</div><div>Euthanasia service</div>
+</div>
+<div class="two">
+<div><h3>Prevention</h3><ul><li>Complete physical exam, hands-on, to pick up subtle signs early</li><li>Vaccinations for cats and dogs</li><li>Internal and external parasite prevention</li></ul></div>
+<div><h3>General dentistry</h3><ul><li>Scaling and polishing</li><li>Full-mouth digital radiographs</li><li>Extractions</li><li>Sanos dental sealant</li></ul></div>
+<div><h3>Surgery</h3><ul><li>Spay and neuter</li><li>Soft tissue and abdominal surgery</li><li>Surgical oncology: tumor resection and diagnostics</li><li>Orthopedics, by consultation only</li></ul></div>
+<div><h3>Laser therapy and diets</h3><ul><li>Laser therapy to reduce pain and inflammation and support healing</li><li>Prescription diets from Hill's and Royal Canin</li></ul></div>
+</div>
+</div></section>
+
+<section class="sec" id="how"><div class="w">
+<h2>How a visit is run</h2>
+<p class="lead">The clinic describes its approach in four parts: record, prevent, diagnose, treat.</p>
+<div class="flow">
+<div><i>1</i><b>Full electronic records</b><span>Blood work, radiographs and medical history are available immediately in your pet's digital record, so nothing is missed when treatment is chosen.</span></div>
+<div><i>2</i><b>Prevention first</b><span>A complete physical exam can catch subtle signs early, for example a heart murmur, limping or inflamed gums. High-quality vaccines protect against serious diseases.</span></div>
+<div><i>3</i><b>Diagnosis</b><span>Accurate diagnosis is treated as the key to a correct treatment, with in-house analyzers, imaging and a reference lab.</span></div>
+<div><i>4</i><b>Treatment</b><span>Treatment is applied according to the diagnosis, from medication and laser therapy to surgery, with clear communication with the owner.</span></div>
+</div>
+</div></section>
+
+<section class="lab" id="lab"><div class="w">
+<h2>Answers on site, powered by IDEXX</h2>
+<p class="lead">The clinic runs its own analyzers next to the exam rooms and uses a reference lab for the rest.</p>
+<div class="stats"><div><b>27</b><span>blood parameters in about 2 minutes</span></div><div><b>&lt;15</b><span>minutes for a chemistry panel</span></div><div><b>~3</b><span>minutes for urine sediment analysis</span></div></div>
+<ul class="dx">
+<li><b>Complete blood count</b> with the ProCyte Dx analyzer</li>
+<li><b>Chemistry analyzer</b> (Catalyst Dx) for organ function</li>
+<li><b>Urine sediment</b> analysis (SediVue Dx)</li>
+<li><b>Coagulation</b> PT/PTT, e.g. before surgery</li>
+<li><b>Digital radiographs</b> and <b>dental radiographs</b></li>
+<li><b>Ultrasound</b> diagnostics</li>
+<li><b>Cytology</b>, biopsy, ocular and blood pressure checks</li>
+<li><b>Parasite tests</b> through the IDEXX reference lab</li>
+</ul>
+<div class="spec">
+<div><b>CT scan</b><span>Cross-sectional images of internal organs, on request.</span></div>
+<div><b>Fluoroscopy</b><span>Dynamic imaging, for example for tracheal collapse or swallowing problems.</span></div>
+<div><b>Echocardiography</b><span>Cardiac ultrasound to evaluate the heart.</span></div>
+</div>
+</div></section>
+
+<section class="sec" id="team"><div class="w">
+<h2>The team</h2>
+<p class="lead">Founded by Dr. Oscar W. Carballo Sr., working with his son and Dr. Ileana Martin-Carrera, and Dr. Ranset Diez.</p>
+<div class="team">
+<div class="pp"><div class="av">OC</div><div><b>Oscar W. Carballo Sr., DVM</b><span>Veterinarian</span></div></div>
+<div class="pp"><div class="av">OJ</div><div><b>Oscar Carballo Jr., DVM</b><span>Veterinarian</span></div></div>
+<div class="pp"><div class="av">RD</div><div><b>Ranset Diez, DVM</b><span>Veterinarian</span></div></div>
+<div class="pp s"><div class="av">IM</div><div><b>Ileana Martin</b><span>Lab specialist</span></div></div>
+<div class="pp s"><div class="av">AF</div><div><b>Ana Fernandez</b><span>Technician</span></div></div>
+<div class="pp s"><div class="av">EC</div><div><b>Emily Cutino</b><span>Technician</span></div></div>
+<div class="pp s"><div class="av">IT</div><div><b>Iraida Torres</b><span>Administrative staff</span></div></div>
+<div class="pp s"><div class="av">AA</div><div><b>Anisleidys Alfonso</b><span>Administrative staff</span></div></div>
+</div>
+<div class="shop"><h3>Pet prescriptions, delivered</h3><p class="lead">The clinic has an online VetSource store: your pet's prescription is packaged and shipped to your door.</p></div>
+</div></section>
+
+<section class="sec" id="owners"><div class="w">
+<h2>What owners say</h2>
+<div class="rv">
+<blockquote><p>They treated me very well and with my puppy, they were excellent.</p><cite>Eddy R.</cite></blockquote>
+<blockquote><p>From the girls in the front desk to the doctor who was very informative and explained all so well.</p><cite>Maylyn L.</cite></blockquote>
+<blockquote><p>The Carballos are truly what a vet team is supposed to be: friendly, professional, caring and loving to pets.</p><cite>Ela W.</cite></blockquote>
+</div>
+<h2 style="margin-top:40px">Good to know, from the clinic's FAQ</h2>
+<div class="tips">
+<div><b>Dachshunds and stairs</b>Going up and down stairs puts a deep extension on a dachshund's back, and an intervertebral disc injury may occur.</div>
+<div><b>Pool water</b>Chlorine and other harsh chemicals can be aggressive to a dog's digestive system.</div>
+<div><b>Car coolant</b>Coolant often contains ethylene glycol. It tastes sweet but can cause irreversible kidney damage in cats and dogs.</div>
+<div><b>Bones</b>Splinters can pierce the intestines or cause blockages, which often need surgery if found in time.</div>
+</div>
+</div></section>
+
+<section class="sec" id="faq"><div class="w">
+<h2>Quick answers</h2>
+<div class="faq">
+<details><summary>Do you take emergencies?</summary><p>Emergency treatment is provided during regular service hours. After hours, call (305) 552-9121 and you will get the information you need for your pet's emergency.</p></details>
+<details><summary>What does the annual check-up include?</summary><p>A physical check-up plus exams chosen according to age and state of health.</p></details>
+<details><summary>Is it better for a pet to live indoors?</summary><p>The clinic's FAQ says pets generally live safer, healthier lives inside the house, where they can also be groomed and taught good habits.</p></details>
+<details><summary>Can I get my pet's medication online?</summary><p>Yes, through the clinic's VetSource online store.</p></details>
+<details><summary>Are specialist scans available?</summary><p>CT scan, fluoroscopy and echocardiography are available on request.</p></details>
+</div>
+</div></section>
+
+<section class="visit" id="visit"><div class="w">
+<div><h2>Visit us</h2><p>8468 SW 8th St, Miami, FL 33144</p><p><a href="tel:3055529121">(305) 552-9121</a></p><p><a href="mailto:info@carballoac.com">info@carballoac.com</a></p></div>
+<div><p>Mon and Wed 9am - 7pm<br>Tue and Thu 9am - 5pm<br>Fri 9am - 4pm<br>Sat 9am - 3pm<br>Sun closed</p><div class="cta"><button class="btn" data-wa="book">Request an appointment</button></div></div>
+</div></section>
+<footer><div class="w"><b style="color:#fff">Carballo Animal Clinic</b><span>8468 SW 8th St, Miami, FL 33144 · (305) 552-9121</span><span>Demo · prepared by Gevorg Hovhannisyan</span></div></footer>
+<script>
+(function(){try{var p=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()),g={};p.forEach(function(x){g[x.type]=x.value;});
+var map={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6},d=map[g.weekday],m=(+g.hour%24)*60+(+g.minute),H={0:null,1:[9,19],2:[9,17],3:[9,19],4:[9,17],5:[9,16],6:[9,15]},h=H[d],on=h&&m>=h[0]*60&&m<h[1]*60;
+var r=document.querySelector('tr[data-d="'+d+'"]');if(r)r.className='today';var pl=document.getElementById('pill');pl.textContent=on?'Open now':'Closed now';pl.className='pill'+(on?' on':'');}catch(e){}})();
+</script>
+
+<script>var WA_CONFIG={"title": "Carballo Animal Clinic", "sub": "Ask about hours, services or booking", "fabIcon": "🐾", "fabLabel": "Ask a question", "placeholder": "Type your question", "greeting": "Hi, welcome to Carballo Animal Clinic. Ask me about hours, services, the in-house lab or emergencies, or request an appointment for your pet.", "chips": ["Make an appointment", "Opening hours", "Emergency", "Services", "Vaccines", "Lab tests", "Directions"], "fallback": "I do not have that on the website, so the team will confirm it. Call <a href=\"tel:3055529121\">(305) 552-9121</a> or request an appointment and they will get back to you.", "flowIntro": "Let us get your pet's appointment request started.", "cancelMsg": "No problem, nothing was saved.", "again": "Request another", "doneMsg": "Thanks. Your request was sent to the team, who will call you to confirm a time:", "flow": [{"label": "Pet name", "q": "What is your pet's name?"}, {"label": "Pet", "q": "Is your pet a dog or a cat?", "options": ["Dog", "Cat", "Other"]}, {"label": "Reason", "q": "What is the visit for?", "options": ["Annual check-up", "Vaccines", "Dental care", "Surgery consultation", "Lab work or X-ray", "Something else"]}, {"label": "Day", "q": "Which day suits you?", "options": ["Mon or Wed (until 7pm)", "Tue or Thu", "Friday", "Saturday", "No preference"]}, {"label": "Your name", "q": "What is your name?"}, {"label": "Phone", "q": "What is the best phone number to reach you?", "type": "phone"}], "kb": [{"k": ["hello", "hi", "hey", "good morning", "good afternoon"], "a": "Hello, welcome to Carballo Animal Clinic. I can help with hours, services, the in-house lab, emergencies or booking an appointment for your pet."}, {"k": ["thanks", "thank you", "thx", "cheers", "great", "perfect"], "a": "You are welcome. Tap \"Make an appointment\" whenever you are ready."}, {"k": ["book my", "book a", "want to book", "to book", "book", "booking", "appointment", "schedule", "reserve", "make an appointment", "see a vet", "see the vet", "come in", "visit"], "action": "book"}, {"k": ["hours", "open", "opening", "close", "closing", "what time", "weekend", "saturday", "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "late", "evening", "opening hours"], "a": "Hours: Mon and Wed 9am - 7pm, Tue and Thu 9am - 5pm, Fri 9am - 4pm, Sat 9am - 3pm, closed on Sunday."}, {"k": ["address", "where", "location", "located", "directions", "find you", "map", "street", "miami", "sw 8th", "8th street", "how do i get"], "a": "The clinic is at 8468 SW 8th St, Miami, FL 33144."}, {"k": ["phone", "call", "number", "email", "contact", "reach", "ring", "telephone"], "a": "Call <a href=\"tel:3055529121\">(305) 552-9121</a> or email <a href=\"mailto:info@carballoac.com\">info@carballoac.com</a>."}, {"k": ["emergency", "emergencies", "urgent", "after hours", "poison", "poisoned", "bleeding", "hit by car", "not breathing", "ate something", "swallowed", "seizure"], "a": "Emergency treatment is provided during regular service hours. After hours, call <a href=\"tel:3055529121\">(305) 552-9121</a> and you will get the information you need for your pet's emergency. I cannot assess symptoms, so please call right away."}, {"k": ["services", "service", "offer", "treatments"], "a": "Principal services: annual check-up exam, immunizations and wellness care, nutritional counseling, laser treatments, pain management, digital X-rays, stem cell and PRP therapy, in-house diagnostics, elective and general surgeries, general dentistry, euthanasia service and flea, tick and heartworm prevention."}, {"k": ["vaccine", "vaccines", "vaccination", "vaccinations", "shots", "immunization", "immunizations", "booster", "puppy shots"], "a": "Vaccinations for cats and dogs and immunization and wellness care are offered, using high-quality vaccines. The vet will go through your pet's schedule at the visit."}, {"k": ["check up", "checkup", "check-up", "annual", "annual exam", "physical", "physical exam", "wellness", "exam"], "a": "The annual check-up is a hands-on physical exam, with tests chosen by your pet's age and state of health."}, {"k": ["flea", "fleas", "tick", "ticks", "heartworm", "heartworms", "parasite", "parasites", "worms", "prevention", "preventive"], "a": "Flea, tick and heartworm prevention is offered, along with internal and external parasite prevention and testing."}, {"k": ["lab", "lab tests", "blood", "blood work", "bloodwork", "idexx", "test", "tests", "results", "urine", "diagnostics", "diagnosis", "diagnostic", "in house"], "a": "The clinic has an in-house IDEXX lab: a complete blood count (27 parameters in about 2 minutes), a chemistry analyzer (under 15 minutes), urine sediment analysis (about 3 minutes), coagulation tests, cytology and more, plus a reference lab."}, {"k": ["xray", "xrays", "x ray", "x rays", "x-ray", "radiograph", "radiographs", "radiography", "ultrasound", "imaging", "ct", "ct scan", "fluoroscopy", "echo", "echocardiography", "heart ultrasound"], "a": "Digital X-rays and dental radiographs, and ultrasound are done in house. CT scan, fluoroscopy and echocardiography (cardiac ultrasound) are available on request."}, {"k": ["surgery", "surgeries", "spay", "neuter", "spaying", "neutering", "operate", "operation", "tumor", "tumour", "mass", "orthopedic", "orthopedics", "fracture"], "a": "The clinic does spay and neuter, soft tissue and abdominal surgery, surgical oncology and, by consultation only, orthopedics. A vet will need to see your pet first."}, {"k": ["dental", "dentistry", "teeth", "tooth", "cleaning", "scaling", "polish", "extraction", "extractions", "gums", "sealant"], "a": "General dentistry covers scaling and polishing, full-mouth digital radiographs, extractions and Sanos dental sealant."}, {"k": ["laser", "laser therapy", "pain", "pain management", "arthritis", "healing", "inflammation"], "a": "Laser therapy and pain management are offered. Laser light is used to reduce pain and inflammation and promote healing. The vet will advise whether it suits your pet."}, {"k": ["stem cell", "stem cells", "platelet", "prp", "regenerative"], "a": "Stem cell therapy and platelet rich plasma (PRP) therapy are listed among the clinic's specialized services."}, {"k": ["food", "diet", "diets", "nutrition", "nutritional", "prescription diet", "hills", "royal canin", "kidney", "renal"], "a": "Nutritional counseling is offered, and prescription diets from Hill's and Royal Canin are used for pets with specific health problems. Ask the vet what suits your pet."}, {"k": ["meds", "medication", "medications", "medicine", "prescription", "prescriptions", "refill", "pharmacy", "online store", "shop", "vetsource"], "a": "Your pet's prescription can be ordered through the clinic's VetSource online store and shipped to your door."}, {"k": ["euthanasia", "put down", "put to sleep", "pass away", "goodbye", "dying"], "a": "The clinic offers a euthanasia service. Please call <a href=\"tel:3055529121\">(305) 552-9121</a> so the team can speak with you directly."}, {"k": ["dog", "dogs", "puppy", "puppies", "cat", "cats", "kitten", "kittens", "pet", "pets", "bird", "rabbit", "exotic", "reptile"], "a": "The website talks about care for dogs and cats. For any other kind of pet, the team will confirm if they can see it. Call (305) 552-9121."}, {"k": ["vet", "vets", "veterinarian", "veterinarians", "doctor", "doctors", "team", "staff", "carballo", "dr carballo", "who", "ranset", "ileana"], "a": "The veterinarians are Dr. Oscar W. Carballo Sr. (founder), Dr. Oscar Carballo Jr. and Dr. Ranset Diez, with Ileana Martin in the lab, technicians Ana Fernandez and Emily Cutino and administrative staff Iraida Torres and Anisleidys Alfonso."}, {"k": ["price", "prices", "cost", "costs", "much", "fee", "fees", "pricing", "quote", "expensive", "charge", "how much"], "a": "Prices are not listed on the website, so the team will confirm costs for your pet's visit. Call <a href=\"tel:3055529121\">(305) 552-9121</a>."}, {"k": ["insurance", "payment", "pay", "credit card", "financing", "carecredit", "accept", "pet insurance"], "a": "Payment options and insurance are not listed on the website, so the team will confirm. Call (305) 552-9121."}, {"k": ["parking", "park", "car"], "a": "Parking is not mentioned on the website, so the team will confirm."}, {"k": ["spanish", "espanol", "english", "language", "habla"], "a": "The clinic's website is available in English and Spanish. For language help at the visit, the team will confirm."}, {"k": ["founded", "history", "since", "about", "how long", "experience", "2008", "built"], "a": "The clinic was built and modernly equipped in 2008. Dr. Oscar W. Carballo Sr., the founder, works with his son Dr. Oscar Carballo Jr., Dr. Ileana Martin-Carrera and Dr. Ranset Diez."}]};</script>
+<script>/* assistant engine + widget (client-side only) */
+function waNorm(s){return String(s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function waStem(w){
+  if(w.length>4){
+    if(/ies$/.test(w))return w.slice(0,-3)+'y';
+    if(/ing$/.test(w)&&w.length>5)return w.slice(0,-3);
+    if(/ed$/.test(w)&&w.length>5)return w.slice(0,-2);
+    if(/es$/.test(w)&&w.length>5)return w.slice(0,-2);
+    if(/s$/.test(w)&&!/ss$/.test(w))return w.slice(0,-1);
+  }
+  return w;
+}
+function waLev(a,b){
+  if(Math.abs(a.length-b.length)>2)return 9;
+  var d=[],i,j;
+  for(i=0;i<=a.length;i++){d[i]=[i];}
+  for(j=0;j<=b.length;j++)d[0][j]=j;
+  for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++){
+    var c=a[i-1]===b[j-1]?0:1;
+    d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);
+    if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1);
+  }
+  return d[a.length][b.length];
+}
+function waWordEq(u,k){
+  if(u===k)return true;
+  var m=Math.min(u.length,k.length);
+  if(m<6)return false;
+  var d=waLev(u,k);
+  return d<=1||(m>=9&&d<=2);
+}
+function waMatcher(KB){
+  var idx=KB.map(function(e){var seen={},keys=[];(e.k||[]).forEach(function(p){var ph=waNorm(p).split(' ').map(function(w){return waStem(w);}),id=ph.join(' ');if(!seen[id]){seen[id]=1;keys.push(ph);}});return {e:e,keys:keys};});
+  return function(q){
+    var ws=waNorm(q).split(' ').filter(Boolean).map(waStem);
+    var best=null,bs=0;
+    idx.forEach(function(it){
+      var s=0;
+      it.keys.forEach(function(ph){
+        var all=ph.every(function(kw){return ws.some(function(u){return waWordEq(u,kw);});});
+        if(all)s+=ph.length*2+Math.min(ph.join('').length,10)/10;
+      });
+      if(s>bs){bs=s;best=it.e;}
+    });
+    return bs>=2?best:null;
+  };
+}
+if(typeof module!=='undefined')module.exports={waMatcher:waMatcher,waNorm:waNorm};
+
+(function(){
+  if(typeof document==='undefined'||typeof WA_CONFIG==='undefined')return;
+  var C=WA_CONFIG,match=waMatcher(C.kb);
+  var el=function(t,c,h){var n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n;};
+  var fab=el('button','wa-fab','<span class="wa-fab-ic" aria-hidden="true">'+C.fabIcon+'</span><span class="wa-fab-t">'+C.fabLabel+'</span>');
+  fab.setAttribute('aria-label',C.fabLabel);
+  var panel=el('div','wa-panel');panel.setAttribute('role','dialog');panel.setAttribute('aria-label',C.title);
+  var head=el('div','wa-head','<div><b>'+C.title+'</b><small>'+C.sub+'</small></div>');
+  var close=el('button','wa-x','×');close.setAttribute('aria-label','Close');head.appendChild(close);
+  var log=el('div','wa-log');log.setAttribute('aria-live','polite');
+  var chips=el('div','wa-chips');
+  var form=el('form','wa-form');
+  var inp=el('input','wa-in');inp.type='text';inp.placeholder=C.placeholder;inp.setAttribute('aria-label',C.placeholder);inp.autocomplete='off';
+  var go=el('button','wa-go','➜');go.type='submit';go.setAttribute('aria-label','Send');
+  form.appendChild(inp);form.appendChild(go);
+  panel.appendChild(head);panel.appendChild(log);panel.appendChild(chips);panel.appendChild(form);
+  document.body.appendChild(fab);document.body.appendChild(panel);
+  var flow=null,data={},started=false;
+  function say(html,me){var m=el('div','wa-m '+(me?'wa-me':'wa-bot'));if(me)m.textContent=html;else m.innerHTML=html;log.appendChild(m);log.scrollTop=log.scrollHeight;}
+  function setChips(list,fn){chips.innerHTML='';(list||[]).forEach(function(t){var b=el('button','wa-chip');b.type='button';b.textContent=t;b.onclick=function(){fn(t);};chips.appendChild(b);});}
+  function home(){setChips(C.chips,ask);}
+  function ask(t){say(t,true);reply(t);}
+  function reply(t){
+    if(flow){step(t);return;}
+    var e=match(t);
+    if(e&&e.action==='book'){startFlow();return;}
+    if(e){say(e.a);home();return;}
+    say(C.fallback);home();
+  }
+  function startFlow(){flow={i:-1};data={};say(C.flowIntro);next();}
+  function next(){
+    flow.i++;
+    if(flow.i>=C.flow.length){finish();return;}
+    var s=C.flow[flow.i];say(s.q);
+    if(s.options){setChips(s.options,function(o){say(o,true);step(o);});}else{setChips(['Cancel'],function(){say('Cancel',true);cancel();});}
+  }
+  function cancel(){flow=null;say(C.cancelMsg);home();}
+  function step(v){
+    if(/^(cancel|stop|never ?mind)$/i.test(v.trim())){cancel();return;}
+    var s=C.flow[flow.i];
+    if(s.type==='phone'&&!/^[+\d][\d\s\-()]{6,}$/.test(v.trim())){say('That does not look like a phone number. Could you type it again?');return;}
+    if(s.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())){say('That does not look like an email address. Could you type it again?');return;}
+    data[s.label]=v.trim();next();
+  }
+  function finish(){
+    var rows=Object.keys(data).map(function(k){return '<li><b>'+k+':</b> '+data[k].replace(/</g,'&lt;')+'</li>';}).join('');
+    say(C.doneMsg+'<ul class="wa-sum">'+rows+'</ul><small>Demo: nothing is actually sent.</small>');
+    flow=null;setChips([C.again],function(){say(C.again,true);startFlow();});
+  }
+  function open(){panel.classList.add('wa-open');fab.classList.add('wa-hide');if(!started){started=true;say(C.greeting);home();}setTimeout(function(){inp.focus();},50);}
+  function shut(){panel.classList.remove('wa-open');fab.classList.remove('wa-hide');}
+  fab.onclick=open;close.onclick=shut;
+  form.onsubmit=function(ev){ev.preventDefault();var v=inp.value.trim();if(!v)return;inp.value='';say(v,true);reply(v);};
+  document.querySelectorAll('[data-wa]').forEach(function(b){b.addEventListener('click',function(ev){ev.preventDefault();open();if(b.getAttribute('data-wa')==='book'&&!flow){say('I want to book',true);startFlow();}});});
+})();
+</script>
+<script>
+(function(){var f=document.querySelector('.wa-fab'),i=document.querySelector('.wa-in'),fm=document.querySelector('.wa-form');
+document.querySelectorAll('[data-q]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();if(!f||!i||!fm)return;f.click();i.value=b.getAttribute('data-q');fm.dispatchEvent(new Event('submit',{cancelable:true}));});});})();
+</script>
+</body>
+</html>
