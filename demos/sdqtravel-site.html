@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Santo Domingo Travel · Miami · Trips planned by a travel specialist</title>
+<meta name="description" content="Demo page for Santo Domingo Travel Agency, Miami: cruises, destination weddings, all-inclusive and Europe trips, with a built-in trip-request assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#25b3ea;--sky-d:#0d86b8;--sky-l:#d9f2fc;
+  --navy:#0a2540;--navy2:#123a5f;
+  --coral:#ff6b4a;--coral-d:#e0512f;
+  --sand:#fff7ea;--paper:#ffffff;--ink:#14263a;--mute:#566a7e;--line:#e8dfcf;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--sand);color:var(--ink);line-height:1.6;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.1;letter-spacing:-.02em}
+.wrap{width:100%;max-width:1100px;margin:0 auto;padding:0 16px}
+
+/* header: navy bar so the sky-blue logo pops */
+header.top{background:var(--navy);position:sticky;top:0;z-index:30}
+.hrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 0}
+.brand img{height:50px;width:auto}
+nav.main{display:none}
+.btn{display:inline-block;border:0;cursor:pointer;font:700 15px 'DM Sans',sans-serif;border-radius:12px;padding:12px 20px;text-decoration:none;transition:.15s}
+.btn-c{background:var(--coral);color:#fff}
+.btn-c:hover{background:var(--coral-d)}
+.btn-s{background:var(--sky);color:#042033}
+.btn-s:hover{background:#5bc8f1}
+.btn-w{background:#fff;color:var(--navy)}
+.btn-o{background:transparent;border:2px solid #fff;color:#fff}
+.btn-o:hover{background:#fff;color:var(--navy)}
+@media(min-width:880px){
+  nav.main{display:flex;gap:22px;font-weight:700;font-size:15px}
+  nav.main a{color:#c8def0;text-decoration:none}
+  nav.main a:hover{color:#fff}
+  .brand img{height:58px}
+}
+.phonebar{background:var(--sky);color:#042033;font-weight:700;font-size:14px;padding:6px 0}
+.phonebar .wrap{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.phonebar a{text-decoration:none}
+
+/* hero = boarding pass */
+.hero{background:linear-gradient(180deg,var(--navy) 0,var(--navy2) 100%);color:#fff;padding:30px 0 64px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:40px;background:var(--sand);clip-path:ellipse(60% 100% at 50% 100%)}
+.hero .motto{font-family:'Bricolage Grotesque',sans-serif;color:var(--sky);font-weight:700;font-size:15px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+.hero h1{font-size:clamp(32px,8.5vw,60px);font-weight:800;max-width:13em}
+.hero h1 span{color:var(--sky)}
+.hero p.lead{font-size:18px;color:#cfe0ef;max-width:34em;margin:14px 0 22px}
+.ticket{margin-top:26px;background:#fff;color:var(--ink);border-radius:18px;display:grid;grid-template-columns:1fr;box-shadow:0 14px 34px rgba(0,0,0,.3);position:relative}
+.ticket .t1{padding:18px 18px 14px}
+.ticket .t2{padding:14px 18px 18px;border-top:2px dashed var(--line);background:var(--sky-l);border-radius:0 0 18px 18px}
+.ticket small{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:700}
+.ticket .route{display:flex;align-items:center;gap:10px;margin:6px 0 2px;font:800 26px 'Bricolage Grotesque',sans-serif;color:var(--navy)}
+.ticket .route i{flex:1;border-top:2px dotted var(--sky);position:relative;min-width:30px}
+.ticket .route i::after{content:"\2708";position:absolute;right:-4px;top:-14px;color:var(--sky-d);font-size:20px;font-style:normal;background:#fff;padding-left:3px}
+.ticket .t2 b{display:block;color:var(--navy)}
+@media(min-width:760px){
+  .ticket{grid-template-columns:1.6fr 1fr}
+  .ticket .t2{border-top:0;border-left:2px dashed var(--line);border-radius:0 18px 18px 0}
+}
+.cut{position:absolute;width:22px;height:22px;background:var(--navy2);border-radius:50%}
+
+section{padding:46px 0}
+section h2{font-size:clamp(26px,6.5vw,40px);color:var(--navy);margin-bottom:8px}
+section .sub{color:var(--mute);max-width:36em;margin-bottom:24px}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+
+/* what we plan: stacked colour tiles */
+.tiles{display:grid;gap:12px}
+@media(min-width:700px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:980px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{border-radius:18px;padding:20px;min-height:170px;display:flex;flex-direction:column;justify-content:space-between}
+.tile h3{font-size:22px}
+.tile p{font-size:15px;margin-top:6px;opacity:.92}
+.tile button{align-self:flex-start;margin-top:12px;border:0;background:rgba(255,255,255,.92);color:var(--navy);font:700 13.5px 'DM Sans',sans-serif;border-radius:999px;padding:7px 14px;cursor:pointer}
+.t-a{background:var(--navy);color:#fff}
+.t-b{background:var(--sky);color:#042033}
+.t-c{background:var(--coral);color:#fff}
+.t-d{background:#ffd9a8;color:#4b2a05}
+.t-e{background:#b9e7d3;color:#06392a}
+.t-f{background:var(--sky-l);color:var(--navy)}
+
+/* promotions: horizontal snap strip */
+.promo{background:var(--navy);color:#fff}
+.promo h2{color:#fff}
+.promo .sub{color:#b5cde2}
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;-webkit-overflow-scrolling:touch}
+.pc{flex:0 0 78%;max-width:290px;scroll-snap-align:start;background:#fff;color:var(--ink);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.pc .days{display:inline-block;align-self:flex-start;background:var(--sky-l);color:var(--sky-d);font-weight:800;font-size:12.5px;border-radius:999px;padding:3px 10px}
+.pc h3{font-size:18px;color:var(--navy)}
+.pc .where{font-size:14px;color:var(--mute)}
+.pc .from{margin-top:auto;padding-top:8px;border-top:1px dashed var(--line);font-size:13px;color:var(--mute)}
+.pc .from b{font:800 20px 'Bricolage Grotesque',sans-serif;color:var(--coral)}
+.pc button{border:0;background:var(--navy);color:#fff;border-radius:10px;padding:9px;font:700 14px 'DM Sans',sans-serif;cursor:pointer;margin-top:6px}
+@media(min-width:700px){.pc{flex-basis:260px}}
+.fine{font-size:13px;color:#9fbad2;margin-top:6px}
+
+/* owner */
+.owner{display:grid;gap:20px}
+@media(min-width:860px){.owner{grid-template-columns:1fr 1.15fr;align-items:start}}
+.ocard{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}
+.ocard .mono{width:64px;height:64px;border-radius:50%;background:var(--navy);color:var(--sky);display:grid;place-items:center;font:800 26px 'Bricolage Grotesque',sans-serif;margin-bottom:12px}
+.ocard p{color:var(--mute);margin-top:8px}
+.stamps{display:flex;flex-wrap:wrap;gap:8px}
+.stamps span{border:2px solid var(--sky);color:var(--sky-d);border-radius:10px;padding:5px 10px;font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em;transform:rotate(-1deg);background:#fff}
+.stamps span:nth-child(2n){transform:rotate(1.2deg);border-color:var(--coral);color:var(--coral-d)}
+.quote{background:var(--sky-l);border-radius:16px;padding:16px;margin-top:14px;color:var(--navy);font-weight:500;font-size:15.5px}
+.quote small{display:block;margin-top:6px;color:var(--mute);font-weight:400}
+
+/* docs banner */
+.docs{background:#fff;border:2px solid var(--navy);border-radius:18px;padding:20px;display:grid;gap:10px}
+.docs h3{font-size:22px;color:var(--navy)}
+.docs ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.docs li{background:var(--sand);border-radius:999px;padding:5px 12px;font-weight:700;font-size:13.5px;color:var(--navy)}
+
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;padding:0 16px}
+summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none;color:var(--navy);display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--coral);font-size:22px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 0 14px;color:var(--mute);font-size:15px}
+
+/* contact */
+.contact{background:var(--sky);color:#042033}
+.contact h2{color:#042033}
+.cgrid{display:grid;gap:12px;margin-top:16px}
+@media(min-width:760px){.cgrid{grid-template-columns:repeat(3,1fr)}}
+.cbox{background:#fff;border-radius:16px;padding:16px}
+.cbox h3{font-size:16px;color:var(--navy);margin-bottom:4px}
+.cbox a{font-weight:700;color:var(--sky-d);word-break:break-word}
+.cbox p{font-size:15px;color:var(--mute)}
+
+footer{background:var(--navy);color:#9fbad2;padding:22px 0 92px;font-size:13.5px;text-align:center}
+footer b{color:var(--sky)}
+
+/* assistant */
+#fab{position:fixed;right:14px;bottom:14px;z-index:50;display:flex;align-items:center;gap:8px;background:var(--coral);color:#fff;border:0;border-radius:999px;padding:13px 20px;font:800 15px 'DM Sans',sans-serif;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+#fab span{font-size:18px}
+#chat{position:fixed;z-index:60;right:0;bottom:0;width:100%;height:min(86vh,640px);background:#fff;border-radius:18px 18px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden}
+#chat.open{display:flex}
+@media(min-width:520px){#chat{right:16px;bottom:16px;width:380px;border-radius:18px}}
+.ch{background:var(--navy);color:#fff;padding:12px 14px;display:flex;align-items:center;gap:10px}
+.ch .av{width:38px;height:38px;border-radius:50%;background:var(--sky);color:#042033;display:grid;place-items:center;font-size:19px}
+.ch .tt{flex:1;line-height:1.2}
+.ch .tt b{display:block;font-size:15px}
+.ch .tt small{opacity:.8;font-size:12px}
+.ch button{background:none;border:0;color:#fff;font-size:24px;cursor:pointer;line-height:1}
+#log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--sand)}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;font-size:14.5px;line-height:1.45;white-space:pre-line;word-wrap:break-word}
+.m.b{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--sky);color:#042033;align-self:flex-end;border-bottom-right-radius:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;background:var(--sand);border-top:1px solid var(--line);max-height:104px;overflow-y:auto}
+.chip{border:1.5px solid var(--navy);background:#fff;color:var(--navy);border-radius:999px;padding:6px 12px;font:700 13px 'DM Sans',sans-serif;cursor:pointer}
+.chip:hover{background:var(--navy);color:#fff}
+.cf{display:flex;gap:6px;padding:10px;border-top:1px solid var(--line);background:#fff}
+.cf input{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:12px;padding:10px 14px;font:15px 'DM Sans',sans-serif;background:var(--sand)}
+.cf input:focus{outline:2px solid var(--sky);border-color:var(--sky)}
+.cf button{border:0;background:var(--coral);color:#fff;border-radius:12px;padding:0 16px;font:700 14px 'DM Sans',sans-serif;cursor:pointer}
+.sum{background:var(--sky-l);border:1px dashed var(--sky-d);border-radius:12px;padding:10px 12px;font-size:14px;align-self:stretch}
+</style>
+</head>
+<body>
+
+<div class="phonebar"><div class="wrap"><span>Santo Domingo Travel · Miami</span><span><a href="tel:+13056356314">305 635 6314</a> · <a href="mailto:yourtravelagent@sdqtravel.net">yourtravelagent@sdqtravel.net</a></span></div></div>
+
+<header class="top">
+  <div class="wrap hrow">
+    <a class="brand" href="#top" aria-label="Santo Domingo Travel"><img src="img/sdqtravel-logo.png" alt="SDQ Santo Domingo Travel" width="120" height="57"></a>
+    <nav class="main" aria-label="Sections">
+      <a href="#plan">What we plan</a>
+      <a href="#promos">Promotions</a>
+      <a href="#eglys">Your specialist</a>
+      <a href="#faq">Questions</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="btn btn-c" data-open="trip">Plan my trip</button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="motto">"We don't sell vacations... we sell dreams"</div>
+    <h1>The pleasure of <span>safe travel</span>, planned for you</h1>
+    <p class="lead">We organize your trip in such a way that you only have to worry about enjoying it to the fullest. Cruises, destination weddings, family vacations, all-inclusive resorts and Europe, from Miami.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px">
+      <button class="btn btn-c" data-open="trip">Start my trip request</button>
+      <a class="btn btn-o" href="#promos">See promotions</a>
+    </div>
+    <div class="ticket" aria-label="Boarding pass style summary">
+      <div class="t1">
+        <small>Departing from</small>
+        <div class="route"><span>MIA</span><i></i><span>Anywhere</span></div>
+        <p style="color:var(--mute);font-size:14.5px">Honeymoons, family holidays, cruises, Caribbean and Europe. Tell us the idea and your specialist builds the details.</p>
+      </div>
+      <div class="t2">
+        <small>For more than 30 years</small>
+        <b>Excellent service for our customers</b>
+        <small style="display:block;margin-top:8px">Google reviews</small>
+        <b>4.8 from 72 reviews</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="wrap">
+    <div class="eyebrow">What we plan</div>
+    <h2>Pick the kind of trip, we handle the rest</h2>
+    <p class="sub">Trying to book each part of a vacation separately takes time. Your agent puts the whole thing together.</p>
+    <div class="tiles">
+      <div class="tile t-a"><div><h3>Destination weddings</h3><p>Plan your dream destination wedding or honeymoon. The Caribbean islands, famous for postcard sunsets, white sand and clear oceans.</p></div><button data-open="trip" data-pre="Wedding or honeymoon">Ask about weddings</button></div>
+      <div class="tile t-b"><div><h3>Cruises</h3><p>Exploring ports or being pampered on the high seas. Cruises suit families, couples and anyone who wants to meet people.</p></div><button data-open="trip" data-pre="Cruise">Ask about cruises</button></div>
+      <div class="tile t-c"><div><h3>All-inclusive</h3><p>A stress-free way to travel: the team finds the all-inclusive resort that fits you, instead of you booking every part separately.</p></div><button data-open="trip" data-pre="All-inclusive resort">Ask about resorts</button></div>
+      <div class="tile t-d"><div><h3>Europe</h3><p>Medieval castles, fairytale villages, mountains, harbors and iconic cities. A Europe vacation is on almost everyone's bucket list.</p></div><button data-open="trip" data-pre="Europe">Ask about Europe</button></div>
+      <div class="tile t-e"><div><h3>Family vacations</h3><p>Great family vacation ideas at a reasonable price, planned so everybody gets something out of the trip.</p></div><button data-open="trip" data-pre="Family vacation">Ask about family trips</button></div>
+      <div class="tile t-f"><div><h3>Bookings and documents</h3><p>A guide to the right travel documentation and up-to-date travel requirements: passports, international travel and visas.</p></div><button data-open="trip" data-pre="Something else">Ask the team</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="promos" class="promo">
+  <div class="wrap">
+    <div class="eyebrow">Promotions</div>
+    <h2>Packages on our promotions page</h2>
+    <p class="sub">Ask about all our packages. The prices below are the "from" figures shown on the agency's promotions page; the team will confirm current availability and price.</p>
+    <div class="strip">
+      <div class="pc"><span class="days">9 days</span><h3>Great Pyramids and full-board Nile cruise</h3><p class="where">Egypt</p><p class="from">From <b>$1,899</b></p><button data-open="trip" data-pre="Egypt in 9 days">Ask about this trip</button></div>
+      <div class="pc"><span class="days">9 days</span><h3>Coastal cities and cultural treasures</h3><p class="where">Portugal</p><p class="from">From <b>$1,399</b></p><button data-open="trip" data-pre="Portugal in 9 days">Ask about this trip</button></div>
+      <div class="pc"><span class="days">12 days</span><h3>Treasures of Anatolia</h3><p class="where">Turkey</p><p class="from">From <b>$1,499</b></p><button data-open="trip" data-pre="Turkey in 12 days">Ask about this trip</button></div>
+      <div class="pc"><span class="days">13 days</span><h3>Buenos Aires, Iguazu and Rio de Janeiro</h3><p class="where">Argentina and Brazil</p><p class="from">From <b>$3,499</b></p><button data-open="trip" data-pre="Argentina and Brazil in 13 days">Ask about this trip</button></div>
+      <div class="pc"><span class="days">19 days</span><h3>Cities, falls and glaciers of South America</h3><p class="where">Brazil, Argentina and Chile</p><p class="from">From <b>$3,299</b></p><button data-open="trip" data-pre="Brazil, Argentina and Chile in 19 days">Ask about this trip</button></div>
+      <div class="pc"><span class="days">13 days</span><h3>Essence of Patagonia and cultural capitals</h3><p class="where">Argentina and Chile</p><p class="from">From <b>$4,299</b></p><button data-open="trip" data-pre="Argentina and Chile in 13 days">Ask about this trip</button></div>
+      <div class="pc"><span class="days">9 days</span><h3>Escorted Eternal Cities</h3><p class="where">Italy</p><p class="from">From <b>$2,599</b></p><button data-open="trip" data-pre="Italy in 9 days">Ask about this trip</button></div>
+      <div class="pc"><span class="days">8 days</span><h3>Swiss charms: nature and mountain villages</h3><p class="where">Switzerland</p><p class="from">From <b>$3,299</b></p><button data-open="trip" data-pre="Switzerland in 8 days">Ask about this trip</button></div>
+      <div class="pc"><span class="days">8 days</span><h3>Nordic paradise: fjords and railway journey</h3><p class="where">Norway</p><p class="from">From <b>$2,999</b></p><button data-open="trip" data-pre="Norway in 8 days">Ask about this trip</button></div>
+    </div>
+    <p class="fine">Swipe sideways for more. Figures as listed on the agency's promotions page; confirm with the team.</p>
+  </div>
+</section>
+
+<section id="eglys">
+  <div class="wrap owner">
+    <div class="ocard">
+      <div class="mono">E</div>
+      <div class="eyebrow">Your travel specialist</div>
+      <h2 style="font-size:28px">Eglys Larez-Rodriguez</h2>
+      <p>Eglys has been a travel specialist for over 20 years and is known for making her clients' dreams come true by granting their every travel wish. What she enjoys most is helping clients and the relationships built with loyal clients.</p>
+      <div class="quote">"Eglys was in charge of organizing the smallest detail: hotels with breakfast included, transfers, tours, train and plane tickets to move around Europe."<small>From a Google review of the agency</small></div>
+    </div>
+    <div>
+      <div class="eyebrow">Certifications</div>
+      <h2 style="font-size:28px">Proud member of the travel specialist programs</h2>
+      <p class="sub" style="margin-top:8px">Certifications listed on the agency's About page:</p>
+      <div class="stamps">
+        <span>Cayman Kind specialist</span><span>Jamaica travel specialist</span><span>Miami specialist</span><span>AMResorts master agent</span><span>Curacao Inner Circle</span><span>Cruiseworld 2013 and 2014</span><span>Weddings and honeymoons 2014</span><span>Palace Resorts specialist</span><span>Colombia specialist program</span><span>Sandals specialist workshop</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="docs">
+      <h3>Before you go: travel documents</h3>
+      <p style="color:var(--mute)">Your guide to getting the right travel documentation and understanding up-to-date travel requirements.</p>
+      <ul><li>U.S. passports</li><li>International travel</li><li>U.S. visas</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:#fff">
+  <div class="wrap">
+    <div class="eyebrow">Questions</div>
+    <h2>What people ask first</h2>
+    <p class="sub">Anything not listed here, the team will answer personally.</p>
+    <details><summary>How do I start planning?</summary><p>Write to yourtravelagent@sdqtravel.net, call 305 635 6314, or use the contact form on the agency website with a subject (Vacations, Honeymoon or Others). You can also leave your trip idea in this assistant and the team follows up.</p></details>
+    <details><summary>Can you plan a destination wedding or honeymoon?</summary><p>Yes. Destination weddings, honeymoons and romantic getaways are one of the agency's specialties, and the owner holds a weddings and honeymoons specialist certification.</p></details>
+    <details><summary>Do you book cruises?</summary><p>Yes. The agency books cruises for families, couples and anyone who wants to explore different ports or be pampered at sea.</p></details>
+    <details><summary>Do you do all-inclusive resorts?</summary><p>Yes. The agency finds an all-inclusive resort that suits you, which saves booking each part of the vacation separately.</p></details>
+    <details><summary>Can you help with Europe trips?</summary><p>Yes. Reviews mention hotels, transfers, tours and train and plane tickets between European cities arranged by the agency.</p></details>
+    <details><summary>Do you speak Spanish?</summary><p>The agency's website has Spanish content and the owner's profile is bilingual, so you can write to the team in Spanish. The team will confirm for your specific request.</p></details>
+    <details><summary>What do trips cost?</summary><p>It depends on destination, dates and group. The promotions page lists "from" figures for set itineraries; for anything else your agent prepares a quote.</p></details>
+    <details><summary>Where are you?</summary><p>Santo Domingo Travel Agency is in Miami. Contact the team for the visiting address and opening hours.</p></details>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Talk to Santo Domingo Travel</h2>
+    <p style="max-width:34em;margin-top:6px">For more than 30 years the agency has provided customers with excellent service. Contact the team today and plan your dream vacation.</p>
+    <div class="cgrid">
+      <div class="cbox"><h3>Phone</h3><a href="tel:+13056356314">305 635 6314</a></div>
+      <div class="cbox"><h3>Email</h3><p><a href="mailto:yourtravelagent@sdqtravel.net">yourtravelagent@sdqtravel.net</a></p><p><a href="mailto:sdqtravelmiami@gmail.com">sdqtravelmiami@gmail.com</a></p></div>
+      <div class="cbox"><h3>Follow</h3><p><a href="https://www.facebook.com/SDQTRAVEL1" target="_blank" rel="noopener">Facebook</a> · <a href="http://www.instagram.com/sdqtravel/" target="_blank" rel="noopener">Instagram</a></p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Santo Domingo Travel Agency · Miami</p>
+    <p style="margin-top:6px"><b>Demo · prepared by Gevorg Hovhannisyan</b></p>
+  </div>
+</footer>
+
+<button id="fab" aria-label="Open the trip assistant"><span>&#9992;</span>Plan with SDQ</button>
+
+<div id="chat" role="dialog" aria-label="Trip assistant">
+  <div class="ch"><div class="av">&#9992;</div><div class="tt"><b>SDQ trip assistant</b><small>English / Espa&ntilde;ol · the team confirms details</small></div><button id="x" aria-label="Close">&times;</button></div>
+  <div id="log" aria-live="polite"></div>
+  <div class="chips" id="chips"></div>
+  <form class="cf" id="f"><input id="in" autocomplete="off" placeholder="Ask a question / Escribe tu pregunta" aria-label="Your question"><button type="submit">Send</button></form>
+</div>
+
+<script>
+/* ---------- knowledge base + matcher (pure, testable) ---------- */
+var PH='305 635 6314',EM='yourtravelagent@sdqtravel.net';
+var KB=[
+ {id:'start',w:.6,k:['start','begin','plan','planning','how do i','get started','book','booking','reserve','reservation','quote','request','organize','organise','arrange'],
+  a:'Easy: leave your trip idea here (I will ask a few questions) or write to '+EM+' or call '+PH+'. Your travel agent then builds the plan and confirms details and availability.',
+  s:'Es facil: deja tu idea de viaje aqui (te hago unas preguntas), escribe a '+EM+' o llama al '+PH+'. Tu agente prepara el plan y confirma disponibilidad.'},
+ {id:'wedding',k:['wedding','weddings','honeymoon','honeymoons','romantic','getaway','getaways','marry','married','bride','destination wedding','anniversary','couple','couples','boda','bodas','luna de miel','novios'],
+  a:'Yes. Destination weddings, honeymoons and romantic getaways are a core service: the Caribbean islands are famous for postcard sunsets, white sand and clear oceans, and the owner holds a weddings and honeymoons specialist certification (2014). I can take your date and guest count for the team.',
+  s:'Si. Bodas de destino, lunas de miel y escapadas romanticas son parte central del servicio. Puedo tomar tu fecha y numero de invitados para el equipo.'},
+ {id:'cruise',k:['cruise','cruises','cruising','ship','ships','sail','sailing','port','ports','caribbean cruise','royal','crucero','cruceros','barco'],
+  a:'Yes, the agency books cruises. They suit families, couples and anyone who wants to explore ports or be pampered at sea. The owner has Cruiseworld recognitions (2013 and 2014). Tell me the month and number of travelers and the team will follow up.',
+  s:'Si, la agencia reserva cruceros, ideales para familias y parejas. Dime el mes y el numero de viajeros y el equipo te contacta.'},
+ {id:'allinc',k:['all inclusive','all-inclusive','resort','resorts','amresorts','palace','sandals','punta cana','beach','all inclusive vacation','todo incluido','playa'],
+  a:'Yes. The agency finds the all-inclusive resort that fits you (the owner is an AMResorts master agent and holds Palace Resorts and Sandals specialist training), so you do not book each part separately. Which destination and dates do you have in mind?',
+  s:'Si. La agencia busca el resort todo incluido ideal para ti. Que destino y fechas tienes en mente?'},
+ {id:'europe',k:['europe','european','italy','spain','france','portugal','switzerland','norway','croatia','paris','rome','london','greece','tour europe','europa','italia','espana','francia'],
+  a:'Europe is a favorite: hotels, transfers, tours and train or plane tickets between cities. Current itineraries on the promotions page include Portugal (9 days), Italy (9 days), Switzerland (8 days) and Norway (8 days). The team will confirm availability.',
+  s:'Europa es de las favoritas: hoteles, traslados, tours y boletos entre ciudades. Hay itinerarios de Portugal, Italia, Suiza y Noruega en la pagina de promociones.'},
+ {id:'family',w:.8,k:['family','families','kids','children','child','vacation','vacations','holiday','holidays','parents','reasonable price','budget','familia','vacaciones','ninos'],
+  a:'Family vacations are one of the main services: ideas at a reasonable price, planned so everyone enjoys the trip. Tell me the number of travelers, ages and a budget range, and the team will propose options.',
+  s:'Las vacaciones en familia son un servicio principal. Dime cuantos viajan y un presupuesto aproximado y el equipo propone opciones.'},
+ {id:'promo',k:['promotion','promotions','promo','promos','package','packages','deal','deals','special','offer','offers','discount','itinerary','itineraries','promocion','promociones','paquete','oferta'],
+  a:'Promotions on the agency site: Egypt 9 days (from $1,899), Portugal 9 days (from $1,399), Turkey 12 days (from $1,499), Argentina and Brazil 13 days (from $3,499), Brazil, Argentina and Chile 19 days (from $3,299), Patagonia 13 days (from $4,299), Italy 9 days (from $2,599), Switzerland 8 days (from $3,299), Norway 8 days (from $2,999). Figures are as listed there; the team confirms the current price.',
+  s:'Promociones: Egipto 9 dias, Portugal 9 dias, Turquia 12 dias, Argentina y Brasil 13 dias, Sudamerica 19 dias, Patagonia 13 dias, Italia 9 dias, Suiza 8 dias, Noruega 8 dias. Los precios "desde" estan en la pagina; el equipo confirma el precio actual.'},
+ {id:'price',w:.5,k:['price','prices','cost','costs','how much','cheap','cheaper','expensive','budget','fee','fees','rate','rates','precio','precios','cuanto','cuesta','costo','barato'],
+  a:'It depends on destination, dates and group size. The promotions page lists "from" figures for set itineraries; for anything else your agent prepares a quote. Tell me what you are planning and I will pass it on.',
+  s:'Depende del destino, fechas y numero de viajeros. En promociones hay precios "desde"; para lo demas el agente prepara una cotizacion.'},
+ {id:'south',k:['south america','argentina','brazil','chile','patagonia','buenos aires','rio','iguazu','peru','colombia','inca','machu picchu','sudamerica','brasil'],
+  a:'South America itineraries on the promotions page: Argentina and Brazil (13 days), Brazil, Argentina and Chile (19 days) and Argentina and Chile with Patagonia (13 days). The owner also completed a Colombia specialist program. The team will confirm dates and price.',
+  s:'Hay itinerarios de Sudamerica: Argentina y Brasil, Brasil Argentina y Chile, y Patagonia. El equipo confirma fechas y precio.'},
+ {id:'egypt',k:['egypt','turkey','pyramids','nile','anatolia','istanbul','cairo','africa','middle east','egipto','turquia'],
+  a:'Egypt (9 days, Great Pyramids and full-board Nile cruise) and Turkey (12 days, Treasures of Anatolia) are on the promotions page. The team will confirm dates, availability and the current price.',
+  s:'Egipto (9 dias) y Turquia (12 dias) estan en promociones. El equipo confirma fechas y precio.'},
+ {id:'docs',k:['passport','passports','visa','visas','document','documents','documentation','requirements','entry','travel requirements','restrictions','pasaporte','visado','documentos','requisitos'],
+  a:'The agency offers a guide to the right travel documentation and up-to-date travel requirements: U.S. passports, international travel and U.S. visas. For your specific case, the team will advise.',
+  s:'La agencia ofrece una guia de documentos y requisitos de viaje actualizados: pasaportes, viajes internacionales y visas. El equipo te asesora en tu caso.'},
+ {id:'insurance',k:['insurance','insure','coverage','protect','cancel','cancellation','refund','trip insurance','seguro','cancelar','reembolso'],
+  a:'The agency website links to travel insurance information for trips. Cancellation and refund terms depend on the supplier and the booking, so your agent will explain them before you pay.',
+  s:'La agencia ofrece informacion sobre seguro de viaje. Las condiciones de cancelacion dependen del proveedor y la reserva; tu agente te las explica antes de pagar.'},
+ {id:'owner',k:['eglys','owner','agent','specialist','who','experience','certified','certification','certifications','years','larez','expert','dueno','duena','agente'],
+  a:'Eglys Larez-Rodriguez has been a travel specialist for over 20 years. Her certifications include Cayman Kind, Jamaica, Miami, AMResorts master agent, Curacao Inner Circle, Cruiseworld (2013 and 2014), weddings and honeymoons (2014), Palace Resorts, Colombia and a Sandals workshop. The agency has served customers for more than 30 years.',
+  s:'Eglys Larez-Rodriguez es especialista en viajes con mas de 20 anos de experiencia, con certificaciones de AMResorts, Palace Resorts, Cruiseworld, bodas y lunas de miel, entre otras.'},
+ {id:'contact',k:['phone','call','number','contact','email','mail','reach','telephone','whatsapp','message','talk','speak','telefono','llamar','correo','contacto'],
+  a:'Phone: '+PH+'. Email: '+EM+' or sdqtravelmiami@gmail.com. Facebook: SDQTRAVEL1. Instagram: sdqtravel.',
+  s:'Telefono: '+PH+'. Correo: '+EM+' o sdqtravelmiami@gmail.com. Facebook: SDQTRAVEL1. Instagram: sdqtravel.'},
+ {id:'where',k:['where','address','location','located','office','visit','miami','florida','directions','map','come in','donde','direccion','oficina','ubicacion'],
+  a:'The agency is based in Miami. I do not have a street address or opening hours from the website, so please call '+PH+' or email '+EM+' and the team will tell you.',
+  s:'La agencia esta en Miami. No tengo la direccion ni el horario en la pagina; llama al '+PH+' o escribe a '+EM+'.'},
+ {id:'hours',w:.7,k:['hours','open','opening','close','closing','schedule','time','when','sunday','saturday','weekend','horario','abierto','abren'],
+  a:'The website does not list opening hours. Call '+PH+' or email '+EM+' and the team will confirm when they are available.',
+  s:'La pagina no publica horario. Llama al '+PH+' o escribe a '+EM+' para confirmarlo.'},
+ {id:'language',k:['spanish','espanol','english','language','bilingual','habla','hablan','idioma','speak spanish'],
+  a:'The agency website has Spanish content and the owner\'s profile is written in Spanish too, so you can write to the team in either language. I can answer in both.',
+  s:'Si, puedes escribir en espanol. La pagina tiene contenido en espanol y yo tambien respondo en ambos idiomas.'},
+ {id:'about',k:['about','history','who are you','since','founded','agency','company','reviews','review','rating','trust','good','reliable','sobre','resenas'],
+  a:'Santo Domingo Travel Agency has served customers for more than 30 years from Miami, with 4.8 stars from 72 Google reviews. Its motto: "We don\'t sell vacations... we sell dreams".',
+  s:'Santo Domingo Travel lleva mas de 30 anos atendiendo clientes desde Miami, con 4.8 estrellas en 72 resenas de Google.'},
+ {id:'group',k:['group','groups','friends','reunion','corporate','team','large','people','travelers','travellers','grupo','grupos','amigos'],
+  a:'Group trips are possible. Tell me the destination, rough dates and number of travelers, and the team will confirm what can be arranged.',
+  s:'Se pueden organizar viajes en grupo. Dime destino, fechas y numero de viajeros y el equipo confirma.'},
+ {id:'hello',k:['hello','hi','hey','good morning','good afternoon','good evening','hola','buenas','buenos dias','buenas tardes'],
+  a:'Hello, and welcome to Santo Domingo Travel. I can answer questions about cruises, weddings, all-inclusive, Europe, promotions and contacts, or start a trip request for the team. Hola, tambien puedes escribirme en espanol.',
+  s:'Hola, bienvenido a Santo Domingo Travel. Puedo responder sobre cruceros, bodas, todo incluido, Europa y promociones, o iniciar tu solicitud de viaje.'},
+ {id:'thanks',k:['thanks','thank you','thx','gracias','appreciate','perfect','great'],
+  a:'You are welcome. If you want, leave your trip idea and the team will get back to you.',
+  s:'De nada. Si quieres, deja tu idea de viaje y el equipo te contacta.'}
+];
+var STOP={the:1,a:1,an:1,is:1,are:1,do:1,does:1,i:1,you:1,we:1,to:1,of:1,for:1,and:1,in:1,on:1,at:1,my:1,me:1,can:1,your:1,it:1,be:1,have:1,there:1,what:1,about:1,with:1,this:1,that:1,get:1,want:1,would:1,like:1,please:1,el:1,la:1,los:1,las:1,un:1,una:1,de:1,del:1,en:1,y:1,que:1,por:1,para:1,con:1,es:1,mi:1,tu:1,se:1,lo:1};
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){
+  if(w.length>5)w=w.replace(/(ing|ed)$/,'');
+  if(/sses$/.test(w))return w.replace(/es$/,'');
+  if(w.length>3&&/(x|ch|sh)es$/.test(w))return w.replace(/es$/,'');
+  if(w.length>3&&!/ss$/.test(w))w=w.replace(/s$/,'');
+  return w;
+}
+function lev(a,b){
+  if(Math.abs(a.length-b.length)>2)return 9;
+  var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;
+  for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c}
+  return p[b.length];
+}
+function toks(q){return norm(q).split(' ').filter(function(w){return w&&!STOP[w]}).map(stem)}
+function scoreEntry(q,T,e){
+  var nq=' '+norm(q)+' ',sc=0,seen={};
+  e.k.forEach(function(kw){
+    var nk=norm(kw);if(!nk)return;var sg=stem(nk);if(seen[sg])return;seen[sg]=1;
+    if(nk.indexOf(' ')>-1){if(nq.indexOf(' '+nk+' ')>-1)sc+=3;return}
+    var sk=stem(nk),hit=0;
+    for(var i=0;i<T.length;i++){
+      var t=T[i];
+      if(t===sk){hit=2;break}
+      if(sk.length>=5&&t.length>=5){var d=lev(t,sk);if(d<=1||(d<=2&&sk.length>=8))hit=Math.max(hit,1.4)}
+    }
+    sc+=hit;
+  });
+  return sc*(e.w||1);
+}
+function answer(q){
+  var T=toks(q),best=null,bs=0;
+  KB.forEach(function(e){var s=scoreEntry(q,T,e);if(s>bs){bs=s;best=e}});
+  return bs>=1?best:null;
+}
+var ES_RX=/\b(hola|gracias|quiero|viaje|viajes|cuanto|cuesta|boda|luna de miel|crucero|donde|puedo|necesito|precio|vacaciones|pasaporte|buenas|buenos dias|hablan|espanol)\b/;
+function isEs(q){return ES_RX.test(norm(q))}
+var PHONE_TXT=PH;
+
+/* ---------- widget ---------- */
+(function(){
+  if(typeof document==='undefined')return;
+  var chat=document.getElementById('chat'),log=document.getElementById('log'),chips=document.getElementById('chips'),inp=document.getElementById('in'),form=document.getElementById('f');
+  var flow=null,data={},started=false;
+  var HOME=['Plan my trip','Cruises','Weddings and honeymoons','All-inclusive','Europe','Promotions','Contact'];
+  function add(t,cls){var d=document.createElement('div');d.className='m '+cls;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+  function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=c;b.onclick=function(){handle(c)};chips.appendChild(b)})}
+  function open(mode,pre){
+    chat.classList.add('open');document.getElementById('fab').style.display='none';
+    if(!started){started=true;add('Hi, welcome to Santo Domingo Travel in Miami. Ask me about cruises, weddings, all-inclusive, Europe or our promotions, or start a trip request for the team. (Tambien en espanol.)','b');setChips(HOME)}
+    if(mode==='trip')startFlow(pre);else inp.focus();
+  }
+  function close(){chat.classList.remove('open');document.getElementById('fab').style.display='flex'}
+  document.getElementById('fab').onclick=function(){open()};
+  document.getElementById('x').onclick=close;
+  document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();open(b.dataset.open,b.dataset.pre)})});
+
+  var STEPS=[
+    {key:'type',q:'What kind of trip is it?',chips:['Cruise','Wedding or honeymoon','All-inclusive resort','Europe','Family vacation','Something else']},
+    {key:'dest',q:'Where would you like to go? A country, a city or just an idea is fine.',chips:['Not sure yet','Caribbean','Europe','South America']},
+    {key:'dates',q:'Roughly when do you want to travel, and for how many days?',chips:['Next 3 months','In 6 months','Next year','Flexible']},
+    {key:'group',q:'How many travelers?',chips:['1','2','3 to 4','5 or more'],check:function(v){return v.length>0}},
+    {key:'name',q:'What is your name?',chips:[]},
+    {key:'contact',q:'What phone number or email can the agent reach you on?',chips:[],check:function(v){return /@/.test(v)||v.replace(/\D/g,'').length>=7}}
+  ];
+  function startFlow(pre){
+    flow={i:0,skip:{}};data={};
+    if(pre){
+      data.type=pre;flow.skip.type=1;
+      if(/ in \d+ days$/.test(pre)||/^(Egypt|Portugal|Turkey|Italy|Norway|Switzerland|Argentina|Brazil)/.test(pre)){data.type='Set itinerary';data.dest=pre;flow.skip.dest=1}
+    }
+    add('Great, let us build your trip request. A few quick questions, then I pass them to the agent. Type "cancel" at any time.','b');
+    next();
+  }
+  function next(){
+    while(flow&&flow.i<STEPS.length&&flow.skip[STEPS[flow.i].key])flow.i++;
+    if(!flow||flow.i>=STEPS.length){finish();return}
+    var s=STEPS[flow.i];add(s.q,'b');setChips(s.chips.length?s.chips:['Cancel']);inp.focus();
+  }
+  function finish(){
+    var d=data,lines='Name: '+d.name+'\nContact: '+d.contact+'\nTrip: '+d.type+'\nDestination: '+d.dest+'\nWhen: '+d.dates+'\nTravelers: '+d.group;
+    add('Thank you, '+d.name+'. Your trip request is ready and has been sent to the team (demo: nothing is actually sent). Your agent will confirm availability, options and the current price, and answer anything not on the website.','b');
+    add(lines,'sum');
+    add('If it is urgent, call '+PH+'.','b');
+    flow=null;setChips(HOME);
+  }
+  function show(e,q){add(isEs(q)&&e.s?e.s:e.a,'b')}
+  function handle(text){
+    text=text.trim();if(!text)return;
+    add(text,'u');inp.value='';
+    if(flow){
+      if(/^(cancel|stop|exit|back|cancelar)$/i.test(text)){flow=null;add('No problem, request cancelled. What else can I help with?','b');setChips(HOME);return}
+      var s=STEPS[flow.i];
+      if(s.check&&!s.check(text)){add(s.key==='contact'?'Please include a phone number or an email address the agent can use.':'Please give a number.','b');return}
+      data[s.key]=text;flow.i++;next();return;
+    }
+    var n=norm(text);
+    if(/^(plan my trip|start my trip request|trip request)$/.test(n)||/(plan|start|book|request).{0,12}(trip|vacation|holiday)|quiero (viajar|reservar)|planear (mi )?viaje/.test(n)){startFlow();return}
+    var nav={'cruises':'cruise','weddings and honeymoons':'wedding','all inclusive':'allinc','europe':'europe','promotions':'promo','contact':'contact'};
+    var key=nav[n];
+    var m=key?KB.filter(function(x){return x.id===key})[0]:answer(text);
+    if(m){show(m,text);setChips(['Plan my trip','Promotions','Contact'])}
+    else{add(isEs(text)?'No tengo ese dato en la pagina y prefiero no inventarlo. El equipo puede confirmarlo: llama al '+PH+' o escribe a '+EM+'. Tambien puedo tomar tus datos.':'I do not have that on the website, so I will not guess. The team can confirm it: call '+PH+' or email '+EM+'. Or I can take your details and your question for them.','b');setChips(['Plan my trip','Promotions','Contact'])}
+  }
+  form.addEventListener('submit',function(e){e.preventDefault();handle(inp.value)});
+})();
+if(typeof module!=='undefined')module.exports={answer:answer,KB:KB};
+</script>
+</body>
+</html>

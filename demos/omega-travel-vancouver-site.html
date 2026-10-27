@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Omega Travel · Vancouver · Demo</title>
+<meta name="description" content="Demo page for Omega Travel, Kitsilano, Vancouver: Signature Tours, personal trip planning and a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d4e9c;--ink:#0b2a4f;--sky:#00aeef;--sand:#fbf6ec;--sand2:#f2e8d5;--terra:#c4573a;--white:#fff;--line:#e4d9c2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Mulish',system-ui,sans-serif;background:var(--sand);color:var(--ink);line-height:1.6;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.1;font-weight:600}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 20px;max-width:1080px;margin:0 auto}
+.hd img{height:42px;width:auto}
+.hd nav{display:none;gap:22px;font-weight:600;font-size:14px}
+.hd nav a{text-decoration:none;color:var(--navy)}
+.call{background:var(--navy);color:#fff;text-decoration:none;padding:9px 14px;border-radius:999px;font-weight:700;font-size:14px;white-space:nowrap}
+@media(min-width:820px){.hd nav{display:flex}}
+/* hero: arch */
+.hero{padding:34px 0 48px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;gap:28px}
+.hero .tag{display:inline-block;color:var(--terra);font-weight:700;letter-spacing:.14em;font-size:12px;text-transform:uppercase;margin-bottom:12px}
+.hero h1{font-size:clamp(38px,9vw,66px);color:var(--ink)}
+.hero h1 em{color:var(--navy);font-style:italic}
+.hero p.lead{margin:16px 0 22px;font-size:17px;max-width:520px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{border:0;cursor:pointer;font:700 15px 'Mulish',sans-serif;padding:13px 20px;border-radius:999px;text-decoration:none;display:inline-block}
+.btn.p{background:var(--terra);color:#fff}
+.btn.s{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 2px var(--navy)}
+.arch{position:relative;width:min(100%,330px);aspect-ratio:3/4;margin:0 auto;border-radius:999px 999px 18px 18px;background:linear-gradient(180deg,#8fd8f7 0%,#d9f1fb 46%,#fff6e0 46%,#0d4e9c 46.5%,#00aeef 100%);box-shadow:0 0 0 8px var(--white),0 0 0 9px var(--line);overflow:hidden}
+.arch .sun{position:absolute;left:50%;top:16%;width:64px;height:64px;border-radius:50%;background:#ffd36b;transform:translateX(-50%);box-shadow:0 0 0 14px rgba(255,211,107,.3)}
+.arch .house{position:absolute;bottom:46%;left:8%;width:38%;height:22%;background:#fff;border-radius:4px 4px 0 0;box-shadow:70px 14px 0 -2px #fff}
+.arch .house:before{content:"";position:absolute;left:30%;top:-26%;width:40%;height:34%;background:var(--navy);border-radius:50% 50% 0 0}
+.arch .wave{position:absolute;left:0;right:0;bottom:0;height:46%;background:repeating-linear-gradient(180deg,rgba(255,255,255,.25) 0 2px,transparent 2px 22px)}
+.arch b{position:absolute;bottom:8%;left:0;right:0;text-align:center;color:#fff;font:italic 600 22px 'Cormorant Garamond',serif}
+@media(min-width:820px){.hero .wrap{grid-template-columns:1.2fr .8fr;align-items:center}}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px;max-width:520px}
+.facts div{background:var(--white);border-radius:14px;padding:12px 10px;text-align:center;border:1px solid var(--line)}
+.facts b{display:block;font:700 26px 'Cormorant Garamond',serif;color:var(--navy)}
+.facts span{font-size:12px;color:#4a5f7a;line-height:1.3;display:block}
+section{padding:46px 0}
+.sec-h{margin-bottom:22px}
+.sec-h small{color:var(--terra);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+.sec-h h2{font-size:clamp(30px,6vw,44px);margin-top:6px}
+.sec-h p{margin-top:8px;max-width:620px;color:#34506f}
+/* countries */
+.cty{display:grid;gap:14px}
+@media(min-width:700px){.cty{grid-template-columns:1fr 1fr}}
+details.c{background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+details.c summary{list-style:none;cursor:pointer;padding:18px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;font:600 28px 'Cormorant Garamond',serif}
+details.c summary::-webkit-details-marker{display:none}
+details.c summary span{font:700 12px 'Mulish';color:var(--terra);letter-spacing:.08em}
+details.c[open] summary{background:var(--ink);color:#fff}
+details.c[open] summary span{color:#ffd36b}
+details.c ul{list-style:none;padding:6px 18px 14px}
+details.c li{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:15px}
+details.c li:last-child{border:0}
+details.c li i{font-style:normal;color:var(--navy);font-weight:700;white-space:nowrap}
+.note{margin-top:14px;font-size:14px;color:#4a5f7a}
+.note a{color:var(--terra);font-weight:700}
+/* custom */
+.band{background:var(--ink);color:#fff}
+.band .sec-h h2{color:#fff}.band .sec-h p{color:#c9dcf2}
+.steps{display:grid;gap:14px;counter-reset:s}
+@media(min-width:800px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:20px;counter-increment:s}
+.steps div:before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--sky);color:var(--ink);font:700 20px 'Cormorant Garamond',serif;margin-bottom:12px}
+.steps h3{font-size:24px;margin-bottom:6px}
+.steps p{color:#c9dcf2;font-size:15px}
+.occ{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.occ button{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:10px 16px;font:700 14px 'Mulish';cursor:pointer}
+/* story */
+.story{display:grid;gap:22px}
+@media(min-width:800px){.story{grid-template-columns:.7fr 1.3fr;align-items:center}}
+.year{font:700 clamp(90px,24vw,170px)/.9 'Cormorant Garamond',serif;color:var(--sand2);-webkit-text-stroke:2px var(--navy)}
+.story p{margin-bottom:12px;color:#34506f}
+.trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.trust span{background:var(--white);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700;color:var(--navy)}
+.more{display:grid;gap:14px}
+@media(min-width:700px){.more{grid-template-columns:1fr 1fr}}@media(min-width:1000px){.more{grid-template-columns:repeat(3,1fr)}}
+.more article{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--sky);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.more h3{font-size:24px;color:var(--navy)}
+.more p{font-size:15px;color:#34506f;flex:1}
+.more .btn{padding:9px 14px;font-size:13px}
+/* faq */
+.faq details{background:var(--white);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;padding:14px 16px}
+.faq summary{cursor:pointer;font-weight:700;color:var(--navy)}
+.faq p{margin-top:8px;color:#34506f;font-size:15px}
+/* visit */
+.visit{display:grid;gap:16px}
+@media(min-width:800px){.visit{grid-template-columns:1fr 1fr}}
+.card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:22px}
+.card h3{font-size:28px;margin-bottom:10px}
+.card p{margin-bottom:6px}
+.card table{width:100%;border-collapse:collapse;font-size:15px}
+.card td{padding:7px 0;border-bottom:1px dashed var(--line)}
+.card td:last-child{text-align:right;font-weight:700}
+footer{background:var(--ink);color:#c9dcf2;padding:26px 0 90px;font-size:14px;text-align:center}
+footer a{color:#fff}
+/* assistant */
+#as-fab{position:fixed;right:16px;bottom:16px;z-index:50;background:var(--terra);color:#fff;border:0;border-radius:999px;padding:14px 20px;font:700 15px 'Mulish';box-shadow:0 8px 24px rgba(11,42,79,.35);cursor:pointer}
+#as-fab.hide{display:none}
+#as-panel{position:fixed;z-index:60;right:0;bottom:0;left:0;height:min(78vh,560px);background:var(--white);border-radius:20px 20px 0 0;box-shadow:0 -10px 40px rgba(11,42,79,.3);display:none;flex-direction:column;overflow:hidden}
+#as-panel.on{display:flex}
+@media(min-width:560px){#as-panel{left:auto;right:20px;bottom:20px;width:380px;border-radius:20px}}
+.as-h{background:var(--ink);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+.as-h b{font:600 20px 'Cormorant Garamond',serif}
+.as-h small{display:block;font-size:11px;color:#9fc0e6}
+#as-x{background:none;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1}
+#as-log{flex:1;overflow-y:auto;padding:14px;background:var(--sand);display:flex;flex-direction:column;gap:8px}
+.as-m{max-width:86%;padding:10px 13px;border-radius:16px;font-size:14.5px;line-height:1.45}
+.as-b{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.as-u{background:var(--navy);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+#as-chips{display:flex;gap:6px;overflow-x:auto;padding:8px 12px;background:var(--sand);border-top:1px solid var(--line);white-space:nowrap}
+#as-chips button{flex:none;background:#fff;border:1px solid var(--navy);color:var(--navy);border-radius:999px;padding:7px 12px;font:700 13px 'Mulish';cursor:pointer}
+#as-form{display:flex;gap:8px;padding:10px 12px;background:#fff;border-top:1px solid var(--line)}
+#as-in{flex:1;min-width:0;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font:16px 'Mulish'}
+#as-form button{background:var(--terra);color:#fff;border:0;border-radius:999px;padding:0 16px;font:700 14px 'Mulish';cursor:pointer}
+</style>
+</head>
+<body>
+<header><div class="hd">
+<a href="#top"><img src="img/omega-travel-vancouver-logo.png" alt="Omega Travel" width="215" height="66"></a>
+<nav><a href="#tours">Signature Tours</a><a href="#custom">Custom trips</a><a href="#story">Since 1974</a><a href="#faq">FAQ</a><a href="#visit">Visit</a></nav>
+<a class="call" href="tel:+16047387161">(604) 738-7161</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<span class="tag">Kitsilano, Vancouver · since 1974</span>
+<h1>Trips planned by people who <em>know the Mediterranean</em> by heart.</h1>
+<p class="lead">Omega Travel opened in Vancouver's Greek town to get families home to Greece. Today the team plans tailor-made trips and Signature Tours across the Mediterranean and beyond.</p>
+<div class="btns"><button class="btn p" data-ask="Plan my trip">Plan my trip</button><a class="btn s" href="#tours">See Signature Tours</a></div>
+<div class="facts"><div><b>1974</b><span>year Nick Panos opened Omega</span></div><div><b>4</b><span>Signature Tour countries</span></div><div><b>M–F</b><span>9:00 to 17:00 at the office</span></div></div>
+</div>
+<div class="arch" aria-hidden="true"><div class="sun"></div><div class="house"></div><div class="wave"></div><b>Mediterranean &amp; beyond</b></div>
+</div></div>
+
+<section id="tours"><div class="wrap">
+<div class="sec-h"><small>Signature Tours</small><h2>Exclusive tours with our travel partners</h2><p>Pick a tour, read the details, then contact the team to arrange the best possible price for your dates. Trip types: Cruises, Omega Travel Special Groups and The Mediterranean.</p></div>
+<div class="cty">
+<details class="c" open><summary>Greece <span>6 TOURS</span></summary><ul>
+<li>Cretan Adventure<i>7 nights</i></li><li>Aegean Dreams<i>13 nights</i></li><li>Classical Greece<i>itinerary</i></li><li>Eros<i>13 nights</i></li><li>12 Day Peloponnese Self Drive Holiday<i>11 nights</i></li><li>Cycladic Escape<i>15 nights</i></li></ul></details>
+<details class="c"><summary>Turkey <span>4 TOURS</span></summary><ul>
+<li>Istanbul Mini Stay<i>3 nights</i></li><li>Crescent Discovery<i>9 nights</i></li><li>Bodrum Gulet Cruise<i>7 nights</i></li><li>Grand Anatolian<i>13 nights</i></li></ul></details>
+<details class="c"><summary>Croatia <span>4 TOURS</span></summary><ul>
+<li>Croatia Explorer<i>7 nights</i></li><li>Coastal Sunshine<i>8 nights</i></li><li>Dubrovnik Mini Stay<i>4 nights</i></li><li>Southern Dalmatia Island Hopping<i>10 days</i></li></ul></details>
+<details class="c"><summary>Italy <span>3 TOURS</span></summary><ul>
+<li>Amazing Italy<i>9 nights</i></li><li>Italian Art Capitals<i>9 nights</i></li><li>Tuscan Discovery<i>14 nights</i></li></ul></details>
+</div>
+<p class="note">Dates and pricing come from an agent. <a href="#" data-ask="Plan my trip">Ask about a tour</a></p>
+</div></section>
+
+<section id="custom" class="band"><div class="wrap">
+<div class="sec-h"><small style="color:#ffd36b">Personal travel planning</small><h2>You don't have to pick from the website</h2><p>The team designs and books your whole vacation around your interests and budget. Honeymoons, culture, adventure or family holidays, anywhere in the world.</p></div>
+<div class="steps">
+<div><h3>Consult an expert</h3><p>You're matched with an authority on your destination from a team of widely published travel writers.</p></div>
+<div><h3>Get a custom plan</h3><p>They map out your trip with insider tips on where to go, what to do, how to get around and where to stay.</p></div>
+<div><h3>Book it</h3><p>The in-house specialists book hotels and activities on your itinerary at the best available rates.</p></div>
+</div>
+<div class="occ"><button data-ask="Honeymoon">Honeymoon</button><button data-ask="Family trip">Family</button><button data-ask="Culture trip">Culture</button><button data-ask="Adventure trip">Adventure</button><button data-ask="Travel insurance">Travel insurance</button></div>
+</div></section>
+
+<section id="story"><div class="wrap"><div class="story">
+<div class="year">1974</div>
+<div>
+<div class="sec-h" style="margin-bottom:12px"><small>Our story</small><h2>From Greek town to Western Canada's expert travel agency</h2></div>
+<p>In September 1974 Nick Panos opened Omega Travel in the heart of Greek town in Kitsilano, to help members of the Hellenic community of British Columbia travel to Greece and spend their holidays with family.</p>
+<p>Over four decades it grew into one of Western Canada's leading expert travel agencies. The Mediterranean still holds the biggest place in the team's hearts: "we're from there, so we're a little biased."</p>
+<div class="trust"><span>Virtuoso</span><span>IATA</span><span>ACTA</span><span>Member of CWT (travel insurance)</span><span>BBB</span></div>
+</div></div></div></section>
+
+<section id="more" style="padding-top:0"><div class="wrap">
+<div class="sec-h"><small>More from Omega</small><h2>Presentations, flights and groups</h2><p>Beyond tours and custom trips, the Omega site also covers these. Ask the team for today's details.</p></div>
+<div class="more">
+<article><h3>Omega Presents</h3><p>Travel presentations hosted by Omega, for example Europe Cruises, Best Hotels in Italy and All About Holland. Sign up on the site and ask which are coming up.</p><button class="btn s" data-ask="Presentations">Ask about presentations</button></article>
+<article><h3>Airfares &amp; offers</h3><p>The site lists airfares, current offers and weekly specials. Fares move quickly, so an agent can check what is available for your route and dates.</p><button class="btn s" data-ask="Flights and deals">Ask about flights</button></article>
+<article><h3>Group bookings</h3><p>Group bookings are marked as coming soon, with a form to register your interest. Omega Travel Special Groups is also a Signature Tour category.</p><button class="btn s" data-ask="Group bookings">Ask about groups</button></article>
+<article><h3>Travel protection</h3><p>Omega recommends you think about travel insurance before you set out, even within Canada, and is specially licensed in all types of travel insurance.</p><button class="btn s" data-ask="Travel insurance">Ask about insurance</button></article>
+<article><h3>Visas &amp; passports</h3><p>Resource pages cover visas and passports, immigration, the ETA for visitors to Canada and the CDC. The team can point you to the right one.</p><button class="btn s" data-ask="Passport and visas">Ask about documents</button></article>
+<article><h3>Omega Insiders</h3><p>Join the Insiders list to get first dibs on travel promotions and offers from the team in Kitsilano.</p><button class="btn s" data-ask="Newsletter">Ask about the newsletter</button></article>
+</div></div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap faq">
+<div class="sec-h"><small>Good to know</small><h2>Quick answers</h2></div>
+<details><summary>Do I need travel insurance?</summary><p>The team always recommends it. Medical issues, family health problems, weather delays and lost baggage can happen to anyone, and an agent can recommend a policy for your situation.</p></details>
+<details><summary>How early should I arrive at the airport?</summary><p>At least two hours before domestic flights and three hours before international flights. Reconfirm your flight time 24 hours before departure.</p></details>
+<details><summary>Do I have to choose from the trips on the site?</summary><p>No. Omega specialises in personalised, one-of-a-kind vacations built around your needs, interests and budget.</p></details>
+<details><summary>Can I book a trip that isn't listed?</summary><p>Yes. Share where you want to go and when, and an expert on that destination designs the plan; the in-house team then books hotels and activities.</p></details>
+<details><summary>Who will plan my trip?</summary><p>You are matched with an authority on your destination from the Omega team. Names and profiles are on the Your Agents page of the Omega site.</p></details>
+<details><summary>Will I need vaccinations?</summary><p>Contact the office or your doctor to find out which are required. If you take medication or have an illness, make sure you are covered.</p></details>
+</div></section>
+
+<section id="visit" style="padding-top:0"><div class="wrap visit">
+<div class="card"><h3>Visit the office</h3><p>3230 West Broadway<br>Vancouver, BC V6K 2H4</p><p><a href="tel:+16047387161"><b>(604) 738-7161</b></a><br><a href="mailto:info@omega-travel.com">info@omega-travel.com</a></p><p style="margin-top:10px"><button class="btn p" data-ask="Plan my trip">Request a callback</button></p></div>
+<div class="card"><h3>Opening hours</h3><table><tr><td>Monday to Friday</td><td>09:00 to 17:00</td></tr><tr><td>Saturday</td><td>Closed</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table><p style="font-size:13px;color:#4a5f7a;margin-top:10px">Check the map listing for updated hours.</p></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="as-fab" type="button">Ask Omega</button>
+<div id="as-panel" role="dialog" aria-label="Omega Travel assistant">
+<div class="as-h"><div><b>Omega Travel assistant</b><small>Answers from this site · the team confirms details</small></div><button id="as-x" type="button" aria-label="Close">×</button></div>
+<div id="as-log"></div><div id="as-chips"></div>
+<form id="as-form"><input id="as-in" autocomplete="off" placeholder="Ask about tours, hours, insurance…"><button>Send</button></form>
+</div>
+<script>
+/* client-side assistant engine: KB match + booking flow. cfg: {name, greet, fallback, kb:[{k:[],a:""}], chips:[], flow:{trigger:[], steps:[{key,q,chips,opt}], done:""}, human:""} */
+function createAssistant(cfg){
+  function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();}
+  function stem(w){return w.length>4?w.replace(/(ing|ed|es|s)$/,''):w.replace(/s$/,'');}
+  function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;
+    for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+  var STOP={the:1,a:1,an:1,of:1,to:1,do:1,you:1,your:1,is:1,are:1,i:1,we:1,can:1,and:1,or:1,for:1,in:1,on:1,at:1,my:1,me:1,it:1,what:1,how:1,there:1,have:1,with:1,about:1,does:1,much:0};
+  function toks(s){return norm(s).split(' ').filter(function(w){return w&&!STOP[w];}).map(stem);}
+  function tokMatch(q,k){ if(q===k)return 1; if(k.length>=5&&q.length>=5){var l=lev(q,k);if(l<=(k.length>=8?2:1))return 0.8;} return 0; }
+  function score(qn,qt,entry){
+    var best=0;
+    entry.k.forEach(function(kw){
+      var kn=norm(kw); if(!kn)return;
+      if((' '+qn+' ').indexOf(' '+kn+' ')>=0){best+=kn.indexOf(' ')>0?3+2*kn.split(' ').length:(kn.length>5?4:3);return;}
+      var kt=toks(kw); if(!kt.length)return;
+      var hit=0; kt.forEach(function(t){var m=0;qt.forEach(function(q){m=Math.max(m,tokMatch(q,t));});hit+=m;});
+      if(hit>=kt.length*0.8) best+=kt.length>1?3.2:2.6; else if(kt.length>1&&hit>=kt.length-0.5&&hit>=1.8) best+=1.5;
+    });
+    return best;
+  }
+  function answer(q){
+    var qn=norm(q),qt=toks(q),top=null,ts=0;
+    cfg.kb.forEach(function(e){var s=score(qn,qt,e);if(s>ts){ts=s;top=e;}});
+    return ts>=2.5?top:null;
+  }
+  function wantsFlow(q){var qn=norm(q);return (cfg.flow.trigger||[]).some(function(t){return (' '+qn+' ').indexOf(' '+norm(t)+' ')>=0;});}
+  var st={step:-1,data:{}};
+  function reply(q){
+    var qn=norm(q);
+    if(st.step>=0){
+      if(/^(cancel|stop|exit|quit|never mind|nevermind|no thanks)$/.test(qn)){st={step:-1,data:{}};return {t:"No problem, I cancelled that. Ask me anything else.",chips:cfg.chips};}
+      var s=cfg.flow.steps[st.step];
+      if(!s.opt&&!q.trim())return {t:s.q,chips:s.chips};
+      if(s.check&&!s.check(q)) return {t:s.err||s.q,chips:s.chips};
+      st.data[s.key]=q.trim(); st.step++;
+      if(st.step>=cfg.flow.steps.length){var d=st.data;st={step:-1,data:{}};return {t:cfg.flow.done(d),chips:cfg.chips,done:d};}
+      var n=cfg.flow.steps[st.step];return {t:n.q,chips:n.chips};
+    }
+    if(wantsFlow(q)){st={step:0,data:{}};return {t:cfg.flow.intro+"<br><br>"+cfg.flow.steps[0].q,chips:cfg.flow.steps[0].chips};}
+    var e=answer(q);
+    if(e)return {t:e.a,chips:e.chips||cfg.chips};
+    if(/^(hi|hello|hey|hiya|good (morning|afternoon|evening)|thanks|thank you|ok|okay)$/.test(qn))return {t:cfg.greet,chips:cfg.chips};
+    return {t:cfg.fallback,chips:cfg.chips};
+  }
+  function reset(){st={step:-1,data:{}};}
+  return {reply:reply,answer:answer,reset:reset,cfg:cfg};
+}
+function mountAssistant(A){
+  var $=function(i){return document.getElementById(i);};
+  var fab=$('as-fab'),panel=$('as-panel'),log=$('as-log'),form=$('as-form'),inp=$('as-in'),chips=$('as-chips');
+  function add(cls,html){var d=document.createElement('div');d.className='as-m '+cls;d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function setChips(list){chips.innerHTML='';(list||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c);};chips.appendChild(b);});}
+  function esc(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function send(t){t=t.trim();if(!t)return;add('as-u',esc(t));var r=A.reply(t);setTimeout(function(){add('as-b',r.t);setChips(r.chips);},260);inp.value='';}
+  var opened=false;
+  function open(){panel.classList.add('on');fab.classList.add('hide');if(!opened){opened=true;add('as-b',A.cfg.greet);setChips(A.cfg.chips);}setTimeout(function(){inp.focus({preventScroll:true});},50);}
+  fab.onclick=open;$('as-x').onclick=function(){panel.classList.remove('on');fab.classList.remove('hide');};
+  form.onsubmit=function(e){e.preventDefault();send(inp.value);};
+  document.querySelectorAll('[data-ask]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();open();send(el.getAttribute('data-ask'));});});
+}
+if(typeof module!=='undefined')module.exports={createAssistant:createAssistant};
+
+var CFG={
+greet:"Hi, I'm the Omega Travel assistant. Ask me about our Signature Tours, custom trip planning, the office or travel insurance, or tap Plan my trip.",
+fallback:"I don't have that detail from the Omega site, so I won't guess. The team can confirm it: (604) 738-7161 or info@omega-travel.com, Mon to Fri 9:00 to 17:00. Or tap Plan my trip and I'll pass your details on.",
+chips:["Plan my trip","Signature Tours","Opening hours","Travel insurance","Where are you?"],
+kb:[
+{k:["hours","open","opening","closed","weekend","saturday","sunday","what time","when are you"],a:"Office hours are 09:00 to 17:00, Monday to Friday. Closed Saturday and Sunday. The site notes that updated hours are on the map listing, so check that before a holiday visit.",chips:["Where are you?","Plan my trip","Call the office"]},
+{k:["where","address","location","find you","directions","broadway","kitsilano","visit","office","come in","parking"],a:"Omega Travel is at 3230 West Broadway, Vancouver, BC V6K 2H4, in Kitsilano.",chips:["Opening hours","Call the office","Plan my trip"]},
+{k:["phone","call the office","call","telephone","number","contact","email","reach","speak to","talk to"],a:"Phone (604) 738-7161, email info@omega-travel.com. Prefer to hand over your details first? Tap Plan my trip.",chips:["Plan my trip","Opening hours"]},
+{k:["signature tours","signature tour","what tours","tour list","package","packages","escorted","group tour","exclusive tours","itineraries"],a:"Signature Tours are exclusive tours Omega puts together with its travel partners. Pick a tour, view the details, then contact the team to arrange it. Trip types: Cruises, Omega Travel Special Groups and The Mediterranean. Countries listed: Greece, Italy, Croatia and Turkey.",chips:["Greece tours","Turkey tours","Croatia tours","Italy tours","Plan my trip"]},
+{k:["greece","greek","crete","cretan","aegean","cycladic","peloponnese","classical greece","eros","athens","santorini","islands greece"],a:"Greece Signature Tours on the site: Cretan Adventure (7 nights), Aegean Dreams (13 nights), Classical Greece, Eros (13 nights), 12 Day Peloponnese Self Drive Holiday (11 nights) and Cycladic Escape (15 nights). Dates and pricing come from the team.",chips:["Italy tours","Turkey tours","Plan my trip"]},
+{k:["turkey","turkish","istanbul","bodrum","gulet","crescent discovery","grand anatolian","anatolia","mini stay"],a:"Turkey tours listed: Istanbul Mini Stay (3 nights), Crescent Discovery (9 nights), Bodrum Gulet Cruise (7 nights) and Grand Anatolian (13 nights). Contact an agent to choose dates and purchase.",chips:["Greece tours","Croatia tours","Plan my trip"]},
+{k:["croatia","croatian","dubrovnik","dalmatia","dalmatian","island hopping","coastal sunshine","croatia explorer","split"],a:"Croatia tours listed: Croatia Explorer (7 nights), Coastal Sunshine (8 nights), Dubrovnik Mini Stay (4 nights) and Southern Dalmatia Island Hopping (10 days).",chips:["Turkey tours","Italy tours","Plan my trip"]},
+{k:["italy","italian","tuscany","tuscan","amazing italy","art capitals","rome","florence","venice","best hotels in italy"],a:"Italy tours listed: Amazing Italy (9 nights), Italian Art Capitals (9 nights) and Tuscan Discovery (14 nights). Omega also ran a presentation on the best hotels in Italy.",chips:["Greece tours","Presentations","Plan my trip"]},
+{k:["cruise","cruises","cruising","europe cruises","ship","sailing","gulet cruise"],a:"Cruises are one of the Signature Tour trip types, and Omega has hosted an 'Europe Cruises' presentation. The team can match a cruise to your dates and tell you what is open to book.",chips:["Plan my trip","Presentations","Travel insurance"]},
+{k:["custom","customize","customise","bespoke","tailor","tailor made","personal","personalized","personalised","personal travel planning","design my trip","my own trip","not on the website","pick from"],a:"You don't have to pick from the vacations on the site. Omega designs personalised trips around your needs, interests and budget. The process: consult an expert on your destination, get a customised plan, then the in-house team books hotels and activities.",chips:["Plan my trip","Honeymoon","Family trip","Adventure trip"]},
+{k:["honeymoon","romantic","wedding","anniversary","couple"],a:"Honeymoons are a speciality: the site says Omega has arranged thousands of them since it opened. Tell me when and where you're dreaming of and I'll pass it to the team.",chips:["Plan my trip","Custom trip"]},
+{k:["family","kids","children","family holiday","family vacation"],a:"Omega plans family holidays for all ages, so everyone gets the trip they hoped for. Share who is travelling and the team will take it from there.",chips:["Plan my trip","Travel insurance"]},
+{k:["adventure","hiking","himalaya","safari","africa","trekking"],a:"Adventure trips are on the list, from hiking in the Himalayas to safaris in Africa. Say where your spirit is taking you and tap Plan my trip.",chips:["Plan my trip","Culture trip"]},
+{k:["culture","cultural","art","theatre","theater","london","museum"],a:"Culture trips: art in Italy, theatre in London, boating in Greece, and more. The team shapes the itinerary around what you love.",chips:["Plan my trip","Italy tours"]},
+{k:["insurance","insured","travel protection","medical coverage","cancellation","trip cancellation","trip interruption","baggage","cwt","protect"],a:"Omega recommends you consider travel insurance before every trip, even within Canada because of out-of-province medical costs. The site says Omega is a member of CWT and specially licensed in all types of travel insurance. An agent can explain the options and recommend a policy for you.",chips:["Call the office","Plan my trip"]},
+{k:["flight","flights","airfare","airfares","air fare","fares","air ticket","plane","book a flight","deal","deals","hot deals","current offers","offers","specials","sale"],a:"There are pages for Airfares and Current Offers on the site, and weekly specials. Fares change fast, so ask the team for today's options. Tap Plan my trip with your route and dates.",chips:["Plan my trip","Call the office"]},
+{k:["presentation","presentations","omega presents","event","events","seminar","webinar","talk"],a:"Omega Presents hosts travel presentations, for example Europe Cruises, Best Hotels in Italy and All About Holland. Sign-up and the current calendar are on the site. Check with the team for upcoming dates.",chips:["Plan my trip","Call the office"]},
+{k:["airport","arrive","arrival","how early","check in","checkin","what time airport","get to the airport"],a:"The Omega FAQ says to arrive at least two hours before domestic flights and three hours before international flights, and to reconfirm your flight time 24 hours before departure.",chips:["Travel insurance","Passport and visas"]},
+{k:["passport","visa","visas","documents","travel documents","eta","immigration","entry requirements"],a:"The site has a Visas & Passports resource page, plus links on immigration and the ETA for visitors to Canada. Requirements depend on your passport and destination, so confirm them with the team.",chips:["Call the office","Plan my trip"]},
+{k:["vaccine","vaccination","vaccinations","shots","medication","illness","medical","health","doctor","sick"],a:"I can't give medical advice. The Omega FAQ says to contact the team or your doctor about vaccinations, and to make sure you are covered if you take medication or have an illness.",chips:["Travel insurance","Call the office"]},
+{k:["history","founder","nick panos","1974","story","about","who are you","about omega","founded","hellenic","greek town","how long"],a:"Nick Panos opened Omega Travel in September 1974 in Greek town in Kitsilano, to help members of BC's Hellenic community travel to Greece to be with family. Over 40 years it grew into one of Western Canada's leading expert travel agencies, and the Mediterranean is still closest to its heart.",chips:["Signature Tours","Plan my trip"]},
+{k:["group","groups","group booking","group bookings","special groups","large group"],a:"Group bookings are marked 'coming soon' on the site, with a form to register your interest. Omega Travel Special Groups is also a Signature Tour category. The team can tell you what is available now.",chips:["Plan my trip","Call the office"]},
+{k:["newsletter","insiders","omega insiders","subscribe","promotions","first dibs"],a:"Join the Omega Insiders list on the site to get first dibs on travel promotions and offers.",chips:["Current offers","Plan my trip"]},
+{k:["price","prices","cost","how much","quote","budget","expensive","cheap","pay","payment","deposit"],a:"I don't have prices or payment terms from the site, and I won't guess. Pricing for a tour or custom trip comes from an agent, who can work to your budget.",chips:["Plan my trip","Call the office"]},
+{k:["career","careers","job","jobs","work for you","hiring","vacancy"],a:"The site has a Careers page. For current openings, ask the team directly at info@omega-travel.com.",chips:["Call the office"]},
+{k:["agents","travel agents","team","experts","your agents","who will","advisor","advisors","specialist"],a:"Omega's team of travel professionals includes widely published travel writers, and you'll be matched with an expert on your destination. Names are on the Your Agents page of the site.",chips:["Plan my trip","Call the office"]},
+{k:["facebook","instagram","social","follow"],a:"Omega is on Facebook (OmegaTravelService) and Instagram (@omegatravelyvr).",chips:["Plan my trip"]},
+{k:["accredited","licensed","licence","license","bbb","better business bureau","consumer protection","iata","acta","virtuoso","member","trusted","safe"],a:"The site links to Better Business Bureau and Consumer Protection BC, and shows IATA, ACTA and Virtuoso memberships. The team can answer anything specific about protections on a booking.",chips:["Call the office","Plan my trip"]}
+],
+flow:{
+ trigger:["plan my trip","plan a trip","book","booking","book a trip","enquire","enquiry","inquire","inquiry","request a quote","get a quote","reserve","start planning","consultation","consult","talk to an agent","speak with an agent"],
+ intro:"Great, a few quick questions and I'll pass your request to an agent. Nothing is booked or charged. Type cancel any time to stop.",
+ steps:[
+  {key:"type",q:"What kind of trip are you after?",chips:["Honeymoon","Family","Culture","Adventure","Cruise","Signature Tour","Flights only"]},
+  {key:"dest",q:"Where would you like to go? A country or region is fine, or 'not sure yet'.",chips:["Greece","Italy","Croatia","Turkey","Not sure yet"]},
+  {key:"when",q:"Roughly when, and for how many nights?",chips:["Next spring","Summer 2027","Flexible"]},
+  {key:"who",q:"How many people are travelling, and any kids?",chips:["2 adults","Family of 4","Group"]},
+  {key:"name",q:"What's your name?",check:function(s){return s.trim().length>=2;},err:"Please type your name."},
+  {key:"contact",q:"Best email or phone for an agent to reach you?",check:function(s){return /@.+\..+|\d{7,}/.test(s.replace(/[\s()-]/g,''));},err:"Please type an email address or a phone number with at least 7 digits."}
+ ],
+ done:function(d){return "Thanks "+d.name+". Your request is ready for the Omega team: "+d.type+" · "+d.dest+" · "+d.when+" · "+d.who+" · "+d.contact+".<br><br><b>Sent to the team.</b> (This is a demo, so nothing was really sent.) An agent confirms the details and pricing; the office is open Mon to Fri 9:00 to 17:00 on (604) 738-7161.";}
+}
+};
+
+mountAssistant(createAssistant(CFG));
+</script>
+</body>
+</html>

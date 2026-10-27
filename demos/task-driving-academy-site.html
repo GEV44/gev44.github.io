@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TASK Driving Academy | Vancouver</title>
+<meta name="description" content="One-on-one driving lessons and ICBC road-test preparation in Vancouver, Burnaby, Richmond and South Delta. Demo page for TASK Driving Academy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--o:#f15e22;--od:#c94711;--c:#343433;--cl:#555554;--bg:#fffaf6;--card:#fff;--line:#eadfd6;--soft:#fde9dc;
+--gw-acc:#f15e22;--gw-ink:#fff;--gw-acc2:#343433;--gw-bub:#f4ece6;--gw-font:"Source Sans 3",system-ui,sans-serif;--gw-pr:6px;--gw-r:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Source Sans 3",system-ui,sans-serif;font-size:17px;background:var(--bg);color:var(--c);line-height:1.55;-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto}
+h1,h2,h3{font-family:Outfit,system-ui,sans-serif;margin:0;line-height:1.12;font-weight:700;letter-spacing:-.01em}
+a{color:var(--od)}
+.wrap{width:min(1100px,100% - 32px);margin-inline:auto}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+header .wrap{display:flex;align-items:center;gap:12px;min-height:64px}
+header img{height:46px;width:auto;display:block}
+nav{display:none;margin-left:auto;gap:20px;font-weight:600;font-size:15px}
+nav a{text-decoration:none;color:var(--c)}nav a:hover{color:var(--o)}
+.hcall{margin-left:auto;background:var(--o);color:#fff;text-decoration:none;font-weight:700;padding:10px 15px;border-radius:6px;font-size:15px;white-space:nowrap}
+@media(min-width:860px){nav{display:flex}.hcall{margin-left:0}}
+.hero{position:relative;overflow:hidden;padding:30px 0 40px;background:linear-gradient(180deg,#fff,var(--bg))}
+.hero:before{content:"";position:absolute;right:-90px;top:-40px;width:340px;height:560px;background:var(--o);transform:skewX(-18deg);opacity:.14}
+.hero .wrap{position:relative;display:grid;gap:26px}
+.tag{display:inline-block;background:var(--soft);color:var(--od);font-weight:700;font-size:13px;padding:5px 11px;border-radius:99px;margin-bottom:12px}
+.hero h1{font-size:clamp(34px,8.5vw,60px)}
+.hero h1 b{color:var(--o)}
+.hero p{max-width:32em;color:var(--cl);margin:14px 0 20px;font-size:18px}
+.btn{display:inline-block;border:2px solid var(--o);background:var(--o);color:#fff;font-weight:700;padding:13px 20px;border-radius:6px;text-decoration:none;font-family:inherit;font-size:16px;cursor:pointer}
+.btn:hover{background:var(--od);border-color:var(--od)}
+.btn.out{background:transparent;color:var(--c);border-color:var(--c)}.btn.out:hover{background:var(--c);color:#fff}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.pick{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;box-shadow:0 10px 30px rgba(52,52,51,.08)}
+.pick h2{font-size:21px;margin-bottom:4px}
+.pick p{font-size:15px;margin:0 0 12px;color:var(--cl)}
+.opts{display:grid;gap:8px}
+.opts button{text-align:left;background:#fff;border:2px solid var(--line);border-radius:8px;padding:11px 13px;font:inherit;font-weight:600;color:var(--c);cursor:pointer}
+.opts button small{display:block;font-weight:400;color:var(--cl)}
+.opts button[aria-pressed=true]{border-color:var(--o);background:var(--soft)}
+.result{margin-top:12px;font-size:15px;min-height:3.2em;border-top:1px dashed var(--line);padding-top:10px}
+.result b{color:var(--od)}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1.2fr 1fr;align-items:center}}
+section{padding:46px 0}
+h2.t{font-size:clamp(27px,6vw,40px);margin-bottom:8px}
+.sub{max-width:38em;color:var(--cl);margin:0 0 24px}
+.feat{display:grid;gap:12px}
+.feat article{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;border-top:4px solid var(--o)}
+.feat h3{font-size:19px;margin-bottom:6px}.feat p{margin:0;color:var(--cl);font-size:16px}
+@media(min-width:760px){.feat{grid-template-columns:repeat(3,1fr)}}
+.band{background:var(--c);color:#fff}
+.band h2.t{color:#fff}.band .sub{color:#d3d3d1}
+.scroller{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;margin:0 -2px;-webkit-overflow-scrolling:touch}
+.plan{flex:0 0 78%;max-width:290px;scroll-snap-align:start;background:#fff;color:var(--c);border-radius:12px;padding:18px 16px;display:flex;flex-direction:column;border:3px solid transparent}
+.plan.hl{border-color:var(--o);box-shadow:0 0 0 4px rgba(241,94,34,.3)}
+.plan h3{font-size:19px}.plan .pr{font-family:Outfit;font-weight:800;font-size:32px;color:var(--o);margin:6px 0 2px}
+.plan .pr small{font-size:14px;font-weight:600;color:var(--cl)}
+.plan .save{display:inline-block;background:var(--soft);color:var(--od);font-weight:700;font-size:13px;padding:2px 8px;border-radius:99px;align-self:flex-start;margin-bottom:8px}
+.plan ul{margin:8px 0 14px;padding-left:18px;font-size:15px;color:var(--cl)}
+.plan .go{margin-top:auto;text-align:center}
+.note{font-size:14px;color:#c9c9c7;margin:6px 0 0}
+.grid2{display:grid;gap:14px}
+@media(min-width:760px){.grid2{grid-template-columns:1fr 1fr}.plan{flex-basis:260px}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px}
+.panel h3{font-size:22px;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0;padding:0;list-style:none}
+.chips li{background:var(--soft);border-radius:99px;padding:5px 12px;font-weight:600;font-size:15px}
+.chips.dark li{background:var(--c);color:#fff}
+.rep{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px}
+.rep li{display:flex;gap:10px;align-items:flex-start}
+.rep li:before{content:"";flex:none;width:12px;height:12px;margin-top:7px;background:var(--o);transform:skewX(-18deg)}
+dl.pol{margin:0;display:grid;gap:12px}
+dl.pol div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+dl.pol dt{font-family:Outfit;font-weight:700;color:var(--od);margin-bottom:2px}
+dl.pol dd{margin:0;font-size:16px}
+@media(min-width:760px){dl.pol{grid-template-columns:1fr 1fr}}
+.contact{background:var(--o);color:#fff;text-align:center;padding:40px 0}
+.contact h2{font-size:clamp(28px,6.5vw,44px)}
+.contact p{margin:10px auto 18px;max-width:30em}
+.contact .btn{background:#fff;color:var(--c);border-color:#fff}.contact .btn.out{background:transparent;color:#fff;border-color:#fff}
+.contact a:not(.btn){color:#fff}
+footer{background:var(--c);color:#cfcfcd;padding:24px 0 90px;font-size:14px}
+footer a{color:#fff}footer p{margin:5px 0}
+footer .demo{color:#a3a3a1;font-size:13px;margin-top:10px;padding-top:10px;border-top:1px solid #4b4b4a}
+@media(prefers-reduced-motion:no-preference){.plan,.btn{transition:transform .15s,background .15s}.plan:hover{transform:translateY(-3px)}}
+.gw{position:fixed;right:14px;bottom:14px;z-index:99;font-family:var(--gw-font,inherit)}
+.gw-btn{width:56px;height:56px;border-radius:var(--gw-r,50%);border:0;background:var(--gw-acc);color:var(--gw-ink);box-shadow:0 6px 20px rgba(0,0,0,.28);cursor:pointer;display:grid;place-items:center}
+.gw-btn:focus-visible,.gw-chips button:focus-visible,.gw-x:focus-visible{outline:3px solid var(--gw-acc2,#fff);outline-offset:2px}
+.gw-panel{position:absolute;right:0;bottom:68px;width:min(360px,calc(100vw - 28px));height:min(500px,calc(100vh - 110px));background:var(--gw-bg,#fff);color:var(--gw-text,#111);border-radius:var(--gw-pr,16px);box-shadow:0 14px 44px rgba(0,0,0,.34);display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+.gw-panel[hidden]{display:none}
+.gw-panel header{background:var(--gw-acc);color:var(--gw-ink);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-size:15px}
+.gw-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+.gw-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.45}
+.gw-m{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-line;overflow-wrap:anywhere}
+.gw-m.b{background:var(--gw-bub,#eef0f2);align-self:flex-start;border-bottom-left-radius:4px}
+.gw-m.u{background:var(--gw-acc);color:var(--gw-ink);align-self:flex-end;border-bottom-right-radius:4px}
+.gw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:4px 12px 8px;max-height:112px;overflow-y:auto}
+.gw-chips button{border:1.5px solid var(--gw-acc);background:transparent;color:var(--gw-text,#111);border-radius:999px;padding:6px 11px;font-size:13px;cursor:pointer;font-family:inherit}
+.gw-chips button:hover{background:var(--gw-acc);color:var(--gw-ink)}
+.gw-form{display:flex;gap:6px;padding:8px 10px;border-top:1px solid rgba(0,0,0,.1)}
+.gw-form input{flex:1;min-width:0;border:1.5px solid #c9ced3;border-radius:10px;padding:10px;font-size:16px;font-family:inherit}
+.gw-form button{border:0;border-radius:10px;background:var(--gw-acc);color:var(--gw-ink);padding:0 14px;font-size:16px;cursor:pointer}
+.gw-note{padding:0 12px 8px;color:#6b7178;font-size:11.5px}
+@media (prefers-reduced-motion:no-preference){.gw-m{animation:gwin .18s ease-out}@keyframes gwin{from{opacity:0;transform:translateY(4px)}}}
+
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <a href="#top" aria-label="TASK Driving Academy"><img src="img/task-driving-academy-logo.png" alt="TASK Driving Academy" width="112" height="46"></a>
+ <nav aria-label="Main"><a href="#fit">Find your lessons</a><a href="#pricing">Pricing</a><a href="#roadtest">Road test</a><a href="#areas">Areas</a><a href="#policies">Policies</a></nav>
+ <a class="hcall" href="tel:+17789577447">778-957-7447</a>
+</div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+ <div>
+  <span class="tag">Licensed B.C. driving school &middot; Class 5 and Class 7</span>
+  <h1>Patient, one-on-one lessons that get you <b>road-test ready</b>.</h1>
+  <p>For complete beginners, nervous drivers and anyone preparing for an ICBC road test in Vancouver, Burnaby, Richmond and South Delta. Free pick-up and drop-off, and a progress report the same day.</p>
+  <div class="row"><button class="btn" onclick="window.__askBot('book a driving lesson')">Book a driving lesson</button><a class="btn out" href="#pricing">See pricing</a></div>
+ </div>
+ <div class="pick" id="fit">
+  <h2>Where are you right now?</h2>
+  <p>Tap one and see which TASK option fits.</p>
+  <div class="opts" role="group" aria-label="Your experience">
+   <button type="button" data-k="a" aria-pressed="false">I have never driven<small>Starting from zero</small></button>
+   <button type="button" data-k="b" aria-pressed="false">I get nervous behind the wheel<small>Need a calm, slow pace</small></button>
+   <button type="button" data-k="c" aria-pressed="false">I have some practice<small>Want to polish skills</small></button>
+   <button type="button" data-k="d" aria-pressed="false">My road test is coming<small>Class 7 or Class 5</small></button>
+  </div>
+  <div class="result" id="res" aria-live="polite">Choose an option above.</div>
+ </div>
+</div></div>
+
+<section><div class="wrap">
+ <h2 class="t">Why students pick TASK</h2>
+ <p class="sub">Every lesson is built around your experience level and the areas you need to improve.</p>
+ <div class="feat">
+  <article><h3>Patient instruction</h3><p>Clear, calm teaching for nervous drivers and learners who want to build confidence at a comfortable pace.</p></article>
+  <article><h3>Same-day progress report</h3><p>After each lesson you get a personalized report on strengths, areas to improve and what to practise next.</p></article>
+  <article><h3>Mock road tests</h3><p>A test-style drive with feedback on observation, lane changes, intersections, speed control and parking.</p></article>
+ </div>
+</div></section>
+
+<section class="band" id="pricing"><div class="wrap">
+ <h2 class="t">Lesson packages and pricing</h2>
+ <p class="sub">Class 5 and Class 7 students. Swipe to see all options. Prices are as published on taskdrivingacademy.com and are subject to 5% GST.</p>
+ <div class="scroller" tabindex="0" aria-label="Packages">
+  <article class="plan" data-p="d"><h3>Road Test Package</h3><div class="pr"><small>from</small> $195*</div><ul><li>60-minute warm-up lesson</li><li>Vehicle for the road test</li><li>Free pick-up and drop-off in road-test areas</li></ul><button class="btn go" onclick="window.__askBot('road test package')">Ask about it</button></article>
+  <article class="plan" data-p="a"><h3>Beginner Program</h3><span class="save">Save $105</span><div class="pr">$2,940</div><ul><li>30 hours of comprehensive training</li><li>For new and beginner drivers</li><li>Warm-up lesson and road-test vehicle included</li><li>Pick-up, drop-off, progress report</li></ul><button class="btn go" onclick="window.__askBot('beginner program')">Ask about it</button></article>
+  <article class="plan" data-p="c"><h3>Intermediate Program</h3><span class="save">Save $55</span><div class="pr">$2,040</div><ul><li>20 hours of in-depth training</li><li>For drivers with some experience</li><li>Warm-up lesson and road-test vehicle included</li></ul><button class="btn go" onclick="window.__askBot('intermediate program')">Ask about it</button></article>
+  <article class="plan" data-p="e"><h3>Advanced Program</h3><span class="save">Save $30</span><div class="pr">$1,115</div><ul><li>10 hours of training</li><li>For experienced drivers</li><li>Warm-up lesson and road-test vehicle included</li></ul><button class="btn go" onclick="window.__askBot('advanced program')">Ask about it</button></article>
+  <article class="plan"><h3>5x Package</h3><span class="save">Save $15</span><div class="pr">$460</div><ul><li>5 hours of training</li><li>Warm-up lesson and test vehicle not included</li></ul><button class="btn go" onclick="window.__askBot('5 hour package')">Ask about it</button></article>
+  <article class="plan"><h3>10x Package</h3><span class="save">Save $25</span><div class="pr">$925</div><ul><li>10 hours of training</li><li>Warm-up lesson and test vehicle not included</li></ul><button class="btn go" onclick="window.__askBot('10 hour package')">Ask about it</button></article>
+  <article class="plan" data-p="b"><h3>Individual lessons</h3><div class="pr">$95 <small>/ hour</small></div><ul><li>2-for-1: $185 for 2 hours (save $5)</li><li>Pay-as-you-go option</li><li>Free pick-up and drop-off, progress report</li></ul><button class="btn go" onclick="window.__askBot('individual lesson price')">Ask about it</button></article>
+ </div>
+ <p class="note">*Road-test package pricing applies to Vancouver, Richmond and Burnaby. For other test locations, please contact the academy.</p>
+</div></section>
+
+<section id="roadtest"><div class="wrap grid2">
+ <div class="panel">
+  <h3>Not sure you are ready for your ICBC road test?</h3>
+  <p>A mock road test shows your strengths and what to practise before your Class 7 or Class 5 test.</p>
+  <ul class="rep"><li>Test-style conditions, so you know where you stand</li><li>Feedback on observation, lane changes, intersections, speed control, parking and manoeuvres</li><li>A clear list of what to focus on before test day</li></ul>
+ </div>
+ <div class="panel" id="areas">
+  <h3>Where TASK teaches</h3>
+  <p>Lessons across the Lower Mainland, with practice in real ICBC test areas.</p>
+  <ul class="chips"><li>Vancouver</li><li>Burnaby</li><li>Richmond</li><li>South Delta</li><li>Ladner</li><li>Tsawwassen</li></ul>
+  <p style="margin:14px 0 0"><b>Road-test areas</b></p>
+  <ul class="chips dark"><li>Point Grey</li><li>Kingsway</li><li>Burnaby Lougheed</li><li>Burnaby Wayburne</li><li>Richmond</li></ul>
+ </div>
+</div></section>
+
+<section id="policies" style="padding-top:0"><div class="wrap">
+ <h2 class="t">Good to know before your first lesson</h2>
+ <p class="sub">The main points of the academy's published policies. The assistant can answer questions about them too.</p>
+ <dl class="pol">
+  <div><dt>Bring</dt><dd>Your learner's licence to every lesson. For a road test, 2 pieces of valid government ID plus your licence.</dd></div>
+  <div><dt>Lesson length</dt><dd>One hour is 60 minutes with at least 55 minutes behind the wheel, then a debrief from your instructor.</dd></div>
+  <div><dt>Cancelling</dt><dd>48 hours of notice for a lesson, otherwise a $50 fee. Less than 24 hours: the full lesson amount. Road-test bookings made by TASK need 72 hours.</dd></div>
+  <div><dt>The 15-minute window</dt><dd>Instructors may arrive up to 15 minutes early or late, and you still get your full hour.</dd></div>
+  <div><dt>Payment</dt><dd>Fees are paid in advance. A lesson or package is reserved once payment is received in full.</dd></div>
+  <div><dt>Safety</dt><dd>Only the instructor and student in the car, and training vehicles have an in-cabin dashcam.</dd></div>
+ </dl>
+</div></section>
+
+<div class="contact"><div class="wrap">
+ <h2>Ready to start driving?</h2>
+ <p>Call, email or leave a request with the assistant. Lessons run 7 days a week with flexible scheduling.</p>
+ <div class="row" style="justify-content:center"><a class="btn" href="tel:+17789577447">Call 778-957-7447</a><a class="btn out" href="mailto:info@taskdrivingacademy.com">info@taskdrivingacademy.com</a></div>
+</div></div>
+</main>
+<footer><div class="wrap">
+ <p><b style="color:#fff">TASK Driving Academy</b> &middot; Vancouver, Burnaby, Richmond and South Delta, B.C.</p>
+ <p><a href="tel:+17789577447">778-957-7447</a> &middot; <a href="mailto:info@taskdrivingacademy.com">info@taskdrivingacademy.com</a></p>
+ <p>Listed by ICBC as a licensed driving school for Class 5 and Class 7 driver training.</p>
+ <p class="demo">Demo &middot; prepared by Gevorg Hovhannisyan</p>
+</div></footer>
+
+<script>
+(function(){
+ var R={a:["Beginner Program, 30 hours, $2,940","Start from the fundamentals with a warm-up lesson and road-test vehicle included. Individual lessons are also available at $95 per hour."],
+ b:["Nervous driver lessons, $95 per hour","One-on-one, patient instruction at a pace that suits you. The 2-for-1 lesson is $185 for 2 hours."],
+ c:["Intermediate Program, 20 hours, $2,040","For drivers with some experience. Smaller 5x ($460) and 10x ($925) packages exist too."],
+ d:["Road Test Package, from $195","A 60-minute warm-up lesson plus the vehicle for your road test, in Vancouver, Richmond and Burnaby. A mock road test is also available."]};
+ var btns=document.querySelectorAll('.opts button'),res=document.getElementById('res');
+ btns.forEach(function(b){b.addEventListener('click',function(){
+  btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+  var r=R[b.dataset.k];res.innerHTML='';var s=document.createElement('b');s.textContent=r[0];res.appendChild(s);res.appendChild(document.createElement('br'));res.appendChild(document.createTextNode(r[1]));
+  document.querySelectorAll('.plan').forEach(function(p){p.classList.toggle('hl',p.dataset.p===b.dataset.k);});
+ });});
+})();
+</script>
+<script>
+/*CFG_START*/
+var CFG={
+ bi:false,
+ title:"TASK Driving Academy assistant",
+ placeholder:"Ask about lessons, pricing, road tests...",
+ note:"Demo assistant. Answers come from taskdrivingacademy.com. Nothing is sent anywhere.",
+ greeting:"Hi, I am the TASK Driving Academy assistant. I can explain lessons, pricing, road-test options and policies, or start a booking request for the team.",
+ cancel:"Cancel",
+ cancelled:"Okay, request cancelled. What else can I help with?",
+ badTel:"That phone number looks too short. Please include the area code.",
+ chips:["Pricing","Beginner lessons","Road test package","Areas served","Cancellation policy","Book a lesson"],
+ fallback:"I do not have that detail, so the team will confirm it. You can call 778-957-7447 or email info@taskdrivingacademy.com, or I can start a booking request.",
+ flow:{
+  kw:["book","booking","reserve","sign up","signup","register","registration","enroll","schedule a lesson","schedule lesson","start lessons","first lesson","book a lesson","make a booking","start a booking request"],
+  intro:"Glad to help. A few quick questions and your request goes to the team.",
+  steps:[
+   {k:"what",label:"Lessons",q:"What do you need?",opts:["Beginner lessons","Nervous driver lessons","Road-test preparation","Road-test package","Mock road test","Enhanced Road Assessment (ERA)","Refresher lessons"]},
+   {k:"stage",label:"Licence stage",q:"Where are you in the licence process?",opts:["No licence yet","Learner (Class 7L)","Novice (Class 7N)","Full Class 5"]},
+   {k:"area",label:"Area",q:"Which area do you want lessons or the test in?",opts:["Vancouver","Burnaby","Richmond","South Delta / Ladner / Tsawwassen","Somewhere else"]},
+   {k:"when",label:"Preferred days and times",q:"Which days and times suit you best?"},
+   {k:"name",label:"Name",q:"Your name?"},
+   {k:"tel",label:"Phone",q:"Best phone number?",type:"tel"}
+  ],
+  done:"Done. Your request is ready for the TASK Driving Academy team, who will confirm availability with you. This demo does not actually send anything."
+ },
+ kb:[
+  {id:"prices",k:["price","prices","pricing","cost","how much","rates","rate","fee","fees","packages","package","gst","tax","cheap","cheapest","afford","expensive","pricess"],a:"Published prices (plus 5% GST): individual lesson $95 per hour, 2-for-1 $185 for 2 hours. Beginner Program 30 hours $2,940, Intermediate 20 hours $2,040, Advanced 10 hours $1,115. 5x package $460 (5 hours), 10x package $925 (10 hours). Road Test Package from $195.",c:["Individual lessons","Beginner program","Road test package"]},
+  {id:"individual",k:["individual lesson","individual lessons","one lesson","how much is one lesson","price of a lesson","cost of a lesson","lesson price","single lesson","per hour","hourly","one hour","2 for 1","two for one","pay as you go","$95","95","$185","185","pay-as-you-go"],a:"One lesson is $95 for 60 minutes (at least 55 minutes behind the wheel, free pick-up and drop-off, progress report). The 2-for-1 lesson is $185 for 120 minutes, saving $5. Both are pay-as-you-go. The road-test vehicle is not included in single lessons.",c:["Pricing","Book a lesson"]},
+  {id:"beginner",k:["beginner","beginners","beginner program","never driven","never drove","complete beginner","first time","new driver","new to driving","zero experience","30 hours","$2940","2940","learn to drive","start from the beginning"],a:"The Beginner Program is $2,940 for 30 hours of comprehensive training for new and beginner drivers, saving $105. It includes a road-test warm-up lesson and vehicle, pick-up and drop-off, one-on-one lessons and progress reports. You learn step by step, from the fundamentals to more confident independent driving.",c:["Nervous driver","Pricing","Book a lesson"]},
+  {id:"intermediate",k:["intermediate","intermediate program","20 hours","$2040","2040","some experience","some practice"],a:"The Intermediate Program is $2,040 for 20 hours of in-depth training for drivers with some experience (save $55). A warm-up lesson and the vehicle for the road test are included, plus pick-up, drop-off and progress reports.",c:["Pricing","Book a lesson"]},
+  {id:"advanced",k:["advanced","advanced program","experienced driver","experienced drivers","10 hours","ten hours","$1115","1115","10x","10x package","$925","925","5x","5x package","5 hours","five hours","$460","460","small package"],a:"Advanced Program: $1,115 for 10 hours, for experienced drivers (save $30), warm-up lesson and road-test vehicle included. Smaller options: 5x package $460 for 5 hours and 10x package $925 for 10 hours. Those two do not include the warm-up lesson or test vehicle.",c:["Road test package","Pricing"]},
+  {id:"nervous",k:["nervous","anxious","anxiety","scared","afraid","fear","nerves","panic","stress","stressed","worried","confidence","confident","shy","patient"],a:"TASK has dedicated lessons for nervous drivers: patient, clear, one-on-one instruction at a comfortable pace, so you can build skills and confidence. A student's review says the instructor put an anxious beginner at ease while still teaching safe habits.",c:["Beginner lessons","Pricing","Book a lesson"]},
+  {id:"roadtest",k:["road test package","road test","roadtest","icbc road test","test package","class 7 test","class 5 test","novice test","n test","pass my test","pass the test","take my test","$195","195","warm up","warm-up","test vehicle","test car","use your car","road-test"],a:"The Road Test Package starts from $195 (plus GST). It includes a 60-minute warm-up lesson, the vehicle for your road test and free pick-up and drop-off in road-test areas. Pricing applies to Vancouver, Richmond and Burnaby; for other test locations the team will confirm.",c:["Mock road test","Test locations","Book a lesson"]},
+  {id:"mock",k:["mock","mock test","mock road test","practice test","assessment","test style","test-style","ready for test","am i ready","readiness"],a:"A mock road test is a test-style drive with professional feedback on observation, lane changes, intersections, speed control, parking and manoeuvres, so you know what to practise before your Class 7 or Class 5 test.",c:["Road test package","Book a lesson"]},
+  {id:"report",k:["progress report","report card","report","feedback","debrief","dashcam report","after the lesson","parents","parent"],a:"After each lesson the student or parents receive a personalized progress report the same day: strengths, areas for improvement and what to focus on in future practice. You also get a debrief from your instructor at the end of every lesson.",c:["Pricing","Book a lesson"]},
+  {id:"areas",k:["area","areas","where do you teach","where do you serve","serve","serving","vancouver","burnaby","richmond","delta","south delta","ladner","tsawwassen","surrey","coquitlam","north vancouver","location","locations","lower mainland","pick up area","pickup area","service area"],a:"TASK teaches in Vancouver, Burnaby, Richmond and South Delta, including Ladner and Tsawwassen. For other areas the team will confirm.",c:["Test locations","Book a lesson"]},
+  {id:"testloc",k:["test location","test locations","test centre","test center","point grey","kingsway","lougheed","wayburne","icbc office","claim centre","which test","where is the test","test route","routes"],a:"TASK has pages and experience for these ICBC road-test areas: Point Grey, Kingsway, Burnaby Lougheed, Burnaby Wayburne and Richmond. Lessons can practise in those test areas.",c:["Road test package","Areas served"]},
+  {id:"era",k:["era","enhanced road assessment","enhanced assessment","enhanced road","senior","seniors","older driver"],a:"TASK has a page for the Enhanced Road Assessment (ERA). I do not have its details here, so the team will confirm what is offered and the price. Call 778-957-7447 or leave a request.",c:["Book a lesson","Phone and email"]},
+  {id:"cancel",k:["cancel","cancellation","cancelling","canceling","reschedule","change my lesson","postpone","48 hours","no show","no-show","missed lesson","fee for cancel","cancellation policy","cancellations"],a:"Lessons need 48 hours of notice, otherwise a $50 cancellation fee applies. Notice under 24 hours means the full lesson amount. A road test booked by TASK needs 72 hours of notice because ICBC must be told, or ICBC may charge a $25 cancellation fee. A no-show means the lesson is not refunded or rescheduled.",c:["Late policy","Refund policy"]},
+  {id:"late",k:["late","running late","15 minutes","fifteen minutes","arrive early","early","instructor late","how late","time policy","15 minute"],a:"Instructors may arrive up to 15 minutes early or 15 minutes late, and you still get the full hour. If you are within 15 minutes late you get the rest of the lesson and pay for the full lesson. Later than that, or cancelling on the spot, counts as a no-show.",c:["Cancellation policy","Book a lesson"]},
+  {id:"refund",k:["refund","refunds","money back","unused","processing fee","unused lessons"],a:"Lessons already taken are not refunded. Unused lessons can be refunded if the academy gets notice at least 48 hours before the scheduled lesson. A $50 processing fee applies to any cancellation process. For your exact package, the team will confirm.",c:["Cancellation policy","Phone and email"]},
+  {id:"payment",k:["pay","payment","paying","how to pay","card","credit card","debit","etransfer","e-transfer","cash","deposit","in advance","upfront","advance payment","reserve"],a:"Fees are paid in advance. A lesson or package is reserved only once payment is received in full, and lessons are first-come, first-served depending on instructor and vehicle availability. The accepted payment methods are not published, so the team will confirm them.",c:["Pricing","Phone and email"]},
+  {id:"bring",k:["bring","what do i need","what to bring","documents","document","id","identification","learner","learners","learner's licence","passport","requirements","need to have","valid"],a:"Bring your learner's licence to every lesson, and keep it valid. For road tests, bring 2 pieces of valid government ID (for example a passport, birth certificate or PR card) along with your licence. For the ICBC test, expect roughly $35 for Class 7 or $50 for Class 5, and about $75 for the licence fee after you pass.",c:["Road test package","Cancellation policy"]},
+  {id:"pickup",k:["pick up","pickup","pick-up","drop off","dropoff","drop-off","come to me","come to my home","my house","my address","transportation"],a:"Pick-up and drop-off are free with lessons. Road-test packages include free pick-up and drop-off in road-test location areas.",c:["Areas served","Pricing"]},
+  {id:"schedule",k:["hours","open","opening","weekend","weekends","sunday","saturday","evening","evenings","schedule","scheduling","flexible","7 days","seven days","available","availability","when can","what days","office hours","time slots"],a:"Driving lessons run 7 days a week with flexible scheduling. I do not have set office hours, so the team will confirm exact availability for your preferred times.",c:["Book a lesson","Phone and email"]},
+  {id:"contact",k:["phone","call","number","contact","email","e-mail","reach","talk to","speak to","text","whatsapp","address of the office","office"],a:"Phone: 778-957-7447. Email: info@taskdrivingacademy.com. You can also leave a request here and I will prepare it for the team.",c:["Book a lesson","Pricing"]},
+  {id:"licensed",k:["licensed","icbc licensed","are you licensed","accredited","icbc approved","approved","certified","insured","legit","legitimate","qualified","qualifications","class 5","class 7","instructor","instructors","surjeet","pass rate","first time pass","reviews","review","rating","reputation","google"],a:"TASK Driving Academy is listed by ICBC as a licensed driving school for Class 5 and Class 7 driver training. Instructors are experienced, patient and familiar with ICBC road-test areas. On Google, students rate it 5 stars across hundreds of reviews. Reviews often name instructor Surjeet.",c:["Pricing","Book a lesson"]},
+  {id:"safety",k:["dashcam","camera","recorded","recording","safety","safe","passenger","bring a friend","bring my parent","extra person","someone with me","family in the car","vehicle","car","dual","automatic","manual","stick"],a:"For safety, training vehicles have an in-cabin dashcam recording inside and outside, and only the instructor and student ride along so the student can focus. I do not have details on the car models or transmission, so the team will confirm those.",c:["Pricing","Phone and email"]},
+  {id:"language",k:["language","languages","punjabi","hindi","mandarin","cantonese","chinese","spanish","french","speak","english"],a:"The website does not list the languages the instructors speak, so the team will confirm. Ask when you call 778-957-7447 or leave a request.",c:["Book a lesson","Phone and email"]},
+  {id:"hi",k:["hello","hi","hey","hiya","good morning","good evening","help","thanks","thank you"],a:"Hello! Ask about pricing, beginner lessons, road tests, areas or policies, or say 'book' to start a request.",c:["Pricing","Road test package","Book a lesson"]}
+ ]
+};
+/*CFG_END*/
+/* Client-side assistant: matcher + booking flow + widget. Sends nothing anywhere. */
+function makeBot(CFG){
+  var CJK=/[一-鿿]/;
+  function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9一-鿿$ ]+/g,' ').replace(/\s+/g,' ').trim();}
+  function stem(w){
+    if(w.length<=3)return w;
+    w=w.replace(/ies$/,'y').replace(/(ing|ed|es|s)$/,function(m,a,off){return w.length-m.length>=3?'':m;});
+    if(w.length>3)w=w.replace(/e$/,'');
+    return w;
+  }
+  function lev(a,b){
+    if(Math.abs(a.length-b.length)>2)return 9;
+    var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;
+    for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));}p=c;}
+    return p[b.length];
+  }
+  function toks(q){return norm(q).split(' ').filter(Boolean).map(stem);}
+  function scoreKW(nq,tk,kw){
+    var k=norm(kw);if(!k)return 0;
+    if(CJK.test(k))return nq.indexOf(k)>=0?3:0;
+    if(k.indexOf(' ')>=0){
+      if((' '+nq+' ').indexOf(' '+k+' ')>=0)return 3;
+      var ws=k.split(' ').map(stem),ok=ws.every(function(w){return tk.some(function(t){return t===w||(w.length>=5&&lev(t,w)<=1);});});
+      return ok?2.5:0;
+    }
+    var s=stem(k),best=0;
+    for(var i=0;i<tk.length;i++){
+      var t=tk[i];
+      if(t===s){best=Math.max(best,2);continue;}
+      if(s.length>=5&&t.length>=4&&(lev(t,s)<=1||(s.length>=8&&lev(t,s)<=2)))best=Math.max(best,1.6);
+      else if(s.length>=6&&t.length>=5&&(t.indexOf(s)===0||s.indexOf(t)===0))best=Math.max(best,1.5);
+    }
+    return best;
+  }
+  function pick(q,list,min){
+    var nq=norm(q),tk=toks(q),best=null,bs=0;
+    for(var i=0;i<list.length;i++){
+      var s=0,kws=list[i].k||[];
+      for(var j=0;j<kws.length;j++)s+=scoreKW(nq,tk,kws[j]);
+      if(s>bs){bs=s;best=list[i];}
+    }
+    return bs>=(min||1.5)?best:null;
+  }
+  function L(x,lang){if(x==null)return '';if(typeof x==='string')return x;return x[lang]||x.en||'';}
+  function langOf(q,cur){return CFG.bi?(CJK.test(q)?'zh':(cur||'en')):'en';}
+  function stepChips(st,lang){return (st.opts||[]).map(function(o){return L(o,lang);});}
+  function startFlow(lang){
+    var st=CFG.flow.steps[0];
+    return {text:L(CFG.flow.intro,lang)+'\n'+L(st.q,lang),chips:stepChips(st,lang).concat([L(CFG.cancel,lang)]),state:{step:0,ans:{}}};
+  }
+  function reply(q,state,curLang){
+    state=state||{step:-1,ans:{}};
+    var lang=langOf(q,curLang),nq=norm(q);
+    var cancel=norm(L(CFG.cancel,lang));
+    if(state.step>=0){
+      if(nq===cancel||/^(cancel|stop|nevermind|never mind|quit|exit|reset|取消|不用了)$/.test(nq))
+        return {text:L(CFG.cancelled,lang),chips:CFG.chips.map(function(c){return L(c,lang);}),state:{step:-1,ans:{}}};
+      var st=CFG.flow.steps[state.step],val=q.trim();
+      if(st.type==='tel'&&val.replace(/\D/g,'').length<7)
+        return {text:L(CFG.badTel,lang),chips:[L(CFG.cancel,lang)],state:state};
+      if(st.opts){
+        var m=pick(val,st.opts.map(function(o){return {k:[L(o,'en'),L(o,'zh'),L(o,lang)].filter(Boolean),v:L(o,lang)};}),1.5);
+        if(m)val=m.v;
+      }
+      var ans={};for(var k in state.ans)ans[k]=state.ans[k];ans[st.k]=val;
+      var ns=state.step+1;
+      if(ns<CFG.flow.steps.length){
+        var nx=CFG.flow.steps[ns];
+        return {text:L(nx.q,lang),chips:stepChips(nx,lang).concat([L(CFG.cancel,lang)]),state:{step:ns,ans:ans}};
+      }
+      var lines=CFG.flow.steps.map(function(s){return L(s.label,lang)+': '+(ans[s.k]||'-');}).join('\n');
+      return {text:L(CFG.flow.done,lang)+'\n\n'+lines,chips:CFG.chips.map(function(c){return L(c,lang);}),state:{step:-1,ans:{}},done:ans};
+    }
+    var f=pick(q,[{k:CFG.flow.kw}],2);
+    var ent=pick(q,CFG.kb,1.5);
+    // a booking trigger wins unless a more specific info entry scored higher
+    if(f){
+      var fs=0,nq2=norm(q),tk2=toks(q);CFG.flow.kw.forEach(function(w){fs+=scoreKW(nq2,tk2,w);});
+      var es=0;if(ent)(ent.k||[]).forEach(function(w){es+=scoreKW(nq2,tk2,w);});
+      if(!ent||fs*1.5>=es)return startFlow(lang);
+    }
+    if(ent)return {text:L(ent.a,lang),chips:(ent.c?ent.c.map(function(c){return L(c,lang);}):CFG.chips.map(function(c){return L(c,lang);})),state:state,id:ent.id};
+    return {text:L(CFG.fallback,lang),chips:CFG.chips.map(function(c){return L(c,lang);}),state:state,id:'fallback'};
+  }
+  return {reply:reply,start:function(lang){return {text:L(CFG.greeting,lang),chips:CFG.chips.map(function(c){return L(c,lang);})};},startFlow:startFlow,L:L};
+}
+function mountWidget(CFG){
+  if(typeof document==='undefined')return;
+  var bot=makeBot(CFG),state={step:-1,ans:{}},lang=window.__lang||'en';
+  var root=document.createElement('div');root.className='gw';
+  root.innerHTML='<button class="gw-btn" aria-label="Chat" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></button>'+
+  '<section class="gw-panel" hidden role="dialog" aria-label="Assistant"><header><b></b><button class="gw-x" aria-label="Close">&times;</button></header><div class="gw-log" aria-live="polite"></div><div class="gw-chips"></div><form class="gw-form"><input type="text" autocomplete="off" aria-label="Message"><button type="submit">&#10148;</button></form><small class="gw-note"></small></section>';
+  document.body.appendChild(root);
+  var btn=root.querySelector('.gw-btn'),panel=root.querySelector('.gw-panel'),log=root.querySelector('.gw-log'),chips=root.querySelector('.gw-chips'),form=root.querySelector('form'),inp=form.querySelector('input');
+  function titles(){root.querySelector('header b').textContent=bot.L(CFG.title,lang);inp.placeholder=bot.L(CFG.placeholder,lang);root.querySelector('.gw-note').textContent=bot.L(CFG.note,lang);}
+  function add(t,who){var d=document.createElement('div');d.className='gw-m '+who;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c);};chips.appendChild(b);});}
+  function send(t){t=(t||'').trim();if(!t)return;add(t,'u');var r=bot.reply(t,state,lang);state=r.state;setTimeout(function(){add(r.text,'b');setChips(r.chips);},180);}
+  function open(){panel.hidden=false;btn.setAttribute('aria-expanded','true');if(!log.children.length){var g=bot.start(lang);add(g.text,'b');setChips(g.chips);}titles();inp.focus();}
+  btn.onclick=function(){panel.hidden?open():(panel.hidden=true,btn.setAttribute('aria-expanded','false'));};
+  root.querySelector('.gw-x').onclick=function(){panel.hidden=true;btn.setAttribute('aria-expanded','false');};
+  form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';send(v);};
+  window.__setLang=function(l){lang=l;titles();var g=bot.start(l);if(!panel.hidden&&log.children.length<=1){log.innerHTML='';add(g.text,'b');}setChips(g.chips);};
+  window.__askBot=function(t){open();send(t);};
+  titles();
+}
+if(typeof module!=='undefined')module.exports={makeBot:makeBot};
+
+mountWidget(CFG);
+</script>
+</body>
+</html>

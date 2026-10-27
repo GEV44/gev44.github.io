@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Malda Travel &amp; Tourism · Deira, Dubai</title>
+<meta name="description" content="Demo site and assistant for Malda Travel &amp; Tourism, Dubai.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#e5148c;--blue:#0a519c;--navy:#063a73;--sand:#fff6fa;--ink:#1d2a3a;--aw-a:#0a519c;--aw-f:Lato,system-ui,sans-serif;--aw-r:999px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 Lato,system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.1;margin:0 0 .4em;color:var(--navy)}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid #f0d9e6}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 16px;max-width:1040px;margin:0 auto}
+.brand img{height:54px;width:auto;display:block}
+.nav nav{display:none;gap:20px;font-weight:700;font-size:15px}
+.nav nav a{text-decoration:none;color:var(--navy)}
+.btn{display:inline-block;border:0;border-radius:999px;padding:12px 22px;font:700 15px Lato,sans-serif;text-decoration:none;cursor:pointer;color:#fff;background:linear-gradient(90deg,var(--pink),var(--blue))}
+.btn.ghost{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+.hero{background:linear-gradient(160deg,var(--pink) 0%,#8a1a8c 38%,var(--blue) 80%);color:#fff;padding:44px 0 90px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;left:-10%;right:-10%;bottom:-1px;height:70px;background:#fff;border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero:before{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.1)}
+.hero small{letter-spacing:.2em;text-transform:uppercase;font-weight:700;opacity:.9;font-size:12px}
+.hero h1{color:#fff;font-size:clamp(40px,10vw,72px);margin:.15em 0}
+.hero p{max-width:520px;font-size:18px;opacity:.95}
+.hero .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.hero .btn{background:#fff;color:var(--navy)}.hero .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:-52px;position:relative;z-index:2}
+.quick a{background:#fff;border-radius:16px;padding:16px 10px;text-align:center;text-decoration:none;box-shadow:0 8px 24px rgba(10,81,156,.18);font-weight:700;color:var(--navy);border-top:4px solid var(--pink)}
+.quick a:nth-child(even){border-top-color:var(--blue)}
+.quick b{display:block;font:700 22px 'Cormorant Garamond',serif}
+.quick span{font-size:13px;font-weight:400;color:#556}
+section{padding:46px 0}
+.eyebrow{color:var(--pink);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:12px}
+h2{font-size:clamp(30px,6vw,44px)}
+.lead{max-width:640px;color:#456}
+.checker{background:var(--sand);border:1px solid #f4cfe3;border-radius:20px;padding:20px;margin-top:20px}
+.checker label{font-weight:700;color:var(--navy);display:block;margin-bottom:6px}
+.checker select,.checker input{width:100%;font:16px Lato;padding:12px;border:2px solid #d8c3d0;border-radius:12px;background:#fff}
+.res{margin-top:14px;padding:14px;border-radius:12px;background:#fff;border-left:5px solid var(--blue);min-height:56px}
+.res.ok{border-color:#1a9a55}.res.no{border-color:var(--pink)}
+.cards{display:grid;gap:12px;margin-top:20px}
+.vc{background:#fff;border:1px solid #e5d3df;border-radius:18px;padding:18px;position:relative;overflow:hidden}
+.vc:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(var(--pink),var(--blue))}
+.vc h3{font-size:26px;margin:0 0 4px 6px}.vc p{margin:0 0 8px 6px;font-size:15px}
+.vc ul{margin:0 0 0 6px;padding-left:18px;font-size:14px;color:#456}
+.tag{display:inline-block;background:#fde7f2;color:#a10c63;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:700;margin:0 0 6px 6px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.tile{border-radius:18px;padding:16px;min-height:120px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;font:700 20px/1.15 'Cormorant Garamond',serif;position:relative;overflow:hidden}
+.tile:after{content:"";position:absolute;right:-20px;top:-20px;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.15)}
+.tile small{font:400 12px Lato;opacity:.9;margin-top:4px}
+.t1{background:linear-gradient(135deg,#0a519c,#063a73)}.t2{background:linear-gradient(135deg,#e5148c,#a10c63)}.t3{background:linear-gradient(135deg,#c9821a,#8a4a10)}.t4{background:linear-gradient(135deg,#1a8fa0,#0a519c)}.t5{background:linear-gradient(135deg,#8a1a8c,#4a1060)}.t6{background:linear-gradient(135deg,#0a519c,#e5148c)}
+.band{background:linear-gradient(90deg,var(--navy),var(--blue));color:#fff}
+.band h2{color:#fff}
+.why{display:grid;gap:10px;margin-top:16px}
+.why div{background:rgba(255,255,255,.1);border-radius:14px;padding:14px;font-weight:700}
+details{border-bottom:1px solid #eadbe4;padding:12px 0}
+summary{cursor:pointer;font-weight:700;color:var(--navy);padding-right:10px}
+details p{margin:8px 0 0;color:#456;font-size:15px}
+.contact{display:grid;gap:12px}
+.cbox{background:var(--sand);border-radius:16px;padding:16px}
+.cbox b{color:var(--navy);display:block}
+footer{background:#06284f;color:#c9d6e8;padding:24px 0 90px;font-size:14px;text-align:center}
+footer a{color:#fff}
+@media(min-width:720px){.nav nav{display:flex}.quick{grid-template-columns:repeat(4,1fr)}.cards{grid-template-columns:1fr 1fr}.tiles{grid-template-columns:repeat(3,1fr)}.why{grid-template-columns:repeat(3,1fr)}.contact{grid-template-columns:1fr 1fr}.hero{padding:70px 0 110px}}
+.voa{display:grid;gap:14px;margin-top:20px}.vb{border:1px solid #e5d3df;border-radius:18px;padding:16px}.vb h3{font-size:26px}.vb p{font-size:14px;color:#456;margin:0 0 8px}.vb ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}.vb li{background:#eef4fb;color:var(--navy);border-radius:999px;padding:3px 10px;font-size:13px}.steps{display:grid;gap:10px;margin-top:16px}.steps div{background:#fff;border-radius:14px;padding:14px 14px 14px 56px;position:relative;border:1px solid #f0d9e6}.steps b{position:absolute;left:12px;top:10px;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--blue));color:#fff;text-align:center;line-height:34px;font:700 20px Cormorant Garamond,serif}@media(min-width:720px){.voa{grid-template-columns:1fr 1fr}.vb:nth-child(2){grid-row:span 2}.steps{grid-template-columns:repeat(3,1fr)}}
+.skywrap{position:absolute;right:0;top:0;width:min(640px,100%);opacity:.55;pointer-events:none}.sky{width:100%;height:auto;display:block}.hero .wrap{position:relative;z-index:1}.hero .wrap>*:not(.skywrap){position:relative;z-index:2}
+.aw-fab{position:fixed;right:16px;bottom:16px;z-index:60;border:0;cursor:pointer;background:var(--aw-a);color:var(--aw-t,#fff);font:600 15px/1 var(--aw-f,inherit);padding:15px 20px;border-radius:var(--aw-r,999px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.aw-fab.hide{display:none}
+.aw-panel{position:fixed;right:12px;bottom:12px;z-index:70;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:#fff;color:#1b1b1b;border-radius:var(--aw-pr,16px);box-shadow:0 18px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:14px/1.45 var(--aw-f,system-ui,sans-serif)}
+.aw-panel.open{display:flex}
+.aw-head{background:var(--aw-a);color:var(--aw-t,#fff);padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+.aw-head b{display:block;font-size:15px}.aw-head small{opacity:.85;font-size:12px}
+.aw-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer}
+.aw-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:#f6f6f6}
+.aw-m{max-width:86%;padding:9px 12px;border-radius:14px;white-space:pre-wrap;word-wrap:break-word}
+.aw-m.bot{background:#fff;border:1px solid #e3e3e3;align-self:flex-start}
+.aw-m.me{background:var(--aw-a);color:var(--aw-t,#fff);align-self:flex-end}
+.aw-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px;max-height:96px;overflow-y:auto;border-top:1px solid #eee;background:#fff}
+.aw-chips button{border:1px solid var(--aw-a);color:var(--aw-a);background:#fff;border-radius:999px;padding:6px 11px;font:inherit;font-size:13px;cursor:pointer}
+.aw-form{display:flex;gap:6px;padding:8px 10px;border-top:1px solid #eee;background:#fff}
+.aw-form input{flex:1;min-width:0;border:1px solid #ccc;border-radius:10px;padding:10px;font:inherit;font-size:16px}
+.aw-form button{border:0;background:var(--aw-a);color:var(--aw-t,#fff);border-radius:10px;padding:0 14px;font:inherit;font-weight:600;cursor:pointer}
+@media(max-width:480px){.aw-panel{right:0;bottom:0;width:100vw;height:86vh;border-radius:16px 16px 0 0}}
+
+</style></head><body>
+<header><div class="nav"><a class="brand" href="#top"><img src="img/malda-travel-logo.png" alt="Malda Travel &amp; Tourism"></a><nav><a href="#visa">Visa</a><a href="#excursions">Excursions</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav><a class="btn" href="#contact" onclick="AWflow();return false">Plan my trip</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap"><div class="skywrap"><svg class="sky" viewBox="0 0 600 220" aria-hidden="true" focusable="false"><defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".0"/><stop offset="1" stop-color="#fff" stop-opacity=".5"/></linearGradient></defs><rect x="241" y="87" width="53" height="6" rx="3" fill="url(#g1)"/><rect x="405" y="132" width="59" height="6" rx="3" fill="url(#g1)"/><rect x="92" y="27" width="42" height="6" rx="3" fill="url(#g1)"/><rect x="411" y="150" width="77" height="6" rx="3" fill="url(#g1)"/><rect x="60" y="66" width="106" height="6" rx="3" fill="url(#g1)"/><rect x="549" y="102" width="75" height="6" rx="3" fill="url(#g1)"/><rect x="176" y="37" width="73" height="6" rx="3" fill="url(#g1)"/><rect x="219" y="16" width="73" height="6" rx="3" fill="url(#g1)"/><rect x="278" y="59" width="61" height="6" rx="3" fill="url(#g1)"/><rect x="317" y="84" width="120" height="6" rx="3" fill="url(#g1)"/><rect x="381" y="32" width="117" height="6" rx="3" fill="url(#g1)"/><rect x="345" y="181" width="89" height="6" rx="3" fill="url(#g1)"/><rect x="518" y="73" width="62" height="6" rx="3" fill="url(#g1)"/><rect x="253" y="131" width="75" height="6" rx="3" fill="url(#g1)"/><circle cx="111" cy="150" r="4" fill="#fff" fill-opacity="0.15"/><circle cx="318" cy="156" r="7" fill="#fff" fill-opacity="0.37"/><circle cx="540" cy="59" r="5" fill="#fff" fill-opacity="0.26"/><circle cx="315" cy="120" r="5" fill="#fff" fill-opacity="0.19"/><circle cx="332" cy="76" r="2" fill="#fff" fill-opacity="0.17"/><circle cx="493" cy="170" r="4" fill="#fff" fill-opacity="0.28"/><circle cx="502" cy="189" r="4" fill="#fff" fill-opacity="0.19"/><circle cx="220" cy="27" r="5" fill="#fff" fill-opacity="0.38"/><circle cx="471" cy="80" r="3" fill="#fff" fill-opacity="0.24"/><circle cx="348" cy="172" r="6" fill="#fff" fill-opacity="0.20"/><g transform="translate(380 70) rotate(-18)" fill="#fff"><path d="M0 22 L70 8 L88 0 L96 4 L84 14 L110 18 L112 24 L84 26 L96 42 L90 46 L66 30 L0 30 Z" fill-opacity=".92"/></g><path d="M20 190 C150 120 260 170 380 110 S520 80 590 40" stroke="#fff" stroke-opacity=".6" stroke-width="2" stroke-dasharray="3 8" fill="none"/></svg></div><small>Deira, Dubai · We serve with love</small><h1>Relax.<br>Explore. Enjoy.</h1><p>Dubai’s travel agency for UAE visas, excursions, airline tickets and holiday packages. Every journey as unique as the traveller.</p><div class="row"><a class="btn" href="#visa">Check my visa</a><a class="btn ghost" href="#excursions">See excursions</a></div></div></div>
+<div class="wrap"><div class="quick"><a href="#visa"><b>UAE Visa</b><span>Pre-applied visas</span></a><a href="#excursions"><b>Excursions</b><span>Burj Khalifa to desert</span></a><a href="#contact"><b>Air tickets</b><span>Ask the team</span></a><a href="#contact"><b>Holidays</b><span>Packages, coming soon</span></a></div></div>
+
+<section id="visa"><div class="wrap"><div class="eyebrow">UAE Visa</div><h2>Do I need a visa before I fly?</h2><p class="lead">Pick your passport and see what Malda’s visa page says about entering the UAE. The team confirms your exact case before you book anything.</p>
+<div class="checker"><label for="nat">Passport country</label><select id="nat"><option value="">Choose a country…</option></select><div class="res" id="natres">Select a country to see the visa-on-arrival rule listed on Malda’s site.</div></div>
+<h3 style="margin-top:30px;font-size:32px">Pre-arranged visa options</h3>
+<div class="cards">
+<div class="vc"><span class="tag">Option 1</span><h3>30-day stay</h3><p>Single-entry visa, valid for 60 days before entry. Stay up to 30 days from arrival.</p><ul><li>Can be extended up to 5 times with immigration approval</li></ul></div>
+<div class="vc"><span class="tag">Option 2</span><h3>60-day stay</h3><p>Valid for 30 days before entry. Stay up to 60 days from arrival.</p><ul><li>Extendable up to 5 times with immigration approval</li><li>Leave and re-enter as many times as you want during the stay</li></ul></div>
+<div class="vc"><span class="tag">Option 3</span><h3>60-day stay, single entry</h3><p>Valid for 60 days before entry. Stay up to 60 days from arrival.</p><ul><li>Extendable up to 2 times with immigration approval</li><li>Leave and re-enter during the 60 days</li></ul></div>
+<div class="vc"><span class="tag">Option 4</span><h3>60-day stay, longer validity</h3><p>Valid for 60 days before entry. Stay up to 60 days from arrival.</p><ul><li>Extendable up to 2 times with immigration approval</li><li>Leave and re-enter during the 60 days</li></ul></div>
+</div><p style="margin-top:14px;font-size:14px;color:#567">Prices and the right option for your passport are confirmed by the team.</p></div></section>
+
+<section id="voa"><div class="wrap"><div class="eyebrow">Visa on arrival</div><h2>The full lists, as published</h2><p class="lead">Disembark, go to immigration and have your passport stamped. No advance arrangements needed for these passports.</p>
+<div class="voa"><div class="vb"><h3>30 days, free of charge</h3><ul><li>Andorra</li><li>Brunei</li><li>Hong Kong (China)</li><li>Kazakhstan</li><li>Macau (China)</li><li>Malaysia</li><li>Mauritius</li><li>Monaco</li><li>Mongolia</li><li>Republic of Ireland</li><li>Ukraine</li><li>Uzbekistan</li><li>Vatican City</li></ul></div>
+<div class="vb"><h3>90 days, multiple entry</h3><p>Valid for 6 months from the date of issue, stays up to 90 days in total. European citizens may also apply for a pre-arranged visit visa once the 90-day visa on arrival is fully used.</p><ul><li>Albania</li><li>Argentina</li><li>Armenia</li><li>Australia</li><li>Austria</li><li>Azerbaijan</li><li>Bahamas Islands</li><li>Barbados</li><li>Belarus</li><li>Belgium</li><li>Bosnia</li><li>Brazil</li><li>Bulgaria</li><li>Canada</li><li>Chile</li><li>China</li><li>Colombia</li><li>Costa Rica</li><li>Croatia</li><li>Cyprus</li><li>Czech Republic</li><li>Denmark</li><li>El Salvador</li><li>Estonia</li><li>Fiji</li><li>Finland</li><li>France</li><li>Georgia</li><li>Germany</li><li>Greece</li><li>Honduras</li><li>Hungary</li><li>Iceland</li><li>Israel</li><li>Italy</li><li>Japan</li><li>Kiribati</li><li>Kosovo</li><li>Latvia</li><li>Liechtenstein</li><li>Lithuania</li><li>Luxembourg</li><li>Maldives</li><li>Malta</li><li>Montenegro</li><li>Nauru</li><li>Netherlands</li><li>New Zealand</li><li>Norway</li><li>Paraguay</li><li>Peru</li><li>Poland</li><li>Portugal</li><li>Republic of Guyana</li><li>Romania</li><li>Russian Federation</li><li>Saint Vincent and the Grenadines</li><li>San Marino</li><li>Serbia</li><li>Seychelles</li><li>Singapore</li><li>Slovakia</li><li>Slovenia</li><li>Solomon Islands</li><li>South Korea</li><li>Spain</li><li>Sweden</li><li>Switzerland</li><li>United Kingdom (including Northern Ireland)</li><li>United States of America</li><li>Uruguay</li></ul></div>
+<div class="vb"><h3>180 days, multiple entry</h3><p>Valid for 6 months from issue, stays up to 180 days in total.</p><ul><li>Mexico</li></ul></div></div></div></section>
+<section style="background:var(--sand)"><div class="wrap"><div class="eyebrow">How it works</div><h2>Three steps with Malda</h2><div class="steps"><div><b>1</b>Choose a service: visa, excursion, air ticket or holiday.</div><div><b>2</b>Send your request here, by phone or on WhatsApp.</div><div><b>3</b>The team confirms the details and the price with you.</div></div></div></section>
+<section id="excursions" style="background:var(--sand)"><div class="wrap"><div class="eyebrow">Excursions</div><h2>Fun starts from here</h2><p class="lead">Six Dubai experiences you can book through Malda.</p>
+<div class="tiles"><div class="tile t1">At The Top Burj Khalifa<small>Dubai skyline</small></div><div class="tile t2">Atlantis Aquaventure<small>Water park</small></div><div class="tile t3">Desert Safari Dubai<small>Dunes</small></div><div class="tile t4">Dubai Frame<small>Old and new Dubai</small></div><div class="tile t5">IMG Worlds of Adventure<small>Indoor theme park</small></div><div class="tile t6">Museum of the Future<small>Downtown</small></div></div>
+<p style="margin-top:18px"><a class="btn" href="#contact" onclick="AWflow();return false">Ask about an excursion</a></p></div></section>
+
+<section id="about"><div class="wrap"><div class="eyebrow">About Malda</div><h2>Travel is more than moving between places</h2><p class="lead">Founded in Dubai, Malda Travel set out to become the leading travel partner in the UAE and beyond: business trips, family holidays, honeymoons, luxury getaways and budget-friendly adventures, each designed around the client.</p>
+<p class="lead"><b>Mission.</b> Make travel easy, enjoyable and accessible for everyone, with a personal touch.<br><b>Vision.</b> Be the most trusted and innovative travel company in the UAE.</p></div></section>
+
+<section class="band"><div class="wrap"><h2>Why Malda Travel?</h2><div class="why"><div>Expert guidance and tailor-made packages</div><div>Strong global network of partners</div><div>24/7 customer support</div><div>Competitive prices with no hidden costs</div><div>Every journey a story worth telling</div></div></div></section>
+
+<section id="faq"><div class="wrap"><div class="eyebrow">Good to know</div><h2>Visa questions</h2>
+<details><summary>If my visa is issued in Dubai, can I enter through another Emirate?</summary><p>Yes. Once issued, the visa works for entry via any Emirate: Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah are one country.</p></details>
+<details><summary>I have a tourist visa. Can I extend it inside the country?</summary><p>If the visa was issued through Malda, a 30-day visa can be extended up to 5 times and a 60-day visa up to 2 times, subject to immigration approval. If another agency issued it, only your sponsor can extend. For a visa on arrival, Malda recommends leaving and coming back with a pre-applied visa. Advice line: +971 50 88 666 49.</p></details>
+<details><summary>Which nationalities get a visa on arrival?</summary><p>Use the checker above. It follows the 30-day, 90-day and 180-day lists on Malda’s visa page.</p></details>
+<details><summary>Anything else I should remember?</summary><p>Never overstay. Malda wishes you an enjoyable stay in the UAE.</p></details></div></section>
+
+<section id="contact" style="background:var(--sand)"><div class="wrap"><div class="eyebrow">Visit or call</div><h2>Get in touch today</h2><div class="contact">
+<div class="cbox"><b>Office</b>Shop 18, Al Masraf Building, Baniyas Rd, Al Rigga, Deira, Dubai, UAE</div>
+<div class="cbox"><b>Phone and WhatsApp</b>+971 4 589 7743<br>+971 50 88 666 49 (WhatsApp too)</div>
+<div class="cbox"><b>Email</b>m.fadel@maldatravel.com</div>
+<div class="cbox"><b>Social</b>Facebook and Instagram: maldatravel</div></div>
+<p style="margin-top:18px"><a class="btn" href="#contact" onclick="AWflow();return false">Send my trip request</a></p></div></section>
+</main>
+<footer><div class="wrap">© Malda Travel &amp; Tourism · Dubai<br>Demo · prepared by Gevorg Hovhannisyan</div></footer>
+<script>
+(function(root){
+function norm(s){return (s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9+ ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4){w=w.replace(/(ing|ed|es|s)$/,'');}return w;}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;if(Math.abs(m-n)>2)return 9;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var prev=p[0];p[0]=i;for(j=1;j<=n;j++){c=p[j];p[j]=Math.min(p[j]+1,p[j-1]+1,prev+(a[i-1]===b[j-1]?0:1));prev=c;}}return p[n];}
+function tokens(s){return norm(s).split(' ').filter(Boolean);}
+function wordHit(kw,toks){var k=stem(kw);for(var i=0;i<toks.length;i++){var t=stem(toks[i]);if(t===k)return 1;if(k.length>=5&&lev(t,k)<=(k.length>=8?2:1))return 0.9;if(k.length>=5&&t.length>=4&&(t.indexOf(k)===0||k.indexOf(t)===0)&&t.length>=k.length-2)return 0.8;}return 0;}
+function score(entry,q,toks){var s=0;for(var i=0;i<entry.k.length;i++){var kw=norm(entry.k[i]);if(!kw)continue;if(kw.indexOf(' ')>-1){if((' '+q+' ').indexOf(' '+kw+' ')>-1)s+=2.5;else{var parts=kw.split(' '),h=0;parts.forEach(function(p){h+=wordHit(p,toks)>0?1:0;});if(h===parts.length)s+=2;}}else{var w=wordHit(kw,toks);s+=w*(kw.length>=6?1.5:1);}}return s;}
+function best(kb,text){var q=norm(text),toks=tokens(text),b=null,bs=0;for(var i=0;i<kb.length;i++){var s=score(kb[i],q,toks);if(s>bs){bs=s;b=kb[i];}}return bs>=1?b:null;}
+function runFlowStep(step,val){if(step.opts){var v=norm(val),f=null;step.opts.forEach(function(o){if(norm(o)===v||(v&&norm(o).indexOf(v)===0))f=o;});if(f)return f;var t=tokens(val);step.opts.forEach(function(o){if(!f&&t.some(function(x){return x.length>2&&wordHit(norm(o).split(' ')[0],[x])>0;}))f=o;});return f;}
+if(step.type==='email')return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val.trim())?val.trim():null;
+if(step.type==='phone')return val.replace(/[^0-9+]/g,'').length>=7?val.trim():null;
+if(step.type==='num'){var m=val.match(/\d+/);return m?m[0]:null;}
+return val.trim().length>=2?val.trim():null;}
+var api={norm:norm,best:best,runFlowStep:runFlowStep,lev:lev};
+root.AW=api;
+if(typeof module!=='undefined')module.exports=api;
+if(typeof document==='undefined')return;
+api.init=function(c){
+var fab=document.createElement('button');fab.className='aw-fab';fab.setAttribute('aria-label','Open assistant');fab.innerHTML='<span>'+(c.fab||'Ask')+'</span>';
+var p=document.createElement('div');p.className='aw-panel';p.setAttribute('role','dialog');
+p.innerHTML='<div class="aw-head"><div><b>'+c.title+'</b><small>'+c.sub+'</small></div><button class="aw-x" aria-label="Close">&times;</button></div><div class="aw-log"></div><div class="aw-chips"></div><form class="aw-form"><input type="text" placeholder="'+(c.ph||'Type your question')+'" aria-label="Message"><button type="submit">Send</button></form>';
+document.body.appendChild(fab);document.body.appendChild(p);
+var log=p.querySelector('.aw-log'),chips=p.querySelector('.aw-chips'),inp=p.querySelector('input'),form=p.querySelector('form');
+var fl=null,data={},started=false;
+function add(t,me){var d=document.createElement('div');d.className='aw-m '+(me?'me':'bot');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){say(t);};chips.appendChild(b);});}
+function ask(){var st=c.flow.steps[fl];add(st.q);setChips((st.opts||[]).concat(['Cancel']));inp.placeholder=st.ph||c.ph||'Type here';}
+function startFlow(){fl=0;data={};add(c.flow.intro);ask();}
+function finish(){var lines=c.flow.steps.map(function(s){return s.label+': '+data[s.key];});add(c.flow.done+'\n\n'+lines.join('\n'));fl=null;inp.placeholder=c.ph||'Type your question';setChips(c.chips);}
+function say(t){t=t.trim();if(!t)return;add(t,1);inp.value='';
+if(fl!==null){if(/^(cancel|stop|exit|never ?mind)$/i.test(norm(t))){fl=null;add('No problem, nothing was sent. What else can I help with?');setChips(c.chips);return;}
+var st=c.flow.steps[fl],v=runFlowStep(st,t);if(!v){add(st.err||'Sorry, I did not catch that. Could you try again?');return;}data[st.key]=v;fl++;if(fl>=c.flow.steps.length)finish();else ask();return;}
+var q=norm(t);if(c.flow.trig.some(function(w){return q.indexOf(w)>-1;})){startFlow();return;}
+var pr=c.pre&&c.pre(t);if(pr){add(pr);setChips(c.chips);return;}var e=best(c.kb,t);if(e){add(e.a);setChips(e.chips||c.chips);}else{add(c.fallback);setChips(c.chips);}}
+function open(){p.classList.add('open');fab.classList.add('hide');if(!started){started=true;add(c.greet);setChips(c.chips);}setTimeout(function(){inp.focus();},50);}
+fab.onclick=open;p.querySelector('.aw-x').onclick=function(){p.classList.remove('open');fab.classList.remove('hide');};
+form.onsubmit=function(ev){ev.preventDefault();say(inp.value);};
+window.AWopen=open;window.AWflow=function(){open();if(fl===null)startFlow();};
+};
+})(typeof window!=='undefined'?window:globalThis);
+
+var VOA30=["Andorra","Brunei","Hong Kong","Kazakhstan","Macau","Malaysia","Mauritius","Monaco","Mongolia","Republic of Ireland","Ukraine","Uzbekistan","Vatican City"];
+var VOA90=["Albania","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Barbados","Belarus","Belgium","Bosnia","Brazil","Bulgaria","Canada","Chile","China","Colombia","Costa Rica","Croatia","Cyprus","Czech Republic","Denmark","El Salvador","Estonia","Fiji","Finland","France","Georgia","Germany","Greece","Honduras","Hungary","Iceland","Israel","Italy","Japan","Kiribati","Kosovo","Latvia","Liechtenstein","Lithuania","Luxembourg","Maldives","Malta","Montenegro","Nauru","Netherlands","New Zealand","Norway","Paraguay","Peru","Poland","Portugal","Guyana","Romania","Russia","Saint Vincent and the Grenadines","San Marino","Serbia","Seychelles","Singapore","Slovakia","Slovenia","Solomon Islands","South Korea","Spain","Sweden","Switzerland","United Kingdom","United States","Uruguay"];
+var VOA180=["Mexico"];
+var ALIAS={"usa":"United States","us":"United States","america":"United States","uk":"United Kingdom","britain":"United Kingdom","england":"United Kingdom","scotland":"United Kingdom","russian":"Russia","korea":"South Korea","ireland":"Republic of Ireland","czechia":"Czech Republic","holland":"Netherlands","american":"United States","british":"United Kingdom","german":"Germany","french":"France","italian":"Italy","armenian":"Armenia","chinese":"China","indian":"India","india":"India","pakistan":"Pakistan","philippines":"Philippines","filipino":"Philippines","egypt":"Egypt","nigeria":"Nigeria","turkey":"Turkey","iran":"Iran"};
+function voa(c){var n=AW.norm(c);var all=[[VOA30,30],[VOA90,90],[VOA180,180]];for(var i=0;i<all.length;i++){for(var j=0;j<all[i][0].length;j++){if(AW.norm(all[i][0][j])===n)return all[i][1];}}return 0;}
+function voaText(name){var d=voa(name);if(d)return name+': listed for a visa on arrival, valid '+(d===30?'30 days (free of charge, no advance arrangements)':d===90?'as a multiple-entry 90-day visit, valid for 6 months from issue':'as a multiple-entry 180-day visit, valid for 6 months from issue')+'. Malda still recommends confirming your case with the team before you travel.';return name+' is not on the visa-on-arrival lists shown on Malda’s site, so you would normally need a pre-applied visa. The team will confirm the right option for your passport.';}
+function findCountry(t){var q=' '+AW.norm(t)+' ',k;for(k in ALIAS){if(q.indexOf(' '+k+' ')>-1)return ALIAS[k];}var all=VOA30.concat(VOA90,VOA180);for(var i=0;i<all.length;i++){if(q.indexOf(' '+AW.norm(all[i])+' ')>-1)return all[i];}return null;}
+(function(){if(typeof document==='undefined')return;var s=document.getElementById('nat'),all=VOA30.concat(VOA90,VOA180).sort();var extra=["India","Pakistan","Philippines","Egypt","Nigeria","Turkey","Iran","Other country"];all.concat(extra).forEach(function(n){var o=document.createElement('option');o.value=o.textContent=n;s.appendChild(o);});
+s.onchange=function(){var r=document.getElementById('natres');if(!s.value){return;}if(s.value==='Other country'){r.className='res';r.textContent='Not on the visa-on-arrival lists shown on Malda’s site. The team will confirm what you need.';return;}var d=voa(s.value);r.className='res '+(d?'ok':'no');r.textContent=voaText(s.value);};})();
+var KB=[
+{k:["services","offer","what do you offer","what services","provide"],a:"Malda Travel & Tourism offers four main services: excursions, UAE visas, airline tickets and holiday packages. Holiday packages are listed as coming soon on the site."},
+{k:["visa","entry permit"],a:"UAE visas: Malda lists four pre-arranged options with 30-day or 60-day stays, extendable with immigration approval. Tell me your passport country and I will check the visa-on-arrival lists, or say 'apply' to send a request to the team."},
+{k:["visa on arrival","voa","on arrival","free visa","need visa","do i need"],a:"Visa on arrival is listed for certain passports: 30 days free for a short list (e.g. Malaysia, Ukraine, Kazakhstan), 90 days for many countries including the US, UK, EU, Russia and Armenia, and 180 days for Mexico. Which passport do you hold?"},
+{k:["extend","extension","overstay","extend visa","extending"],a:"A visa issued through Malda: a 30-day visa can be extended up to 5 times and a 60-day visa up to 2 times, with immigration approval. If another agency issued it, only your sponsor can extend. After a visa on arrival, Malda recommends leaving and returning with a pre-applied visa. Never overstay. Advice line: +971 50 88 666 49."},
+{k:["emirate","sharjah","abu dhabi","ajman","fujairah","ras al khaimah","umm al quwain","another emirate","enter","via","emirates"],a:"Yes. A visa issued from Dubai can be used to enter through any Emirate. Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah are one country."},
+{k:["excursion","excursions","tour","tours","activities","things to do","attractions","sightseeing"],a:"Excursions you can book through Malda: At The Top Burj Khalifa, Atlantis Aquaventure, Desert Safari Dubai, Dubai Frame, IMG Worlds of Adventure and Museum of the Future. Say 'book' to send a request."},
+{k:["burj","khalifa","at the top"],a:"At The Top, Burj Khalifa is one of the six excursions on Malda's list. The team confirms available dates and details when you send a request."},
+{k:["atlantis","aquaventure","water park","waterpark"],a:"Atlantis Aquaventure is on Malda's excursion list. Details and booking are handled by the team."},
+{k:["desert","safari","dunes"],a:"Desert Safari Dubai is on Malda's excursion list. The team confirms what is included and pick-up details."},
+{k:["frame","dubai frame"],a:"Dubai Frame is on Malda's excursion list. Send a request and the team will confirm the details."},
+{k:["img","worlds of adventure","theme park"],a:"IMG Worlds of Adventure is on Malda's excursion list. The team confirms details when you request it."},
+{k:["museum","museum of the future"],a:"Museum of the Future is on Malda's excursion list. The team confirms details when you request it."},
+{k:["flight","flights","ticket","tickets","airline","airlines","air ticket","fly"],a:"Airline tickets are one of Malda's top services. Say 'book' and give me your route and dates, and the team will come back to you."},
+{k:["holiday","holidays","package","packages","honeymoon","luxury","family holiday","vacation","trip","trips"],a:"Holiday packages are marked as coming soon on the website, but the team handles family holidays, honeymoons, luxury getaways and business trips. Send a request and they will advise."},
+{k:["price","prices","cost","how much","fee","fees","rate","rates","cheap","how much is","how much does","how much for","cost of","price of"],a:"Prices are not published on the website. The About page promises competitive prices with no hidden costs. The team will confirm the price for your case."},
+{k:["address","where","location","office","find you","map","directions","deira","rigga"],a:"Shop 18, Al Masraf Building, Baniyas Rd, Al Rigga, Deira, Dubai, UAE."},
+{k:["phone","call","number","telephone","contact","whatsapp","reach"],a:"Phone: +971 4 589 7743 or +971 50 88 666 49 (also WhatsApp). Email: m.fadel@maldatravel.com."},
+{k:["email","mail","e-mail"],a:"Email: m.fadel@maldatravel.com."},
+{k:["hours","open","opening","close","closing","time","working hours","weekend","friday"],a:"Opening hours are not listed on the website. The About page mentions 24/7 customer support, and the team will confirm the office hours."},
+{k:["about","who are you","company","founded","history","mission","vision","malda"],a:"Malda Travel & Tourism was founded in Dubai to become a leading travel partner in the UAE and beyond. Motto: We Serve With Love. Mission: make travel easy, enjoyable and accessible, with a personal touch."},
+{k:["support","help","assistance","customer support","24/7","24 7"],a:"The About page lists 24/7 customer support. For visa advice call +971 50 88 666 49."},
+{k:["social","facebook","instagram"],a:"Malda is on Facebook and Instagram as 'maldatravel'."},
+{k:["language","languages","speak"],a:"The website is in English. The team will confirm which other languages they can help in."},
+{k:["pay","payment","cash","card"],a:"Payment methods are not listed on the website. The team will confirm them."}
+];
+var CFG={title:"Malda Assistant",sub:"Visa, excursions and tickets",fab:"Ask Malda",greet:"Hello! I can answer questions about UAE visas, excursions, tickets and the Deira office, or take a trip request for the team. Nothing is sent from this demo.",chips:["Do I need a visa?","Excursions","Airline tickets","Plan my trip","Office address"],kb:KB,pre:function(t){var q=AW.norm(t);if(/\b(visa|arrival|need|enter|passport|allowed|citizen)\b/.test(q)||q.split(' ').length<=3){var c=findCountry(t);if(c)return voaText(c);}return null;},
+fallback:"I do not have that on Malda's site. The team will confirm it: call +971 50 88 666 49, or say 'plan my trip' to send a request.",
+flow:{trig:["plan my trip","book","apply","request","reserve","enquiry","inquiry","i want to travel","send my trip"],intro:"Let's put your request together. A few quick questions.",done:"Done. Your request is ready to go to the Malda team, who will confirm availability and details. (Demo: nothing was actually sent.)",steps:[
+{key:"svc",label:"Service",q:"What do you need?",opts:["UAE visa","Excursion","Airline ticket","Holiday package"]},
+{key:"what",label:"Details",q:"Tell me more: your passport country for a visa, the excursion you like, or your route for a ticket.",ph:"e.g. Armenia passport / Desert Safari"},
+{key:"date",label:"Travel date",q:"Which date or month do you plan to travel?",ph:"e.g. 12 December"},
+{key:"group",label:"Travellers",q:"How many travellers?",type:"num",err:"Please give a number, e.g. 2.",ph:"e.g. 2"},
+{key:"name",label:"Name",q:"Your name?"},
+{key:"phone",label:"Phone/WhatsApp",q:"Best phone or WhatsApp number for the team?",type:"phone",err:"That does not look like a phone number. Please include the digits.",ph:"+971 ..."}]}};
+if(typeof document!=='undefined')AW.init(CFG);
+if(typeof module!=='undefined')module.exports={CFG:CFG,KB:KB};
+</script>
+</body></html>

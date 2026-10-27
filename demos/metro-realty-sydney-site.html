@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Metro Realty · Inner Sydney sales and property management</title>
+<meta name="description" content="Demo site and assistant for Metro Realty, Surry Hills, Sydney.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--n:#183964;--n2:#10294a;--p:#e6b09d;--c:#efe7e3;--c2:#f8f5f3;--ink:#22303f;--mut:#5b6b7c;--aw-a:#183964;--aw-t:#fff;--aw-f:'Source Sans 3',system-ui,sans-serif;--aw-r:14px;--aw-pr:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--c2);color:var(--ink);font:17px/1.6 'Source Sans 3',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Outfit,sans-serif;color:var(--n);line-height:1.12;margin:0 0 .5em;font-weight:600}
+a{color:inherit}
+.wrap{max-width:1060px;margin:0 auto;padding:0 16px}
+header{background:var(--c);position:sticky;top:0;z-index:40}
+.nav{max-width:1060px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 16px}
+.nav img{height:46px;width:auto;display:block}
+.nav nav{display:none;gap:22px;font:500 15px Outfit,sans-serif}
+.nav nav a{text-decoration:none;color:var(--n)}
+.tel{font:600 15px Outfit;color:var(--n);text-decoration:none;border:2px solid var(--n);border-radius:999px;padding:8px 14px;white-space:nowrap}
+.hero{background:var(--n);color:#fff;padding:40px 0 0;position:relative;overflow:hidden}
+.hero .grid{display:grid;gap:26px}
+.hero h1{color:#fff;font-size:clamp(34px,8vw,62px);font-weight:700}
+.hero h1 em{font-style:normal;color:var(--p)}
+.hero p{color:#d5deea;font-size:19px;max-width:520px}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 0}
+.b{border:0;border-radius:12px;padding:14px 22px;font:600 16px Outfit;cursor:pointer;text-decoration:none;display:inline-block}
+.b.p{background:var(--p);color:var(--n2)}.b.o{background:transparent;color:#fff;border:2px solid #fff}
+.ba{display:flex;gap:6px;align-items:flex-end;height:170px;padding:0 4px}
+.ba span{flex:1;background:var(--p);border-radius:6px 6px 0 0;opacity:.9}
+.ba span:nth-child(even){background:#fff;opacity:.9}
+.stats{background:var(--p);color:var(--n2)}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.sg div{padding:20px 10px;text-align:center;border-right:1px solid rgba(24,57,100,.18);border-bottom:1px solid rgba(24,57,100,.18)}
+.sg b{display:block;font:700 34px Outfit}
+.sg small{font-size:13px}
+section{padding:54px 0}
+h2{font-size:clamp(28px,5.5vw,42px)}
+.lab{font:600 13px Outfit;letter-spacing:.14em;text-transform:uppercase;color:#a0674f;margin-bottom:8px}
+.lead{color:var(--mut);max-width:640px;font-size:18px}
+.two{display:grid;gap:24px}
+.card{background:#fff;border-radius:18px;padding:22px;box-shadow:0 1px 0 rgba(0,0,0,.04),0 8px 24px rgba(24,57,100,.07)}
+.card h3{font-size:22px}.card p{margin:0;color:var(--mut);font-size:16px}
+.cards{display:grid;gap:14px;margin-top:22px}
+.ic{width:40px;height:40px;border-radius:12px;background:var(--c);color:var(--n);display:grid;place-items:center;font:700 18px Outfit;margin-bottom:12px}
+.chk{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
+.chk li{background:#fff;border-radius:12px;padding:12px 14px 12px 44px;position:relative;font-size:16px}
+.chk li:before{content:"";position:absolute;left:14px;top:17px;width:16px;height:9px;border-left:3px solid var(--n);border-bottom:3px solid var(--n);transform:rotate(-45deg)}
+.alt{background:var(--c)}
+.navy{background:var(--n);color:#fff}.navy h2,.navy h3{color:#fff}.navy .lead{color:#d5deea}
+.tl{border-left:3px solid var(--p);margin:22px 0 0 6px;padding-left:20px;display:grid;gap:18px}
+.tl div{position:relative}.tl div:before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--p);border:3px solid var(--n)}
+.tl b{font:600 20px Outfit;color:#fff;display:block}
+.tl span{color:#d5deea;font-size:15px}
+.q{background:#fff;border-radius:18px;padding:22px;border-top:5px solid var(--p)}
+.q p{margin:0 0 8px;font-size:18px;color:var(--n)}.q small{color:var(--mut)}
+details{background:#fff;border-radius:14px;margin-top:10px;padding:14px 16px}
+summary{cursor:pointer;font:600 17px Outfit;color:var(--n)}
+details p{margin:10px 0 0;color:var(--mut);font-size:16px}
+.ct{display:grid;gap:12px;margin-top:20px}
+.ct div{background:#fff;border-radius:14px;padding:16px}.ct b{font:600 14px Outfit;letter-spacing:.1em;text-transform:uppercase;color:#a0674f;display:block}
+footer{background:var(--n2);color:#b8c6d8;padding:26px 0 92px;font-size:14px}
+@media(min-width:780px){.nav nav{display:flex}.hero .grid{grid-template-columns:1.3fr .7fr;align-items:end}.sg{grid-template-columns:repeat(5,1fr)}.sg div{border-bottom:0}.cards{grid-template-columns:repeat(3,1fr)}.two{grid-template-columns:1fr 1fr;align-items:start}.ct{grid-template-columns:repeat(3,1fr)}.chk{grid-template-columns:1fr 1fr}}
+.steps{list-style:none;counter-reset:s;margin:22px 0 0;padding:0;display:grid;gap:12px}.steps li{counter-increment:s;background:#fff;border-radius:16px;padding:16px 16px 16px 66px;position:relative;box-shadow:0 1px 0 rgba(0,0,0,.04)}.steps li:before{content:counter(s);position:absolute;left:16px;top:14px;width:36px;height:36px;border-radius:50%;background:var(--n);color:#fff;font:600 18px Outfit;display:grid;place-items:center}.steps b{display:block;font:600 19px Outfit;color:var(--n)}.steps span{color:var(--mut);font-size:16px}@media(min-width:780px){.steps{grid-template-columns:1fr 1fr}}
+.aw-fab{position:fixed;right:16px;bottom:16px;z-index:60;border:0;cursor:pointer;background:var(--aw-a);color:var(--aw-t,#fff);font:600 15px/1 var(--aw-f,inherit);padding:15px 20px;border-radius:var(--aw-r,999px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.aw-fab.hide{display:none}
+.aw-panel{position:fixed;right:12px;bottom:12px;z-index:70;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:#fff;color:#1b1b1b;border-radius:var(--aw-pr,16px);box-shadow:0 18px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:14px/1.45 var(--aw-f,system-ui,sans-serif)}
+.aw-panel.open{display:flex}
+.aw-head{background:var(--aw-a);color:var(--aw-t,#fff);padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+.aw-head b{display:block;font-size:15px}.aw-head small{opacity:.85;font-size:12px}
+.aw-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer}
+.aw-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:#f6f6f6}
+.aw-m{max-width:86%;padding:9px 12px;border-radius:14px;white-space:pre-wrap;word-wrap:break-word}
+.aw-m.bot{background:#fff;border:1px solid #e3e3e3;align-self:flex-start}
+.aw-m.me{background:var(--aw-a);color:var(--aw-t,#fff);align-self:flex-end}
+.aw-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px;max-height:96px;overflow-y:auto;border-top:1px solid #eee;background:#fff}
+.aw-chips button{border:1px solid var(--aw-a);color:var(--aw-a);background:#fff;border-radius:999px;padding:6px 11px;font:inherit;font-size:13px;cursor:pointer}
+.aw-form{display:flex;gap:6px;padding:8px 10px;border-top:1px solid #eee;background:#fff}
+.aw-form input{flex:1;min-width:0;border:1px solid #ccc;border-radius:10px;padding:10px;font:inherit;font-size:16px}
+.aw-form button{border:0;background:var(--aw-a);color:var(--aw-t,#fff);border-radius:10px;padding:0 14px;font:inherit;font-weight:600;cursor:pointer}
+@media(max-width:480px){.aw-panel{right:0;bottom:0;width:100vw;height:86vh;border-radius:16px 16px 0 0}}
+
+</style></head><body>
+<header><div class="nav"><a href="#top"><img src="img/metro-realty-sydney-logo.png" alt="Metro Realty"></a><nav><a href="#sell">Sell</a><a href="#manage">Property management</a><a href="#awards">Awards</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav><a class="tel" href="tel:0292607100">02 9260 7100</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap"><div class="grid"><div><div class="lab" style="color:var(--p)">Surry Hills · Inner Sydney</div><h1>Inner Sydney specialists with <em>award winning</em> service</h1><p>Sales and property management with equal strength: the agility of a boutique agency with the scale of a larger network.</p>
+<div class="acts"><button class="b p" onclick="AWflow()">Request a sales appraisal</button><button class="b o" onclick="AWflow()">Rental appraisal</button></div></div>
+<div class="ba" aria-hidden="true"><span style="height:46%"></span><span style="height:72%"></span><span style="height:58%"></span><span style="height:92%"></span><span style="height:66%"></span><span style="height:80%"></span></div></div></div>
+<div class="stats" style="margin-top:34px"><div class="wrap"><div class="sg"><div><b>260</b><small>properties leased in the last 12 months</small></div><div><b>16</b><small>average days on market</small></div><div><b>9,700+</b><small>tenant enquiries generated</small></div><div><b>2,700+</b><small>applications received</small></div><div><b>800+</b><small>open homes conducted</small></div></div></div></div></div>
+
+<section id="sell"><div class="wrap"><div class="two"><div><div class="lab">Selling</div><h2>Thinking of selling? Take your time.</h2><p class="lead">Selling is one of the biggest transactions you will make. Metro takes the time to understand your circumstances, your property and your timeline, then builds a strategy to suit. No pressure, no pushy sales pitch.</p><div class="acts"><button class="b p" style="background:var(--n);color:#fff" onclick="AWflow()">Talk to an agent</button></div></div>
+<ul class="chk"><li><b>Presentation is everything.</b> Styling and presentation strategy for vacant, owner-occupied or tenanted homes.</li><li><b>Off-market options.</b> Often the best buyer is already in the database, sometimes with no public advertising.</li><li><b>Maximum exposure.</b> Largest premium listings on realestate.com.au and domain.com.au, never shrinking after 30 days.</li><li><b>Open homes with impact.</b> Mobile tech on the spot, plus a detailed report with buyer feedback after each one.</li><li><b>Weekly campaign updates.</b> Listing performance, feedback, offers and next-step advice.</li></ul></div></div></section>
+
+<section id="process"><div class="wrap"><div class="lab">How a sale runs</div><h2>From first chat to offers</h2><ol class="steps">
+<li><b>A confidential chat</b><span>Talk through your circumstances, your property and your ideal timeline. Do your research and ask every question you need; the team is there to guide, not rush you.</span></li>
+<li><b>Presentation plan</b><span>Whether vacant, owner-occupied or tenanted, a styling and presentation strategy to help the home stand out, online and in person. An upfront investment that can significantly increase your return.</span></li>
+<li><b>Off-market first look</b><span>Your property is matched against qualified buyers in the database and private network, which can save time and money.</span></li>
+<li><b>Going to market</b><span>Premium-tier listings on realestate.com.au and domain.com.au with professional photography, eBrochures and compelling copy. Ads stay premium: unlimited campaigns only.</span></li>
+<li><b>Open homes with impact</b><span>Agents with mobile tech capture buyer interest on the spot and answer questions instantly. Each open home ends with a report on buyer feedback and interest levels.</span></li>
+<li><b>Weekly updates and negotiation</b><span>Listing performance, buyer feedback, offers and negotiations, plus strategic advice on what to do next.</span></li></ol></div></section>
+<section id="manage" class="alt"><div class="wrap"><div class="lab">Property management</div><h2>Management that puts you first</h2><p class="lead">Approachable, responsive managers who treat your investment like their own. A dedicated leasing specialist and trust account manager free the portfolio managers to focus on you and your property.</p>
+<ul class="chk"><li>Proactive, experienced managers</li><li>Thorough routine, ingoing and outgoing inspection reports</li><li>Flexible landlord payments</li><li>No arrears policy with full direct debit facilities</li><li>Smart tenant screening with fast, secure online applications</li><li>Timely rental reviews and renewals</li><li>Maintenance you can trust from reliable trades</li><li>Dedicated team structure: leasing and accounts handled separately</li><li>Owner portal access, 24/7</li></ul>
+<div class="acts"><button class="b p" style="background:var(--n);color:#fff" onclick="AWflow()">Switch to Metro</button></div></div></section>
+
+<section><div class="wrap"><div class="lab">Four ways in</div><h2>Buy, sell, rent, manage</h2><div class="cards"><div class="card"><div class="ic">B</div><h3>Buy</h3><p>Residential for sale, plus off-market opportunities from Metro’s private network.</p></div><div class="card"><div class="ic">S</div><h3>Sell</h3><p>Sales appraisal, residential sold results and the reasons to sell with Metro.</p></div><div class="card"><div class="ic">R</div><h3>Rent</h3><p>Residential for lease, with online applications and fast tenant screening.</p></div><div class="card"><div class="ic">M</div><h3>Manage</h3><p>Property management and a rental appraisal for your investment.</p></div></div></div></section>
+
+<section class="alt" id="story"><div class="wrap"><div class="lab">Our story</div><h2>Boutique agility, network strength</h2><div class="two"><div><p class="lead">Based in the heart of Sydney’s CBD, Metro Realty has navigated numerous property cycles and earned a reputation for resilience, reliability and results.</p><p class="lead"><b>Equal strength between sales and property management.</b> Unlike most agencies that lean heavily to one side, Metro keeps both strong. The award-winning sales team and experienced property managers share one goal: exceptional outcomes with efficiency and integrity.</p></div><div><p class="lead"><b>Seasoned experience meets modern technology.</b> As a boutique business Metro adapts quickly to market conditions and tailors its strategy to each client. There is no cookie-cutter approach. Investment in leading technology streamlines processes and adds transparency while service stays at the centre.</p><p class="lead"><b>Results over theatrics.</b> Clients come for one reason: results. Metro focuses on meaningful strategy, not empty theatrics. It is here to deliver, not to dazzle.</p></div></div>
+<h3 style="margin-top:28px;font-size:26px">Market reading</h3><div class="cards"><div class="card"><h3>Sydney CBD Market Update</h3><p>Buyer confidence returns as the market steadies, from Metro’s December 2025 note.</p></div><div class="card"><h3>What we’re seeing: investors</h3><p>A July 2026 note on where investors are at after the Federal Budget.</p></div><div class="card"><h3>Buying and selling in Sydney</h3><p>Guides and category pages on the main site for buyers, sellers and market updates.</p></div></div></div></section>
+<section id="awards" class="navy"><div class="wrap"><div class="lab" style="color:var(--p)">Recognised excellence</div><h2>Awards, locally and nationally</h2><p class="lead">Established, without being outdated: seasoned experience meets modern technology.</p>
+<div class="tl"><div><b>2024</b><span>Rate My Agent, Agency of the Year, Haymarket NSW 2000 (winner)</span></div><div><b>2023</b><span>Rate My Agent: Agent of the Year Haymarket (Joseph Fairchild) and Sales Agency of the Year Haymarket, both winners<br>REB Awards: Rising Star of the Year (Cintia Elkhoury, winner); Principal of the Year (Joseph Fairchild, finalist)</span></div><div><b>2022</b><span>Rate My Agent: Agent of the Year Sydney (Joseph Fairchild); Rental Agency of the Year, Sydney and Haymarket<br>Property Management: Agency of the Year 2020, 2021 and 2022<br>REB Awards: Business Development Manager of the Year</span></div><div><b>2020 to 2021</b><span>Multiple Rate My Agent wins in sales and rental categories; REB Sales Agent of the Year finalist</span></div><div><b>2017 to 2019</b><span>Featured in The Australian and Top Agent Magazine; REB and Business Chamber Awards finalist placements</span></div></div></div></section>
+
+<section><div class="wrap"><div class="lab">What clients say</div><h2>From Google reviews</h2><div class="cards"><div class="q"><p>“Very professional, great service and clearly one of the best real estate agents in the CBD.”</p><small>Google review</small></div><div class="q"><p>“Honest and genuine and kept us informed along the way.”</p><small>Google review, a seller</small></div><div class="q"><p>“Rent and property inspection is always on time.”</p><small>Google review, a landlord client</small></div></div></div></section>
+
+<section id="faq" class="alt"><div class="wrap"><div class="lab">Good to know</div><h2>Questions we hear</h2>
+<details><summary>Can I take my time deciding to sell?</summary><p>Yes. Metro asks you to take your time, do your research and ask all the questions you need. The team guides rather than rushes.</p></details>
+<details><summary>Will I get a report after each open home?</summary><p>Yes. After every open home the owner gets a detailed report with buyer feedback and interest levels.</p></details>
+<details><summary>What does Metro say about its approach?</summary><p>Results over theatrics: meaningful strategy, personal and intelligent service, and technology that adds transparency for clients.</p></details>
+<details><summary>Do you only sell, or manage too?</summary><p>Both, with equal strength. Many agencies lean toward one side; Metro runs an award-winning sales team and experienced property managers.</p></details>
+<details><summary>Do my online ads shrink after 30 days?</summary><p>No. Metro only uses unlimited campaigns, so your premium ad does not turn into a pumpkin after midnight.</p></details>
+<details><summary>Can a sale happen without public advertising?</summary><p>Sometimes. Metro matches properties with qualified buyers through its off-market channels and private network.</p></details>
+<details><summary>How will I hear about my campaign?</summary><p>Weekly updates on online listing performance, buyer feedback, offers and negotiations, with strategic advice on next steps.</p></details>
+<details><summary>How does Metro handle tenant applications?</summary><p>Smart tenant screening with fast, secure online applications, and a no arrears policy using full direct debit facilities.</p></details></div></section>
+
+<section id="contact"><div class="wrap"><div class="lab">Visit or call</div><h2>Metro Realty, Surry Hills</h2><div class="ct"><div><b>Address</b>148 Foveaux Street<br>Surry Hills, NSW 2010</div><div><b>Phone</b>02 9260 7100</div><div><b>Email</b>team@metrorealty.com.au</div></div><div class="acts"><button class="b p" style="background:var(--n);color:#fff" onclick="AWflow()">Request an appraisal or viewing</button></div></div></section>
+</main>
+<footer><div class="wrap">© Metro Realty · Surry Hills NSW<br>Demo · prepared by Gevorg Hovhannisyan</div></footer>
+<script>
+(function(root){
+function norm(s){return (s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9+ ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4){w=w.replace(/(ing|ed|es|s)$/,'');}return w;}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;if(Math.abs(m-n)>2)return 9;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var prev=p[0];p[0]=i;for(j=1;j<=n;j++){c=p[j];p[j]=Math.min(p[j]+1,p[j-1]+1,prev+(a[i-1]===b[j-1]?0:1));prev=c;}}return p[n];}
+function tokens(s){return norm(s).split(' ').filter(Boolean);}
+function wordHit(kw,toks){var k=stem(kw);for(var i=0;i<toks.length;i++){var t=stem(toks[i]);if(t===k)return 1;if(k.length>=5&&lev(t,k)<=(k.length>=8?2:1))return 0.9;if(k.length>=5&&t.length>=4&&(t.indexOf(k)===0||k.indexOf(t)===0)&&t.length>=k.length-2)return 0.8;}return 0;}
+function score(entry,q,toks){var s=0;for(var i=0;i<entry.k.length;i++){var kw=norm(entry.k[i]);if(!kw)continue;if(kw.indexOf(' ')>-1){if((' '+q+' ').indexOf(' '+kw+' ')>-1)s+=2.5;else{var parts=kw.split(' '),h=0;parts.forEach(function(p){h+=wordHit(p,toks)>0?1:0;});if(h===parts.length)s+=2;}}else{var w=wordHit(kw,toks);s+=w*(kw.length>=6?1.5:1);}}return s;}
+function best(kb,text){var q=norm(text),toks=tokens(text),b=null,bs=0;for(var i=0;i<kb.length;i++){var s=score(kb[i],q,toks);if(s>bs){bs=s;b=kb[i];}}return bs>=1?b:null;}
+function runFlowStep(step,val){if(step.opts){var v=norm(val),f=null;step.opts.forEach(function(o){if(norm(o)===v||(v&&norm(o).indexOf(v)===0))f=o;});if(f)return f;var t=tokens(val);step.opts.forEach(function(o){if(!f&&t.some(function(x){return x.length>2&&wordHit(norm(o).split(' ')[0],[x])>0;}))f=o;});return f;}
+if(step.type==='email')return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val.trim())?val.trim():null;
+if(step.type==='phone')return val.replace(/[^0-9+]/g,'').length>=7?val.trim():null;
+if(step.type==='num'){var m=val.match(/\d+/);return m?m[0]:null;}
+return val.trim().length>=2?val.trim():null;}
+var api={norm:norm,best:best,runFlowStep:runFlowStep,lev:lev};
+root.AW=api;
+if(typeof module!=='undefined')module.exports=api;
+if(typeof document==='undefined')return;
+api.init=function(c){
+var fab=document.createElement('button');fab.className='aw-fab';fab.setAttribute('aria-label','Open assistant');fab.innerHTML='<span>'+(c.fab||'Ask')+'</span>';
+var p=document.createElement('div');p.className='aw-panel';p.setAttribute('role','dialog');
+p.innerHTML='<div class="aw-head"><div><b>'+c.title+'</b><small>'+c.sub+'</small></div><button class="aw-x" aria-label="Close">&times;</button></div><div class="aw-log"></div><div class="aw-chips"></div><form class="aw-form"><input type="text" placeholder="'+(c.ph||'Type your question')+'" aria-label="Message"><button type="submit">Send</button></form>';
+document.body.appendChild(fab);document.body.appendChild(p);
+var log=p.querySelector('.aw-log'),chips=p.querySelector('.aw-chips'),inp=p.querySelector('input'),form=p.querySelector('form');
+var fl=null,data={},started=false;
+function add(t,me){var d=document.createElement('div');d.className='aw-m '+(me?'me':'bot');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){say(t);};chips.appendChild(b);});}
+function ask(){var st=c.flow.steps[fl];add(st.q);setChips((st.opts||[]).concat(['Cancel']));inp.placeholder=st.ph||c.ph||'Type here';}
+function startFlow(){fl=0;data={};add(c.flow.intro);ask();}
+function finish(){var lines=c.flow.steps.map(function(s){return s.label+': '+data[s.key];});add(c.flow.done+'\n\n'+lines.join('\n'));fl=null;inp.placeholder=c.ph||'Type your question';setChips(c.chips);}
+function say(t){t=t.trim();if(!t)return;add(t,1);inp.value='';
+if(fl!==null){if(/^(cancel|stop|exit|never ?mind)$/i.test(norm(t))){fl=null;add('No problem, nothing was sent. What else can I help with?');setChips(c.chips);return;}
+var st=c.flow.steps[fl],v=runFlowStep(st,t);if(!v){add(st.err||'Sorry, I did not catch that. Could you try again?');return;}data[st.key]=v;fl++;if(fl>=c.flow.steps.length)finish();else ask();return;}
+var q=norm(t);if(c.flow.trig.some(function(w){return q.indexOf(w)>-1;})){startFlow();return;}
+var pr=c.pre&&c.pre(t);if(pr){add(pr);setChips(c.chips);return;}var e=best(c.kb,t);if(e){add(e.a);setChips(e.chips||c.chips);}else{add(c.fallback);setChips(c.chips);}}
+function open(){p.classList.add('open');fab.classList.add('hide');if(!started){started=true;add(c.greet);setChips(c.chips);}setTimeout(function(){inp.focus();},50);}
+fab.onclick=open;p.querySelector('.aw-x').onclick=function(){p.classList.remove('open');fab.classList.remove('hide');};
+form.onsubmit=function(ev){ev.preventDefault();say(inp.value);};
+window.AWopen=open;window.AWflow=function(){open();if(fl===null)startFlow();};
+};
+})(typeof window!=='undefined'?window:globalThis);
+
+var KB=[
+{k:["sold","residential sold","recent sales","results","track record","sold results"],a:"Metro shows recent results under 'Residential Sold' on its site, and its sales team has won Rate My Agent awards in Haymarket and Sydney. The team can talk you through relevant recent sales."},
+{k:["review","reviews","testimonial","testimonials","google","rating","ratings","feedback from clients"],a:"Metro displays Google reviews on its home page. Clients call the team professional, honest and genuine, and say rent and inspections are always on time."},
+{k:["rent review","rental review","renewal","renewals","increase rent","raise rent"],a:"Property managers handle timely rental reviews and renewals to maximize returns and minimize vacancy."},
+{k:["leasing specialist","trust account","trust accountant","accounts","accounting","statement"],a:"Metro has a dedicated leasing specialist and a trust account manager, so portfolio managers can focus on you and your property. Leasing and accounts are handled separately."},
+{k:["screening","tenant screening","reference","references","background check"],a:"Tenant screening is smart and fast with secure online applications. Metro reports 2,700+ applications received in its latest figures."},
+{k:["switch","change agent","change manager","moving agency","transfer","leave my agent","current agent"],a:"Switching is simple to start: say 'switch' and I will take your property details for the team. Metro also notes it is made up of investors who understand trust-based partnerships."},
+{k:["investor","investors","investing","portfolio","growing portfolio","yield"],a:"Metro describes itself as a team of investors and manages for investors in Sydney apartments. Figures and yields are not published on the site, so the team will advise."},
+{k:["boutique","small agency","personal service","personal"],a:"Metro is a boutique agency with the strength of a larger network: intelligent but personal service, tailored strategies and no cookie-cutter approach."},
+{k:["technology","tech","digital","modern","innovation"],a:"Metro invests in leading technology to streamline its processes and give clients more transparency, such as online applications, an owner portal and mobile tech at open homes."},
+{k:["confidential","pressure","pushy","sales pitch","privacy"],a:"Metro promises a confidential chat with no pressure and no pushy sales pitch, just expert advice from a team that treats your property like their own."},
+{k:["services","offer","what do you do","what services","provide"],a:"Metro Realty offers residential sales, property management and leasing in inner Sydney: sales appraisals, off-market sales, rentals, rental appraisals and full property management."},
+{k:["sell","selling","sale","vendor","list my","list","market my"],a:"Selling with Metro: a strategy tailored to your timeline, a styling and presentation plan, premium unlimited listings on realestate.com.au and domain.com.au, open homes with feedback reports and weekly campaign updates. Say 'appraisal' to request one."},
+{k:["appraisal","appraise","valuation","value","worth","how much is my"],a:"You can request a sales appraisal or a rental appraisal. Say 'appraisal' and I will take the property details for the team. Estimates and figures come from the agents, not from this assistant."},
+{k:["buy","buying","buyer","purchase","for sale","properties for sale"],a:"Metro lists residential properties for sale on its website and runs an off-market channel with a private buyer network. Say 'buy' to tell the team what you are looking for."},
+{k:["off market","off-market","offmarket","private","quiet sale","without advertising","no advertising","public advertising","sell without","sale without advertising"],a:"Off-market: Metro often matches properties with qualified buyers from its database and private network, and in some cases a sale can complete without public advertising."},
+{k:["rent","renting","lease","tenant","tenants","apply","application","applications","rental"],a:"Metro lists residential properties for lease and takes fast, secure online applications with tenant screening. Say 'viewing' to request an inspection."},
+{k:["property management","manage","manager","managers","landlord","investor","investment","switch","portfolio"],a:"Metro's property management includes proactive managers, routine and ingoing/outgoing inspection reports, flexible landlord payments, a no arrears policy with direct debit, online tenant screening, timely rent reviews, trusted maintenance, a dedicated leasing specialist and trust account manager, and a 24/7 owner portal. Say 'switch' to start."},
+{k:["arrears","late rent","direct debit","overdue"],a:"Metro runs a no arrears policy with full direct debit facilities."},
+{k:["inspection","inspections","routine inspection","ingoing","outgoing","condition report"],a:"Property managers carry out thorough routine, ingoing and outgoing inspection reports."},
+{k:["maintenance","repairs","repair","tradesperson","trades","plumber"],a:"Maintenance is handled with quality work at fair prices from reliable trades. Owners can follow things in the owner portal."},
+{k:["portal","owner portal","statement","statements","online","app"],a:"Landlords have owner portal access, 24/7. The team can explain what is shown in it."},
+{k:["open home","open homes","open house","inspect","viewing","view","see the property","open home report","after open home"],a:"Open homes are run by agents with mobile tech, and after each one the owner gets a report with buyer feedback and interest levels. To arrange a viewing or inspection, say 'viewing'."},
+{k:["advertising","advertise","domain","realestate","realestate.com.au","portal listing","online listing","photography","photos","30 days"],a:"Metro uses the largest premium-tier listings on realestate.com.au and domain.com.au with professional photography and eBrochures. Ads do not shrink after 30 days because only unlimited campaigns are used."},
+{k:["update","updates","report","reports","feedback","communication","kept informed"],a:"Sellers receive weekly campaign updates covering online listing performance, buyer feedback, offers and negotiations, with strategic advice on next steps."},
+{k:["style","styling","stylist","presentation","staging","prepare","prep"],a:"Presentation is one of the key pillars of a successful sale. Metro works with you on a styling and presentation strategy whether the property is vacant, owner-occupied or tenanted."},
+{k:["award","awards","winner","best","rate my agent","reb","rated","recognised","recognized"],a:"Metro was Rate My Agent Agency of the Year in Haymarket in 2024, and Sales Agency of the Year in 2023. It has also won rental and property management awards, including Property Management Agency of the Year in 2020, 2021 and 2022."},
+{k:["stats","numbers","performance","days on market","leased","enquiries"],a:"Metro's property management page reports 260 properties leased in the last 12 months, an average of 16 days on market, 9,700+ tenant enquiries, 2,700+ applications and 800+ open homes."},
+{k:["team","agent","agents","joseph","fairchild","cintia","elkhoury","who"],a:"Joseph Fairchild and Cintia Elkhoury are named on Metro's awards. Use 'Our Team' on the main site, or call 02 9260 7100, to reach the right person."},
+{k:["price","prices","fee","fees","commission","cost","charge","charges","rate"],a:"Fees and commissions are not published on the website. The team will talk through them with you, with no pressure."},
+{k:["address","where","location","office","directions","find you","surry hills","foveaux"],a:"Metro Realty, 148 Foveaux Street, Surry Hills NSW 2010, with a focus on inner Sydney and the CBD."},
+{k:["phone","call","number","telephone","contact","reach","mobile"],a:"Call 02 9260 7100 or email team@metrorealty.com.au."},
+{k:["email","mail","e-mail"],a:"Email team@metrorealty.com.au."},
+{k:["hours","open","opening","close","closing","weekend","saturday","sunday"],a:"Office hours are not listed on the website. The team will confirm them: 02 9260 7100."},
+{k:["about","company","who are you","story","boutique","history","profile"],a:"Metro Realty blends the agility of a boutique agency with the strength of a larger network, based in the heart of Sydney's CBD area with equal strength in sales and property management. Its aim: results through meaningful strategy, not empty theatrics."},
+{k:["suburb","suburbs","areas","cbd","haymarket","sydney","inner sydney","areas do you cover","coverage"],a:"Metro focuses on inner Sydney, with its office in Surry Hills and awards in Haymarket and Sydney. The team will confirm whether your suburb is covered."},
+{k:["apartment","apartments","unit","units","strata"],a:"Metro is known for Sydney apartments. Review quotes mention managing city apartments for investors. The team will confirm details for your building."},
+{k:["news","blog","market update","market","trends"],a:"Metro publishes market updates on its site, such as a Sydney CBD market update and an investor-focused monthly note."}
+];
+var CFG={title:"Metro Assistant",sub:"Sales, leasing and management",fab:"Ask Metro",ph:"Ask about selling, renting or managing",greet:"Hi! I can answer questions about selling, leasing and property management with Metro Realty, or take details for an appraisal or viewing. Nothing is sent from this demo.",chips:["Sales appraisal","Rental appraisal","How do you advertise?","Switch property manager","Where is the office?"],kb:KB,
+fallback:"I do not have that on Metro's site. The team will confirm it: call 02 9260 7100 or say 'appraisal' to leave your details.",
+flow:{trig:["appraisal","appraise","valuation","book a viewing","viewing","inspection request","switch","i want to sell","i want to buy","i want to rent","look at a property","book an inspection","enquiry","inquiry"],intro:"Let's get your request ready for the team. A few quick questions.",done:"Done. Your request is ready for the Metro team, who will confirm a time with you. (Demo: nothing was actually sent.)",steps:[
+{key:"want",label:"Request",q:"What would you like?",opts:["Sales appraisal","Rental appraisal","Property viewing","Switch property manager","Buying enquiry"]},
+{key:"ptype",label:"Property type",q:"Property type?",opts:["Apartment","House","Townhouse","Other"]},
+{key:"addr",label:"Address or suburb",q:"Property address or suburb?",ph:"e.g. Surry Hills"},
+{key:"when",label:"Preferred time",q:"When suits you? A day or time window works.",ph:"e.g. Thursday after 5pm"},
+{key:"name",label:"Name",q:"Your name?"},
+{key:"phone",label:"Mobile",q:"Best mobile number for the team to reach you?",type:"phone",err:"That does not look like a phone number. Please include the digits.",ph:"04.."}]}};
+if(typeof document!=='undefined')AW.init(CFG);
+if(typeof module!=='undefined')module.exports={CFG:CFG};
+</script>
+</body></html>

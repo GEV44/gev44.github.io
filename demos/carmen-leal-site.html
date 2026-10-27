@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carmen Leal · Vancouver Realtor</title>
+<meta name="description" content="Demo page for Carmen Leal, Vancouver REALTOR®, with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#ec1848;--red-d:#c40f39;--ink:#1d1a1b;--mut:#6c6466;--cream:#faf6f3;--line:#e8dfdb;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;font-size:15px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.1}
+h2{font-size:clamp(30px,6vw,44px);margin-bottom:14px}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:12px}
+/* header */
+header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+.logo{height:46px;width:auto}
+.hd nav{display:none}
+.hd nav a{text-decoration:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-left:22px;color:var(--mut)}
+.hd nav a:hover{color:var(--red)}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:13px 22px;border:0;border-radius:2px;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--red-d)}
+.btn.line{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn.line:hover{background:var(--ink);color:#fff}
+.hd .btn{padding:10px 14px;font-size:11px}
+/* hero */
+.hero{padding:44px 0 34px}
+.hero .wrap{display:grid;gap:28px}
+.hero h1{font-size:clamp(42px,11vw,78px);font-weight:500}
+.hero h1 em{color:var(--red);font-style:italic}
+.hero p.lead{font-size:16px;color:#4a4345;max-width:520px;margin:18px 0 24px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.card-id{background:var(--white);border:1px solid var(--line);padding:24px;border-left:4px solid var(--red)}
+.card-id h3{font-size:26px;margin-bottom:4px}
+.card-id .sub{font-size:12px;color:var(--mut);margin-bottom:14px}
+.card-id dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13px}
+.card-id dt{color:var(--mut)}
+.card-id dd{font-weight:500;word-break:break-word}
+/* strip */
+.strip{background:var(--ink);color:#fff;padding:26px 0}
+.strip .wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px 12px;text-align:center}
+.strip b{display:block;font-family:"Cormorant Garamond",serif;font-size:38px;color:#ff7a96;line-height:1}
+.strip span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+section{padding:54px 0}
+.lead2{max-width:620px;color:#4a4345;margin-bottom:26px}
+/* touch */
+.touch{background:var(--white)}
+.touch blockquote{font-family:"Cormorant Garamond",serif;font-size:clamp(24px,5vw,34px);line-height:1.3;font-style:italic;max-width:760px;border-left:3px solid var(--red);padding-left:18px}
+/* two paths */
+.two{display:grid;gap:18px}
+.path{background:var(--white);border:1px solid var(--line);padding:26px}
+.path h3{font-size:30px;margin-bottom:8px}
+.path ul{list-style:none;margin:12px 0 18px}
+.path li{padding:7px 0 7px 22px;position:relative;font-size:14px;border-bottom:1px dashed var(--line)}
+.path li:before{content:"";position:absolute;left:0;top:15px;width:10px;height:2px;background:var(--red)}
+/* hoods */
+.hoods{display:grid;gap:14px}
+.hood{background:var(--white);border:1px solid var(--line);padding:20px}
+.hood h3{font-size:28px;color:var(--red);margin-bottom:8px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:12px;border:1px solid var(--line);padding:4px 10px;border-radius:30px;background:var(--cream)}
+.more{margin-top:18px;font-size:13px;color:var(--mut)}
+.more b{color:var(--ink)}
+/* eval */
+.eval{background:var(--red);color:#fff}
+.eval .eyebrow{color:#ffd3dc}
+.eval .grid{display:grid;gap:26px}
+.eval .fields{display:flex;flex-wrap:wrap;gap:8px}
+.eval .fields span{border:1px solid rgba(255,255,255,.55);padding:6px 12px;font-size:12px;border-radius:30px}
+.eval .btn{background:#fff;color:var(--red);margin-top:20px}
+.eval .btn:hover{background:var(--ink);color:#fff}
+/* awards */
+.awards{display:grid;gap:10px}
+.award{display:flex;gap:14px;align-items:baseline;background:var(--white);border:1px solid var(--line);padding:14px 18px}
+.award b{font-family:"Cormorant Garamond",serif;font-size:26px;color:var(--red);min-width:92px}
+.award span{font-size:13px;color:#4a4345}
+/* reviews */
+.revs{display:grid;gap:14px}
+.rev{background:var(--white);border:1px solid var(--line);padding:22px;font-size:14px}
+.rev p:before{content:"\201C";font-family:"Cormorant Garamond",serif;font-size:42px;color:var(--red);line-height:0;vertical-align:-14px;margin-right:4px}
+.rev cite{display:block;margin-top:12px;font-style:normal;font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+/* faq */
+details{background:var(--white);border:1px solid var(--line);margin-bottom:8px;padding:0 18px}
+summary{cursor:pointer;padding:15px 0;font-weight:600;font-size:14px;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"+";color:var(--red);font-size:20px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 0 16px;font-size:14px;color:#4a4345}
+/* contact */
+.contact{background:var(--ink);color:#fff}
+.contact .grid{display:grid;gap:24px}
+.contact a{color:#ff9db1}
+.contact p{margin-bottom:6px}
+.contact .big{font-family:"Cormorant Garamond",serif;font-size:34px;line-height:1.1;margin-bottom:12px}
+footer{background:#111;color:#9b9294;font-size:12px;padding:22px 0;text-align:center}
+.meet{display:grid;gap:18px}
+.bio p{margin-bottom:12px;color:#4a4345}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.pills span{border:1px solid var(--red);color:var(--red);padding:7px 14px;border-radius:30px;font-size:12px;font-weight:500;letter-spacing:.04em}
+.pills.big span{background:var(--white);font-size:13px;padding:10px 18px}
+.four{display:grid;gap:14px}
+.four>div{border-top:3px solid var(--red);padding:16px 0 4px}
+.four b{font-family:"Cormorant Garamond",serif;font-size:34px;color:var(--red);display:block;line-height:1}
+.four h3{font-size:24px;margin:6px 0}
+.four p{font-size:14px;color:#4a4345;font-style:italic}
+table.chk{width:100%;border-collapse:collapse;background:var(--cream);border:1px solid var(--line);font-size:14px}
+.chk th{background:var(--ink);color:#fff;text-align:left;padding:10px 14px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.chk td{padding:11px 14px;border-top:1px solid var(--line);vertical-align:top}
+.chk td:first-child{font-weight:600;width:42%}
+/* widget */
+#cw-fab{position:fixed;right:16px;bottom:16px;z-index:50;background:var(--red);color:#fff;border:0;border-radius:40px;padding:14px 20px;font:600 13px Montserrat,sans-serif;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#cw-panel{position:fixed;right:16px;bottom:74px;z-index:50;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 100px));background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.28);display:none;flex-direction:column;overflow:hidden}
+#cw-panel.open{display:flex}
+.cw-h{background:var(--ink);color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.cw-h b{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600}
+.cw-h button{background:none;border:0;color:#fff;font-size:22px;cursor:pointer;line-height:1}
+#cw-msgs{flex:1;overflow-y:auto;padding:12px;background:var(--cream);display:flex;flex-direction:column;gap:8px}
+.cw-m{max-width:88%;padding:9px 12px;border-radius:10px;font-size:13px;line-height:1.5}
+.cw-m.bot{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.cw-m.me{background:var(--red);color:#fff;align-self:flex-end}
+#cw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;border-top:1px solid var(--line);max-height:104px;overflow-y:auto;background:#fff}
+#cw-chips:empty{display:none}
+#cw-chips button{border:1px solid var(--red);background:#fff;color:var(--red);border-radius:30px;padding:6px 11px;font:500 12px Montserrat,sans-serif;cursor:pointer}
+#cw-chips button:hover{background:var(--red);color:#fff}
+#cw-form{display:flex;border-top:1px solid var(--line)}
+#cw-in{flex:1;border:0;padding:13px;font:14px Montserrat,sans-serif;min-width:0;outline:none}
+#cw-form button{border:0;background:var(--red);color:#fff;padding:0 16px;font:600 12px Montserrat,sans-serif;cursor:pointer}
+@media(min-width:760px){
+ .hd nav{display:block}
+ .hero .wrap{grid-template-columns:1.4fr 1fr;align-items:center;gap:44px}
+ .strip .wrap{grid-template-columns:repeat(4,1fr)}
+ .two{grid-template-columns:1fr 1fr}
+ .hoods{grid-template-columns:1fr 1fr}
+ .eval .grid{grid-template-columns:1.2fr 1fr;align-items:center}
+ .revs{grid-template-columns:1fr 1fr}
+ .meet{grid-template-columns:1fr 1.2fr;gap:44px}
+ .four{grid-template-columns:repeat(4,1fr);gap:20px}
+ .contact .grid{grid-template-columns:1.2fr 1fr}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+<a href="#top"><img class="logo" src="img/carmen-leal-logo.png" alt="Carmen Leal Realtor, Personal Real Estate Corporation"></a>
+<nav><a href="#buy-sell">Buy &amp; sell</a><a href="#hoods">Neighbourhoods</a><a href="#evaluation">Evaluation</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></nav>
+<a class="btn" href="#contact">Call Carmen</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<div class="eyebrow">Vancouver real estate</div>
+<h1>Vancouver realtor, <em>Carmen&rsquo;s touch</em></h1>
+<p class="lead">A top Vancouver REALTOR® and guide for the best direction in your selling or buying transaction, with reassurance on every step of the way.</p>
+<div class="cta"><a class="btn" href="#evaluation">Request online evaluation</a><a class="btn line" href="#hoods">Browse neighbourhoods</a></div>
+</div>
+<aside class="card-id">
+<h3>Carmen Leal</h3>
+<div class="sub">REALTOR® · Personal Real Estate Corporation</div>
+<dl>
+<dt>Brokerage</dt><dd>Macdonald Realty Downtown</dd>
+<dt>Office</dt><dd>1050 Howe Street, Vancouver BC</dd>
+<dt>Phone</dt><dd><a href="tel:6042184846">604.218.4846</a></dd>
+<dt>E-mail</dt><dd>carmen@carmenleal.ca</dd>
+</dl>
+</aside>
+</div></div>
+
+<div class="strip"><div class="wrap">
+<div><b>12+</b><span>years in Vancouver real estate</span></div>
+<div><b>Top 10%</b><span>Medallion 2025, Greater Vancouver REALTORS®</span></div>
+<div><b>4</b><span>downtown neighbourhoods</span></div>
+<div><b>6</b><span>areas with listings</span></div>
+</div></div>
+
+<section class="touch"><div class="wrap">
+<div class="eyebrow">Carmen&rsquo;s touch</div>
+<blockquote>&ldquo;Carmen touches us with her charm. In the demanding world of Vancouver real estate she is the helpful word at the other end of your inquiring call.&rdquo;</blockquote>
+</div></section>
+
+<section id="buy-sell"><div class="wrap">
+<div class="eyebrow">Working with Carmen</div>
+<h2>Buying or selling, one person on the line</h2>
+<p class="lead2">Carmen has helped clients buy, sell, invest and develop around Greater Vancouver. Here is what each side looks like.</p>
+<div class="two">
+<div class="path"><h3>For buyers</h3>
+<p style="font-size:14px;color:#4a4345">Clients say she spends time up front to understand the home they imagine, then stays in constant contact.</p>
+<ul><li>Condos downtown: Yaletown, Coal Harbour, Gastown</li><li>Homes across Vancouver East and West, Burnaby North, North and West Vancouver</li><li>Investment properties and rentals</li><li>MLS Plus+ and Google Map Search on her site</li></ul>
+<a class="btn" href="#contact">Plan a viewing</a></div>
+<div class="path"><h3>For sellers</h3>
+<p style="font-size:14px;color:#4a4345">Sellers mention creative marketing with a cinematic film, daytime and twilight photos, and strong negotiating on offers.</p>
+<ul><li>Online home evaluation, a short form</li><li>Featured listings and a Sold by Carmen page</li><li>Cinematic property films on her YouTube channel</li><li>Daily blogs on the Vancouver market</li></ul>
+<a class="btn" href="#evaluation">Value my home</a></div>
+</div>
+</div></section>
+
+<section id="hoods" style="background:var(--white)"><div class="wrap">
+<div class="eyebrow">Downtown neighbourhoods</div>
+<h2>Pick a neighbourhood, then a size</h2>
+<p class="lead2">Her site groups downtown condos by area and by type.</p>
+<div class="hoods">
+<div class="hood"><h3>Yaletown</h3><div class="tags"><span>1 bedroom</span><span>2 bedrooms</span><span>3 bedrooms</span><span>Penthouses</span><span>Lofts</span></div></div>
+<div class="hood"><h3>Downtown</h3><div class="tags"><span>1 bedroom</span><span>2 bedrooms</span><span>3 bedrooms</span><span>Penthouses</span><span>Lofts</span></div></div>
+<div class="hood"><h3>Coal Harbour</h3><div class="tags"><span>1 bedroom</span><span>2 bedrooms</span><span>3 bedrooms</span><span>Penthouses</span><span>Lofts</span></div></div>
+<div class="hood"><h3>Gastown</h3><div class="tags"><span>1 bedroom</span><span>2 bedrooms</span><span>3 bedrooms</span><span>Penthouses</span><span>Lofts</span></div></div>
+</div>
+<p class="more"><b>Also listed:</b> Vancouver East · Vancouver West · Downtown Vancouver · Burnaby North · North Vancouver · West Vancouver</p>
+</div></section>
+
+<section id="evaluation" class="eval"><div class="wrap grid">
+<div>
+<div class="eyebrow">Thinking of selling?</div>
+<h2>Request an online evaluation</h2>
+<p style="max-width:460px">Carmen&rsquo;s form takes a few details about your home so she can look at it properly before she calls.</p>
+<a class="btn" href="#contact" onclick="document.getElementById('cw-fab').click();return false">Ask the assistant how it works</a>
+</div>
+<div class="fields"><span>Bedrooms</span><span>Bathrooms</span><span>Living area, sq. ft</span><span>Suite number</span><span>Address</span><span>Parking</span><span>Locker</span><span>View</span><span>Renovation spend</span><span>Your perceived value</span><span>When you plan to sell</span></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="eyebrow">Recognition</div>
+<h2>Awards</h2>
+<div class="awards">
+<div class="award"><b>2025</b><span>Medallion, awarded to the top 10% of Greater Vancouver Realtors</span></div>
+<div class="award"><b>2019</b><span>Medallion, top 10% of Greater Vancouver Realtors</span></div>
+<div class="award"><b>2018</b><span>Medallion, top 10% of Greater Vancouver Realtors</span></div>
+<div class="award"><b>2017</b><span>Medallion, top 10% of Greater Vancouver Realtors</span></div>
+<div class="award"><b>Excellence</b><span>Award of Excellence 2015 to 2017, 2021, 2022, 2025</span></div>
+<div class="award"><b>Sales</b><span>Sales Achievement 2014, 2018 to 2020, 2023, 2024</span></div>
+</div></div></section>
+
+<section id="meet" style="background:var(--cream)"><div class="wrap meet">
+<div>
+<div class="eyebrow">Meet Carmen</div>
+<h2>An experienced specialist, based in Vancouver</h2>
+</div>
+<div class="bio">
+<p>Carmen Leal is a Vancouver real estate specialist with more than 12 years in the industry and a record of success across the city. She is known for clear communication, attention to detail and for taking the time to listen to what her clients need before she acts.</p>
+<p>Her portfolio spans a variety of properties across Greater Vancouver, and her network of contacts and market knowledge serve people who want to buy, sell, invest or develop.</p>
+<p>Carmen is a Personal Real Estate Corporation (PREC) and works with Macdonald Realty Downtown, on Howe Street.</p>
+<div class="pills"><span>Clear communication</span><span>Attention to detail</span><span>Local market knowledge</span><span>Extensive network</span></div>
+</div></div></section>
+
+<section style="background:var(--white)"><div class="wrap">
+<div class="eyebrow">What clients mention most</div>
+<h2>Four things, in their words</h2>
+<div class="four">
+<div><b>01</b><h3>Always available</h3><p>&ldquo;Carmen is always available, always patient, and always professional.&rdquo;</p></div>
+<div><b>02</b><h3>Reads the market</h3><p>&ldquo;A tremendous grasp of the Vancouver real estate market and an intuitive feeling as to what a house is really worth.&rdquo;</p></div>
+<div><b>03</b><h3>Listens first</h3><p>&ldquo;She spent a great deal of time with us up front to truly understand the type of home we imagined for ourselves.&rdquo;</p></div>
+<div><b>04</b><h3>Negotiates well</h3><p>&ldquo;An outstanding negotiator, securing an offer over our asking price.&rdquo;</p></div>
+</div></div></section>
+
+<section style="background:var(--white)"><div class="wrap">
+<div class="eyebrow">Before you request an evaluation</div>
+<h2>Have these details to hand</h2>
+<p class="lead2">The online form is short. A few minutes with your paperwork makes it faster, and gives Carmen a clearer picture of your home.</p>
+<table class="chk">
+<tr><th>Detail</th><th>Why it helps</th></tr>
+<tr><td>Bedrooms and bathrooms</td><td>The basic layout she compares with recent sales.</td></tr>
+<tr><td>Living area, sq. ft</td><td>Size is the first thing buyers compare.</td></tr>
+<tr><td>Suite number and address</td><td>So she can look at the exact building and unit.</td></tr>
+<tr><td>Parking and locker</td><td>Both are asked for on the form: yes or no, and how many spaces.</td></tr>
+<tr><td>View</td><td>Asked as yes or no.</td></tr>
+<tr><td>Renovations</td><td>What you have spent on updates, and what you think the home is worth.</td></tr>
+<tr><td>Timing</td><td>When you plan to sell, from 1 to 6 months.</td></tr>
+</table>
+</div></section>
+
+<section id="reviews" style="background:var(--white)"><div class="wrap">
+<div class="eyebrow">Testimonials</div>
+<h2>What clients write</h2>
+<div class="revs">
+<div class="rev"><p>Carmen was able to help me find the perfect new home in Downtown Vancouver. Her knowledge of the various neighbourhoods in the city proved very helpful.</p><cite>Landon Seibold</cite></div>
+<div class="rev"><p>Her creative marketing included a cinematic film, and gorgeous daytime/twilight photos. During the offers and counter offers, Carmen proved an outstanding negotiator.</p><cite>Mr. &amp; Mrs. Canovas</cite></div>
+<div class="rev"><p>Throughout the whole real estate buying process Carmen&rsquo;s greatest value was her personal touch. She was in constant contact; always available.</p><cite>Kit &amp; Wendy</cite></div>
+<div class="rev"><p>Carmen made a tremendous commitment to us as we pondered purchasing in Vancouver or White Rock. We appreciate her time and effort tremendously!</p><cite>C. White</cite></div>
+<div class="rev"><p>Her knowledge of the Vancouver market is unparalleled. With her help we have been successful in acquiring investment properties and securing good people to rent them.</p><cite>WR</cite></div>
+<div class="rev"><p>A tremendous grasp of the Vancouver real estate market, the perfect balance of knowledge, drive and enthusiasm that gets the job done right!</p><cite>Jose Gonzalez</cite></div>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="eyebrow">Follow along</div>
+<h2>Where Carmen shares her work</h2>
+<p class="lead2">Cinematic property films, daily blogs and market statistics, plus her social channels.</p>
+<div class="pills big"><span>YouTube films</span><span>Daily blogs</span><span>Instagram</span><span>Facebook</span><span>LinkedIn</span><span>Twitter</span><span>Google Business</span></div>
+</div></section>
+
+
+<section><div class="wrap">
+<div class="eyebrow">Good to know</div>
+<h2>Questions</h2>
+<details><summary>How do I get an idea of my home&rsquo;s value?</summary><p>Fill in the online evaluation on Carmen&rsquo;s site: bedrooms, bathrooms, size, address, parking, locker, view, renovations and when you plan to sell.</p></details>
+<details><summary>Which areas does Carmen cover?</summary><p>Downtown condos in Yaletown, Coal Harbour and Gastown, plus Vancouver East and West, Burnaby North, North Vancouver and West Vancouver.</p></details>
+<details><summary>Can I book a time to talk?</summary><p>Yes, by phone on 604.218.4846, by e-mail, or through the online appointment link on her website.</p></details>
+<details><summary>What does it cost to work with Carmen?</summary><p>Fees are not published on her site. Carmen will go through them with you directly.</p></details>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap grid">
+<div>
+<div class="eyebrow" style="color:#ff9db1">Contact</div>
+<div class="big">Let&rsquo;s talk about your next move.</div>
+<p>Carmen Leal PREC, REALTOR®<br>Macdonald Realty Downtown</p>
+</div>
+<div>
+<p><b>Phone</b><br><a href="tel:6042184846">604.218.4846</a></p>
+<p><b>E-mail</b><br><a href="mailto:carmen@carmenleal.ca">carmen@carmenleal.ca</a></p>
+<p><b>Office</b><br>1050 Howe Street, Vancouver BC</p>
+<p style="opacity:.7;font-size:12px;margin-top:8px">Opening hours are not published; the team confirms on request.</p>
+</div>
+</div></section>
+</main>
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+
+<button id="cw-fab" type="button" aria-expanded="false" aria-controls="cw-panel">Ask Carmen&rsquo;s assistant</button>
+<div id="cw-panel" role="dialog" aria-label="Assistant">
+<div class="cw-h"><b>Carmen Leal · assistant</b><button id="cw-x" type="button" aria-label="Close">&times;</button></div>
+<div id="cw-msgs"></div><div id="cw-chips"></div>
+<form id="cw-form"><input id="cw-in" autocomplete="off" placeholder="Ask a question" aria-label="Your message"><button>Send</button></form>
+</div>
+<script>(function(root){
+function norm(s){return String(s).toLowerCase().replace(/[’'`]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;if(Math.abs(m-n)>2)return 9;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var q=[i];for(j=1;j<=n;j++){c=a[i-1]===b[j-1]?0:1;q[j]=Math.min(p[j]+1,q[j-1]+1,p[j-1]+c);}p=q;}return p[n];}
+function tm(t,k){if(t===k)return 1;if(k.length<4||t.length<4)return 0;
+ if(k.length>=5&&t.length>=5&&t.slice(0,5)===k.slice(0,5)&&Math.abs(t.length-k.length)<=4)return .9;
+ if(t[0]===k[0]&&lev(t,k)<=(k.length>=8?2:1))return .8;return 0;}
+function score(toks,kw){var ws=norm(kw).split(' '),tot=0;for(var i=0;i<ws.length;i++){var b=0;for(var j=0;j<toks.length;j++){var s=tm(toks[j],ws[i]);if(s>b)b=s;}if(!b)return 0;tot+=b;}return tot*(ws.length>1?1.3:1);}
+function match(KB,text){var toks=norm(text).split(' ').filter(Boolean),best=null,bs=0;
+ for(var i=0;i<KB.length;i++){var e=KB[i],s=0;for(var k=0;k<e.k.length;k++){var v=score(toks,e.k[k]);if(v>s)s=v;}if(s>bs){bs=s;best=e;}}
+ return bs>=0.8?best:null;}
+root.CE={norm:norm,match:match};
+if(typeof module!=='undefined')module.exports=root.CE;
+})(typeof window!=='undefined'?window:globalThis);
+</script>
+<script>window.CFG={short:"Carmen",
+hello:"Hello! I can answer questions about Carmen Leal, her areas and how an evaluation or viewing works. What would you like to know?",
+fallback:"I do not have that detail from Carmen's site. Carmen's team will confirm it: 604.218.4846 or carmen@carmenleal.ca. Or I can take your enquiry.",
+doneMsg:"Thank you! Your enquiry is ready and has been sent to Carmen's team, who will get back to you. Here is what I noted:",
+chips:["Home evaluation","Buying a condo","Areas covered","Awards","Contact details","Make an enquiry"],
+kb:[
+{k:["hello","hi","hey","good morning","good evening"],a:"Hello! Ask about buying, selling, areas or a home evaluation.",next:null},
+{k:["who is carmen","about carmen","tell me about carmen","biography","experience","years","realtor","how long have you been","how long"],a:"Carmen Leal is a Vancouver REALTOR® with a Personal Real Estate Corporation, at Macdonald Realty Downtown. She has more than 12 years in Vancouver real estate and works with people buying, selling, investing or developing.",next:["Awards","Areas covered","Contact details"]},
+{k:["award","awards","medallion","top 10","excellence","recognition","achievement","best realtor"],a:"Carmen holds the Medallion (top 10% of Greater Vancouver Realtors) for 2017, 2018, 2019 and 2025, Awards of Excellence for 2015 to 2017, 2021, 2022 and 2025, and Sales Achievement awards for 2014, 2018 to 2020, 2023 and 2024.",next:["Home evaluation","Make an enquiry"]},
+{k:["evaluation","evaluate","valuation","value my home","worth","how much is my home","appraisal","apraisal","estimate","home value","market value"],a:"Carmen offers an online home evaluation. The form asks for your contact details, bedrooms, bathrooms, living area in sq. ft, suite number, address, parking, locker, view, renovation spend, your perceived value and when you plan to sell (from 1 to 6 months).",next:["Make an enquiry","Selling my home","Contact details"]},
+{k:["sell","selling","seller","list my","listing my","put my home on the market","sale of my","sellng"],a:"For sellers, clients mention a creative marketing package with a cinematic film and daytime or twilight photos, plus strong negotiation on offers. A good first step is the online evaluation.",next:["Home evaluation","Make an enquiry"]},
+{k:["buy","buying","buyer","purchase","purchasing","first time","looking for a home","find a home","find a condo","buing"],a:"For buyers, clients say Carmen spends time up front to understand the home you imagine, stays in constant contact and knows the neighbourhoods well. She covers downtown condos and the wider Greater Vancouver area.",next:["Areas covered","Condo types","Make an enquiry"]},
+{k:["condo","condos","apartment","penthouse","penthouses","loft","lofts","bedroom","bedrooms","1 bed","2 bed","3 bed","studio"],a:"Her site lists downtown condos by size and type: 1, 2 and 3 bedrooms, penthouses and lofts, in Yaletown, Downtown, Coal Harbour and Gastown.",next:["Areas covered","Make an enquiry"]},
+{k:["area","areas","neighbourhood","neighbourhoods","neighborhood","neighborhoods","where","location","locations","cover","cities","yaletown","coal harbour","gastown","downtown","burnaby","north vancouver","west vancouver","east vancouver","vancouver west","white rock"],a:"Downtown neighbourhoods: Yaletown, Downtown, Coal Harbour and Gastown. Listing areas on her site: Vancouver East, Vancouver West, Downtown Vancouver, Burnaby North, North Vancouver and West Vancouver. A client also mentions buying advice for White Rock.",next:["Condo types","Make an enquiry"]},
+{k:["invest","investment","investor","rental","rent","rentals","tenant","develop","developer","development"],a:"Carmen works with people who want to buy, sell, invest or develop. A client credits her with helping acquire investment properties and find good tenants for them.",next:["Make an enquiry","Contact details"]},
+{k:["featured","active listings","listings","listing","for sale","sold","recent sales","sold by carmen","mls","map search","properties"],a:"Her site has Featured Properties, Active Listings and Recent Sales (Sold by Carmen) pages, plus MLS Plus+ and a Google Map Search.",next:["Areas covered","Make an enquiry"]},
+{k:["video","videos","film","films","cinematic","youtube","photos","photography","twilight","marketing"],a:"Carmen publishes cinematic films of Vancouver properties on YouTube, and clients mention daytime and twilight photography in their sales.",next:["Selling my home"]},
+{k:["blog","blogs","news","market stats","statistics","market update"],a:"Carmen writes daily blogs about Vancouver real estate, and her site links to market statistics.",next:null},
+{k:["phone","call","number","telephone","contact","contacts","email","e-mail","mail","address","office","where are you","howe street","reach","reach carmen"],a:"Phone: 604.218.4846. E-mail: carmen@carmenleal.ca. Office: 1050 Howe Street, Vancouver BC (Macdonald Realty Downtown).",next:["Opening hours","Make an enquiry"]},
+{k:["hours","open","opening","opening hours","when are you open","available","weekend","saturday","sunday"],a:"Opening hours are not published on her site, so the team will confirm them. Clients describe Carmen as always available, and you can call 604.218.4846.",next:["Contact details"]},
+{k:["appointment","book","booking","schedule","meeting","meet","consultation","viewing","viewings","view a property","see a property","see a home","visit"],a:"I can note your request for a viewing or a call. It takes six short questions.",flow:1,next:null},
+{k:["enquiry","inquiry","make an enquiry","make an inquiry","request","contact me","call me","get in touch","talk to carmen"],a:"Sure, I will take a few details for Carmen's team.",flow:1},
+{k:["price","prices","cost","fee","fees","commission","charge","how much","how much do you charge","pricing"],a:"Fees are not published on her site. Carmen will go over them with you directly.",next:["Make an enquiry","Contact details"]},
+{k:["language","languages","speak","spanish","french","english","mandarin","russian","chinese"],a:"Languages are not listed on her site. Ask the team when you get in touch: 604.218.4846.",next:["Contact details"]},
+{k:["review","reviews","testimonial","testimonials","reference","references","clients say"],a:"The site carries testimonials. Clients describe Carmen as patient, professional, always available and a strong negotiator with a personal touch.",next:["Awards","Make an enquiry"]},
+{k:["parking","locker","storage","view","views"],a:"Parking, locker and view are among the details the online evaluation form asks about, since they affect a condo's value. The team will talk through them with you.",next:["Home evaluation"]},
+{k:["social","instagram","facebook","linkedin","twitter","follow","social media"],a:"Carmen is on Instagram, Facebook, LinkedIn, Twitter and YouTube, and also keeps a Google Business profile and blogs.",next:["Videos and photos"]},
+{k:["newsletter","subscribe","mailing list","updates"],a:"Her site has a sign-up for her mailing list. The team can add you if you leave an e-mail.",next:["Make an enquiry"]},
+{k:["timeline","how soon","when to sell","time frame","timeframe"],a:"The evaluation form asks when you plan to sell, from within 1 month up to 6 months. The right timing is something Carmen can talk through with you.",next:["Home evaluation"]},
+{k:["white rock","surrey","richmond","langley","coquitlam","victoria","kelowna"],a:"Her site lists Vancouver East, Vancouver West, Downtown, Burnaby North, North Vancouver and West Vancouver. For other places, such as White Rock, which a client mentions, the team will confirm.",next:["Areas covered","Contact details"]},
+{k:["rent out","property management","landlord","list for rent","lease"],a:"A client credits Carmen with helping find good people to rent their investment properties. For specifics on rentals, the team will confirm.",next:["Make an enquiry"]},
+{k:["mls data","reciprocity","data source","disclaimer"],a:"Listing data on her website comes in part from the MLS® Reciprocity program of the Greater Vancouver REALTORS®, the Fraser Valley Real Estate Board and the Chilliwack and District Real Estate Board.",next:["Listings"]},
+{k:["yaletown"],a:"Yaletown is one of her four downtown neighbourhoods, with pages for 1, 2 and 3 bedrooms, penthouses and lofts. For what is available today, the team will confirm.",next:["Make an enquiry"]},
+{k:["coal harbour"],a:"Coal Harbour is one of her four downtown neighbourhoods, with pages for 1, 2 and 3 bedrooms, penthouses and lofts. For what is available today, the team will confirm.",next:["Make an enquiry"]},
+{k:["gastown"],a:"Gastown is one of her four downtown neighbourhoods, with pages for 1, 2 and 3 bedrooms, penthouses and lofts. For what is available today, the team will confirm.",next:["Make an enquiry"]},
+{k:["thanks","thank you","thx","cheers"],a:"You are welcome! Anything else about Carmen's services?",next:null},
+{k:["brokerage","macdonald","company","firm","agency","prec","personal real estate corporation"],a:"Carmen is a REALTOR® with a Personal Real Estate Corporation (PREC), working with Macdonald Realty Downtown.",next:["Contact details"]}
+],
+flow:[
+{key:"goal",label:"I want to",q:"What are you looking to do?",chips:["Buy","Sell","Invest","Get a home evaluation","Just ask a question"],ph:"Buy, sell, invest..."},
+{key:"area",label:"Area",q:"Which area interests you?",chips:["Yaletown","Downtown","Coal Harbour","Gastown","Other area"],ph:"Neighbourhood"},
+{key:"type",label:"Home type",q:"What kind of home?",chips:["1 bedroom","2 bedrooms","3 bedrooms","Penthouse","Loft","House"],ph:"Home type"},
+{key:"when",label:"Timing",q:"When are you thinking of moving?",chips:["Within 1 to 3 months","3 to 6 months","Later this year","Just exploring"],ph:"Timing"},
+{key:"name",label:"Name",q:"What is your name?",ph:"Your name",v:function(t){return t.length>=2},err:"Please enter your name."},
+{key:"contact",label:"Phone or e-mail",q:"The best phone number or e-mail to reach you?",ph:"Phone or e-mail",v:function(t){return /@.+\./.test(t)||t.replace(/\D/g,"").length>=7},err:"Please enter a valid phone number or e-mail."}
+]};
+</script>
+<script>(function(){
+var C=window.CFG,CE=window.CE,$=function(i){return document.getElementById(i)};
+var box=$('cw-msgs'),chips=$('cw-chips'),inp=$('cw-in'),form=$('cw-form'),panel=$('cw-panel'),fab=$('cw-fab');
+var flow=null,fi=0,data={};
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+function say(t,me){var d=document.createElement('div');d.className='cw-m '+(me?'me':'bot');d.innerHTML=esc(t).replace(/\n/g,'<br>');box.appendChild(d);box.scrollTop=box.scrollHeight;}
+function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){handle(c)};chips.appendChild(b);});}
+function home(){setChips(C.chips);}
+function startFlow(pre){flow=C.flow;fi=0;data={};if(pre){data[flow[0].key]=pre;fi=1;}ask();}
+function ask(){var s=flow[fi];say(s.q);setChips(s.chips||[]);inp.placeholder=s.ph||'Type here';}
+function finish(){var lines=flow.map(function(s){return s.label+': '+(data[s.key]||'-')});
+ say(C.doneMsg+'\n\n'+lines.join('\n'));flow=null;inp.placeholder='Ask a question';setChips(['Start again'].concat(C.chips.slice(0,3)));}
+function handle(t){t=t.trim();if(!t)return;say(t,1);inp.value='';
+ if(/^start again$/i.test(t)){startFlow();return;}
+ if(flow){if(/^(cancel|stop|exit|back to questions)$/i.test(t)){flow=null;say('No problem. Ask me anything about '+C.short+'.');home();return;}
+  var s=flow[fi];if(s.chipsOnly&&s.chips&&s.chips.indexOf(t)<0){var m=s.chips.filter(function(c){return CE.norm(c).indexOf(CE.norm(t))>=0});if(m.length==1)t=m[0];}
+  if(s.v&&!s.v(t)){say(s.err||'Could you check that and try again?');return;}
+  data[s.key]=t;fi++;if(fi>=flow.length)finish();else ask();return;}
+ var e=CE.match(C.kb,t);
+ if(e){if(e.flow){say(e.a);startFlow(e.pre);return;}say(e.a);setChips(e.next||C.chips);}
+ else{say(C.fallback);setChips(C.chips);}}
+form.onsubmit=function(ev){ev.preventDefault();handle(inp.value);};
+fab.onclick=function(){var o=panel.classList.toggle('open');fab.setAttribute('aria-expanded',o);if(o&&!box.children.length){say(C.hello);home();}if(o)setTimeout(function(){inp.focus()},50);};
+$('cw-x').onclick=function(){panel.classList.remove('open');fab.setAttribute('aria-expanded',false);};
+})();
+</script>
+</body>
+</html>

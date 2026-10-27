@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dublin Homes Auctioneers · Castleknock, Dublin 15</title>
+<meta name="description" content="Demo page for Dublin Homes Auctioneers, estate agents in Castleknock, Dublin 15, with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#285296;--navy:#35345e;--sky:#6a9bff;--ink:#1c2233;--mut:#5d6477;--bg:#f3f6fb;--line:#dbe2ef;--white:#fff;--ok:#1f7a55}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Open Sans",system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.65;font-size:15px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.15}
+h2{font-size:clamp(28px,6vw,40px);color:var(--navy);margin-bottom:10px}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);background:#e4ecfb;padding:5px 11px;border-radius:30px;margin-bottom:12px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:14px;padding:13px 22px;border-radius:8px;background:var(--sky);color:#0d1b3d;border:2px solid var(--sky);cursor:pointer;font-family:inherit}
+.btn:hover{background:#8bb0ff;border-color:#8bb0ff}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.btn.dark{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.dark:hover{background:var(--navy);border-color:var(--navy)}
+/* top bar */
+.top{background:var(--navy);color:#cfd6f0;font-size:12px;padding:7px 0}
+.top .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.top a{text-decoration:none;font-weight:600;color:#fff}
+header{background:var(--white);position:sticky;top:0;z-index:20;box-shadow:0 1px 0 var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:8px 0;gap:10px}
+.logo{height:58px;width:auto}
+.hd nav{display:none}
+.hd nav a{margin-left:20px;text-decoration:none;font-weight:600;font-size:13px;color:var(--navy)}
+.hd nav a:hover{color:var(--blue)}
+.hd .btn{padding:9px 14px;font-size:12px}
+/* hero: centred on navy */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,#243e73 100%);color:#fff;text-align:center;padding:56px 0 64px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;left:50%;top:-60px;width:520px;height:520px;margin-left:-260px;border-radius:50%;background:radial-gradient(circle,rgba(106,155,255,.28),transparent 68%)}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(36px,9vw,64px);max-width:760px;margin:0 auto 16px}
+.hero p{max-width:600px;margin:0 auto 26px;color:#d6dcf2;font-size:16px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.hero small{display:block;margin-top:18px;color:#aab4d6;font-size:12px}
+/* promise */
+.promise{display:grid;gap:12px;margin-top:-30px;position:relative;z-index:2}
+.pr{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:0 8px 24px rgba(40,82,150,.1);display:flex;gap:14px;align-items:flex-start}
+.pr i{font-style:normal;font-family:"DM Serif Display",serif;font-size:28px;color:var(--sky);line-height:1}
+.pr b{display:block;font-size:14px;color:var(--navy)}
+.pr span{font-size:13px;color:var(--mut)}
+section{padding:52px 0}
+.sub{max-width:620px;color:var(--mut);margin-bottom:24px}
+/* services tiles */
+.tiles{display:grid;gap:12px}
+.tile{border:1px solid var(--line);border-radius:12px;padding:20px;background:var(--bg)}
+.tile h3{font-size:24px;color:var(--navy);margin-bottom:6px}
+.tile p{font-size:14px;color:var(--mut)}
+.tile .n{display:inline-block;background:var(--blue);color:#fff;font-weight:700;font-size:12px;width:28px;height:28px;border-radius:50%;text-align:center;line-height:28px;margin-bottom:10px}
+/* timeline */
+.steps{background:var(--bg)}
+.tl{list-style:none;position:relative;margin:10px 0 28px 14px;border-left:3px solid var(--sky);padding-left:24px}
+.tl li{position:relative;padding-bottom:22px}
+.tl li:before{content:"";position:absolute;left:-35px;top:3px;width:18px;height:18px;border-radius:50%;background:var(--white);border:4px solid var(--blue)}
+.tl b{display:block;font-size:16px;color:var(--navy)}
+.tl span{font-size:14px;color:var(--mut)}
+details{background:var(--white);border:1px solid var(--line);border-radius:10px;margin-bottom:8px;padding:0 16px}
+summary{cursor:pointer;font-weight:700;font-size:14px;padding:14px 0;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"+";color:var(--blue);font-size:20px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details ul{list-style:none;padding-bottom:14px}
+details li{font-size:14px;padding:5px 0 5px 24px;position:relative;color:#3b4258}
+details li:before{content:"\2713";position:absolute;left:0;color:var(--ok);font-weight:700}
+details p{padding:0 0 14px;font-size:14px;color:#3b4258}
+/* buyers agent */
+.buy{display:grid;gap:20px}
+.buyl{display:grid;gap:10px}
+.bs{display:flex;gap:12px;background:var(--white);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.bs b.num{flex:0 0 28px;height:28px;border-radius:8px;background:var(--navy);color:#fff;text-align:center;line-height:28px;font-size:13px}
+.bs div{font-size:14px}
+.bs strong{display:block;color:var(--navy)}
+.bs span{color:var(--mut);font-size:13px}
+/* team */
+.team{background:var(--navy);color:#fff}
+.team h2{color:#fff}
+.team .sub{color:#c1c9e6}
+.people{display:grid;gap:16px}
+.person{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:22px}
+.person h3{font-size:28px;margin-bottom:2px}
+.person .role{color:var(--sky);font-weight:700;font-size:13px;margin-bottom:10px}
+.person p{font-size:14px;color:#dde2f5;margin-bottom:10px}
+.person .lic{font-size:12px;color:#aab4d6;margin-bottom:10px}
+.person a{color:#fff;font-weight:700;text-decoration:none;border-bottom:1px solid var(--sky)}
+/* reviews */
+.rv{display:grid;gap:14px}
+.q{border-left:4px solid var(--sky);background:var(--bg);padding:18px 20px;border-radius:0 12px 12px 0;font-size:14px}
+.q cite{display:block;margin-top:10px;font-style:normal;font-weight:700;color:var(--navy);font-size:13px}
+/* contact */
+.contact{background:var(--bg)}
+.cg{display:grid;gap:20px}
+.cc{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px}
+.cc h3{font-size:26px;color:var(--navy);margin-bottom:8px}
+.cc p{margin-bottom:6px}
+.cc a{color:var(--blue);font-weight:700;text-decoration:none}
+footer{background:#1c2233;color:#9aa3bd;text-align:center;font-size:12px;padding:20px 0}
+/* widget */
+#cw-fab{position:fixed;right:14px;bottom:14px;z-index:50;background:var(--blue);color:#fff;border:0;border-radius:14px;padding:13px 18px;font:700 13px "Open Sans",sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(20,30,70,.35)}
+#cw-panel{position:fixed;right:14px;bottom:70px;z-index:50;width:min(370px,calc(100vw - 28px));height:min(530px,calc(100vh - 96px));background:#fff;border-radius:16px;box-shadow:0 14px 44px rgba(20,30,70,.4);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--line)}
+#cw-panel.open{display:flex}
+.cw-h{background:var(--navy);color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.cw-h b{font-family:"DM Serif Display",serif;font-weight:400;font-size:19px}
+.cw-h button{background:none;border:0;color:#fff;font-size:22px;cursor:pointer;line-height:1}
+#cw-msgs{flex:1;overflow-y:auto;padding:12px;background:var(--bg);display:flex;flex-direction:column;gap:8px}
+.cw-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:13px;line-height:1.5}
+.cw-m.bot{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.cw-m.me{background:var(--blue);color:#fff;align-self:flex-end}
+#cw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;border-top:1px solid var(--line);max-height:104px;overflow-y:auto;background:#fff}
+#cw-chips:empty{display:none}
+#cw-chips button{border:1px solid var(--blue);background:#fff;color:var(--blue);border-radius:30px;padding:6px 11px;font:600 12px "Open Sans",sans-serif;cursor:pointer}
+#cw-chips button:hover{background:var(--blue);color:#fff}
+#cw-form{display:flex;border-top:1px solid var(--line)}
+#cw-in{flex:1;border:0;padding:13px;font:14px "Open Sans",sans-serif;min-width:0;outline:none}
+#cw-form button{border:0;background:var(--blue);color:#fff;padding:0 16px;font:700 12px "Open Sans",sans-serif;cursor:pointer}
+@media(min-width:760px){
+ .hd nav{display:block}
+ .promise{grid-template-columns:repeat(3,1fr)}
+ .tiles{grid-template-columns:repeat(3,1fr)}
+ .buy{grid-template-columns:1fr 1.3fr;gap:36px}
+ .people{grid-template-columns:1fr 1fr}
+ .rv{grid-template-columns:1fr 1fr}
+ .cg{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><span>Estate agents, Castleknock, Dublin 15</span><a href="tel:018203406">Call 01 8203 406</a></div></div>
+<header><div class="wrap hd">
+<a href="#top"><img class="logo" src="img/dublin-homes-auctioneers-logo.jpg" alt="Dublin Homes Auctioneers"></a>
+<nav><a href="#services">Services</a><a href="#selling">Selling</a><a href="#buyers">Buyer&rsquo;s agent</a><a href="#team">Team</a><a href="#contact">Contact</a></nav>
+<a class="btn dark" href="#contact">Free valuation</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<span class="tag" style="background:rgba(255,255,255,.14);color:#fff">Dublin Homes · Estate agents in Dublin 15</span>
+<h1>A bespoke, personal service for your sale</h1>
+<p>Outstanding results with a personal touch. We explain every step in plain terms and we are always available when you need us.</p>
+<div class="cta"><a class="btn" href="#contact" onclick="document.getElementById('cw-fab').click();return false">Get a free valuation</a><a class="btn ghost" href="#selling">How selling works</a></div>
+<small>Licensed. Unit E, Laurel Lodge Shopping Centre, Castleknock</small>
+</div></div>
+
+<div class="wrap promise">
+<div class="pr"><i>01</i><div><b>Calls returned</b><span>By end of day, or first thing the next morning.</span></div></div>
+<div class="pr"><i>02</i><div><b>Premium marketing</b><span>Professional photography and video for every property.</span></div></div>
+<div class="pr"><i>03</i><div><b>Free valuation</b><span>No-obligation, with clear and honest advice.</span></div></div>
+</div>
+
+<section id="services"><div class="wrap">
+<span class="tag">Our services</span>
+<h2>Everything around the sale, in one office</h2>
+<p class="sub">For buyers and sellers, at each stage of the property journey.</p>
+<div class="tiles">
+<div class="tile"><span class="n">1</span><h3>Selling</h3><p>A straightforward, stress-free sale, with the aim of securing the best price for you.</p></div>
+<div class="tile"><span class="n">2</span><h3>Valuations</h3><p>Standard market appraisals, plus specialist valuations for HSE, probate and divorce proceedings.</p></div>
+<div class="tile"><span class="n">3</span><h3>BER certificates</h3><p>We can arrange a professional Building Energy Rating assessment.</p></div>
+<div class="tile"><span class="n">4</span><h3>Home staging</h3><p>Trusted tradespeople for painting and improvements, and carefully chosen furnishings, so your home looks its best.</p></div>
+<div class="tile"><span class="n">5</span><h3>Financial advice</h3><p>We connect you with trusted advisors for mortgages and insurance.</p></div>
+<div class="tile"><span class="n">6</span><h3>Buyer&rsquo;s agent</h3><p>We represent your interests exclusively when you buy, from search to completion.</p></div>
+</div>
+</div></section>
+
+<section style="background:var(--white)"><div class="wrap">
+<span class="tag">Why sell with Dublin Homes</span>
+<h2>Our approach, in five points</h2>
+<p class="sub">Selling a home is a big decision that deserves expert guidance and genuine care.</p>
+<div class="tiles">
+<div class="tile"><h3>Personalised service</h3><p>Your needs come first. Every call is returned by the end of the day, or first thing the next morning, because your time matters.</p></div>
+<div class="tile"><h3>Clear communication</h3><p>No jargon and no confusion. Each step is explained in straightforward language.</p></div>
+<div class="tile"><h3>Results-driven</h3><p>We help you present the property at its best, attract qualified buyers and guide you through every stage of the sale.</p></div>
+<div class="tile"><h3>Premium marketing</h3><p>Professional photography and videos are some of the ways we showcase your property.</p></div>
+<div class="tile"><h3>5-star Google reviews</h3><p>Our clients consistently rate us highly for dedication, results and service.</p></div>
+<div class="tile" style="background:var(--navy);color:#fff"><h3 style="color:#fff">Ready for the next step?</h3><p style="color:#d6dcf2">Ask for a free, no-obligation valuation and see how we can help.</p></div>
+</div>
+</div></section>
+
+<section id="selling" class="steps"><div class="wrap">
+<span class="tag">Thinking of selling?</span>
+<h2>Three first steps</h2>
+<p class="sub">Selling can feel overwhelming. Broken into steps, it is manageable.</p>
+<ol class="tl">
+<li><b>Find a trustworthy estate agent</b><span>Choose someone who listens, communicates clearly and understands your goals.</span></li>
+<li><b>Appoint a solicitor</b><span>A good property solicitor handles the legal side and keeps things moving smoothly.</span></li>
+<li><b>Gather your documents</b><span>Having everything ready early avoids delays. Open each group below.</span></li>
+</ol>
+<details><summary>Legal and ownership</summary><ul><li>Title deeds</li><li>Land Registry compliant map</li><li>Planning documentation</li><li>Certificate of Compliance (Building Regulations)</li><li>MUD Act documentation, for multi-unit developments</li></ul></details>
+<details><summary>Energy and safety</summary><ul><li>BER certificate (Building Energy Rating)</li><li>Boiler service certificate</li></ul></details>
+<details><summary>Financial and tax</summary><ul><li>LPT history (Local Property Tax)</li><li>Bank statement, for identity verification</li></ul></details>
+<details><summary>Personal identification</summary><ul><li>Proof of ID: passport or driver&rsquo;s licence</li><li>Proof of address: utility bill or similar</li><li>Marriage certificate, if applicable</li></ul></details>
+</div></section>
+
+<section id="buyers"><div class="wrap buy">
+<div>
+<span class="tag">For buyers</span>
+<h2>Your own buyer&rsquo;s agent</h2>
+<p class="sub">Our role is to represent your best interests exclusively throughout the purchase. The aim is an efficient, transparent, stress-free acquisition.</p>
+<a class="btn dark" href="#contact" onclick="document.getElementById('cw-fab').click();return false">Arrange a consultation</a>
+</div>
+<div class="buyl">
+<div class="bs"><b class="num">1</b><div><strong>Consultation and needs</strong><span>Objectives, locations, budget and requirements, to set clear search criteria.</span></div></div>
+<div class="bs"><b class="num">2</b><div><strong>Search and shortlist</strong><span>On-market and off-market properties, via agents, developers and private sellers.</span></div></div>
+<div class="bs"><b class="num">3</b><div><strong>Viewings and evaluation</strong><span>We attend on your behalf or with you, with unbiased feedback.</span></div></div>
+<div class="bs"><b class="num">4</b><div><strong>Market analysis</strong><span>Local insight, comparable sales and independent valuation advice.</span></div></div>
+<div class="bs"><b class="num">5</b><div><strong>Negotiation and offers</strong><span>Working for the most favourable price and terms.</span></div></div>
+<div class="bs"><b class="num">6</b><div><strong>Due diligence</strong><span>We liaise with solicitors, surveyors and financial advisors.</span></div></div>
+<div class="bs"><b class="num">7</b><div><strong>Completion and aftercare</strong><span>Updates at every stage, plus help with property management, renovation or rental advice if needed.</span></div></div>
+</div>
+</div></section>
+
+<section id="team" class="team"><div class="wrap">
+<span class="tag" style="background:rgba(255,255,255,.14);color:#fff">The team</span>
+<h2>Two people you will actually speak to</h2>
+<p class="sub">Both are licensed, and both are on the phone.</p>
+<div class="people">
+<div class="person"><h3>Annette Balfe</h3><div class="role">Owner</div><div class="lic">Licence No 002356</div>
+<p>Annette began as an estate agent in 2007, as the market turned from boom to bust, and has sold a home herself 13 times across Ireland and the UK. She guarantees to return every call by day&rsquo;s end or the following morning.</p>
+<a href="tel:0873211234">087 321 1234</a></div>
+<div class="person"><h3>Susan Stewart</h3><div class="role">Negotiator</div><div class="lic">Licence No 004684</div>
+<p>Susan joined Dublin Homes in 2022 with more than two decades across residential and commercial sales, valuations, lettings and property management. Calm, detail-minded and thoughtful with both buyers and sellers.</p>
+<a href="tel:0872393534">087 239 3534</a></div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<span class="tag">Client words</span>
+<h2>What sellers write</h2>
+<div class="rv">
+<div class="q">&ldquo;Susan&rsquo;s flexibility regarding viewings, her genuine interest in the property and the potential buyers, and her post-viewing communication set her a mile apart.&rdquo;<cite>Barbara M</cite></div>
+<div class="q">&ldquo;Dublin Homes Auctioneers supported our family through the sale of our parents&rsquo; home after they passed. We had no idea where to start, but Annette and team took care of everything.&rdquo;<cite>Jason B</cite></div>
+<div class="q">&ldquo;Annette kept me consistently informed through the process and all her advice turned out to be spot on.&rdquo;<cite>Clara McD</cite></div>
+<div class="q">&ldquo;Communication was clear and timely and response times to any queries was same day via call, text or email.&rdquo;<cite>Frances W</cite></div>
+</div></div></section>
+
+<section style="background:var(--bg)"><div class="wrap">
+<span class="tag">Quick answers</span>
+<h2>Questions we hear</h2>
+<details><summary>Is the valuation really free?</summary><p>Yes. The website offers a free, no-obligation valuation. Standard market appraisals and specialist valuations (HSE, probate, divorce) are both available.</p></details>
+<details><summary>How quickly will someone call me back?</summary><p>Every call is returned by the end of the day, or the following morning at the latest.</p></details>
+<details><summary>Can you help get the property ready to sell?</summary><p>Yes. Dublin Homes can arrange trusted tradespeople for painting and improvements, choose furnishings for staging, and organise a BER assessment.</p></details>
+<details><summary>Do you only act for sellers?</summary><p>No. There is a buyer&rsquo;s agent service that represents your interests exclusively through the purchase, including off-market searches.</p></details>
+<details><summary>What are your opening hours and fees?</summary><p>Neither is published on the website. The team confirms both when you get in touch.</p></details>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+<span class="tag">Contact</span>
+<h2>Speak to the team</h2>
+<div class="cg">
+<div class="cc"><h3>Find us</h3>
+<p>Dublin Homes Auctioneers<br>Unit E, Laurel Lodge Shopping Centre<br>Castleknock, Dublin 15, D15 ARY7</p>
+<p style="color:var(--mut);font-size:13px;margin-top:10px">Opening hours are not published online. The team confirms them on request.</p></div>
+<div class="cc"><h3>Get in touch</h3>
+<p>Office: <a href="tel:018203406">01 8203 406</a></p>
+<p>E-mail: <a href="mailto:info@dublinhomes.ie">info@dublinhomes.ie</a></p>
+<p>Annette: <a href="tel:0873211234">087 321 1234</a></p>
+<p>Susan: <a href="tel:0872393534">087 239 3534</a></p>
+<p style="margin-top:12px"><a class="btn dark" style="color:#fff" href="#contact" onclick="document.getElementById('cw-fab').click();return false">Request a free valuation</a></p></div>
+</div>
+</div></section>
+</main>
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+
+<button id="cw-fab" type="button" aria-expanded="false" aria-controls="cw-panel">Chat with Dublin Homes</button>
+<div id="cw-panel" role="dialog" aria-label="Assistant">
+<div class="cw-h"><b>Dublin Homes · assistant</b><button id="cw-x" type="button" aria-label="Close">&times;</button></div>
+<div id="cw-msgs"></div><div id="cw-chips"></div>
+<form id="cw-form"><input id="cw-in" autocomplete="off" placeholder="Ask a question" aria-label="Your message"><button>Send</button></form>
+</div>
+<script>(function(root){
+function norm(s){return String(s).toLowerCase().replace(/[’'`]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;if(Math.abs(m-n)>2)return 9;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var q=[i];for(j=1;j<=n;j++){c=a[i-1]===b[j-1]?0:1;q[j]=Math.min(p[j]+1,q[j-1]+1,p[j-1]+c);}p=q;}return p[n];}
+function tm(t,k){if(t===k)return 1;if(k.length<4||t.length<4)return 0;
+ if(k.length>=5&&t.length>=5&&t.slice(0,5)===k.slice(0,5)&&Math.abs(t.length-k.length)<=4)return .9;
+ if(t[0]===k[0]&&lev(t,k)<=(k.length>=8?2:1))return .8;return 0;}
+function score(toks,kw){var ws=norm(kw).split(' '),tot=0;for(var i=0;i<ws.length;i++){var b=0;for(var j=0;j<toks.length;j++){var s=tm(toks[j],ws[i]);if(s>b)b=s;}if(!b)return 0;tot+=b;}return tot*(ws.length>1?1.3:1);}
+function match(KB,text){var toks=norm(text).split(' ').filter(Boolean),best=null,bs=0;
+ for(var i=0;i<KB.length;i++){var e=KB[i],s=0;for(var k=0;k<e.k.length;k++){var v=score(toks,e.k[k]);if(v>s)s=v;}if(s>bs){bs=s;best=e;}}
+ return bs>=0.8?best:null;}
+root.CE={norm:norm,match:match};
+if(typeof module!=='undefined')module.exports=root.CE;
+})(typeof window!=='undefined'?window:globalThis);
+</script>
+<script>window.CFG={short:"Dublin Homes",
+hello:"Hello! I can answer questions about selling, valuations, BER, staging, buying with a buyer's agent and the Dublin Homes team. What would you like to know?",
+fallback:"I do not have that detail from the Dublin Homes website. The team will confirm it: 01 8203 406 or info@dublinhomes.ie. Or I can take a valuation request.",
+doneMsg:"Thank you! Your request has been sent to the Dublin Homes team, who will get back to you. Here is what I noted:",
+chips:["Free valuation","Selling my home","Documents needed","Buyer's agent","BER cert","Contact the team"],
+kb:[
+{k:["hello","hi","hey","good morning","good evening"],a:"Hello! Ask about selling, valuations, BER certificates or buying with a buyer's agent.",next:null},
+{k:["valuation","valuations","value","valued","free valuation","how much is my house worth","how much is my home worth","worth","appraisal","apraisal","market appraisal"],a:"Dublin Homes offers a free, no-obligation valuation. They do standard market appraisals and specialist valuations for HSE, probate and divorce proceedings. The online form asks for your name, phone, email, address and Eircode.",next:["Request a valuation","Selling my home"]},
+{k:["request a valuation","book a valuation","get a valuation","arrange a valuation","request","enquiry","inquiry","book","booking","appointment","call me","callback","call back","get in touch","contact me","viewing","viewings"],a:"Of course, I will take a few details for the team.",flow:1},
+{k:["sell","selling","seller","sale","sell my house","sell my home","sell my apartment","list my","put my house on the market","sellng"],a:"Dublin Homes aims to make a sale smooth and stress-free, and to secure the best price. They explain each step in plain terms, use professional photography and video, and return every call by the end of the day or the next morning.",next:["Selling steps","Documents needed","Free valuation"]},
+{k:["steps","start selling","how do i start","first steps","where to start","how to start","process","how does selling work","how does it work","get started","start"],a:"Three first steps: 1) find a trustworthy estate agent, 2) appoint a solicitor, 3) gather your documents early to avoid delays.",next:["Documents needed","Free valuation"]},
+{k:["documents","document","paperwork","papers","what do i need","checklist","title deeds","what to prepare","certificates"],a:"Typical documents: title deeds, Land Registry compliant map, planning documentation, Certificate of Compliance, MUD Act documentation for multi-unit developments, BER certificate, boiler service certificate, LPT history, a bank statement for ID verification, proof of ID and address, and a marriage certificate if applicable.",next:["BER cert","Free valuation"]},
+{k:["ber","ber cert","ber certificate","energy rating","building energy rating","energy"],a:"Dublin Homes can arrange a professional Building Energy Rating assessment, and a BER certificate is part of the sale paperwork.",next:["Free valuation","Documents needed"]},
+{k:["staging","stage","home staging","furniture","furnishings","painting","paint","tradespeople","trades","improvements","renovation","renovations","declutter"],a:"They can stage your home: arranging trusted tradespeople for painting and improvements, and organising carefully chosen furnishings, so it looks its best and attracts buyers quickly.",next:["Free valuation","Financial advice"]},
+{k:["financial","financial advice","mortgage","mortgages","insurance","finance","loan","advisor","adviser","advisors"],a:"Dublin Homes connects you with trusted advisors for mortgages and insurance, to help with the financial side of selling.",next:["Selling my home","Contact the team"]},
+{k:["buyer","buyers","buy","buying","buyers agent","buyer's agent","purchase","purchasing","looking to buy","find a house","off market","off-market","biuing"],a:"As a buyer's agent, Dublin Homes represents your interests exclusively: consultation, search on-market and off-market, viewings, market analysis, negotiation, due diligence with solicitors and surveyors, then completion and aftercare.",next:["Buyer steps","Request a valuation"]},
+{k:["buyer steps","buyer process","buying process","consultation","negotiate","negotiation"],a:"The buyer's agent process: 1) consultation, 2) search and shortlist, 3) viewings and evaluation, 4) market analysis, 5) negotiation and offers, 6) due diligence, 7) completion and aftercare.",next:["Request a valuation","Contact the team"]},
+{k:["probate","divorce","hse","inheritance","bereavement","deceased","probate valuation","parents home","family home","specialist valuation"],a:"Specialist valuations are available for HSE, probate and divorce proceedings. A client also describes how the team supported their family in selling their parents' home. For your case, please speak to the team directly.",next:["Request a valuation","Contact the team"]},
+{k:["team","staff","who","agents","annette","balfe","susan","stewart","owner","negotiator","licence","license","psra"],a:"Annette Balfe is the owner (Licence No 002356, 087 321 1234). Susan Stewart is the negotiator (Licence No 004684, 087 239 3534). Annette started as an estate agent in 2007; Susan joined in 2022 with more than two decades in the industry.",next:["Contact the team","Request a valuation"]},
+{k:["address","where","location","find you","directions","castleknock","laurel lodge","shopping centre","dublin 15","d15","eircode","office","map"],a:"Dublin Homes Auctioneers, Unit E, Laurel Lodge Shopping Centre, Castleknock, Dublin 15, D15 ARY7.",next:["Opening hours","Contact the team"]},
+{k:["phone","call","number","telephone","contact","contact the team","email","e-mail","mail","reach","mobile"],a:"Office: 01 8203 406. E-mail: info@dublinhomes.ie. Annette: 087 321 1234. Susan: 087 239 3534.",next:["Opening hours","Request a valuation"]},
+{k:["hours","open","opening","opening hours","when are you open","closed","weekend","saturday","sunday","time"],a:"Opening hours are not published on the website, so the team will confirm them. Every call is returned by the end of the day or the next morning.",next:["Contact the team"]},
+{k:["fee","fees","price","prices","cost","charge","commission","how much do you charge","pricing","percentage"],a:"Fees are not published on the website. The team will explain them when you ask for a valuation.",next:["Request a valuation","Contact the team"]},
+{k:["photo","photos","photography","video","videos","marketing","brochure","advertise","advertising","daft","myhome"],a:"Professional photography and video are part of how they showcase a property. For which portals they list on, the team will confirm.",next:["Selling my home"]},
+{k:["review","reviews","testimonial","testimonials","google","rating","stars","feedback","clients say"],a:"The website highlights 5-star Google reviews and a page of client testimonials. Clients mention clear communication, same-day replies and a personal touch.",next:["Selling my home","Contact the team"]},
+{k:["join","job","jobs","career","careers","work for","vacancy","hiring","recruit","come join us"],a:"The website has a Join Us page. For current openings, please contact the team: 01 8203 406.",next:["Contact the team"]},
+{k:["lettings","letting","rent","rental","tenant","landlord","property management","managed"],a:"Susan has experience in lettings and property management, and a client mentions Dublin Homes managing a tenancy before selling. For current rental services, the team will confirm.",next:["Contact the team"]},
+{k:["solicitor","solicitors","conveyancing","legal","lawyer"],a:"A good property solicitor handles the legal side of a sale. The website lists appointing one as step two, and a client mentions Dublin Homes arranging a pleasant solicitor for them. The team will advise on options.",next:["Selling steps","Contact the team"]},
+{k:["social","facebook","instagram","linkedin","twitter","follow"],a:"Dublin Homes is on Facebook, Instagram, LinkedIn and Twitter, with links on the website.",next:["Contact the team"]},
+{k:["lpt","local property tax","tax"],a:"LPT history (Local Property Tax) is among the financial documents to have ready when selling, along with a bank statement for identity verification. For tax advice, speak to a qualified advisor; the team can connect you.",next:["Documents needed","Financial advice"]},
+{k:["multi unit","mud act","apartment block","management company","owners management"],a:"For multi-unit developments, MUD Act documentation is on the list of legal and ownership documents to gather before selling.",next:["Documents needed"]},
+{k:["how long","how fast","how quickly","how soon","timeline","time frame","timeframe"],a:"The website does not give a sale timeline. It does say every call is returned by the end of the day or the next morning, and the team will talk through timing at your valuation.",next:["Request a valuation"]},
+{k:["thanks","thank you","thx","cheers"],a:"You are welcome! Anything else about selling or buying?",next:null},
+{k:["language","languages","irish","gaeilge","polish","spanish"],a:"Languages other than English are not listed on the website. Please ask the team when you call: 01 8203 406.",next:["Contact the team"]}
+],
+flow:[
+{key:"what",label:"Request",q:"What can we help with?",chips:["Free valuation","Selling","Buyer's agent","BER certificate","Home staging","Something else"],ph:"Valuation, selling, buying..."},
+{key:"prop",label:"Property",q:"What type of property is it?",chips:["Apartment","House","Duplex","Site or other"],ph:"Property type"},
+{key:"addr",label:"Address or area",q:"What is the address or area? An Eircode helps if you have it.",ph:"Address, area or Eircode",v:function(t){return t.length>=3},err:"Please enter an address or area."},
+{key:"when",label:"Timing",q:"When are you thinking of going ahead?",chips:["As soon as possible","Within 3 months","Later this year","Just exploring"],ph:"Timing"},
+{key:"name",label:"Name",q:"What is your name?",ph:"Your name",v:function(t){return t.length>=2},err:"Please enter your name."},
+{key:"contact",label:"Phone or e-mail",q:"The best phone number or e-mail to reach you?",ph:"Phone or e-mail",v:function(t){return /@.+\./.test(t)||t.replace(/\D/g,"").length>=7},err:"Please enter a valid phone number or e-mail."}
+]};
+</script>
+<script>(function(){
+var C=window.CFG,CE=window.CE,$=function(i){return document.getElementById(i)};
+var box=$('cw-msgs'),chips=$('cw-chips'),inp=$('cw-in'),form=$('cw-form'),panel=$('cw-panel'),fab=$('cw-fab');
+var flow=null,fi=0,data={};
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+function say(t,me){var d=document.createElement('div');d.className='cw-m '+(me?'me':'bot');d.innerHTML=esc(t).replace(/\n/g,'<br>');box.appendChild(d);box.scrollTop=box.scrollHeight;}
+function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){handle(c)};chips.appendChild(b);});}
+function home(){setChips(C.chips);}
+function startFlow(pre){flow=C.flow;fi=0;data={};if(pre){data[flow[0].key]=pre;fi=1;}ask();}
+function ask(){var s=flow[fi];say(s.q);setChips(s.chips||[]);inp.placeholder=s.ph||'Type here';}
+function finish(){var lines=flow.map(function(s){return s.label+': '+(data[s.key]||'-')});
+ say(C.doneMsg+'\n\n'+lines.join('\n'));flow=null;inp.placeholder='Ask a question';setChips(['Start again'].concat(C.chips.slice(0,3)));}
+function handle(t){t=t.trim();if(!t)return;say(t,1);inp.value='';
+ if(/^start again$/i.test(t)){startFlow();return;}
+ if(flow){if(/^(cancel|stop|exit|back to questions)$/i.test(t)){flow=null;say('No problem. Ask me anything about '+C.short+'.');home();return;}
+  var s=flow[fi];if(s.chipsOnly&&s.chips&&s.chips.indexOf(t)<0){var m=s.chips.filter(function(c){return CE.norm(c).indexOf(CE.norm(t))>=0});if(m.length==1)t=m[0];}
+  if(s.v&&!s.v(t)){say(s.err||'Could you check that and try again?');return;}
+  data[s.key]=t;fi++;if(fi>=flow.length)finish();else ask();return;}
+ var e=CE.match(C.kb,t);
+ if(e){if(e.flow){say(e.a);startFlow(e.pre);return;}say(e.a);setChips(e.next||C.chips);}
+ else{say(C.fallback);setChips(C.chips);}}
+form.onsubmit=function(ev){ev.preventDefault();handle(inp.value);};
+fab.onclick=function(){var o=panel.classList.toggle('open');fab.setAttribute('aria-expanded',o);if(o&&!box.children.length){say(C.hello);home();}if(o)setTimeout(function(){inp.focus()},50);};
+$('cw-x').onclick=function(){panel.classList.remove('open');fab.setAttribute('aria-expanded',false);};
+})();
+</script>
+</body>
+</html>

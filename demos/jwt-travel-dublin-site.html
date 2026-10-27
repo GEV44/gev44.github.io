@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JWT Travel · Dublin · Demo</title>
+<meta name="description" content="Demo page for JWT Travel: Camino guided tours, rugby and sports trips, school tours, cruises and a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#005484;--sky:#008dd4;--green:#77b52a;--ink:#06283d;--bg:#f3f7fa;--white:#fff;--line:#d5e1ea;--mut:#486578}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Source Sans 3',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;font-size:16.5px;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+/* top */
+.top{background:linear-gradient(135deg,var(--sky) 0%,var(--blue) 55%,var(--ink) 100%);color:#fff;position:relative;overflow:hidden}
+.top:after{content:"";position:absolute;right:-60px;bottom:-60px;width:260px;height:260px;border-radius:50%;background:var(--green);opacity:.18}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;max-width:1040px;margin:0 auto;position:relative;z-index:2}
+.logo{background:#fff;border-radius:10px;padding:5px 8px;display:flex}
+.logo img{height:46px;width:auto}
+.tel{color:#fff;font-weight:700;text-decoration:none;border:2px solid rgba(255,255,255,.7);border-radius:8px;padding:8px 12px;font-size:15px;white-space:nowrap}
+.hero{padding:28px 18px 56px;max-width:1040px;margin:0 auto;position:relative;z-index:2}
+.pill{display:inline-block;background:var(--green);color:#fff;font:700 13px 'Source Sans 3';letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:6px;margin-bottom:14px}
+.hero h1{font-size:clamp(44px,11vw,88px);font-weight:800;max-width:760px}
+.hero h1 span{color:var(--green)}
+.hero p{margin:16px 0 24px;max-width:560px;font-size:18px;color:#dcebf5}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.b{border:0;cursor:pointer;font:700 16px 'Source Sans 3';padding:13px 22px;border-radius:8px;text-decoration:none;display:inline-block}
+.b.g{background:var(--green);color:#10230a}
+.b.o{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px #fff}
+.strip{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+.strip div{background:#fff;padding:14px 16px}
+.strip b{display:block;font:700 26px 'Barlow Condensed';color:var(--blue)}
+.strip span{font-size:13.5px;color:var(--mut)}
+@media(min-width:760px){.strip{grid-template-columns:repeat(4,1fr)}}
+/* tabs */
+.tabsec{padding:36px 0 10px}
+.sh{margin-bottom:16px}
+.sh small{color:var(--green);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px;filter:brightness(.8)}
+.sh h2{font-size:clamp(34px,7vw,52px);color:var(--blue);margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 18px 12px;margin:0 -18px;scrollbar-width:thin}
+.tabs button{flex:none;border:2px solid var(--blue);background:#fff;color:var(--blue);font:700 15px 'Source Sans 3';border-radius:999px;padding:9px 16px;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--blue);color:#fff}
+.panel{display:none;background:#fff;border:1px solid var(--line);border-left:6px solid var(--green);border-radius:12px;padding:22px 20px;margin-top:6px}
+.panel.on{display:block}
+.panel h3{font-size:34px;color:var(--blue);margin-bottom:8px}
+.panel p{color:#274b61;margin-bottom:10px}
+.panel ul{margin:8px 0 14px 18px;color:#274b61}
+.panel li{margin-bottom:4px}
+.panel .b{background:var(--blue);color:#fff;font-size:15px;padding:10px 16px;margin:4px 6px 0 0}
+/* departures */
+.dep{margin-top:20px}
+.dep h2{font-size:clamp(30px,6vw,44px);color:var(--blue)}
+.dl{margin-top:12px;display:grid;gap:8px}
+@media(min-width:760px){.dl{grid-template-columns:1fr 1fr}}
+.d{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.d time{background:var(--blue);color:#fff;border-radius:8px;text-align:center;padding:6px 0;font:700 13px 'Source Sans 3';text-transform:uppercase;line-height:1.1}
+.d time b{display:block;font:800 26px 'Barlow Condensed'}
+.d strong{display:block;font-size:15.5px;line-height:1.25}
+.d span{font-size:13px;color:var(--mut)}
+.d.new time{background:var(--green);color:#10230a}
+.dnote{margin-top:12px;font-size:14px;color:var(--mut)}
+/* official partner */
+.ptn{background:var(--ink);color:#fff;margin-top:40px;padding:42px 0}
+.ptn .g{display:grid;gap:18px}
+@media(min-width:760px){.ptn .g{grid-template-columns:1.2fr 1fr;align-items:center}}
+.ptn h2{font-size:clamp(34px,7vw,54px)}
+.ptn h2 span{color:var(--green)}
+.ptn p{color:#bcd3e3;margin-top:10px}
+.lic{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:18px}
+.lic h3{font-size:24px;color:var(--green);margin-bottom:8px}
+.lic p{font-size:15px;margin:0 0 6px}
+/* schools */
+.sch{padding:40px 0}
+.sch .cards{display:grid;gap:12px;margin-top:12px}
+@media(min-width:700px){.sch .cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+.card h3{font-size:26px;color:var(--blue);margin-bottom:6px}
+.card p{font-size:15px;color:#274b61}
+.card a{color:var(--sky);font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;margin-top:8px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;padding:13px 15px}
+.faq summary{cursor:pointer;font-weight:700;color:var(--blue)}
+.faq p{margin-top:8px;color:#274b61;font-size:15.5px}
+/* contact */
+.ct{background:#fff;border-top:1px solid var(--line);padding:38px 0}
+.ct table{width:100%;border-collapse:collapse;margin-top:10px;font-size:15.5px}
+.ct td{padding:10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.ct td:last-child{text-align:right;font-weight:700;word-break:break-word}
+.ct a{color:var(--blue)}
+footer{background:var(--blue);color:#cfe4f1;text-align:center;padding:22px 18px 90px;font-size:14px}
+/* assistant */
+#as-fab{position:fixed;right:14px;bottom:14px;z-index:50;background:var(--green);color:#10230a;border:0;border-radius:10px;padding:14px 18px;font:700 16px 'Source Sans 3';box-shadow:0 8px 22px rgba(0,0,0,.3);cursor:pointer}
+#as-fab.hide{display:none}
+#as-panel{position:fixed;z-index:60;right:0;bottom:0;left:0;height:min(80vh,560px);background:#fff;border-radius:14px 14px 0 0;box-shadow:0 -8px 36px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden}
+#as-panel.on{display:flex}
+@media(min-width:560px){#as-panel{left:auto;right:18px;bottom:18px;width:380px;border-radius:14px}}
+.as-h{background:linear-gradient(90deg,var(--blue),var(--sky));color:#fff;padding:13px 15px;display:flex;justify-content:space-between;align-items:center}
+.as-h b{font:700 22px 'Barlow Condensed';text-transform:uppercase}
+.as-h small{display:block;font-size:11.5px;color:#d3e9f6}
+#as-x{background:none;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1}
+#as-log{flex:1;overflow-y:auto;padding:14px;background:var(--bg);display:flex;flex-direction:column;gap:8px}
+.as-m{max-width:88%;padding:10px 13px;border-radius:12px;font-size:15px;line-height:1.45}
+.as-b{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.as-u{background:var(--blue);color:#fff;align-self:flex-end}
+#as-chips{display:flex;gap:6px;overflow-x:auto;padding:8px 12px;background:var(--bg);border-top:1px solid var(--line);white-space:nowrap}
+#as-chips button{flex:none;background:#fff;border:1.5px solid var(--green);color:#2f5a07;border-radius:999px;padding:7px 12px;font:700 13.5px 'Source Sans 3';cursor:pointer}
+#as-form{display:flex;gap:8px;padding:10px 12px;background:#fff;border-top:1px solid var(--line)}
+#as-in{flex:1;min-width:0;border:1px solid var(--line);border-radius:8px;padding:10px 12px;font:16px 'Source Sans 3'}
+#as-form button{background:var(--blue);color:#fff;border:0;border-radius:8px;padding:0 16px;font:700 15px 'Source Sans 3';cursor:pointer}
+</style>
+</head>
+<body>
+<div class="top">
+<div class="bar"><a class="logo" href="#top"><img src="img/jwt-travel-dublin-logo.svg" alt="JWT Travel" width="116" height="46"></a><a class="tel" href="tel:+35316852244">01 6852244</a></div>
+<div class="hero" id="top">
+<span class="pill">Official travel partner of Leinster Rugby</span>
+<h1>Travel with the team <span>and more</span></h1>
+<p>Rugby trips, school tours, Camino guided walks, cruises and escorted holidays, planned for groups and individuals by an Irish-owned team with over 60 years in travel.</p>
+<div class="cta"><button class="b g" data-ask="Plan a trip">Plan a trip</button><a class="b o" href="#tours">Browse tours</a></div>
+</div></div>
+<div class="strip"><div><b>60+</b><span>years in the travel business</span></div><div><b>TA 0804</b><span>Travel Agent licence, Irish Aviation Authority</span></div><div><b>TO 273</b><span>Tour Operator licence</span></div><div><b>100%</b><span>Irish owned and bonded</span></div></div>
+
+<main>
+<section class="tabsec" id="tours"><div class="wrap">
+<div class="sh"><small>What would you like to plan?</small><h2>Choose your JWT</h2></div>
+<div class="tabs" role="tablist">
+<button role="tab" aria-selected="true" data-t="p-sports">Sports</button>
+<button role="tab" aria-selected="false" data-t="p-camino">Camino</button>
+<button role="tab" aria-selected="false" data-t="p-schools">Schools</button>
+<button role="tab" aria-selected="false" data-t="p-cruises">Cruises</button>
+<button role="tab" aria-selected="false" data-t="p-music">Music</button>
+<button role="tab" aria-selected="false" data-t="p-esc">Escorted</button>
+<button role="tab" aria-selected="false" data-t="p-ire">Ireland</button>
+</div>
+
+<div class="panel on" id="p-sports"><h3>JWT Sports</h3><p>Join sports tours to rugby and soccer matches, from the Champions Cup and Six Nations to the United Rugby Championship and the Premier League. JWT also arranges travel for the Leinster team on overseas matches.</p>
+<ul><li>Leinster Rugby supporter packages to European Champions Cup and URC away games</li><li>Six Nations 2027: rugby in Rome and Edinburgh</li><li>Ireland Rugby tours</li><li>Sports tours for groups, clubs and schools, including youth tournaments</li></ul>
+<button class="b" data-ask="Rugby">Ask about rugby trips</button><button class="b" data-ask="Groups and clubs">Club or group</button></div>
+
+<div class="panel" id="p-camino"><h3>JWT Camino</h3><p>Week-long fully escorted guided tours to Santiago de Compostela, walking about 100 km so you receive your own Compostela. 2027 is a Holy Year, Xacobeo. All listed departures leave from Dublin.</p>
+<ul><li>Camino Frances, from Sarria</li><li>Coastal Camino Portugues, from near Baiona in southern Galicia</li><li>Camino Ingles, the medieval route of Irish and British pilgrims (new for 2027)</li><li>Camino to Fisterra and Muxia on the Atlantic coast</li><li>Easy Camino: a 9-night Easy Walk tour and three Coach and Walking tours</li></ul>
+<button class="b" data-ask="Camino dates">See departures below</button><button class="b" data-ask="Easy Camino">Easier option</button></div>
+
+<div class="panel" id="p-schools"><h3>JWT Schools</h3><p>School trips designed so students share a memorable journey of discovery. Every itinerary can be adapted to your classroom, with support on pre-tour preparation, risk assessment and on-tour assistance.</p>
+<ul><li>School ski trips 2026/27</li><li>Language school trips</li><li>History in Berlin and city trips such as Krakow</li><li>Sports school trips</li><li>Camino de Santiago for schools</li></ul>
+<button class="b" data-ask="School trips">Ask about school tours</button><button class="b" data-ask="Request a quote">Request a quote</button></div>
+
+<div class="panel" id="p-cruises"><h3>JWT Cruises</h3><p>Sail to your dream destinations with JWT Cruises, including luxury holidays and a Cruise Deals of the Week page on the site. The Cruises and Luxury desk is based at the Galway branch.</p>
+<ul><li>cruises@jwttravel.ie</li><li>luxury@jwttravel.ie</li><li>Galway branch: 091 394 484</li></ul>
+<button class="b" data-ask="Cruises">Ask about cruises</button></div>
+
+<div class="panel" id="p-music"><h3>JWT Music</h3><p>JWT is travel partner of Paul Claffey Music and Fun in the Sun tours. The JWT Music experts can also help plan a musical holiday for your group.</p>
+<button class="b" data-ask="Music tours">Ask about music tours</button></div>
+
+<div class="panel" id="p-esc"><h3>JWT Escorted</h3><p>Escorted tours designed so you can enjoy and share a memorable trip: the festive Christmas Markets, the music cities of the USA and the Camino de Santiago.</p>
+<button class="b" data-ask="Escorted tours">Ask about escorted tours</button></div>
+
+<div class="panel" id="p-ire"><h3>JWT Ireland</h3><p>Programmes in Ireland designed around you, from boutique stays and private drivers to themed itineraries and extended touring: cultural, educational, pilgrimage and sports tours.</p>
+<ul><li>irelandtours@jwttravel.ie</li></ul>
+<button class="b" data-ask="Ireland tours">Ask about Ireland tours</button></div>
+
+<div class="dep">
+<h2>Camino 2027 guided departures</h2>
+<div class="dl">
+<div class="d"><time>Mar<b>21</b></time><div><strong>Easter Coastal Camino Portugues</strong><span>7 nights · from Dublin</span></div></div>
+<div class="d"><time>Mar<b>28</b></time><div><strong>Easter Camino Frances</strong><span>7 nights · from Dublin</span></div></div>
+<div class="d"><time>Apr<b>02</b></time><div><strong>Camino Frances Guided Tour</strong><span>7 nights · from Dublin</span></div></div>
+<div class="d"><time>Apr<b>30</b></time><div><strong>Camino Frances Guided Tour</strong><span>7 nights · from Dublin</span></div></div>
+<div class="d"><time>May<b>03</b></time><div><strong>Camino Finisterre Guided Tour</strong><span>7 nights · from Dublin</span></div></div>
+<div class="d"><time>May<b>07</b></time><div><strong>Coastal Camino Portugues, Porto to Baiona</strong><span>7 nights · from Dublin</span></div></div>
+<div class="d"><time>May<b>21</b></time><div><strong>Camino Frances Easy Walk</strong><span>9 nights · from Dublin</span></div></div>
+<div class="d new"><time>Jun<b>11</b></time><div><strong>Camino Ingles Guided Tour (new)</strong><span>7 nights · from Dublin</span></div></div>
+<div class="d"><time>Jun<b>25</b></time><div><strong>Camino Portugues Coach and Walking</strong><span>7 nights · from Dublin</span></div></div>
+<div class="d"><time>Jul<b>19</b></time><div><strong>St James Day tours</strong><span>Frances coach and walking, or Coastal Portugues</span></div></div>
+<div class="d"><time>Jul<b>23</b></time><div><strong>Saint James Day in Santiago</strong><span>3 nights · from Dublin</span></div></div>
+<div class="d"><time>Sep<b>10</b></time><div><strong>Coastal Camino Portugues Guided Tour</strong><span>7 nights · from Dublin</span></div></div>
+</div>
+<p class="dnote">A selection of the dates on the site. The team confirms seats and pricing. <a href="#" data-ask="Plan a trip" style="color:var(--sky);font-weight:700">Ask about a date</a></p>
+</div>
+</div></section>
+
+<section class="ptn"><div class="wrap g">
+<div><h2>Official partner of <span>Leinster Rugby</span></h2><p>JWT looks after the team's overseas match travel and organises official supporter packages for European Champions Cup and United Rugby Championship away games.</p><p style="margin-top:14px"><button class="b g" data-ask="Leinster rugby">Supporter trips</button></p></div>
+<div class="lic"><h3>Licensed and bonded</h3><p>Petriva Ltd T/A JWT Travel is licensed by the Irish Aviation Authority.</p><p>Travel Agent TA 0804 · Tour Operator TO 273</p><p>100% Irish owned.</p></div>
+</div></section>
+
+<section class="sch"><div class="wrap">
+<div class="sh"><small>Good to know</small><h2>How JWT looks after you</h2></div>
+<div class="cards">
+<div class="card"><h3>Everything planned</h3><p>Flights and transport, quality accommodation, tickets to matches and travel insurance are handled by the team, so you pack and bring your passport.</p></div>
+<div class="card"><h3>Safe hands</h3><p>The team focuses on health and safety and the financial protection of customers, with risk assessment and on-tour assistance.</p></div>
+<div class="card"><h3>Gifts and brochures</h3><p>Gift Vouchers give the gift of travel, and brochures are on the site to browse.</p><a data-ask="Gift vouchers">Ask about vouchers</a></div>
+</div>
+</div></section>
+
+<section class="sch" style="padding-top:0"><div class="wrap">
+<div class="sh"><small>Questions people ask</small><h2>Quick answers</h2></div>
+<div class="faq">
+<details><summary>Can a school tour be adapted to our class?</summary><p>Yes. All itineraries can be adapted to your classroom requirements, and the team supports you with pre-tour preparation, risk assessment and on-tour assistance.</p></details>
+<details><summary>What does a Camino guided tour cover?</summary><p>A week-long, fully escorted walk of about 100 km into Santiago de Compostela, so you can receive your own Compostela. Choose the Camino Frances, the Coastal Camino Portugues, the Camino Ingles or Finisterre and Muxia.</p></details>
+<details><summary>Is there an easier Camino option?</summary><p>Yes: a 9-night Easy Walk Camino tour and three Camino Coach and Walking tours, back by popular demand.</p></details>
+<details><summary>Can supporters travel with Leinster Rugby?</summary><p>JWT organises official travel packages for supporters to European Champions Cup and United Rugby Championship away games, as the official travel partner of Leinster Rugby.</p></details>
+<details><summary>Are you licensed?</summary><p>Yes. Petriva Ltd T/A JWT Travel holds Travel Agent licence TA 0804 and Tour Operator licence TO 273 from the Irish Aviation Authority.</p></details>
+</div>
+</div></section>
+
+<section class="ct" id="contact"><div class="wrap">
+<div class="sh"><small>Contact the team</small><h2>Who to ask</h2></div>
+<table>
+<tr><td>Ireland headquarters</td><td><a href="tel:+35316852244">01 6852244</a></td></tr>
+<tr><td>UK freephone</td><td><a href="tel:08081890468">0808 1890468</a></td></tr>
+<tr><td>Cruises and Luxury, Galway</td><td><a href="tel:+353091394484">091 394 484</a></td></tr>
+<tr><td>Sales and enquiries</td><td><a href="mailto:sales@jwttravel.ie">sales@jwttravel.ie</a></td></tr>
+<tr><td>Cruises / Luxury</td><td><a href="mailto:cruises@jwttravel.ie">cruises@</a> · <a href="mailto:luxury@jwttravel.ie">luxury@</a></td></tr>
+<tr><td>Ireland tours</td><td><a href="mailto:irelandtours@jwttravel.ie">irelandtours@jwttravel.ie</a></td></tr>
+</table>
+<p style="margin-top:12px;font-size:14.5px;color:var(--mut)">When you write, include how many people are travelling and your dates if you can.</p>
+</div></section>
+</main>
+
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+
+<button id="as-fab" type="button">Ask JWT</button>
+<div id="as-panel" role="dialog" aria-label="JWT Travel assistant">
+<div class="as-h"><div><b>JWT Travel assistant</b><small>Answers from this site · the team confirms details</small></div><button id="as-x" type="button" aria-label="Close">×</button></div>
+<div id="as-log"></div><div id="as-chips"></div>
+<form id="as-form"><input id="as-in" autocomplete="off" placeholder="Ask about Camino, rugby, schools…"><button>Send</button></form>
+</div>
+<script>
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
+ document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false');});
+ document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on',p.id===b.getAttribute('data-t'));});});});
+/* client-side assistant engine: KB match + booking flow. cfg: {name, greet, fallback, kb:[{k:[],a:""}], chips:[], flow:{trigger:[], steps:[{key,q,chips,opt}], done:""}, human:""} */
+function createAssistant(cfg){
+  function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();}
+  function stem(w){return w.length>4?w.replace(/(ing|ed|es|s)$/,''):w.replace(/s$/,'');}
+  function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;
+    for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+  var STOP={the:1,a:1,an:1,of:1,to:1,do:1,you:1,your:1,is:1,are:1,i:1,we:1,can:1,and:1,or:1,for:1,in:1,on:1,at:1,my:1,me:1,it:1,what:1,how:1,there:1,have:1,with:1,about:1,does:1,much:0};
+  function toks(s){return norm(s).split(' ').filter(function(w){return w&&!STOP[w];}).map(stem);}
+  function tokMatch(q,k){ if(q===k)return 1; if(k.length>=5&&q.length>=5){var l=lev(q,k);if(l<=(k.length>=8?2:1))return 0.8;} return 0; }
+  function score(qn,qt,entry){
+    var best=0;
+    entry.k.forEach(function(kw){
+      var kn=norm(kw); if(!kn)return;
+      if((' '+qn+' ').indexOf(' '+kn+' ')>=0){best+=kn.indexOf(' ')>0?3+2*kn.split(' ').length:(kn.length>5?4:3);return;}
+      var kt=toks(kw); if(!kt.length)return;
+      var hit=0; kt.forEach(function(t){var m=0;qt.forEach(function(q){m=Math.max(m,tokMatch(q,t));});hit+=m;});
+      if(hit>=kt.length*0.8) best+=kt.length>1?3.2:2.6; else if(kt.length>1&&hit>=kt.length-0.5&&hit>=1.8) best+=1.5;
+    });
+    return best;
+  }
+  function answer(q){
+    var qn=norm(q),qt=toks(q),top=null,ts=0;
+    cfg.kb.forEach(function(e){var s=score(qn,qt,e);if(s>ts){ts=s;top=e;}});
+    return ts>=2.5?top:null;
+  }
+  function wantsFlow(q){var qn=norm(q);return (cfg.flow.trigger||[]).some(function(t){return (' '+qn+' ').indexOf(' '+norm(t)+' ')>=0;});}
+  var st={step:-1,data:{}};
+  function reply(q){
+    var qn=norm(q);
+    if(st.step>=0){
+      if(/^(cancel|stop|exit|quit|never mind|nevermind|no thanks)$/.test(qn)){st={step:-1,data:{}};return {t:"No problem, I cancelled that. Ask me anything else.",chips:cfg.chips};}
+      var s=cfg.flow.steps[st.step];
+      if(!s.opt&&!q.trim())return {t:s.q,chips:s.chips};
+      if(s.check&&!s.check(q)) return {t:s.err||s.q,chips:s.chips};
+      st.data[s.key]=q.trim(); st.step++;
+      if(st.step>=cfg.flow.steps.length){var d=st.data;st={step:-1,data:{}};return {t:cfg.flow.done(d),chips:cfg.chips,done:d};}
+      var n=cfg.flow.steps[st.step];return {t:n.q,chips:n.chips};
+    }
+    if(wantsFlow(q)){st={step:0,data:{}};return {t:cfg.flow.intro+"<br><br>"+cfg.flow.steps[0].q,chips:cfg.flow.steps[0].chips};}
+    var e=answer(q);
+    if(e)return {t:e.a,chips:e.chips||cfg.chips};
+    if(/^(hi|hello|hey|hiya|good (morning|afternoon|evening)|thanks|thank you|ok|okay)$/.test(qn))return {t:cfg.greet,chips:cfg.chips};
+    return {t:cfg.fallback,chips:cfg.chips};
+  }
+  function reset(){st={step:-1,data:{}};}
+  return {reply:reply,answer:answer,reset:reset,cfg:cfg};
+}
+function mountAssistant(A){
+  var $=function(i){return document.getElementById(i);};
+  var fab=$('as-fab'),panel=$('as-panel'),log=$('as-log'),form=$('as-form'),inp=$('as-in'),chips=$('as-chips');
+  function add(cls,html){var d=document.createElement('div');d.className='as-m '+cls;d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function setChips(list){chips.innerHTML='';(list||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c);};chips.appendChild(b);});}
+  function esc(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function send(t){t=t.trim();if(!t)return;add('as-u',esc(t));var r=A.reply(t);setTimeout(function(){add('as-b',r.t);setChips(r.chips);},260);inp.value='';}
+  var opened=false;
+  function open(){panel.classList.add('on');fab.classList.add('hide');if(!opened){opened=true;add('as-b',A.cfg.greet);setChips(A.cfg.chips);}setTimeout(function(){inp.focus({preventScroll:true});},50);}
+  fab.onclick=open;$('as-x').onclick=function(){panel.classList.remove('on');fab.classList.remove('hide');};
+  form.onsubmit=function(e){e.preventDefault();send(inp.value);};
+  document.querySelectorAll('[data-ask]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();open();send(el.getAttribute('data-ask'));});});
+}
+if(typeof module!=='undefined')module.exports={createAssistant:createAssistant};
+
+var CFG={
+greet:"Hi, I'm the JWT Travel assistant. Ask about Camino tours, rugby and sports trips, school tours, cruises or how to reach the team, or tap Plan a trip.",
+fallback:"I don't have that on the JWT site, so I won't guess. The team can confirm: sales@jwttravel.ie or 01 6852244. You can also tap Plan a trip and I'll pass your details on.",
+chips:["Plan a trip","Camino tours","Rugby and sports","School trips","Contact the team"],
+kb:[
+{k:["contact","phone","call","telephone","number","email","reach","speak to","talk to","contact the team","who do i contact","headquarters"],a:"Ireland HQ: 01 6852244. UK freephone: 0808 1890468. Cruises and Luxury, Galway branch: 091 394 484. Emails: sales@jwttravel.ie for enquiries, cruises@jwttravel.ie, luxury@jwttravel.ie and irelandtours@jwttravel.ie. When you write, include how many are travelling and your dates if you can.",chips:["Plan a trip","Camino tours"]},
+{k:["camino","santiago","compostela","pilgrim","pilgrimage","walk the camino","walking","guided tour","guided tours","xacobeo","holy year"],a:"JWT Camino guided tours for 2027 (a Holy Year, Xacobeo) are week-long, fully escorted walks of about 100 km into Santiago de Compostela so you earn your Compostela. Routes: Camino Frances from Sarria, Coastal Camino Portugues from near Baiona, the Camino Ingles (new for 2027), and Finisterre and Muxia. All depart from Dublin.",chips:["Camino dates","Easy Camino","Camino for schools","Plan a trip"]},
+{k:["camino dates","camino departures","departures","departure dates","dates","when are the tours","upcoming tours","2027 tours","schedule"],a:"Camino 2027 departures from Dublin include: Easter Coastal Camino Portugues (21 and 28 March), Easter Camino Frances (28 March), Camino Frances (2 April, 30 April, 28 May, 18 June), Finisterre (3 May), Coastal Portugues (7 May, 14 May, 4 June), Easy Walk (21 May, 9 nights), Camino Ingles (11 June), St James Day tours (19 July) and a 3-night St James Day in Santiago (23 July). Seat availability comes from the team.",chips:["Easy Camino","Plan a trip"]},
+{k:["easy camino","easy walk","coach and walking","coach walking","less walking","not fit","beginner","easier","mobility"],a:"For a gentler Camino, JWT has a 9-night Easy Walk Camino tour and Camino Coach and Walking tours, which came back by popular demand. The team can tell you which suits your fitness.",chips:["Camino dates","Plan a trip"]},
+{k:["rugby","leinster","leinster rugby","ireland rugby","six nations","champions cup","urc","united rugby championship","away game","away games","supporters","match","match tickets"],a:"JWT is the official travel partner of Leinster Rugby: it handles the team's overseas travel and runs supporter packages to European Champions Cup and United Rugby Championship away games. Six Nations 2027 trips to Rome and Edinburgh are on the site, and there are Ireland Rugby tours too.",chips:["Sports tours","Groups and clubs","Plan a trip"]},
+{k:["sports","sport","sports tour","sports tours","soccer","football","premier league","sports break","sports breaks","club","clubs","team trip","youth cup","tournament"],a:"JWT Sports covers rugby and soccer trips to matches including the Champions Cup, Six Nations, United Rugby Championship and Premier League, plus sports tours for groups, clubs and schools, and youth tournaments such as the Duinrell Youth Cup in Holland.",chips:["Rugby","Groups and clubs","Plan a trip"]},
+{k:["school","schools","school trip","school trips","school tour","school tours","student","students","teacher","classroom","educational","ski trip","ski trips","skiing","berlin","krakow","language trip","language school"],a:"JWT Schools plans school trips including ski trips for 2026/27 and 2027, Berlin and Krakow, language trips, sports tours and the Camino de Santiago for schools. All itineraries can be adapted to your classroom, with support on pre-tour preparation, risk assessment and on-tour assistance. Request a quote and the team will come back to you.",chips:["Ski trips","Plan a trip","Contact the team"]},
+{k:["groups and clubs","group","groups","group travel","group booking","large group","choir","society"],a:"JWT organises trips for groups and individuals: school groups, sports clubs, music groups, Camino groups and escorted tours. Tell the team the size of your group and your dates and they will plan it with you.",chips:["Plan a trip","Contact the team"]},
+{k:["cruise","cruises","cruising","jwt cruises","princess","japan","luxury","luxury holidays","galway","sail"],a:"JWT Cruises plans cruise holidays, including luxury cruises, and the site has weekly Cruise Deals. The Cruises and Luxury desk is based in the Galway branch: 091 394 484, cruises@jwttravel.ie or luxury@jwttravel.ie.",chips:["Contact the team","Plan a trip"]},
+{k:["music","paul claffey","claffey","fun in the sun","music tours","music holiday","musical","band","concert"],a:"JWT is the travel partner of Paul Claffey Music and Fun in the Sun tours, and JWT Music helps plan musical holidays for groups. Ask the team about current destinations and dates.",chips:["Plan a trip","Contact the team"]},
+{k:["escorted","escorted tour","escorted tours","christmas market","christmas markets","usa","music cities","classic tours"],a:"JWT escorted tours are designed so you can enjoy and share a memorable trip: Christmas Markets, the music cities of the USA, the Camino de Santiago and more. See the upcoming departures with the team.",chips:["Plan a trip","Camino tours"]},
+{k:["ireland tours","jwt ireland","incoming","visit ireland","tour ireland","private driver","boutique","boutique stays","cultural tours","educational tours","pilgrimage tours","sports tours ireland","visitors"],a:"JWT Ireland builds programmes in Ireland, from boutique stays and private drivers to themed itineraries and extended touring: cultural, educational, pilgrimage and sports tours. Email irelandtours@jwttravel.ie.",chips:["Contact the team","Plan a trip"]},
+{k:["about","who are you","history","walsh","david walsh","how long","experience","family","irish owned","60 years","petriva"],a:"JWT Travel (Petriva Ltd T/A JWT Travel) is 100% Irish owned, with over 60 years in the travel business. Its mission is exciting travel experiences for groups and individuals, from sports and school trips to Camino and cruise holidays.",chips:["Licences","Plan a trip"]},
+{k:["licence","license","licensed","licences","bonded","iaa","aviation authority","protected","safe","financial protection","ta 0804","to 273","regulated"],a:"JWT is bonded and licensed by the Irish Aviation Authority: Travel Agent licence TA 0804 and Tour Operator licence TO 273. The site also lists industry memberships in Ireland and Europe.",chips:["Contact the team","Plan a trip"]},
+{k:["brochure","brochures","catalogue","catalog","download","pdf"],a:"The site has a JWT Brochures page where you can browse the brochures. The team can also send details of a specific tour.",chips:["Contact the team","Plan a trip"]},
+{k:["gift","gift voucher","gift vouchers","voucher","vouchers","present","gift card"],a:"JWT offers Gift Vouchers, so you can give the gift of travel. Ask the team how to arrange one.",chips:["Contact the team"]},
+{k:["newsletter","subscribe","updates","mailing list"],a:"You can subscribe to the JWT newsletter from the site to get updates on Camino tours and new destinations.",chips:["Camino tours","Plan a trip"]},
+{k:["price","prices","cost","how much","quote","deposit","payment","pay","budget","cheap","per person"],a:"Prices and deposits are set per tour and date, and I don't want to quote them from memory. The tour pages show 'from' prices, and the team confirms the exact amount for your group. Tap Plan a trip or email sales@jwttravel.ie.",chips:["Plan a trip","Contact the team"]},
+{k:["insurance","insured","travel insurance","cancellation","cover"],a:"The JWT team can look after the planning, including travel insurance, along with flights, transport, accommodation and match tickets. Ask them what is included in your tour.",chips:["Contact the team","Plan a trip"]},
+{k:["flight","flights","fly","flying","airport","from dublin","depart","departing"],a:"The Camino guided tours list Dublin as the departure point. For other departures, flights and transport, the team organises the details with you.",chips:["Camino dates","Plan a trip"]},
+{k:["feedback","complaint","complain","review","how to share your feedback"],a:"The site has a page on how to share your feedback. You can also write to sales@jwttravel.ie.",chips:["Contact the team"]},
+{k:["terms","conditions","booking terms","terms and conditions","booking forms","booking form","privacy"],a:"Booking forms and booking terms and conditions are on the site. The team can send the right form for your tour.",chips:["Contact the team","Plan a trip"]},
+{k:["press","media","journalist","press and media"],a:"There is a Press and Media Requests page under Contact on the JWT site.",chips:["Contact the team"]},
+{k:["trade","travel trade","partners","trade partners","agent partner"],a:"The site lists JWT's travel trade partners under About JWT.",chips:["Contact the team"]}
+],
+flow:{
+ trigger:["plan a trip","plan my trip","book","booking","book a trip","enquire","enquiry","inquire","inquiry","request a quote","get a quote","quote for","quote for my group","reserve","speak to the team"],
+ intro:"Sure, a few quick questions and I'll pass the request to the JWT team. Nothing is booked or charged. Type cancel any time.",
+ steps:[
+  {key:"kind",q:"Which part of JWT is this for?",chips:["Camino","Rugby or sports","School trip","Cruise","Music tour","Escorted tour","Ireland tour"]},
+  {key:"who",q:"Is this for a group or for yourself? Tell me the group name or type if it is a group.",chips:["Just me","Couple","School","Club","Friends or family"]},
+  {key:"dest",q:"Which tour or destination do you have in mind? 'Not sure yet' is fine.",chips:["Camino Frances","Coastal Camino Portugues","Six Nations","Ski trip","Not sure yet"]},
+  {key:"when",q:"What dates are you looking at, and for how many nights?",chips:["Spring 2027","Summer 2027","Flexible"]},
+  {key:"size",q:"How many people will travel?",check:function(s){return /\d/.test(s);},err:"Please give a number, even a rough one."},
+  {key:"name",q:"What's your name?",check:function(s){return s.trim().length>=2;},err:"Please type your name."},
+  {key:"contact",q:"Best email or phone for the team to reach you?",check:function(s){return /@.+\..+|\d{7,}/.test(s.replace(/[\s()-]/g,''));},err:"Please type an email address or a phone number with at least 7 digits."}
+ ],
+ done:function(d){return "Thanks "+d.name+". Your request is ready for the JWT team: "+d.kind+" · "+d.who+" · "+d.dest+" · "+d.when+" · "+d.size+" travelling · "+d.contact+".<br><br><b>Sent to the team.</b> (This is a demo, so nothing was really sent.) Someone from JWT confirms availability and pricing. You can also reach them on sales@jwttravel.ie or 01 6852244.";}
+}
+};
+
+mountAssistant(createAssistant(CFG));
+</script>
+</body>
+</html>
