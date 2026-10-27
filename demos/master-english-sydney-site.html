@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Master English Australia · IELTS, PTE and CELPIP in Sydney</title>
+<meta name="description" content="Demo page for Master English Australia: IELTS, PTE and CELPIP preparation in Sydney and online, with a built-in course assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Newsreader:ital,wght@0,500;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#d5213a;--red2:#b21a30;--navy:#294763;--ink:#14243a;--mute:#566a80;--sky:#edf4fb;--sky2:#d8e6f3;--blush:#fff8f8;--line:#cfe0ef;--white:#fff;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.6 Inter,system-ui,sans-serif;color:var(--ink);background:#f7fbff;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,.sora{font-family:Sora,system-ui,sans-serif;letter-spacing:-.02em;line-height:1.15}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:600 15px/1 Sora,sans-serif;padding:15px 22px;border-radius:999px;text-decoration:none;transition:.15s}
+.btn.red{background:var(--red);color:#fff;box-shadow:0 8px 20px -8px rgba(213,33,58,.7)}
+.btn.red:hover{background:var(--red2);transform:translateY(-1px)}
+.btn.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--sky2)}
+.btn.ghost:hover{border-color:var(--navy)}
+/* header */
+.top{position:sticky;top:0;z-index:30;background:rgba(247,251,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:10px}
+.brand{display:block;background:var(--red);border-radius:10px;padding:3px 8px}
+.brand img{height:40px;width:auto}
+.nav{display:none;gap:22px;font:500 14px Sora,sans-serif;color:var(--navy)}
+.nav a{text-decoration:none}.nav a:hover{color:var(--red)}
+.top .btn{padding:11px 16px;font-size:13px}
+@media(min-width:860px){.nav{display:flex}}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:34px 0 46px}
+.hero:before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,#ffe3e6,rgba(255,227,230,0) 70%)}
+.hero .wrap{position:relative;display:grid;gap:30px;grid-template-columns:minmax(0,1fr)}
+.eyebrow{display:inline-block;font:600 12px Sora,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--red);background:var(--blush);border:1px solid #f6cdd2;padding:6px 12px;border-radius:999px}
+.hero h1{font-size:clamp(30px,7.2vw,52px);margin:16px 0 14px;font-weight:800}
+.hero h1 em{font:italic 500 1.05em Newsreader,serif;color:var(--red)}
+.hero p.lead{color:var(--mute);font-size:17px;max-width:560px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 18px}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badges span{font:500 12.5px Inter;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:var(--navy)}
+.badges span:before{content:"✓ ";color:var(--red);font-weight:700}
+.meter{background:var(--navy);color:#fff;border-radius:24px;padding:22px;position:relative;overflow:hidden}
+.meter:after{content:"";position:absolute;right:-50px;bottom:-50px;width:180px;height:180px;border-radius:50%;border:26px solid rgba(255,255,255,.06)}
+.meter h3{font-size:14px;font-weight:600;color:#9bc7f5;letter-spacing:.08em;text-transform:uppercase}
+.meter .row{margin-top:16px;display:grid;gap:10px}
+.meter .it{display:flex;justify-content:space-between;gap:10px;background:rgba(255,255,255,.07);border-radius:12px;padding:12px 14px;font-size:14px}
+.meter .it b{font:700 14px Sora;color:#fff}
+.meter .it span{color:#cfe0ef}
+.meter p{margin-top:14px;font:italic 500 18px Newsreader,serif;color:#fff}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1.25fr .85fr;align-items:center;gap:48px}.hero{padding:64px 0 70px}}
+/* sections */
+section{padding:48px 0}
+.sec-h{max-width:640px;margin-bottom:26px}
+.sec-h .k{font:600 12px Sora;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.sec-h h2{font-size:clamp(25px,5.4vw,38px);margin:8px 0 10px;font-weight:700}
+.sec-h p{color:var(--mute)}
+/* test tabs */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tab{font:600 14px Sora;padding:12px 20px;border-radius:999px;border:1.5px solid var(--sky2);background:#fff;color:var(--navy);cursor:pointer}
+.tab[aria-selected=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+.panel{display:none}.panel.on{display:block}
+.pgrid{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.pgrid{grid-template-columns:repeat(3,minmax(0,1fr))}.pgrid.two{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card.rec{border:2px solid var(--red);position:relative}
+.card.rec:before{content:"Recommended";position:absolute;top:-12px;left:16px;background:var(--red);color:#fff;font:600 11px Sora;padding:4px 10px;border-radius:999px}
+.card h3{font-size:17px}
+.card .pr{font:800 30px Sora;color:var(--navy)}
+.card .pr small{font:500 12px Inter;color:var(--mute)}
+.card ul{list-style:none;color:var(--mute);font-size:14px;display:grid;gap:5px}
+.card li:before{content:"–  ";color:var(--red)}
+.card .btn{margin-top:auto;padding:12px 16px;font-size:13px}
+.note{margin-top:14px;font-size:13.5px;color:var(--mute)}
+/* path */
+.band{background:var(--sky)}
+.steps{display:grid;gap:14px;counter-reset:s}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.step{background:#fff;border-radius:var(--r);padding:22px;position:relative;border:1px solid var(--line)}
+.step:before{counter-increment:s;content:counter(s);font:800 44px Sora;color:#f6cdd2;position:absolute;right:16px;top:6px}
+.step h3{font-size:17px;margin-bottom:6px;max-width:80%}
+.step p{color:var(--mute);font-size:14.5px}
+/* teachers */
+.tgrid{display:grid;gap:16px}
+@media(min-width:760px){.tgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.teach{display:flex;gap:16px;background:#fff;border-radius:var(--r);padding:20px;border:1px solid var(--line);align-items:flex-start}
+.av{flex:none;width:64px;height:64px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font:700 22px Sora}
+.teach h3{font-size:18px}.teach .role{color:var(--red);font:600 12.5px Sora;margin:2px 0 8px}
+.teach p{color:var(--mute);font-size:14.5px}
+/* visit */
+.visit{display:grid;gap:18px}
+@media(min-width:860px){.visit{grid-template-columns:1fr 1fr}}
+.vbox{background:var(--navy);color:#fff;border-radius:24px;padding:26px;overflow:hidden;position:relative}
+.vbox h3{font-size:22px;margin-bottom:12px}
+.vbox p{color:#d6e5f4;margin-bottom:4px}
+.vbox .big{font:700 20px Sora;color:#fff;margin:8px 0}
+.hours{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px}
+.hours h3{font-size:20px;margin-bottom:10px}
+.hours table{width:100%;border-collapse:collapse;font-size:15px}
+.hours td{padding:10px 0;border-bottom:1px solid var(--sky)}
+.hours td:last-child{text-align:right;font-weight:600;color:var(--navy)}
+/* faq */
+.faq{display:grid;gap:10px;max-width:820px}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 18px}
+summary{cursor:pointer;list-style:none;font:600 15.5px Sora;padding:16px 24px 16px 0;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:0;top:14px;font:500 22px Sora;color:var(--red)}
+details[open] summary:after{content:"–"}
+details p{padding:0 0 16px;color:var(--mute);font-size:15px}
+.final{background:var(--red);color:#fff;border-radius:28px;padding:34px 22px;text-align:center;overflow:hidden;position:relative}
+.final h2{font-size:clamp(24px,5.4vw,36px);margin-bottom:10px}
+.final p{opacity:.92;margin-bottom:20px}
+.final .btn{background:#fff;color:var(--red)}
+footer{padding:30px 0 90px;color:var(--mute);font-size:13.5px;text-align:center}
+footer b{color:var(--navy)}
+/* assistant */
+.aw{position:fixed;right:14px;bottom:14px;z-index:50;font:14px/1.45 Inter,sans-serif}
+.aw-fab{display:flex;align-items:center;gap:8px;background:var(--navy);color:#fff;border:0;border-radius:999px;padding:12px 18px 12px 12px;cursor:pointer;box-shadow:0 10px 26px -8px rgba(20,36,58,.7);font:600 14px Sora}
+.aw-fab-i{width:30px;height:30px;border-radius:50%;background:var(--red);display:grid;place-items:center;font:700 16px Sora}
+.aw.open .aw-fab{display:none}
+.aw-panel{width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 28px));background:#fff;border-radius:20px;box-shadow:0 24px 60px -12px rgba(20,36,58,.5);display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line)}
+.aw-panel[hidden]{display:none}
+.aw-h{background:var(--navy);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+.aw-h b{display:block;font:700 15px Sora}.aw-h small{color:#9bc7f5;font-size:12px}
+.aw-x{background:0;border:0;color:#fff;font-size:26px;line-height:1;cursor:pointer}
+.aw-log{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;background:#f7fbff}
+.aw-m{max-width:86%;padding:10px 13px;border-radius:14px;white-space:pre-wrap;overflow-wrap:anywhere}
+.aw-m.b{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.aw-m.u{background:var(--red);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.aw-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 12px;border-top:1px solid var(--sky);max-height:112px;overflow-y:auto}
+.aw-chips button{font:500 12.5px Inter;border:1px solid var(--sky2);background:#fff;color:var(--navy);padding:7px 11px;border-radius:999px;cursor:pointer}
+.aw-chips button:hover{border-color:var(--red);color:var(--red)}
+.aw-f{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--line)}
+.aw-in{flex:1;min-width:0;border:1.5px solid var(--sky2);border-radius:999px;padding:11px 15px;font:15px Inter}
+.aw-in:focus{outline:0;border-color:var(--navy)}
+.aw-s{border:0;background:var(--red);color:#fff;width:42px;border-radius:50%;cursor:pointer;font-size:16px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="#top" aria-label="Master English Australia"><img src="img/master-english-sydney-logo.png" alt="Master English" width="84" height="40"></a>
+<nav class="nav"><a href="#tests">Courses</a><a href="#how">How it works</a><a href="#teachers">Teachers</a><a href="#visit">Visit</a><a href="#faq">FAQ</a></nav>
+<button class="btn red" data-ask="Book a free assessment">Free assessment</button>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<span class="eyebrow">Sydney classroom and live online</span>
+<h1>Your English test is stopping you. <em>We will help you smash it.</em></h1>
+<p class="lead">IELTS, PTE and CELPIP preparation in Sydney and online for people building a future through study, work, migration or professional registration.</p>
+<div class="cta"><a class="btn red" href="#tests">View our courses</a><button class="btn ghost" data-ask="Which test do I need?">Which test do I need?</button></div>
+<div class="badges"><span>IELTS Approved Preparation Provider</span><span>CELTA-qualified teacher</span><span>Certified CELPIP instructors</span><span>Typically 3–6 students</span></div>
+</div>
+<aside class="meter" aria-label="What a student gets">
+<h3>Your plan, step by step</h3>
+<div class="row">
+<div class="it"><b>1 · Assessment</b><span>free, 15–20 min</span></div>
+<div class="it"><b>2 · Plan</b><span>target score + deadline</span></div>
+<div class="it"><b>3 · Practice</b><span>classes, homework, mocks</span></div>
+<div class="it"><b>4 · Feedback</b><span>from a real teacher</span></div>
+</div>
+<p>More than a test score. Your life is waiting on the other side.</p>
+</aside>
+</div></div>
+
+<section id="tests"><div class="wrap">
+<div class="sec-h"><span class="k">Choose your test</span><h2>IELTS, PTE or CELPIP?</h2><p>The right test depends on your destination, visa, profession, strengths and preferred test experience. Pick one to see the formats.</p></div>
+<div class="tabs" role="tablist">
+<button class="tab" role="tab" aria-selected="true" data-t="ielts">IELTS</button>
+<button class="tab" role="tab" aria-selected="false" data-t="pte">PTE</button>
+<button class="tab" role="tab" aria-selected="false" data-t="celpip">CELPIP</button>
+</div>
+<div class="panel on" id="p-ielts">
+<div class="pgrid">
+<div class="card rec"><h3>IELTS Score Builder</h3><div class="pr">$1,300 <small>incl. GST</small></div><ul><li>25 one-hour small-group lessons</li><li>Monday to Friday for 5 weeks</li><li>Sydney 11:00 am–12:00 pm or online 6:00–7:00 pm</li><li>$1,200 if paid in full · $260 a week</li></ul><button class="btn red" data-ask="Book IELTS group course">Ask about this course</button></div>
+<div class="card"><h3>Private IELTS Score Accelerator</h3><div class="pr">$1,500 <small>incl. GST</small></div><ul><li>Ten one-to-one lessons</li><li>Built around your weakest skills</li><li>Writing or Speaking Score Booster also available, 10 private lessons</li></ul><button class="btn ghost" data-ask="Private IELTS lessons">Ask about private</button></div>
+<div class="card"><h3>Private lesson</h3><div class="pr">$150 <small>60 minutes</small></div><ul><li>Best for one specific problem</li><li>Guided practice and individual feedback</li></ul><button class="btn ghost" data-ask="Book a single private lesson">Book a lesson</button></div>
+</div>
+<p class="note">Taught by Maher Itani. IELTS groups meet in the Sydney classroom or on Microsoft Teams. Contact the team for the next classroom start date.</p>
+</div>
+<div class="panel" id="p-pte">
+<div class="pgrid">
+<div class="card rec"><h3>PTE Score Builder</h3><div class="pr">$1,080 <small>incl. GST</small></div><ul><li>20 one-hour small-group lessons</li><li>Monday to Friday for 4 weeks, 7:00–8:00 pm</li><li>Live online with Majo</li><li>$990 if paid in full · $270 a week</li></ul><button class="btn red" data-ask="Book PTE group course">Ask about this course</button></div>
+<div class="card"><h3>Private PTE Score Accelerator</h3><div class="pr">$1,500 <small>incl. GST</small></div><ul><li>Ten one-to-one PTE lessons</li><li>In the Sydney classroom or online</li><li>Focus on the tasks costing you marks</li></ul><button class="btn ghost" data-ask="Private PTE lessons">Ask about private</button></div>
+<div class="card"><h3>Private lesson</h3><div class="pr">$150 <small>60 minutes</small></div><ul><li>One specific task or skill</li><li>Individual feedback</li></ul><button class="btn ghost" data-ask="Book a single private lesson">Book a lesson</button></div>
+</div>
+<p class="note">PTE group classes are online only for now. The team may add classroom groups when there is enough demand.</p>
+</div>
+<div class="panel" id="p-celpip">
+<div class="pgrid two">
+<div class="card rec"><h3>Private CELPIP Score Accelerator</h3><div class="pr">$1,500 <small>incl. GST</small></div><ul><li>10 hours of one-to-one preparation</li><li>Online or in the Sydney classroom</li><li>Certified CELPIP instructor</li></ul><button class="btn red" data-ask="Private CELPIP lessons">Build my CELPIP plan</button></div>
+<div class="card"><h3>CELPIP group classes</h3><div class="pr" style="font-size:22px">Coming soon</div><ul><li>Private lessons are available now</li><li>Group schedules and prices will be published when enrolment opens</li></ul><button class="btn ghost" data-ask="CELPIP group classes">Ask about CELPIP</button></div>
+</div>
+<p class="note">Maher Itani is a certified CELPIP instructor and CELTA-qualified English teacher.</p>
+</div>
+<p class="note">All prices are in Australian dollars and include GST. Pay by bank transfer, card through Stripe, or PayPal. Weekly payments are available for group programs.</p>
+</div></section>
+
+<section id="how" class="band"><div class="wrap">
+<div class="sec-h"><span class="k">How it works</span><h2>A clear plan instead of more pressure</h2></div>
+<div class="steps">
+<div class="step"><h3>Tell us where you need to go</h3><p>We listen to your story, target score, deadline and the pressure behind the test.</p></div>
+<div class="step"><h3>Turn the test into a clear plan</h3><p>We break complex tasks into small, practical steps you can understand and repeat.</p></div>
+<div class="step"><h3>Practise, get feedback, improve</h3><p>Classes, homework, mock tests and personal feedback keep you focused on the next useful action.</p></div>
+</div>
+</div></section>
+
+<section id="teachers"><div class="wrap">
+<div class="sec-h"><span class="k">Meet your teachers</span><h2>Small groups, real teachers</h2></div>
+<div class="tgrid">
+<div class="teach"><div class="av">MI</div><div><h3>Maher Itani</h3><div class="role">Founder and director · IELTS, PTE and CELPIP</div><p>CELTA-qualified English teacher, PTE trainer and certified CELPIP instructor. Teaches IELTS groups online and in the Sydney classroom, plus private IELTS, PTE and CELPIP lessons.</p></div></div>
+<div class="teach"><div class="av">MJ</div><div><h3>Maria Jose (Majo)</h3><div class="role">Lead PTE teacher · PTE course co-developer</div><p>Trained by Maher. Teaches the online PTE group class and offers one-to-one PTE training.</p></div></div>
+</div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<div class="sec-h"><span class="k">Free to use</span><h2>Support before and during your course</h2><p>Free IELTS writing practice with a timer and word count, plus a Vocabulary Centre, Knowledge Centre, Grammar Centre and Spelling Centre built by the same teaching team. Students also get a login to the learning portal.</p></div>
+</div></section>
+
+<section id="visit"><div class="wrap">
+<div class="sec-h"><span class="k">Visit or call</span><h2>Sydney classroom and online</h2></div>
+<div class="visit">
+<div class="vbox"><h3>Master English Australia</h3><p>Suite 803, Level 8</p><p>368 Sussex Street</p><p>Sydney NSW 2000</p><div class="big">0468 79 79 75</div><p>Call or WhatsApp</p><p>admin@masterenglish.com.au</p></div>
+<div class="hours"><h3>Opening hours</h3><table><tr><td>Monday to Friday</td><td>9:00 am–8:00 pm</td></tr><tr><td>Saturday and Sunday</td><td>Please ask the team</td></tr><tr><td>Free assessment</td><td>15–20 minutes</td></tr><tr><td>Assessment by</td><td>Teams, phone or classroom</td></tr></table></div>
+</div>
+</div></section>
+
+<section id="faq" class="band"><div class="wrap">
+<div class="sec-h"><span class="k">Questions</span><h2>Clear answers before you choose</h2></div>
+<div class="faq">
+<details><summary>Is the English level assessment free?</summary><p>Yes. It is currently free and takes about 15 to 20 minutes. You can meet by Microsoft Teams, phone or at the Sydney classroom.</p></details>
+<details><summary>Can I study in a Sydney classroom or online?</summary><p>IELTS is available in the classroom and online. PTE private lessons are in the classroom or online, while PTE group classes are online only for now. Contact the team for current CELPIP options.</p></details>
+<details><summary>How large are the group classes?</summary><p>Groups are small, typically three to six students, so you get more time to ask questions and receive feedback.</p></details>
+<details><summary>Can I pay weekly?</summary><p>Yes, weekly payments are available for group programs. The team explains the schedule and payment dates before enrolment.</p></details>
+<details><summary>Which payment methods do you accept?</summary><p>Bank transfer, card through Stripe, and PayPal. Bank-transfer enrolments are confirmed by the team.</p></details>
+<details><summary>When can I start?</summary><p>Group programs generally start on a Monday. Availability can change, so contact the team to confirm the next start date.</p></details>
+<details><summary>What happens after I send an enquiry?</summary><p>The team reviews your test, target score and contact details, then replies the way you prefer. You can choose a free assessment time before deciding to enrol.</p></details>
+</div>
+</div></section>
+
+<section><div class="wrap"><div class="final">
+<h2>Not sure which test fits?</h2>
+<p>Ask the assistant, or request a free assessment and a teacher will help you compare IELTS, PTE and CELPIP.</p>
+<button class="btn" data-ask="Book a free assessment">Request a free assessment</button>
+</div></div></section>
+</main>
+
+<footer><div class="wrap"><b>Master English Australia</b> · Your success. Our mission.<br>Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<script id="cfg">
+var CFG={
+ name:'Master English',sub:'Course assistant · answers from this site',fab:'Ask about courses',ph:'Ask about IELTS, PTE, CELPIP…',
+ greet:'Hi! I can answer questions about IELTS, PTE and CELPIP courses at Master English, or take your details for a free assessment. What would you like to know?',
+ fallback:'I do not have that detail here, so the team will confirm it. You can reach them on 0468 79 79 75 (call or WhatsApp), Monday to Friday 9:00 am–8:00 pm, or I can take your details for a free assessment.',
+ cancel:'No problem, nothing was sent. Ask me anything else.',
+ chips:['Which test do I need?','Course prices','Class times','Free assessment','Where are you?','Book a free assessment'],
+ bookWords:['book','enrol','enroll','enrolment','enrollment','sign up','register','reserve','apply','i want a free assessment'],
+ kb:[
+ {k:['which test','what test','ielts or pte','pte or ielts','not sure which','compare tests','choose test','difference between'],a:'It depends on your destination, visa, profession, strengths and the test experience you prefer. A free assessment lets a teacher help you compare IELTS, PTE and CELPIP. Want me to take your details?',follow:['Book a free assessment','IELTS course','PTE course','CELPIP course']},
+ {k:['ielts','ilets'],a:'IELTS Score Builder is a small-group course: 25 one-hour lessons, Monday to Friday for 5 weeks. Sydney classroom is 11:00 am–12:00 pm, live online (Microsoft Teams) is 6:00–7:00 pm. Teacher: Maher Itani. Master English is an IELTS Approved Preparation Provider. Price is $1,300 incl. GST, or $1,200 if paid in full.',follow:['Class times','Payment options','Private lessons','Book a free assessment']},
+ {k:['pte','pte academic','pearson'],a:'PTE Score Builder runs live online, Monday to Friday 7:00–8:00 pm for 4 weeks (20 one-hour lessons) with lead PTE teacher Majo. $1,080 incl. GST, or $990 if paid in full. PTE private lessons are available in the Sydney classroom or online.',follow:['Private lessons','Class times','Book a free assessment']},
+ {k:['celpip','canada','canadian'],a:'CELPIP is available as private one-to-one lessons now: the Private CELPIP Score Accelerator is 10 hours, $1,500 incl. GST, online or in the Sydney classroom, with a certified CELPIP instructor. Group classes are coming soon; schedules and prices will be published when enrolment opens.',follow:['Book a free assessment','Course prices']},
+ {k:['price','prices','cost','fee','fees','how much','pricing','expensive','afford'],a:'All prices are in Australian dollars and include GST.\nIELTS group: $1,300 ($1,200 if paid in full)\nPTE group: $1,080 ($990 if paid in full)\nPrivate 10-lesson programs (IELTS, PTE, CELPIP): $1,500\nSingle 60-minute private lesson: $150\nIELTS Writing or Speaking Score Booster: 10 private lessons for $1,500.',follow:['Payment options','Weekly payments','Book a free assessment']},
+ {k:['pay','payment','payments','paypal','stripe','card','bank transfer','credit card','weekly','instalment','installment','per week'],a:'You can pay by bank transfer, card through Stripe, or PayPal. Weekly payments are available for group programs (IELTS $260 a week for 5 weeks, PTE $270 a week for 4 weeks). Bank-transfer enrolments are confirmed by the team.',follow:['Course prices','Book a free assessment']},
+ {k:['class time','class times','times','schedule','timetable','hours','when','what time','session time','lesson time'],a:'IELTS Sydney classroom: Monday to Friday, 11:00 am–12:00 pm. IELTS online: Monday to Friday, 6:00–7:00 pm. PTE online: Monday to Friday, 7:00–8:00 pm. Private lessons are arranged with the teacher.',follow:['When can I start?','Book a free assessment']},
+ {k:['start','starting','start date','next course','next start','begin','commence','when can i start','intake'],a:'Group programs generally start on a Monday. Online groups start on the upcoming Monday. For the next Sydney classroom start date, contact the team. Availability can change, so they will confirm it.',follow:['Book a free assessment','Where are you?']},
+ {k:['assessment','free assessment','level test','level check','english level','free trial','trial'],a:'The English level assessment is free and takes about 15 to 20 minutes. You can do it by Microsoft Teams, phone or at the Sydney classroom. Shall I take your details?',follow:['Book a free assessment']},
+ {k:['where','address','location','sydney','sussex','classroom','find you','directions','suite','cbd'],a:'Sydney classroom: Suite 803, Level 8, 368 Sussex Street, Sydney NSW 2000.',follow:['Opening hours','Call or WhatsApp']},
+ {k:['open','opening hours','office hours','hours open','what days','weekend','saturday','sunday','monday'],a:'The team is available Monday to Friday, 9:00 am–8:00 pm. For weekend questions, please ask the team to confirm.',follow:['Call or WhatsApp','Book a free assessment']},
+ {k:['phone','call','whatsapp','number','email','contact','mobile','ring','reach'],a:'Call or WhatsApp 0468 79 79 75, or email admin@masterenglish.com.au. Monday to Friday, 9:00 am–8:00 pm.',follow:['Book a free assessment']},
+ {k:['online','teams','microsoft teams','zoom','remote','from home','overseas'],a:'IELTS and PTE group classes run live online on Microsoft Teams. PTE group classes are online only for now. Private lessons for IELTS, PTE and CELPIP can be online or in the Sydney classroom.',follow:['Class times','Private lessons']},
+ {k:['private','one to one','one-to-one','individual','personal','1 on 1','single lesson','private lesson','private lessons'],a:'Private options: a single 60-minute lesson is $150; a 10-lesson Score Accelerator for IELTS, PTE or CELPIP is $1,500. IELTS Writing and Speaking Score Boosters are also 10 private lessons each, $1,500. All include live teaching, feedback and practice.',follow:['Book a free assessment','Course prices']},
+ {k:['writing','speaking','booster','writing program'],a:'There are IELTS Writing and IELTS Speaking Score Boosters, each 10 private lessons for $1,500 incl. GST. There is also free IELTS writing practice on the site with a timer and word count.',follow:['Private lessons','Free resources']},
+ {k:['group','class size','how many students','small group','students per','how big'],a:'Groups are small, typically 3 to 6 students, so the teacher can know your target score and weaknesses.',follow:['Class times','Course prices']},
+ {k:['teacher','teachers','maher','majo','maria','instructor','tutor','qualified','celta','who teaches'],a:'Maher Itani is the founder and director: a CELTA-qualified English teacher, PTE trainer and certified CELPIP instructor. Maria Jose (Majo) is the lead PTE teacher and co-developed the PTE course.',follow:['IELTS course','PTE course']},
+ {k:['free resources','resources','vocabulary','grammar','spelling','practice','free practice','knowledge centre','materials'],a:'Free tools on the site include IELTS Writing Practice (timer, word count, no spellcheck), a Vocabulary Centre, Knowledge Centre, Grammar Centre and Spelling Centre. Enrolled students also have a student login.',follow:['Writing']},
+ {k:['mock','mock test','homework','feedback','notes'],a:'Courses include live teacher-led classes, guided practice, study notes and homework, vocabulary and spelling tools, individual feedback and mock-test practice.',follow:['Course prices']},
+ {k:['visa','migration','permanent residency','university','registration','target score'],a:'Students come to prepare for study, work, migration or professional registration. Tell me your test and target score in the booking, and a teacher will build a plan around it. I cannot confirm what score a particular visa or body needs; please check the official requirement.',follow:['Book a free assessment']},
+ {k:['refund','cancel','cancellation','policy','terms','guarantee'],a:'I do not have the refund or cancellation terms here, so the team will confirm them. Please ask before enrolling.',follow:['Call or WhatsApp']},
+ {k:['hello','hi','hey','good morning','good afternoon'],a:'Hello! Ask about IELTS, PTE or CELPIP, prices, class times, or a free assessment.'},
+ {k:['thanks','thank you','cheers'],a:'You are welcome. Anything else I can help with?'}
+ ],
+ flow:[
+ {key:'test',label:'Test',skip:function(a){return !!a.test},q:'Which test are you preparing for?',opts:['IELTS','PTE','CELPIP','Not sure'],valid:function(t){return t.length>1},err:'Please type or tap a test.'},
+ {key:'format',label:'Format',q:function(a){return /celpip/i.test(a.test)?'CELPIP is private one-to-one. Online or Sydney classroom?':'What format do you prefer?'},opts:function(a){return /celpip/i.test(a.test)?['Private online','Private in Sydney']:/pte/i.test(a.test)?['Online group','Private online','Private in Sydney']:['Sydney classroom group','Online group','Private online','Private in Sydney']},valid:function(t){return t.length>1},err:'Please tell me the format you prefer.'},
+ {key:'score',label:'Target score and deadline',q:'What is your target score and when is your test or deadline? (A rough idea is fine.)',opts:['Not sure yet'],valid:function(t){return t.length>1},err:'A short answer is fine.'},
+ {key:'name',label:'Name',q:'What is your name?',opts:null,valid:function(t){return t.length>1},err:'Please enter your name.'},
+ {key:'contact',label:'Phone / WhatsApp or email',q:'Best phone, WhatsApp or email for the team to reply?',opts:null,valid:function(t){return /[0-9]{6,}|@/.test(t.replace(/[\s-]/g,''))},err:'Please include a phone number, WhatsApp or email so the team can reply.'}
+ ],
+ done:function(l){return 'Thank you! Here is what I have for the team:\n'+l.join('\n')+'\n\nThis request was sent to the team (demo: nothing is actually sent). A teacher replies using the details you gave, Monday to Friday, 9:00 am–8:00 pm.'},
+ pre:function(t){var p={};if(/ielts/i.test(t))p.test='IELTS';else if(/pte/i.test(t))p.test='PTE';else if(/celpip/i.test(t))p.test='CELPIP';return p}
+};
+/*LOGIC*/
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|s)$/,''):w.replace(/s$/,'')}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length,i,j,p=[],c;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var prev=p[0];p[0]=i;for(j=1;j<=n;j++){c=p[j];p[j]=Math.min(p[j]+1,p[j-1]+1,prev+(a[i-1]===b[j-1]?0:1));prev=c}}return p[n]}
+function wm(q,k){if(q===k)return 1;if(Math.min(q.length,k.length)>=4&&Math.abs(q.length-k.length)<=2&&(q.indexOf(k)===0||k.indexOf(q)===0))return .9;if(k.length>=6&&q.length>=6&&lev(q,k)<=1)return .85;if(k.length>=7&&q.length>=6&&lev(q,k)<=2)return .6;if(k.length>=5&&q.length>=5&&(q.indexOf(k)===0||k.indexOf(q)===0))return .6;return 0}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem)}
+function best(KB,q){var qn=norm(q),qt=toks(q),top=null,ts=0;if(!qn)return null;
+ KB.forEach(function(e){var s=0;e.k.forEach(function(k){var kn=norm(k);if(kn.indexOf(' ')>0){if((' '+qn+' ').indexOf(' '+kn+' ')>=0)s+=3;else{var kt=toks(kn),h=0;kt.forEach(function(x){qt.forEach(function(t){if(wm(t,x)>=.85)h++})});if(h===kt.length)s+=2}}else{var ks=stem(kn),b=0;qt.forEach(function(t){b=Math.max(b,wm(t,ks))});s+=b*1.5}});
+  if(s>ts){ts=s;top=e}});
+ return ts>=1.2?top:null}
+function wantsBooking(q,words){var qt=toks(q);return words.some(function(w){return qt.some(function(t){return wm(t,stem(norm(w)))>=.85})})}
+if(typeof module!=='undefined')module.exports={best:best,norm:norm,wantsBooking:wantsBooking};
+/*ENDLOGIC*/
+/*UI*/
+function initAssistant(C){
+ var st=document.createElement('div');st.className='aw';
+ st.innerHTML='<button class="aw-fab" aria-label="Open assistant" aria-expanded="false"><span class="aw-fab-i">?</span><span class="aw-fab-t">'+C.fab+'</span></button><section class="aw-panel" hidden role="dialog" aria-label="'+C.name+' assistant"><header class="aw-h"><div><b>'+C.name+'</b><small>'+C.sub+'</small></div><button class="aw-x" aria-label="Close">&times;</button></header><div class="aw-log" aria-live="polite"></div><div class="aw-chips"></div><form class="aw-f"><input class="aw-in" autocomplete="off" placeholder="'+C.ph+'" aria-label="Your message"><button class="aw-s" aria-label="Send">&#10148;</button></form></section>';
+ document.body.appendChild(st);
+ var fab=st.querySelector('.aw-fab'),panel=st.querySelector('.aw-panel'),log=st.querySelector('.aw-log'),chips=st.querySelector('.aw-chips'),form=st.querySelector('.aw-f'),inp=st.querySelector('.aw-in');
+ var flow=null,ans={},opened=false;
+ function say(t,who){var d=document.createElement('div');d.className='aw-m '+(who||'b');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+ function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){handle(c)};chips.appendChild(b)})}
+ function startFlow(pre){flow={i:0};ans=pre||{};ask()}
+ function ask(){while(flow.i<C.flow.length&&C.flow[flow.i].skip&&C.flow[flow.i].skip(ans))flow.i++;
+  if(flow.i>=C.flow.length){var lines=C.flow.filter(function(s){return ans[s.key]}).map(function(s){return s.label+': '+ans[s.key]});say(C.done(lines),'b');setChips(C.chips);flow=null;return}
+  var s=C.flow[flow.i];say(typeof s.q==='function'?s.q(ans):s.q);setChips(s.opts?(typeof s.opts==='function'?s.opts(ans):s.opts):['Cancel'])}
+ function handle(t){t=t.trim();if(!t)return;say(t,'u');
+  if(flow){if(/^(cancel|stop|never ?mind|no thanks)$/i.test(t)){flow=null;say(C.cancel);setChips(C.chips);return}
+   var s=C.flow[flow.i];if(s.valid&&!s.valid(t)){say(s.err);return}ans[s.key]=t;flow.i++;ask();return}
+  if(wantsBooking(t,C.bookWords)){var pre={};if(C.pre)pre=C.pre(t)||{};startFlow(pre);return}
+  var e=best(C.kb,t);if(e){say(e.a);if(e.follow)setChips(e.follow);else setChips(C.chips)}else{say(C.fallback);setChips(C.chips)}}
+ function open(){panel.hidden=false;fab.setAttribute('aria-expanded','true');st.classList.add('open');if(!opened){opened=true;say(C.greet);setChips(C.chips)}setTimeout(function(){inp.focus()},50)}
+ function close(){panel.hidden=true;fab.setAttribute('aria-expanded','false');st.classList.remove('open')}
+ fab.onclick=function(){panel.hidden?open():close()};st.querySelector('.aw-x').onclick=close;
+ form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';handle(v)};
+ window.awOpen=function(t){open();if(t)handle(t)};
+ document.querySelectorAll('[data-ask]').forEach(function(b){b.addEventListener('click',function(){open();handle(b.getAttribute('data-ask'))})});
+}
+/*ENDUI*/
+
+initAssistant(CFG);
+document.querySelectorAll('.tab').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on',p.id==='p-'+b.getAttribute('data-t'))})})});
+</script>
+</body>
+</html>

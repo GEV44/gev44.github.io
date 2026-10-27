@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bespoke Estate Agents · Dublin · Demo</title>
+<meta name="description" content="Demo page for Bespoke Estate Agents, 60 Merrion Square South, Dublin 2, with a small assistant for valuation and lettings questions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--sl:#323E48;--sl2:#27313a;--or:#F15623;--or2:#c9421a;--cr:#f4f1ec;--wh:#fff;--tx:#232b32;--mu:#5d6872;--ln:#dcd6cc;--wa:#F15623;--wb:#fff;--wf:'DM Sans',system-ui,sans-serif;--wbg:#fff;--wm:#f4f1ec;--wr:10px;--wr2:12px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'DM Sans',system-ui,sans-serif;color:var(--tx);background:var(--cr);line-height:1.6;-webkit-text-size-adjust:100%}
+a{color:inherit}
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;line-height:1.1;margin:0 0 .5em}
+.w{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+.k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--or);margin:0 0 12px}
+/* header */
+.hd{background:var(--sl);color:#fff;position:sticky;top:0;z-index:40}
+.hd .w{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px}
+.logo{display:block;background:var(--sl);padding:2px 0}
+.logo img{height:40px;width:auto;display:block}
+.hd nav{display:none;gap:22px;font-size:14px}
+.hd nav a{text-decoration:none;opacity:.85}
+.hd nav a:hover{opacity:1}
+.tel{background:var(--or);color:#fff;text-decoration:none;font-weight:700;padding:9px 15px;border-radius:999px;font-size:14px;white-space:nowrap}
+@media(min-width:900px){.hd nav{display:flex}}
+/* hero */
+.hero{background:var(--sl);color:#fff;padding:56px 0 0;overflow:hidden;position:relative}
+.hero::after{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border:60px solid rgba(241,86,35,.18);border-radius:50%}
+.hero .w{position:relative;z-index:1}
+.hero h1{font-size:clamp(2.3rem,8.5vw,4.6rem);max-width:12em}
+.hero h1 i{color:var(--or)}
+.hero p.l{font-size:1.1rem;max-width:36em;color:#d4dae0}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 44px}
+.b{display:inline-block;text-decoration:none;font-weight:700;font-size:15px;padding:14px 24px;border-radius:999px;border:2px solid var(--or);cursor:pointer;font-family:inherit}
+.b.f{background:var(--or);color:#fff}
+.b.o{background:transparent;color:inherit;border-color:rgba(255,255,255,.5)}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.18)}
+.stat{padding:22px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.stat b{font-family:'DM Serif Display',serif;font-size:2.2rem;font-weight:400;display:block;color:#fff;line-height:1}
+.stat span{font-size:13px;color:#b8c1c9}
+@media(min-width:800px){.stats{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}.stat{border-bottom:0}}
+/* bento */
+.bento{display:grid;gap:14px;margin-top:28px}
+.bx{background:#fff;border:1px solid var(--ln);border-radius:16px;padding:26px;position:relative}
+.bx h3{font-size:1.5rem}
+.bx p{margin:0;color:var(--mu)}
+.bx .ic{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--or);margin-bottom:10px}
+.bx.d{background:var(--sl);color:#fff;border-color:var(--sl)}
+.bx.d p{color:#c8d0d7}
+.bx.o{background:var(--or);color:#fff;border-color:var(--or)}
+.bx.o p{color:#ffe6dd}
+.bx.o .ic{color:#fff}
+@media(min-width:760px){.bento{grid-template-columns:repeat(6,minmax(0,1fr))}.bx{grid-column:span 3}.bx.w2{grid-column:span 4}.bx.w1{grid-column:span 2}}
+/* valuation */
+.val{background:#fff}
+.vg{display:grid;gap:36px}
+.chk{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:0}
+.chk li{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--ln)}
+.chk li:last-child{border-bottom:1px solid var(--ln)}
+.chk li::before{content:"";flex:0 0 12px;height:12px;margin-top:7px;background:var(--or);border-radius:50%}
+.chk b{display:block}
+.chk span{color:var(--mu);font-size:15px}
+.vbox{background:var(--sl);color:#fff;border-radius:16px;padding:30px;align-self:start}
+.vbox h3{font-size:1.8rem}
+.vbox p{color:#c8d0d7}
+@media(min-width:900px){.vg{grid-template-columns:1.2fr .8fr;gap:64px}}
+/* lettings */
+.lg{display:grid;gap:0;margin-top:24px;border:1px solid var(--ln);border-radius:16px;overflow:hidden;background:#fff}
+.lr{display:grid;gap:4px;padding:18px 22px;border-top:1px solid var(--ln)}
+.lr:first-child{border-top:0}
+.lr b{font-family:'DM Serif Display',serif;font-weight:400;font-size:1.2rem}
+.lr span{color:var(--mu);font-size:15px}
+@media(min-width:760px){.lr{grid-template-columns:260px minmax(0,1fr);gap:24px;align-items:start}}
+/* block */
+.blk{background:var(--sl2);color:#e4e9ed}
+.blk h2{color:#fff}
+.blk p{color:#b9c3cb;max-width:44em}
+.pill{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill span{border:1px solid rgba(255,255,255,.28);padding:8px 14px;border-radius:999px;font-size:14px}
+/* team */
+.tm{margin-top:26px;border-top:2px solid var(--tx)}
+.tr{display:grid;gap:6px;padding:20px 0;border-bottom:1px solid var(--ln)}
+.tr h3{font-size:1.4rem;margin:0}
+.tr em{font-style:normal;color:var(--or);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.tr p{margin:0;color:var(--mu);font-size:15px}
+@media(min-width:800px){.tr{grid-template-columns:1fr 1.6fr;gap:40px}}
+/* more */
+.mg{display:grid;gap:14px;margin-top:22px}
+.mg a{display:block;background:#fff;border:1px solid var(--ln);border-radius:14px;padding:20px;text-decoration:none}
+.mg a b{font-family:'DM Serif Display',serif;font-weight:400;font-size:1.25rem;display:block}
+.mg a span{color:var(--mu);font-size:14px}
+@media(min-width:760px){.mg{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.steps{display:grid;gap:14px;margin-top:26px}
+.st{background:#fff;border:1px solid var(--ln);border-radius:16px;padding:24px}
+.st i{font-family:'DM Serif Display',serif;font-style:normal;font-size:2.4rem;color:var(--or);line-height:1}
+.st h3{font-size:1.4rem;margin:.4em 0 .3em}
+.st p{margin:0;color:var(--mu)}
+@media(min-width:800px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.why{background:var(--sl);color:#fff}.why h2{color:#fff}
+.wg{display:grid;gap:22px;margin-top:24px}
+.wg div{border-top:2px solid var(--or);padding-top:14px}
+.wg b{font-family:'DM Serif Display',serif;font-weight:400;font-size:1.3rem;display:block}
+.wg p{color:#c3ccd3;margin:.4em 0 0;font-size:15px}
+@media(min-width:800px){.wg{grid-template-columns:repeat(4,minmax(0,1fr))}}
+/* faq */
+details{border-top:1px solid var(--ln);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--or);font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{color:var(--mu);margin:.6em 0 0}
+/* contact */
+.ct{background:var(--or);color:#fff}
+.ct h2{font-size:clamp(2rem,6vw,3.2rem)}
+.cg{display:grid;gap:24px}
+.cb{background:#fff;color:var(--tx);border-radius:16px;padding:26px}
+.cb dt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--or2);margin-top:14px}
+.cb dt:first-child{margin-top:0}
+.cb dd{margin:2px 0 0;overflow-wrap:anywhere}
+.cb a{text-decoration:none;border-bottom:1px solid var(--ln)}
+@media(min-width:860px){.cg{grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}}
+footer{background:var(--sl2);color:#aeb8c0;padding:26px 0;font-size:14px}
+footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+footer small{opacity:.75;max-width:60em;display:block}
+#gw{font-family:var(--wf,system-ui,sans-serif);font-size:15px;line-height:1.45;color:var(--wt,#222)}
+#gw *{box-sizing:border-box}
+#gw-b{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--wa,#111);color:var(--wb,#fff);padding:12px 18px;border-radius:var(--wr,999px);font:600 14px var(--wf,system-ui);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#gw-b .gw-i{font-size:18px}
+#gw-p{position:fixed;right:12px;bottom:76px;z-index:61;width:min(380px,calc(100vw - 24px));height:min(540px,calc(100vh - 100px));display:flex;flex-direction:column;background:var(--wbg,#fff);border-radius:var(--wr2,14px);box-shadow:0 16px 48px rgba(0,0,0,.3);overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+#gw-p[hidden]{display:none}
+#gw-p header{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--wa,#111);color:var(--wb,#fff);padding:12px 14px}
+#gw-p header b{display:block;font-size:15px}#gw-p header small{opacity:.8;font-size:12px}
+#gw-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer}
+#gw-m{flex:1;min-height:0;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--wm,#f6f6f6)}
+#gw-m div{max-width:86%;padding:9px 12px;border-radius:12px;white-space:pre-wrap;overflow-wrap:anywhere}
+.gw-a{background:#fff;align-self:flex-start;border:1px solid rgba(0,0,0,.07)}
+.gw-u{background:var(--wa,#111);color:var(--wb,#fff);align-self:flex-end}
+#gw-c{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;max-height:116px;overflow-y:auto;background:var(--wbg,#fff);border-top:1px solid rgba(0,0,0,.06)}
+#gw-c:empty{display:none}
+#gw-c button{border:1px solid var(--wa,#111);background:transparent;color:var(--wa,#111);padding:6px 11px;border-radius:999px;font:500 13px var(--wf,system-ui);cursor:pointer}
+#gw-f{display:flex;gap:6px;padding:10px 12px;border-top:1px solid rgba(0,0,0,.08);background:var(--wbg,#fff)}
+#gw-f input{flex:1;min-width:0;padding:10px 12px;border:1px solid #ccc;border-radius:8px;font:15px var(--wf,system-ui)}
+#gw-f button{border:0;background:var(--wa,#111);color:var(--wb,#fff);padding:0 14px;border-radius:8px;font:600 14px var(--wf,system-ui);cursor:pointer}
+@media(max-width:420px){#gw-b .gw-t{display:none}#gw-b{padding:14px 16px}}
+
+</style>
+</head>
+<body>
+<header class="hd"><div class="w">
+<a class="logo" href="#top" aria-label="Bespoke Estate Agents"><img src="img/bespoke-ie-logo.svg" alt="Bespoke Estate Agents" width="125" height="40"></a>
+<nav><a href="#services">Services</a><a href="#valuation">Valuations</a><a href="#lettings">Lettings</a><a href="#blocks">Block management</a><a href="#team">Team</a><a href="#contact">Contact</a></nav>
+<a class="tel" href="tel:+35316619670">(01) 661 9670</a>
+</div></header>
+<main id="top">
+<div class="hero"><div class="w">
+<p class="k">Independent · Dublin · Since 2000</p>
+<h1>Your trusted property partner in <i>Dublin.</i></h1>
+<p class="l">Expert sales, lettings, property management, block management and professional valuations across Dublin, from an independent boutique agency on Merrion Square.</p>
+<div class="cta"><a class="b f" href="#valuation">Request your free valuation</a><a class="b o" href="#services">See all services</a></div>
+<div class="stats"><div class="stat"><b>2000</b><span>established, independent</span></div><div class="stat"><b>25+</b><span>years of experience</span></div><div class="stat"><b>PSRA</b><span>licensed, licence 001671</span></div><div class="stat"><b>RICS</b><span>valuation expertise</span></div></div>
+</div></div>
+
+<section id="services"><div class="w">
+<p class="k">What Bespoke does</p><h2>A more personal approach to property</h2>
+<p style="max-width:42em;color:var(--mu)">Property is about people as much as it is about buildings. Homeowners, landlords, investors, buyers and businesses all get honest advice and a team that does what it says it will do.</p>
+<div class="bento">
+<div class="bx w2"><span class="ic">Sales</span><h3>Residential property sales</h3><p>From the first valuation to completion, a sales strategy built around your circumstances and priorities, with honest advice on when and how to launch and how to negotiate offers.</p></div>
+<div class="bx w1 o"><span class="ic">Free</span><h3>Valuations</h3><p>No-obligation market valuations, not an online estimate.</p></div>
+<div class="bx w1 d"><span class="ic">Lettings</span><h3>Letting and management</h3><p>Tenant finding, referencing, rent and compliance handled for you.</p></div>
+<div class="bx w2"><span class="ic">OMCs</span><h3>Block management</h3><p>Managing agent services for Owners' Management Companies, supporting volunteer directors with maintenance, contractors and day-to-day administration of the development.</p></div>
+<div class="bx"><span class="ic">Business</span><h3>Commercial sales and lettings</h3><p>Led by Managing Director Sean O'Donoghue, with serviced offices and parking rentals also listed.</p></div>
+<div class="bx"><span class="ic">Browse</span><h3>Property to buy or rent</h3><p>Recent listings across Dublin, South Dublin and Wicklow, searchable by price range and bedrooms on the main site.</p></div>
+</div></div></section>
+
+<section class="val" id="valuation"><div class="w vg">
+<div><p class="k">Property valuations</p><h2>Know what your property is worth</h2>
+<p style="color:var(--mu)">Whether you are selling, letting, refinancing, managing a portfolio or simply curious, an accurate valuation is the best place to start. Bespoke does not rely on automated valuations or generic estimates. Here is what the team weighs up:</p>
+<ul class="chk">
+<li><div><b>Location</b><span>Your neighbourhood, amenities, transport links and current demand.</span></div></li>
+<li><div><b>Property type and size</b><span>Layout, accommodation, floor area and overall appeal.</span></div></li>
+<li><div><b>Condition and presentation</b><span>Quality, specification and any improvements or upgrades.</span></div></li>
+<li><div><b>Recent comparable sales</b><span>Transactions involving similar properties in your area.</span></div></li>
+<li><div><b>Current market conditions</b><span>Buyer and tenant demand, available stock and wider trends.</span></div></li>
+</ul></div>
+<aside class="vbox"><h3>Free, no-obligation</h3><p>Thinking about selling or letting? A realistic indication of what your property could achieve today, from a RICS-registered valuer's team, with clear advice based on comparables and local demand.</p><p>Use the assistant at the bottom right to leave a request. In this demo nothing is sent.</p><a class="b f" href="tel:+35316619670">Call (01) 661 9670</a></aside>
+</div></section>
+
+<section id="lettings"><div class="w">
+<p class="k">Lettings management</p><h2>Professional management, less stress for you</h2>
+<p style="max-width:44em;color:var(--mu)">Managing tenants, rent, maintenance, paperwork and regulation can swallow your time. Whether you own one investment property or a portfolio, the team takes the day-to-day off your shoulders.</p>
+<div class="lg">
+<div class="lr"><b>Professional property marketing</b><span>A tailored campaign across the most effective property platforms and digital channels.</span></div>
+<div class="lr"><b>Professional viewings</b><span>Enquiries, appointments and feedback handled, with the property presented well.</span></div>
+<div class="lr"><b>Tenant referencing</b><span>Proof of identity, previous landlord references, proof of employment and income, and relevant financial information.</span></div>
+<div class="lr"><b>Tenancy and lease administration</b><span>Tenancy documentation prepared and the required information given to landlord and tenant.</span></div>
+<div class="lr"><b>Inventory and condition reports</b><span>A detailed record of condition and contents at the start of the tenancy.</span></div>
+<div class="lr"><b>Rent and deposit management</b><span>Collection and administration, with the landlord kept informed of the rental position.</span></div>
+<div class="lr"><b>RTB registration</b><span>Help registering tenancies with the Residential Tenancies Board and meeting obligations.</span></div>
+<div class="lr"><b>Move-in and utilities</b><span>A smooth start to the tenancy, including coordinating utility changes and property information.</span></div>
+</div></div></section>
+
+<section id="selling" style="padding-top:0"><div class="w">
+<p class="k">Selling your property</p><h2>Selling with confidence</h2>
+<p style="max-width:44em;color:var(--mu)">Selling is a significant decision, whether it is the family home, an investment property or a commercial asset. Bespoke has helped clients buy and sell since 2000 and combines local market knowledge with a modern approach to marketing, negotiation and client service.</p>
+<div class="steps"><div class="st"><i>01</i><h3>Valuation</h3><p>An honest market valuation as the starting point, based on comparables, local demand and the property itself.</p></div><div class="st"><i>02</i><h3>Strategy</h3><p>The team learns your circumstances, priorities and objectives before shaping a sales strategy for your property, including when and how to launch.</p></div><div class="st"><i>03</i><h3>Negotiation</h3><p>From offers to progressing the sale to completion, the detail is handled and you are kept informed.</p></div></div>
+</div></section>
+
+<section class="why"><div class="w"><p class="k">Why Bespoke</p><h2>Professional. Independent. Experienced.</h2>
+<div class="wg"><div><b>Experience you can rely on</b><p>More than two decades helping homeowners, landlords, investors, buyers and businesses navigate the Dublin market.</p></div><div><b>Independent by choice</b><p>Being independent allows advice based on what is right for your property and circumstances.</p></div><div><b>Regulation, explained</b><p>The team keeps up with rules affecting owners and landlords, including the changing lettings and property management requirements.</p></div><div><b>Trust and communication</b><p>Doing what they say they will do, and keeping clients informed along the way.</p></div></div></div></section>
+
+<section class="blk" id="blocks"><div class="w">
+<p class="k">Block management</p><h2>Professional management for your development</h2>
+<p>An OMC is responsible for the common areas and shared facilities of a development, and its directors are volunteers balancing this with their own work. Bespoke works with the board to coordinate contractors, manage maintenance and handle the administration. The approach: clear communication, proactive management and accountability at every stage.</p>
+<div class="pill"><span>Day-to-day running</span><span>Maintenance</span><span>Contractor coordination</span><span>Administration</span><span>Support for OMC directors</span></div>
+</div></section>
+
+<section id="team"><div class="w">
+<p class="k">Meet the team</p><h2>Property expertise. Personal service. Trusted relationships.</h2>
+<div class="tm">
+<div class="tr"><div><h3>Sean O'Donoghue</h3><em>Managing Director, Head of Commercial</em></div><p>B.Sc. (Hons), RICS, SCSI. Around 30 years in the property industry, managing everything from single units to large mixed developments, with extensive valuation experience for banks and financial institutions.</p></div>
+<div class="tr"><div><h3>Maria Bailey Ryan</h3><em>Sales and letting negotiator</em></div><p>Focused on maximising capital and rental values for clients, with extensive experience in housing policy and legislation and a former Oireachtas Chair of Housing, Planning and Local Government.</p></div>
+<div class="tr"><div><h3>Eamon Casey</h3><em>Director, block management</em></div><p>A qualified accountant and former investment manager with extensive property portfolio management experience.</p></div>
+<div class="tr"><div><h3>Michelle Murphy</h3><em>Block manager</em></div><p>Brings strong administrative skill and experience to the block management team, joining from Indigo Real Estate Management.</p></div>
+<div class="tr"><div><h3>Kellie Lennon</h3><em>Block manager</em></div><p>Fully licensed and experienced, joining from O'Sullivan McGoldrick Property Plus, with a background in architecture and interior design that informs her attention to detail.</p></div>
+</div></div></section>
+
+<section style="padding-top:0"><div class="w">
+<p class="k">Also on the Bespoke site</p>
+<div class="mg"><a href="#contact"><b>Commercial lettings</b><span>Commercial property to let</span></a><a href="#contact"><b>Serviced offices</b><span>Flexible office space</span></a><a href="#contact"><b>Parking rental</b><span>Spaces to rent</span></a><a href="#contact"><b>Property mailing list</b><span>Listings and news by e-mail</span></a></div>
+</div></section>
+
+<section id="faq" style="padding-top:0"><div class="w">
+<p class="k">Questions</p><h2>Before you call</h2>
+<details><summary>Is the valuation really free?</summary><p>Yes. The site describes a free, no-obligation market valuation for anyone thinking of selling or letting.</p></details>
+<details><summary>Who regulates Bespoke?</summary><p>Bespoke is licensed by the Property Services Regulatory Authority, licence 001671, and Sean O'Donoghue is a RICS-registered valuer and SCSI affiliate.</p></details>
+<details><summary>Can you manage just one apartment?</summary><p>Yes. The lettings and management service is described for landlords with one property or a larger portfolio.</p></details>
+<details><summary>What areas do the listings cover?</summary><p>Dublin, South Dublin and Wicklow.</p></details>
+<details><summary>What does tenant referencing involve?</summary><p>Appropriate checks and documents, which may include proof of identity, previous landlord references, proof of employment and income, and relevant financial information, so landlords can make informed decisions.</p></details>
+<details><summary>Do you work with owners' management companies?</summary><p>Yes. Block management is provided on behalf of OMCs, working with the board of volunteer directors on maintenance, contractors and administration of the development.</p></details>
+<details><summary>Why not just use an online estimate?</summary><p>Bespoke says it does not rely on automated valuations or generic market estimates, because every property differs in location, condition, specification and local demand.</p></details>
+<details><summary>What are the opening hours?</summary><p>Not published on the site. Phone (01) 661 9670 and the team will confirm.</p></details>
+</div></section>
+
+<section class="ct" id="contact"><div class="w cg">
+<div><p class="k" style="color:#fff">Get in touch</p><h2>Property valuation, lettings or something else?</h2><p style="max-width:34em">Phone, use the contact form on the Bespoke site, or try the assistant at the bottom right to see how an enquiry could be taken.</p><div class="cta" style="margin-bottom:0"><a class="b" style="background:#fff;color:var(--or2);border-color:#fff" href="tel:+35316619670">Call +353 1 661 9670</a></div></div>
+<div class="cb"><dl style="margin:0">
+<dt>Telephone</dt><dd><a href="tel:+35316619670">+353 1 661 9670</a></dd>
+<dt>Address</dt><dd>60 Merrion Square South, Dublin 2, D02 NT04</dd>
+<dt>Enquiry types</dt><dd>General, valuations, lettings, property management, residential sales, commercial sales, feedback</dd>
+<dt>Licence</dt><dd>PSRA 001671</dd>
+</dl></div></div></section>
+</main>
+<footer><div class="w"><span>Demo · prepared by Gevorg Hovhannisyan</span><small>Built from the public content of bespoke.ie. This is a demonstration; the assistant sends nothing. Listings are not reproduced here.</small></div></footer>
+<script>
+(function(root){
+function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|s|ly)$/,''):w.replace(/s$/,'');}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=0;j<=n;j++)d[0][j]=j;
+for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function tm(t,k){var ts=stem(t);if(ts===k||t===k)return 1;
+if(k.length>=4&&ts.length>=4&&(ts.indexOf(k)===0||k.indexOf(ts)===0))return .9;
+if(k.length>=5&&ts.length>=4&&Math.abs(ts.length-k.length)<=1&&lev(ts,k)<=1)return .8;
+if(k.length>=8&&Math.abs(ts.length-k.length)<=2&&lev(ts,k)<=2)return .7;return 0;}
+function match(q,cfg){var nq=norm(q),toks=nq.split(' ').filter(Boolean),best=null,bs=0;
+cfg.kb.forEach(function(e,idx){var s=0;e.k.forEach(function(kw){var k=norm(kw);if(!k)return;
+if(k.indexOf(' ')>0){if((' '+nq+' ').indexOf(' '+k+' ')>=0)s+=2;else{var ps=k.split(' '),all=ps.every(function(p){return toks.some(function(t){return tm(t,stem(p))>=.8;});});if(all)s+=1.6;}}
+else{var ks=stem(k),m=0;toks.forEach(function(t){var v=tm(t,ks);if(v>m)m=v;});s+=m;}});
+if(s>bs){bs=s;best=e;}});
+return bs>=.8?best:null;}
+function wantsFlow(q,cfg){var nq=norm(q);return (cfg.flow.trig||[]).some(function(w){var k=norm(w);return nq.split(' ').some(function(t){return tm(t,stem(k))>=.8;})||nq.indexOf(k)>=0;});}
+var api={norm:norm,match:match,wantsFlow:wantsFlow};
+if(typeof module!=='undefined')module.exports=api;
+if(typeof document==='undefined')return;
+root.GEVW=function(cfg){
+var $=function(s){return document.querySelector(s);},wrap=document.createElement('div');wrap.id='gw';
+wrap.innerHTML='<button id="gw-b" aria-label="'+cfg.btn+'"><span class="gw-i">✉</span><span class="gw-t">'+cfg.btn+'</span></button><section id="gw-p" hidden role="dialog" aria-label="'+cfg.name+'"><header><div><b>'+cfg.name+'</b><small>'+cfg.sub+'</small></div><button id="gw-x" aria-label="Close">×</button></header><div id="gw-m" aria-live="polite"></div><div id="gw-c"></div><form id="gw-f" autocomplete="off"><input id="gw-q" type="text" placeholder="'+cfg.ph+'" aria-label="'+cfg.ph+'"><button type="submit">'+cfg.send+'</button></form></section>';
+document.body.appendChild(wrap);
+var m=$('#gw-m'),c=$('#gw-c'),q=$('#gw-q'),panel=$('#gw-p'),step=-1,data={},started=false;
+function say(t,who){var d=document.createElement('div');d.className='gw-'+(who||'a');d.textContent=t;m.appendChild(d);m.scrollTop=m.scrollHeight;}
+function chips(a){c.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){input(t);};c.appendChild(b);});}
+function home(){step=-1;chips(cfg.chips);}
+function ask(){var s=cfg.flow.steps[step];say(s.q);if(s.opts)chips(s.opts);else c.innerHTML='';q.placeholder=s.ph||cfg.ph;}
+function startFlow(){step=0;data={};say(cfg.flow.intro);ask();}
+function finish(){var lines=cfg.flow.steps.map(function(s){return s.label+': '+data[s.k];}).join('\n');
+say(cfg.flow.done+'\n\n'+lines);step=-1;q.placeholder=cfg.ph;chips(cfg.chips);}
+function input(t){t=String(t).trim();if(!t)return;say(t,'u');
+if(step>=0){var s=cfg.flow.steps[step];
+if(/^(cancel|stop|exit|back to questions)$/i.test(t)){step=-1;say(cfg.flow.cancel);chips(cfg.chips);return;}
+if(s.min&&t.length<s.min){say(s.err||cfg.flow.err);return;}
+if(s.re&&!new RegExp(s.re,'i').test(t)){say(s.err||cfg.flow.err);return;}
+data[s.k]=t;step++;if(step>=cfg.flow.steps.length)finish();else ask();return;}
+if(wantsFlow(t,cfg)){startFlow();return;}
+var e=match(t,cfg);if(e){say(e.a);if(e.flow){chips([cfg.flow.chip].concat(cfg.chips.slice(0,3)));}else chips(cfg.chips);}else{say(cfg.fallback);chips(cfg.chips);}}
+$('#gw-b').onclick=function(){panel.hidden=!panel.hidden;if(!panel.hidden&&!started){started=true;say(cfg.hello);home();}if(!panel.hidden)q.focus();};
+$('#gw-x').onclick=function(){panel.hidden=true;};
+$('#gw-f').onsubmit=function(ev){ev.preventDefault();var v=q.value;q.value='';input(v);};
+};
+})(typeof window!=='undefined'?window:this);
+
+GEVW({"name": "Bespoke assistant", "sub": "Dublin sales, lettings and management", "btn": "Ask Bespoke", "ph": "Ask about valuations, lettings...", "send": "Send", "hello": "Hello! I can answer questions about Bespoke Estate Agents: valuations, sales, lettings, property and block management, commercial, and the team. I can also take a valuation or enquiry request for the team.", "chips": ["Free valuation", "Selling", "Letting my property", "Block management", "Commercial", "Contact details"], "fallback": "I cannot find that on the Bespoke site, so I will not guess. The team can confirm it on (01) 661 9670, or tap \"Make an enquiry\" and leave your details.", "flow": {"chip": "Make an enquiry", "trig": ["book", "enquiry", "enquire", "arrange", "appointment", "request", "callback", "call me", "schedule", "reserve", "get in touch"], "intro": "Glad to help. A few quick questions and this goes to the Bespoke team.", "done": "Thank you! This is a demo, so nothing was actually sent. This is the request the Bespoke team would receive, and they would reply to confirm.", "cancel": "Cancelled, no problem. Ask me anything else.", "err": "Could you add a little more detail?", "steps": [{"k": "type", "label": "Enquiry", "q": "What is your enquiry about?", "opts": ["Property valuation", "Selling", "Letting my property", "Looking to rent", "Block management", "Commercial"]}, {"k": "prop", "label": "Property", "q": "Where is the property, and what kind is it (apartment, house, commercial)?", "min": 3, "ph": "e.g. 2 bed apartment, Ranelagh"}, {"k": "when", "label": "Timing", "q": "When would you like to hear from us?", "opts": ["This week", "Next week", "No rush"]}, {"k": "name", "label": "Name", "q": "Your name?", "min": 2, "ph": "Your name"}, {"k": "contact", "label": "Contact", "q": "Best phone number or e-mail?", "re": "[@0-9]{5,}|@", "err": "Please add a phone number or an e-mail address.", "ph": "Phone or e-mail"}]}, "kb": [{"k": ["valuation", "value", "worth", "valuer", "appraisal", "estimate", "market valuation"], "a": "Bespoke offers a free, no-obligation market valuation for sales or lettings. It is not an automated online estimate: the team considers location, size, condition and specification, recent comparable sales and current buyer and tenant demand. Managing Director Sean O'Donoghue is a RICS-registered valuer.", "flow": 1}, {"k": ["sell", "selling", "sale", "sales", "buy", "list my property", "put on the market"], "a": "Bespoke has sold and let property in Dublin since 2000. For sales you get a valuation first, then a strategy built around your priorities, honest advice on when and how to launch, negotiation of offers and progress through to completion.", "flow": 1}, {"k": ["let", "letting", "lettings", "landlord", "tenant", "tenants", "rent out", "rental", "rent"], "a": "The lettings service covers marketing across the main property platforms, professional viewings, tenant referencing (ID, previous landlord references, employment and income), tenancy documents, inventory and condition reports, rent and deposit management, RTB registration and tenant move-in.", "flow": 1}, {"k": ["management", "manage", "property management", "managing agent"], "a": "Property management means the day-to-day load for landlords is handled for you: tenancy administration, rent and deposits, maintenance coordination, compliance and clear updates on how your property is doing. It suits one property or a portfolio.", "flow": 1}, {"k": ["block", "block management", "omc", "owners management company", "apartment block", "development", "management company"], "a": "Block management is provided for Owners' Management Companies: day-to-day running, maintenance, contractors and administration, with clear communication to the OMC board of volunteer directors. The block team is Eamon Casey, Michelle Murphy and Kellie Lennon.", "flow": 1}, {"k": ["commercial", "serviced office", "serviced offices", "shop", "business premises"], "a": "Bespoke handles commercial sales and lettings, and also lists serviced offices. Sean O'Donoghue is Managing Director and Head of Commercial Property, with around 30 years in the property industry.", "flow": 1}, {"k": ["parking", "car park", "space", "parking rental"], "a": "Bespoke has a parking rental section on its site. Ask the team about current availability on (01) 661 9670.", "flow": 1}, {"k": ["phone", "telephone", "call", "number", "contact"], "a": "Telephone: +353 1 661 9670 (or (01) 661 9670 from Ireland). You can also tap \"Make an enquiry\" and leave your details.", "flow": 1}, {"k": ["address", "office", "where", "location", "merrion", "merrion square", "find you", "visit"], "a": "Bespoke Estate Agents is at 60 Merrion Square South, Dublin 2, D02 NT04."}, {"k": ["email", "e-mail", "write", "mail"], "a": "Please use the contact form on the Bespoke site or phone (01) 661 9670; the team replies as soon as possible. In this demo, tap \"Make an enquiry\" and leave your details instead.", "flow": 1}, {"k": ["team", "staff", "who", "people", "meet", "agents", "negotiator", "manager"], "a": "The team: Sean O'Donoghue (Managing Director, Head of Commercial, RICS, SCSI), Maria Bailey Ryan (sales and letting negotiator), Eamon Casey (director of block management) and block managers Michelle Murphy and Kellie Lennon."}, {"k": ["sean", "odonoghue", "o'donoghue", "managing director", "rics", "scsi"], "a": "Sean O'Donoghue B.Sc. (Hons), RICS, SCSI is Managing Director and Head of Commercial Property, with about 30 years' experience in the property industry and a background in banking valuations."}, {"k": ["maria", "bailey", "ryan", "negotiator"], "a": "Maria Bailey Ryan is a sales and letting negotiator focused on maximising capital and rental values, with extensive experience in housing policy and legislation, and formerly Oireachtas Chair of Housing, Planning and Local Government."}, {"k": ["licence", "license", "psra", "regulated", "regulation", "registered", "insured"], "a": "Bespoke is fully licensed by the Property Services Regulatory Authority (PSRA), licence 001671, and works with RICS valuation expertise."}, {"k": ["history", "established", "since", "years", "experience", "independent", "boutique", "about", "2000", "trading", "long", "how long"], "a": "Bespoke is an independent, boutique estate agency established in 2000 and operating across Dublin, with over 25 years of experience in residential and commercial property."}, {"k": ["area", "areas", "cover", "dublin", "south dublin", "wicklow", "where do you work"], "a": "Bespoke lists property for sale and to let across Dublin, South Dublin and Wicklow."}, {"k": ["hours", "open", "opening", "time", "when", "weekend"], "a": "Opening hours are not published on the site, so the team will confirm. Phone (01) 661 9670 or leave an enquiry here.", "flow": 1}, {"k": ["rtb", "registration", "tenancy", "deposit", "deposits", "inventory", "referencing", "references"], "a": "Yes, tenancy registration with the RTB, rent and deposit management, inventory and condition reports and tenant referencing are all part of the lettings and management service.", "flow": 1}, {"k": ["mailing", "mailing list", "alerts", "newsletter", "news"], "a": "The site has a property mailing list and a property news section. Ask the team how to be added.", "flow": 1}]});
+</script>
+</body>
+</html>

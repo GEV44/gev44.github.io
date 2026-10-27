@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>I Have Evolved · Cooper Driving School, Vancouver</title>
+<meta name="description" content="Demo page for I Have Evolved, Cooper Driving School in Vancouver: calm driving lessons, ICBC road test preparation and an assistant that answers booking questions.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--pu:#5c2d91;--pu2:#2a0554;--pu3:#392154;--yl:#ffcf01;--cr:#fbf8ff;--lav:#ece4f7;--ink:#241238;--mute:#6a5a80;--line:#ddd0ee;--r:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.65 Nunito,system-ui,sans-serif;color:var(--ink);background:var(--cr);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,.fr{font-family:Fraunces,Georgia,serif;line-height:1.12}
+.wrap{width:100%;max-width:1040px;margin:0 auto;padding:0 16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:800 16px/1 Nunito;padding:16px 24px;border-radius:14px;text-decoration:none;transition:.15s}
+.btn.yl{background:var(--yl);color:var(--pu2);box-shadow:0 6px 0 #c9a200}
+.btn.yl:hover{transform:translateY(2px);box-shadow:0 4px 0 #c9a200}
+.btn.out{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.45)}
+.btn.out:hover{border-color:#fff}
+.btn.pu{background:var(--pu);color:#fff}
+/* header */
+.hd{background:var(--pu2);color:#fff;position:sticky;top:0;z-index:30}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:10px}
+.logo{display:block;background:var(--pu2);border-radius:10px}
+.logo img{height:52px;width:auto;margin:-4px 0}
+.hd a.t{color:var(--yl);font:800 14px Nunito;text-decoration:none;white-space:nowrap}
+.hd nav{display:none;gap:20px;font:700 14px Nunito}
+.hd nav a{text-decoration:none;color:#e7dbf8}.hd nav a:hover{color:var(--yl)}
+@media(min-width:860px){.hd nav{display:flex}}
+/* hero */
+.hero{background:linear-gradient(160deg,var(--pu2),var(--pu) 120%);color:#fff;position:relative;overflow:hidden;padding:44px 0 90px}
+.hero svg.road{position:absolute;left:0;bottom:0;width:100%;height:120px;opacity:.9}
+.hero .wrap{position:relative}
+.tag{display:inline-block;background:rgba(255,207,1,.16);color:var(--yl);font:800 12px Nunito;letter-spacing:.12em;text-transform:uppercase;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,207,1,.4)}
+.hero h1{font-size:clamp(34px,8.4vw,66px);font-weight:800;margin:18px 0 16px;max-width:760px}
+.hero h1 em{font-style:italic;color:var(--yl);font-weight:600}
+.hero p{max-width:600px;color:#e0d2f3;font-size:18px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+/* sections */
+section{padding:56px 0}
+.k{font:800 12px Nunito;letter-spacing:.14em;text-transform:uppercase;color:var(--pu)}
+.sh{max-width:660px;margin-bottom:28px}
+.sh h2{font-size:clamp(27px,5.6vw,42px);margin:8px 0 10px;font-weight:800;color:var(--pu2)}
+.sh p{color:var(--mute)}
+/* start tiles */
+.tiles{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:640px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:960px){.tiles{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.tile{background:#fff;border:2px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0;position:relative;overflow:hidden}
+.tile:before{content:"";position:absolute;left:0;top:0;width:100%;height:6px;background:var(--yl)}
+.tile h3{font-size:21px;color:var(--pu2);margin-top:4px}
+.tile p{color:var(--mute);font-size:15.5px}
+.tile button{margin-top:auto;align-self:flex-start;background:var(--lav);color:var(--pu);border:0;font:800 14px Nunito;padding:11px 16px;border-radius:12px;cursor:pointer}
+.tile button:hover{background:var(--pu);color:#fff}
+/* road timeline */
+.dk{background:var(--pu2);color:#fff}
+.dk .sh h2{color:#fff}.dk .sh p{color:#cdbbe6}.dk .k{color:var(--yl)}
+.road{position:relative;margin-left:14px;padding-left:34px;border-left:4px dashed var(--yl);display:grid;gap:22px;max-width:760px}
+.stop{position:relative}
+.stop:before{content:"";position:absolute;left:-47px;top:6px;width:20px;height:20px;border-radius:50%;background:var(--yl);border:4px solid var(--pu2)}
+.stop h3{font-size:20px;margin-bottom:4px}
+.stop p{color:#d8c8ee;font-size:16px}
+.stop small{display:inline-block;margin-top:6px;background:rgba(255,207,1,.15);color:var(--yl);font:800 12px Nunito;padding:4px 10px;border-radius:999px}
+/* test day */
+.two{display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:860px){.two{grid-template-columns:1fr 1fr;align-items:start}}
+.clock{background:#fff;border:2px solid var(--line);border-radius:var(--r);padding:24px}
+.clock h3{font-size:22px;color:var(--pu2);margin-bottom:12px}
+.clock ul{list-style:none;display:grid;gap:0}
+.clock li{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--lav);align-items:baseline}
+.clock li b{flex:none;min-width:84px;font:800 14px Nunito;color:var(--pu)}
+.clock li:last-child{border:0}
+.note{background:var(--lav);border-radius:var(--r);padding:20px;color:var(--pu3);font-size:15.5px}
+.note b{color:var(--pu2)}
+.classes{display:grid;gap:14px;margin-top:6px}
+.cls{background:#fff;border-left:6px solid var(--yl);border-radius:14px;padding:18px 20px;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cls h3{font-size:19px;color:var(--pu2)}
+.cls p{color:var(--mute);font-size:15.5px;margin-top:4px}
+/* about */
+.about{display:grid;gap:22px}
+@media(min-width:860px){.about{grid-template-columns:1.1fr .9fr}}
+.about p{color:var(--mute);margin-bottom:12px}
+.facts{display:grid;gap:10px;align-content:start}
+.fact{background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px 16px;font-size:15.5px}
+.fact b{display:block;font:800 13px Nunito;color:var(--pu);letter-spacing:.06em;text-transform:uppercase}
+/* policies */
+.pol{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.pol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.pol div{background:#fff;border:2px solid var(--line);border-radius:16px;padding:16px 18px;font-size:15.5px;color:var(--mute)}
+.pol b{color:var(--pu2);display:block;font:700 17px Fraunces,serif;margin-bottom:2px}
+/* faq */
+.qa{display:grid;gap:10px;max-width:800px}
+.qa details{background:#fff;border:2px solid var(--line);border-radius:16px;padding:0 20px}
+.qa summary{cursor:pointer;list-style:none;font:700 17px Fraunces,serif;color:var(--pu2);padding:16px 26px 16px 0;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary:after{content:"+";position:absolute;right:0;top:12px;font:600 26px Nunito;color:var(--pu)}
+.qa details[open] summary:after{content:"–"}
+.qa p{padding:0 0 18px;color:var(--mute)}
+/* contact */
+.ct{background:var(--yl);color:var(--pu2);border-radius:28px;padding:34px 22px;position:relative;overflow:hidden}
+.ct h2{font-size:clamp(26px,5.6vw,40px);font-weight:800;margin-bottom:10px}
+.ct p{max-width:560px;margin-bottom:6px;font-weight:600}
+.ct .num{font:800 clamp(28px,7vw,44px) Fraunces,serif;margin:10px 0 4px}
+.ct .btn{background:var(--pu2);color:#fff;margin-top:16px}
+footer{background:var(--pu2);color:#cdbbe6;padding:30px 0 100px;font-size:14px;text-align:center}
+footer b{color:#fff}
+/* assistant */
+.aw{position:fixed;right:14px;bottom:14px;z-index:50;font:15px/1.45 Nunito,sans-serif}
+.aw-fab{display:flex;align-items:center;gap:10px;background:var(--yl);color:var(--pu2);border:0;border-radius:16px;padding:12px 18px 12px 12px;cursor:pointer;box-shadow:0 6px 0 #c9a200,0 14px 28px -10px rgba(42,5,84,.6);font:800 15px Nunito}
+.aw-fab-i{width:32px;height:32px;border-radius:10px;background:var(--pu2);color:var(--yl);display:grid;place-items:center;font:800 17px Fraunces}
+.aw.open .aw-fab{display:none}
+.aw-panel{width:min(380px,calc(100vw - 24px));height:min(570px,calc(100vh - 28px));background:#fff;border-radius:22px;box-shadow:0 26px 60px -12px rgba(42,5,84,.6);display:flex;flex-direction:column;overflow:hidden;border:2px solid var(--pu2)}
+.aw-panel[hidden]{display:none}
+.aw-h{background:var(--pu2);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:4px solid var(--yl)}
+.aw-h b{display:block;font:800 17px Fraunces,serif}.aw-h small{color:#cdbbe6;font-size:12.5px}
+.aw-x{background:0;border:0;color:#fff;font-size:28px;line-height:1;cursor:pointer}
+.aw-log{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:9px;background:var(--cr)}
+.aw-m{max-width:88%;padding:10px 14px;border-radius:16px;white-space:pre-wrap;overflow-wrap:anywhere}
+.aw-m.b{background:#fff;border:2px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.aw-m.u{background:var(--pu);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.aw-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 12px;border-top:1px solid var(--lav);max-height:112px;overflow-y:auto}
+.aw-chips button{font:700 13px Nunito;border:2px solid var(--line);background:#fff;color:var(--pu);padding:6px 11px;border-radius:12px;cursor:pointer}
+.aw-chips button:hover{border-color:var(--pu);background:var(--lav)}
+.aw-f{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--line)}
+.aw-in{flex:1;min-width:0;border:2px solid var(--line);border-radius:12px;padding:11px 14px;font:16px Nunito}
+.aw-in:focus{outline:0;border-color:var(--pu)}
+.aw-s{border:0;background:var(--pu);color:#fff;width:44px;border-radius:12px;cursor:pointer;font-size:16px}
+</style>
+</head>
+<body>
+<header class="hd"><div class="wrap">
+<a class="logo" href="#top" aria-label="I Have Evolved, Cooper Driving School"><img src="img/cooper-driving-school-vancouver-logo.png" alt="I Have Evolved" width="100" height="52"></a>
+<nav><a href="#start">Start here</a><a href="#session">First session</a><a href="#test">Road test</a><a href="#about">About Cooper</a><a href="#faq">FAQ</a></nav>
+<a class="t" href="#book" data-ask="Book a lesson">Text Cooper</a>
+</div></header>
+
+<main id="top">
+<div class="hero">
+<div class="wrap">
+<span class="tag">Vancouver, B.C. · Instilling a seriousness for driving</span>
+<h1>Learn to drive <em>calm.</em> Pass the test with a plan.</h1>
+<p>Cooper has been turning doubtful learners into calm, confident drivers in Vancouver since 2019. Anxiety, first lessons, ICBC road tests, or getting back on the road after a crash.</p>
+<div class="cta"><button class="btn yl" data-ask="Book a lesson">Book a drive</button><button class="btn out" data-ask="What happens in the first session?">What happens first?</button></div>
+</div>
+<svg class="road" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C 200 20, 380 120, 600 70 S 1000 10, 1200 60" fill="none" stroke="#ffcf01" stroke-width="5" stroke-dasharray="16 14" stroke-linecap="round"/><path d="M0 120 L0 100 C 200 40, 380 130, 600 85 S 1000 30, 1200 75 L1200 120Z" fill="#fbf8ff"/></svg>
+</div>
+
+<section id="start"><div class="wrap">
+<div class="sh"><span class="k">Start here</span><h2>Where are you on the road?</h2><p>Pick the one that sounds like you. Most people start with a quiet first meeting rather than a lesson at their front door.</p></div>
+<div class="tiles">
+<div class="tile"><h3>I get anxious driving</h3><p>Fear and anxiety assessment. Tell your story, see the car, move slowly in a calm area. Some drivers never go faster than 10 km/h on day one.</p><button data-ask="Tell me about the fear and anxiety assessment">Fear and anxiety</button></div>
+<div class="tile"><h3>I need to pass my test</h3><p>Class 7 (first exam) and Class 5 (stricter second exam, with highway driving) test prep, plus road test day with a warm-up.</p><button data-ask="Tell me about test prep">Test prep</button></div>
+<div class="tile"><h3>I am a new driver</h3><p>New novice drivers are welcome. Build the base: car control, sign reading and the actual laws, at your pace.</p><button data-ask="I am a new driver">New drivers</button></div>
+<div class="tile"><h3>I had a crash or close call</h3><p>A 90-minute recovery session: rebuild the event, then drive the skills related to it and rebuild confidence.</p><button data-ask="Tell me about the post-crash session">Post-crash</button></div>
+</div>
+</div></section>
+
+<section id="session" class="dk"><div class="wrap">
+<div class="sh"><span class="k">Your first drive</span><h2>A quiet start, then a plan</h2><p>Cooper starts at King Edward Station, close to a very calm area. Starting position can be flexible within reason.</p></div>
+<div class="road">
+<div class="stop"><h3>Meet at King Edward Station</h3><p>Bring your real licence or related ICBC documents. No expectations: tell your story and get to know Cooper and his car.</p></div>
+<div class="stop"><h3>I drive, you talk</h3><p>Cooper drives to the calm area while you share your driving history. Friendly questions, basic controls along the way.</p></div>
+<div class="stop"><h3>You drive when you are ready</h3><p>Many do not drive on the first visit, or only a little. Diagrams, car checks and slow movement all count.</p></div>
+<div class="stop"><h3>Assessment and plan</h3><p>You leave with a best-next-step plan, a voice recording summarising the key points, and images or videos matched to what you discussed.<br><small>90 minutes in the car · about 1 h 40 min of full attention</small></p></div>
+</div>
+</div></section>
+
+<section id="test"><div class="wrap">
+<div class="sh"><span class="k">ICBC road tests</span><h2>Plan the whole test day</h2><p>Two test levels, one calm routine.</p></div>
+<div class="two">
+<div>
+<div class="classes">
+<div class="cls"><h3>Class 7 and 7L test prep</h3><p>The first exam has many surprising requirements. Cooper suggests going through both ICBC books in detail and practising with an experienced local instructor.</p></div>
+<div class="cls"><h3>Class 5, 5L and LDL test prep</h3><p>A second-level test with stricter criteria: highway driving and conflict avoidance awareness. One drive gives you two lists: your habits that need changing, and the ICBC fault items to avoid.</p></div>
+<div class="cls"><h3>Failed your Class 7?</h3><p>Cooper has a guide on what to do next. Text your story and he will answer.</p></div>
+</div>
+</div>
+<div class="clock">
+<h3>Road test day, hour by hour</h3>
+<ul>
+<li><b>Warm-up</b><span>One hour with Cooper before the test. ICBC time 3:00 means meeting at 2:00.</span></li>
+<li><b>Arrive</b><span>At the test centre 15 minutes before your test time.</span></li>
+<li><b>Exam</b><span>Usually starts within 15 minutes of schedule and runs about 40 minutes (26 minutes driving).</span></li>
+<li><b>Paperwork</b><span>ICBC paperwork afterwards takes about 15 minutes.</span></li>
+<li><b>Total</b><span>Expect about 2.5 hours from start to finish.</span></li>
+</ul>
+</div>
+</div>
+<div class="note" style="margin-top:20px"><b>Using Cooper's car for the test?</b> You must take a 1.5-hour lesson at least a week before test day. It is Cooper's call whether you are safe to use the car. You can also use the same car you trained in.</div>
+</div></section>
+
+<section id="about" style="background:#fff"><div class="wrap">
+<div class="about">
+<div>
+<span class="k">About Cooper</span>
+<h2 class="fr" style="font-size:clamp(27px,5.6vw,40px);color:var(--pu2);margin:8px 0 14px">An anxiety-aware driving instructor</h2>
+<p>Cooper worked with the Transport Canada Ergonomics Division on some of the earliest studies of cell phone use while driving, and brings a background in driver assessments and measurement tools to every lesson.</p>
+<p>His teaching follows a four-level skills pyramid with a strong emphasis on the base: car control, 100% sign reading and the actual laws. The focus is real confidence, real competence and an honest look at the risks, especially for young drivers.</p>
+<p>He has also done trauma training through the RSEA course conducted by Sue McNeil, and train-the-trainer work, and has worked with fleets, government, municipalities, skid school and new driver insurance programs.</p>
+</div>
+<div class="facts">
+<div class="fact"><b>Since</b>Specialising in nervous learners since 2019</div>
+<div class="fact"><b>Typical client</b>Average client age is 34</div>
+<div class="fact"><b>Who comes</b>Experienced drivers, new-to-Canada drivers and beginners</div>
+<div class="fact"><b>Where</b>700 West Pender St., Vancouver B.C. V6B 1X6</div>
+</div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="sh"><span class="k">Good to know</span><h2>How booking works</h2></div>
+<div class="pol">
+<div><b>Text first</b>Text your story and what you need to 236-998-4268. Text, email or WhatsApp are preferred; Cooper rarely takes phone calls.</div>
+<div><b>Policies before booking</b>ICBC requires you to review the corporate policies before final booking, and sign once to confirm. A signature is also needed for each in-car session.</div>
+<div><b>Cancellations</b>Give 24 hours notice to cancel a lesson, for any reason.</div>
+<div><b>Dash cams</b>The cars have two dash cams pointing out the front and rear. Cameras do not record inside the car.</div>
+<div><b>Schedule</b>Schedules often go back and forth until there is a good fit, and can be changed. Spots can disappear quickly.</div>
+<div><b>New to Canada?</b>Bring your original licence and ICBC documents. The team will confirm exactly what you need.</div>
+</div>
+</div></section>
+
+<section id="faq" style="background:var(--lav)"><div class="wrap">
+<div class="sh"><span class="k">Questions</span><h2>Before you text</h2></div>
+<div class="qa">
+<details><summary>Why start at King Edward Station?</summary><p>Most driving schools go to your home. Cooper prefers a super quiet area, which lowers strain and stress, and he recommends it for anyone learning to drive, especially someone getting back into driving.</p></details>
+<details><summary>How long is a session?</summary><p>Sessions are 90 minutes. Packages on the pricing page include five or ten 90-minute drives.</p></details>
+<details><summary>I am very nervous. Do I have to drive?</summary><p>No. Many people do not drive on the first visit, or drive only a little from the instructor seat. Cancelling or delaying is okay too.</p></details>
+<details><summary>Do you only teach tests?</summary><p>No. Services include test prep for Class 5 and Class 7, young drivers, fear and anxiety assessment, post-crash recovery, regular driving lessons and new novice drivers.</p></details>
+<details><summary>Can I phone?</summary><p>Cooper openly avoids phone calls. Text short or long questions on 236-998-4268, email, or WhatsApp.</p></details>
+<details><summary>What do I bring?</summary><p>Your real licence or related ICBC documents, including a temporary licence or ICBC code number attached to an international licence if that applies.</p></details>
+</div>
+</div></section>
+
+<section id="book"><div class="wrap"><div class="ct">
+<h2>Text Cooper your story</h2>
+<p>Say what you need and what makes you nervous. He will answer all your questions.</p>
+<div class="num">236-998-4268</div>
+<p>Text, email or WhatsApp · todd.cooper@gmail.com</p>
+<button class="btn" data-ask="Book a lesson">Start a booking with the assistant</button>
+</div></div></section>
+</main>
+
+<footer><div class="wrap"><b>I Have Evolved</b> · Cooper Driving School · Vancouver, B.C.<br>Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<script id="cfg">
+var CFG={
+ name:'Cooper assistant',sub:'Answers from this site · no phone calls needed',fab:'Ask a question',ph:'Ask about lessons, tests, anxiety…',
+ greet:'Hi! I can answer questions about lessons, anxiety sessions and ICBC road test prep with Cooper in Vancouver, or help you start a booking. What is on your mind? (No pressure, ask anything.)',
+ fallback:'I do not have that detail here, so Cooper will confirm it. The best way is to text your question to 236-998-4268 (he prefers text, email or WhatsApp over calls), or I can help you start a booking.',
+ cancel:'No problem, nothing was sent. Ask me anything else.',
+ chips:['Anxious about driving','Class 7 test prep','Class 5 test prep','Road test day','Where do we meet?','Book a lesson'],
+ bookWords:['book','booking','reserve','enrol','enroll'],
+ kb:[
+ {k:['anxious','anxiety','nervous','scared','fear','afraid','panic','worried','phobia','stress','confidence','calm'],a:'Cooper specialises in nervous and anxious drivers. The fear and anxiety assessment starts at King Edward Station near a very calm area. You tell your story, no expectations. Many people do not drive at all on the first visit. Some sessions never go faster than 10 km/h. You leave with a plan and a voice recording summarising key points. Nothing here replaces medical advice; for health questions, please speak to a professional.',follow:['What happens in the first session?','Where do we meet?','Book a lesson']},
+ {k:['first session','first lesson','first drive','what happens','first meeting','what to expect','assessment','quiet drive'],a:'First drive: you meet Cooper at King Edward Station. He drives to a calm area while you tell your driving history. When you are ready, you drive. You finish with a best-next-step plan, a voice recording of key points, and images or videos about what you discussed. It is a 90-minute session, about 1 hour 40 minutes of full attention.',follow:['Where do we meet?','What do I bring?','Book a lesson']},
+ {k:['king edward','meet','meeting','pick up','pickup','pick me up','home','my house','where do we meet','start location','start point','where'],a:'Lessons start at King Edward Station, close to a very quiet area. Cooper says most schools go to your home, but a calm start lowers stress and helps success. A flexible start location is possible within reason, so ask him.',follow:['Why a quiet start?','Book a lesson']},
+ {k:['address','office','west pender','pender','downtown','location','vancouver'],a:'The business address is 700 West Pender St., Vancouver B.C. V6B 1X6. Lessons start at King Edward Station.',follow:['Where do we meet?']},
+ {k:['class 7','class7','7l','first test','learner test','novice test','level one','first level'],a:'Class 7 and 7L test prep: the first exam has many surprising requirements that most people would not expect. Cooper suggests going through both ICBC books in detail and practising with an experienced local instructor before the test.',follow:['Road test day','Using the car for the test','Book a lesson']},
+ {k:['class 5','class5','5l','ldl','second test','full licence','full license','highway'],a:'Class 5, 5L and LDL test prep: a second-level test with stricter criteria than Class 7, including highway driving and conflict avoidance awareness. One drive gives you two lists to work on: your habits that need changing and the ICBC fault items to avoid. The exam is roughly 30 minutes.',follow:['Road test day','Book a lesson']},
+ {k:['road test','test day','exam day','icbc test','driving test','test booking','road test bookings','test centre','test center'],a:'On test day, expect about 2.5 hours in total. Meet Cooper one hour before for a warm-up (ICBC time 3:00 means meeting at 2:00). Arrive at the test centre 15 minutes early. The exam usually starts within 15 minutes of schedule and runs about 40 minutes (26 minutes driving), then about 15 minutes of ICBC paperwork. For help with booking the ICBC test itself, Cooper will confirm how.',follow:['Using the car for the test','Class 7 test prep','Class 5 test prep']},
+ {k:['use your car','your car','use the car','car for the test','car for the exam','rent car','test car','borrow','which car','same car'],a:'You can use the same car you trained in, or Cooper\'s car. To use his car for the test you must take a 1.5-hour lesson at least a week before test day, and it is his call whether you are safe. If not, he will not supply the car.',follow:['Road test day','Book a lesson']},
+ {k:['post crash','post-crash','crash','accident','collision','close call','near miss','recovery','trauma'],a:'The post-crash and close-call recovery session is 90 minutes. You reconstruct the event together, name your main concerns, then spend most of the time driving and working on skills linked to the incident, to turn it into learning and rebuild confidence. For medical or legal matters please speak to the right professional.',follow:['Book a lesson','What happens in the first session?']},
+ {k:['new driver','novice','beginner','never driven','never drove','learn to drive','learning to drive','first time driver','zero','from scratch','basics','teenager','young driver','young drivers','teen'],a:'New novice drivers are welcome, and there is a young drivers session too. Start from zero basics or drive while Cooper watches. The foundation is car control, 100% sign reading and the actual laws. Many drivers stay with him until test day; others mix him with a practice person.',follow:['What happens in the first session?','Book a lesson']},
+ {k:['new to canada','immigrant','international licence','international license','foreign licence','foreign license','moved to canada','newcomer','abroad'],a:'New-to-Canada drivers are welcome. Bring your original licence or related ICBC documents, such as a temporary licence or an ICBC code number attached to an international licence. Cooper will confirm exactly what applies to you.',follow:['What do I bring?','Book a lesson']},
+ {k:['price','prices','cost','fee','fees','how much','pricing','package','packages','rate','rates','charge'],a:'There is a pricing page for test prep and new drivers. Packages include five or ten 90-minute drives. I do not have the current amounts here, so Cooper will confirm the price when you text him.',follow:['Book a lesson','How do I contact Cooper?']},
+ {k:['contact','text','phone','call','whatsapp','email','number','reach','message','get in touch'],a:'Text your story and what you need to 236-998-4268, or use email or WhatsApp. Cooper openly avoids phone calls but answers every text, short or long. Email: todd.cooper@gmail.com.',follow:['Book a lesson']},
+ {k:['cancel','cancellation','reschedule','postpone','change time','late'],a:'Please give 24 hours notice to cancel a lesson, for any reason. For anxious first visits, delaying is okay: Cooper says tomorrow will come and he will still be near to help.',follow:['How booking works','Book a lesson']},
+ {k:['policy','policies','insurance','insured','icbc requires','sign','signature','corporate'],a:'ICBC requires you to review Cooper\'s corporate policies before final booking, with one signature to confirm. A signature is also required for each in-car session. The cars are covered by insurance, and Cooper can share the details.',follow:['Dash cams','Book a lesson']},
+ {k:['dash cam','dashcam','camera','cameras','video','recording','record','privacy'],a:'Each car has two dash cams pointing out the front and rear, used for collision disputes and for creating educational material. The cameras shoot outside the car, not inside, and no client information is linked to the videos.',follow:['Policies','Book a lesson']},
+ {k:['qualification','qualifications','qualified','experience','credentials','who is cooper','about cooper','background','transport canada','certified','trainer'],a:'Cooper has been specialising in nervous learners in Vancouver since 2019. His background includes work with the Transport Canada Ergonomics Division on early cell phone studies, trauma training through an RSEA course, train-the-trainer experience, and corporate, fleet and government driver work. He also teaches bike instructors.',follow:['Teaching philosophy','Book a lesson']},
+ {k:['philosophy','teaching style','method','approach','pyramid','how do you teach'],a:'Cooper follows a four-level skills pyramid with a strong emphasis on the base: car control, 100% sign reading and the actual laws. The aim is real confidence, real competence and an honest look at the risks.',follow:['Book a lesson']},
+ {k:['how long','duration','session length','minutes','hours long','how many hours','length'],a:'Sessions are 1.5 hours (90 minutes). Road test day takes about 2.5 hours including the warm-up and ICBC paperwork.',follow:['Road test day','Book a lesson']},
+ {k:['available','availability','schedule','weekend','evening','saturday','sunday','morning','when','what days','spots','openings'],a:'Schedules often go back and forth until there is a good fit, and they can be changed. Spots can disappear quickly. I do not have a live calendar, so Cooper will confirm times when you text him.',follow:['Book a lesson']},
+ {k:['bring','documents','licence','license','what do i bring','id'],a:'Bring your real licence or related ICBC documents (original licence, temporary licence, or the ICBC code number attached to an international licence). Cooper will confirm exactly what you need.',follow:['Book a lesson']},
+ {k:['why quiet','quiet start','why a quiet start','super quiet','calm area'],a:'Cooper says starting in a super quiet area is a huge component in ensuring success. It lowers strain and stress, and he recommends it for anyone learning to drive, especially someone getting back into it.',follow:['Where do we meet?','Book a lesson']},
+ {k:['hello','hi','hey','good morning','good afternoon'],a:'Hello! Ask about anxious driving, Class 7 or Class 5 test prep, road test day, or starting a booking.'},
+ {k:['thanks','thank you','cheers'],a:'You are welcome. Anything else you would like to know?'}
+ ],
+ flow:[
+ {key:'svc',label:'What you need',skip:function(a){return !!a.svc},q:'What would you like help with?',opts:['Calm / anxiety session','Learn to drive','Class 7 test prep','Class 5 test prep','Road test day','Post-crash session'],valid:function(t){return t.length>1},err:'Please type or tap what you need.'},
+ {key:'exp',label:'Your situation',q:'Which sounds most like you?',opts:['Never driven','Have a learner licence','New to Canada','Licensed but nervous'],valid:function(t){return t.length>1},err:'A few words are fine.'},
+ {key:'worry',label:'What worries you most',q:'Anything specific that worries you or you want to work on? (Optional, you can say "skip".)',opts:['Skip'],valid:function(t){return t.length>0},err:'Type skip if nothing comes to mind.'},
+ {key:'when',label:'Preferred days and times',q:'What days and times usually work for you? Cooper confirms the actual slot.',opts:['Weekday mornings','Weekday evenings','Weekends','Flexible'],valid:function(t){return t.length>1},err:'A rough idea is fine.'},
+ {key:'name',label:'Name',q:'What is your name?',opts:null,valid:function(t){return t.length>1},err:'Please enter your name.'},
+ {key:'contact',label:'Text / WhatsApp / email',q:'How should Cooper reach you? He prefers text, WhatsApp or email, not calls.',opts:null,valid:function(t){return /[0-9]{6,}|@/.test(t.replace(/[\s-]/g,''))},err:'Please include a mobile number or an email address.'}
+ ],
+ done:function(l){return 'Thank you! Here is what I have for Cooper:\n'+l.join('\n')+'\n\nThis request was sent to the team (demo: nothing is actually sent). Cooper will text, email or WhatsApp you with options, and ICBC requires you to review his policies before final booking.'},
+ pre:function(t){var p={};if(/class ?7/i.test(t))p.svc='Class 7 test prep';else if(/class ?5/i.test(t))p.svc='Class 5 test prep';else if(/anx|nerv|scared|fear/i.test(t))p.svc='Calm / anxiety session';else if(/crash|accident/i.test(t))p.svc='Post-crash session';return p}
+};
+/*LOGIC*/
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|s)$/,''):w.replace(/s$/,'')}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length,i,j,p=[],c;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var prev=p[0];p[0]=i;for(j=1;j<=n;j++){c=p[j];p[j]=Math.min(p[j]+1,p[j-1]+1,prev+(a[i-1]===b[j-1]?0:1));prev=c}}return p[n]}
+function wm(q,k){if(q===k)return 1;if(Math.min(q.length,k.length)>=4&&Math.abs(q.length-k.length)<=2&&(q.indexOf(k)===0||k.indexOf(q)===0))return .9;if(k.length>=6&&q.length>=6&&lev(q,k)<=1)return .85;if(k.length>=7&&q.length>=6&&lev(q,k)<=2)return .6;if(k.length>=5&&q.length>=5&&(q.indexOf(k)===0||k.indexOf(q)===0))return .6;return 0}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem)}
+function best(KB,q){var qn=norm(q),qt=toks(q),top=null,ts=0;if(!qn)return null;
+ KB.forEach(function(e){var s=0;e.k.forEach(function(k){var kn=norm(k);if(kn.indexOf(' ')>0){if((' '+qn+' ').indexOf(' '+kn+' ')>=0)s+=3;else{var kt=toks(kn),h=0;kt.forEach(function(x){qt.forEach(function(t){if(wm(t,x)>=.85)h++})});if(h===kt.length)s+=2}}else{var ks=stem(kn),b=0;qt.forEach(function(t){b=Math.max(b,wm(t,ks))});s+=b*1.5}});
+  if(s>ts){ts=s;top=e}});
+ return ts>=1.2?top:null}
+function wantsBooking(q,words){var qt=toks(q);return words.some(function(w){return qt.some(function(t){return wm(t,stem(norm(w)))>=.85})})}
+if(typeof module!=='undefined')module.exports={best:best,norm:norm,wantsBooking:wantsBooking};
+/*ENDLOGIC*/
+/*UI*/
+function initAssistant(C){
+ var st=document.createElement('div');st.className='aw';
+ st.innerHTML='<button class="aw-fab" aria-label="Open assistant" aria-expanded="false"><span class="aw-fab-i">?</span><span class="aw-fab-t">'+C.fab+'</span></button><section class="aw-panel" hidden role="dialog" aria-label="'+C.name+' assistant"><header class="aw-h"><div><b>'+C.name+'</b><small>'+C.sub+'</small></div><button class="aw-x" aria-label="Close">&times;</button></header><div class="aw-log" aria-live="polite"></div><div class="aw-chips"></div><form class="aw-f"><input class="aw-in" autocomplete="off" placeholder="'+C.ph+'" aria-label="Your message"><button class="aw-s" aria-label="Send">&#10148;</button></form></section>';
+ document.body.appendChild(st);
+ var fab=st.querySelector('.aw-fab'),panel=st.querySelector('.aw-panel'),log=st.querySelector('.aw-log'),chips=st.querySelector('.aw-chips'),form=st.querySelector('.aw-f'),inp=st.querySelector('.aw-in');
+ var flow=null,ans={},opened=false;
+ function say(t,who){var d=document.createElement('div');d.className='aw-m '+(who||'b');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+ function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){handle(c)};chips.appendChild(b)})}
+ function startFlow(pre){flow={i:0};ans=pre||{};ask()}
+ function ask(){while(flow.i<C.flow.length&&C.flow[flow.i].skip&&C.flow[flow.i].skip(ans))flow.i++;
+  if(flow.i>=C.flow.length){var lines=C.flow.filter(function(s){return ans[s.key]}).map(function(s){return s.label+': '+ans[s.key]});say(C.done(lines),'b');setChips(C.chips);flow=null;return}
+  var s=C.flow[flow.i];say(typeof s.q==='function'?s.q(ans):s.q);setChips(s.opts?(typeof s.opts==='function'?s.opts(ans):s.opts):['Cancel'])}
+ function handle(t){t=t.trim();if(!t)return;say(t,'u');
+  if(flow){if(/^(cancel|stop|never ?mind|no thanks)$/i.test(t)){flow=null;say(C.cancel);setChips(C.chips);return}
+   var s=C.flow[flow.i];if(s.valid&&!s.valid(t)){say(s.err);return}ans[s.key]=t;flow.i++;ask();return}
+  if(wantsBooking(t,C.bookWords)){var pre={};if(C.pre)pre=C.pre(t)||{};startFlow(pre);return}
+  var e=best(C.kb,t);if(e){say(e.a);if(e.follow)setChips(e.follow);else setChips(C.chips)}else{say(C.fallback);setChips(C.chips)}}
+ function open(){panel.hidden=false;fab.setAttribute('aria-expanded','true');st.classList.add('open');if(!opened){opened=true;say(C.greet);setChips(C.chips)}setTimeout(function(){inp.focus()},50)}
+ function close(){panel.hidden=true;fab.setAttribute('aria-expanded','false');st.classList.remove('open')}
+ fab.onclick=function(){panel.hidden?open():close()};st.querySelector('.aw-x').onclick=close;
+ form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';handle(v)};
+ window.awOpen=function(t){open();if(t)handle(t)};
+ document.querySelectorAll('[data-ask]').forEach(function(b){b.addEventListener('click',function(){open();handle(b.getAttribute('data-ask'))})});
+}
+/*ENDUI*/
+
+initAssistant(CFG);
+</script>
+</body>
+</html>

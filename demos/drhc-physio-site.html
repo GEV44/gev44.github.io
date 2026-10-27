@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DRHC Dubai Physiotherapy | Demo page</title>
+<meta name="description" content="Demo page for the DRHC physiotherapy centre in Dubai with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#104D65;--teal2:#0b3547;--green:#35B559;--green2:#2a9448;--mint:#eaf6ef;--ink:#17262e;--mut:#55656d;--line:#d8e4e0;--gw-a:#2a9448;--gw-b:#104D65;--gw-font:'Source Sans 3',system-ui,sans-serif;--gw-bg:#f1f7f4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.6 'Source Sans 3',system-ui,sans-serif;color:var(--ink);background:#fff;-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:Manrope,system-ui,sans-serif;line-height:1.15;margin:0 0 .5em;color:var(--teal)}
+h1{font-size:clamp(30px,7vw,52px);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(24px,4.6vw,34px);font-weight:800}
+h3{font-size:19px;font-weight:700}
+p{margin:0 0 1em}a{color:var(--teal)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.top{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:62px}
+.brand{display:block;background:#fff;padding:2px 0}
+.brand img{display:block;height:34px;width:auto;max-width:62vw}
+.call{background:var(--green2);color:#fff;text-decoration:none;font:700 15px Manrope,sans-serif;padding:10px 16px;border-radius:99px;white-space:nowrap}
+.nav{display:none}
+@media(min-width:860px){.nav{display:flex;gap:22px}.nav a{text-decoration:none;color:var(--ink);font-weight:600;font-size:15px}.nav a:hover{color:var(--green2)}}
+.hero{background:linear-gradient(180deg,var(--mint),#fff);padding:34px 0 30px;overflow:hidden;position:relative}
+.hero::after{content:"";position:absolute;right:-90px;top:-70px;width:280px;height:280px;border-radius:50%;background:rgba(53,181,89,.14)}
+.hero .wrap{display:grid;gap:26px;position:relative;z-index:1}
+.hero>.wrap>*{min-width:0}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1.25fr .75fr;align-items:center}}
+.kick{display:inline-block;font:700 13px Manrope,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--green2);margin-bottom:10px}
+.lead{font-size:19px;color:#2d424c;max-width:560px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.btn{display:inline-block;border:0;cursor:pointer;text-decoration:none;font:700 16px Manrope,sans-serif;padding:13px 22px;border-radius:10px;background:var(--teal);color:#fff}
+.btn.g{background:var(--green2)}.btn.o{background:#fff;color:var(--teal);border:2px solid var(--teal)}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 10px 30px rgba(16,77,101,.08)}
+.card h3{margin-bottom:.3em}
+.facts{list-style:none;margin:0;padding:0}
+.facts li{padding:9px 0;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:space-between;font-size:15px}
+.facts li:first-child{border-top:0}.facts b{color:var(--teal);text-align:right}
+section{padding:46px 0}
+.alt{background:#f6faf8}
+.sub{color:var(--mut);max-width:640px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+.chips li{background:#fff;border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-size:15px}
+.acc{display:grid;gap:10px;margin-top:20px}
+@media(min-width:760px){.acc{grid-template-columns:1fr 1fr;align-items:start}}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 16px;min-width:0}
+summary{cursor:pointer;font:700 17px Manrope,sans-serif;color:var(--teal);padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--green2);font-size:22px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{color:#33474f;font-size:16px}
+.rehab{display:grid;gap:18px;margin-top:26px;counter-reset:s}
+@media(min-width:760px){.rehab{grid-template-columns:repeat(3,1fr)}}
+.rehab div{background:#fff;border-radius:14px;padding:22px 18px 6px;border:1px solid var(--line);position:relative;min-width:0}
+.rehab div::before{counter-increment:s;content:counter(s);position:absolute;top:-12px;left:16px;background:var(--green2);color:#fff;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font:700 14px Manrope,sans-serif}
+.team{display:grid;gap:14px;margin-top:20px}
+@media(min-width:640px){.team{grid-template-columns:1fr 1fr}}
+.person{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.av{flex:0 0 58px;height:58px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font:800 20px Manrope,sans-serif}
+.person p{margin:0;color:var(--mut);font-size:15px}
+.second{background:var(--teal);color:#fff;overflow:hidden;position:relative}
+.second h2{color:#fff}.second p{color:#d6e8ee;max-width:640px}
+.second::before{content:"";position:absolute;left:-80px;bottom:-100px;width:260px;height:260px;border-radius:50%;background:rgba(53,181,89,.22)}
+.second .wrap{position:relative}
+.ins{columns:2;column-gap:10px;padding:0;margin:16px 0 0;list-style:none;font-size:15px}
+@media(min-width:640px){.ins{columns:4}}
+.ins li{padding:5px 0;border-bottom:1px dashed var(--line);break-inside:avoid}
+.locs{display:grid;gap:14px;margin-top:20px}
+@media(min-width:760px){.locs{grid-template-columns:1fr 1fr}}
+.loc{border-left:5px solid var(--green);background:#fff;border-radius:6px 14px 14px 6px;padding:16px 18px;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0;overflow-wrap:anywhere}
+.faq details{margin-top:10px}
+.steps{margin:16px 0 0;padding-left:0;list-style:none;counter-reset:n;display:grid;gap:10px}
+@media(min-width:760px){.steps{grid-template-columns:1fr 1fr}}
+.steps li{counter-increment:n;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px 56px;position:relative;min-width:0}
+.steps li::before{content:counter(n);position:absolute;left:14px;top:12px;width:30px;height:30px;border-radius:50%;background:var(--green2);color:#fff;display:grid;place-items:center;font:700 15px Manrope,sans-serif}
+.two{display:grid;gap:14px;margin-top:20px}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr;align-items:start}}
+.two p{font-size:16px;color:#33474f}
+.tb{width:100%;border-collapse:collapse;margin:18px 0 8px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.tb th,.tb td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);font-size:16px;overflow-wrap:anywhere}
+.tb th{background:var(--teal);color:#fff;font-family:Manrope,sans-serif;font-size:15px}
+footer{background:var(--teal2);color:#c9dde5;padding:28px 0 90px;font-size:14px}
+footer a{color:#fff}
+.note{font-size:13px;color:var(--mut)}
+@media(max-width:640px){.call .n{display:none}.brand img{max-width:60vw}}
+</style></head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="#top" aria-label="DRHC Healthcare"><img src="img/drhc-physio-logo.png" alt="DRHC Healthcare, Dr. Rami Hamed Center" width="272" height="34"></a>
+<nav class="nav"><a href="#therapies">Therapies</a><a href="#team">Physiotherapists</a><a href="#insurance">Insurance</a><a href="#visit">Locations</a><a href="#faq">Questions</a></nav>
+<a class="call" href="tel:+97142798200">Call<span class="n"> +971 4 279 8200</span></a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<span class="kick">Physiotherapy centre &middot; Dubai</span>
+<h1>Move again after surgery, injury or back pain.</h1>
+<p class="lead">Surgeons, physicians and physiotherapists at DRHC work as one rehab team, so patients recovering from spinal or knee surgery are not handed between strangers. Sports injuries and everyday back pain are treated here too.</p>
+<div class="btns"><button class="btn g" data-gw="book" type="button">Request an appointment</button><a class="btn o" href="https://wa.me/97142798200">WhatsApp the clinic</a></div>
+</div>
+<aside class="card" aria-label="Quick facts">
+<h3>At a glance</h3>
+<ul class="facts">
+<li><span>Physio centre</span><b>Dubai Healthcare City</b></li>
+<li><span>Clinic</span><b>Majan, Wadi Al Safa 3</b></li>
+<li><span>Phone</span><b>+971 4 279 8200</b></li>
+<li><span>Therapists</span><b>2 named PTs</b></li>
+<li><span>Insurers listed</span><b>28</b></li>
+</ul></aside>
+</div></div>
+
+<section id="treat"><div class="wrap">
+<h2>What the physiotherapists see</h2>
+<p class="sub">The centre's own pages describe these areas. The assistant on this page can answer questions about them, but it never judges an individual case.</p>
+<ul class="chips"><li>Post-surgical rehabilitation</li><li>Spinal and knee surgery recovery</li><li>Sports injuries</li><li>Back pain</li><li>Plantar fasciitis and heel pain</li><li>Tennis elbow</li><li>Calcific tendinitis of the shoulder</li><li>Patellar and Achilles tendon problems</li></ul>
+</div></section>
+
+<section id="therapies" class="alt"><div class="wrap">
+<h2>Therapies on offer</h2>
+<p class="sub">Tap a therapy for the clinic's own description.</p>
+<div class="acc">
+<details><summary>Exercise therapy</summary><p>The most common treatment. Moderate exercises under a physiotherapist's guidance keep muscles strong and flexible, support alignment and function, and reduce the chance of the same injury coming back.</p></details>
+<details><summary>Manual therapy</summary><p>Hands-on work: massage, mobilization and manipulation to relax tissue, reduce pain and improve flexibility in the affected area.</p></details>
+<details><summary>Shockwave therapy</summary><p>A non-invasive option. High-energy acoustic pulses are delivered to the painful area to stimulate healing. The clinic offers focused and radial shockwave and describes uses such as plantar fasciitis, tennis elbow, calcific tendinitis of the shoulder and patellar or Achilles tendinopathy.</p></details>
+<details><summary>Dry needling</summary><p>Fine filament needles are placed in tight muscles or trigger points to reduce pain. It is often combined with other treatments.</p></details>
+<details><summary>Electrotherapy</summary><p>Electrical stimulation to ease tissue pain and swelling. Because its benefits are short term, it is usually paired with other methods.</p></details>
+<details><summary>Kinesiotaping</summary><p>Kinesiology tape on the affected area to modulate pain, improve myofascial dysfunction and limit swelling for patients who need continuous support.</p></details>
+</div></div></section>
+
+<section><div class="wrap">
+<h2>One rehab team, not three separate offices</h2>
+<p class="sub">DRHC is a day-case hospital, so the people who operate and the people who rebuild strength sit in the same building.</p>
+<div class="rehab">
+<div><h3>Surgeon</h3><p>Spinal and knee operations are among the cases the centre sees most often afterwards.</p></div>
+<div><h3>Physician</h3><p>Physicians work alongside the surgeons and the therapists on the same case.</p></div>
+<div><h3>Physiotherapist</h3><p>Runs the rehab plan toward mobility, function and quality of life.</p></div>
+</div></div></section>
+
+<section id="team" class="alt"><div class="wrap">
+<h2>Your physiotherapists</h2>
+<div class="team">
+<div class="person"><div class="av">VK</div><div><h3>PT Vinesh Kumar</h3><p>Physiotherapist with his own profile page on the DRHC site.</p></div></div>
+<div class="person"><div class="av">AV</div><div><h3>PT Anju Susan Varughese</h3><p>Physiotherapist at the Dubai physiotherapy clinic.</p></div></div>
+</div>
+<p class="note" style="margin-top:14px">The clinic describes its physiotherapists as specialised in sports injury, post-surgery and rehabilitation.</p>
+</div></section>
+
+<section id="reads"><div class="wrap">
+<h2>Two articles worth reading first</h2>
+<p class="sub">Summaries of what the clinic itself publishes. They are general information and not a diagnosis.</p>
+<div class="two">
+<article class="card"><h3>Heel pain and plantar fasciitis</h3>
+<p>The clinic's article says around 1 in 10 people get plantar fasciitis, and 10 to 15 percent of them need a medical practitioner. It is inflammation of the band-like tissue between heel and toes, usually worst with the first steps in the morning and easing as you keep walking. Sometimes a calcium deposit called a calcaneal spur is involved.</p>
+<p>For pain younger than three months the article suggests rest, regular stretching of the plantar fascia, calf stretches and comfortable footwear, and stepping on a cushion in the morning before putting weight on the foot.</p></article>
+<article class="card"><h3>Back pain: is it serious?</h3>
+<p>The article notes that 8 out of 10 people will have low back pain at some point and that it often returns. Long sitting, poor posture and little exercise are named as common contributors, and the number of young people affected is rising.</p>
+<p>Its main message is that not every sharp pain means tissue damage: the nervous system can behave like a car alarm that goes off when someone merely leans on the car. It also addresses when to see a doctor and which symptoms to watch for, which the physiotherapists go through with you in person.</p></article>
+</div></div></section>
+
+<section class="alt"><div class="wrap">
+<h2>Where shockwave therapy is described</h2>
+<p class="sub">The clinic has a full shockwave page covering how the pulses are generated and the conditions below.</p>
+<table class="tb"><thead><tr><th>Area</th><th>Mentioned use</th></tr></thead><tbody>
+<tr><td>Heel</td><td>Proximal plantar fasciitis</td></tr>
+<tr><td>Elbow</td><td>Lateral epicondylitis (tennis elbow)</td></tr>
+<tr><td>Shoulder</td><td>Calcifying tendinitis</td></tr>
+<tr><td>Knee and ankle</td><td>Patellar and Achilles tendinopathy</td></tr>
+<tr><td>Tendon attachments</td><td>Insertional tendinopathy</td></tr>
+<tr><td>Bone</td><td>Bone healing</td></tr>
+</tbody></table>
+<p class="note">Two delivery types are explained on the page: focused shockwave and radial shockwave.</p>
+</div></section>
+
+<section class="second"><div class="wrap">
+<h2>Not sure your current plan is right?</h2>
+<p>DRHC offers a second opinion for physiotherapy: exercise programmes, taping, dry needling and electrotherapy can all be reviewed by its physiotherapists before you decide how to continue.</p>
+<button class="btn g" data-gw="book" type="button">Ask for a second opinion</button>
+</div></section>
+
+<section id="insurance"><div class="wrap">
+<h2>Insurance networks listed on the site</h2>
+<p class="sub">Whether your own plan covers physiotherapy is something the team confirms. Ask before booking.</p>
+<ul class="ins"><li>Nextcare</li><li>SAADA</li><li>NGI</li><li>NAS</li><li>FMC</li><li>SAICO</li><li>ADNIC</li><li>GlobeMed</li><li>Dubai Insurance</li><li>Aafyia</li><li>Mednet</li><li>MetLife (Alico)</li><li>Neuron</li><li>NOW</li><li>Allianz</li><li>BUPA</li><li>IRIS</li><li>AXA</li><li>ENAYA</li><li>DEWA</li><li>Almadallah</li><li>Enet</li><li>Healix</li><li>Cigna</li><li>GIG</li><li>Inayah</li><li>MSH International</li><li>Aspire</li></ul>
+</div></section>
+
+<section id="visit" class="alt"><div class="wrap">
+<h2>Where to find DRHC</h2>
+<div class="locs">
+<div class="loc"><h3>Dubai Healthcare City</h3><p>Physiotherapy centre. Bookings by phone on <a href="tel:+97142798200">+971 4 279 8200</a>.</p></div>
+<div class="loc"><h3>Majan</h3><p>Tulip Oasis 9, Wadi Al Safa 3, Majan, Dubai.<br>Phones: +971 4 279 8200 / +971 52 483 0895<br><a href="mailto:info@drhc.ae">info@drhc.ae</a></p></div>
+</div>
+<p class="note" style="margin-top:12px">A Wadi Al Safa location is also listed in the site menu. Opening hours are not published on the pages this demo was built from, so the assistant sends hours questions to the team.</p>
+</div></section>
+
+<section id="ready" class="alt"><div class="wrap">
+<h2>Have these ready when you call</h2>
+<ol class="steps"><li><b>Which branch.</b> Dubai Healthcare City for the physiotherapy centre, or the Majan clinic.</li><li><b>What brings you in.</b> Surgery recovery, a sports injury, back pain, heel or elbow pain, or a second opinion.</li><li><b>Your insurer, or self-pay.</b> The team confirms coverage for physiotherapy.</li><li><b>A day that suits you.</b> Hours are not published on the site, so the team tells you what is open.</li></ol>
+</div></section>
+
+<section id="faq" class="faq"><div class="wrap">
+<h2>Common questions</h2>
+<details><summary>Do I need a referral?</summary><p>The site does not say. The team will confirm when you call.</p></details>
+<details><summary>Is shockwave therapy surgery?</summary><p>No. The clinic describes it as a non-surgical option that uses no medication.</p></details>
+<details><summary>Can the clinic treat my back pain?</summary><p>Back pain is one of the clinic's listed areas, and the site has an article on when back pain needs a doctor. Whether your own pain needs treatment, tests or urgent care is for the clinicians to decide after seeing you.</p></details>
+<details><summary>Which languages are spoken?</summary><p>The website is in English and Arabic and lists Russian-speaking and Persian-speaking doctors. Ask the team who is available for physiotherapy.</p></details>
+<details><summary>What does a session cost?</summary><p>Prices are not published for physiotherapy. The team gives them on request.</p></details>
+<details><summary>Can I message the clinic on WhatsApp?</summary><p>Yes. The site links WhatsApp on the main clinic number, +971 4 279 8200.</p></details>
+<details><summary>Is physiotherapy the only thing DRHC does?</summary><p>No. DRHC is a day-case hospital with many specialties, from orthopedic and spinal surgery to urology, ENT and dermatology. This page covers the physiotherapy centre.</p></details>
+<details><summary>What if my insurer is not on the list?</summary><p>Call the team. The list on the site may not be the full picture, and they can tell you whether your plan applies.</p></details>
+<details><summary>How do the surgeons and physiotherapists work together?</summary><p>The clinic says they work closely as a rehab team, which matters most for post-surgical patients recovering from spinal or knee operations.</p></details>
+<details><summary>Does the assistant on this page book me in?</summary><p>No. It collects the details of a request inside this demo and sends nothing. The real booking happens when you call or message the team.</p></details>
+</div></section>
+</main>
+<footer><div class="wrap"><p>Demo · prepared by Gevorg Hovhannisyan</p><p>Built from public information on drhc.ae. Not an official DRHC page. The assistant sends nothing: requests end inside this demo.</p></div></footer>
+
+<script>var STOP={the:1,a:1,an:1,is:1,are:1,do:1,does:1,you:1,your:1,i:1,my:1,me:1,can:1,to:1,of:1,for:1,in:1,on:1,at:1,and:1,or:1,it:1,there:1,have:1,has:1,how:1,what:1,when:1,which:1,with:1,we:1,us:1,be:1,get:1,any:1,about:1,tell:1,please:1,want:1,would:1,like:1,need:1,this:1,that:1,s:1};
+function norm(s){return String(s).toLowerCase().replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();}
+function toks(s){return norm(s).split(' ').filter(function(w){return w&&!STOP[w];});}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++){d[0][j]=j;}
+for(i=1;i<=m;i++){for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1]){d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1);}}}return d[m][n];}
+function tm(q,k){if(q===k)return true;var lq=q.length,lk=k.length;
+if(lq>=4&&lk>=4&&(q.indexOf(k)===0||k.indexOf(q)===0)&&Math.abs(lq-lk)<=3)return true;
+if(lq>=5&&lk>=5){var d=lev(q,k);if(d<=1||(lq>=8&&lk>=8&&d<=2))return true;}return false;}
+function score(qt,e){var s=0,i,j,k,kt,hit,m;
+for(i=0;i<e.k.length;i++){kt=toks(e.k[i]);if(!kt.length)continue;m=0;
+for(j=0;j<kt.length;j++){hit=false;for(k=0;k<qt.length;k++){if(tm(qt[k],kt[j])){hit=true;break;}}if(hit)m++;}
+if(m===kt.length)s+=2*kt.length;}
+return s;}
+function match(KB,q){var qt=toks(q),best=null,bs=0,i,s;if(!qt.length)return null;
+for(i=0;i<KB.length;i++){s=score(qt,KB[i]);if(s>bs){bs=s;best=KB[i];}}
+return bs>=2?best:null;}
+if(typeof module!=='undefined')module.exports={match:match,norm:norm,toks:toks};
+</script>
+<script>window.GW_CFG={"title": "DRHC physio assistant", "sub": "Demo · answers from the clinic's own pages", "fab": "💬", "ph": "Ask about physio, insurance, location…", "greet": "Hello! I can answer questions about physiotherapy at DRHC Dubai, or take an appointment request. I do not give medical advice: anything about your own symptoms goes to the physiotherapists.", "chips": ["Book an appointment", "Therapies offered", "Shockwave therapy", "Insurance", "Where are you?", "Opening hours", "Prices"], "fallback": "I do not have that on the clinic's pages, so I will not guess. The team can confirm it: +971 4 279 8200 or info@drhc.ae.", "kb": [{"id": "book", "k": ["book", "booking", "appointment", "appointments", "schedule", "reserve", "consultation", "see a physio", "make an appointment", "request an appointment", "second opinion appointment"]}, {"k": ["hours", "opening hours", "open", "opens", "closing", "close", "timing", "timings", "weekend", "saturday", "sunday", "friday", "working hours", "late"], "a": "Opening hours are not published on the clinic's pages, so I will not guess. Please call +971 4 279 8200 or WhatsApp the same number and the team will confirm."}, {"k": ["where", "location", "locations", "address", "map", "directions", "majan", "healthcare city", "wadi al safa", "branch", "branches", "find you", "situated"], "a": "The physiotherapy centre is at the Dubai Healthcare City branch. DRHC also has a Majan clinic at Tulip Oasis 9, Wadi Al Safa 3, Majan, Dubai. The team confirms which branch fits your treatment: +971 4 279 8200."}, {"k": ["phone", "call", "number", "telephone", "contact", "email", "mail", "whatsapp", "mobile", "reach"], "a": "Phone: +971 4 279 8200 or +971 52 483 0895. WhatsApp: the first number. Email: info@drhc.ae."}, {"k": ["treatment", "treatments", "services", "therapy", "therapies", "offer", "what do you do", "what do you treat", "specialties", "specialities"], "a": "Physiotherapy at DRHC covers exercise therapy, manual therapy, shockwave (focused and radial), dry needling, electrotherapy and kinesiotaping. Areas listed: post-surgical rehab, sports injuries, back pain, plantar fasciitis and tendon problems.", "chips": ["Shockwave therapy", "Dry needling", "Kinesiotaping", "Book an appointment"]}, {"k": ["shockwave", "shock wave", "focused shockwave", "radial", "acoustic", "shockwaves"], "a": "Shockwave is a non-invasive therapy: high-energy acoustic pulses are delivered to the painful area to stimulate healing, with no medication. DRHC offers focused and radial shockwave. Whether it suits you is a decision for the physiotherapist after assessment."}, {"k": ["dry needling", "needle", "needles", "needling", "trigger point", "trigger points", "acupuncture"], "a": "Dry needling uses fine filament needles in tight muscles or trigger points to reduce pain, often together with other treatments. The physiotherapist decides if it is right for you."}, {"k": ["kinesiotaping", "kinesio", "tape", "taping", "kinesiology tape", "kinesiotape"], "a": "Kinesiotaping applies kinesiology tape to the affected area to modulate pain, support the tissue and limit swelling."}, {"k": ["electrotherapy", "electrical", "electric", "tens", "electro", "impulses", "stimulation"], "a": "Electrotherapy uses electrical impulses to ease tissue pain and swelling. Its effects are short term, so it is usually combined with other treatments."}, {"k": ["manual therapy", "manual", "massage", "mobilization", "mobilisation", "manipulation", "hands on"], "a": "Manual therapy is hands-on work: massage, mobilization and manipulation to relax tissue, reduce pain and improve flexibility."}, {"k": ["exercise", "exercises", "exercise therapy", "strength", "strengthening", "flexibility", "stretching", "stretches", "workout"], "a": "Exercise therapy is the most common treatment: moderate exercises guided by a physiotherapist to keep muscles strong and flexible and to reduce the chance of re-injury."}, {"k": ["back pain", "backache", "lumbar", "spine", "spinal", "disc", "slipped disc", "sciatica", "lower back"], "a": "Back pain is one of the areas the clinic treats, and its site has an article on when back pain needs a doctor. I cannot assess symptoms. If pain is sudden, severe, or comes with numbness or weakness, please contact a doctor or emergency services straight away.", "chips": ["Book an appointment", "Second opinion"]}, {"k": ["plantar fasciitis", "plantar", "heel pain", "heel", "foot pain", "foot", "arch pain"], "a": "Heel and foot pain such as plantar fasciitis is covered on the clinic's pages, and shockwave therapy is described as one option. The physiotherapist decides what fits your case."}, {"k": ["sport", "sports", "sporty", "athlete", "injury", "injuries", "sprain", "football", "running", "gym", "tendon", "tendinopathy", "achilles", "tennis elbow"], "a": "The physiotherapists are described as specialised in sports injuries. Tendon problems such as patellar or Achilles tendinopathy and tennis elbow are mentioned among shockwave uses. They assess each case in person."}, {"k": ["surgery", "post surgical", "post op", "postop", "rehab", "rehabilitation", "knee surgery", "spinal surgery", "recovery", "replacement", "after operation"], "a": "Post-surgical rehab is a frequent case, especially after spinal and knee surgery. DRHC's surgeons, physicians and physiotherapists work together as one rehab team."}, {"k": ["who", "physiotherapist", "physiotherapists", "physio", "therapist", "doctor", "team", "vinesh", "anju", "staff", "pt", "specialist"], "a": "The physiotherapists named on the site are PT Vinesh Kumar and PT Anju Susan Varughese. Both are described as specialised in sports injury, post-surgery and rehabilitation."}, {"k": ["insurance", "insured", "cover", "coverage", "covered", "nextcare", "daman", "cigna", "bupa", "axa", "allianz", "cashless", "policy", "mednet", "globemed", "adnic"], "a": "The site lists these insurers: Nextcare, SAADA, NGI, NAS, FMC, SAICO, ADNIC, GlobeMed, Dubai Insurance, Aafyia, Mednet, MetLife (Alico), Neuron, NOW, Allianz, BUPA, IRIS, AXA, ENAYA, DEWA, Almadallah, Enet, Healix, Cigna, GIG, Inayah, MSH International and Aspire. If yours is not there, or you want to know if physio is covered, the team will confirm."}, {"k": ["price", "prices", "cost", "costs", "fee", "fees", "how much", "charge", "charges", "pay", "payment", "expensive", "cheap", "rate"], "a": "Physiotherapy prices are not published on the clinic's pages, so I will not guess. The team gives them on request: +971 4 279 8200."}, {"id": "second", "k": ["second opinion", "another opinion", "opinion", "review my treatment", "not sure about my treatment", "check my plan"], "a": "Yes. DRHC offers a second opinion for physiotherapy: exercise programmes, taping, dry needling and electrotherapy can be reviewed before you decide how to continue. I can take a request."}, {"k": ["russian", "persian", "arabic", "english", "language", "languages", "speak", "speaking", "farsi"], "a": "The DRHC website is in English and Arabic, and lists Russian-speaking and Persian-speaking doctors. Ask the team who is available for physiotherapy."}, {"k": ["hospital", "daycase", "day case", "other departments", "orthopedic", "orthopaedic", "dentist", "cardiology", "specialist doctors", "medical tourism"], "a": "DRHC is a day-case hospital with many departments besides physiotherapy, including orthopedic and spinal surgery, urology, ENT, dermatology and more. This demo covers the physiotherapy centre only."}, {"k": ["first visit", "bring", "prepare", "what to expect", "first session", "assessment", "referral", "referral needed", "need a referral", "how long", "session length", "sessions"], "a": "The clinic's pages do not describe the first visit, referrals or session length, so I will not guess. The team will confirm when you call: +971 4 279 8200."}, {"k": ["knee", "knees", "knee pain", "patellar", "patella", "knee replacement"], "a": "Knee problems appear in two places on the clinic's pages: rehab after knee surgery, and patellar tendinopathy among the shockwave uses. The physiotherapist assesses your knee in person."}, {"k": ["shoulder", "shoulders", "calcific", "calcifying", "calcific tendinitis", "frozen shoulder"], "a": "Calcifying tendinitis of the shoulder is one of the conditions the clinic's shockwave page describes. Any other shoulder question is for the physiotherapist to assess."}, {"k": ["elbow", "lateral epicondylitis", "epicondylitis", "tennis elbow", "golfer"], "a": "Tennis elbow (lateral epicondylitis) is listed among the shockwave therapy uses on the clinic's site. The physiotherapist decides if it fits your case."}, {"k": ["neck", "neck pain", "posture", "office", "desk", "sitting"], "a": "The clinic's back pain article blames long sitting and poor posture for many cases. Neck pain is not covered on the pages I have, so the team can tell you if they see it: +971 4 279 8200."}, {"k": ["children", "child", "kids", "pediatric", "paediatric", "baby", "elderly", "pregnant", "pregnancy"], "a": "The clinic's pages do not say who the physiotherapists treat by age or condition, so I will not guess. Please ask the team: +971 4 279 8200."}, {"k": ["whatsapp", "wa", "message", "text", "chat"], "a": "The site links WhatsApp on the main clinic number, +971 4 279 8200."}, {"k": ["hello", "hi", "hey", "good morning", "good evening", "thanks", "thank you", "salam", "hola"], "a": "Hello! Ask me about therapies, insurance, locations, or request an appointment."}], "flow": {"intro": "Happy to take a request. A few quick questions.", "steps": [{"label": "Branch", "q": "Which branch would you prefer?", "opts": ["Dubai Healthcare City", "Majan", "Not sure"]}, {"label": "Reason", "q": "What is the visit about? Choose or type it in your words.", "opts": ["After surgery", "Sports injury", "Back pain", "Shockwave therapy", "Second opinion"]}, {"label": "Preferred day and time", "q": "Which day and time suit you? The team confirms what is free."}, {"label": "Insurance", "q": "Which insurance do you have, or will you pay yourself?", "opts": ["Self-pay", "Not sure"]}, {"label": "Name", "q": "Your name?", "re": "\\S{2,}"}, {"label": "Phone", "q": "A phone number for the team to reach you?", "re": "[+\\d][\\d\\s+()-]{5,}", "err": "Please type a phone number with digits."}], "done": "Thank you. Your request is ready for the DRHC team, who confirm the slot by phone.{list}Demo only: nothing is actually sent. To book now, call +971 4 279 8200.", "cancel": "No problem, request cancelled."}};window.GW_CFG.match=match;</script>
+<script>(function(){var C=window.GW_CFG,d=document;
+function el(t,c,h){var e=d.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+var root=el('div','gw');
+root.innerHTML='<button class="gw-fab" type="button" aria-expanded="false" aria-label="Open assistant"><span>'+C.fab+'</span></button><section class="gw-panel" hidden aria-label="'+esc(C.title)+'"><header class="gw-h"><div><b>'+C.title+'</b><small>'+C.sub+'</small></div><button class="gw-x" type="button" aria-label="Close">&times;</button></header><div class="gw-log" aria-live="polite"></div><div class="gw-chips"></div><form class="gw-f"><input autocomplete="off" aria-label="Your message" placeholder="'+esc(C.ph)+'"><button type="submit" aria-label="Send">&rarr;</button></form></section>';
+d.body.appendChild(root);
+var fab=root.querySelector('.gw-fab'),panel=root.querySelector('.gw-panel'),log=root.querySelector('.gw-log'),chips=root.querySelector('.gw-chips'),form=root.querySelector('.gw-f'),inp=form.querySelector('input');
+var flow=null,started=false;
+function say(t,who){var b=el('div','gw-m '+(who||'bot'));b.innerHTML=who==='me'?esc(t):t;log.appendChild(b);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';a.forEach(function(t){var b=el('button','gw-c',esc(t));b.type='button';b.onclick=function(){ask(t);};chips.appendChild(b);});}
+function open(v){panel.hidden=!v;fab.setAttribute('aria-expanded',v);root.classList.toggle('is-open',v);if(v&&!started){started=true;say(C.greet);setChips(C.chips);}if(v)setTimeout(function(){try{inp.focus({preventScroll:true});}catch(e){}},50);}
+fab.onclick=function(){open(panel.hidden);};root.querySelector('.gw-x').onclick=function(){open(false);};
+function step(){var s=C.flow.steps[flow.i];say(s.q);setChips((s.opts||[]).concat(['Cancel']));}
+function startFlow(){flow={i:0,data:{}};say(C.flow.intro);step();}
+function finish(){var rows=C.flow.steps.map(function(s,i){return '<li><b>'+esc(s.label)+':</b> '+esc(flow.data[i])+'</li>';}).join('');
+say(C.flow.done.replace('{list}','<ul class="gw-s">'+rows+'</ul>'));flow=null;setChips(C.chips);}
+function ask(t){t=String(t).trim();if(!t)return;say(t,'me');
+if(flow){if(/^(cancel|stop|exit|nevermind|never mind)$/i.test(t)){flow=null;say(C.flow.cancel);setChips(C.chips);return;}
+var s=C.flow.steps[flow.i];
+if(s.re&&!new RegExp('^'+s.re).test(t)){say(s.err||'Could you rephrase that?');return;}
+flow.data[flow.i]=t;flow.i++;if(flow.i>=C.flow.steps.length)finish();else step();return;}
+var m=C.match(C.kb,t);
+if(m&&m.id==='book'){startFlow();return;}
+if(m){say(m.a);setChips(m.chips||C.chips);return;}
+say(C.fallback);setChips(C.chips);}
+form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';ask(v);};
+window.GW_OPEN=function(){open(true);};
+d.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-gw]');if(t){e.preventDefault();open(true);if(t.getAttribute('data-gw')==='book')ask('book');}});
+})();
+</script>
+<style>.gw{position:fixed;right:16px;bottom:16px;z-index:9999;font:15px/1.45 var(--gw-font,system-ui,sans-serif);color:#1b1b1b}
+.gw *{box-sizing:border-box}
+.gw-fab{width:58px;height:58px;border-radius:var(--gw-fr,50%);border:0;background:var(--gw-b);color:#fff;font-size:26px;cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;outline-offset:3px}
+.gw-fab:hover{background:var(--gw-a)}
+.gw.is-open .gw-fab{display:none}
+.gw-panel{position:absolute;right:0;bottom:0;width:min(360px,calc(100vw - 32px));height:min(540px,calc(100vh - 32px));background:#fff;border-radius:var(--gw-pr,14px);box-shadow:0 12px 44px rgba(0,0,0,.3);display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+.gw-panel[hidden]{display:none}
+.gw-h{background:var(--gw-b);color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.gw-h b{display:block;font-size:16px}.gw-h small{opacity:.8;font-size:12px}
+.gw-x{background:none;border:0;color:#fff;font-size:28px;line-height:1;cursor:pointer;padding:0 4px}
+.gw-log{flex:1;overflow-y:auto;padding:12px;background:var(--gw-bg,#f6f7f8);display:flex;flex-direction:column;gap:8px}
+.gw-m{max-width:88%;padding:9px 12px;border-radius:12px;overflow-wrap:anywhere}
+.gw-m.bot{background:#fff;border:1px solid rgba(0,0,0,.08);align-self:flex-start}
+.gw-m.me{background:var(--gw-a);color:var(--gw-ac,#fff);align-self:flex-end}
+.gw-s{margin:6px 0 0;padding-left:18px}
+.gw-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px;max-height:104px;overflow-y:auto;border-top:1px solid rgba(0,0,0,.06);background:#fff}
+.gw-c{border:1px solid var(--gw-a);background:#fff;color:var(--gw-b);border-radius:99px;padding:5px 11px;font:inherit;font-size:13px;cursor:pointer}
+.gw-c:hover{background:var(--gw-a);color:var(--gw-ac,#fff)}
+.gw-f{display:flex;gap:6px;padding:8px 10px;border-top:1px solid rgba(0,0,0,.08);background:#fff}
+.gw-f input{flex:1;min-width:0;border:1px solid #c9ccd1;border-radius:8px;padding:9px 10px;font:inherit}
+.gw-f button{border:0;background:var(--gw-b);color:#fff;border-radius:8px;padding:0 14px;font-size:18px;cursor:pointer}
+@media(max-width:420px){.gw{right:8px;bottom:8px}.gw-panel{width:calc(100vw - 16px);height:calc(100vh - 16px)}}
+</style>
+</body></html>

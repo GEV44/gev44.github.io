@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vivian Yu · Vancouver REALTOR · Demo</title>
+<meta name="description" content="Demo page for Vivian Yu Personal Real Estate Corporation, Vancouver. Questions answered by a small assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1d1b19;--paper:#f8f3ed;--sand:#efe5d9;--clay:#a4694a;--clay-d:#7d4a30;--mist:#6b655f;--line:#ddd0c0;--wa:#1d1b19;--wb:#fff;--wf:'Work Sans',system-ui,sans-serif;--wbg:#fff;--wm:#f8f3ed;--wr:6px;--wr2:6px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Work Sans',system-ui,sans-serif;font-weight:400;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:'Lora',Georgia,serif;font-weight:500;line-height:1.15;margin:0 0 .5em}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--clay-d);font-weight:600;margin:0 0 14px}
+/* header */
+header.top{position:sticky;top:0;z-index:40;background:rgba(248,243,237,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+.brand{display:flex;align-items:center;min-width:0}
+.brand img{height:46px;width:auto;display:block}
+nav.m{display:none;gap:22px;font-size:14px}
+nav.m a{text-decoration:none;color:var(--mist)}
+nav.m a:hover{color:var(--ink)}
+.call{background:var(--ink);color:#fff;text-decoration:none;padding:10px 16px;border-radius:6px;font-size:14px;font-weight:500;white-space:nowrap}
+@media(min-width:820px){nav.m{display:flex}}
+/* hero */
+.hero{padding:48px 0 56px;position:relative;overflow:hidden}
+.hero .grid{display:grid;gap:32px;align-items:center}
+.hero h1{font-size:clamp(2.2rem,8vw,4.2rem);letter-spacing:-.01em}
+.hero h1 em{color:var(--clay);font-style:italic}
+.hero p.lead{font-size:1.1rem;color:var(--mist);max-width:34em}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-block;text-decoration:none;padding:13px 22px;border-radius:6px;font-weight:500;font-size:15px;border:1px solid var(--ink);cursor:pointer;font-family:inherit}
+.btn.p{background:var(--ink);color:#fff}
+.btn.s{background:transparent;color:var(--ink)}
+.hero .card{background:var(--sand);border:1px solid var(--line);padding:26px;border-radius:4px;position:relative}
+.hero .card h3{font-size:1.25rem}
+.hero .card ul{list-style:none;margin:0;padding:0}
+.hero .card li{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.hero .card li:first-child{border-top:0}
+.hero .card li b{font-family:'Lora',serif;color:var(--clay);font-size:1.4rem;line-height:1}
+.hero::before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:var(--sand);opacity:.7;z-index:0}
+.hero .wrap{position:relative;z-index:1}
+@media(min-width:860px){.hero .grid{grid-template-columns:1.25fr .85fr}}
+/* about */
+.about{background:#fff}
+.about .grid{display:grid;gap:28px}
+.about blockquote{margin:0;font-family:'Lora',serif;font-style:italic;font-size:clamp(1.3rem,4vw,1.9rem);line-height:1.35;border-left:3px solid var(--clay);padding-left:20px}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
+.fact{background:var(--paper);padding:14px 16px;border-radius:4px;font-size:14px}
+.fact b{display:block;font-family:'Lora',serif;font-size:1.05rem}
+@media(min-width:860px){.about .grid{grid-template-columns:1fr 1fr;gap:56px}}
+/* sellers timeline */
+.tl{list-style:none;margin:30px 0 0;padding:0;counter-reset:s;border-left:2px solid var(--line);margin-left:14px}
+.tl li{position:relative;padding:0 0 28px 30px;counter-increment:s}
+.tl li::before{content:counter(s);position:absolute;left:-15px;top:-2px;width:28px;height:28px;border-radius:50%;background:var(--clay);color:#fff;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.tl h3{font-size:1.15rem;margin-bottom:.25em}
+.tl p{margin:0;color:var(--mist)}
+.split{display:grid;gap:36px}
+@media(min-width:900px){.split{grid-template-columns:.8fr 1.2fr;gap:64px}.split .stick{position:sticky;top:96px;align-self:start}}
+/* buyers */
+.buyers{background:var(--ink);color:#f3ece3}
+.buyers h2{color:#fff}
+.buyers .eyebrow{color:#d9a98c}
+.cols{display:grid;gap:16px;margin-top:28px}
+.col{border:1px solid rgba(255,255,255,.18);padding:24px;border-radius:4px}
+.col .n{font-family:'Lora',serif;font-size:2.4rem;color:#d9a98c;line-height:1}
+.col h3{font-size:1.15rem;margin:.6em 0 .4em;color:#fff}
+.col p{margin:0;color:#cfc5ba;font-size:15px}
+@media(min-width:800px){.cols{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* areas */
+.areas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.areas a{padding:11px 20px;border:1px solid var(--ink);border-radius:999px;text-decoration:none;font-size:15px}
+.areas a:hover{background:var(--ink);color:#fff}
+.types{display:grid;gap:12px;margin-top:30px}
+.type{background:#fff;border:1px solid var(--line);padding:18px 20px;border-radius:4px}
+.type b{font-family:'Lora',serif;font-size:1.1rem}
+@media(min-width:700px){.types{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* invest */
+.invest{background:var(--sand)}
+.icards{display:grid;gap:14px;margin-top:26px}
+.icard{background:#fff;padding:22px;border-radius:4px;border-top:3px solid var(--clay)}
+.icard h3{font-size:1.1rem}
+.icard p{margin:0;color:var(--mist);font-size:15px}
+@media(min-width:760px){.icards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* testimonials */
+.tg{display:grid;gap:16px;margin-top:26px}
+.t{background:#fff;border:1px solid var(--line);padding:24px;border-radius:4px}
+.t q{font-family:'Lora',serif;font-style:italic;font-size:1.05rem;display:block;quotes:"\201C" "\201D"}
+.t cite{display:block;margin-top:14px;font-size:13px;font-style:normal;color:var(--clay-d);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+@media(min-width:860px){.tg{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* faq */
+details{border-top:1px solid var(--line);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-family:'Lora',serif;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--clay);font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{margin:.7em 0 0;color:var(--mist)}
+/* contact */
+.contact{background:#fff}
+.cg{display:grid;gap:24px}
+.cbox{background:var(--paper);border:1px solid var(--line);padding:28px;border-radius:4px}
+.cbox dl{margin:0}
+.cbox dt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay-d);font-weight:600;margin-top:16px}
+.cbox dd{margin:2px 0 0;overflow-wrap:anywhere}
+.cbox dd a{text-decoration:none;border-bottom:1px solid var(--line)}
+@media(min-width:860px){.cg{grid-template-columns:1fr 1fr;gap:48px}}
+.calc{display:grid;gap:14px;background:var(--paper);border:1px solid var(--line);padding:24px;border-radius:4px}
+.calc label{display:grid;gap:6px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--clay-d);font-weight:600}
+.calc input{width:100%;min-width:0;padding:12px;font:16px 'Work Sans',sans-serif;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--ink)}
+.calc .out{background:var(--ink);color:#fff;padding:18px;border-radius:4px}
+.calc .out span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d9a98c;display:block}
+.calc .out b{font-family:'Lora',serif;font-size:2rem;font-weight:500;display:block}
+.calc .out small{opacity:.7;font-size:12px}
+@media(min-width:560px){.calc{grid-template-columns:1fr 1fr}.calc .out{grid-column:1/-1}}
+footer{background:var(--ink);color:#cfc5ba;padding:30px 0;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+footer small{display:block;max-width:60em;opacity:.7}
+#gw{font-family:var(--wf,system-ui,sans-serif);font-size:15px;line-height:1.45;color:var(--wt,#222)}
+#gw *{box-sizing:border-box}
+#gw-b{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--wa,#111);color:var(--wb,#fff);padding:12px 18px;border-radius:var(--wr,999px);font:600 14px var(--wf,system-ui);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#gw-b .gw-i{font-size:18px}
+#gw-p{position:fixed;right:12px;bottom:76px;z-index:61;width:min(380px,calc(100vw - 24px));height:min(540px,calc(100vh - 100px));display:flex;flex-direction:column;background:var(--wbg,#fff);border-radius:var(--wr2,14px);box-shadow:0 16px 48px rgba(0,0,0,.3);overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+#gw-p[hidden]{display:none}
+#gw-p header{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--wa,#111);color:var(--wb,#fff);padding:12px 14px}
+#gw-p header b{display:block;font-size:15px}#gw-p header small{opacity:.8;font-size:12px}
+#gw-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer}
+#gw-m{flex:1;min-height:0;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--wm,#f6f6f6)}
+#gw-m div{max-width:86%;padding:9px 12px;border-radius:12px;white-space:pre-wrap;overflow-wrap:anywhere}
+.gw-a{background:#fff;align-self:flex-start;border:1px solid rgba(0,0,0,.07)}
+.gw-u{background:var(--wa,#111);color:var(--wb,#fff);align-self:flex-end}
+#gw-c{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;max-height:116px;overflow-y:auto;background:var(--wbg,#fff);border-top:1px solid rgba(0,0,0,.06)}
+#gw-c:empty{display:none}
+#gw-c button{border:1px solid var(--wa,#111);background:transparent;color:var(--wa,#111);padding:6px 11px;border-radius:999px;font:500 13px var(--wf,system-ui);cursor:pointer}
+#gw-f{display:flex;gap:6px;padding:10px 12px;border-top:1px solid rgba(0,0,0,.08);background:var(--wbg,#fff)}
+#gw-f input{flex:1;min-width:0;padding:10px 12px;border:1px solid #ccc;border-radius:8px;font:15px var(--wf,system-ui)}
+#gw-f button{border:0;background:var(--wa,#111);color:var(--wb,#fff);padding:0 14px;border-radius:8px;font:600 14px var(--wf,system-ui);cursor:pointer}
+@media(max-width:420px){#gw-b .gw-t{display:none}#gw-b{padding:14px 16px}}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="#top" aria-label="Vivian Yu Real Estate"><img src="img/vivian-yu-logo.png" alt="Vivian Yu Real Estate" width="105" height="46"></a>
+<nav class="m"><a href="#selling">Selling</a><a href="#buying">Buying</a><a href="#areas">Areas</a><a href="#invest">Investing</a><a href="#stories">Stories</a><a href="#contact">Contact</a></nav>
+<a class="call" href="tel:6047548989">604-754-8989</a>
+</div></header>
+<main id="top">
+<div class="hero"><div class="wrap grid">
+<div>
+<p class="eyebrow">Vivian Yu · Personal Real Estate Corporation</p>
+<h1>Discover your home in Vancouver. Real estate should be <em>simple.</em></h1>
+<p class="lead">Vivian is a Top 1% award-winning Vancouver REALTOR who walks buyers and sellers through every step, from the first assessment to closing day.</p>
+<div class="btns"><a class="btn p" href="#selling">I am selling</a><a class="btn s" href="#buying">I am buying</a><a class="btn s" href="#contact">Free home valuation</a></div>
+</div>
+<aside class="card"><h3>Start with a conversation</h3>
+<ul>
+<li><b>1</b><span>Tell Vivian what you want from your move, selling, buying or investing.</span></li>
+<li><b>2</b><span>Get a plan with timelines, budget and taxes explained in plain words.</span></li>
+<li><b>3</b><span>She stays with you until the keys change hands.</span></li>
+</ul></aside>
+</div></div>
+
+<section class="about" id="about"><div class="wrap grid">
+<div><p class="eyebrow">Meet Vivian</p>
+<blockquote>Her mother's dream was a cozy little home in Vancouver. Realtors told them their budget was not enough.</blockquote>
+<p style="margin-top:20px;color:var(--mist)">That is why Vivian went into real estate: so every client with even the slightest ambition of owning a home knows how to reach the goal and never misses the opportunity. Looking back, she says that budget was more than enough for a two-bedroom ten years ago, and still is today.</p></div>
+<div><h2>What working with her looks like</h2>
+<p style="color:var(--mist)">Her focus is on the highest level of service for every client: assessing your wish list, explaining timelines, budgets and taxes, and making sure your hard-earned money goes as far as possible in any market. Her motto is "Once a client, always a client."</p>
+<div class="facts"><div class="fact"><b>Top 1%</b>award-winning agent</div><div class="fact"><b>Vancouver</b>and five nearby cities</div><div class="fact"><b>Photo, drone, video</b>for every listing</div><div class="fact"><b>Mortgage partner</b>introduced for buyers</div></div></div>
+</div></section>
+
+<section id="selling"><div class="wrap split">
+<div class="stick"><p class="eyebrow">For sellers</p><h2>Selling your home just got easier</h2><p style="color:var(--mist)">Six steps, each one planned with you. Nothing is a surprise on the day your home goes live.</p><a class="btn p" href="#contact" style="margin-top:8px">Get your home's value</a></div>
+<ol class="tl">
+<li><h3>Personalized home assessment</h3><p>What made you choose to live in your home? What makes it special? Vivian uses the answers to position your property in its finest light.</p></li>
+<li><h3>Decide on your price</h3><p>Together you choose a price that is both competitive and market-driven, with the same page on everything from the start.</p></li>
+<li><h3>Prepare for showings</h3><p>A walk-through points out what to do before thousands of eyes see it. A home stager can help, then a professional photographer shoots HD photos, drone and video for a listing video.</p></li>
+<li><h3>Advertise your home</h3><p>Targeted digital marketing, social media advertising, e-mail marketing and personalized 1-to-1 outreach to the right buyer.</p></li>
+<li><h3>Host an open house</h3><p>Planned around your property type, location and style, to turn digital attention into face time and create real buzz.</p></li>
+<li><h3>Close and celebrate</h3><p>Vivian handles the title, closing services and inspection so closing goes smoothly. Then you celebrate.</p></li>
+</ol></div></section>
+
+<section class="buyers" id="buying"><div class="wrap">
+<p class="eyebrow">For buyers</p><h2>Let Vivian help you buy your dream property</h2>
+<p style="max-width:40em;color:#cfc5ba">Known for listening and understanding what her clients need. Need to sell first? Ask about timing both moves.</p>
+<div class="cols">
+<div class="col"><div class="n">1</div><h3>What you want vs. need</h3><p>A buyer consultation to focus your search and set your range, with an introduction to a mortgage partner so you can plan with confidence.</p></div>
+<div class="col"><div class="n">2</div><h3>Find the home, write the offer</h3><p>Open houses and viewings together from the listings you loved in your alerts. Vivian presents a written offer and negotiates for you all the way.</p></div>
+<div class="col"><div class="n">3</div><h3>Appraisal, inspection, closing</h3><p>The appraisal checks the price matches the condition, the inspection checks everything works, and then the final paperwork, kept as painless as possible.</p></div>
+</div></div></section>
+
+<section id="areas"><div class="wrap">
+<p class="eyebrow">Where she works</p><h2>Vancouver and the neighbouring cities</h2>
+<p style="color:var(--mist);max-width:40em">Search by location, or by the type of home you have in mind.</p>
+<div class="areas"><a href="#contact">Vancouver</a><a href="#contact">Burnaby</a><a href="#contact">Richmond</a><a href="#contact">Coquitlam</a><a href="#contact">New West</a><a href="#contact">Surrey</a></div>
+<div class="types"><div class="type"><b>Condos</b><br>Search listings</div><div class="type"><b>Townhouses</b><br>Search listings</div><div class="type"><b>Detached houses</b><br>Search listings</div></div>
+</div></section>
+
+<section class="invest" id="invest"><div class="wrap">
+<p class="eyebrow">Investing</p><h2>Invest like a boss</h2>
+<p style="max-width:42em;color:var(--mist)">From quick-fix flips to long-term multi-family rent and hold, the options are wide. Once Vivian understands your needs, timeline and risk tolerance, she designs an investment plan around them.</p>
+<div class="icards">
+<div class="icard"><h3>Airbnb-friendly properties</h3><p>Ask about her exclusive list of Airbnb-friendly properties in Vancouver and how rents compare between neighbourhoods.</p></div>
+<div class="icard"><h3>Land value</h3><p>Thinking about a detached house? She evaluates the current and future potential of the land you are interested in.</p></div>
+<div class="icard"><h3>Fix and flip</h3><p>Barebones or nicest home on the block? How far to fix up is the question she helps you answer.</p></div>
+</div></div></section>
+
+<section id="stories"><div class="wrap">
+<p class="eyebrow">Client success stories</p><h2>In their words</h2>
+<div class="tg">
+<div class="t"><q>Vivian is 10/10 the best realtor to work with. I was looking to purchase my first home in Vancouver and she made it so easy and stress free.</q><cite>Jason P.</cite></div>
+<div class="t"><q>This is our second time dealing with Vivian in selling a family member's home. A hard working, dedicated and honest realtor.</q><cite>Ken and Sharon</cite></div>
+<div class="t"><q>She was there every step of the way, with good insight on each of the properties we went to view.</q><cite>Brennan S.</cite></div>
+</div></div></section>
+
+<section id="calc" style="background:#fff"><div class="wrap split">
+<div class="stick"><p class="eyebrow">Mortgage calculator</p><h2>Get a feel for the monthly numbers</h2><p style="color:var(--mist)">Vivian's site includes a mortgage calculator and an introduction to a mortgage partner. This small one is only for rough thinking; it does not replace a pre-approval.</p></div>
+<form class="calc" onsubmit="return false" aria-label="Mortgage estimate">
+<label>Home price<input id="c1" type="number" inputmode="numeric" value="900000" min="0"></label>
+<label>Down payment<input id="c2" type="number" inputmode="numeric" value="180000" min="0"></label>
+<label>Interest rate, %<input id="c3" type="number" inputmode="decimal" step="0.01" value="4.5" min="0"></label>
+<label>Amortization, years<input id="c4" type="number" inputmode="numeric" value="25" min="1" max="40"></label>
+<div class="out"><span>Estimated monthly payment</span><b id="c5">-</b><small>Principal and interest only. Taxes, insurance and fees are extra. Ask Vivian's mortgage partner for real figures.</small></div>
+</form></div></section>
+
+<section id="first" style="padding-bottom:20px"><div class="wrap">
+<p class="eyebrow">Your first call</p><h2>What to have in mind</h2>
+<div class="icards">
+<div class="icard"><h3>If you are selling</h3><p>Why you chose your home and what makes it special, your timeline, and whether you are buying next.</p></div>
+<div class="icard"><h3>If you are buying</h3><p>Your wish list versus your must-haves, the areas you like, and whether you have a home to sell first.</p></div>
+<div class="icard"><h3>If you are investing</h3><p>Your goal, whether short-term Airbnb, a flip or a long-term hold, your timeline and your comfort with risk.</p></div>
+</div></div></section>
+
+<section id="why" style="padding-bottom:20px"><div class="wrap">
+<p class="eyebrow">Why clients stay</p><h2>Once a client, always a client</h2>
+<p style="max-width:44em;color:var(--mist)">Vivian keeps up with the latest changes and developments in the market and draws on her years of experience to help clients reach their goals. Reviews on her page describe someone who is incredibly accessible, professional, patient and never pressuring, even with picky and inexperienced first-time buyers. Her sold gallery and market stats pages show how recent sales and boards such as REBGV and FVREB are moving, so conversations start from facts rather than guesses.</p>
+</div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap">
+<p class="eyebrow">Common questions</p><h2>Before you call</h2>
+<details><summary>How does Vivian price a home for sale?</summary><p>You decide together, after the assessment, on a price that is competitive and market-driven.</p></details>
+<details><summary>Does she help with the mortgage side?</summary><p>She introduces buyers to a mortgage partner so you can set your buying range with confidence, and the site has a mortgage calculator.</p></details>
+<details><summary>What if I need to sell before I buy?</summary><p>The buyers page covers this. Ask Vivian how to time both, and the team will confirm the best order for your situation.</p></details>
+<details><summary>Which areas does she cover?</summary><p>Vancouver, Burnaby, Richmond, Coquitlam, New Westminster and Surrey are featured on her site.</p></details>
+<details><summary>Can I see sold homes and market stats?</summary><p>Her site has a sold gallery and market stats for the REBGV and FVREB boards. For how they apply to your street, request a call.</p></details>
+<details><summary>Is the home valuation really free?</summary><p>Yes, the site offers a free home valuation. Tell the team about your property and they will arrange it.</p></details>
+<details><summary>Can I just talk first, with no commitment?</summary><p>Yes. The conversation comes first, and her approach is to explain timelines, budgets and taxes before you decide anything.</p></details>
+<details><summary>Do I need to be ready to move to start talking?</summary><p>No. Plenty of people call while they are still exploring. Vivian explains timelines, budgets and taxes first, so that when you do decide, you already know the path and the numbers behind it.</p></details>
+<details><summary>How do I stay updated on new listings?</summary><p>Buyers get listing alerts from Vivian's search, then view homes and open houses with her. You can also join her e-mail list from the site footer.</p></details>
+<details><summary>What are the office hours?</summary><p>Hours are not published. Call or text and the team will arrange a time.</p></details>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap cg">
+<div><p class="eyebrow">Have questions?</p><h2>Vivian is just a call, or a button, away.</h2>
+<p style="color:var(--mist)">Request a call, send an e-mail or even a text, whichever suits you. Or open the assistant at the bottom right and leave your details; in this demo nothing is sent.</p>
+<div class="btns"><a class="btn p" href="tel:6047548989">Call 604-754-8989</a><a class="btn s" href="mailto:homes@vivianyu.ca">E-mail the team</a></div></div>
+<div class="cbox"><dl>
+<dt>Cell</dt><dd><a href="tel:6047548989">604.754.8989</a></dd>
+<dt>Office</dt><dd><a href="tel:6048428843">604-842-8843</a></dd>
+<dt>E-mail</dt><dd><a href="mailto:homes@vivianyu.ca">homes@vivianyu.ca</a></dd>
+<dt>Address</dt><dd>500-666 Burrard St, Vancouver, BC V6C 3P6</dd>
+</dl></div></div></section>
+</main>
+<footer><div class="wrap"><span>Demo · prepared by Gevorg Hovhannisyan</span><small>Built from the public content of vivianyu.ca. This is a demonstration; the assistant sends nothing. Property data and listings are not shown here.</small></div></footer>
+<script>
+(function(){function f(){var P=+document.getElementById('c1').value-+document.getElementById('c2').value,r=+document.getElementById('c3').value/1200,n=+document.getElementById('c4').value*12,o=document.getElementById('c5');
+if(!(P>0)||!(n>0)){o.textContent='-';return;}var m=r?P*r/(1-Math.pow(1+r,-n)):P/n;o.textContent=m.toLocaleString('en-CA',{style:'currency',currency:'CAD',maximumFractionDigits:0})+' / month';}
+['c1','c2','c3','c4'].forEach(function(i){document.getElementById(i).addEventListener('input',f);});f();})();
+(function(root){
+function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|s|ly)$/,''):w.replace(/s$/,'');}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=0;j<=n;j++)d[0][j]=j;
+for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function tm(t,k){var ts=stem(t);if(ts===k||t===k)return 1;
+if(k.length>=4&&ts.length>=4&&(ts.indexOf(k)===0||k.indexOf(ts)===0))return .9;
+if(k.length>=5&&ts.length>=4&&Math.abs(ts.length-k.length)<=1&&lev(ts,k)<=1)return .8;
+if(k.length>=8&&Math.abs(ts.length-k.length)<=2&&lev(ts,k)<=2)return .7;return 0;}
+function match(q,cfg){var nq=norm(q),toks=nq.split(' ').filter(Boolean),best=null,bs=0;
+cfg.kb.forEach(function(e,idx){var s=0;e.k.forEach(function(kw){var k=norm(kw);if(!k)return;
+if(k.indexOf(' ')>0){if((' '+nq+' ').indexOf(' '+k+' ')>=0)s+=2;else{var ps=k.split(' '),all=ps.every(function(p){return toks.some(function(t){return tm(t,stem(p))>=.8;});});if(all)s+=1.6;}}
+else{var ks=stem(k),m=0;toks.forEach(function(t){var v=tm(t,ks);if(v>m)m=v;});s+=m;}});
+if(s>bs){bs=s;best=e;}});
+return bs>=.8?best:null;}
+function wantsFlow(q,cfg){var nq=norm(q);return (cfg.flow.trig||[]).some(function(w){var k=norm(w);return nq.split(' ').some(function(t){return tm(t,stem(k))>=.8;})||nq.indexOf(k)>=0;});}
+var api={norm:norm,match:match,wantsFlow:wantsFlow};
+if(typeof module!=='undefined')module.exports=api;
+if(typeof document==='undefined')return;
+root.GEVW=function(cfg){
+var $=function(s){return document.querySelector(s);},wrap=document.createElement('div');wrap.id='gw';
+wrap.innerHTML='<button id="gw-b" aria-label="'+cfg.btn+'"><span class="gw-i">✉</span><span class="gw-t">'+cfg.btn+'</span></button><section id="gw-p" hidden role="dialog" aria-label="'+cfg.name+'"><header><div><b>'+cfg.name+'</b><small>'+cfg.sub+'</small></div><button id="gw-x" aria-label="Close">×</button></header><div id="gw-m" aria-live="polite"></div><div id="gw-c"></div><form id="gw-f" autocomplete="off"><input id="gw-q" type="text" placeholder="'+cfg.ph+'" aria-label="'+cfg.ph+'"><button type="submit">'+cfg.send+'</button></form></section>';
+document.body.appendChild(wrap);
+var m=$('#gw-m'),c=$('#gw-c'),q=$('#gw-q'),panel=$('#gw-p'),step=-1,data={},started=false;
+function say(t,who){var d=document.createElement('div');d.className='gw-'+(who||'a');d.textContent=t;m.appendChild(d);m.scrollTop=m.scrollHeight;}
+function chips(a){c.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){input(t);};c.appendChild(b);});}
+function home(){step=-1;chips(cfg.chips);}
+function ask(){var s=cfg.flow.steps[step];say(s.q);if(s.opts)chips(s.opts);else c.innerHTML='';q.placeholder=s.ph||cfg.ph;}
+function startFlow(){step=0;data={};say(cfg.flow.intro);ask();}
+function finish(){var lines=cfg.flow.steps.map(function(s){return s.label+': '+data[s.k];}).join('\n');
+say(cfg.flow.done+'\n\n'+lines);step=-1;q.placeholder=cfg.ph;chips(cfg.chips);}
+function input(t){t=String(t).trim();if(!t)return;say(t,'u');
+if(step>=0){var s=cfg.flow.steps[step];
+if(/^(cancel|stop|exit|back to questions)$/i.test(t)){step=-1;say(cfg.flow.cancel);chips(cfg.chips);return;}
+if(s.min&&t.length<s.min){say(s.err||cfg.flow.err);return;}
+if(s.re&&!new RegExp(s.re,'i').test(t)){say(s.err||cfg.flow.err);return;}
+data[s.k]=t;step++;if(step>=cfg.flow.steps.length)finish();else ask();return;}
+if(wantsFlow(t,cfg)){startFlow();return;}
+var e=match(t,cfg);if(e){say(e.a);if(e.flow){chips([cfg.flow.chip].concat(cfg.chips.slice(0,3)));}else chips(cfg.chips);}else{say(cfg.fallback);chips(cfg.chips);}}
+$('#gw-b').onclick=function(){panel.hidden=!panel.hidden;if(!panel.hidden&&!started){started=true;say(cfg.hello);home();}if(!panel.hidden)q.focus();};
+$('#gw-x').onclick=function(){panel.hidden=true;};
+$('#gw-f').onsubmit=function(ev){ev.preventDefault();var v=q.value;q.value='';input(v);};
+};
+})(typeof window!=='undefined'?window:this);
+
+GEVW({"name": "Vivian's assistant", "sub": "Vancouver real estate, quick answers", "btn": "Ask about your move", "ph": "Type a question...", "send": "Send", "hello": "Hi! I can answer questions about working with Vivian Yu, how selling and buying with her works, and which areas she covers. I can also pass a call request to her team.", "chips": ["Selling my home", "Buying a home", "Free home valuation", "Areas covered", "Investing", "Request a call"], "fallback": "I do not have that detail from Vivian's site, so I will not guess. Her team can confirm it: call 604-754-8989, or tap \"Request a call\" and leave your details.", "flow": {"chip": "Request a call", "trig": ["book", "schedule", "appointment", "request a call", "call me", "get started", "consultation", "enquire", "reserve"], "intro": "Happy to set that up. A few quick questions, then it goes to Vivian's team.", "done": "Thank you! This is a demo, so nothing was actually sent, but this is the request Vivian's team would receive. They would reply to confirm a time.", "cancel": "No problem, request cancelled. Ask me anything else.", "err": "Could you add a little more detail?", "steps": [{"k": "goal", "label": "Goal", "q": "What would you like to talk about?", "opts": ["Selling", "Buying", "Investing", "Home value"]}, {"k": "area", "label": "Area", "q": "Which area? Vivian works across Vancouver, Burnaby, Richmond, Coquitlam, New West and Surrey.", "opts": ["Vancouver", "Burnaby", "Richmond", "Coquitlam", "New West", "Surrey"]}, {"k": "type", "label": "Property", "q": "What type of property?", "opts": ["Condo", "Townhouse", "Detached house", "Not sure yet"]}, {"k": "when", "label": "Timing", "q": "What is your timeline?", "opts": ["As soon as possible", "1 to 3 months", "Later this year", "Just exploring"]}, {"k": "name", "label": "Name", "q": "Your name?", "min": 2, "ph": "Your name"}, {"k": "contact", "label": "Contact", "q": "Best phone number or e-mail to reach you?", "re": "[@0-9]{5,}|@", "err": "Please add a phone number or an e-mail address.", "ph": "Phone or e-mail"}]}, "kb": [{"k": ["sell", "selling", "seller", "list my home", "listing", "listing my"], "a": "Selling with Vivian: a personalized home assessment first, then you decide on a price together that is competitive and market-driven. She walks through the home before showings, brings in a stager if needed, and arranges HD photos, drone footage and a listing video. Marketing includes digital and social ads, e-mail and 1-to-1 outreach, then a planned open house and help through closing.", "flow": 1}, {"k": ["buy", "buying", "buyer", "purchase", "first home", "first time", "dream home"], "a": "Buying with Vivian has three stages: a buyer consultation to separate what you want from what you need, then searching and open houses together with listing alerts, and she presents and negotiates your written offer. After acceptance she guides you through appraisal, inspection and closing. She also introduces you to a mortgage partner so you know your price range first.", "flow": 1}, {"k": ["valuation", "value", "worth", "evaluation", "estimate", "appraisal", "free home valuation"], "a": "Vivian offers a free home valuation. Tap \"Request a call\" and tell the team about the property; they will come back to you to arrange it.", "flow": 1}, {"k": ["area", "areas", "where", "location", "neighbourhood", "neighborhood", "vancouver", "burnaby", "richmond", "coquitlam", "new west", "surrey", "cover"], "a": "Vivian is based in Vancouver and her site features Vancouver, Burnaby, Richmond, Coquitlam, New Westminster and Surrey. If your area is not in that list, ask the team to confirm."}, {"k": ["invest", "investing", "investment", "airbnb", "flip", "fix and flip", "rental", "land value", "multi family"], "a": "Vivian designs an investment plan around your needs, timeline and risk tolerance. Topics on her site include Airbnb-friendly properties in Vancouver, assessing land value of detached houses, and fix and flip decisions such as how far to renovate.", "flow": 1}, {"k": ["phone", "call", "number", "contact", "reach", "talk"], "a": "Call or text Vivian on 604-754-8989. The office line is 604-842-8843. Or tap \"Request a call\" and leave your details here.", "flow": 1}, {"k": ["email", "e-mail", "mail", "write"], "a": "You can e-mail Vivian's team at homes@vivianyu.ca."}, {"k": ["office", "address", "burrard", "where is your office", "visit"], "a": "The office is at 500-666 Burrard St, Vancouver, BC V6C 3P6."}, {"k": ["who", "vivian", "about", "agent", "realtor", "top 1", "award", "experience", "background"], "a": "Vivian Yu is a Vancouver REALTOR and Personal Real Estate Corporation, described on her site as a Top 1% award-winning agent. She got into real estate after her own family was told their budget was not enough for a home, and wants every client to know how to reach homeownership."}, {"k": ["open house", "open houses", "showing", "showings", "viewing", "viewings", "tour"], "a": "Vivian goes to open houses and schedules viewings with buyers, and plans a consistent open house strategy for sellers. Tell the team which homes you like through \"Request a call\".", "flow": 1}, {"k": ["mortgage", "financing", "budget", "afford", "pre approval", "preapproval", "calculator"], "a": "Vivian introduces buyers to a mortgage partner so you can set your price range with confidence, and her site has a mortgage calculator. Her advice: never go above what you are comfortable with."}, {"k": ["sell first", "need to sell first", "sell before buy", "trade"], "a": "Her buyers page has a section for buyers who need to sell first. Ask the team how to time both; request a call and mention it.", "flow": 1}, {"k": ["photo", "photos", "photographer", "drone", "video", "stager", "staging", "marketing", "advertise"], "a": "For sellers she arranges a professional photographer, HD photos, drone footage, a listing video and a stager if your home needs one, plus digital, social media and e-mail marketing with 1-to-1 outreach to the right buyer."}, {"k": ["review", "reviews", "testimonial", "testimonials", "client", "clients", "stories", "reference"], "a": "Clients on her site describe her as accessible, professional, patient and always ready to help. See the Client Success Stories section on this page."}, {"k": ["stats", "statistics", "market", "trend", "prices", "price", "market stats"], "a": "Her site has market stats for the REBGV and FVREB boards. For a view of your own area and what it means for your plans, request a call.", "flow": 1}, {"k": ["hours", "open", "available", "when", "time"], "a": "Business hours are not published on the site, so the team will confirm. Request a call and they will reply to arrange a time that suits you.", "flow": 1}, {"k": ["brokerage", "real broker", "company", "license", "licence", "corporation"], "a": "Vivian works as Vivian Yu Personal Real Estate Corporation with Real Broker, in Vancouver, BC."}, {"k": ["language", "languages", "speak", "english", "chinese", "mandarin", "cantonese"], "a": "The site does not list languages, so I will not guess. Ask the team when you request a call."}]});
+</script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BOC Sports Physio | Dublin 2 sports physiotherapy</title>
+<meta name="description" content="Demo page for BOC Sports Physio with an assistant that answers from the clinic's own site.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1215;--bg2:#141b20;--card:#1a232a;--lime:#c6f24e;--lime2:#a6d12f;--bone:#f2efe8;--ink:#e9edf0;--mut:#93a3ad;--line:#26323a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.6 'Source Sans 3',system-ui,sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;margin:0;line-height:1.08;letter-spacing:-.01em}
+a{color:var(--lime)}img{max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:30;background:rgba(13,18,21,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:12px;max-width:1080px;margin:0 auto;padding:10px 16px}
+.logochip{background:var(--bg);display:block;line-height:0;min-width:0}
+.logochip img{height:38px;width:auto;display:block}
+nav{margin-left:auto;display:none;gap:20px}
+nav a{color:var(--ink);text-decoration:none;font-size:15px;font-weight:600}
+nav a:hover{color:var(--lime)}
+.btn{display:inline-block;background:var(--lime);color:#0d1215;border:0;border-radius:999px;padding:12px 22px;font:700 16px 'Space Grotesk',sans-serif;text-decoration:none;cursor:pointer}
+.btn:hover{background:#d8ff63}
+.btn.o{background:transparent;border:1.5px solid var(--lime);color:var(--lime)}
+.hd .btn{margin-left:auto;padding:9px 16px;font-size:14px}
+@media(min-width:860px){nav{display:flex}.hd .btn{margin-left:8px}}
+.hero{padding:44px 0 56px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;left:50%;top:-220px;width:620px;height:620px;margin-left:-60px;border-radius:50%;background:radial-gradient(circle,rgba(198,242,78,.16),rgba(198,242,78,0) 66%)}
+.hero .wrap{position:relative}
+.kick{font:600 13px 'Space Grotesk';letter-spacing:.16em;text-transform:uppercase;color:var(--lime)}
+.hero h1{font-size:clamp(40px,9.5vw,82px);margin:12px 0 16px;font-weight:700;max-width:860px}
+.hero h1 span{color:var(--lime)}
+.hero p{font-size:19px;color:#c3cfd6;max-width:620px;margin:0 0 24px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:34px}
+.facts div{border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--bg2);min-width:0}
+.facts b{display:block;font:700 26px 'Space Grotesk';color:var(--lime)}
+.facts span{font-size:14px;color:var(--mut)}
+@media(min-width:760px){.facts{grid-template-columns:repeat(4,1fr)}}
+section{padding:52px 0}
+.lab{font:600 13px 'Space Grotesk';letter-spacing:.16em;text-transform:uppercase;color:var(--lime);margin-bottom:8px}
+section h2{font-size:clamp(30px,6vw,46px);margin-bottom:12px}
+.lead{color:#b4c1c9;max-width:640px;margin:0 0 26px}
+.alt{background:var(--bg2)}
+.svc{display:grid;gap:12px}
+.svc div{background:var(--card);border-radius:16px;padding:18px;border:1px solid var(--line);min-width:0}
+.svc b{font:600 22px 'Space Grotesk';display:block;margin-bottom:4px}
+.svc span{color:#b4c1c9;font-size:15.5px}
+.svc div:nth-child(1){border-top:4px solid var(--lime)}
+@media(min-width:760px){.svc{grid-template-columns:repeat(3,1fr)}}
+.body{display:grid;gap:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{background:transparent;color:var(--ink);border:1.5px solid #38474f;border-radius:999px;padding:8px 15px;font:600 15px 'Source Sans 3';cursor:pointer}
+.chips button.on{background:var(--lime);color:#0d1215;border-color:var(--lime)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;min-height:140px}
+.panel h3{font-size:26px;margin-bottom:8px;color:var(--lime)}
+.panel p{margin:0 0 10px;color:#c7d2d8}
+@media(min-width:860px){.body{grid-template-columns:1fr 1fr;align-items:start}}
+.body>*{min-width:0}
+.team{display:grid;gap:14px}
+.team div{background:var(--card);border-radius:18px;padding:22px;border:1px solid var(--line);min-width:0}
+.team h3{font-size:26px}
+.team .role{color:var(--lime);font-weight:600;margin-bottom:10px;display:block}
+.team p{margin:0 0 10px;color:#c7d2d8;font-size:16px}
+@media(min-width:860px){.team{grid-template-columns:1fr 1fr}}
+.clin{display:grid;gap:14px}
+.clin>div{border:1px solid var(--line);border-radius:18px;padding:20px;background:var(--bg);min-width:0}
+.clin h3{font-size:24px;margin-bottom:6px}
+@media(min-width:860px){.clin{grid-template-columns:1fr 1fr}}
+table{width:100%;border-collapse:collapse;font-size:16px;margin-top:8px}
+td{padding:8px 0;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right;color:var(--lime);font-weight:600}
+.walk{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px}
+.walk li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed #33424b;padding:6px 0;font-size:15.5px}
+.walk li b{color:var(--lime);}
+.quote{border-left:4px solid var(--lime);padding:4px 0 4px 18px;font-size:19px;color:var(--bone);max-width:680px;margin:0}
+.quote cite{display:block;font-size:14px;color:var(--mut);margin-top:8px;font-style:normal}
+.ins{background:var(--lime);color:#0d1215;border-radius:20px;padding:24px;display:grid;gap:12px}
+.ins h2{color:#0d1215}
+.ins p{margin:0;color:#1e2a12}
+.ins a{color:#0d1215;font-weight:700}
+details{border-bottom:1px solid var(--line);padding:2px 0}
+summary{cursor:pointer;padding:14px 0;font:600 18px 'Space Grotesk';list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary:after{content:"+";color:var(--lime);font-size:24px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{margin:0 0 16px;color:#b4c1c9}
+footer{padding:28px 0 92px;color:var(--mut);font-size:14.5px;border-top:1px solid var(--line)}
+footer a{color:var(--ink)}
+#a-fab{position:fixed;right:14px;bottom:14px;z-index:40;background:var(--lime);color:#0d1215;border:0;border-radius:999px;padding:14px 20px;font:700 16px 'Space Grotesk';box-shadow:0 8px 28px rgba(0,0,0,.55);cursor:pointer}
+#a-panel{position:fixed;right:10px;bottom:70px;z-index:41;width:min(380px,calc(100vw - 20px));height:min(540px,calc(100vh - 90px));background:var(--bg2);border:1px solid #33424b;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
+#a-panel.open{display:flex}
+.a-h{background:var(--card);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+.a-h b{font:700 17px 'Space Grotesk';display:block}.a-h small{color:var(--mut)}
+#a-x{background:none;border:0;color:#fff;font-size:24px;cursor:pointer;line-height:1}
+#a-log{flex:1;overflow:auto;padding:12px;background:var(--bg)}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;margin:0 0 8px;font-size:15px;line-height:1.45;overflow-wrap:anywhere}
+.m.b{background:var(--card);border:1px solid var(--line)}
+.m.u{background:var(--lime);color:#0d1215;margin-left:auto}
+.m a{font-weight:700}
+#a-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px 0;background:var(--bg2);max-height:96px;overflow:auto}
+#a-chips button{border:1.5px solid #44555e;background:transparent;border-radius:999px;padding:5px 11px;font:600 13px 'Source Sans 3';cursor:pointer;color:var(--ink)}
+#a-chips button:hover{border-color:var(--lime);color:var(--lime)}
+#a-form{display:flex;gap:6px;padding:10px;background:var(--bg2)}
+#a-form input{flex:1;min-width:0;border:1.5px solid #3b4a53;background:var(--bg);color:var(--ink);border-radius:10px;padding:10px;font:16px 'Source Sans 3'}
+#a-form button{background:var(--lime);color:#0d1215;border:0;border-radius:10px;padding:0 15px;font:700 15px 'Space Grotesk';cursor:pointer}
+</style></head><body>
+<header><div class="hd">
+<a class="logochip" href="#top" aria-label="BOC Sports Physio"><img src="img/boc-sports-physio-logo.svg" alt="BOC Sports Physio" height="38"></a>
+<nav><a href="#services">Services</a><a href="#areas">What we treat</a><a href="#team">Team</a><a href="#clinics">Clinics</a><a href="#faq">FAQ</a></nav>
+<a class="btn" href="#" data-ask="Book an appointment">Book</a></div></header>
+
+<div class="hero" id="top"><div class="wrap">
+<div class="kick">Chartered physiotherapy &middot; Dublin 2</div>
+<h1>Recover faster. Build strength. <span>Perform.</span></h1>
+<p>Chartered physiotherapy and sports injury rehab in Dublin 2, with a fully equipped rehab gym when your injury needs more than a treatment table.</p>
+<a class="btn" href="#" data-ask="Book an appointment">Request an appointment</a> <a class="btn o" href="tel:+353877755346">087 775 5346</a>
+<div class="facts"><div><b>10+ yrs</b><span>in the industry</span></div><div><b>ISCP</b><span>chartered physios, CORU registered</span></div><div><b>2</b><span>clinics in Dublin 2</span></div><div><b>Mon to Fri</b><span>7am to 8pm at Windmill Lane</span></div></div>
+</div></div>
+
+<section id="services" class="alt"><div class="wrap">
+<div class="lab">Services</div><h2>Six ways in</h2><p class="lead">From the first diagnosis to a full return to sport, in one place.</p>
+<div class="svc">
+<div><b>Chartered physiotherapy</b><span>For all types of injuries and health conditions. The pathway starts with an initial diagnosis, then a full treatment and rehab plan to optimise recovery.</span></div>
+<div><b>Physio-led rehabilitation</b><span>For long-term injuries, post-operative rehab and injury prevention, in the clinic&#x27;s rehabilitation gym.</span></div>
+<div><b>Strength and conditioning</b><span>Training programmes tailored to each person, led by a physiotherapist, in a safe environment.</span></div>
+<div><b>Sports performance consultancy</b><span>Help for athletes of all levels with training, recovery and mindset.</span></div>
+<div><b>Sports massage</b><span>Treatments to relieve tension, improve flexibility and keep you at your best.</span></div>
+<div><b>Dry needling</b><span>Targets trigger points to relieve tension, reduce pain and restore mobility.</span></div>
+</div></div></section>
+
+<section id="areas"><div class="wrap">
+<div class="lab">What we treat</div><h2>Pick the part that hurts</h2><p class="lead">The clinic covers a wide range of injuries. Choose an area to see what the site says about it. A physiotherapist still has to assess your case.</p>
+<div class="body"><div class="chips" id="chips">
+<button type="button" data-i="0">Back pain</button><button type="button" data-i="1">Neck and shoulder</button><button type="button" data-i="2">Knee</button><button type="button" data-i="3">Hip and groin</button><button type="button" data-i="4">Hamstring, quad, calf</button><button type="button" data-i="5">Achilles and tendons</button><button type="button" data-i="6">Osteoarthritis</button><button type="button" data-i="7">Concussion</button><button type="button" data-i="8">Women&#x27;s health</button>
+</div><div class="panel" id="panel"></div></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="lab">How rehab works</div><h2>From assessment to return to sport</h2><p class="lead">The clinic's knee page lays out its approach. The same pattern runs through the rest of the work.</p>
+<div class="svc">
+<div><b>1. Initial assessment</b><span>Movement, strength and flexibility testing, plus a review of any imaging you have.</span></div>
+<div><b>2. Tailored rehab plan</b><span>Pain and swelling management, strengthening for quads, glutes and hamstrings, then balance, agility and return-to-sport progressions.</span></div>
+<div><b>3. Techniques used</b><span>Manual therapy and taping, exercise-based rehab and injury prevention education, with objective monitoring along the way.</span></div>
+</div>
+<p style="margin:22px 0 0;color:#b4c1c9;max-width:700px">Strength gains are charted with regular Force Frame testing, and plyometric and power progressions are quantified with Output testing, so progress is measured, not guessed.</p>
+<div class="chips" style="margin-top:22px"><span class="kick" style="width:100%">Injury prevention tips from the clinic</span><button type="button" style="cursor:default">Strengthen glutes, hamstrings and quads</button><button type="button" style="cursor:default">Balance and neuromuscular training</button><button type="button" style="cursor:default">Warm up and cool down</button><button type="button" style="cursor:default">Focus on technique and form</button><button type="button" style="cursor:default">Manage training load and recovery</button></div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+<div class="lab">Who it is for</div><h2>Not only elite athletes</h2>
+<p class="lead">The Windmill Lane page names the people it expects through the door: developers at the Silicon Docks tech offices, rugby players at Old Belvedere or Lansdowne, runners training along the Grand Canal, and anyone managing a chronic injury. They all get access to the full team and the rehab gym under one roof.</p>
+<p class="quote">I can't recommend Brendan enough. His expertise in detailed assessments and thorough rehab plans has greatly benefited me over the years.<cite>Caelan Doris, Leinster and Ireland captain, testimonial on bocsportsphysio.com</cite></p>
+</div></section>
+
+<section id="team"><div class="wrap">
+<div class="lab">Team</div><h2>Who you will see</h2>
+<div class="team">
+<div><h3>Brendan</h3><span class="role">Founder, chartered physiotherapist (ISCP, CORU)</span>
+<p>Many years in private practice as a senior physio, and physio to the Dublin senior men's hurling team, the Irish men's and women's 7s teams and Ballyboden senior men's hurling. Seven seasons as an academy physio with Leinster Rugby, and a contractor for Sport Ireland.</p>
+<p>MSc in Musculoskeletal Sport Science and Health from Loughborough University, and a research masters from Trinity College on blood biomarkers in concussion.</p></div>
+<div><h3>Bebhinn</h3><span class="role">Sports and pelvic health physiotherapist</span>
+<p>Over 11 years as a physiotherapist, five of them in high-performance sport, including two years with the Irish women's international hockey team.</p>
+<p>Also a qualified women's health practitioner, with specialist training in pelvic floor conditions, pregnancy, postpartum return to sport and menstrual cycle health.</p></div>
+</div>
+<p class="quote" style="margin-top:26px">Being a runner I was constantly injured before I started working with Brendan. He helps identify the cause and delivers structured plans that have helped me run injury free for the past few years.<cite>Maeve O'Reilly, client testimonial on bocsportsphysio.com</cite></p>
+</div></section>
+
+<section id="clinics"><div class="wrap">
+<div class="lab">Clinics</div><h2>Two addresses, one team</h2>
+<div class="clin">
+<div><h3>Windmill Lane</h3><p style="margin:0;color:#b4c1c9">Perpetua Fitness, 2 Windmill Lane, Dublin 2, D02 F206. The flagship clinic, inside one of Dublin's strength and conditioning facilities.</p>
+<table><tr><td>Monday to Friday</td><td>7am to 8pm</td></tr><tr><td>Saturday and Sunday</td><td>Closed</td></tr></table>
+<p style="color:#b4c1c9;font-size:15px;margin:10px 0 0">On-street parking is available just outside the clinic.</p></div>
+<div><h3>Lennox Street</h3><p style="margin:0;color:#b4c1c9">The Lennox Building, Lennox St, Saint Kevin's, Dublin 2, D02 FK02.</p>
+<p style="color:#b4c1c9;font-size:15px">The site does not list hours for this clinic, so the team confirms them when you ask.</p></div>
+</div>
+<div style="margin-top:26px"><h3 style="font-size:22px">Getting to Windmill Lane</h3>
+<ul class="walk"><li>Grand Canal Dock<b>5 min walk</b></li><li>IFSC and Silicon Docks offices<b>5 to 10 min</b></li><li>Pearse Station<b>10 min walk</b></li><li>Trinity College Dublin<b>12 min walk</b></li><li>Luas Red Line<b>George's Dock, Mayor Square</b></li></ul>
+<p style="color:#b4c1c9;font-size:15px">Multiple Dublin Bus routes serve City Quay and Pearse Street.</p></div>
+<p style="margin-top:20px">Phone <a href="tel:+353877755346">087 775 5346</a> &middot; <a href="mailto:bocsportsphysio@gmail.com">bocsportsphysio@gmail.com</a> &middot; <a href="https://boc-sports-physio.eu1.cliniko.com/bookings#service">Book online with the clinic</a></p>
+</div></section>
+
+<section class="alt"><div class="wrap">
+<div class="ins"><h2>Insurance and receipts</h2>
+<p>The majority of health insurance policies give money back on physiotherapy sessions, depending on the insurer and policy, so the clinic suggests checking yours before you attend. There is tax relief on physiotherapy appointments, claimed when you file your tax return (see revenue.ie).</p>
+<p>After each appointment a PDF receipt is emailed to you, which insurers ask for.</p>
+<p><b>Cancellations:</b> the clinic needs at least 48 hours' notice to cancel or reschedule without a charge. Inside 48 hours, or for a no-show, the cancellation fee equals the appointment fee.</p></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+<div class="lab">FAQ</div><h2>Quick answers</h2>
+<details><summary>Where is the clinic?</summary><p>Perpetua Fitness, 2 Windmill Lane, Dublin 2, D02 F206, with a second clinic at The Lennox Building, Lennox St, Dublin 2, D02 FK02.</p></details>
+<details><summary>Is there parking?</summary><p>There is on-street parking just outside the Windmill Lane clinic.</p></details>
+<details><summary>How do I book?</summary><p>Online through the clinic's booking page, by phone on 087 775 5346, or by sending a request through the assistant here (demo only, nothing is sent).</p></details>
+<details><summary>Do you treat women's health and pelvic floor problems?</summary><p>Yes. Bebhinn is a sports and pelvic health physiotherapist, and the clinic has a Women's Health Physio page on its site.</p></details>
+<details><summary>I have an injury but I am not an athlete. Is this for me?</summary><p>The clinic describes itself as serving everyone from developers at the Docklands tech offices to rugby players, runners and people managing a chronic injury.</p></details>
+<details><summary>Do I need a GP referral?</summary><p>The clinic has an FAQ answer for this on its site, but this demo does not repeat it. The team can confirm on 087 775 5346.</p></details>
+</div></section>
+
+<footer><div class="wrap">Demo &middot; prepared by Gevorg Hovhannisyan<br>Facts on this page come from bocsportsphysio.com. Nothing you type in the assistant is sent anywhere.<br><a href="https://bocsportsphysio.com/windmill-lane-dublin-2">bocsportsphysio.com</a></div></footer>
+
+<button id="a-fab" type="button" aria-label="Open assistant">Ask BOC</button>
+<div id="a-panel" role="dialog" aria-label="BOC Sports Physio assistant"><div class="a-h"><div><b>BOC assistant</b><small>Demo. Sends nothing.</small></div><button id="a-x" type="button" aria-label="Close">&times;</button></div>
+<div id="a-log"></div><div id="a-chips"></div>
+<form id="a-form"><input id="a-in" autocomplete="off" placeholder="Type your question"><button type="submit">Send</button></form></div>
+<script>
+/* assistant engine: client-side only, sends nothing */
+(function(g){
+function norm(s){return String(s).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.replace(/(ing|ings|ed|es|s|ly)$/,function(m,x,o){return w.length-m.length>=3?'':m;});}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;var d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function tokens(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function tokScore(qt,kw){var k=stem(norm(kw));if(!k)return 0;
+ if(k.indexOf(' ')>-1){var parts=k.split(' ');var ok=parts.every(function(p){return qt.some(function(t){return t===p||(p.length>3&&lev(t,p)<=1);});});return ok?parts.length*2.2:0;}
+ for(var i=0;i<qt.length;i++){var t=qt[i];if(t===k)return 2;if(k.length>4&&t.length>4&&(k.indexOf(t)===0||t.indexOf(k)===0)&&Math.abs(k.length-t.length)<=3)return 1.6;var tol=k.length>=8?2:(k.length>=5?1:0);if(tol&&lev(t,k)<=tol)return 1.5;}
+ return 0;}
+function match(q,kb){var qt=tokens(q),best=null,bs=0;kb.forEach(function(e){var s=0;e.k.forEach(function(kw){s+=tokScore(qt,kw);});s*=(e.w||1);if(s>bs){bs=s;best=e;}});return bs>=1.5?best:null;}
+g.AsstEngine={norm:norm,match:match,lev:lev};
+if(typeof document==='undefined')return;
+g.AsstInit=function(C){
+ var $=function(i){return document.getElementById(i)};
+ var fab=$('a-fab'),pan=$('a-panel'),log=$('a-log'),inp=$('a-in'),chips=$('a-chips'),form=$('a-form');
+ var flow=null,data={};
+ function add(t,who){var d=document.createElement('div');d.className='m '+who;if(who==='b')d.innerHTML=t;else d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+ function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){say(c)};chips.appendChild(b);});}
+ function startFlow(){flow={i:0};data={};ask();}
+ function ask(){var s=C.flow[flow.i];add(s.q,'b');setChips(s.opts?s.opts.concat([C.cancel]):[C.cancel]);inp.placeholder=s.opts?C.pickHint:C.typeHint;}
+ function say(t){t=String(t).trim();if(!t)return;add(t,'u');inp.value='';
+  if(flow){if(norm(t)===norm(C.cancel)){flow=null;add(C.cancelled,'b');setChips(C.chips);return;}
+   var s=C.flow[flow.i];var v=t;if(s.opts){var f=null;s.opts.forEach(function(o){if(norm(o)===norm(t)||(norm(t).length>2&&norm(o).indexOf(norm(t))>-1))f=o;});if(!f){add(C.pickAgain,'b');return;}v=f;}
+   if(s.check&&!s.check(v)){add(s.err,'b');return;}
+   data[s.key]=v;flow.i++;if(flow.i<C.flow.length){ask();}else{var sum=C.flow.map(function(x){return '<b>'+x.label+':</b> '+esc(data[x.key]);}).join('<br>');flow=null;add(C.done(sum),'b');setChips(C.chips);inp.placeholder=C.typeHint;}return;}
+  if(C.bookRe.test(norm(t))&&!(C.noBook&&C.noBook.test(norm(t)))){startFlow();return;}
+  var m=match(t,C.kb);if(m){add(m.a,'b');if(m.book){}}else add(C.fallback,'b');setChips(C.chips);}
+ function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+ fab.onclick=function(){pan.classList.toggle('open');if(pan.classList.contains('open')&&!log.children.length){add(C.hello,'b');setChips(C.chips);}};
+ $('a-x').onclick=function(){pan.classList.remove('open')};
+ form.onsubmit=function(e){e.preventDefault();say(inp.value);};
+ window.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-ask]');if(t){e.preventDefault();pan.classList.add('open');if(!log.children.length){add(C.hello,'b');}say(t.getAttribute('data-ask'));}});
+};
+})(typeof window!=='undefined'?window:globalThis);
+(function(){
+var T='<a href="tel:+353877755346">087 775 5346</a>';
+var CONF='The team will confirm that: call '+T+' or email bocsportsphysio@gmail.com.';
+var kb=[
+{k:['hours','open','opening','close','closing','late','early','evening','when','time','times','saturday','sunday','weekend'],a:'Windmill Lane is open Monday to Friday 7am to 8pm, and closed on Saturday and Sunday. The site does not list hours for the Lennox Street clinic, so for that one '+CONF},
+{k:['where','address','location','locations','directions','find','windmill','windmill lane','perpetua','lennox','lennox street','dublin 2','map','clinic','clinics','docklands'],a:'Two clinics in Dublin 2. Windmill Lane: Perpetua Fitness, 2 Windmill Lane, D02 F206 (the flagship). Lennox Street: The Lennox Building, Lennox St, Saint Kevin\'s, D02 FK02.'},
+{k:['parking','park','car','on street'],a:'There is on-street parking just outside the Windmill Lane clinic. I do not have parking details for Lennox Street. '+CONF},
+{k:['luas','bus','dart','train','pearse','transport','get there','getting here','walk','public transport','tram'],a:'Windmill Lane is a short walk from Grand Canal Dock (5 minutes), the IFSC and Silicon Docks (5 to 10), Pearse Station (10) and Trinity College (12). The Luas Red Line stops at George\'s Dock and Mayor Square, and several Dublin Bus routes serve City Quay and Pearse Street.'},
+{k:['phone','call','number','contact','email','mail','reach','telephone','gmail'],a:'Call '+T+' or email bocsportsphysio@gmail.com.'},
+{k:['price','prices','pricing','cost','costs','how much','fee','fees','rate','rates','charge','charges'],a:'I do not have prices, they are shown when you book on the clinic\'s booking page. '+CONF},
+{k:['insurance','insurer','insured','health insurance','vhi','laya','irish life','rebate','refund','money back','claim','receipt','receipts','tax','tax relief','revenue'],a:'The majority of health insurance policies give money back on physiotherapy, but it depends on the insurer and policy, so check yours first. There is tax relief on physio appointments, claimed in your tax return (see revenue.ie). A PDF receipt is emailed after each appointment.'},
+{k:['cancel','cancellation','cancelling','reschedule','no show','missed','notice','48 hours'],a:'To cancel or reschedule without a charge the clinic needs at least 48 hours\' notice. Inside that window, or for a no-show, the cancellation fee equals the appointment fee and payment is not refundable. Confirmation and reminder emails are sent.'},
+{k:['referral','gp','doctor','referred','need a referral'],a:'The clinic answers this on its own FAQ, but I do not have the text. '+CONF},
+{k:['brendan','founder','owner','chartered','iscp','coru','qualified','qualification','experience'],a:'Brendan is the founder: a chartered physiotherapist (ISCP, CORU registered) with an MSc from Loughborough and a research masters from Trinity. He has been physio to the Dublin senior hurling team and the Irish 7s teams, spent seven seasons at Leinster Rugby\'s academy and contracts for Sport Ireland.'},
+{w:1.5,k:['bebhinn','women','womens health','pelvic','pelvic floor','postpartum','pregnancy','pregnant','menstrual','period','female'],a:'Bebhinn is a sports and pelvic health physiotherapist and a qualified women\'s health practitioner. Her specialist training covers pelvic floor conditions, pregnancy, postpartum return to sport and menstrual cycle health. Specific questions go to her directly: '+T+'.'},
+{w:1.5,k:['back','back pain','lower back','spine','disc','slipped disc','sciatica'],a:'Back pain is one of the injuries the clinic treats, with tailored treatment to relieve pain and restore function. I cannot tell what is behind your pain, so a physiotherapist will assess it.'},
+{w:1.5,k:['knee','acl','mcl','meniscus','runners knee','it band','cartilage','ligament'],a:'The clinic treats ACL and MCL tears, meniscus tears, runner\'s knee and IT band problems. Rehab uses strength testing with a Force Frame and power testing to track progress. A physiotherapist has to assess your own knee.'},
+{w:1.5,k:['shoulder','neck','upper limb','arm'],a:'Neck pain and shoulder injuries and rehab are both on the clinic\'s list, aiming at pain relief and restoring function. A physiotherapist assesses your case.'},
+{w:1.5,k:['hip','groin','hamstring','quad','quads','calf','achilles','tendon','tendinopathy','lower limb','muscle strain'],a:'The clinic treats hip and groin injuries, hamstring, quad and calf problems, Achilles issues and tendon injuries, with individual rehab plans. A physiotherapist decides what fits your injury.'},
+{w:1.5,k:['concussion','concusion','head injury','head'],a:'Concussion management is on the list, aimed at a safe return to sport and daily life. Brendan\'s research masters looked at blood biomarkers in concussion. I cannot judge symptoms, so please speak to a physiotherapist: '+T+'.'},
+{w:1.5,k:['arthritis','osteoarthritis','oa','stiff','joint pain'],a:'Osteoarthritis is on the list: treatment focuses on reducing pain and improving joint function.'},
+{k:['gym','rehab gym','strength','conditioning','s and c','strength and conditioning','weights','training','perpetua fitness','physio led'],a:'Windmill Lane includes a fully equipped rehabilitation gym, inside Perpetua Fitness. The clinic offers physio-led rehabilitation for long-term injuries, post-operative rehab and injury prevention, and strength and conditioning led by a physiotherapist.'},
+{k:['massage','sports massage','tight muscles','tension','deep tissue'],a:'Sports massage is offered to relieve tension and improve flexibility.'},
+{k:['dry needling','needling','needle','needles','trigger point','acupuncture'],a:'Dry needling targets trigger points to relieve tension, reduce pain and restore mobility. A physiotherapist decides whether it suits you.'},
+{k:['performance','consultancy','consult','athlete','athletes','sports performance','rugby','gaelic','hurling','run','running','runner','marathon'],a:'The clinic offers a sports performance consultancy covering training, recovery and mindset for athletes of all levels, and treats runners and team-sport players. The testimonials on the site include Leinster and Ireland players.'},
+{k:['services','service','what do you do','what services','treat','offer','list of services'],a:'Chartered physiotherapy, physio-led rehabilitation, strength and conditioning, sports performance consultancy, sports massage and dry needling. See the Services section above.'},
+{k:['first','first visit','new patient','arrive','expect','what to bring','bring','assessment','diagnosis'],a:'Treatment starts with an initial assessment and diagnosis, followed by a treatment and rehab plan. For what to bring and what happens on arrival '+CONF},
+{k:['online','booking','online booking','cliniko','confirmed','confirmation'],a:'The clinic takes bookings online (booking page linked in the Clinics section) and sends confirmation and reminder emails. You can also tell me what you need and I will write up a request for the team.'},
+{w:1,k:['pain','hurts','hurt','sore','ache','symptom','symptoms','diagnose'],a:'I cannot diagnose or advise on symptoms. A physiotherapist will assess it. <a href="#" data-ask="Book an appointment">Request an appointment</a>.'},
+{w:.8,k:['injured','injury','injuries'],a:'I cannot diagnose or advise on symptoms. A physiotherapist will assess it. <a href="#" data-ask="Book an appointment">Request an appointment</a>.'},
+{k:['hi','hello','hey','thanks','thank','good morning'],a:'Hello. Ask about hours, the two clinics, insurance, cancellation or what the team treats, or request an appointment.'}
+];
+var C={noBook:/(how much|price|cost|fee|hours|open|cancel|when can|insurance|claim|online|booking page|cliniko|receipt)/,kb:kb,bookRe:/\b(book|booking|appointment|appointments|schedule|reserve|request|apointment|apointments|boking|slot)\b/,
+hello:'Hi, I am the demo assistant for BOC Sports Physio. I answer from the clinic\'s own site and can take an appointment request. I cannot give medical advice or diagnose.',
+chips:['Request an appointment','Opening hours','Where are the clinics?','Insurance and receipts','Cancellation policy','What do you treat?'],
+fallback:'I do not have that. '+CONF+' For anything about your symptoms please speak to a physiotherapist.',
+cancel:'Cancel',cancelled:'No problem, request cancelled.',pickHint:'Tap an option',typeHint:'Type your question',pickAgain:'Please tap one of the options.',
+flow:[
+{key:'clinic',label:'Clinic',q:'Which clinic suits you?',opts:['Windmill Lane','Lennox Street','Either']},
+{key:'svc',label:'Reason',q:'What is it for?',opts:['Injury assessment','Back or neck','Knee','Shoulder','Hip, groin or leg','Running injury','Women\'s or pelvic health','Rehab gym / strength','Sports massage','Dry needling','Not sure']},
+{key:'who',label:'Physio',q:'Do you want a particular physio?',opts:['Brendan','Bebhinn','Any']},
+{key:'visit',label:'Visit type',q:'Have you been to BOC before?',opts:['First visit','Returning client']},
+{key:'tod',label:'Time of day',q:'What time of day suits you? The clinic is open weekdays.',opts:['Early (7am to 10am)','Midday','Evening (to 8pm)']},
+{key:'name',label:'Your name',q:'Your name?'},
+{key:'phone',label:'Phone',q:'Best phone number?',check:function(v){return v.replace(/\D/g,'').length>=7},err:'Please enter a phone number with at least 7 digits.'}],
+done:function(s){return 'Thank you. Your request is with the team (demo: nothing was really sent).<br>'+s+'<br>Please do not share medical details here. The team will confirm a time and answer anything about your injury.';}};
+if(typeof document!=='undefined')AsstInit(C);else globalThis.__C=C;
+var ch=typeof document!=='undefined'&&document.getElementById('chips');
+var AREAS=[["Back pain", "Back pain can disrupt your daily life and limit your movement. The physiotherapists use tailored treatment to relieve pain, restore function and help you move with confidence again. The clinic also has a dedicated lower back pain page."], ["Neck and shoulder", "Neck pain is treated with targeted work to relieve tension and restore mobility. Shoulder injuries and rehab focus on pain relief, restoring function and getting you back to peak performance."], ["Knee", "ACL and MCL tears, meniscus tears, runner's knee and IT band syndrome, and cartilage or ligament injuries. The approach starts with movement, strength and flexibility testing, then a tailored rehab plan. Strength gains are charted with Force Frame testing, and power progressions with Output testing."], ["Hip and groin", "Hip and groin pain can limit movement and performance. The aim is to find the root cause and build a personalised rehab plan."], ["Hamstring, quad, calf", "Hamstring injuries, quad strains and muscle imbalances, and tight or recurring calf pain. Rehab plans focus on strength, flexibility and injury prevention."], ["Achilles and tendons", "Achilles pain gets an evidence-based approach to reduce pain, improve strength and return to activity without setbacks. Tendon injuries get treatment plans for pain, strength and long-term recovery."], ["Osteoarthritis", "Everyday movement can feel stiff and painful. Treatment focuses on reducing pain, improving joint function and enhancing quality of life."], ["Concussion", "Comprehensive management strategies to help you return to sport and daily life safely, with a focus on long-term health."], ["Women's health", "Bebhinn is a sports and pelvic health physiotherapist with specialist training in pelvic floor conditions, pregnancy, postpartum return to sport and menstrual cycle health. The clinic has a dedicated women's health physio page."]];
+if(ch){var pn=document.getElementById('panel');
+function show(i){[].forEach.call(ch.children,function(x,j){x.classList.toggle('on',j===i)});var a=AREAS[i];pn.innerHTML='<h3>'+a[0]+'</h3><p>'+a[1]+'</p><p><a href="#" data-ask="Book an appointment">Request an appointment</a></p>';}
+ch.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;show(+b.getAttribute('data-i'));});show(0);}
+})();
+</script></body></html>

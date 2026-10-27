@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BodyForge Physical Therapy, Miami</title>
+<meta name="description" content="One-to-one physical therapy, strength and conditioning, sports rehab, Pilates and weekend recovery in Miami. Call the clinic or send a request.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=Martian+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a120d;--ink2:#2a1d15;--bone:#f4eee6;--bone2:#e9e0d4;--ember:#f2661f;--ember2:#c84a0b;--mute:#7b6c60;--line:#d8cbbb}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Archivo,system-ui,sans-serif;background:var(--bone);color:var(--ink);line-height:1.55;font-size:17px;overflow-x:hidden}
+.mono{font-family:'Martian Mono',ui-monospace,monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+img{max-width:100%;display:block}
+a{color:inherit}
+.w{width:100%;max-width:1120px;margin:0 auto;padding:0 18px}
+section{padding:64px 0}
+h1,h2,h3{font-weight:900;line-height:1.02;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,6vw,3.2rem);margin:10px 0 14px;max-width:16em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;background:var(--ember);color:#fff;font:800 .95rem Archivo;border:0;cursor:pointer;text-decoration:none;border-radius:4px}
+.btn:hover{background:var(--ember2)}
+.btn.ghost{background:transparent;border:2px solid currentColor;color:inherit}
+.btn.ghost:hover{background:#ffffff18}
+header{position:sticky;top:0;z-index:30;background:var(--ink);color:var(--bone);border-bottom:1px solid #ffffff22}
+.hb{display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:1120px;margin:0 auto;padding:10px 18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:40px;width:auto}
+.brand b{display:block;font-size:1.25rem;font-weight:900;letter-spacing:-.02em;line-height:1}
+.brand b em{color:var(--ember);font-style:normal}
+.brand small{display:block;font:400 .6rem 'Martian Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#c9bcae;margin-top:3px}
+.hb nav{display:none;gap:22px;font-size:.9rem;font-weight:600}
+.hb nav a{text-decoration:none;color:#d9cdbf}
+.hb nav a:hover{color:var(--ember)}
+.hb .btn{min-height:40px;padding:0 16px;font-size:.85rem}
+@media(min-width:860px){.hb nav{display:flex}}
+.hero{background:var(--ink);color:var(--bone);position:relative;overflow:hidden;padding:56px 0 64px}
+.hero::after{content:"";position:absolute;right:-160px;bottom:-200px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,var(--ember) 0,#f2661f00 68%);opacity:.5}
+.hero .w{position:relative;z-index:1}
+.hero h1{font-size:clamp(3rem,13vw,7rem);margin:16px 0 20px;max-width:9em}
+.hero h1 em{font-style:normal;color:var(--ember)}
+.hero p{font-size:1.15rem;max-width:34em;color:#e3d8cb}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.creds{display:grid;gap:1px;background:#ffffff22;margin-top:46px;border:1px solid #ffffff22}
+.creds div{background:var(--ink);padding:16px}
+.creds b{display:block;font-size:1.1rem}
+.creds span{color:#bdae9f;font-size:.85rem}
+@media(min-width:760px){.creds{grid-template-columns:repeat(3,1fr)}}
+.model{display:grid;gap:30px}
+.model .big{font-size:1.2rem;max-width:36em}
+.four{display:grid;gap:0;border-top:2px solid var(--ink)}
+.four div{padding:16px 0;border-bottom:1px solid var(--line);min-width:0}
+.four b{display:block;font-size:1.05rem}
+.four p{color:var(--mute);font-size:.95rem}
+@media(min-width:820px){.model{grid-template-columns:1fr 1fr}}
+.pick{background:var(--bone2)}
+.regions{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.reg{border:2px solid var(--ink);background:transparent;padding:10px 16px;font:700 .95rem Archivo;cursor:pointer;border-radius:999px}
+.reg[aria-pressed=true]{background:var(--ink);color:var(--bone)}
+.conds{display:grid;gap:8px;grid-template-columns:1fr;min-width:0}
+.conds li{list-style:none;background:var(--bone);padding:12px 14px;border-left:5px solid var(--ember);font-weight:600;min-width:0}
+@media(min-width:700px){.conds{grid-template-columns:1fr 1fr}}
+.note{margin-top:20px;max-width:42em;color:var(--mute);font-size:.95rem}
+.svc{border-top:2px solid var(--ink)}
+.s{display:grid;gap:10px;padding:26px 0;border-bottom:1px solid var(--line);min-width:0}
+.s .n{color:var(--ember)}
+.s h3{font-size:clamp(1.5rem,4vw,2.2rem)}
+.s p{max-width:38em}
+.s ul{list-style:none;margin-top:6px;display:grid;gap:6px;min-width:0}
+.s li{padding-left:18px;position:relative;font-size:.95rem}
+.s li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:3px;background:var(--ember)}
+@media(min-width:820px){.s{grid-template-columns:90px 1fr 1fr;gap:28px}}
+.rec{background:var(--ember);color:#fff}
+.rec h2{color:#fff}
+.rec .g{display:grid;gap:10px;margin-top:20px}
+.rec .g div{background:#00000026;padding:14px 16px;min-width:0}
+.rec .g b{display:block}
+.rec .g span{font-size:.88rem;opacity:.92}
+@media(min-width:760px){.rec .g{grid-template-columns:repeat(3,1fr)}}
+.team{display:grid;gap:26px}
+.team blockquote{font-size:1.25rem;font-weight:600;border-left:6px solid var(--ember);padding-left:16px;max-width:30em}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.badges span{background:var(--ink);color:var(--bone);padding:6px 12px}
+@media(min-width:820px){.team{grid-template-columns:1fr 1fr;align-items:center}}
+.rv{background:var(--ink);color:var(--bone)}
+.rvs{display:grid;gap:14px;margin-top:20px}
+.rvs figure{border:1px solid #ffffff2a;padding:20px;min-width:0}
+.rvs blockquote{font-size:1.05rem;font-weight:600}
+.rvs figcaption{margin-top:10px;color:#bdae9f;font-size:.85rem}
+@media(min-width:820px){.rvs{grid-template-columns:repeat(3,1fr)}}
+.visit{display:grid;gap:30px}
+.week{border-top:2px solid var(--ink)}
+.week div{display:flex;justify-content:space-between;gap:10px;padding:11px 4px;border-bottom:1px solid var(--line);font-weight:600;min-width:0}
+.week span{color:var(--mute);font-weight:400;text-align:right}
+.week .today{background:var(--ink);color:var(--bone);padding:11px 12px}
+.week .today span{color:#d9cdbf}
+.week .rc b::after{content:" Recovery";font:400 .65rem 'Martian Mono',monospace;color:var(--ember);letter-spacing:.06em;text-transform:uppercase}
+@media(min-width:820px){.visit{grid-template-columns:1fr 1fr}}
+.call{background:var(--bone2);padding:22px;margin-top:20px}
+.call a.num{display:block;font-size:clamp(1.8rem,7vw,2.6rem);font-weight:900;text-decoration:none;color:var(--ember2)}
+.prep{margin-top:10px;padding-left:18px;font-size:.93rem;color:var(--mute)}
+footer{background:var(--ink);color:#bdae9f;padding:30px 0 96px;font-size:.85rem;text-align:center}
+
+.first{background:var(--bone)}
+.flow{display:grid;gap:0;border-top:2px solid var(--ink);counter-reset:f;margin-top:22px}
+.flow li{list-style:none;counter-increment:f;display:grid;grid-template-columns:54px 1fr;gap:12px;padding:18px 0;border-bottom:1px solid var(--line);min-width:0}
+.flow li::before{content:"0" counter(f);font:600 .9rem 'Martian Mono',monospace;color:var(--ember2);padding-top:3px}
+.flow b{display:block;font-size:1.15rem}
+.flow p{color:var(--mute);font-size:.95rem}
+.who{display:grid;gap:12px;margin-top:26px}
+.who div{border:2px solid var(--ink);padding:16px;min-width:0}
+.who b{display:block;font-size:1.05rem;margin-bottom:4px}
+.who p{font-size:.92rem;color:var(--mute)}
+@media(min-width:820px){.who{grid-template-columns:repeat(3,1fr)}.flow{grid-template-columns:repeat(2,1fr);column-gap:40px}}
+/* widget */
+#bfFab{position:fixed;right:14px;bottom:14px;z-index:50;background:var(--ember);color:#fff;border:0;border-radius:4px;padding:0 20px;min-height:52px;font:800 .95rem Archivo;cursor:pointer;box-shadow:0 8px 24px #0006}
+#bfPanel{position:fixed;right:10px;bottom:76px;z-index:50;width:min(380px,calc(100vw - 20px));max-height:min(580px,calc(100vh - 96px));background:var(--bone);border:2px solid var(--ink);display:none;flex-direction:column;box-shadow:10px 10px 0 #00000040;overflow:hidden}
+#bfPanel.open{display:flex}
+.bh{background:var(--ink);color:var(--bone);padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+.bh b{font-weight:900}
+.bh button{background:none;border:0;color:var(--bone);font-size:1.5rem;cursor:pointer;line-height:1}
+#bfLog{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:160px}
+.m{max-width:88%;padding:9px 12px;font-size:.92rem;line-height:1.4;white-space:pre-line;overflow-wrap:anywhere}
+.m.b{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.m.u{background:var(--ink);color:var(--bone);align-self:flex-end}
+#bfChips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 0}
+#bfChips button{border:1.5px solid var(--ink);background:transparent;padding:5px 11px;font:700 .8rem Archivo;cursor:pointer;border-radius:999px}
+#bfChips button:hover{background:var(--ember);color:#fff;border-color:var(--ember)}
+#bfForm{display:flex;gap:8px;padding:10px 12px}
+#bfForm input{flex:1;min-width:0;border:2px solid var(--ink);background:#fff;padding:9px 12px;font:1rem Archivo}
+#bfForm button{border:0;background:var(--ink);color:#fff;padding:0 16px;font-weight:800;cursor:pointer}
+</style>
+</head>
+<body>
+<header>
+ <div class="hb">
+  <a class="brand" href="#top" aria-label="BodyForge Physical Therapy"><img src="img/bodyforge-pt-logo.png" alt="" width="36" height="40"><span><b>Body<em>Forge</em></b><small>Physical Therapy</small></span></a>
+  <nav><a href="#treat">What we treat</a><a href="#services">Services</a><a href="#recovery">Recovery</a><a href="#team">The team</a><a href="#visit">Visit</a></nav>
+  <a class="btn" href="tel:+13054561004">Call (305) 456-1004</a>
+ </div>
+</header>
+
+<main id="top">
+<div class="hero">
+ <div class="w">
+  <span class="mono" style="color:var(--ember)">Doctor of Physical Therapy &middot; Miami</span>
+  <h1>One patient <em>at a time.</em></h1>
+  <p>Every session is one-to-one with a licensed clinician, start to finish. The clinic finds what is actually holding you back, builds a plan around it, and measures again so you can see it working.</p>
+  <div class="row"><button class="btn" data-ask>Send a request to the clinic</button><a class="btn ghost" href="#treat">See what we treat</a></div>
+  <div class="creds">
+   <div><span class="mono" style="color:var(--ember)">Credential</span><b>PT, DPT</b><span>Doctor of Physical Therapy on staff</span></div>
+   <div><span class="mono" style="color:var(--ember)">Appointment</span><b>One-to-one</b><span>Same clinician, first visit to last</span></div>
+   <div><span class="mono" style="color:var(--ember)">Faculty role</span><b>Program Director</b><span>Geriatrics group, Florida Physical Therapy Association</span></div>
+  </div>
+ </div>
+</div>
+
+<section>
+ <div class="w model">
+  <div>
+   <span class="mono" style="color:var(--ember2)">01 / The model</span>
+   <h2>Most physical therapy is three patients an hour. This one isn't.</h2>
+   <p class="big">You will not be left on a table with a heat pack while somebody else runs the room. Your plan is built around what your body is actually doing, not printed off a sheet for your diagnosis.</p>
+  </div>
+  <div class="four">
+   <div><b>A proper first look</b><p>How far the joint moves, how strong it is, how much it can handle, and how everything around it is working.</p></div>
+   <div><b>A plan on day one</b><p>Exercises start at the first visit. You leave knowing what to do at home and why it helps.</p></div>
+   <div><b>Hands-on treatment</b><p>Massage, joint work and soft-tissue release to get the movement back. The exercises make it stay.</p></div>
+   <div><b>Progress you can see</b><p>Goals set on day one and checked again, tracked and logged every session.</p></div>
+   <div><b>Machines help, they don't do the work</b><p>Electrical stimulation, TENS and hot or cold packs support the treatment.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="first">
+ <div class="w">
+  <span class="mono" style="color:var(--ember2)">What a first visit looks like</span>
+  <h2>From the first call to a plan in your hands</h2>
+  <ol class="flow">
+   <li><div><b>You call, someone answers</b><p>A couple of minutes about what happened and what you want back. You will know before you hang up whether this is the right place.</p></div></li>
+   <li><div><b>A proper first look</b><p>Range of motion, strength, load tolerance and the tissues around the sore spot, not just the spot that hurts.</p></div></li>
+   <li><div><b>Your plan, that day</b><p>Exercises start at the first visit, with what to do at home and why it helps.</p></div></li>
+   <li><div><b>Hands-on work</b><p>Massage, joint work and soft-tissue release where it helps, with machines only in a supporting role.</p></div></li>
+   <li><div><b>Measured again</b><p>Clear goals from day one, checked later. Progress is tracked and logged every session.</p></div></li>
+   <li><div><b>Keep it from coming back</b><p>At the end you know what to keep doing so the problem does not return.</p></div></li>
+  </ol>
+  <div class="who">
+   <div><b>Older patients</b><p>Rebuilding the confidence to walk without a stick. The founder leads the Geriatrics group of the Florida Physical Therapy Association.</p></div>
+   <div><b>Weekend athletes</b><p>Keeping training through an injury, then returning on test results rather than on the calendar.</p></div>
+   <div><b>Pro-level demands</b><p>The founder has worked with NFL players and UFC fighters. Different needs, same approach: find it, work on it, measure it again.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="pick" id="treat">
+ <div class="w">
+  <span class="mono" style="color:var(--ember2)">02 / Scope of practice</span>
+  <h2>Pick where it hurts</h2>
+  <p class="note" style="margin:0">Everything listed here is treated at the clinic, whether it started with surgery, years of wear, a fall or a weekend that got out of hand.</p>
+  <div class="regions" id="regions"></div>
+  <ul class="conds" id="conds"></ul>
+  <p class="note">Not sure what yours is called? Describe it when you call and you will get a straight answer about whether this is the right place for it. This page cannot tell you what is wrong, only the clinician can.</p>
+ </div>
+</section>
+
+<section id="services">
+ <div class="w">
+  <span class="mono" style="color:var(--ember2)">03 / What you can book</span>
+  <h2>Four ways in. One clinician throughout.</h2>
+  <div class="svc">
+   <div class="s"><span class="n mono">Service 01</span><div><h3>Personalized physical therapy</h3><p style="margin-top:8px">The heart of the practice. One-to-one sessions built around your problem and your goal, so you get back to what you want to do.</p></div><ul><li>A full one-to-one visit, every time</li><li>Your exercise plan on the first day</li><li>Massage, joint work, soft-tissue release</li><li>Goals tracked and logged each session</li><li>E-stim, TENS, hot or cold when they help</li><li>What to keep doing once you finish</li></ul></div>
+   <div class="s"><span class="n mono">Service 02</span><div><h3>Strength &amp; conditioning</h3><p style="margin-top:8px">Getting stronger, safely, with someone who knows what your joints can take. Built to become a habit rather than a six-week burst.</p></div><ul><li>Training in the clinic, with a plan written for you</li><li>Train on your own schedule at your gym, with text access to ask questions</li><li>Prehab: screening to spot what is most likely to injure you</li></ul></div>
+   <div class="s"><span class="n mono">Service 03</span><div><h3>Sports injury rehab</h3><p style="margin-top:8px">Back to competing with confidence. Testing says when you are ready, while the rest of you keeps training so you do not lose the fitness you built.</p></div><ul><li>Field sports</li><li>Court sports</li><li>Water sports</li><li>Combat sports</li><li>Return to play is based on test results, not the calendar</li></ul></div>
+   <div class="s"><span class="n mono">Service 04</span><div><h3>One-on-one Pilates</h3><p style="margin-top:8px">Taught one-to-one by a Polestar-educated instructor who is also a doctor of physical therapy, at whatever level you walk in with.</p></div><ul><li>Mat, reformer, trapeze and spine corrector in the studio</li><li>Chair and ladder barrel coming soon</li><li>Adapted for long-standing back pain or thinning bones</li><li>All levels, including first-timers</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section class="rec" id="recovery">
+ <div class="w">
+  <span class="mono">04 / New at BodyForge</span>
+  <h2>Professional recovery. Thirty minutes.</h2>
+  <p style="max-width:38em">Weekend sessions run by the same clinical team that handles the rehab. Recovery with a clinical edge, not a spa. In, reset, back to your day.</p>
+  <div class="g">
+   <div><b>Manual massage</b><span>Soft-tissue work through tightened muscle and fascia</span></div>
+   <div><b>Assisted stretching</b><span>Someone else holds the position for more range</span></div>
+   <div><b>Joint mobilization</b><span>Graded pressure to restore glide</span></div>
+   <div><b>Cupping</b><span>Suction that lifts the tissue</span></div>
+   <div><b>Theragun</b><span>Percussive therapy for a quick edge-off</span></div>
+   <div><b>Normatec compression</b><span>Boots that flush the legs after a heavy week</span></div>
+  </div>
+  <div class="row"><span class="mono" style="align-self:center">Saturday 7:00 am to 2:00 pm &middot; Sunday 1:00 pm to 7:00 pm &middot; by appointment, no lock-in</span></div>
+ </div>
+</section>
+
+<section id="team">
+ <div class="w team">
+  <div>
+   <span class="mono" style="color:var(--ember2)">05 / Who treats you</span>
+   <h2>Dr. David Perez-Espinosa</h2>
+   <p class="note" style="margin:0;color:var(--ink)">PT, DPT &middot; Founder. He has worked with older patients rebuilding the confidence to walk without a stick, weekend athletes, NFL players and UFC fighters. What they need differs; the approach does not: find the problem, work on it, measure it again.</p>
+   <div class="badges mono"><span>DPT</span><span>FPTA geriatrics Program Director</span><span>Polestar Pilates</span><span>S&amp;C specialist</span></div>
+  </div>
+  <blockquote>"Empower individuals through personalized physical therapy and training that fosters wellness, resilience, and a balanced lifestyle."<p class="mono" style="margin-top:12px;color:var(--mute)">The BodyForge mission, in his words</p></blockquote>
+ </div>
+ <div class="w"><p class="note">The practice has grown, the rule has not: you are matched with the clinician who fits what you are dealing with, and you stay with that person from your first visit to your last.</p></div>
+</section>
+
+<section class="rv">
+ <div class="w">
+  <span class="mono" style="color:var(--ember)">06 / In their words</span>
+  <h2>Three patients, unedited</h2>
+  <div class="rvs">
+   <figure><blockquote>"After just five weeks of working with David, her progress was so remarkable that even our orthopedic surgeon was impressed."</blockquote><figcaption>Shumin Yin and Yiqin Zuo &middot; knee replacement, age 80</figcaption></figure>
+   <figure><blockquote>"I felt strong, empowered and like I was in the best shape I've been in years."</blockquote><figcaption>Diane H. &middot; hip replacement, now in knee rehab</figcaption></figure>
+   <figure><blockquote>"He set me up with the tools and knowledge to continue improving and avoid injuries."</blockquote><figcaption>Maria Rossi &middot; knee injury, returned to running</figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<section id="visit">
+ <div class="w visit">
+  <div>
+   <span class="mono" style="color:var(--ember2)">07 / Take the first step</span>
+   <h2>Call the clinic. Talk to a person.</h2>
+   <p class="note" style="margin:0;color:var(--ink)">Appointments are arranged on the phone: two minutes of hearing what happened and what you are trying to get back to tells the clinic more than any set of boxes.</p>
+   <div class="call"><a class="num" href="tel:+13054561004">(305) 456-1004</a><span class="mono">info@bodyforgept.com &middot; IG @bodyforge.pt</span>
+    <ul class="prep"><li>What is going on, and roughly how long it has been</li><li>Any surgery, and the date it happened</li><li>A referral or imaging report, if a doctor gave you one</li><li>What you are trying to get back to doing</li></ul>
+    <div class="row"><button class="btn" data-ask>Prefer to write? Leave a request</button></div>
+   </div>
+  </div>
+  <div>
+   <span class="mono" style="color:var(--ember2)">08 / Finding us</span>
+   <h2 style="font-size:clamp(1.6rem,5vw,2.4rem)">3600 West Flagler Street, Miami, FL 33135</h2>
+   <p class="note" style="margin:8px 0 18px;color:var(--ink)">Park inside the gated building area. Take the elevator to the second floor.</p>
+   <div class="week" id="week"></div>
+   <p class="note">Weekends are Recovery Program sessions only, by appointment. Physical therapy runs Monday to Friday.</p>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="w">&copy; BodyForge Physical Therapy &middot; Demo &middot; prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="bfFab" aria-expanded="false">Ask BodyForge</button>
+<div id="bfPanel" role="dialog" aria-label="BodyForge assistant">
+ <div class="bh"><b>BodyForge assistant</b><button id="bfX" aria-label="Close">&times;</button></div>
+ <div id="bfLog"></div>
+ <div id="bfChips"></div>
+ <form id="bfForm"><input id="bfIn" placeholder="Ask about services, hours, parking..." autocomplete="off"><button>Send</button></form>
+</div>
+
+<script>
+/*KB*/
+var REG={
+ "Knee":["Knee replacement (after surgery)","ACL, MCL or LCL surgery (after surgery)","ACL, MCL or LCL sprains and tears","Meniscus and cartilage surgery","Runner's knee (kneecap pain)","Knee arthritis and bursitis","Recovery after a broken bone","Thigh and hamstring tears"],
+ "Hip & pelvis":["Hip replacement","Hip labral tears","SI joint pain (low back and pelvis)","Hip bursitis and tendon pain","Sciatica","Hip arthritis","Groin and hip strains"],
+ "Shoulder & elbow":["Shoulder replacement","Rotator cuff tears and repairs","Rotator cuff pain and pinching","Shoulder labral tears","Tennis elbow","Golfer's elbow","Frozen shoulder and shoulder arthritis"],
+ "Spine & neck":["Low back pain","Neck pain","Recovery after spinal fusion","An unstable or giving-way back","Sciatica and nerve pain down the leg","SI joint pain","Desk and posture-related neck strain"],
+ "Foot & ankle":["Plantar fasciitis","Achilles tendonitis","Ankle sprains and strains","Recovery after a broken bone","Calf and Achilles tears","Foot and ankle arthritis"],
+ "Balance & bone health":["Vertigo and spinning sensations (BPPV)","Inner-ear balance problems","Unsteadiness and fear of falling","Balance after a stroke or head injury","Osteoporosis and thinning bones","Arthritis in more than one joint"],
+ "Neurological":["Parkinson's disease","Foot drop","Ehlers-Danlos syndrome"]
+};
+var HOURS=[["Monday","7:00 am - 4:00 pm",0],["Tuesday","10:00 am - 7:00 pm",0],["Wednesday","7:00 am - 4:00 pm",0],["Thursday","10:00 am - 7:00 pm",0],["Friday","7:00 am - 4:00 pm",0],["Saturday","7:00 am - 2:00 pm",1],["Sunday","1:00 pm - 7:00 pm",1]];
+var KB=[
+ {k:["hello","hi","hey","good morning"],a:"Hi, I can answer questions about the clinic, services, hours and location, or take a request for the team to call you back."},
+ {k:["hours","open","opening","schedule","when are you","close","closing","time"],a:"Physical therapy: Mon, Wed, Fri 7 am to 4 pm; Tue, Thu 10 am to 7 pm. Recovery Program only on weekends: Saturday 7 am to 2 pm, Sunday 1 pm to 7 pm, by appointment."},
+ {k:["where","address","location","directions","flagler","find you","map","miami"],a:"3600 West Flagler Street, Miami, FL 33135."},
+ {k:["park","parking","garage","elevator","floor","gated"],a:"Park inside the gated building area and take the elevator to the second floor."},
+ {k:["phone","call","number","contact","email","mail","reach","instagram"],a:"Call (305) 456-1004 or write to info@bodyforgept.com. Instagram: @bodyforge.pt. Appointments are arranged by phone."},
+ {k:["book","booking","appointment","schedule visit","make appointment","new patient","first visit","request","sign up","see someone"],a:"__BOOK__"},
+ {k:["physical therapy","pt","therapy","rehabilitation","one on one","one to one","session"],a:"Physical therapy here is one-to-one with a licensed clinician for the whole visit. You get a full assessment, a plan and exercises on day one, hands-on treatment, and progress logged every session."},
+ {k:["strength","conditioning","training","gym","prehab","workout","stronger","personal training"],a:"Strength & conditioning comes in three forms: training in the clinic, a plan you follow at your own gym with text access to ask questions (pay as you go, no subscription), and prehab screening to catch what might injure you."},
+ {k:["sport","athlete","sports injury","return to play","compete","soccer","football","tennis","boxing","mma","swimming","basketball"],a:"Sports injury rehab covers field, court, water and combat sports. Return to play is decided on test results, not on the calendar."},
+ {k:["pilates","reformer","trapeze","mat","studio","polestar"],a:"One-on-one Pilates is taught by a Polestar-educated instructor who is also a doctor of physical therapy. The studio has mat, reformer, trapeze and spine corrector; chair and ladder barrel are coming soon. All levels welcome."},
+ {k:["recovery","massage","cupping","theragun","normatec","stretching","weekend","saturday","sunday","compression","recovery program"],a:"The Recovery Program is a 30-minute weekend session: manual massage, assisted stretching, joint mobilization, cupping, Theragun and Normatec compression. Saturday 7 am to 2 pm, Sunday 1 pm to 7 pm, by appointment, no lock-in."},
+ {k:["price","cost","how much","fee","rate","pay","founding","dollar","expensive","self pay","cash"],a:"For the Recovery Program the site lists single sessions from $85 and $49 for a first session while founding places last. For physical therapy fees, please call (305) 456-1004 and the team will tell you."},
+ {k:["insurance","insured","medicare","aetna","cigna","coverage","covered","bcbs","blue cross","united"],a:"I don't have insurance details, so the team will confirm them. Please call (305) 456-1004 and ask before you book."},
+ {k:["doctor","david","founder","perez","espinosa","who treats","therapist","clinician","staff","team"],a:"The founder is Dr. David Perez-Espinosa, PT, DPT. He is Program Director of the Geriatrics Special Interest Group of the Florida Physical Therapy Association and a Polestar-educated Pilates instructor. You are matched with the clinician who fits your problem and stay with them."},
+ {k:["knee","acl","mcl","lcl","meniscus","runner","patella"],a:"Knee care here includes replacement and ligament or meniscus surgery recovery, sprains and tears, runner's knee, arthritis and bursitis, and hamstring tears. I cannot tell you what is wrong with your knee; the clinician does that at the first visit."},
+ {k:["hip","pelvis","labral","sciatica","groin","si joint"],a:"Hip and pelvis care includes hip replacement, labral tears, SI joint pain, bursitis, sciatica, hip arthritis and groin strains."},
+ {k:["shoulder","elbow","rotator","cuff","frozen","golfer"],a:"Shoulder and elbow care includes replacement, rotator cuff tears and pain, labral tears, tennis and golfer's elbow, and frozen shoulder."},
+ {k:["back","spine","neck","spinal","fusion","posture","desk","lumbar","disc"],a:"Spine and neck care includes low back pain, neck pain, recovery after spinal fusion, an unstable back, nerve pain down the leg and posture-related neck strain."},
+ {k:["foot","ankle","plantar","achilles","fasciitis","heel","calf"],a:"Foot and ankle care includes plantar fasciitis, Achilles tendonitis, ankle sprains, calf and Achilles tears and arthritis."},
+ {k:["balance","dizzy","dizziness","vertigo","bppv","fall","falls","unsteady","osteoporosis","bone","stroke"],a:"The clinic treats vertigo (BPPV), inner-ear balance problems, unsteadiness and fear of falling, balance after stroke or head injury, and osteoporosis. A clinician will assess you first, this page cannot diagnose."},
+ {k:["parkinson","neurological","neuro","foot drop","ehlers","danlos","eds"],a:"Neurological care covers Parkinson's disease, foot drop and Ehlers-Danlos syndrome, focused on gait, balance, joint control and strength. Plans are rebuilt as the condition changes rather than run to a fixed number of visits."},
+ {k:["surgery","surgical","operation","after surgery","replacement","post op","postop"],a:"Post-surgical rehab includes knee, hip and shoulder replacement, ACL and meniscus surgery, rotator cuff repair, spinal fusion and fracture recovery. Bring the surgery date and any imaging report when you call."},
+ {k:["referral","prescription","imaging","mri","xray","x ray","bring","prepare","need"],a:"Worth having to hand: what is going on and for how long, any surgery and its date, a referral or imaging report if a doctor gave you one, and what you want to get back to doing."},
+ {k:["pain","hurt","hurts","diagnose","diagnosis","what is wrong","injury","injured","sore"],a:"I can't diagnose or advise on what is causing pain. The clinician assesses you at the first visit. Tell the team what is going on when you call (305) 456-1004."},
+ {k:["old","older","elderly","senior","geriatric","mother","father","parent","80","age"],a:"Dr. Perez-Espinosa leads the Geriatrics group of the Florida Physical Therapy Association and has worked with older patients rebuilding confidence to walk, including knee replacement recovery."},
+ {k:["membership","lock in","contract","commitment","cancel"],a:"The Recovery Program has no lock-in: start with a single session. Membership exists because people ask for it."},
+ {k:["review","testimonial","patients say","rating"],a:"Patients on the site include a knee replacement at age 80, a hip replacement who moved on to knee rehab, and a runner back after a knee injury."}
+];
+var FALL="I don't have that yet, so the team will confirm it. Please call (305) 456-1004 or write to info@bodyforgept.com.";
+function norm(s){return String(s).toLowerCase().replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim()}
+function stem(w){return w.length>3?w.replace(/(ing|ed|es|s)$/,""):w}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i]}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n]}
+function wordHit(t,k){t=stem(t);k=stem(k);if(t===k)return 1;if(k.length>=5&&t.length>=4&&lev(t,k)<=(k.length>=9?2:1))return .9;return 0}
+function score(q,e){var qn=" "+norm(q)+" ",toks=qn.trim().split(" "),s=0;e.k.forEach(function(k){var kn=norm(k);if(kn.indexOf(" ")>0){if(qn.indexOf(" "+kn)>-1)s+=2.5}else{for(var i=0;i<toks.length;i++){var h=wordHit(toks[i],kn);if(h){s+=h*(kn.length>=5?1.5:1);break}}}});return s}
+function answer(q){var best=null,bs=0;KB.forEach(function(e){var s=score(q,e);if(s>bs){bs=s;best=e}});return bs>=1?best.a:null}
+/*ENDKB*/
+(function(){
+if(typeof document==="undefined")return;
+var $=function(s){return document.querySelector(s)};
+var rg=$("#regions"),cd=$("#conds");
+function reg(r){Array.prototype.forEach.call(rg.children,function(b){b.setAttribute("aria-pressed",b.textContent===r)});cd.innerHTML=REG[r].map(function(c){return "<li>"+c+"</li>"}).join("")}
+Object.keys(REG).forEach(function(r){var b=document.createElement("button");b.className="reg";b.textContent=r;b.onclick=function(){reg(r)};rg.appendChild(b)});
+reg("Knee");
+var td=(new Date().getDay()+6)%7;
+$("#week").innerHTML=HOURS.map(function(h,i){return "<div class='"+(i===td?"today ":"")+(h[2]?"rc":"")+"'><b>"+h[0]+"</b><span>"+h[1]+"</span></div>"}).join("");
+var P=$("#bfPanel"),L=$("#bfLog"),C=$("#bfChips"),F=$("#bfForm"),I=$("#bfIn"),fab=$("#bfFab");
+function say(t,w){var d=document.createElement("div");d.className="m "+w;d.textContent=t;L.appendChild(d);L.scrollTop=L.scrollHeight}
+function chips(a){C.innerHTML="";a.forEach(function(t){var b=document.createElement("button");b.type="button";b.textContent=t;b.onclick=function(){input(t)};C.appendChild(b)})}
+var home=["Request an appointment","Hours","Where are you?","Services","Recovery Program"];
+var flow=null,data={};
+var STEPS=[
+ {q:"Which area is this about?",o:["Knee","Hip","Shoulder or elbow","Back or neck","Foot or ankle","Balance","Something else"],k:"area"},
+ {q:"Was there surgery?",o:["Yes, recently","Yes, a while ago","No surgery"],k:"surg"},
+ {q:"What do you want to get back to doing? (a few words)",free:true,k:"goal"},
+ {q:"Which service are you interested in?",o:["Physical therapy","Strength & conditioning","Sports rehab","Pilates","Weekend recovery"],k:"svc"},
+ {q:"Best days to be called?",o:["Mon / Wed / Fri","Tue / Thu","Any weekday"],k:"day"},
+ {q:"Your name and phone number for the clinic to call?",free:true,k:"contact"}
+];
+function ask(i){flow=i;var s=STEPS[i];say(s.q,"b");chips(s.o||[])}
+function finish(){flow=null;say("Thank you. I have noted: "+data.area+", "+data.surg+", goal: "+data.goal+", "+data.svc+", "+data.day+".\nSent to the team. The clinic will call "+data.contact+" to arrange your visit. (Demo: nothing is actually sent. This does not replace a clinical assessment.)","b");chips(home)}
+function input(t){say(t,"u");
+ if(flow!==null){var s=STEPS[flow];data[s.k]=t;if(flow+1<STEPS.length)ask(flow+1);else finish();return}
+ var n=norm(t);
+ if(/request an appointment|book|appointment|new patient/.test(n)){data={};say("Happy to pass a request to the clinic. A few quick questions. I will not ask for medical details beyond what helps them prepare.","b");ask(0);return}
+ var a=answer(t);
+ if(a==="__BOOK__"){data={};ask(0);return}
+ say(a||FALL,"b");chips(home)}
+function open(){P.classList.add("open");fab.setAttribute("aria-expanded","true");if(!L.children.length){say("Hi! Ask me about services, hours, parking, or leave a request for the clinic to call you. I can't give medical advice.","b");chips(home)}}
+fab.onclick=function(){P.classList.contains("open")?P.classList.remove("open"):open()};
+$("#bfX").onclick=function(){P.classList.remove("open")};
+F.onsubmit=function(e){e.preventDefault();var v=I.value.trim();if(!v)return;I.value="";input(v)};
+Array.prototype.forEach.call(document.querySelectorAll("[data-ask]"),function(b){b.onclick=function(){open();data={};if(flow===null){say("I would like to leave a request","u");ask(0)}}});
+})();
+</script>
+</body>
+</html>

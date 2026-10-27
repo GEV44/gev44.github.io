@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VanCity Physio | Downtown and Fairview, Vancouver</title>
+<meta name="description" content="Demo page for VanCity Physio with an assistant that answers from the clinic's own site.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#002e4c;--navy2:#0a4468;--cream:#f6f1e7;--paper:#fffdf8;--or:#ff6a2b;--or2:#e5521a;--ink:#10202b;--mut:#5a6b78;--line:#e3dccd;--mint:#d9efe7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+img{max-width:100%}a{color:var(--navy2)}
+h1,h2,h3,.cond{font-family:'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1;margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+header{background:var(--navy);position:sticky;top:0;z-index:30;border-bottom:3px solid var(--or)}
+.hd{display:flex;align-items:center;gap:12px;padding:8px 16px;max-width:1120px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand img{width:54px;height:54px;border-radius:50%;background:#fff;padding:2px;display:block;flex:none}
+.brand span{color:#fff;font:700 19px 'Barlow Condensed',sans-serif;text-transform:uppercase;line-height:1.05;letter-spacing:.04em}
+.brand small{display:block;color:#9cc2dc;font:500 11px Inter;text-transform:none;letter-spacing:0}
+nav{margin-left:auto;display:none;gap:18px}
+nav a{color:#dbe9f3;text-decoration:none;font-weight:600;font-size:14px}
+nav a:hover{color:#fff}
+.btn{display:inline-block;background:var(--or);color:#fff;border:0;border-radius:6px;padding:12px 20px;font:700 17px 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--or2)}
+.btn.ghost{background:transparent;border:2px solid #fff;padding:10px 18px}
+.hd .btn{margin-left:auto;padding:9px 14px;font-size:15px}
+@media(min-width:860px){nav{display:flex}.hd .btn{margin-left:8px}}
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden;padding:38px 0 70px}
+.hero:before{content:"";position:absolute;right:-120px;top:-120px;width:460px;height:460px;border-radius:50%;border:60px solid rgba(255,106,43,.14)}
+.hero:after{content:"";position:absolute;left:-90px;bottom:-130px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.04)}
+.hg{display:grid;gap:28px;position:relative;z-index:1}
+.hg>*{min-width:0}
+.eyebrow{display:inline-block;background:var(--or);color:#fff;padding:3px 10px;font:700 14px 'Barlow Condensed';letter-spacing:.1em;text-transform:uppercase;border-radius:3px}
+.hero h1{font-size:clamp(44px,11vw,84px);font-weight:800;margin:12px 0}
+.hero h1 em{font-style:normal;color:var(--or)}
+.hero p.lead{font-size:18px;color:#cfe0ec;max-width:520px;margin:0 0 20px}
+.hbtns{display:flex;gap:10px;flex-wrap:wrap}
+.cards{display:grid;gap:12px;min-width:0}
+.loc{background:var(--paper);color:var(--ink);border-radius:12px;padding:16px;border-left:8px solid var(--or);min-width:0}
+.loc h3{font-size:26px;color:var(--navy)}
+.loc p{margin:6px 0;font-size:14.5px}
+.loc .tag{font:700 11px Inter;letter-spacing:.1em;color:var(--or2);text-transform:uppercase}
+.loc a.book{font-weight:700}
+@media(min-width:860px){.hg{grid-template-columns:1.2fr 1fr;align-items:center}.hero{padding:60px 0 90px}}
+.strip{background:var(--or);color:#fff;overflow:hidden}
+.strip div{display:flex;flex-wrap:wrap;gap:6px 26px;padding:10px 16px;max-width:1120px;margin:0 auto;font:700 17px 'Barlow Condensed';letter-spacing:.06em;text-transform:uppercase}
+section{padding:54px 0}
+section h2{font-size:clamp(34px,7vw,52px);color:var(--navy);margin-bottom:8px}
+.sub{color:var(--mut);max-width:620px;margin:0 0 24px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.tabs button{border:2px solid var(--navy);background:transparent;color:var(--navy);border-radius:99px;padding:6px 14px;font:700 16px 'Barlow Condensed';letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
+.tabs button.on{background:var(--navy);color:#fff}
+.sv{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr))}
+.sv div{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px;min-width:0}
+.sv b{display:block;font:700 22px 'Barlow Condensed';text-transform:uppercase;color:var(--navy);line-height:1.1}
+.sv span{font-size:14px;color:var(--mut)}
+.sv div[hidden]{display:none}
+.how{background:var(--navy);color:#fff}
+.how h2{color:#fff}
+.steps{display:grid;gap:14px;counter-reset:s}
+.steps div{position:relative;padding:16px 16px 16px 66px;background:rgba(255,255,255,.07);border-radius:10px;min-width:0}
+.steps div:before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:12px;width:40px;height:40px;border-radius:50%;background:var(--or);font:800 24px 'Barlow Condensed';display:grid;place-items:center}
+.steps b{font:700 22px 'Barlow Condensed';text-transform:uppercase;display:block}
+.steps span{color:#cfe0ec;font-size:14.5px}
+@media(min-width:860px){.steps{grid-template-columns:repeat(4,1fr)}}
+.pay{display:grid;gap:12px}
+.pay div{background:var(--mint);border-radius:12px;padding:18px;min-width:0}
+.pay b{font:700 24px 'Barlow Condensed';text-transform:uppercase;color:var(--navy);display:block}
+@media(min-width:760px){.pay{grid-template-columns:repeat(3,1fr)}}
+table{border-collapse:collapse;width:100%;background:var(--paper);border-radius:10px;overflow:hidden;font-size:15px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--navy);color:#fff;font:700 18px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.05em}
+.q{background:var(--paper);border-left:6px solid var(--or);padding:16px 18px;border-radius:0 10px 10px 0;font-size:17px;margin:0}
+.q cite{display:block;margin-top:6px;font-size:13px;color:var(--mut);font-style:normal}
+details{background:var(--paper);border:1px solid var(--line);border-radius:10px;margin:0 0 8px;padding:0 14px}
+summary{cursor:pointer;padding:13px 0;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary:after{content:"+";color:var(--or2);font-size:22px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{margin:0 0 14px;color:#33444f}
+.two{display:grid;gap:22px}
+@media(min-width:860px){.two{grid-template-columns:1fr 1fr}}
+.two>*{min-width:0}
+footer{background:#00203a;color:#9cb7cb;padding:26px 0 90px;font-size:14px}
+footer a{color:#cfe0ec}
+#a-fab{position:fixed;right:14px;bottom:14px;z-index:40;background:var(--or);color:#fff;border:0;border-radius:99px;padding:13px 20px;font:700 18px 'Barlow Condensed';letter-spacing:.06em;text-transform:uppercase;box-shadow:0 8px 24px rgba(0,30,50,.4);cursor:pointer}
+#a-panel{position:fixed;right:10px;bottom:70px;z-index:41;width:min(380px,calc(100vw - 20px));height:min(540px,calc(100vh - 90px));background:#fff;border-radius:16px;box-shadow:0 18px 50px rgba(0,30,50,.45);display:none;flex-direction:column;overflow:hidden}
+#a-panel.open{display:flex}
+.a-h{background:var(--navy);color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--or)}
+.a-h b{font:700 20px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.05em;display:block}.a-h small{color:#9cc2dc}
+#a-x{background:none;border:0;color:#fff;font-size:24px;cursor:pointer;line-height:1}
+#a-log{flex:1;overflow:auto;padding:12px;background:#f3efe6}
+.m{max-width:86%;padding:9px 12px;border-radius:12px;margin:0 0 8px;font-size:14.5px;line-height:1.45;overflow-wrap:anywhere}
+.m.b{background:#fff;border:1px solid var(--line)}
+.m.u{background:var(--navy);color:#fff;margin-left:auto}
+.m a{font-weight:700}
+#a-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px 0;background:#fff;max-height:96px;overflow:auto}
+#a-chips button{border:1.5px solid var(--navy);background:#fff;border-radius:99px;padding:5px 11px;font:600 12.5px Inter;cursor:pointer;color:var(--navy)}
+#a-chips button:hover{background:var(--cream)}
+#a-form{display:flex;gap:6px;padding:10px;background:#fff}
+#a-form input{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:8px;padding:10px;font:15px Inter}
+#a-form button{background:var(--or);color:#fff;border:0;border-radius:8px;padding:0 15px;font:700 16px 'Barlow Condensed';text-transform:uppercase;cursor:pointer}
+</style></head><body>
+<header><div class="hd">
+<a class="brand" href="#top"><img src="img/vancity-physio-logo.png" alt="VanCity Physio" width="54" height="54"><span>VanCity Physio<small>Downtown &amp; Fairview, Vancouver</small></span></a>
+<nav><a href="#services">Services</a><a href="#visit">Your first visit</a><a href="#billing">Billing</a><a href="#clinics">Clinics</a><a href="#faq">FAQ</a></nav>
+<a class="btn" href="#" data-ask="Book an appointment">Book</a></div></header>
+
+<div class="hero" id="top"><div class="wrap hg">
+<div><span class="eyebrow">Now accepting new patients</span>
+<h1>Move well.<br><em>Stay</em> moving.</h1>
+<p class="lead">Evidence-based physiotherapy at two Vancouver clinics. A comprehensive assessment first, then a plan built around your goals, tracked step by step.</p>
+<div class="hbtns"><a class="btn" href="#" data-ask="Book an appointment">Request an appointment</a><a class="btn ghost" href="tel:+16043985584">(604) 398-5584</a></div></div>
+<div class="cards">
+<div class="loc"><span class="tag">Downtown (Burrard)</span><h3>Unit 508, 1160 Burrard St</h3><p>Vancouver, BC V6Z 2E8</p><p><a class="book" href="https://vancityphysio.janeapp.com/locations/vancity-physio-downtown-clinic/book">Book online with the clinic</a></p></div>
+<div class="loc"><span class="tag">Fairview</span><h3>Unit 201, 1416 W 8th Ave</h3><p>Vancouver, BC V6H 1E1</p><p><a class="book" href="https://vancityphysio.janeapp.com/locations/vancity-physio-fairview-clinic/book">Book online with the clinic</a></p></div>
+</div></div></div>
+<div class="strip"><div><span>Direct billing for most extended health plans</span><span>No referral needed</span><span>ICBC and WorkSafeBC</span><span>Virtual appointments across BC</span></div></div>
+
+<section style="background:var(--paper)"><div class="wrap two">
+<div><h2>Precision care that gets you back to what matters</h2>
+<p class="sub" style="margin-top:12px">The physiotherapists use advanced assessment techniques to understand exactly what is causing your pain, then build the plan around your goals and lifestyle. Every session has a clear purpose and you see trackable progress.</p>
+<div class="pay" style="grid-template-columns:1fr"><div><b>Root cause analysis</b>The "why" behind your pain, not just the "what".</div><div><b>Individualised treatment</b>Your recovery plan is as unique as you are.</div><div><b>Functional outcomes</b>Success is measured by your return to the life you love.</div></div></div>
+<div><h2>Four pillars of recovery</h2>
+<div class="sv" style="margin-top:18px;grid-template-columns:1fr 1fr"><div><b>Strength</b><span>Build resilience in your body's foundational systems.</span></div><div><b>Mobility</b><span>Restore natural, pain-free range of motion.</span></div><div><b>Function</b><span>Return to the activities that define your quality of life.</span></div><div><b>Freedom</b><span>Live without the constraints of chronic pain or injury.</span></div></div>
+<p style="margin-top:16px">In-person sessions at the Downtown (Burrard) and Fairview clinics, or virtually.</p></div>
+</div></section>
+
+<section id="services"><div class="wrap">
+<h2>Services</h2><p class="sub">21 services across four categories, in the clinic or virtually. Tap a category.</p>
+<div class="tabs" id="tabs"><button class="on" data-c="all">All</button><button data-c="core">Core care</button><button data-c="hands">Hands-on and devices</button><button data-c="spec">Specialised programs</button><button data-c="beyond">Beyond the clinic</button></div>
+<div class="sv" id="sv">
+<div data-c="core"><b>Physiotherapy</b><span>Assessment and treatment for injury, pain, and movement dysfunction.</span></div>
+<div data-c="core"><b>Sports therapy</b><span>Injury assessment, rehabilitation, and performance support for athletes at every level.</span></div>
+<div data-c="core"><b>Active rehabilitation and kinesiology</b><span>Exercise-based rehab and functional movement guided by certified kinesiologists.</span></div>
+<div data-c="core"><b>Post-operative physiotherapy</b></div>
+<div data-c="core"><b>Registered massage therapy</b><span>RMT-delivered therapeutic massage for pain relief, stress, and recovery.</span></div>
+<div data-c="hands"><b>Manual therapy</b></div>
+<div data-c="hands"><b>Dry needling / IMS</b></div>
+<div data-c="hands"><b>Shockwave therapy</b><span>Targeted acoustic wave treatment for chronic tendon and soft tissue conditions.</span></div>
+<div data-c="hands"><b>Ultrasound therapy</b></div>
+<div data-c="hands"><b>ElectroTherapy</b><span>TENS, IFC, muscle stimulation.</span></div>
+<div data-c="hands"><b>HeIT physiotherapy</b></div>
+<div data-c="spec"><b>Pelvic floor physiotherapy</b></div>
+<div data-c="spec"><b>Vestibular physiotherapy</b><span>Dizziness and balance.</span></div>
+<div data-c="spec"><b>Concussion physiotherapy</b></div>
+<div data-c="spec"><b>TMJ physiotherapy</b><span>Jaw.</span></div>
+<div data-c="spec"><b>GLA:D program</b><span>For hip and knee osteoarthritis.</span></div>
+<div data-c="spec"><b>Arthritis and rheumatic conditions</b></div>
+<div data-c="spec"><b>Running lab / running assessment</b></div>
+<div data-c="spec"><b>Clinical Pilates</b></div>
+<div data-c="beyond"><b>Mobile physiotherapy clinic</b><span>Workplace wellness and mobile clinic solutions for teams.</span></div>
+<div data-c="beyond"><b>Corporate workshops</b></div>
+</div></div></section>
+
+<section class="how" id="visit"><div class="wrap">
+<h2>Your first visit</h2><p class="sub" style="color:#cfe0ec">You get an intake form to fill in online before you come, so the session starts with you, not paperwork.</p>
+<div class="steps">
+<div><b>Assessment</b><span>A full physical evaluation covering movement, strength, posture and your pain profile.</span></div>
+<div><b>Discussion</b><span>Your story: what is happening, what you have tried and what matters most.</span></div>
+<div><b>Diagnosis and plan</b><span>Your therapist explains the findings and outlines a personalised recovery plan.</span></div>
+<div><b>First treatment</b><span>Most patients receive hands-on treatment in their first session.</span></div>
+</div></div></section>
+
+<section id="book" style="background:var(--mint)"><div class="wrap">
+<h2>Three ways to book</h2><p class="sub" style="color:#34505f">The clinic runs its own online booking for each location. Here is the quickest route for each situation.</p>
+<div class="pay" style="--m:#fff"><div style="background:#fff"><b>Online</b>Pick the Downtown or Fairview calendar and choose a time yourself: <a href="https://vancityphysio.janeapp.com/locations/vancity-physio-downtown-clinic/book">Downtown</a> or <a href="https://vancityphysio.janeapp.com/locations/vancity-physio-fairview-clinic/book">Fairview</a>.</div>
+<div style="background:#fff"><b>By phone</b>Call <a href="tel:+16043985584">(604) 398-5584</a> if you have an ICBC or WorkSafeBC claim, a question about your plan, or want a specific therapist.</div>
+<div style="background:#fff"><b>Through the assistant</b>Tap the button in the corner, answer a few questions, and the request is written up for the team. In this demo it is not actually sent.</div></div>
+<p style="margin-top:14px;font-size:14px;color:#34505f">Before your first visit you receive an intake form to complete online. It takes a few minutes and lets your physiotherapist arrive informed and prepared.</p>
+</div></section>
+
+<section id="billing"><div class="wrap">
+<h2>Paying for it</h2><p class="sub">The clinic's own words, simplified. For your specific plan, the team confirms.</p>
+<div class="pay">
+<div><b>Extended health</b>Direct billing to most major extended health insurance providers.</div>
+<div><b>ICBC</b>ICBC claimants are accepted. Have treatment approval from your adjuster before the first session.</div>
+<div><b>WorkSafeBC</b>WorkSafeBC claimants are accepted, with the same approval from your adjuster first.</div>
+</div>
+<p style="margin-top:14px">The clinic publishes a <a href="https://www.vancityphysio.com/price-list">price list</a> on its own site. This demo does not repeat it.</p>
+</div></section>
+
+<section id="clinics" style="background:var(--paper)"><div class="wrap two">
+<div><h2>Two clinics</h2><p class="sub">Both in Vancouver, both bookable online.</p>
+<table><tr><th>Clinic</th><th>Address</th></tr>
+<tr><td><b>Downtown</b></td><td>Unit 508 - 1160 Burrard Street<br>Vancouver, BC V6Z 2E8</td></tr>
+<tr><td><b>Fairview</b></td><td>Unit 201 - 1416 W 8th Avenue<br>Vancouver, BC V6H 1E1</td></tr></table>
+<p style="margin-top:12px">Phone <a href="tel:+16043985584">(604) 398-5584</a><br>Email <a href="mailto:info@vancityphysio.com">info@vancityphysio.com</a></p></div>
+<div><h2>Hours</h2><p class="sub">As shown for the Downtown clinic on the clinic's locations page.</p>
+<table><tr><th>Day</th><th>Downtown</th></tr><tr><td>Mon to Thu</td><td>7am to 7pm</td></tr><tr><td>Friday</td><td>7am to 5pm</td></tr><tr><td>Saturday</td><td>7am to 1pm</td></tr></table>
+<p style="font-size:14px;color:var(--mut)">The site lists slightly different hours on different pages, and Fairview's are not spelled out the same way everywhere, so the team confirms exact times when you ask.</p></div>
+</div></section>
+
+<section><div class="wrap two">
+<div><h2>Patients say</h2><p class="q">I was skeptical about IMS but Ranko is an IMS wizard! Super gentle and it's actually super effective for muscle pain. 10/10 recommend.<cite>Katina F., review shown on vancityphysio.com</cite></p></div>
+<div><h2>Good to know</h2><p style="margin:0">Patient wait time is listed as under two days at both clinics, and the team has 12+ licensed practitioners with certifications in sports medicine, pelvic health, vestibular rehabilitation and manual therapy.</p></div>
+</div></section>
+
+<section id="faq" style="background:var(--paper)"><div class="wrap">
+<h2>Questions</h2><p class="sub">Or ask the assistant in the corner.</p>
+<details><summary>Do I need a referral?</summary><p>No. You can book directly at either clinic. If your extended health plan needs a referral for reimbursement, check with your provider first.</p></details>
+<details><summary>Do you offer direct billing?</summary><p>Yes, to most major extended health providers. ICBC and WorkSafeBC claimants are accepted with adjuster approval.</p></details>
+<details><summary>Can I have a virtual appointment?</summary><p>Yes. The clinic offers virtual physiotherapy for patients across BC, as well as in-person sessions at both clinics.</p></details>
+<details><summary>What happens at the first appointment?</summary><p>A comprehensive assessment: medical history, symptoms and goals, movement testing to find the root cause, then a plan. Most patients get hands-on treatment that day.</p></details>
+<details><summary>Which clinic should I pick?</summary><p>Downtown is at Unit 508 - 1160 Burrard Street and Fairview is at Unit 201 - 1416 W 8th Avenue. Both take bookings online, so pick whichever is closer to home or work, or choose a virtual appointment.</p></details>
+<details><summary>Can my workplace book something for the team?</summary><p>The clinic lists corporate workshops and a mobile physiotherapy clinic for workplace wellness. The team can tell you what is possible for your office.</p></details>
+<details><summary>Who are the physiotherapists?</summary><p>The clinic has 12+ licensed practitioners, certified in areas including sports medicine, pelvic health, vestibular rehabilitation and manual therapy. See the Team page on the clinic's site for profiles.</p></details>
+<details><summary>Where can I see prices?</summary><p>On the clinic's own price list page. The assistant here does not quote numbers, to avoid showing you something out of date.</p></details>
+</div></section>
+
+<footer><div class="wrap"><p style="margin:0 0 14px;color:#cfe0ec"><b>VanCity Physio</b> &middot; Downtown: Unit 508 - 1160 Burrard Street, Vancouver, BC V6Z 2E8 &middot; Fairview: Unit 201 - 1416 W 8th Avenue, Vancouver, BC V6H 1E1 &middot; <a href="tel:+16043985584">(604) 398-5584</a> &middot; <a href="mailto:info@vancityphysio.com">info@vancityphysio.com</a> &middot; <a href="https://www.vancityphysio.com/">vancityphysio.com</a> &middot; <a href="https://www.vancityphysio.com/new-patients">New patients</a> &middot; <a href="https://www.vancityphysio.com/frequently-asked-questions">FAQ</a> &middot; <a href="https://www.vancityphysio.com/meet-the-team">The team</a></p>Demo &middot; prepared by Gevorg Hovhannisyan<br>Facts on this page come from vancityphysio.com. Nothing you type in the assistant is sent anywhere.</div></footer>
+
+<button id="a-fab" type="button" aria-label="Open assistant">Ask VanCity</button>
+<div id="a-panel" role="dialog" aria-label="VanCity Physio assistant"><div class="a-h"><div><b>VanCity assistant</b><small>Demo. Sends nothing.</small></div><button id="a-x" type="button" aria-label="Close">&times;</button></div>
+<div id="a-log"></div><div id="a-chips"></div>
+<form id="a-form"><input id="a-in" autocomplete="off" placeholder="Type your question"><button type="submit">Send</button></form></div>
+<script>
+/* assistant engine: client-side only, sends nothing */
+(function(g){
+function norm(s){return String(s).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.replace(/(ing|ings|ed|es|s|ly)$/,function(m,x,o){return w.length-m.length>=3?'':m;});}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;var d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function tokens(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function tokScore(qt,kw){var k=stem(norm(kw));if(!k)return 0;
+ if(k.indexOf(' ')>-1){var parts=k.split(' ');var ok=parts.every(function(p){return qt.some(function(t){return t===p||(p.length>3&&lev(t,p)<=1);});});return ok?parts.length*2.2:0;}
+ for(var i=0;i<qt.length;i++){var t=qt[i];if(t===k)return 2;if(k.length>4&&t.length>4&&(k.indexOf(t)===0||t.indexOf(k)===0)&&Math.abs(k.length-t.length)<=3)return 1.6;var tol=k.length>=8?2:(k.length>=5?1:0);if(tol&&lev(t,k)<=tol)return 1.5;}
+ return 0;}
+function match(q,kb){var qt=tokens(q),best=null,bs=0;kb.forEach(function(e){var s=0;e.k.forEach(function(kw){s+=tokScore(qt,kw);});s*=(e.w||1);if(s>bs){bs=s;best=e;}});return bs>=1.5?best:null;}
+g.AsstEngine={norm:norm,match:match,lev:lev};
+if(typeof document==='undefined')return;
+g.AsstInit=function(C){
+ var $=function(i){return document.getElementById(i)};
+ var fab=$('a-fab'),pan=$('a-panel'),log=$('a-log'),inp=$('a-in'),chips=$('a-chips'),form=$('a-form');
+ var flow=null,data={};
+ function add(t,who){var d=document.createElement('div');d.className='m '+who;if(who==='b')d.innerHTML=t;else d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+ function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){say(c)};chips.appendChild(b);});}
+ function startFlow(){flow={i:0};data={};ask();}
+ function ask(){var s=C.flow[flow.i];add(s.q,'b');setChips(s.opts?s.opts.concat([C.cancel]):[C.cancel]);inp.placeholder=s.opts?C.pickHint:C.typeHint;}
+ function say(t){t=String(t).trim();if(!t)return;add(t,'u');inp.value='';
+  if(flow){if(norm(t)===norm(C.cancel)){flow=null;add(C.cancelled,'b');setChips(C.chips);return;}
+   var s=C.flow[flow.i];var v=t;if(s.opts){var f=null;s.opts.forEach(function(o){if(norm(o)===norm(t)||(norm(t).length>2&&norm(o).indexOf(norm(t))>-1))f=o;});if(!f){add(C.pickAgain,'b');return;}v=f;}
+   if(s.check&&!s.check(v)){add(s.err,'b');return;}
+   data[s.key]=v;flow.i++;if(flow.i<C.flow.length){ask();}else{var sum=C.flow.map(function(x){return '<b>'+x.label+':</b> '+esc(data[x.key]);}).join('<br>');flow=null;add(C.done(sum),'b');setChips(C.chips);inp.placeholder=C.typeHint;}return;}
+  if(C.bookRe.test(norm(t))&&!(C.noBook&&C.noBook.test(norm(t)))){startFlow();return;}
+  var m=match(t,C.kb);if(m){add(m.a,'b');if(m.book){}}else add(C.fallback,'b');setChips(C.chips);}
+ function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+ fab.onclick=function(){pan.classList.toggle('open');if(pan.classList.contains('open')&&!log.children.length){add(C.hello,'b');setChips(C.chips);}};
+ $('a-x').onclick=function(){pan.classList.remove('open')};
+ form.onsubmit=function(e){e.preventDefault();say(inp.value);};
+ window.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-ask]');if(t){e.preventDefault();pan.classList.add('open');if(!log.children.length){add(C.hello,'b');}say(t.getAttribute('data-ask'));}});
+};
+})(typeof window!=='undefined'?window:globalThis);
+(function(){
+var T='<a href="tel:+16043985584">(604) 398-5584</a>';
+var CONF='The team will confirm that: call '+T+' or email info@vancityphysio.com.';
+var kb=[
+{k:['hours','open','opening','close','closing','late','early','evening','when','time','times','saturday','weekend','sunday'],a:'Downtown, per the clinic\'s locations page: Mon to Thu 7am to 7pm, Friday 7am to 5pm, Saturday 7am to 1pm. The site shows slightly different hours on different pages and Fairview\'s are not spelled out the same way everywhere, so for an exact time '+CONF},
+{k:['where','address','location','locations','directions','find','burrard','fairview','downtown','8th','map','clinic','clinics'],a:'Two clinics. Downtown: Unit 508 - 1160 Burrard Street, Vancouver BC V6Z 2E8. Fairview: Unit 201 - 1416 W 8th Avenue, Vancouver BC V6H 1E1. I do not have parking or transit details, so the team will confirm: '+T+'.'},
+{k:['phone','call','number','contact','email','mail','reach','telephone','whatsapp'],a:'Call '+T+' or email info@vancityphysio.com.'},
+{k:['referral','referrals','doctor','gp','physician','need a referral'],a:'No referral is needed to book physiotherapy. If your extended health plan requires one for reimbursement, check with your provider before the first appointment.'},
+{k:['direct billing','direct bill','billing','insurance','insurer','extended health','coverage','covered','benefits','plan','claim','sun life','manulife','blue cross','pacific blue'],a:'The clinic offers direct billing to most major extended health insurance providers. I cannot see which provider or plan you have, so for your specific plan '+CONF},
+{k:['icbc','car accident','crash','mva','motor vehicle','whiplash','adjuster'],a:'ICBC claimants are accepted. Have treatment approval from your adjuster before your first session.'},
+{k:['worksafe','worksafebc','wcb','work injury','workers compensation','wsbc','at work'],a:'WorkSafeBC claimants are accepted too. Make sure you have treatment approval from your adjuster before your first session.'},
+{k:['price','prices','pricing','cost','costs','how much','fee','fees','rate','rates','charge','pay','self pay'],a:'The clinic publishes its price list on its own site (vancityphysio.com/price-list). I will not quote numbers here, so please check that page or ask the team: '+T+'.'},
+{k:['virtual','online appointment','telehealth','tele physio','remote','video','zoom','from home','across bc'],a:'Yes, the clinic offers virtual physiotherapy for patients across BC, as well as in-person sessions at both clinics.'},
+{k:['first','first visit','new patient','new patients','what to expect','expect','assessment','initial','intake','form','paperwork','prepare'],a:'You complete an online intake form beforehand. The first session is a full assessment: history, symptoms and goals, movement testing, then your therapist explains the findings and a plan. Most patients also get hands-on treatment that day. Patient wait time is listed as under two days.'},
+{k:['shockwave','shock wave','tendon','tendinopathy','plantar','chronic tendon','acoustic'],a:'Shockwave therapy is targeted acoustic wave treatment for chronic tendon and soft-tissue conditions. A physiotherapist decides whether it suits your case.'},
+{k:['ims','dry needling','needling','needle','needles','acupuncture','trigger point','intramuscular'],a:'The clinic offers dry needling and IMS (intramuscular stimulation) for muscle pain. One patient review on the site calls it gentle and effective. Whether it suits you is for the physiotherapist to assess.'},
+{k:['massage','rmt','registered massage','massage therapy','therapeutic massage','relax','stress'],a:'Registered massage therapy (RMT): therapeutic massage for pain relief, stress and recovery.'},
+{k:['pilates','clinical pilates','reformer'],a:'Clinical Pilates is on the services list. For class times and levels '+CONF},
+{k:['running','run','runner','gait','running lab','running assessment','jogging'],a:'There is a Running Lab and a running assessment service. For details and availability '+CONF},
+{k:['pelvic','pelvic floor','postpartum','pregnancy','incontinence','prenatal'],a:'Pelvic floor physiotherapy is offered, with therapists certified in pelvic health. Specific questions go to a therapist. '+CONF},
+{k:['concussion','head injury','vestibular','dizzy','dizziness','vertigo','balance'],a:'Concussion physiotherapy and vestibular physiotherapy (dizziness and balance) are both on the services list. I cannot judge your symptoms, so please speak to a physiotherapist: '+T+'.'},
+{k:['tmj','jaw','temporomandibular','jaw pain'],a:'TMJ (jaw) physiotherapy is offered. One review on the site describes a quick resolution of a painful TMJ. A therapist has to assess your case.'},
+{k:['sports','sport','athlete','athletes','performance','sports therapy','injury','injuries'],a:'Sports therapy covers injury assessment, rehabilitation and performance support for athletes at every level. A physiotherapist assesses what is behind a specific injury.'},
+{k:['surgery','post op','post operative','postoperative','operation','after surgery','replacement'],a:'Post-operative physiotherapy and rehabilitation is on the services list. '+CONF},
+{k:['arthritis','osteoarthritis','glad','gla d','knee oa','hip oa','rheumatic'],a:'There is a GLA:D Program for hip and knee osteoarthritis, and a service for arthritis and rheumatic conditions. For program dates '+CONF},
+{k:['kinesiology','kinesiologist','active rehab','active rehabilitation','exercise','rehab','rehabilitation'],a:'Active rehabilitation is exercise-based rehab and functional movement guided by certified kinesiologists.'},
+{k:['electro','electrotherapy','tens','ifc','muscle stimulation','ultrasound','heit','high energy','manual therapy','manual'],a:'Hands-on and device treatments on the list include manual therapy, ultrasound therapy, electrotherapy (TENS, IFC, muscle stimulation) and HeIT therapy. Your physiotherapist chooses what fits.'},
+{k:['corporate','workshop','workshops','workplace','mobile','home visit','home assessment','team wellness','office'],a:'The clinic also offers corporate workshops and a mobile physiotherapy clinic for workplace wellness. For a quote or visit '+CONF},
+{k:['services','service','what do you do','what services','list of services','all services'],a:'21 services across four categories, from physiotherapy, massage and shockwave to pelvic floor, vestibular, concussion, clinical Pilates, kinesiology and corporate services. See the Services section on this page.'},
+{k:['cancel','cancellation','reschedule','late fee','no show','missed'],a:'I do not have the cancellation policy. '+CONF},
+{k:['team','physio','physiotherapist','physiotherapists','therapists','who','staff','practitioners','ranko'],a:'The clinic lists 12+ licensed practitioners, certified in areas including sports medicine, pelvic health, vestibular rehabilitation and manual therapy. If you want a specific therapist, say so when you book.'},
+{k:['pain','hurts','hurt','sore','ache','back pain','neck','knee','shoulder','symptom','symptoms','diagnose','diagnosis'],a:'I cannot diagnose or advise on symptoms. A physiotherapist will assess it. <a href="#" data-ask="Book an appointment">Request an appointment</a>.'},
+{k:['hi','hello','hey','thanks','thank','good morning'],a:'Hello. Ask about hours, direct billing, ICBC, services or virtual appointments, or request an appointment.'}
+];
+var C={noBook:/(how much|price|cost|fee|hours|open|cancel|when can|insurance|claim|online appointment|virtual|telehealth|video|remote|zoom|direct|what happens)/,kb:kb,bookRe:/\b(book|booking|appointment|appointments|schedule|reserve|request|apointment|apointments|boking|slot)\b/,
+hello:'Hi, I am the demo assistant for VanCity Physio. I answer from the clinic\'s own site and can take an appointment request. I cannot give medical advice or diagnose.',
+chips:['Request an appointment','Opening hours','Direct billing','ICBC / WorkSafeBC','Virtual appointments','First visit'],
+fallback:'I do not have that. '+CONF+' For anything about your symptoms please speak to a physiotherapist.',
+cancel:'Cancel',cancelled:'No problem, request cancelled.',pickHint:'Tap an option',typeHint:'Type your question',pickAgain:'Please tap one of the options.',
+flow:[
+{key:'clinic',label:'Clinic',q:'Which clinic suits you?',opts:['Downtown (Burrard)','Fairview','Virtual','No preference']},
+{key:'svc',label:'Service',q:'What is the appointment for?',opts:['Physiotherapy','Massage (RMT)','Shockwave','Dry needling / IMS','Pelvic floor','Concussion / vestibular','Clinical Pilates','Running assessment','Not sure']},
+{key:'visit',label:'Visit type',q:'Have you been to VanCity Physio before?',opts:['First visit','Returning patient']},
+{key:'pay',label:'Paying via',q:'How will this be covered?',opts:['Extended health (direct billing)','ICBC','WorkSafeBC','Self-pay','Not sure']},
+{key:'day',label:'Days',q:'Which days suit you?',opts:['Weekdays','Saturday','Either']},
+{key:'tod',label:'Time of day',q:'What time of day?',opts:['Early morning','Midday','Late afternoon']},
+{key:'name',label:'Your name',q:'Your name?'},
+{key:'phone',label:'Phone',q:'Best phone number?',check:function(v){return v.replace(/\D/g,'').length>=7},err:'Please enter a phone number with at least 7 digits.'}],
+done:function(s){return 'Thank you. Your request is with the team (demo: nothing was really sent).<br>'+s+'<br>Please do not share medical details here. The team will confirm a time and answer anything about your symptoms.';}};
+if(typeof document!=='undefined')AsstInit(C);else globalThis.__C=C;
+var tb=typeof document!=='undefined'&&document.getElementById('tabs');
+if(tb){tb.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;[].forEach.call(tb.children,function(x){x.classList.toggle('on',x===b)});var c=b.getAttribute('data-c');[].forEach.call(document.querySelectorAll('#sv div'),function(d){d.hidden=!(c==='all'||d.getAttribute('data-c')===c)});});}
+})();
+</script></body></html>
