@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tony's Vehicle Solutions · Auto repair, Miami / Coral Gables</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Saira+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#e10b17;--yel:#ffc82e;--ch:#1b1b1f;--ch2:#26262c;--tx:#f3f1ea;--mut:#a9a8a0;--bot-a:#e10b17;--bot-on:#fff;--bot-bg:#202024;--bot-b:#33333b;--bot-ink:#f3f1ea;--bot-font:'Rubik',system-ui,sans-serif;--bot-r:10px;--bot-pr:10px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--ch);color:var(--tx);font:16px/1.55 'Rubik',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:.01em;margin:0;line-height:1}
+a{color:inherit}
+.wrap{max-width:1060px;margin:0 auto;padding:0 16px}
+.top{background:var(--red);color:#fff;font-size:13px;padding:6px 0;text-align:center}
+.top a{font-weight:700;text-decoration:none}
+header{background:var(--ch);border-bottom:4px solid var(--yel);position:sticky;top:0;z-index:50}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:1060px;margin:0 auto;padding:8px 16px}
+.chip{background:#fff;border-radius:8px;padding:4px 8px;display:flex}
+.chip img{height:40px;width:auto;display:block}
+.cta{background:var(--yel);color:#111;font:800 17px 'Saira Condensed';text-transform:uppercase;text-decoration:none;padding:10px 14px;border-radius:6px;white-space:nowrap}
+.hero{padding:34px 0 8px;background:linear-gradient(180deg,#26262c,#1b1b1f)}
+.tag{display:inline-block;background:var(--yel);color:#111;font:700 13px 'Saira Condensed';letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:3px}
+.hero h1{font-size:clamp(44px,13vw,92px);font-weight:800;margin:12px 0 10px}
+.hero h1 em{font-style:normal;color:var(--yel)}
+.hero p{color:#d8d6cd;max-width:34em;font-size:18px;margin:0 0 18px}
+.stripe{height:14px;background:repeating-linear-gradient(135deg,var(--yel) 0 18px,#111 18px 36px);margin-top:26px}
+.triage{background:#fff;color:#161616;border-radius:12px;padding:18px;margin:22px 0 0;border-top:6px solid var(--red)}
+.triage h2{font-size:30px;font-weight:800;margin-bottom:10px}
+.sym{display:flex;flex-wrap:wrap;gap:8px}
+.sym button{font:500 15px Rubik;border:2px solid #161616;background:#fff;border-radius:999px;padding:8px 13px;cursor:pointer;color:#161616}
+.sym button[aria-pressed=true]{background:#161616;color:var(--yel)}
+#symOut{margin-top:14px;background:#fff6d9;border-left:5px solid var(--yel);padding:12px 14px;border-radius:4px;min-height:60px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0 0}
+.facts div{background:var(--ch2);border:1px solid #3a3a42;border-radius:8px;padding:12px}
+.facts b{display:block;font:800 30px 'Saira Condensed';color:var(--yel)}
+.facts span{font-size:13px;color:var(--mut)}
+section{padding:44px 0}
+h2.big{font-size:clamp(34px,8vw,54px);font-weight:800;margin-bottom:14px}
+h2.big em{font-style:normal;color:var(--yel)}
+.bays{display:grid;gap:12px;counter-reset:b}
+.bay{background:var(--ch2);border:1px solid #3a3a42;border-left:6px solid var(--red);border-radius:6px;padding:16px 16px 16px 16px;position:relative;counter-increment:b}
+.bay:before{content:"BAY " counter(b);position:absolute;right:12px;top:12px;font:700 12px 'Saira Condensed';letter-spacing:.14em;color:var(--mut)}
+.bay h3{font-size:26px;font-weight:700;margin-bottom:6px;color:var(--yel)}
+.bay ul{margin:6px 0 0;padding-left:18px;color:#d8d6cd}
+.bay li{margin:2px 0}
+.light{background:#f3f1ea;color:#1b1b1f}
+.light h2.big em{color:var(--red)}
+.chk{columns:1;list-style:none;padding:0;margin:0}
+.chk li{padding:8px 0 8px 32px;position:relative;border-bottom:1px solid #ddd}
+.chk li:before{content:"";position:absolute;left:4px;top:13px;width:14px;height:8px;border-left:4px solid var(--red);border-bottom:4px solid var(--red);transform:rotate(-45deg)}
+.grid2{display:grid;gap:18px}
+.box{background:var(--ch2);border:1px solid #3a3a42;border-radius:8px;padding:18px}
+.light .box{background:#fff;border-color:#ddd;color:#1b1b1f}
+.cars{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.cars div{background:#fff;border:2px solid #1b1b1f;border-radius:8px;text-align:center;padding:14px 6px;font:800 22px 'Saira Condensed';text-transform:uppercase}
+.war{background:var(--red);color:#fff;border-radius:10px;padding:20px;margin-top:12px}
+.war b{font:800 36px 'Saira Condensed';display:block;line-height:1}
+.faq details{background:var(--ch2);border:1px solid #3a3a42;border-radius:6px;margin:8px 0;padding:0 14px}
+.faq summary{cursor:pointer;font:700 17px 'Saira Condensed';text-transform:uppercase;letter-spacing:.03em;padding:14px 0}
+.faq details p{margin:0 0 14px;color:#d8d6cd}
+.contact{background:var(--yel);color:#111}
+.contact a{font-weight:700}
+.big-tel{display:block;font:800 clamp(34px,10vw,60px) 'Saira Condensed';text-decoration:none;line-height:1}
+footer{background:#111;color:var(--mut);padding:26px 0 90px;font-size:14px}
+.sig{margin-top:12px;font-size:13px}
+@media(min-width:760px){.grid2{grid-template-columns:1fr 1fr}.bays{grid-template-columns:1fr 1fr}.facts{grid-template-columns:repeat(4,1fr)}.cars{grid-template-columns:repeat(4,1fr)}.chk{columns:2;column-gap:30px}.chip img{height:48px}}
+.sym button:focus-visible,.cta:focus-visible,summary:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.bot-fab{position:fixed;right:16px;bottom:16px;z-index:90;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--bot-a);color:var(--bot-on);padding:12px 16px;border-radius:var(--bot-r,999px);font:600 15px/1 var(--bot-font);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.bot-fab-i{font-size:18px}
+.bot-panel{position:fixed;right:12px;bottom:76px;z-index:91;width:min(380px,calc(100vw - 24px));height:min(540px,calc(100vh - 100px));display:flex;flex-direction:column;background:var(--bot-bg);color:var(--bot-ink);border-radius:var(--bot-pr,16px);box-shadow:0 18px 50px rgba(0,0,0,.35);overflow:hidden;font:15px/1.45 var(--bot-font)}
+.bot-panel[hidden]{display:none}
+.bot-h{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--bot-a);color:var(--bot-on)}
+.bot-h small{display:block;opacity:.85;font-size:12px}
+.bot-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer}
+.bot-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.bot-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.bot-m.bt{background:var(--bot-b);align-self:flex-start}
+.bot-m.me{background:var(--bot-a);color:var(--bot-on);align-self:flex-end}
+.bot-chips{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px}
+.bot-c{border:1px solid var(--bot-a);background:transparent;color:var(--bot-ink);border-radius:999px;padding:6px 11px;font:13px var(--bot-font);cursor:pointer}
+.bot-f{display:flex;gap:6px;padding:10px;border-top:1px solid rgba(0,0,0,.1)}
+.bot-f input{flex:1;min-width:0;border:1px solid rgba(0,0,0,.25);border-radius:10px;padding:9px 10px;font:15px var(--bot-font);background:#fff;color:#111}
+.bot-f button{border:0;background:var(--bot-a);color:var(--bot-on);border-radius:10px;padding:0 14px;font:600 14px var(--bot-font);cursor:pointer}
+
+</style>
+</head>
+<body>
+<div class="top">Walk-ins welcome · Call <a href="tel:+17867039084">786-703-9084</a></div>
+<header><div class="hd"><span class="chip"><img src="img/tonys-vehicle-solutions-logo.png" alt="Tony's Vehicle Solutions"></span><a class="cta" href="#contact" onclick="__bot.open();__bot.handle('Book an appointment',{go:'flow'});return false;">Book a visit</a></div></header>
+
+<div class="hero"><div class="wrap">
+<span class="tag">ASE-certified · AAA-certified shop</span>
+<h1>Quality car repair <em>you can count on.</em></h1>
+<p>Brakes, A/C, transmission, electrical and diagnostics for all makes and models at 3693 SW 7th St, Miami. Expert service, state-of-the-art tools, genuine care for your vehicle.</p>
+<div class="triage"><h2>What is your car doing?</h2>
+<div class="sym" id="sym">
+<button data-k="brake" aria-pressed="false">Brakes grind or pulse</button>
+<button data-k="ac" aria-pressed="false">A/C is not cold</button>
+<button data-k="light" aria-pressed="false">Warning light on</button>
+<button data-k="shift" aria-pressed="false">Slipping or clunking gears</button>
+<button data-k="batt" aria-pressed="false">Won't start</button>
+<button data-k="pull" aria-pressed="false">Pulls to one side</button>
+</div>
+<div id="symOut">Tap what you notice and I will show which service fits. The technicians confirm after inspection.</div></div>
+<div class="facts">
+<div><b>700+</b><span>Google reviews mentioned on the site</span></div>
+<div><b>2 yr</b><span>warranty on parts and labor on shop-supplied parts</span></div>
+<div><b>ASE</b><span>certified technicians</span></div>
+<div><b>AAA</b><span>certified auto shop</span></div>
+</div>
+</div><div class="stripe"></div></div>
+
+<section id="services"><div class="wrap">
+<h2 class="big">Eight <em>bays</em>, one shop</h2>
+<div class="bays">
+<div class="bay"><h3>Brake replacement and repair</h3><ul><li>Detailed brake inspection</li><li>Brake fluid flush</li><li>Pad and rotor replacement</li><li>Caliper and line repair</li></ul></div>
+<div class="bay"><h3>Air conditioning</h3><ul><li>A/C diagnostics and leak detection</li><li>Compressor and condenser repair</li><li>Freon recharge and pressure testing</li><li>Cabin filter replacement</li></ul></div>
+<div class="bay"><h3>Electrical and diagnostics</h3><ul><li>Computer diagnostic tests</li><li>Starting and charging systems</li><li>Battery, alternator, starter</li><li>Wiring and fuses</li></ul></div>
+<div class="bay"><h3>Transmission</h3><ul><li>Diagnostics for clunking, slipping, delayed engagement</li><li>Fluid flush and filter service</li><li>Repair and replacement</li></ul></div>
+<div class="bay"><h3>Maintenance</h3><ul><li>Oil change, synthetic or conventional</li><li>Spark plugs, differential oil, brake fluid</li><li>Engine and cabin air filters</li><li>Cooling system flush</li></ul></div>
+<div class="bay"><h3>Tires</h3><ul><li>Replacement and installation</li><li>Balancing, new valve stems</li><li>Inflation to manufacturer specs</li></ul></div>
+<div class="bay"><h3>Alignment</h3><ul><li>Aligns your suspension and steering system</li></ul></div>
+<div class="bay"><h3>Suspension and modifications</h3><ul><li>Steering and suspension work</li><li>CV axles</li></ul></div>
+</div></div></section>
+
+<section class="light"><div class="wrap grid2">
+<div><h2 class="big">What a diagnostic <em>includes</em></h2>
+<ul class="chk"><li>20-point multipoint inspection</li><li>OBD-II fault-code scan</li><li>Carfax service-history review</li><li>Battery and charging test</li><li>Fluid, brake and steering checks</li><li>Tire and brake-pad measurements</li><li>Road test if needed</li></ul></div>
+<div><h2 class="big">European <em>cars</em> too</h2>
+<div class="box"><p style="margin:0 0 10px">BMW, Mercedes-Benz, Audi and more get factory-grade diagnostics, OEM-approved fluids and quality parts.</p><p style="margin:0">Written estimates follow the inspection or diagnostic. A diagnostic fee may apply.</p></div>
+<div class="war"><b>2-year warranty</b>on parts bought through the shop and installed by its technicians, labor included. It does not cover customer-provided parts, fluid or A/C recharge services with no part replaced, normal wear, misuse, or towing. Claims are inspected in the shop.</div></div>
+</div></section>
+
+<section style="background:#202024"><div class="wrap">
+<h2 class="big">Signs to <em>watch for</em></h2>
+<div class="grid2">
+<div class="box"><h3 style="font-size:26px;color:var(--yel);margin-bottom:8px">Time for an A/C service</h3><ul style="margin:0;padding-left:18px;color:#d8d6cd"><li>Weak or warm airflow</li><li>Strange odors when the A/C is on</li><li>Moisture or leaks around the vents</li><li>Unusual noises during operation</li></ul></div>
+<div class="box"><h3 style="font-size:26px;color:var(--yel);margin-bottom:8px">Time for an alignment</h3><ul style="margin:0;padding-left:18px;color:#d8d6cd"><li>The car pulls to one side</li><li>Uneven or rapid tire wear</li><li>A crooked steering wheel while driving straight</li><li>Squealing tires or shaky handling</li></ul></div>
+<div class="box"><h3 style="font-size:26px;color:var(--yel);margin-bottom:8px">Brake problems</h3><ul style="margin:0;padding-left:18px;color:#d8d6cd"><li>Worn-out pads or rotors</li><li>Brake fluid leaks</li><li>A spongy or hard pedal</li><li>ABS warning lights</li></ul></div>
+<div class="box"><h3 style="font-size:26px;color:var(--yel);margin-bottom:8px">Electrical problems</h3><ul style="margin:0;padding-left:18px;color:#d8d6cd"><li>Dead battery or charging issues</li><li>Faulty alternator or starter</li><li>Dashboard warning lights</li><li>Power windows or locks not working</li><li>Wiring and fuse issues</li></ul></div>
+</div></div></section>
+
+<section class="light"><div class="wrap grid2">
+<div><h2 class="big">The alignment <em>process</em></h2>
+<ul class="chk"><li>Computerized diagnostic check</li><li>Suspension and steering inspection</li><li>Adjustment of camber, caster and toe angles</li><li>Post-alignment road test for accuracy</li></ul></div>
+<div><h2 class="big">Custom <em>lifts</em></h2>
+<div class="box"><p style="margin:0">For off-road capability and ground clearance, or just a sportier or more rugged 4x4 look: custom lifts for all vehicles with professional guidance and premium parts, tailored to your driving style.</p></div></div>
+</div></section>
+
+<section><div class="wrap">
+<h2 class="big">Also on <em>site</em>: cars for sale</h2>
+<p style="max-width:40em;color:#d8d6cd">The dealership side has quality cars in Miami, financing options with a network of lenders, and a 1-year warranty on mechanical issues for every car.</p>
+<div class="cars"><div style="background:var(--ch2);color:var(--yel);border-color:#3a3a42">Sedan</div><div style="background:var(--ch2);color:var(--yel);border-color:#3a3a42">SUV</div><div style="background:var(--ch2);color:var(--yel);border-color:#3a3a42">Hatchback</div><div style="background:var(--ch2);color:var(--yel);border-color:#3a3a42">Pick-up</div></div>
+<p style="color:var(--mut);font-size:14px;margin-top:12px">Credit application and car choice help are handled by the team.</p>
+</div></section>
+
+<section><div class="wrap">
+<h2 class="big">Why drivers <em>pick</em> the shop</h2>
+<div class="bays">
+<div class="bay"><h3>Quality parts, advanced technology</h3><p style="margin:0;color:#d8d6cd">Top-tier parts and the latest diagnostic tools so every repair meets a high standard.</p></div>
+<div class="bay"><h3>Skilled, certified technicians</h3><p style="margin:0;color:#d8d6cd">Do the job right the first time, and keep downtime short because your car is part of your daily life.</p></div>
+<div class="bay"><h3>Honest advice</h3><p style="margin:0;color:#d8d6cd">Clear recommendations and an explanation of the problem and the cost before repairs begin.</p></div>
+<div class="bay"><h3>Full service</h3><p style="margin:0;color:#d8d6cd">From oil changes and brake service to engine diagnostics and full transmission rebuilds.</p></div>
+</div>
+<h2 class="big" style="margin-top:36px">Everything on the <em>work list</em></h2>
+<div class="sym" style="gap:8px">
+<span class="tag" style="background:#33333b;color:#f3f1ea">A/C, fuel system, exhaust</span><span class="tag" style="background:#33333b;color:#f3f1ea">Electrical diagnostics</span><span class="tag" style="background:#33333b;color:#f3f1ea">Tire replacement</span><span class="tag" style="background:#33333b;color:#f3f1ea">Oil change</span><span class="tag" style="background:#33333b;color:#f3f1ea">Starting and charging</span><span class="tag" style="background:#33333b;color:#f3f1ea">CV axles</span><span class="tag" style="background:#33333b;color:#f3f1ea">Steering and suspension</span><span class="tag" style="background:#33333b;color:#f3f1ea">Engines and gearboxes</span><span class="tag" style="background:#33333b;color:#f3f1ea">Alignment</span><span class="tag" style="background:#33333b;color:#f3f1ea">Engine cooling system</span><span class="tag" style="background:#33333b;color:#f3f1ea">Computer diagnostics</span><span class="tag" style="background:#33333b;color:#f3f1ea">Transmission and brakes</span><span class="tag" style="background:#33333b;color:#f3f1ea">Emissions repair facility</span>
+</div></div></section>
+
+<section class="light"><div class="wrap">
+<h2 class="big">One <em>visit</em>, start to finish</h2>
+<div class="grid2">
+<div class="box"><h3 style="font-size:26px;color:var(--red);margin-bottom:6px">1. Tell us the problem</h3><p style="margin:0">Walk in, call 786-703-9084 or message the shop on WhatsApp. For oil changes, an appointment simply cuts the wait.</p></div>
+<div class="box"><h3 style="font-size:26px;color:var(--red);margin-bottom:6px">2. Inspection or diagnostic</h3><p style="margin:0">The technicians inspect the car and scan it. A diagnostic fee may apply and the findings are explained clearly.</p></div>
+<div class="box"><h3 style="font-size:26px;color:var(--red);margin-bottom:6px">3. Written estimate</h3><p style="margin:0">You get an accurate written estimate after the inspection. Part quality, make and model, labor time and coverage all affect the price.</p></div>
+<div class="box"><h3 style="font-size:26px;color:var(--red);margin-bottom:6px">4. Repair and warranty</h3><p style="margin:0">Most repairs carry up to 2 years on parts and labor, with the details on your estimate. Financing options are available.</p></div>
+</div></div></section>
+
+<section class="faq" style="background:#202024"><div class="wrap">
+<h2 class="big">Quick <em>answers</em></h2>
+<details><summary>Do I need an appointment for an oil change?</summary><p>Walk-ins are welcome, an appointment cuts wait times. Most oil changes take 30 to 45 minutes once in the bay.</p></details>
+<details><summary>How long does A/C repair take?</summary><p>Diagnostics usually take 30 to 60 minutes. Repairs range from same-day recharges or leak fixes to 1 to 2 days for parts like compressors.</p></details>
+<details><summary>How much is a brake job?</summary><p>The site says brake pad replacement starts at $389 plus tax for most vehicles. Final price depends on front or rear, rotor condition and OEM or aftermarket parts. You get a written estimate.</p></details>
+<details><summary>Do you work on European cars?</summary><p>Yes, including BMW, Mercedes-Benz and Audi, with factory-grade diagnostics and OEM-approved fluids.</p></details>
+<details><summary>What is in a diagnostic check?</summary><p>A 20-point multipoint inspection, OBD-II fault-code scan, Carfax service-history review, battery and charging test, fluid, brake and steering checks, tire and pad measurements and a road test if needed.</p></details>
+<details><summary>Can I bring my own parts?</summary><p>Not recommended, and labor on customer-supplied parts is not warranted.</p></details>
+<details><summary>Are free estimates available?</summary><p>Estimates are written, after a professional inspection or diagnostic, and a diagnostic fee may apply.</p></details>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap grid2">
+<div><h2 class="big" style="color:#111">Drop in or call</h2>
+<a class="big-tel" href="tel:+17867039084">786-703-9084</a>
+<p style="margin:10px 0 0">3693 SW 7th St, Miami, FL 33135<br><a href="mailto:tonyvehiclesolutions@gmail.com">tonyvehiclesolutions@gmail.com</a><br><a href="https://wa.me/message/JTWMK3CTZWH5D1">WhatsApp the shop</a> · <a href="https://www.facebook.com/tonyvehiclesolutions/">Facebook</a> · <a href="https://www.instagram.com/tonyvehiclesolutions/">Instagram</a></p></div>
+<div class="box" style="background:#fff;color:#111;border-color:#111"><b style="font:800 24px 'Saira Condensed';text-transform:uppercase">Opening hours</b><p style="margin:6px 0 0">The site does not list them. Call or ask the assistant and the team will confirm.</p></div>
+</div></section>
+
+<footer><div class="wrap">Tony's Vehicle Solutions · 3693 SW 7th St, Miami, FL 33135 · Serving Coral Gables and greater Miami
+<div class="sig">Demo · prepared by Gevorg Hovhannisyan</div></div></footer>
+
+<script>
+var SY={brake:['Brake replacement and repair','Grinding, pulsing or a soft pedal point to pads, rotors or fluid. Detailed inspection, fluid flush, pad and rotor replacement, caliper and line repair.'],ac:['Air conditioning','Diagnostics and leak detection, compressor and condenser repair, recharge and pressure testing. Diagnostics usually take 30 to 60 minutes.'],light:['Electrical issues and diagnostics','A computer scan reads the fault codes. The 20-point diagnostic also checks battery, charging, fluids, brakes and steering.'],shift:['Transmission','Diagnostics for clunking, slipping and delayed engagement, then service, repair or replacement as needed.'],batt:['Electrical and maintenance','Starting and charging systems, battery, alternator and starter work. Bring it in and the technicians check.'],pull:['Alignment','An alignment adjusts the suspension and steering system. Tires and suspension get checked at the same visit.']};
+document.querySelectorAll('#sym button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#sym button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});var s=SY[b.dataset.k];document.getElementById('symOut').innerHTML='<b>'+s[0]+'</b><br>'+s[1]+' <a href="#contact" onclick="__bot.open();__bot.handle(\'Book an appointment\',{go:\'flow\'});return false;"><b>Book it</b></a>. Final diagnosis is by the technicians.';};});
+/*CORE*/
+function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.replace(/(ing|ers|er|ed|es|s)$/,function(m,a,o,str){return str.length-m.length>=3?'':m;});}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function tokMatch(kw,t){if(kw===t)return 1;var ks=stem(kw),ts=stem(t);if(ks===ts)return 1;if(kw.length>=4&&t.length>=4&&(kw.indexOf(t)===0||t.indexOf(kw)===0)&&Math.min(kw.length,t.length)>=5&&Math.min(kw.length,t.length)/Math.max(kw.length,t.length)>=.7)return .9;var L=Math.max(ks.length,ts.length);if(L>=5&&lev(ks,ts)<=1)return .8;if(L>=9&&lev(ks,ts)<=2)return .7;return 0;}
+function makeMatcher(kb){var rows=kb.map(function(e){return {e:e,ks:e.k.map(function(k){return norm(k).split(' ');})};});
+return function(q){var toks=norm(q).split(' ').filter(Boolean),best=null,bs=0;
+rows.forEach(function(r){var sc=0;r.ks.forEach(function(kp){var tot=0,ok=true;kp.forEach(function(kw){var m=0;toks.forEach(function(t){var x=tokMatch(kw,t);if(x>m)m=x;});if(m===0)ok=false;tot+=m;});if(ok){var s=tot*(kp.length>1?1.6:1)*(kp.join('').length>=6?1.2:1);if(s>sc)sc=s;}});
+if(sc>bs){bs=sc;best=r.e;}});
+return bs>=0.9?best:null;};}
+function wantsBooking(q,words){var toks=norm(q).split(' ');return words.some(function(w){var p=norm(w).split(' ');return p.every(function(kw){return toks.some(function(t){return tokMatch(kw,t)>=.8;});});});}
+/*ENDCORE*/
+/*UI*/
+function initBot(C){var match=makeMatcher(C.kb);var el=function(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;};
+var fab=el('button','bot-fab','<span class="bot-fab-i">'+C.fabIcon+'</span><span class="bot-fab-t">'+C.fabText+'</span>');fab.setAttribute('aria-label',C.fabText);
+var panel=el('div','bot-panel');panel.setAttribute('role','dialog');panel.hidden=true;
+panel.innerHTML='<div class="bot-h"><div><b>'+C.title+'</b><small>'+C.sub+'</small></div><button class="bot-x" aria-label="Close">&times;</button></div><div class="bot-log" aria-live="polite"></div><div class="bot-chips"></div><form class="bot-f"><input type="text" placeholder="'+C.placeholder+'" autocomplete="off"><button type="submit">'+C.send+'</button></form>';
+document.body.appendChild(fab);document.body.appendChild(panel);
+var log=panel.querySelector('.bot-log'),chips=panel.querySelector('.bot-chips'),inp=panel.querySelector('input'),form=panel.querySelector('form');
+var flow=null,step=0,data={},opened=false;
+function say(h,me){var m=el('div','bot-m '+(me?'me':'bt'));if(me)m.textContent=h;else m.innerHTML=h;log.appendChild(m);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=el('button','bot-c');b.type='button';b.textContent=c.t||c;b.onclick=function(){handle(c.t||c,c);};chips.appendChild(b);});}
+function home(){setChips(C.chips);}
+function ask(){var s=C.flow.steps[step];say(s.q);if(s.opts)setChips(s.opts.concat([{t:C.cancel,cancel:1}]));else setChips([{t:C.cancel,cancel:1}]);inp.placeholder=s.ph||C.placeholder;}
+function start(){flow=true;step=0;data={};say(C.flow.intro);ask();}
+function finish(){var lines=C.flow.steps.map(function(s){return '<b>'+s.label+':</b> '+esc(data[s.key]);}).join('<br>');say(C.flow.done(lines));flow=null;home();inp.placeholder=C.placeholder;}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function handle(text,chip){text=(text||'').trim();if(!text)return;say(esc(text),true);
+if(chip&&chip.cancel){flow=null;say(C.cancelMsg);home();inp.placeholder=C.placeholder;return;}
+if(flow){var s=C.flow.steps[step];if(s.check&&!s.check(text)){say(s.err||C.flowErr);return;}data[s.key]=text;step++;if(step>=C.flow.steps.length)finish();else ask();return;}
+if(chip&&chip.go==='flow'||wantsBooking(text,C.flow.triggers)){start();return;}
+var r=match(text);if(r){say(r.a);if(r.more)setChips(r.more.map(function(x){return x;}).concat(C.chips.slice(0,2)));else home();}else{say(C.fallback);home();}}
+function open(){panel.hidden=false;fab.classList.add('on');if(!opened){opened=true;say(C.hello);home();}inp.focus();}
+fab.onclick=function(){panel.hidden?open():(panel.hidden=true,fab.classList.remove('on'));};
+panel.querySelector('.bot-x').onclick=function(){panel.hidden=true;fab.classList.remove('on');};
+form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';handle(v);};
+window.__bot={handle:handle,open:open};}
+/*ENDUI*/
+
+/*CFG*/
+var CFG={
+fabIcon:'&#128295;',fabText:'Ask or book',title:"Tony's Vehicle Solutions",sub:'Assistant · the team confirms everything',
+placeholder:'Brakes, A/C, oil change...',send:'Send',cancel:'Cancel',cancelMsg:'No problem, nothing was sent.',flowErr:'Could you answer that so I can pass it on?',
+hello:'Hi! Ask me about services, estimates, warranty or the dealership, or book a visit.',
+chips:[{t:'Book an appointment',go:'flow'},'Brake service','A/C repair','Warranty','Walk-ins?','Address'],
+fallback:'Not sure about that one. Call 786-703-9084 or email tonyvehiclesolutions@gmail.com and the team will confirm, or tap Book an appointment.',
+kb:[
+{id:'brake',k:['brake','brakes','pads','rotors','rotor','grinding','pedal','frenos','abs'],a:'Brake service includes a detailed inspection, brake fluid flush, pad and rotor replacement, and caliper and line repair. The site says brake pad replacement starts at $389 plus tax for most vehicles. Final price depends on front or rear, rotor condition and OEM or aftermarket parts, with a written estimate after inspection.'},
+{id:'ac',k:['ac','a/c','air conditioning','air conditioner','air con','aire acondicionado','freon','compressor','heat','cold air','cooling'],a:'A/C services: diagnostics and leak detection, compressor and condenser repair, freon recharge and pressure testing, cabin filter replacement. Diagnostics typically take 30 to 60 minutes, repairs from same-day recharge to 1 to 2 days for parts like compressors.'},
+{id:'oil',k:['oil','oil change','aceite','synthetic','conventional','lube'],a:'Oil change: old oil drained, premium motor oil and a new filter, fluid top-off and a basic leak inspection. The technicians help you choose synthetic or conventional. Walk-ins are welcome and most oil changes take 30 to 45 minutes once in the bay.'},
+{id:'trans',k:['transmission','gearbox','gears','shifting','slipping','clunking','trans'],a:'Transmission: diagnostics for clunking, slipping and delayed engagement, service with fluid flush and filter replacement, and repair or replacement for major problems.'},
+{id:'elec',k:['electrical','battery','alternator','starter','wiring','fuse','warning light','check engine','dashboard light','diagnostic','diagnostics','scan','obd','wont start','dead battery'],a:'Electrical and diagnostics: computer diagnostic tests, starting and charging systems, battery, alternator, starter, wiring and fuses. A diagnostic check is a 20-point inspection with an OBD-II scan, Carfax history review, battery and charging test, fluid, brake and steering checks, tire and pad measurements and a road test if needed.'},
+{id:'tires',k:['tire','tires','tyre','llantas','balancing','valve','flat','wheel'],a:'Tires: replacement and installation, balancing, new valve stems and inflation to manufacturer specs. The shop focuses on replacement and balancing.'},
+{id:'align',k:['alignment','align','pulls','steering','shaking','vibration'],a:'Alignment aligns your suspension and steering system. Suspension, steering and CV axle work is also available.'},
+{id:'susp',k:['suspension','shocks','struts','cv axle','axle','modifications','lowering'],a:'Suspension and modifications: steering and suspension work and CV axles. Tell the team what you need and they will confirm.'},
+{id:'euro',k:['bmw','mercedes','audi','european','german','volkswagen','vw','all makes','toyota','honda','ford'],a:'Yes, all makes and models, including BMW, Mercedes-Benz and Audi, with factory-grade diagnostics, OEM-approved fluids and quality parts.'},
+{id:'warr',k:['warranty','guarantee','guaranteed','warrantee','covered'],a:'Most repairs include up to a 2-year warranty on parts and labor for parts bought through the shop and installed by its technicians. It does not cover customer-provided parts, services with no part replaced (brake fluid, coolant, A/C recharge), normal wear, misuse or towing. Claims are completed in the shop.'},
+{id:'price',k:['price','cost','how much','estimate','quote','free estimate','cheap','tune up','tuneup','tune-up','precio'],a:'You get a written estimate after an inspection or diagnostic, and a diagnostic fee may apply. The site lists brake pad replacement from $389 plus tax and tune-ups from $289 plus tax. Final pricing depends on the vehicle, parts and labor.'},
+{id:'walk',k:['walk in','walk-in','walkin','appointment needed','wait','drop off','dropoff','while i wait'],a:'Walk-ins are welcome. Booking an appointment helps minimize wait times. You can drop the car off or wait for it.'},
+{id:'hours',k:['hours','open','opening','close','closing','saturday','sunday','weekend','time'],a:'The site does not list opening hours, so please call 786-703-9084 and the team will confirm.'},
+{id:'addr',k:['address','where','location','directions','find you','map','coral gables','miami','7th st','street'],a:'3693 SW 7th St, Miami, FL 33135, serving Coral Gables and the greater Miami area.'},
+{id:'phone',k:['phone','call','number','telephone','email','whatsapp','contact','text','reach'],a:'Phone 786-703-9084, email tonyvehiclesolutions@gmail.com, or message the shop on WhatsApp.'},
+{id:'fin',k:['financing','finance','credit','loan','payment plan','monthly','lenders','credit application'],a:'Financing is available, both for repairs and for the dealership. The shop works with a network of trusted lenders and there is a credit application on the site.'},
+{id:'deal',k:['dealership','buy a car','cars for sale','used car','sedan','suv','hatchback','pickup','pick up','truck','autosales','sale'],a:'The shop also sells quality cars: sedans, SUVs, hatchbacks and pick-ups, with financing and a 1-year warranty on mechanical issues. The team helps you choose.'},
+{id:'cert',k:['ase','aaa','certified','certification','technician','technicians','mechanic','mechanics'],a:'The technicians are ASE-certified and the shop is an AAA-certified auto shop.'},
+{id:'parts',k:['own parts','my parts','bring parts','customer parts','supplied parts','oem','aftermarket'],a:'Bringing your own parts is not recommended, and labor on customer-supplied parts is not warranted. The shop installs parts it can verify and guarantee.'},
+{id:'maint',k:['maintenance','tuneup','spark plug','spark plugs','filter','filters','coolant','flush','inspection','scheduled'],a:'Maintenance covers oil changes, spark plugs, differential oil, brake fluid, engine and cabin air filters, cooling system flush and scheduled maintenance following your manufacturer schedule.'},
+{id:'lift',k:['lift','lifts','lifted','lift kit','off road','offroad','4x4','custom lift','ground clearance'],a:'Custom lifts for all vehicles: off-road capability and ground clearance, or a sportier, more rugged 4x4 look, with professional guidance and premium parts.'},
+{id:'signs',k:['signs','symptoms','weak airflow','smell','odor','noise','noises','squeal','squealing','leak','leaks','crooked'],a:'Common signs: weak or warm A/C airflow or odors; a car that pulls to one side, uneven tire wear or a crooked steering wheel (alignment); a spongy pedal or ABS light (brakes); dashboard warning lights or a dead battery (electrical). The technicians confirm after inspection.'},
+{id:'rev',k:['reviews','review','rating','ratings','reputation','google reviews','yelp','recommend','trusted'],a:'The site mentions over 700 reviews, many on Google, and the shop is on Yelp, Facebook and Instagram too. Customers mention fast diagnostics and same-day repairs.'},
+{id:'emis',k:['emissions','emission','smog','exhaust','fuel system','fuel tank','cooling system','radiator','overheating','coolant flush'],a:'The shop is an emissions repair facility and also repairs exhaust and fuel systems and flushes and repairs engine cooling systems.'},
+{id:'lang',k:['spanish','espanol','hablan','habla','idioma','language','speak'],a:'Customer reviews on the site are in both English and Spanish. Ask the team by phone or WhatsApp about language support.'},
+{id:'diagfee',k:['diagnostic fee','diag fee','fee','charge for diagnostic'],a:'A diagnostic fee may apply. The written estimate follows the professional inspection or diagnostic.'},
+{id:'jobs',k:['job','jobs','career','careers','hiring','work for you','employment'],a:'There is a Careers page on the site. Call 786-703-9084 for current openings.'}
+],
+flow:{triggers:['book','booking','appointment','schedule','reserve','bring my car','service today','book a visit','make an appointment'],
+intro:'Sure, let me gather the details for the team.',
+steps:[
+{key:'service',label:'Service',q:'What does the car need?',opts:['Brakes','Oil change','A/C or heat','Check-engine or diagnostics','Tires','Transmission','Something else']},
+{key:'car',label:'Vehicle',q:'Year, make and model?',ph:'e.g. 2017 Audi A4',check:function(t){return t.length>=3;},err:'Please add the car, for example 2017 Audi A4.'},
+{key:'drop',label:'Drop-off',q:'Will you drop it off or wait?',opts:['Drop off','I will wait']},
+{key:'when',label:'Day and time',q:'Which day and time suits you?',ph:'e.g. Thursday morning'},
+{key:'name',label:'Name',q:'Your name?',ph:'Name'},
+{key:'contact',label:'Phone or email',q:'Phone number or email for the shop to reach you?',ph:'Phone or email',check:function(t){return t.length>=6;},err:'Please add a phone number or email.'}
+],
+done:function(l){return 'Thanks! Here is what would go to the team:<br>'+l+'<br><br>This is a demo preview, so nothing was sent. On the live site this reaches the shop, which confirms the slot and gives a written estimate after inspection.';}}
+};
+/*ENDCFG*/
+initBot(CFG);
+</script>
+</body>
+</html>

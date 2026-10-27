@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MoTai Mandarin | Small-group Mandarin in Sydney CBD</title>
+<meta name="description" content="Demo page for MoTai Mandarin, Sydney: small-group and private Mandarin, business programs, young learners, HSK. Includes a question-and-booking assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#2092c8;--blue-d:#14709b;--blue-l:#e4f3fa;--gold:#f2ac24;--gold-l:#fff3d6;--ink:#262626;--mut:#5d6670;--paper:#fffaf0;--line:#eadfc6;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Nunito,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--blue-d)}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 16px}
+.zh{font-family:"Noto Serif SC",serif}
+header{background:#fff;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:20}
+.hbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 16px;max-width:1080px;margin:0 auto}
+.hbar img{height:46px;width:auto}
+.hbar nav{display:none;gap:18px;font-weight:700;font-size:.92rem}
+.hbar nav a{text-decoration:none;color:var(--ink)}
+.hbar nav a:hover{color:var(--blue)}
+.btn{display:inline-block;background:var(--blue);color:#fff;border:0;border-radius:999px;padding:11px 20px;font:800 .95rem Nunito,sans-serif;text-decoration:none;cursor:pointer;box-shadow:0 3px 0 var(--blue-d)}
+.btn.gold{background:var(--gold);color:#3a2a00;box-shadow:0 3px 0 #c98a0c}
+.btn.ghost{background:transparent;color:var(--blue-d);box-shadow:inset 0 0 0 2px var(--blue)}
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--blue-l),var(--paper) 70%);padding:34px 0 44px}
+.hero .big{position:absolute;right:-10px;top:-18px;font-size:11rem;line-height:1;color:rgba(32,146,200,.10);font-weight:700;pointer-events:none;white-space:nowrap}
+.hero h1{font-size:clamp(1.9rem,7vw,3.1rem);line-height:1.12;font-weight:800;max-width:15em;position:relative}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero p.lead{margin:14px 0 20px;max-width:34em;color:var(--mut);font-size:1.06rem;position:relative}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;position:relative}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:26px;position:relative}
+.fact{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px}
+.fact b{display:block;font-size:1.25rem;color:var(--blue-d)}
+.fact span{font-size:.82rem;color:var(--mut)}
+section{padding:42px 0}
+h2{font-size:clamp(1.5rem,5vw,2.1rem);line-height:1.15;font-weight:800;margin-bottom:6px}
+h2 small{display:block;font:700 .85rem Nunito;color:#9a6a00;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.sub{color:var(--mut);max-width:38em;margin-bottom:22px}
+.ladder{display:grid;gap:8px;position:relative}
+.step{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;background:#fff;border:1px solid var(--line);border-left:8px solid var(--blue);border-radius:12px;padding:10px 14px}
+.step:nth-child(2){margin-left:10px}.step:nth-child(3){margin-left:20px}.step:nth-child(4){margin-left:30px}.step:nth-child(5){margin-left:40px}.step:nth-child(6){margin-left:50px}
+.step b{font-size:1.02rem}
+.step i{font-style:normal;color:var(--mut);font-size:.88rem}
+.abc{display:flex;gap:6px;margin-top:2px}
+.abc span{background:var(--gold-l);border:1px solid var(--gold);border-radius:6px;font-weight:800;font-size:.75rem;padding:0 8px}
+.note{margin-top:14px;font-size:.92rem;color:var(--mut)}
+.cards{display:grid;gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;min-width:0}
+.card h3{font-size:1.15rem;margin-bottom:4px}
+.card .tag{display:inline-block;background:var(--blue-l);color:var(--blue-d);font-weight:800;font-size:.72rem;border-radius:999px;padding:1px 10px;margin-bottom:8px}
+.card ul{padding-left:18px;color:var(--mut);font-size:.94rem}
+.card.hl{border:2px solid var(--gold);background:var(--gold-l)}
+.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.two{display:grid;gap:22px}
+.two>*{min-width:0}
+.quote{background:var(--blue);color:#fff;border-radius:var(--r);padding:22px;position:relative;overflow:hidden}
+.quote p{font-size:1.1rem;font-weight:600;position:relative}
+.quote .zh{position:absolute;right:-6px;bottom:-26px;font-size:7rem;color:rgba(255,255,255,.13)}
+.quote small{display:block;margin-top:8px;opacity:.9;position:relative}
+.kids{display:grid;gap:10px}
+.kid{display:flex;gap:12px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px}
+.kid .age{flex:0 0 74px;text-align:center;background:var(--gold);color:#3a2a00;border-radius:12px;font-weight:800;padding:8px 4px;font-size:.85rem}
+.kid div:last-child{min-width:0}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;padding:12px 14px}
+summary{cursor:pointer;font-weight:800}
+details p{margin-top:8px;color:var(--mut);font-size:.95rem}
+.visit{background:var(--blue);color:#fff}
+.visit a{color:#fff}
+.visit .cards .card{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#fff}
+.visit .card p{font-size:.98rem;overflow-wrap:anywhere}
+footer{background:#1c2a33;color:#c8d4dc;padding:24px 0 90px;font-size:.85rem}
+footer img{height:38px;background:#fff;border-radius:8px;padding:3px 8px;margin-bottom:10px}
+#fab{position:fixed;right:14px;bottom:14px;z-index:50;background:var(--gold);color:#3a2a00;border:0;border-radius:999px;padding:12px 18px;font:800 .95rem Nunito;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer}
+#panel{position:fixed;right:10px;bottom:70px;z-index:50;width:min(380px,calc(100vw - 20px));height:min(520px,calc(100vh - 90px));background:#fff;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden;border:2px solid var(--blue)}
+#panel.open{display:flex}
+#ph{background:var(--blue);color:#fff;padding:10px 14px;font-weight:800;display:flex;justify-content:space-between;align-items:center}
+#ph button{background:none;border:0;color:#fff;font-size:1.4rem;cursor:pointer}
+#msgs{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--paper)}
+.m{max-width:86%;padding:8px 12px;border-radius:14px;font-size:.93rem;white-space:pre-line;overflow-wrap:anywhere}
+.m.b{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.m.u{background:var(--blue);color:#fff;align-self:flex-end}
+#chips{display:flex;flex-wrap:wrap;gap:6px;padding:6px 10px;background:var(--paper);border-top:1px solid var(--line);max-height:96px;overflow-y:auto}
+#chips button{background:#fff;border:1.5px solid var(--blue);color:var(--blue-d);border-radius:999px;padding:4px 11px;font:700 .8rem Nunito;cursor:pointer}
+#f{display:flex;gap:6px;padding:8px;border-top:1px solid var(--line)}
+#f input{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;font:inherit;font-size:.95rem}
+#f button{background:var(--blue);color:#fff;border:0;border-radius:999px;padding:0 16px;font-weight:800;cursor:pointer}
+@media(min-width:700px){
+.hbar nav{display:flex}.hbar img{height:54px}
+.facts{grid-template-columns:repeat(4,minmax(0,1fr))}
+.cards.c4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cards.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.two{grid-template-columns:1.1fr .9fr;align-items:start}
+.hero .big{font-size:20rem;right:0;top:-40px}
+.ladder{grid-template-columns:repeat(2,minmax(0,1fr))}
+.step,.step:nth-child(n){margin-left:0}
+}
+@media(min-width:1000px){.cards.c4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<header><div class="hbar">
+<a href="#top"><img src="img/motai-mandarin-logo.png" alt="MoTai Mandarin" width="136" height="46"></a>
+<nav><a href="#pathway">Courses</a><a href="#options">Tuition</a><a href="#young">Young learners</a><a href="#business">Business</a><a href="#faq">FAQ</a><a href="#visit">Visit</a></nav>
+<a class="btn gold" href="#visit" onclick="openAssistant('trial');return false">Free assessment</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="zh big" aria-hidden="true">你好</div>
+<div class="wrap">
+<h1>Learn more than <em>nǐ hǎo</em> and <em>xiè xie</em>, in a small class on George Street.</h1>
+<p class="lead">MoTai Mandarin is a private Chinese language institute in Sydney CBD. Adults, business teams and children study Mandarin with teachers trained in teaching Chinese as a second language, in groups of 3 to 6 or one on one.</p>
+<div class="cta"><a class="btn" href="#pathway">See the course path</a><button class="btn ghost" onclick="openAssistant('trial')">Book a free trial or assessment</button></div>
+<div class="facts">
+<div class="fact"><b>2015</b><span>founded by Isabella Yi</span></div>
+<div class="fact"><b>3 to 6</b><span>students per standard group</span></div>
+<div class="fact"><b>20 hours</b><span>per module, 10 weekly sessions</span></div>
+<div class="fact"><b>4 terms</b><span>a year, open enrolment each term</span></div>
+</div></div></div>
+
+<section id="pathway"><div class="wrap">
+<h2><small>Adult Mandarin</small>Six levels, three modules each</h2>
+<p class="sub">Each module is 20 hours: one 2-hour lesson a week across ten weeks. Textbook included for adult courses, with MoTai handouts that explain pronunciation and grammar in plain English.</p>
+<div class="ladder">
+<div class="step"><b>1 · Beginner</b><i>Start from zero</i><div class="abc"><span>A</span><span>B</span><span>C</span></div></div>
+<div class="step"><b>2 · Elementary</b><i>Everyday conversation</i><div class="abc"><span>A</span><span>B</span><span>C</span></div></div>
+<div class="step"><b>3 · Intermediate</b><i>Build sentences with confidence</i><div class="abc"><span>A</span><span>B</span><span>C</span></div></div>
+<div class="step"><b>4 · Upper-Intermediate</b><i>Longer, richer exchanges</i><div class="abc"><span>A</span><span>B</span><span>C</span></div></div>
+<div class="step"><b>5 · Pre-Advanced</b><i>Towards fluency</i><div class="abc"><span>A</span><span>B</span><span>C</span></div></div>
+<div class="step"><b>6 · Advanced</b><i>Polish and depth</i><div class="abc"><span>A</span><span>B</span><span>C</span></div></div>
+</div>
+<p class="note">Studied before? A short complimentary assessment places you at the right module. Total beginners are advised to start at Beginner Module A.</p>
+</div></section>
+
+<section id="options" class="alt"><div class="wrap">
+<h2><small>Tuition options</small>Pick the way you like to learn</h2>
+<p class="sub">Group lessons run on a fixed weekly timetable. Private lessons move around your work and life.</p>
+<div class="cards c4">
+<div class="card"><span class="tag">Group</span><h3>Standard</h3><ul><li>Small group, 3 to 6 students</li><li>In person or online</li><li>Textbook, handouts, slides</li></ul></div>
+<div class="card hl"><span class="tag">Group+</span><h3>Standard Plus</h3><ul><li>Everything in Standard</li><li>One-on-one tutorials</li><li>HSK sponsorship</li></ul></div>
+<div class="card"><span class="tag">1-on-1</span><h3>Private class</h3><ul><li>Fixed or flexible schedule</li><li>One on one or private group</li><li>Dedicated teacher, in person or online</li></ul></div>
+<div class="card"><span class="tag">Teams</span><h3>Corporate program</h3><ul><li>Language, etiquette, culture</li><li>Standard, part or fully customised</li><li>All private class features</li></ul></div>
+</div>
+<p class="note">There is also a Starters Group for beginner courses (6 to 10 students, runs when at least 6 enrol). Weekly tutoring sessions support Standard Group and private students. Current fees are on the Term Dates and Fees page, and the team confirms them.</p>
+</div></section>
+
+<section id="why"><div class="wrap two">
+<div><h2><small>About</small>Taught by people trained to teach Chinese</h2>
+<p class="sub" style="margin-bottom:12px">Founder Isabella Yi holds a Master of Linguistics and Applied Linguistics (TCSOL) and taught Mandarin in China and abroad before opening MoTai. Teachers hold degrees in Chinese language teaching, and anyone teaching children needs a valid Working With Children Check.</p>
+<p class="sub">Classes meet in MoTai's own classroom, not shared with other schools, with refreshments provided. MoTai is a member of the Australia China Business Council and an official partner for the Oral Chinese Test (OCT).</p></div>
+<div class="quote"><span class="zh" aria-hidden="true">师</span><p>"I have found my level of mandarin has improved more rapidly in the first 10 weeks at MoTai than it did in a whole year."</p><small>Olivia Flynn, student review on motaimandarin.com.au</small></div>
+</div></section>
+
+<section id="young" class="alt"><div class="wrap">
+<h2><small>Young learners</small>Private lessons by age</h2>
+<p class="sub">Children's Mandarin is private class only. Private tutoring also covers HSC Chinese, IB Diploma, HSK and YCT preparation.</p>
+<div class="kids">
+<div class="kid"><div class="age">3 to 5</div><div><b>Preschool</b><br><span style="color:var(--mut);font-size:.9rem">40 to 50 hours</span></div></div>
+<div class="kid"><div class="age">6 to 9</div><div><b>Junior</b><br><span style="color:var(--mut);font-size:.9rem">90 hours</span></div></div>
+<div class="kid"><div class="age">10 to 17</div><div><b>Senior</b><br><span style="color:var(--mut);font-size:.9rem">200 to 260 hours</span></div></div>
+</div></div></section>
+
+<section id="business"><div class="wrap two">
+<div><h2><small>Business Mandarin</small>For careers and Chinese-speaking customers</h2>
+<p class="sub">The pathway: finish Adult Beginner and Elementary (6 modules, 120 hours), take Business Mandarin Foundation (3 modules, 60 hours), then Intermediate to Advanced (12 modules, 240 hours).</p>
+<p class="sub">Employers can ask for a customised corporate program covering language, business etiquette and cultural awareness. Private and corporate lessons can be delivered at your office in Sydney or Parramatta CBD with no travel cost. MoTai also offers NAATI translation services for Chinese.</p></div>
+<div class="card hl"><h3>Request a quote</h3><p style="color:var(--mut);margin:6px 0 12px">Tell the assistant what you need and the team follows up. Private class rates depend on category, lesson length and time slots.</p><button class="btn" onclick="openAssistant('corp')">Start an enquiry</button></div>
+</div></section>
+
+<section id="faq" class="alt"><div class="wrap">
+<h2><small>FAQ</small>Good to know before you enrol</h2>
+<details><summary>Can I join in the middle of a term?</summary><p>Beginner A: generally the next term is advised if you will miss three sessions; with two missed you can still enrol and catch up with private sessions at extra fee. Other levels: anytime during the term, subject to placement assessment.</p></details>
+<details><summary>What if I miss a group lesson?</summary><p>Group classes cannot be rescheduled. MoTai tries to place you in another class of the same course, or you can use a weekly tutoring session. Private lessons can be moved with two days written notice.</p></details>
+<details><summary>What is the refund policy?</summary><p>80% refund if requested before the course starts. No refund once it has commenced. Full refund only if MoTai cancels, or cannot place you in any of your three preferred class times.</p></details>
+<details><summary>How do I pay?</summary><p>Bank transfer or major credit card. American Express and JCB carry a 1.4% surcharge, waived for group classes enrolled online. Fees are GST inclusive and a tax invoice is provided.</p></details>
+<details><summary>Is there a minimum for private lessons?</summary><p>Generally 10 hours is the minimum private booking. Contact the centre if you need another arrangement.</p></details>
+<details><summary>What is a tutoring session?</summary><p>An extra weekly support session, not a class: ask questions, get help with homework or practise speaking. Standard Group and private students can attend up to two a week, Starters Group students one. Students of different levels can join together.</p></details>
+<details><summary>Can lessons happen at my office?</summary><p>Yes. Private and corporate lessons in Sydney or Parramatta CBD are delivered on site with no travel cost. Other locations add travel cost.</p></details>
+<details><summary>How do I know which course to join?</summary><p>If you studied on your own or with friends, start at Beginner Module A. If you studied at school, a short complimentary assessment finds your level and the team recommends a course.</p></details>
+</div></section>
+
+<section id="voices"><div class="wrap"><h2><small>Student voices</small>What learners say</h2><p class="sub">Quotes from the testimonials on motaimandarin.com.au.</p><div class="cards c3"><div class="card"><p>"Small groups which make for a perfect learning environment as well as allowing you to practise with similar level speakers."</p><p style="margin-top:8px;font-weight:800">Olivia Flynn</p></div><div class="card"><p>"Textbooks are provided which is great as I can refer to the books when I revise. The time and location in the city is convenient as well."</p><p style="margin-top:8px;font-weight:800">Marlisa Hancock</p></div><div class="card"><p>"A bonus is the small classes so you never get left out or behind."</p><p style="margin-top:8px;font-weight:800">Christian Maggio</p></div></div></div></section>
+
+<section id="visit" class="visit"><div class="wrap">
+<h2><small style="color:var(--gold-l)">Visit and contact</small>Suite 310, 478 George Street</h2>
+<div class="cards c3" style="margin-top:16px">
+<div class="card"><h3>Address</h3><p>Suite 310, 478 George Street<br>Sydney NSW 2000</p></div>
+<div class="card"><h3>Phone and hours</h3><p><a href="tel:+61280660224">(02) 8066 0224</a><br>9am to 5pm AEST, Mon to Fri</p></div>
+<div class="card"><h3>Email</h3><p><a href="mailto:nihao@motaimandarin.com.au">nihao@motaimandarin.com.au</a></p></div>
+</div>
+<p style="margin-top:18px"><button class="btn gold" onclick="openAssistant('trial')">Book a free trial or assessment</button></p>
+</div></section>
+</main>
+
+<footer><div class="wrap"><img src="img/motai-mandarin-logo.png" alt="MoTai Mandarin" width="112" height="38"><p>Demo · prepared by Gevorg Hovhannisyan</p><p style="opacity:.7;margin-top:4px">Content from motaimandarin.com.au. The team confirms current dates, fees and availability.</p></div></footer>
+
+<button id="fab" onclick="toggleP()" aria-label="Open assistant">💬 Ask MoTai</button>
+<div id="panel" role="dialog" aria-label="MoTai assistant"><div id="ph"><span>MoTai assistant</span><button onclick="toggleP()" aria-label="Close">×</button></div><div id="msgs" aria-live="polite"></div><div id="chips"></div><form id="f" autocomplete="off"><input id="q" placeholder="Ask about classes, levels, trial…" aria-label="Your question"><button>Send</button></form></div>
+
+<script>
+//#MATCHER-START
+var KB=[
+{id:'hi',k:'hello hi hey nihao hola',a:'Hello, 你好! I can answer questions about MoTai Mandarin courses, trials and enrolment, or take a booking request for the team.'},
+{id:'about',k:'about who what motai institute school founded founder isabella story history tcsol teacher qualified',a:'MoTai Mandarin is a private Chinese language institute in Sydney CBD, founded in 2015 by Isabella Yi (Master of Linguistics and Applied Linguistics, TCSOL). Teachers hold degrees in Chinese language teaching, and children\'s teachers need a valid Working With Children Check.'},
+{id:'location',k:'where address location located find street george cbd directions station parking map',a:'MoTai Mandarin is at Suite 310, 478 George Street, Sydney NSW 2000. The team can confirm directions on 02 8066 0224.'},
+{id:'hours',k:'hours open opening time call phone contact office when reach number telephone',a:'Phone (02) 8066 0224, 9am to 5pm AEST, Monday to Friday. Email nihao@motaimandarin.com.au.'},
+{id:'email',k:'email mail write nihao',a:'You can write to nihao@motaimandarin.com.au.'},
+{id:'levels',k:'level levels course courses module modules beginner elementary intermediate advanced pre-advanced upper structure path pathway offer',a:'Adult Mandarin has six levels: Beginner, Elementary, Intermediate, Upper-Intermediate, Pre-Advanced and Advanced. Each level has Modules A, B and C, and each module is 20 hours (10 sessions).'},
+{id:'duration',k:'long duration hours weekly week module session length often many term terms year',a:'A group module is 20 hours: one 2-hour lesson a week for ten consecutive weeks (public holidays excluded). One term covers one module and there are four terms a year.'},
+{id:'size',k:'size class small group students many people number standard starters',a:'Standard Group classes are small, 3 to 6 students. Starters Group (beginner courses only) is 6 to 10 students and runs when at least 6 enrol; otherwise the team offers an upgrade to Standard, a deferral or a full refund.'},
+{id:'tuition',k:'tuition options plan standard plus private corporate difference types type kinds',a:'Four options: Standard (small group, in person or online, textbook and handouts), Standard Plus (adds one-on-one tutorials and HSK sponsorship), Private Class (fixed or flexible schedule, dedicated teacher) and Corporate Program (language, etiquette and culture, customised if needed).'},
+{id:'price',k:'price prices cost costs fee fees much pay charge rate rates cheap expensive quote',a:'Fees are on the Term Dates and Fees page, and the team confirms current figures. All fees are GST inclusive. Private class rates depend on course category, lesson length and time slots, and cost less per hour when you book more hours. I can send a quote request to the team.'},
+{id:'payment',k:'payment pay payments card credit amex american express jcb bank transfer invoice gst surcharge',a:'You can pay by bank transfer or major credit card. American Express and JCB carry a 1.4% surcharge, waived when you enrol a group class online. Fees include GST and a tax invoice is provided.'},
+{id:'refund',k:'refund refunds cancel cancellation cancelled money back withdraw',a:'80% refund if requested before the course commences. No refund once it has started. Full refund only if MoTai cancels the course, or cannot place you in any of your preferred class times. See Terms and Conditions for details.'},
+{id:'trial',k:'trial free assessment test placement try class demo complimentary info session',a:'Yes: MoTai holds free trial classes and information sessions, and offers a short complimentary assessment if you have studied before. I can take your details for that now.'},
+{id:'placement',k:'studied before prior experience know which course join start place placed right level my level never',a:'If you learned on your own or from friends, starting at Beginner Module A is recommended. If you studied at school, a short free assessment finds your level and the team recommends a course.'},
+{id:'timetable',k:'timetable schedule time times day evening weekend weekday slot preferred class time when',a:'Group class times vary by term. When you enrol you can give three preferred times and the team confirms your time one week before the term starts. Private lessons can be arranged within or outside business hours.'},
+{id:'missed',k:'miss missed absent reschedule postpone makeup make-up catch skip sick',a:'Group classes run on a fixed timetable and cannot be rescheduled, but the team tries to place you in another class of the same course. You can also use a weekly tutoring session. Private lessons can be moved with two days written notice.'},
+{id:'midterm',k:'join late middle after started midterm mid-term enrol enroll enrolment enrolling sign signup register registration',a:'All courses are open for enrolment every term. For Beginner A it is generally advised to join next term if you will miss three sessions. Other levels can be joined anytime, subject to a placement assessment.'},
+{id:'online',k:'online zoom remote distance virtual person inperson',a:'Standard group, Standard Plus and private classes can be in person or online.'},
+{id:'textbook',k:'textbook book books materials handout handouts workbook buy',a:'Textbooks are included for adult and business Mandarin courses, plus MoTai handouts. Children\'s textbooks and workbooks are not included and can be bought from a bookshop or from MoTai at the same retail price.'},
+{id:'private',k:'private oneonone 1on1 individual personal tutor tutoring dedicated lesson lessons minimum',a:'Private class is one on one or a private group, on a fixed or flexible schedule, in person or online, with a dedicated teacher. Generally the minimum booking is 10 hours. Lessons can be held at your office in Sydney or Parramatta CBD without travel cost.'},
+{id:'kids',k:'child children kid kids young learner learners junior senior preschool teen teenager age son daughter',a:'Young learners Mandarin is private class only: Preschool (3 to 5 years, 40 to 50 hours), Junior (6 to 9 years, 90 hours) and Senior (10 to 17 years, 200 to 260 hours). Teachers have a valid Working With Children Check.'},
+{id:'exams',k:'hsk yct hsc ib exam exams diploma test proficiency oct oral',a:'Private tutoring covers HSC Chinese, IB Diploma, HSK and YCT. MoTai sponsors eligible students to sit HSK exams (optional) and is an official partner for the Oral Chinese Test (OCT).'},
+{id:'business',k:'business corporate company staff employee employees employer team etiquette work workplace career customers',a:'Business Mandarin follows a pathway: Adult Beginner and Elementary (120 hours), Business Mandarin Foundation (60 hours), then Intermediate to Advanced (240 hours). Corporate programs cover language, business etiquette and cultural awareness, standard or customised.'},
+{id:'naati',k:'naati translation translate translator chinese-english document',a:'MoTai offers NAATI translation services for Chinese. I can pass a quote request to the team.'},
+{id:'tutoring',k:'tutoring tutorial support homework practise practice',a:'Tutoring is an extra weekly support session: ask questions, get homework help or practise speaking. Standard Group and private students can attend up to two a week, Starters Group one.'},
+{id:'thanks',k:'thanks thank cheers great ok okay',a:'You are welcome! Anything else, or shall I take a booking request?'}
+];
+var SYN={price:['prise','pricing','cheapest','tuition'],trial:['trail','tryout'],assessment:['asesment','assesment','asessment','assessement'],beginner:['begginer','beginers','begginers','newbie'],intermediate:['intermidiate','intermedeate'],elementary:['elementry'],schedule:['shedule','scedule'],address:['adress','adres'],location:['locaton'],enrol:['enroll','enrollment','enrolment','enrolling'],refund:['refand','refunnd'],private:['privat','privte'],children:['childs','kidz','childrens'],corporate:['coorporate','corperate','corparate'],mandarin:['mandrin','mandarinn','chinese']};
+var STOP=['what','is','the','can','do','you','i','how','are','your','a','an','to','for','of','it','does','there','my','me','we','in','on','at','and','or','have','has','who','about'];
+function norm(s){return s.toLowerCase().replace(/[^a-z0-9一-鿿\s-]/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){if(w.length>4){w=w.replace(/(ing|ed|es|s)$/,'')}return w}
+function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c}return p[b.length]}
+var IDX=KB.map(function(e){return {e:e,w:e.k.split(' ').map(stem)}});
+function fixSyn(t){for(var k in SYN){if(SYN[k].indexOf(t)>-1)return k}return t}
+function match(q){
+ q=norm(q);if(!q)return null;
+ var toks=q.split(' ').filter(function(w){return STOP.indexOf(w)<0}).map(fixSyn).map(stem);
+ var best=null,bs=0;
+ IDX.forEach(function(it){var s=0;toks.forEach(function(t){if(t.length<2)return;
+  var hit=0;it.w.forEach(function(w){if(w===t)hit=Math.max(hit,3);else if(t.length>=5&&w.length>=5&&(w.indexOf(t)===0||t.indexOf(w)===0))hit=Math.max(hit,2);else if(t.length>=5&&lev(t,w)<=1)hit=Math.max(hit,2);else if(t.length>=7&&lev(t,w)<=2)hit=Math.max(hit,1.5)});if(hit&&SYN[t])hit+=0.5;s+=hit});
+  if(s>bs){bs=s;best=it.e}});
+ return bs>=2?best:null}
+//#MATCHER-END
+var P=document.getElementById('panel'),M=document.getElementById('msgs'),C=document.getElementById('chips'),Q=document.getElementById('q'),F=document.getElementById('f');
+var flow=null,data={},started=false;
+function say(t,u){var d=document.createElement('div');d.className='m '+(u?'u':'b');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight}
+function chips(a){C.innerHTML='';a.forEach(function(x){var b=document.createElement('button');b.type='button';b.textContent=x[0];b.onclick=function(){if(typeof x[1]==='function')x[1]();else handle(x[1],true)};C.appendChild(b)})}
+function home(){chips([['Book a free trial','__trial'],['Course levels','levels'],['Tuition options','tuition'],['Private lessons','private'],['Kids classes','kids'],['Business Mandarin','business'],['Fees','price'],['Address and hours','location']])}
+function toggleP(){P.classList.toggle('open');if(P.classList.contains('open')&&!started){started=true;say('Hello 你好! I am the MoTai Mandarin assistant. Ask about courses, levels, trial classes or enrolment, or book a free assessment.');home()}}
+function openAssistant(kind){if(!P.classList.contains('open'))toggleP();if(kind==='trial')startFlow('trial');if(kind==='corp')startFlow('corp')}
+var STEPS={
+trial:[['kind','What would you like to book?',['Free trial class','Free level assessment']],['level','What is your Mandarin level?',['Total beginner','Studied a little','Intermediate or above','Not sure']],['times','Which days or times suit you best? (up to three)',null],['name','Your name?',null],['contact','Best email or phone number?',null]],
+group:[['level','Which level do you want to enrol in?',['Beginner A','Elementary','Intermediate','Upper-Intermediate or above','Not sure']],['mode','In person or online?',['In person','Online']],['times','Give up to three preferred class times.',null],['name','Your name?',null],['contact','Best email or phone number?',null]],
+private:[['who','Who is the lesson for?',['Myself','My child','My team']],['goal','What is the goal?',['General Mandarin','Business Mandarin','HSC or IB','HSK or YCT','Other']],['times','Preferred days, times and place (office, centre, online)?',null],['name','Your name?',null],['contact','Best email or phone number?',null]],
+corp:[['company','Company name?',null],['people','How many learners, and what is the aim (language, etiquette, culture)?',null],['name','Your name?',null],['contact','Best email or phone number?',null]]
+};
+function startFlow(k){flow={k:k,i:0};data={};ask()}
+function ask(){var s=STEPS[flow.k][flow.i];say(s[1]);if(s[2])chips(s[2].map(function(x){return [x,x]}));else C.innerHTML=''}
+function finish(){flow=null;var lines=Object.keys(data).map(function(k){return data[k]}).join(', ');say('Thank you. Your request is noted ('+lines+') and has been sent to the MoTai team. They reply during office hours, 9am to 5pm AEST, Monday to Friday. Demo: nothing is actually sent.');home()}
+function handle(t,chip){
+ t=String(t).trim();if(!t)return;
+ if(t==='__trial'){say('Book a free trial',true);return startFlow('trial')}
+ say(chip&&KB.some(function(e){return e.id===t})?(KB.filter(function(e){return e.id===t})[0].k.split(' ')[0]):t,true);
+ if(flow){var s=STEPS[flow.k][flow.i];data[s[0]]=t;flow.i++;if(flow.i>=STEPS[flow.k].length)return finish();return ask()}
+ var n=norm(t);
+ if(!chip&&/\b(book|booking|reserve|sign up|enrol|enroll)\b/.test(n)&&!/\b(refund|cancel|how|what|when|can i|do you)\b/.test(n)){return startFlow(/private|tutor/.test(n)?'private':(/enrol|enroll|group/.test(n)?'group':'trial'))}
+ var r=chip?KB.filter(function(e){return e.id===t})[0]:match(t);
+ if(r){say(r.a);if(r.id==='trial')chips([['Book now','__trial'],['Course levels','levels'],['Fees','price']]);else if(r.id==='tuition'||r.id==='levels')chips([['Enrol in a group class',function(){startFlow('group')}],['Private lessons','private'],['Book a free trial','__trial']]);else if(r.id==='private'||r.id==='kids')chips([['Request private lessons',function(){startFlow('private')}],['Book a free trial','__trial']]);else if(r.id==='business'||r.id==='naati')chips([['Start a corporate enquiry',function(){startFlow('corp')}],['Home',home]]);else home()}
+ else{say('I am not sure about that one, and I would rather not guess. The team can confirm on (02) 8066 0224 or nihao@motaimandarin.com.au. Meanwhile I can help with levels, trials, fees, lessons for kids or business courses.');home()}
+}
+F.addEventListener('submit',function(e){e.preventDefault();var v=Q.value;Q.value='';handle(v)});
+</script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alexandra School of Motoring · Fairview, Dublin 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--g:#18AC10;--gd:#0d5a09;--ink:#14210f;--paper:#f7f4ea;--red:#d6291f;--line:#d9d3bd;--bot-a:#0d5a09;--bot-on:#fff;--bot-bg:#fffdf6;--bot-b:#eaf3de;--bot-ink:#14210f;--bot-font:'Source Sans 3',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 'Source Sans 3',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Archivo,sans-serif;line-height:1.05;margin:0}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:3px solid var(--g)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 16px;max-width:1040px;margin:0 auto}
+.hd img{height:34px;width:auto;display:block;max-width:60vw}
+.call{background:var(--ink);color:#fff;text-decoration:none;font:700 14px Archivo;padding:10px 13px;border-radius:8px;white-space:nowrap}
+nav.sub{display:none}
+.hero{position:relative;overflow:hidden;background:var(--gd);color:#fff;padding:44px 0 0}
+.hero .wrap{position:relative;z-index:2}
+.eyebrow{font:700 12px Archivo;letter-spacing:.14em;text-transform:uppercase;color:#bff0b3}
+.hero h1{font-size:clamp(34px,9vw,68px);font-weight:800;margin:10px 0 14px;max-width:11em}
+.hero p.lead{max-width:34em;font-size:19px;color:#e3f3dc;margin:0 0 22px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;text-decoration:none;font:700 16px Archivo;padding:14px 20px;border-radius:10px;border:0;cursor:pointer}
+.btn.p{background:#fff;color:var(--gd)}.btn.o{border:2px solid #fff;color:#fff}
+.lplate{position:absolute;right:-18px;top:26px;width:130px;height:130px;background:#fff;color:var(--red);border:6px solid var(--red);border-radius:10px;font:800 110px/1 Archivo;display:flex;align-items:center;justify-content:center;transform:rotate(9deg);opacity:.95}
+.road{height:46px;margin-top:34px;background:#1d2a19;position:relative}
+.road:before{content:"";position:absolute;left:0;right:0;top:50%;height:4px;background:repeating-linear-gradient(90deg,#fff 0 36px,transparent 36px 72px)}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin:-1px 0 0}
+.facts div{background:#fff;padding:14px 16px}
+.facts b{display:block;font:800 26px Archivo;color:var(--gd)}
+.facts span{font-size:14px}
+section{padding:46px 0}
+h2{font-size:clamp(28px,6vw,42px);font-weight:800;margin-bottom:8px}
+.kick{font:700 12px Archivo;letter-spacing:.14em;text-transform:uppercase;color:var(--g);margin-bottom:6px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.tab{font:700 15px Archivo;padding:10px 16px;border-radius:999px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.tab[aria-selected=true]{background:var(--ink);color:#fff}
+.pane{display:none;background:#fff;border:2px solid var(--ink);border-radius:14px;padding:20px}
+.pane.on{display:block}
+.pane h3{font-size:24px;margin-bottom:8px}
+.pane ul{padding-left:20px;margin:10px 0}
+.pane li{margin:4px 0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tags span{background:#eaf3de;border-radius:6px;padding:4px 9px;font-size:14px;font-weight:600}
+.edt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:0;position:relative}
+.steps li{position:relative;padding:10px 0 10px 54px;min-height:52px;border-left:0}
+.steps li:before{content:attr(data-n);position:absolute;left:0;top:6px;width:38px;height:38px;border-radius:50%;background:var(--g);color:#fff;font:800 16px/38px Archivo;text-align:center;z-index:2}
+.steps li:after{content:"";position:absolute;left:18px;top:40px;bottom:-8px;width:3px;background:var(--line)}
+.steps li:last-child:after{display:none}
+.steps li.alt:before{background:var(--ink)}
+.note{background:#fff7d6;border-left:5px solid #e0b400;padding:10px 14px;margin-top:18px;font-size:15px}
+.two{display:grid;gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+.hist{display:grid;gap:0}
+.hist div{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.hist b{font:800 22px Archivo;color:var(--gd);min-width:62px}
+table.hrs{width:100%;border-collapse:collapse}
+table.hrs td{padding:7px 0;border-bottom:1px solid var(--line)}
+table.hrs td:last-child{text-align:right;font-weight:600}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:8px 0;padding:0 14px}
+summary{cursor:pointer;font:700 16px Archivo;padding:14px 0}
+details p{margin:0 0 14px}
+footer{background:var(--ink);color:#cfd8c9;padding:34px 0 90px;font-size:15px}
+footer a{color:#fff}
+.sig{margin-top:18px;font-size:13px;opacity:.75}
+@media(min-width:760px){
+.facts{grid-template-columns:repeat(4,1fr)}
+.two{grid-template-columns:1fr 1fr}
+.lplate{right:6%;top:40px;width:190px;height:190px;font-size:160px}
+.hd img{height:42px}
+}
+.bot-fab{position:fixed;right:16px;bottom:16px;z-index:90;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--bot-a);color:var(--bot-on);padding:12px 16px;border-radius:var(--bot-r,999px);font:600 15px/1 var(--bot-font);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.bot-fab-i{font-size:18px}
+.bot-panel{position:fixed;right:12px;bottom:76px;z-index:91;width:min(380px,calc(100vw - 24px));height:min(540px,calc(100vh - 100px));display:flex;flex-direction:column;background:var(--bot-bg);color:var(--bot-ink);border-radius:var(--bot-pr,16px);box-shadow:0 18px 50px rgba(0,0,0,.35);overflow:hidden;font:15px/1.45 var(--bot-font)}
+.bot-panel[hidden]{display:none}
+.bot-h{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--bot-a);color:var(--bot-on)}
+.bot-h small{display:block;opacity:.85;font-size:12px}
+.bot-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer}
+.bot-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.bot-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.bot-m.bt{background:var(--bot-b);align-self:flex-start}
+.bot-m.me{background:var(--bot-a);color:var(--bot-on);align-self:flex-end}
+.bot-chips{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px}
+.bot-c{border:1px solid var(--bot-a);background:transparent;color:var(--bot-ink);border-radius:999px;padding:6px 11px;font:13px var(--bot-font);cursor:pointer}
+.bot-f{display:flex;gap:6px;padding:10px;border-top:1px solid rgba(0,0,0,.1)}
+.bot-f input{flex:1;min-width:0;border:1px solid rgba(0,0,0,.25);border-radius:10px;padding:9px 10px;font:15px var(--bot-font);background:#fff;color:#111}
+.bot-f button{border:0;background:var(--bot-a);color:var(--bot-on);border-radius:10px;padding:0 14px;font:600 14px var(--bot-font);cursor:pointer}
+
+.kick+h2+p,.kick+h2+.tabs{margin-top:4px}
+.card h3{font-family:Archivo,sans-serif}
+.tab:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid #e0b400;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="hd"><img src="img/alexandra-school-of-motoring-logo.png" alt="Alexandra School of Motoring"><a class="call" href="tel:+35318363344">Call (01) 836 3344</a></div></header>
+
+<div class="hero">
+<div class="lplate" aria-hidden="true">L</div>
+<div class="wrap">
+<div class="eyebrow">Fairview, Dublin 3 · since 1965</div>
+<h1>Practice is key to passing first time.</h1>
+<p class="lead">Lessons with ADI instructors in modern dual-control cars, manual or automatic, in one-hour, 1.5 or 2-hour slots you choose. Free collection, sponsors welcome.</p>
+<div class="btns"><a class="btn p" href="#book" onclick="__bot.open();__bot.handle('Book a lesson',{go:'flow'});return false;">Book a lesson</a><a class="btn o" href="#edt">See the 12 EDT lessons</a></div>
+</div>
+<div class="road"></div>
+</div>
+<div class="wrap" style="padding:0"><div class="facts">
+<div><b>1965</b><span>school established in Dublin</span></div>
+<div><b>1972</b><span>first HGV rigid training in Ireland</span></div>
+<div><b>1976</b><span>articulated driver training introduced</span></div>
+<div><b>12</b><span>one-hour EDT lessons for car learners</span></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+<div class="kick">What you can learn</div>
+<h2>Pick your vehicle</h2>
+<div class="tabs" role="tablist">
+<button class="tab" role="tab" aria-selected="true" data-t="car">Car</button>
+<button class="tab" role="tab" aria-selected="false" data-t="hgv">HGV</button>
+<button class="tab" role="tab" aria-selected="false" data-t="bus">Minibus</button>
+<button class="tab" role="tab" aria-selected="false" data-t="cpc">Driver CPC</button>
+</div>
+<div class="pane on" id="p-car"><h3>Car lessons, private and commercial</h3>
+<p>Courses are built around you. On your first lesson the instructor assesses you and draws up a lesson plan with goals. The plan also prepares you for the EDT syllabus and the RSA driving test.</p>
+<ul><li>ADI instructors, male or female</li><li>Automatic or manual, in modern dual-controlled cars</li><li>One to one tuition, full hour, 1.5 or 2 hour slots</li><li>Free collection, sponsor welcome</li></ul>
+<div class="tags"><span>EDT lessons</span><span>Pre-test</span><span>Motorway</span><span>Parking</span><span>Driver theory test</span><span>Learner permit help</span></div></div>
+<div class="pane" id="p-hgv"><h3>HGV driver training: rigid and articulated</h3>
+<p>The first driving school to bring HGV tuition to Ireland. Trainees learn the skills for the transport industry at home and abroad, and it all aims at passing the RSA test first time.</p>
+<ul><li>Introduction to course and vehicle</li><li>Safety checks, driving, eco driving, reversing</li><li>Pre-test</li><li>A lesson assessment first: the instructor reviews your skills and experience, then recommends training and quotes you</li></ul>
+<div class="tags"><span>HGV theory test</span><span>HGV learner permit</span><span>HGV pre-test</span></div></div>
+<div class="pane" id="p-bus"><h3>Learn to drive a minibus</h3>
+<p>Professional tuition tailored to your requirements, with emphasis on the responsibility of passenger care and safety.</p>
+<div class="tags"><span>Minibus lessons</span><span>Theory test</span><span>Learner permit</span><span>Pre-test</span></div></div>
+<div class="pane" id="p-cpc"><h3>Professional Driver CPC training</h3>
+<p>All RSA CPC training modules, delivered with FTAI. CPC is the Certificate of Professional Competence for professional bus and coach drivers (and truck drivers). Fleet training is available for companies.</p>
+<div class="tags"><span>Training requirements</span><span>Examination details</span><span>Benefits of CPC</span><span>CPC courses FTAI</span><span>Fleet training</span></div></div>
+</div></section>
+
+<section class="edt" id="edt"><div class="wrap">
+<div class="kick">Car learners</div>
+<h2>The 12 EDT lessons</h2>
+<p>Essential Driver Training is mandatory for first-time car learner permit holders. Each lesson is one hour. Do lessons 1 to 8 in order; 9 to 12 can be taken in any order. Leave two weeks between lessons so you can practise. Your instructor signs each one off in your logbook, and you bring that logbook to every lesson.</p>
+<ol class="steps">
+<li data-n="1">Car controls and safety checks</li><li data-n="2">Correct positioning</li><li data-n="3">Changing direction</li><li data-n="4">Progression management</li>
+<li data-n="5">Correct positioning</li><li data-n="6">Anticipation and reaction</li><li data-n="7">Sharing the road</li><li data-n="8">Driving safely through traffic</li>
+<li data-n="9" class="alt">Changing direction, more complex situations</li><li data-n="10" class="alt">Speed management</li><li data-n="11" class="alt">Driving calmly</li><li data-n="12" class="alt">Night driving</li>
+</ol>
+<div class="note">Want the EDT information booklet? Email <a href="mailto:info@alexandraschoolofmotoring.ie">info@alexandraschoolofmotoring.ie</a>.</div>
+</div></section>
+
+<section><div class="wrap two">
+<div><div class="kick">Before the test</div><h2>Pre-test lessons</h2>
+<p>A preview of what the RSA examiner will expect, from a school that has prepared learners since 1965.</p>
+<ul><li>Rules of the road questions</li><li>Under-bonnet and secondary control checks</li><li>Reversing, turnabout and hill start</li><li>A written assessment report with fault feedback</li></ul>
+<p><b>Test routes covered:</b> Raheny, Finglas, Tallaght, Churchtown.</p></div>
+<div class="card"><div class="kick">First steps to a permit</div><h3 style="font-size:22px;margin-bottom:8px">Learner permit checklist</h3>
+<ol style="padding-left:20px;margin:0"><li>Pass the driver theory test (40 multiple choice questions, 35 right to pass)</li><li>Eyesight report</li><li>Permit application form</li><li>Two signed passport photos</li><li>Hand it in at your motor tax office</li></ol>
+<p style="font-size:15px;margin-top:10px">The permit is valid for two years. You need L plates and an accompanying driver with two years of full licence.</p></div>
+</div></section>
+
+<section style="background:#fff;border-top:1px solid var(--line)"><div class="wrap two">
+<div><div class="kick">Our story</div><h2>Driving tuition since the test began</h2>
+<p>Car driver testing started in Ireland in 1964 and Alexandra School of Motoring opened in 1965 to meet the demand. The school has worked with FAS, Dublin City Council, ESB and An Post, among others.</p></div>
+<div class="hist"><div><b>1965</b><span>School established</span></div><div><b>1972</b><span>HGV rigid training introduced in Ireland</span></div><div><b>1976</b><span>Articulated driver training introduced</span></div></div>
+</div></section>
+
+<section id="start" style="background:var(--gd);color:#fff"><div class="wrap">
+<div class="kick" style="color:#bff0b3">Not sure where to begin?</div>
+<h2>Where do I start?</h2>
+<p style="max-width:36em;color:#e3f3dc">Tap the one that sounds like you.</p>
+<div class="tabs" id="startTabs">
+<button class="tab st" data-s="a" aria-selected="true" style="border-color:#fff;color:#fff">Never driven</button>
+<button class="tab st" data-s="b" aria-selected="false" style="border-color:#fff;color:#fff">I have a permit</button>
+<button class="tab st" data-s="c" aria-selected="false" style="border-color:#fff;color:#fff">Test booked</button>
+<button class="tab st" data-s="d" aria-selected="false" style="border-color:#fff;color:#fff">Professional driver</button>
+</div>
+<div class="card" style="color:var(--ink)" id="startOut"></div>
+</div></section>
+
+<section><div class="wrap two">
+<div><div class="kick">Step one</div><h2>The driver theory test</h2>
+<p>You must pass it before you apply for a learner permit. It covers the rules of the road, risk perception, eco-driving, hazard awareness and good driving behaviour. Candidates with special requirements can be accommodated.</p>
+<p><b>Ways to apply:</b> online at prometric.com, by phone on 1890 606 106 (Monday to Friday, 8am to 6pm), or by post.</p></div>
+<div class="card"><h3 style="font-size:21px;margin-bottom:8px">Bring one original ID</h3>
+<ul style="padding-left:20px;margin:0"><li>Passport or national ID card</li><li>Employee or student identity card</li><li>Garda National Age Card</li><li>Medical card issued in the State</li><li>Birth or marriage certificate</li><li>Immigration Certificate of Registration</li></ul>
+<p style="font-size:15px;margin:10px 0 0">Late arrivals cannot sit the test and lose the fee.</p></div>
+</div></section>
+
+<section style="background:#fff;border-top:1px solid var(--line)"><div class="wrap">
+<div class="kick">Professional drivers</div><h2>Driver CPC, explained</h2>
+<p style="max-width:40em">Driver CPC came in across the EU in 2008 for professional bus drivers and 2009 for truck drivers. It sets common standards for training and testing and aims to reduce deaths and serious injuries on Irish roads.</p>
+<div class="two" style="margin-top:14px"><div class="card"><b>New to the profession?</b><br>You take the Driver CPC theory and practical tests before getting your Driver CPC.</div><div class="card"><b>Licence from before 2008 or 2009?</b><br>Bus and truck licence holders from before then are automatically entitled to Driver CPC. This is called acquired rights. Periodic training is compulsory.</div></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="kick">On the road</div><h2>Learner permit rules</h2>
+<div class="two" style="margin-top:12px">
+<div class="card"><h3 style="font-size:21px;margin-bottom:6px">What you must do</h3><ul style="padding-left:20px;margin:0"><li>Display L plates at the front and rear, at least 15cm high, red on white, clearly visible</li><li>Carry your learner permit whenever you drive</li><li>Drive only with a qualified accompanying driver, someone with a full licence for the same category for a continuous two years</li></ul></div>
+<div class="card"><h3 style="font-size:21px;margin-bottom:6px">Good to know</h3><ul style="padding-left:20px;margin:0"><li>A first permit is valid for two years</li><li>After you pass the test you apply for a full driving licence</li><li>You can start EDT lessons at any point while you learn, and practise with an accompanying driver in between</li><li>The completed EDT logbook has to be shown before your driving test</li></ul></div>
+</div></div></section>
+
+<section style="background:#fff;border-top:1px solid var(--line)"><div class="wrap">
+<div class="kick">Everything the school teaches</div><h2>By category</h2>
+<div class="two" style="margin-top:12px">
+<div class="card"><h3 style="font-size:20px;margin-bottom:6px">Car</h3><p style="margin:0">Car driving lessons · Driver theory test · Learners permit · EDT lessons · Pre-test</p></div>
+<div class="card"><h3 style="font-size:20px;margin-bottom:6px">HGV</h3><p style="margin:0">HGV driving lessons · HGV driver theory test · HGV learners permit · HGV pre-test</p></div>
+<div class="card"><h3 style="font-size:20px;margin-bottom:6px">Minibus</h3><p style="margin:0">Minibus driving lessons · Minibus driver theory test · Minibus learners permit · Minibus pre-test</p></div>
+<div class="card"><h3 style="font-size:20px;margin-bottom:6px">Driver CPC</h3><p style="margin:0">Training requirements · Examination details · Benefits of CPC · CPC courses FTAI · Fleet training</p></div>
+</div>
+<p style="margin-top:16px">Each category has the same shape: theory test first, then the learner permit, then lessons with an instructor, then a pre-test before the RSA test.</p>
+</div></section>
+
+<section id="book"><div class="wrap two">
+<div><div class="kick">Visit or call</div><h2>Fairview office</h2>
+<p><b>5 Marino Mart, Fairview, Dublin 3</b><br><a href="tel:+35318363344">(01) 836 3344</a><br><a href="mailto:info@alexandraschoolofmotoring.ie">info@alexandraschoolofmotoring.ie</a></p>
+<table class="hrs"><tr><td>Monday to Friday</td><td>8:30am – 5:30pm</td></tr><tr><td>Saturday</td><td>8:30am – 1:30pm*</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table>
+<p style="font-size:14px;margin-top:8px">*A few pages on the school's site list Saturday to 5:30pm, so confirm when you call.</p></div>
+<div><div class="kick">Questions</div><h2>Quick answers</h2>
+<details><summary>Do I need a learner permit to start?</summary><p>You need one to drive on a public road. The first step is the driver theory test, then the permit. Bring the permit to your lesson.</p></details>
+<details><summary>Manual or automatic?</summary><p>Both are available. The enquiry form asks which you need.</p></details>
+<details><summary>What should I wear?</summary><p>Sensible, narrow, thin-soled shoes give you feel for the pedals. Revise the rules of the road beforehand.</p></details>
+<details><summary>Can my employer or sponsor pay?</summary><p>Sponsors are welcome. Tell the team when you enquire and they will confirm how it works.</p></details>
+<details><summary>What does the first HGV lesson involve?</summary><p>A driving lesson assessment. The instructor evaluates your skills and experience, establishes training needs and then makes recommendations and a quote.</p></details>
+<details><summary>Can I choose a female instructor?</summary><p>The school has male and female ADI instructors. Ask the team when you book.</p></details>
+<details><summary>I am nervous.</summary><p>That is normal. The ADI instructors set the pace for you.</p></details>
+</div></div></section>
+
+<footer><div class="wrap"><b style="color:#fff">Alexandra School of Motoring</b><br>Driving lessons and professional driver training from the Fairview office, Dublin 3.<br>Phone lines open Monday to Friday 8:30am to 5:30pm.<br>5 Marino Mart, Fairview, Dublin 3 · (01) 836 3344
+<div class="sig">Demo · prepared by Gevorg Hovhannisyan</div></div></footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(function(b){b.onclick=function(){document.querySelectorAll('.tab').forEach(function(x){x.setAttribute('aria-selected',x===b)});document.querySelectorAll('.pane').forEach(function(p){p.classList.toggle('on',p.id==='p-'+b.dataset.t)});};});
+var SO={a:'<b>Start with the driver theory test</b> (40 questions, 35 to pass), then the eyesight report and learner permit application. Once you hold the permit, book your first lesson: the instructor assesses you and builds your plan. You can be 17 to drive a standard car.',b:'<b>Book your first lesson and bring the permit.</b> You get an assessment and a lesson plan, and your 12 EDT lessons start in the logbook. Tell us manual or automatic and we will arrange free collection.',c:'<b>Book a pre-test.</b> You get rules of the road questions, vehicle checks, reversing, turnabout and hill start, and a written assessment report. Routes: Raheny, Finglas, Tallaght, Churchtown. Have your EDT logbook ready: it must be presented before the driving test.',d:'<b>HGV, minibus or Driver CPC.</b> For HGV the instructor starts with a lesson assessment of your skills and experience, then recommends training. For CPC, the school provides all RSA modules with FTAI. Companies can ask about fleet training.'};
+function showS(k){document.getElementById('startOut').innerHTML=SO[k]+'<p style="margin:12px 0 0"><a href="#book" style="font:700 15px Archivo;color:var(--gd)" onclick="__bot.open();__bot.handle(&quot;Book a lesson&quot;,{go:&quot;flow&quot;});return false;">Book a lesson with the assistant</a></p>';}
+document.querySelectorAll('.st').forEach(function(b){b.onclick=function(){document.querySelectorAll('.st').forEach(function(x){x.setAttribute('aria-selected',x===b);});showS(b.dataset.s);};});showS('a');
+/*CORE*/
+function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.replace(/(ing|ers|er|ed|es|s)$/,function(m,a,o,str){return str.length-m.length>=3?'':m;});}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function tokMatch(kw,t){if(kw===t)return 1;var ks=stem(kw),ts=stem(t);if(ks===ts)return 1;if(kw.length>=4&&t.length>=4&&(kw.indexOf(t)===0||t.indexOf(kw)===0)&&Math.min(kw.length,t.length)>=5&&Math.min(kw.length,t.length)/Math.max(kw.length,t.length)>=.7)return .9;var L=Math.max(ks.length,ts.length);if(L>=5&&lev(ks,ts)<=1)return .8;if(L>=9&&lev(ks,ts)<=2)return .7;return 0;}
+function makeMatcher(kb){var rows=kb.map(function(e){return {e:e,ks:e.k.map(function(k){return norm(k).split(' ');})};});
+return function(q){var toks=norm(q).split(' ').filter(Boolean),best=null,bs=0;
+rows.forEach(function(r){var sc=0;r.ks.forEach(function(kp){var tot=0,ok=true;kp.forEach(function(kw){var m=0;toks.forEach(function(t){var x=tokMatch(kw,t);if(x>m)m=x;});if(m===0)ok=false;tot+=m;});if(ok){var s=tot*(kp.length>1?1.6:1)*(kp.join('').length>=6?1.2:1);if(s>sc)sc=s;}});
+if(sc>bs){bs=sc;best=r.e;}});
+return bs>=0.9?best:null;};}
+function wantsBooking(q,words){var toks=norm(q).split(' ');return words.some(function(w){var p=norm(w).split(' ');return p.every(function(kw){return toks.some(function(t){return tokMatch(kw,t)>=.8;});});});}
+/*ENDCORE*/
+/*UI*/
+function initBot(C){var match=makeMatcher(C.kb);var el=function(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;};
+var fab=el('button','bot-fab','<span class="bot-fab-i">'+C.fabIcon+'</span><span class="bot-fab-t">'+C.fabText+'</span>');fab.setAttribute('aria-label',C.fabText);
+var panel=el('div','bot-panel');panel.setAttribute('role','dialog');panel.hidden=true;
+panel.innerHTML='<div class="bot-h"><div><b>'+C.title+'</b><small>'+C.sub+'</small></div><button class="bot-x" aria-label="Close">&times;</button></div><div class="bot-log" aria-live="polite"></div><div class="bot-chips"></div><form class="bot-f"><input type="text" placeholder="'+C.placeholder+'" autocomplete="off"><button type="submit">'+C.send+'</button></form>';
+document.body.appendChild(fab);document.body.appendChild(panel);
+var log=panel.querySelector('.bot-log'),chips=panel.querySelector('.bot-chips'),inp=panel.querySelector('input'),form=panel.querySelector('form');
+var flow=null,step=0,data={},opened=false;
+function say(h,me){var m=el('div','bot-m '+(me?'me':'bt'));if(me)m.textContent=h;else m.innerHTML=h;log.appendChild(m);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=el('button','bot-c');b.type='button';b.textContent=c.t||c;b.onclick=function(){handle(c.t||c,c);};chips.appendChild(b);});}
+function home(){setChips(C.chips);}
+function ask(){var s=C.flow.steps[step];say(s.q);if(s.opts)setChips(s.opts.concat([{t:C.cancel,cancel:1}]));else setChips([{t:C.cancel,cancel:1}]);inp.placeholder=s.ph||C.placeholder;}
+function start(){flow=true;step=0;data={};say(C.flow.intro);ask();}
+function finish(){var lines=C.flow.steps.map(function(s){return '<b>'+s.label+':</b> '+esc(data[s.key]);}).join('<br>');say(C.flow.done(lines));flow=null;home();inp.placeholder=C.placeholder;}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function handle(text,chip){text=(text||'').trim();if(!text)return;say(esc(text),true);
+if(chip&&chip.cancel){flow=null;say(C.cancelMsg);home();inp.placeholder=C.placeholder;return;}
+if(flow){var s=C.flow.steps[step];if(s.check&&!s.check(text)){say(s.err||C.flowErr);return;}data[s.key]=text;step++;if(step>=C.flow.steps.length)finish();else ask();return;}
+if(chip&&chip.go==='flow'||wantsBooking(text,C.flow.triggers)){start();return;}
+var r=match(text);if(r){say(r.a);if(r.more)setChips(r.more.map(function(x){return x;}).concat(C.chips.slice(0,2)));else home();}else{say(C.fallback);home();}}
+function open(){panel.hidden=false;fab.classList.add('on');if(!opened){opened=true;say(C.hello);home();}inp.focus();}
+fab.onclick=function(){panel.hidden?open():(panel.hidden=true,fab.classList.remove('on'));};
+panel.querySelector('.bot-x').onclick=function(){panel.hidden=true;fab.classList.remove('on');};
+form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';handle(v);};
+window.__bot={handle:handle,open:open};}
+/*ENDUI*/
+
+/*CFG*/
+var CFG={
+fabIcon:'L',fabText:'Ask or book',title:'Alexandra School of Motoring',sub:'Assistant · the team confirms everything',
+placeholder:'Ask about lessons, EDT, HGV...',send:'Send',cancel:'Cancel',cancelMsg:'No problem, nothing was sent. Ask me anything else.',flowErr:'Could you answer that one so I can pass it on?',
+hello:'Hello! I can answer questions about lessons, EDT, pre-test, HGV, minibus and CPC, or take your lesson enquiry.',
+chips:[{t:'Book a lesson',go:'flow'},'Opening hours','EDT lessons','Automatic cars','HGV training','Where are you?'],
+fallback:'I am not sure about that one. Call (01) 836 3344 or email info@alexandraschoolofmotoring.ie and the team will confirm. Or tap Book a lesson and I will pass on your details.',
+kb:[
+{id:'hours',k:['hours','opening','open','close','closed','saturday','sunday','weekend','office hours','when are you open'],a:'Office hours: Monday to Friday 8:30am to 5:30pm, Saturday 8:30am to 1:30pm (a few pages on the site say 5:30pm, so please confirm), Sunday closed.'},
+{id:'where',k:['where','address','location','directions','find you','fairview','marino','dublin','map','office'],a:'5 Marino Mart, Fairview, Dublin 3. Phone (01) 836 3344.'},
+{id:'phone',k:['phone','call','telephone','number','contact','email','mail','reach'],a:'Phone (01) 836 3344 or email info@alexandraschoolofmotoring.ie. You can also leave your details here.'},
+{id:'auto',k:['automatic','auto','manual','gear','gears','transmission','stick'],a:'Lessons are available in automatic or manual modern dual-controlled cars. Tell us which one you need.'},
+{id:'edt',k:['edt','essential driver training','12 lessons','twelve lessons','logbook','log book','syllabus','mandatory'],a:'EDT is 12 one-hour lessons, mandatory for first-time car learner permit holders. Do lessons 1 to 8 in order, 9 to 12 in any order, with two weeks between lessons. Your ADI signs each one off in your logbook. For the booklet, email info@alexandraschoolofmotoring.ie.'},
+{id:'pretest',k:['pre test','pretest','mock test','mock','before my test','practice test','test routes','route'],a:'Pre-test lessons give you a preview of the RSA test: rules of the road questions, under-bonnet and secondary control checks, reversing, turnabout, hill start, then an assessment report with feedback. Routes covered: Raheny, Finglas, Tallaght, Churchtown.'},
+{id:'permit',k:['learner permit','learners permit','permit','provisional','licence','license','apply for permit','l plates','l plate'],a:'To get your first learner permit: pass the driver theory test, complete the eyesight report, fill in the application, bring two signed passport photos, and hand it in at your local motor tax office. The permit is valid for 2 years. You must display L plates, carry the permit and drive with a qualified accompanying driver.'},
+{id:'theory',k:['theory','theory test','driver theory','rules of the road','multiple choice','prometric'],a:'The driver theory test is 40 multiple choice questions and you need 35 right. It is offered in Irish and English. You can book online at prometric.com, by phone on 1890 606 106 or by post.'},
+{id:'hgv',k:['hgv','truck','lorry','articulated','artic','rigid','heavy goods'],a:'HGV training covers rigid and articulated trucks. The school brought HGV tuition to Ireland first. Courses include safety checks, driving, eco driving, reversing and pre-test. A lesson assessment comes first, then the instructor recommends training and a quote.'},
+{id:'bus',k:['minibus','mini bus','bus','passenger'],a:'Minibus lessons are tailored to you, with focus on passenger care and safety. There is also a minibus theory test, learner permit and pre-test section.'},
+{id:'cpc',k:['cpc','driver cpc','certificate of professional competence','coach','fleet','ftai','professional driver','company training'],a:'Alexandra School of Motoring provides all RSA Driver CPC modules together with FTAI, for professional bus, coach and truck drivers. Fleet training is available for companies.'},
+{id:'lesson',k:['lesson length','how long','hour','duration','1.5','two hours','slot','slots'],a:'You choose: a full hour, 1.5 or 2 hour slots, one to one.'},
+{id:'types',k:['motorway','parking','park','reverse','reversing','roundabout','types of lesson','lesson types'],a:'Car lesson types on the site: EDT lessons, pre-test, motorway, parking and general driving lessons. Tell the team what you want to work on.'},
+{id:'collect',k:['collection','pick up','pickup','collect','sponsor','sponsored'],a:'Free collection is included, and sponsors are welcome.'},
+{id:'instr',k:['instructor','adi','teacher','female instructor','male instructor','woman','man','gender'],a:'Lessons are with approved driving instructors (ADI), male or female.'},
+{id:'first',k:['first lesson','assessment','assess','beginner','never driven','complete beginner','lesson plan'],a:'On the first lesson the instructor assesses you and draws up a lesson plan with goals. It also prepares you for the EDT syllabus and the RSA test.'},
+{id:'prep',k:['prepare','bring','wear','shoes','come prepared'],a:'Bring your learner permit, revise the rules of the road, be alert, and wear sensible narrow shoes with a thin sole for pedal feel.'},
+{id:'nerv',k:['nervous','nerves','anxious','scared','afraid','worried'],a:'Totally normal. The ADI instructors put you at ease and you learn at the right pace for you.'},
+{id:'about',k:['history','established','since','about','who are you','1965','first school','experience','old'],a:'Established in 1965, a year after car driver testing began in Ireland. HGV rigid training followed in 1972 and articulated in 1976. The school has worked with FAS, Dublin City Council, ESB and An Post.'},
+{id:'price',k:['price','cost','how much','fee','fees','rate','rates','charge','quote','cheap'],a:'Prices are not listed on the site, so the team will confirm. Leave your details with Book a lesson, or call (01) 836 3344.'},
+{id:'age',k:['age','how old','minimum age','17','18','21','old enough'],a:'The site lists 17 to drive a standard car, 18 for a truck and 21 for a bus.'},
+{id:'sponsor2',k:['employer','company pays','sponsor pays','who pays','fleet training','corporate'],a:'Sponsors are welcome and fleet training is offered for companies. The team will confirm the details with you.'},
+{id:'late',k:['late','miss','cancel','cancellation','reschedule','postpone'],a:'The site does not list a cancellation policy, so the team will confirm. For the theory test itself, being late means you cannot sit it and you lose the fee. To reschedule that test, contact the Driver Theory Test call centre on 1890 606 106.'},
+{id:'idk',k:['id','identification','documents','passport','what id'],a:'For the theory test bring one original ID such as a passport, national ID card, student or employee ID, Garda National Age Card, medical card, birth or marriage certificate, or GNIB certificate.'},
+{id:'acq',k:['acquired rights','before 2008','before 2009','already a driver','existing licence'],a:'If you got your bus or truck licence before 2008 (bus) or 2009 (truck), you are automatically entitled to Driver CPC. This is called acquired rights. Periodic training is still compulsory.'},
+{id:'ours',k:['pass rate','success','results','how many pass','guarantee'],a:'The site says the school pass rate is unmatched but does not publish a number, so the team can tell you more. The aim is safe, competent driving for life.'},
+{id:'gallery',k:['photos','gallery','pictures','cars','vehicles','fleet cars','car types'],a:'Lessons use modern dual-controlled cars, and the site has a photo gallery. The team can tell you which models are used.'},
+{id:'social',k:['facebook','twitter','social','instagram'],a:'The school is on Facebook (Alexandra School of Motoring Ltd) and Twitter (@AlexandraSOMLtd).'}
+],
+flow:{triggers:['book','booking','enquiry','enquire','sign up','register','reserve','appointment','book a lesson','start lessons'],
+intro:'Happy to take your details. A few quick questions.',
+steps:[
+{key:'type',label:'Lesson',q:'Which training do you need?',opts:['Car lessons','EDT lessons','Pre-test','HGV','Minibus','Driver CPC']},
+{key:'permit',label:'Learner permit',q:'Do you have a learner permit yet?',opts:['Yes','No, not yet','Applying']},
+{key:'gear',label:'Gearbox',q:'Manual or automatic?',opts:['Manual','Automatic','Not sure']},
+{key:'area',label:'Pick-up area',q:'What area should we collect you from?',ph:'e.g. Clontarf'},
+{key:'name',label:'Name',q:'Your name?',ph:'Name'},
+{key:'contact',label:'Phone or email',q:'Best phone number or email for the team to reach you?',ph:'Phone or email',check:function(t){return t.length>=6;},err:'Please add a phone number or email so the team can reply.'}
+],
+done:function(l){return 'Thank you! Your enquiry is ready for the team:<br>'+l+'<br><br>This is a demo preview, so nothing was actually sent. On the live site this would go to the office, and the team confirms times and prices.';}}
+};
+/*ENDCFG*/
+initBot(CFG);
+</script>
+</body>
+</html>
