@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RM Physio | Coral Gables, Miami</title>
+<meta name="description" content="Demo page for RM Physio, therapeutic and sports massage in Coral Gables.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#151414;--ink2:#201e1e;--ink3:#2c2929;--red:#ed1c24;--red2:#ff4a50;--bone:#f4f0ea;--mute:#a9a39b;--line:#3a3636;--h:'Oswald','Arial Narrow',sans-serif;--b:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--bone);font:400 16px/1.6 var(--b);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--h);text-transform:uppercase;letter-spacing:.02em;line-height:1.02;font-weight:700}
+.kicker{font:600 12px/1 var(--b);letter-spacing:.22em;text-transform:uppercase;color:var(--red2);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.kicker:before{content:"";width:28px;height:3px;background:var(--red)}
+header{position:sticky;top:0;z-index:20;background:rgba(21,20,20,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 20px;max-width:1080px;margin:0 auto}
+.brand{display:flex;align-items:center;background:#000;border-radius:6px;padding:2px 6px}
+.brand img{height:46px;width:auto}
+nav{display:none;gap:22px;font:500 13px var(--b);letter-spacing:.08em;text-transform:uppercase}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--red);color:#fff;font:600 14px var(--h);letter-spacing:.1em;text-transform:uppercase;padding:13px 22px;border:0;border-radius:3px;cursor:pointer;text-decoration:none;clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+.btn:hover{background:var(--red2)}
+.btn.ghost{background:transparent;border:1.5px solid var(--line);clip-path:none;color:var(--bone)}
+.btn.ghost:hover{border-color:var(--red);background:transparent}
+.hd .btn{padding:10px 16px;font-size:13px}
+.hero{position:relative;padding:54px 0 40px;overflow:hidden;background:radial-gradient(900px 420px at 85% 0,rgba(237,28,36,.22),transparent 60%),var(--ink)}
+.hero:after{content:"RM";position:absolute;right:-20px;bottom:-60px;font:700 300px/1 var(--h);color:#fff;opacity:.03;pointer-events:none}
+.hero h1{font-size:clamp(44px,12vw,108px);max-width:900px}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero p.lead{max-width:560px;margin:20px 0 26px;color:#d6d0c8;font-size:17px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);margin-top:42px;border:1px solid var(--line)}
+.stats div{background:var(--ink2);padding:16px}
+.stats b{display:block;font:700 26px var(--h);color:#fff}
+.stats span{font-size:13px;color:var(--mute)}
+section{padding:58px 0}
+section h2{font-size:clamp(32px,7vw,54px);margin-bottom:12px}
+.sub{color:var(--mute);max-width:620px;margin-bottom:30px}
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:38px 1fr;gap:6px 14px;padding:18px 0;border-bottom:1px solid var(--line);align-items:start}
+.row i{font:600 14px var(--h);color:var(--red);font-style:normal;padding-top:4px}
+.row h3{font-size:22px}
+.row p{grid-column:2;color:#bdb7af;font-size:15px}
+.row button{grid-column:2;justify-self:start;background:none;border:0;color:var(--red2);font:600 12px var(--b);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;padding:4px 0}
+.board{background:var(--bone);color:var(--ink);padding:54px 0}
+.board h2{color:var(--ink)}
+.board .sub{color:#5f5a54}
+.menu{list-style:none;border-top:3px solid var(--ink)}
+.menu li{display:grid;grid-template-columns:1fr auto;gap:2px 14px;padding:15px 0;border-bottom:1px dashed #b8b1a7;align-items:baseline}
+.menu b{font:600 19px var(--h);text-transform:uppercase;letter-spacing:.03em}
+.menu em{font:700 24px var(--h);font-style:normal;color:var(--red)}
+.menu span{grid-column:1/-1;font-size:14px;color:#5f5a54}
+.note{font-size:13px;color:#5f5a54;margin-top:14px}
+.bio{display:grid;gap:26px}
+.bio .badge{border:1px solid var(--line);padding:20px;background:var(--ink2)}
+.bio .badge b{display:block;font:700 40px var(--h);color:var(--red)}
+.bio .badge small{color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chips span{border:1px solid var(--line);padding:6px 12px;font-size:13px;color:#d6d0c8}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font:600 19px var(--h);text-transform:uppercase;letter-spacing:.03em;list-style:none;display:flex;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--red);font-size:24px;line-height:1}
+details[open] summary:after{content:"\2013"}
+details p{margin-top:10px;color:#bdb7af;font-size:15px}
+.visit{display:grid;gap:14px}
+.card{background:var(--ink2);border:1px solid var(--line);padding:22px}
+.card h3{font-size:20px;margin-bottom:10px;color:#fff}
+.hrs{width:100%;border-collapse:collapse;font-size:15px}
+.hrs td{padding:6px 0;border-bottom:1px solid var(--line)}
+.hrs td:last-child{text-align:right;color:var(--mute)}
+.card a:not(.btn){color:var(--red2)}
+.steps{display:grid;gap:14px}.st{border-left:3px solid var(--red);padding:4px 0 4px 18px}.st b{font:700 14px var(--h);color:var(--red)}.st h3{font-size:22px;margin:4px 0 6px}.st p{color:#bdb7af;font-size:15px}
+.why{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:30px}.why div{background:var(--ink);padding:16px}.why b{display:block;font:600 18px var(--h);text-transform:uppercase}.why span{color:var(--mute);font-size:14px}
+.q{font:500 clamp(20px,4.6vw,30px)/1.35 var(--h);text-transform:none;letter-spacing:0;border-left:4px solid var(--red);padding-left:18px}.q cite{display:block;margin-top:12px;font:400 13px var(--b);color:var(--mute);font-style:normal}
+.blog{list-style:none;border-top:1px solid var(--line);margin-bottom:12px}.blog li{padding:12px 0;border-bottom:1px solid var(--line);color:#d6d0c8;font-size:15px}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}.why{grid-template-columns:repeat(3,1fr)}}
+.gl{border-top:1px solid var(--line)}.gl dt{font:600 20px var(--h);text-transform:uppercase;letter-spacing:.03em;padding-top:16px;color:#fff}.gl dd{color:#bdb7af;font-size:15px;padding:4px 0 16px;border-bottom:1px solid var(--line)}
+footer{border-top:1px solid var(--line);padding:28px 0 90px;color:var(--mute);font-size:13px}
+footer .lic{margin-bottom:6px}
+@media(min-width:760px){nav{display:flex}.stats{grid-template-columns:repeat(4,1fr)}.bio{grid-template-columns:1.6fr 1fr}.visit{grid-template-columns:1.2fr 1fr 1fr}.row{grid-template-columns:60px 1.1fr 1.6fr auto;align-items:center}.row p,.row button{grid-column:auto}.hero{padding:90px 0 60px}}
+#cw-fab{position:fixed;right:16px;bottom:16px;z-index:50;background:var(--red);color:#fff;border:0;border-radius:3px;padding:14px 18px;font:600 14px var(--h);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.5);clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+#cw-panel{position:fixed;right:12px;bottom:72px;z-index:50;width:calc(100vw - 24px);max-width:380px;height:min(540px,calc(100vh - 100px));background:#fff;color:var(--ink);border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
+#cw-panel.open{display:flex}
+.cw-h{background:var(--ink);color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--red)}
+.cw-h b{font:600 15px var(--h);letter-spacing:.08em;text-transform:uppercase}
+.cw-h small{display:block;color:var(--mute);font-size:11px}
+#cw-x{background:none;border:0;color:#fff;font-size:22px;cursor:pointer;line-height:1}
+#cw-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:#f4f0ea;font-size:14px;line-height:1.45}
+.cw-m{max-width:88%;padding:9px 12px;border-radius:4px}
+.cw-m.bot{background:#fff;border:1px solid #ddd6cc;align-self:flex-start}
+.cw-m.me{background:var(--ink);color:#fff;align-self:flex-end}
+#cw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;background:#f4f0ea;border-top:1px solid #ddd6cc;max-height:104px;overflow-y:auto}
+.cw-chip{background:#fff;border:1px solid var(--red);color:var(--red);font:500 12.5px var(--b);padding:6px 10px;border-radius:99px;cursor:pointer}
+.cw-chip:hover{background:var(--red);color:#fff}
+#cw-form{display:flex;border-top:1px solid #ddd6cc}
+#cw-in{flex:1;border:0;padding:13px;font:16px var(--b);outline:0;min-width:0}
+#cw-form button{background:var(--red);color:#fff;border:0;padding:0 16px;font:600 13px var(--h);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+</style></head><body>
+<header><div class="hd">
+ <a class="brand" href="#top" aria-label="RM Physio"><img src="img/rm-physio-logo.png" alt="RM Physio, your body, our priority" width="90" height="46"></a>
+ <nav><a href="#services">Services</a><a href="#menu">Sessions</a><a href="#raul">Raul</a><a href="#faq">FAQ</a><a href="#visit">Visit</a></nav>
+ <a class="btn" href="#visit" data-ask="Book a session">Book now</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+ <div class="kicker">Coral Gables, Miami</div>
+ <h1>Train hard.<br><em>Recover smarter.</em></h1>
+ <p class="lead">Neuromuscular, sports and deep tissue work with Raul Mosqueira, LMT and physical therapist assistant. Manual therapy to restore mobility, without drugs or surgery.</p>
+ <div class="cta"><a class="btn" href="#visit" data-ask="Book a session">Book a session</a><a class="btn ghost" href="#menu">See sessions</a></div>
+ <div class="stats"><div><b>2008</b><span>certified massage therapist</span></div><div><b>11</b><span>therapies on the services page</span></div><div><b>Mon-Sat</b><span>9am to 9pm</span></div><div><b>1 hr+</b><span>60 to 90 minute sessions</span></div></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+ <div class="kicker">What Raul treats</div><h2>Eleven ways to work on the problem</h2>
+ <p class="sub">Each session is customised, mixing techniques such as fascia work, cupping, trigger point therapy and PNF stretching.</p>
+ <div class="rows">
+  <div class="row"><i>01</i><h3>Sports massage</h3><p>Prepares muscles for hard training and helps lower the risk of strains.</p><button data-ask="sports massage">Ask about it</button></div>
+  <div class="row"><i>02</i><h3>Deep tissue</h3><p>For lower back pain, sciatica and sports injuries.</p><button data-ask="deep tissue">Ask about it</button></div>
+  <div class="row"><i>03</i><h3>Neuromuscular therapy</h3><p>Soft tissue disorders linked to the nervous and musculoskeletal systems, such as sciatica, carpal tunnel and migraines.</p><button data-ask="neuromuscular">Ask about it</button></div>
+  <div class="row"><i>04</i><h3>Myofascial and myospinal release</h3><p>Releases tension and adhesions in the fascia and supports blood flow.</p><button data-ask="myofascial release">Ask about it</button></div>
+  <div class="row"><i>05</i><h3>Massage for back pain</h3><p>Focused work for the back, neck and hips.</p><button data-ask="back pain">Ask about it</button></div>
+  <div class="row"><i>06</i><h3>Injury therapy</h3><p>Reduces pain, inflammation and swelling in the affected area.</p><button data-ask="injury therapy">Ask about it</button></div>
+  <div class="row"><i>07</i><h3>Whiplash therapy</h3><p>A dedicated page on the site for whiplash treatment.</p><button data-ask="whiplash">Ask about it</button></div>
+  <div class="row"><i>08</i><h3>Lymphatic massage</h3><p>Gentle strokes to move lymph fluid and ease swelling.</p><button data-ask="lymphatic">Ask about it</button></div>
+  <div class="row"><i>09</i><h3>Cancer (oncology) massage</h3><p>Adapted to each person's health and treatment plan.</p><button data-ask="cancer massage">Ask about it</button></div>
+  <div class="row"><i>10</i><h3>Reflexology</h3><p>Listed among the services, with its own page.</p><button data-ask="reflexology">Ask about it</button></div>
+  <div class="row"><i>11</i><h3>Therapeutic massage</h3><p>Targets specific muscle issues, pain relief or recovery.</p><button data-ask="therapeutic massage">Ask about it</button></div>
+ </div>
+</div></section>
+
+<div class="board" id="menu"><div class="wrap">
+ <div class="kicker">Bookable sessions</div><h2>The session board</h2>
+ <p class="sub">As listed on your online booking page. Ask the assistant to start a request and Raul's team confirms the slot.</p>
+ <ul class="menu">
+  <li><b>Package of 4, rehabilitation therapy</b><em>$359</em><span>1 hr sessions</span></li>
+  <li><b>90 min therapy</b><em>$159</em><span>Deep tissue, sports massage, neuromuscular therapy. 1 hr 30 min</span></li>
+  <li><b>Sports massage, neuromuscular therapy</b><em>$125</em><span>1 hr</span></li>
+  <li><b>Deep tissue, trigger point therapy</b><em>$120</em><span>1 hr</span></li>
+  <li><b>Cupping therapy or myofascial release</b><em>$120</em><span>1 hr</span></li>
+  <li><b>Therapeutic massage</b><em>$100</em><span>1 hr</span></li>
+  <li><b>Craniosacral therapy (CST)</b><em>$100</em><span>1 hr</span></li>
+ </ul>
+ <p class="note">Gift cards are also available through the website.</p>
+</div></div>
+
+
+<section id="how"><div class="wrap">
+ <div class="kicker">How a visit goes</div><h2>Done with you, not to you</h2>
+ <p class="sub">The practice describes its approach in three parts. Nothing here replaces a conversation with Raul about your own case.</p>
+ <div class="steps">
+  <div class="st"><b>01</b><h3>Listen and assess</h3><p>Your physical concerns, the nature of your sport and your fitness goals shape the plan. For sports clients that means a detailed therapy assessment first.</p></div>
+  <div class="st"><b>02</b><h3>Work the tissue</h3><p>Techniques are mixed per person: Swedish, fascia work, cupping, trigger point therapy, PNF stretching and more, combining current research with traditional methods.</p></div>
+  <div class="st"><b>03</b><h3>Take it home</h3><p>Raul teaches stretching, strengthening and posture, so the result lasts beyond the table. Massage alone will not fix everything, and the site says so plainly.</p></div>
+ </div>
+ <div class="why">
+  <div><b>Five-star service</b><span>Caring, experienced and dedicated practitioners.</span></div>
+  <div><b>Individualised care</b><span>Every session is customised to the person.</span></div>
+  <div><b>Licensed therapist</b><span>Licence numbers are published in the footer.</span></div>
+ </div>
+</div></section>
+
+<section id="voices" style="background:var(--ink2)"><div class="wrap">
+ <div class="kicker">From the site</div><h2>What clients say</h2>
+ <blockquote class="q">"I had a construction accident that left me immobilized for several months. And thanks to Raul for his massage therapy and his hands, I can walk and feel better."<cite>Froilan Roy, review shown on rmphysio.com</cite></blockquote>
+ <div class="kicker" style="margin-top:34px">On the blog</div>
+ <ul class="blog">
+  <li>Which proprioceptive organ is targeted during myofascial release techniques?</li>
+  <li>Which body regions should be avoided during myofascial release techniques?</li>
+  <li>Do I need a referral for physical therapy? Understanding the requirements and benefits</li>
+ </ul>
+ <p class="note" style="color:var(--mute)">Instagram @rm_physiomiami · Facebook RMPHYSIO · LinkedIn rmphysio</p>
+</div></section>
+
+
+<section id="glossary"><div class="wrap">
+ <div class="kicker">In plain words</div><h2>What the techniques mean</h2>
+ <dl class="gl">
+  <dt>Sports massage</dt><dd>Deep tissue manipulation aimed at reducing muscle tension, improving circulation and speeding recovery. Unlike a relaxation massage it targets specific muscle groups.</dd>
+  <dt>Myofascial release</dt><dd>Works the fascia, the connective tissue around muscle, to release tension, reduce adhesions and improve blood flow.</dd>
+  <dt>Neuromuscular therapy</dt><dd>Relief from pain and dysfunction that starts in the nervous and musculoskeletal systems.</dd>
+  <dt>Lymphatic drainage</dt><dd>Soft, gentle strokes that encourage lymph to move, since the lymphatic system has no pump of its own.</dd>
+  <dt>Oncology massage</dt><dd>Massage adapted to a person's health, treatment plan and cancer type so that it is safe and gentle.</dd>
+  <dt>Abdominal massage</dt><dd>Listed in Raul's bio as part of his work for women's health.</dd>
+ </dl>
+ <p class="note" style="color:var(--mute)">Descriptions paraphrase the clinic's own service pages. Questions about your own case go to Raul.</p>
+</div></section>
+
+<section id="raul"><div class="wrap bio">
+ <div><div class="kicker">The practice</div><h2>Raul Mosqueira</h2>
+  <p>Founder of the practice, licensed massage therapist and physical therapist assistant. His philosophy is simple: better mobility and range of motion through expert massage and manual technique, so clients build long-term health without relying on drugs or surgery.</p>
+  <p style="margin-top:12px">He also teaches clients stretching, strengthening and posture, and keeps studying health medicine and rehabilitation. Elite athletes have sought him out, including NFL and NBA players, the USA Sailing team, professional runners and Cirque du Soleil performers.</p>
+  <div class="chips"><span>Neuromuscular and trigger point</span><span>Sports medicine</span><span>Myofascial release</span><span>Abdominal massage for women's health</span><span>Energetic healing</span></div></div>
+ <div class="badge"><b>2025</b><small>Top Choice Massage Therapy Clinic, International Icon Awards</small><hr style="border:0;border-top:1px solid var(--line);margin:16px 0"><small>MA#77299 · PTA#30010</small></div>
+</div></section>
+
+<section id="faq" style="background:var(--ink2)"><div class="wrap">
+ <div class="kicker">Before you come</div><h2>Common questions</h2>
+ <details><summary>How long is a session?</summary><p>Sessions typically run 60 to 90 minutes and can be adjusted to your needs.</p></details>
+ <details><summary>What should I wear?</summary><p>Comfortable, loose clothing that allows easy movement. Athletic wear is ideal. For a specific injury, make sure the area is easy to reach.</p></details>
+ <details><summary>What conditions do you treat?</summary><p>Sports injuries, chronic pain, post-surgical rehabilitation, muscle and joint pain, and mobility issues.</p></details>
+ <details><summary>Will sports massage fix anterior pelvic tilt?</summary><p>It can help by loosening tight muscles, improving circulation and reducing pain, but it will not fully fix it. Strengthening, stretching and posture correction are needed too.</p></details>
+ <details><summary>Therapeutic or relaxation massage?</summary><p>A relaxation massage is mostly for unwinding. Therapeutic massage targets specific muscle issues, pain relief or recovery from injury.</p></details>
+</div></section>
+
+<section id="visit"><div class="wrap">
+ <div class="kicker">Find us</div><h2>Visit RM Physio</h2><p class="sub">Ready when you are. Open the assistant to send a booking request.</p>
+ <div class="visit">
+  <div class="card"><h3>Address</h3><p>3081 Salzedo St, Suite 200<br>Coral Gables, FL 33134</p><p style="margin-top:12px"><a href="tel:+17865874481">(786) 587-4481</a><br><a href="mailto:Raul@rmphysio.com">Raul@rmphysio.com</a></p></div>
+  <div class="card"><h3>Hours</h3><table class="hrs"><tr><td>Monday to Saturday</td><td>9am - 9pm</td></tr><tr><td>Sunday</td><td>not listed</td></tr></table></div>
+  <div class="card"><h3>Book</h3><p style="margin-bottom:14px">Request a session in under a minute.</p><a class="btn" href="#" data-ask="Book a session">Start request</a></div>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><div class="lic">RM Physio · 3081 Salzedo St Suite 200, Coral Gables · MA#77299 · PTA#30010</div>Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="cw-fab" aria-expanded="false" aria-controls="cw-panel">Ask RM Physio</button>
+<div id="cw-panel" role="dialog" aria-label="RM Physio assistant">
+ <div class="cw-h"><div><b>RM Physio assistant</b><small>Answers from the clinic's own site</small></div><button id="cw-x" aria-label="Close">&times;</button></div>
+ <div id="cw-log" aria-live="polite"></div><div id="cw-chips"></div>
+ <form id="cw-form"><input id="cw-in" autocomplete="off" placeholder="Ask a question"><button>Send</button></form>
+</div>
+
+<script>/* assistant engine: client-side only, sends nothing */
+(function(root){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4)w=w.replace(/(ing|ed|es|ly|s)$/,'');return w;}
+var STOP={do:1,does:1,you:1,your:1,the:1,is:1,are:1,a:1,an:1,of:1,to:1,i:1,my:1,me:1,what:1,how:1,can:1,for:1,it:1,in:1,on:1,at:1,and:1,or:1,there:1,have:1,any:1,we:1,our:1};
+function toks(s){var a=norm(s).split(' ').filter(Boolean),b=a.filter(function(w){return!STOP[w];});return(b.length?b:a).map(stem);}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;if(Math.abs(m-n)>2)return 9;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){c=[i];for(j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[n];}
+function tmatch(k,t){if(k===t)return 1;var L=Math.min(k.length,t.length);if(L>=5&&lev(k,t)<=1)return .85;if(L>=8&&lev(k,t)<=2)return .8;if(L>=4&&(k.indexOf(t)===0||t.indexOf(k)===0)&&Math.abs(k.length-t.length)<=2)return .75;return 0;}
+function build(kb){kb.forEach(function(e){e._k=e.keys.map(function(k){var t=toks(k),n=norm(k);return{t:t,n:n,x:n.split(' ').length>1&&t.length<=1};});});return kb;}
+function answer(kb,q){var qn=norm(q),qt=toks(q),best=null,bs=0;if(!qn)return null;
+kb.forEach(function(e){(e._k||[]).forEach(function(k){if(!k.t.length)return;var s=0;
+if((' '+qn+' ').indexOf(' '+k.n+' ')>-1){s=1.4+.1*k.t.length;}
+else if(k.x){return;}
+else{var sum=0;k.t.forEach(function(kt){var m=0;qt.forEach(function(t){var x=tmatch(kt,t);if(x>m)m=x;});sum+=m;});var cov=sum/k.t.length;if(cov<.7)return;s=cov*(1+.1*k.t.length);if(k.t.length>1&&sum<2)return;}
+s*= (e.w||1);if(s>bs){bs=s;best=e;}});});
+return bs>=.75?best:null;}
+function makeChat(cfg){
+ var kb=build(cfg.kb),step=-1,data={},doc=root.document;
+ var $=function(id){return doc.getElementById(id);},log=$('cw-log'),inp=$('cw-in'),chips=$('cw-chips');
+ function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+ function say(h,me){var d=doc.createElement('div');d.className='cw-m '+(me?'me':'bot');d.innerHTML=h;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+ function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=doc.createElement('button');b.type='button';b.className='cw-chip';b.textContent=c;b.onclick=function(){send(c);};chips.appendChild(b);});}
+ function menu(){setChips(cfg.menu);}
+ function ask(){var s=cfg.flow[step];say(s.q);setChips((s.chips||[]).concat(['Cancel']));inp.placeholder=s.ph||'Type your answer';}
+ function startFlow(){step=0;data={};say(cfg.flowIntro);ask();}
+ function endFlow(){step=-1;inp.placeholder='Ask a question';menu();}
+ function finish(){var lines=cfg.flow.map(function(s){return '<b>'+s.label+':</b> '+esc(data[s.k]);}).join('<br>');say(cfg.done.replace('{summary}',lines));endFlow();}
+ function send(t){t=String(t||'').trim();if(!t)return;say(esc(t),1);inp.value='';
+  if(step>=0){if(/^(cancel|stop|menu|back)$/i.test(t)){say('No problem, nothing was sent. What else can I help with?');endFlow();return;}
+   if(cfg.urgent&&cfg.urgent.re.test(t)){say(cfg.urgent.msg);return;}
+   var s=cfg.flow[step],err=s.check?s.check(t,data):null;if(err){say(err);return;}
+   data[s.k]=s.norm?s.norm(t):t;step++;if(step>=cfg.flow.length){finish();}else{ask();}return;}
+  if(cfg.urgent&&cfg.urgent.re.test(t)){say(cfg.urgent.msg);return;}
+  if(cfg.flowTrigger.test(t)){startFlow();return;}
+  var e=answer(kb,t);if(e){say(e.a);setChips(e.chips||cfg.menu);if(e.flow){}}
+  else{say(cfg.fallback);menu();}}
+ var fab=$('cw-fab'),panel=$('cw-panel'),opened=false;
+ function toggle(){var o=panel.classList.toggle('open');fab.setAttribute('aria-expanded',o);if(o&&!opened){opened=true;say(cfg.hello);menu();}if(o)setTimeout(function(){inp.focus();},50);}
+ fab.onclick=toggle;$('cw-x').onclick=toggle;
+ $('cw-form').onsubmit=function(ev){ev.preventDefault();send(inp.value);};
+ Array.prototype.forEach.call(doc.querySelectorAll('[data-ask]'),function(b){b.addEventListener('click',function(ev){ev.preventDefault();if(!panel.classList.contains('open'))toggle();send(b.getAttribute('data-ask'));});});
+ return{send:send};}
+var api={answer:function(kb,q){var e=answer(build(kb),q);return e?e.id:null;},makeChat:makeChat,norm:norm};
+if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.CW=api;
+})(typeof window!=='undefined'?window:this);
+</script>
+<script>
+var KB=[
+{id:'hours',keys:['hours','open','opening hours','what time','when are you open','closing','close','saturday','weekend','sunday','monday','late','evening'],a:'Raul sees clients Monday to Saturday, 9am to 9pm. Sunday is not on the listed hours, so the team will confirm if you need it.'},
+{id:'addr',keys:['address','where are you','location','located','directions','find you','coral gables','salzedo','street','miami','map'],a:'3081 Salzedo St, Suite 200, Coral Gables, FL 33134.'},
+{id:'parking',keys:['parking','park','valet','garage','entrance'],a:'I do not have parking details from the site. The team will confirm them when they reply.'},
+{id:'phone',keys:['phone','call','number','telephone','contact','reach','email','mail','text'],a:'Phone: (786) 587-4481. Email: Raul@rmphysio.com.'},
+{id:'book',keys:['book online','how to book','make an appointment','schedule','reserve','availability','available','slot'],a:'You can book on the clinic website, or I can take a request here and pass it to the team. Tap "Book a session" to start.',chips:['Book a session','Prices']},
+{id:'price',keys:['price','prices','cost','how much','rate','fee','charge','pricing','expensive','package'],a:'From the booking page: therapeutic massage $100 (1 hr), craniosacral $100, deep tissue with trigger point $120, cupping or myofascial release $120, sports massage with neuromuscular therapy $125, 90 min therapy $159, and a package of 4 rehabilitation sessions $359.'},
+{id:'duration',keys:['how long','session length','duration','minutes','hour','90 minutes','60 minutes'],a:'Sessions typically run 60 to 90 minutes and can be adjusted to your needs. The booking page lists 1 hr and 1 hr 30 min options.'},
+{id:'wear',keys:['wear','clothes','clothing','what to bring','undress','dress','outfit'],a:'Wear comfortable, loose clothing that allows easy movement. Athletic wear is ideal. For a specific injury, make sure the area is easy to reach.'},
+{id:'conditions',w:.85,keys:['conditions','what do you treat','treat','help with','pain','injury','injuries','rehab','rehabilitation','post surgery','surgery','mobility'],a:'Raul works with sports injuries, chronic pain, post-surgical rehabilitation, muscle and joint pain, and mobility issues. For anything medical, such as whether a treatment suits your case, the team will advise you directly.',chips:['Services','Book a session']},
+{id:'services',keys:['services','what do you offer','treatments','therapies','menu','massage types','types of massage'],a:'The site lists: therapeutic massage, massage for back pain, sports massage, myofascial and myospinal release, neuromuscular therapy, lymphatic massage, injury therapy, whiplash therapy, cancer massage, reflexology and deep tissue. The booking page also has cupping and craniosacral therapy.',chips:['Sports massage','Deep tissue','Prices']},
+{id:'sports',keys:['sports massage','athlete','athletes','training','workout','runner','running','marathon','sport','performance','recovery','strain'],a:'Sports massage prepares muscles for intense activity, helps lower the risk of strains, and speeds recovery. It includes an assessment of your concerns, your sport and your goals. Listed at $125 for 1 hr with neuromuscular therapy.',chips:['Book a session','Prices']},
+{id:'deep',keys:['deep tissue','deep','trigger point','sciatica','firm pressure'],a:'Deep tissue is effective for lower back pain, sciatica and sports injuries. The booking page lists deep tissue with trigger point therapy at $120 for 1 hr.'},
+{id:'neuro',keys:['neuromuscular','neuro muscular','nerve','carpal tunnel','migraine','migraines','headache','soft tissue'],a:'Neuromuscular therapy treats soft tissue disorders that come from the nervous and musculoskeletal systems, such as sciatica, carpal tunnel syndrome and migraines.'},
+{id:'myo',keys:['myofascial','fascia','myospinal','release','adhesions','cupping','cup','pnf','stretching'],a:'Myofascial and myospinal release works on the fascia to release tension and adhesions and support blood flow. Cupping or myofascial release is listed at $120 for 1 hr.'},
+{id:'back',keys:['back pain','neck pain','hip pain','back','neck','hip','spine','posture'],a:'Raul does focused massage for back, neck and hip pain, and also coaches stretching, strengthening and posture. He does not diagnose by chat, so describe it to him at the visit.'},
+{id:'injury',keys:['injury therapy','swelling','inflammation','hot cold','sprain','rehab'],a:'Injury therapy aims to reduce pain, inflammation and swelling in the affected area, using manual therapy and hot or cold treatment.'},
+{id:'whip',keys:['whiplash','car accident','accident','crash','neck injury'],a:'Whiplash therapy is one of the listed services. I cannot assess an injury from here, so the team will talk you through it.'},
+{id:'lymph',keys:['lymphatic','lymph','drainage','bloated','detox','fluid'],a:'Lymphatic drainage uses soft, gentle strokes to encourage lymph flow, often for people who feel swollen or bloated.'},
+{id:'cancer',keys:['cancer','oncology','chemo','chemotherapy','radiation','tumor'],a:'The clinic offers oncology massage, adapted to your health, treatment plan and cancer type. Because it depends on your situation, please contact the team first so they can answer for your case.'},
+{id:'reflex',keys:['reflexology','reflexologist','feet','foot massage'],a:'Reflexology is listed among the services. The team will confirm what a session includes.'},
+{id:'cst',keys:['craniosacral','cst','cranio','head massage'],a:'Craniosacral therapy (CST) is on the booking page, 1 hr at $100.'},
+{id:'thera',keys:['therapeutic massage','therapeutic','relaxation','relax','relaxing','swedish'],a:'Relaxation massage is mostly for unwinding. Therapeutic massage targets specific muscle issues, pain relief or recovery from injury. It is $100 for 1 hr on the booking page.'},
+{id:'raul',keys:['raul','who is raul','meet raul','therapist','who will treat','founder','owner','experience','qualified','license','licensed','certified','credentials','pta','lmt'],a:'Raul Mosqueira is the founder: a licensed massage therapist and physical therapist assistant, certified as a massage therapist since 2008. He has worked with elite athletes including NFL and NBA players and Cirque du Soleil performers. Licences on the site: MA#77299 and PTA#30010.',chips:['Book a session','Services']},
+{id:'pelvic',keys:['anterior pelvic tilt','pelvic tilt','pelvic'],a:'Sports massage can help by loosening tight muscles and reducing pain, but it will not fully fix anterior pelvic tilt. Strengthening, stretching and posture correction are needed as well.',w:1.3},
+{id:'gift',keys:['gift card','gift cards','gift','voucher','present'],a:'Gift cards are available on the clinic website under "Gift Card".'},
+{id:'award',keys:['award','awards','best','top choice','number one','reviews','rating'],a:'The clinic was named Top Choice Massage Therapy Clinic of 2025 by the International Icon Awards.'},
+{id:'ins',keys:['insurance','insured','pip','coverage','reimburse','hsa','medical card','payment','pay','credit card','cash','card'],a:'I do not have confirmed payment or insurance details. The team will tell you what they accept.'},
+{id:'first',keys:['first visit','first time','new client','new patient','what to expect','assessment','consultation'],a:'Each session is customised. Raul looks at your concerns and goals, then chooses techniques such as fascia work, cupping, trigger point therapy or PNF stretching. He works with you, not on you.'},
+{id:'women',keys:['women','womens health','abdominal','abdominal massage','pregnant','pregnancy'],a:'Raul lists abdominal massage for women\'s health in his bio. For pregnancy or any health condition, the team will confirm what is suitable before you book.'},
+{id:'online',keys:['online booking','book online','website booking','app'],a:'The clinic has an online booking page with the session list. I can also take a request here and pass it to the team.',chips:['Book a session']},
+{id:'nfl',keys:['nfl','nba','elite','professional athletes','cirque','sailing','celebrity','pro'],a:'Raul\'s bio says elite athletes have sought him out, including NFL and NBA players, the USA Sailing team, professional runners and Cirque du Soleil performers.'},
+{id:'philo',keys:['drugs','surgery free','without surgery','holistic','natural','philosophy','approach','energetic healing'],a:'The practice believes in the body\'s natural ability to heal. Manual techniques support that, rather than surgery or medication. Raul also adds energetic healing to some work.'},
+{id:'social',keys:['instagram','facebook','linkedin','social media','follow','socials'],a:'You can find the clinic on Instagram as @rm_physiomiami, on Facebook as RMPHYSIO and on LinkedIn as rmphysio.'},
+{id:'blog',keys:['blog','articles','read more','tips','posts'],a:'The clinic blog covers topics such as which proprioceptive organ is targeted in myofascial release, which body regions to avoid during myofascial release, and whether you need a referral for physical therapy.'},
+{id:'sunday',keys:['sunday','sundays','open sunday'],a:'Sunday is not on the listed hours (Monday to Saturday, 9am to 9pm). The team will confirm if an exception is possible.',w:1.2},
+{id:'licnum',keys:['license number','licence number','ma number','license numbers','registered','accredited'],a:'The footer of the clinic site lists MA#77299 and PTA#30010.'},
+{id:'hi',keys:['hello','hi','hey','good morning','good evening','hola'],a:'Hello! I can answer questions about RM Physio or take a booking request.'},
+{id:'thx',keys:['thanks','thank you','thx','cheers'],a:'You are welcome. Anything else?'}
+];
+var MENU=['Book a session','Services','Prices','Hours and location','Meet Raul'];
+var SERV=['Therapeutic massage','Deep tissue','Sports massage','Neuromuscular','Myofascial release','Cupping','Craniosacral','Other'];
+var FLOW=[
+{k:'service',label:'Service',q:'Which session would you like?',chips:SERV},
+{k:'day',label:'Preferred day',q:'Which day suits you? Raul is in Monday to Saturday.',chips:['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],check:function(t){return /\bsun/i.test(t)?'Sunday is not on the listed hours. Pick Monday to Saturday, and the team will confirm anything else.':null;}},
+{k:'time',label:'Preferred time',q:'What time? Hours are 9am to 9pm.',chips:['Morning','Afternoon','Evening']},
+{k:'name',label:'Name',q:'Your name?',check:function(t){return t.length<2?'Please type your name.':null;}},
+{k:'contact',label:'Phone or email',q:'Phone number or email so the team can confirm?',check:function(t){return (/@/.test(t)||(t.replace(/\D/g,'').length>=7))?null:'That does not look like a phone number or email. Try again?';}}
+];
+if(typeof document!=='undefined'){CW.makeChat({kb:KB,menu:MENU,flow:FLOW,flowTrigger:/\b(book a session|book me|i want to book|i would like to book|make a booking|booking request|start request|appointment)\b/i,hello:'Hi! I am the RM Physio assistant. Ask me about sessions, hours or Raul, or request a booking.',flowIntro:'Happy to help. Five quick questions, then I pass it to the team.',done:'Request ready for the team:<br>{summary}<br><br>Sent to the team. They will confirm the slot with you.',fallback:'I am not sure about that one. The team can answer it: (786) 587-4481 or Raul@rmphysio.com. Or ask me about services, hours or prices.'});}
+if(typeof module!=='undefined')module.exports={KB:KB};
+</script>
+</body></html>

@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HUSTLE | Group fitness in Vancouver</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f2efe8;--ink:#0b0b0b;--mute:#5b5850;--line:#0b0b0b;--volt:#c9ff3d;--soft:#e6e2d8;
+--w-acc:#0b0b0b;--w-accink:#c9ff3d;--w-bg:#f2efe8;--w-ink:#0b0b0b;--w-line:#0b0b0b;--w-head:#0b0b0b;--w-headink:#f2efe8;--w-bot:#e6e2d8;--w-botink:#0b0b0b;--w-inbg:#fff;--w-font:Archivo,system-ui,sans-serif;--w-chip:#0b0b0b;--w-ring:#0b0b0b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 Archivo,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit}img{max-width:100%}
+h1,h2,h3{font-family:'Archivo Black',Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.95;margin:0;letter-spacing:-.01em}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+header{background:var(--paper);border-bottom:3px solid var(--ink);position:sticky;top:0;z-index:50}
+.hb{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:62px}
+.logo img{height:28px;width:auto;display:block}
+nav{display:none;gap:22px;font:700 13px Archivo;text-transform:uppercase;letter-spacing:.08em}
+nav a{text-decoration:none}nav a:hover{background:var(--volt)}
+.btn{display:inline-block;background:var(--ink);color:var(--volt);border:3px solid var(--ink);padding:11px 16px;font:700 13px Archivo;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--volt);color:var(--ink)}.btn.alt{background:transparent;color:var(--ink)}.btn.alt:hover{background:var(--ink);color:var(--volt)}
+.hero{background:var(--ink);color:var(--paper);padding:40px 0 0;overflow:hidden}
+.hero .k{font:700 12px Archivo;letter-spacing:.2em;text-transform:uppercase;color:var(--volt)}
+.hero h1{font-size:clamp(54px,17vw,170px);margin:12px 0 18px;color:var(--paper)}
+.hero h1 span{color:var(--volt)}
+.hero p{max-width:560px;color:#cfcbc0;margin:0 0 22px}
+.hero .btn{border-color:var(--volt)}.hero .btn.alt{color:var(--paper);border-color:var(--paper)}
+.tick{margin-top:34px;background:var(--volt);color:var(--ink);border-block:3px solid var(--ink);white-space:nowrap;overflow:hidden;font:400 20px 'Archivo Black';text-transform:uppercase}
+.tick div{display:inline-block;padding:10px 0;animation:mq 28s linear infinite}
+.tick span{margin:0 18px}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.tick div{animation:none}}
+section{padding:48px 0;border-bottom:3px solid var(--ink)}
+h2{font-size:clamp(34px,8vw,64px);margin-bottom:12px}
+.lead{max-width:640px;color:var(--mute);margin:0 0 22px}
+.finder{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.finder button{border:2px solid var(--ink);background:transparent;padding:8px 13px;font:700 12px Archivo;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;color:var(--ink)}
+.finder button[aria-pressed=true]{background:var(--ink);color:var(--volt)}
+.list{border-top:3px solid var(--ink)}
+.row{border-bottom:2px solid var(--ink)}
+.row button{width:100%;display:flex;gap:12px;align-items:baseline;text-align:left;background:none;border:0;padding:14px 2px;cursor:pointer;color:var(--ink);font:inherit}
+.row .n{font:400 14px 'Archivo Black';color:var(--mute);min-width:28px}
+.row .t{font:400 clamp(20px,5vw,30px) 'Archivo Black';text-transform:uppercase;flex:1;line-height:1}
+.row .tag{font:700 11px Archivo;text-transform:uppercase;letter-spacing:.08em;background:var(--volt);border:2px solid var(--ink);padding:2px 6px;white-space:nowrap}.row button{flex-wrap:wrap}.row button>*{min-width:0}
+.row .pl{font:400 22px 'Archivo Black'}
+.row .b{display:none;padding:0 2px 16px 40px;max-width:720px}
+.row.open .b{display:block}.row.open .pl{transform:rotate(45deg)}
+.row .b p{margin:0 0 8px}.row .b small{color:var(--mute);display:block;margin-bottom:10px}
+.grid{display:grid;gap:14px}
+.box{border:3px solid var(--ink);padding:18px;background:#fff}
+.box.dark{background:var(--ink);color:var(--paper)}.box.dark h3{color:var(--volt)}
+.box h3{font-size:26px;margin-bottom:8px}
+.box ul{margin:8px 0 0;padding-left:18px}.box li{margin:3px 0}
+.names{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.names span{border:2px solid var(--ink);padding:6px 12px;font:700 13px Archivo;text-transform:uppercase;letter-spacing:.05em;background:#fff}
+.rules{display:grid;gap:0;border:3px solid var(--ink);background:#fff}
+.rule{padding:14px 16px;border-bottom:2px solid var(--ink)}.rule:last-child{border:0}
+.rule b{font:400 18px 'Archivo Black';text-transform:uppercase;display:block;margin-bottom:2px}.rule span{color:var(--mute);font-size:15px}
+details{border-bottom:2px solid var(--ink);padding:12px 0}summary{cursor:pointer;font-weight:700}details p{margin:8px 0 0;color:var(--mute)}
+.visit{display:grid;gap:16px}
+.big{font:400 clamp(26px,6vw,42px)/1 'Archivo Black';text-transform:uppercase}
+footer{padding:26px 0 92px;text-align:center;font-size:13px;color:var(--mute)}
+@media(min-width:760px){nav{display:flex}.grid.g2{grid-template-columns:1fr 1fr}.grid.g3{grid-template-columns:repeat(3,1fr)}.visit{grid-template-columns:1.2fr 1fr}.rules{grid-template-columns:1fr 1fr}.rule{border-right:2px solid var(--ink)}.rule:nth-child(2n){border-right:0}}
+
+#gw-btn{position:fixed;right:16px;bottom:16px;z-index:9999;border:0;border-radius:999px;padding:13px 18px;background:var(--w-acc);color:var(--w-accink,#fff);font:700 15px/1 var(--w-font,system-ui);box-shadow:0 8px 24px rgba(0,0,0,.35);cursor:pointer;display:flex;gap:8px;align-items:center}
+#gw-btn:focus-visible,#gw-panel button:focus-visible,#gw-panel input:focus-visible{outline:3px solid var(--w-ring,#fff);outline-offset:2px}
+#gw-panel{position:fixed;right:12px;bottom:72px;z-index:9999;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 96px));background:var(--w-bg);color:var(--w-ink);border:1px solid var(--w-line);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.45);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--w-font,system-ui)}
+#gw-panel.open{display:flex}
+#gw-head{padding:12px 14px;background:var(--w-head);color:var(--w-headink);display:flex;justify-content:space-between;align-items:center;font-weight:700}
+#gw-head small{display:block;font-weight:400;opacity:.8;font-size:12px}
+#gw-x{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1;padding:4px 8px}
+#gw-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.gw-m{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-line;word-wrap:break-word}
+.gw-b{background:var(--w-bot);color:var(--w-botink);align-self:flex-start;border-bottom-left-radius:4px}
+.gw-u{background:var(--w-acc);color:var(--w-accink,#fff);align-self:flex-end;border-bottom-right-radius:4px}
+#gw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+#gw-chips button{border:1px solid var(--w-acc);background:transparent;color:var(--w-chip,var(--w-ink));border-radius:999px;padding:6px 11px;font:600 13px var(--w-font,system-ui);cursor:pointer}
+#gw-chips button:hover{background:var(--w-acc);color:var(--w-accink,#fff)}
+#gw-form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--w-line)}
+#gw-in{flex:1;min-width:0;padding:10px 12px;border-radius:10px;border:1px solid var(--w-line);background:var(--w-inbg);color:var(--w-ink);font:16px var(--w-font,system-ui)}
+#gw-send{border:0;background:var(--w-acc);color:var(--w-accink,#fff);border-radius:10px;padding:0 14px;font:700 14px var(--w-font,system-ui);cursor:pointer}
+
+</style></head><body>
+<header><div class="wrap hb">
+<a class="logo" href="#top" aria-label="HUSTLE"><img src="img/hustle-logo.png" alt="HUSTLE logo" width="151" height="28"></a>
+<nav><a href="#classes">Classes</a><a href="#mama">Mama</a><a href="#pt">Private training</a><a href="#know">Good to know</a><a href="#coaches">Coaches</a><a href="#visit">Visit</a></nav>
+<button class="btn" type="button" onclick="gwAsk('Book a class')">Book</button></div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<div class="k">Vancouver &middot; Kingsway studio</div>
+<h1>Hustle<br>is <span>heart.</span></h1>
+<p>A fitness collective created to empower the mind, challenge the body and train for life. High-energy, creative classes with experienced coaches. All fitness levels welcome.</p>
+<button class="btn" type="button" onclick="gwAsk('Which class is right for me?')">Find your class</button> <a class="btn alt" href="#visit">229 Kingsway</a>
+</div>
+<div class="tick" aria-hidden="true"><div><span>Booty + HIIT</span><span>Control</span><span>TRX</span><span>Powerhouse</span><span>Mobility</span><span>Tempo Sculpt</span><span>Prenatal + postpartum</span><span>Booty + HIIT</span><span>Control</span><span>TRX</span><span>Powerhouse</span><span>Mobility</span><span>Tempo Sculpt</span><span>Prenatal + postpartum</span></div></div>
+</div>
+
+<section id="classes"><div class="wrap">
+<h2>Our spice is variety</h2>
+<p class="lead">Whether you've been working out for years, are rehabbing an injury, are on a prenatal or postpartum journey, or fitness is new to you. Tap a goal to filter, tap a class to open it.</p>
+<div class="finder" id="fl" role="group" aria-label="Filter classes"></div>
+<div class="list" id="cl"></div>
+<p style="margin-top:18px"><button class="btn" type="button" onclick="gwAsk('Book a class')">Request a spot</button> <button class="btn alt" type="button" onclick="gwAsk('Which class is right for me?')">Not sure? Ask</button></p>
+</div></section>
+
+<section id="mama" style="background:var(--volt)"><div class="wrap">
+<h2>The LU Method</h2>
+<p class="lead" style="color:var(--ink)">Prenatal and postpartum classes for mamas. Carefully designed across fitness modalities to build trust in the body, strength in the mind and support for the baby.</p>
+<div class="grid g2">
+<div class="box"><h3>Babies welcome</h3><p>You are welcome to bring babies to postpartum sessions. Bouncers, rockers, exersaucers, Jolly Jumpers and toys are available as needed. Babies can attend until they are crawling.</p></div>
+<div class="box"><h3>Late or leaving early</h3><p>For prenatal and postpartum classes the coaches can help with late entry or leaving early, for the comfort of mama and baby.</p></div></div>
+<p style="margin-top:14px;font-size:14px">Please check with your medical professional first. For which class fits you, speak with a Hustle coach.</p>
+</div></section>
+
+<section id="pt"><div class="wrap">
+<h2>Private &amp; small-group training</h2>
+<p class="lead">You might not always get that extra love in a packed group class. Hustle trainers design a workout tailored to your goals and current fitness level, one on one or in small groups.</p>
+<div class="grid g2">
+<div class="box dark"><h3>Specialties</h3><ul><li>Rehab from injuries</li><li>Weight loss and transformation</li><li>Pregnancy and postpartum journey</li><li>Parkinson's disease</li><li>Senior workouts</li><li>Running programs</li><li>Taking current fitness to the next level</li><li>Triathlon strength training</li></ul></div>
+<div class="box"><h3>How to start</h3><p>Send a message to info@hustleup.ca to set up training with the coach that best fits your needs. Please request personal training before purchasing PT sessions, as availability is limited.</p><p><button class="btn" type="button" onclick="gwAsk('Private training')">Ask about private training</button></p></div></div>
+</div></section>
+
+<section id="know"><div class="wrap">
+<h2>Good to know</h2>
+<p class="lead">The studio's rules, so your first class goes smoothly.</p>
+<div class="rules">
+<div class="rule"><b>First time?</b><span>Arrive 15 minutes before class to meet your coach and set up your account.</span></div>
+<div class="rule"><b>Booking window</b><span>Book up to 7 days ahead. Sold-out classes have a waitlist.</span></div>
+<div class="rule"><b>Cancelling</b><span>Cancel at least 12 hours before class. Late cancels forfeit the class on a pack.</span></div>
+<div class="rule"><b>Arriving late</b><span>Be present 5 to 10 minutes before start. After the start time you can't be admitted.</span></div>
+<div class="rule"><b>What to wear</b><span>Breathable athletic wear and non-marking shoes for wood floors. Bare feet for yoga.</span></div>
+<div class="rule"><b>No phones</b><span>Phones stay in a locker, not on the studio floor.</span></div>
+<div class="rule"><b>Amenities</b><span>Towels, Jade yoga mats, blocks, straps, lockers, showers and change rooms.</span></div>
+<div class="rule"><b>Age</b><span>16 and up; under 18 with an adult.</span></div></div>
+</div></section>
+
+<section id="coaches" style="background:var(--soft)"><div class="wrap">
+<h2>The coaches</h2>
+<p class="lead">The Hustle squad. Experienced coaches who support injury modifications, pregnancy, postpartum and everything life does to our bodies.</p>
+<div class="names"><span>Lucy</span><span>Brent</span><span>Marco</span><span>Vanessa</span><span>Alex</span><span>Mikaela</span><span>Stephanie</span><span>Amanda</span><span>Alicia</span><span>Anil</span><span>Amy</span><span>Sofia</span><span>Carson</span></div>
+</div></section>
+
+<section><div class="wrap">
+<h2>Questions</h2>
+<details><summary>Are there beginner classes?</summary><p>Beginners are welcome in every class, so there are no beginner-only classes. Arrive 15 minutes early on your first visit.</p></details>
+<details><summary>How often should I come?</summary><p>3 to 5 classes a week is recommended for real change, but there is no magic number. Rest matters too, especially if you are new.</p></details>
+<details><summary>How long until I see results?</summary><p>About 2 weeks of 3 to 5 classes a week to feel motivated and confident; a consistent routine over 2 to 3 months optimizes results.</p></details>
+<details><summary>Packs or membership?</summary><p>There are two options: packs of classes, or a membership. Check the pricing page; it depends on how often you plan to come. Student pricing is available for full-time students under 25.</p></details>
+<details><summary>Can I freeze my membership?</summary><p>In general, if you commit to a month or more you can freeze for a doctor's order, pregnancy, extended travel, job loss or bereavement. Memberships are non-transferable; class packs can be shared.</p></details>
+<details><summary>Should I eat before class?</summary><p>A small snack of about 200 to 300 calories an hour before, with protein and carbs.</p></details>
+</div></section>
+
+<section id="visit" style="border-bottom:0"><div class="wrap visit">
+<div><h2>Come say hi</h2>
+<div class="big">229 Kingsway Street<br>Vancouver, BC<br>V5T 3J5</div>
+<p style="margin-top:16px"><a class="btn" href="tel:+16044234005">604-423-4005</a> <a class="btn alt" href="mailto:info@hustleup.ca">info@hustleup.ca</a></p></div>
+<div class="box"><h3>Online too</h3><p>Hustle 24/7 puts workouts on demand. Book classes through your online account, or register in studio. Follow @hustleupca on Instagram.</p>
+<p style="font-size:13px;color:var(--mute)">We acknowledge and respect the Musqueam, Squamish and Tsleil-Waututh peoples on whose traditional territory we move.</p></div>
+</div></section>
+</main>
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+<script>
+(function(){
+var C=[
+['Booty + HIIT','Lower body · cardio','Cardio strength','In this lower body focused class, high intensity cardio combines with strength training: inner thighs, outer glutes, hamstrings, quads and calves.','Resistance bands, dumbbells, steps, BOSU and sliders'],
+['Booty + Core','Lower body · core','Strength','A detour on the traditional Booty class: core-focused movements, no cardio, to maximize the lower body working with the whole core system.','Resistance bands, dumbbells, steps, ankle weights, BOSU and sliders'],
+['TRX Connect','Core stability · lifting','Strength|Mama','Builds awareness of the pelvic floor while learning to lift heavy through core stability. Aims at bone density, balance, stamina and coordination. Low and high impact options. Prenatal and postpartum friendly.','Dumbbells, TRX, ankle weights and resistance bands'],
+['Control','Mat Pilates inspired','Mat|Mama','Balance, stability and body awareness to strengthen muscles, ignite the core and improve postural alignment. Learn to support the spine and mobilize the pelvic floor. Low impact; prenatal and postpartum friendly.','Dumbbells, resistance bands, sliders, ankle weights, yoga blocks, BOSU and stability balls'],
+['HIIT + Heavy Circuit','Intervals · lifting','Cardio strength|Strength','Leave the fear of lifting heavy behind. Short bursts of high intensity intervals plus a smart program to build muscle.','Dumbbells, TRX, battle ropes, rowers and air bike'],
+['Tempo Sculpt','Control to the beat','Mat','The classic Control class set to the beat of the music: range of motion, stability, balance, strength and some feel-good core work.','Resistance bands, dumbbells, steps, ankle weights, BOSU and sliders'],
+['Mobility','Stretch · recover','Recover','Active stretching for the spine, shoulders and hips, finishing with static relaxing stretches. Recover from the work you do through the week.','Your body'],
+['Move','Full body · cardio','Cardio strength','Set to a fiery playlist: upper body, lower body and core, building the mind-to-muscle connection, cardio endurance, body awareness and stamina.','Dumbbells, resistance bands, steps, BOSU, stability balls, ankle weights and sliders'],
+['Powerhouse','Strength · no cardio','Strength','Full-body strength with a major focus on form. No cardio, but still breathless and sweaty.','Dumbbells and resistance bands'],
+['Arms and Abs','Mat circuit','Mat','Mat-based, circuit-style workout using timed intervals to test your limit and build strength and conditioning.','Resistance bands, dumbbells, steps and BOSU'],
+['Tempo Strength','Full body to the beat','Strength','Rhythm-based strength class, full body with core focus. Think Powerhouse, but to the rhythm.','Dumbbells and resistance bands'],
+['TRX Strength','Constant movement','Strength|Mama','Not your average TRX class: push, pull, twist and balance to improve posture, strength and flexibility. Body position on the TRX adds or reduces resistance. Prenatal and postpartum friendly.','TRX, dumbbells and resistance bands'],
+['Prenatal Pilates + Core','The LU Method','Mama','Pilates principles for the pregnant body: how the core supports a growing belly, prepping the pelvic floor for birth, breath control and relaxation.','Resistance bands, dumbbells, ankle weights and sliders'],
+['Prenatal Strength','The LU Method','Mama','Low impact training to build confidence and strength during pregnancy: labour prep postures, breathing, core stabilization and life with babies. Postpartum mamas welcome.','Dumbbells, resistance bands, steps, BOSU, TRX and stability balls'],
+['Postpartum + Baby: Control + Core','The LU Method','Mama','Pilates principles to reconnect with the pelvic floor, body and mind after birth. Take it when ready, based on conversations with your healthcare provider. Babies welcome.','Resistance bands, dumbbells, ankle weights and sliders'],
+['Postpartum + Baby: Strength','The LU Method','Mama','For mamas and babies: feel strong, reactivate posture, reclaim confidence, relieve tension. Baby massage when time permits. Babies welcome until crawling.','Dumbbells, resistance bands, steps, BOSU, TRX and stability balls'],
+['Mama Move','The LU Method','Mama|Cardio','For mamas ready to move beyond Postpartum + Baby, about a year after birth: pelvic floor work, optional high impact cardio, strength conditioning and a fluid stretch. Toddler mamas minus the little ones.','TRX, dumbbells, resistance bands, steps, BOSU, stability balls, ankle weights and sliders']];
+var F=[['All','all'],['Strength','Strength'],['Cardio','Cardio'],['Mat + core','Mat'],['Recover','Recover'],['Mama','Mama']];
+var fl=document.getElementById('fl'),cl=document.getElementById('cl'),cur='all';
+function render(){cl.innerHTML='';var n=0;C.forEach(function(c){var tg=c[2].replace('Cardio strength','Cardio|Strength').split('|');if(cur!=='all'&&tg.indexOf(cur)<0)return;n++;var r=document.createElement('div');r.className='row';
+var b=document.createElement('button');b.type='button';b.setAttribute('aria-expanded','false');b.innerHTML='<span class="n">'+(n<10?'0':'')+n+'</span><span class="t"></span><span class="tag"></span><span class="pl" aria-hidden="true">+</span>';
+b.querySelector('.t').textContent=c[0];b.querySelector('.tag').textContent=c[1];
+var d=document.createElement('div');d.className='b';var p=document.createElement('p');p.textContent=c[3];var s=document.createElement('small');s.textContent='Equipment: '+c[4];var a=document.createElement('button');a.type='button';a.className='btn alt';a.textContent='Ask about '+c[0];a.onclick=function(){gwAsk(c[0])};d.appendChild(p);d.appendChild(s);d.appendChild(a);
+b.onclick=function(){var o=r.classList.toggle('open');b.setAttribute('aria-expanded',o)};r.appendChild(b);r.appendChild(d);cl.appendChild(r);});}
+F.forEach(function(f){var b=document.createElement('button');b.type='button';b.textContent=f[0];b.setAttribute('aria-pressed',f[1]==='all');b.onclick=function(){cur=f[1];[].forEach.call(fl.children,function(x,i){x.setAttribute('aria-pressed',F[i][1]===cur)});render();};fl.appendChild(b);});
+render();
+})();
+</script>
+<script>
+(function(){
+var CFG={"title": "Hustle assistant", "sub": "Answers from hustleup.ca", "btn": "Ask Hustle", "icon": "⚡", "ph": "Ask about classes, rules, the studio...", "send": "Send", "greet": "Hey! I know the Hustle class list, studio rules and FAQ. Ask me which class fits, what to bring, how cancelling works, or request a spot and I'll take your details for the team.", "chips": ["Which class is right for me?", "First time at Hustle", "Cancellation policy", "Prenatal / postpartum", "Private training", "Request a spot"], "bookKeys": ["book", "reserve", "sign up", "request spot", "spot", "join", "register", "try class", "come to class", "book class"], "fallback": "I don't have that one from the website. The team can help: info@hustleup.ca or 604-423-4005. Or tap \"Request a spot\" and leave your details.", "kb": [{"id": "which", "k": ["which class", "right class", "what class", "recommend", "suggest", "choose", "class list", "what classes", "types of class", "options", "variety"], "a": "The classes: Booty + HIIT, Booty + Core, TRX Connect, Control, HIIT + Heavy Circuit, Tempo Sculpt, Mobility, Move, Powerhouse, Arms and Abs, Tempo Strength, TRX Strength, plus the LU Method prenatal and postpartum classes. Tell me your goal (strength, cardio, stretching, core, prenatal) and I'll narrow it down. Hustle encourages trying a variety."}, {"id": "beginner", "k": ["beginner", "new to working out", "never worked out", "new to this", "totally new", "complete beginner", "first timer", "newbie", "out of shape", "long time", "fit enough", "intimidat", "all levels", "fitness level"], "a": "All fitness levels are welcome, and there are no beginner-only classes because beginners are welcome in every one. On your first visit, arrive 15 minutes before class so you can meet your coach and talk through the workout."}, {"id": "first", "k": ["first time", "first class", "first visit", "what to expect", "new here", "how it works"], "a": "For your first class: arrive 15 minutes early, set up your online account (or register in studio), and meet your coach. Wear breathable athletic wear and non-marking shoes, and leave your phone in a locker."}, {"id": "strength", "k": ["strength", "lift", "lifting", "heavy", "muscle", "build muscle", "weights", "powerhouse", "trx"], "a": "For strength: Powerhouse (full body, no cardio, focus on form), Tempo Strength (rhythm-based), TRX Strength, TRX Connect, and HIIT + Heavy Circuit for lifting with intervals."}, {"id": "cardio", "k": ["cardio", "hiit", "sweat", "burn", "interval", "endurance", "weight loss", "lose weight", "calorie", "fat"], "a": "For cardio: Booty + HIIT, HIIT + Heavy Circuit (battle ropes, rowers, air bike), Move (full body with cardio endurance) and Mama Move. Coaches can also design weight loss and transformation training privately."}, {"id": "booty", "k": ["booty", "glute", "lower body", "legs", "thigh"], "a": "Booty + HIIT is lower body with high intensity cardio. Booty + Core drops the cardio and adds core work. Both use bands, dumbbells, steps, BOSU and sliders."}, {"id": "mat", "k": ["pilates", "mat", "core", "abs", "control", "posture", "tempo sculpt", "arms"], "a": "Control is mat Pilates inspired and low impact, Tempo Sculpt is Control set to the beat, and Arms and Abs is a mat-based timed circuit. They focus on core, posture and stability."}, {"id": "mobility", "k": ["mobility", "stretch", "stretching", "flexibility", "recover", "recovery", "sore", "relax"], "a": "Mobility is active stretching for the spine, shoulders and hips, ending with static relaxing stretches. It needs no equipment, just your body."}, {"id": "mama", "k": ["prenatal", "pregnant", "pregnancy", "postpartum", "baby", "babies", "mama", "mom", "mother", "lu method", "post natal", "newborn", "after birth"], "a": "The LU Method runs prenatal and postpartum classes: Prenatal Pilates + Core, Prenatal Strength, Postpartum + Baby (Control + Core, and Strength) and Mama Move. Babies are welcome at postpartum sessions until they start crawling, with bouncers and toys provided. Please check with your healthcare provider first; I can't give medical advice."}, {"id": "private", "k": ["private", "personal training", "personal trainer", "one on one", "small group training", "pt", "1 on 1", "trainer"], "a": "Yes: Hustle trainers design a workout around your goals and fitness level, one on one or in small groups. Specialties include injury rehab, weight loss, pregnancy and postpartum, Parkinson's, seniors, running and triathlon strength. Email info@hustleup.ca to be matched with a coach; request PT before buying PT sessions."}, {"id": "cancel", "k": ["cancel", "cancellation", "late cancel", "miss class", "missed", "no show", "refund", "fee", "charged", "12 hour"], "a": "Cancel at least 12 hours before class. A late cancel forfeits the class if you're on a pack; on a membership your card on file is charged $20. If you're unwell, email info@hustleup.ca to cancel free of charge."}, {"id": "late", "k": ["late", "arrive late", "running late", "traffic", "after start", "start time", "on time"], "a": "Please be there 5 to 10 minutes before class begins. Nobody can be admitted after the scheduled start time, and that counts as a late cancel. You can book the next class that suits you. Prenatal and postpartum classes are the exception: coaches can help with late entry."}, {"id": "waitlist", "k": ["waitlist", "wait list", "sold out", "full", "no spots", "fully booked"], "a": "If a class is sold out, join the waitlist. As people cancel you're added in order. If a spot opens more than 12 hours ahead you get an email; otherwise show up at least 5 minutes before class and the waitlist is run after the no-show count."}, {"id": "advance", "k": ["how far", "in advance", "book ahead", "advance", "7 days", "booking window", "drop in", "walk in", "just show up", "without booking"], "a": "You can book 7 days ahead. You can also just show up: new clients should allow at least 15 minutes to create an account and sign up in studio. Check first whether the class is full or waitlisted."}, {"id": "price", "k": ["price", "cost", "how much", "pricing", "package", "pack", "membership", "pass", "fee", "rate", "student", "discount", "promo", "deal", "black friday", "special"], "a": "There are two options: packs of classes or a membership, and the price drops the more you commit. Full-time students under 25 get student pricing on every package (email info@hustleup.ca with proof of enrolment). Current rates and promotions are on the Pricing page; the team will confirm anything else."}, {"id": "wear", "k": ["wear", "what to bring", "shoes", "clothes", "towel", "mat", "water", "yoga mat", "equipment"], "a": "Wear light, breathable athletic fabric and non-marking shoes for the wood floors (bare feet for yoga). Towels, Jade yoga mats, blocks, straps and equipment are provided, and you can bring your own mat."}, {"id": "phone", "k": ["phone", "cell", "mobile", "cellphone"], "a": "No cell phones on the studio floor: leave yours in a locker. If someone might need to reach you, give them the front desk number."}, {"id": "amen", "k": ["shower", "locker", "change room", "changeroom", "amenities", "parking", "towels"], "a": "There are lockers in the common area, and men's and women's change rooms with showers, body wash and grooming products, plus a beauty bar for women. Complimentary workout towels are in the studio."}, {"id": "age", "k": ["age", "minimum", "teen", "16", "under 18", "kid", "child", "children", "daycare", "child minding", "pet"], "a": "You can attend from age 16, accompanied by an adult until you turn 18. There's no child minding, and the lobby can't be left with kids or pets. Babies are welcome at postpartum classes."}, {"id": "freq", "k": ["how often", "how many times", "frequency", "times a week", "per week", "results", "how long"], "a": "3 to 5 classes a week is recommended for real change, though there's no magic number. About 2 weeks at that pace to feel motivated and confident, and 2 to 3 months of consistency for best results. Rest matters too, especially if you're new."}, {"id": "injury", "k": ["injury", "injured", "hurt", "pain", "knee", "back", "shoulder", "rehab", "surgery", "condition", "doctor", "physio", "limit"], "a": "Coaches support injury modifications. If you're cleared by your doctor or physiotherapist, tell your coach before class so they can modify. I can't advise on medical matters, so please check with your healthcare provider, and ask about private training for rehab."}, {"id": "freeze", "k": ["freeze", "pause", "hold", "transfer", "share", "travel"], "a": "If you commit to a month or more of membership you can generally freeze it for a doctor's order, pregnancy, extended travel, job loss or bereavement. Memberships are non-transferable, but class packs can be shared with other Hustle clients."}, {"id": "eat", "k": ["eat", "food", "snack", "hungry", "meal"], "a": "A small snack of about 200-300 calories an hour before class works well, with protein, carbs and some sugar. A handful of nuts and some fruit is an example."}, {"id": "loc", "k": ["where", "address", "location", "located", "directions", "kingsway", "vancouver", "map", "find you", "studio"], "a": "229 Kingsway Street, Vancouver, BC V5T 3J5. Phone 604-423-4005, email info@hustleup.ca."}, {"id": "hours", "k": ["hours", "open", "schedule", "timetable", "what time class", "class time", "times", "when", "what time", "early morning", "evening", "weekend", "saturday", "sunday"], "a": "The class timetable lives in the online booking system, so I don't have today's times here. The team can confirm: 604-423-4005 or info@hustleup.ca."}, {"id": "contact", "k": ["phone", "call", "email", "contact", "reach", "number", "instagram", "message"], "a": "Phone 604-423-4005, email info@hustleup.ca, Instagram @hustleupca."}, {"id": "online", "k": ["online", "virtual", "at home", "247", "24/7", "on demand", "stream", "home workout", "app"], "a": "Hustle 24/7 offers on-demand workouts online, and there's a Hustle app on the App Store."}, {"id": "coach", "k": ["coach", "instructor", "teacher", "who teaches", "lucy", "brent", "marco", "vanessa", "alex", "mikaela", "stephanie", "amanda", "alicia", "anil", "amy", "sofia", "carson"], "a": "The Hustle squad: Lucy, Brent, Marco, Vanessa, Alex, Mikaela, Stephanie, Amanda, Alicia, Anil, Amy, Sofia and Carson."}, {"id": "book", "k": ["how to book", "where do i book", "online booking", "account", "login", "password"], "a": "Log in to your online account to book, or register in studio. If you have account trouble: reset your password via the login page, check your card details or browser, and if nothing works call or drop by the studio."}], "flow": {"steps": [{"key": "class", "label": "Class interest", "q": "Happy to pass your request to the team. What are you after?", "opts": ["Strength", "Cardio / HIIT", "Mat + core", "Mobility", "Prenatal / postpartum", "Private training"]}, {"key": "first", "label": "First time at Hustle", "q": "Is this your first time at Hustle?", "opts": ["Yes, first time", "I've been before"]}, {"key": "when", "label": "Preferred day/time", "q": "Which days and times work for you?", "ph": "e.g. weekday mornings, Sat 10am"}, {"key": "note", "label": "Anything to tell the coach", "q": "Anything your coach should know (injuries, pregnancy stage, goals)? Or 'none'.", "ph": "Optional"}, {"key": "name", "label": "Name", "q": "Your first name?", "ph": "First name"}, {"key": "contact", "label": "Contact", "q": "Best email or phone for the team to reach you?", "ph": "Email or phone"}], "done": "Thanks! Here's what I'd pass on:\n{summary}\n\nThis demo doesn't send anything. On the live site it would go to the Hustle team, who confirm a spot and how to book it in your online account.", "cancel": "No problem, cancelled. Anything else?"}};
+function norm(s){return String(s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9Ѐ-ӿ]+/g,' ').trim();}
+function stem(w){if(w.length>4&&/ies$/.test(w))return w.slice(0,-3)+'y';if(w.length>5&&/ing$/.test(w))return w.slice(0,-3);if(w.length>4&&/ed$/.test(w))return w.slice(0,-2);if(w.length>3&&/es$/.test(w)&&!/(ss|ses)$/.test(w))return w.slice(0,-2);if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))return w.slice(0,-1);return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];if(Math.abs(m-n)>2)return 9;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));}return d[m][n];}
+function srt(a){return a.split('').sort().join('')}
+function tokMatch(k,q){if(k===q)return true;if(k.length===4&&q.length===4&&srt(k)===srt(q)&&k[0]===q[0]||k.length===4&&q.length===4&&srt(k)===srt(q)&&k[3]===q[3])return true;if(k.length>=5&&q.length>=5&&(q.indexOf(k)===0||k.indexOf(q)===0)&&Math.abs(k.length-q.length)<=3)return true;var t=k.length>=9?2:(k.length>=5?1:0);return t>0&&lev(k,q)<=t;}
+function kwMatch(kw,qt){var kt=toks(kw);if(!kt.length)return 0;for(var i=0;i<kt.length;i++){var ok=false;for(var j=0;j<qt.length;j++){if(tokMatch(kt[i],qt[j])){ok=true;break;}}if(!ok)return 0;}return kt.length*kt.join('').length;}
+function answer(q){var qt=toks(q),best=null,bs=0;if(!qt.length)return null;
+ for(var i=0;i<CFG.kb.length;i++){var e=CFG.kb[i],s=0;for(var j=0;j<e.k.length;j++){var v=kwMatch(e.k[j],qt);if(v>s)s=v;}if(s>bs){bs=s;best=e;}}
+ return best;}
+var BOOKK=CFG.bookKeys||[];
+function wantsBook(q){var qt=toks(q);for(var i=0;i<BOOKK.length;i++){if(kwMatch(BOOKK[i],qt))return true;}return false;}
+function reply(q){if(wantsBook(q)&&!/\b(how much|cost|price)\b/i.test(q))return{flow:true};var e=answer(q);if(e)return{id:e.id,a:e.a};return{id:'none',a:CFG.fallback};}
+if(typeof window!=='undefined'){window.__gw={reply:reply};}
+if(typeof module!=='undefined'){module.exports={reply:reply,CFG:CFG};}
+if(typeof document==='undefined')return;
+var $=function(i){return document.getElementById(i)};
+var btn=document.createElement('button');btn.id='gw-btn';btn.type='button';btn.setAttribute('aria-expanded','false');btn.innerHTML='<span aria-hidden="true">'+CFG.icon+'</span><span>'+CFG.btn+'</span>';
+var p=document.createElement('div');p.id='gw-panel';p.setAttribute('role','dialog');p.setAttribute('aria-label',CFG.title);
+p.innerHTML='<div id="gw-head"><div>'+CFG.title+'<small>'+CFG.sub+'</small></div><button id="gw-x" type="button" aria-label="Close">&times;</button></div><div id="gw-log" aria-live="polite"></div><div id="gw-chips"></div><form id="gw-form"><input id="gw-in" autocomplete="off" placeholder="'+CFG.ph+'" aria-label="'+CFG.ph+'"><button id="gw-send" type="submit">'+CFG.send+'</button></form>';
+document.body.appendChild(btn);document.body.appendChild(p);
+var log=$('gw-log'),chips=$('gw-chips'),inp=$('gw-in'),flow=null,started=false;
+function add(t,c){var d=document.createElement('div');d.className='gw-m '+c;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){say(t)};chips.appendChild(b);});}
+function startFlow(){flow={i:0,d:{}};ask();}
+function ask(){var s=CFG.flow.steps[flow.i];add(s.q,'gw-b');if(s.opts)setChips(s.opts);else setChips([]);inp.placeholder=s.ph||CFG.ph;}
+function stepIn(t){var s=CFG.flow.steps[flow.i];flow.d[s.key]=t;flow.i++;if(flow.i<CFG.flow.steps.length){ask();return;}
+ var sum=CFG.flow.steps.map(function(x){return x.label+': '+flow.d[x.key]}).join('\n');add(CFG.flow.done.replace('{summary}',sum),'gw-b');flow=null;inp.placeholder=CFG.ph;setChips(CFG.chips);}
+function say(t){t=String(t).trim();if(!t)return;add(t,'gw-u');inp.value='';
+ if(flow){if(/^(cancel|stop|exit|back)$/i.test(t)){flow=null;add(CFG.flow.cancel,'gw-b');setChips(CFG.chips);return;}stepIn(t);return;}
+ var r=reply(t);if(r.flow){startFlow();return;}add(r.a,'gw-b');setChips(CFG.chips);}
+function open(){p.classList.add('open');btn.setAttribute('aria-expanded','true');if(!started){started=true;add(CFG.greet,'gw-b');setChips(CFG.chips);}inp.focus();}
+function close(){p.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+btn.onclick=function(){p.classList.contains('open')?close():open();};$('gw-x').onclick=close;
+$('gw-form').onsubmit=function(e){e.preventDefault();say(inp.value);};
+window.gwOpen=open;window.gwAsk=function(t){open();say(t);};
+})();
+</script>
+</body></html>

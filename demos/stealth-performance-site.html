@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stealth Performance | Phoenix personal training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b12;--bg2:#0d121b;--card:#121927;--line:#222c40;--blue:#2f5bff;--glow:#6d93ff;--ink:#f5f7fb;--mute:#9ba8bd;--teal:#37e6d6;
+--w-acc:#2f5bff;--w-bg:#0d121b;--w-ink:#f5f7fb;--w-line:#222c40;--w-head:#121927;--w-headink:#f5f7fb;--w-bot:#1a2336;--w-botink:#f5f7fb;--w-inbg:#080b12;--w-font:Inter,system-ui,sans-serif;--w-chip:#cfd9ff;--w-ring:#37e6d6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+img{max-width:100%}a{color:inherit}
+h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:50;background:rgba(8,11,18,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hb{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.chip{background:#fff;border-radius:8px;padding:3px 8px;display:flex}
+.chip img{height:40px;width:auto;display:block}
+.brand span.t{font:700 12px/1.2 Inter;color:var(--mute);letter-spacing:.14em;text-transform:uppercase;display:none}
+nav{display:none;gap:20px;font-size:14px;font-weight:600}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:#fff}
+.btn{display:inline-block;background:var(--blue);color:#fff;border:0;border-radius:6px;padding:12px 18px;font:700 14px Inter;text-decoration:none;cursor:pointer;letter-spacing:.03em}
+.btn:hover{background:var(--glow)}.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.hero{padding:44px 0 30px;background:radial-gradient(900px 420px at 85% -10%,rgba(47,91,255,.35),transparent 60%),var(--bg)}
+.kick{color:var(--teal);font:700 12px Inter;letter-spacing:.2em;text-transform:uppercase}
+.hero h1{font-size:clamp(44px,12vw,92px);margin:12px 0 14px;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--glow)}
+.hero p{color:var(--mute);max-width:560px;margin:0 0 22px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px}
+.stat{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:12px 14px}
+.stat b{font:800 34px 'Barlow Condensed';color:#fff;display:block;line-height:1}
+.stat span{font-size:12px;color:var(--mute)}
+.open{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--mute);margin-top:14px}
+.dot{width:9px;height:9px;border-radius:50%;background:#777}.dot.on{background:#2ee59d;box-shadow:0 0 8px #2ee59d}
+section{padding:46px 0}
+h2{font-size:clamp(32px,7vw,50px);margin-bottom:10px;font-weight:800}
+.lead{color:var(--mute);max-width:620px;margin:0 0 22px}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:14px;-webkit-overflow-scrolling:touch}
+.tabs button{flex:0 0 auto;background:var(--card);color:var(--mute);border:1px solid var(--line);border-radius:999px;padding:9px 15px;font:600 13px Inter;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--blue);color:#fff;border-color:var(--blue)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.panel h3{font-size:34px;margin-bottom:6px}.panel .size{color:var(--teal);font:700 13px Inter;letter-spacing:.1em;text-transform:uppercase}
+.panel ul{padding-left:18px;color:var(--mute);margin:12px 0}.panel li{margin:4px 0}
+.cols{display:grid;gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.card h3{font-size:24px;margin-bottom:4px}.card p{margin:4px 0;color:var(--mute);font-size:14px}
+.card .role{color:var(--teal);font:700 11px Inter;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.alt{background:var(--bg2);border-block:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--mute);font:700 11px Inter;letter-spacing:.12em;text-transform:uppercase}
+td:first-child{font-weight:600}
+.steps{counter-reset:s;display:grid;gap:10px}
+.step{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font:800 32px 'Barlow Condensed';color:var(--blue)}
+.step b{display:block}.step span{color:var(--mute);font-size:14px}
+details{border-bottom:1px solid var(--line);padding:12px 0}summary{cursor:pointer;font-weight:600}details p{color:var(--mute);margin:8px 0 0}
+.contact{display:grid;gap:16px}
+.hours td{padding:6px 0;border:0}
+footer{padding:26px 0 90px;border-top:1px solid var(--line);color:var(--mute);font-size:13px;text-align:center}
+@media(min-width:760px){nav{display:flex}.brand span.t{display:block}.cols.c2{grid-template-columns:1fr 1fr}.cols.c3{grid-template-columns:repeat(3,1fr)}.contact{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(4,1fr)}.steps{grid-template-columns:repeat(2,1fr)}}
+
+#gw-btn{position:fixed;right:16px;bottom:16px;z-index:9999;border:0;border-radius:999px;padding:13px 18px;background:var(--w-acc);color:var(--w-accink,#fff);font:700 15px/1 var(--w-font,system-ui);box-shadow:0 8px 24px rgba(0,0,0,.35);cursor:pointer;display:flex;gap:8px;align-items:center}
+#gw-btn:focus-visible,#gw-panel button:focus-visible,#gw-panel input:focus-visible{outline:3px solid var(--w-ring,#fff);outline-offset:2px}
+#gw-panel{position:fixed;right:12px;bottom:72px;z-index:9999;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 96px));background:var(--w-bg);color:var(--w-ink);border:1px solid var(--w-line);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.45);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--w-font,system-ui)}
+#gw-panel.open{display:flex}
+#gw-head{padding:12px 14px;background:var(--w-head);color:var(--w-headink);display:flex;justify-content:space-between;align-items:center;font-weight:700}
+#gw-head small{display:block;font-weight:400;opacity:.8;font-size:12px}
+#gw-x{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1;padding:4px 8px}
+#gw-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.gw-m{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-line;word-wrap:break-word}
+.gw-b{background:var(--w-bot);color:var(--w-botink);align-self:flex-start;border-bottom-left-radius:4px}
+.gw-u{background:var(--w-acc);color:var(--w-accink,#fff);align-self:flex-end;border-bottom-right-radius:4px}
+#gw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+#gw-chips button{border:1px solid var(--w-acc);background:transparent;color:var(--w-chip,var(--w-ink));border-radius:999px;padding:6px 11px;font:600 13px var(--w-font,system-ui);cursor:pointer}
+#gw-chips button:hover{background:var(--w-acc);color:var(--w-accink,#fff)}
+#gw-form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--w-line)}
+#gw-in{flex:1;min-width:0;padding:10px 12px;border-radius:10px;border:1px solid var(--w-line);background:var(--w-inbg);color:var(--w-ink);font:16px var(--w-font,system-ui)}
+#gw-send{border:0;background:var(--w-acc);color:var(--w-accink,#fff);border-radius:10px;padding:0 14px;font:700 14px var(--w-font,system-ui);cursor:pointer}
+
+</style></head><body>
+<header><div class="wrap hb">
+<a class="brand" href="#top" aria-label="Stealth Performance"><span class="chip"><img src="img/stealth-performance-logo.jpg" alt="Stealth Performance logo"></span><span class="t">Arcadia &middot; Phoenix</span></a>
+<nav><a href="#fit">Find your fit</a><a href="#times">Times</a><a href="#youth">Youth</a><a href="#team">Team</a><a href="#faq">FAQ</a><a href="#visit">Visit</a></nav>
+<button class="btn" type="button" onclick="gwAsk('Book a free session')">Book now</button></div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<div class="kick">Stealth Performance &middot; Phoenix</div>
+<h1>A higher standard of <em>personal training.</em></h1>
+<p>Build strength with a coach who plans your training and tracks your progress. Small group with individual assignments, semi-private with your own program, or one-on-one.</p>
+<a class="btn" href="#fit">Find your fit</a> <button class="btn ghost" type="button" onclick="gwAsk('Group times')">See group times</button>
+<div class="open"><i class="dot" id="od"></i><span id="ot">Checking hours...</span></div>
+<div class="stats"><div class="stat"><b>4.9</b><span>Google rating, 100+ reviews</span></div><div class="stat"><b>10+</b><span>years at the same location</span></div><div class="stat"><b>4</b><span>ways to train</span></div><div class="stat"><b>NFL NBA MLB</b><span>pro athletes train here</span></div></div>
+</div></div>
+
+<section id="fit"><div class="wrap">
+<h2>Find your fit</h2><p class="lead">Adults, young athletes and professionals train side by side. Every program starts with your goals, your history and how you move.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="panel" id="tp" role="tabpanel"></div>
+</div></section>
+
+<section class="alt" id="times"><div class="wrap">
+<h2>Small group times</h2><p class="lead">Once you're placed in a group you can switch if your schedule changes. Semi-private runs mornings and evenings; open spots change as groups fill.</p>
+<table><thead><tr><th>Days</th><th>Time</th></tr></thead><tbody>
+<tr><td>Mon / Wed / Fri</td><td>6:00am or 9:00am</td></tr>
+<tr><td>Mon / Wed</td><td>7:00am</td></tr>
+<tr><td>Tue / Thu</td><td>6:00am</td></tr>
+<tr><td>Mon to Thu (2 or 4 days a week)</td><td>5:30pm</td></tr>
+<tr><td>Saturday</td><td>9:00am, included with every membership</td></tr></tbody></table>
+<p style="margin-top:18px"><button class="btn" type="button" onclick="gwAsk('Book a free session')">Ask the team which time is open</button></p>
+</div></section>
+
+<section><div class="wrap">
+<h2>How it works</h2><p class="lead">Three steps from first visit to real results.</p>
+<div class="steps">
+<div class="step"><div><b>Share your goals</b><span>Submit the website form. The team follows up by message to help you choose your next step.</span></div></div>
+<div class="step"><div><b>Get assessed</b><span>A coach learns your goals, training history and injuries, and looks at how you move.</span></div></div>
+<div class="step"><div><b>Train with a plan</b><span>You're matched to small group, semi-private, 1-on-1 or youth training and your program is built.</span></div></div>
+<div class="step"><div><b>Weights on the screens</b><span>In small group your assigned loads are up on the gym screens before you arrive, and coaches track every cycle.</span></div></div></div>
+</div></section>
+
+<section class="alt" id="youth"><div class="wrap">
+<h2>Youth &amp; high school</h2><p class="lead">Coached strength and movement training for kids who play a sport and kids who don't. Start with a free session so a coach can meet your child and place them in the right group.</p>
+<div class="cols c2">
+<div class="card"><div class="role">Ages 8 to 14</div><h3>Youth group</h3><p>Coordination, balance, running mechanics, jumping and landing, and strength. Kids don't need to play a sport to join.</p><p>Weekdays after school, mostly 3:30 and 4:30pm, plus some evening groups.</p></div>
+<div class="card"><div class="role">Grades 9 to 12</div><h3>High school group</h3><p>Sprint mechanics, the main lifts with good technique, jumps and throws. Volume adjusts in season around games and practices.</p><p>Weekday groups after school, with a Saturday speed and strength add-on.</p></div></div>
+<p style="margin-top:16px;color:var(--mute);font-size:14px">Led by Torrey Hudspeth, head of youth development, who spent 7 years in a physical therapy clinic and worked with Altis preparing sprinters for the Tokyo Games.</p>
+</div></section>
+
+<section id="team"><div class="wrap">
+<h2>The coaches</h2><p class="lead">Small gym, the same faces, and trainers who know your plan.</p>
+<div class="cols c3">
+<div class="card"><div class="role">Co-founder &amp; principal partner</div><h3>Ben Novak</h3><p>Over a decade of coaching and gym ownership. Builds programs that are effective and sustainable.</p></div>
+<div class="card"><div class="role">Co-founder &amp; performance director</div><h3>Nicholas Edmond</h3><p>Stronger, faster, more powerful: custom programs for pro athletes and everyday clients.</p></div>
+<div class="card"><div class="role">Head coach &amp; partner</div><h3>John Hiltibran</h3><p>Kinesiology background and Precision Nutrition training, former college basketball player.</p></div>
+<div class="card"><div class="role">Trainer &amp; community impact lead</div><h3>Marlee Untermeyer</h3><p>NASM CPT, PES, TRX and PN1. Coaches pro football players and clients working on balance and independence.</p></div>
+<div class="card"><div class="role">Trainer &amp; head of youth development</div><h3>Torrey Hudspeth</h3><p>ASU Exercise &amp; Wellness, FMS and strength &amp; conditioning certified. Injury prevention and speed.</p></div>
+<div class="card"><div class="role">Trainer</div><h3>Kevin Olson</h3><p>MS Human Movement, BS Kinesiology, CSCS. Works with ages from high school athletes to the 80s.</p></div></div>
+</div></section>
+
+<section><div class="wrap">
+<h2>A small group session</h2><p class="lead">The group follows one program, but your training details are individual. Before class, coaches prepare your weights, reps and exercise variations.</p>
+<div class="cols c2">
+<div class="card"><div class="role">1 &middot; Arrive with a plan</div><p>Your coach knows you are booked in. Your assigned weights and current training details are displayed on the screens, so there is no guessing which weight to pick or which version of an exercise to do.</p></div>
+<div class="card"><div class="role">2 &middot; Warm up together</div><p>Work through the warm-up with your group, with adjustments where you need them.</p></div>
+<div class="card"><div class="role">3 &middot; Train at your level</div><p>Follow the group program with your assigned loads and movements while a coach watches technique.</p></div>
+<div class="card"><div class="role">4 &middot; Record and progress</div><p>Your weights, sets and reps are tracked so your coach can plan the next increase in load or volume through the cycle.</p></div></div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+<h2>Semi-private and one-on-one</h2><p class="lead">For people who want a program that is only theirs.</p>
+<div class="cols c2">
+<div class="card"><h3>Semi-private</h3><p>Typically 1 to 3 members per coach, never more than 4. Your exercises, loads, sets and reps are planned around your goals, experience and movement needs, and your coach has your previous results at hand all session.</p><p>A lot of adult members land here long term: people in their 40s, 50s and 60s, people working around an old injury, and anyone who wants a custom plan without paying for one-on-one every session.</p></div>
+<div class="card"><h3>One-on-one</h3><p>Working around pain, coming off physical therapy, aiming for a wedding, a season or a physical test, brand new to lifting, or on a tough schedule. A coach watching only you can adjust in real time.</p><p>Start with a free assessment: goals, history, injuries and a look at how you move. Then a weekly schedule that fits your life.</p></div></div>
+<p style="margin-top:14px;color:var(--mute);font-size:14px">&ldquo;Build you up, not beat you down&rdquo; is how the site puts it: steady progress over random hard workouts.</p>
+</div></section>
+
+<section><div class="wrap">
+<h2>What members say</h2><p class="lead">Rated 4.9 on Google by 100+ clients. A few lines from the site.</p>
+<div class="cols c2">
+<div class="card"><p>&ldquo;It's a personalized gym that truly caters to individual needs, making every session feel tailored and effective.&rdquo;</p><div class="role" style="margin-top:8px">Penny Tuton</div></div>
+<div class="card"><p>&ldquo;Every trainer is aware of my limitations and consistently checks my form or modifies exercises to suit my needs.&rdquo;</p><div class="role" style="margin-top:8px">Dean</div></div>
+<div class="card"><p>&ldquo;Perfect place whether you are a seasoned athlete or someone who has never been at a gym.&rdquo;</p><div class="role" style="margin-top:8px">Kim Miller</div></div>
+<div class="card"><p>&ldquo;The trainers are all very knowledgeable, patient and willing to help you work through whatever your body is feeling.&rdquo;</p><div class="role" style="margin-top:8px">Jessica Hajjar</div></div></div>
+</div></section>
+
+<section class="alt" id="faq"><div class="wrap">
+<h2>Questions</h2>
+<details><summary>I'm out of shape. Can I keep up?</summary><p>Yes. Every movement is scaled to your level, and your coach adjusts weights and exercises for you.</p></details>
+<details><summary>What if I have an old injury?</summary><p>Tell the coach at your first session. Exercises are modified so you can keep training without flare-ups.</p></details>
+<details><summary>How many people are in a semi-private session?</summary><p>Usually 1 to 3, never more than 4. Each person follows their own program.</p></details>
+<details><summary>Is there a trial?</summary><p>New clients can try 4 weeks for $97. After that, pricing depends on how many days a week you train.</p></details>
+<details><summary>Can I switch group times?</summary><p>Yes, once you're placed you can move to another group time.</p></details>
+</div></section>
+
+<section id="visit"><div class="wrap contact">
+<div><h2>Visit</h2><p class="lead" style="margin-bottom:10px">3927 East Indian School Road<br>Phoenix, AZ 85018<br><small>Formerly Spire Health Club. Serving Arcadia, Scottsdale, Paradise Valley and Phoenix.</small></p>
+<p><a class="btn" href="tel:+17605740923">Call or text (760) 574-0923</a></p>
+<p><a href="mailto:stealthperformanceaz@gmail.com" style="color:var(--glow)">stealthperformanceaz@gmail.com</a></p></div>
+<div><h2>Hours</h2><table class="hours"><tr><td>Mon to Fri</td><td>5:00am to 8:00pm</td></tr><tr><td>Saturday</td><td>7:00am to 1:00pm</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table>
+<p><button class="btn" type="button" onclick="gwAsk('Book a free session')">Leave your details</button></p></div>
+</div></section>
+</main>
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+<script>
+(function(){
+var T=[
+{n:'Small group',s:'4 to 10 clients',d:'Train with a regular crew on a progressive program. Your assigned weights, reps and exercise variations are planned before you arrive and shown on the gym screens.',l:['Coach knows who is booked and prepares in advance','Your weights, sets and reps are tracked through each cycle','Saturday 9am group included']},
+{n:'Semi-private',s:'1 to 3 clients, never more than 4',d:'Your own program, with a coach rotating between just a few people. The feel of personal training at a lower cost.',l:['Many adult members are in their 40s, 50s and 60s','Works around old injuries','Your coach has your plan and past results at hand']},
+{n:'One-on-one',s:'Personal training',d:'Every minute is about you. Your program is built around your goals, schedule and anything you are working around.',l:['Free assessment to start','Best for injuries, a date or goal, or brand-new lifters','Most people do 2 or 3 sessions a week']},
+{n:'Athlete',s:'High school, college, pro',d:'Speed, strength and power planned around your sport and season, with loads adjusted around practices, games and recovery.',l:['NFL, NBA and MLB athletes train here','One-on-one or semi-private','Basketball training also available']},
+{n:'Youth',s:'Ages 8 to 14 and grades 9 to 12',d:'Coached strength and movement for young athletes, in separate youth and high school groups.',l:['Free first session','Weekdays after school','No sport required']}];
+var tb=document.getElementById('tabs'),tp=document.getElementById('tp');
+function show(i){[].forEach.call(tb.children,function(b,j){b.setAttribute('aria-selected',j===i)});var t=T[i];tp.innerHTML='<div class="size">'+t.s+'</div><h3>'+t.n+'</h3><p style="color:var(--mute);margin:8px 0">'+t.d+'</p><ul>'+t.l.map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul><button class="btn" type="button" onclick="gwAsk(\''+t.n+' training\')">Ask about '+t.n.toLowerCase()+'</button>';}
+T.forEach(function(t,i){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent=t.n;b.onclick=function(){show(i)};tb.appendChild(b);});show(0);
+try{var f=new Intl.DateTimeFormat('en-US',{timeZone:'America/Phoenix',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()),g={};f.forEach(function(p){g[p.type]=p.value});var h=(+g.hour%24)+(+g.minute)/60,wd=g.weekday,on=false;
+if(['Mon','Tue','Wed','Thu','Fri'].indexOf(wd)>-1)on=h>=5&&h<20;else if(wd==='Sat')on=h>=7&&h<13;
+document.getElementById('od').className='dot'+(on?' on':'');document.getElementById('ot').textContent=on?'Open now in Phoenix':'Closed right now. Mon-Fri 5am-8pm, Sat 7am-1pm';}catch(e){document.getElementById('ot').textContent='Mon-Fri 5am-8pm, Sat 7am-1pm';}
+})();
+</script>
+<script>
+(function(){
+var CFG={"title": "Stealth assistant", "sub": "Answers from stealthperformanceaz.com", "btn": "Ask Stealth", "icon": "💬", "ph": "Ask about training, times, kids...", "send": "Send", "greet": "Hi! I can answer questions about Stealth Performance: formats, times, youth training, the 4-week trial. I can also take your details for the team. What would you like to know?", "chips": ["Which format fits me?", "Group times", "4-week trial", "Youth training", "Hours & location", "Book a free session"], "bookKeys": ["book", "free session", "free assessment", "sign up", "get started", "start training", "reserve", "appointment", "join", "try a class"], "fallback": "I don't have that one in front of me. The team can answer it: call or text (760) 574-0923 or email stealthperformanceaz@gmail.com. Or tap \"Book a free session\" and leave your details.", "kb": [{"id": "formats", "k": ["format", "which fit", "find fit", "which one", "what option", "type of training", "what do you offer", "services", "programs", "difference", "choose", "options"], "a": "There are four ways to train:\n- Small group (4-10 clients) on a shared program with your own assigned weights\n- Semi-private (1-3 clients, never more than 4) with your own program\n- One-on-one personal training\n- Athlete and youth performance\nTell me your goal or injury and I'll point to the closest one."}, {"id": "small", "k": ["small group", "group class", "group training", "4-10", "crew"], "a": "Small group is 4-10 people on one progressive program. Your assigned weights, reps and exercise variations are on the gym screens before you arrive, and coaches track your numbers through each cycle. The Saturday 9am group is included with every membership."}, {"id": "semi", "k": ["semi private", "semiprivate", "own program", "custom plan", "1-3", "over 40", "older", "50s", "60s"], "a": "Semi-private is your own program in a session of usually 1-3 people (never more than 4). The coach has your plan and past results at hand. Many adult members in their 40s, 50s and 60s, and people working around old injuries, stay here long term."}, {"id": "pt", "k": ["personal training", "one on one", "1 on 1", "private", "personal trainer"], "a": "One-on-one means every minute is about you. Your coach builds the program around your goals, schedule and any injury, and adjusts it each session. It works well for injuries, a specific goal or date, brand-new lifters and awkward schedules. Most people do 2 or 3 sessions a week."}, {"id": "times", "k": ["time", "schedule", "when", "group time", "morning", "evening", "early", "class times", "session times"], "a": "Small group times:\n- Mon/Wed/Fri 6:00am or 9:00am\n- Mon/Wed 7:00am\n- Tue/Thu 6:00am\n- Mon-Thu 5:30pm (2 or 4 days a week)\n- Saturday 9:00am (included with every membership)\nOnce you're placed you can switch times. Semi-private runs mornings and evenings; open spots change as groups fill, so the team confirms what's free."}, {"id": "trial", "k": ["trial", "4 week", "four week", "97", "try", "first month", "new client", "new member", "intro offer"], "a": "New clients can try 4 weeks for $97. After that you join a regular membership based on how many days a week you train, and the team goes over options at your check-in. You can also book a free session or assessment first."}, {"id": "price", "k": ["price", "cost", "how much", "membership", "fee", "rate", "pricing", "afford", "expensive", "pay"], "a": "Past the $97 4-week trial, pricing depends on how many days a week you train and which format you pick. The team goes through it at your check-in, so call or text (760) 574-0923 if you want it sooner."}, {"id": "free", "k": ["free session", "free class", "free assessment", "free trial", "free"], "a": "Yes: the site offers a free session for group and youth training, and a free assessment for one-on-one. Tap \"Book a free session\" and I'll take your details."}, {"id": "hours", "k": ["hours", "open", "close", "opening", "sunday", "saturday", "weekend", "closed"], "a": "Gym hours: Mon-Fri 5:00am-8:00pm, Saturday 7:00am-1:00pm, closed Sunday."}, {"id": "loc", "k": ["where", "address", "location", "located", "directions", "find you", "arcadia", "phoenix", "parking", "scottsdale", "paradise valley", "map"], "a": "3927 East Indian School Road, Phoenix, AZ 85018 (Arcadia). Formerly Spire Health Club, 10+ years at this location. The gym serves Arcadia, Scottsdale, Paradise Valley and Phoenix."}, {"id": "contact", "k": ["phone", "call", "text", "email", "contact", "number", "reach", "message"], "a": "Call or text (760) 574-0923, email stealthperformanceaz@gmail.com, or use the contact form on the website. Instagram is @stealthperformanceaz."}, {"id": "youth", "k": ["youth", "kid", "child", "children", "son", "daughter", "teen", "young", "junior", "high school", "age", "8-14", "boy", "girl", "student"], "a": "Youth training has two groups: ages 8-14, and high school athletes (grades 9-12). Kids don't need to play a sport. Sessions are weekdays after school, mostly 3:30 and 4:30pm plus some evenings, and high schoolers can add a Saturday speed session. Start with a free session so a coach can place your child."}, {"id": "athlete", "k": ["athlete", "sport", "nfl", "nba", "mlb", "speed", "college", "pro", "position", "season", "off season", "performance"], "a": "Stealth trains high school, college and pro athletes, including NFL, NBA and MLB players. Programs are built around your sport and season, with speed, strength and power work, one-on-one or semi-private. There is also dedicated basketball training."}, {"id": "basketball", "k": ["basketball", "hoops"], "a": "Yes, there's a Basketball Training page on the site. Head coach John Hiltibran is a former college basketball player. For current basketball session times the team will confirm."}, {"id": "injury", "k": ["injury", "injured", "pain", "back pain", "knee", "shoulder", "surgery", "physical therapy", "rehab", "limitation", "hurt", "recover", "old injury"], "a": "Working around injuries is a core part of how they coach. Tell the coach at your first session and exercises, range of motion and load are modified. I can't give medical advice, so for anything specific please talk to the coaches or your doctor."}, {"id": "beginner", "k": ["beginner", "new to lifting", "out of shape", "never lifted", "first time", "newbie", "fit enough", "keep up", "scared", "intimidat"], "a": "Beginners are welcome. Every movement is scaled to where you are today, and one-on-one is a good start if you're brand new to lifting. Coaches teach form and basics first."}, {"id": "team", "k": ["coach", "team", "who", "staff", "john", "ben", "nick", "nicholas", "marlee", "torrey", "kevin", "owner", "founder"], "a": "The team: Ben Novak (co-founder), Nicholas Edmond (co-founder, performance director), John Hiltibran (head coach), Marlee Untermeyer (trainer), Torrey Hudspeth (head of youth development), Kevin Olson (trainer), plus Katrina in operations and Jesus G on media."}, {"id": "saturday", "k": ["saturday group", "saturday session", "weekend class"], "a": "The Saturday 9:00am group is included with every membership, as a drop-in or an extra day."}, {"id": "switch", "k": ["switch", "change time", "move", "reschedule", "different time"], "a": "Yes. Once you're placed in a group you can switch times if your schedule changes."}, {"id": "app", "k": ["app", "download", "tracking", "track"], "a": "There's a Stealth Performance app (listed on the App Store). Coaches record your weights, sets and reps and review them across each training cycle."}], "flow": {"steps": [{"key": "goal", "label": "Interest", "q": "Great, let's get you set up. Which are you interested in?", "opts": ["Small group", "Semi-private", "One-on-one", "Youth / high school", "Athlete training"]}, {"key": "exp", "label": "Experience", "q": "How would you describe your training experience?", "opts": ["Brand new", "Some experience", "Experienced", "Returning after a break"]}, {"key": "inj", "label": "Injuries/goals", "q": "Anything the coach should know: an injury, a goal or a date? (type it, or 'none')", "ph": "e.g. sore knee, marathon in March"}, {"key": "when", "label": "Preferred times", "q": "Preferred days and times?", "opts": ["Early morning", "Mid-morning", "After school", "Evening", "Saturday"]}, {"key": "name", "label": "Name", "q": "Your first name?", "ph": "First name"}, {"key": "contact", "label": "Phone or email", "q": "Best phone number or email for the team to message you?", "ph": "Phone or email"}], "done": "Thanks! Here's what I'd pass on:\n{summary}\n\nThis demo doesn't send anything. On the live site it would go to the Stealth team, who follow up by message to confirm a time.", "cancel": "No problem, cancelled. Anything else?"}};
+function norm(s){return String(s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9Ѐ-ӿ]+/g,' ').trim();}
+function stem(w){if(w.length>4&&/ies$/.test(w))return w.slice(0,-3)+'y';if(w.length>5&&/ing$/.test(w))return w.slice(0,-3);if(w.length>4&&/ed$/.test(w))return w.slice(0,-2);if(w.length>3&&/es$/.test(w)&&!/(ss|ses)$/.test(w))return w.slice(0,-2);if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))return w.slice(0,-1);return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];if(Math.abs(m-n)>2)return 9;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));}return d[m][n];}
+function srt(a){return a.split('').sort().join('')}
+function tokMatch(k,q){if(k===q)return true;if(k.length===4&&q.length===4&&srt(k)===srt(q)&&k[0]===q[0]||k.length===4&&q.length===4&&srt(k)===srt(q)&&k[3]===q[3])return true;if(k.length>=5&&q.length>=5&&(q.indexOf(k)===0||k.indexOf(q)===0)&&Math.abs(k.length-q.length)<=3)return true;var t=k.length>=9?2:(k.length>=5?1:0);return t>0&&lev(k,q)<=t;}
+function kwMatch(kw,qt){var kt=toks(kw);if(!kt.length)return 0;for(var i=0;i<kt.length;i++){var ok=false;for(var j=0;j<qt.length;j++){if(tokMatch(kt[i],qt[j])){ok=true;break;}}if(!ok)return 0;}return kt.length*kt.join('').length;}
+function answer(q){var qt=toks(q),best=null,bs=0;if(!qt.length)return null;
+ for(var i=0;i<CFG.kb.length;i++){var e=CFG.kb[i],s=0;for(var j=0;j<e.k.length;j++){var v=kwMatch(e.k[j],qt);if(v>s)s=v;}if(s>bs){bs=s;best=e;}}
+ return best;}
+var BOOKK=CFG.bookKeys||[];
+function wantsBook(q){var qt=toks(q);for(var i=0;i<BOOKK.length;i++){if(kwMatch(BOOKK[i],qt))return true;}return false;}
+function reply(q){if(wantsBook(q)&&!/\b(how much|cost|price)\b/i.test(q))return{flow:true};var e=answer(q);if(e)return{id:e.id,a:e.a};return{id:'none',a:CFG.fallback};}
+if(typeof window!=='undefined'){window.__gw={reply:reply};}
+if(typeof module!=='undefined'){module.exports={reply:reply,CFG:CFG};}
+if(typeof document==='undefined')return;
+var $=function(i){return document.getElementById(i)};
+var btn=document.createElement('button');btn.id='gw-btn';btn.type='button';btn.setAttribute('aria-expanded','false');btn.innerHTML='<span aria-hidden="true">'+CFG.icon+'</span><span>'+CFG.btn+'</span>';
+var p=document.createElement('div');p.id='gw-panel';p.setAttribute('role','dialog');p.setAttribute('aria-label',CFG.title);
+p.innerHTML='<div id="gw-head"><div>'+CFG.title+'<small>'+CFG.sub+'</small></div><button id="gw-x" type="button" aria-label="Close">&times;</button></div><div id="gw-log" aria-live="polite"></div><div id="gw-chips"></div><form id="gw-form"><input id="gw-in" autocomplete="off" placeholder="'+CFG.ph+'" aria-label="'+CFG.ph+'"><button id="gw-send" type="submit">'+CFG.send+'</button></form>';
+document.body.appendChild(btn);document.body.appendChild(p);
+var log=$('gw-log'),chips=$('gw-chips'),inp=$('gw-in'),flow=null,started=false;
+function add(t,c){var d=document.createElement('div');d.className='gw-m '+c;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){say(t)};chips.appendChild(b);});}
+function startFlow(){flow={i:0,d:{}};ask();}
+function ask(){var s=CFG.flow.steps[flow.i];add(s.q,'gw-b');if(s.opts)setChips(s.opts);else setChips([]);inp.placeholder=s.ph||CFG.ph;}
+function stepIn(t){var s=CFG.flow.steps[flow.i];flow.d[s.key]=t;flow.i++;if(flow.i<CFG.flow.steps.length){ask();return;}
+ var sum=CFG.flow.steps.map(function(x){return x.label+': '+flow.d[x.key]}).join('\n');add(CFG.flow.done.replace('{summary}',sum),'gw-b');flow=null;inp.placeholder=CFG.ph;setChips(CFG.chips);}
+function say(t){t=String(t).trim();if(!t)return;add(t,'gw-u');inp.value='';
+ if(flow){if(/^(cancel|stop|exit|back)$/i.test(t)){flow=null;add(CFG.flow.cancel,'gw-b');setChips(CFG.chips);return;}stepIn(t);return;}
+ var r=reply(t);if(r.flow){startFlow();return;}add(r.a,'gw-b');setChips(CFG.chips);}
+function open(){p.classList.add('open');btn.setAttribute('aria-expanded','true');if(!started){started=true;add(CFG.greet,'gw-b');setChips(CFG.chips);}inp.focus();}
+function close(){p.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+btn.onclick=function(){p.classList.contains('open')?close():open();};$('gw-x').onclick=close;
+$('gw-form').onsubmit=function(e){e.preventDefault();say(inp.value);};
+window.gwOpen=open;window.gwAsk=function(t){open();say(t);};
+})();
+</script>
+</body></html>

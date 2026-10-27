@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Melbourne Dentist · 517 St Kilda Rd</title>
+<meta name="description" content="Do it right. Feel your best. Dentistry on St Kilda Road that aims to keep your own teeth for life.">
+<link rel="icon" href="img/melbourne-dentist-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fff8f0;--sand:#f7ead9;--ink:#1d1a17;--mut:#6b625a;--or:#e4782a;--ord:#b95a14;--teal:#2f7f89;--tealL:#dff0f2;--line:#ead9c3;--wf:'DM Sans',system-ui,sans-serif;--wA:#b95a14;--wr:999px;--wpr:20px;--wLog:#fbf3e8;--wLine:#ead9c3;--wBg:#fffdf9}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.6 var(--wf);color:var(--ink);background:var(--cream);overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:700;line-height:1.12;letter-spacing:-.01em}
+a{color:inherit}
+img{max-width:100%;display:block}
+.w{max-width:1080px;margin:0 auto;padding:0 16px}
+.top{position:sticky;top:0;z-index:20;background:#fff;border-bottom:3px solid var(--or)}
+.top .w{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:64px}
+.logo{height:44px;width:auto}
+.top nav{display:none;gap:22px;font-weight:500;font-size:15px}
+.top nav a{text-decoration:none;color:var(--mut)}
+.top nav a:hover{color:var(--ord)}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--ord);color:#fff;font:700 15px var(--wf);padding:12px 20px;border-radius:999px;text-decoration:none}
+.btn:hover{background:#9c470c}
+.btn.ghost{background:transparent;color:var(--ord);border:2px solid var(--ord)}
+.btn.ghost:hover{background:var(--ord);color:#fff}
+.tel{font-weight:700;text-decoration:none;color:var(--ink);font-size:15px;white-space:nowrap}
+.hero{padding:44px 0 36px;background:linear-gradient(180deg,var(--sand),var(--cream))}
+.hero h1{font-size:clamp(2.3rem,9vw,4.2rem);max-width:12ch}
+.hero h1 em{font-style:normal;color:var(--or)}
+.hero p.lead{margin:18px 0 22px;max-width:36em;color:#3d362f;font-size:1.08rem}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px}
+.hgrid{display:grid;gap:26px}
+.hours{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 18px 12px;box-shadow:0 10px 30px rgba(120,70,20,.08)}
+.hours h3{font-size:1.15rem;margin-bottom:8px}
+.hours ul{list-style:none;padding:0}
+.hours li{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:15.5px}
+.hours li:last-child{border:0}
+.hours li.today{font-weight:700;color:var(--ord)}
+.hours small{display:block;color:var(--mut);padding:8px 0 4px;font-size:13.5px}
+section{padding:46px 0}
+h2{font-size:clamp(1.7rem,6vw,2.5rem);margin-bottom:12px}
+.sub{color:var(--mut);max-width:40em;margin-bottom:22px}
+.three{display:grid;gap:14px}
+.three div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+.three b{font-family:'Fraunces',serif;font-size:1.3rem;display:block;color:var(--ord);margin-bottom:4px}
+.band{background:var(--ink);color:#f5ece0}
+.band h2{color:#fff}
+.band .sub{color:#cdbfae}
+.probs{display:grid;gap:8px;grid-template-columns:1fr}
+.probs button{font:500 16px var(--wf);text-align:left;background:#2a2622;color:#f5ece0;border:1px solid #433b33;border-radius:12px;padding:13px 16px;cursor:pointer;display:flex;justify-content:space-between;gap:10px}
+.probs button:hover{border-color:var(--or);background:#332d27}
+.probs button::after{content:"→";color:var(--or)}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden}
+summary{cursor:pointer;padding:16px 18px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--or);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details .in{padding:0 18px 16px;color:#40382f}
+details .in ul{padding-left:20px;margin-top:6px}
+.promo{display:grid;gap:14px}
+.promo article{background:#fff;border-radius:18px;border:1px solid var(--line);padding:22px;border-top:6px solid var(--or)}
+.promo article:nth-child(2){border-top-color:var(--teal)}
+.promo article:nth-child(3){border-top-color:var(--ink)}
+.promo h3{font-size:1.25rem;margin-bottom:8px}
+.promo p{color:#4a4138;font-size:15.5px;margin-bottom:14px}
+.team{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.team div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+.team b{display:block;font-family:'Fraunces',serif;font-size:1.2rem}
+.team span{font-size:14px;color:var(--mut)}
+.team .p{grid-column:1/-1;background:var(--tealL);border-color:#bddde1}
+.quote{background:var(--sand);border-radius:20px;padding:26px 22px;margin-top:20px;border-left:6px solid var(--or)}
+.quote p{font-family:'Fraunces',serif;font-size:1.25rem;line-height:1.4}
+.quote cite{display:block;margin-top:10px;font-style:normal;color:var(--mut);font-size:15px}
+.way{display:grid;gap:14px}
+.way div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}
+.way h3{font-size:1.1rem;margin-bottom:6px}
+.way ul{padding-left:18px;font-size:15.5px;color:#40382f}
+.pay{display:grid;gap:12px}
+.pay div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.pay b{display:block;margin-bottom:2px}
+footer{background:var(--ink);color:#cdbfae;padding:34px 0 90px;font-size:15px}
+footer .w{display:grid;gap:18px}
+footer a{color:#fff}
+footer .logoChip{background:#fff;border-radius:10px;padding:8px 12px;display:inline-block;width:max-content}
+footer .logoChip img{height:34px}
+.demo{font-size:13px;opacity:.75;border-top:1px solid #3a332c;padding-top:14px}
+@media(min-width:720px){.top nav{display:flex}.hgrid{grid-template-columns:1.25fr 1fr;align-items:center}.three,.promo{grid-template-columns:repeat(3,1fr)}.probs{grid-template-columns:1fr 1fr}.team{grid-template-columns:repeat(4,1fr)}.way{grid-template-columns:1fr 1fr}.pay{grid-template-columns:1fr 1fr}footer .w{grid-template-columns:1.2fr 1fr 1fr}}
+#aFab{position:fixed;right:16px;bottom:16px;z-index:50;border:0;cursor:pointer;background:var(--wA);color:var(--wAt,#fff);font:600 15px/1 var(--wf);padding:14px 20px;border-radius:var(--wr,999px);box-shadow:0 8px 24px rgba(0,0,0,.25);display:flex;gap:8px;align-items:center}
+#aFab:hover{filter:brightness(1.08)}
+#aPanel{position:fixed;right:16px;bottom:76px;z-index:51;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100dvh - 100px));background:var(--wBg,#fff);color:var(--wInk,#222);border-radius:var(--wpr,18px);box-shadow:0 18px 50px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--wf)}
+#aPanel.open{display:flex}
+.aH{background:var(--wA);color:var(--wAt,#fff);padding:13px 16px;display:flex;justify-content:space-between;align-items:center;font-weight:700}
+.aH small{display:block;font-weight:400;opacity:.85;font-size:12px}
+#aX{background:none;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer;padding:0 4px}
+#aLog{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;background:var(--wLog,#f6f6f6)}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word}
+.m.b{background:#fff;border:1px solid var(--wLine,#e4e4e4);align-self:flex-start;border-bottom-left-radius:4px;color:#222}
+.m.u{background:var(--wA);color:var(--wAt,#fff);align-self:flex-end;border-bottom-right-radius:4px}
+.m small{opacity:.7}
+#aChips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;background:var(--wBg,#fff);border-top:1px solid var(--wLine,#e4e4e4);max-height:96px;overflow-y:auto}
+#aChips:empty{display:none}
+#aChips button{border:1px solid var(--wA);color:var(--wA);background:transparent;border-radius:999px;padding:6px 12px;font:600 13px var(--wf);cursor:pointer}
+#aChips button:hover{background:var(--wA);color:var(--wAt,#fff)}
+#aForm{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--wLine,#e4e4e4);background:var(--wBg,#fff)}
+#aIn{flex:1;min-width:0;border:1px solid var(--wLine,#ccc);border-radius:999px;padding:10px 14px;font:16px var(--wf);background:#fff;color:#222}
+#aForm button{border:0;background:var(--wA);color:var(--wAt,#fff);border-radius:999px;padding:0 16px;font:700 14px var(--wf);cursor:pointer}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="w">
+<a href="#top" aria-label="Melbourne Dentist"><img class="logo" src="img/melbourne-dentist-logo.png" alt="Melbourne Dentist" width="147" height="44"></a>
+<nav><a href="#problems">Problems we solve</a><a href="#services">Services</a><a href="#team">Team</a><a href="#getting-here">Getting here</a><a href="#payment">Payment</a></nav>
+<a class="tel" href="tel:+61398671252">(03) 9867 1252</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="w hgrid">
+<div>
+<h1>Do it right. <em>Feel your best.</em></h1>
+<p class="lead">Good dentistry does more than improve your smile. At 517 St Kilda Road, Dr David Treherne and his team aim to protect the structure and nerve health of your own teeth, so they last.</p>
+<div class="cta"><button class="btn" data-ask="Book an appointment">Book an appointment</button><button class="btn ghost" data-ask="I have a question">Ask a question</button></div>
+</div>
+<aside class="hours" aria-label="Opening hours">
+<h3>Opening hours</h3>
+<ul id="hrs">
+<li data-d="1"><span>Monday</span><span>8:00 am – 4:30 pm</span></li>
+<li data-d="2"><span>Tuesday</span><span>8:00 am – 4:30 pm</span></li>
+<li data-d="3"><span>Wednesday</span><span>8:00 am – 6:00 pm</span></li>
+<li data-d="4"><span>Thursday</span><span>8:00 am – 4:00 pm</span></li>
+<li data-d="5"><span>Friday</span><span>8:00 am – 2:30 pm</span></li>
+</ul>
+<small>517 St Kilda Rd, Melbourne 3004, on the corner of St Kilda and Commercial Roads. No weekend hours are listed on the website.</small>
+</aside>
+</div></div>
+
+<section><div class="w">
+<h2>Three things that stop people booking</h2>
+<p class="sub">The practice says the main barriers to starting treatment are fear, time and money, and that it works hard to find a way around each one.</p>
+<div class="three">
+<div><b>Fear</b>Nervous about the dentist? There is a page on dental anxiety, and the team says it understands the stress that often sits behind long-term dental problems.</div>
+<div><b>Time</b>The schedule keeps spaces open for emergencies, and an online appointment book lets you lock in a time without making an account.</div>
+<div><b>Money</b>HICAPS claiming on the spot, and plans that spread larger treatment over months, with interest-free options.</div>
+</div>
+</div></section>
+
+<section class="band" id="problems"><div class="w">
+<h2>Problems we solve</h2>
+<p class="sub">The practice lists its work by what bothers you, not by treatment name. Tap one and the assistant will tell you what the website says and how to book.</p>
+<div class="probs">
+<button data-ask="I'm unhappy with my smile">I'm unhappy with my smile</button>
+<button data-ask="Discoloured teeth">Discoloured teeth</button>
+<button data-ask="Old discoloured fillings">Old discoloured fillings</button>
+<button data-ask="Crooked and crowded teeth">Crooked and crowded teeth</button>
+<button data-ask="Worn down teeth">Worn down teeth</button>
+<button data-ask="My false teeth look false">My false teeth look false</button>
+<button data-ask="Gummy smile">Gummy smile</button>
+<button data-ask="Gappy teeth">Gappy teeth</button>
+<button data-ask="I need a tooth removed">I need a tooth removed</button>
+<button data-ask="I need teeth replaced">I need teeth replaced</button>
+<button data-ask="I need all my teeth fixed">I need all my teeth fixed</button>
+<button data-ask="I'm anxious at the dentist">I'm anxious at the dentist</button>
+<button data-ask="Something's broken">Something's broken</button>
+<button data-ask="Snoring and sleep apnoea">Snoring and sleep apnoea</button>
+<button data-ask="Jaw pain and headaches">Jaw pain and headaches</button>
+<button data-ask="I'm in pain">I'm in pain</button>
+</div>
+</div></section>
+
+<section id="services"><div class="w">
+<h2>What the practice offers</h2>
+<p class="sub">Grouped the way the website groups them. Details of any treatment are confirmed by the team at your visit.</p>
+<details open><summary>Improving your smile</summary><div class="in">Curious what your best smile would look like? Options on the site:<ul><li>Teeth whitening</li><li>Porcelain veneers and crowns</li><li>Composite veneers (dental bonding)</li><li>Hybrid veneers</li><li>Digital smile design</li><li>Tooth coloured fillings</li><li>Straightening teeth</li><li>Cosmetic recontouring</li></ul></div></details>
+<details><summary>Replacing teeth</summary><div class="in"><ul><li>Dental implants</li><li>Dentures: full, partial, immediate and implant supported</li><li>Dental bridges</li></ul></div></details>
+<details><summary>Rebuilding and preserving teeth</summary><div class="in"><ul><li>Rebuilding teeth and oral rehabilitation</li><li>Dental crowns, inlays and onlays</li><li>Occlusal splints and grinding</li><li>Mouthguards</li></ul>The focus stated on the site is keeping your remaining teeth in place and trouble free.</div></details>
+<details><summary>Gum care and hygienists</summary><div class="in">Dental hygienists Steph and Ros look after cleaning and gum care. The practice says prevention of disease is its primary focus.</div></details>
+<details><summary>Dental emergencies</summary><div class="in">Pain, accidents, a broken tooth, or a crown that falls off before a big day. Spaces are left in the schedule for emergencies without bumping regular patients. After hours, there is an Emergency eForm that the practice says is monitored very regularly.</div></details>
+<details><summary>Removing teeth, snoring and sleep apnoea</summary><div class="in">Tooth removal and sleep apnoea each have their own page on the website. The team will confirm what is suitable for you.</div></details>
+</div></section>
+
+<section class="band"><div class="w">
+<h2>New patient specials</h2>
+<p class="sub">Three offers listed on the home page for people new to the practice.</p>
+<div class="promo">
+<article><h3>Cleaner &amp; whiter teeth</h3><p>A professional clean bundled with a professional whitening kit, because the clean is what makes whitening look its best.</p><button class="btn ghost" data-ask="Tell me about the clean and whitening offer">Ask about it</button></article>
+<article><h3>Smile check</h3><p>Try a smile simulation, or the Smile "Test Drive", to see a possible result before you commit to anything.</p><button class="btn ghost" data-ask="Tell me about the smile check">Ask about it</button></article>
+<article><h3>50+ executive check</h3><p>A check-up aimed at planning for healthy teeth in your later years, with the chance to improve oral health early.</p><button class="btn ghost" data-ask="Tell me about the 50+ executive check">Ask about it</button></article>
+</div>
+</div></section>
+
+<section id="team"><div class="w">
+<h2>The people you will meet</h2>
+<div class="team">
+<div class="p"><b>Dr David Treherne</b><span>Principal dentist · 30 years experience</span></div>
+<div><b>Steph</b><span>Dental hygienist and therapist</span></div>
+<div><b>Ros</b><span>Dental hygienist</span></div>
+<div><b>Ethan</b><span>Assistant, treatment co-ordinator</span></div>
+<div><b>Mel</b><span>Receptionist, treatment co-ordinator</span></div>
+<div><b>Jamie</b><span>Assistant, sterilisation</span></div>
+<div><b>Emma</b><span>Dental assistant</span></div>
+</div>
+<div class="quote"><p>"What you want to do is find somebody who is the best dentist for you. Someone you can really trust as your dental health advocate."</p><cite>Dr David Treherne, from the Why Us page</cite></div>
+</div></section>
+
+<section id="getting-here" class="band"><div class="w">
+<h2>Getting here</h2>
+<p class="sub">The practice is in the 517 St Kilda Road medical building, one minute's walk from the Alfred Hospital on Commercial Road.</p>
+<div class="way">
+<div><h3>Tram</h3><ul><li>Tram stop 25 is directly outside the building</li><li>Routes 3/3a, 5, 6, 64, 67 and 72 are listed on the site</li><li>About 15 minutes from Flinders St Station</li><li>About 9 minutes from Prahran Station on tram 6</li></ul></div>
+<div><h3>Driving</h3><ul><li>The building has paid parking, limited spaces, listed at $9 an hour</li><li>Surrounding streets have paid parking at around $4 an hour</li><li>The Alfred Hospital car park is a minute up Commercial Road</li></ul></div>
+<div><h3>Walking</h3><ul><li>16 minutes from Prahran Station along Moubray Street</li><li>22 minutes from South Yarra Station through Fawkner Park</li></ul></div>
+<div><h3>Contact</h3><ul><li><a href="tel:+61398671252">(03) 9867 1252</a></li><li><a href="mailto:info@melbournedentist.com">info@melbournedentist.com</a></li><li>517 St Kilda Rd, Melbourne 3004</li></ul></div>
+</div>
+</div></section>
+
+<section id="payment"><div class="w">
+<h2>Paying for treatment</h2>
+<div class="pay">
+<div><b>Everyday payment</b>Cash, eftpos and credit cards (Visa, Mastercard, AMEX).</div>
+<div><b>Health fund</b>Claim electronically from your private health insurer using HICAPS.</div>
+<div><b>Payment plans</b>The site describes DentiCare and National Dental Plan options, with plans spread over months, including interest-free terms. Eligibility and fees are confirmed by the team.</div>
+<div><b>Super</b>The site also points to early release of super for dental expenses.</div>
+</div>
+</div></section>
+
+<section class="band"><div class="w">
+<h2>Quick answers</h2>
+<details><summary>Do I need an account to book online?</summary><div class="in">No. The online appointment book does not need an account or sign-in. If you cannot find a suitable time, the request form takes two preferred times.</div></details>
+<details><summary>What if I have a dental emergency?</summary><div class="in">Call (03) 9867 1252 during opening hours. After hours, use the Emergency eForm on the website.</div></details>
+<details><summary>Do you do anything about dental anxiety?</summary><div class="in">The website has a dental anxiety page. Tell the team when you book and they will talk it through.</div></details>
+<details><summary>Can I pay it off over time?</summary><div class="in">Payment plans exist. Ask Mel or Ethan, the treatment co-ordinators, about the right plan for your treatment.</div></details>
+</div></section>
+</main>
+
+<footer><div class="w">
+<div><span class="logoChip"><img src="img/melbourne-dentist-logo.png" alt="Melbourne Dentist" width="113" height="34"></span><p style="margin-top:10px">517 St Kilda Rd, Melbourne 3004</p></div>
+<div><b style="color:#fff">Hours</b><br>Mon, Tue 8:00–4:30<br>Wed 8:00–6:00<br>Thu 8:00–4:00 · Fri 8:00–2:30</div>
+<div><b style="color:#fff">Contact</b><br><a href="tel:+61398671252">(03) 9867 1252</a><br><a href="mailto:info@melbournedentist.com">info@melbournedentist.com</a></div>
+<p class="demo" style="grid-column:1/-1">Demo · prepared by Gevorg Hovhannisyan</p>
+</div></footer>
+
+<button id="aFab" type="button" aria-expanded="false" aria-controls="aPanel">Ask the team</button>
+<div id="aPanel" role="dialog" aria-label="Melbourne Dentist assistant">
+<div class="aH"><div>Melbourne Dentist<small>Assistant · answers from the practice website</small></div><button id="aX" type="button" aria-label="Close">×</button></div>
+<div id="aLog" aria-live="polite"></div><div id="aChips"></div>
+<form id="aForm" autocomplete="off"><input id="aIn" type="text" placeholder="Type a question" aria-label="Your question"><button>Send</button></form>
+</div>
+
+<script>
+(function(){try{var d=new Intl.DateTimeFormat('en-AU',{weekday:'short',timeZone:'Australia/Melbourne'}).format(new Date());var m={Mon:1,Tue:2,Wed:3,Thu:4,Fri:5};var n=m[d.slice(0,3)];if(n){var li=document.querySelector('#hrs li[data-d="'+n+'"]');if(li)li.className='today'}}catch(e){}})();
+/*KB*/
+const P='(03) 9867 1252';
+const CALL='Please call '+P+' during opening hours. ';
+const CFG={
+greet:'Hello, I am the assistant for Melbourne Dentist. I only know what is on the practice website, and I will say so when I am not sure. How can I help?',
+chips:['Book an appointment','Opening hours','Parking and trams','Payment plans','I am in pain','Teeth whitening'],
+fallback:'I could not find that on the practice website, so I would rather not guess. The team will confirm it: '+P+' or info@melbournedentist.com. Would you like to book instead?',
+done:'The team will confirm a time with you. Opening hours are Mon and Tue 8:00-4:30, Wed 8:00-6:00, Thu 8:00-4:00, Fri 8:00-2:30.',
+steps:[
+{key:'reason',label:'Reason',q:'What would you like to see the team about?',chips:['Check-up and clean','Smile improvement','Replacing teeth','Something broken','Something else','Cancel']},
+{key:'patient',label:'Patient',q:'Have you been to Melbourne Dentist before?',chips:['New patient','Existing patient']},
+{key:'day',label:'Preferred day',q:'Which day suits you? (Wednesday runs until 6 pm, Friday finishes at 2:30 pm.)',chips:['Monday','Tuesday','Wednesday','Thursday','Friday']},
+{key:'time',label:'Time',q:'Morning or afternoon?',chips:['Morning','Afternoon','Late (Wednesday)']},
+{key:'name',label:'Name',q:'What is your name?',chips:['Cancel'],val:/\S{2}/,err:'Please type your name.'},
+{key:'phone',label:'Phone',q:'And a phone number the team can reach you on?',chips:['Cancel'],val:/\d[\d\s()+-]{6,}/,err:'That does not look like a phone number. Try again, or type cancel.'}
+]};
+const KB=[
+{k:['book','booking','appointment','appoint','schedule','make a booking'],a:'You can lock in a time in the online appointment book (no account needed), or I can take your request here. The team then confirms. A few quick questions first.',flow:true},
+{k:['hours','open','opening','close','closing','time open','when are you','what time','late','evening'],a:'Opening hours: Monday and Tuesday 8:00 am to 4:30 pm, Wednesday 8:00 am to 6:00 pm, Thursday 8:00 am to 4:00 pm, Friday 8:00 am to 2:30 pm. No weekend hours are listed on the website, so the team will confirm anything else.',c:['Book an appointment','Parking and trams']},
+{k:['weekend','saturday','sunday'],w:2,a:'The website lists hours Monday to Friday only. Weekend availability is not mentioned, so please ask the team on '+P+'.'},
+{k:['address','where','location','located','find you','directions','st kilda road','st kilda rd','commercial road','map'],a:'517 St Kilda Rd, Melbourne 3004, on the corner of St Kilda and Commercial Roads, in the medical building. The Alfred Hospital is a minute up Commercial Road.',c:['Parking and trams','Opening hours']},
+{k:['parking','park','car','drive','driving'],a:'The 517 St Kilda Road building has paid parking, limited spaces, listed at $9 an hour. Nearby streets have paid parking at about $4 an hour, and the Alfred Hospital car park is a minute up Commercial Road.',c:['Trams and trains','Opening hours']},
+{k:['tram','train','transport','public transport','bus','station','walk','walking','prahran','flinders','south yarra'],a:'Tram stop 25 is directly outside the building. The site lists routes 3/3a, 5, 6, 64, 67 and 72. It is about 15 minutes from Flinders St Station, 9 minutes from Prahran on tram 6, or a 16 minute walk from Prahran along Moubray Street (22 minutes from South Yarra through Fawkner Park).',c:['Parking','Opening hours']},
+{k:['phone','call','number','ring','telephone','contact'],a:'Phone '+P+'. Email info@melbournedentist.com. The website also has an "I have a question" form.'},
+{k:['email','e mail','mail'],a:'info@melbournedentist.com. For something urgent, phone '+P+' instead.'},
+{k:['emergency','urgent','broke','broken','chipped','knocked out','accident','crown fell off','fell out','after hours','swelling','swollen','bleeding'],w:1.3,a:'I cannot judge what is wrong, so please speak to the team: '+CALL+'They keep spaces in the schedule for emergencies. After hours, use the Emergency eForm on the website, which they say is monitored very regularly.',c:['Book an appointment','Opening hours']},
+{k:['pain','painful','hurt','hurts','ache','toothache','sore','sensitive','sensitivity','jaw','headache','headaches'],a:'I cannot say what is causing pain, that needs a dentist. '+CALL+'The practice keeps emergency spaces free, and after hours there is an Emergency eForm on the website.',c:['Book an appointment','Opening hours']},
+{k:['pay','payment','payments','afford','money','plan','plans','interest free','instalment','installment','finance','financing','denticare','ndp','national dental plan','super'],a:'Payment options on the site: cash, eftpos, Visa, Mastercard and AMEX; HICAPS claims with your private health fund; and plans that spread larger treatment over months, including interest-free options (DentiCare and National Dental Plan). It also mentions early release of super. The team will confirm what suits your treatment.',c:['Book an appointment','Health fund claims']},
+{k:['hicaps','health fund','private health','insurance','insurer','rebate','claim','medibank','bupa','hcf'],a:'You can claim electronically from your private health insurer on the spot using HICAPS. How much you get back depends on your fund, so check with them or the team.'},
+{k:['cost','price','prices','fee','fees','how much','quote','expensive','cheap','estimate'],a:'Fees depend on the treatment and are not listed on the website, so I will not guess. The team can talk you through a plan and the payment options.',c:['Payment plans','Book an appointment']},
+{k:['whiten','whitening','whiter','bleach','bleaching','brighter','stain','stains','discolour','discoloured','discolouration','yellow'],a:'Teeth whitening is under "Improving your smile". The new patient special pairs a professional clean with a professional whitening kit, as the clean helps the brightness. For discoloured teeth or old fillings the team will advise on options.',c:['New patient specials','Book an appointment']},
+{k:['filling','fillings','tooth coloured','white filling','old fillings','inlay','inlays','onlay','onlays'],a:'The practice offers tooth coloured fillings and replacement of old discoloured fillings, plus inlays and onlays. The team will advise what suits your tooth.'},
+{k:['veneer','veneers','porcelain','composite','bonding','hybrid','smile design','digital smile','cosmetic','recontouring','makeover','unhappy with my smile','gummy','gappy','gap','gaps','smile'],a:'Under "Improving your smile" the site lists porcelain veneers and crowns, composite veneers (bonding), hybrid veneers, digital smile design, cosmetic recontouring and whitening. It also describes a Smile Check with a smile simulation or "Test Drive" before you commit.',c:['New patient specials','Book an appointment']},
+{k:['crown','crowns','cap','caps','rebuild','rebuilding','oral rehabilitation','worn','worn down','all my teeth'],a:'The site covers dental crowns, rebuilding worn teeth and full oral rehabilitation. Dr Treherne says complex plans need careful sequencing, so the first step is a consultation.',c:['Book an appointment']},
+{k:['implant','implants','replace','replacing','missing','missing tooth','gap in teeth','denture','dentures','false teeth','falsies','bridge','bridges','plate'],a:'For replacing teeth the site lists dental implants, dental bridges and dentures (full, partial, immediate and implant supported). It also has a page for people whose false teeth look false. The team will confirm which suits you.',c:['Book an appointment','Payment plans']},
+{k:['crooked','crowded','straighten','straightening','braces','invisalign','aligner','aligners','orthodontic','orthodontics','teeth straight'],a:'Straightening teeth is listed under improving your smile, with a page for crooked and crowded teeth. Which option suits you is confirmed by the team at a consultation.',c:['Book an appointment']},
+{k:['gum','gums','gingivitis','hygienist','hygiene','clean','cleaning','scale','scaling','check up','checkup','check-up','plaque','tartar','bad breath'],a:'Dental hygienists Steph and Ros look after cleaning and gum care. The practice says prevention is its main focus. Gum pain or swelling should be looked at by the team, so call '+P+' if you have it.',c:['Book an appointment']},
+{k:['extract','extraction','extractions','remove','removed','removal','pull','pulled','tooth out','wisdom'],a:'Removing teeth has its own page on the website. The team will explain what is involved at a consultation. If it is urgent, call '+P+'.',c:['Book an appointment']},
+{k:['sleep','apnoea','apnea','snore','snoring','snorer'],a:'Snoring and sleep apnoea have their own page on the website. Whether a dental option is right for you is for the team to confirm.',c:['Book an appointment']},
+{k:['anxious','anxiety','nervous','scared','afraid','fear','phobia','terrified','petrified','worried','panic','relax','calm'],a:'You are not the only one. The practice lists "fear, time and money" as the three barriers it works to remove, and it has a dental anxiety page. Tell Mel or the team when you book so they can plan around it.',c:['Book an appointment']},
+{k:['grind','grinding','splint','splints','clench','clenching','night guard','mouthguard','mouthguards','mouth guard','sport','sports'],a:'The site covers occlusal splints (for grinding) and mouthguards. The team will advise at a consultation.',c:['Book an appointment']},
+{k:['david','treherne','doctor','principal','owner','who is the dentist','which dentist','who is the doctor','who will i see'],a:'Dr David Treherne is the principal dentist, with 30 years of experience. He says he focused early on hand skills and decision making, and the practice aims to preserve your natural teeth long term.',c:['Meet the team','Book an appointment']},
+{k:['team','staff','steph','ros','mel','ethan','emma','jamie','nurse','assistant','receptionist','coordinator','co-ordinator'],a:'The team: Dr David Treherne (dentist), Steph (dental hygienist and therapist), Ros (dental hygienist), Ethan (assistant, treatment co-ordinator), Mel (receptionist, treatment co-ordinator), Jamie (assistant, sterilisation) and Emma (dental assistant).',c:['Book an appointment']},
+{k:['special','specials','offer','offers','promotion','promotions','new patient','discount','deal','executive','50','smile check','simulation','test drive','trial'],a:'New patient specials on the site: (1) Cleaner and whiter teeth, a professional clean plus a whitening kit; (2) Smile Check, with a smile simulation or "Test Drive"; (3) a 50+ Executive Check. The team confirms the details when you book.',c:['Book an appointment']},
+{k:['child','children','kid','kids','baby','toddler','teen','pediatric','paediatric'],a:'The website does not list a children\'s service, so I do not want to guess. Please ask the team on '+P+'.'},
+{k:['online','book online','online booking','without account','sign in','account'],a:'The online appointment book does not need an account or sign-in. If you cannot find a time that works, the request form takes a first and second preference.',c:['Book an appointment']},
+{k:['why','different','difference','philosophy','prevent','prevention','preserve','natural teeth','long term'],a:'The practice says "Do it right. Feel your best." Its focus is preserving your natural teeth and nerve health for the long term, and preventing problems before they grow.'},
+{k:['question','questions','ask','enquiry','enquire','enquiries','i have a question','query'],a:'Of course. Type your question below. I can answer from the practice website, and anything I am not sure about goes to the team on '+P+'.'},
+{k:['hello','hi','hey','good morning','good afternoon','g day','gday'],a:'Hello! I can tell you about hours, location and parking, treatments, payment plans or help you book. What would you like to know?'},
+{k:['thanks','thank','cheers','great','ok thanks'],a:'You are welcome. Anything else I can help with?'},
+{k:['safe','diagnose','what is wrong','infection','antibiotic','antibiotics','medication','pregnant','pregnancy','diabetes','allergy','allergic'],w:1.5,a:'That is a clinical question, and I cannot give medical advice. Dr Treherne or the team will answer it properly: '+P+'.',c:['Book an appointment']}
+,{k:['dentist','dentists'],w:.85,a:'Dr David Treherne is the principal dentist, with 30 years of experience. Ask me about the team, hours or booking.'}
+];
+/*ENDKB*/
+//#MATCHER
+function norm(s){return String(s).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){if(w.length>4){if(/ies$/.test(w))return w.slice(0,-3)+'y';if(/(ing|ed)$/.test(w)&&w.length>5)return w.replace(/(ing|ed)$/,'');if(/es$/.test(w)&&w.length>5)return w.slice(0,-2)}if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))return w.slice(0,-1);return w}
+function lev(a,b){if(a===b)return 0;const m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;let p=[];for(let j=0;j<=n;j++)p[j]=j;for(let i=1;i<=m;i++){let c=[i];for(let j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c}return p[n]}
+function tokEq(t,k){if(t===k)return 1;if(t.length>=4&&k.length>=4&&(t.startsWith(k)||k.startsWith(t))&&Math.abs(t.length-k.length)<=2)return .9;const d=lev(t,k),L=Math.min(t.length,k.length);if(L>=5&&d<=1)return .85;if(L>=8&&d<=2)return .8;return 0}
+function makeMatcher(KB){
+  const prep=KB.map(e=>({e,keys:e.k.map(k=>norm(k).split(' ').map(stem))}));
+  return function answer(q){
+    const toks=norm(q).split(' ').filter(Boolean).map(stem);let best=null,bs=0;
+    for(const p of prep){let s=0;for(const kt of p.keys){let tot=0,ok=true;for(const k of kt){let b=0;for(const t of toks){const v=tokEq(t,k);if(v>b)b=v}if(!b){ok=false;break}tot+=b}if(ok)s=Math.max(s,tot*(kt.length>1?1.4:1)+(kt.length>1?.5:0))}if(p.e.w)s*=p.e.w;if(s>bs){bs=s;best=p.e}}
+    return bs>=.8?best:null}}
+//#END
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+(function(){
+  const ans=makeMatcher(KB);const $=id=>document.getElementById(id);
+  const log=$('aLog'),chips=$('aChips'),inp=$('aIn'),panel=$('aPanel'),fab=$('aFab');
+  let flow=null,data={},started=false;
+  function say(t,who){const d=document.createElement('div');d.className='m '+(who||'b');d.innerHTML=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+  function setChips(a){chips.innerHTML='';(a||[]).forEach(c=>{const b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=()=>send(c);chips.appendChild(b)})}
+  function openP(){panel.classList.add('open');fab.setAttribute('aria-expanded','true');if(!started){started=true;say(CFG.greet);setChips(CFG.chips)}setTimeout(()=>inp.focus(),50)}
+  window.openAssistant=function(msg){openP();if(msg)send(msg)};
+  fab.onclick=()=>panel.classList.contains('open')?(panel.classList.remove('open'),fab.setAttribute('aria-expanded','false')):openP();
+  $('aX').onclick=()=>{panel.classList.remove('open');fab.setAttribute('aria-expanded','false')};
+  document.querySelectorAll('[data-ask]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();window.openAssistant(b.getAttribute('data-ask'))}));
+  const BOOKRE=/\b(book|booking|appointment|appoint|schedul|reserve|reservation|make an appointment|see a dentist|come in|visit)\w*/i;
+  function startFlow(){flow=0;data={};ask()}
+  function ask(){const st=CFG.steps[flow];say(st.q);setChips(st.chips||['Cancel'])}
+  function finish(){const sum=CFG.steps.map(s=>'<b>'+esc(s.label)+':</b> '+esc(data[s.key]||'-')).join('<br>');say('Thank you, '+esc(data.name||'')+'. '+CFG.done+'<br><br>'+sum+'<br><br><small>Demo only: nothing was actually sent.</small>');flow=null;setChips(CFG.chips)}
+  function send(t){t=String(t||'').trim();if(!t)return;say(esc(t),'u');inp.value='';
+    if(/^(cancel|stop|never mind|nevermind|start over)$/i.test(t)){flow=null;say('No problem. What else would you like to know?');setChips(CFG.chips);return}
+    if(flow!==null){const st=CFG.steps[flow];if(st.val&&!st.val.test(t)){say(st.err);return}data[st.key]=t;flow++;if(flow>=CFG.steps.length)finish();else ask();return}
+    const hit=ans(t);
+    if(hit&&hit.flow){say(hit.a);startFlow();return}
+    if(!hit&&BOOKRE.test(t)){startFlow();return}
+    if(hit){say(hit.a);setChips(hit.c||CFG.chips)}else{say(CFG.fallback);setChips(CFG.chips)}
+  }
+  $('aForm').onsubmit=e=>{e.preventDefault();send(inp.value)};
+  window.__ans=ans;
+})();
+
+</script>
+</body>
+</html>

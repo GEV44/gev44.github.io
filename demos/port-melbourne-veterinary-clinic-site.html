@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Port Melbourne Veterinary Clinic &amp; Hospital</title>
+<meta name="description" content="Demo page for Port Melbourne Veterinary Clinic and Hospital, Bay Street, since 1997.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#2b2f7e;--navy2:#1c2062;--sun:#f7d948;--sun2:#ffe97a;--cream:#fdf8ea;--sand:#f3ebd3;--coral:#e8664d;--ink:#232540;--mute:#6a6c8a;--h:'Fraunces',Georgia,serif;--b:'Nunito',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font:400 16.5px/1.65 var(--b);overflow-x:hidden}
+a{color:inherit}
+.wrap{width:100%;max-width:1060px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--h);font-weight:700;line-height:1.12;color:var(--navy)}
+h2{font-size:clamp(28px,6vw,42px);margin-bottom:10px}
+.eyebrow{display:inline-block;font:800 12px var(--b);letter-spacing:.16em;text-transform:uppercase;background:var(--sun);color:var(--navy2);padding:5px 12px;border-radius:99px;margin-bottom:14px}
+header{background:var(--navy);position:sticky;top:0;z-index:30}
+.hd{max-width:1060px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 20px}
+.brand img{height:38px;width:auto;max-width:62vw}
+.brand{display:block}
+nav{display:none;gap:20px;font:700 14px var(--b)}
+nav a{color:#dfe0ff;text-decoration:none}nav a:hover{color:var(--sun)}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--sun);color:var(--navy2);font:800 15px var(--b);padding:12px 22px;border-radius:99px;text-decoration:none;border:0;cursor:pointer;box-shadow:0 3px 0 rgba(28,32,98,.25)}
+.pill:hover{background:var(--sun2)}
+.pill.line{background:transparent;color:var(--navy);border:2px solid var(--navy);box-shadow:none}
+.pill.line:hover{background:var(--navy);color:#fff}
+.hd .pill{padding:9px 16px;font-size:14px}
+.hero{background:var(--navy);color:#fff;position:relative;padding:44px 0 90px}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:54px;background:var(--cream);clip-path:ellipse(75% 100% at 50% 100%)}
+.hero .wrap{display:grid;gap:26px}
+.hero h1{color:#fff;font-size:clamp(36px,9vw,64px)}
+.hero h1 span{color:var(--sun)}
+.hero p{color:#dfe0ff;max-width:520px;margin:16px 0 22px;font-size:18px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero .pill.line{color:#fff;border-color:#8f93ee}
+.status{background:var(--cream);color:var(--ink);border-radius:22px;padding:22px;box-shadow:0 12px 0 var(--navy2)}
+.status .dot{display:inline-block;width:11px;height:11px;border-radius:50%;background:#8a8aa6;margin-right:8px}
+.status.open .dot{background:#2faa62;box-shadow:0 0 0 5px rgba(47,170,98,.2)}
+.status b#st{font:800 18px var(--b)}
+.status small{display:block;color:var(--mute);margin:2px 0 12px}
+.tbl{width:100%;border-collapse:collapse;font-size:15px}
+.tbl td{padding:7px 0;border-bottom:1px dashed #d8cfb0}
+.tbl td:last-child{text-align:right;font-weight:700}
+.tbl tr.today td{color:var(--navy);font-weight:800}
+section{padding:54px 0}
+.lead{max-width:640px;color:var(--mute);margin-bottom:26px}
+.two{display:grid;gap:26px}
+.chipbox{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chipbox span{background:var(--sand);border-radius:99px;padding:6px 14px;font:700 14px var(--b);color:var(--navy)}
+.svc{display:grid;gap:14px}
+.tile{background:#fff;border-radius:22px;padding:22px;border:2px solid var(--sand);position:relative}
+.tile i{position:absolute;top:-14px;left:20px;background:var(--navy);color:var(--sun);font:800 13px var(--b);font-style:normal;padding:4px 12px;border-radius:99px}
+.tile h3{font-size:22px;margin:6px 0}
+.tile p{color:var(--mute);font-size:15px}
+.tile button{margin-top:10px;background:none;border:0;color:var(--navy);font:800 14px var(--b);text-decoration:underline;cursor:pointer;padding:0}
+.team{background:var(--sand);border-radius:34px;padding:34px 22px}
+.tg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.tg div{background:var(--cream);border-radius:16px;padding:12px 14px}
+.tg b{display:block;font:700 18px var(--h);color:var(--navy)}
+.tg span{font-size:13px;color:var(--mute)}
+.tg .vet{background:var(--navy);grid-column:1/-1}
+.tg .vet b{color:#fff}.tg .vet span{color:var(--sun)}
+.emerg{background:var(--coral);color:#fff;border-radius:30px;padding:30px 22px}
+.emerg h2{color:#fff}
+.emerg .lead{color:#ffe9e3}
+.signs{display:grid;gap:8px;list-style:none;margin:14px 0 20px}
+.signs li{background:rgba(255,255,255,.16);border-radius:14px;padding:9px 14px;font-size:15px}
+.centres{display:grid;gap:12px}
+.centres div{background:#fff;color:var(--ink);border-radius:18px;padding:16px}
+.centres b{display:block;font:700 18px var(--h);color:var(--navy)}
+.centres a{color:var(--coral);font-weight:800}
+.plan{background:var(--navy);color:#fff;border-radius:34px;padding:34px 22px}
+.plan h2{color:#fff}.plan .lead{color:#cfd1ff}
+.perks{display:grid;grid-template-columns:1fr;gap:8px;list-style:none;margin:6px 0 20px}
+.perks li{padding-left:28px;position:relative;font-size:15px;color:#eceeff}
+.perks li:before{content:"\2713";position:absolute;left:0;top:0;color:var(--sun);font-weight:800}
+.rev{display:grid;gap:14px}
+.rv{background:#fff;border-radius:22px;padding:20px;border:2px solid var(--sand)}
+.rv p{font:600 17px/1.5 var(--h);color:var(--navy)}
+.rv small{display:block;margin-top:10px;color:var(--mute);font-weight:700}
+.adv{list-style:none}
+.adv li{display:flex;justify-content:space-between;gap:10px;padding:14px 0;border-bottom:1px dashed #d8cfb0;font-weight:700;color:var(--navy)}
+.adv li span{color:var(--mute);font-weight:600;white-space:nowrap}
+.pay{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.pay span{border:2px solid var(--sand);background:#fff;border-radius:12px;padding:6px 14px;font-weight:800;color:var(--navy)}
+.visit{background:var(--navy2);color:#dfe0ff}
+.visit h2{color:#fff}
+.visit a{color:var(--sun)}
+footer{background:var(--navy2);color:#aab;padding:0 0 90px;font-size:13px;text-align:center}
+@media(min-width:760px){nav{display:flex}.hero .wrap{grid-template-columns:1.25fr 1fr;align-items:center}.two{grid-template-columns:1.2fr 1fr}.svc{grid-template-columns:repeat(4,1fr)}.tg{grid-template-columns:repeat(3,1fr)}.tg .vet{grid-column:auto}.rev{grid-template-columns:1fr 1fr}.centres{grid-template-columns:1fr 1fr}.perks{grid-template-columns:1fr 1fr}.hero{padding:70px 0 110px}}
+.mem{display:grid;gap:12px;margin:8px 0 14px}.mem div{background:rgba(255,255,255,.1);border-radius:20px;padding:16px 18px}.mem b{display:block;font:700 20px var(--h);color:#fff}.mem span{display:block;color:#cfd1ff;font-size:14px}.mem em{display:block;font:700 28px var(--h);font-style:normal;color:var(--sun);margin-top:6px}.mem small{color:#cfd1ff}.note2{font-size:14px;color:#cfd1ff;margin-bottom:16px}
+@media(min-width:760px){.mem{grid-template-columns:1fr 1fr}}
+#cw-fab{position:fixed;right:16px;bottom:16px;z-index:50;background:var(--sun);color:var(--navy2);border:0;border-radius:99px;padding:14px 20px;font:800 15px var(--b);cursor:pointer;box-shadow:0 6px 0 rgba(28,32,98,.3),0 14px 30px rgba(0,0,0,.25)}
+#cw-panel{position:fixed;right:12px;bottom:76px;z-index:50;width:calc(100vw - 24px);max-width:380px;height:min(560px,calc(100vh - 100px));background:var(--cream);border-radius:24px;box-shadow:0 20px 60px rgba(28,32,98,.45);display:none;flex-direction:column;overflow:hidden}
+#cw-panel.open{display:flex}
+.cw-h{background:var(--navy);color:#fff;padding:13px 16px;display:flex;justify-content:space-between;align-items:center}
+.cw-h b{font:700 17px var(--h)}
+.cw-h small{display:block;color:var(--sun);font-size:12px;font-weight:700}
+#cw-x{background:none;border:0;color:#fff;font-size:24px;cursor:pointer;line-height:1}
+#cw-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.45}
+.cw-m{max-width:88%;padding:9px 13px;border-radius:18px}
+.cw-m.bot{background:#fff;border:2px solid var(--sand);align-self:flex-start;border-bottom-left-radius:4px}
+.cw-m.me{background:var(--navy);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+#cw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;max-height:108px;overflow-y:auto;border-top:2px solid var(--sand)}
+.cw-chip{background:#fff;border:2px solid var(--navy);color:var(--navy);font:700 13px var(--b);padding:5px 11px;border-radius:99px;cursor:pointer}
+.cw-chip:hover{background:var(--navy);color:#fff}
+#cw-form{display:flex;border-top:2px solid var(--sand);background:#fff}
+#cw-in{flex:1;border:0;padding:13px 16px;font:16px var(--b);outline:0;min-width:0;background:transparent}
+#cw-form button{background:var(--sun);color:var(--navy2);border:0;padding:0 20px;font:800 14px var(--b);cursor:pointer}
+</style></head><body>
+<header><div class="hd">
+ <a class="brand" href="#top" aria-label="Port Melbourne Vet"><img src="img/port-melbourne-veterinary-clinic-logo.png" alt="Port Melbourne Vet" width="218" height="38"></a>
+ <nav><a href="#services">Services</a><a href="#team">Team</a><a href="#emergency">Emergency</a><a href="#plan">Wellness plan</a><a href="#visit">Visit</a></nav>
+ <a class="pill" href="#visit" data-ask="Book an appointment">Book</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+ <div>
+  <span class="eyebrow">Bay Street, since 1997</span>
+  <h1>Two streets from the beach, <span>six days a week</span> for your pet.</h1>
+  <p>Dogs, cats, birds and other small pets, in a purpose-built clinic and hospital. Injured native animals are treated on a compassionate basis too.</p>
+  <div class="ctas"><a class="pill" href="#visit" data-ask="Book an appointment">Book an appointment</a><a class="pill line" href="tel:+61396465300">(03) 9646 5300</a></div>
+ </div>
+ <div class="status" id="status"><span class="dot"></span><b id="st">Checking hours...</b><small id="st2">Melbourne time</small>
+  <table class="tbl" id="tbl"><tr data-d="1,2,3,4,5"><td>Monday to Friday</td><td>8am - 7pm</td></tr><tr data-d="6"><td>Saturday</td><td>9am - 2pm</td></tr><tr data-d="0"><td>Sunday</td><td>Closed</td></tr><tr><td>Public holidays</td><td>Closed</td></tr></table>
+ </div>
+</div></div>
+
+<section id="about"><div class="wrap two">
+ <div><span class="eyebrow">Who we are</span><h2>A local clinic that has stayed local</h2>
+  <p>Port Melbourne Veterinary Clinic and Hospital opened in 1997 on Bay Street. The clinic is purpose built and fully equipped, with a wide range of surgical procedures and advanced diagnostics on site.</p>
+  <p style="margin-top:12px">The vets stay current by attending seminars and conferences, and the team works closely with referral centres across Melbourne. When your pet needs a specialist, they can arrange a consultation at the clinic or refer you to one they trust.</p></div>
+ <div><span class="eyebrow">Neighbourhoods</span><h3 style="font-size:24px">Pet owners come from</h3>
+  <div class="chipbox"><span>Port Melbourne</span><span>South Melbourne</span><span>Docklands</span><span>Albert Park</span><span>Fishermans Bend</span><span>Southbank</span></div>
+  <p style="margin-top:16px;color:var(--mute);font-size:15px">109 Bay Street, Port Melbourne VIC 3207</p></div>
+</div></section>
+
+<section id="services" style="padding-top:10px"><div class="wrap">
+ <span class="eyebrow">What we do</span><h2>Services</h2>
+ <p class="lead">Four core services are listed on the site, with more on the full services page. Ask the assistant if you do not see what you need.</p>
+ <div class="svc">
+  <div class="tile"><i>01</i><h3>Consultations</h3><p>Check-ups and questions about your pet's health, with a vet who explains the plan.</p><button data-ask="consultation">Ask about it</button></div>
+  <div class="tile"><i>02</i><h3>Anaesthesia</h3><p>Part of the clinic's surgical and diagnostic work, in a purpose-built hospital.</p><button data-ask="anaesthesia">Ask about it</button></div>
+  <div class="tile"><i>03</i><h3>Hospitalisation</h3><p>Care for pets who need to stay in the hospital.</p><button data-ask="hospitalisation">Ask about it</button></div>
+  <div class="tile"><i>04</i><h3>Microchipping</h3><p>Permanent identification, also included in the Best for Pet plan.</p><button data-ask="microchipping">Ask about it</button></div>
+ </div>
+</div></section>
+
+<section id="team"><div class="wrap"><div class="team">
+ <span class="eyebrow">Meet the team</span><h2>Friendly faces on Bay Street</h2>
+ <p class="lead">Passionate about animal health and aware of the bond you share with your pet.</p>
+ <div class="tg">
+  <div class="vet"><b>Karl</b><span>Vet</span></div><div class="vet"><b>Kaitlyn</b><span>Vet</span></div>
+  <div><b>Casey</b><span>Practice Manager</span></div><div><b>Hanna</b><span>Vet Nurse</span></div><div><b>Tu&#287;&ccedil;e</b><span>Vet Nurse</span></div><div><b>Cheryl</b><span>Vet Nurse</span></div>
+  <div><b>Emily</b><span>Trainee Vet Nurse</span></div><div><b>Alicia</b><span>Trainee Vet Nurse</span></div><div><b>Chloe</b><span>Trainee Nurse</span></div><div><b>Ellen</b><span>Animal Attendant</span></div>
+ </div>
+ <p style="margin-top:16px;font-size:14px;color:var(--mute)">The clinic is also hiring: see Careers on the site.</p>
+</div></div></section>
+
+<section id="emergency"><div class="wrap"><div class="emerg">
+ <span class="eyebrow" style="background:#fff;color:var(--coral)">Emergency</span><h2>If something is wrong right now</h2>
+ <p class="lead">During opening hours call (03) 9646 5300 and the team will direct you. Depending on the situation you may be sent straight to an emergency hospital. Outside hours, use one of the centres below.</p>
+ <ul class="signs"><li>Distress or drooling after eating a bone or other object</li><li>Excessive coughing, vomiting or diarrhoea</li><li>Collapse from fatigue</li><li>Straining to urinate or defecate</li><li>Overheating or heatstroke</li><li>Poison (rat bait, snail pellets, human medication)</li><li>Faster, harder or excessive panting or breathing changes</li></ul>
+ <div class="centres">
+  <div><b>Advanced Vetcare</b>24 hr Emergency Centre<br>Level 1/26 Robertson Street, Kensington 3031<br><a href="tel:+61390920400">(03) 9092 0400</a></div>
+  <div><b>CARE Veterinary Hospital</b>5 Hood Street, Collingwood 3066<br><a href="tel:+61394176417">(03) 9417 6417</a></div>
+ </div>
+</div></div></section>
+
+<section id="plan"><div class="wrap"><div class="plan">
+ <span class="eyebrow">Best for Pet</span><h2>A health membership for your pet</h2>
+ <p class="lead">The clinic offers the Best for Pet Wellness Plan for dogs and cats: routine, preventative care in one monthly plan. It is different from insurance, which helps with accidents and illness.</p>
+ <ul class="perks"><li>Unlimited vet consults</li><li>24/7 online access to vets</li><li>Annual core vaccinations</li><li>Health check with blood and urine tests</li><li>4 nail trims and a microchip</li><li>$250 off dental</li><li>20% off desexing</li><li>10% off food, services and parasite control</li><li>2 nights cat boarding*</li></ul>
+ <div class="mem"><div><b>Dog membership</b><span>From playful pups to loyal companions.</span><em>$50 a month</em><small>$600 AUD a year, minimum 12 months</small></div><div><b>Cat membership</b><span>Support for every stage of your cat's nine lives.</span><em>$50 a month</em><small>$600 AUD a year, minimum 12 months</small></div></div>
+ <p class="note2">No waiting periods, no age or breed restrictions, no excess. More pets at home? Additional plans get 10% off. The site says members save $800 to $1,300 a year on average.</p>
+ <button class="pill" data-ask="wellness plan">Ask about the plan</button>
+</div></div></section>
+
+<section id="voices"><div class="wrap">
+ <span class="eyebrow">Why furry friends love us</span><h2>Recent words from owners</h2>
+ <div class="rev">
+  <div class="rv"><p>"Excellent service. Appointment was on time and vet very caring when handling my cat."</p><small>Mandy, Google, Aug 2026</small></div>
+  <div class="rv"><p>"Excellent, professional care of our beautiful 18 year old cat, ever since she was a kitten of 10 weeks old."</p><small>Anna, Facebook, Aug 2026</small></div>
+  <div class="rv"><p>"Appreciated the detailed explanation of issues and the suggested cure."</p><small>Maria, Google, Jun 2026</small></div>
+ </div>
+</div></section>
+
+<section id="advice" style="padding-top:10px"><div class="wrap two">
+ <div><span class="eyebrow">Pet advice</span><h2>Read before your visit</h2>
+  <ul class="adv"><li>Know your parasites <span>4 min</span></li><li>Your guide to the first 6 months of owning a puppy <span>3 min</span></li><li>Preparing for your vet visit <span>5 min</span></li></ul></div>
+ <div><span class="eyebrow">Payments</span><h2>Ways to pay</h2><p>EFTPOS, credit card and cash, plus payment plans that spread the cost of care.</p><div class="pay"><span>Afterpay</span><span>Zip</span><span>VetPay</span></div></div>
+</div></section>
+
+<section id="visit" class="visit"><div class="wrap two">
+ <div><h2>Visit us</h2><p>109 Bay Street, Port Melbourne VIC 3207<br><a href="tel:+61396465300">(03) 9646 5300</a><br><a href="mailto:info@portmelbournevet.com.au">info@portmelbournevet.com.au</a></p><p style="margin-top:14px"><button class="pill" data-ask="Book an appointment">Request an appointment</button></p></div>
+ <div><h3 style="color:var(--sun);font-size:20px">Consultation hours</h3><p>Monday to Friday 8am - 7pm<br>Saturday 9am - 2pm<br>Sunday and public holidays closed</p></div>
+</div></section>
+</main>
+<footer><div class="wrap" style="padding-top:22px">Demo &middot; prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="cw-fab" aria-expanded="false" aria-controls="cw-panel">Ask the clinic</button>
+<div id="cw-panel" role="dialog" aria-label="Port Melbourne Vet assistant">
+ <div class="cw-h"><div><b>Port Melbourne Vet</b><small>Answers from the clinic's own site</small></div><button id="cw-x" aria-label="Close">&times;</button></div>
+ <div id="cw-log" aria-live="polite"></div><div id="cw-chips"></div>
+ <form id="cw-form"><input id="cw-in" autocomplete="off" placeholder="Ask a question"><button>Send</button></form>
+</div>
+
+<script>/* assistant engine: client-side only, sends nothing */
+(function(root){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4)w=w.replace(/(ing|ed|es|ly|s)$/,'');return w;}
+var STOP={do:1,does:1,you:1,your:1,the:1,is:1,are:1,a:1,an:1,of:1,to:1,i:1,my:1,me:1,what:1,how:1,can:1,for:1,it:1,in:1,on:1,at:1,and:1,or:1,there:1,have:1,any:1,we:1,our:1};
+function toks(s){var a=norm(s).split(' ').filter(Boolean),b=a.filter(function(w){return!STOP[w];});return(b.length?b:a).map(stem);}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;if(Math.abs(m-n)>2)return 9;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){c=[i];for(j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[n];}
+function tmatch(k,t){if(k===t)return 1;var L=Math.min(k.length,t.length);if(L>=5&&lev(k,t)<=1)return .85;if(L>=8&&lev(k,t)<=2)return .8;if(L>=4&&(k.indexOf(t)===0||t.indexOf(k)===0)&&Math.abs(k.length-t.length)<=2)return .75;return 0;}
+function build(kb){kb.forEach(function(e){e._k=e.keys.map(function(k){var t=toks(k),n=norm(k);return{t:t,n:n,x:n.split(' ').length>1&&t.length<=1};});});return kb;}
+function answer(kb,q){var qn=norm(q),qt=toks(q),best=null,bs=0;if(!qn)return null;
+kb.forEach(function(e){(e._k||[]).forEach(function(k){if(!k.t.length)return;var s=0;
+if((' '+qn+' ').indexOf(' '+k.n+' ')>-1){s=1.4+.1*k.t.length;}
+else if(k.x){return;}
+else{var sum=0;k.t.forEach(function(kt){var m=0;qt.forEach(function(t){var x=tmatch(kt,t);if(x>m)m=x;});sum+=m;});var cov=sum/k.t.length;if(cov<.7)return;s=cov*(1+.1*k.t.length);if(k.t.length>1&&sum<2)return;}
+s*= (e.w||1);if(s>bs){bs=s;best=e;}});});
+return bs>=.75?best:null;}
+function makeChat(cfg){
+ var kb=build(cfg.kb),step=-1,data={},doc=root.document;
+ var $=function(id){return doc.getElementById(id);},log=$('cw-log'),inp=$('cw-in'),chips=$('cw-chips');
+ function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+ function say(h,me){var d=doc.createElement('div');d.className='cw-m '+(me?'me':'bot');d.innerHTML=h;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+ function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=doc.createElement('button');b.type='button';b.className='cw-chip';b.textContent=c;b.onclick=function(){send(c);};chips.appendChild(b);});}
+ function menu(){setChips(cfg.menu);}
+ function ask(){var s=cfg.flow[step];say(s.q);setChips((s.chips||[]).concat(['Cancel']));inp.placeholder=s.ph||'Type your answer';}
+ function startFlow(){step=0;data={};say(cfg.flowIntro);ask();}
+ function endFlow(){step=-1;inp.placeholder='Ask a question';menu();}
+ function finish(){var lines=cfg.flow.map(function(s){return '<b>'+s.label+':</b> '+esc(data[s.k]);}).join('<br>');say(cfg.done.replace('{summary}',lines));endFlow();}
+ function send(t){t=String(t||'').trim();if(!t)return;say(esc(t),1);inp.value='';
+  if(step>=0){if(/^(cancel|stop|menu|back)$/i.test(t)){say('No problem, nothing was sent. What else can I help with?');endFlow();return;}
+   if(cfg.urgent&&cfg.urgent.re.test(t)){say(cfg.urgent.msg);return;}
+   var s=cfg.flow[step],err=s.check?s.check(t,data):null;if(err){say(err);return;}
+   data[s.k]=s.norm?s.norm(t):t;step++;if(step>=cfg.flow.length){finish();}else{ask();}return;}
+  if(cfg.urgent&&cfg.urgent.re.test(t)){say(cfg.urgent.msg);return;}
+  if(cfg.flowTrigger.test(t)){startFlow();return;}
+  var e=answer(kb,t);if(e){say(e.a);setChips(e.chips||cfg.menu);if(e.flow){}}
+  else{say(cfg.fallback);menu();}}
+ var fab=$('cw-fab'),panel=$('cw-panel'),opened=false;
+ function toggle(){var o=panel.classList.toggle('open');fab.setAttribute('aria-expanded',o);if(o&&!opened){opened=true;say(cfg.hello);menu();}if(o)setTimeout(function(){inp.focus();},50);}
+ fab.onclick=toggle;$('cw-x').onclick=toggle;
+ $('cw-form').onsubmit=function(ev){ev.preventDefault();send(inp.value);};
+ Array.prototype.forEach.call(doc.querySelectorAll('[data-ask]'),function(b){b.addEventListener('click',function(ev){ev.preventDefault();if(!panel.classList.contains('open'))toggle();send(b.getAttribute('data-ask'));});});
+ return{send:send};}
+var api={answer:function(kb,q){var e=answer(build(kb),q);return e?e.id:null;},makeChat:makeChat,norm:norm};
+if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.CW=api;
+})(typeof window!=='undefined'?window:this);
+</script>
+<script>
+var KB=[
+{id:'hours',keys:['hours','opening hours','open','what time','when are you open','closing time','close','closed','saturday','weekend','monday','friday','public holiday','holiday','late','evening'],a:'Consultation hours: Monday to Friday 8am to 7pm, Saturday 9am to 2pm. Closed Sunday and public holidays.'},
+{id:'sunday',keys:['sunday','sundays','open sunday'],a:'The clinic is closed on Sundays and public holidays. For an emergency then, use Advanced Vetcare (24 hr, Kensington, (03) 9092 0400) or CARE Veterinary Hospital (Collingwood, (03) 9417 6417).',w:1.2},
+{id:'addr',keys:['address','where are you','where is the clinic','where is the vet','location','located','directions','find you','bay street','map','port melbourne'],a:'109 Bay Street, Port Melbourne VIC 3207, two streets from the beach.'},
+{id:'parking',keys:['parking','park','car park','street parking'],a:'I do not have parking details from the site. The team will confirm them when they reply.'},
+{id:'phone',keys:['phone','call','number','telephone','contact','reach','email','mail'],a:'Phone (03) 9646 5300, email info@portmelbournevet.com.au.'},
+{id:'book',keys:['how to book','booking','book online','make an appointment','appointment','schedule','reserve','availability','available'],a:'You can book online on the clinic site, call (03) 9646 5300, or I can take a request here for the team to confirm.',chips:['Book an appointment','Opening hours']},
+{id:'emerg',w:1.3,keys:['emergency','urgent','after hours','out of hours','overnight','24 hour','24hr','night','sick pet','24 7'],a:'During opening hours call (03) 9646 5300 and the team will direct you. After hours the closest centres are Advanced Vetcare, 24 hr Emergency Centre, Level 1/26 Robertson Street, Kensington, (03) 9092 0400, and CARE Veterinary Hospital, 5 Hood Street, Collingwood, (03) 9417 6417.'},
+{id:'signs',keys:['signs of an emergency','what is an emergency','is it an emergency','emergency signs','should i go to emergency'],a:'The clinic lists these as emergencies: distress or drooling after eating a bone or object, excessive coughing, vomiting or diarrhoea, collapse, straining to urinate or defecate, heatstroke, poison (rat bait, snail pellets, human medication) and breathing changes. If you see any of them, call now or go straight to an emergency hospital. I cannot assess your pet from here.'},
+{id:'animals',keys:['dogs','cats','birds','what animals','which pets','rabbit','rabbits','guinea pig','small pets','exotic','reptile','native animals','wildlife','injured wildlife','possum'],a:'The clinic cares for dogs, cats, birds and other small pets, and treats injured native animals on a compassionate basis. For a specific species, the team will confirm.'},
+{id:'services',keys:['services','what do you offer','treatments','what do you do','procedures','surgery','surgeries','diagnostics','x ray','scan'],a:'Listed services include consultations, anaesthesia, hospitalisation and microchipping. The clinic has a wide range of surgical procedures and advanced diagnostics in a purpose-built hospital. The full list is on the services page.',chips:['Consultations','Microchipping','Book an appointment']},
+{id:'consult',keys:['consultation','consultations','check up','checkup','health check','see a vet','vet visit','first visit'],a:'Consultations are available during opening hours. To prepare, the clinic has an article called "Preparing for your vet visit" in Pet Advice. The team confirms the details when you book.',chips:['Book an appointment']},
+{id:'anaes',keys:['anaesthesia','anesthesia','anaesthetic','sedation','put under'],a:'Anaesthesia is one of the listed services, part of the clinic\'s surgical work. I cannot discuss a specific pet\'s risk here, so the vets will go through it with you.'},
+{id:'hosp',keys:['hospitalisation','hospital','overnight stay','stay in','admit','admitted'],a:'Hospitalisation is a listed service in the purpose-built hospital. The team will explain what it means for your pet.'},
+{id:'chip',keys:['microchip','microchipping','chip','id tag','identification'],a:'Microchipping is a listed service, and a microchip is included in the Best for Pet Wellness Plan.'},
+{id:'vacc',keys:['vaccination','vaccinations','vaccine','vaccines','shots','booster','jab','core vaccinations'],a:'Annual core vaccinations are part of the Best for Pet Wellness Plan. The team will confirm the right schedule for your pet at a consultation.'},
+{id:'dental',keys:['dental','teeth','teeth cleaning','dentistry'],a:'The wellness plan includes $250 off dental. The team will advise on whether your pet needs a dental.'},
+{id:'desex',keys:['desex','desexing','neuter','neutering','spay','spaying','castration'],a:'The wellness plan lists 20% off desexing. Timing for your pet is something the vets will advise on.'},
+{id:'plan',keys:['wellness plan','best for pet','membership','plan','monthly plan','savings','subscription'],a:'Best for Pet is a wellness plan for dogs and cats: unlimited vet consults, 24/7 online vet access, annual core vaccinations, a health check with blood and urine tests, 4 nail trims, a microchip, $250 off dental, 20% off desexing and 10% off food, services and parasite control. It is published as $50 per month ($600 a year, minimum 12 months), with no waiting periods.',chips:['Book an appointment','Payments']},
+{id:'pay',keys:['payment','payments','pay','payment plan','afterpay','zip','vetpay','eftpos','credit card','cash','card','installments','instalments','afford','cost','price','prices','how much','fee'],a:'You can pay by EFTPOS, credit card or cash, or use a payment plan: Afterpay, Zip or VetPay. I do not have a price list, so the team will give you a quote for your pet.',chips:['Book an appointment']},
+{id:'team',keys:['team','staff','who works','vets','vet names','veterinarian','veterinarians','karl','kaitlyn','casey','nurse','nurses','practice manager','doctor'],a:'The vets are Karl and Kaitlyn. Casey is the practice manager, Hanna, Tuğçe and Cheryl are vet nurses, Emily and Alicia are trainee vet nurses, Chloe is a trainee nurse and Ellen is the animal attendant.'},
+{id:'about',keys:['about','history','established','since','how long open','founded','1997','who are you'],a:'Port Melbourne Veterinary Clinic and Hospital was established in 1997 on Bay Street. It is purpose built and fully equipped.'},
+{id:'special',keys:['specialist','referral','refer','specialists','referral centre','second opinion'],a:'The clinic works closely with multiple referral centres in Melbourne and can arrange specialist consultations at the clinic, or refer you to trusted specialists.'},
+{id:'area',keys:['suburbs','area','do you service','south melbourne','docklands','albert park','fishermans bend','southbank','near me'],a:'Pet owners come from Port Melbourne, South Melbourne, Docklands, Albert Park, Fishermans Bend and Southbank.'},
+{id:'advice',keys:['parasites','parasite','fleas','ticks','worms','heartworm','puppy','puppies','first 6 months','pet advice','tips','article','articles','blog'],a:'Pet Advice on the clinic site has "Know your parasites", "Your guide to the first 6 months of owning a puppy" and "Preparing for your vet visit". For your own pet\'s symptoms, the vets need to see it.'},
+{id:'careers',keys:['careers','jobs','hiring','work for you','vacancy','vacancies','employment','apply'],a:'The clinic is hiring. See Careers on the clinic website or call (03) 9646 5300.'},
+{id:'diag',w:.9,keys:['my dog is','my cat is','not eating','limping','vomiting','diarrhoea','diarrhea','itchy','scratching','lump','swollen','sick','symptoms','what is wrong','diagnose','is it serious','medication','dose'],a:'I cannot diagnose or advise on symptoms from here. Please call the team on (03) 9646 5300 during opening hours. If it looks like an emergency, go straight to an emergency hospital.',chips:['Emergency','Book an appointment']},
+{id:'multi',keys:['more than one pet','multiple pets','two pets','second pet','additional pet','save money','how much will i save'],a:'On the Best for Pet plan, additional pets get 10% off their plans. The site says members save $800 to $1,300 a year on average.'},
+{id:'board',keys:['boarding','cat boarding','board my cat','kennel','holiday stay'],a:'The wellness plan mentions 2 nights of cat boarding (marked with an asterisk on the site). I do not have boarding details beyond that, so the team will confirm.'},
+{id:'nails',keys:['nail trim','nail trims','nails','claws','claw clipping'],a:'Four nail trims are included in the Best for Pet Wellness Plan. The team will confirm whether a one-off trim is possible.'},
+{id:'bloods',keys:['blood test','blood tests','urine test','blood work','bloods'],a:'A health check with blood and urine tests is included in the Best for Pet Wellness Plan. For tests on a pet with symptoms, the vets will advise at a consultation.'},
+{id:'online',keys:['online vet','online access','telehealth','video call vet','24 7 vet','vet chat'],a:'The wellness plan includes 24/7 online access to vets. Outside that plan, I do not have details, so the team will confirm.'},
+{id:'hi',keys:['hello','hi','hey','good morning','good afternoon','gday','g day'],a:'Hello! I can answer questions about the clinic or take an appointment request.'},
+{id:'thx',keys:['thanks','thank you','thx','cheers'],a:'You are welcome. Anything else?'}
+];
+var MENU=['Book an appointment','Opening hours','Emergency','Services','Wellness plan','Payments'];
+function dayCheck(t){return /\bsun/i.test(t)?'The clinic is closed on Sundays. Please pick Monday to Saturday.':(/holiday/i.test(t)?'The clinic is closed on public holidays. Please pick another day.':null);}
+var FLOW=[
+{k:'pet',label:'Pet name',q:'What is your pet\'s name?',check:function(t){return t.length<1?'Please type a name.':null;}},
+{k:'kind',label:'Pet',q:'Is it a dog, a cat, a bird or another small pet?',chips:['Dog','Cat','Bird','Other small pet']},
+{k:'reason',label:'Reason',q:'What is the visit for? I only pass this on, I cannot assess it.',chips:['Check-up','Vaccination','Microchipping','Something else']},
+{k:'day',label:'Preferred day',q:'Which day? Mon-Fri 8am to 7pm, Saturday 9am to 2pm.',chips:['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],check:dayCheck},
+{k:'time',label:'Preferred time',q:'Morning or afternoon? (Saturday is 9am to 2pm.)',chips:['Morning','Afternoon','Late afternoon']},
+{k:'name',label:'Your name',q:'Your name?',check:function(t){return t.length<2?'Please type your name.':null;}},
+{k:'contact',label:'Phone or email',q:'Phone number or email so the team can confirm?',check:function(t){return (/@/.test(t)||(t.replace(/\D/g,'').length>=8))?null:'That does not look like a phone number or email. Try again?';}}
+];
+var URG=/\b(poison|poisoned|rat bait|snail pellets?|collapsed?|not breathing|cant breathe|can't breathe|struggling to breathe|bleeding|seizure|seizing|hit by a car|choking|heatstroke|bloat|bloated stomach|straining to)\b/i;
+if(typeof document!=='undefined'){
+ CW.makeChat({kb:KB,menu:MENU,flow:FLOW,urgent:{re:URG,msg:'That sounds like it could be an emergency. Please call the clinic now on (03) 9646 5300 (Mon-Fri 8am-7pm, Sat 9am-2pm), or go straight to an emergency hospital: Advanced Vetcare, 24 hr, Kensington, (03) 9092 0400, or CARE Veterinary Hospital, Collingwood, (03) 9417 6417. I cannot assess your pet from here.'},flowTrigger:/\b(book an appointment|book appointment|book a visit|i want to book|i would like to book|make an appointment|make a booking|appointment request|request an appointment)\b/i,hello:'Hi! I am the Port Melbourne Vet assistant. Ask about hours, services or the wellness plan, or request an appointment.',flowIntro:'Happy to help. A few quick questions, then I pass the request to the team.',done:'Request ready for the team:<br>{summary}<br><br>Sent to the team. They will confirm a time with you.',fallback:'I am not sure about that one. The team can help on (03) 9646 5300 or info@portmelbournevet.com.au.'});
+ (function(){try{var f=new Intl.DateTimeFormat('en-AU',{timeZone:'Australia/Melbourne',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()),o={};f.forEach(function(p){o[p.type]=p.value;});
+ var map={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6},d=map[o.weekday],m=(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10);
+ var H={0:null,1:[480,1140],2:[480,1140],3:[480,1140],4:[480,1140],5:[480,1140],6:[540,840]},names=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+ var st=document.getElementById('st'),st2=document.getElementById('st2'),box=document.getElementById('status');
+ Array.prototype.forEach.call(document.querySelectorAll('#tbl tr[data-d]'),function(r){if(r.getAttribute('data-d').split(',').indexOf(String(d))>-1)r.className='today';});
+ var h=H[d];
+ if(h&&m>=h[0]&&m<h[1]){box.className='status open';st.textContent='Open now';st2.textContent='Until '+(h[1]===1140?'7pm':'2pm')+' today, Melbourne time. Public holidays closed.';}
+ else{var n=(h&&m<h[0])?d:null,k=1;if(n===null){while(k<8){var dd=(d+k)%7;if(H[dd]){n=dd;break;}k++;}}
+  var at=H[n][0]/60;st.textContent='Closed right now';st2.textContent='Opens '+(n===d?'today':names[n])+' at '+at+'am. Emergency? Scroll to Emergency.';}
+ }catch(e){document.getElementById('st').textContent='Mon-Fri 8am-7pm, Sat 9am-2pm';}})();
+}
+if(typeof module!=='undefined')module.exports={KB:KB};
+</script>
+</body></html>
