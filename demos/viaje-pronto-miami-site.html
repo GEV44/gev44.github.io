@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Viaje Pronto Inc · Agencia de viajes y envíos a Cuba, Miami</title>
+<meta name="description" content="Demo para Viaje Pronto Inc: servicios, envíos a Cuba, combos, preguntas frecuentes, contacto y asistente de reservas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--b:#2790b4;--b2:#1c6f8e;--deep:#0c3a52;--s1:#d3dfeb;--s2:#a9c5da;--s3:#8ab3cf;--sand:#f7b84b;--bg:#f4f8fb;--tx:#17313f;--mut:#58717f;--card:#fff;
+--aw-ac:#0c3a52;--aw-ink:#fff;--aw-ac2:#1c6f8e;--aw-bg:#fff;--aw-tx:#17313f;--aw-bd:#d3dfeb;--aw-hd:#2790b4;--aw-hdt:#fff;--aw-b1:#e8f1f7;--aw-font:'Nunito Sans',system-ui,sans-serif;--aw-r:18px;--aw-ring:#f7b84b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.6 'Nunito Sans',system-ui,sans-serif;overflow-x:hidden}
+img{max-width:100%}a{color:inherit}
+h1,h2,h3{font-family:Sora,system-ui,sans-serif;line-height:1.15;margin:0;letter-spacing:-.01em}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+header.top{background:#fff;position:sticky;top:0;z-index:30;box-shadow:0 2px 14px rgba(12,58,82,.1)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0}
+.brand img{height:50px;width:auto;display:block}
+nav.m{display:none;gap:22px;font-weight:700;font-size:15px}nav.m a{text-decoration:none;color:var(--deep)}nav.m a:hover{color:var(--b)}
+.btn{display:inline-block;border:0;cursor:pointer;text-decoration:none;font:700 15px 'Nunito Sans';padding:13px 22px;border-radius:99px;background:var(--deep);color:#fff}
+.btn.sand{background:var(--sand);color:#2b2108}.btn.out{background:transparent;border:2px solid #fff;color:#fff}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--sand);outline-offset:2px}
+.hero{position:relative;overflow:hidden;background:var(--b);color:#fff;padding:44px 0 70px}
+.hero::before{content:"";position:absolute;left:-40px;right:-40px;top:0;bottom:0;background:linear-gradient(115deg,transparent 0 56%,rgba(255,255,255,.12) 56% 64%,rgba(255,255,255,.2) 64% 72%,rgba(255,255,255,.3) 72% 80%,transparent 80%)}
+.hero .wrap{position:relative;display:grid;gap:26px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.18);border-radius:99px;padding:6px 14px;font-weight:700;font-size:14px}
+.dot{width:10px;height:10px;border-radius:50%;background:#bbb}.dot.on{background:#5ff08a}
+.hero h1{font-size:clamp(32px,8vw,56px);margin:14px 0 12px}
+.hero p{max-width:540px;margin:0 0 22px;color:#e8f6fb}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:center;min-width:0}
+.quick a{background:#fff;color:var(--deep);border-radius:16px;padding:14px;text-decoration:none;font-weight:800;font-family:Sora;font-size:15px;min-width:0;box-shadow:0 8px 20px rgba(0,0,0,.14)}
+.quick a small{display:block;font:600 13px 'Nunito Sans';color:var(--mut);margin-top:2px}
+.facts{margin-top:-34px;position:relative;z-index:2}
+.facts .wrap{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.facts div{background:#fff;border-radius:16px;padding:14px;box-shadow:0 8px 22px rgba(12,58,82,.12);text-align:center;min-width:0}
+.facts b{display:block;font:800 24px Sora;color:var(--b)}.facts span{font-size:13px;color:var(--mut)}
+section{padding:54px 0}
+.eyebrow{font:700 13px 'Nunito Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--b2)}
+h2{font-size:clamp(26px,6vw,38px);margin:6px 0 10px}
+.sub{color:var(--mut);max-width:620px;margin:0 0 26px}
+.tiles{display:grid;gap:14px}
+.tile{background:var(--card);border-radius:20px;padding:22px 20px 22px 26px;position:relative;overflow:hidden;box-shadow:0 6px 18px rgba(12,58,82,.08);min-width:0}
+.tile::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:linear-gradient(var(--s1) 0 25%,var(--s2) 25% 50%,var(--s3) 50% 75%,var(--b) 75%)}
+.tile h3{font-size:19px;margin-bottom:6px}.tile p{margin:0;color:var(--mut)}
+.tile a{display:inline-block;margin-top:10px;font-weight:800;color:var(--b2)}
+.ship{background:var(--deep);color:#fff;position:relative;overflow:hidden}
+.ship h2{color:#fff}.ship .sub{color:#b9d3e0}
+.lanes{display:grid;gap:14px}
+.lane{background:rgba(255,255,255,.07);border-radius:18px;padding:18px;min-width:0}
+.lane h3{font-size:17px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.lane h3 span{color:var(--sand)}
+.track{height:12px;border-radius:99px;background:rgba(255,255,255,.14);margin:12px 0 8px;overflow:hidden}
+.track i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--s3),var(--sand))}
+.lane p{margin:0;color:#b9d3e0;font-size:15px}
+.note{margin-top:18px;padding:16px;border-radius:16px;background:rgba(247,184,75,.15);color:#ffe7b5}
+.combos{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+.combo{background:#fff;border:2px dashed var(--s2);border-radius:18px;padding:18px;text-align:center;font:800 17px Sora;color:var(--deep);min-width:0}
+.combo small{display:block;font:600 13px 'Nunito Sans';color:var(--mut);margin-top:4px}
+.two{display:grid;gap:14px}
+.two .box[style*=grid-column]{grid-column:auto!important}
+.box{background:#fff;border-radius:20px;padding:22px;box-shadow:0 6px 18px rgba(12,58,82,.08);min-width:0}
+.box h3{font-size:20px;margin-bottom:8px}.box ul{margin:0;padding-left:20px;color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}.chips span{background:var(--bg);border:1px solid var(--s2);border-radius:99px;padding:5px 12px;font-weight:700;font-size:14px}
+.tst{display:grid;gap:14px}
+.tst blockquote{margin:0;background:var(--card);border-radius:20px;padding:20px;position:relative;box-shadow:0 6px 18px rgba(12,58,82,.08);min-width:0}
+.tst blockquote::before{content:"\201C";font:800 50px Sora;color:var(--s2);position:absolute;right:16px;top:2px}
+.tst p{margin:0 0 10px}.tst cite{font-weight:800;font-style:normal;color:var(--b2)}
+details{background:#fff;border-radius:16px;padding:16px 18px;margin-bottom:10px;box-shadow:0 4px 12px rgba(12,58,82,.06)}
+summary{font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--b);font-size:24px;line-height:1}details[open] summary::after{content:"\2212"}
+details p{margin:10px 0 0;color:var(--mut)}
+.contact{display:grid;gap:14px}
+.hrs{width:100%;border-collapse:collapse;font-size:16px}.hrs td{padding:8px 0;border-bottom:1px solid var(--s1)}.hrs td:last-child{text-align:right;font-weight:700}
+.hrs tr.today td{color:var(--b2);font-weight:800}
+footer{background:var(--deep);color:#b9d3e0;padding:24px 0 96px;font-size:14px}
+@media(min-width:760px){.two .box[style*=grid-column]{grid-column:1/-1!important}nav.m{display:flex}.hero .wrap{grid-template-columns:1.2fr .9fr;align-items:center}.facts .wrap{grid-template-columns:repeat(4,1fr)}.tiles{grid-template-columns:repeat(3,1fr)}.lanes{grid-template-columns:repeat(3,1fr)}.combos{grid-template-columns:repeat(4,1fr)}.two{grid-template-columns:1fr 1fr}.tst{grid-template-columns:repeat(3,1fr)}.contact{grid-template-columns:1fr 1fr}}
+.calc{display:grid;gap:14px;max-width:760px}
+.calc label{display:block;font-weight:800;color:var(--deep)}
+.calc select{display:block;width:100%;margin-top:6px;padding:13px 12px;border-radius:14px;border:2px solid var(--s2);font:600 16px 'Nunito Sans';background:#fff;color:var(--tx)}
+.res{background:var(--bg);border-left:8px solid var(--b);border-radius:14px;padding:16px 18px;font-weight:700;color:var(--deep)}
+.steps{display:grid;gap:14px;counter-reset:st}
+.steps div{counter-increment:st;background:#fff;border-radius:20px;padding:20px 20px 20px 72px;position:relative;box-shadow:0 6px 18px rgba(12,58,82,.08);min-width:0}
+.steps div::before{content:counter(st);position:absolute;left:18px;top:18px;width:38px;height:38px;border-radius:12px;background:var(--b);color:#fff;font:800 19px/38px Sora;text-align:center;transform:skewX(-10deg)}
+.steps h3{font-size:18px;margin-bottom:4px}.steps p{margin:0;color:var(--mut)}
+@media(min-width:760px){.calc{grid-template-columns:1fr 1fr}.res{grid-column:span 2}.steps{grid-template-columns:repeat(3,1fr)}}
+#aw-btn{position:fixed;right:16px;bottom:16px;z-index:60;border:0;cursor:pointer;background:var(--aw-ac);color:var(--aw-ink);font:700 15px var(--aw-font);padding:14px 18px;border-radius:var(--aw-r);box-shadow:0 8px 24px rgba(0,0,0,.28);display:flex;align-items:center;gap:8px}
+#aw-btn:focus-visible,#aw-chips button:focus-visible,#aw-form button:focus-visible{outline:3px solid var(--aw-ring,#fff);outline-offset:2px}
+#aw-panel{position:fixed;right:16px;bottom:76px;z-index:61;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 100px));background:var(--aw-bg);color:var(--aw-tx);border-radius:var(--aw-r);box-shadow:0 18px 50px rgba(0,0,0,.38);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--aw-font);border:1px solid var(--aw-bd)}
+#aw-panel.open{display:flex}
+#aw-head{background:var(--aw-hd);color:var(--aw-hdt);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+#aw-head b{display:block;font-size:15px}#aw-head small{opacity:.8;font-size:12px}
+#aw-x{background:none;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1;padding:2px 6px}
+#aw-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:0}
+.aw-m{max-width:88%;padding:9px 12px;border-radius:calc(var(--aw-r) - 2px);word-wrap:break-word;overflow-wrap:anywhere}
+.aw-m.bot{background:var(--aw-b1);align-self:flex-start}.aw-m.me{background:var(--aw-ac);color:var(--aw-ink);align-self:flex-end}
+.aw-m a{color:inherit;text-decoration:underline}
+#aw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+#aw-chips button{background:transparent;border:1px solid var(--aw-ac2);color:var(--aw-ac2);border-radius:99px;padding:6px 11px;font:600 13px var(--aw-font);cursor:pointer}
+#aw-form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--aw-bd)}
+#aw-in{flex:1;min-width:0;padding:10px;border:1px solid var(--aw-bd);border-radius:calc(var(--aw-r) - 4px);font:15px var(--aw-font);background:#fff;color:#111}
+#aw-form button{background:var(--aw-ac);color:var(--aw-ink);border:0;border-radius:calc(var(--aw-r) - 4px);padding:0 14px;font:700 14px var(--aw-font);cursor:pointer}
+
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "TravelAgency",
+ "name": "Viaje Pronto Inc",
+ "telephone": "+1-786-431-1119",
+ "email": "viajeprontoinc@gmail.com",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "5584 NW 7th St",
+  "addressLocality": "Miami",
+  "addressRegion": "FL",
+  "postalCode": "33126",
+  "addressCountry": "US"
+ },
+ "openingHours": [
+  "Mo-Fr 09:00-18:00",
+  "Sa 10:00-18:00"
+ ],
+ "paymentAccepted": "Cash, Zelle, credit card, debit card",
+ "description": "Agencia de viajes en Miami: pasajes, envíos de paquetería a Cuba, renta de autos, visas y pasaportes, servicios notariales y paquetes turísticos."
+}
+</script>
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="#top" aria-label="Viaje Pronto Inc"><img src="img/viaje-pronto-miami-logo.png" alt="Viaje Pronto Inc" width="84" height="50"></a>
+<nav class="m"><a href="#servicios">Servicios</a><a href="#envios">Envíos a Cuba</a><a href="#combos">Combos</a><a href="#preguntas">Preguntas</a><a href="#contacto">Contacto</a></nav>
+<a class="btn" href="tel:+17864311119">Llamar</a>
+</div></header>
+
+<noscript><p style="margin:0;padding:12px 16px;background:#ffe9b0;color:#222;font:15px sans-serif">Esta página funciona mejor con JavaScript. Sin él puedes llamar al +1 786 431 1119 o escribir a viajeprontoinc@gmail.com.</p></noscript>
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<span class="pill"><i class="dot" id="od"></i><span id="ot">Miami, Florida</span></span>
+<h1>Tu agencia de viajes a Cuba y el mundo</h1>
+<p>Más de 15 años ayudando a la comunidad desde un negocio familiar: vuelos, paquetería a Cuba, renta de autos, visas y pasaportes, servicios notariales y paquetes turísticos, en un solo lugar de Miami.</p>
+<div class="cta"><a class="btn sand" href="https://wa.me/17868211166">Escribir por WhatsApp</a><a class="btn out" href="#servicios">Ver servicios</a></div>
+</div>
+<div class="quick">
+<a href="#envios">Enviar a Cuba<small>Express, aéreo, marítimo</small></a>
+<a href="#servicios">Pasajes<small>Nacionales e internacionales</small></a>
+<a href="#combos">Combos de comida<small>Entrega desde Miami</small></a>
+<a href="#contacto">Visítanos<small>NW 7th St, Miami</small></a>
+</div>
+</div></div>
+
+<div class="facts"><div class="wrap">
+<div><b>15+</b><span>años de experiencia</span></div><div><b>6</b><span>servicios en un lugar</span></div><div><b>24-48 h</b><span>express a La Habana</span></div><div><b>4.8</b><span>en Google (241 reseñas)</span></div>
+</div></div>
+
+<section id="servicios"><div class="wrap">
+<span class="eyebrow">Qué hacemos</span><h2>Soluciones para cada trámite</h2>
+<p class="sub">Para viajeros frecuentes, familias, empresarios y para quien necesita enviar paquetería a Cuba, gestionar visas o alquilar un auto.</p>
+<div class="tiles">
+<div class="tile"><h3>Reserva de pasajes</h3><p>Reservas de vuelos nacionales e internacionales, incluyendo Cuba. Te ayudamos a encontrar las mejores opciones con comodidad, seguridad y tarifas competitivas.</p></div>
+<div class="tile"><h3>Envío de paquetes</h3><p>Paquetería a toda Cuba, excepto Isla de la Juventud, por vía aérea o marítima. También servicio express.</p><a href="#envios">Ver tiempos de entrega</a></div>
+<div class="tile"><h3>Renta de autos</h3><p>Renta en todo el país, en varias categorías, además de vehículos de tres ruedas y motorhomes. Período mínimo de tres días.</p></div>
+<div class="tile"><h3>Visas y pasaportes</h3><p>Emisión y renovación de pasaportes y visas, con asesoría personalizada para cumplir los requisitos de cada trámite.</p></div>
+<div class="tile"><h3>Servicios notariales</h3><p>Autenticación de documentos y trámites legales con un equipo capacitado para una amplia gama de documentos.</p></div>
+<div class="tile"><h3>Paquetes turísticos</h3><p>Ofertas a República Dominicana, Cancún y Europa, desde playas hasta ciudades históricas, adaptadas a tus preferencias.</p></div>
+</div></div></section>
+
+<section id="envios" class="ship"><div class="wrap">
+<span class="eyebrow" style="color:var(--sand)">Paquetería a Cuba</span><h2>Cuánto tarda tu envío</h2>
+<p class="sub">Llegamos a toda Cuba excepto Isla de la Juventud. Elige la velocidad que te conviene.</p>
+<div class="lanes">
+<div class="lane"><h3>Express a La Habana <span>24 a 48 h</span></h3><div class="track"><i style="width:14%"></i></div><p>Salidas 2 veces por semana.</p></div>
+<div class="lane"><h3>Carga aérea <span>10 a 15 días</span></h3><div class="track"><i style="width:50%"></i></div><p>Días laborables. Otras provincias: también 10 a 15 días laborables.</p></div>
+<div class="lane"><h3>Marítimo <span>~30 días</span></h3><div class="track"><i style="width:100%"></i></div><p>Entrega aproximada en un mes.</p></div>
+</div>
+<div class="note"><b>Compras por correo:</b> puedes preparar tu propia caja o pedir en Shein, Amazon u otras tiendas. Haz el seguimiento con tu número de tracking y avísanos cuando llegue. Los precios son los mismos que enviando desde la oficina.</div>
+</div></section>
+
+<section style="background:#fff"><div class="wrap">
+<span class="eyebrow">Calculadora rápida</span><h2>¿Cuándo llega mi paquete?</h2>
+<p class="sub">Elige el destino y la vía. El resultado usa los tiempos publicados por Viaje Pronto.</p>
+<div class="calc">
+<label>Destino en Cuba<select id="c1"><option value="h">La Habana</option><option value="o">Otra provincia</option></select></label>
+<label>Vía de envío<select id="c2"><option value="x">Express</option><option value="a">Carga aérea</option><option value="m">Marítimo</option></select></label>
+<div class="res" id="cr" aria-live="polite"></div>
+</div></div></section>
+
+<section><div class="wrap">
+<span class="eyebrow">Cómo se envía</span><h2>Tres pasos para tu paquete</h2>
+<div class="steps" style="margin-top:20px">
+<div><h3>Prepara el envío</h3><p>Trae tu caja a la oficina, o haz tu compra en Shein, Amazon u otra tienda y avísanos cuando llegue con tu número de tracking.</p></div>
+<div><h3>Elige la vía</h3><p>Express, carga aérea o marítimo, según lo rápido que lo necesites.</p></div>
+<div><h3>Llega a Cuba</h3><p>Entregamos en toda Cuba, excepto Isla de la Juventud. Por WhatsApp puedes preguntar cómo va.</p></div>
+</div></div></section>
+
+<section id="combos"><div class="wrap">
+<span class="eyebrow">Para tu familia</span><h2>Combos de alimentos para Cuba</h2>
+<p class="sub">Paquetes listos con productos de calidad, entregados desde Miami. También hay un mercadito de productos en la agencia.</p>
+<div class="combos">
+<div class="combo">Combo-6<small>Listo para enviar</small></div><div class="combo">Combo Ganga<small>Listo para enviar</small></div><div class="combo">Combo Super fuerte<small>Listo para enviar</small></div><div class="combo">Combo Sanador<small>Listo para enviar</small></div>
+</div>
+<p style="margin-top:16px"><a href="https://viajeprontoinc.com/combos"><b>Ver precios y pedir un combo en la página de Viaje Pronto</b></a></p>
+</div></section>
+
+<section style="background:#fff"><div class="wrap">
+<span class="eyebrow">Más detalles</span><h2>Autos, viajes y pagos</h2>
+<div class="two" style="margin-top:20px">
+<div class="box"><h3>Renta de autos</h3><ul><li>En todo el país</li><li>Varias categorías</li><li>Vehículos de tres ruedas y motorhomes</li><li>Período mínimo: tres días</li></ul></div>
+<div class="box"><h3>Paquetes turísticos a</h3><div class="chips"><span>República Dominicana</span><span>Cancún</span><span>Europa</span></div><h3 style="margin-top:18px">Formas de pago</h3><div class="chips"><span>Efectivo</span><span>Zelle</span><span>Tarjeta de crédito</span><span>Tarjeta de débito</span></div></div>
+<div class="box" style="grid-column:1/-1"><h3>Pensado para</h3><div class="chips"><span>Viajeros frecuentes</span><span>Familias</span><span>Empresarios</span><span>Quien envía paquetería a Cuba</span><span>Quien gestiona visas</span><span>Quien alquila un auto</span><span>Trámites notariales</span><span>Paquetes turísticos a medida</span></div><p style="margin:14px 0 0;color:var(--mut)">Un servicio rápido, seguro y eficiente, con atención personalizada y más de 15 años en el mercado.</p></div>
+</div></div></section>
+
+<section><div class="wrap">
+<span class="eyebrow">Opiniones</span><h2>Lo que dicen los clientes</h2>
+<div class="tst" style="margin-top:20px">
+<blockquote><p>Pude organizar un viaje a Cuba de manera rápida y sin complicaciones. Su equipo me asesoró en todo momento.</p><cite>Carlos M.</cite></blockquote>
+<blockquote><p>Me impresionó la rapidez y seguridad con la que llegaron mis productos. Me mantuvieron informado en todo momento.</p><cite>Jose A.</cite></blockquote>
+<blockquote><p>El proceso fue sencillo, el vehículo estaba en excelentes condiciones y el servicio al cliente fue excepcional.</p><cite>Maria L.</cite></blockquote>
+</div></div></section>
+
+<section id="preguntas" style="background:#fff"><div class="wrap">
+<span class="eyebrow">Preguntas frecuentes</span><h2>Respuestas rápidas</h2>
+<div style="margin-top:20px;max-width:780px">
+<details><summary>¿A qué regiones de Cuba entregan los paquetes?</summary><p>A toda Cuba, excepto Isla de la Juventud.</p></details>
+<details><summary>¿Cuánto tiempo tarda la entrega?</summary><p>La Habana: 24 a 48 horas, con salidas 2 veces por semana. Otras provincias: 10 a 15 días laborables.</p></details>
+<details><summary>¿Tienen envíos regulares además del express?</summary><p>Sí. El envío marítimo tarda aproximadamente 30 días y la carga aérea entre 10 y 15 días laborables.</p></details>
+<details><summary>¿Qué métodos de pago aceptan?</summary><p>Efectivo, Zelle, tarjeta de crédito y tarjeta de débito.</p></details>
+<details><summary>¿Aceptan compras por correo?</summary><p>Sí, desde cualquier parte del mundo. Puedes preparar tu propia caja o pedir en Shein, Amazon u otras plataformas. Haz el seguimiento con tu número de tracking y contáctanos cuando llegue.</p></details>
+<details><summary>¿Puedo contactarlos fuera del horario laboral?</summary><p>Sí, hay un WhatsApp para tus consultas: 786 821 1166. Responden lo antes posible.</p></details>
+<details><summary>¿Dónde veo los precios de los combos?</summary><p>En la página de Combos de Viaje Pronto, donde también puedes ordenar el combo con el botón de cada uno o escribir por WhatsApp si tienes preguntas.</p></details>
+<details><summary>¿Atienden otros trámites además de viajes?</summary><p>Sí: servicios notariales, gestión de visas y pasaportes, renta de autos y envíos de paquetería a Cuba.</p></details>
+</div></div></section>
+
+<section id="contacto"><div class="wrap">
+<span class="eyebrow">Contacto</span><h2>Ven a vernos o escríbenos</h2>
+<div class="contact" style="margin-top:20px">
+<div class="box"><h3>Viaje Pronto Inc</h3><p style="margin:0 0 6px">5584 NW 7th St<br>Miami, Florida 33126</p><p style="margin:0 0 6px"><a href="tel:+17864311119">+1 786 431 1119</a></p><p style="margin:0 0 6px"><a href="https://wa.me/17868211166">WhatsApp 786 821 1166</a></p><p style="margin:0;overflow-wrap:anywhere"><a href="mailto:viajeprontoinc@gmail.com">viajeprontoinc@gmail.com</a></p></div>
+<div class="box"><h3>Horario</h3><table class="hrs" id="hrs"><tr data-d="1-5"><td>Lunes a viernes</td><td>9:00 am - 6:00 pm</td></tr><tr data-d="6"><td>Sábado</td><td>10:00 am - 6:00 pm</td></tr><tr data-d="0"><td>Domingo</td><td>No indicado</td></tr></table></div>
+</div></div></section>
+</main>
+
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="aw-btn" type="button" aria-label="Abrir asistente">Reservar / preguntar</button>
+<div id="aw-panel" role="dialog" aria-label="Asistente de Viaje Pronto">
+<div id="aw-head"><div><b>Asistente de Viaje Pronto</b><small>Responde con datos de esta página</small></div><button id="aw-x" type="button" aria-label="Cerrar">&times;</button></div>
+<div id="aw-log" aria-live="polite"></div><div id="aw-chips"></div>
+<form id="aw-form"><input id="aw-in" type="text" placeholder="Pregunta por envíos, vuelos, horario..." aria-label="Tu mensaje" autocomplete="off"><button type="submit">Enviar</button></form>
+</div>
+
+<script>
+function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim()}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var q=[i];for(j=1;j<=n;j++){c=a[i-1]===b[j-1]?0:1;q[j]=Math.min(p[j]+1,q[j-1]+1,p[j-1]+c)}p=q}return p[n]}
+function tokMatch(t,k){if(t===k)return 1;if(k.length>=4&&t.length>=4){if(Math.min(t.length,k.length)>=5&&t.slice(0,5)===k.slice(0,5))return .9;var d=lev(t,k);if(d<=(k.length>=8?2:1))return .8}return 0}
+function match(kb,text){var n=norm(text),ts=n.split(' ').filter(Boolean),best=null,bs=0;kb.forEach(function(e){var s=0;e.k.forEach(function(kw){var kn=norm(kw);if(kn.indexOf(' ')>0){if(n.indexOf(kn)>=0)s+=2}else{var m=0;ts.forEach(function(t){m=Math.max(m,tokMatch(t,kn))});s+=m}});if(s>bs){bs=s;best=e}});return bs>=.8?best:null}
+function AWinit(C){
+var $=function(i){return document.getElementById(i)},log=$('aw-log'),chips=$('aw-chips'),inp=$('aw-in'),panel=$('aw-panel'),flow=null;
+function say(h,who){var d=document.createElement('div');d.className='aw-m '+(who||'bot');d.innerHTML=h;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){ask(c)};chips.appendChild(b)})}
+function nextStep(){var f=flow,s;while(f.i<C.flow.steps.length){s=C.flow.steps[f.i];if(!s.if||s.if(f.a))break;f.i++}return f.i<C.flow.steps.length?C.flow.steps[f.i]:null}
+function startFlow(pre){flow={i:0,a:{}};if(pre)say(pre);step()}
+function step(){var s=nextStep();if(!s){finish();return}say(s.q);setChips(s.chips||[C.ui.cancel])}
+function finish(){var L=[],seen={};C.flow.steps.forEach(function(s){if(flow.a[s.key]&&!seen[s.key]){seen[s.key]=1;L.push('<b>'+s.label+':</b> '+esc(flow.a[s.key]))}});say(C.ui.summary+'<br>'+L.join('<br>')+'<br><br>'+C.ui.done);flow=null;setChips(C.ui.chips)}
+function esc(t){return t.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function ask(t){t=(t||'').trim();if(!t)return;say(esc(t),'me');inp.value='';
+if(flow){if(new RegExp(C.ui.cancelRe,'i').test(norm(t))){flow=null;say(C.ui.cancelled);setChips(C.ui.chips);return}
+var s=nextStep();flow.a[s.key]=t;flow.i++;step();return}
+var n=norm(t);if(C.flow.trigger.test(n)){startFlow(C.flow.intro);return}
+var e=match(C.kb,t);if(e){say(e.a);setChips(e.c||C.ui.chips)}else{say(C.ui.fallback);setChips(C.ui.chips)}}
+$('aw-btn').onclick=function(){panel.classList.toggle('open');if(panel.classList.contains('open')&&!log.children.length){say(C.ui.hello);setChips(C.ui.chips)}};
+$('aw-x').onclick=function(){panel.classList.remove('open')};
+$('aw-form').onsubmit=function(ev){ev.preventDefault();ask(inp.value)};
+window.AW={ask:ask}}
+if(typeof module!=='undefined')module.exports={match:match,norm:norm};
+
+(function(){try{var f=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()),w={},i;f.forEach(function(p){w[p.type]=p.value});var d={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[w.weekday],m=(+w.hour%24)*60+(+w.minute),o=false;if(d>=1&&d<=5)o=m>=540&&m<1080;else if(d===6)o=m>=600&&m<1080;document.getElementById('od').className='dot'+(o?' on':'');document.getElementById('ot').textContent=o?'Abierto ahora en Miami':'Cerrado ahora · hora de Miami';document.querySelectorAll('#hrs tr').forEach(function(r){var g=r.getAttribute('data-d'),ok=g.indexOf('-')>0?(d>=1&&d<=5):(+g===d);if(ok)r.className='today'})}catch(e){}})();
+var T='<a href="tel:+17864311119">+1 786 431 1119</a>',W='<a href="https://wa.me/17868211166">WhatsApp 786 821 1166</a>';
+var R={vuelo:/vuelo|pasaj|boleto/,turis:/turis|paquete t|cancun|dominic|europa/,combo:/combo|comida|aliment/,visa:/visa|pasaporte/,notar:/notar/,auto:/auto|carro|renta|alquil/,envio:/envi|cuba/};
+function is(a,n){var s=norm(a.svc||'');for(var k in R){if(R[k].test(s))return k===n}return false}
+function anyk(a){for(var n in R)if(is(a,n))return true;return false}
+var CFG={
+ui:{cancelRe:'cancel|salir|no quiero|dejalo|parar',cancel:'Cancelar',cancelled:'Listo, cancelé la solicitud. Aquí sigo si necesitas algo.',
+hello:'¡Hola! Soy el asistente de Viaje Pronto Inc. Te cuento de vuelos, envíos a Cuba, renta de autos, visas, notaría, paquetes turísticos, combos y horarios. ¿En qué te ayudo?',
+fallback:'Eso no lo veo en la página de Viaje Pronto y prefiero no inventarlo. El equipo te lo confirma: llama al '+T+' o escribe por '+W+'.',
+summary:'Esto es lo que anoté:',done:'Listo, ya tengo todo. Esto es una demo y no se envía nada. En la página real, tu solicitud llegaría al equipo de Viaje Pronto y te confirmarían por llamada o WhatsApp.',
+chips:['Solicitar información','Enviar a Cuba','Horario','Pagos','Combos','Dirección']},
+flow:{trigger:/(reserv|cotiz|solicit|pedir|presupuest|asesor|llamen|llamar|quisiera un|necesito ayuda)/,intro:'Con gusto. Unas preguntas rápidas.',steps:[
+{key:'svc',label:'Servicio',q:'¿Qué necesitas?',chips:['Vuelo','Envío a Cuba','Renta de auto','Visa o pasaporte','Notaría','Paquete turístico','Combo de comida']},
+{key:'det',label:'Detalles',if:function(a){return is(a,'vuelo')},q:'¿Desde dónde y hacia dónde vuelas, en qué fechas y cuántas personas?',chips:['Cancelar']},
+{key:'det',label:'Detalles',if:function(a){return is(a,'envio')},q:'¿A qué provincia de Cuba va y qué tipo de envío prefieres: express (La Habana), aéreo o marítimo?',chips:['Express La Habana','Aéreo','Marítimo']},
+{key:'det',label:'Detalles',if:function(a){return is(a,'auto')},q:'¿En qué fechas necesitas el auto (el mínimo es de tres días) y qué tipo de vehículo buscas?',chips:['Cancelar']},
+{key:'det',label:'Detalles',if:function(a){return is(a,'visa')},q:'¿Es emisión o renovación, de pasaporte o visa, y para cuántas personas?',chips:['Cancelar']},
+{key:'det',label:'Detalles',if:function(a){return is(a,'notar')},q:'¿Qué documento necesitas autenticar o qué trámite es?',chips:['Cancelar']},
+{key:'det',label:'Detalles',if:function(a){return is(a,'turis')},q:'¿A qué destino quieres ir (República Dominicana, Cancún, Europa), en qué fechas y cuántas personas?',chips:['República Dominicana','Cancún','Europa']},
+{key:'det',label:'Detalles',if:function(a){return is(a,'combo')},q:'¿Qué combo te interesa (Combo-6, Ganga, Super fuerte, Sanador) y a qué provincia de Cuba va?',chips:['Combo-6','Combo Ganga','Combo Super fuerte','Combo Sanador']},
+{key:'det',label:'Detalles',if:function(a){return !anyk(a)},q:'Cuéntame en una frase qué necesitas.',chips:['Cancelar']},
+{key:'who',label:'Nombre',q:'¿Cómo te llamas?',chips:['Cancelar']},
+{key:'tel',label:'Teléfono o WhatsApp',q:'¿A qué número te contacta el equipo?',chips:['Cancelar']},
+{key:'cuando',label:'Mejor momento',q:'¿Cuándo prefieres que te contacten? El horario es de lunes a viernes de 9 a 6 y sábados de 10 a 6.',chips:['Mañana','Tarde','Sábado']}]},
+kb:[
+{k:['hola','buenas','buenos dias','buenas tardes','buenas noches','saludos'],a:'¡Hola! ¿Quieres saber de envíos a Cuba, vuelos, renta de autos, visas, notaría, paquetes turísticos o combos?'},
+{k:['servicio','servicios','que hacen','que ofrecen','ofrecen','hacen'],a:'Viaje Pronto ofrece reserva de pasajes, envío de paquetes a Cuba, renta de autos, gestión de visas y pasaportes, servicios notariales y paquetes turísticos a República Dominicana, Cancún y Europa.'},
+{k:['vuelo','vuelos','pasaje','pasajes','boleto','boletos','ticket','tickets','avion','aereo','reserva de pasajes'],a:'Reservan vuelos nacionales e internacionales, incluyendo Cuba, y te ayudan a encontrar las mejores opciones. Para fechas y tarifas, el equipo te confirma.',c:['Solicitar información','Contacto']},
+{k:['enviar','envio','envios','paquete','paquetes','paqueteria','encomienda','mandar','cuba','habana','provincia','provincias'],a:'Envían paquetería a toda Cuba, excepto Isla de la Juventud. Express a La Habana: 24 a 48 horas con salidas 2 veces por semana. Otras provincias: 10 a 15 días laborables. Hay carga aérea y marítima.',c:['Cuánto tarda','Pagos','Solicitar información']},
+{k:['cuanto tarda','tarda','demora','tiempo','dias','entrega','plazo','rapido','express'],a:'Express a La Habana: 24 a 48 horas (salidas 2 veces por semana). Carga aérea: 10 a 15 días laborables. Marítimo: unos 30 días. Otras provincias: 10 a 15 días laborables.'},
+{k:['maritimo','barco','maritima','mar'],a:'El envío marítimo llega en aproximadamente 30 días.'},
+{k:['isla de la juventud','isla','juventud'],a:'Los envíos llegan a toda Cuba excepto Isla de la Juventud.'},
+{k:['correo','shein','amazon','tracking','seguimiento','compras online','tienda','caja','online'],a:'Sí aceptan compras por correo desde cualquier parte del mundo: puedes preparar tu propia caja o pedir en Shein, Amazon u otras tiendas. Haz el seguimiento con tu número de tracking y escríbeles cuando llegue. Los precios son los mismos que desde la oficina.'},
+{k:['combo','combos','comida','alimentos','alimento','mercadito','el combo','los combos','un combo','precio del combo','cuesta el combo','canasta','ganga','sanador','super fuerte'],a:'Hay combos de alimentos para Cuba: Combo-6, Combo Ganga, Combo Super fuerte y Combo Sanador, con entrega desde Miami. Los precios están en la página de Combos de Viaje Pronto, y también hay un mercadito de productos en la agencia.',c:['Solicitar información','Enviar a Cuba']},
+{k:['auto','autos','carro','carros','renta','alquiler','alquilar','rentar','coche','motorhome','triciclo','vehiculo'],a:'Rentan autos en todo el país, en varias categorías, además de vehículos de tres ruedas y motorhomes. El período mínimo es de tres días.',c:['Solicitar información','Pagos']},
+{k:['visa','visas','pasaporte','pasaportes','renovar','renovacion','renovacion de pasaporte','documentos'],a:'Gestionan la emisión y renovación de pasaportes y visas, con asesoría personalizada sobre los requisitos. Para tu caso, el equipo te confirma qué necesitas.',c:['Solicitar información']},
+{k:['notario','notarial','notarias','notaria','autenticar','autenticacion','legal','apostilla'],a:'Ofrecen servicios notariales: autenticación de documentos y trámites legales. Para un documento específico, confirma con el equipo.'},
+{k:['turistico','turisticos','turismo','vacaciones','cancun','dominicana','punta cana','europa','viaje','viajes','paquete turistico','paquetes turisticos','a cancun','a europa','a dominicana','a punta cana','ofertas'],a:'Tienen ofertas de paquetes turísticos a República Dominicana, Cancún y Europa, adaptadas a tus gustos. Para fechas y disponibilidad, el equipo te confirma.',c:['Solicitar información']},
+{k:['precio de','precios de','precio','precios','cuesta','cuanto cuesta','costo','tarifa','tarifas','cotizacion','barato','cobran'],a:'Los precios de los combos están en la página de Combos de Viaje Pronto. Para vuelos, envíos y trámites, el equipo te da el precio exacto según tu caso. ¿Te anoto una solicitud?',c:['Solicitar información','Contacto']},
+{k:['pago','pagos','pagar','zelle','tarjeta','efectivo','cash','credito','debito','metodo'],a:'Aceptan efectivo, Zelle, tarjeta de crédito y tarjeta de débito.'},
+{k:['horario','horarios','abierto','abren','cierran','hora','horas','sabado','domingo','laboral','atienden'],a:'Horario: lunes a viernes de 9:00 am a 6:00 pm y sábados de 10:00 am a 6:00 pm. Fuera de horario puedes escribir por WhatsApp. Para el domingo no hay horario indicado en la página.'},
+{k:['whatsapp','wasap','watsap','telefono','llamar','numero','celular','contacto','contactar','email','correo electronico','escribir'],a:'Teléfono: '+T+'. '+W+' (puedes escribir también fuera del horario). Email: <a href="mailto:viajeprontoinc@gmail.com">viajeprontoinc@gmail.com</a>.'},
+{k:['direccion','ubicacion','donde','donde estan','mapa','miami','oficina','local','llegar','ubicados'],a:'La oficina está en 5584 NW 7th St, Miami, Florida 33126.'},
+{k:['familiar','experiencia','anos','historia','quienes','sobre','nosotros','confianza','confiable'],a:'Es una agencia de viajes con más de 15 años de experiencia, nacida de un negocio familiar con la misión de ayudar a la comunidad.'},
+{k:['personalizada','atencion','trato','servicio al cliente','familia','confianza'],a:'Viaje Pronto promete atención personalizada, un servicio rápido, seguro y eficiente, y soluciones pensadas para cada cliente, con más de 15 años de experiencia.'},
+{k:['gracias','muchas gracias','perfecto','genial','vale'],a:'¡Con gusto! ¿Algo más?'}]};
+AWinit(CFG);
+(function(){var a=document.getElementById('c1'),b=document.getElementById('c2'),r=document.getElementById('cr');function u(){var h=a.value==='h',v=b.value,s;if(v==='m')s='Marítimo: unos 30 días aproximadamente.';else if(v==='a')s='Carga aérea: 10 a 15 días laborables.';else s=h?'Express a La Habana: 24 a 48 horas, con salidas 2 veces por semana.':'Express fuera de La Habana: el tiempo publicado para otras provincias es de 10 a 15 días laborables. Confirma con el equipo.';r.textContent=s}a.onchange=u;b.onchange=u;u()})();
+</script>
+</body>
+</html>

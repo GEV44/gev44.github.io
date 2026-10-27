@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prime Focus Educational Services · Tutors in Dubai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1e95cc;--blue-d:#176f99;--sky:#e8f5fb;--red:#c1272d;--sun:#fcd35f;--leaf:#9cc86a;--leaf-d:#5d8a2c;--ink:#14323f;--mut:#5a7381;--paper:#fffdf7;--line:#dbe8ee}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px;overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.15;color:var(--ink)}
+a{color:var(--blue-d)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 16px}
+section{position:relative;overflow:hidden;padding:56px 0}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--red);margin-bottom:8px}
+h2{font-size:clamp(1.55rem,5vw,2.3rem);margin-bottom:14px}
+.lead{color:var(--mut);max-width:60ch}
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(255,253,247,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 16px;max-width:1060px;margin:0 auto}
+.brand img{height:46px;width:auto;display:block}
+nav{display:none;gap:18px;font-size:.92rem;font-weight:600}
+nav a{text-decoration:none;color:var(--ink)}
+nav a:hover{color:var(--blue)}
+.btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:700;text-decoration:none;padding:12px 20px;border-radius:999px;background:var(--blue);color:#fff;transition:transform .15s,background .15s}
+.btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+.btn.alt{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+.btn.alt:hover{background:var(--sun);border-color:var(--sun)}
+.btn.sm{padding:9px 16px;font-size:.9rem}
+@media(min-width:860px){nav{display:flex}}
+/* hero */
+.hero{padding:40px 0 70px;background:linear-gradient(180deg,var(--sky),var(--paper))}
+.hero::before{content:"";position:absolute;right:-120px;top:-140px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--sun),transparent 70%);opacity:.7}
+.hero::after{content:"";position:absolute;left:-80px;bottom:-60px;width:280px;height:140px;border-radius:50%;background:var(--leaf);opacity:.25}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:26px}
+.hero h1{font-size:clamp(2rem,8vw,3.5rem);margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero p{max-width:52ch;color:var(--mut);font-size:1.05rem}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fact{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px}
+.fact b{display:block;font-family:'Fraunces',serif;font-size:1.05rem;color:var(--blue-d)}
+.fact span{font-size:.86rem;color:var(--mut)}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1.3fr 1fr;align-items:center}}
+/* steps */
+.steps{display:grid;gap:14px;margin-top:22px;counter-reset:s}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 20px 20px 66px;position:relative}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:18px;width:36px;height:36px;border-radius:50%;background:var(--sun);font-family:'Fraunces',serif;font-weight:700;display:grid;place-items:center}
+.step:nth-child(2)::before{background:var(--leaf)}
+.step:nth-child(3)::before{background:var(--blue);color:#fff}
+.step h3{font-size:1.1rem;margin-bottom:4px}
+.step p{color:var(--mut);font-size:.95rem}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+/* services */
+.svc{background:#fff}
+.grid{display:grid;gap:14px;margin-top:22px;grid-template-columns:1fr}
+.card{background:var(--paper);border:1px solid var(--line);border-top:5px solid var(--blue);border-radius:16px;padding:18px;min-width:0}
+.card:nth-child(4n+2){border-top-color:var(--red)}
+.card:nth-child(4n+3){border-top-color:var(--sun)}
+.card:nth-child(4n+4){border-top-color:var(--leaf)}
+.card h3{font-size:1.1rem;margin-bottom:6px}
+.card p{font-size:.93rem;color:var(--mut)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tag{font-size:.78rem;background:var(--sky);color:var(--blue-d);padding:3px 10px;border-radius:999px;font-weight:600}
+@media(min-width:620px){.grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+/* curricula + subjects */
+.split{display:grid;gap:24px}
+@media(min-width:860px){.split{grid-template-columns:1fr 1fr}}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;min-width:0}
+.panel h3{margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:.86rem;border:1.5px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--paper)}
+.chip.k{border-color:var(--leaf);background:#f3f9ea}
+table{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:8px}
+td,th{padding:9px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--mut);font-weight:600;width:38%}
+/* languages band */
+.band{background:var(--blue);color:#fff}
+.band h2,.band .eyebrow{color:#fff}
+.band .lead{color:#e3f4fb}
+.band .chip{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.4);color:#fff}
+.band::after{content:"";position:absolute;right:-90px;bottom:-90px;width:260px;height:260px;border-radius:50%;background:var(--sun);opacity:.25}
+.band .wrap{position:relative;z-index:1}
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-top:10px}
+summary{cursor:pointer;font-weight:700;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--blue);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:8px;color:var(--mut);font-size:.95rem}
+/* contact */
+.contact{background:var(--sky)}
+.ci{display:grid;gap:12px;margin-top:18px}
+.ci div{background:#fff;border-radius:14px;padding:14px 16px;border:1px solid var(--line);overflow-wrap:anywhere}
+.ci b{display:block;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+@media(min-width:760px){.ci{grid-template-columns:repeat(2,1fr)}}
+footer{padding:26px 0 90px;font-size:.88rem;color:var(--mut);text-align:center;border-top:1px solid var(--line)}
+/* assistant */
+#fab{position:fixed;right:16px;bottom:16px;z-index:50;border:0;cursor:pointer;background:var(--red);color:#fff;font:inherit;font-weight:700;padding:13px 20px;border-radius:999px;box-shadow:0 8px 24px rgba(20,50,63,.28)}
+#panel{position:fixed;right:12px;bottom:12px;z-index:60;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:#fff;border-radius:20px;box-shadow:0 16px 50px rgba(20,50,63,.35);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--line)}
+#panel.on{display:flex}
+.ph{background:var(--blue);color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+.ph b{font-family:'Fraunces',serif}
+.ph small{display:block;opacity:.85;font-size:.76rem}
+.ph button{background:none;border:0;color:#fff;font-size:1.5rem;cursor:pointer;line-height:1}
+#log{flex:1;overflow-y:auto;padding:12px;background:var(--paper);display:flex;flex-direction:column;gap:8px}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;font-size:.92rem;line-height:1.45;overflow-wrap:anywhere}
+.m.b{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--blue);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+#chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 0;background:var(--paper)}
+#chips button{font:inherit;font-size:.8rem;border:1.5px solid var(--blue);background:#fff;color:var(--blue-d);padding:5px 11px;border-radius:999px;cursor:pointer;font-weight:600}
+#chips button:hover{background:var(--blue);color:#fff}
+#f{display:flex;gap:8px;padding:10px 12px;background:var(--paper);border-top:1px solid var(--line)}
+#f input{flex:1;min-width:0;font:inherit;border:1.5px solid var(--line);border-radius:999px;padding:9px 14px;outline:0}
+#f input:focus{border-color:var(--blue)}
+#f button{border:0;background:var(--blue);color:#fff;font-weight:700;border-radius:999px;padding:0 16px;cursor:pointer;font:inherit}
+.demo{font-size:.72rem;color:var(--mut);text-align:center;padding:0 0 6px;background:var(--paper)}
+</style>
+</head>
+<body>
+<header>
+ <div class="hbar">
+  <a class="brand" href="#top"><img src="img/pfes-ae-logo.png" alt="Prime Focus Educational Services" width="106" height="46"></a>
+  <nav><a href="#how">How it works</a><a href="#services">Services</a><a href="#subjects">Subjects</a><a href="#languages">Languages</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+  <button class="btn sm" onclick="openBot('tutor')">Get a tutor</button>
+ </div>
+</header>
+
+<section class="hero" id="top">
+ <div class="wrap">
+  <div>
+   <div class="eyebrow">Dubai · since 2015</div>
+   <h1>The right tutor, <em>matched to your child</em>, at home or online.</h1>
+   <p>Prime Focus Educational Services connects students from K to university level with pre-screened tutors for IB, IGCSE, CBSE, ICSE, American and SABIS curricula. Meet your tutor for a free 30-minute consultation before you commit.</p>
+   <div class="cta"><button class="btn" onclick="openBot('tutor')">Request a tutor</button><a class="btn alt" href="#services">See all services</a></div>
+  </div>
+  <div class="facts">
+   <div class="fact"><b>One-to-one</b><span>online, at home or at our institute</span></div>
+   <div class="fact"><b>Free 30 min</b><span>consultation with your tutor</span></div>
+   <div class="fact"><b>15 languages</b><span>from Arabic to Mandarin</span></div>
+   <div class="fact"><b>K to university</b><span>school subjects and exam prep</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="how">
+ <div class="wrap">
+  <div class="eyebrow">How to get started</div>
+  <h2>Three steps from enquiry to first lesson</h2>
+  <div class="steps">
+   <div class="step"><h3>Connect with us</h3><p>Tell us what you need. We get in touch and propose one of our pre-screened tutors based on your needs and availability.</p></div>
+   <div class="step"><h3>Meet the tutor, free</h3><p>A free 30-minute consultation, in person or online, so you can get to know the tutor first.</p></div>
+   <div class="step"><h3>Start learning</h3><p>Approve your tutor, choose a lesson package that suits you, complete the registration form and classes begin.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="svc" id="services">
+ <div class="wrap">
+  <div class="eyebrow">What we offer</div>
+  <h2>Services for students, families and schools</h2>
+  <p class="lead">Every programme is personal: we build the plan around the student's strengths, weak spots and learning style.</p>
+  <div class="grid">
+   <div class="card"><h3>Tutoring</h3><p>Academic support from elementary to university level, exam prep and targeted help in specific subjects.</p><div class="tags"><span class="tag">Online</span><span class="tag">Home</span><span class="tag">At our institute</span></div></div>
+   <div class="card"><h3>Language courses</h3><p>Private, live online, small-group and corporate classes at basic, intermediate and advanced levels.</p><div class="tags"><span class="tag">Private</span><span class="tag">Group</span><span class="tag">Corporate</span></div></div>
+   <div class="card"><h3>Exam preparation</h3><p>Academic and language-proficiency exams with practice tests, past papers and exam strategies.</p><div class="tags"><span class="tag">SAT</span><span class="tag">IGCSE</span><span class="tag">IELTS</span></div></div>
+   <div class="card"><h3>Music and arts</h3><p>One-on-one lessons in piano, guitar and violin, plus drawing, painting, crafts and design.</p><div class="tags"><span class="tag">Piano</span><span class="tag">Guitar</span><span class="tag">Violin</span></div></div>
+   <div class="card"><h3>Information technology</h3><p>Microsoft Office, C++, Java, introduction to programming, computer science and graphic design.</p><div class="tags"><span class="tag">Beginner to advanced</span></div></div>
+   <div class="card"><h3>School support</h3><p>Temporary teacher replacements, curriculum-aligned lesson plans, support staff, learning support assistants and staff training.</p><div class="tags"><span class="tag">For schools</span></div></div>
+   <div class="card"><h3>Homeschooling support</h3><p>Guidance and tutors for families who teach at home.</p></div>
+   <div class="card"><h3>Life coaching</h3><p>Personal and professional coaching alongside the academic programmes.</p></div>
+   <div class="card"><h3>Professional development</h3><p>Customised courses for teams and companies. Ask about a tailored programme.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="subjects">
+ <div class="wrap">
+  <div class="eyebrow">Tutoring in detail</div>
+  <h2>Curricula and subjects</h2>
+  <div class="split">
+   <div class="panel">
+    <h3>Curricula we cover</h3>
+    <div class="chips"><span class="chip k">IB</span><span class="chip k">IGCSE</span><span class="chip k">CBSE</span><span class="chip k">ICSE</span><span class="chip k">American</span><span class="chip k">AP</span><span class="chip k">SABIS</span></div>
+    <table>
+     <tr><th>Levels</th><td>Pre-school, primary, secondary, high school and university</td></tr>
+     <tr><th>Formats</th><td>Online, home tutoring, in-person at our institute</td></tr>
+     <tr><th>Exams</th><td>SAT, IGCSE, IB, AP, A-Level, Edexcel; IELTS, DELF/DALF, TCF, DELE, HSK, Goethe-Zertifikat, CIPLE</td></tr>
+    </table>
+   </div>
+   <div class="panel">
+    <h3>Subjects</h3>
+    <div class="chips"><span class="chip">Mathematics</span><span class="chip">Science</span><span class="chip">Physics</span><span class="chip">Chemistry</span><span class="chip">Biology</span><span class="chip">Business Studies</span><span class="chip">Accounting</span><span class="chip">Economics</span><span class="chip">English</span><span class="chip">English Literature</span><span class="chip">History</span><span class="chip">Geography</span><span class="chip">Psychology</span><span class="chip">Sociology</span><span class="chip">Computer Science</span><span class="chip">Arabic A and B</span><span class="chip">Islamic Studies and Quran</span><span class="chip">Design and Technology</span><span class="chip">Social Studies</span><span class="chip">Art</span><span class="chip">French</span><span class="chip">Spanish</span><span class="chip">German</span><span class="chip">Mandarin</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="band" id="languages">
+ <div class="wrap">
+  <div class="eyebrow">Learn a new language</div>
+  <h2>Languages taught by native-level trainers</h2>
+  <p class="lead">Classes are interactive and tailored to your needs: basic (everyday expressions), intermediate (vocabulary and confident conversation) and advanced (read, write and express yourself properly).</p>
+  <div class="chips" style="margin-top:18px"><span class="chip">Arabic</span><span class="chip">English</span><span class="chip">French</span><span class="chip">Spanish</span><span class="chip">German</span><span class="chip">Mandarin</span><span class="chip">Turkish</span><span class="chip">Farsi</span><span class="chip">Dutch</span><span class="chip">Greek</span><span class="chip">Russian</span><span class="chip">Italian</span><span class="chip">Swedish</span><span class="chip">Danish</span><span class="chip">Hindi</span></div>
+  <div class="cta"><button class="btn" style="background:var(--sun);color:var(--ink)" onclick="openBot('language')">Ask about a language class</button></div>
+ </div>
+</section>
+
+<section id="why">
+ <div class="wrap">
+  <div class="eyebrow">Why families choose PFES</div>
+  <h2>Our approach</h2>
+  <div class="grid">
+   <div class="card"><h3>Expertise</h3><p>Highly qualified educators with years of experience delivering tailored courses.</p></div>
+   <div class="card"><h3>Needs analysis</h3><p>A complementary needs analysis to match your demands with the right solution.</p></div>
+   <div class="card"><h3>Accessibility</h3><p>Virtual and face-to-face lessons, so you pick the format that fits your week.</p></div>
+   <div class="card"><h3>Individualised plans</h3><p>Learning plans built around each student's strengths, weaknesses and learning style.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="story">
+ <div class="wrap">
+  <div class="eyebrow">Our story</div>
+  <h2>Learning that adapts to the student</h2>
+  <div class="split">
+   <div class="panel"><h3>Where we started</h3><p class="lead">Prime Focus Educational Services was founded in 2015 with a simple vision: personalised, high-quality education for students of all ages. We grew from a passion for making learning accessible, engaging and effective into a team of dedicated tutors who work one-to-one with students, helping them reach their goals and unlock their potential.</p></div>
+   <div class="panel"><h3>Mission and vision</h3><p class="lead">Our mission is to deliver tailored, results-driven programmes in languages, school subjects, IT and music, in a supportive environment that inspires growth. Our vision is to be the leading provider of personalised, high-quality educational services, empowering people of all ages to thrive in a world of continuous learning.</p></div>
+  </div>
+  <div class="panel" style="margin-top:18px"><h3>Who we help</h3><p class="lead">Parents looking for a tutor for a child in the UAE, university students, adults learning a new language or a digital skill, companies training their teams, and schools that need staffing, lesson plans or professional development. Whatever the starting point, the first step is the same: tell us what you need, and we propose the right person.</p></div>
+  <div class="panel" style="margin-top:18px"><h3>From our blog</h3>
+   <table>
+    <tr><th>Tutoring and consistency</th><td>How to help your child succeed in school.</td></tr>
+    <tr><th>Languages and the brain</th><td>How learning multiple languages enhances cognitive development.</td></tr>
+    <tr><th>Study plans</th><td>How a personalised study plan helps you make the most of your time.</td></tr>
+   </table>
+  </div>
+ </div>
+</section>
+
+<section class="svc" id="faq">
+ <div class="wrap">
+  <div class="eyebrow">Good to know</div>
+  <h2>Questions and policies</h2>
+  <details><summary>Can we meet the tutor before paying?</summary><p>Yes. Step two is a free 30-minute consultation with the proposed tutor, in person or online. You approve the tutor, then choose a lesson package.</p></details>
+  <details><summary>Can I choose a specific tutor?</summary><p>You can request one. PFES makes the final tutor assignment based on the learner's needs, preferences and availability.</p></details>
+  <details><summary>What if I need to cancel or reschedule a lesson?</summary><p>Please give PFES or the tutor at least 24 hours' notice. Without it the session may be charged in full; changes inside the 24 hours depend on approval and availability.</p></details>
+  <details><summary>What is the refund policy?</summary><p>A learner who stops within 2 weeks of booking is refunded the remaining unused hours, with the original receipt. After 2 weeks a credit note is issued for any future PFES course. If a learner misses classes for 3 continuous months without notice, the contract ends without refund. Promotional or discounted rates are handled under the full policy on the site.</p></details>
+  <details><summary>Is my information kept private?</summary><p>Information shared between PFES, clients and tutors stays confidential and is used only for educational purposes. It is not sold or shared with third parties without consent.</p></details>
+  <details><summary>Do you work with schools and companies?</summary><p>Yes: school support, staffing, training, and customised corporate language and professional development courses.</p></details>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap">
+  <div class="eyebrow">Get in touch</div>
+  <h2>We are always ready to hear from you</h2>
+  <div class="ci">
+   <div><b>Mobile and WhatsApp</b><a href="tel:+971558284539">+971 558 284 539</a></div>
+   <div><b>Landline</b><a href="tel:+97145521597">+971 45 52 15 97</a></div>
+   <div><b>Email</b><a href="mailto:hello@pfes.ae">hello@pfes.ae</a></div>
+   <div><b>Office</b>Office 211, The Light Commercial Tower, Arjan, Dubai</div>
+  </div>
+  <div class="cta"><button class="btn" onclick="openBot('tutor')">Request a tutor</button><a class="btn alt" href="https://wa.me/971558284539">WhatsApp us</a></div>
+ </div>
+</section>
+
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="fab" onclick="openBot()" aria-label="Open assistant">Ask PFES assistant</button>
+<div id="panel" role="dialog" aria-label="PFES assistant">
+ <div class="ph"><div><b>PFES assistant</b><small>Answers from this site. The team confirms the rest.</small></div><button onclick="closeBot()" aria-label="Close">&times;</button></div>
+ <div id="log"></div>
+ <div id="chips"></div>
+ <form id="f" autocomplete="off"><input id="q" placeholder="Type your question" aria-label="Your question"><button>Send</button></form>
+ <div class="demo">Demo · prepared by Gevorg Hovhannisyan</div>
+</div>
+
+<script>
+var KB=[
+{k:['tutor','tutoring','private lesson','private lessons','home tutor','book','booking','book a lesson','one to one','one on one','individual'],a:'We provide one-to-one tutoring from pre-school to university level: online, at your home, or in person at our institute. Tutors are pre-screened and matched to the student\'s needs and availability. Want to request one?',act:'tutor'},
+{k:['curriculum','curricula','ib','igcse','cbse','icse','american','sabis','ap','advanced placement','a level','alevel','edexcel','syllabus','board'],a:'We cover IB, IGCSE, CBSE, ICSE, American, AP and SABIS, from elementary to university level.'},
+{k:['subject','math','maths','mathematics','physics','chemistry','biology','science','accounting','economics','business','history','geography','psychology','sociology','literature','arabic a','quran','islamic','design and technology','social studies','art'],a:'Subjects include Mathematics, Science, Physics, Chemistry, Biology, Business Studies, Accounting, Economics, English and English Literature, History, Geography, Psychology, Sociology, Computer Science, Arabic A and B, Islamic Studies and Quran, Design and Technology, Social Studies and Art, plus French, Spanish, German and Mandarin.'},
+{k:['language','languages','learn language','speak','french','spanish','german','mandarin','chinese','turkish','farsi','persian','dutch','greek','russian','italian','swedish','danish','hindi','english course','arabic course'],a:'We teach Arabic, English, French, Spanish, German, Mandarin, Turkish, Farsi, Dutch, Greek, Russian, Italian, Swedish, Danish and Hindi at basic, intermediate and advanced levels. Formats: private, live online, small group and corporate.',act:'language'},
+{k:['exam','exams','preparation','prep','sat','ielts','delf','dalf','tcf','dele','hsk','goethe','ciple','test','past paper','past papers'],a:'Academic exam prep: SAT, IGCSE, IB, AP, A-Level and Edexcel. Language exam prep: IELTS, DELF/DALF, TCF, DELE, HSK, Goethe-Zertifikat and CIPLE. It includes personalised tutoring or group classes, study materials, practice tests and exam strategies.',act:'exam'},
+{k:['music','piano','guitar','violin','instrument','drawing','painting','craft','crafts','sketch'],a:'Music: one-on-one piano, guitar (acoustic, electric or bass) and violin lessons. Arts: drawing and sketching, painting (watercolour, acrylic, oils) and crafts and design. Online or in person.'},
+{k:['it','computer','programming','programing','coding','code','java','c++','cpp','microsoft office','excel','powerpoint','outlook','graphic','photoshop','illustrator','indesign','computer science','ics'],a:'IT courses: Microsoft Office (Word, Excel, PowerPoint, Outlook), C++, Java, introduction to programming, computer science (all curricula) and graphic design (Photoshop, Illustrator, InDesign). Beginner to advanced.'},
+{k:['school support','teachers','staff','staffing','replacement','learning support','assistant','lsa','training','workshop','team building','institution','school'],a:'For schools we offer temporary teacher replacements, curriculum-aligned lesson plans (IB, IGCSE, American), school support staff, learning support assistants, and training such as public speaking workshops, customised programmes, team building and teacher/admin training. Please contact the team with your needs.'},
+{k:['homeschool','homeschooling','home school','home education'],a:'Yes, we have a homeschooling support service. The team can tell you which tutors and programmes fit your family.'},
+{k:['coaching','life coaching','coach'],a:'Life coaching is one of our services. The team can share the details and who would be your coach.'},
+{k:['corporate','company','companies','business training','professional','development','team','employees','customised','customized','custom course'],a:'We run corporate language training and professional development courses, and customised courses on request. Please send the details to the team and they will confirm the programme.'},
+{k:['online','virtual','zoom','remote','in person','face to face','institute','centre','center','format'],a:'Lessons can be online, at your home, or in person at our institute in Arjan, Dubai.'},
+{k:['free','trial','consultation','meet','30','minutes','intro','introduction','first lesson'],a:'Yes: you get a free 30-minute consultation with the proposed tutor, in person or online. If you approve, you choose a lesson package and complete the registration form.'},
+{k:['start','begin','steps','process','get started','register','registration','enrol','enroll','sign up'],a:'Three steps: 1) connect with us and we propose a pre-screened tutor; 2) free 30-minute consultation with the tutor; 3) approve the tutor, choose a lesson package, complete the registration form and classes begin.',act:'tutor'},
+{k:['price','prices','cost','fee','fees','rate','rates','package','packages','how much','pay','payment','paying','charge','expensive','cheap','budget'],a:'Rates depend on the subject, level and format, and I do not want to guess. The team will confirm the current packages. Payment follows the terms agreed at registration. Shall I pass your enquiry on?',act:'tutor'},
+{k:['cancel','cancellation','reschedule','reschedules','postpone','24','notice','miss'],a:'Please give PFES or the tutor at least 24 hours\' notice to cancel or reschedule. Without it the session may be charged in full; changes inside 24 hours depend on approval and availability.'},
+{k:['refund','refunds','money back','credit note','discontinue','stop','terminate'],a:'If a learner stops within 2 weeks of booking, unused hours are refunded with the original receipt. After 2 weeks a credit note is issued for any future PFES course. If classes are missed for 3 continuous months without notice, the contract ends without refund. Cases are reviewed individually.'},
+{k:['confidential','privacy','private','data','information','safe','safety','secure'],a:'Information shared between PFES, clients and tutors stays confidential and is used only for educational purposes. It is not shared with third parties without consent. For in-person sessions, the client is responsible for the student\'s safety and for giving the tutor access.'},
+{k:['qualified','qualification','experience','screened','vetted','background','who are','tutors'],a:'Our tutors are qualified, experienced and pre-screened, and the team matches them to the learner\'s needs, preferences and availability. You can request a specific tutor, but PFES makes the final assignment.'},
+{k:['about','story','founded','since','history','who','company','pfes','prime focus','mission','vision'],a:'Prime Focus Educational Services was founded in 2015 to offer personalised, high-quality education to students of all ages, with programmes in languages, school subjects, IT and music.'},
+{k:['contact','phone','call','number','telephone','whatsapp','email','mail','reach','talk'],a:'Mobile and WhatsApp: +971 558 284 539. Landline: +971 45 52 15 97. Email: hello@pfes.ae.'},
+{k:['address','location','office','where are you','find you','arjan','light commercial','tower','map','dubai','directions','visit'],a:'Our office is Office 211, The Light Commercial Tower, Arjan, Dubai.'},
+{k:['hours','open','opening','time','times','when','schedule','availability','available','weekend'],a:'I do not have our opening hours on this site. Lesson times are arranged with your tutor, and the team will confirm availability when you send an enquiry.',act:'tutor'},
+{k:['hire tutors','become a tutor','work as a tutor','tutor job','job','jobs','career','careers','vacancy','vacancies','join','work with','hire','hiring','apply'],a:'If you are a tutor and would like to join, please use the Join Our Team page on pfes.ae or contact the team at hello@pfes.ae.'},
+{k:['hello','hi','hey','salam','good morning','good evening'],a:'Hello! I can answer questions about tutoring, languages, exams, music and arts, IT and our policies, or take your tutor request.'},
+{k:['thanks','thank','thx','ok','great'],a:'You are welcome! Anything else I can help with?'}
+];
+var CHIPS=['Request a tutor','Which curricula?','Languages offered','Free consultation','Prices','Cancellation policy','Contact'];
+var FLOWS={
+ tutor:{title:'tutor request',steps:[
+  {key:'name',q:'Great, let\'s set it up. What is the parent or student name?',ph:'Name'},
+  {key:'subject',q:'Which subject or exam does the student need help with?',opts:['Mathematics','Science','English','Arabic','IT / Computer Science','Exam preparation','Other']},
+  {key:'curr',q:'Which curriculum?',opts:['IB','IGCSE','CBSE / ICSE','American / AP','SABIS','University','Not sure']},
+  {key:'level',q:'Which grade or level?',ph:'e.g. Grade 8'},
+  {key:'format',q:'How would you like lessons?',opts:['Online','At home','At the institute','Not sure yet']},
+  {key:'contact',q:'Best phone or email for the team to reach you?',ph:'Phone or email'}]},
+ language:{title:'language class request',steps:[
+  {key:'name',q:'Happy to help. What is your name?',ph:'Name'},
+  {key:'lang',q:'Which language?',opts:['Arabic','English','French','Spanish','German','Mandarin','Russian','Other']},
+  {key:'level',q:'Your level?',opts:['Beginner','Intermediate','Advanced','Not sure']},
+  {key:'type',q:'Which class type?',opts:['Private','Live online','Small group','Corporate']},
+  {key:'contact',q:'Best phone or email for the team to reach you?',ph:'Phone or email'}]},
+ exam:{title:'exam preparation request',steps:[
+  {key:'name',q:'Sure. What is your name?',ph:'Name'},
+  {key:'exam',q:'Which exam?',opts:['SAT','IGCSE','IB','AP','A-Level','IELTS','Other']},
+  {key:'when',q:'When is the exam, roughly?',ph:'e.g. May'},
+  {key:'contact',q:'Best phone or email for the team to reach you?',ph:'Phone or email'}]}
+};
+function norm(s){return ' '+String(s).toLowerCase().replace(/[^a-z0-9\+\s]/g,' ').replace(/\s+/g,' ').trim()+' ';}
+function stem(w){return w.replace(/(ing|ed|es|s)$/,'');}
+function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;var d=[],i,j;for(i=0;i<=a.length;i++){d[i]=[i];}for(j=0;j<=b.length;j++)d[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[a.length][b.length];}
+function score(q,item){var qn=norm(q),words=qn.trim().split(' '),s=0;
+ item.k.forEach(function(k){var kn=norm(k);
+  if(k.indexOf(' ')>-1){if(qn.indexOf(kn)>-1)s+=4;return;}
+  words.forEach(function(w){if(!w)return;
+   if(w===k)s+=3;
+   else if(w.length>3&&k.length>3&&(stem(w)===stem(k)))s+=2.5;
+   else if(w.length>4&&k.length>4&&lev(w,k)<=1)s+=2;
+   else if(w.length>5&&k.length>5&&lev(w,k)<=2)s+=1.2;});});
+ return s;}
+function answer(q){var best=null,bs=0;KB.forEach(function(it){var s=score(q,it);if(s>bs){bs=s;best=it;}});
+ if(best&&bs>=2)return{a:best.a,act:best.act};
+ return{a:'I am not sure about that one, and I would rather not guess. The team can confirm it: +971 558 284 539 or hello@pfes.ae. I can also take a tutor request for them.',act:'tutor'};}
+/* UI */
+var log,chips,flow=null,fi=0,data={};
+function $(i){return document.getElementById(i)}
+function say(t,c){var d=document.createElement('div');d.className='m '+c;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a,fn){chips.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){fn(t)};chips.appendChild(b);});}
+function openBot(f){$('panel').classList.add('on');$('fab').style.display='none';if(!log.children.length){say('Hi! I am the PFES assistant. I can answer questions about tutoring, languages, exams, music and IT, or take a tutor request for the team.','b');}
+ if(f&&FLOWS[f])startFlow(f);else if(!flow)setChips(CHIPS,ask);}
+function closeBot(){$('panel').classList.remove('on');$('fab').style.display='';}
+function ask(t){if(flow){stepAnswer(t);return;}
+ if(/^request a tutor$/i.test(t)){say(t,'u');startFlow('tutor');return;}
+ say(t,'u');var r=answer(t);say(r.a,'b');
+ var c=CHIPS.slice();if(r.act)c.unshift(r.act==='tutor'?'Request a tutor':r.act==='language'?'Language class request':'Exam prep request');setChips(c.slice(0,7),function(x){
+  if(x==='Language class request'){say(x,'u');startFlow('language');}else if(x==='Exam prep request'){say(x,'u');startFlow('exam');}else ask(x);});}
+function startFlow(f){flow=FLOWS[f];fi=0;data={};say(flow.steps[0].q,'b');showStep();}
+function showStep(){var s=flow.steps[fi];$('q').placeholder=s.ph||'Type or pick an option';if(s.opts)setChips(s.opts,stepAnswer);else chips.innerHTML='';}
+function stepAnswer(v){v=String(v).trim();if(!v)return;say(v,'u');var s=flow.steps[fi];data[s.key]=v;fi++;
+ if(fi<flow.steps.length){say(flow.steps[fi].q,'b');showStep();}
+ else{var lines=Object.keys(data).map(function(k){return k+': '+data[k]}).join(' | ');
+  say('Thank you! Your '+flow.title+' has been sent to the team ('+lines+'). They will reach out to confirm tutor, schedule and package details.','b');
+  flow=null;$('q').placeholder='Type your question';setChips(CHIPS,ask);}}
+if(typeof document!=='undefined'){document.addEventListener('DOMContentLoaded',function(){log=$('log');chips=$('chips');
+ $('f').addEventListener('submit',function(e){e.preventDefault();var v=$('q').value;$('q').value='';if(!v.trim())return;if(flow)stepAnswer(v);else ask(v);});});}
+</script>
+</body>
+</html>

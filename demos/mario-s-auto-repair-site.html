@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mario's Auto Repair · Miami since 1972 · Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Public+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#D42E27;--yel:#F5D03A;--blue:#2A5DB0;--ink:#1A1A1A;--cream:#FBF8F1;--mut:#5A5A5A;--line:#E5E2D8;--tint:#F3EFE4}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.55 'Public Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+h1,h2,h3,.an{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:1.02}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+.tri{height:8px;background:linear-gradient(90deg,var(--red) 0 33.3%,var(--yel) 33.3% 66.6%,var(--blue) 66.6%)}
+.top{background:var(--ink);color:#fff;font-size:13px}
+.top .wrap{display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;padding-top:7px;padding-bottom:7px}
+header{background:var(--cream);border-bottom:2px solid var(--ink);position:sticky;top:0;z-index:20}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mark b{font:400 26px/.86 Anton,sans-serif;text-transform:uppercase;border-left:6px solid var(--red);padding-left:9px;letter-spacing:.02em}
+.mark b span{display:block}
+.mark small{font-size:10px;font-weight:800;letter-spacing:.14em;color:var(--mut);text-transform:uppercase;line-height:1.3}
+nav{display:none;gap:20px;font-weight:600;font-size:14px}
+nav a{text-decoration:none}nav a:hover{color:var(--red)}
+.call{background:var(--red);color:#fff;text-decoration:none;font-weight:800;padding:10px 14px;border-radius:4px;font-size:14px;white-space:nowrap}
+@media(max-width:430px){.call .nm{display:none}}@media(min-width:820px){nav{display:flex}}
+.hero{padding:34px 0 40px;position:relative;overflow:hidden}
+.hero .g{display:grid;gap:28px;min-width:0}
+.hero h1{font-size:clamp(40px,12vw,104px)}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero p.lead{font-size:18px;max-width:520px;margin:16px 0 22px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.b{display:inline-block;text-decoration:none;font-weight:800;padding:13px 20px;border-radius:4px;border:2px solid var(--ink);cursor:pointer;font-size:15px;font-family:inherit;background:none;color:var(--ink)}
+.b.r{background:var(--red);border-color:var(--red);color:#fff}.b.y{background:var(--yel)}
+.ticket{background:#fff;border:2px solid var(--ink);box-shadow:8px 8px 0 var(--yel);padding:20px 18px;position:relative;font-size:15px;min-width:0}
+.ticket h3{font-size:22px;margin-bottom:2px}
+.ticket .sub{font-size:12px;color:var(--mut);letter-spacing:.1em;text-transform:uppercase;font-weight:800;margin-bottom:12px}
+.ticket ul{list-style:none}
+.ticket li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.ticket li span:last-child{font-weight:800;color:var(--red);text-align:right}
+.ticket .ok{margin-top:12px;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.06em;border:2px solid var(--blue);color:var(--blue);display:inline-block;padding:4px 9px;transform:rotate(-3deg)}
+@media(min-width:820px){.hero .g{grid-template-columns:1.25fr .75fr;align-items:center;gap:50px}}
+.ribbon{background:var(--yel);border-block:2px solid var(--ink);overflow:hidden}
+.ribbon .wrap{display:flex;flex-wrap:wrap;gap:6px 22px;padding-top:11px;padding-bottom:11px;font-weight:800;font-size:12.5px;letter-spacing:.09em;text-transform:uppercase}
+section{padding:54px 0}
+.eyebrow{font-size:12px;letter-spacing:.16em;font-weight:800;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+h2{font-size:clamp(32px,7vw,54px);margin-bottom:22px}
+.pr{display:grid;gap:14px}
+.pr article{background:#fff;border:2px solid var(--ink);padding:22px 20px;position:relative;min-width:0}
+.pr .n{font:400 60px/1 Anton;color:var(--yel);-webkit-text-stroke:2px var(--ink);margin-bottom:6px}
+.pr h3{font-size:24px;margin-bottom:8px}
+@media(min-width:820px){.pr{grid-template-columns:repeat(3,1fr)}}
+.svc{list-style:none;display:grid;border-top:2px solid var(--ink)}
+.svc li{display:grid;grid-template-columns:34px 1fr;gap:6px 10px;padding:14px 0;border-bottom:1px solid var(--line);min-width:0}
+.svc li i{font:400 15px Anton;color:var(--red);font-style:normal;padding-top:3px}
+.svc b{display:block;font:400 21px/1.1 Anton;text-transform:uppercase}
+.svc span{color:var(--mut);font-size:14.5px}
+@media(min-width:760px){.svc{grid-template-columns:1fr 1fr;column-gap:46px}}
+.note{margin-top:22px;border-left:6px solid var(--blue);background:#fff;padding:14px 16px;font-size:15px}
+.story{background:var(--ink);color:#fff}
+.story h2 em{font-style:normal;color:var(--yel)}
+.story .g{display:grid;gap:30px;min-width:0}
+.story p{margin-bottom:14px;color:#e8e4d8}
+.story blockquote{font:400 28px/1.12 Anton;text-transform:uppercase;color:var(--yel);border-left:6px solid var(--red);padding-left:14px;margin-top:10px}
+.tl{list-style:none;border-left:3px solid var(--yel);padding-left:18px;display:grid;gap:18px;align-self:start}
+.tl b{font:400 26px Anton;color:var(--yel);display:block}
+@media(min-width:820px){.story .g{grid-template-columns:1.3fr .7fr;gap:60px}}
+.rev{background:var(--tint)}
+.rev blockquote{background:#fff;border:2px solid var(--ink);padding:20px;font-size:15.5px;max-width:720px}
+.rev cite{display:block;margin-top:10px;font-style:normal;font-weight:800;font-size:13px;color:var(--mut)}
+.towns{margin-top:18px;color:var(--mut);font-size:14px;max-width:720px}
+.visit .g{display:grid;gap:26px;min-width:0}
+table{border-collapse:collapse;width:100%}
+td{padding:11px 0;border-bottom:1px solid var(--line)}td:last-child{text-align:right;font-weight:800}
+.card{background:#fff;border:2px solid var(--ink);padding:20px;min-width:0}
+.card p{margin-bottom:8px}
+@media(min-width:820px){.visit .g{grid-template-columns:1fr 1fr}}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"+";color:var(--red);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:8px;color:var(--mut)}
+footer{background:var(--ink);color:#cfcabb;padding:30px 0 90px;font-size:14px}
+footer .wrap{display:grid;gap:8px}
+footer .dm{color:#9c9788;font-size:13px;margin-top:6px}
+.sg{display:grid;gap:14px}.sg h3{font-size:24px;margin-bottom:8px;border-bottom:4px solid var(--yel);display:inline-block}.sg ul{list-style:none}.sg li{padding:7px 0 7px 18px;position:relative;border-bottom:1px dashed var(--line);font-size:15px}.sg li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:8px;background:var(--red)}
+@media(min-width:820px){.sg{grid-template-columns:repeat(3,1fr)}}
+.eqg{display:grid;gap:14px}@media(min-width:700px){.eqg{grid-template-columns:1fr 1fr}}@media(min-width:1000px){.eqg{grid-template-columns:repeat(4,1fr)}}
+.es{display:grid;gap:22px;min-width:0}.tw{list-style:none;display:flex;flex-wrap:wrap;gap:8px}.tw li{border:2px solid #fff;border-radius:30px;padding:4px 12px;font-size:13px;font-weight:600}@media(min-width:820px){.es{grid-template-columns:1fr 1.2fr;align-items:center}}
+.st{list-style:none;counter-reset:s;display:grid;gap:12px}.st li{counter-increment:s;background:#fff;border:2px solid var(--ink);padding:14px 16px 14px 62px;position:relative;min-width:0}.st li::before{content:counter(s);position:absolute;left:14px;top:10px;font:400 34px/1 Anton;color:var(--red)}.st b{display:block;font:400 21px/1.1 Anton;text-transform:uppercase}.st span{color:var(--mut);font-size:14.5px}@media(min-width:820px){.st{grid-template-columns:1fr 1fr}}
+/* assistant */
+#bot-btn{position:fixed;right:14px;bottom:14px;z-index:50;background:var(--red);color:#fff;border:2px solid var(--ink);border-radius:40px;padding:12px 18px;font:800 15px 'Public Sans';cursor:pointer;box-shadow:4px 4px 0 var(--ink)}
+#bot-panel{position:fixed;right:10px;bottom:10px;z-index:60;width:min(380px,calc(100vw - 20px));height:min(560px,calc(100vh - 20px));background:var(--cream);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);display:none;flex-direction:column;border-radius:6px;overflow:hidden}
+#bot-panel.open{display:flex}
+#bot-panel header{position:static;background:var(--ink);color:#fff;border:0;padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+#bot-panel header b{font:400 19px Anton;text-transform:uppercase;letter-spacing:.03em}
+#bot-panel header small{display:block;font-size:11px;color:#bdb8a8}
+#bot-x{background:none;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1}
+#bot-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.m{max-width:88%;padding:9px 12px;border-radius:4px;white-space:pre-wrap;font-size:14.5px;line-height:1.45}
+.m.bot{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.m.me{background:var(--yel);border:1px solid var(--ink);align-self:flex-end}
+#bot-chips{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px;max-height:104px;overflow:auto}
+#bot-chips button{border:1.5px solid var(--ink);background:#fff;border-radius:20px;padding:5px 11px;font:600 13px 'Public Sans';cursor:pointer}
+#bot-chips button:hover{background:var(--yel)}
+#bot-form{display:flex;gap:6px;padding:10px 12px;border-top:2px solid var(--ink);background:#fff}
+#bot-in{flex:1;min-width:0;border:2px solid var(--ink);border-radius:4px;padding:9px;font:15px 'Public Sans'}
+#bot-form button{background:var(--red);color:#fff;border:0;border-radius:4px;padding:0 14px;font-weight:800;cursor:pointer}
+</style></head><body>
+<div class="top"><div class="wrap"><span>Mon–Fri 8 AM–5 PM · Sat 8 AM–12 PM · Sun closed</span><span>1160 SW 5th St, Miami, FL 33130</span></div></div>
+<header><div class="wrap">
+<a class="mark" href="#top" aria-label="Mario's Auto Repair"><b><span>Mario's</span><span>Auto Repair</span></b><small>Est. 1972<br>Miami, FL</small></a>
+<nav><a href="#promises">Promises</a><a href="#services">Services</a><a href="#mario">Mario</a><a href="#visit">Visit</a><a href="#faq">FAQ</a></nav>
+<a class="call" href="tel:+13058151067">Call<span class="nm"> 305.815.1067</span></a></div></header>
+<div class="tri"></div>
+<main id="top">
+<div class="hero"><div class="wrap g"><div>
+<div class="eyebrow">Family-owned on SW 5th Street · since 1972</div>
+<h1>The price comes <em>first.</em><br>Then the wrench.</h1>
+<p class="lead">Same diagnostic equipment as the dealership. Different incentives. Mario uses the tools to find the problem, not to find more work.</p>
+<div class="btns"><button class="b r" onclick="botOpen(true);botSend('Book a visit')">Request a visit</button><a class="b" href="tel:+13058151067">Call the shop</a></div></div>
+<aside class="ticket" aria-label="How a repair works here"><h3>How a job goes</h3><div class="sub">Every car, every time</div>
+<ul><li><span>1 · You describe it</span><span>Bay on SW 5th</span></li><li><span>2 · Mario diagnoses</span><span>Himself</span></li><li><span>3 · You get a call</span><span>Price + turnaround</span></li><li><span>4 · You approve</span><span>Then work starts</span></li><li><span>5 · Repair guarantee</span><span>1 year, parts and labor</span></li></ul>
+<span class="ok">No approval, no work</span></aside></div></div>
+<div class="ribbon"><div class="wrap"><span>ASE-certified</span><span>Domestic &amp; Asian imports</span><span>1-year parts &amp; labor guarantee</span><span>Hablamos español</span></div></div>
+
+<section id="promises"><div class="wrap"><div class="eyebrow">The three promises</div><h2>What you can hold<br>Mario to</h2>
+<div class="pr">
+<article><div class="n">1</div><h3>You know the price before we start</h3><p>No work is done without an estimate and your approval. The shop calls you with the price and turnaround before touching the car.</p></article>
+<article><div class="n">2</div><h3>One full year, parts and labor</h3><p>If something fixed here fails inside that year, it gets made right at no charge. Not just the part, the labor too.</p></article>
+<article><div class="n">3</div><h3>Same Mario, every time</h3><p>Mario diagnoses every job himself. No service advisor between you and the work.</p></article></div></div></section>
+
+<section id="services" style="background:#fff;border-block:2px solid var(--ink)"><div class="wrap"><div class="eyebrow">12 service categories</div><h2>Every repair your car needs</h2>
+<ul class="svc">
+<li><i>01</i><div><b>Brake Repair</b><span>Pads, rotors, fluid flushes, full brake-system inspections.</span></div></li>
+<li><i>02</i><div><b>A/C Repair</b><span>Recharge, leak detection, compressor and component service.</span></div></li>
+<li><i>03</i><div><b>Oil Change</b><span>Synthetic, conventional, blend; high-mileage oil available.</span></div></li>
+<li><i>04</i><div><b>Alignment</b><span>Front-end and four-wheel alignment with Hunter equipment.</span></div></li>
+<li><i>05</i><div><b>Battery &amp; Alternator</b><span>DieHard batteries: testing, charging, replacement; alternator diagnosis and repair.</span></div></li>
+<li><i>06</i><div><b>Diagnostics</b><span>Same diagnostic computer tools as the dealer, without the dealer pricing.</span></div></li>
+<li><i>07</i><div><b>CV Joints &amp; Boots</b><span>CV joints, axle boots, driveshaft service, full diagnosis.</span></div></li>
+<li><i>08</i><div><b>Radiator &amp; Water Pump</b><span>Cooling system diagnosis, radiator service, water pump replacement.</span></div></li>
+<li><i>09</i><div><b>Suspension</b><span>Shocks, struts, and full suspension diagnosis and replacement.</span></div></li>
+<li><i>10</i><div><b>Tires</b><span>Mounting, balancing, rotation; tire sales when available.</span></div></li>
+<li><i>11</i><div><b>Tune-Ups</b><span>Spark plugs, ignition coils, throttle body cleaning, interval service.</span></div></li>
+<li><i>12</i><div><b>Maintenance</b><span>Routine inspections, fluid services, belt and hose checks.</span></div></li></ul>
+<p class="note"><b>Straight talk on European makes:</b> the shop does not do diagnostics on Mercedes, BMW, Audi, Volkswagen, Porsche or Volvo, and would rather refer you than do it poorly. Routine mechanical work (oil, brakes, alignment, tires, suspension) is fine.</p></div></section>
+
+<section id="signs"><div class="wrap"><div class="eyebrow">Miami is hard on cars</div><h2>When to bring it in</h2>
+<p style="max-width:640px;margin-bottom:22px;color:var(--mut)">Heat, humidity, salt air and stop-and-go traffic on US-1, the Dolphin and 836 wear a car faster than most places. The shop's own checklists for three common jobs:</p>
+<div class="sg">
+<div class="card"><h3>Brakes</h3><ul><li>Squealing or grinding when you brake</li><li>Pulling to one side under braking</li><li>Pulsing or vibrating pedal at highway speed</li><li>A pedal that feels soft or sinks</li><li>Brake or ABS light on the dash</li></ul></div>
+<div class="card"><h3>A/C</h3><ul><li>Lukewarm air, especially in traffic</li><li>Slow to cool down after a long drive</li><li>Clicking, hissing or grinding on start</li><li>Musty or sour smell from the vents</li><li>Weak airflow at full fan</li></ul></div>
+<div class="card"><h3>Tires</h3><ul><li>Vibration in the wheel or seat</li><li>Car pulling to one side</li><li>A tire losing air faster than the others</li><li>Bulges, cuts or sidewall cracks</li><li>TPMS light on the dash</li></ul><p style="margin-top:10px;font-size:14px;color:var(--mut)">Rotation every 5,000&ndash;7,500 miles, or every other oil change. New tires by wholesale order when you are ready.</p></div></div></div></section>
+<section class="story" id="mario"><div class="wrap g"><div><div class="eyebrow" style="color:var(--yel)">About Mario</div><h2>Started at twelve.<br><em>Still on every car.</em></h2>
+<p>The shop has been on SW 5th Street since 1972, when Mario's father opened it. Mario swept the floors and handed his father tools, then went on to earn his FAA Airframe &amp; Powerplant certification and, back at the shop, his ASE certification.</p>
+<p>Aviation work leaves no room for shortcuts. Mario carried that standard back to the shop floor, and he explains what is wrong in plain language before he fixes it.</p>
+<blockquote>My word is my bond. My work is the proof.</blockquote></div>
+<ol class="tl"><li><b>1972</b>Mario's father opens the shop on SW 5th Street</li><li><b>Age 12</b>Mario starts sweeping floors, handing over tools</li><li><b>A&amp;P</b>FAA Airframe &amp; Powerplant certification</li><li><b>ASE</b>Certified in automotive repair</li></ol></div></section>
+
+<section style="background:var(--tint);border-block:2px solid var(--ink)"><div class="wrap"><div class="eyebrow">In the bays</div><h2>The gear is dealer-grade</h2>
+<div class="eqg"><div class="card"><b class="an" style="font-size:22px">Snap-On</b><p>Professional diagnostic equipment for domestic vehicles and Asian imports: module-level diagnostics, manufacturer-specific data and reset procedures.</p></div>
+<div class="card"><b class="an" style="font-size:22px">Hunter</b><p>Front-end and four-wheel alignment on Hunter equipment, the same system the dealership uses.</p></div>
+<div class="card"><b class="an" style="font-size:22px">DieHard</b><p>Batteries tested, charged and replaced in the shop, with alternator diagnosis and repair alongside.</p></div>
+<div class="card"><b class="an" style="font-size:22px">Domestic &amp; Asian</b><p>The shop's focus. European makes get routine mechanical work only, and a referral when diagnostics need specialty tools.</p></div></div></div></section>
+<section class="rev"><div class="wrap"><div class="eyebrow">From the shop's Google reviews</div><h2>What customers say</h2>
+<blockquote>“After two other shops, including a dealership, couldn't find the source of a noise in my Chevy Silverado, Mario took the time to truly investigate. He did not lead me down a rabbit hole of endless repairs.”<cite>A.C. · Google review</cite></blockquote>
+<p class="towns">Miami families drive in from Little Havana, The Roads, Brickell, MidTown, Coral Gables, Doral, Hialeah, Kendall, South Miami, Palmetto Bay, Pinecrest, Cutler Bay and Homestead.</p></div></section>
+
+<section style="background:var(--blue);color:#fff;padding:40px 0"><div class="wrap es"><div><h2 style="margin-bottom:10px">Hablamos espa&ntilde;ol</h2><p style="max-width:520px">The shop speaks Spanish, and its own site has a Spanish version. Ask for Mario in either language.</p></div>
+<ul class="tw"><li>Little Havana</li><li>The Roads</li><li>Brickell</li><li>MidTown</li><li>Coral Gables</li><li>Doral</li><li>Hialeah</li><li>Kendall</li><li>South Miami</li><li>Palmetto Bay</li><li>Pinecrest</li><li>Cutler Bay</li><li>Homestead</li></ul></div></section>
+<section class="visit" id="visit"><div class="wrap"><div class="eyebrow">Visit</div><h2>On SW 5th Street</h2><div class="g">
+<div class="card"><table><tr><td>Monday–Friday</td><td>8:00 AM–5:00 PM</td></tr><tr><td>Saturday</td><td>8:00 AM–12:00 PM</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table></div>
+<div class="card"><p><b>Mario's Auto Repair</b><br>1160 SW 5th St, Miami, FL 33130</p><p><a href="tel:+13058151067">305.815.1067</a><br><a href="mailto:mariobautorepair@gmail.com">mariobautorepair@gmail.com</a></p><p>Pull up to the bay and ask for Mario. Payment: cash, all major cards, Apple Pay and Zelle.</p><a class="b y" href="https://www.google.com/maps/search/?api=1&query=1160+SW+5th+St+Miami+FL+33130">Get directions</a></div></div></div></section>
+
+<section id="first" style="padding-top:0"><div class="wrap"><div class="eyebrow">First time here?</div><h2>What to expect at the bay</h2>
+<ol class="st"><li><b>Pull up on SW 5th Street</b><span>Ask for Mario. He will talk you through what the car is doing and what it likely needs.</span></li>
+<li><b>Hear the price first</b><span>No work happens until you have heard the price and the turnaround, and said yes.</span></li>
+<li><b>Get it explained</b><span>You leave knowing what was done and why, in plain language rather than tech-speak.</span></li>
+<li><b>Keep the guarantee</b><span>One year on parts and labor, for every repair done in the shop.</span></li></ol></div></section>
+<section id="faq" style="padding-top:0"><div class="wrap"><div class="eyebrow">Quick answers</div><h2>FAQ</h2>
+<details><summary>Do I get a price before work starts?</summary><p>Yes. The shop calls you with the price and turnaround, and nothing is done without your approval.</p></details>
+<details><summary>What is guaranteed?</summary><p>Every repair carries a 1-year guarantee on parts and labor.</p></details>
+<details><summary>Do you work on European cars?</summary><p>Routine mechanical work yes. Diagnostics on Mercedes, BMW, Audi, Volkswagen, Porsche and Volvo, no.</p></details>
+<details><summary>Do I need an appointment?</summary><p>The shop's own advice for a first visit: pull up to the bay on SW 5th Street and ask for Mario. If you would like to set a time, send a request here and the team will confirm it.</p></details>
+<details><summary>How can I pay?</summary><p>Cash, all major credit cards, Apple Pay and Zelle.</p></details>
+<details><summary>Who actually works on my car?</summary><p>Mario diagnoses every job himself, and his ASE-certified team handles the execution.</p></details>
+<details><summary>What if something I had fixed fails?</summary><p>Inside the 1-year guarantee window, Mario fixes it again at no charge, parts and labor.</p></details>
+<details><summary>Will you tell me if I do not need a repair?</summary><p>That is the idea. Mario explains what is wrong in plain language, and tells you what your car does not need.</p></details>
+<details><summary>Se habla español?</summary><p>Sí, hablamos español. There is also a Spanish version of the shop's site.</p></details></div></section>
+</main>
+<footer><div class="wrap"><div class="an" style="font-size:22px;color:#fff">Mario's Auto Repair</div><div>1160 SW 5th St, Miami, FL 33130 · 305.815.1067 · Family-owned since 1972</div><div class="dm">Demo · prepared by Gevorg Hovhannisyan</div></div></footer>
+
+<button id="bot-btn" aria-expanded="false" aria-controls="bot-panel">Ask Mario's shop</button>
+<div id="bot-panel" role="dialog" aria-label="Shop assistant"><header><div><b>Mario's assistant</b><small>Answers from this site only</small></div><button id="bot-x" aria-label="Close">×</button></header>
+<div id="bot-log" aria-live="polite"></div><div id="bot-chips"></div>
+<form id="bot-form"><input id="bot-in" autocomplete="off" placeholder="Ask about services, hours, price..." aria-label="Your question"><button>Send</button></form></div>
+<script>
+/*ENGINE*/
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9ñ]+/g,' ').trim();}
+function stem(w){if(w.length>5&&w.endsWith('ies'))return w.slice(0,-3)+'y';if(w.length>5&&w.endsWith('ing'))return w.slice(0,-3);if(w.length>4&&w.endsWith('ed'))return w.slice(0,-2);if(w.length>4&&w.endsWith('es'))return w.slice(0,-2);if(w.length>2&&w.endsWith('s')&&!w.endsWith('ss'))return w.slice(0,-1);return w;}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function tokMatch(q,k){if(q===k)return 1;var sq=stem(q),sk=stem(k);if(sq===sk)return 1;if(k.length>=5&&q.length>=4&&(sk.startsWith(sq)&&sq.length>=5))return .9;var L=Math.max(sq.length,sk.length);if(L>=5&&Math.abs(sq.length-sk.length)<=2){var dd=lev(sq,sk);if(dd<=1)return .85;if(L>=8&&dd<=2)return .75;}return 0;}
+function score(qt,kw){var best=0;for(var i=0;i<kw.length;i++){var kt=norm(kw[i]).split(' '),s=0;if(kt.length===1){for(var x=0;x<qt.length;x++){var m=tokMatch(qt[x],kt[0]);if(m>s)s=m;}}else{for(var st=0;st+kt.length<=qt.length;st++){var tot=0,ok=true;for(var j=0;j<kt.length;j++){var mm=tokMatch(qt[st+j],kt[j]);if(mm===0){ok=false;break;}tot+=mm;}if(ok&&tot*1.4>s)s=tot*1.4;}}if(s>best)best=s;}return best;}
+function findAnswer(KB,q){var qt=norm(q).split(' ').filter(Boolean),top=null,ts=0;for(var i=0;i<KB.length;i++){var s=score(qt,KB[i].kw)+(KB[i].w||0);if(score(qt,KB[i].kw)>0&&s>ts){ts=s;top=KB[i];}}return ts>=0.75?top:null;}
+/*END*/
+
+var KB=[
+{kw:['hours','open','opening','close','closing','time','when','sunday','saturday','weekend','monday','weekday'],a:"Mon–Fri 8 AM–5 PM, Saturday 8 AM–12 PM, closed Sunday.",c:['Where are you?','Book a visit','Services']},
+{kw:['where','address','location','directions','find you','street','located','map','parking'],a:"Mario's Auto Repair, 1160 SW 5th St, Miami, FL 33130. Pull up to the bay and ask for Mario.",c:['Hours','Call the shop','Book a visit']},
+{kw:['email address','phone','call','number','contact','telephone','email','mail','reach'],a:"Phone 305.815.1067. Email mariobautorepair@gmail.com.",c:['Hours','Book a visit']},
+{kw:['price','cost','how much','estimate','quote','charge','pricing','expensive','cheap','afford'],a:"The shop publishes no price list. What is promised: you get a call with the actual price and turnaround before any work starts, and nothing happens without your approval. The team will confirm a number once Mario has looked at the car.",c:['Guarantee','Book a visit']},
+{kw:['guarantee','warranty','warrant','guaranty','covered','breaks again','fails'],a:"Every repair is backed by a 1-year guarantee on parts AND labor. If something Mario fixed fails inside that year, it is made right at no charge.",c:['Price before work','Services']},
+{kw:['brake','brakes','rotor','pad','pads','stopping','squeal','squeak'],a:"Brake Repair covers pads, rotors, fluid flushes and full brake-system inspections. If you hear squealing or grinding, bring it in and Mario will look and call you with the price first.",c:['Book a visit','Hours']},
+{kw:['ac','a/c','air conditioning','air conditioner','air conditioning','cold air','freon','refrigerant','recharge','compressor','climate'],a:"A/C Repair: recharge, leak detection, compressor and component service.",c:['Book a visit','Hours']},
+{kw:['oil','oil change','synthetic','conventional','blend','high mileage','lube'],a:"Oil Change: synthetic, conventional or blend, and high-mileage oil is available.",c:['Maintenance','Book a visit']},
+{kw:['alignment','align','aligned','pulls','crooked','wheel alignment','hunter'],a:"Front-end and four-wheel alignment, done on Hunter equipment.",c:['Tires','Suspension','Book a visit']},
+{kw:['battery','batteries','alternator','diehard','dead battery','wont start','jump','charging','starter'],a:"Battery & Alternator: DieHard batteries, with testing, charging and replacement, plus alternator diagnosis and repair.",c:['Book a visit','Hours']},
+{kw:['diagnostic','diagnostics','diagnose','check engine','engine light','scan','warning light','dashboard light','computer','code','abs light','airbag'],a:"Diagnostics use the same professional scan tools as the dealer, without the dealer pricing. Domestic and Asian imports. Note: no diagnostics on Mercedes, BMW, Audi, Volkswagen, Porsche or Volvo.",c:['European cars','Price before work','Book a visit']},
+{kw:['cv joint','cv joints','cv boot','axle','boot','boots','driveshaft','clicking'],a:"CV Joints & Boots: CV joints, axle boots, driveshaft service and full diagnosis.",c:['Book a visit','Services']},
+{kw:['radiator','water pump','cooling','coolant','overheat','overheating','overheats','antifreeze','thermostat'],a:"Radiator & Water Pump: cooling system diagnosis, radiator service and water pump replacement.",c:['Book a visit','Hours']},
+{kw:['suspension','shock','shocks','strut','struts','bumpy','bouncy','ride'],a:"Suspension: shocks, struts, and full suspension diagnosis and replacement.",c:['Alignment','Book a visit']},
+{kw:['tire','tires','tyre','tyres','balancing','rotation','flat','wheel'],a:"Tires: mounting, balancing, rotation, repair and pressure checks, plus honest advice on when they really need replacing. New tires come by wholesale order. Rotation is suggested every 5,000-7,500 miles, or with every other oil change.",c:['Alignment','Book a visit']},
+{kw:['tune up','tune-up','tuneup','spark plug','spark plugs','ignition','coil','coils','throttle body','misfire'],a:"Tune-Ups: spark plugs, ignition coils, throttle body cleaning and manufacturer-recommended interval service.",c:['Maintenance','Book a visit']},
+{kw:['maintenance','inspection','inspect','fluid','fluids','belt','belts','hose','hoses','service','routine'],a:"Maintenance: routine inspections, fluid services, and belt and hose checks.",c:['Oil change','Tune-ups','Book a visit']},
+{kw:['services','repair','repairs','offer','list','fix'],a:"Twelve categories: brakes, A/C, oil change, alignment, battery & alternator, diagnostics, CV joints & boots, radiator & water pump, suspension, tires, tune-ups and maintenance.",c:['Brakes','Diagnostics','Tires','Book a visit']},
+{kw:['european','mercedes','bmw','audi','volkswagen','vw','porsche','volvo','benz'],a:"For Mercedes, BMW, Audi, Volkswagen, Porsche and Volvo, the shop does not do diagnostics (those need specialty equipment) and will refer you instead. Routine work like oil, brakes, alignment, tires and suspension is fine.",c:['Services','Book a visit']},
+{kw:['domestic','asian','import','imports','toyota','honda','ford','chevy','chevrolet','nissan','hyundai','kia','brands','truck','silverado'],a:"Mario's works on domestic vehicles and Asian imports. European makes: routine mechanical work only, no diagnostics.",c:['European cars','Book a visit']},
+{kw:['mario','owner','who','mechanic','1972','history','family','about','story','aviation','ase','certified','certification'],a:"Mario's father opened the shop on SW 5th Street in 1972. Mario started at twelve, earned FAA Airframe & Powerplant and ASE certifications, and diagnoses every job himself.",c:['Guarantee','Book a visit']},
+{kw:['pay','payment','cash','card','cards','credit','zelle','apple pay','visa','mastercard','amex'],a:"Cash, all major credit cards, Apple Pay and Zelle.",c:['Hours','Book a visit']},
+{kw:['spanish','espanol','español','hablan','habla','hablamos'],a:"Sí, hablamos español. The shop also has a Spanish version of its website.",c:['Hours','Book a visit']},
+{kw:['appointment','without booking','without appointment','no appointment','walk in','walk-in','walkin','appointment needed','need appointment','drop off','drop in','without appointment'],a:"The site says to pull up to the bay on SW 5th Street and ask for Mario. If you would rather set a time, use the visit request and the team will confirm it.",c:['Book a visit','Hours']},
+{kw:['signs','symptoms','when to bring','noise','noisy','grinding','vibration','vibrate','pulling','smell','smells','hissing','warm air','lukewarm','not cold','soft pedal','tpms'],a:"Common signs to bring a car in: squealing or grinding brakes, pulling to one side, a pulsing pedal, lukewarm A/C, a musty smell from the vents, vibration in the wheel, or a dash warning light. Mario can only tell what it is after looking, so describe it in a visit request and the team will take it from there.",c:['Book a visit','Brakes','A/C']},
+{kw:['neighborhood','neighbourhood','coral gables','brickell','hialeah','doral','kendall','homestead','little havana','pinecrest','cutler bay','palmetto bay','south miami','midtown','serve','service area','near me','far'],a:"Customers come from all over Miami: Little Havana, The Roads, Brickell, MidTown, Coral Gables, Doral, Hialeah, Kendall, South Miami, Palmetto Bay, Pinecrest, Cutler Bay and Homestead. The shop is at 1160 SW 5th St.",c:['Where are you?','Hours']},
+{kw:['hello','hi','hey','hola','good morning','howdy'],a:"Hi! I can answer questions about services, hours and how the shop works, or take a visit request for the team.",c:['Services','Hours','Book a visit']}
+];
+function V(t){return t.trim().length>1}
+window.CFG={kb:KB,
+greet:"Hi, I'm the assistant for Mario's Auto Repair. I only know what is on this site. Ask me about services, hours or the guarantee, or request a visit.",
+chips:['Book a visit','Services','Hours','Price before work','Guarantee','Where are you?'],
+bookRe:/\b(book|booking|appointment|schedule|visit request|request a visit|set up a time|make an appointment)\b/,
+bookNo:/(without|no|need|necessary|required|do i have to) (a |an )?(booking|appointment|appointmnt)/,
+fallback:"I don't have that on the site, so I won't guess. The team will confirm it: call 305.815.1067 or request a visit and Mario will get back to you.",
+flow:[
+{key:'name',label:'Name',q:"Happy to set that up. What's your name?",v:V,err:'Please type your name.'},
+{key:'phone',label:'Phone',q:"Best phone number? Mario's team calls with the price before any work.",v:function(t){return t.replace(/\D/g,'').length>=7},err:'That does not look like a phone number. Try again with area code.'},
+{key:'car',label:'Vehicle',q:"What's the vehicle (year, make, model)?",v:V,err:'Please give year, make and model.'},
+{key:'svc',label:'Service',q:"What do you need?",chips:['Brakes','A/C','Oil change','Alignment','Battery & alternator','Diagnostics','CV joints','Radiator & water pump','Suspension','Tires','Tune-up','Maintenance','Not sure'],v:V,err:'Pick a service or describe the problem.'},
+{key:'when',label:'Preferred day and time',q:"When works? The shop is open Mon–Fri 8–5 and Saturday 8–12.",chips:['Mon–Fri morning','Mon–Fri afternoon','Saturday morning','Any time'],v:V,err:'Tell me a day or time.'}],
+doneIntro:"Here is your visit request:",
+done:"Sent to the team. This is a demo, so nothing is actually sent here; the shop will confirm the time and call you with the price before any work. You can also call 305.815.1067."};
+/*WIDGET*/
+(function(){
+var C=window.CFG,$=function(i){return document.getElementById(i)};
+var btn=$('bot-btn'),panel=$('bot-panel'),log=$('bot-log'),chips=$('bot-chips'),form=$('bot-form'),inp=$('bot-in');
+var st=null,data={};
+function add(t,me){var d=document.createElement('div');d.className='m '+(me?'me':'bot');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.textContent='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b);});}
+function open(v){panel.classList.toggle('open',v);btn.setAttribute('aria-expanded',v);if(v&&!log.children.length){add(C.greet,false);setChips(C.chips);}if(v)setTimeout(function(){inp.focus()},50);}
+btn.onclick=function(){open(!panel.classList.contains('open'))};
+$('bot-x').onclick=function(){open(false)};
+function ask(){var s=C.flow[st];add(s.q,false);setChips(s.chips||['Cancel']);}
+function startFlow(pre){st=0;data={};if(pre)data.pre=pre;ask();}
+function endFlow(){var lines=C.flow.map(function(s){return s.label+': '+(data[s.key]||'-')}).join('\n');add(C.doneIntro+'\n\n'+lines+'\n\n'+C.done,false);st=null;setChips(C.chips);}
+function send(t){t=String(t||'').trim();if(!t)return;add(t,true);inp.value='';
+ if(st!==null){if(/^(cancel|stop|never ?mind|exit)$/i.test(t)){st=null;add('No problem, nothing was sent. What else can I help with?',false);setChips(C.chips);return;}
+  var s=C.flow[st];if(s.v&&!s.v(t)){add(s.err,false);return;}data[s.key]=t;st++;if(st>=C.flow.length)endFlow();else ask();return;}
+ if(C.bookRe.test(norm(t))&&!(C.bookNo&&C.bookNo.test(norm(t)))){startFlow();return;}
+ var a=findAnswer(C.kb,t);
+ if(a){add(a.a,false);if(a.f)setTimeout(function(){add(a.f,false)},0);setChips(a.c||C.chips);}else{add(C.fallback,false);setChips(C.chips);}}
+form.onsubmit=function(e){e.preventDefault();send(inp.value)};
+window.botSend=send;window.botOpen=open;
+})();
+/*ENDW*/
+
+</script></body></html>
