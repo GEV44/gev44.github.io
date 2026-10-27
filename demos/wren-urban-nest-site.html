@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wren Urban Nest · Dublin · Demo</title>
+<meta name="description" content="Demo page for Wren Urban Nest, Dublin: compact nests, ALT Bar and Restaurant, practical answers and a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--pine:#1e493e;--pine2:#2c6556;--peach:#f4d6ba;--coral:#ff9c86;--cream:#fbf6ef;--ink:#1d2a26;--mut:#5c6b65;--line:#e4d9ca;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16.5px/1.6 'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:700;line-height:1.12;letter-spacing:-.01em}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:0;z-index:30;background:var(--cream);border-bottom:1px solid var(--line)}
+.hb{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 18px;max-width:1040px;margin:0 auto}
+.logo{height:34px;width:auto}
+.hb nav{display:none;gap:20px;font-weight:500;font-size:15px}
+.hb nav a{text-decoration:none;color:var(--pine)}
+.cta{display:inline-block;background:var(--pine);color:var(--peach);border:0;border-radius:999px;padding:11px 20px;font:700 15px 'DM Sans';text-decoration:none;cursor:pointer}
+.cta.alt{background:var(--coral);color:#3a1710}
+.cta.line{background:none;color:var(--peach);box-shadow:inset 0 0 0 2px var(--peach)}
+@media(min-width:760px){.hb nav{display:flex}}
+.hero{background:var(--pine);color:var(--cream);position:relative;overflow:hidden}
+.hero .wrap{padding-top:44px;padding-bottom:54px;position:relative;z-index:2}
+.hero small{display:inline-block;color:var(--peach);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12.5px;margin-bottom:14px}
+.hero h1{font-size:clamp(38px,9.5vw,76px);max-width:11em}
+.hero h1 em{font-style:italic;color:var(--coral)}
+.hero p{margin:18px 0 24px;max-width:34em;font-size:18px;color:#e2ece7}
+.hero .row{display:flex;flex-wrap:wrap;gap:10px}
+.nestart{position:absolute;right:-40px;bottom:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--pine2),transparent 70%);opacity:.9;z-index:1}
+.facts{background:var(--peach);color:var(--pine)}
+.facts .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.facts div{padding:16px 6px;border-bottom:1px solid #e3bd97}
+.facts b{display:block;font:700 26px 'Fraunces';line-height:1}
+.facts span{font-size:13.5px}
+@media(min-width:760px){.facts .wrap{grid-template-columns:repeat(4,1fr)}.facts div{border-bottom:0;padding:20px 8px}}
+section{padding:46px 0}
+.sh small{color:var(--coral);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12.5px;filter:brightness(.82)}
+.sh h2{font-size:clamp(28px,6vw,42px);margin:6px 0 10px;color:var(--pine)}
+.sh p{max-width:40em;color:var(--mut)}
+/* nests: scaled floor plans */
+.plans{display:grid;gap:14px;margin-top:24px}
+.plan{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:end}
+.fp{background:var(--peach);border:2px solid var(--pine);border-radius:6px;position:relative;align-self:end}
+.fp::after{content:attr(data-sq);position:absolute;inset:0;display:grid;place-items:center;font:700 18px 'Fraunces';color:var(--pine)}
+.plan h3{font-size:22px;color:var(--pine)}
+.plan p{font-size:15px;color:var(--mut);margin:6px 0 10px}
+.plan .tag{font-size:12.5px;font-weight:700;color:var(--pine);background:#e8f0ec;border-radius:999px;padding:3px 10px;display:inline-block;margin:0 4px 4px 0}
+@media(min-width:760px){.plans{grid-template-columns:repeat(3,1fr)}.plan{grid-template-columns:1fr}.fp{justify-self:start}}
+.incl{margin-top:22px;background:var(--pine);color:var(--cream);border-radius:16px;padding:20px}
+.incl h3{color:var(--peach);margin-bottom:10px;font-size:20px}
+.incl ul{list-style:none;display:grid;gap:7px;font-size:15.5px}
+.incl li::before{content:'\2022';color:var(--coral);margin-right:9px}
+@media(min-width:760px){.incl ul{grid-template-columns:1fr 1fr}}
+/* alt */
+.alt-s{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.altg{display:grid;gap:20px;margin-top:22px}
+.clock{border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.clock div{display:flex;justify-content:space-between;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line);font-size:15.5px}
+.clock div:last-child{border-bottom:0}
+.clock b{color:var(--pine)}
+.clock .hd{background:var(--pine);color:var(--peach);font:700 13px 'DM Sans';letter-spacing:.1em;text-transform:uppercase}
+.altt p{margin-bottom:12px;color:var(--mut)}
+.altt strong{color:var(--pine)}
+@media(min-width:760px){.altg{grid-template-columns:1fr 1fr;align-items:start}}
+/* location */
+.walk{display:grid;gap:10px;margin-top:22px}
+.wk{display:flex;align-items:center;gap:14px;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.wk i{font:700 21px 'Fraunces';font-style:normal;color:var(--coral);filter:brightness(.85);min-width:58px}
+.wk span{font-size:15.5px}
+@media(min-width:760px){.walk{grid-template-columns:1fr 1fr}}
+.apt{margin-top:22px;border-left:5px solid var(--coral);background:var(--white);border-radius:0 14px 14px 0;padding:16px 18px}
+.apt h3{color:var(--pine);font-size:20px;margin-bottom:4px}
+.apt p{font-size:15.5px;color:var(--mut)}
+/* good */
+.good{background:var(--pine);color:var(--cream)}
+.good .sh h2{color:var(--cream)}.good .sh p{color:#d4e3dc}
+.gg{display:grid;gap:12px;margin-top:22px}
+.gc{background:var(--pine2);border-radius:14px;padding:16px}
+.gc h3{font:700 17px 'DM Sans';color:var(--peach);margin-bottom:4px}
+.gc p{font-size:15px;color:#e5efea}
+@media(min-width:760px){.gg{grid-template-columns:repeat(3,1fr)}}
+.faq details{background:var(--white);border:1px solid var(--line);border-radius:12px;margin-top:10px;padding:0 16px}
+.faq summary{padding:14px 0;font-weight:700;color:var(--pine);cursor:pointer;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';float:right;font-size:22px;line-height:1;color:var(--coral)}
+.faq details[open] summary::after{content:'\2212'}
+.faq p{padding:0 0 15px;color:var(--mut);font-size:15.5px}
+.ct{background:var(--peach)}
+.ct table{width:100%;border-collapse:collapse;margin-top:16px;background:var(--cream);border-radius:12px;overflow:hidden}
+.ct td{padding:12px 14px;border-bottom:1px solid var(--line);font-size:15.5px;vertical-align:top}
+.ct td:first-child{font-weight:700;color:var(--pine);width:36%}
+.ct tr:last-child td{border-bottom:0}
+.ct a{color:var(--pine)}
+footer{background:var(--ink);color:#cdd8d3;text-align:center;padding:22px 18px 90px;font-size:14px}
+#as-fab{position:fixed;right:14px;bottom:14px;z-index:50;background:var(--coral);color:#3a1710;border:0;border-radius:999px;padding:14px 20px;font:700 16px 'DM Sans';box-shadow:0 8px 22px rgba(0,0,0,.28);cursor:pointer}
+#as-fab.hide{display:none}
+#as-panel{position:fixed;z-index:60;right:0;bottom:0;left:0;height:min(80vh,560px);background:#fff;border-radius:18px 18px 0 0;box-shadow:0 -8px 36px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden}
+#as-panel.on{display:flex}
+@media(min-width:560px){#as-panel{left:auto;right:18px;bottom:18px;width:380px;border-radius:18px}}
+.as-h{background:var(--pine);color:#fff;padding:13px 16px;display:flex;justify-content:space-between;align-items:center}
+.as-h b{font:700 19px 'Fraunces'}
+.as-h small{display:block;font-size:11.5px;color:var(--peach)}
+#as-x{background:none;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1}
+#as-log{flex:1;overflow-y:auto;padding:14px;background:var(--cream);display:flex;flex-direction:column;gap:8px}
+.as-m{max-width:88%;padding:10px 13px;border-radius:14px;font-size:15px;line-height:1.45}
+.as-b{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.as-u{background:var(--pine);color:#fff;align-self:flex-end}
+#as-chips{display:flex;gap:6px;overflow-x:auto;padding:8px 12px;background:var(--cream);border-top:1px solid var(--line);white-space:nowrap}
+#as-chips button{flex:none;background:#fff;border:1.5px solid var(--pine);color:var(--pine);border-radius:999px;padding:7px 13px;font:700 13.5px 'DM Sans';cursor:pointer}
+#as-form{display:flex;gap:8px;padding:10px 12px;background:#fff;border-top:1px solid var(--line)}
+#as-in{flex:1;min-width:0;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font:16px 'DM Sans'}
+#as-form button{background:var(--pine);color:var(--peach);border:0;border-radius:999px;padding:0 18px;font:700 15px 'DM Sans';cursor:pointer}
+</style>
+</head>
+<body>
+<header><div class="hb">
+<a href="#top" aria-label="Wren Urban Nest"><img class="logo" src="img/wren-urban-nest-logo.svg" alt="Wren Urban Nest" width="130" height="34"></a>
+<nav><a href="#nests">Nests</a><a href="#alt">ALT</a><a href="#where">Location</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<button class="cta" type="button" data-ask="Book a stay">Book a stay</button>
+</div></header>
+<main id="top">
+<div class="hero"><div class="nestart"></div><div class="wrap">
+<small>St. Andrew's Lane · Dublin 2</small>
+<h1>Big rooms are <em>over-rated.</em></h1>
+<p>A boutique hotel of 137 compact Scandinavian-style rooms on a quiet lane in the middle of Dublin, and Ireland's first net zero carbon place to stay.</p>
+<div class="row"><button class="cta alt" type="button" data-ask="Book a stay">Plan my stay</button><a class="cta line" href="#nests">See the nests</a></div>
+</div></div>
+
+<div class="facts"><div class="wrap">
+<div><b>137</b><span>rooms</span></div>
+<div><b>3 min</b><span>walk to Grafton St, Temple Bar, Trinity</span></div>
+<div><b>3pm / 11am</b><span>check-in / check-out</span></div>
+<div><b>Net zero</b><span>carbon, no fossil fuels burned</span></div>
+</div></div>
+
+<section id="nests"><div class="wrap">
+<div class="sh"><small>The nests</small><h2>Small rooms, designed properly</h2><p>Three room types, shown here at relative size. Each has a queen bed (or two singles in the Twin), air-conditioning and free Wi-Fi.</p></div>
+<div class="plans">
+<div class="plan"><div class="fp" data-sq="10 m²" style="width:100px;height:100px"></div><div><h3>Snug Nest</h3><p>The most compact nest: queen bed, speciality Irish roasted coffee, Irish toiletries from the Handmade Soap Company. Good for flying solo or a comfy double.</p><span class="tag">Queen bed</span><span class="tag">Air-con</span><button class="cta" type="button" data-ask="Snug Nest">Ask about it</button></div></div>
+<div class="plan"><div class="fp" data-sq="12 m²" style="width:110px;height:109px"></div><div><h3>Cosy Nest</h3><p>USB charging ports and LED panels that control everything in the room, even the remote controlled curtains.</p><span class="tag">Queen bed</span><span class="tag">Smart controls</span><button class="cta" type="button" data-ask="Cosy Nest">Ask about it</button></div></div>
+<div class="plan"><div class="fp" data-sq="18 m²" style="width:120px;height:135px"></div><div><h3>Twin Nest</h3><p>A nest meant for sharing, with two single beds and large windows that give some of the best views of the city. Stocked with Epilogue Roasters coffee.</p><span class="tag">Two single beds</span><span class="tag">City views</span><button class="cta" type="button" data-ask="Twin Nest">Ask about it</button></div></div>
+</div>
+<div class="incl"><h3>In every nest</h3><ul>
+<li>Complimentary high-speed Wi-Fi throughout the hotel</li>
+<li>Air-conditioning and a flat-screen TV</li>
+<li>Hairdryer in every room, iron and board on request</li>
+<li>USB charging ports</li>
+<li>Free calls to anywhere in the world</li>
+<li>Soft natural fabrics and earthy colours</li>
+</ul></div>
+<div class="apt"><h3>Need more space? Wren Apartments</h3><p>One- and two-bedroom serviced apartments on College Green, two minutes' walk from the hotel: kitchen, laundry, city views and pets welcome. Good for longer stays. Reservations team: info@wrenhotel.ie.</p></div>
+</div></section>
+
+<section class="alt-s" id="alt"><div class="wrap">
+<div class="sh"><small>Eat &amp; drink</small><h2>ALT Bar &amp; Restaurant</h2><p>Downstairs at the hotel, with an OpenTable Diners' Choice Award, a zero-waste kitchen and a Too Good To Go partnership for surplus food.</p></div>
+<div class="altg">
+<div class="clock">
+<div class="hd"><span>ALT Restaurant</span><span>hours</span></div>
+<div><span>Buffet breakfast</span><b>07:00 - 11:00</b></div>
+<div><span>Lunch</span><b>12:00 - 16:00</b></div>
+<div><span>Dinner</span><b>17:00 - 21:00</b></div>
+<div><span>Bottomless brunch (Sat &amp; Sun)</span><b>12:00 - 16:00</b></div>
+<div class="hd"><span>ALT Bar</span><span>hours</span></div>
+<div><span>Sunday to Thursday</span><b>11:00 - 23:00</b></div>
+<div><span>Friday &amp; Saturday</span><b>11:00 - 00:30</b></div>
+<div><span>Residents only bar</span><b>daily until 04:00</b></div>
+</div>
+<div class="altt">
+<p><strong>Handcrafted cocktails</strong> and a bar of small-batch Irish whiskeys, local ales and organic wines, with house pours like Dingle Gin and Teeling Whiskey.</p>
+<p><strong>Private events:</strong> a stylish, intimate setting in the heart of the city, with curated canapes, signature drinks and personal service.</p>
+<p style="margin-top:16px"><button class="cta" type="button" data-ask="Book a table">Ask about a table</button></p>
+</div>
+</div>
+</div></section>
+
+<section id="where"><div class="wrap">
+<div class="sh"><small>Location</small><h2>On the edge of the Creative Quarter</h2><p>Near St Stephen's Green, in a surprisingly quiet corner. Most of Dublin is walkable from the door.</p></div>
+<div class="walk">
+<div class="wk"><i>3 min</i><span>Grafton Street</span></div>
+<div class="wk"><i>3 min</i><span>Temple Bar</span></div>
+<div class="wk"><i>3 min</i><span>Trinity College</span></div>
+<div class="wk"><i>3 min</i><span>Drury Street car park (APCOA), open 24/7</span></div>
+</div>
+<div class="apt"><h3>Arriving</h3><p>From the airport: bus 16 goes to the city centre, or a taxi takes about 30 to 45 minutes. There is no car park at the hotel; two nearby car parks offer guests a discount, and reception validates the ticket.</p></div>
+</div></section>
+
+<section class="good"><div class="wrap">
+<div class="sh"><small>Little Steps</small><h2>A hotel that does its bit, quietly</h2><p>Quality over quantity. No fossil fuels burned on site, renewable energy, no single-use plastics, local organic produce, and as much upcycling as possible.</p></div>
+<div class="gg">
+<div class="gc"><h3>Irish makers</h3><p>Irish roasted coffee, Handmade Soap Company toiletries and Irish spirits at the bar.</p></div>
+<div class="gc"><h3>Zero-waste kitchen</h3><p>Wonky veg and all, with surplus food shared through Too Good To Go.</p></div>
+<div class="gc"><h3>Wren Guide</h3><p>An insider's guide to Dublin on the site, from artisanal distilleries to charming pubs.</p></div>
+</div>
+</div></section>
+
+<section class="faq" id="faq"><div class="wrap">
+<div class="sh"><small>Before you book</small><h2>Quick answers</h2></div>
+<details><summary>What time are check-in and check-out?</summary><p>Check-in is from 3pm and check-out is 11am. Early check-in depends on availability, and the only way to guarantee it is to book from the night before. Late check-out is subject to availability and a charge. You can leave luggage with the front office team.</p></details>
+<details><summary>Can I cancel a direct booking?</summary><p>Contact the hotel by 2pm local time the day before arrival, or the first night is charged. Advance Purchase rates are prepaid, non-cancellable and non-refundable. For bookings through third parties, contact the booking provider.</p></details>
+<details><summary>Do you have family rooms, cots or interconnecting rooms?</summary><p>No. The hotel does not offer family rooms, interconnecting rooms, cots or cribs. Guests must be at least 18 to check in, or accompanied by an adult.</p></details>
+<details><summary>Are pets allowed?</summary><p>Only certified guide dogs and emotional support dogs at the hotel. Wren Apartments on College Green are pet friendly.</p></details>
+<details><summary>Is the hotel accessible?</summary><p>There are wheelchair accessible rooms with an emergency cord in the bathroom, a lower sink, a raised toilet with grab rails, and the upper floors are accessible by wheelchair. The site has an accessibility guide.</p></details>
+<details><summary>Do I need a card at check-in?</summary><p>A valid credit or debit card is needed at check-in. The hotel pre-authorises the room rate plus an amount per room for additional charges.</p></details>
+</div></section>
+
+<section class="ct" id="contact"><div class="wrap">
+<div class="sh"><small>Contact the team</small><h2>Say hello</h2></div>
+<table>
+<tr><td>Address</td><td>Wren Urban Nest, St. Andrew's Lane, Dublin 2, D02 P9K0</td></tr>
+<tr><td>Phone</td><td><a href="tel:+35312234555">+353 (0)1 223 4555</a></td></tr>
+<tr><td>Email</td><td><a href="mailto:info@wrenhotel.ie">info@wrenhotel.ie</a></td></tr>
+<tr><td>Amenities and gifts</td><td>Welcome amenities can be arranged in the room with at least 48 hours' notice.</td></tr>
+</table>
+</div></section>
+</main>
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+
+<button id="as-fab" type="button">Ask the Nest</button>
+<div id="as-panel" role="dialog" aria-label="Wren Urban Nest assistant">
+<div class="as-h"><div><b>Wren assistant</b><small>Answers from this site · the team confirms details</small></div><button id="as-x" type="button" aria-label="Close">×</button></div>
+<div id="as-log"></div><div id="as-chips"></div>
+<form id="as-form"><input id="as-in" autocomplete="off" placeholder="Ask about rooms, check-in, ALT…"><button>Send</button></form>
+</div>
+<script>
+function createAssistant(cfg){
+  function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();}
+  function stem(w){return w.length>4?w.replace(/(ing|ed|es|s)$/,''):w.replace(/s$/,'');}
+  function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;
+    for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+  var STOP={the:1,a:1,an:1,of:1,to:1,do:1,you:1,your:1,is:1,are:1,i:1,we:1,can:1,and:1,or:1,for:1,in:1,on:1,at:1,my:1,me:1,it:1,what:1,how:1,there:1,have:1,with:1,about:1,does:1,much:0};
+  function toks(s){return norm(s).split(' ').filter(function(w){return w&&!STOP[w];}).map(stem);}
+  function tokMatch(q,k){ if(q===k)return 1; if(k.length>=5&&q.length>=5){var l=lev(q,k);if(l<=(k.length>=8?2:1))return 0.8;} return 0; }
+  function score(qn,qt,entry){
+    var best=0;
+    entry.k.forEach(function(kw){
+      var kn=norm(kw); if(!kn)return;
+      if((' '+qn+' ').indexOf(' '+kn+' ')>=0){best+=kn.indexOf(' ')>0?3+2*kn.split(' ').length:(kn.length>5?4:3);return;}
+      var kt=toks(kw); if(!kt.length)return;
+      var hit=0; kt.forEach(function(t){var m=0;qt.forEach(function(q){m=Math.max(m,tokMatch(q,t));});hit+=m;});
+      if(hit>=kt.length*0.8) best+=kt.length>1?3.2:2.6; else if(kt.length>1&&hit>=kt.length-0.5&&hit>=1.8) best+=1.5;
+    });
+    return best;
+  }
+  function answer(q){
+    var qn=norm(q),qt=toks(q),top=null,ts=0;
+    cfg.kb.forEach(function(e){var s=score(qn,qt,e);if(s>ts){ts=s;top=e;}});
+    return ts>=2.5?top:null;
+  }
+  function wantsFlow(q){var qn=norm(q);return (cfg.flow.trigger||[]).some(function(t){return (' '+qn+' ').indexOf(' '+norm(t)+' ')>=0;});}
+  var st={step:-1,data:{}};
+  function reply(q){
+    var qn=norm(q);
+    if(st.step>=0){
+      if(/^(cancel|stop|exit|quit|never mind|nevermind|no thanks)$/.test(qn)){st={step:-1,data:{}};return {t:"No problem, I cancelled that. Ask me anything else.",chips:cfg.chips};}
+      var s=cfg.flow.steps[st.step];
+      if(!s.opt&&!q.trim())return {t:s.q,chips:s.chips};
+      if(s.check&&!s.check(q)) return {t:s.err||s.q,chips:s.chips};
+      st.data[s.key]=q.trim(); st.step++;
+      if(st.step>=cfg.flow.steps.length){var d=st.data;st={step:-1,data:{}};return {t:cfg.flow.done(d),chips:cfg.chips,done:d};}
+      var n=cfg.flow.steps[st.step];return {t:n.q,chips:n.chips};
+    }
+    if(wantsFlow(q)){st={step:0,data:{}};return {t:cfg.flow.intro+"<br><br>"+cfg.flow.steps[0].q,chips:cfg.flow.steps[0].chips};}
+    var e=answer(q);
+    if(e)return {t:e.a,chips:e.chips||cfg.chips};
+    if(/^(hi|hello|hey|hiya|good (morning|afternoon|evening)|thanks|thank you|ok|okay)$/.test(qn))return {t:cfg.greet,chips:cfg.chips};
+    return {t:cfg.fallback,chips:cfg.chips};
+  }
+  function reset(){st={step:-1,data:{}};}
+  return {reply:reply,answer:answer,reset:reset,cfg:cfg};
+}
+function mountAssistant(A){
+  var $=function(i){return document.getElementById(i);};
+  var fab=$('as-fab'),panel=$('as-panel'),log=$('as-log'),form=$('as-form'),inp=$('as-in'),chips=$('as-chips');
+  function add(cls,html){var d=document.createElement('div');d.className='as-m '+cls;d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function setChips(list){chips.innerHTML='';(list||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c);};chips.appendChild(b);});}
+  function esc(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function send(t){t=t.trim();if(!t)return;add('as-u',esc(t));var r=A.reply(t);setTimeout(function(){add('as-b',r.t);setChips(r.chips);},260);inp.value='';}
+  var opened=false;
+  function open(){panel.classList.add('on');fab.classList.add('hide');if(!opened){opened=true;add('as-b',A.cfg.greet);setChips(A.cfg.chips);}setTimeout(function(){inp.focus({preventScroll:true});},50);}
+  fab.onclick=open;$('as-x').onclick=function(){panel.classList.remove('on');fab.classList.remove('hide');};
+  form.onsubmit=function(e){e.preventDefault();send(inp.value);};
+  document.querySelectorAll('[data-ask]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();open();send(el.getAttribute('data-ask'));});});
+}
+if(typeof module!=='undefined')module.exports={createAssistant:createAssistant};
+
+
+var CFG={
+greet:"Hi, I'm the Wren Urban Nest assistant. Ask about the rooms, check-in, ALT Bar and Restaurant, parking or the neighbourhood, or tap Book a stay.",
+fallback:"I don't have that on the Wren site, so I won't guess. The team can confirm: info@wrenhotel.ie or +353 (0)1 223 4555. You can also tap Book a stay and I'll pass your details on.",
+chips:["Book a stay","Rooms","Check-in and out","ALT hours","Parking"],
+kb:[
+{k:["contact","phone","call","telephone","number","email","reach","address","where are you","speak to","talk to","reservations","reception"],a:"Wren Urban Nest, St. Andrew's Lane, Dublin 2, D02 P9K0. Phone +353 (0)1 223 4555, email info@wrenhotel.ie. The team can also organise welcome amenities in the room if you give at least 48 hours' notice.",chips:["Book a stay","Location"]},
+{k:["rooms","room types","nest","nests","accommodation","sleep","what rooms","room size","sizes","square metres","sq m","how big"],a:"There are 137 rooms in three types: Snug Nest (10 m²), Cosy Nest (12 m²) and Twin Nest (18 m²). The Snug and Cosy have a queen bed; the Twin has two single beds. All have air-conditioning, free Wi-Fi, a flat-screen TV and a hairdryer.",chips:["Snug Nest","Cosy Nest","Twin Nest","Book a stay"]},
+{k:["snug","snug nest","smallest room","cheapest room","solo","solo traveller","single traveller","one person"],a:"The Snug Nest is 10 m² with a queen bed, speciality Irish roasted coffee and Irish toiletries from the Handmade Soap Company. Good for flying solo or a comfy double.",chips:["Cosy Nest","Twin Nest","Book a stay"]},
+{k:["cosy","cozy","cosy nest","cozy nest","12 sq","usb","led panel","curtains","remote curtains"],a:"The Cosy Nest is 12 m² with a queen bed, USB charging ports and LED panels that control everything in the room, even the remote controlled curtains.",chips:["Snug Nest","Twin Nest","Book a stay"]},
+{k:["twin","twin room","twin nest","two beds","two single beds","separate beds","friends","share a room","sharing","18 sq","bigger room","largest room","view","views","city views"],a:"The Twin Nest is 18 m² with two single beds and large windows with some of the best views of the city. It is stocked with Epilogue Roasters coffee. It is the largest hotel room type; for more space see Wren Apartments.",chips:["Wren Apartments","Book a stay"]},
+{k:["apartment","apartments","wren apartments","kitchen","longer stay","extended stay","long stay","self catering","serviced apartment","two bedroom","one bedroom","college green","laundry"],a:"Wren Apartments are one- and two-bedroom serviced apartments on College Green, two minutes' walk from the hotel. They have a fully equipped kitchen, laundry facilities, Smart TV, Wi-Fi, a coffee machine, city views and are pet friendly, with 24-hour reception and access to ALT. Reservations: info@wrenhotel.ie.",chips:["Contact","Book a stay"]},
+{k:["check in","checkin","check-in","arrival","arrive","early check in","early arrival","what time can i check in","luggage","bags","store bags","leave luggage"],a:"Check-in is from 3pm. Earlier check-in depends on availability; the only way to guarantee it is to book the room from the night before. If it isn't possible, you're welcome to leave your luggage with the front office team at reception. You must be at least 18 to check in.",chips:["Check-out","Book a stay"]},
+{k:["check out","checkout","check-out","late checkout","late check out","leave","departure time","what time check out"],a:"Check-out is 11am. Late check-out is subject to availability and carries a charge per hour; ask reception for details.",chips:["Check-in","Contact"]},
+{k:["check in and out","check-in and out","times","check in time"],a:"Check-in is from 3pm and check-out is 11am. Early check-in and late check-out depend on availability.",chips:["Check-in","Check-out"]},
+{k:["cancel","cancle","cancellation","cancelling","refund","change booking","amend","modify","manage booking","non refundable","prepaid","advance purchase"],a:"To cancel a direct booking, contact the hotel by 2pm local time the day before arrival, otherwise the first night is charged. Advance Purchase rates are prepaid, non-cancellable and non-refundable. For bookings made through third parties, contact the booking provider directly. The site also has a Manage Booking page.",chips:["Contact","Book a stay"]},
+{k:["card","credit card","debit card","pre authorisation","pre-authorisation","preauth","deposit","payment","pay","guarantee"],a:"A valid credit or debit card is needed at check-in. The hotel pre-authorises the full room rate plus an amount per room for additional charges. The card is only charged in advance for prepaid rates.",chips:["Cancellation","Contact"]},
+{k:["alt","alt restaurant","alt bar","restaurant","bar","dinner","lunch","dine","eat","eating","food","menu","menus","cocktails","drinks","whiskey","whisky"],a:"ALT Bar & Restaurant is at the hotel. Restaurant: buffet breakfast 07:00-11:00, lunch 12:00-16:00, dinner 17:00-21:00. Bar: Sunday to Thursday 11:00-23:00, Friday and Saturday 11:00-00:30, residents-only bar daily until 04:00. It has an OpenTable Diners' Choice Award. Menus are on the site.",chips:["Breakfast","Brunch","Private events","Book a stay"]},
+{k:["alt hours","opening hours","opening times","hours","when does the bar open","bar hours","open late","last orders","residents bar","residents only"],a:"ALT Restaurant: breakfast 07:00-11:00, lunch 12:00-16:00, dinner 17:00-21:00. ALT Bar: Sunday to Thursday 11:00-23:00, Friday and Saturday 11:00-00:30. The residents-only bar is open daily until 04:00.",chips:["Brunch","Breakfast"]},
+{k:["breakfast","buffet","buffet breakfast","morning","what time is breakfast","breakfast time","breakfast included"],a:"There is a buffet breakfast at ALT, served until 11am. The restaurant page lists it from 07:00 and the FAQ says from 8am, so please confirm the exact start time with the team on +353 (0)1 223 4555. Whether breakfast is included depends on your rate; the booking page shows it.",chips:["ALT hours","Contact"]},
+{k:["book a table","table","tables","table booking","reserve a table","brunch","bottomless","bottomless brunch","weekend","saturday","sunday","weekend brunch"],a:"Bottomless Brunch runs every Saturday and Sunday from 12:00 to 16:00 at ALT. Book a table through the site or the team.",chips:["Book a table","ALT hours"]},
+{k:["private event","private events","event","events","party","celebration","hosting","function","canapes","hire","venue","corporate event","meeting"],a:"ALT is available for private events: a stylish, intimate setting in the heart of the city with curated canapes, signature drinks and personal service. There is also an Events & Hosting page. Tell the team your date and group size.",chips:["Book a table","Contact"]},
+{k:["parking","park","car","car park","carpark","drive","driving","garage","valet","where to park"],a:"The hotel doesn't have its own car park, but guests get discounted parking at two nearby car parks: Trinity Street (directly opposite) and Drury Street (APCOA, 3 minutes' walk, open 24/7). Ask reception to validate your ticket. Rates are on the site's parking page, and the team can confirm the current amount.",chips:["Location","Contact"]},
+{k:["location","where","directions","how to get","getting here","find you","walk","walking","nearby","close to","near","neighbourhood","grafton","temple bar","trinity","trinity college","st stephens green","creative quarter","centre","center","city centre"],a:"The hotel is on St. Andrew's Lane in Dublin 2, on the edge of the Creative Quarter near St Stephen's Green. Grafton Street, Temple Bar and Trinity College are each about a 3-minute walk. Dublin is compact and walkable, and Dublin Bikes, buses and the Luas are close.",chips:["From the airport","Parking","Book a stay"]},
+{k:["airport","from the airport","bus","taxi","transport","train","luas","leap card","dublin bikes","how do i get there","public transport"],a:"From Dublin Airport the 16 bus runs to the city centre (the cheapest option), or a taxi takes about 30 to 45 minutes depending on traffic. Trains from around Ireland arrive at Heuston or Connolly stations, then bus and Luas connections bring you close to the hotel. A Leap card works across modes.",chips:["Location","Parking"]},
+{k:["pet","pets","dog","dogs","animal","guide dog","emotional support"],a:"At the hotel only certified guide dogs and emotional support dogs are permitted. Wren Apartments on College Green are pet friendly.",chips:["Wren Apartments","Contact"]},
+{k:["family","family room","family rooms","kids","children","child","baby","cot","cots","crib","cribs","interconnecting","connecting rooms","connecting"],a:"The hotel doesn't offer family rooms, interconnecting rooms, cots or cribs. Guests must be at least 18 to check in, or accompanied by someone 18 or older. Rooms for 3 or more people need a minimum 2-night stay on the booking page. Wren Apartments may suit families better; ask the team.",chips:["Wren Apartments","Contact"]},
+{k:["accessible","acesible","acessible","accessible room","accessibility","wheelchair","disabled","disability","mobility","grab rails","step free","lift","elevator"],a:"The hotel has wheelchair accessible rooms with an emergency cord in the bathroom, a lower bathroom sink, a raised toilet with grab rails, and the upper floors are accessible by wheelchair. The site has an accessibility guide, and the team can tell you which room suits your needs.",chips:["Contact","Book a stay"]},
+{k:["wifi","wi-fi","internet","wireless","adaptor","adapter","adaptors","adapters","plug","charger","usb charging","hairdryer","hair dryer","iron","ironing","air conditioning","air-con","aircon","ac","tv","coffee","tea","amenities","facilities","what is included"],a:"Every room has complimentary high-speed Wi-Fi, air-conditioning, a flat-screen TV, USB charging ports, a hairdryer and speciality Irish roasted coffee. Irons and boards are available on request, and a limited supply of plug adaptors is at reception.",chips:["Rooms","Book a stay"]},
+{k:["sustainable","sustainability","net zero","carbon","green","eco","environment","environmental","little steps","plastic","recycling","zero waste","too good to go","upcycle","renewable"],a:"Wren is Ireland's first net zero carbon place to stay: no fossil fuels burned on site, a heating system using sustainable technology, renewable energy, no single-use plastics, local organic produce and a zero-waste kitchen at ALT. The Little Steps and Sustainability pages on the site explain more.",chips:["Rooms","Contact"]},
+{k:["offer","offers","special offers","deal","deals","discount","promo","promo code","prepay","winter break","winter breaks","direct","book direct","cheaper","best rate","eu presidency"],a:"The site has a Special Offers page, including Prepay & Save 20%, Winter Breaks and EU Presidency Ireland 2026. Booking direct is encouraged, and there is a promo code box on the booking page. Offers change, so the booking page shows what applies to your dates.",chips:["Book a stay","Contact"]},
+{k:["gift","gift voucher","gift vouchers","voucher","vouchers","present","gift card"],a:"Wren sells gift vouchers through its site (Gift Vouchers page). The team can help if you need something specific.",chips:["Contact"]},
+{k:["corporate","business","company","corporate rates","corporate rate","gds","amadeus","sabre","travel agent","conference","airline economics"],a:"There is a Corporates section with corporate room rates, and the hotel is on the GDS (Amadeus ON DUBWRE, Sabre ON 606682, Galileo ON I1726, Worldspan ON DUBWR). For corporate or conference stays, email info@wrenhotel.ie.",chips:["Contact","Book a stay"]},
+{k:["us visitors","american","usa","from the us","from america","us guests","tourists"],a:"The site has a dedicated US Visitors page with arrival tips, and the Wren Guide and the 3 Day Dublin Itinerary are good places to start planning.",chips:["Location","Contact"]},
+{k:["things to do","what to do","see","sightseeing","itinerary","guide","wren guide","attractions","museums","pubs","distillery","distilleries","dublin guide","recommendations"],a:"The site has a Wren Guide to Dublin (artisanal distilleries, charming pubs and more), a 3 Day Dublin Itinerary and a What's Happening in Dublin page. Trinity College, Grafton Street, Temple Bar and the museums are all within a short walk.",chips:["Location","Book a stay"]},
+{k:["age","how old","under 18","minimum age","18"],a:"Guests must be at least 18 to check in. If you are under 18, you must be accompanied by someone aged 18 or older.",chips:["Check-in","Contact"]},
+{k:["price","prices","cost","how much","how much is a room","how much is the parking","rate","rates","tariff","per night","cheap","budget","expensive"],a:"Rates change by date and offer, so I won't quote one from memory. The booking page shows the live price for your dates, and the team on +353 (0)1 223 4555 or info@wrenhotel.ie can help. Tap Book a stay and I'll pass your request on.",chips:["Book a stay","Special offers"]},
+{k:["about","who are you","what is wren","wren urban nest","boutique","boutique hotel","story","hotel"],a:"Wren Urban Nest is a boutique hotel with 137 compact, design-led rooms in the heart of Dublin, on the edge of the Creative Quarter. It is Ireland's first net zero carbon place to stay, with ALT Bar & Restaurant on site.",chips:["Rooms","ALT hours","Book a stay"]}
+],
+flow:{
+ trigger:["book a stay","reserve","reserve a room","make a reservation","book a room","book a nest","check availability","enquire","enquiry","inquire","inquiry","stay with you","i want to book","book my stay"],
+ intro:"Happy to. A few quick questions and I'll pass your request to the Wren team. Nothing is booked or charged. Type cancel any time.",
+ steps:[
+  {key:"dates",q:"Which dates would you like, and for how many nights?",chips:["This weekend","Next month","Flexible"]},
+  {key:"guests",q:"How many guests, and how many rooms?",chips:["1 guest, 1 room","2 guests, 1 room","3 or 4 guests"]},
+  {key:"room",q:"Which nest suits you?",chips:["Snug Nest","Cosy Nest","Twin Nest","Wren Apartment","Not sure yet"]},
+  {key:"extra",q:"Anything else the team should know? For example accessibility needs, a table at ALT or a celebration. Type 'no' if not.",chips:["No","Table at ALT","Accessibility needs"],opt:true},
+  {key:"name",q:"What's your name?",check:function(s){return s.trim().length>=2;},err:"Please type your name."},
+  {key:"contact",q:"Best email or phone for the team to reach you?",check:function(s){return /@.+\..+|\d{7,}/.test(s.replace(/[\s()-]/g,''));},err:"Please type an email address or a phone number with at least 7 digits."}
+ ],
+ done:function(d){return "Thanks "+d.name+". Your request is ready for the Wren team: "+d.dates+" · "+d.guests+" · "+d.room+" · "+d.extra+" · "+d.contact+".<br><br><b>Sent to the team.</b> (This is a demo, so nothing was really sent.) Someone from Wren confirms availability and rates. You can also reach them on info@wrenhotel.ie or +353 (0)1 223 4555.";}
+}
+};
+
+mountAssistant(createAssistant(CFG));
+</script>
+</body>
+</html>

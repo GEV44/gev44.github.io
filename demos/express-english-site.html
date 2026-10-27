@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Express English Language Institute, Dubai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2367;--red:#b62c36;--grey:#d6d6d6;--ink:#14182b;--paper:#fbfaf7;--w-main:#0d2367;--w-accent:#b62c36;--w-bg:#f3f2ee;--w-font:'Source Sans 3',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.6 'Source Sans 3',system-ui,sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden}
+h1,h2,h3{font-family:Outfit,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}img{max-width:100%}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
+.top{background:var(--navy);color:#fff;font-size:14px}
+.top .wrap{display:flex;gap:6px 18px;flex-wrap:wrap;padding-top:7px;padding-bottom:7px;justify-content:space-between}
+.top a{text-decoration:none;opacity:.92}
+header.h{background:#fff;position:sticky;top:0;z-index:20;box-shadow:0 1px 0 #e6e4dc}
+header.h .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px}
+header.h img{height:46px;width:auto;display:block}
+.btn{display:inline-block;background:var(--red);color:#fff;border:0;border-radius:999px;padding:12px 22px;font:600 16px Outfit,sans-serif;text-decoration:none;cursor:pointer}
+.btn.o{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 2px var(--navy)}
+nav.n{display:none}
+@media(min-width:860px){nav.n{display:flex;gap:22px;font:600 15px Outfit,sans-serif}nav.n a{text-decoration:none;color:var(--navy)}}
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden;padding:44px 0 56px}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.hero:before{width:380px;height:380px;right:-120px;top:-80px;background:var(--red);opacity:.9}
+.hero:after{width:260px;height:260px;right:90px;bottom:-130px;background:var(--grey);opacity:.9}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:28px}
+.hero h1{font-size:clamp(34px,8vw,60px);font-weight:300;max-width:13em}.hero h1 b{font-weight:700}
+.hero p{max-width:34em;font-size:19px;opacity:.95;margin:14px 0 0}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.hero .btn.o{color:#fff;box-shadow:inset 0 0 0 2px #fff}
+.stats{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;font-family:Outfit}
+.stats div{min-width:110px}.stats b{display:block;font-size:30px;font-weight:700}.stats span{font-size:14px;opacity:.85}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1.5fr 1fr;align-items:center}.hero{padding:70px 0 80px}}
+.card-pt{background:#fff;color:var(--ink);border-radius:18px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.25)}
+.card-pt h3{font-size:22px;color:var(--navy)}.card-pt ol{margin:12px 0 16px;padding-left:20px}.card-pt li{margin:4px 0}
+section{padding:54px 0}
+.eyebrow{font:600 13px Outfit;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+h2{font-size:clamp(28px,5vw,40px);color:var(--navy);margin-bottom:10px}
+.lead{max-width:42em;color:#454a63}
+.courses{display:grid;gap:12px;margin-top:26px;grid-template-columns:1fr}
+@media(min-width:560px){.courses{grid-template-columns:1fr 1fr}}@media(min-width:900px){.courses{grid-template-columns:repeat(3,1fr)}}
+.c{background:#fff;border:1px solid #e6e4dc;border-radius:14px;padding:16px 18px;border-left:6px solid var(--navy)}
+.c:nth-child(3n+2){border-left-color:var(--grey)}.c:nth-child(3n){border-left-color:var(--red)}
+.c h3{font-size:19px;color:var(--navy);margin-bottom:4px}.c p{margin:0;font-size:15.5px;color:#454a63}
+.band{background:#eeece5}
+.teach{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 14px;margin-top:22px;scroll-snap-type:x mandatory}
+.t{flex:0 0 220px;background:#fff;border-radius:16px;padding:18px;scroll-snap-align:start;border-top:5px solid var(--red)}
+.t h3{font-size:22px;color:var(--navy)}.t .nat{font-size:14px;color:var(--red);font-weight:600;margin:2px 0 8px}.t p{margin:0;font-size:15px;color:#454a63}
+.split{display:grid;gap:26px}@media(min-width:860px){.split{grid-template-columns:1fr 1fr;align-items:start}}
+.tick{list-style:none;padding:0;margin:18px 0 0}.tick li{padding:8px 0 8px 32px;position:relative;border-bottom:1px solid #e6e4dc}
+.tick li:before{content:"";position:absolute;left:2px;top:15px;width:14px;height:14px;border-radius:50%;background:var(--red)}
+.tick li:nth-child(even):before{background:var(--navy)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 14px}
+.tabs button{border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:999px;padding:9px 18px;font:600 15px Outfit;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--navy);color:#fff}
+.pane{background:#fff;border-radius:16px;padding:22px;border:1px solid #e6e4dc}.pane h3{color:var(--navy);font-size:24px}.pane p{margin:8px 0}
+details{background:#fff;border:1px solid #e6e4dc;border-radius:12px;padding:14px 18px;margin:10px 0}
+summary{font:600 17px Outfit;color:var(--navy);cursor:pointer}details p{margin:10px 0 0;color:#454a63}
+footer{background:var(--navy);color:#dfe3f3;padding:34px 0 90px;font-size:15px}
+footer .wrap{display:grid;gap:14px}footer a{color:#fff}
+.c,.t,.pane,details{transition:box-shadow .2s,transform .2s}.c:hover,.t:hover{box-shadow:0 8px 22px rgba(13,35,103,.12);transform:translateY(-2px)}
+a:focus-visible,summary:focus-visible,.tabs button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.sig{opacity:.75;font-size:14px;border-top:1px solid rgba(255,255,255,.2);padding-top:14px}
+</style></head><body>
+<div class="top"><div class="wrap"><span>KHDA accredited &middot; Official IELTS test partner with IDP Dubai</span><span><a href="tel:+97145136452">+971 4 513 6452</a> &middot; <a href="mailto:info@expressenglish.ae">info@expressenglish.ae</a></span></div></div>
+<header class="h"><div class="wrap"><a href="#top" aria-label="Express English"><img src="img/express-english-logo.png" alt="Express English, Learn. Speak. Connect." width="117" height="46"></a>
+<nav class="n"><a href="#courses">Courses</a><a href="#teachers">Teachers</a><a href="#why">Why us</a><a href="#branches">Branches</a><a href="#faq">FAQ</a></nav>
+<a class="btn" href="#" data-aw>Free placement test</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap"><div>
+<h1>Speak English <b>with people who speak it natively.</b></h1>
+<p>English courses in Dubai for speaking, writing and exams. Small groups, private lessons, online or home-based, taught by British, American, Irish and South African tutors.</p>
+<div class="cta"><a class="btn" href="#" data-aw>Book a free placement test</a><a class="btn o" href="#courses">See courses</a></div>
+<div class="stats"><div><b>5,000+</b><span>students since 2018</span></div><div><b>95%</b><span>improve at least one CEFR level</span></div><div><b>3</b><span>Dubai branches</span></div></div></div>
+<div class="card-pt"><h3>How to enrol</h3><ol><li>Meet an academic advisor</li><li>Take the placement test</li><li>Confirm your registration</li></ol><a class="btn" href="#" data-aw>Start now</a></div></div></div>
+
+<section id="courses"><div class="wrap"><div class="eyebrow">Courses</div><h2>Pick what you need to do in English</h2>
+<p class="lead">The method is communicative: lessons are built around real situations, not grammar tables alone. Materials come from Oxford and Cambridge.</p>
+<div class="courses">
+<div class="c"><h3>General English</h3><p>Grammar, vocabulary and fluency for everyday use. All levels, beginner to advanced.</p></div>
+<div class="c"><h3>Business English</h3><p>Workplace emails, presentations and meetings with industry vocabulary.</p></div>
+<div class="c"><h3>IELTS Preparation</h3><p>Academic and General Training, with in-house examiners and mock tests.</p></div>
+<div class="c"><h3>TOEFL, PTE, OET</h3><p>Exam prep for study, immigration and healthcare careers.</p></div>
+<div class="c"><h3>CELPIP, SAT, ACT</h3><p>Immigration and college-entry test preparation.</p></div>
+<div class="c"><h3>Public Speaking</h3><p>Confident communication, persuasive speaking and stage presence.</p></div>
+<div class="c"><h3>Accent Training</h3><p>Speak clearly and be understood.</p></div>
+<div class="c"><h3>Kids Tutor</h3><p>Fun, interactive English lessons that build confidence.</p></div>
+<div class="c"><h3>Arabic and Math</h3><p>Arabic for non-native speakers and personalised maths support.</p></div>
+<div class="c"><h3>Private Tutor</h3><p>One-to-one lessons tailored to your goals, also online.</p></div>
+<div class="c"><h3>Online Courses</h3><p>Live, interactive classes from home.</p></div>
+<div class="c"><h3>Book an IELTS test</h3><p>Express English is an official IELTS test partner with IDP Dubai.</p></div>
+</div></div></section>
+
+
+<section id="about"><div class="wrap split"><div><div class="eyebrow">About</div><h2>Welcome to Express English</h2>
+<p>Express English Language Training Center offers English courses in Dubai to help individuals and families hone their writing and speaking skills. The institute is accredited by the Knowledge and Human Development Authority (KHDA) and is an official IELTS test partner, partnered with IDP Dubai.</p>
+<p>The English language centre provides spoken English courses, private English lessons, business English courses, IELTS training, PTE training and expert training for other exams.</p></div>
+<div><div class="eyebrow">The curriculum</div><h2>From the basics to phonetics</h2>
+<p>The curriculum starts with the basics of English: understanding and producing correct sentences. It then moves to more advanced topics such as phonetics and written comprehension. Students learn everything from verbs and adjectives to idioms and proverbs through real-life examples.</p>
+<p>Lessons should be fun. Enjoyment is more of a focus in the spoken English classes, but IELTS and PTE preparation courses are meant to be fun too.</p></div></div></section>
+
+<section class="band" id="teachers"><div class="wrap"><div class="eyebrow">Teachers</div><h2>Native tutors, by name</h2>
+<p class="lead">Swipe to meet some of the team.</p>
+<div class="teach">
+<div class="t"><h3>Xan</h3><div class="nat">South African</div><p>IELTS preparation, business English, pronunciation, general English.</p></div>
+<div class="t"><h3>Karina</h3><div class="nat">American</div><p>General and business English, kids, pronunciation.</p></div>
+<div class="t"><h3>Philip</h3><div class="nat">British</div><p>IELTS expert. Also PTE, OET and TOEFL, business and general English.</p></div>
+<div class="t"><h3>Aimee</h3><div class="nat">Irish</div><p>General English, IELTS, kids, pronunciation.</p></div>
+<div class="t"><h3>Hannah</h3><div class="nat">British</div><p>General English, public speaking, kids, phonics, pronunciation.</p></div>
+<div class="t"><h3>Nathan</h3><div class="nat">Irish</div><p>General and business English, kids, pronunciation.</p></div>
+<div class="t"><h3>Patricia</h3><div class="nat">American</div><p>IELTS preparation, business English, pronunciation.</p></div>
+<div class="t"><h3>Aya</h3><div class="nat">Swedish</div><p>Arabic, maths, kids and general English.</p></div>
+</div></div></section>
+
+<section id="why"><div class="wrap split"><div><div class="eyebrow">Why Express English</div><h2>Built around speaking</h2>
+<ul class="tick"><li>British and American tutors for accents you will actually hear</li><li>Oxford and Cambridge course materials</li><li>In-house examiners for IELTS and OET courses</li><li>Blended learning with online access, interactive content and games</li><li>KHDA accredited certificate for each level passed</li><li>Small group, semi-private or private classes</li></ul></div>
+<div><div class="eyebrow">Community</div><h2>Practice outside class</h2><p class="lead">Weekly language exchange meetups with native speakers, and movie nights where English-language films are followed by guided discussion to sharpen listening.</p>
+<p><a class="btn o" href="#" data-aw>Ask about events</a></p></div></div></section>
+
+<section class="band" id="branches"><div class="wrap"><div class="eyebrow">Branches</div><h2>Three places in Dubai, plus online</h2>
+<div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-p="0">Business Bay</button><button role="tab" aria-selected="false" data-p="1">Port Saeed</button><button role="tab" aria-selected="false" data-p="2">JLT</button></div>
+<div class="pane" id="pane"></div>
+<p class="lead" style="margin-top:14px">Home-based classes and online classes are also available.</p></div></section>
+
+
+
+<section id="formats"><div class="wrap"><div class="eyebrow">Formats</div><h2>Study the way that fits your week</h2>
+<p class="lead">Every format uses the same communicative method and the same Oxford and Cambridge materials.</p>
+<div class="courses">
+<div class="c"><h3>Small group</h3><p>Most IELTS students choose small groups for the tips, practice and feedback from British IELTS teachers. Weekday mornings, evenings or weekends.</p></div>
+<div class="c"><h3>Semi-private</h3><p>A small group of friends or colleagues who want to study the same course together.</p></div>
+<div class="c"><h3>Private</h3><p>One-to-one lessons where a native tutor tailors the course to your needs, pace and timetable.</p></div>
+<div class="c"><h3>Online</h3><p>Live, interactive English classes from the comfort of your home.</p></div>
+<div class="c"><h3>Home-based</h3><p>Choose home-based classes when you send your enquiry to the team.</p></div>
+<div class="c"><h3>At a branch</h3><p>Business Bay, Port Saeed or JLT, with interactive whiteboards and bright screens in each classroom.</p></div>
+</div>
+<p style="margin-top:22px"><a class="btn" href="#" data-aw>Tell the team what you need</a></p></div></section>
+
+<section id="exams"><div class="wrap"><div class="eyebrow">Choosing an exam</div><h2>Which test is for you?</h2>
+<p class="lead">A quick guide based on what the course pages say. Your academic advisor will confirm the right one for your plan.</p>
+<div class="courses">
+<div class="c"><h3>IELTS General Training</h3><p>One of the main requirements for visa applications. Scores are used for UK, Canadian or Australian immigration.</p></div>
+<div class="c"><h3>IELTS Academic</h3><p>Mainly used for university entrance or employment.</p></div>
+<div class="c"><h3>PTE Academic</h3><p>Pearson Test of English preparation, built for confident, fast results.</p></div>
+<div class="c"><h3>OET</h3><p>Occupational English Test coaching designed for healthcare professionals.</p></div>
+<div class="c"><h3>CELPIP</h3><p>Targeted training for immigration and success with the CELPIP exam.</p></div>
+<div class="c"><h3>SAT and ACT</h3><p>Expert prep with real practice tests, to get you college-ready.</p></div>
+</div></div></section>
+
+<section class="band" id="voices"><div class="wrap"><div class="eyebrow">Student voices</div><h2>What students write</h2>
+<div class="courses">
+<div class="c"><h3>Ada Vergara</h3><p>"I was only aiming for band 7 but I got a band score of 8!"</p></div>
+<div class="c"><h3>Mina Soriano</h3><p>"After 6 weeks of training, I got my desired IELTS result. I never got bored in class."</p></div>
+<div class="c"><h3>Naweed</h3><p>"Our family has seen a lot of improvement in our spoken English since we joined here."</p></div>
+</div><p class="lead" style="margin-top:14px">Quotes are taken from the testimonials on the Express English website.</p></div></section>
+
+<section id="faq"><div class="wrap"><div class="eyebrow">FAQ</div><h2>Quick answers</h2>
+<details><summary>Do you provide certificates?</summary><p>Yes. Express English provides KHDA accredited certificates for each language level passed.</p></details>
+<details><summary>Are the teachers native speakers?</summary><p>The institute guarantees native English teachers, mostly British and American, so students get used to the accents they will meet in IELTS and PTE.</p></details>
+<details><summary>Which IELTS version should I choose?</summary><p>General Training is commonly required for visa and immigration applications. Academic is mainly used for university entrance or employment. Your tutor also helps you choose between paper-based and computer-delivered IELTS.</p></details>
+<details><summary>Can I study with friends or colleagues?</summary><p>Yes. Semi-private lessons are available for a small group who want to study together.</p></details>
+<details><summary>When are the classes?</summary><p>IELTS classes run on weekday mornings, evenings or weekends. For other courses, the team will confirm current timings.</p></details>
+<details><summary>What do the courses cost?</summary><p>Prices are not published on the page you are viewing. The team will confirm them for your course and branch.</p></details>
+</div></section>
+</main>
+<footer><div class="wrap"><div><b>Express English Language Training Centre</b><br>Dubai based language training and exam preparation institute.</div>
+<div>Head office &middot; <a href="mailto:info@expressenglish.ae">info@expressenglish.ae</a> &middot; <a href="tel:+97145136452">+971 4 513 6452</a> &middot; WhatsApp <a href="https://wa.me/971521501324">+971 52 150 1324</a> (Business Bay)</div>
+<div class="sig">Demo &middot; prepared by Gevorg Hovhannisyan</div></div></footer>
+
+<button id="aw-btn" aria-expanded="false" aria-controls="aw-panel">Ask Express English</button>
+<div id="aw-panel" role="dialog" aria-label="Express English assistant"><div id="aw-head"><div><b>Express English assistant</b><small>Answers from the website. The team confirms details.</small></div><button id="aw-x" aria-label="Close">&times;</button></div><div id="aw-log" aria-live="polite"></div><div id="aw-chips"></div><form id="aw-form"><input id="aw-in" autocomplete="off" aria-label="Your message" placeholder="Type your question"><button id="aw-go">Send</button></form></div>
+<script>
+var PANES=[["Business Bay","Next to Dubai Mall. Head office. Tel +971 4 513 6452, WhatsApp +971 52 150 1324. Parking is available around the building."],["Port Saeed","Deira, by City Centre Metro. About 20 metres from the metro station, with parking around the building."],["JLT","Jumeirah Lakes Towers. About 20 metres from a metro station, with parking around the building."]];
+(function(){var b=document.querySelectorAll('.tabs button'),p=document.getElementById('pane');function s(i){b.forEach(function(x,j){x.setAttribute('aria-selected',i==j)});p.innerHTML='<h3>'+PANES[i][0]+'</h3><p>'+PANES[i][1]+'</p><p>Contact the team to book a visit or a free placement test.</p>'}b.forEach(function(x,i){x.onclick=function(){s(i)}});s(0)})();
+</script>
+<script id="engine">function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9Ѐ-ӿ ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>5)return w.slice(0,5);return w.replace(/(es|s)$/,'');}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[m][n];}
+function score(q,e){var nq=' '+norm(q)+' ',toks=norm(q).split(' ').filter(Boolean),s=0,tb={};
+ e.kw.forEach(function(k){var nk=norm(k);if(!nk)return;
+  if(nk.indexOf(' ')>-1){if(nq.indexOf(' '+nk+' ')>-1){s+=4;return;}var parts=nk.split(' '),hit=0;parts.forEach(function(p){if(toks.some(function(t){return stem(t)==stem(p)||(p.length>4&&lev(t,p)<=1);}))hit++;});if(hit==parts.length)s+=3;return;}
+  toks.forEach(function(t,i){var b=0;if(t==nk)b=3;else if(stem(t)==stem(nk)&&Math.min(t.length,nk.length)>=3)b=2.5;else if(nk.length>=5&&t.length>=4&&lev(t,nk)<=(nk.length>=8?2:1))b=1.8;else if(nk.length>=5&&t.length>=5&&(t.indexOf(nk)>-1||nk.indexOf(t)>-1))b=2;if(b>(tb[i]||0))tb[i]=b;});});
+ for(var i in tb)s+=tb[i];return s;}
+function match(q,KB){var best=null,bs=0;KB.forEach(function(e){var s=score(q,e);if(s>bs){bs=s;best=e;}});return bs>=1.8?best:null;}
+</script>
+<script id="kbs">
+var TEL='<a href="tel:+97145136452">+971 4 513 6452</a>',WA='<a href="https://wa.me/971521501324">+971 52 150 1324</a>';
+var KB=[
+{id:'hi',kw:['hello','hi','hey','good morning','good evening','salam','marhaba'],a:'Hello! Ask me about courses, teachers, branches or the free placement test, or tap a button below.'},
+{id:'courses',kw:['courses','course','classes','lessons','what do you teach','offer','programs','programmes','subjects'],a:'We teach General English, Business English, IELTS, TOEFL, PTE, OET, CELPIP, SAT, ACT, Public Speaking, Accent Training, Arabic, Math, Kids Tutor and Private Tutor, plus online courses.'},
+{id:'general',kw:['general english','spoken english','speaking','conversation','fluency','grammar','vocabulary','beginner','advanced'],a:'General English covers grammar, vocabulary and fluency for real-world communication, in small groups or private lessons. All levels are welcome, from beginner to advanced.'},
+{id:'business',kw:['business english','business','work','workplace','professional','emails','presentations','meetings','office','career'],a:'Business English focuses on workplace emails, presentations and meetings, with industry-specific vocabulary and scenarios.'},
+{id:'ielts',kw:['ielts','band score','band','academic','general training','examiner','mock test','mock'],a:'IELTS preparation covers Academic and General Training, with certified instructors, in-house examiners, mock tests and feedback. Classes run weekday mornings, evenings or weekends. Private and semi-private options exist too.'},
+{id:'ieltstest',kw:['book ielts test','ielts test date','sit the test','idp','official test','exam booking','test partner','take ielts'],a:'Express English is an official IELTS test partner with IDP Dubai, so you can book the test itself with the team. Ask for the available dates and they will confirm.'},
+{id:'exams',kw:['toefl','pte','oet','celpip','sat','act','exam','exams','immigration','nurse','nursing','healthcare','test prep'],a:'Exam preparation is available for TOEFL, PTE Academic, OET (for healthcare professionals), CELPIP (immigration), SAT and ACT. Philip, for example, teaches PTE, OET and TOEFL.'},
+{id:'kids',kw:['kids','kid','child','children','son','daughter','young','year old','years old','phonics','school age'],a:'Kids Tutor offers fun, interactive English lessons that build confidence. Tutors such as Karina, Aimee, Hannah, Nathan and Aya teach kids. Ask the team which age groups are open.'},
+{id:'arabic',kw:['arabic','math','maths','mathematics','aya'],a:'Arabic courses are designed for non-native speakers of all levels, and Math covers catching up, staying ahead or exam prep. Aya, from Sweden, teaches both.'},
+{id:'speaking',kw:['public speaking','accent','accent training','pronunciation','stage','presenting'],a:'Public Speaking builds confident, persuasive communication and stage presence. Accent Training helps you speak clearly and be understood. Pronunciation is part of most tutors\' strengths.'},
+{id:'private',kw:['private','private tutor','one to one','1 to 1','individual','semi private','tutor','small group','group'],a:'You can choose small group classes, semi-private lessons for a few friends or colleagues, or private one-to-one tutoring tailored to your goals, in person or online.'},
+{id:'online',kw:['online','zoom','remote','from home','home based','home','virtual'],a:'Yes. Online classes are live and interactive, and home-based classes are also available. Choose them when booking.'},
+{id:'teachers',kw:['teacher','teachers','tutors','native','native speaker','british','american','irish','who teaches','instructors','staff'],a:'Teachers are native English speakers, mostly British and American. Names on the site: Xan (South African), Karina (American), Philip (British), Aimee (Irish), Hannah (British), Nathan (Irish), Patricia (American) and Aya (Swedish).'},
+{id:'branches',kw:['branch','branches','location','locations','where is','where are you','address','centre','center','near me','map','find you','directions','parking','park'],a:'There are three branches: Business Bay (next to Dubai Mall), Port Saeed (by City Centre Metro in Deira) and JLT. Port Saeed and JLT are about 20 metres from a metro station, and all have parking around the building.'},
+{id:'bb',kw:['business bay','dubai mall','head office'],a:'Business Bay is next to Dubai Mall and is the head office. Tel '+TEL+', WhatsApp '+WA+'.'},
+{id:'ps',kw:['port saeed','deira','city centre','city center','metro'],a:'The Port Saeed branch is in Deira by City Centre Metro, about 20 metres from the station, with parking around the building.'},
+{id:'jlt',kw:['jlt','jumeirah lakes','jumeirah lakes towers','marina'],a:'The JLT branch is about 20 metres from a metro station, with parking around the building.'},
+{id:'contact',kw:['contact','phone','call','whatsapp','email','mail','number','reach','talk to someone','speak to'],a:'Head office: '+TEL+' (Business Bay), WhatsApp '+WA+', email <a href="mailto:info@expressenglish.ae">info@expressenglish.ae</a>.'},
+{id:'placement',kw:['placement','placement test','level test','my level','which level','assessment','free test','level'],a:'The placement test is free. It tells the team your level so you start in the right class. Book it with the button below or with the team.'},
+{id:'enrol',kw:['enrol','enroll','enrolment','register','registration','join','sign up','start','how to start','how do i'],a:'Enrolling takes three steps: meet an academic advisor, take the placement test, confirm your registration.'},
+{id:'price',kw:['price','prices','cost','fee','fees','how much','pay','payment','payments','installment','installments','plan','discount','expensive','cheap'],a:'Prices and payment plans depend on the course and branch and are not listed on the page, so I will not guess. The team will confirm them. Use the booking button and they will get back to you.'},
+{id:'hours',kw:['hours','open','opening','time','times','timing','timings','schedule','weekend','evening','morning','when','saturday','friday','sunday'],a:'IELTS classes run on weekday mornings, evenings and weekends. Opening hours and other course timings are not listed, so the team will confirm them.'},
+{id:'cert',kw:['certificate','certificates','khda','accredited','accreditation','licensed','official','recognised','recognized'],a:'Express English is accredited by KHDA, and provides KHDA accredited certificates for each language level passed.'},
+{id:'results',kw:['results','pass rate','success','successful','reviews','testimonials','students','experience','since','years','improve','guarantee'],a:'The institute has taught over 5,000 students since 2018, and reports that 95% improve at least one CEFR level.'},
+{id:'method',kw:['method','methodology','materials','oxford','cambridge','books','technology','how do you teach','approach','communicative','blended'],a:'Lessons use the communicative method with Oxford and Cambridge materials, interactive whiteboards and blended learning with online access, interactive content and games.'},
+{id:'events',kw:['events','community','language exchange','movie','movie nights','meetup','meetups','social','club'],a:'There is a weekly Language Exchange meetup with native speakers, and Movie Nights with English-language films and guided discussion.'},
+{id:'jobs',kw:['career','careers','job','jobs','vacancy','hiring','work for you','apply as teacher','partner','partnership','franchise'],a:'There are Career and Partner With Us pages on the website. Email <a href="mailto:info@expressenglish.ae">info@expressenglish.ae</a> and the team will point you the right way.'},
+{id:'thanks',kw:['thanks','thank you','thx','great','ok thanks','perfect'],a:'You are welcome. Anything else I can help with?'}
+];
+</script>
+<script>
+window.AW_CFG={kb:KB,greet:'Hi! I can answer questions about Express English courses, teachers and branches, or book you a free placement test. What would you like to know?',
+chips:[{label:'Book placement test',act:'flow'},{label:'Courses',id:'courses'},{label:'IELTS',id:'ielts'},{label:'Branches',id:'branches'},{label:'Teachers',id:'teachers'},{label:'Prices',id:'price'},{label:'Contact',id:'contact'}],
+typeHere:'Type your question',cancelled:'No problem, nothing was sent. What else can I help with?',badPhone:'Please enter a phone or WhatsApp number the team can reach.',
+fallback:'I do not have that on the website, so I will not guess. The team will confirm: '+TEL+' or WhatsApp '+WA+'. Or tap a button below.',
+flow:{title:'Let us arrange your free placement test. Type cancel any time.',steps:[
+{key:'course',label:'Course',q:'Which course are you interested in?',opts:['General English','Business English','IELTS','Other exam (TOEFL, PTE, OET...)','Kids','Public Speaking','Arabic or Math','Not sure']},
+{key:'level',label:'Your level',q:'How would you describe your English?',opts:['Beginner','Intermediate','Advanced','Not sure']},
+{key:'where',label:'Branch or format',q:'Where would you like to study?',opts:['Business Bay','Port Saeed','JLT','Online','Home-based']},
+{key:'when',label:'Preferred time',q:'When suits you best?',opts:['Weekday morning','Weekday evening','Weekend','Flexible']},
+{key:'name',label:'Name',q:'Your name?',ph:'Your name'},
+{key:'phone',label:'Phone or WhatsApp',q:'Phone or WhatsApp number for the team to reach you?',type:'tel',ph:'+971 ...'}],
+done:function(l){return 'Thank you! Your request is ready for the team:<br>'+l+'<br><br>It has been sent to the team, who will confirm the placement test time and any details I could not (prices, exact timings).'}}};
+</script>
+<script id="widget">(function(){
+var C=window.AW_CFG,KB=C.kb,$=function(i){return document.getElementById(i)};
+var btn=$('aw-btn'),panel=$('aw-panel'),log=$('aw-log'),chips=$('aw-chips'),form=$('aw-form'),inp=$('aw-in');
+var flow=null,step=0,data={};
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function add(t,cls,html){var d=document.createElement('div');d.className='aw-m '+cls;if(html)d.innerHTML=t;else d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function setChips(list){chips.innerHTML='';list.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c.label;b.onclick=function(){say(c.label,c)};chips.appendChild(b)})}
+function home(){setChips(C.chips)}
+function open(){panel.classList.add('open');btn.setAttribute('aria-expanded','true');if(!log.children.length){add(C.greet,'aw-b');home()}inp.focus()}
+function close(){panel.classList.remove('open');btn.setAttribute('aria-expanded','false')}
+btn.onclick=function(){panel.classList.contains('open')?close():open()};$('aw-x').onclick=close;
+function ask(){var s=C.flow.steps[step];add(s.q,'aw-b');if(s.opts)setChips(s.opts.map(function(o){return{label:o,val:o}}));else chips.innerHTML='';inp.placeholder=s.ph||C.typeHere;if(s.type=='tel')inp.setAttribute('inputmode','tel');else inp.removeAttribute('inputmode')}
+function startFlow(){flow=true;step=0;data={};ask()}
+function finish(){var s=C.flow.steps,lines=s.map(function(x){return '<b>'+esc(x.label)+':</b> '+esc(data[x.key])}).join('<br>');add(C.flow.done(lines),'aw-b',true);flow=null;inp.placeholder=C.typeHere;inp.removeAttribute('inputmode');setChips(C.chips)}
+function say(text,chip){
+ text=String(text).trim();if(!text)return;add(text,'aw-u');
+ if(chip&&chip.act=='flow'){startFlow();return}
+ if(flow){var s=C.flow.steps[step];
+  if(/^(cancel|stop|exit|back|salir|cancelar|volver)$/i.test(text)){flow=null;add(C.cancelled,'aw-b');home();return}
+  if(s.type=='tel'&&text.replace(/\D/g,'').length<7){add(C.badPhone,'aw-b');return}
+  data[s.key]=text;step++;if(step>=C.flow.steps.length)finish();else ask();return}
+ if(chip&&chip.id){var e=KB.filter(function(k){return k.id==chip.id})[0];if(e){reply(e);return}}
+ if(/^(book|enrol|enroll|reserv|apuntar|quiero reservar|sign up|register)/i.test(norm(text))&&C.flow){startFlow();return}
+ var m=match(text,KB);if(m)reply(m);else{add(C.fallback,'aw-b',true);home()}
+}
+function reply(e){add(e.a,'aw-b',true);var l=C.chips.slice();setChips(l)}
+form.onsubmit=function(ev){ev.preventDefault();var v=inp.value;inp.value='';say(v)};
+window.AW={say:say,open:open,start:function(){open();if(!flow){add(C.flow.title,'aw-b');startFlow()}}};
+document.querySelectorAll('[data-aw]').forEach(function(el){el.addEventListener('click',function(ev){ev.preventDefault();window.AW.start()})});
+})();
+</script>
+<style>#aw-btn{position:fixed;right:16px;bottom:16px;z-index:99;border:0;border-radius:999px;background:var(--w-main);color:#fff;font:600 15px/1 var(--w-font);padding:14px 18px;box-shadow:0 8px 24px rgba(0,0,0,.28);cursor:pointer;display:flex;gap:8px;align-items:center}
+#aw-btn:focus-visible,#aw-panel button:focus-visible,#aw-panel input:focus-visible{outline:3px solid var(--w-accent);outline-offset:2px}
+#aw-panel{position:fixed;right:12px;bottom:76px;z-index:100;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 100px));background:#fff;color:#1b1b1f;border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--w-font)}
+#aw-panel.open{display:flex}
+#aw-head{background:var(--w-main);color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+#aw-head b{font-size:15px}#aw-head small{display:block;opacity:.8;font-size:12px}
+#aw-x{background:none;border:0;color:#fff;font-size:24px;line-height:1;cursor:pointer;padding:2px 8px}
+#aw-log{flex:1;overflow:auto;padding:12px;background:var(--w-bg);display:flex;flex-direction:column;gap:8px}
+.aw-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.aw-m a{color:inherit;text-decoration:underline}
+.aw-b{background:#fff;border:1px solid rgba(0,0,0,.08);align-self:flex-start;border-bottom-left-radius:4px}
+.aw-u{background:var(--w-main);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+#aw-chips{padding:8px 10px 0;display:flex;flex-wrap:wrap;gap:6px;background:#fff;max-height:112px;overflow:auto}
+#aw-chips button{border:1px solid var(--w-main);background:#fff;color:var(--w-main);border-radius:999px;padding:6px 11px;font:600 13px/1.2 var(--w-font);cursor:pointer}
+#aw-chips button:hover{background:var(--w-main);color:#fff}
+#aw-form{display:flex;gap:6px;padding:10px;background:#fff}
+#aw-in{flex:1;min-width:0;border:1px solid #c9c9d1;border-radius:10px;padding:10px;font:15px var(--w-font)}
+#aw-go{border:0;background:var(--w-accent);color:#fff;border-radius:10px;padding:0 14px;font:700 14px var(--w-font);cursor:pointer}
+</style>
+</body></html>

@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hotel Mimosa · 30 rooms on Division Street, Chinatown, New York</title>
+<meta name="description" content="Demo site and assistant for Hotel Mimosa New York, 79 Division St.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blk:#0a0a0a;--yel:#f7e96a;--yel2:#e8d43a;--cream:#fbf6e6;--paper:#f1ead2;--red:#b3392f;--mut:#6b6450;--aw-f:'Montserrat',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.65 'Montserrat',system-ui,sans-serif;color:var(--blk);background:var(--cream);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Old Standard TT',Georgia,serif;font-weight:700;line-height:1.12}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header{background:var(--blk);color:var(--cream);position:sticky;top:0;z-index:40;border-bottom:3px solid var(--yel)}
+.bar{max-width:1040px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:46px;width:46px;object-fit:contain;border-radius:50%}
+.brand span{font:700 17px 'Old Standard TT',serif;letter-spacing:.02em;color:#fff}
+.brand small{display:block;font:500 10px 'Montserrat',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--yel)}
+.bar nav{display:none;gap:18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.bar nav a{text-decoration:none;color:#e9e3c9}
+.bar nav a:hover{color:var(--yel)}
+.btn{display:inline-block;background:var(--yel);color:var(--blk);font:700 12px 'Montserrat',sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:12px 18px;border:0;cursor:pointer;text-decoration:none;border-radius:2px}
+.btn.line{background:transparent;color:var(--cream);border:2px solid var(--yel)}
+.btn.blk{background:var(--blk);color:var(--yel)}
+@media(min-width:900px){.bar nav{display:flex}}
+.hero{background:var(--blk);color:var(--cream);padding:40px 0 0;position:relative;overflow:hidden}
+.hero .g{display:grid;gap:26px;padding-bottom:40px}
+.eyebrow{font:600 11px 'Montserrat',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--yel);margin-bottom:12px}
+.hero h1{font-size:clamp(34px,9vw,62px);margin-bottom:14px}
+.hero h1 i{color:var(--yel);font-weight:400}
+.hero p.l{color:#d9d3b8;max-width:540px;margin-bottom:22px}
+.acts{display:flex;gap:10px;flex-wrap:wrap}
+.stamp{width:200px;height:200px;border-radius:50%;border:3px dashed var(--yel);display:grid;place-items:center;text-align:center;padding:20px;color:var(--yel);justify-self:start;transform:rotate(-6deg)}
+.stamp b{display:block;font:700 36px 'Old Standard TT',serif;line-height:1}
+.stamp span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e9e3c9}
+@media(min-width:820px){.hero .g{grid-template-columns:1.4fr .6fr;align-items:center}.stamp{justify-self:center;width:230px;height:230px}}
+.tick{background:var(--yel);color:var(--blk);overflow:hidden;white-space:nowrap;padding:9px 0;font:700 12px 'Montserrat',sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.tick div{display:inline-block;padding-left:100%;animation:mq 34s linear infinite}
+@keyframes mq{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.tick div{animation:none;padding-left:16px}}
+section{padding:46px 0}
+.h2{font-size:clamp(27px,6vw,40px);margin-bottom:8px}
+.lead{color:var(--mut);max-width:620px;margin-bottom:24px}
+.about .g{display:grid;gap:20px}
+.fact{border-top:3px solid var(--blk);padding-top:10px}
+.fact b{font:700 30px 'Old Standard TT',serif;display:block}
+.fact span{font-size:13px;color:var(--mut)}
+.facts{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(min-width:820px){.about .g{grid-template-columns:1.1fr .9fr;gap:40px}.facts{grid-template-columns:1fr 1fr 1fr 1fr;grid-column:1/-1}}
+.rooms{background:var(--paper)}
+.rl{display:grid;gap:0;border-top:2px solid var(--blk)}
+.rr{display:grid;gap:6px;padding:18px 0;border-bottom:1px solid #cdc4a4}
+.rr h3{font-size:22px}
+.rr p{font-size:14px;color:var(--mut)}
+.rr .tags{display:flex;gap:6px;flex-wrap:wrap}
+.rr .tags span{font-size:11px;font-weight:600;letter-spacing:.06em;background:var(--blk);color:var(--yel);padding:3px 9px;border-radius:2px}
+.rr button{justify-self:start;margin-top:4px}
+@media(min-width:760px){.rr{grid-template-columns:200px 1fr auto;gap:22px;align-items:center}.rr button{margin:0}}
+.incl{display:grid;gap:10px;margin-top:22px;grid-template-columns:1fr 1fr}
+.incl div{background:#fff;border:1px solid #d9cfa9;padding:12px;font-size:13px;font-weight:600}
+@media(min-width:760px){.incl{grid-template-columns:repeat(4,1fr)}}
+.walk{background:var(--blk);color:var(--cream)}
+.walk .lead{color:#cfc9ad}
+.walk .h2{color:var(--yel)}
+.wl{list-style:none;counter-reset:w;display:grid;gap:0}
+.wl li{counter-increment:w;display:grid;grid-template-columns:44px 1fr;gap:10px;padding:14px 0;border-top:1px solid #3a372b}
+.wl li:before{content:counter(w,decimal-leading-zero);font:400 26px 'Old Standard TT',serif;color:var(--yel);font-style:italic}
+.wl b{display:block;font-size:15px}
+.wl span{font-size:13px;color:#bdb79c}
+@media(min-width:820px){.wl{grid-template-columns:1fr 1fr;column-gap:40px}}
+.walk .tag{margin-top:22px;border:1px dashed var(--yel);padding:14px;font-size:14px;color:#e9e3c9}
+.pol .g{display:grid;gap:14px}
+.tk{background:#fff;border:1px solid #d9cfa9;border-left:8px solid var(--yel);padding:16px 18px;position:relative}
+.tk h3{font-size:18px;margin-bottom:4px}
+.tk p{font-size:14px;color:var(--mut)}
+@media(min-width:760px){.pol .g{grid-template-columns:1fr 1fr}}
+.say{background:var(--yel)}
+.say .g{display:grid;gap:16px}
+.say figure{background:var(--cream);border:2px solid var(--blk);padding:20px;position:relative}
+.say figure:before{content:"C";position:absolute;top:-6px;left:12px;font:700 64px 'Old Standard TT',serif;color:var(--red);line-height:1}
+.say blockquote{font:italic 400 18px/1.45 'Old Standard TT',serif;padding-top:22px}
+.say figcaption{margin-top:12px;font:600 11px 'Montserrat';letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+@media(min-width:820px){.say .g{grid-template-columns:repeat(3,1fr)}}
+.map{margin-top:20px;border:2px solid var(--yel);background:#1a1a14;color:#cfc9ad;font-size:12px;max-width:420px}.map p{padding:10px 12px}
+.pol{background:var(--cream)}
+.acc{background:var(--paper)}
+.acc .box{background:#fff;border:2px solid var(--blk);padding:22px;display:grid;gap:12px}
+.acc .box p{font-size:15px}
+.faq details{border-bottom:1px solid #cdc4a4;padding:0}
+.faq summary{cursor:pointer;padding:16px 0;font:700 18px 'Old Standard TT',serif;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faq summary:after{content:"+";font:400 24px 'Montserrat';line-height:1;color:var(--red)}
+.faq details[open] summary:after{content:"–"}
+.faq p{padding:0 0 16px;color:var(--mut);font-size:15px}
+.book{background:var(--yel);text-align:center}
+.book h2{font-size:clamp(28px,7vw,44px);margin-bottom:10px}
+.book p{max-width:520px;margin:0 auto 18px}
+.contact{background:var(--blk);color:var(--cream)}
+.contact .g{display:grid;gap:22px}
+.contact h2{color:var(--yel);margin-bottom:12px;font-size:28px}
+.contact dt{font:600 11px 'Montserrat';letter-spacing:.2em;text-transform:uppercase;color:var(--yel);margin-top:12px}
+.contact dd{font-size:15px;color:#e9e3c9}
+.contact dd a{color:#fff}
+@media(min-width:760px){.contact .g{grid-template-columns:1fr 1fr}}
+footer{background:#000;color:#8d8770;font-size:12px;text-align:center;padding:16px 0}
+.aw-fab{position:fixed;right:16px;bottom:16px;z-index:60;border:2px solid var(--yel);cursor:pointer;background:var(--blk);color:var(--yel);font:700 13px/1 'Montserrat',sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:15px 18px;border-radius:2px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.aw-fab.hide{display:none}
+.aw-panel{position:fixed;right:12px;bottom:12px;z-index:70;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:var(--cream);color:var(--blk);border:2px solid var(--blk);box-shadow:0 18px 50px rgba(0,0,0,.45);display:none;flex-direction:column;overflow:hidden;font:14px/1.45 'Montserrat',system-ui,sans-serif}
+.aw-panel.open{display:flex}
+.aw-head{background:var(--blk);color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--yel)}
+.aw-head b{display:block;font:700 17px 'Old Standard TT',serif}.aw-head small{color:var(--yel);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.aw-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer}
+.aw-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--paper)}
+.aw-m{max-width:88%;padding:9px 12px;white-space:pre-wrap;word-wrap:break-word}
+.aw-m.bot{background:#fff;border:1px solid #d9cfa9;align-self:flex-start}
+.aw-m.me{background:var(--blk);color:var(--yel);align-self:flex-end}
+.aw-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px;max-height:96px;overflow-y:auto;border-top:1px solid #d9cfa9;background:var(--cream)}
+.aw-chips button{border:1px solid var(--blk);color:var(--blk);background:#fff;padding:6px 10px;font:inherit;font-size:12px;font-weight:600;cursor:pointer;border-radius:2px}
+.aw-form{display:flex;gap:6px;padding:8px 10px;border-top:1px solid #d9cfa9;background:var(--cream)}
+.aw-form input{flex:1;min-width:0;border:1px solid #9a916f;padding:10px;font:inherit;font-size:16px;background:#fff;border-radius:2px}
+.aw-form button{border:0;background:var(--blk);color:var(--yel);padding:0 14px;font:inherit;font-weight:700;cursor:pointer;border-radius:2px}
+@media(max-width:480px){.aw-panel{right:0;bottom:0;width:100vw;height:86vh}}
+</style></head><body>
+<header><div class="bar"><a class="brand" href="#top"><img src="img/hotelmimosa-logo.png" alt="Hotel Mimosa"><span>Hotel Mimosa<small>New York · Chinatown</small></span></a><nav><a href="#about">About</a><a href="#rooms">Rooms</a><a href="#hood">Neighborhood</a><a href="#policy">Policies</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav><button class="btn" onclick="AWflow()">Check dates</button></div></header>
+<main id="top">
+<div class="hero"><div class="wrap"><div class="g"><div>
+<div class="eyebrow">79 Division Street · Lower East Side edge</div>
+<h1>To be Mimosa, every experience is <i>young at heart.</i></h1>
+<p class="l">A 30-room hotel with 1950s-inspired rooms, very clean and quiet, and a front desk that hands you a list of small places to eat nearby. In Spanish, mimosa means a pampered, loved one. The service is meant to match.</p>
+<div class="acts"><button class="btn" onclick="AWflow()">Ask about a stay</button><a class="btn line" href="#rooms">See the rooms</a></div></div>
+<div class="stamp"><div><b>Top 10</b><span>New York hotels, TripAdvisor 2020 &amp; 2022</span></div></div>
+</div></div>
+<div class="tick"><div>Free Wi-Fi &nbsp;✦&nbsp; Smart TV &nbsp;✦&nbsp; MERV-13 air filters &nbsp;✦&nbsp; 24-hour front desk &nbsp;✦&nbsp; Four-pane soundproof windows &nbsp;✦&nbsp; Check-in 4 pm &nbsp;✦&nbsp; Check-out 12 noon &nbsp;✦&nbsp; Walk to Soho, Nolita and Little Italy &nbsp;✦&nbsp;</div></div></div>
+
+<section class="about" id="about"><div class="wrap"><div class="g"><div><h2 class="h2">Small on purpose</h2><p class="lead" style="margin-bottom:12px">Only 30 rooms, right by the Lower East Side, with Soho, Nolita, Chinatown and Little Italy within easy walking distance. Guest reviews keep coming back to the quiet, the beds and the staff.</p><p style="color:var(--mut)">Written guides are arranged for guests with one or two nights in the city, or a few leisurely days: an Old New York version of Chinatown plus a taste of the cutting-edge Lower East Side.</p></div>
+<div class="fact"><b>30</b><span>rooms in the whole hotel</span></div>
+<div class="facts"><div class="fact"><b>24h</b><span>front desk</span></div><div class="fact"><b>4 pm</b><span>check-in, bags held earlier</span></div><div class="fact"><b>12</b><span>noon check-out</span></div><div class="fact"><b>21+</b><span>minimum check-in age, with ID</span></div></div>
+</div></div></section>
+
+<section class="rooms" id="rooms"><div class="wrap"><h2 class="h2">Five ways to stay</h2><p class="lead">Every room has a 1950s-inspired look, a comfortable bed, a well-stocked bathroom and complimentary Wi-Fi. Manhattan rooms run small, and the hotel says so plainly.</p>
+<div class="rl">
+<div class="rr"><h3>Queen Room</h3><p>One queen bed.</p><div class="tags"><span>Queen bed</span><span>Wi-Fi</span></div></div>
+<div class="rr"><h3>Superior Queen Room</h3><p>One queen bed, sleeps two adults and one child under 12. Roll-away available in this room type only.</p><div class="tags"><span>Queen bed</span><span>Roll-away possible</span></div></div>
+<div class="rr"><h3>Twin Room</h3><p>Two beds.</p><div class="tags"><span>Two beds</span><span>Wi-Fi</span></div></div>
+<div class="rr"><h3>King Room</h3><p>One king bed.</p><div class="tags"><span>King bed</span><span>Wi-Fi</span></div></div>
+<div class="rr"><h3>ADA Superior Queen</h3><p>106 sq ft. Bath tub with adjustable shower head, grab bars in the bathroom, accessible lobby entrance and elevator.</p><div class="tags"><span>Accessible</span><span>106 sq ft</span></div></div>
+</div>
+<div class="incl"><div>Immaculate beds</div><div>Well-stocked bathrooms</div><div>Free earplugs at the desk</div><div>Smart TV</div></div>
+<div style="margin-top:20px"><button class="btn blk" onclick="AWflow()">Ask about dates</button></div></div></section>
+
+<section class="walk" id="hood"><div class="wrap"><h2 class="h2">The list at the front desk</h2><p class="lead">The hotel hands guests a short guide of places close by. A few from its own neighborhood page:</p>
+<ol class="wl">
+<li><div><b>88 Palace</b><span>Dim sum across the street from the hotel, open from 9:30 am, best around 11.</span></div></li>
+<li><div><b>Tous le jour</b><span>Espresso cafe on Division St, 7 am to 8 pm, La Colombe coffee and French pastries.</span></div></li>
+<li><div><b>Attaboy</b><span>Speakeasy bar at 134 Eldridge St, listed among the world's top 50.</span></div></li>
+<li><div><b>Bacaro</b><span>Venetian-style osteria on Division St with a wine cellar. Reservations suggested.</span></div></li>
+<li><div><b>Cafe Katja</b><span>Austrian eatery on Orchard St: goulash, sausages and beer.</span></div></li>
+<li><div><b>King's Kitchen</b><span>Barbecued meats, duck and congee around the corner on East Broadway.</span></div></li>
+</ol><div class="tag">Walking tours: the hotel recommends Sights By Sam, fully customizable, 917-242-8421. And yes, Men in Black 3 was filmed right in front of the hotel.</div></div></section>
+
+<section class="say"><div class="wrap"><h2 class="h2">What guests write</h2><p class="lead" style="color:#3b3600">Short excerpts from reviews quoted on the hotel's page.</p><div class="g">
+<figure><blockquote>I could not believe how quiet the whole building was. That was so nice to come back to each night.</blockquote><figcaption>Taylor A on TripAdvisor</figcaption></figure>
+<figure><blockquote>The hotel was renovated and very clean. The staff was especially friendly and we received a list of recommended local restaurants.</blockquote><figcaption>Matthias H. on TripAdvisor</figcaption></figure>
+<figure><blockquote>The staff here are phenomenal and will have all the advice you need on local food and attractions.</blockquote><figcaption>Greg on TripAdvisor</figcaption></figure>
+</div></div></section>
+
+<section class="pol" id="policy"><div class="wrap"><h2 class="h2">House rules, written plainly</h2><p class="lead">The things guests ask most, straight from the hotel's FAQ.</p><div class="g">
+<div class="tk"><h3>Cancellation</h3><p>Standard rate: free to cancel up to 48 hours before arrival. Inside 48 hours, the first night and tax. Non-refundable rates are not refunded. Groups of 4 or more rooms follow a separate schedule.</p></div>
+<div class="tk"><h3>Non-smoking</h3><p>100% non-smoking under New York City law. A minimum $400 cleaning fee may apply.</p></div>
+<div class="tk"><h3>Pets</h3><p>Pets and emotional support animals are not permitted. Verified service animals are welcome.</p></div>
+<div class="tk"><h3>Parking</h3><p>No on-site parking. The FAQ lists three local lots, two of them open 24 hours.</p></div>
+<div class="tk"><h3>Extra bed</h3><p>Roll-away beds in Superior Queen rooms only, $50 per night.</p></div>
+<div class="tk"><h3>Room keys</h3><p>Please return room cards at check-out. $20 for lost or damaged cards.</p></div>
+</div></div></section>
+
+<section class="acc"><div class="wrap"><div class="box"><h2 class="h2" style="font-size:28px;margin:0">Accessibility questions</h2><p>The hotel has an accessible entrance, an accessible elevator and an ADA Superior Queen room. The front desk is under temporary construction, so guests can check in at the lobby lounge. For specifics, call 24/7 at +1 (212) 343-4243 or +1 (917) 887-7000.</p><div><button class="btn blk" onclick="AWopen()">Ask the assistant</button></div></div></div></section>
+
+<section class="faq" id="faq"><div class="wrap"><h2 class="h2">FAQ</h2>
+<details><summary>How do I get to the hotel?</summary><p>The lobby entrance is on Eldridge St, between Division St and East Broadway.</p></details>
+<details><summary>Can I store bags?</summary><p>Yes. Arriving early, the team can hold belongings in the secure storage room until your room is ready, and also after check-out.</p></details>
+<details><summary>Is it noisy?</summary><p>Windows have four panes of glass. Guests often say they cannot hear the nearby bridge. For full silence, free earplugs are at the front desk.</p></details>
+<details><summary>How many people fit in a Superior Queen?</summary><p>Two adults and one small child under 12. Overcrowding is not recommended.</p></details>
+<details><summary>Late check-out or early check-in?</summary><p>Subject to availability, and may incur additional charges.</p></details>
+</div></section>
+
+<section class="book"><div class="wrap"><h2>Book directly, say hello first</h2><p>Tell the assistant your dates, guests and room type, and it will prepare the note for the front desk. Nothing is sent from this demo.</p><button class="btn blk" onclick="AWflow()">Plan my stay</button></div></section>
+
+<section class="contact" id="contact"><div class="wrap"><div class="g"><div><h2>Find us</h2><dl><dt>Address</dt><dd>79 Division Street, New York, NY 10002<br>Lobby entrance on Eldridge St</dd><dt>Phone</dt><dd><a href="tel:+12123434243">+1 (212) 343-4243</a></dd><dt>Email</dt><dd><a href="mailto:contact@hotelmimosany.com">contact@hotelmimosany.com</a></dd></dl><div class="map"><svg viewBox="0 0 320 200" role="img" aria-label="Schematic: the lobby entrance is on Eldridge Street between Division Street and East Broadway" style="width:100%;height:auto;display:block"><rect width="320" height="200" fill="#1a1a14"/><g stroke="#f7e96a" stroke-width="3" fill="none"><path d="M0 50H320"/><path d="M0 150H320"/><path d="M160 0V200" stroke-width="6"/></g><circle cx="160" cy="100" r="11" fill="#f7e96a"/><text x="160" y="104" font-family="Old Standard TT,serif" font-weight="700" font-size="13" text-anchor="middle" fill="#0a0a0a">M</text><g font-family="Montserrat,sans-serif" font-size="10" fill="#e9e3c9" letter-spacing="1.2"><text x="10" y="42">DIVISION ST</text><text x="10" y="168">EAST BROADWAY</text><text x="172" y="30">ELDRIDGE ST</text><text x="172" y="106" fill="#f7e96a">LOBBY ENTRANCE</text></g></svg><p>Schematic, not to scale. The lobby entrance is on Eldridge St, between Division St and East Broadway.</p></div></div>
+<div><h2>Times</h2><dl><dt>Front desk</dt><dd>24 hours, every day</dd><dt>Accessibility line</dt><dd>+1 (917) 887-7000, 24/7</dd><dt>Check-in</dt><dd>4:00 pm</dd><dt>Check-out</dt><dd>12:00 noon</dd><dt>Minimum age to check in</dt><dd>21, with government ID or passport</dd><dt>Bags</dt><dd>Held before check-in and after check-out</dd></dl></div></div></div></section>
+</main>
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+<script>
+(function(root){
+function norm(s){return (s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9+ ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4){w=w.replace(/(ing|ed|es|s)$/,'');}return w;}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;if(Math.abs(m-n)>2)return 9;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var prev=p[0];p[0]=i;for(j=1;j<=n;j++){c=p[j];p[j]=Math.min(p[j]+1,p[j-1]+1,prev+(a[i-1]===b[j-1]?0:1));prev=c;}}return p[n];}
+function tokens(s){return norm(s).split(' ').filter(Boolean);}
+function wordHit(kw,toks){var k=stem(kw);for(var i=0;i<toks.length;i++){var t=stem(toks[i]);if(t===k)return 1;if(k.length>=5&&lev(t,k)<=(k.length>=8?2:1))return 0.9;if(k.length>=5&&t.length>=4&&(t.indexOf(k)===0||k.indexOf(t)===0)&&t.length>=k.length-2)return 0.8;}return 0;}
+function score(entry,q,toks){var s=0;for(var i=0;i<entry.k.length;i++){var kw=norm(entry.k[i]);if(!kw)continue;if(kw.indexOf(' ')>-1){if((' '+q+' ').indexOf(' '+kw+' ')>-1)s+=2.5;else{var parts=kw.split(' '),h=0;parts.forEach(function(p){h+=wordHit(p,toks)>0?1:0;});if(h===parts.length)s+=2;}}else{var w=wordHit(kw,toks);s+=w*(kw.length>=6?1.5:1);}}return s;}
+function best(kb,text){var q=norm(text),toks=tokens(text),b=null,bs=0;for(var i=0;i<kb.length;i++){var s=score(kb[i],q,toks);if(s>bs){bs=s;b=kb[i];}}return bs>=1?b:null;}
+function runFlowStep(step,val){if(step.opts){var v=norm(val),f=null;step.opts.forEach(function(o){if(norm(o)===v||(v&&norm(o).indexOf(v)===0))f=o;});if(f)return f;var t=tokens(val);step.opts.forEach(function(o){if(!f&&t.some(function(x){return x.length>2&&wordHit(norm(o).split(' ')[0],[x])>0;}))f=o;});return f;}
+if(step.type==='email')return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val.trim())?val.trim():null;
+if(step.type==='phone')return val.replace(/[^0-9+]/g,'').length>=7?val.trim():null;
+if(step.type==='num'){var m=val.match(/\d+/);return m?m[0]:null;}
+return val.trim().length>=2?val.trim():null;}
+var api={norm:norm,best:best,runFlowStep:runFlowStep,lev:lev};
+root.AW=api;
+if(typeof module!=='undefined')module.exports=api;
+if(typeof document==='undefined')return;
+api.init=function(c){
+var fab=document.createElement('button');fab.className='aw-fab';fab.setAttribute('aria-label','Open assistant');fab.innerHTML='<span>'+(c.fab||'Ask')+'</span>';
+var p=document.createElement('div');p.className='aw-panel';p.setAttribute('role','dialog');
+p.innerHTML='<div class="aw-head"><div><b>'+c.title+'</b><small>'+c.sub+'</small></div><button class="aw-x" aria-label="Close">&times;</button></div><div class="aw-log"></div><div class="aw-chips"></div><form class="aw-form"><input type="text" placeholder="'+(c.ph||'Type your question')+'" aria-label="Message"><button type="submit">Send</button></form>';
+document.body.appendChild(fab);document.body.appendChild(p);
+var log=p.querySelector('.aw-log'),chips=p.querySelector('.aw-chips'),inp=p.querySelector('input'),form=p.querySelector('form');
+var fl=null,data={},started=false;
+function add(t,me){var d=document.createElement('div');d.className='aw-m '+(me?'me':'bot');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){say(t);};chips.appendChild(b);});}
+function ask(){var st=c.flow.steps[fl];add(st.q);setChips((st.opts||[]).concat(['Cancel']));inp.placeholder=st.ph||c.ph||'Type here';}
+function startFlow(){fl=0;data={};add(c.flow.intro);ask();}
+function finish(){var lines=c.flow.steps.map(function(s){return s.label+': '+data[s.key];});add(c.flow.done+'\n\n'+lines.join('\n'));fl=null;inp.placeholder=c.ph||'Type your question';setChips(c.chips);}
+function say(t){t=t.trim();if(!t)return;add(t,1);inp.value='';
+if(fl!==null){if(/^(cancel|stop|exit|never ?mind)$/i.test(norm(t))){fl=null;add('No problem, nothing was sent. What else can I help with?');setChips(c.chips);return;}
+var st=c.flow.steps[fl],v=runFlowStep(st,t);if(!v){add(st.err||'Sorry, I did not catch that. Could you try again?');return;}data[st.key]=v;fl++;if(fl>=c.flow.steps.length)finish();else ask();return;}
+var q=norm(t);if(c.flow.trig.some(function(w){return q.indexOf(w)>-1;})){startFlow();return;}
+var pr=c.pre&&c.pre(t);if(pr){add(pr);setChips(c.chips);return;}var e=best(c.kb,t);if(e){add(e.a);setChips(e.chips||c.chips);}else{add(c.fallback);setChips(c.chips);}}
+function open(){p.classList.add('open');fab.classList.add('hide');if(!started){started=true;add(c.greet);setChips(c.chips);}setTimeout(function(){inp.focus();},50);}
+fab.onclick=open;p.querySelector('.aw-x').onclick=function(){p.classList.remove('open');fab.classList.remove('hide');};
+form.onsubmit=function(ev){ev.preventDefault();say(inp.value);};
+window.AWopen=open;window.AWflow=function(){open();if(fl===null)startFlow();};
+};
+})(typeof window!=='undefined'?window:globalThis);
+
+
+var KB=[
+{k:["room","rooms","room types","types of rooms","accommodation","what rooms","options"],a:"Five room types: Queen, Superior Queen, ADA Superior Queen, Twin and King. All have a 1950s-inspired look, comfortable beds, a well-stocked bathroom and free Wi-Fi."},
+{k:["queen","queen room","queen bed"],a:"The Queen Room has one queen bed, free Wi-Fi and the hotel's 1950s-inspired look. The Superior Queen is the roomier queen option. Rates are not published on the page: say 'dates' and the front desk confirms."},
+{k:["superior","superior queen"],a:"The Superior Queen Room has one queen bed and is designed for two adults and one small child under 12. It is the only room type where a roll-away bed can be added."},
+{k:["king","king room","king bed"],a:"The King Room has one king bed, free Wi-Fi and the same 1950s-inspired design. Rates are not published on the page: say 'dates' and the front desk confirms."},
+{k:["twin","two beds","2 beds","twin room","separate beds"],a:"The Twin Room has two beds, free Wi-Fi and the same 1950s-inspired design. Say 'dates' and I will take the details for the front desk."},
+{k:["ada","accessible","accessibility","wheelchair","disability","disabled","handicap","grab bars","mobility"],a:"The ADA Superior Queen room is 106 sq ft with a bath tub with adjustable shower head and grab bars. The hotel has an accessible front door, internal pathways and an accessible elevator. For specifics, call +1 (212) 343-4243 or +1 (917) 887-7000 (24/7)."},
+{k:["size","square feet","sq ft","how big","small","spacious","room size"],a:"The hotel says its rooms are small, like many Manhattan hotels. Only the ADA room's size is published: 106 sq ft."},
+{k:["price","prices","rate","rates","cost","how much","per night","cheap","expensive","deal","deals","discount"],a:"Rates are not published on the page, and they change by date. The team or the booking page shows exact rates. The hotel says booking directly saves money. Say 'dates' to send your request."},
+{k:["check in","checkin","check-in","arrive","arrival","early arrival","early check in"],a:"Check-in starts at 4:00 pm. If you arrive earlier, the team stores your bags in a secure room until your room is ready. Early check-in is subject to availability and may cost extra."},
+{k:["check out","checkout","check-out","late checkout","late check out","leave","departure"],a:"Check-out is by 12:00 noon. Late check-out is subject to availability and may incur an extra charge. Bags can be held after check-out."},
+{k:["cancel","cancellation","cancelling","refund","non refundable","nonrefundable","change booking","modify"],a:"Standard rate: no fee if cancelled at least 48 hours before arrival; inside 48 hours, the first night plus tax; a no-show is 100%. Non-refundable rates are not refunded. Refunds take about 5 to 7 business days."},
+{k:["group","groups","4 rooms","wedding","large booking","team","many rooms"],a:"For 4 or more rooms, a group policy applies: no fee 4+ weeks before arrival, 15% at 3 to 4 weeks, 50% at 2 to 3 weeks, and 100% inside 1 week."},
+{k:["age","minimum age","how old","21","under 21","teenager","id","identification","passport"],a:"You must be at least 21 to check in and register. A valid government-issued ID or passport is required."},
+{k:["smoke","smoking","cigarette","vape","non smoking","no smoking"],a:"Hotel Mimosa is 100% non-smoking under NYC law. A minimum $400 cleaning fee may be charged for smoking in a room."},
+{k:["pet","pets","dog","cat","animal","service animal","emotional support"],a:"Pets and emotional support animals are not permitted. Verified service animals are welcome."},
+{k:["parking","park","garage","car","drive","driving"],a:"There is no on-site parking. The FAQ lists nearby lots: Champion Confucius LLC at 2 Division St (24 hrs), Bridgeview Auto Services Center & Parking Lot at 26 Forsyth St, and iPark at 59 Allen St (24 hrs)."},
+{k:["noise","noisy","quiet","loud","sound","soundproof","sleep","earplugs","ear plugs","bridge"],a:"The windows have four panes of glass, like an airport hotel, and most guests say the nearby bridge cannot be heard. Free earplugs are available at the front desk."},
+{k:["wifi","wi-fi","internet","tv","television","smart tv","amenities","features","facilities"],a:"Free fast Wi-Fi, Smart TV, MERV-13 air filters, a 24-hour front desk, comfortable beds and well-stocked bathrooms."},
+{k:["breakfast","food","eat","eating","restaurant","restaurants","dining","coffee","dim sum","cafe"],a:"Breakfast is not described on the site. The hotel points guests to 88 Palace Dim Sum across the street (open from 9:30 am) and Tous le jour cafe on Division St (7 am to 8 pm). The front desk has a longer dining list."},
+{k:["bar","bars","drinks","cocktail","cocktails","nightlife","speakeasy","attaboy"],a:"Close by: Attaboy at 134 Eldridge St (a top-50 world bar), Leadbelly on Orchard St, Mr. Fong's on Market St and Hair of the Dog, a sports bar on Orchard St."},
+{k:["tour","tours","walking tour","sightseeing","things to do","activities","attractions","sights","see"],a:"The hotel recommends Sights By Sam for customizable walking and private tours: 917-242-8421. It also offers guides for Chinatown, Lower East Side and bookshop hunting."},
+{k:["neighborhood","neighbourhood","area","chinatown","lower east side","les","soho","nolita","little italy","location","near","around"],a:"The hotel sits at the edge of the Lower East Side, in Chinatown. Soho, Nolita and Little Italy are walkable. From the windows you can see the World Trade Center."},
+{k:["address","where","find","directions","entrance","lobby","how to get","get there","subway","metro","train"],a:"79 Division Street, New York, NY 10002. The lobby entrance is on Eldridge St, between Division St and East Broadway."},
+{k:["phone","call","number","telephone","contact","reach","speak"],a:"Call +1 (212) 343-4243. The 24-hour front desk answers accessibility questions on +1 (212) 343-4243 or +1 (917) 887-7000."},
+{k:["email","mail","e-mail","write"],a:"Email contact@hotelmimosany.com."},
+{k:["family room","family rooms","child","children","kids","kid","baby","infant","family","roll away","rollaway","extra bed","third person"],a:"The Superior Queen suits two adults and one small child under 12. A roll-away bed costs $50 per night and is available only in Superior Queen rooms."},
+{k:["award","awards","tripadvisor","rating","best","top 10","recognition"],a:"Hotel Mimosa was named one of the Top 10 hotels in New York on TripAdvisor in 2020 and 2022."},
+{k:["about","hotel","history","story","who are you","name","mimosa","meaning"],a:"Hotel Mimosa is an intimate 30-room hotel. In Spanish, mimosa means a pampered, loved one, so personal service is the key feature."},
+{k:["key","keycard","room card","lost card","damaged"],a:"Please return your room cards at check-out. Lost or damaged card keys carry a $20 charge."},
+{k:["hours","front desk","reception","24 hour","staff","open"],a:"The front desk is open 24 hours."},
+{k:["film","movie","filmed","men in black","famous","celebrity"],a:"Men in Black 3 was filmed right in front of the hotel, on Eldridge Street, and the hotel appeared in Detective Chinatown 2."},
+{k:["covid","clean","cleaning","hygiene","safety","air filter","merv"],a:"The hotel is known for its cleanliness: public areas are cleaned frequently, housekeeping follows strict protocols, and rooms have MERV-13 air filters."},
+{k:["luggage","bags","baggage","storage","store my bags","hold"],a:"The team can store your bags in a secure room if you arrive early, and hold them after check-out."},
+{k:["hello","hi","hey","good morning","good evening"],a:"Hello! Ask me about rooms, check-in, cancellation, parking or the neighborhood. Say 'dates' and I will prepare a stay request for the front desk."},
+{k:["thanks","thank you","thx","great","ok"],a:"My pleasure. Say 'dates' whenever you want a stay request prepared."}
+];
+var CFG={title:"Mimosa Assistant",sub:"Hotel Mimosa · New York",fab:"Ask Mimosa",ph:"Ask about rooms, check-in or the area",greet:"Hi! I know the rooms, house rules and the neighborhood around Hotel Mimosa. Say 'dates' and I will prepare a stay request for the front desk. Nothing is sent from this demo.",chips:["Check dates","Room types","Cancellation policy","Parking","Good places to eat"],kb:KB,
+fallback:"I do not have that on the hotel's site. The front desk will confirm it: +1 (212) 343-4243.",
+flow:{trig:["dates","check dates","check availability","availability","available","book","booking","reserve","reservation","plan my stay","stay request","i want a room","need a room"],intro:"Let's prepare your stay request for the front desk. A few quick questions.",done:"Done. Your request is ready for the Hotel Mimosa front desk, who will confirm availability and rates. (Demo: nothing was actually sent.)",steps:[
+{key:"in",label:"Arrival",q:"What date would you like to arrive?",ph:"e.g. Nov 14"},
+{key:"out",label:"Departure",q:"And your departure date?",ph:"e.g. Nov 17"},
+{key:"room",label:"Room type",q:"Which room type?",opts:["Queen","Superior Queen","Twin","King","ADA Superior Queen","Not sure"]},
+{key:"guests",label:"Guests",q:"How many guests in total?",type:"num",err:"Please give a number, for example 2.",ph:"2"},
+{key:"name",label:"Name",q:"Name for the reservation?"},
+{key:"email",label:"Email",q:"Your email for the reply?",type:"email",err:"That does not look like an email address.",ph:"name@email.com"}]}};
+if(typeof document!=='undefined')AW.init(CFG);
+if(typeof module!=='undefined')module.exports={CFG:CFG};
+</script>
+</body></html>
