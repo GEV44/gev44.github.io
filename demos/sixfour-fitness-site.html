@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SixFour Fitness | Personal training for women, Dublin 2</title>
+<meta name="description" content="Small-group personal training for women in a private Fitzwilliam Square studio. Demo page with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#003060;--navy2:#022449;--blue:#0c4da2;--sky:#1d8fd6;--green:#5ba672;--green-d:#3f7e52;--mint:#aee0c0;
+  --ink:#1d2733;--muted:#54606e;--bg:#fff;--surface:#f4f7fb;--line:#dbe3ec;--sun:#f5c451;
+  --disp:"Barlow Condensed","Arial Narrow",sans-serif;--body:"Karla",system-ui,sans-serif;--r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.55;font-size:17px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--disp);line-height:.98;letter-spacing:.2px;text-transform:uppercase}
+h2{font-size:clamp(34px,8vw,58px);color:var(--navy)}
+h3{font-size:26px;color:var(--navy)}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:2.2px;text-transform:uppercase;color:var(--green-d);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.eyebrow:before{content:"";width:26px;height:3px;background:var(--green);border-radius:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 16px var(--body);padding:14px 24px;border-radius:999px;border:2px solid transparent;text-decoration:none;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-green{background:var(--green);color:#06210f}
+.btn-green:hover{background:#6fbb88}
+.btn-line{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-line:hover{background:rgba(255,255,255,.12)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{border-color:var(--navy);color:var(--navy)}
+/* header */
+header.top{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo-chip img{height:40px;width:auto}
+.nav{display:none;gap:26px;font-weight:700;font-size:15px}
+.nav a{text-decoration:none;color:var(--navy)}
+.nav a:hover{color:var(--blue)}
+.top .btn{padding:10px 18px;font-size:14px}
+.openpill{display:none}
+/* hero */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden;padding:44px 0 0}
+.hero:before{content:"";position:absolute;right:-120px;top:-80px;width:420px;height:420px;background:linear-gradient(135deg,var(--sky),var(--blue));transform:rotate(18deg);border-radius:60px;opacity:.9}
+.hero:after{content:"";position:absolute;right:140px;top:260px;width:170px;height:170px;background:var(--green);transform:rotate(-12deg);border-radius:34px;opacity:.95}
+.hero .wrap{position:relative;z-index:2}
+.hero small.tag{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);padding:6px 14px;border-radius:999px;font-weight:700;font-size:13px;letter-spacing:.4px}
+.hero h1{font-size:clamp(54px,15vw,128px);margin:18px 0 18px;font-weight:800;max-width:11ch}
+.hero h1 em{font-style:normal;color:var(--mint)}
+.hero p.lead{font-size:19px;max-width:30em;color:#dce7f4}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 38px}
+.hero-rail{position:relative;z-index:2;background:#fff;color:var(--navy);margin-top:6px;border-radius:22px 22px 0 0}
+.rail{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.rail div{padding:20px 16px;border-bottom:1px solid var(--line)}
+.rail div:nth-child(odd){border-right:1px solid var(--line)}
+.rail b{display:block;font-family:var(--disp);font-size:44px;line-height:1;color:var(--blue)}
+.rail span{font-size:14px;color:var(--muted)}
+/* sections */
+section{padding:64px 0}
+.alt{background:var(--surface)}
+.sec-head{max-width:640px;margin-bottom:34px}
+.sec-head p{color:var(--muted);margin-top:12px}
+/* feel at home */
+.home{display:grid;gap:14px}
+.home .c{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;position:relative;overflow:hidden}
+.home .c:before{content:attr(data-n);position:absolute;right:14px;top:-6px;font-family:var(--disp);font-size:90px;font-weight:800;color:var(--surface)}
+.home .c *{position:relative}
+.home p{color:var(--muted);margin-top:8px}
+/* programmes */
+.progs{display:grid;gap:18px}
+.prog{border-radius:22px;padding:28px;border:1px solid var(--line);background:#fff;display:flex;flex-direction:column;gap:12px}
+.prog.main{background:var(--navy);color:#fff;border:0;box-shadow:0 18px 40px rgba(0,48,96,.25)}
+.prog.main h3{color:#fff}
+.prog .badge{align-self:flex-start;background:var(--sun);color:#3b2d00;font-weight:800;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.prog ul{list-style:none;display:grid;gap:8px;margin:6px 0 10px}
+.prog li{padding-left:28px;position:relative}
+.prog li:before{content:"";position:absolute;left:0;top:7px;width:14px;height:14px;border-radius:4px;background:var(--green);transform:rotate(45deg) scale(.75)}
+.prog.main p{color:#d4e1f1}
+.prog .price{font-family:var(--disp);font-size:34px;color:var(--blue);line-height:1}
+.prog .btn{margin-top:auto;align-self:flex-start}
+/* steps */
+.steps{display:grid;gap:0;counter-reset:s}
+.step{display:grid;grid-template-columns:56px 1fr;gap:14px;padding:18px 0;border-top:1px dashed #b7c5d6}
+.step:last-child{border-bottom:1px dashed #b7c5d6}
+.step i{font-style:normal;font-family:var(--disp);font-size:46px;line-height:1;color:var(--green)}
+.step p{color:var(--muted)}
+.note{margin-top:22px;background:#fff;border-left:5px solid var(--green);padding:18px 20px;border-radius:0 12px 12px 0}
+/* timetable */
+.tt{display:grid;gap:14px}
+.tt .box{background:var(--navy);color:#fff;border-radius:var(--r);padding:24px}
+.tt .box h3{color:#fff}
+.tt .box b{color:var(--mint)}
+.tt .days{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tt .days span{padding:6px 12px;border-radius:10px;background:rgba(255,255,255,.12);font-weight:700;font-size:14px}
+.tt .days span.off{opacity:.45;text-decoration:line-through}
+/* midlife */
+.mid{display:grid;gap:26px;align-items:center}
+.mid .big{background:linear-gradient(140deg,var(--blue),var(--navy));color:#fff;border-radius:26px;padding:30px}
+.mid .big h3{color:#fff;font-size:34px}
+.mid ul{list-style:none;display:grid;gap:10px}
+.mid li{display:flex;gap:12px;align-items:flex-start}
+.mid li span{flex:0 0 28px;height:28px;border-radius:50%;background:var(--mint);color:var(--navy);font-weight:800;display:grid;place-items:center;font-size:14px}
+/* voices */
+.voices{display:grid;gap:14px}
+.v{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.v .st{color:#e0a800;letter-spacing:3px}
+.v p{margin:8px 0 10px}
+.v small{color:var(--muted);font-weight:700}
+/* faq */
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:700;font-size:18px;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:26px;line-height:1;color:var(--green-d);transition:transform .2s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{margin-top:10px;color:var(--muted);max-width:44em}
+/* visit */
+.visit{background:var(--navy2);color:#fff}
+.visit h2{color:#fff}
+.vgrid{display:grid;gap:26px}
+.vgrid a{color:var(--mint)}
+.hours{width:100%;border-collapse:collapse;margin-top:10px}
+.hours td{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.hours td:last-child{text-align:right;font-weight:700}
+.hours tr.today td{color:var(--sun)}
+.contact-list{display:grid;gap:12px;margin:18px 0}
+.contact-list a{display:flex;gap:12px;align-items:center;text-decoration:none;background:rgba(255,255,255,.08);padding:14px 16px;border-radius:14px;font-weight:700}
+.contact-list a:hover{background:rgba(255,255,255,.16)}
+.mapcard{background:linear-gradient(160deg,#0a3f86,#022449);border:1px solid rgba(255,255,255,.18);border-radius:22px;padding:26px;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.mapcard:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 46px,rgba(255,255,255,.06) 46px 48px),repeating-linear-gradient(0deg,transparent 0 46px,rgba(255,255,255,.06) 46px 48px)}
+.mapcard:after{content:"";position:absolute;left:58%;top:28%;width:22px;height:22px;background:var(--green);border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 0 0 10px rgba(91,166,114,.25)}
+.mapcard *{position:relative;z-index:1}
+footer{background:#001a36;color:#9fb3cc;padding:26px 0 96px;font-size:14px}
+footer .wrap{display:flex;flex-direction:column;gap:6px}
+/* assistant */
+#ax-btn{position:fixed;right:16px;bottom:16px;z-index:60;background:var(--green);color:#06210f;border:0;border-radius:999px;padding:14px 20px;font:800 15px var(--body);cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.3);display:flex;align-items:center;gap:8px}
+#ax-btn .dot{width:10px;height:10px;border-radius:50%;background:#0c4da2;box-shadow:0 0 0 0 rgba(12,77,162,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(12,77,162,0)}100%{box-shadow:0 0 0 0 rgba(12,77,162,0)}}
+#ax{position:fixed;z-index:70;right:0;bottom:0;width:100%;height:min(82vh,640px);background:#fff;border-radius:22px 22px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden}
+#ax.on{display:flex}
+#ax-h{background:var(--navy);color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+#ax-h b{font-family:var(--disp);font-size:22px;letter-spacing:.5px;text-transform:uppercase;display:block;line-height:1}
+#ax-h span{font-size:12px;color:#b8cce4}
+#ax-x{background:none;border:0;color:#fff;font-size:28px;cursor:pointer;line-height:1;padding:4px 8px}
+#ax-log{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--surface)}
+.m{max-width:86%;padding:11px 14px;border-radius:16px;font-size:15.5px;line-height:1.45;animation:in .2s}
+@keyframes in{from{opacity:0;transform:translateY(6px)}}
+.m.b{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+.m.u{background:var(--blue);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.m a{color:var(--blue);font-weight:700}
+#ax-chips{display:flex;gap:8px;flex-wrap:wrap;padding:10px 14px 4px;background:#fff;border-top:1px solid var(--line);max-height:112px;overflow-y:auto}
+.chip{background:#fff;border:1.5px solid var(--blue);color:var(--blue);padding:7px 13px;border-radius:999px;font:700 14px var(--body);cursor:pointer}
+.chip:hover{background:var(--blue);color:#fff}
+#ax-f{display:flex;gap:8px;padding:10px 14px 14px;background:#fff}
+#ax-in{flex:1;border:1.5px solid var(--line);border-radius:999px;padding:11px 16px;font:16px var(--body);min-width:0}
+#ax-in:focus{outline:0;border-color:var(--blue)}
+#ax-go{background:var(--navy);color:#fff;border:0;border-radius:999px;padding:0 18px;font:700 15px var(--body);cursor:pointer}
+.demo-foot{text-align:center;font-size:11px;color:var(--muted);padding:0 0 8px;background:#fff}
+@media(min-width:760px){
+  .nav{display:flex}
+  .openpill{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--navy);background:var(--surface);border:1px solid var(--line);padding:6px 12px;border-radius:999px}
+  .openpill:before{content:"";width:9px;height:9px;border-radius:50%;background:#9aa7b6}
+  .openpill.open:before{background:#2da05a}
+  .hero{padding-top:70px}
+  .rail{grid-template-columns:repeat(4,1fr)}
+  .rail div{border-bottom:0;border-right:1px solid var(--line)}
+  .rail div:last-child{border-right:0}
+  .home{grid-template-columns:repeat(3,1fr)}
+  .progs{grid-template-columns:1.25fr 1fr 1fr}
+  .steps{grid-template-columns:repeat(4,1fr);gap:20px}
+  .step{grid-template-columns:1fr;border:0!important;border-top:3px solid var(--green)!important;padding-top:16px}
+  .tt{grid-template-columns:1.2fr 1fr}
+  .mid{grid-template-columns:1fr 1fr;gap:50px}
+  .voices{grid-template-columns:repeat(3,1fr)}
+  .vgrid{grid-template-columns:1fr 1fr;gap:50px}
+  #ax{right:22px;bottom:22px;width:390px;border-radius:22px}
+  #ax-btn{right:22px;bottom:22px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo-chip" href="#top" aria-label="SixFour Fitness"><img src="img/sixfour-fitness-logo.png" alt="SixFour Fitness" width="130" height="40"></a>
+    <nav class="nav"><a href="#train">Training</a><a href="#kickstart">Kickstart</a><a href="#midlife">Midlife strength</a><a href="#faq">FAQ</a><a href="#visit">Visit</a></nav>
+    <span class="openpill" id="openpill">Checking hours</span>
+    <a class="btn btn-blue" href="#visit" data-open-flow>Book a call</a>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <small class="tag">Personal training for women · Dublin 2</small>
+    <h1>Your strongest <em>year</em> starts here.</h1>
+    <p class="lead">Train with expert coaches in a private Dublin 2 studio, in small groups of no more than six, and finally feel fitter, more confident and back in control.</p>
+    <div class="cta">
+      <a class="btn btn-green" href="#kickstart">6 Week Kickstart</a>
+      <a class="btn btn-line" href="#visit" data-open-flow>Book a free discovery call</a>
+    </div>
+  </div>
+  <div class="hero-rail"><div class="wrap"><div class="rail">
+    <div><b>6:1</b><span>Six members per coach, at most</span></div>
+    <div><b>45</b><span>Minute full-body sessions</span></div>
+    <div><b>3x</b><span>Coached sessions a week, up to</span></div>
+    <div><b>Mon-Sat</b><span>6:00 to 20:00, Sunday closed</span></div>
+  </div></div></div>
+</div>
+
+<section id="train">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">A studio built for women</div>
+      <h2>Not a commercial gym</h2>
+      <p>SixFour is a small-group personal training studio on Fitzwilliam Square. Six women to a coach and a plan that works around the life you already have, with a coach beside you for every rep.</p>
+    </div>
+    <div class="home">
+      <div class="c" data-n="1"><h3>You've trained before</h3><p>You know your way around a gym, but staying consistent on your own never quite sticks.</p></div>
+      <div class="c" data-n="2"><h3>You want a real plan</h3><p>You'd progress faster with a set time, a clear structure, and someone keeping you to it.</p></div>
+      <div class="c" data-n="3"><h3>You want to feel strong</h3><p>More than a number on the scale: strength, energy and confidence that lasts.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="programmes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Ways to train</div>
+      <h2>Pick your starting point</h2>
+    </div>
+    <div class="progs">
+      <article class="prog main" id="kickstart">
+        <span class="badge">Where most members begin</span>
+        <h3 style="font-size:40px">The 6 Week Kickstart</h3>
+        <p>Our flagship programme: momentum fast, with real structure and real accountability.</p>
+        <ul>
+          <li>Up to three small-group personal training sessions a week</li>
+          <li>Full access to strength and fitness classes</li>
+          <li>Personalised nutrition guidance that still has room for a social life</li>
+          <li>Expert coaching, never just a face in a crowded class</li>
+        </ul>
+        <a class="btn btn-green" href="#visit" data-open-flow="Kickstart">Register your interest</a>
+      </article>
+      <article class="prog">
+        <h3>1:1 Personal Training</h3>
+        <div class="price">From €75 / session</div>
+        <p>A coach focused entirely on you: body composition, performance, or a safe return after injury or surgery.</p>
+        <ul><li>Programme built around your goals</li><li>Flexible scheduling, Mon to Sat</li></ul>
+        <a class="btn btn-ghost" href="#visit" data-open-flow="1:1 Training">Ask about 1:1</a>
+      </article>
+      <article class="prog" id="midlife">
+        <h3>Midlife Strength</h3>
+        <p>Perimenopause and beyond: small classes, an empathetic coach, programming that respects your body.</p>
+        <ul><li>Max six per coach</li><li>After a discovery call, your first class is on them</li></ul>
+        <a class="btn btn-ghost" href="#visit" data-open-flow="Midlife Strength">Come and try a class</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">How it works</div>
+      <h2>First form to first session in under a week</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><i>1</i><div><h3>Register</h3><p>Fill in the short form to claim a spot on the next intake.</p></div></div>
+      <div class="step"><i>2</i><div><h3>They get in touch</h3><p>You get the full programme details, promptly.</p></div></div>
+      <div class="step"><i>3</i><div><h3>Enrol</h3><p>Secure your place in the booking app and choose your slots.</p></div></div>
+      <div class="step"><i>4</i><div><h3>Start training</h3><p>Show up, get coached, build momentum from week one.</p></div></div>
+    </div>
+    <div class="note"><b>After the six weeks:</b> flexible monthly membership options to suit your goals and schedule. No need to weigh it up now; it's covered on the free discovery call.</div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Timetable</div>
+      <h2>Early mornings to evenings</h2>
+    </div>
+    <div class="tt">
+      <div class="box">
+        <h3>Small Group PT</h3>
+        <p><b>6:1 · about 45 min.</b> Runs through the day, Monday to Saturday from 6:00am. Morning, lunchtime and evening slots are booked from the app so training fits around your week.</p>
+        <div class="days"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span class="off">Sun</span></div>
+      </div>
+      <div class="box" style="background:var(--blue)">
+        <h3>SWEAT HIIT</h3>
+        <p><b>8:1 · about 30 to 45 min</b> at selected times, plus open cardio spots for members. Timetable is subject to change; the team shares the current one on request.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap mid">
+    <div class="big">
+      <div class="eyebrow" style="color:var(--mint)">Perimenopause and menopause</div>
+      <h3>Strength for a vibrant life</h3>
+      <p style="margin-top:12px;color:#d4e1f1">Strength training is one of the most powerful tools for your health, energy and confidence through this stage and beyond.</p>
+    </div>
+    <ul>
+      <li><span>1</span>Improved bone density and protection against osteoporosis</li>
+      <li><span>2</span>Preserved lean muscle and a healthier metabolism</li>
+      <li><span>3</span>Better mood and steadier energy</li>
+      <li><span>4</span>A judgement-free room with one experienced coach and no more than six women</li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Google reviews · 5.0</div>
+      <h2>Why they stayed</h2>
+    </div>
+    <div class="voices">
+      <div class="v"><div class="st">★★★★★</div><p>"I'm 57 and had never been in a gym before. I was a bit apprehensive but needn't have worried as the trainers have endless patience."</p><small>Dorothy Ware</small></div>
+      <div class="v"><div class="st">★★★★★</div><p>"The structure of the programme really helps with progression and building up confidence and all the trainers are fantastic."</p><small>Ruth O'Mara</small></div>
+      <div class="v"><div class="st">★★★★★</div><p>"I have gained so much confidence in using gym equipment and completing exercises that I never thought was possible!"</p><small>Róisín O'Shea</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap" style="max-width:820px">
+    <div class="sec-head"><div class="eyebrow">Questions</div><h2>Before you book</h2></div>
+    <details><summary>Is it only for women?</summary><p>Yes. SixFour is small-group personal training built exclusively for women, with coaching and programming designed around women.</p></details>
+    <details><summary>I've never trained before. Is that okay?</summary><p>Very. Plenty of members started as beginners, and the coaches build your confidence with the equipment from the first session.</p></details>
+    <details><summary>How many people are in a session?</summary><p>No more than six per coach for small-group PT. SWEAT HIIT classes run at 8:1.</p></details>
+    <details><summary>What happens after the Kickstart?</summary><p>You can move onto flexible monthly membership options. The team talks them through on your free discovery call.</p></details>
+    <details><summary>How do I book sessions?</summary><p>Once you've enrolled, you choose your slots in the booking app: morning, lunchtime or evening, Monday to Saturday.</p></details>
+    <details><summary>Not ready to start yet?</summary><p>Join the Priority List to hear first about the next Open Week, where you can try a small-group PT session.</p></details>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap vgrid">
+    <div>
+      <div class="eyebrow" style="color:var(--mint)">Visit the studio</div>
+      <h2>Talk first, train second</h2>
+      <p style="margin-top:12px;color:#c4d4e8">Book a free discovery call and turn your goals into a plan. No pressure.</p>
+      <div class="contact-list">
+        <a href="https://calendly.com/sixfourfitness/discovery-call-2024" target="_blank" rel="noopener">Book a free discovery call</a>
+        <a href="tel:+353871793105">+353 87 179 3105</a>
+        <a href="https://wa.me/353871793105" target="_blank" rel="noopener">WhatsApp the studio</a>
+        <a href="mailto:info@sixfourfitness.ie">info@sixfourfitness.ie</a>
+      </div>
+    </div>
+    <div>
+      <div class="mapcard"><b style="font-size:19px">Basement Unit D2</b><span>19 Fitzwilliam Square South, Dublin 2, D02 CD40</span></div>
+      <table class="hours" id="hours"><tbody>
+        <tr data-d="1"><td>Monday</td><td>6:00 to 20:00</td></tr>
+        <tr data-d="2"><td>Tuesday</td><td>6:00 to 20:00</td></tr>
+        <tr data-d="3"><td>Wednesday</td><td>6:00 to 20:00</td></tr>
+        <tr data-d="4"><td>Thursday</td><td>6:00 to 20:00</td></tr>
+        <tr data-d="5"><td>Friday</td><td>6:00 to 20:00</td></tr>
+        <tr data-d="6"><td>Saturday</td><td>6:00 to 20:00</td></tr>
+        <tr data-d="0"><td>Sunday</td><td>Closed</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><div>SixFour Fitness · Basement Unit D2, 19 Fitzwilliam Square South, Dublin 2</div><div>Demo · prepared by Gevorg Hovhannisyan</div></div></footer>
+
+<button id="ax-btn" aria-label="Open assistant"><span class="dot"></span>Ask SixFour</button>
+<div id="ax" role="dialog" aria-label="SixFour assistant">
+  <div id="ax-h"><div><b>SixFour assistant</b><span>Answers from this website. The team confirms the rest.</span></div><button id="ax-x" aria-label="Close">&times;</button></div>
+  <div id="ax-log" aria-live="polite"></div>
+  <div id="ax-chips"></div>
+  <form id="ax-f" autocomplete="off"><input id="ax-in" type="text" placeholder="Ask about training, hours, 1:1..." aria-label="Your question"><button id="ax-go" type="submit">Send</button></form>
+  <div class="demo-foot">Demo · nothing you type here is sent anywhere</div>
+</div>
+
+<script>
+/*KB-START*/
+var CHIPS_MAIN=["Opening hours","What is the Kickstart?","1:1 training","Menopause strength","Prices","Book a call"];
+var KB=[
+{id:"hours",k:["hours","opening hours","open","opened","close","closing","what time","sunday","saturday","early","late","evening","opening times","weekend","monday"],
+ a:"The studio is open <b>Monday to Saturday, 6:00 to 20:00</b>, and closed on Sunday. Small-group sessions run through the day from 6:00am, so there are morning, lunchtime and evening slots.",c:["Where are you?","How do I book sessions?","Book a call"]},
+{id:"where",k:["where","address","location","find you","directions","fitzwilliam","square","dublin","basement","situated","map","located"],
+ a:"We're in <b>Basement Unit D2, 19 Fitzwilliam Square South, Dublin 2, D02 CD40</b>, a private studio rather than a commercial gym.",c:["Opening hours","Parking?","Book a call"]},
+{id:"contact",k:["phone","call","number","whatsapp","email","e-mail","contact","text","ring","reach","telephone","message"],
+ a:"Phone or WhatsApp: <a href='tel:+353871793105'>+353 87 179 3105</a>. Email: <a href='mailto:info@sixfourfitness.ie'>info@sixfourfitness.ie</a>. Or I can take your details for the team right here.",c:["Book a call","Opening hours"]},
+{id:"kick",k:["kickstart","kick start","6 week","six week","6 weeks","flagship","programme","program","where do i start","start","begin","starter","beginning"],
+ a:"The <b>6 Week Kickstart</b> is where most members begin: up to three coached small-group sessions a week (6:1, about 45 minutes), full access to strength and fitness classes, personalised nutrition guidance and expert coaching.",c:["What's included?","What happens after?","Book a call"]},
+{id:"incl",k:["included","include","includes","what do i get","what is included","whats included","come with","covered"],
+ a:"The Kickstart includes up to three small-group PT sessions a week, access to strength and fitness classes, personalised nutrition guidance that leaves room for a social life, and expert coaching from experienced professionals.",c:["What happens after?","Prices","Book a call"]},
+{id:"group",k:["group","small group","how many","six","ratio","crowded","class size","busy","people","numbers","6:1"],
+ a:"No more than <b>six women per coach</b> in small-group personal training. SWEAT HIIT classes run at 8:1. You're never just a face in a crowded class.",c:["How long are sessions?","1:1 training","Book a call"]},
+{id:"len",k:["how long","minutes","duration","length","45","hour","quick","fit around"],
+ a:"Small-group PT sessions are about <b>45 minutes</b>, full-body strength with core and cardio woven in. SWEAT HIIT classes are about 30 to 45 minutes.",c:["How often can I train?","Opening hours"]},
+{id:"freq",k:["how often","times a week","per week","three","sessions a week","frequency","days a week","weekly"],
+ a:"On the Kickstart you can train <b>up to three times a week</b>, Monday to Saturday, booking slots in the app to suit your week.",c:["How do I book sessions?","Opening hours"]},
+{id:"oneone",k:["1:1","one to one","one on one","personal training","personal trainer","private","individual","injury","surgery","recovery","performance","bespoke","one-to-one","onetoone"],
+ a:"<b>1:1 Personal Training</b> is fully bespoke coaching for body composition, performance, or recovery after injury or surgery. It's from <b>€75 a session</b>; the team recommends a number of sessions and a package after your call.",c:["Book a call","Prices","Kickstart"]},
+{id:"price",k:["price","prices","cost","how much","fee","fees","euro","expensive","much","afford","rate","pay","payment","charge","cheap"],
+ a:"Published on the site: <b>1:1 personal training is from €75 per session</b>. The Kickstart and monthly membership rates aren't listed, so the team will confirm them, usually on the free discovery call.",c:["Book a call","What happens after?"]},
+{id:"member",k:["membership","monthly","after kickstart","after the kickstart","continue","ongoing","afterwards","what next","after six weeks","after the six weeks","happens after","after 6 weeks","after weeks","join"],
+ a:"After the six weeks there are <b>flexible monthly membership options</b> to suit your goals and how often you want to train. The team talks them through on the free discovery call.",c:["Book a call","Prices"]},
+{id:"disc",k:["discovery","free call","consultation","chat","talk","speak","intro call","discovery call"],
+ a:"The <b>free discovery call</b> turns your goals into a plan: you talk through goals and availability, ask anything, and find the right starting point. No pressure.",c:["Book a call","Opening hours"]},
+{id:"meno",k:["menopause","perimenopause","midlife","bone","bones","osteoporosis","hormone","hormones","older","age","hot flush","50","over 50","menopausal"],
+ a:"<b>Midlife Strength</b> is built for perimenopause and beyond: strength training for bone density, lean muscle, mood and energy, in a small judgement-free group (max six, one experienced coach). After a discovery call, your first class is on them.",c:["Book a call","I'm a beginner"]},
+{id:"women",k:["women","woman","men","male","man","ladies","female","only women","gender","husband","boyfriend","guys"],
+ a:"SixFour is built <b>exclusively for women</b>, with coaching and programming designed around women.",c:["I'm a beginner","What is the Kickstart?"]},
+{id:"nutri",k:["nutrition","diet","dieting","food","eat","eating","meal","meals","weight loss","lose weight","fat","calories","body fat","slim"],
+ a:"The Kickstart includes <b>personalised nutrition guidance</b> with approaches that work in real life, so you don't need to diet forever. The coaches teach habits that last.",c:["What's included?","Book a call"]},
+{id:"begin",k:["beginner","never been","nervous","intimidating","intimidated","first time","anxious","confidence","inexperienced","fit enough","scared","new to","shy","unfit","never trained","apprehensive"],
+ a:"Plenty of members started nervous. SixFour is the alternative to intimidating commercial gyms: small groups, patient coaches, and a room where you feel welcome. Many members say their confidence with the equipment grew fast.",c:["What is the Kickstart?","Book a call"]},
+{id:"app",k:["app","timetable","schedule","slots","slot","book sessions","morning","lunchtime","lunch","how do i book","reschedule","timings"],
+ a:"Once enrolled you choose your slots in the <b>booking app</b>: morning, lunchtime or evening, Monday to Saturday. The current timetable can be shared by the team.",c:["Opening hours","Book a call"]},
+{id:"hiit",k:["hiit","sweat","cardio","classes","class","strength class","fitness class","circuit"],
+ a:"<b>SWEAT HIIT</b> classes (8:1, about 30 to 45 minutes) run at selected times, and members have open cardio spots. Kickstart members also get access to strength and fitness classes.",c:["How long are sessions?","Book a call"]},
+{id:"try",k:["open week","priority list","trial","try","free class","taster","test","sample","waiting list","next intake","spots","places"],
+ a:"Not ready yet? Join the <b>Priority List</b> to hear first about the next Open Week, where you can try a small-group PT session, and the next Kickstart intake. Spots on each intake are limited.",c:["Book a call","What is the Kickstart?"]},
+{id:"rev",k:["review","reviews","rating","google","testimonial","reputation","feedback","stars"],
+ a:"SixFour has a <b>5.0 rating from 132 Google reviews</b>. Members mention patient trainers, structure, and growing confidence.",c:["What is the Kickstart?","Book a call"]},
+{id:"unk",k:["bring","wear","shower","showers","locker","changing","parking","park","towel","cancel","cancellation","freeze","pause","kids","child","childcare","bus","luas","dart","water","clothes","trainers","music","age limit"],
+ a:"That detail isn't on the website, so I won't guess. The team will confirm it: ask on the free discovery call, by phone or WhatsApp on <a href='tel:+353871793105'>+353 87 179 3105</a>.",c:["Book a call","Opening hours"]},
+{id:"med",k:["medical","doctor","gp","pregnant","pregnancy","postnatal","condition","pain","diabetes","asthma","blood pressure","heart","diagnose","arthritis","back pain","disc","slipped"],
+ a:"I can't give medical advice. Please talk to the coaches about this on the discovery call so they can plan safely around you; they work with people returning from injury or surgery too.",c:["Book a call","1:1 training"]},
+{id:"hi",k:["hi","hello","hey","good morning","good evening","howdy","hiya"],a:"Hi! I know this studio's programmes, hours and how to get started. What would you like to know?",c:["What is the Kickstart?","Opening hours","Prices"]},
+{id:"thx",k:["thanks","thank you","thx","cheers","great","perfect","ok thanks"],a:"Happy to help. Anything else, or shall I pass your details to the team?",c:["Book a call","Opening hours"]}
+];
+var CHIPMAP={"What is the Kickstart?":"kick","Opening hours":"hours","1:1 training":"oneone","Menopause strength":"meno","Prices":"price","Where are you?":"where","How do I book sessions?":"app","What's included?":"incl","What happens after?":"member","How long are sessions?":"len","How often can I train?":"freq","Parking?":"unk","I'm a beginner":"begin","Kickstart":"kick"};
+var INTENT=["book","booking a call","enquire","enquiry","sign up","signup","register","reserve","callback","call me","book a call","get started","get in touch","apply"];
+function norm(s){
+  s=(s||"").toLowerCase().replace(/[‘’]/g,"'");
+  s=s.replace(/1\s*:\s*1|1\s*-\s*1|1\s*to\s*1|one\s*(to|on)\s*one|one-to-one|121\b/g," onetoone ").replace(/6\s*:\s*1/g," six ");
+  return s.replace(/[^a-z0-9€]+/g," ").trim();
+}
+function stem(w){return w.replace(/(ing|ed|es|s)$/,function(m){return w.length>4?"":m;});}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++){d[0][j]=j;}
+  for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[m][n];}
+function tokMatch(t,k){
+  if(t===k)return true;
+  var st=stem(t),sk=stem(k);
+  if(st===sk)return true;
+  if(k.length>=5&&t.length>=5&&(t.indexOf(sk)===0||sk.indexOf(st)===0)&&Math.abs(t.length-k.length)<=3)return true;
+  if(k.length>=5){var lim=k.length>=9?2:1;if(Math.abs(t.length-k.length)<=lim&&lev(st,sk)<=lim)return true;}
+  return false;
+}
+function phraseHit(toks,kw){
+  var kt=norm(kw).split(" ").filter(Boolean),i,j,ok;
+  if(!kt.length)return 0;
+  for(i=0;i<kt.length;i++){ok=false;for(j=0;j<toks.length;j++){if(tokMatch(toks[j],kt[i])){ok=true;break;}}if(!ok)return 0;}
+  return Math.min(kt.join("").length,6)+(kt.length>1?4:0);
+}
+function scoreEntry(toks,e){var s=0,i;for(i=0;i<e.k.length;i++){s+=phraseHit(toks,e.k[i]);}return s;}
+function isIntent(q){var toks=norm(q).split(" "),i,t=0;for(i=0;i<INTENT.length;i++){if(phraseHit(toks,INTENT[i])){t++;}}return t>0;}
+function answer(q){
+  if(CHIPMAP[q]){for(var z=0;z<KB.length;z++){if(KB[z].id===CHIPMAP[q])return KB[z];}}
+  var toks=norm(q).split(" ").filter(Boolean),best=null,bs=0,i,s;
+  for(i=0;i<KB.length;i++){s=scoreEntry(toks,KB[i]);if(s>bs){bs=s;best=KB[i];}}
+  if(best&&best.id==="oneone"&&/(how much|cost|price|pric|€|euro|fee)/.test(norm(q)))best=KB[9];
+  return bs>=2?best:null;
+}
+/*KB-END*/
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var box=$("ax"),log=$("ax-log"),chips=$("ax-chips"),inp=$("ax-in"),flow=null,data={};
+  function say(t,who){var d=document.createElement("div");d.className="m "+(who||"b");if(who==="u"){d.textContent=t;}else{d.innerHTML=t;}log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function setChips(a){chips.innerHTML="";(a||[]).forEach(function(c){var b=document.createElement("button");b.type="button";b.className="chip";b.textContent=c;b.onclick=function(){handle(c);};chips.appendChild(b);});}
+  function open(){box.classList.add("on");$("ax-btn").style.display="none";if(!log.children.length){say("Hi, I'm the SixFour assistant. I can answer questions about training, hours and getting started, or take your details for the team.");setChips(CHIPS_MAIN);}setTimeout(function(){try{inp.focus({preventScroll:true})}catch(e){}},50);}
+  function close(){box.classList.remove("on");$("ax-btn").style.display="flex";}
+  $("ax-btn").onclick=open;$("ax-x").onclick=close;
+  var steps=[
+   {q:"Lovely. Which are you interested in?",c:["6 Week Kickstart","1:1 Training","Midlife Strength","Not sure yet"],k:"prog"},
+   {q:"What's your main goal?",c:["Get stronger & fitter","Lose body fat","Build a consistent routine","Support through menopause","Something else"],k:"goal"},
+   {q:"When would you prefer to train?",c:["Morning","Lunchtime","Evening","Flexible"],k:"time"},
+   {q:"What's your first name?",c:[],k:"name"},
+   {q:"And the best phone number or email for the team to reach you?",c:[],k:"contact"}
+  ];
+  var si=0;
+  function startFlow(pre){flow=true;si=0;data={};if(pre&&pre!==true){data.prog=pre;si=1;}ask();}
+  function ask(){var s=steps[si];say(s.q);setChips(s.c.concat(["Cancel"]));}
+  function flowInput(t){
+    if(/^cancel$/i.test(t)){flow=false;say("No problem, nothing was saved. What else can I help with?");setChips(CHIPS_MAIN);return;}
+    var s=steps[si];
+    if(s.k==="contact"&&!(/@/.test(t)||t.replace(/\D/g,"").length>=7)){say("That doesn't look like a phone number or email. Could you re-enter it?");return;}
+    if(s.k==="name"&&t.length>40){say("Just a first name is fine.");return;}
+    data[s.k]=t;si++;
+    if(si<steps.length){ask();return;}
+    say("Here's what I'll pass on:<br><b>"+esc(data.name)+"</b> · "+esc(data.prog)+" · goal: "+esc(data.goal)+" · "+esc(data.time).toLowerCase()+" · "+esc(data.contact)+"<br>Send it to the team?");
+    setChips(["Send to the team","Start over","Cancel"]);flow="confirm";
+  }
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+  function handle(t){
+    t=(t||"").trim();if(!t)return;say(t,"u");inp.value="";
+    if(flow==="confirm"){
+      if(/send/i.test(t)){flow=false;say("Sent to the team. They'll get back to you very promptly, usually to arrange your free discovery call. (This is a demo page, so nothing was actually sent.)");setChips(["Opening hours","What is the Kickstart?"]);return;}
+      if(/start over/i.test(t)){startFlow();return;}
+      flow=false;say("Cancelled. Nothing was saved.");setChips(CHIPS_MAIN);return;
+    }
+    if(flow){flowInput(t);return;}
+    if(/^book a call$/i.test(t)||isIntent(t)){startFlow();return;}
+    var r=answer(t);
+    setTimeout(function(){
+      if(r){say(r.a);setChips(r.c);}
+      else{say("I'm not sure about that one, and I won't guess. The team will confirm it: call or WhatsApp <a href='tel:+353871793105'>+353 87 179 3105</a>, or I can take your details.");setChips(["Book a call","What is the Kickstart?","Opening hours"]);}
+    },280);
+  }
+  $("ax-f").onsubmit=function(e){e.preventDefault();handle(inp.value);};
+  var opens=document.querySelectorAll("[data-open-flow]");
+  for(var i=0;i<opens.length;i++){opens[i].addEventListener("click",function(e){var p=this.getAttribute("data-open-flow");if(this.getAttribute("href")==="#visit"&&!p){/* header link */}e.preventDefault();open();if(!flow||flow==="confirm"){log.innerHTML="";say("Hi, I'm the SixFour assistant.");say("Let's get you to the team.");startFlow(p&&p!==""?p:null);}});}
+  /* opening status in Dublin time */
+  try{
+    var f=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Dublin",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date()),w,h,m;
+    f.forEach(function(p){if(p.type==="weekday")w=p.value;if(p.type==="hour")h=+p.value%24;if(p.type==="minute")m=+p.value;});
+    var dn={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[w],mins=h*60+m,isOpen=dn!==0&&mins>=360&&mins<1200,pill=$("openpill");
+    pill.textContent=isOpen?"Open now · until 20:00":"Closed now";pill.className="openpill"+(isOpen?" open":"");
+    var tr=document.querySelector('#hours tr[data-d="'+dn+'"]');if(tr)tr.className="today";
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

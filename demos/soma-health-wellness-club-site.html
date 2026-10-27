@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SOMA Health &amp; Wellness Club | Aurora Place, Sydney</title>
+<meta name="description" content="Demo page for SOMA Health &amp; Wellness Club: strength, studio, spa and social in Sydney CBD, with an assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#121110;--bg2:#1a1816;--bg3:#232019;--ink:#f1ece4;--mut:#a79f92;--gold:#c8b08a;--gold2:#e0cba6;--line:#33302a;--w-accent:#c8b08a;--w-accent-ink:#121110;--w-bg:#1a1816;--w-ink:#f1ece4;--w-line:#33302a;--w-head:#232019;--w-head-ink:#e0cba6;--w-bot:#2a261f;--w-font:Montserrat,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 15.5px/1.7 Montserrat,system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:'Crimson Pro',Georgia,serif;font-weight:300;line-height:1.06}
+a{color:inherit}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
+.k{font:500 11px Montserrat;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:16px}
+/* header */
+header{position:absolute;top:0;left:0;right:0;z-index:40}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{display:block;line-height:0;background:#121110;padding:8px 12px;border:1px solid var(--line);border-radius:4px}
+.logo img{height:30px;width:auto;display:block}
+.nav nav{display:none;gap:26px;font:500 11px Montserrat;letter-spacing:.2em;text-transform:uppercase}
+.nav nav a{text-decoration:none;color:var(--mut)}.nav nav a:hover{color:var(--gold2)}
+.btn{display:inline-block;border:1px solid var(--gold);color:var(--gold2);background:transparent;text-decoration:none;font:500 11.5px Montserrat;letter-spacing:.2em;text-transform:uppercase;padding:14px 24px;cursor:pointer}
+.btn:hover{background:var(--gold);color:#121110}
+.btn.fill{background:var(--gold);color:#121110}.btn.fill:hover{background:var(--gold2)}
+.btn.sm{padding:11px 16px;font-size:10.5px}
+@media(min-width:900px){.nav nav{display:flex}}
+/* hero */
+.hero{min-height:92vh;display:flex;align-items:center;text-align:center;padding:120px 0 70px;background:radial-gradient(700px 460px at 50% 38%,#c8b08a26,transparent 70%),#121110;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(46px,11vw,112px);font-weight:300;letter-spacing:-.01em}
+.hero h1 i{color:var(--gold2)}
+.hero p{max-width:540px;margin:24px auto 32px;color:#cdc5b6;font-size:16px}
+.hero .addr{margin-top:30px;font:500 11px Montserrat;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.pillars{display:flex;justify-content:center;flex-wrap:wrap;gap:0;font:500 11px Montserrat;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-top:22px}
+.pillars span{padding:0 14px;border-right:1px solid var(--line)}.pillars span:last-child{border:0}
+/* sections */
+section{padding:84px 0}
+h2{font-size:clamp(34px,6.6vw,58px);margin-bottom:18px}
+h2 i{color:var(--gold2)}
+.lede{color:var(--mut);max-width:600px;font-size:16px}
+.split{display:grid;gap:34px}
+@media(min-width:880px){.split{grid-template-columns:5fr 6fr;gap:70px;align-items:start}}
+.steps{counter-reset:s;list-style:none}
+.steps li{counter-increment:s;display:grid;grid-template-columns:54px 1fr;gap:6px;padding:22px 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps li:before{content:"0" counter(s);font:300 38px 'Crimson Pro',serif;color:var(--gold);line-height:1}
+.steps b{display:block;font:500 12px Montserrat;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.steps span{color:var(--mut);font-size:14.5px}
+/* recovery */
+.rec{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mods{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}
+.mod{background:var(--bg2);padding:28px 24px}
+.mod h3{font-size:30px;margin-bottom:8px;color:var(--gold2)}.mod p{color:var(--mut);font-size:14.5px}
+@media(min-width:800px){.mods{grid-template-columns:repeat(3,1fr)}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chips span{border:1px solid var(--line);padding:7px 13px;font-size:12.5px;color:#cdc5b6}
+/* classes */
+.cls{list-style:none;margin-top:30px}
+.cls li{display:grid;gap:4px;padding:24px 0;border-top:1px solid var(--line)}
+.cls li:last-child{border-bottom:1px solid var(--line)}
+.cls h3{font-size:30px}.cls em{font:500 10.5px Montserrat;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-style:normal}
+.cls p{color:var(--mut);font-size:14.5px;max-width:560px}
+@media(min-width:760px){.cls li{grid-template-columns:230px 1fr;gap:30px;align-items:baseline}}
+/* trainers */
+.tr{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}
+.t{background:var(--bg);padding:22px}
+.t h3{font-size:28px}.t small{display:block;color:var(--gold);font:500 10.5px Montserrat;letter-spacing:.16em;text-transform:uppercase;margin:2px 0 8px}
+.t p{color:var(--mut);font-size:13.5px;line-height:1.55}
+@media(min-width:640px){.tr{grid-template-columns:1fr 1fr}}@media(min-width:960px){.tr{grid-template-columns:repeat(3,1fr)}}
+/* membership */
+.mem{background:var(--bg2);border-top:1px solid var(--line)}
+.pk{display:grid;gap:14px;margin-top:34px}
+.pkg{border:1px solid var(--line);padding:30px 26px;background:var(--bg)}
+.pkg.hi{border-color:var(--gold)}
+.pkg h3{font-size:32px}.pkg .pr{font:300 44px 'Crimson Pro',serif;color:var(--gold2);line-height:1.1;margin:10px 0 2px}.pkg .pr small{font:400 12px Montserrat;color:var(--mut)}
+.pkg .al{font-size:12.5px;color:var(--mut);margin-bottom:14px;display:block}
+.pkg ul{list-style:none;font-size:14px;color:#cdc5b6}.pkg li{padding:6px 0;border-top:1px solid var(--line)}
+@media(min-width:900px){.pk{grid-template-columns:repeat(3,1fr)}}
+.note{margin-top:20px;color:var(--mut);font-size:13.5px}
+.summer{margin-top:34px;border:1px solid var(--gold);padding:26px;display:grid;gap:12px}
+.summer h3{font-size:32px}.summer p{color:#cdc5b6;font-size:14.5px}
+/* faq / visit */
+details{border-top:1px solid var(--line);padding:0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:20px 0;font:400 22px 'Crimson Pro',serif;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--gold);font-size:24px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{color:var(--mut);padding:0 0 20px;font-size:14.5px;max-width:640px}
+.visit{background:var(--bg2);border-top:1px solid var(--line)}
+.hrs{width:100%;border-collapse:collapse;margin-top:6px;font-size:14px}
+.hrs td{padding:10px 0;border-bottom:1px solid var(--line)}.hrs td:last-child{text-align:right;color:#cdc5b6}
+.hrs th{text-align:left;font:500 10.5px Montserrat;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);padding:18px 0 6px}
+.contact p{margin-bottom:12px;overflow-wrap:anywhere}.contact a{text-decoration:none;border-bottom:1px solid var(--gold)}
+footer{padding:28px 0 90px;border-top:1px solid var(--line);color:var(--mut);font-size:12.5px;text-align:center}
+.aw-btn{position:fixed;right:16px;bottom:16px;z-index:90;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;padding:12px 16px;border-radius:999px;background:var(--w-accent);color:var(--w-accent-ink,#fff);font:600 14px/1 var(--w-font,system-ui);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.aw-btn svg{width:18px;height:18px}
+.aw-panel{position:fixed;right:12px;bottom:12px;z-index:100;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));display:none;flex-direction:column;background:var(--w-bg);color:var(--w-ink);border:1px solid var(--w-line);border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.35);font:400 14px/1.45 var(--w-font,system-ui)}
+.aw-panel.open{display:flex}
+.aw-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--w-head);color:var(--w-head-ink,#fff)}
+.aw-head b{font-size:14px}.aw-head small{display:block;opacity:.75;font-size:11px}
+.aw-x{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}
+.aw-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.aw-m{max-width:86%;padding:9px 12px;border-radius:14px;white-space:pre-wrap;word-wrap:break-word}
+.aw-m.b{background:var(--w-bot);align-self:flex-start;border-bottom-left-radius:4px}
+.aw-m.u{background:var(--w-accent);color:var(--w-accent-ink,#fff);align-self:flex-end;border-bottom-right-radius:4px}
+.aw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+.aw-chip{border:1px solid var(--w-accent);background:transparent;color:var(--w-ink);padding:6px 11px;border-radius:999px;font:500 12.5px var(--w-font,system-ui);cursor:pointer}
+.aw-chip:hover{background:var(--w-accent);color:var(--w-accent-ink,#fff)}
+.aw-form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--w-line)}
+.aw-form input{flex:1;min-width:0;padding:10px 12px;border-radius:10px;border:1px solid var(--w-line);background:var(--w-bg);color:var(--w-ink);font:400 16px var(--w-font,system-ui)}
+.aw-form button{padding:0 14px;border:0;border-radius:10px;background:var(--w-accent);color:var(--w-accent-ink,#fff);font:600 14px var(--w-font,system-ui);cursor:pointer}
+
+</style></head><body>
+<header><div class="wrap nav"><a class="logo" href="#top" aria-label="SOMA Health and Wellness Club"><img src="img/soma-health-wellness-club-logo.png" alt="SOMA Health &amp; Wellness Club" width="107" height="30"></a>
+<nav><a href="#approach">Approach</a><a href="#recovery">Recovery</a><a href="#classes">Classes</a><a href="#team">Trainers</a><a href="#membership">Membership</a><a href="#visit">Visit</a></nav>
+<a class="btn sm" href="#visit" onclick="awSend('book a tour');return false">Book a tour</a></div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<span class="k">Aurora Place &middot; Sydney CBD</span>
+<h1>Strength, recovery<br>and <i>longevity</i>,<br>under one roof.</h1>
+<p>A private members club with limited membership, personal trainers who build around your goals, small group sessions and a full recovery centre.</p>
+<a class="btn fill" href="#visit" onclick="awSend('book a tour');return false">Book a complimentary tour</a>
+<p style="margin:22px 0 0;font-size:13px;color:var(--mut)">Rated 4.9 from 200+ member reviews, with a private recovery centre included in membership.</p><div class="pillars"><span>Strength</span><span>Studio</span><span>Spa</span><span>Social</span></div>
+<div class="addr">Shop 1, Aurora Place, 88 Phillip St</div>
+</div></div>
+
+<section id="approach"><div class="wrap split">
+<div><span class="k">How we work with you</span><h2>It starts with<br>how you <i>move</i>.</h2><p class="lede">Before any program is written, the coaches look at how your body moves, recovers and performs, then turn the data into a weekly plan that keeps being measured and refined.</p></div>
+<ol class="steps">
+<li><div><b>Posture + movement analysis</b><span>How your body moves, where it overworks, underperforms or overcompensates, so training is purposeful and injury-aware.</span></div></li>
+<li><div><b>Body assessment + health metrics</b><span>Scans for lean mass, fat, hydration, bone density and visceral fat, giving an accurate baseline to customise your program.</span></div></li>
+<li><div><b>Functional strength + stability testing</b><span>Core, joint and muscle control tested to find what to strengthen from the inside out.</span></div></li>
+<li><div><b>Training plan + app access</b><span>A realistic, evolving plan, plus app access for tracking, coaching support, nutrition tips, sleep and heart rate monitoring.</span></div></li>
+</ol></div></section>
+
+<section id="recovery" class="rec"><div class="wrap">
+<span class="k">The Recovery Centre</span><h2>A rested body<br><i>performs better</i>.</h2>
+<p class="lede">After an intense session, reset at your own pace in private or shared spaces. Heat, cold and quiet in one room, with support choosing the right tools for your training load.</p>
+<div class="mods">
+<div class="mod"><h3>Finnish sauna</h3><p>Traditional heat to ease muscle tension, enhance circulation and calm the nervous system.</p></div>
+<div class="mod"><h3>Infrared saunas</h3><p>Full-spectrum infrared with integrated audio and light therapy, supporting recovery and relaxation.</p></div>
+<div class="mod"><h3>Magnesium cold plunge</h3><p>A mineral-rich plunge to ease soreness, flush metabolites and sharpen focus.</p></div>
+</div>
+<div class="chips"><span>Red light therapy</span><span>Guided mindfulness</span><span>Private change rooms</span><span>Fresh towels</span><span>Leif botanical products</span><span>Dyson hair dryers</span><span>Weekend recovery 8am-5pm</span></div>
+</div></section>
+
+<section id="classes"><div class="wrap">
+<span class="k">Group sessions</span><h2>Find your flow,<br><i>strength</i> and balance.</h2>
+<p class="lede">Small groups, expert instructors and a studio built for reformer work. Not sure where to begin? New or returning members are pointed to Foundations Reformer Pilates or Yoga.</p>
+<ul class="cls">
+<li><div><h3>Foundations Reformer Pilates</h3><em>Open level</em></div><p>Alignment, control and breath on ALLEGRO 2 reformers. A full-body, low-impact class for beginners through to experienced clients, with options to progress or regress.</p></li>
+<li><div><h3>Intermediate Reformer Pilates</h3><em>Confident reformer clients</em></div><p>More complex, flowing sequences, deeper core and glute engagement, and a steady build in intensity and endurance.</p></li>
+<li><div><h3>Strength</h3><em>Open level</em></div><p>High-intensity strength combining floor weights with reformer work: 15 minutes of weight training, then slower, heavier reformer sequences for legs, glutes, core, back and upper body.</p></li>
+<li><div><h3>Stretch + Flow</h3><em>Recovery and longevity</em></div><p>Breathwork, stretching and mobility to counteract long hours of sitting: posture, hips, spine and shoulders, and key stabilisers that protect the lower back.</p></li>
+</ul></div></section>
+
+<section id="team" class="rec"><div class="wrap">
+<span class="k">Personal trainers</span><h2>Elite performance specialists,<br><i>in the CBD</i>.</h2>
+<p class="lede">Nine coaches, each with their own specialisations. The team will match you with the right one.</p>
+<div class="tr">
+<div class="t"><h3>Calum</h3><small>Body recomposition</small><p>Sport and exercise science background. Strength training, sports-specific conditioning, nutritional advice.</p></div>
+<div class="t"><h3>Ellie</h3><small>Strength &amp; reformer</small><p>1:1 and group coaching. Pre and post-natal training, women's health, postural correction, corporate coaching.</p></div>
+<div class="t"><h3>Nicole</h3><small>Women's strength</small><p>Weight training for women, body transformation, Pilates-based core and postural development, mobility.</p></div>
+<div class="t"><h3>Nick</h3><small>Fat loss &amp; function</small><p>Fifteen years in the industry. Lean muscle growth, functional strength, corporate wellness.</p></div>
+<div class="t"><h3>Jade</h3><small>Women's health</small><p>Twelve years of resistance training. Pilates-inspired core stability, postural control, group conditioning.</p></div>
+<div class="t"><h3>Nathan</h3><small>Strength &amp; mobility</small><p>Fourteen years in the industry. Body recomposition, movement development, injury prevention, nutrition coaching.</p></div>
+<div class="t"><h3>Steph</h3><small>In-house nutritionist</small><p>Nutrition coaching, body transformation, pre and postnatal training, competition preparation.</p></div>
+<div class="t"><h3>Isaak</h3><small>Hypertrophy</small><p>Ten years in the industry. Muscle hypertrophy, strength, lifestyle coaching, habit development.</p></div>
+<div class="t"><h3>Elaine</h3><small>Master Trainer</small><p>Registered since 2013. Body transformation, glute sculpting and hip stability, women's health, holistic lifestyle coaching.</p></div>
+</div></div></section>
+
+<section id="membership" class="mem"><div class="wrap">
+<span class="k">Membership</span><h2>Limited places,<br>a <i>personal</i> pace.</h2>
+<p class="lede">Every plan includes access to the facility. Apply and the team will check that your goals and needs fit the club.</p>
+<div class="pk">
+<div class="pkg"><h3>Membership</h3><div class="pr">$88<small> /week, paid annually</small></div><span class="al">or $111 /week paid monthly &middot; 3 months minimum</span><ul><li>Unlimited gym and group class access</li><li>Unlimited access to private recovery</li><li>2 guest passes a quarter</li><li>Monthly longevity scans</li><li>Movement and lifestyle assessment with a coach</li><li>Concierge service and amenities</li></ul></div>
+<div class="pkg hi"><h3>Gold</h3><div class="pr">$150<small> /session</small></div><span class="al">Billed monthly &middot; 3 months minimum</span><ul><li>4 reserved personal training spots a month</li><li>Tailored holistic weekly program</li><li>SOMA Personal Training App</li><li>Nutritional guidance</li><li>Progress tracking and goal reviews</li><li>Priority booking</li></ul></div>
+<div class="pkg"><h3>Platinum</h3><div class="pr">$145<small> /session</small></div><span class="al">Billed monthly &middot; 3 months minimum</span><ul><li>8 reserved personal training spots a month</li><li>Tailored holistic weekly program</li><li>SOMA Personal Training App</li><li>Nutritional guidance</li><li>Progress tracking and goal reviews</li><li>Priority booking and ongoing support</li></ul></div>
+</div>
+<p class="note">Locker and laundry service can be added to any membership for $32 per week.</p>
+<div class="summer"><span class="k" style="margin:0">Now open</span><h3>The 6-Week Summer Challenge</h3><p>Two 1:1 PT sessions a week (12 in total), a personalised program with progress tracking, six weeks of full SOMA access, nutrition guidance and 2 complimentary red light sessions. Open to members and non-members, 10 places, $1,920.</p><div><a class="btn sm" href="#visit" onclick="awSend('summer challenge');return false">Ask about it</a></div></div>
+</div></section>
+
+<section><div class="wrap split">
+<div><span class="k">SOMA Longevity</span><h2>Understand,<br>act, <i>measure</i>.</h2><p class="lede">A new, connected approach: bloodwork, DNA testing and epigenetic age analysis combined with your wearable data, then a personalised plan that is retested over time. The founding waitlist is open.</p></div>
+<div><span class="k">Questions</span><p class="lede" style="margin-bottom:12px">Can't find your answer? Ask the assistant at the bottom right or call 1300 294 463.</p>
+<details><summary>Is there a trial or tour?</summary><p>Yes. Complimentary tours are available, and you can leave your details to book one or call 1300 294 463.</p></details>
+<details><summary>Which class suits a beginner?</summary><p>If you are new or returning after a break, try Foundations Reformer Pilates or Yoga. Confident movers may enjoy Intermediate Reformer or Strength.</p></details>
+<details><summary>Is it worth paying for a personal trainer?</summary><p>A trainer offers personalised plans, proper form and motivation, and supports every level from beginner to experienced athlete.</p></details>
+<details><summary>How fast does the team reply?</summary><p>Enquiries are answered within one business day.</p></details>
+</div></div></section>
+
+<section id="visit" class="visit"><div class="wrap split">
+<div class="contact"><span class="k">Visit SOMA at Aurora</span><h2>Come and<br><i>see</i> it.</h2><p class="lede" style="margin-bottom:22px">Shop 1, Aurora Place, 88 Phillip St, Sydney 2000.</p><p>Phone <a href="tel:1300294463">1300 294 463</a></p><p>Email <a href="mailto:hello@somacollection.com.au">hello@somacollection.com.au</a></p><p style="margin-top:22px"><a class="btn fill" href="#visit" onclick="awSend('book a tour');return false" style="border-bottom:1px solid var(--gold)">Book a tour</a></p></div>
+<table class="hrs"><tr><th colspan="2">Opening hours</th></tr><tr><td>Mon - Fri</td><td>4:30am - 10:00pm</td></tr><tr><td>Sat - Sun</td><td>6:00am - 6:00pm</td></tr><tr><td>Weekend Recovery Centre</td><td>8:00am - 5:00pm</td></tr><tr><th colspan="2">Staffed hours</th></tr><tr><td>Mon - Thu</td><td>6:00am - 8:00pm</td></tr><tr><td>Fri</td><td>6:00am - 7:00pm</td></tr><tr><td>Sat</td><td>8:00am - 1:00pm</td></tr><tr><td>Sun and public holidays</td><td>Unstaffed</td></tr></table>
+</div></section>
+</main>
+<footer><div class="wrap">Demo &middot; prepared by Gevorg Hovhannisyan</div></footer>
+<button class="aw-btn" id="awBtn" aria-label="Open assistant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12z"/></svg><span>Ask SOMA</span></button>
+<div class="aw-panel" id="awPanel" role="dialog" aria-label="Assistant"><div class="aw-head"><div><b>SOMA Health & Wellness Club</b><small>Concierge assistant</small></div><button class="aw-x" id="awX" aria-label="Close">&times;</button></div><div class="aw-log" id="awLog"></div><div class="aw-chips" id="awChips"></div><form class="aw-form" id="awForm"><input id="awIn" autocomplete="off" placeholder="Ask about SOMA..."><button type="submit">Send</button></form></div>
+
+<script>function norm(s){return String(s).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9$ ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4)w=w.replace(/(ing|ed|es|s|ly)$/,'');return w;}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[m][n];}
+function tokm(t,k){if(t===k)return 1;if(k.length>=5&&t.length>=5&&Math.abs(t.length-k.length)<=1&&lev(t,k)<=1)return .9;if(k.length>=4&&t.length>=4&&Math.abs(t.length-k.length)<=3&&(t.indexOf(k)===0||k.indexOf(t)===0))return .75;return 0;}
+function score(q,keys){var qn=norm(q),toks=qn.split(' ').map(stem),qs=toks.join(' '),s=0;keys.forEach(function(k){var ks=norm(k).split(' ').map(stem);if(ks.length>1){if((' '+qs+' ').indexOf(' '+ks.join(' ')+' ')>-1)s+=2;}else{var m=0;toks.forEach(function(t){m=Math.max(m,tokm(t,ks[0]));});s+=m;}});return s;}
+function match(q,KB){var best=null,bs=0;KB.forEach(function(e){var s=score(q,e.k);if(s>bs){bs=s;best=e;}});return bs>=.75?best:null;}
+function isFlow(q,words){return score(q,words)>=.9;}
+
+(function(){var C={ph:'Ask about SOMA...',
+greet:"Welcome to SOMA. I can answer questions about membership, classes, recovery, trainers and hours, or help you request a tour.",
+chips:['Book a tour','Opening hours','Membership','Group classes','Recovery Centre','Personal training'],
+fallback:"I do not have that detail. The team will confirm it: 1300 294 463 or hello@somacollection.com.au (replies within one business day). I can also help you request a tour.",
+flowWords:['book a tour','request a tour','tour','visit','arrange a visit','book a visit','see the club','apply','apply now','become a member','enquire','enquiry','consultation','book a class'],
+flow:{intro:"Lovely, let's set up your enquiry for the team.",done:"Sent to the SOMA team. They will come back to you within one business day. (This is a demo, so nothing was actually sent.)",
+steps:[
+{key:'svc',label:'Interested in',q:'Which of our services are you interested in?',chips:['Gym floor and facilities','Classes','Personal training / nutrition','Corporate training / events','Recovery Centre']},
+{key:'goal',label:'Goal',q:'What are your health and wellness goals?',chips:['Improve recovery','Weight loss','General wellbeing','Increased muscle mass','Aerobic fitness','Corporate wellness']},
+{key:'when',label:'Timeline',q:'How soon are you looking to join?',chips:['Now','Within 2 weeks','Longer']},
+{key:'date',label:'Preferred tour date',q:'Do you have a preferred day for your tour?',chips:['This week','Next week','Flexible'],ph:'e.g. Tuesday morning'},
+{key:'name',label:'Name',q:'Your name?',ph:'Your name',re:/\S{2,}/,err:'Please enter your name.'},
+{key:'contact',label:'Phone or email',q:'Best phone number or email for the team?',ph:'Phone or email',re:/(@.+\..+|\d[\d\s().+-]{6,})/,err:'That does not look like a phone number or email. Try again, or type cancel.'}
+]},
+kb:[
+{k:['hours','opening hours','open','opening','close','closing','what time','when are you open','early','late','4:30'],a:"Opening hours: Mon-Fri 4:30am-10:00pm, Sat-Sun 6:00am-6:00pm. The weekend Recovery Centre runs 8:00am-5:00pm. Staffed hours: Mon-Thu 6am-8pm, Fri 6am-7pm, Sat 8am-1pm; Sunday and public holidays are unstaffed.",c:['Book a tour','Membership']},
+{k:['staffed','staff','reception','concierge','unstaffed','public holiday','holidays','sunday','saturday','weekend'],a:"Staffed hours: Mon-Thu 6:00am-8:00pm, Fri 6:00am-7:00pm, Sat 8:00am-1:00pm. Sunday and public holidays are unstaffed. Opening hours are longer: Mon-Fri 4:30am-10pm, Sat-Sun 6am-6pm.",c:['Opening hours','Book a tour']},
+{k:['where','address','location','located','directions','aurora','phillip','cbd','find you','parking','train station','transport'],a:"SOMA is at Shop 1, Aurora Place, 88 Phillip St, Sydney 2000, in the CBD.",c:['Opening hours','Book a tour']},
+{k:['phone','call','number','contact','email','reach','reply','respond','response','get back','talk to someone','speak','human'],a:"Phone 1300 294 463 or email hello@somacollection.com.au. The team replies within one business day. I can also take your details for a tour request.",c:['Book a tour','Opening hours']},
+{k:['membership','memberships','member','members','package','packages','plan','plans','join','gold','platinum','apply','tier'],a:"Three packages. Membership: unlimited gym and group classes, private recovery, 2 guest passes a quarter, monthly longevity scans, and a movement and lifestyle assessment, from $88/week paid annually or $111/week paid monthly (3 months minimum). Gold: 4 reserved PT spots a month at $150/session. Platinum: 8 spots a month at $145/session. Locker and laundry can be added for $32/week.",c:['Book a tour','Personal training','What is included?']},
+{k:['price','prices','cost','how much','fee','fees','rate','rates','pricing','expensive','afford','week','weekly','per session'],a:"Membership is $88/week paid annually in full or $111/week paid monthly (3 months minimum). Gold is $150 per PT session (4 a month) and Platinum $145 per session (8 a month), billed monthly. Locker/laundry is $32/week. The 6-Week Summer Challenge is $1,920.",c:['Membership','Summer challenge','Book a tour']},
+{k:['included','include','includes','what do i get','come with','perks','benefits','amenities','towel','towels'],a:"Membership includes unlimited gym and group class access, unlimited private recovery, 2 guest passes a quarter, monthly longevity scans, a movement and lifestyle assessment with a coach, and concierge service. Amenities include private change rooms, fresh towels, Leif botanical products and Dyson hair dryers.",c:['Recovery Centre','Book a tour']},
+{k:['minimum','commitment','contract','cancel','cancellation','lock in','term','terms','rules'],a:"Packages have a 3-month minimum. Full rules, terms and fees are on the club's Rules, Terms + Fees page, and the team can walk you through them on a tour.",c:['Membership','Book a tour']},
+{k:['tour','trial','try','free','complimentary','visit','see the club','look around','first time','guest','guests','guest pass'],a:"Complimentary tours are available. Leave your details here and the team will come back to you within one business day, or call 1300 294 463 to book directly. Members also get 2 guest passes a quarter.",c:['Book a tour','Opening hours']},
+{k:['recovery','recover','sauna','saunas','spa','cold plunge','plunge','ice bath','infrared','finnish','steam','red light','wellness centre','relax'],a:"The Recovery Centre has a traditional Finnish sauna, full-spectrum infrared saunas with audio and light therapy, and a magnesium-infused cold plunge, plus red light therapy and guided mindfulness. Choose private or shared spaces. The weekend centre is open 8am-5pm.",c:['Membership','Opening hours','Book a tour']},
+{k:['class','classes','group','group session','group sessions','timetable','schedule','book a class','pilates','reformer','yoga','hiit','mat'],a:"Group sessions: Foundations Reformer Pilates (open level), Intermediate Reformer Pilates, Strength (reformer plus floor weights) and Stretch + Flow. The club also lists yoga with breathwork and sound healing, mat pilates and HIIT. Book through the class timetable or the concierge team.",c:['Beginner class','Book a tour']},
+{k:['beginner','new','newbie','first class','never done','returning','return','starting out','where to start','not fit','nervous'],a:"If you are new, or returning after a break, try Foundations Reformer Pilates or Yoga. Confident movers may enjoy Intermediate Reformer or Strength. The coaches and PT director can match you to a level.",c:['Group classes','Book a tour']},
+{k:['strength','weights','weight training','lifting','floor','gym floor','equipment','machines','facility','facilities'],a:"SOMA has a premium gym floor with cutting-edge equipment, a reformer studio and a Recovery Centre. The Strength class combines floor weights with reformer work. Specific equipment lists are best confirmed on a tour.",c:['Group classes','Book a tour']},
+{k:['personal training','trainer','trainers','pt','personal trainer','coach','coaches','coaching','one on one','1 on 1','1:1','program','programs'],a:"There are nine personal trainers and coaches: Calum, Ellie, Nicole, Nick, Jade, Nathan, Steph, Isaak and Elaine, covering strength, fat loss, women's health, pre/post-natal, mobility, nutrition and more. Gold and Platinum packages include reserved PT sessions and a weekly program.",c:['Body assessment','Nutrition','Membership']},
+{k:['assessment','body assessment','scan','scans','posture','movement','body composition','inbody','dexa','test','testing','baseline','metrics'],a:"Your journey starts with posture and movement analysis, a body assessment with professional-grade scans (lean mass, fat, hydration, bone density, visceral fat), and functional strength and stability testing. Results become a tailored weekly plan with app access.",c:['Personal training','Book a tour']},
+{k:['nutrition','nutritionist','diet','meal','food','eating','fat loss','lose weight','weight loss','supplements'],a:"Steph is SOMA's in-house nutritionist, and several trainers also give nutrition coaching. Gold and Platinum include nutritional guidance, and the Summer Challenge includes nutrition guidance too.",c:['Personal training','Membership']},
+{k:['pregnant','pregnancy','prenatal','pre natal','postnatal','post natal','postpartum','pre and post natal'],a:"Ellie and Steph both offer pre and post-natal training. For any medical questions about your situation, please speak to your doctor and the team.",c:['Personal training','Book a tour']},
+{k:['summer','summer challenge','challenge','6 week','six week','transformation'],a:"The 6-Week Summer Challenge: two 1:1 PT sessions a week (12 total), a personalised program with progress tracking, six weeks of full SOMA access, nutrition guidance and 2 complimentary red light sessions. Open to members and non-members, 10 places, $1,920.",c:['Book a tour','Membership']},
+{k:['longevity','biomarker','bloodwork','blood test','dna','epigenetic','biological age','hyperbaric','hbot','waitlist','founding'],a:"SOMA Longevity is a new connected program: comprehensive bloodwork, DNA testing and epigenetic age analysis with your wearable data, then a personalised plan (supplements, red light therapy, hyperbaric oxygen, movement and recovery) with ongoing retesting. The founding waitlist is open.",c:['Book a tour','Membership']},
+{k:['corporate','corporates','business','company','executive','team building','event','events','shoot','media','filming'],a:"SOMA works with corporate wellness, group training and events. Use the Corporate training / events option in the enquiry, or contact hello@somacollection.com.au.",c:['Book a tour']},
+{k:['locker','lockers','laundry','towel service'],a:"A locker and laundry service can be added to any membership for $32 per week.",c:['Membership']},
+{k:['app','tracking','track','progress','sleep','heart rate'],a:"Members get access to the SOMA Personal Training App for tracking, coaching support, nutrition tips, plus sleep and heart rate monitoring.",c:['Personal training']},
+{k:['job','jobs','career','careers','hiring','work here'],a:"There is a Careers page on SOMA's website. You can also email hello@somacollection.com.au.",c:['Opening hours']},
+{k:['hello','hi','hey','hiya','good morning','good evening','thanks','thank you','g\'day'],a:"Hello! Ask about membership, classes, recovery, trainers or hours, or request a tour.",c:['Book a tour','Membership','Opening hours']}
+]};
+var $=function(i){return document.getElementById(i)},log=$('awLog'),chips=$('awChips'),inp=$('awIn'),panel=$('awPanel');
+var st=null,data={},opened=false;
+function add(t,c){var d=document.createElement('div');d.className='aw-m '+c;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';(a||[]).forEach(function(t){var b=document.createElement('button');b.type='button';b.className='aw-chip';b.textContent=t;b.onclick=function(){send(t)};chips.appendChild(b);});}
+function ask(){var s=C.flow.steps[st];add(s.q,'b');setChips(s.chips||[]);inp.placeholder=s.ph||C.ph;}
+function startFlow(){st=0;data={};add(C.flow.intro,'b');ask();}
+function flowIn(t){var s=C.flow.steps[st];if(/^(cancel|stop|exit|nevermind)$/i.test(t.trim())){st=null;add('No problem, nothing was sent. What else can I help with?','b');setChips(C.chips);inp.placeholder=C.ph;return;}
+if(s.re&&!s.re.test(t)){add(s.err||'Could you rephrase that?','b');return;}data[s.key]=t;st++;
+if(st>=C.flow.steps.length){var L=C.flow.steps.map(function(x){return x.label+': '+data[x.key]}).join('\n');st=null;add(C.flow.done+'\n\n'+L,'b');setChips(C.chips);inp.placeholder=C.ph;return;}ask();}
+function send(t){t=t.trim();if(!t)return;add(t,'u');inp.value='';
+if(st!==null){flowIn(t);return;}
+if(isFlow(t,C.flowWords)){startFlow();return;}
+var m=match(t,C.kb);if(m){add(m.a,'b');setChips(m.c||C.chips);}else{add(C.fallback,'b');setChips(C.chips);}}
+function open(){panel.classList.add('open');$('awBtn').style.display='none';if(!opened){opened=true;add(C.greet,'b');setChips(C.chips);}setTimeout(function(){inp.focus()},50);}
+$('awBtn').onclick=open;$('awX').onclick=function(){panel.classList.remove('open');$('awBtn').style.display='flex'};
+$('awForm').onsubmit=function(e){e.preventDefault();send(inp.value)};
+window.awOpen=open;window.awSend=function(t){open();send(t)};
+})();
+</script>
+</body></html>

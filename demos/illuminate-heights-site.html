@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Illuminate Heights | Houston Heights Gym</title>
+<meta name="description" content="Demo page for Illuminate Heights, 19,000 sq ft gym in Houston Heights with 24/7 member access, coaching and an assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira+Semi+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0d11;--bg2:#15151b;--bg3:#1d1d26;--ink:#f4f4f7;--mut:#a7a7b5;--mag:#c13b8f;--mag2:#e157ab;--line:#2a2a36;--w-accent:#c13b8f;--w-bg:#15151b;--w-ink:#f4f4f7;--w-line:#2a2a36;--w-head:#c13b8f;--w-bot:#23232e;--w-font:Inter,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.cond{font-family:'Saira Semi Condensed',Inter,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.02}
+a{color:inherit}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 18px}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(13,13,17,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:10px}
+.logo{display:block;background:#fff;border-radius:8px;padding:5px 9px;line-height:0}
+.logo img{height:34px;width:auto;display:block}
+.nav ul{display:none;list-style:none;gap:22px;font:600 14px 'Saira Semi Condensed';text-transform:uppercase;letter-spacing:.06em}
+.nav ul a{text-decoration:none;color:var(--mut)}.nav ul a:hover{color:#fff}
+.btn{display:inline-block;background:var(--mag);color:#fff;border:0;text-decoration:none;font:700 15px 'Saira Semi Condensed',sans-serif;text-transform:uppercase;letter-spacing:.07em;padding:13px 22px;border-radius:6px;cursor:pointer}
+.btn:hover{background:var(--mag2)}
+.btn.ghost{background:transparent;border:1.5px solid #fff3}
+.btn.ghost:hover{border-color:var(--mag);background:transparent}
+.btn.sm{padding:10px 15px;font-size:13px}
+@media(min-width:860px){.nav ul{display:flex}}
+/* hero */
+.hero{position:relative;padding:54px 0 46px;background:radial-gradient(900px 420px at 85% -10%,#c13b8f40,transparent 60%),linear-gradient(180deg,#111118,#0d0d11)}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 22px,#ffffff05 22px 23px);pointer-events:none}
+.tag{display:inline-block;font:600 12px 'Saira Semi Condensed';letter-spacing:.18em;text-transform:uppercase;color:var(--mag2);margin-bottom:14px}
+.hero h1{font-size:clamp(44px,12vw,104px);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--mag)}
+.hero p.lead{max-width:560px;color:#cfcfda;margin:20px 0 26px;font-size:17px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.hours-card{margin-top:34px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;max-width:620px}
+.hours-card div{background:var(--bg2);padding:12px 16px;display:flex;justify-content:space-between;gap:12px;font-size:14px}
+.hours-card b{font-family:'Saira Semi Condensed';text-transform:uppercase;letter-spacing:.06em;color:var(--mag2);font-weight:600}
+/* stats */
+.stats{background:var(--mag);color:#fff}
+.stats .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.stat{padding:20px 6px;text-align:center;border-right:1px solid #ffffff30}
+.stat:nth-child(2n){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid #ffffff30}
+.stat b{display:block;font:800 34px 'Saira Semi Condensed';line-height:1}
+.stat span{font-size:12.5px;opacity:.92;text-transform:uppercase;letter-spacing:.08em}
+@media(min-width:760px){.stats .wrap{grid-template-columns:repeat(4,1fr)}.stat{border-bottom:0!important}.stat:nth-child(2n){border-right:1px solid #ffffff30}.stat:last-child{border-right:0}}
+/* sections */
+section{padding:62px 0}
+.eyebrow{font:600 12px 'Saira Semi Condensed';letter-spacing:.2em;text-transform:uppercase;color:var(--mag2);display:block;margin-bottom:10px}
+h2{font-size:clamp(32px,7vw,56px);font-weight:700;margin-bottom:14px}
+.sub{color:var(--mut);max-width:620px;margin-bottom:30px}
+.paths{display:grid;gap:14px}
+.path{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:24px;position:relative;overflow:hidden}
+.path:before{content:attr(data-n);position:absolute;right:14px;top:2px;font:800 76px 'Saira Semi Condensed';color:#ffffff08}
+.path h3{font-size:26px;margin-bottom:8px}.path p{color:var(--mut);margin-bottom:16px;font-size:15px}
+@media(min-width:800px){.paths{grid-template-columns:repeat(3,1fr)}}
+/* facility */
+.fac{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fgrid{display:grid;gap:34px}
+@media(min-width:860px){.fgrid{grid-template-columns:1fr 1.1fr;align-items:start}}
+.feat{list-style:none;display:grid;gap:0}
+.feat li{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid var(--line)}
+.feat li:last-child{border-bottom:0}
+.feat i{flex:none;width:34px;height:34px;border-radius:8px;background:#c13b8f22;color:var(--mag2);display:grid;place-items:center;font:700 13px 'Saira Semi Condensed';font-style:normal}
+.feat b{display:block;font-weight:600}.feat span{color:var(--mut);font-size:14.5px}
+.dark{margin-top:24px;border:1px solid var(--mag);border-radius:12px;padding:22px;background:linear-gradient(135deg,#1a0f17,#0d0d11)}
+.dark h3{font-size:30px;color:var(--mag2)}.dark p{color:#d4d4de;font-size:15px;margin-top:6px}
+/* services */
+.svc{display:grid;gap:10px}
+details{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:0 18px}
+summary{list-style:none;cursor:pointer;padding:16px 0;font:700 20px 'Saira Semi Condensed';text-transform:uppercase;letter-spacing:.03em;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--mag2);font-size:24px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{color:var(--mut);padding:0 0 16px;font-size:15px}
+details p b{color:#fff;font-weight:600}
+/* membership */
+.tiers{display:grid;gap:12px}
+.tier{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:22px}
+.fac .tier{background:var(--bg3)}
+.tier.pop{border-color:var(--mag);position:relative}
+.tier.pop:after{content:"Most popular";position:absolute;top:-11px;left:18px;background:var(--mag);font:700 11px 'Saira Semi Condensed';letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:99px}
+.tier h3{font-size:26px}.tier .term{color:var(--mag2);font-size:13px;font-weight:600;margin-bottom:10px;display:block}
+.tier ul{list-style:none;color:var(--mut);font-size:14.5px}.tier li{padding:5px 0 5px 22px;position:relative}
+.tier li:before{content:"";position:absolute;left:2px;top:13px;width:9px;height:9px;border-radius:2px;background:var(--mag)}
+@media(min-width:640px){.tiers{grid-template-columns:1fr 1fr}}@media(min-width:1000px){.tiers{grid-template-columns:repeat(4,1fr)}}
+.passes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+.pass{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:16px 8px;text-align:center}
+.pass b{display:block;font:800 32px 'Saira Semi Condensed'}.pass span{font-size:12.5px;color:var(--mut)}
+.free{margin-top:14px;background:#c13b8f1f;border:1px dashed var(--mag);border-radius:10px;padding:16px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.free p{font-size:14.5px;max-width:560px}
+/* faq + visit */
+.faq details{background:transparent;border-radius:0;border:0;border-bottom:1px solid var(--line);padding:0}
+.faq summary{font-size:17px;text-transform:none;font-family:Inter;font-weight:600;letter-spacing:0}
+.visit{background:var(--bg2);border-top:1px solid var(--line)}
+.vgrid{display:grid;gap:26px}
+@media(min-width:800px){.vgrid{grid-template-columns:1fr 1fr}}
+.vgrid dl{display:grid;gap:14px}.vgrid dt{font:600 12px 'Saira Semi Condensed';letter-spacing:.18em;text-transform:uppercase;color:var(--mag2)}
+.vgrid dd{font-size:17px;overflow-wrap:anywhere}.vgrid dd a{text-decoration:none;border-bottom:1px solid var(--mag)}
+footer{padding:28px 0 90px;border-top:1px solid var(--line);color:var(--mut);font-size:13px;text-align:center}
+.cul{margin-top:8px}@media(min-width:800px){.cul{grid-template-columns:repeat(3,1fr)}}
+.for{margin-top:30px;background:var(--bg2);border:1px solid var(--line);border-left:4px solid var(--mag);border-radius:10px;padding:22px}
+.for h3{font-size:26px;margin-bottom:10px}.for ul{list-style:none;color:#cfcfda}.for li{padding:6px 0 6px 24px;position:relative;font-size:15.5px}.for li:before{content:"";position:absolute;left:2px;top:15px;width:10px;height:3px;background:var(--mag)}
+.quote{margin-top:26px;font:500 20px/1.45 'Saira Semi Condensed',sans-serif;color:#fff;border-top:1px solid var(--line);padding-top:22px}.quote cite{display:block;margin-top:10px;font:400 13px Inter;color:var(--mut);font-style:normal}
+.aw-btn{position:fixed;right:16px;bottom:16px;z-index:90;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;padding:12px 16px;border-radius:999px;background:var(--w-accent);color:var(--w-accent-ink,#fff);font:600 14px/1 var(--w-font,system-ui);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.aw-btn svg{width:18px;height:18px}
+.aw-panel{position:fixed;right:12px;bottom:12px;z-index:100;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));display:none;flex-direction:column;background:var(--w-bg);color:var(--w-ink);border:1px solid var(--w-line);border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.35);font:400 14px/1.45 var(--w-font,system-ui)}
+.aw-panel.open{display:flex}
+.aw-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--w-head);color:var(--w-head-ink,#fff)}
+.aw-head b{font-size:14px}.aw-head small{display:block;opacity:.75;font-size:11px}
+.aw-x{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}
+.aw-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.aw-m{max-width:86%;padding:9px 12px;border-radius:14px;white-space:pre-wrap;word-wrap:break-word}
+.aw-m.b{background:var(--w-bot);align-self:flex-start;border-bottom-left-radius:4px}
+.aw-m.u{background:var(--w-accent);color:var(--w-accent-ink,#fff);align-self:flex-end;border-bottom-right-radius:4px}
+.aw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+.aw-chip{border:1px solid var(--w-accent);background:transparent;color:var(--w-ink);padding:6px 11px;border-radius:999px;font:500 12.5px var(--w-font,system-ui);cursor:pointer}
+.aw-chip:hover{background:var(--w-accent);color:var(--w-accent-ink,#fff)}
+.aw-form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--w-line)}
+.aw-form input{flex:1;min-width:0;padding:10px 12px;border-radius:10px;border:1px solid var(--w-line);background:var(--w-bg);color:var(--w-ink);font:400 16px var(--w-font,system-ui)}
+.aw-form button{padding:0 14px;border:0;border-radius:10px;background:var(--w-accent);color:var(--w-accent-ink,#fff);font:600 14px var(--w-font,system-ui);cursor:pointer}
+
+</style></head><body>
+<header><div class="wrap nav"><a class="logo" href="#top" aria-label="Illuminate Heights"><img src="img/illuminate-heights-logo.png" alt="Illuminate Heights" width="114" height="34"></a>
+<ul><li><a href="#paths">Start</a></li><li><a href="#facility">Facility</a></li><li><a href="#coaching">Coaching</a></li><li><a href="#culture">Culture</a></li><li><a href="#join">Membership</a></li><li><a href="#visit">Visit</a></li></ul>
+<a class="btn sm" href="#join" onclick="awSend('free day pass');return false">Free day pass</a></div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap" style="position:relative">
+<span class="tag">630 W 6th St &middot; Houston Heights</span>
+<h1>Train where<br><em>standards</em><br>are higher.</h1>
+<p class="lead">A 19,000 sq ft gym for people who are tired of crowded box gyms and random workouts. Serious equipment, coaching when you want a plan, and member access around the clock.</p>
+<div class="cta"><a class="btn" href="#join" onclick="awSend('free day pass');return false">Claim a free day pass</a><a class="btn ghost" href="#coaching">Train with a coach</a></div>
+<div class="hours-card"><div><b>Members</b><span>24/7, any day</span></div><div><b>Staffed Mon-Fri</b><span>5a - 10p</span></div><div><b>Staffed Sat</b><span>7a - 7p</span></div><div><b>Staffed Sun</b><span>8a - 7p</span></div></div>
+</div></div>
+
+<div class="stats"><div class="wrap"><div class="stat"><b>4.9</b><span>Google rating</span></div><div class="stat"><b>19,000</b><span>sq ft floor</span></div><div class="stat"><b>24/7</b><span>member access</span></div><div class="stat"><b>0</b><span>contracts on day passes</span></div></div></div>
+
+<section id="paths"><div class="wrap">
+<span class="eyebrow">Choose your path</span><h2>Start where you are.</h2>
+<p class="sub">Membership, coaching, or a day pass. Pick the one that fits today; you can add the others later.</p>
+<div class="paths">
+<div class="path" data-n="01"><h3>Membership</h3><p>You know how to show up. You want the space, the equipment and access that fits your schedule.</p><a class="btn sm" href="#join">See memberships</a></div>
+<div class="path" data-n="02"><h3>Coaching</h3><p>Tired of guessing? Get structure, accountability and a coach who turns effort into progress.</p><a class="btn sm" href="#coaching">See coaching</a></div>
+<div class="path" data-n="03"><h3>Day pass</h3><p>Do not decide from the outside. Train in the space, meet the team, then choose on your terms.</p><a class="btn sm" href="#join" onclick="awSend('free day pass');return false">Get a day pass</a></div>
+</div></div></section>
+
+<section id="facility" class="fac"><div class="wrap fgrid">
+<div><span class="eyebrow">The facility</span><h2>The space changes how you train.</h2>
+<p class="sub" style="margin-bottom:0">Machines, free weights, cardio and specialty strength equipment on one big floor, with open space for conditioning and functional work.</p>
+<div class="dark"><h3>Dark Side</h3><p>A focused training room inside the gym for lifters who want a harder atmosphere and fewer distractions. Included with every membership.</p></div></div>
+<ul class="feat">
+<li><i>01</i><div><b>19,000 sq ft training floor</b><span>Room to lift, move and condition without feeling boxed in.</span></div></li>
+<li><i>02</i><div><b>Serious strength equipment</b><span>Machines, free weights and specialty equipment built for progression.</span></div></li>
+<li><i>03</i><div><b>24/7 member access</b><span>Early, late or whenever your schedule gives you the opening.</span></div></li>
+<li><i>04</i><div><b>On-site recovery support</b><span>Recovery and rehab support without leaving the building.</span></div></li>
+<li><i>05</i><div><b>Dog-friendly gym</b><span>Bring a well-behaved dog along.</span></div></li>
+<li><i>06</i><div><b>Meal prep on site</b><span>Ready-to-go meals that match your training and schedule.</span></div></li>
+</ul></div></section>
+
+<section id="coaching"><div class="wrap">
+<span class="eyebrow">Coaching &amp; services</span><h2>Stop guessing.<br>Train with direction.</h2>
+<p class="sub">Coaching is available to members. Not sure what fits? Start with a consultation and tell the team where you are and what has not worked before.</p>
+<div class="svc">
+<details open><summary>Personal training</summary><p>One-on-one coaching built around your goals, schedule and experience level. Good for learning fundamentals, building strength, fat loss or muscle gain, and accountability.</p></details>
+<details><summary>Semi-private training</summary><p>Small-group coaching with structure, accountability and expert guidance. Good for building consistency, training with energy and clear programming.</p></details>
+<details><summary>Contest prep</summary><p>Detailed coaching for physique athletes preparing for the stage: bodybuilding, physique competition, posing support and nutrition structure. Built for competitors only.</p></details>
+<details><summary>Nutrition coaching</summary><p>Practical guidance for performance, body composition and consistency: fat loss, muscle gain, better habits and meal structure.</p></details>
+<details><summary>Lifestyle support</summary><p>Accountability and habit support for people who want progress beyond workouts alone.</p></details>
+</div>
+<div class="cta" style="margin-top:24px"><a class="btn" href="#join" onclick="awSend('personal training');return false">Request personal training</a></div>
+</div></section>
+
+<section id="culture"><div class="wrap">
+<span class="eyebrow">The culture</span><h2>Serious training.<br>Real people.</h2>
+<p class="sub">The energy is focused and welcoming. You are not hovered over, and you are not left to disappear in a crowd.</p>
+<div class="paths cul">
+<div class="path" data-n="01"><h3>Effort over ego</h3><p>You do not need to be the strongest in the room. You need to show up ready to work.</p></div>
+<div class="path" data-n="02"><h3>Respect the space</h3><p>The gym works because members care about the equipment, the environment and the people around them.</p></div>
+<div class="path" data-n="03"><h3>Support without ego</h3><p>A focused, welcoming floor where you are not treated like you are helpless.</p></div>
+<div class="path" data-n="04"><h3>A cleaner space</h3><p>Maintained and intentional, for people who take progress seriously.</p></div>
+<div class="path" data-n="05"><h3>People who want more</h3><p>You train around members working toward something, not just passing time.</p></div>
+<div class="path" data-n="06"><h3>Higher standards</h3><p>The room makes consistency feel expected, not optional.</p></div>
+</div>
+<div class="for"><h3>This is for you if</h3><ul><li>You are tired of crowded box gyms.</li><li>You want better equipment and a better environment.</li><li>You need more structure, support or accountability.</li><li>You want to be around people who take progress seriously.</li><li>You want a gym that makes it harder to stay average.</li></ul></div>
+<blockquote class="quote">&ldquo;The gym is very spacious and has two unique sides to it, which makes it feel like a new gym each and every day.&rdquo;<cite>Carlos Barrios, member, from the gym's site</cite></blockquote>
+<p class="sub" style="margin:22px 0 0">Led by Jourdan and Nate Bran, a team that cares about how the space feels, how the equipment performs and how members are treated.</p>
+</div></section>
+
+<section id="join" class="fac"><div class="wrap">
+<span class="eyebrow">Membership</span><h2>Join a gym that raises your standard.</h2>
+<p class="sub">Every tier includes 24/7 gym access and InBody scans. Current rates and activation fees are on the gym's membership page; the team confirms them when you ask.</p>
+<div class="tiers">
+<div class="tier"><h3>Basic</h3><span class="term">1 month commitment</span><ul><li>24/7 gym access</li><li>InBody scans</li></ul></div>
+<div class="tier"><h3>Standard</h3><span class="term">4-week billing cycle</span><ul><li>24/7 gym access</li><li>3 guest passes</li><li>InBody scans</li><li>Free key fob</li><li>Free PT session</li></ul></div>
+<div class="tier pop"><h3>Premium</h3><span class="term">6 months, paid in full</span><ul><li>24/7 gym access</li><li>4 guest passes</li><li>InBody scans</li><li>Free key fob</li><li>Free PT session</li></ul></div>
+<div class="tier"><h3>Premium+</h3><span class="term">12 months, paid in full</span><ul><li>24/7 gym access</li><li>5 guest passes</li><li>InBody scans</li><li>Free key fob</li><li>Free PT session</li></ul></div>
+</div>
+<h3 style="font-size:26px;margin-top:38px">Try it first: day passes</h3>
+<div class="passes"><div class="pass"><b>$20</b><span>1 day</span></div><div class="pass"><b>$30</b><span>2 days, consecutive</span></div><div class="pass"><b>$40</b><span>3 days, consecutive</span></div></div>
+<div class="free"><p><b>First-time visitors: free 1-day pass.</b> No contracts, no pressure. Full access to all 19,000 sq ft. Requires a valid Texas ID.</p><a class="btn sm" href="#join" onclick="awSend('free day pass');return false">Claim it</a></div>
+</div></section>
+
+<section class="faq"><div class="wrap">
+<span class="eyebrow">Questions</span><h2>Before you decide.</h2>
+<details><summary>Do I need to be advanced to join?</summary><p>No. You do not need to be an athlete or a bodybuilder. You need to want a better place to train and be ready to take your progress seriously.</p></details>
+<details><summary>Is Dark Side included?</summary><p>Yes. Dark Side comes with every membership.</p></details>
+<details><summary>Do I need a membership to book coaching?</summary><p>Yes, coaching services are for members. You can add personal training, semi-private training, nutrition or lifestyle coaching any time.</p></details>
+<details><summary>Is the gym staffed 24/7?</summary><p>No. Staffed hours are listed above; members get 24/7 access after signing up.</p></details>
+<details><summary>Do 2-day and 3-day passes need to be consecutive?</summary><p>Yes, multi-day passes must be used on consecutive days.</p></details>
+</div></section>
+
+<section id="visit" class="visit"><div class="wrap vgrid">
+<div><span class="eyebrow">Visit</span><h2>Skip the inbox.<br>Come on in.</h2><p class="sub">Questions or a visit in mind? Use the assistant or reach the team directly.</p></div>
+<dl><div><dt>Address</dt><dd>630 W 6th St, Houston, TX 77007</dd></div><div><dt>Phone</dt><dd><a href="tel:+17135338227">713.533.8227</a></dd></div><div><dt>Email</dt><dd><a href="mailto:heightsilluminate@gmail.com">heightsilluminate@gmail.com</a></dd></div><div><dt>Instagram</dt><dd>@illuminate_heights</dd></div></dl>
+</div></section>
+</main>
+<footer><div class="wrap">Demo &middot; prepared by Gevorg Hovhannisyan</div></footer>
+<button class="aw-btn" id="awBtn" aria-label="Open assistant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12z"/></svg><span>Ask the gym</span></button>
+<div class="aw-panel" id="awPanel" role="dialog" aria-label="Assistant"><div class="aw-head"><div><b>Illuminate Heights</b><small>Gym assistant</small></div><button class="aw-x" id="awX" aria-label="Close">&times;</button></div><div class="aw-log" id="awLog"></div><div class="aw-chips" id="awChips"></div><form class="aw-form" id="awForm"><input id="awIn" autocomplete="off" placeholder="Ask about the gym..."><button type="submit">Send</button></form></div>
+
+<script>function norm(s){return String(s).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9$ ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4)w=w.replace(/(ing|ed|es|s|ly)$/,'');return w;}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[m][n];}
+function tokm(t,k){if(t===k)return 1;if(k.length>=5&&t.length>=5&&Math.abs(t.length-k.length)<=1&&lev(t,k)<=1)return .9;if(k.length>=4&&t.length>=4&&Math.abs(t.length-k.length)<=3&&(t.indexOf(k)===0||k.indexOf(t)===0))return .75;return 0;}
+function score(q,keys){var qn=norm(q),toks=qn.split(' ').map(stem),qs=toks.join(' '),s=0;keys.forEach(function(k){var ks=norm(k).split(' ').map(stem);if(ks.length>1){if((' '+qs+' ').indexOf(' '+ks.join(' ')+' ')>-1)s+=2;}else{var m=0;toks.forEach(function(t){m=Math.max(m,tokm(t,ks[0]));});s+=m;}});return s;}
+function match(q,KB){var best=null,bs=0;KB.forEach(function(e){var s=score(q,e.k);if(s>bs){bs=s;best=e;}});return bs>=.75?best:null;}
+function isFlow(q,words){return score(q,words)>=.9;}
+
+(function(){var C={ph:'Ask about the gym...',
+greet:"Hi, I'm the Illuminate Heights assistant. Ask about memberships, day passes, coaching, hours or the facility, or claim a free day pass.",
+chips:['Free day pass','Hours','Memberships','Personal training','Dark Side','Where are you?'],
+fallback:"I don't have that one. The team can answer it: 713.533.8227 or heightsilluminate@gmail.com. Or ask about hours, memberships, day passes or coaching.",
+flowWords:['free day pass','claim day pass','book day pass','get a day pass','sign up','join the gym','tour','visit the gym','try the gym','book a visit','request personal training','start personal training','consultation'],
+flow:{intro:"Great, let's set up your visit. A few quick questions.",done:"Sent to the team. They will contact you to confirm. (This is a demo, so nothing was actually sent.)",
+steps:[
+{key:'what',label:'Interested in',q:'What would you like to start with?',chips:['Free day pass','Membership info','Personal training','Semi-private training','Nutrition coaching']},
+{key:'exp',label:'Experience',q:'How would you describe your training experience?',chips:['Beginner','Returning','Intermediate','Advanced']},
+{key:'goal',label:'Main goal',q:'What is your main goal?',chips:['Build strength','Lose body fat','Improve conditioning','Learn proper form','Contest prep']},
+{key:'when',label:'How soon',q:'How soon do you want to start?',chips:['Immediately','Within 30 days','Just exploring']},
+{key:'name',label:'Name',q:'Your name?',ph:'Your name',re:/\S{2,}/,err:'Please enter your name.'},
+{key:'contact',label:'Phone or email',q:'Best phone number or email for the team to reach you?',ph:'Phone or email',re:/(@.+\..+|\d[\d\s().+-]{6,})/,err:'That does not look like a phone number or email. Try again, or type cancel.'}
+]},
+kb:[
+{k:['hours','open','opening','close','closing','staffed','schedule','when are you open','sunday','saturday','weekend'],a:"Members get 24/7 access, any day. Staffed hours: Mon-Fri 5a-10p, Saturday 7a-7p, Sunday 8a-7p.",c:['Memberships','Free day pass','Where are you?']},
+{k:['247','24 7','all night','late night','early morning','anytime','access','key fob','fob'],a:"Members train 24/7. Staffed hours are separate (Mon-Fri 5a-10p, Sat 7a-7p, Sun 8a-7p). Standard, Premium and Premium+ include a free key fob.",c:['Memberships','Hours']},
+{k:['where','address','location','directions','located','find you','parking','heights','houston'],a:"630 W 6th St, Houston, TX 77007 (Houston Heights). Phone 713.533.8227.",c:['Hours','Free day pass']},
+{k:['phone','call','number','contact','email','reach','talk to someone','human','staff'],a:"Phone 713.533.8227, email heightsilluminate@gmail.com, or Instagram @illuminate_heights. I can also pass your details to the team.",c:['Free day pass','Hours']},
+{k:['membership','memberships','member','join','plan','plans','tier','tiers','basic','standard','premium','enroll'],a:"Four tiers, all with 24/7 access and InBody scans: Basic (1 month), Standard (4-week billing, 3 guest passes, key fob, free PT session), Premium (6 months paid in full, 4 guest passes) and Premium+ (12 months paid in full, 5 guest passes). The team confirms current rates and activation fees.",c:['Free day pass','What is included?','Hours']},
+{k:['price','prices','cost','how much','fee','fees','rate','rates','activation','pricing','expensive','cheap','afford'],a:"Day passes are $20 (1 day), $30 (2 days) or $40 (3 days, consecutive). Membership rates and activation fees change, so the team confirms them: 713.533.8227. First-time visitors get a free 1-day pass.",c:['Free day pass','Memberships']},
+{k:['included','include','includes','what do i get','come with','perks','amenities','benefits'],a:"Membership includes the training facility, equipment, Dark Side, 24/7 access and InBody scans. Higher tiers add guest passes, a key fob and a free PT session.",c:['Dark Side','Personal training','Free day pass']},
+{k:['day pass','daypass','trial','free pass','try','free','try out','test','visitor','visiting','first time','first timer'],a:"First-time visitors can claim a free 1-day pass (valid Texas ID required, one day of full access to all 19,000 sq ft). After that, passes are $20 (1 day), $30 (2 days) or $40 (3 days); multi-day passes must be consecutive.",c:['Free day pass','Memberships','Hours']},
+{k:['id','texas id','identification','license','requirements','bring'],a:"The free first-visit day pass requires a valid Texas ID. For anything else to bring, the team can confirm at 713.533.8227.",c:['Free day pass']},
+{k:['contract','contracts','commitment','cancel','cancellation','pressure','lock in','locked'],a:"Day passes carry no contract and no pressure. Membership terms depend on the tier (1 month, 4-week billing, or 6/12 months paid in full); the team will walk you through them.",c:['Memberships','Free day pass']},
+{k:['personal training','trainer','trainers','pt','one on one','1 on 1','train with a coach','lessons'],a:"Personal training is one-on-one coaching built around your goals, schedule and experience level. Good for fundamentals, strength, fat loss or muscle gain. Coaching is for members, and you can start with a consultation.",c:['Semi-private','Nutrition coaching','Request personal training']},
+{k:['semi private','semi-private','semiprivate','small group','group training','group','class','classes'],a:"Semi-private training is small-group coaching with structure, accountability and clear programming. It sits between training alone and one-on-one sessions.",c:['Personal training','Request personal training']},
+{k:['contest','contest prep','bodybuilding','physique','stage','posing','competition','compete','competing'],a:"Contest prep is detailed coaching for physique athletes preparing for the stage: structure, precision, posing support and nutrition. It is only for people competing.",c:['Nutrition coaching','Personal training']},
+{k:['nutrition','nutrition coaching','nutritionist','diet','meal','meals','meal prep','food','eating','macros','fat loss','weight loss','lose weight'],a:"Nutrition coaching covers fat loss, muscle gain, better habits and meal structure. There is also ready-to-go meal prep on site.",c:['Personal training','Free day pass']},
+{k:['lifestyle','habit','habits','accountability','consistency','motivation'],a:"Lifestyle support gives accountability and habit support for people who want progress beyond workouts alone.",c:['Personal training','Nutrition coaching']},
+{k:['dark side','darkside','heavy','lifting','lifter','powerlifting','deadlift','squat'],a:"Dark Side is a focused training room inside the gym for lifters who want a harder atmosphere and fewer distractions. It is included with every membership.",c:['Memberships','Equipment']},
+{k:['equipment','machines','machine','weights','free weights','dumbbell','dumbbells','barbell','cardio','treadmill','facility','sq ft','square feet','size','big','space','floor'],a:"A 19,000 sq ft floor with machines, free weights, cardio and specialty strength equipment, plus open space for conditioning and functional training. Dark Side is inside.",c:['Dark Side','Recovery','Hours']},
+{k:['recovery','rehab','injury','sore','stretch'],a:"There is on-site recovery and rehab support, so you can access it without leaving the facility. For specifics about what is offered, the team will confirm.",c:['Equipment','Personal training']},
+{k:['dog','dogs','pet','pets','puppy','bring my dog'],a:"Yes, it is a dog-friendly gym. Well-behaved dogs are welcome.",c:['Hours','Where are you?']},
+{k:['inbody','body scan','scan','scans','body composition'],a:"InBody scans are included with every membership tier.",c:['Memberships']},
+{k:['guest','guests','guest pass','bring a friend','friend','friends','partner'],a:"Guest passes come with the higher tiers: 3 on Standard, 4 on Premium, 5 on Premium+. Friends can also try the gym with a day pass.",c:['Memberships','Free day pass']},
+{k:['beginner','new','newbie','experience','advanced','not fit','out of shape','intimidated','nervous','scared'],a:"You do not need to be advanced, an athlete or a bodybuilder. The gym is for people ready to train with intention, and a coach can set a plan. A day pass is an easy way to see the room first.",c:['Free day pass','Personal training']},
+{k:['clean','cleanliness','crowded','busy','crowd','vibe','culture','atmosphere'],a:"The gym aims for a serious but welcoming culture: effort over ego, respect for the space and equipment, and a clean, maintained floor with less of the crowded box-gym feeling.",c:['Equipment','Free day pass']},
+{k:['job','jobs','career','careers','hiring','work here','apply'],a:"There is a Careers page on the gym's website. For openings, email heightsilluminate@gmail.com or call 713.533.8227.",c:['Hours']},
+{k:['owner','owners','who runs','team','leadership','nate','jourdan'],a:"The gym is led by Jourdan and Nate Bran, and describes itself as not a faceless franchise or a generic box gym.",c:['Equipment','Hours']},
+{k:['coach','coaching','coaches','services','service','programs','program'],a:"Coaching options for members: personal training (one-on-one), semi-private training (small group), contest prep, nutrition coaching and lifestyle support. A consultation is the best place to start if you are unsure.",c:['Personal training','Semi-private','Nutrition coaching']},
+{k:['hello','hi','hey','hiya','good morning','good evening','howdy','thanks','thank you'],a:"Hi! Ask about hours, memberships, day passes, coaching or the facility, or claim a free day pass.",c:['Free day pass','Hours','Memberships']}
+]};
+var $=function(i){return document.getElementById(i)},log=$('awLog'),chips=$('awChips'),inp=$('awIn'),panel=$('awPanel');
+var st=null,data={},opened=false;
+function add(t,c){var d=document.createElement('div');d.className='aw-m '+c;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';(a||[]).forEach(function(t){var b=document.createElement('button');b.type='button';b.className='aw-chip';b.textContent=t;b.onclick=function(){send(t)};chips.appendChild(b);});}
+function ask(){var s=C.flow.steps[st];add(s.q,'b');setChips(s.chips||[]);inp.placeholder=s.ph||C.ph;}
+function startFlow(){st=0;data={};add(C.flow.intro,'b');ask();}
+function flowIn(t){var s=C.flow.steps[st];if(/^(cancel|stop|exit|nevermind)$/i.test(t.trim())){st=null;add('No problem, nothing was sent. What else can I help with?','b');setChips(C.chips);inp.placeholder=C.ph;return;}
+if(s.re&&!s.re.test(t)){add(s.err||'Could you rephrase that?','b');return;}data[s.key]=t;st++;
+if(st>=C.flow.steps.length){var L=C.flow.steps.map(function(x){return x.label+': '+data[x.key]}).join('\n');st=null;add(C.flow.done+'\n\n'+L,'b');setChips(C.chips);inp.placeholder=C.ph;return;}ask();}
+function send(t){t=t.trim();if(!t)return;add(t,'u');inp.value='';
+if(st!==null){flowIn(t);return;}
+if(isFlow(t,C.flowWords)){startFlow();return;}
+var m=match(t,C.kb);if(m){add(m.a,'b');setChips(m.c||C.chips);}else{add(C.fallback,'b');setChips(C.chips);}}
+function open(){panel.classList.add('open');$('awBtn').style.display='none';if(!opened){opened=true;add(C.greet,'b');setChips(C.chips);}setTimeout(function(){inp.focus()},50);}
+$('awBtn').onclick=open;$('awX').onclick=function(){panel.classList.remove('open');$('awBtn').style.display='flex'};
+$('awForm').onsubmit=function(e){e.preventDefault();send(inp.value)};
+window.awOpen=open;window.awSend=function(t){open();send(t)};
+})();
+</script>
+</body></html>
