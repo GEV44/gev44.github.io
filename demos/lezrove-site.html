@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lez Rove Tourism · Dubai · Demo</title>
+<meta name="description" content="Demo page and trip-planning assistant for Lez Rove Tourism, Dubai.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--brown:#492915;--green:#3a4635;--gold:#b99457;--cream:#F5EEE2;--paper:#FBF7F0;--line:#E2D6C1;--mute:#6f5d4e;--gold2:#D9BE8A;
+--as-font:'Outfit',system-ui,sans-serif;--as-accent:#492915;--as-on:#fff;--as-bg:#FBF7F0;--as-ink:#2a1a0e;--as-line:#E2D6C1;--as-head:#3a4635;--as-headink:#fff;--as-bot:#F0E6D3;--as-r:999px;--as-pr:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:#2a1a0e;font:16px/1.6 'Outfit',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;line-height:1.1;margin:0}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--gold);color:var(--brown);padding:13px 22px;border-radius:99px;font:700 15px 'Outfit',sans-serif;text-decoration:none;text-align:center}
+.btn.dark{background:var(--brown);color:#fff}
+.btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+.btn.sm{padding:9px 16px;font-size:14px}
+header.nav{background:var(--cream);position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:8px 16px;gap:10px}
+.logo img{display:block;height:46px;width:auto}
+.nav nav{display:none;gap:22px;font-size:15px;font-weight:500}.nav nav a{text-decoration:none;color:var(--brown)}
+@media(min-width:860px){.nav nav{display:flex}.logo img{height:54px}}
+/* hero: centred arc */
+.hero{background:var(--green);color:#fff;position:relative;overflow:hidden;text-align:center;padding:54px 0 0}
+.hero:before{content:"";position:absolute;left:50%;top:-30%;width:150vmax;height:150vmax;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 50% 28%,rgba(185,148,87,.28),transparent 46%)}
+.hero .wrap{position:relative}
+.stamp{display:inline-block;border:1.5px solid var(--gold2);color:var(--gold2);border-radius:99px;padding:4px 14px;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.hero h1{font-size:clamp(38px,9.5vw,76px);margin:16px auto 14px;max-width:820px}
+.hero h1 span{color:var(--gold2);font-style:italic}
+.hero p{font-size:18px;color:#D6DDD0;max-width:600px;margin:0 auto 22px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.dune{display:block;width:100%;height:auto;margin-top:34px;margin-bottom:-2px}
+/* doors */
+.doors{display:grid;gap:12px;margin-top:-28px;position:relative;z-index:2}
+.door{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;text-decoration:none;display:block;box-shadow:0 10px 30px rgba(73,41,21,.08)}
+.door small{color:var(--gold);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:12px}
+.door h3{font-size:24px;margin:4px 0 6px;color:var(--brown)}
+.door p{margin:0;color:var(--mute);font-size:15px}
+@media(min-width:760px){.doors{grid-template-columns:repeat(3,1fr)}}
+section{padding:54px 0}
+.sec-h{margin-bottom:22px}
+.sec-h small{display:block;color:var(--gold);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px;margin-bottom:6px}
+.sec-h h2{font-size:clamp(30px,6.5vw,46px);color:var(--brown)}
+.sec-h p{color:var(--mute);margin:8px 0 0;max-width:640px}
+/* packages: ticket scroller */
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:4px 16px 16px;scrollbar-width:thin}
+.tkt{flex:0 0 min(270px,78vw);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.tkt .top{background:var(--brown);color:#fff;padding:16px 18px;position:relative}
+.tkt .top:after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:14px;background:radial-gradient(circle at 7px 0,#fff 6px,transparent 7px) 0 0/20px 14px repeat-x}
+.tkt .top small{color:var(--gold2);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.tkt .top h3{font-size:26px;margin-top:2px}
+.tkt .bd{padding:20px 18px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tkt .bd p{margin:0;font-size:14.5px;color:var(--mute)}
+.pill{align-self:flex-start;background:var(--cream);border-radius:99px;padding:3px 11px;font-size:13px;font-weight:600;color:var(--brown)}
+.tkt a{margin-top:auto;font-weight:700;color:var(--brown)}
+.note{font-size:14px;color:var(--mute);margin-top:6px}
+/* visa finder */
+.visa{background:var(--cream);border-block:1px solid var(--line)}
+.finder{display:grid;gap:16px}
+.search{width:100%;padding:14px 16px;border:1.5px solid var(--brown);border-radius:12px;font:16px 'Outfit',sans-serif;background:#fff;color:#2a1a0e}
+.vgrid{display:flex;flex-wrap:wrap;gap:8px}
+.vgrid span{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-size:15px;font-weight:500;color:var(--brown)}
+.vgrid span.hide{display:none}
+.vgrid span.hot{border-color:var(--gold);background:#FFF9EC}
+.empty{display:none;color:var(--mute)}
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+.panel h3{font-size:22px;color:var(--brown);margin-bottom:6px}
+.panel p{margin:0 0 10px;color:var(--mute);font-size:15px}
+.panel ul{margin:0;padding-left:18px;font-size:15px;color:#3b2a1d}
+@media(min-width:860px){.finder{grid-template-columns:1.3fr 1fr;gap:36px;align-items:start}}
+/* attractions mosaic */
+.mos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mos div{border-radius:14px;padding:18px 14px;min-height:96px;display:flex;align-items:flex-end;font-family:'DM Serif Display',serif;font-size:20px;line-height:1.15;color:#fff}
+.mos .a{background:var(--brown)}.mos .b{background:var(--green)}.mos .c{background:var(--gold);color:var(--brown)}
+.mos .w{grid-column:span 2}
+@media(min-width:760px){.mos{grid-template-columns:repeat(4,1fr)}.mos div{min-height:120px}}
+/* process */
+.proc{background:var(--green);color:#fff}
+.proc .sec-h h2{color:#fff}.proc .sec-h p{color:#CFD8C9}
+.path{list-style:none;padding:0;margin:0;position:relative}
+.path li{position:relative;padding:0 0 22px 46px}
+.path li:before{content:"";position:absolute;left:13px;top:26px;bottom:0;border-left:2px dashed var(--gold)}
+.path li:last-child:before{display:none}
+.path li i{position:absolute;left:0;top:2px;width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--brown);display:grid;place-items:center;font:700 14px 'Outfit',sans-serif;font-style:normal}
+.path b{display:block;font-family:'DM Serif Display',serif;font-weight:400;font-size:22px}
+.path span{color:#D6DDD0;font-size:15px}
+.two{display:grid;gap:30px}
+@media(min-width:860px){.two{grid-template-columns:1fr 1fr;gap:56px}}
+.facts{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.facts li{background:rgba(255,255,255,.08);border-radius:12px;padding:12px 14px;font-size:15px}
+.facts b{display:block;color:var(--gold2);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+/* faq */
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;padding:16px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px;color:var(--brown)}
+summary::-webkit-details-marker{display:none}summary:after{content:"+";color:var(--gold);font-size:24px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{margin:0 0 16px;color:var(--mute);font-size:15px}
+/* contact */
+.contact{background:var(--brown);color:#fff}
+.contact .sec-h h2{color:#fff}
+.cbox{display:grid;gap:12px}
+.cbox div{border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:16px}
+.cbox small{display:block;color:var(--gold2);letter-spacing:.1em;text-transform:uppercase;font-size:12px}
+.cbox a{text-decoration:none;font-weight:600}
+@media(min-width:760px){.cbox{grid-template-columns:repeat(3,1fr)}}
+footer{background:#2c1a0d;color:#BBA58E;padding:22px 0 90px;font-size:14px}
+.legal{margin-top:6px;font-size:13px}
+#as-root{position:fixed;right:14px;bottom:14px;z-index:50;font-family:var(--as-font,system-ui,sans-serif)}
+.as-fab{display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--as-accent);color:var(--as-on);padding:12px 16px;border-radius:var(--as-r,999px);font:600 14px var(--as-font,system-ui);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.as-fab-i{font-size:18px;line-height:1}
+.as-panel{position:absolute;right:0;bottom:56px;width:min(360px,calc(100vw - 28px));height:min(520px,calc(100vh - 100px));display:flex;flex-direction:column;background:var(--as-bg);color:var(--as-ink);border-radius:var(--as-pr,16px);box-shadow:0 18px 50px rgba(0,0,0,.3);overflow:hidden;border:1px solid var(--as-line)}
+.as-panel[hidden]{display:none}
+.as-head{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--as-head);color:var(--as-headink)}
+.as-head b{display:block;font-size:15px}.as-head small{opacity:.8;font-size:12px}
+.as-x{background:none;border:0;color:inherit;font-size:26px;cursor:pointer;line-height:1}
+.as-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.as-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:14px;line-height:1.45;white-space:pre-line}
+.as-bot{background:var(--as-bot);align-self:flex-start}
+.as-user{background:var(--as-accent);color:var(--as-on);align-self:flex-end}
+.as-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px;max-height:92px;overflow:auto}
+.as-chips button{border:1px solid var(--as-accent);background:transparent;color:var(--as-ink);border-radius:999px;padding:6px 11px;font:500 13px var(--as-font,system-ui);cursor:pointer}
+.as-form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--as-line)}
+.as-in{flex:1;min-width:0;border:1px solid var(--as-line);border-radius:10px;padding:10px;font:16px var(--as-font,system-ui);background:var(--as-bg);color:var(--as-ink)}
+.as-go{border:0;background:var(--as-accent);color:var(--as-on);border-radius:10px;width:42px;cursor:pointer;font-size:16px}
+
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+<a class="logo" href="#top" aria-label="Lez Rove Tourism"><img src="img/lezrove-logo.svg" alt="Lez Rove Tourism logo" width="130" height="46"></a>
+<nav><a href="#packages">Holiday packages</a><a href="#visas">Visas</a><a href="#attractions">Dubai attractions</a><a href="#how">How it works</a><a href="#contact">Contact</a></nav>
+<a class="btn sm dark" href="#" data-open-assist>Plan a trip</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<span class="stamp">Dubai · UAE</span>
+<h1>Holidays, visas and Dubai days out, <span>sorted in one place.</span></h1>
+<p>Lez Rove Tourism builds trips from the UAE to Georgia, Armenia, Azerbaijan, Turkey and beyond, handles the visa paperwork, and sells tickets to Dubai's big attractions.</p>
+<div class="cta"><a class="btn" href="#" data-open-assist>Start planning</a><a class="btn ghost" href="#visas">Check a visa</a></div>
+<svg class="dune" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120V70C150 20 260 20 420 62S740 112 900 60 1120 18 1200 50V120Z" fill="#b99457" opacity=".5"/><path d="M0 120V92C180 50 300 60 470 92S780 118 940 84 1130 50 1200 74V120Z" fill="#FBF7F0"/></svg>
+</div></div>
+
+<div class="wrap"><div class="doors">
+<a class="door" href="#packages"><small>Go away</small><h3>Holiday packages</h3><p>Fixed departures and customised trips: visa, flights, transfers, hotel and guided sightseeing.</p></a>
+<a class="door" href="#visas"><small>Paperwork</small><h3>Visa service</h3><p>UAE visit visas and 18 more countries, handled online or at the Al Qusais office.</p></a>
+<a class="door" href="#attractions"><small>Stay local</small><h3>Dubai attractions</h3><p>Burj Khalifa, desert safari, Ferrari World, Atlantis Aquaventure and more.</p></a>
+</div></div>
+
+<section id="packages"><div class="wrap">
+<div class="sec-h"><small>Holiday packages</small><h2>Where would you like to go?</h2><p>Packages are listed on the site as fixed departures (often around Eid) or customised holidays. Departures change through the year, so the team confirms dates and current rates.</p></div>
+<div class="rail" tabindex="0" aria-label="Destinations">
+<div class="tkt"><div class="top"><small>3 nights / 4 days</small><h3>Georgia</h3></div><div class="bd"><span class="pill">Visa on arrival or simple process for UAE residents</span><p>Package includes visa help, flights, transfers, hotel and guided sightseeing.</p><a href="#" data-open-assist>Ask about Georgia &rarr;</a></div></div>
+<div class="tkt"><div class="top"><small>3 nights / 4 days</small><h3>Armenia</h3></div><div class="bd"><span class="pill">Yerevan hotel stay</span><p>City tour of Yerevan, Khor Virap, Garni, Geghard Monastery, Lake Sevan and Tsaghkadzor on the fixed-departure itinerary.</p><a href="#" data-open-assist>Ask about Armenia &rarr;</a></div></div>
+<div class="tkt"><div class="top"><small>3 nights / 4 days</small><h3>Baku, Azerbaijan</h3></div><div class="bd"><span class="pill">Honeymoon option listed</span><p>Azerbaijan tourist visa from the UAE is also handled by the team.</p><a href="#" data-open-assist>Ask about Baku &rarr;</a></div></div>
+<div class="tkt"><div class="top"><small>Holiday page</small><h3>Turkey</h3></div><div class="bd"><span class="pill">Popular destination</span><p>Great-deals page on the site. Flights, hotel and transfers arranged to your preferences.</p><a href="#" data-open-assist>Ask about Turkey &rarr;</a></div></div>
+<div class="tkt"><div class="top"><small>3 nights / 4 days</small><h3>Phuket</h3></div><div class="bd"><span class="pill">Thailand</span><p>Listed as an Eid Al Fitr package from the UAE.</p><a href="#" data-open-assist>Ask about Phuket &rarr;</a></div></div>
+<div class="tkt"><div class="top"><small>3 nights / 4 days</small><h3>Malaysia</h3></div><div class="bd"><span class="pill">Eid Al Adha package</span><p>Putrajaya, Batu Caves, Genting Highlands, KLCC Aquaria and city sightseeing.</p><a href="#" data-open-assist>Ask about Malaysia &rarr;</a></div></div>
+<div class="tkt"><div class="top"><small>4 nights / 5 days</small><h3>Bali</h3></div><div class="bd"><span class="pill">Indonesia</span><p>Listed as an Eid package. Dates and availability confirmed by the team.</p><a href="#" data-open-assist>Ask about Bali &rarr;</a></div></div>
+<div class="tkt"><div class="top"><small>4 nights / 5 days</small><h3>Almaty</h3></div><div class="bd"><span class="pill">Kazakhstan</span><p>Eid Al Adha holiday package from the UAE.</p><a href="#" data-open-assist>Ask about Almaty &rarr;</a></div></div>
+<div class="tkt"><div class="top"><small>4 nights / 5 days</small><h3>Russia</h3></div><div class="bd"><span class="pill">Visa service available</span><p>Eid Al Adha package from the UAE, plus Russia visa processing.</p><a href="#" data-open-assist>Ask about Russia &rarr;</a></div></div>
+<div class="tkt"><div class="top"><small>4 nights / 5 days</small><h3>Kenya</h3></div><div class="bd"><span class="pill">From Dubai</span><p>Eid Al Adha special from Dubai. Ask the team for the next departure.</p><a href="#" data-open-assist>Ask about Kenya &rarr;</a></div></div>
+</div>
+<p class="note">Swipe sideways to see more destinations. No prices are shown here: the team quotes by dates, hotel and group size.</p>
+</div></section>
+
+<section class="visa" id="visas"><div class="wrap finder">
+<div>
+<div class="sec-h"><small>Visa service</small><h2>Find your visa</h2><p>Type a country to see whether Lez Rove Tourism handles it.</p></div>
+<label for="vs" style="display:none">Search visa country</label>
+<input id="vs" class="search" type="search" placeholder="Try Turkey, Schengen, UK..." autocomplete="off">
+<div class="vgrid" id="vg" style="margin-top:14px">
+<span class="hot">UAE visit visa</span><span>Azerbaijan</span><span>Malaysia</span><span>Australia</span><span>Singapore</span><span>Albania</span><span>China</span><span>Canada</span><span>UK</span><span>Uzbekistan</span><span>Saudi Arabia</span><span>Egypt</span><span>Bahrain</span><span>Schengen</span><span>Turkey</span><span>Russia</span><span>USA</span><span>India</span>
+</div>
+<p class="empty" id="ve">Not listed on the visa page. Other visas mentioned in their FAQ: Japan and Oman. Ask the team about any other country.</p>
+</div>
+<div class="panel">
+<h3>UAE visit visa</h3>
+<p>The agency describes itself as a leading issuer of UAE visit and tourist visas. Requirements depend on nationality: some travellers need no visa, some get one on arrival, the rest need one approved before travel.</p>
+<h3 style="margin-top:14px">Visa on arrival trips</h3>
+<ul><li>Passport valid for at least 6 months</li><li>UAE residence visa valid for at least 1 month</li><li>Certain nationalities with UAE residency may qualify</li></ul>
+<p style="margin-top:10px"><a href="#" data-open-assist><b>Ask a visa question</b></a></p>
+</div>
+</div></section>
+
+<section id="attractions"><div class="wrap">
+<div class="sec-h"><small>In the UAE</small><h2>Dubai and Abu Dhabi, ticketed</h2><p>Attractions the agency sells tickets for. Tap "Plan a trip" to ask about a date or group.</p></div>
+<div class="mos">
+<div class="a w">Burj Khalifa At the Top</div><div class="b">Desert Safari with dune bashing</div><div class="c">Ferrari World, Abu Dhabi</div>
+<div class="b">Atlantis Aquaventure</div><div class="a">Wild Wadi Water Park</div><div class="c">Dubai Aquarium</div><div class="b">IMG Worlds of Adventure</div>
+<div class="a">The Green Planet Dubai</div><div class="c w">Palm Jumeirah</div>
+</div>
+</div></section>
+
+<section class="proc" id="how"><div class="wrap two">
+<div>
+<div class="sec-h"><small>How it works</small><h2>From message to boarding pass</h2><p>The agency's own steps, in plain order.</p></div>
+<ol class="path">
+<li><i>1</i><b>Tell the team what you need</b><span>Share your dates, group and destination by phone, email or the form.</span></li>
+<li><i>2</i><b>Visa first</b><span>The team handles the visa application or visa assistance for your trip.</span></li>
+<li><i>3</i><b>Flights, hotel and transfers</b><span>Booked to match your preferences, with guided visits to the key sights.</span></li>
+<li><i>4</i><b>Pay your way</b><span>Payment link or online transfer, cash at the office, or 4 instalments with Tabby.</span></li>
+</ol>
+</div>
+<div>
+<div class="sec-h"><small>At a glance</small><h2>Good to know</h2></div>
+<ul class="facts">
+<li><b>Licensed</b>Department of Economy and Tourism, Dubai · Trade licence 1284542</li>
+<li><b>Reputation</b>4.9 from 361 Google reviews</li>
+<li><b>Mission</b>Make travel accessible and affordable for every budget</li>
+<li><b>Arrival rule</b>Group waiting time after landing is a maximum of 90 minutes</li>
+</ul>
+</div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+<div class="sec-h"><small>FAQ</small><h2>Quick answers</h2></div>
+<details><summary>What do the tour packages include?</summary><p>Visa processing or assistance, flight booking, comfortable transfers, hotel reservations and guided visits to key sights, as per your requirements.</p></details>
+<details><summary>What payment options are available?</summary><p>Payment links or online transfers, cash at the office, and the option to spread the cost over 4 instalments with Tabby.</p></details>
+<details><summary>What if I need to cancel?</summary><p>Once payment is made, the agency's cancellation policy applies. If visa on arrival is denied, or a flight is cancelled or boarding refused, the package is non-refundable and non-transferable, and unused services are not refunded. Ask the team for the full terms.</p></details>
+<details><summary>Do you help with visas for other countries?</summary><p>Yes. The list includes Saudi, Turkey, US, UK, Schengen, China, Bahrain and more. Their FAQ also mentions Japan and Oman.</p></details>
+<details><summary>Can I book without visiting the office?</summary><p>Yes. Online customers can pay through payment links or online transfers.</p></details>
+<details><summary>Which destinations are most popular?</summary><p>Georgia, Azerbaijan, Armenia and Turkey are listed as the most popular packages.</p></details>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+<div class="sec-h"><small>Talk to the team</small><h2>Al Qusais, Dubai</h2></div>
+<div class="cbox">
+<div><small>Phone</small><a href="tel:+97148863488">+971 4 886 3488</a></div>
+<div><small>Email</small><a href="mailto:info@lezrove.com">info@lezrove.com</a></div>
+<div><small>Office</small>PO Box 2144, Al Qusais, Dubai<br>Open 9:00 AM to 7:00 PM, closed Sunday</div>
+</div>
+<p style="margin-top:18px"><a class="btn" href="#" data-open-assist>Plan my trip</a></p>
+</div></section>
+</main>
+
+<footer><div class="wrap"><div>Lez Rove Tourism L.L.C · Dubai</div><div class="legal">Demo · prepared by Gevorg Hovhannisyan</div></div></footer>
+
+<div id="as-root"></div>
+<script>
+(function(){var i=document.getElementById('vs'),g=document.querySelectorAll('#vg span'),e=document.getElementById('ve');
+i.addEventListener('input',function(){var q=i.value.toLowerCase().trim(),n=0;if(q==='uk'||q==='england')q='uk';
+g.forEach(function(s){var t=s.textContent.toLowerCase(),show=!q||t.indexOf(q)>-1||(q==='usa'&&t==='usa')||(q==='us'&&t==='usa')||(q==='america'&&t==='usa')||(q==='dubai'&&t.indexOf('uae')>-1)||(q==='saudi'&&t.indexOf('saudi')>-1)||(q==='india'&&t==='india')||(q==='europe'&&t==='schengen')||(q==='baku'&&t==='azerbaijan');
+s.classList.toggle('hide',!show);if(show)n++;});e.style.display=n?'none':'block';});})();
+</script>
+<script>
+(function(G){
+var STOP=new Set('a an the is are do does did i we you your you should my me to of for in on at and or can could would will it be there any what how when where which who with about please tell us our get have has'.split(' '));
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|s)$/,''):w.replace(/s$/,'');}
+function toks(s){return norm(s).split(' ').filter(function(w){return w&&!STOP.has(w)}).map(stem);}
+function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;var d=[],i,j;for(i=0;i<=a.length;i++){d[i]=[i];}for(j=0;j<=b.length;j++)d[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++){var c=a[i-1]==b[j-1]?0:1;d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);if(i>1&&j>1&&a[i-1]==b[j-2]&&a[i-2]==b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1);}return d[a.length][b.length];}
+function same(q,k){if(q===k)return true;if(k.length>=5&&q.length>=5&&lev(q,k)<=1)return true;if(k.length>=6&&q.length>=6&&Math.max(k.length,q.length)>=7&&lev(q,k)<=2)return true;if(q.length>=4&&k.length>=5&&(k.indexOf(q)===0||q.indexOf(k)===0))return true;return false;}
+function uniq(a){var seen={};return a.filter(function(t){var j=t.join(' ');if(seen[j])return false;seen[j]=1;return true})}
+function make(cfg){
+  var kb=cfg.kb.map(function(e){return {a:e.a,chips:e.chips,k:uniq(e.k.map(function(p){return toks(p)}))}});
+  var flowT=cfg.flow.trigger.map(function(p){return toks(p)});
+  function score(qt,kl){var a=[];kl.forEach(function(kt){if(!kt.length)return;var ok=kt.every(function(w){return qt.some(function(x){return same(x,w)})});if(ok)a.push(kt.length*2+1+kt.join('').length/20);});if(!a.length)return 0;a.sort(function(x,y){return y-x});var s=a[0];for(var i=1;i<a.length&&i<4;i++)s+=0.25;return s;}
+  function answer(q){
+    var qt=toks(q);
+    if(cfg.rx)for(var i=0;i<cfg.rx.length;i++)if(new RegExp(cfg.rx[i][0],'i').test(q)){var e=cfg.kb[cfg.rx[i][1]];return {a:e.a,chips:e.chips};}
+    if(!qt.length)return {a:cfg.fallback,chips:cfg.chips};
+    var fs=score(qt,flowT)*1.6,best=null,bs=0;
+    kb.forEach(function(e){var s=score(qt,e.k);if(s>bs){bs=s;best=e}});
+    if(fs>0&&(fs>=bs||qt.length<=2))return {flow:true};
+    if(best&&bs>0)return {a:best.a,chips:best.chips};
+    return {a:cfg.fallback,chips:cfg.chips};
+  }
+  return {answer:answer};
+}
+G.Assist={make:make,norm:norm};
+if(typeof module!=='undefined')module.exports=G.Assist;
+if(typeof document==='undefined')return;
+G.Assist.init=function(cfg){
+  var core=make(cfg),root=document.getElementById('as-root');
+  root.innerHTML='<button class="as-fab" aria-label="'+cfg.title+'" aria-expanded="false"><span class="as-fab-i">'+cfg.fabIcon+'</span><span class="as-fab-t">'+cfg.fabText+'</span></button><div class="as-panel" role="dialog" aria-label="'+cfg.title+'" hidden><div class="as-head"><div><b>'+cfg.title+'</b><small>'+cfg.sub+'</small></div><button class="as-x" aria-label="Close">&times;</button></div><div class="as-log" aria-live="polite"></div><div class="as-chips"></div><form class="as-form"><input class="as-in" type="text" autocomplete="off" placeholder="'+cfg.placeholder+'" aria-label="'+cfg.placeholder+'"><button class="as-go" aria-label="Send">&#10148;</button></form></div>';
+  var fab=root.querySelector('.as-fab'),panel=root.querySelector('.as-panel'),log=root.querySelector('.as-log'),chips=root.querySelector('.as-chips'),form=root.querySelector('.as-form'),inp=root.querySelector('.as-in');
+  var step=-1,data={},opened=false;
+  function say(t,who){var d=document.createElement('div');d.className='as-m as-'+who;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.addEventListener('click',function(){send(c)});chips.appendChild(b)});}
+  function open(){panel.hidden=false;fab.setAttribute('aria-expanded','true');if(!opened){opened=true;say(cfg.greet,'bot');setChips(cfg.chips);}inp.focus();}
+  function close(){panel.hidden=true;fab.setAttribute('aria-expanded','false');}
+  fab.addEventListener('click',function(){panel.hidden?open():close()});
+  root.querySelector('.as-x').addEventListener('click',close);
+  function ask(){var s=cfg.flow.steps[step];say(s.q,'bot');setChips(s.chips);inp.placeholder=s.ph||cfg.placeholder;}
+  function startFlow(){step=0;data={};say(cfg.flow.intro,'bot');ask();}
+  function finish(){var lines=cfg.flow.steps.map(function(s){return s.label+': '+data[s.key]}).join('\n');step=-1;inp.placeholder=cfg.placeholder;say(cfg.flow.done(data)+'\n\n'+lines,'bot');setChips(cfg.chips);}
+  function send(t){
+    t=String(t).trim();if(!t)return;say(t,'user');inp.value='';
+    if(step>=0){
+      if(/^(cancel|stop|exit|never ?mind)$/i.test(t)){step=-1;inp.placeholder=cfg.placeholder;say(cfg.flow.cancel,'bot');setChips(cfg.chips);return;}
+      var s=cfg.flow.steps[step];
+      if(s.digits&&t.replace(/\D/g,'').length<6){say(s.bad,'bot');return;}
+      data[s.key]=t;step++;
+      if(step>=cfg.flow.steps.length){finish();}else{ask();}
+      return;
+    }
+    var r=core.answer(t);
+    if(r.flow){startFlow();return;}
+    setTimeout(function(){say(r.a,'bot');setChips(r.chips||cfg.chips);},220);
+  }
+  form.addEventListener('submit',function(e){e.preventDefault();send(inp.value)});
+  document.querySelectorAll('[data-open-assist]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();open();})});
+};
+})(typeof window!=='undefined'?window:globalThis);
+
+</script>
+<script>
+var KB=[
+{k:["hours","opening hours","open","opening times","what time","close","closing","sunday","saturday","when are you open","working hours","office hours"],a:"The office is open 9:00 AM to 7:00 PM and closed on Sunday.",chips:["Address","Phone","Plan a trip"]},
+{k:["address","where","location","office","find you","po box","al qusais","qusais","visit you","walk in","directions","where is your office"],a:"Lez Rove Tourism, PO Box 2144, Al Qusais, Dubai, UAE. Open 9:00 AM to 7:00 PM, closed Sunday.",chips:["Phone","Office hours"]},
+{k:["phone","call","telephone","number","contact","email","mail","whatsapp","reach","speak to someone","talk to someone"],a:"Phone +971 4 886 3488 or email info@lezrove.com. There is also a message form on the Contact Us page.",chips:["Office hours","Plan a trip"]},
+{k:["licence","license","licensed","trade license","legit","legitimate","registered","authorised","authorized","trust","safe","genuine"],a:"Lez Rove Tourism L.L.C is licensed by the Department of Economy and Tourism, Dubai, UAE (Trade License No. 1284542).",chips:["Reviews","Payment options"]},
+{k:["reviews","rating","rated","google","stars","testimonials","feedback","recommend"],a:"The agency has a 4.9 rating from 361 reviews on Google.",chips:["Licence","Plan a trip"]},
+{k:["included","include","includes","what is included","whats included","inclusions","cover","covered","all inclusive"],a:"Each package includes visa processing or visa assistance, flight booking, comfortable transfers, hotel reservations, and guided visits to key sightseeing spots and major attractions, as per your requirements.",chips:["Payment options","Plan a trip"]},
+{k:["package","holiday","tour","trip","destination","tour package","holiday package","trips","destinations","where can i go","places","countries"],a:"Packages listed: Georgia, Armenia, Azerbaijan (Baku), Turkey, Phuket (Thailand), Malaysia, Bali, Almaty (Kazakhstan), Russia and Kenya. Most are 3 nights/4 days or 4 nights/5 days, either fixed departures (often around Eid) or customised holidays. Georgia, Azerbaijan, Armenia and Turkey are the most popular.",chips:["What's included","Georgia","Armenia","Plan a trip"]},
+{k:["price","prices","cost","how much","rate","rates","pricing","fare","budget","cheap","cheapest","affordable","expensive","quote","deal","deals","offer","offers","discount"],a:"I don't have current prices here, because rates change with the season, dates, hotel and group size. The team quotes them: +971 4 886 3488 or send a trip request. The agency says it aims for competitive, affordable pricing and shares monthly deals through its newsletter.",chips:["Plan a trip","Payment options","Phone"]},
+{k:["georgia","tbilisi","batumi"],a:"Georgia is one of the most popular packages (listed as 3 nights/4 days). For UAE residents Georgia offers visa on arrival or a straightforward visa process. The team arranges flights, transfers, hotel and guided sightseeing.",chips:["Plan a trip","What's included","Visa on arrival"]},
+{k:["armenia","yerevan","khor virap","garni","geghard","sevan","tsaghkadzor"],a:"The Armenia package is listed as 3 nights/4 days in Yerevan. The fixed-departure itinerary covers a Yerevan city tour, Khor Virap with views of Mount Ararat, Garni Temple, Geghard Monastery, Lake Sevan and Tsaghkadzor, from Dubai or Abu Dhabi. Dates change, so the team confirms the next departure.",chips:["Plan a trip","What's included"]},
+{k:["azerbaijan","baku","honeymoon","honeymoons"],a:"Azerbaijan (Baku) is listed as a 3 nights/4 days package, and there is a Honeymoon tour page. The team also processes the Azerbaijan tourist visa from the UAE.",chips:["Plan a trip","Visa help"]},
+{k:["turkey","turkiye","istanbul","antalya"],a:"Turkey is among the most popular holiday packages, and a Turkey visa service is also offered. The team tailors flights, hotel and transfers to your preferences.",chips:["Plan a trip","Visa help"]},
+{k:["phuket","thailand","thai"],a:"A Phuket, Thailand package (3 nights/4 days) has been listed as an Eid Al Fitr holiday package from the UAE. Ask the team for the next departure.",chips:["Plan a trip"]},
+{k:["malaysia","kuala lumpur","genting","putrajaya","batu caves","klcc"],a:"The Malaysia package (3 nights/4 days) lists Putrajaya, Batu Caves and King's Palace, Genting Highlands with the cable car, KLCC Aquaria and fountain show, and a city and Chinatown tour. A Malaysia visa is also handled.",chips:["Plan a trip","Visa help"]},
+{k:["bali","indonesia"],a:"A Bali package (4 nights/5 days) has been listed as an Eid holiday package. Ask the team for the next departure and what's included.",chips:["Plan a trip"]},
+{k:["almaty","kazakhstan"],a:"An Almaty (Kazakhstan) package, 4 nights/5 days, has been listed as an Eid Al Adha holiday package. Kazakhstan is among destinations with visa-on-arrival or easy visa routes for UAE residents.",chips:["Plan a trip"]},
+{k:["russia","moscow","petersburg"],a:"A Russia package (4 nights/5 days) has been listed from the UAE, and a Russia visa service is also available.",chips:["Plan a trip","Visa help"]},
+{k:["kenya","safari","nairobi","africa"],a:"A Kenya package (4 nights/5 days) has been listed as an Eid Al Adha special from Dubai. Ask the team about the next departure.",chips:["Plan a trip"]},
+{k:["maldives","jordan","kyrgyzstan","saudi arabia trip"],a:"The agency says UAE residents can travel visa-on-arrival or with a simple visa process to countries such as Georgia, Azerbaijan, Armenia, Maldives, Saudi Arabia, Kyrgyzstan, Kazakhstan and Jordan. Ask the team whether they can arrange a package there.",chips:["Plan a trip","Visa help"]},
+{k:["custom","customised","customized","personalised","personalized","tailor","tailored","own trip","private trip","family trip","group trip","fixed departure","fixed departures"],a:"There are two kinds of packages: fixed departures on set dates, and customised holidays tailored to your preferences and schedule. Tell the team your plan and they'll arrange the rest.",chips:["Plan a trip","What's included"]},
+{k:["visa","visas","visa service","visa help","visa assistance","apply for visa","visa application","need a visa"],a:"The visa page lists: UAE visit visa, Azerbaijan, Malaysia, Australia, Singapore, Albania, China, Canada, UK, Uzbekistan, Saudi Arabia, Egypt, Bahrain, Schengen, Turkey, Russia, USA and India. Their FAQ also mentions Japan and Oman. Which country do you need?",chips:["UAE visit visa","Schengen","US visa","UK visa","Plan a trip"]},
+{k:["uae visa","uae visit visa","uae tourist visa","dubai visa","visit visa","tourist visa","visa for dubai","visa to dubai","entry visa"],a:"Lez Rove Tourism says it is a leading issuer of UAE visit and tourist visas. What you need depends on your nationality: some travellers need no visa, some get one on arrival, and the rest need a visa approved before travel. Share your nationality with the team to confirm.",chips:["Plan a trip","Phone"]},
+{k:["visa on arrival","voa","arrival visa","visa on arrival rules"],a:"For visa-on-arrival packages, your passport must have at least 6 months' validity and your UAE residence visa at least 1 month. Certain nationalities with UAE residency may be eligible. If visa on arrival is denied, the package is non-refundable and non-transferable.",chips:["Cancellation","Plan a trip"]},
+{k:["schengen","europe","european","france","italy","spain","germany","greece","netherlands"],a:"Yes, a Schengen visa service is listed. Visa requirements depend on your nationality, so share it with the team to get the exact steps.",chips:["Plan a trip","Visa help"]},
+{k:["us visa","usa visa","american visa","united states","america","us appointment","visa appointment"],a:"A USA visa service is listed, and the blog covers US visa appointment slots. Share your details with the team for the exact process.",chips:["Plan a trip","Phone"]},
+{k:["uk visa","britain","british","england","london","united kingdom"],a:"Yes, a UK visa service is listed on the visa page.",chips:["Visa help","Plan a trip"]},
+{k:["saudi","saudi visa","saudi arabia","umrah","mecca","riyadh"],a:"A Saudi Arabia visa service is listed on the visa page. Ask the team what is needed for your nationality.",chips:["Visa help","Plan a trip"]},
+{k:["india","indian","indian visa","e visa","evisa"],a:"An Indian visa service is listed on the visa page. The team can tell you what is needed.",chips:["Visa help","Plan a trip"]},
+{k:["china","australia","canada","singapore","albania","uzbekistan","egypt","bahrain","oman","japan","azerbaijan visa","malaysia visa"],a:"These visas are covered by the agency: Azerbaijan, Malaysia, Australia, Singapore, Albania, China, Canada, Uzbekistan, Egypt and Bahrain are on the visa page, and their FAQ mentions Japan and Oman. Tell the team your nationality for the steps.",chips:["Visa help","Plan a trip"]},
+{k:["attraction","attractions","tickets","ticket","things to do","burj khalifa","burj","desert safari","safari","dune bashing","ferrari world","ferrari","aquarium","wild wadi","atlantis","aquaventure","green planet","img worlds","palm jumeirah","yas","water park","theme park","waterpark"],a:"Attraction tickets listed: Burj Khalifa At the Top, Desert Safari with dune bashing, Ferrari World (Abu Dhabi), Atlantis Aquaventure, Wild Wadi Water Park, Dubai Aquarium, IMG Worlds of Adventure, The Green Planet Dubai and Palm Jumeirah. Yas water park tickets are mentioned too. Contact the team with your date and group size.",chips:["Plan a trip","Phone"]},
+{k:["pay","payment","payments","payment options","how can i pay","how do i pay","cash","card","bank transfer","online transfer","payment link","installment","installments","instalment","instalments","tabby","pay later","split"],a:"You can pay by payment link or online transfer (handy if you won't visit the office), in cash at the office, or split the cost over 4 instalments with Tabby.",chips:["Cancellation","Plan a trip"]},
+{k:["cancel","cancellation","cancelling","refund","refunds","change","modify","reschedule","money back","non refundable"],a:"Once payment is made, the agency's cancellation policy applies. If visa on arrival is denied, or a flight is cancelled or boarding is refused, the package is non-refundable and non-transferable, and unused services aren't refunded. Please ask the team for the full terms before paying.",chips:["Phone","Payment options"]},
+{k:["transfer","transfers","pickup","pick up","airport","wait","waiting time","delay","delayed","90 minutes"],a:"Packages include comfortable transfers. The group's waiting time after flight arrival is a maximum of 90 minutes. If your flight is delayed beyond this, guests need to arrange their own transport to the hotel.",chips:["What's included","Plan a trip"]},
+{k:["flight","flights","air ticket","airline","fly","air arabia","ticketing"],a:"Flight booking is part of the packages. For flights on their own, ask the team on +971 4 886 3488.",chips:["Plan a trip","Phone"]},
+{k:["hotel","hotels","accommodation","stay","room","star"],a:"Hotel reservations are part of the packages. For example the Armenia fixed departure used a 4-star hotel in Yerevan (or similar). The team can match a hotel to your preferences.",chips:["Plan a trip","What's included"]},
+{k:["guide","guided","guided tour","sightseeing","excursion","itinerary"],a:"Packages include guided visits to key sightseeing spots and major attractions as per your requirements. Itineraries for some trips are on the website; the team can send the one you need.",chips:["Plan a trip","What's included"]},
+{k:["online","remote","without visiting","not in dubai","from home","abroad","outside dubai"],a:"Yes. For online bookings the agency accepts payments through payment links or online transfers, so you don't have to visit the office.",chips:["Payment options","Plan a trip"]},
+{k:["inbound","tourists coming to dubai","visiting dubai","coming to uae","dubai trip","uae tour"],a:"The agency also runs inbound tours of the UAE, with Dubai attractions, tickets and UAE visit visas. Tell the team your dates and what you'd like to see.",chips:["Dubai attractions","UAE visit visa","Plan a trip"]},
+{k:["about","who are you","company","agency","mission","vision","team","staff","experience","why choose"],a:"Lez Rove Tourism is a Dubai travel agency run by a young, travel-loving team. Their mission is to make travel accessible and affordable for every budget, with worldwide coverage, quick booking, guided tours and flexible planning.",chips:["Licence","Reviews","Plan a trip"]},
+{k:["newsletter","subscribe","monthly deals","blog","tips"],a:"The website has a newsletter for monthly deals, and a blog with travel tips, visa news and holiday ideas.",chips:["Plan a trip"]},
+{k:["hello","hi","hey","good morning","good evening","salam","marhaba","hiya"],a:"Hello! Ask me about visas, packages, Dubai attractions or payment, or tap Plan a trip to send a request to the team.",chips:["Plan a trip","Visa help","Holiday packages"]},
+{k:["thanks","thank you","cheers","great","perfect","shukran"],a:"You're welcome! Anything else I can help with?",chips:["Plan a trip","Office hours"]}
+];
+if(typeof module!=='undefined')module.exports=KB;
+
+var CFG={
+title:"Lez Rove trip assistant",sub:"Answers from the agency's website",fabIcon:"&#9992;",fabText:"Plan a trip",placeholder:"Ask about visas, packages, payment...",
+greet:"Hello! I'm the assistant for Lez Rove Tourism. Ask about visas, holiday packages, Dubai attractions or payment, or tell me about a trip and I'll pass it to the team. I don't have live prices or seat availability, so the team confirms those.",
+chips:["Plan a trip","Visa help","Holiday packages","How can I pay?","Dubai attractions","Office hours"],
+fallback:"I don't have that detail from the website. The team can answer on +971 4 886 3488 (9 AM to 7 PM, closed Sunday) or info@lezrove.com. I can also help with visas, packages, attractions, payment, or take your trip request.",
+flow:{
+trigger:["plan a trip","plan my trip","book a tour","book a package","book a holiday","book a trip","make a booking","online booking","reserve","enquiry","inquiry","get a quote","quote","start planning","holiday request","want to travel","want to book","send request"],
+intro:"Lovely, let's get the basics down and the team will come back with options. Type cancel at any time to stop.",
+cancel:"No problem, nothing was sent. Ask me anything else.",
+steps:[
+{key:"need",label:"Looking for",q:"What do you need?",chips:["Holiday package","Visa only","Dubai attraction tickets","Custom trip"]},
+{key:"dest",label:"Destination",q:"Which destination or attraction?",chips:["Georgia","Armenia","Azerbaijan","Turkey","Phuket","Malaysia","Not sure yet"],ph:"Destination or attraction"},
+{key:"date",label:"Travel dates",q:"Roughly when do you want to travel?",ph:"e.g. mid-December, 5 to 9 March",chips:["Flexible"]},
+{key:"group",label:"Group",q:"How many travellers (adults and children)?",chips:["1 adult","2 adults","2 adults + 1 child","Family of 4","Group of 5+"],ph:"e.g. 2 adults, 1 child (6)"},
+{key:"res",label:"Residency",q:"Do you live in the UAE? The visa route depends on nationality and residency.",chips:["UAE resident","Visiting the UAE","Outside the UAE"]},
+{key:"name",label:"Name",q:"Your name, please?",ph:"Your name"},
+{key:"phone",label:"Phone / WhatsApp",q:"Best phone or WhatsApp number for the team?",ph:"+971...",digits:1,bad:"That doesn't look like a phone number. Could you type it again with the country code?"}
+],
+done:function(d){return "Thank you, "+d.name+". Your trip request has been sent to the Lez Rove Tourism team. They will contact you with options and current rates (office hours 9 AM to 7 PM, closed Sunday). (Demo: nothing is actually sent.)";}
+}};
+CFG.kb=KB;CFG.rx=[["where (are|is) (you|your office|the office)",1],["how much|\bprices?\b|\bcosts?\b|pricing",KB.findIndex(function(e){return e.k.indexOf('pricing')>-1})]];
+Assist.init(CFG);
+</script>
+<noscript><p style="padding:16px">The trip assistant needs JavaScript. Call +971 4 886 3488.</p></noscript>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gallo Travel Agency · El Gallo que viaja · Miami</title>
+<meta name="description" content="Bus tours desde Miami, paquetes a Turquía, Punta Cana y Europa. Agencia de viajes en Miami.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#13808c;--deep:#0d4a58;--ink:#0b2f38;--sun:#f29a1f;--leaf:#7ab648;
+  --cream:#fbf6ea;--sand:#f2e8d0;--paper:#fffdf7;--line:#e3d6b6;--mute:#5d7178;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.55;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 16px}
+.topbar{background:var(--deep);color:#e9f4f3;font-size:13px}
+.topbar .wrap{display:flex;justify-content:space-between;gap:8px;padding-top:7px;padding-bottom:7px;flex-wrap:wrap}
+.topbar a{text-decoration:none;font-weight:500}
+header.site{background:var(--paper);border-bottom:2px dashed var(--line);position:sticky;top:0;z-index:30}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:8px;padding-bottom:8px}
+.brand{display:flex;align-items:center;background:#fff;border-radius:10px;padding:2px 6px}
+.brand img{height:44px;width:auto}
+nav.main{display:none;gap:20px;font-weight:500;font-size:15px}
+nav.main a{text-decoration:none;color:var(--deep)}
+nav.main a:hover{color:var(--sun)}
+.btn{display:inline-block;border:0;border-radius:999px;padding:11px 20px;font:600 15px var(--sans);cursor:pointer;text-decoration:none;text-align:center}
+.btn-sun{background:var(--sun);color:#2a1700}
+.btn-deep{background:var(--deep);color:#fff}
+.btn-line{background:transparent;border:2px solid var(--deep);color:var(--deep)}
+.hero{padding:30px 0 10px;background:
+  radial-gradient(circle at 92% 8%,rgba(242,154,31,.22),transparent 40%),
+  radial-gradient(circle at 0% 100%,rgba(19,128,140,.14),transparent 45%)}
+.hero .tag{display:inline-block;background:var(--sand);color:var(--deep);border-radius:999px;padding:4px 12px;font-size:13px;font-weight:600;letter-spacing:.04em}
+.hero h1{font-family:var(--serif);font-size:clamp(38px,9vw,66px);line-height:1;margin:14px 0 12px;color:var(--deep);font-weight:700}
+.hero h1 em{color:var(--sun);font-style:italic}
+.hero p.lead{font-size:18px;max-width:560px;color:#274850}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.pass{margin-top:28px;background:var(--paper);border:2px solid var(--deep);border-radius:16px;position:relative;overflow:hidden}
+.pass .row{display:flex;flex-direction:column}
+.pass .cell{padding:14px 18px;border-bottom:2px dashed var(--line)}
+.pass .cell:last-child{border-bottom:0}
+.pass small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:600}
+.pass b{font-family:var(--serif);font-size:26px;color:var(--deep);line-height:1.1}
+.pass .stub{background:var(--deep);color:#fff;padding:14px 18px}
+.pass .stub small{color:#b6dde0}
+.pass .stub b{color:#fff}
+section{padding:44px 0}
+h2{font-family:var(--serif);font-size:clamp(30px,6vw,44px);color:var(--deep);line-height:1.05;margin-bottom:8px}
+.kicker{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+.sub{color:var(--mute);max-width:620px;margin-bottom:22px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab{border:1.5px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:7px 14px;font:500 14px var(--sans);cursor:pointer}
+.tab.on{background:var(--deep);color:#fff}
+.tickets{display:grid;gap:12px}
+.ticket{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;display:flex;flex-direction:column;overflow:hidden}
+.ticket .main{padding:14px 16px}
+.ticket h3{font-family:var(--serif);font-size:24px;color:var(--deep);line-height:1.1}
+.ticket p{font-size:14.5px;color:#34535b;margin-top:4px}
+.ticket .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{background:var(--sand);border-radius:6px;padding:2px 8px;font-size:12.5px;font-weight:500;color:var(--deep)}
+.ticket .price{border-top:2px dashed var(--line);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px;background:#fff9e8}
+.ticket .price span{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.1em}
+.ticket .price strong{font-family:var(--serif);font-size:28px;color:var(--sun)}
+.ticket .price button{border:0;background:var(--deep);color:#fff;border-radius:999px;padding:8px 14px;font:600 13px var(--sans);cursor:pointer}
+.note{font-size:13px;color:var(--mute);margin-top:14px}
+.band{background:var(--deep);color:#e9f4f3}
+.band h2{color:#fff}
+.band .kicker{color:#f6c46b}
+.steps{display:grid;gap:14px;margin-top:20px}
+.step{border-left:3px solid var(--sun);padding:2px 0 2px 14px}
+.step b{font-family:var(--serif);font-size:22px;color:#fff;display:block}
+.step span{font-size:15px;color:#cfe7e8}
+.two{display:grid;gap:22px}
+.facts{list-style:none;display:grid;gap:10px}
+.facts li{background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15px}
+.facts li b{display:block;font-family:var(--serif);font-size:20px;color:var(--deep)}
+.reviews{display:flex;align-items:center;gap:14px;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:16px}
+.reviews .big{font-family:var(--serif);font-size:44px;color:var(--sun);line-height:1}
+.reviews div{font-size:14.5px}
+details{background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:9px}
+summary{cursor:pointer;font-weight:600;color:var(--deep)}
+details p{margin-top:8px;font-size:15px;color:#34535b}
+.contact{display:grid;gap:12px}
+.contact a.box,.contact div.box{background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;display:block}
+.contact .box small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:600}
+.contact .box b{font-family:var(--serif);font-size:24px;color:var(--deep);word-break:break-word}
+footer{background:var(--ink);color:#b8cfd2;padding:28px 0 90px;font-size:13.5px}
+footer .wrap{display:flex;flex-direction:column;gap:6px}
+/* assistant */
+#gt-fab{position:fixed;right:14px;bottom:14px;z-index:60;background:var(--sun);color:#2a1700;border:0;border-radius:999px;padding:13px 18px;font:600 15px var(--sans);box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer}
+#gt-panel{position:fixed;right:10px;bottom:10px;z-index:61;width:calc(100vw - 20px);max-width:380px;height:min(560px,calc(100vh - 20px));background:var(--paper);border:2px solid var(--deep);border-radius:18px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 12px 34px rgba(0,0,0,.3)}
+#gt-panel.open{display:flex}
+.gt-h{background:var(--deep);color:#fff;padding:11px 14px;display:flex;justify-content:space-between;align-items:center}
+.gt-h b{font-family:var(--serif);font-size:20px}
+.gt-h small{display:block;font-size:11.5px;color:#b6dde0}
+.gt-h button{background:transparent;border:0;color:#fff;font-size:22px;cursor:pointer;line-height:1}
+#gt-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--cream)}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;font-size:14.5px;line-height:1.45;word-wrap:break-word}
+.m.b{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--teal);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px;background:var(--cream)}
+.chips button{background:#fff;border:1.5px solid var(--teal);color:var(--deep);border-radius:999px;padding:5px 11px;font:500 13px var(--sans);cursor:pointer}
+.gt-f{display:flex;gap:6px;padding:9px;border-top:1px solid var(--line);background:var(--paper)}
+.gt-f input{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:999px;padding:9px 13px;font:15px var(--sans);background:#fff}
+.gt-f button{background:var(--deep);color:#fff;border:0;border-radius:999px;padding:0 15px;font:600 14px var(--sans);cursor:pointer}
+@media(min-width:720px){
+  nav.main{display:flex}
+  .pass .row{flex-direction:row}
+  .pass .cell{flex:1;border-bottom:0;border-right:2px dashed var(--line)}
+  .pass .stub{flex:1.1}
+  .tickets{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .two{grid-template-columns:1.1fr 1fr}
+  .contact{grid-template-columns:repeat(3,1fr)}
+  .hero{padding:54px 0 20px}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>Agencia de viajes · Miami</span><a href="tel:+17867622630">(786) 762-2630</a></div></div>
+<header class="site"><div class="wrap">
+  <a class="brand" href="#top" aria-label="Gallo Travel"><img src="img/gallo-travel-agency-logo.png" alt="Gallo Travel" width="159" height="44"></a>
+  <nav class="main"><a href="#tours">Tours</a><a href="#paquetes">Paquetes</a><a href="#como">Cómo reservar</a><a href="#nosotros">Nosotros</a><a href="#faq">Preguntas</a><a href="#contacto">Contacto</a></nav>
+  <button class="btn btn-sun" onclick="GT.open('reserva')">Reservar</button>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <span class="tag">DESCUBRE EL MUNDO A TU RITMO</span>
+  <h1>¡El Gallo <em>que viaja!</em></h1>
+  <p class="lead">Bus tours por Florida y Estados Unidos con guía de habla hispana, paquetes a Turquía, Punta Cana y Europa, y viajes diseñados a tu medida desde Miami.</p>
+  <div class="cta"><a class="btn btn-deep" href="#tours">Ver bus tours</a><button class="btn btn-line" onclick="GT.open()">Preguntar al asistente</button></div>
+  <div class="pass"><div class="row">
+    <div class="cell"><small>Salida</small><b>Miami</b></div>
+    <div class="cell"><small>Tipo de viaje</small><b>Bus tour · Paquete · Crucero</b></div>
+    <div class="cell stub"><small>¿Necesitas ayuda?</small><b>(786) 762-2630</b></div>
+  </div></div>
+</div></div>
+
+<section id="tours"><div class="wrap">
+  <div class="kicker">Excursiones por carretera</div>
+  <h2>Bus tours desde Miami</h2>
+  <p class="sub">Rutas con la cultura y la historia de Estados Unidos, de un día o de varios. Precios "desde" tal como aparecen en la web; el equipo confirma fechas y disponibilidad.</p>
+  <div class="tabs" id="tabs"></div>
+  <div class="tickets" id="tickets"></div>
+  <p class="note">La lista completa incluye también Nashville, Chicago, Nueva York, Niagara Falls y Toronto, New Orleans, Washington, Charleston, Smoky Mountains, Naples, Jungle Queen y más. Pregunta por la que buscas.</p>
+</div></section>
+
+<section id="paquetes" style="background:var(--sand)"><div class="wrap">
+  <div class="kicker">Viajes internacionales</div>
+  <h2>Paquetes a Turquía y más allá</h2>
+  <p class="sub">Paquetes cerrados con touroperadores y hoteles. Turquía es el destino estrella, y también hay Punta Cana, México, Europa y cruceros.</p>
+  <div class="tickets" id="turkey"></div>
+  <div class="two" style="margin-top:26px">
+    <ul class="facts">
+      <li><b>Punta Cana y República Dominicana</b>Paquetes todo incluido y hoteles. También hay opción de Punta Cana desde Cuba.</li>
+      <li><b>México</b>Riviera Maya y Cancún, con hoteles seleccionados por el equipo.</li>
+      <li><b>Europa</b>España, Italia y Francia, con vuelos y hoteles incluidos, y viajes internacionales personalizados.</li>
+    </ul>
+    <ul class="facts">
+      <li><b>Cruceros desde Miami</b>Información de precios y reservas de cruceros.</li>
+      <li><b>Viajes para grupos y empresas</b>Excursiones y viajes organizados para grupos, tanto largos como de fin de semana.</li>
+      <li><b>Financiación accesible</b>Planes de financiación para paquetes turísticos y excursiones por carretera.</li>
+    </ul>
+  </div>
+</div></section>
+
+
+<section id="mas"><div class="wrap">
+  <div class="kicker">Más rutas</div>
+  <h2>Otras salidas por carretera</h2>
+  <p class="sub">Estas rutas aparecen en el menú de la web. Pregunta al equipo por fechas, precio y qué incluye cada una.</p>
+  <div class="tabs" style="gap:8px">
+    <span class="chip">Orlando</span><span class="chip">Naples con crucero</span><span class="chip">Tarpon Springs y Weeki Wachee</span><span class="chip">Jungle Queen</span><span class="chip">Mount Dora e Ice Show</span><span class="chip">Mai-Kai, show polinesio</span><span class="chip">Ringling Brothers Museum</span><span class="chip">Baños termales</span><span class="chip">Arca de Noé</span><span class="chip">Daytona Speedway y San Agustín</span><span class="chip">Nashville</span><span class="chip">Chicago</span><span class="chip">Nueva York</span><span class="chip">Washington</span><span class="chip">New Orleans</span><span class="chip">Charleston</span><span class="chip">Smoky Mountains</span><span class="chip">San Antonio, Texas</span><span class="chip">Niagara Falls y Toronto</span>
+  </div>
+</div></section>
+
+<section id="como" class="band"><div class="wrap">
+  <div class="kicker">Reservar sin complicarte</div>
+  <h2>Tres pasos y estás en ruta</h2>
+  <div class="steps">
+    <div class="step"><b>1. Elige tu viaje</b><span>Un bus tour, un paquete o un viaje a tu medida. Si dudas, pregunta.</span></div>
+    <div class="step"><b>2. Cuéntanos los datos</b><span>Fecha deseada, cuántos viajan, teléfono y email. Un agente te atiende.</span></div>
+    <div class="step"><b>3. Respuesta del equipo</b><span>Su objetivo es responder dentro de las 24 horas con disponibilidad y siguientes pasos.</span></div>
+  </div>
+</div></section>
+
+<section id="nosotros"><div class="wrap two">
+  <div>
+    <div class="kicker">Nosotros</div>
+    <h2>Solo ofrecemos lo que hemos disfrutado</h2>
+    <p class="sub" style="margin-bottom:12px">Gallo Travel firma contratos con cadenas de hoteles y touroperadores, y el equipo directivo ha visitado los destinos, excursiones, paquetes y hoteles que ofrece.</p>
+    <p class="sub">Nacieron para atender a clientes particulares que quieren descubrir el mundo de forma distinta, y destacan en viajes para empresas, para grupos y excursiones por carretera de larga duración y de fin de semana.</p>
+    <div class="reviews"><span class="big">397</span><div><b>Reseñas en Google</b><br>Valoración "Excellent" verificada por Trustindex.</div></div>
+  </div>
+  <ul class="facts">
+    <li><b>Guía de habla hispana</b>Las excursiones incluyen guía que cuenta el destino en tu idioma; algunas con guía bilingüe.</li>
+    <li><b>Bus cómodo</b>Autobús con baño en los viajes por carretera, según el programa de cada tour.</li>
+    <li><b>Agente asignado</b>Para viajes a medida te asignan un agente con acceso a ofertas flash.</li>
+  </ul>
+</div></section>
+
+<section id="faq" style="background:var(--sand)"><div class="wrap">
+  <div class="kicker">Antes de reservar</div>
+  <h2>Preguntas frecuentes</h2>
+  <p class="sub">Lo que la web publica. Lo demás lo confirma el equipo.</p>
+  <details><summary>¿Cuánto tardan en responder?</summary><p>Su objetivo es responder dentro de las 24 horas. También puedes llamar al (786) 762-2630.</p></details>
+  <details><summary>¿Qué incluyen los bus tours?</summary><p>Depende del programa. Por ejemplo, Key West incluye autobús con baño, desayuno en un restaurante local, la visita a la boya icónica y guía de habla hispana. Cada página de tour detalla lo que incluye y lo que no.</p></details>
+  <details><summary>¿Los tours son de un día o de varios?</summary><p>Hay de ambos tipos: escapadas de un día como Key West o Dry Tortugas, y viajes más largos como San Agustín iluminado con una noche de hotel o Las Vegas y el Gran Cañón.</p></details>
+  <details><summary>¿Hay un mínimo de personas?</summary><p>Dry Tortugas indica mínimo 2 personas. Key West indica hasta 52 personas. Para otros tours, el equipo te lo confirma.</p></details>
+  <details><summary>¿Puedo financiar mi viaje?</summary><p>La web menciona planes de financiación para paquetes turísticos y excursiones por carretera. El equipo te explica las condiciones.</p></details>
+  <details><summary>¿Y las políticas de cancelación?</summary><p>Están en los Términos y condiciones de la web. Si tienes una duda concreta, el equipo la responde.</p></details>
+  <details><summary>¿Puedo pedir un viaje a medida?</summary><p>Sí. Para viajes a medida te asignan un agente. Cuéntale destino, fecha deseada, fecha de regreso y los planes que tienes en mente.</p></details>
+  <details><summary>¿Qué pasa con mis datos?</summary><p>La web indica que no comparten tu información con otras empresas para fines distintos a encontrar las mejores ofertas, y que puedes pedir que la edites o la borres escribiendo al correo de la agencia.</p></details>
+  <details><summary>¿Los precios de la web son finales?</summary><p>Son precios "desde". Salvo los tours con reserva en línea, requieren la atención de un agente para definirse, y el equipo confirma el precio final.</p></details>
+</div></section>
+
+<section id="contacto"><div class="wrap">
+  <div class="kicker">Hablemos</div>
+  <h2>Tu próximo viaje empieza aquí</h2>
+  <p class="sub">Escríbenos o llama. Para viajes a medida, cuéntanos destino, fechas y a quién llevas.</p>
+  <div class="contact">
+    <a class="box" href="tel:+17867622630"><small>Teléfono</small><b>(786) 762-2630</b></a>
+    <a class="box" href="mailto:info@gallotravelagency.us"><small>Email</small><b>info@gallotravelagency.us</b></a>
+    <div class="box"><small>Redes</small><b>Facebook · Instagram</b></div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>Demo · prepared by Gevorg Hovhannisyan</span>
+  <span>Contenido tomado de gallotravelagency.us. Esta demo no envía ningún dato.</span>
+</div></footer>
+
+<button id="gt-fab" onclick="GT.open()" aria-label="Abrir asistente">Asistente de viajes</button>
+<div id="gt-panel" role="dialog" aria-label="Asistente de Gallo Travel">
+  <div class="gt-h"><div><b>Asistente de Gallo Travel</b><small>Responde con lo que dice la web</small></div><button onclick="GT.close()" aria-label="Cerrar">×</button></div>
+  <div id="gt-log"></div>
+  <div class="chips" id="gt-chips"></div>
+  <form class="gt-f" id="gt-form"><input id="gt-in" autocomplete="off" placeholder="Escribe tu pregunta" aria-label="Pregunta"><button type="submit">Enviar</button></form>
+</div>
+
+<script>
+var TOURS=[
+ {g:'fl',n:'Key West',p:'$99',d:'1 día',t:'Bus tour a Key West. Boya icónica a 90 millas de Cuba, Calle Duval y atardecer en Mallory Square.',c:['Bus con baño','Desayuno','Guía en español','Hasta 52 personas']},
+ {g:'fl',n:'Founder Park, Islamorada',p:'$99',d:'Escapada',t:'Escápate desde Miami hacia uno de los rincones de los Cayos.',c:['Bus tour']},
+ {g:'fl',n:'Dry Tortugas',p:'$399',d:'1 día',t:'Ferry oficial Yankee Freedom, Fort Jefferson, snorkeling y playas turquesa. Salida a las 3:45 a.m. Niño $329.',c:['Ferry incluido','Snorkel incluido','Mínimo 2 personas']},
+ {g:'fl',n:'Kennedy Space Center',p:'$189',d:'Viaje por carretera',t:'Viaje por carretera al Kennedy Space Center.',c:['Bus tour']},
+ {g:'fl',n:'San Agustín iluminado',p:'$299',d:'2 días',t:'La ciudad más antigua de Florida de noche. Incluye bus, 2 desayunos, 1 cena y 1 noche de hotel.',c:['Hotel 1 noche','2 desayunos','1 cena']},
+ {g:'us',n:'Las Vegas y el Gran Cañón',p:'$1815',d:'Viaje largo',t:'Las Vegas, el Gran Cañón y la presa Hoover.',c:['Gran Cañón','Presa Hoover']}
+];
+var TURK=[
+ {n:'Bella Turquía',p:'$2795',t:'Viaje a Turquía, uno de los paquetes más completos.',c:['Turquía']},
+ {n:'Turquía con Israel',p:'$2370',t:'Turquía combinada con Israel.',c:['Turquía','Israel']},
+ {n:'Turquía sin prisas',p:'$1590',t:'Turquía a un ritmo más pausado.',c:['Turquía']},
+ {n:'Turquía con Líbano',p:'$1548',t:'Turquía combinada con Líbano.',c:['Turquía','Líbano']},
+ {n:'Turquía con Jordania',p:'$1547',t:'Turquía combinada con Jordania.',c:['Turquía','Jordania']},
+ {n:'Turquía con la ruta de las mil kasbahs',p:'$1410',t:'Turquía con Marruecos y la ruta de las mil kasbahs.',c:['Turquía','Marruecos']},
+ {n:'Turquía legendaria',p:'$598',t:'Turquía legendaria, el precio de entrada más bajo de los paquetes a Turquía.',c:['Turquía']}
+];
+function card(x,withDur){
+  return '<article class="ticket"><div class="main"><h3>'+x.n+'</h3><p>'+x.t+'</p><div class="meta">'+
+   (x.d?'<span class="chip">'+x.d+'</span>':'')+x.c.map(function(c){return '<span class="chip">'+c+'</span>'}).join('')+
+   '</div></div><div class="price"><div><span>Desde</span><br><strong>'+x.p+'</strong></div><button data-t="'+x.n.replace(/"/g,'')+'">Reservar</button></div></article>';
+}
+function showTours(g){
+  var l=g==='all'?TOURS:TOURS.filter(function(t){return t.g===g});
+  document.getElementById('tickets').innerHTML=l.map(card).join('');
+  Array.prototype.forEach.call(document.querySelectorAll('#tabs .tab'),function(b){b.classList.toggle('on',b.dataset.g===g)});
+}
+(function(){
+  var T=[['all','Todos'],['fl','Florida'],['us','Resto de EE. UU.']];
+  document.getElementById('tabs').innerHTML=T.map(function(x){return '<button class="tab" data-g="'+x[0]+'">'+x[1]+'</button>'}).join('');
+  document.getElementById('tabs').addEventListener('click',function(e){if(e.target.dataset.g)showTours(e.target.dataset.g)});
+  showTours('all');
+  document.getElementById('turkey').innerHTML=TURK.map(card).join('');
+  document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('.price button');if(t)GT.open('reserva',t.dataset.t)});
+})();
+
+//MATCHER-START
+var KB=[
+ {id:'hola',k:['hola','buenas','buenos dias','buenas tardes','hey','saludos'],a:'¡Hola! Soy el asistente de Gallo Travel. Puedo contarte de los bus tours desde Miami, los paquetes a Turquía, Punta Cana o Europa, y ayudarte a preparar una solicitud para el equipo.'},
+ {id:'gracias',k:['gracias','muchas gracias','genial','perfecto','vale','ok'],a:'¡A ti! Si quieres, preparo tu solicitud de reserva y el equipo te contesta.'},
+ {id:'tel',k:['telefono','llamar','llamo','numero','celular','whatsapp','llamada'],a:'Puedes llamar al (786) 762-2630. También escribir a info@gallotravelagency.us.'},
+ {id:'email',k:['email','correo','mail','escribir','escribo','gmail'],a:'El correo es info@gallotravelagency.us. Su objetivo es responder dentro de las 24 horas.'},
+ {id:'resp',k:['responden','respuesta','cuanto tardan','tardan','demora','contestan','24 horas'],a:'Su objetivo es responder dentro de las 24 horas. Para algo urgente, llama al (786) 762-2630.'},
+ {id:'horario',k:['horario','horarios','abren','abierto','cierran','atienden','hora de atencion'],a:'La web no publica horario de oficina. Llama al (786) 762-2630 o escribe y el equipo te lo confirma.'},
+ {id:'donde',k:['donde','direccion','ubicacion','oficina','oficinas','local','calle'],a:'Son una agencia de viajes en Miami. La dirección exacta de la oficina no la tengo aquí; el equipo te la confirma al llamar al (786) 762-2630.'},
+ {id:'precio',k:['precio','precios','cuanto','cuesta','cuestan','costo','tarifa','barato','economico','valor'],a:'Precios "desde" de la web: Key West y Founder Park $99, Kennedy Space Center $189, San Agustín iluminado $299, Dry Tortugas $399, Las Vegas $1815. Turquía desde $598 (legendaria) hasta $2795 (Bella Turquía). El equipo confirma el precio final y las fechas.'},
+ {id:'keywest',k:['key west','keywest','cayo hueso','boya','duval','mallory'],a:'Key West: bus tour de un día desde $99. Incluye autobús con baño, desayuno en un restaurante local, visita a la boya icónica (90 millas de Cuba) y guía de habla hispana. Se recorre la Calle Duval y se ve el atardecer en Mallory Square. Hasta 52 personas.'},
+ {id:'tortugas',k:['dry tortugas','tortugas','tortuga','fort jefferson','snorkel','snorkeling','ferry','yankee freedom'],a:'Dry Tortugas: excursión de un día desde $399 por adulto ($329 niño). Incluye bus privado Miami-Key West, ferry oficial Yankee Freedom, entrada al Parque Nacional, equipo de snorkel y guía bilingüe. Salida a las 3:45 a.m. Mínimo 2 personas.'},
+ {id:'founder',k:['founder park','founder','islamorada','cayos'],a:'Founder Park, Islamorada: escapada desde Miami desde $99. El equipo te da los detalles de la salida.'},
+ {id:'kennedy',k:['kennedy','space center','nasa','cohetes','espacial'],a:'Kennedy Space Center: viaje por carretera desde Miami, desde $189. El equipo confirma fechas y qué incluye.'},
+ {id:'vegas',k:['las vegas','vegas','gran canon','canon','hoover','presa'],a:'Las Vegas, el Gran Cañón y la presa Hoover: tour desde $1815. Pregunta al equipo por fechas y el itinerario.'},
+ {id:'agustin',k:['san agustin','agustin','augustine','iluminado','enamorados','daytona','amelia island'],a:'San Agustín iluminado: desde $299, 2 días. Incluye bus, 2 desayunos, 1 cena y 1 noche de hotel. También hay San Agustín Enamorados y rutas con Daytona y Amelia Island.'},
+ {id:'turquia',k:['turquia','turkia','estambul','capadocia','israel','jordania','libano','marruecos','kasbahs','bella turquia'],a:'Turquía: Bella Turquía desde $2795, con Israel $2370, sin prisas $1590, con Líbano $1548, con Jordania $1547, ruta de las mil kasbahs (Marruecos) $1410 y Turquía legendaria desde $598. Precios "desde"; el equipo confirma fechas y qué incluye.'},
+ {id:'puntacana',k:['punta cana','puntacana','dominicana','republica dominicana','todo incluido','caribe','playa','cuba'],a:'Tienen paquetes a Punta Cana y República Dominicana (todo incluido), hoteles, y también Punta Cana desde Cuba. Cuéntame fechas y viajeros y preparo la solicitud.'},
+ {id:'mexico',k:['mexico','cancun','riviera maya','playa del carmen'],a:'México: paquetes y hoteles en Riviera Maya y Cancún. El equipo te recomienda según fechas y presupuesto.'},
+ {id:'europa',k:['europa','espana','italia','francia','vuelos','vuelo','madrid','roma','paris'],a:'Europa: paquetes a España, Italia y Francia con vuelos y hoteles incluidos, y viajes internacionales personalizados según tus intereses y presupuesto.'},
+ {id:'crucero',k:['crucero','cruceros','barco','sandals'],a:'Cruceros desde Miami: la web tiene precios de cruceros y reserva. El equipo te propone opciones según fechas.'},
+ {id:'hotel',k:['hotel','hoteles','resort','alojamiento','hospedaje'],a:'Tienen hoteles en Riviera Maya, Cancún y Punta Cana, y varios bus tours incluyen hotel, como San Agustín iluminado.'},
+ {id:'grupo',k:['grupo','grupos','empresa','empresas','corporativo','familia','familiar','equipo'],a:'Organizan viajes para empresas y para grupos, tanto excursiones largas como de fin de semana. Dime cuántos son y el equipo te contesta.'},
+ {id:'financia',k:['financiacion','financiar','pagos','pagar','cuotas','plazos','credito','tarjeta','pago'],a:'La web menciona planes de financiación para paquetes turísticos y excursiones por carretera. El equipo te explica las condiciones y las formas de pago.'},
+ {id:'cancel',k:['cancelar','cancelacion','reembolso','devolucion','politica','terminos','condiciones'],a:'La política de cancelación y los términos están en la web, en Términos y condiciones. Para tu caso concreto, el equipo te lo confirma.'},
+ {id:'ninos',k:['nino','ninos','nina','menores','bebe','bebes','chd','infantil'],a:'Dry Tortugas indica precio de niño $329. Para otros tours, el equipo te confirma tarifas y edades.'},
+ {id:'idioma',k:['idioma','espanol','ingles','bilingue','guia','guias','habla hispana'],a:'Los tours llevan guía de habla hispana y algunos, como Dry Tortugas, guía bilingüe.'},
+ {id:'incluye',k:['incluye','incluido','incluida','bus','autobus','bano','comida','desayuno','cena'],a:'Depende del tour. Ejemplos: Key West incluye autobús con baño, desayuno, boya y guía. San Agustín iluminado incluye 2 desayunos, 1 cena y hotel. Dime cuál te interesa.'},
+ {id:'visa',k:['visa','pasaporte','documentos','documentacion','requisitos','permiso'],a:'Los documentos necesarios dependen del destino y de tu situación. Eso lo confirma el equipo.'},
+ {id:'resenas',k:['resenas','opiniones','confiable','seguro','calificacion','estrellas','google','excelente'],a:'En la web figuran 397 reseñas de Google con valoración "Excellent" verificada por Trustindex.'},
+ {id:'medida',k:['medida','personalizado','personalizar','disenar','asesor','agente','planificar','itinerario'],a:'Para un viaje a medida te asignan un agente con acceso a ofertas flash. Dime destino, fechas y cuántos viajan.'},
+ {id:'redes',k:['instagram','facebook','redes','sociales'],a:'Están en Facebook e Instagram. Los enlaces están en la web de Gallo Travel.'},
+ {id:'tours',k:['tour','tours','excursion','excursiones','bus tour','viajes por carretera','que ofrecen','que tienen','destinos','servicios','nashville','chicago','nueva york','new york','washington','charleston','orlando','naples'],a:'Los bus tours salen de Miami: Key West, Dry Tortugas, Kennedy Space Center, San Agustín, Orlando, Naples, Nashville, Chicago, Nueva York, Washington, Las Vegas, Niagara Falls y más. Dime cuál te interesa.'}
+];
+var BOOK=['reservar','reserva','reservo','quiero ir','apuntar','apuntarme','solicitud','inscribir','disponibilidad','salida','salidas','fecha','fechas'];
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim()}
+function lev(a,b){if(a===b)return 0;if(Math.abs(a.length-b.length)>2)return 9;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c}return p[b.length]}
+function stem(w){return w.length>5?w.slice(0,5):w}
+function tokMatch(t,kw){
+  if(t===kw)return 1;
+  if(t.length>=4&&kw.length>=4&&stem(t)===stem(kw)&&Math.abs(t.length-kw.length)<=3)return .8;
+  if(t.length>=5&&kw.length>=5&&lev(t,kw)<=1)return .8;
+  if(t.length>=7&&kw.length>=7&&lev(t,kw)<=2)return .6;
+  return 0;
+}
+function score(q,e){
+  var nq=norm(q),toks=nq.split(' '),best=0;
+  e.k.forEach(function(kw){
+    var nk=norm(kw),s=0;
+    if(nk.indexOf(' ')>-1){
+      if((' '+nq+' ').indexOf(' '+nk+' ')>-1)s=2.2;
+      else{var parts=nk.split(' '),h=0;parts.forEach(function(p){toks.forEach(function(t){if(tokMatch(t,p)>=.8)h++})});if(h===parts.length)s=1.8}
+    }else{toks.forEach(function(t){var m=tokMatch(t,nk);if(m*1.2>s)s=m*1.2})}
+    if(s>best)best=s;
+  });
+  return best;
+}
+function answer(q){
+  var nq=norm(q);
+  if(!nq)return null;
+  var b=0,i,bk=false;
+  BOOK.forEach(function(k){if(score(q,{k:[k]})>=1)bk=true});
+  if(bk&&!/\b(cuanto|precio|cuesta)\b/.test(nq))return {flow:true};
+  var best=null,bs=0;
+  KB.forEach(function(e){var s=score(q,e);if(s>0&&/^(precio|tours|hola|gracias|incluye)$/.test(e.id))s-=.1;if(s>bs){bs=s;best=e}});
+  if(best&&bs>=.9)return {a:best.a,id:best.id};
+  return null;
+}
+//MATCHER-END
+
+var GT=(function(){
+  var log=document.getElementById('gt-log'),chips=document.getElementById('gt-chips'),panel=document.getElementById('gt-panel'),fab=document.getElementById('gt-fab'),inp=document.getElementById('gt-in');
+  var flow=null,data={},started=false;
+  var DEF=['Bus tours','Turquía','Precios','Reservar','Contacto'];
+  function say(t,who){var d=document.createElement('div');d.className='m '+(who||'b');d.innerHTML=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+  function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){handle(c)};chips.appendChild(b)})}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  var STEPS=[
+   {key:'tour',ask:'¿Qué viaje te interesa? Puede ser un bus tour, un paquete a Turquía, Punta Cana, Europa o un viaje a medida.',chips:['Key West','Dry Tortugas','San Agustín','Turquía','Punta Cana','A medida']},
+   {key:'fecha',ask:'¿Para qué fecha o mes lo imaginas? Si no estás seguro, escribe "flexible".',chips:['Flexible','Este mes','Próximo mes']},
+   {key:'viajeros',ask:'¿Cuántas personas viajan? Indica adultos y niños si los hay.',chips:['1','2','3-4','Grupo']},
+   {key:'nombre',ask:'¿A nombre de quién preparo la solicitud?',chips:[]},
+   {key:'tel',ask:'¿A qué teléfono te llama el equipo?',chips:[]},
+   {key:'email',ask:'¿Y tu email?',chips:[]}
+  ];
+  var si=0;
+  function startFlow(pre){flow=true;si=0;data={};if(pre){data.tour=pre;si=1}ask()}
+  function ask(){var s=STEPS[si];say(s.ask);setChips(s.chips)}
+  function stepIn(v){
+    var s=STEPS[si];
+    if(s.key==='email'&&!/^\S+@\S+\.\S+$/.test(v)){say('Ese email no parece completo. Escríbelo así: nombre@correo.com');return}
+    if(s.key==='tel'&&v.replace(/\D/g,'').length<7){say('Necesito un teléfono con al menos 7 dígitos.');return}
+    data[s.key]=v;si++;
+    if(si<STEPS.length){ask();return}
+    flow=null;
+    say('Listo. Solicitud preparada para el equipo de Gallo Travel:<br><b>Viaje:</b> '+esc(data.tour)+'<br><b>Fecha:</b> '+esc(data.fecha)+'<br><b>Viajeros:</b> '+esc(data.viajeros)+'<br><b>Nombre:</b> '+esc(data.nombre)+'<br><b>Teléfono:</b> '+esc(data.tel)+'<br><b>Email:</b> '+esc(data.email)+'<br><br>En esta demo no se envía nada; en la versión real llegaría al equipo, que confirma disponibilidad y precio final.');
+    setChips(DEF);
+  }
+  function handle(t){
+    t=String(t).trim();if(!t)return;
+    say(esc(t),'u');
+    if(flow){if(/^(cancelar|salir|no)$/i.test(norm(t))){flow=null;say('Sin problema, cancelé la solicitud.');setChips(DEF);return}stepIn(t);return}
+    var r=answer(t);
+    if(r&&r.flow){startFlow();return}
+    if(r){say(r.a);setChips(r.id==='precio'||r.id==='turquia'||r.id==='keywest'||r.id==='tortugas'||r.id==='agustin'?['Reservar','Contacto','Bus tours']:DEF);return}
+    say('No tengo ese dato en la web de Gallo Travel. El equipo te lo confirma: (786) 762-2630 o info@gallotravelagency.us. ¿Quieres que prepare una solicitud?');
+    setChips(['Reservar','Bus tours','Turquía','Contacto']);
+  }
+  document.getElementById('gt-form').addEventListener('submit',function(e){e.preventDefault();var v=inp.value;inp.value='';handle(v)});
+  return {
+    open:function(mode,pre){
+      panel.classList.add('open');fab.style.display='none';
+      if(!started){started=true;say('¡Hola! Soy el asistente de Gallo Travel. Te cuento de los bus tours desde Miami, Turquía, Punta Cana y más, o preparo tu solicitud de viaje.');setChips(DEF)}
+      if(mode==='reserva'){startFlow(pre)}
+      setTimeout(function(){inp.focus()},50);
+    },
+    close:function(){panel.classList.remove('open');fab.style.display=''}
+  };
+})();
+</script>
+</body>
+</html>

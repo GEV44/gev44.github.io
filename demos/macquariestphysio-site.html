@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Macquarie Street Physiotherapy · Sydney CBD · Demo</title>
+<meta name="description" content="Demo page and booking assistant for Macquarie Street Physiotherapy, Sydney CBD.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1B3B36;--mid:#3D7A5C;--soft:#E3EFE3;--cream:#FAF8F3;--sand:#C9B590;--line:#D8D3C6;--mute:#5B6660;--lime:#A8BC36;
+--as-font:'DM Sans',system-ui,sans-serif;--as-accent:#1B3B36;--as-on:#fff;--as-bg:#FAF8F3;--as-ink:#1B3B36;--as-line:#D8D3C6;--as-head:#1B3B36;--as-headink:#fff;--as-bot:#E3EFE3;--as-r:14px;--as-pr:6px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 'DM Sans',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.12;margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.top{background:var(--ink);color:#DCE8DF;font-size:13px}
+.top .wrap{display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;padding:7px 16px}
+.top a{text-decoration:none}
+header.nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 16px}
+.logo img{display:block;height:34px;width:auto;max-width:210px}
+.nav nav{display:none;gap:20px;font-size:15px}
+.nav nav a{text-decoration:none;color:var(--mute)}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--ink);color:#fff;padding:12px 20px;border-radius:6px;font:700 15px 'DM Sans',sans-serif;text-decoration:none;text-align:center}
+.btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.sm{padding:8px 14px;font-size:14px}
+@media(min-width:820px){.nav nav{display:flex}.logo img{height:40px}}
+/* hero */
+.hero{padding:34px 0 10px}
+.hero .wrap{display:grid;gap:26px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--soft);color:var(--ink);border-radius:99px;padding:5px 12px;font-size:13px;font-weight:700}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--lime);display:block}
+.hero h1{font-size:clamp(36px,9vw,64px);margin:14px 0 14px}
+.hero h1 em{font-style:italic;color:var(--mid);font-weight:400}
+.hero p.lead{font-size:18px;color:var(--mute);max-width:560px;margin:0 0 20px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.card-visit{background:#fff;border:1px solid var(--line);border-radius:6px;padding:20px;position:relative}
+.card-visit:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--lime);border-radius:6px 0 0 6px}
+.card-visit h3{font-size:20px;margin-bottom:10px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px;margin:0}
+.kv dt{color:var(--mute)}.kv dd{margin:0;font-weight:500}
+@media(min-width:820px){.hero .wrap{grid-template-columns:1.35fr 1fr;align-items:center;gap:50px}.hero{padding:60px 0 24px}}
+.marquee{overflow:hidden;white-space:nowrap;border-block:1px solid var(--line);margin-top:30px;background:#fff}
+.marquee div{display:inline-block;padding:12px 0;animation:mq 38s linear infinite;color:var(--mute);font-size:14px}
+.marquee span{margin:0 18px}.marquee span:before{content:"\2022";color:var(--lime);margin-right:18px}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee div{animation:none}}
+/* sections */
+section{padding:48px 0}
+.sec-h{margin-bottom:22px}
+.sec-h small{display:block;color:var(--mid);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px;margin-bottom:6px}
+.sec-h h2{font-size:clamp(28px,6vw,40px)}
+.sec-h p{color:var(--mute);margin:8px 0 0;max-width:620px}
+/* steps */
+.band{background:var(--ink);color:#fff}
+.band .sec-h small{color:var(--lime)}.band .sec-h p{color:#B9CCC1}
+.steps{display:grid;gap:14px;counter-reset:s}
+.steps div{border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:18px;counter-increment:s;position:relative}
+.steps div:before{content:"0" counter(s);font-family:'Fraunces',serif;font-size:34px;color:var(--lime);display:block;line-height:1}
+.steps h3{font-size:20px;margin:8px 0 4px}.steps p{margin:0;color:#C9D8CE;font-size:15px}
+.stats{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:22px;font-size:14px;color:#B9CCC1}
+.stats b{font:600 28px 'Fraunces',serif;color:#fff;display:block}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+/* services */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin:0 -16px 14px;padding-inline:16px;scrollbar-width:thin}
+.tabs button{flex:none;border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:99px;padding:8px 16px;font:700 14px 'DM Sans',sans-serif;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--ink);color:#fff}
+.svc{display:none;gap:12px}.svc.on{display:grid}
+.svc article{background:#fff;border:1px solid var(--line);border-radius:6px;padding:16px 18px}
+.svc h3{font-size:18px;margin-bottom:4px}.svc p{margin:0;color:var(--mute);font-size:15px}
+@media(min-width:760px){.svc.on{grid-template-columns:1fr 1fr}.tabs{margin-inline:0;padding-inline:0}}
+/* team */
+.team{display:grid;gap:14px}
+.person{background:#fff;border:1px solid var(--line);border-radius:6px;padding:20px;display:grid;grid-template-columns:64px 1fr;gap:14px}
+.ava{width:64px;height:64px;border-radius:50%;background:var(--soft);color:var(--ink);display:grid;place-items:center;font:600 22px 'Fraunces',serif;border:2px solid var(--lime)}
+.person h3{font-size:20px}.person .role{color:var(--mid);font-weight:700;font-size:14px}
+.person q{display:block;font-family:'Fraunces',serif;font-style:italic;color:var(--mute);margin:6px 0}
+.person p{margin:6px 0 0;font-size:15px;color:#33473f}
+@media(min-width:900px){.team{grid-template-columns:repeat(3,1fr)}.person{grid-template-columns:1fr}}
+/* classes */
+.classes{display:grid;gap:12px}
+.cl{background:var(--soft);border-radius:6px;padding:18px;display:grid;gap:6px}
+.cl h3{font-size:19px}.cl .meta{display:flex;flex-wrap:wrap;gap:6px;font-size:13px;font-weight:700}
+.cl .meta span{background:#fff;border-radius:99px;padding:3px 10px}
+.cl p{margin:0;font-size:15px;color:#33473f}
+.dots{display:flex;gap:5px}.dots i{width:12px;height:12px;border-radius:50%;background:var(--ink)}.dots i.o{background:transparent;border:1.5px solid var(--ink)}
+@media(min-width:760px){.classes{grid-template-columns:1fr 1fr}}
+/* fees */
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:10px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+td:last-child,th:last-child{text-align:right;white-space:nowrap}
+.note{font-size:14px;color:var(--mute);margin-top:10px}
+.two{display:grid;gap:26px}
+@media(min-width:820px){.two{grid-template-columns:1.1fr 1fr;gap:50px}}
+.chipsrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chipsrow span{background:#fff;border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:14px}
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:6px;margin-bottom:8px}
+summary{cursor:pointer;padding:14px 16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}summary:after{content:"+";color:var(--mid);font-size:22px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{margin:0;padding:0 16px 14px;color:var(--mute);font-size:15px}
+/* visit */
+.visit{background:var(--soft)}
+.visit address{font-style:normal;font-size:18px;margin-bottom:12px}
+.how{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.how li{background:#fff;border-radius:6px;padding:12px 14px;font-size:15px}
+.how b{display:block;font-family:'Fraunces',serif;font-size:17px}
+footer{background:var(--ink);color:#B9CCC1;padding:26px 0 90px;font-size:14px}
+footer a{color:#fff}
+.legal{margin-top:10px;font-size:13px;opacity:.85}
+#as-root{position:fixed;right:14px;bottom:14px;z-index:50;font-family:var(--as-font,system-ui,sans-serif)}
+.as-fab{display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--as-accent);color:var(--as-on);padding:12px 16px;border-radius:var(--as-r,999px);font:600 14px var(--as-font,system-ui);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.as-fab-i{font-size:18px;line-height:1}
+.as-panel{position:absolute;right:0;bottom:56px;width:min(360px,calc(100vw - 28px));height:min(520px,calc(100vh - 100px));display:flex;flex-direction:column;background:var(--as-bg);color:var(--as-ink);border-radius:var(--as-pr,16px);box-shadow:0 18px 50px rgba(0,0,0,.3);overflow:hidden;border:1px solid var(--as-line)}
+.as-panel[hidden]{display:none}
+.as-head{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--as-head);color:var(--as-headink)}
+.as-head b{display:block;font-size:15px}.as-head small{opacity:.8;font-size:12px}
+.as-x{background:none;border:0;color:inherit;font-size:26px;cursor:pointer;line-height:1}
+.as-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.as-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:14px;line-height:1.45;white-space:pre-line}
+.as-bot{background:var(--as-bot);align-self:flex-start}
+.as-user{background:var(--as-accent);color:var(--as-on);align-self:flex-end}
+.as-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px;max-height:92px;overflow:auto}
+.as-chips button{border:1px solid var(--as-accent);background:transparent;color:var(--as-ink);border-radius:999px;padding:6px 11px;font:500 13px var(--as-font,system-ui);cursor:pointer}
+.as-form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--as-line)}
+.as-in{flex:1;min-width:0;border:1px solid var(--as-line);border-radius:10px;padding:10px;font:16px var(--as-font,system-ui);background:var(--as-bg);color:var(--as-ink)}
+.as-go{border:0;background:var(--as-accent);color:var(--as-on);border-radius:10px;width:42px;cursor:pointer;font-size:16px}
+
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><span>Level 5 Park House, 187 Macquarie St, Sydney NSW 2000</span><span><a href="tel:+61292211604">(02) 9221 1604</a> · Mon–Fri 8am–5:30pm</span></div></div>
+<header class="nav"><div class="wrap">
+<a class="logo" href="#top" aria-label="Macquarie Street Physiotherapy"><img src="img/macquariestphysio-logo.svg" alt="Macquarie Street Physiotherapy logo" width="210" height="35"></a>
+<nav><a href="#care">What we treat</a><a href="#team">Team</a><a href="#classes">Classes</a><a href="#fees">Fees</a><a href="#visit">Find us</a></nav>
+<a class="btn sm" href="#" data-open-assist>Book a visit</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<span class="eyebrow"><i></i>Accepting new patients this week</span>
+<h1>Move better.<br><em>Live pain-free.</em></h1>
+<p class="lead">Physiotherapy on Macquarie Street that treats the cause, not just the symptom. A team with over 40 years in practice, 150 m from Martin Place station.</p>
+<div class="cta"><a class="btn" href="#" data-open-assist>Request an appointment</a><a class="btn alt" href="#care">See what we treat</a></div>
+</div>
+<aside class="card-visit" aria-label="Quick facts">
+<h3>Your first visit</h3>
+<dl class="kv">
+<dt>Length</dt><dd>45 minutes</dd>
+<dt>Referral</dt><dd>Not needed*</dd>
+<dt>Hours</dt><dd>Mon–Fri, 8am–5:30pm</dd>
+<dt>Wait</dt><dd>Often same or next day</dd>
+<dt>Claim</dt><dd>HICAPS on the spot</dd>
+</dl>
+<p class="note" style="margin:12px 0 0">*Workers compensation and third-party claims need a GP referral, and workers comp clients book by phone.</p>
+</aside>
+</div>
+<div class="marquee" aria-hidden="true"><div><span>Manual therapy</span><span>Dizziness and vertigo</span><span>Post-surgical care</span><span>Women's health</span><span>Chronic pain</span><span>Exercise rehabilitation</span><span>Manual therapy</span><span>Dizziness and vertigo</span><span>Post-surgical care</span><span>Women's health</span><span>Chronic pain</span><span>Exercise rehabilitation</span><span>Manual therapy</span><span>Dizziness and vertigo</span><span>Post-surgical care</span><span>Women's health</span><span>Chronic pain</span><span>Exercise rehabilitation</span></div></div>
+</div>
+
+<section class="band" id="how"><div class="wrap">
+<div class="sec-h"><small>Our approach</small><h2>A clear path back to full movement</h2><p>Treatment starts on day one. Nobody is sent away with only a diagnosis.</p></div>
+<div class="steps">
+<div><h3>Assessment</h3><p>A thorough 45-minute first session to understand your body, history and goals. Bring any x-rays or scans.</p></div>
+<div><h3>Treatment</h3><p>Hands-on care paired with a plan built around how you actually live and move.</p></div>
+<div><h3>Recovery</h3><p>Guided progression and check-ins until you are back to your best.</p></div>
+</div>
+<div class="stats"><div><b>40+</b>years in practice</div><div><b>4.9</b>from 57 Google reviews</div><div><b>20+</b>years of experience per physio</div></div>
+</div></section>
+
+<section id="care"><div class="wrap">
+<div class="sec-h"><small>What we treat</small><h2>Physiotherapy shaped around your goals</h2><p>Over 20 conditions, grouped the way patients usually describe them.</p></div>
+<div class="tabs" role="tablist" aria-label="Condition groups">
+<button role="tab" aria-selected="true" data-t="pain">Pain</button><button role="tab" aria-selected="false" data-t="injury">Injury</button><button role="tab" aria-selected="false" data-t="diz">Dizziness</button><button role="tab" aria-selected="false" data-t="wom">Women's health</button><button role="tab" aria-selected="false" data-t="pos">Posture</button><button role="tab" aria-selected="false" data-t="more">More</button>
+</div>
+<div class="svc on" id="t-pain">
+<article><h3>Headache treatment</h3><p>Many neck-related and tension-type headaches start in the joints and muscles of the neck and upper back. Gentle mobilisation, soft tissue work and postural correction, without forceful manipulation.</p></article>
+<article><h3>Neck and back pain</h3><p>We look for the underlying cause so relief lasts longer than a temporary fix.</p></article>
+<article><h3>Sciatica</h3><p>Relieving pressure on the nerve, restoring movement in the lower back and hip, then building strength to prevent a repeat.</p></article>
+<article><h3>Pain at work</h3><p>We look at how your sitting, standing and desk setup may be contributing, with practical strategies alongside hands-on treatment.</p></article>
+</div>
+<div class="svc" id="t-injury">
+<article><h3>Whiplash</h3><p>Gentle early treatment, progressing to active rehabilitation as recovery allows.</p></article>
+<article><h3>Sports injuries</h3><p>Hands-on assessment and evidence-based techniques to guide recovery and lower the risk of re-injury.</p></article>
+<article><h3>Joint and muscle injury</h3><p>From a twisted ankle to a strained shoulder: hands-on therapy plus progressive exercise.</p></article>
+<article><h3>Rehabilitation after surgery</h3><p>Your physio liaises with your surgeon and follows their post-surgical protocol.</p></article>
+<article><h3>Disc injury</h3><p>Relieving pressure on affected structures, restoring safe movement and building strength to protect the spine.</p></article>
+</div>
+<div class="svc" id="t-diz">
+<article><h3>Dizziness and vertigo (BPPV)</h3><p>Vestibular physiotherapists can assess with diagnostic video goggles and use specialist techniques such as the Epley manoeuvre. For many clients this can resolve symptoms in as little as one to two treatments.</p></article>
+<article><h3>Who treats it</h3><p>Justine Trethewey and Simon Reid both treat dizziness, including BPPV.</p></article>
+</div>
+<div class="svc" id="t-wom">
+<article><h3>Bladder leakage</h3><p>Pelvic floor assessment and tailored exercise programs at any life stage.</p></article>
+<article><h3>Outer hip pain (gluteal tendinopathy)</h3><p>Often the tendon rather than the joint. Targeted strengthening is highly effective.</p></article>
+<article><h3>Osteoporosis prevention and management</h3><p>Safe, progressive strength programs suited to your bone health.</p></article>
+<article><h3>Menopause and exercise</h3><p>A program tailored to protect bone and muscle health during this life stage.</p></article>
+</div>
+<div class="svc" id="t-pos">
+<article><h3>Improve posture</h3><p>Practical, sustainable guidance rather than a rigid "sit up straight", since over-correcting brings its own problems.</p></article>
+<article><h3>Core stability advice</h3><p>Assessing how your abdominals, diaphragm and pelvic floor work together to protect your spine.</p></article>
+</div>
+<div class="svc" id="t-more">
+<article><h3>Dry needling</h3><p>Fine needles to release trigger points, used alongside manual therapy and exercise.</p></article>
+<article><h3>Workplace ergonomic assessments</h3><p>On-site within Sydney CBD or in clinic: practical changes to desk, chair and habits.</p></article>
+<article><h3>Running and walking analysis</h3><p>Your gait is filmed on the treadmill to find and correct the underlying cause. Bring running shoes.</p></article>
+<article><h3>NDIS, DVA and Workcover</h3><p>The clinic treats NDIS and DVA clients, and Workcover patients (Workcover bookings are by phone).</p></article>
+</div>
+</div></section>
+
+<section id="team" style="background:#fff;border-block:1px solid var(--line)"><div class="wrap">
+<div class="sec-h"><small>The team</small><h2>Clinicians who take the time</h2><p>Every physio has at least 20 years of clinical experience and post-graduate qualifications.</p></div>
+<div class="team">
+<div class="person"><div class="ava">SR</div><div><h3>Simon Reid</h3><div class="role">Principal Physiotherapist</div><q>"Running, to be enjoyed, not endured"</q><p>Sports injuries, treadmill gait analysis and personalised exercise. Runs core stability, strength and Tai Chi classes. Treats dizziness including BPPV (Epley manoeuvre). Graduated 1996, Masters in Manipulative Physiotherapy 2006.</p></div></div>
+<div class="person"><div class="ava">JT</div><div><h3>Justine Trethewey</h3><div class="role">Manipulative Physiotherapist</div><q>"Passionate about posture"</q><p>Core stability and posture, plus vestibular physiotherapy for dizziness and vertigo. Runs 1:1 and group core stability and strength classes. Graduated in 1988 and later added a Graduate Diploma in Manipulative Physiotherapy.</p></div></div>
+<div class="person"><div class="ava">KA</div><div><h3>Kate Armstrong</h3><div class="role">Physiotherapist</div><q>"Helping patients feel better, move better"</q><p>Over 25 years in private practice. Musculoskeletal and sports injuries, complex spinal, pelvic and hip pain, manual therapy including dry needling, and women's health. Accredited to teach GLA:D for hip and knee arthritis.</p></div></div>
+</div>
+</div></section>
+
+<section id="classes"><div class="wrap">
+<div class="sec-h"><small>Physio-led classes</small><h2>Small groups. Real physiotherapists.</h2><p>Every new participant starts with a 30-minute assessment, so each class can be tailored to you.</p></div>
+<div class="classes">
+<div class="cl"><h3>Core stability / Pilates</h3><div class="meta"><span>45 min</span><span>up to 4 people</span></div><div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="o"></i><i class="o"></i></div><p>Pilates-inspired exercises, strength work, stretches and balance training with a focus on spinal alignment. One-to-one sessions may use the Pilates Reformer.</p></div>
+<div class="cl"><h3>Functional strength</h3><div class="meta"><span>45 min</span><span>up to 3 people</span></div><div class="dots" aria-hidden="true"><i></i><i></i><i></i><i class="o"></i><i class="o"></i><i class="o"></i></div><p>Functional trainer machine, TRX, bands and weights, tailored to your starting strength. No prior experience needed.</p></div>
+<div class="cl"><h3>Osteoporosis prevention</h3><div class="meta"><span>45 min</span><span>up to 4 people</span></div><div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="o"></i><i class="o"></i></div><p>For people diagnosed with osteoporosis or osteopenia. Strength training that is increased step by step. Individual or duet sessions are available.</p></div>
+<div class="cl"><h3>Tai Chi for arthritis and fall prevention</h3><div class="meta"><span>45 min</span><span>up to 6 people</span></div><div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><p>Dr Paul Lam's program based on Sun-style Tai Chi. Suited to balance affected by injury, age or arthritis, and you do not need arthritis to join.</p></div>
+</div>
+<p class="note">Group classes may qualify for a health fund rebate under "Group Physiotherapy" (item code 560). Check with your fund.</p>
+</div></section>
+
+<section id="fees" style="background:#fff;border-block:1px solid var(--line)"><div class="wrap two">
+<div>
+<div class="sec-h"><small>Fees and rebates</small><h2>Clear, upfront pricing</h2></div>
+<table>
+<thead><tr><th>Service</th><th>Fee</th></tr></thead>
+<tbody>
+<tr><td>Initial assessment · 45 min</td><td>$165</td></tr>
+<tr><td>Subsequent consultation · 30 min</td><td>$130</td></tr>
+<tr><td>Extended consultation · 45 min</td><td>$165</td></tr>
+<tr><td>1:1 core / exercise · 45 min</td><td>$165</td></tr>
+<tr><td>Group core / exercise (1:4) · 45 min</td><td>$58</td></tr>
+<tr><td>Tai Chi (1:5) · 45 min</td><td>$50</td></tr>
+</tbody></table>
+<p class="note">Payable on the day: cash, Visa, Mastercard or AMEX. Functional strength and osteoporosis classes are listed at $56 per session on the Classes page.</p>
+</div>
+<div>
+<div class="sec-h"><small>Claiming</small><h2>Health funds and Medicare</h2></div>
+<p>Claim on the spot with HICAPS if your extras cover includes physiotherapy, and pay only the gap. If your GP finds you eligible for a chronic condition management plan, bring your Medicare card and the rebate is processed on the day.</p>
+<div class="chipsrow"><span>HICAPS</span><span>Medicare plans</span><span>Workcover</span><span>DVA</span><span>NDIS</span></div>
+<p class="note">Please give 24 hours' notice to cancel. Otherwise a 50% non-attendance fee applies.</p>
+</div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+<div class="sec-h"><small>Good to know</small><h2>Quick answers before you book</h2></div>
+<details><summary>Do I need a referral?</summary><p>No. You only need a GP referral for a workers compensation or motor vehicle (third-party) claim, and workers compensation clients need to call to book.</p></details>
+<details><summary>How soon can I be seen?</summary><p>There is a good chance of an appointment on the day you call or the day after.</p></details>
+<details><summary>What should I bring and wear?</summary><p>Any relevant x-rays or scans, your referral if you have one, your health fund card and your Medicare card if you have a GP plan. No special clothing is needed, as shorts and gowns are provided. Bring running shoes for a running assessment, or gym gear for a class.</p></details>
+<details><summary>Will it hurt?</summary><p>If you are in significant pain, the area is treated very gently. For old stiff conditions a firmer approach may cause some discomfort. Tell your physio about any pain and they will not push beyond what you can tolerate.</p></details>
+<details><summary>Do you manipulate the neck?</summary><p>All the physios are manipulative physiotherapists, but they do not manipulate the cervical spine (neck) because of the risk to the vertebral artery. With consent they may manipulate the mid and lower back.</p></details>
+<details><summary>How long is each session?</summary><p>The first is 45 minutes, later ones are usually 30 minutes. Extended 45-minute sessions are available for complex problems or two treatment areas.</p></details>
+<details><summary>Is the clinic accessible?</summary><p>Yes. A lift runs from street level or the parking level, there is wheelchair access into the clinic, and assistance animals are welcome.</p></details>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap two">
+<div>
+<div class="sec-h"><small>Find us</small><h2>Right by Martin Place</h2></div>
+<address>Level 5, Park House<br>187 Macquarie Street<br>Sydney NSW 2000</address>
+<p><a href="tel:+61292211604"><b>(02) 9221 1604</b></a><br><a href="mailto:physio@macquariestphysio.com.au">physio@macquariestphysio.com.au</a><br>Mon–Fri 8:00am–5:30pm, closed weekends</p>
+<a class="btn" href="#" data-open-assist>Request an appointment</a>
+</div>
+<ul class="how">
+<li><b>Train</b>Martin Place Station is about 150 m away. Wynyard Station is a 9-minute walk.</li>
+<li><b>Parking</b>Under the building at Park House, at Sydney Hospital or at the Domain. Prices vary, so check each car park.</li>
+<li><b>Bus and bicycle</b>Several bus stops nearby (check Transport NSW). Bicycle racks along Macquarie Street.</li>
+</ul>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<div>Macquarie Street Physiotherapy · Sydney CBD</div>
+<div class="legal">Demo · prepared by Gevorg Hovhannisyan</div>
+</div></footer>
+
+<div id="as-root"></div>
+<script>
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
+document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected','false')});b.setAttribute('aria-selected','true');
+document.querySelectorAll('.svc').forEach(function(s){s.classList.remove('on')});document.getElementById('t-'+b.dataset.t).classList.add('on');});});
+</script>
+<script>
+(function(G){
+var STOP=new Set('a an the is are do does did i we you your you should my me to of for in on at and or can could would will it be there any what how when where which who with about please tell us our get have has'.split(' '));
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|s)$/,''):w.replace(/s$/,'');}
+function toks(s){return norm(s).split(' ').filter(function(w){return w&&!STOP.has(w)}).map(stem);}
+function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;var d=[],i,j;for(i=0;i<=a.length;i++){d[i]=[i];}for(j=0;j<=b.length;j++)d[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++){var c=a[i-1]==b[j-1]?0:1;d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);if(i>1&&j>1&&a[i-1]==b[j-2]&&a[i-2]==b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1);}return d[a.length][b.length];}
+function same(q,k){if(q===k)return true;if(k.length>=5&&q.length>=5&&lev(q,k)<=1)return true;if(k.length>=6&&q.length>=6&&Math.max(k.length,q.length)>=7&&lev(q,k)<=2)return true;if(q.length>=4&&k.length>=5&&(k.indexOf(q)===0||q.indexOf(k)===0))return true;return false;}
+function uniq(a){var seen={};return a.filter(function(t){var j=t.join(' ');if(seen[j])return false;seen[j]=1;return true})}
+function make(cfg){
+  var kb=cfg.kb.map(function(e){return {a:e.a,chips:e.chips,k:uniq(e.k.map(function(p){return toks(p)}))}});
+  var flowT=cfg.flow.trigger.map(function(p){return toks(p)});
+  function score(qt,kl){var a=[];kl.forEach(function(kt){if(!kt.length)return;var ok=kt.every(function(w){return qt.some(function(x){return same(x,w)})});if(ok)a.push(kt.length*2+1+kt.join('').length/20);});if(!a.length)return 0;a.sort(function(x,y){return y-x});var s=a[0];for(var i=1;i<a.length&&i<4;i++)s+=0.25;return s;}
+  function answer(q){
+    var qt=toks(q);
+    if(cfg.rx)for(var i=0;i<cfg.rx.length;i++)if(new RegExp(cfg.rx[i][0],'i').test(q)){var e=cfg.kb[cfg.rx[i][1]];return {a:e.a,chips:e.chips};}
+    if(!qt.length)return {a:cfg.fallback,chips:cfg.chips};
+    var fs=score(qt,flowT)*1.6,best=null,bs=0;
+    kb.forEach(function(e){var s=score(qt,e.k);if(s>bs){bs=s;best=e}});
+    if(fs>0&&(fs>=bs||qt.length<=2))return {flow:true};
+    if(best&&bs>0)return {a:best.a,chips:best.chips};
+    return {a:cfg.fallback,chips:cfg.chips};
+  }
+  return {answer:answer};
+}
+G.Assist={make:make,norm:norm};
+if(typeof module!=='undefined')module.exports=G.Assist;
+if(typeof document==='undefined')return;
+G.Assist.init=function(cfg){
+  var core=make(cfg),root=document.getElementById('as-root');
+  root.innerHTML='<button class="as-fab" aria-label="'+cfg.title+'" aria-expanded="false"><span class="as-fab-i">'+cfg.fabIcon+'</span><span class="as-fab-t">'+cfg.fabText+'</span></button><div class="as-panel" role="dialog" aria-label="'+cfg.title+'" hidden><div class="as-head"><div><b>'+cfg.title+'</b><small>'+cfg.sub+'</small></div><button class="as-x" aria-label="Close">&times;</button></div><div class="as-log" aria-live="polite"></div><div class="as-chips"></div><form class="as-form"><input class="as-in" type="text" autocomplete="off" placeholder="'+cfg.placeholder+'" aria-label="'+cfg.placeholder+'"><button class="as-go" aria-label="Send">&#10148;</button></form></div>';
+  var fab=root.querySelector('.as-fab'),panel=root.querySelector('.as-panel'),log=root.querySelector('.as-log'),chips=root.querySelector('.as-chips'),form=root.querySelector('.as-form'),inp=root.querySelector('.as-in');
+  var step=-1,data={},opened=false;
+  function say(t,who){var d=document.createElement('div');d.className='as-m as-'+who;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.addEventListener('click',function(){send(c)});chips.appendChild(b)});}
+  function open(){panel.hidden=false;fab.setAttribute('aria-expanded','true');if(!opened){opened=true;say(cfg.greet,'bot');setChips(cfg.chips);}inp.focus();}
+  function close(){panel.hidden=true;fab.setAttribute('aria-expanded','false');}
+  fab.addEventListener('click',function(){panel.hidden?open():close()});
+  root.querySelector('.as-x').addEventListener('click',close);
+  function ask(){var s=cfg.flow.steps[step];say(s.q,'bot');setChips(s.chips);inp.placeholder=s.ph||cfg.placeholder;}
+  function startFlow(){step=0;data={};say(cfg.flow.intro,'bot');ask();}
+  function finish(){var lines=cfg.flow.steps.map(function(s){return s.label+': '+data[s.key]}).join('\n');step=-1;inp.placeholder=cfg.placeholder;say(cfg.flow.done(data)+'\n\n'+lines,'bot');setChips(cfg.chips);}
+  function send(t){
+    t=String(t).trim();if(!t)return;say(t,'user');inp.value='';
+    if(step>=0){
+      if(/^(cancel|stop|exit|never ?mind)$/i.test(t)){step=-1;inp.placeholder=cfg.placeholder;say(cfg.flow.cancel,'bot');setChips(cfg.chips);return;}
+      var s=cfg.flow.steps[step];
+      if(s.digits&&t.replace(/\D/g,'').length<6){say(s.bad,'bot');return;}
+      data[s.key]=t;step++;
+      if(step>=cfg.flow.steps.length){finish();}else{ask();}
+      return;
+    }
+    var r=core.answer(t);
+    if(r.flow){startFlow();return;}
+    setTimeout(function(){say(r.a,'bot');setChips(r.chips||cfg.chips);},220);
+  }
+  form.addEventListener('submit',function(e){e.preventDefault();send(inp.value)});
+  document.querySelectorAll('[data-open-assist]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();open();})});
+};
+})(typeof window!=='undefined'?window:globalThis);
+
+</script>
+<script>
+var KB=[
+{k:["hours","opening hours","open","opening times","what time","close","closing","weekend","saturday","sunday","when are you open","monday to friday"],a:"The clinic is open Monday to Friday, 8:00am to 5:30pm, and closed on weekends. Reception: (02) 9221 1604.",chips:["Book an appointment","Address","Fees"]},
+{k:["address","where","location","find you","directions","situated","located","level 5","park house","macquarie street","map"],a:"Level 5, Park House, 187 Macquarie Street, Sydney NSW 2000, in the CBD about 150 m from Martin Place station.",chips:["Parking","Train","Opening hours"]},
+{k:["parking","park","car","drive","driving","car park","carpark"],a:"Parking is available under the building at Park House, at Sydney Hospital, or at the Domain. Limited street parking too. Prices vary between car parks, so check each one.",chips:["Train","Address"]},
+{k:["train","station","martin place","wynyard","bus","public transport","transport","bicycle","bike","walk","how to get"],a:"Martin Place Station is about 150 m away, and Wynyard train and light rail station is a 9-minute walk. There are bus stops nearby (check Transport NSW) and bicycle racks along Macquarie Street.",chips:["Parking","Address"]},
+{k:["phone","call","telephone","number","contact","email","reception","reach","talk to someone"],a:"Phone (02) 9221 1604 (Mon–Fri 8am–5:30pm) or email physio@macquariestphysio.com.au. The online form is answered within one business day.",chips:["Book an appointment","Opening hours"]},
+{k:["referral","refer","gp","doctor letter","need a doctor","do i need a referral"],a:"No referral is needed. A GP referral is only required for workers compensation or motor vehicle (third-party) claims, and workers comp clients need to call the clinic to book.",chips:["Workcover","Book an appointment"]},
+{k:["first visit","first appointment","first session","initial","what to expect","what happens","new patient","assessment","first time"],a:"The first appointment is 45 minutes. Your physio talks through your problem and history, does a physical assessment, explains what is going on and why, and treatment begins on the first day.",chips:["What to bring","What to wear","Fees"]},
+{k:["bring","x-ray","xray","scan","scans","what should i bring","health fund card","medicare card"],a:"Bring any relevant x-rays or scans, your doctor's referral if you have one, your health fund card to claim on the spot, and your Medicare card if you have a GP care plan.",chips:["What to wear","Health fund"]},
+{k:["wear","clothing","clothes","shorts","gown","shoes","running shoes","what to wear"],a:"No special clothing is needed, since the clinic has shorts and gowns for you to use. For a running assessment bring running shoes. For a group class wear comfortable clothing or gym gear.",chips:["First visit","Classes"]},
+{k:["how long","duration","session length","minutes","appointment length","long is","30 minute","45 minute","extended"],a:"First appointments are 45 minutes. Follow-ups are usually 30 minutes. Extended 45-minute follow-ups are available for complex problems, two treatment areas, or core stability and exercise sessions.",chips:["Fees","Book an appointment"]},
+{k:["fee","fees","how much first appointment","how much first visit","first appointment cost","first appointment price","price","prices","cost","how much","charge","charges","rate","pricing","expensive","pay"],a:"Initial assessment (45 min) $165. Subsequent consultation (30 min) $130. Extended consultation (45 min) $165. 1:1 core/exercise (45 min) $165. Group core/exercise classes (1:4) $58. Tai Chi (1:5) $50. Functional strength and osteoporosis classes are listed at $56. Payable on the day.",chips:["Health fund","Payment methods","Classes"]},
+{k:["payment method","payment methods","how do i pay","visa","mastercard","amex","cards accepted","card","pay by card","accept cards","cash","credit card","eftpos","pay on the day"],a:"Payment is made on the day of service. The clinic accepts cash, Visa, Mastercard and AMEX.",chips:["Health fund","Fees"]},
+{k:["health fund","private health","hicaps","rebate","claim","insurance","extras","extras cover","bupa","medibank","claim back"],a:"If your extras cover includes physiotherapy, you can claim on the spot through HICAPS with your membership card and pay only the gap. The exact amount depends on your fund, so check with them. Group classes may qualify under \"Group Physiotherapy\" (item code 560).",chips:["Medicare","Fees"]},
+{k:["medicare","care plan","chronic condition","epc","enhanced primary care","gp plan","gp care plan"],a:"If your GP finds you eligible for a chronic condition management plan (EPC), bring your Medicare card and the clinic can process your rebate at the time of the consultation.",chips:["Health fund","Referral"]},
+{k:["workcover","workers compensation","work cover","third party","third-party","motor vehicle","injured at work","claim number","compulsory third party"],a:"The clinic treats Workcover patients. Workers compensation and third-party claims need a GP referral, and all workers comp clients must call (02) 9221 1604 to book.",chips:["NDIS and DVA","Book an appointment"]},
+{k:["ndis","dva","veteran","veterans","disability","department of veterans"],a:"Yes, the clinic provides physiotherapy for NDIS and DVA clients. Please call reception on (02) 9221 1604 so they can confirm the details for your situation.",chips:["Workcover","Phone"]},
+{k:["cancel","cancellation","cancelling","reschedule","no show","non attendance","missed appointment","late cancel"],a:"Please give 24 hours' notice if you need to cancel so the time can be offered to another patient. Otherwise a 50% non-attendance fee applies.",chips:["Phone","Book an appointment"]},
+{k:["team","physio","physios","physiotherapist","physiotherapists","who works","staff","clinicians","practitioner","who will i see"],a:"The team is Simon Reid (Principal Physiotherapist), Justine Trethewey (Manipulative Physiotherapist) and Kate Armstrong (Physiotherapist). Each has at least 20 years of clinical experience and post-graduate qualifications.",chips:["Simon Reid","Justine","Kate","Book an appointment"]},
+{k:["simon","simon reid","principal","gait","treadmill","running"],a:"Simon Reid is the Principal Physiotherapist (graduated 1996, Masters in Manipulative Physiotherapy 2006). He focuses on sports injuries, treadmill gait analysis and personalised exercise, runs core stability, strength and Tai Chi classes, and treats dizziness including BPPV.",chips:["Running analysis","Classes"]},
+{k:["justine","trethewey","posture","core stability"],a:"Justine Trethewey is a manipulative physiotherapist with a particular interest in core stability and posture. She is also a vestibular physiotherapist treating dizziness and vertigo including BPPV, and runs 1:1 and group core stability and strength classes.",chips:["Dizziness","Classes"]},
+{k:["kate","armstrong","dry needling","needling","needle","glad","arthritis program","hip knee"],a:"Kate Armstrong has over 25 years in private practice. She treats musculoskeletal and sports injuries and complex spinal, pelvic and hip pain, using manual therapy including dry needling plus exercise therapy. She is accredited to teach the GLA:D program for hip and knee arthritis and is interested in women's health.",chips:["Women's health","Book an appointment"]},
+{k:["services","treat","treatment","treatments","conditions","what do you treat","what you treat","what do you help with","specialise","specialties"],a:"The clinic treats pain (headache, neck and back, sciatica, pain at work), injuries (whiplash, sports, joint and muscle, post-surgery, disc), dizziness and vertigo, women's health, posture and core stability, plus dry needling, ergonomic assessments and running analysis.",chips:["Neck and back pain","Dizziness","Women's health","Sports injury"]},
+{k:["headache","headaches","migraine","tension headache","head pain"],a:"Many neck-related and tension-type headaches start in the joints and muscles of the neck and upper back. The physios use gentle mobilisation, soft tissue work and postural correction, without forceful manipulation. If you have sudden or severe headaches, please see a doctor.",chips:["Book an appointment","Neck manipulation"]},
+{k:["neck pain","back pain","backache","lower back","sore back","neck and back","spine","stiff neck"],a:"The physios focus on finding the underlying cause of neck and back pain, so relief lasts rather than being a temporary fix, using hands-on care and exercise. They can't tell you what is wrong before an assessment, so the first visit is the place to start.",chips:["Book an appointment","First visit"]},
+{k:["sciatica","sciatic","leg pain","nerve pain","tingling","numbness"],a:"Sciatica treatment focuses on relieving pressure on the nerve, restoring movement in the lower back and hip, and building strength to prevent a recurrence. Your physio will assess your situation at the first visit.",chips:["Book an appointment","Disc injury"]},
+{k:["disc","slipped disc","bulging disc","herniated"],a:"Treatment for disc injuries aims to relieve pressure on the affected structures, restore safe movement and build the strength to protect the spine. Your physio will assess you first.",chips:["Back pain","Book an appointment"]},
+{k:["whiplash","car accident","neck injury"],a:"Whiplash is treated gently at first, then progresses to more active rehabilitation as your recovery allows. If it is a car accident claim, a GP referral is needed and the booking is made by phone.",chips:["Workcover","Phone"]},
+{k:["sport","sports","sports injury","sprain","strain","athlete","ankle","shoulder","knee","muscle injury","joint injury"],a:"Sports injuries and joint and muscle injuries are assessed hands-on and treated with evidence-based techniques and progressive exercise to restore function and reduce the chance of re-injury. You don't need to be an athlete to come in.",chips:["Running analysis","Book an appointment"]},
+{k:["surgery","post surgical","post-surgical","after surgery","operation","surgeon","rehab","rehabilitation","replacement"],a:"After surgery your physio liaises directly with your surgeon and follows their protocol, using gentle mobilisation, soft tissue work and tailored exercise to guide you back to full activity.",chips:["Book an appointment","Exercise classes"]},
+{k:["dizzy","dizziness","vertigo","bppv","epley","vestibular","spinning","goggles","room spinning"],a:"Vestibular physiotherapists treat dizziness and BPPV, with a detailed assessment that may use diagnostic video goggles and the Epley manoeuvre. Many clients improve in one to two treatments. The physio will decide at assessment if it is suitable; for sudden severe dizziness please seek medical help.",chips:["Book an appointment","Team"]},
+{k:["women","womens","women's health","pelvic floor","pregnancy","prenatal","postnatal","bladder","incontinence","leakage","menopause","outer hip pain","gluteal","tendinopathy","antenatal"],a:"Women's health includes pre and postnatal care, pelvic floor rehabilitation, bladder leakage, outer hip pain (gluteal tendinopathy), osteoporosis management and menopause-related exercise programs. Kate Armstrong has a strong interest in this area.",chips:["Book an appointment","Osteoporosis"]},
+{k:["ergonomic","ergonomics","desk","workstation","office","sitting","work pain","pain at work","desk setup","workplace"],a:"Workplace ergonomic assessments can be done on-site in the Sydney CBD or in the clinic, with practical changes to your desk, chair and habits. Physios also treat work-related pain from prolonged sitting or repetitive tasks.",chips:["Book an appointment","Phone"]},
+{k:["running analysis","gait","walking analysis","run","runner","treadmill","filmed"],a:"For running and walking analysis, the physio takes your history, examines the problem area and films your gait on the treadmill to find and correct the underlying cause. Bring your running shoes.",chips:["Simon Reid","Fees"]},
+{k:["class","classes","group","pilates","exercise class","group class","small group","group physiotherapy"],a:"Four physio-led small-group classes: Core stability / Pilates (up to 4), Functional strength (up to 3), Osteoporosis prevention (up to 4) and Tai Chi for arthritis and fall prevention (up to 6). Each lasts 45 minutes and starts with a 30-minute assessment.",chips:["Pilates","Functional strength","Osteoporosis","Tai Chi","Class fees"]},
+{k:["pilates","reformer","core stability class","core class","swiss ball"],a:"Core stability / Pilates classes (45 min, up to 4 people) mix Pilates-inspired exercises, strength, stretches and balance work with a focus on spinal alignment, using Swiss balls, bands and foam rollers. One-to-one sessions may use the Pilates Reformer. All ages and fitness levels.",chips:["Class fees","Book an appointment"]},
+{k:["functional strength","strength","strength class","trx","weights","senior fitness","gym","strength training"],a:"Functional strength classes (45 min, up to 3 people) use a functional trainer machine, TRX, bands and weights, tailored to your level. No prior experience needed, but a 30-minute physio assessment comes first.",chips:["Class fees","Book an appointment"]},
+{k:["osteoporosis","osteopenia","bone","bone density","bones"],a:"The osteoporosis prevention class (45 min, up to 4 people) uses strength equipment tailored to bone health, increased step by step. A 30-minute physio assessment is needed first. Individual or duet sessions are also available.",chips:["Class fees","Book an appointment"]},
+{k:["tai chi","taichi","balance","fall","falls","fall prevention","arthritis","paul lam"],a:"Tai Chi for Arthritis and Fall Prevention (45 min, up to 6 people) is Dr Paul Lam's program based on Sun-style Tai Chi. It suits balance affected by injury, age or arthritis, and you don't need arthritis to join. Fee: $50.",chips:["Class fees","Book an appointment"]},
+{k:["class fee","class fees","class price","class cost","how much is a class","price of class"],a:"Group core/exercise classes (1:4) are $58 for 45 minutes. Tai Chi (1:5) is $50. Functional strength and osteoporosis classes are listed at $56 per session. Each new participant first has a 30-minute assessment; reception can confirm that fee.",chips:["Classes","Health fund"]},
+{k:["manipulate","manipulation","crack","click","cervical","neck manipulation","adjust","adjustment"],a:"All the physios are manipulative physiotherapists, but they do not manipulate the cervical spine (neck) because of potential risk to the vertebral artery. With your consent they may manipulate the mid and lower back.",chips:["Will it hurt?","Book an appointment"]},
+{k:["hurt","pain during","painful","sore","does it hurt","will it hurt","uncomfortable"],a:"If you are in significant pain, the area is treated very gently. Some old, stiff conditions may feel sore with a firmer approach. Always tell your physio about pain and they won't push beyond what you can tolerate.",chips:["First visit","Book an appointment"]},
+{k:["access","accessible","wheelchair","lift","elevator","disabled","disability access","guide dog","assistance animal","mobility"],a:"Yes. A lift takes you up from street level or from the parking level, there is wheelchair access into the clinic, and assistance animals are welcome.",chips:["Parking","Address"]},
+{k:["how soon","same day","soon","urgent","next day","availability","available","wait","waiting","earliest","accepting new patients"],a:"The clinic is accepting new patients this week, and there is a good chance of being seen on the day you call or the day after. Call (02) 9221 1604 for the earliest time, or send a request here.",chips:["Book an appointment","Phone"]},
+{k:["how many treatments","how many sessions","how many visits","sessions needed","how many appointments"],a:"That depends on the type, severity and length of the problem. The physios use education and exercises so that you keep recovering between visits. Your physio will give you a clearer idea after your first assessment.",chips:["First visit","Book an appointment"]},
+{k:["diagnose","diagnosis","what is wrong","symptoms","should i worry","medical advice","is it serious","medication","scan results"],a:"I can't diagnose or give medical advice. Please book an assessment so a physio can examine you, or ring reception on (02) 9221 1604. For sudden severe symptoms, seek urgent medical care.",chips:["Book an appointment","Phone"]},
+{k:["about","history","years","experience","40 years","established","how long have you","qualifications"],a:"Macquarie Street Physiotherapy has served the Sydney CBD for over 40 years. All the physios have at least 20 years of clinical experience and post-graduate qualifications, with a focus on getting to the cause of the problem.",chips:["Team","Services"]},
+{k:["reviews","rating","rated","google","stars","testimonials"],a:"The clinic is rated 4.9 by 57 patients on Google.",chips:["Team","Book an appointment"]},
+{k:["hip pain","knee pain","shoulder pain","joint pain","chronic pain","persistent pain","pain","aches","ache"],a:"The physios treat many kinds of pain (neck, back, hip, shoulder, headaches, chronic and persistent pain). I can't say what is causing yours, so the 45-minute first assessment is the place to start. No referral is needed.",chips:["Book an appointment","Services","Fees"]},
+{k:["hello","hi","hey","good morning","good afternoon","hiya","g'day"],a:"Hello! Ask me about hours, fees, services, classes or the team, or tap Book an appointment to send a request.",chips:["Book an appointment","Opening hours","Fees"]},
+{k:["thanks","thank you","cheers","great","perfect","ok thanks"],a:"You're welcome. Anything else I can help with?",chips:["Book an appointment","Opening hours"]}
+];
+if(typeof module!=='undefined')module.exports=KB;
+
+var CFG={
+title:"Macquarie Street Physio",sub:"Assistant · answers from the clinic's website",fabIcon:"&#9877;",fabText:"Ask or book",placeholder:"Ask about hours, fees, classes...",
+greet:"Hi, I'm the assistant for Macquarie Street Physiotherapy. Ask about hours, fees, the team or classes, or request an appointment. I can't give medical advice or diagnose; for that, your physio will help at your visit.",
+chips:["Book an appointment","Opening hours","Fees","Do I need a referral?","Classes","Parking"],
+fallback:"I don't have that on the clinic's website. The reception team can help on (02) 9221 1604, Mon–Fri 8am–5:30pm. Meanwhile I can help with hours, fees, services, classes, the team or an appointment request.",
+flow:{
+trigger:["book","booking","appointment","make an appointment","schedule","reserve","see a physio","new patient","request a visit","enquiry","book now","get seen","see someone"],
+intro:"Happy to help with a request. A few quick questions, then it goes to reception, who will call to confirm a time. Type cancel at any point to stop.",
+cancel:"No problem, nothing was sent. Ask me anything else.",
+steps:[
+{key:"reason",label:"Reason",q:"What would you like help with?",chips:["Pain or injury","Dizziness or vertigo","Women's health","After surgery","Pilates / strength class","Not sure"]},
+{key:"visit",label:"Visit",q:"Have you been to the clinic before?",chips:["First visit","I'm a returning patient"]},
+{key:"funding",label:"Payment type",q:"How will this visit be funded?",chips:["Private / health fund","Medicare plan","NDIS or DVA","Workcover or third-party"]},
+{key:"day",label:"Preferred day",q:"Which day suits you? The clinic is open Monday to Friday.",chips:["Monday","Tuesday","Wednesday","Thursday","Friday","Any weekday"]},
+{key:"time",label:"Preferred time",q:"And what time of day?",chips:["Morning (8–12)","Lunchtime (12–2)","Afternoon (2–5:30)"]},
+{key:"name",label:"Name",q:"Your name, please?",ph:"Your name"},
+{key:"phone",label:"Phone",q:"The best phone number for the team to call you back?",ph:"Phone number",digits:1,bad:"That doesn't look like a phone number. Could you type it again with the area code?"}
+],
+done:function(d){var wc=/workcover|third/i.test(d.funding)?" Please note Workcover and third-party clients book by phone on (02) 9221 1604, so reception will treat this as a call-back request.":"";return "Thank you, "+d.name+". Your request has been sent to the Macquarie Street Physiotherapy team, and they will call you back within one business day to confirm a time."+wc+" (Demo: nothing is actually sent.)";}
+}};
+CFG.kb=KB;CFG.rx=[["where (are|is) (you|the clinic|it)",1]];
+Assist.init(CFG);
+</script>
+<noscript><p style="padding:16px">The booking assistant needs JavaScript. Call (02) 9221 1604.</p></noscript>
+</body>
+</html>

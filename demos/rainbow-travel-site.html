@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rainbow Travel Inc | Vancouver travel agency near Olympic Village</title>
+<meta name="description" content="Demo page for Rainbow Travel Inc, Vancouver: flights, packages, cruises, tours, hotels and express visas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14213d;--ink2:#34405c;--paper:#fbf6ec;--card:#ffffff;--line:#e6dcc8;
+  --sky:#96d9f3;--blue:#0088cb;--red:#ed1c24;--sun:#ffcb05;--mute:#6b6f7c;
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Figtree,system-ui,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:700;line-height:1.1;letter-spacing:-.01em}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+.stripe{height:6px;background:linear-gradient(90deg,var(--red) 0 25%,var(--sun) 25% 50%,var(--blue) 50% 75%,var(--sky) 75% 100%)}
+
+/* header */
+header{position:sticky;top:0;z-index:30;background:rgba(251,246,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hbar{display:flex;align-items:center;gap:12px;padding:10px 18px;max-width:1080px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none}
+.brand b{font-family:Fraunces,serif;font-size:19px;line-height:1.05;display:block}
+.brand small{font-size:11px;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}
+nav{margin-left:auto;display:none;gap:18px;font-weight:600;font-size:14px}
+nav a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--red)}
+.callbtn{margin-left:auto;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:10px 14px;border-radius:999px;white-space:nowrap}
+@media(min-width:820px){nav{display:flex}.callbtn{margin-left:8px}}
+
+/* hero: boarding pass */
+.hero{padding:34px 0 20px;position:relative}
+.hero{overflow:hidden}.hero::before{content:"";position:absolute;right:-90px;top:-60px;width:320px;height:320px;border-radius:50%;background:conic-gradient(from 20deg,var(--red),var(--sun),#37c24a,var(--blue),#3a1d6e,var(--red));opacity:.14;z-index:-1}
+.hero .wrap{display:grid;gap:26px}
+.kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.hero h1{font-size:clamp(34px,8.6vw,60px)}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--sun) 62%)}
+.hero p.lead{margin:16px 0 22px;font-size:18px;color:var(--ink2);max-width:520px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:700;text-decoration:none;padding:13px 20px;border-radius:12px}
+.btn.p{background:var(--red);color:#fff}
+.btn.s{background:transparent;border:2px solid var(--ink);color:var(--ink)}
+.pass{background:var(--card);border-radius:var(--r);box-shadow:0 14px 40px -18px rgba(20,33,61,.45);position:relative;border:1px solid var(--line)}
+.pass-top{padding:18px 18px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px dashed var(--line)}
+.pass-top span{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.route{display:flex;align-items:center;gap:10px;padding:18px;font-family:Fraunces,serif}
+.route b{font-size:38px}
+.route i{flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--ink) 0 6px,transparent 6px 12px);position:relative}
+.route i::after{content:"\2708";position:absolute;left:50%;top:-12px;transform:translateX(-50%);background:var(--card);padding:0 6px;font-size:20px;font-style:normal}
+.pass-bot{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 18px 18px}
+.pass-bot div small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.pass-bot div strong{font-size:15px}
+.pass::before,.pass::after{content:"";position:absolute;top:62px;width:20px;height:20px;border-radius:50%;background:var(--paper);border:1px solid var(--line)}
+.pass::before{left:-11px}.pass::after{right:-11px}
+@media(min-width:820px){.hero .wrap{grid-template-columns:1.15fr .85fr;align-items:center}.hero{padding:56px 0 30px}}
+
+/* open now strip */
+.strip{background:var(--ink);color:#fff;font-size:14px}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:6px 22px;padding-top:11px;padding-bottom:11px;align-items:center}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#37c24a;margin-right:7px}
+.dot.off{background:var(--red)}
+
+section{padding:46px 0}
+.sh{margin-bottom:22px}
+.sh h2{font-size:clamp(28px,6vw,40px)}
+.sh p{color:var(--ink2);margin-top:8px;max-width:640px}
+
+/* reasons */
+.reasons{display:grid;gap:10px;grid-template-columns:1fr}
+.reason{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.reason .n{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-family:Fraunces,serif;font-weight:700;color:#fff}
+.reason:nth-child(1) .n{background:var(--red)}.reason:nth-child(2) .n{background:#e9a800}.reason:nth-child(3) .n{background:#2c9a3e}.reason:nth-child(4) .n{background:var(--blue)}.reason:nth-child(5) .n{background:#4a2a86}
+.reason b{display:block;font-size:16px}
+.reason span{font-size:14px;color:var(--ink2)}
+@media(min-width:700px){.reasons{grid-template-columns:repeat(2,1fr)}.reason:last-child{grid-column:span 2}}
+
+/* services */
+.svc{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+.sv{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 14px;text-decoration:none;display:block;transition:transform .15s,box-shadow .15s}
+.sv:hover{transform:translateY(-3px);box-shadow:0 10px 24px -14px rgba(20,33,61,.5)}
+.sv em{font-style:normal;font-size:26px;display:block;margin-bottom:6px}
+.sv b{font-family:Fraunces,serif;font-size:18px;display:block}
+.sv span{font-size:13px;color:var(--ink2);display:block;margin-top:4px}
+@media(min-width:760px){.svc{grid-template-columns:repeat(3,1fr)}}
+
+/* deals: stubs */
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tab{border:2px solid var(--ink);background:transparent;border-radius:999px;padding:7px 16px;font:inherit;font-weight:700;cursor:pointer}
+.tab[aria-selected=true]{background:var(--ink);color:#fff}
+.deals{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:640px){.deals{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.deals{grid-template-columns:repeat(3,1fr)}}
+.deal{display:flex;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.deal .l{flex:1;padding:14px}
+.deal .l b{font-family:Fraunces,serif;font-size:18px;display:block}
+.deal .l span{font-size:13px;color:var(--ink2);display:block;margin-top:3px}
+.deal .r{flex:none;width:104px;border-left:2px dashed var(--line);padding:12px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:2px;background:#fffaf0}
+.deal .r small{font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em}
+.deal .r strong{font-family:Fraunces,serif;font-size:21px}
+.deal .r button{margin-top:6px;border:0;background:var(--blue);color:#fff;font:inherit;font-size:12px;font-weight:700;border-radius:8px;padding:6px;cursor:pointer}
+.note{font-size:13px;color:var(--mute);margin-top:12px}
+
+/* visa + partners */
+.two{display:grid;gap:16px}
+@media(min-width:820px){.two{grid-template-columns:1fr 1fr}}
+.panel{background:var(--ink);color:#fff;border-radius:var(--r);padding:24px}
+.panel h3{font-size:26px;margin-bottom:10px}
+.panel p{color:#dfe5f3;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chip{background:rgba(255,255,255,.14);border-radius:999px;padding:6px 14px;font-weight:600;font-size:14px}
+.panel.light{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.panel.light p{color:var(--ink2)}
+.panel.light .chip{background:#f3ecdc}
+
+/* visit */
+.visit{display:grid;gap:16px}
+@media(min-width:820px){.visit{grid-template-columns:1.1fr .9fr}}
+.hours{width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.hours td{padding:12px 14px;border-bottom:1px solid var(--line)}
+.hours tr:last-child td{border-bottom:0}
+.hours td:last-child{text-align:right;font-weight:700}
+.hours tr.today{background:#fff3c4}
+.addr{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.addr h3{font-size:22px;margin-bottom:8px}
+.addr p{margin:6px 0;color:var(--ink2)}
+.addr a.tel{display:block;font-weight:700;font-size:18px;text-decoration:none;margin-top:8px}
+
+/* faq */
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;padding:0 16px}
+summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"+";font-size:22px;line-height:1;color:var(--red)}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 0 14px;color:var(--ink2);font-size:15px}
+
+footer{background:var(--ink);color:#cfd6e8;padding:30px 0 90px;font-size:14px;margin-top:20px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+footer b{color:#fff}
+
+/* assistant */
+#ab{position:fixed;right:16px;bottom:16px;z-index:60;border:0;cursor:pointer;background:var(--red);color:#fff;font:inherit;font-weight:700;padding:14px 18px;border-radius:999px;box-shadow:0 10px 26px -8px rgba(237,28,36,.7);display:flex;align-items:center;gap:8px}
+#ap{position:fixed;z-index:70;right:12px;bottom:12px;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:var(--card);border-radius:18px;box-shadow:0 24px 60px -12px rgba(20,33,61,.55);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--line)}
+#ap.open{display:flex}
+.ah{background:var(--ink);color:#fff;padding:12px 14px;display:flex;align-items:center;gap:10px}
+.ah img{width:34px;height:34px;border-radius:50%;background:#fff}
+.ah b{display:block;font-size:15px;line-height:1.1}
+.ah small{font-size:12px;color:#b9c3dc}
+.ah button{margin-left:auto;background:transparent;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1}
+#am{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:9px;background:#fffdf8}
+.m{max-width:86%;padding:10px 13px;border-radius:14px;font-size:14.5px;line-height:1.45;white-space:pre-line}
+.m.b{background:#f0eadb;align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--blue);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.qr{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 8px;background:#fffdf8}
+.qr button{border:1.5px solid var(--ink);background:#fff;color:var(--ink);border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.qr button:hover{background:var(--ink);color:#fff}
+.af{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:#fff}
+.af input{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:15px}
+.af button{border:0;background:var(--red);color:#fff;font:inherit;font-weight:700;border-radius:10px;padding:0 16px;cursor:pointer}
+.demo{font-size:11px;color:var(--mute);text-align:center;padding:4px 8px 8px;background:#fff}
+</style>
+</head>
+<body>
+<div class="stripe"></div>
+<header>
+  <div class="hbar">
+    <a class="brand" href="#top" id="top">
+      <img src="img/rainbow-travel-logo.jpg" alt="Rainbow Travel Inc logo" width="44" height="44">
+      <span><b>Rainbow Travel Inc</b><small>Vancouver, BC</small></span>
+    </a>
+    <nav>
+      <a href="#why">Why us</a><a href="#services">Services</a><a href="#deals">Deals</a><a href="#visa">Visas</a><a href="#visit">Visit</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="callbtn" href="tel:+16048722627">Call +1 604 872 2627</a>
+  </div>
+</header>
+
+<div class="strip"><div class="wrap">
+  <span id="openNow"><span class="dot"></span>Checking Vancouver time...</span>
+  <span>339 West 2nd Avenue, a block from Olympic Village station</span>
+</div></div>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="kicker">Full service travel agency</span>
+    <h1>Small enough to care, <em>big enough</em> to make it happen.</h1>
+    <p class="lead">Flights, packages, cruises, tours, hotels and visas, planned by people you can walk in and talk to. Tell us where you want to go and we will work out how.</p>
+    <div class="btns">
+      <button class="btn p" onclick="openAssist('trip')">Plan my trip</button>
+      <a class="btn s" href="#deals">See current deals</a>
+    </div>
+  </div>
+  <div class="pass" aria-label="Boarding pass style summary">
+    <div class="pass-top"><span>Rainbow Travel</span><span>25 years in business</span></div>
+    <div class="route"><b>YVR</b><i></i><b>Asia</b></div>
+    <div class="pass-bot">
+      <div><small>We specialize in</small><strong>Asia and Europe</strong></div>
+      <div><small>Also</small><strong>Cruises, custom tours</strong></div>
+      <div><small>Money protected</small><strong>100%</strong></div>
+      <div><small>Walk-ins</small><strong>Mon to Sat</strong></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="why"><div class="wrap">
+  <div class="sh"><h2>Five reasons to book with us</h2><p>Our mission is simple: repeat customers, earned with honest advice and knowledge from continuous industry training and from our clients' own travels.</p></div>
+  <div class="reasons">
+    <div class="reason"><div class="n">1</div><div><b>Tailor-made holidays</b><span>Your trip built around your dates, pace and budget, not a stock itinerary.</span></div></div>
+    <div class="reason"><div class="n">2</div><div><b>25 years in business</b><span>Many years of arranging travel for business and for pleasure.</span></div></div>
+    <div class="reason"><div class="n">3</div><div><b>Express visa services</b><span>China, Vietnam, Australia and Myanmar.</span></div></div>
+    <div class="reason"><div class="n">4</div><div><b>100% money protected</b><span>Your booking is protected, so you can plan with confidence.</span></div></div>
+    <div class="reason"><div class="n">5</div><div><b>Expert travel knowledge</b><span>We act as your "value interpreter": amazing experiences that exceed your wishes, not your budget.</span></div></div>
+  </div>
+</div></section>
+
+<section id="services" style="background:#f4ecda"><div class="wrap">
+  <div class="sh"><h2>What we arrange</h2><p>We are agents for the major tour operators, cruise lines and world airlines.</p></div>
+  <div class="svc">
+    <a class="sv" href="#deals" onclick="pickTab('flights')"><em>&#9992;&#65039;</em><b>Flights</b><span>Deals from Vancouver to Asia, Europe, Oceania and North America.</span></a>
+    <a class="sv" href="#deals" onclick="pickTab('packages')"><em>&#127965;&#65039;</em><b>Vacation packages</b><span>Air plus hotel, including all-inclusive resorts.</span></a>
+    <a class="sv" href="#deals" onclick="pickTab('cruises')"><em>&#128674;</em><b>Cruises</b><span>Alaska, Caribbean, Hawaii, Far East and more.</span></a>
+    <a class="sv" href="#visa"><em>&#127970;</em><b>Guided tours</b><span>Trafalgar, CostSaver, Insight Vacations and G Adventures.</span></a>
+    <a class="sv" href="#services" onclick="openAssist('hotel')"><em>&#127976;</em><b>Hotels</b><span>City stays, all-inclusive resorts and airport pre/post nights.</span></a>
+    <a class="sv" href="#visa"><em>&#128216;</em><b>Visas and insurance</b><span>Express visas and travel insurance for Canadians and visitors.</span></a>
+  </div>
+</div></section>
+
+<section id="deals"><div class="wrap">
+  <div class="sh"><h2>Deals on the board</h2><p>These are the departures currently posted on rainbowtravelonline.com. Always subject to availability, so ask the team to confirm today's fare.</p></div>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-t="flights">Flights</button>
+    <button class="tab" role="tab" aria-selected="false" data-t="packages">Packages</button>
+    <button class="tab" role="tab" aria-selected="false" data-t="cruises">Cruises</button>
+  </div>
+  <div class="deals" id="dealList"></div>
+  <p class="note" id="dealNote"></p>
+</div></section>
+
+<section id="visa" style="background:#f4ecda"><div class="wrap">
+  <div class="two">
+    <div class="panel">
+      <h3>Express visa services</h3>
+      <p>Skip the paperwork guesswork. We handle express visas for these destinations.</p>
+      <div class="chips"><span class="chip">China</span><span class="chip">Vietnam</span><span class="chip">Australia</span><span class="chip">Myanmar</span></div>
+      <p>Requirements change, so the team confirms what you need for your passport and dates. You stay responsible for meeting entry and transit rules on your itinerary.</p>
+      <p style="margin-top:14px"><button class="btn p" onclick="openAssist('visa')">Ask about a visa</button></p>
+    </div>
+    <div class="panel light">
+      <h3>Tour partners</h3>
+      <p>Guided tour and vacation packages through trusted suppliers.</p>
+      <div class="chips"><span class="chip">Trafalgar</span><span class="chip">CostSaver Tour</span><span class="chip">Insight Vacations</span><span class="chip">G Adventures</span></div>
+      <p>Also on the site: Disney travel, Mexico Visitax payment help, and a government travel advisory page for Canadians.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="visit"><div class="wrap">
+  <div class="sh"><h2>Drop in or call</h2></div>
+  <div class="visit">
+    <table class="hours" id="hrs">
+      <tr data-d="1"><td>Monday</td><td>10 AM - 6 PM</td></tr>
+      <tr data-d="2"><td>Tuesday</td><td>10 AM - 6 PM</td></tr>
+      <tr data-d="3"><td>Wednesday</td><td>10 AM - 6 PM</td></tr>
+      <tr data-d="4"><td>Thursday</td><td>10 AM - 6 PM</td></tr>
+      <tr data-d="5"><td>Friday</td><td>10 AM - 6 PM</td></tr>
+      <tr data-d="6"><td>Saturday</td><td>11 AM - 3 PM</td></tr>
+      <tr data-d="0"><td>Sunday and holidays</td><td>Closed</td></tr>
+    </table>
+    <div class="addr">
+      <h3>Rainbow Travel Inc</h3>
+      <p>339 West 2nd Avenue<br>Vancouver, BC V5Y 0B4</p>
+      <p>A block away from Olympic Village Canada Line Station.</p>
+      <a class="tel" href="tel:+16048722627">+1 (604) 872-2627</a>
+      <a class="tel" href="tel:+18779224269" style="font-size:16px">Toll free +1 (877) 922-4269</a>
+      <p style="margin-top:12px"><a href="mailto:info@rainbowtravelonline.com">info@rainbowtravelonline.com</a></p>
+    </div>
+  </div>
+</div></section>
+
+<section id="faq" style="background:#f4ecda"><div class="wrap">
+  <div class="sh"><h2>Quick answers</h2></div>
+  <details><summary>Do I need an appointment?</summary><p>You can call or walk in during opening hours. For a tailor-made trip or a visa, the team can set aside time if you tell them what you need first.</p></details>
+  <details><summary>Which destinations do you know best?</summary><p>We specialize in flights and packages to Asia and Europe, cruises, and custom tours.</p></details>
+  <details><summary>Can you help with a visa?</summary><p>Yes, express visa services for China, Vietnam, Australia and Myanmar. The team confirms the documents for your case.</p></details>
+  <details><summary>Is my money protected?</summary><p>Rainbow Travel lists "100% money protected" among its reasons to book. Ask the team for the details of your booking.</p></details>
+  <details><summary>Do you offer travel insurance?</summary><p>Yes. Travel insurance for Canadians and visitors to Canada is on the services list, covering emergency medical and trip cancellation.</p></details>
+  <details><summary>Are the posted prices final?</summary><p>No. Deals are subject to availability, and packages are based on double occupancy with taxes included (gratuities and resort fees excluded). The team confirms the current fare.</p></details>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div><b>Rainbow Travel Inc</b><br>339 West 2nd Avenue, Vancouver, BC</div>
+  <div>It is your responsibility to ensure that you meet all entry or transit requirements for each country on your itinerary.</div>
+  <div>Demo &middot; prepared by Gevorg Hovhannisyan</div>
+</div></footer>
+
+<button id="ab" onclick="openAssist()" aria-label="Open travel assistant">&#128172; Ask Rainbow</button>
+<div id="ap" role="dialog" aria-label="Rainbow Travel assistant">
+  <div class="ah"><img src="img/rainbow-travel-logo.jpg" alt=""><div><b>Rainbow assistant</b><small>Answers from this site. The team confirms the rest.</small></div><button onclick="closeAssist()" aria-label="Close">&times;</button></div>
+  <div id="am"></div>
+  <div class="qr" id="qr"></div>
+  <form class="af" id="af"><input id="ai" autocomplete="off" placeholder="Type your question..." aria-label="Your message"><button>Send</button></form>
+  <div class="demo">Demo &middot; prepared by Gevorg Hovhannisyan. Nothing is sent anywhere.</div>
+</div>
+
+<script>
+/*KB-START*/
+var KB=[
+{id:'hours',k:['hours','open','opening','close','closing','closed','time','when','sunday','saturday','weekend','holiday','monday','friday','late'],
+ a:'Monday to Friday 10 AM to 6 PM, Saturday 11 AM to 3 PM. Closed on Sunday and holidays (Vancouver time).'},
+{id:'where',k:['where','address','location','located','find','directions','station','skytrain','canada line','olympic village','street','avenue','map','parking','come','visit','walk'],
+ a:'339 West 2nd Avenue, Vancouver, BC V5Y 0B4. We are a block away from Olympic Village Canada Line Station.'},
+{id:'phone',k:['phone','call','number','telephone','tel','toll','free','ring','contact','reach','email','mail'],
+ a:'Phone +1 (604) 872-2627, toll free +1 (877) 922-4269, email info@rainbowtravelonline.com.'},
+{id:'flights',k:['flight','flights','fly','flying','airfare','air','ticket','tickets','plane','airline','airlines','airport','manila','hong kong','tokyo','bangkok','paris','rome','auckland','melbourne','toronto','calgary','york','francisco'],
+ a:'We book flights on the world airlines and post current deals from Vancouver: Manila, Hong Kong, Tokyo, Bangkok, Auckland, Melbourne, Paris, Rome, Toronto, New York, San Francisco and Calgary. See the Deals section. The team confirms the fare for your dates.'},
+{id:'packages',k:['package','packages','vacation','vacations','holiday','resort','resorts','inclusive','all-inclusive','mexico','hawaii','honolulu','maya','riviera','vallarta','mazatlan','negril','jamaica','athens','frankfurt','beach','sun','hotel and flight','air and hotel'],
+ a:'Vacation packages are air plus hotel, some all-inclusive. Posted examples include Riviera Maya, Huatulco, Honolulu, Puerto Vallarta, Mazatlan, Negril, Athens and Frankfurt. They are based on double occupancy, taxes included, gratuities and resort fees excluded.'},
+{id:'cruise',k:['cruise','cruises','cruising','ship','sail','sailing','alaska','caribbean','bahamas','cabin','port','new england'],
+ a:'We sell cruises on the major cruise lines. Posted deals include Alaska (from Vancouver), Caribbean, Bahamas, Hawaii, Australia, Far East and Canada/New England. Prices are for an inside cabin, double occupancy, taxes included; gratuities and airfare excluded.'},
+{id:'tours',k:['tour','tours','guided','trafalgar','costsaver','insight','adventures','adventure','group','europe','asia','custom','itinerary','coach','bus'],
+ a:'We offer guided and custom tours, with suppliers such as Trafalgar, CostSaver Tour, Insight Vacations and G Adventures. We specialize in Asia and Europe. Tell us what you want and the team will build it around you.'},
+{id:'visa',k:['visa','visas','passport','china','vietnam','australia','myanmar','burma','entry','requirement','requirements','document','documents','express','eta'],
+ a:'We offer express visa services for China, Vietnam, Australia and Myanmar. The team confirms which documents you need. You remain responsible for meeting the entry and transit requirements of every country on your trip.'},
+{id:'insurance',k:['insurance','insure','insured','cover','coverage','medical','cancel','cancellation','manulife','emergency','protect'],
+ a:'Travel insurance for Canadians and visitors to Canada is available (emergency medical, trip cancellation and other mishaps). The team will go through the options and what is covered.'},
+{id:'hotel',k:['hotel','hotels','stay','room','accommodation','airport hotel','city hotel','night','overnight','pre','post'],
+ a:'We reserve city hotels, all-inclusive resorts and airport hotels (handy for a tight connection or a pre/post cruise night).'},
+{id:'about',k:['about','who','company','agency','history','years','experience','mission','team','staff','iata','accredited','trust','legit','reliable'],
+ a:'Rainbow Travel is a full service travel agency with 25 years in business, serving both business and leisure travellers. "Small enough to care, big enough to make it happen." The staff are experienced, well-travelled and keep up with industry training.'},
+{id:'safe',k:['money','safe','safety','secure','protected','guarantee','refund','deposit','pay','payment'],
+ a:'Rainbow Travel lists "100% money protected" among its reasons to book. For payment and deposit terms on a specific booking, the team will confirm the details.'},
+{id:'price',k:['price','prices','cost','how much','cheap','cheapest','budget','afford','affordable','fare','quote','deal','deals','offer','special','discount'],
+ a:'The Deals section shows the fares currently posted on the site. They change and are subject to availability, so the team will quote the exact price for your dates. Share your trip and we will pass it on.'},
+{id:'disney',k:['disney','disneyland','disneyworld','theme park','family'],
+ a:'The site has a Disney travel page. The team can help plan a Disney trip; give them your dates and group size.'},
+{id:'visitax',k:['visitax','tourist tax','mexico tax'],
+ a:'The site has a Mexico Visitax payment form. The team can tell you whether it applies to your trip.'},
+{id:'advisory',k:['advisory','advice','covid','rules','travel rules','safe to travel','warning','alert','government'],
+ a:'The site links the Government of Canada travel advice and entry requirement pages. Please check the rules for your destination; the team can also point you to the right ones.'},
+{id:'thanks',k:['thanks','thank','thx','ok','okay','great','perfect'],a:'You are welcome. Anything else I can help with?'},
+{id:'hello',k:['hi','hello','hey','hola','greetings','good morning','good afternoon'],a:'Hello! I am the Rainbow Travel assistant. Ask about hours, flights, cruises, packages, tours or visas, or start a trip request.'}
+];
+var STOP='the a an is are do you we i to of for on in it me my can what how your our with and or be have has this that there any please about at as by from if'.split(' ');
+function norm(s){return (' '+String(s).toLowerCase().replace(/[^a-z0-9\s\-\/]/g,' ').replace(/\s+/g,' ').trim()+' ');}
+function stem(w){return w.replace(/(ing|ed|es|s)$/,function(m){return w.length>4?'':m;});}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++){d[0][j]=j;}
+ for(i=1;i<=m;i++)for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));}return d[m][n];}
+function wordMatch(w,k){if(w===k)return 1;if(stem(w)===stem(k))return .9;
+ if(w.length>=5&&k.length>=5){var t=w.length>=8?2:1;if(lev(w,k)<=t)return .7;}return 0;}
+function answer(q){
+ var n=norm(q),words=n.trim().split(' ').filter(function(w){return w&&STOP.indexOf(w)<0;});
+ var best=null,bs=0;
+ KB.forEach(function(e){var s=0;
+  e.k.forEach(function(k){
+   if(k.indexOf(' ')>0){if(n.indexOf(' '+k+' ')>=0||n.indexOf(' '+k)>=0)s+=2;return;}
+   var bm=0;words.forEach(function(w){var m=wordMatch(w,k);if(m>bm)bm=m;});s+=bm*1.2;});
+  if(s>bs){bs=s;best=e;}});
+ if(best&&bs>=.65)return best;return null;}
+/*KB-END*/
+
+var DEALS={
+ flights:[['Vancouver to Manila','Air only, 28 days. Departs Feb 10, 2027','$1,170'],['Vancouver to Hong Kong','Air only, 14 days. Departs Mar 4, 2027','$1,198'],['Vancouver to Tokyo','Air only, 14 days. Departs Feb 17, 2027','$1,254'],['Vancouver to Bangkok','Air only, 13 days. Departs Mar 1, 2027','$1,019'],['Vancouver to Paris','Air only, 13 days. Departs Mar 2, 2027','$756'],['Vancouver to Rome','Air only, 10 days. Departs Mar 7, 2027','$1,118'],['Vancouver to Auckland','Air only, 12 days. Departs Mar 4, 2027','$1,469'],['Vancouver to Melbourne','Air only, 10 days. Departs Mar 6, 2027','$1,443'],['Vancouver to Calgary','Air only, 10 days. Departs Nov 11, 2026','$390']],
+ packages:[['Honolulu','Air + hotel, no meals, 6 nights. Nov 19, 2026','$899'],['Huatulco','Air + hotel, no meals, 7 nights. Nov 20, 2026','$1,169'],['Riviera Maya','Air + hotel, all-inclusive, 4 nights. Apr 20, 2027','$1,009'],['Puerto Vallarta','Air + hotel, no meals, 5 nights. Apr 18, 2027','$1,159'],['Mazatlan','Air + hotel, no meals, 7 nights. Feb 10, 2027','$1,205'],['Negril','Air + hotel, no meals, 7 nights. Apr 18, 2027','$1,359']],
+ cruises:[['Alaska','7 nights from Vancouver, BC. May 9, 2027','$1,033'],['Caribbean','5 nights from Tampa. Jan 4, 2027','$459'],['Bahamas','5 nights from Jacksonville. Jan 23, 2027','$457'],['Hawaii','8 nights from Honolulu. Apr 29, 2027','$1,074'],['Far East','7 nights from Taipei. Jan 13, 2027','$809'],['US Pacific Coast','1 night from Vancouver. Apr 23, 2027','$240']]
+};
+var NOTES={flights:'Taxes included, subject to availability. Prices are "from" fares as posted on the site.',packages:'Based on double occupancy, taxes included. Gratuities and resort fees excluded.',cruises:'Inside cabin, double occupancy, taxes included. Gratuities and airfare excluded.'};
+function pickTab(t){var tabs=document.querySelectorAll('.tab');tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.t===t?'true':'false');});
+ var el=document.getElementById('dealList');el.innerHTML='';
+ DEALS[t].forEach(function(d){var c=document.createElement('div');c.className='deal';
+  c.innerHTML='<div class="l"><b></b><span></span></div><div class="r"><small>from</small><strong></strong><button type="button">Ask</button></div>';
+  c.querySelector('b').textContent=d[0];c.querySelector('span').textContent=d[1];c.querySelector('strong').textContent=d[2];
+  c.querySelector('button').onclick=function(){openAssist('deal',d[0]);};el.appendChild(c);});
+ document.getElementById('dealNote').textContent=NOTES[t];}
+document.querySelectorAll('.tab').forEach(function(b){b.onclick=function(){pickTab(b.dataset.t);};});
+pickTab('flights');
+
+/* open now (Vancouver time) */
+(function(){try{
+ var p=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Vancouver',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+ var o={};p.forEach(function(x){o[x.type]=x.value;});
+ var map={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6},d=map[o.weekday],h=(+o.hour%24)+(+o.minute)/60;
+ var open=(d>=1&&d<=5&&h>=10&&h<18)||(d===6&&h>=11&&h<15);
+ var el=document.getElementById('openNow');
+ el.innerHTML='<span class="dot'+(open?'':' off')+'"></span>'+(open?'Open now (Vancouver time)':'Closed right now. Back Mon to Fri 10 to 6, Sat 11 to 3.');
+ var tr=document.querySelector('#hrs tr[data-d="'+d+'"]');if(tr)tr.className='today';
+}catch(e){document.getElementById('openNow').textContent='Mon to Fri 10 AM to 6 PM, Sat 11 AM to 3 PM';}})();
+
+/* assistant UI */
+var am=document.getElementById('am'),qr=document.getElementById('qr'),ai=document.getElementById('ai'),flow=null,data={};
+function say(t,who){var d=document.createElement('div');d.className='m '+(who||'b');d.textContent=t;am.appendChild(d);am.scrollTop=am.scrollHeight;}
+function chips(list){qr.innerHTML='';list.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c[0];b.onclick=function(){send(c[1]||c[0]);};qr.appendChild(b);});}
+var HOME=[['Opening hours','hours'],['Where are you?','where'],['Flight deals','flight deals'],['Cruises','cruise'],['Visas','visa'],['Plan my trip','book']];
+function openAssist(kind,extra){document.getElementById('ap').classList.add('open');document.getElementById('ab').style.display='none';
+ if(!am.children.length){say('Hi! I am the Rainbow Travel assistant. Ask me about hours, flights, cruises, packages, tours or visas, or send a trip request to the team.');chips(HOME);}
+ if(kind==='trip')startFlow();else if(kind==='visa'){startFlow('Visa');}else if(kind==='hotel'){startFlow('Hotel');}else if(kind==='deal'){startFlow(null,extra);}
+ setTimeout(function(){ai.focus();},50);}
+function closeAssist(){document.getElementById('ap').classList.remove('open');document.getElementById('ab').style.display='flex';}
+
+/* booking flow */
+var STEPS=['type','dest','when','who','name','contact'];
+var TYPES=['Flight','Package','Cruise','Tour','Hotel','Visa'];
+function startFlow(type,dest){flow=0;data={};
+ if(dest){data.dest=dest;}
+ if(type){data.type=type;}
+ next();}
+function next(){
+ while(flow<STEPS.length&&data[STEPS[flow]]!==undefined)flow++;
+ var s=STEPS[flow];
+ if(s==='type'){say('Great, let us put your request together for the team. What do you need?');chips(TYPES.map(function(t){return [t];}));}
+ else if(s==='dest'){say(data.type==='Visa'?'Which country do you need the visa for?':'Where would you like to go (or fly from Vancouver to)?');chips([['Not sure yet'],['Asia'],['Europe'],['Mexico or Hawaii']]);}
+ else if(s==='when'){say('Roughly when, and for how long? For example "March, two weeks".');chips([['Flexible'],['Next month'],['Spring 2027']]);}
+ else if(s==='who'){say(data.type==='Visa'?'How many applicants, and what passport(s)?':'How many travellers? Add ages if children are coming.');chips([['1'],['2'],['Family of 4']]);}
+ else if(s==='name'){say('What name should the team use?');chips([]);}
+ else if(s==='contact'){say('And the best phone or email to reach you?');chips([]);}
+ else{finish();}}
+function finish(){
+ say('Thank you, '+data.name+'. I have noted: '+(data.type||'Trip')+', '+data.dest+', '+data.when+', '+data.who+'.\n\nThis request is now sent to the team, who will reply to '+data.contact+' with options and confirm current fares. For anything urgent, call +1 (604) 872-2627 (Mon to Fri 10 to 6, Sat 11 to 3).');
+ flow=null;chips(HOME);}
+function stepAnswer(t){
+ var s=STEPS[flow];
+ if(s==='type'){var m=TYPES.filter(function(x){return norm(t).indexOf(x.toLowerCase())>=0;})[0];
+  var r=/cruis/i.test(t)?'Cruise':/tour/i.test(t)?'Tour':/visa/i.test(t)?'Visa':/hotel|resort/i.test(t)?'Hotel':/packag|vacat/i.test(t)?'Package':/flight|fly|ticket/i.test(t)?'Flight':m;
+  data.type=r||t;}
+ else data[s]=t;
+ flow++;next();}
+
+/* messages */
+function send(t){t=String(t).trim();if(!t)return;say(t,'u');ai.value='';
+ if(/^(cancel|stop|never mind|nevermind|exit)$/i.test(t)&&flow!==null){flow=null;say('No problem, I cancelled the request.');chips(HOME);return;}
+ if(flow!==null){stepAnswer(t);return;}
+ if(/\b(book|booking|reserve|reservation|enquir|inquir|quote|request|plan|appointment|trip)\w*/i.test(t)){startFlow();return;}
+ var e=answer(t);
+ if(e){say(e.a);chips(e.id==='visa'?[['Ask about a visa','book visa'],['Opening hours','hours']]:[['Plan my trip','book'],['Opening hours','hours'],['Phone and email','phone']]);}
+ else{say('I do not want to guess on that one. The team will confirm it: call +1 (604) 872-2627 or leave a request and they will get back to you.');chips([['Leave a request','book'],['Opening hours','hours'],['Phone and email','phone']]);}}
+document.getElementById('af').onsubmit=function(ev){ev.preventDefault();send(ai.value);};
+</script>
+</body>
+</html>
