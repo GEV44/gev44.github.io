@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VIKARA Miami | Dentistry, Vitality, Esthetics</title>
+<meta name="description" content="Demo page for VIKARA Miami with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Questrial&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2b2b2b;--muted:#646464;--cu:#9c4e38;--cud:#8a4632;--cul:#d28369;--pk:#fdaf95;--warm:#f7f1ec;--line:#e2cfc2;--bg:#fffdfb;
+--wa-a:#9c4e38;--wa-font:'Questrial','Century Gothic',sans-serif;--wa-r:4px;--wa-fr:4px;--wa-log:#f7f1ec}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Questrial','Century Gothic',sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:16px;overflow-x:hidden}
+h1,h2,h3,.hd{font-family:'Poppins',sans-serif;font-weight:300;letter-spacing:.02em}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,253,251,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hb{display:flex;align-items:center;justify-content:space-between;gap:12px;height:68px}
+.logo img{height:52px;width:auto}
+nav{display:none;gap:22px;font:400 12px 'Poppins',sans-serif;letter-spacing:.14em;text-transform:uppercase}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--cu)}
+.btn{display:inline-block;border:1px solid var(--cu);background:var(--cu);color:#fff;text-decoration:none;padding:12px 20px;font:400 12px 'Poppins',sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.btn.o{background:transparent;color:var(--cu)}
+.btn:hover{background:var(--cud);color:#fff}
+.hbtn{padding:10px 14px;font-size:11px}
+@media(min-width:860px){nav{display:flex}}
+/* hero */
+.hero{text-align:center;padding:64px 0 28px;background:radial-gradient(ellipse at 50% 0,#f9e4da 0,rgba(255,253,251,0) 62%)}
+.eyebrow{font:400 11px 'Poppins',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--cul)}
+.hero h1{font-size:clamp(28px,6.2vw,52px);line-height:1.2;margin:16px auto 18px;max-width:780px;color:#3a3a3a}
+.hero h1 em{font-style:normal;color:var(--cu)}
+.hero p.lead{max-width:600px;margin:0 auto 26px;color:var(--muted)}
+.cta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+/* branches */
+.branches{display:grid;gap:0;margin-top:44px;border-top:1px solid var(--line)}
+.br{padding:30px 22px;border-bottom:1px solid var(--line);text-align:left;position:relative}
+.br .n{font:300 54px 'Poppins',sans-serif;color:var(--pk);line-height:1}
+.br h2{font-size:22px;letter-spacing:.18em;text-transform:uppercase;margin:6px 0 8px;color:var(--cu)}
+.br p{color:var(--muted);font-size:15px;margin-bottom:12px}
+.br ul{list-style:none;columns:1}
+.br li{padding:5px 0 5px 18px;position:relative;font-size:15px}
+.br li:before{content:"";position:absolute;left:0;top:14px;width:8px;height:1px;background:var(--cul)}
+@media(min-width:820px){.branches{grid-template-columns:repeat(3,1fr)}.br{border-bottom:0;border-right:1px solid var(--line)}.br:last-child{border-right:0}}
+/* connected */
+.conn{background:var(--cu);color:#fff;padding:54px 0;text-align:center}
+.conn p{max-width:760px;margin:0 auto;font:300 clamp(18px,3.4vw,26px)/1.55 'Poppins',sans-serif}
+.conn small{display:block;margin-top:14px;letter-spacing:.24em;text-transform:uppercase;font:400 11px 'Poppins',sans-serif;color:#fbd9cc}
+/* offer */
+.offer{padding:56px 0}
+.card{border:1px solid var(--line);background:#fff;padding:26px 22px;display:grid;gap:18px}
+.card h2{font-size:24px}
+.price{font:300 54px 'Poppins',sans-serif;color:var(--cu);line-height:1}
+.price s{font-size:18px;color:var(--muted);margin-left:8px}
+.card ul{list-style:none}.card li{padding:6px 0;border-bottom:1px dashed var(--line)}
+@media(min-width:820px){.card{grid-template-columns:1.3fr 1fr;align-items:center;padding:34px}}
+/* team */
+.team{padding:20px 0 56px}
+.sh{text-align:center;margin-bottom:28px}.sh h2{font-size:clamp(24px,4.4vw,34px);margin-top:8px}
+.tg{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.tm{border:1px solid var(--line);padding:14px 14px 12px;background:#fff}
+.tm b{display:block;font-weight:400;font-size:15px}.tm span{color:var(--muted);font-size:13px}
+.tm.lead{grid-column:1/-1;background:var(--warm);border-color:var(--cul)}
+.tm.lead p{font-size:14px;color:var(--muted);margin-top:6px}
+@media(min-width:820px){.tg{grid-template-columns:repeat(4,1fr)}.tm.lead{grid-column:span 2}}
+/* membership */
+.mem{background:var(--warm);padding:56px 0}
+.mg{display:grid;gap:16px}
+.mc{background:#fff;border:1px solid var(--line);padding:24px 20px}
+.mc h3{font-size:19px;color:var(--cu);margin-bottom:8px}
+.mc li{list-style:none;padding:4px 0 4px 16px;position:relative;font-size:15px}
+.mc li:before{content:"+";position:absolute;left:0;color:var(--cul)}
+.note{font-size:13px;color:var(--muted);margin-top:14px}
+@media(min-width:820px){.mg{grid-template-columns:1fr 1fr}}
+/* visit */
+.visit{padding:56px 0}
+.vg{display:grid;gap:26px}
+table{width:100%;border-collapse:collapse}
+td{padding:11px 4px;border-bottom:1px solid var(--line)}td:last-child{text-align:right;color:var(--muted)}
+.vi p{margin-bottom:8px}.vi a{color:var(--cu)}
+@media(min-width:820px){.vg{grid-template-columns:1fr 1fr}}
+/* faq */
+.faq{padding:0 0 56px}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font:400 15px 'Poppins',sans-serif;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--cu);font-size:20px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{color:var(--muted);margin-top:8px}
+.fq-h{font:400 11px 'Poppins',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--cul);margin:26px 0 4px}
+footer{background:#2b2b2b;color:#cfc6c0;padding:34px 0;text-align:center;font-size:14px}
+footer img{height:46px;margin:0 auto 12px;background:#fff;padding:6px 10px}
+footer a{color:#fff}
+.demo{margin-top:12px;font-size:12px;color:#9a918b}
+</style>
+</head>
+<body>
+<header><div class="wrap hb">
+<a class="logo" href="#top"><img src="img/vikara-miami-logo.png" alt="VIKARA Dentistry Vitality Esthetics" width="114" height="52"></a>
+<nav><a href="#care">Care</a><a href="#team">Team</a><a href="#membership">Membership</a><a href="#visit">Visit</a><a href="#faq">FAQ</a></nav>
+<a class="btn hbtn" href="#" data-wa="book">Request appointment</a>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+<div class="eyebrow">Miami &middot; NE 24th Street</div>
+<h1>Your smile, your energy and your skin, <em>cared for by one connected team.</em></h1>
+<p class="lead">Dentistry, vitality and esthetics under one roof, so the people looking after your teeth also know what the rest of your plan looks like.</p>
+<div class="cta-row"><a class="btn" href="#" data-wa="book">Request appointment</a><a class="btn o" href="tel:3055721600">Call 305-572-1600</a></div>
+<div class="branches" id="care">
+<div class="br"><div class="n">01</div><h2>Dentistry</h2><p>Advanced restorative and cosmetic dental care designed to protect your health and transform your smile.</p>
+<ul><li>Straighten your teeth</li><li>Transform your smile</li><li>Prevent problems</li><li>Repair damage</li><li>Missing teeth</li><li>Restore gum health</li><li>TMJ, jaw pain and headaches</li><li>Reduce snoring</li><li>Sedation and laser</li></ul></div>
+<div class="br"><div class="n">02</div><h2>Vitality</h2><p>Personalized care for your energy, metabolism, hormone balance, and long-term vitality.</p>
+<ul><li>Lose weight, improve metabolism</li><li>Boost energy and performance</li><li>Improve sleep and recovery</li><li>Balance hormones</li><li>Reduce stress, enhance mental wellness</li><li>Age better, optimize longevity</li></ul></div>
+<div class="br"><div class="n">03</div><h2>Esthetics</h2><p>A thoughtful, personalized approach to enhancing your appearance without losing what makes you look like you.</p>
+<ul><li>Restore volume</li><li>Reduce wrinkles</li><li>Tighten and lift loose skin</li><li>Skin texture and glow</li><li>Sun damage and pigmentation</li><li>Acne and acne scars</li><li>Restore hair growth</li><li>Facial features and body contours</li><li>Refresh tired eyes</li></ul></div>
+</div>
+</div></section>
+
+<section class="conn"><div class="wrap"><p>Oral health, gut health, hormone balance, energy, skin quality and overall appearance are connected through inflammation, circulation, metabolism, nutrition and repair.</p><small>Care that sees the whole person</small></div></section>
+
+<section class="offer"><div class="wrap"><div class="card">
+<div><div class="eyebrow">New patient comprehensive oral health assessment</div><h2 style="margin:8px 0 10px">Start with a full picture of your mouth</h2>
+<ul><li>Comprehensive dental exam + full-series digital X-rays</li><li>Oral microbiome test + 3D dental scan + oral health evaluation</li></ul></div>
+<div><div class="price">$199 <s>value $725</s></div><p class="note" style="margin:8px 0 14px">To redeem, mention the special when you schedule.</p><a class="btn" href="#" data-wa="book">Request your consultation</a></div>
+</div></div></section>
+
+<section class="team" id="team"><div class="wrap">
+<div class="sh"><div class="eyebrow">Meet the team</div><h2>Your health. One connected team.</h2></div>
+<div class="tg">
+<div class="tm lead"><b>Dr. Julio E. Hernandez</b><span>Founder of VIKARA</span><p>Third-generation dentist with 30+ years of clinical experience and a Functional Dentistry Certificate from the American Academy of Anti-Aging Medicine (A4M).</p></div>
+<div class="tm"><b>Dr. Cesar Hernandez, DDS</b><span>Dentist</span></div>
+<div class="tm"><b>Dr. Yaneth Gerardi, DMD</b><span>Dentist, facial esthetics</span></div>
+<div class="tm"><b>Dr. Francisco L. Oliver, DMD</b><span>Periodontal surgery and implantology</span></div>
+<div class="tm"><b>Abeer Altarsha, RDH</b><span>Dental hygienist</span></div>
+<div class="tm"><b>Angelica Gonzalez, APRN</b><span>Nurse practitioner</span></div>
+<div class="tm"><b>Patricia Felizzola</b><span>Esthetician</span></div>
+<div class="tm"><b>Dr. John Childress</b><span>Medical director</span></div>
+</div></div></section>
+
+<section class="mem" id="membership"><div class="wrap">
+<div class="sh"><div class="eyebrow">Ongoing care</div><h2>Memberships</h2></div>
+<div class="mg">
+<div class="mc"><h3>Annual dental membership</h3><p style="margin-bottom:10px;font-size:15px">Your team recommends the Preventive pathway (3 prophylaxis visits) or the Periodontal pathway (4 periodontal maintenance visits).</p>
+<ul><li>Annual bitewing X-rays + two periapicals</li><li>Panoramic X-ray every three years</li><li>Annual iTero digital health scan</li><li>Oral cancer screening at every visit</li><li>Annual Bristle oral microbiome saliva test</li><li>Take-home whitening kit</li><li>Cosmetic dentistry consultation</li><li>15% savings on eligible dental treatment</li><li>Priority scheduling and same-day dental emergency access when available</li></ul></div>
+<div class="mc"><h3>VIKARA 360 Passport</h3><p style="margin-bottom:10px;font-size:15px">Your dental membership plus benefits across Dentistry, Vitality and Esthetics.</p>
+<ul><li>15% savings on eligible services across all three branches</li><li>After payment 3: one complimentary base skincare treatment</li><li>Month-to-month, cancel before your next billing date</li></ul>
+<p class="note">Membership is not insurance. Savings apply to eligible services and cannot be combined with another package or promotion.</p></div>
+</div></div></section>
+
+<section class="visit" id="visit"><div class="wrap"><div class="vg">
+<div><div class="eyebrow">Plan your visit</div><h2 style="font-size:28px;margin:8px 0 14px">Office hours</h2>
+<table><tr><td>Monday</td><td>9:00 AM &ndash; 6:00 PM</td></tr><tr><td>Tuesday</td><td>8:00 AM &ndash; 5:00 PM</td></tr><tr><td>Wednesday</td><td>8:00 AM &ndash; 5:00 PM</td></tr><tr><td>Thursday</td><td>8:00 AM &ndash; 5:00 PM</td></tr><tr><td>Friday</td><td>8:00 AM &ndash; 4:00 PM</td></tr></table>
+<p class="note">Miami local time.</p></div>
+<div class="vi"><h2 style="font-size:28px;margin:30px 0 14px" class="hd">Find us</h2>
+<p>350 NE 24th St, Suite 105<br>Miami, FL 33137</p>
+<p><a href="tel:3055721600">305-572-1600</a> &middot; call or text<br><a href="mailto:info@vikaramiami.com">info@vikaramiami.com</a></p>
+<p style="margin-top:14px"><b style="font-weight:400">Insurance and payment.</b> VIKARA is fee-for-service. They bill your insurance as a courtesy so any eligible reimbursement is paid to you. CareCredit and Cherry financing are available.</p>
+<p>Children are welcome. Friendly dogs can wait in reception.</p></div>
+</div></div></section>
+
+<section class="faq" id="faq"><div class="wrap" style="max-width:780px">
+<div class="sh"><div class="eyebrow">Good to know</div><h2>Questions</h2></div>
+<details><summary>What can I expect on my first visit?</summary><p>You talk through your goals, review your health and history, and map out a plan that connects dentistry, vitality and esthetics. You won't feel rushed.</p></details>
+<details><summary>Do you offer financing?</summary><p>Yes. CareCredit and Cherry financing. The team can discuss deposits and payment options that fit your budget.</p></details>
+<details><summary>Is my deposit refundable?</summary><p>Yes, if no treatment has been rendered. Ask the team about the cancellation and scheduling terms for your appointment.</p></details>
+<details><summary>Are same-day appointments available?</summary><p>Yes. Contact the team to check same-day availability.</p></details>
+<details><summary>Are you kid-friendly? Can I bring my dog?</summary><p>Children are welcome. Friendly dogs are welcome too but stay in the reception area with the staff.</p></details>
+<details><summary>Are the Vitality programs medically supervised?</summary><p>Yes. Plans are personalized using diagnostics such as bloodwork, with clear expectations set up front.</p></details>
+<details><summary>Will esthetic results look natural?</summary><p>Natural is the whole point: features are enhanced without changing what makes you look like you. Downtime varies by treatment, and many options have little to none.</p></details>
+<details><summary>Do porcelain veneers look natural, and how long do they last?</summary><p>They are custom-designed to look and function like natural teeth, and with good care can last for many years.</p></details>
+<details><summary>Is Invisalign right for me?</summary><p>It is a great fit for a lot of patients. The team checks your bite and goals to confirm whether clear aligners or another option works best.</p></details>
+<details><summary>Do you treat TMJ pain or snoring?</summary><p>Yes, TMJ treatment and snoring and airway options are part of the special services.</p></details>
+<details><summary>Will my dental care connect with my other treatment?</summary><p>Yes. As an integrated practice, your dental plan works alongside your vitality and esthetics care.</p></details>
+<details><summary>Do I need lab work before starting Vitality?</summary><p>Usually yes. Diagnostics like bloodwork are used to personalize your plan.</p></details>
+<details><summary>Can esthetic treatments be combined?</summary><p>Yes, often, for example microneedling with PRF for better results. How long results last depends on the treatment, and the team walks you through it.</p></details>
+</div></section>
+</main>
+
+<footer><div class="wrap"><img src="img/vikara-miami-logo.png" alt="VIKARA" width="100" height="46">
+<p>350 NE 24th St, Suite 105, Miami, FL 33137 &middot; <a href="tel:3055721600">305-572-1600</a></p>
+<p class="demo">Demo &middot; prepared by Gevorg Hovhannisyan</p></div></footer>
+
+<style>.wa-fab{position:fixed;right:14px;bottom:14px;z-index:90;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--wa-a);color:var(--wa-on,#fff);font:600 14px/1 var(--wa-font);padding:13px 16px;border-radius:var(--wa-fr,999px);box-shadow:0 8px 24px rgba(0,0,0,.22)}
+.wa-fab-ic{font-size:18px;line-height:1}
+.wa-hide{display:none}
+.wa-panel{position:fixed;right:12px;bottom:12px;z-index:100;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));display:none;flex-direction:column;background:var(--wa-bg,#fff);color:var(--wa-ink,#222);border-radius:var(--wa-r,16px);box-shadow:0 16px 48px rgba(0,0,0,.3);overflow:hidden;font:15px/1.45 var(--wa-font)}
+.wa-open{display:flex}
+.wa-head{background:var(--wa-a);color:var(--wa-on,#fff);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.wa-head b{display:block;font-size:15px}.wa-head small{opacity:.85;font-size:12px}
+.wa-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+.wa-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--wa-log,#f6f6f6)}
+.wa-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.wa-bot{background:#fff;color:#222;align-self:flex-start;border:1px solid rgba(0,0,0,.07)}
+.wa-bot a{color:var(--wa-link,var(--wa-a))}
+.wa-me{background:var(--wa-a);color:var(--wa-on,#fff);align-self:flex-end}
+.wa-sum{margin:6px 0;padding-left:18px}.wa-sum li{margin:2px 0}
+.wa-bot small{opacity:.65}
+.wa-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;max-height:104px;overflow:auto;border-top:1px solid rgba(0,0,0,.07);background:var(--wa-bg,#fff)}
+.wa-chip{border:1px solid var(--wa-a);color:var(--wa-a);background:transparent;border-radius:999px;padding:6px 11px;font:13px var(--wa-font);cursor:pointer}
+.wa-chip:hover{background:var(--wa-a);color:var(--wa-on,#fff)}
+.wa-form{display:flex;gap:6px;padding:8px 10px 10px;background:var(--wa-bg,#fff)}
+.wa-in{flex:1;min-width:0;border:1px solid rgba(0,0,0,.2);border-radius:999px;padding:10px 14px;font:16px var(--wa-font);color:#222;background:#fff}
+.wa-go{border:0;background:var(--wa-a);color:var(--wa-on,#fff);width:42px;border-radius:50%;font-size:16px;cursor:pointer}
+@media(max-width:420px){.wa-fab-t{display:none}.wa-fab{padding:14px}}
+</style>
+<script>var WA_CONFIG={"title": "VIKARA assistant", "sub": "Ask about care, hours or booking", "fabIcon": "✦", "fabLabel": "Ask VIKARA", "placeholder": "Ask a question", "greeting": "Hello, I am the VIKARA assistant. Ask me about dentistry, vitality, esthetics, hours, memberships or payment, or request an appointment.", "chips": ["Request appointment", "Office hours", "New patient special", "Memberships", "Financing", "Where are you?"], "fallback": "I do not have that on the website, so the team will confirm it. You can call 305-572-1600 or request an appointment and they will get back to you.", "flowIntro": "Happy to help you request a visit. A few quick questions.", "cancelMsg": "No problem, nothing was saved.", "again": "Request another", "doneMsg": "Thank you. Your request was sent to the team, who will reach out to confirm a time:", "flow": [{"label": "Interested in", "q": "Which area are you interested in?", "options": ["Dentistry", "Vitality", "Esthetics", "Not sure yet"]}, {"label": "Visit type", "q": "What would you like to book?", "options": ["New patient assessment", "Consultation", "Hygiene visit", "Dental problem or pain"]}, {"label": "Preferred day", "q": "Which day suits you best?", "options": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Any day"]}, {"label": "Time of day", "q": "Morning or afternoon?", "options": ["Morning", "Afternoon", "No preference"]}, {"label": "Name", "q": "What is your name?"}, {"label": "Phone", "q": "Best phone number for the team to reach you?", "type": "phone"}], "kb": [{"k": ["hello", "hi", "hey", "good morning", "good afternoon", "good evening"], "a": "Hello, welcome to VIKARA Miami. I can answer questions about dentistry, vitality, esthetics, hours, memberships and payment, or help you request an appointment."}, {"k": ["thanks", "thank you", "thx", "great", "perfect"], "a": "You are welcome. If you would like to be seen, tap \"Request appointment\" and the team will follow up."}, {"k": ["book", "booking", "appointment", "schedule", "reserve", "consultation", "consult", "visit", "see someone", "come in", "make an appointment", "request appointment"], "action": "book"}, {"k": ["hours", "open", "opening", "close", "closing", "what time", "time", "today", "weekend", "saturday", "sunday", "monday", "tuesday", "wednesday", "thursday", "friday"], "a": "Office hours (Miami time): Monday 9:00 AM to 6:00 PM, Tuesday to Thursday 8:00 AM to 5:00 PM, Friday 8:00 AM to 4:00 PM. Weekend hours are not listed on the site, so the team will confirm them if you need one."}, {"k": ["address", "where", "location", "located", "directions", "find you", "street", "map", "miami", "neighborhood"], "a": "VIKARA is at 350 NE 24th St, Suite 105, Miami, FL 33137. Parking details are not on the site, so the team will confirm them when you book."}, {"k": ["parking", "park", "valet"], "a": "Parking details are not published on the website. The team will confirm the best option when you schedule. The address is 350 NE 24th St, Suite 105, Miami, FL 33137."}, {"k": ["phone", "call", "number", "text", "sms", "email", "contact", "reach"], "a": "You can call or text <a href=\"tel:3055721600\">305-572-1600</a> or write to <a href=\"mailto:info@vikaramiami.com\">info@vikaramiami.com</a>. The team answers the phone during office hours and replies to texts and email the same day."}, {"k": ["dentistry", "dental", "dentist", "teeth", "tooth", "smile", "services", "treatments", "what do you offer", "what do you do"], "a": "Dentistry at VIKARA covers straightening teeth, smile transformation, prevention, repairing damage, missing teeth, gum health, TMJ and jaw pain, reducing snoring, and sedation and laser options."}, {"k": ["veneers", "veneer", "porcelain", "cosmetic", "smile makeover", "transform", "natural looking teeth"], "a": "Yes, cosmetic dentistry is part of Dentistry here. Porcelain veneers are custom-designed to look and function like natural teeth, and with good care they can last many years. The dentist will go through what suits you at a consultation."}, {"k": ["invisalign", "aligner", "aligners", "braces", "straighten", "crooked", "orthodontic", "clear aligners"], "a": "Straightening is on the list. For Invisalign, the team checks your bite and goals first to confirm whether clear aligners or another option works best for you."}, {"k": ["implant", "implants", "missing", "missing teeth", "gap", "replace tooth", "dentures"], "a": "Missing teeth are part of the dental services, and Dr. Francisco L. Oliver, DMD focuses on periodontal surgery and implantology. The team will confirm which option fits you at your visit."}, {"k": ["gum", "gums", "periodontal", "periodontitis", "bleeding gums", "gum disease"], "a": "Restoring gum health is part of Dentistry, and Dr. Francisco L. Oliver, DMD is the periodontal surgery and implantology specialist. The membership also has a Periodontal pathway with 4 maintenance visits a year."}, {"k": ["tmj", "jaw", "jaw pain", "headache", "headaches", "grinding", "clenching"], "a": "Yes, TMJ, jaw pain and headaches are listed under Dentistry. For anything medical about your symptoms, the dentists need to see you in person."}, {"k": ["snoring", "snore", "airway", "sleep apnea"], "a": "Reducing snoring and airway options are among the special services offered. Medical questions about your sleep go to the clinical team."}, {"k": ["sedation", "laser", "anxious", "nervous", "scared", "afraid", "anxiety", "fear"], "a": "Sedation and laser dentistry are listed as special services. If you feel nervous, say so when you book and the team will talk through the options."}, {"k": ["whitening", "whitning", "whiten", "bleaching", "whiter"], "a": "A take-home whitening kit is included in the annual dental membership. For other whitening options, the team will confirm what they offer."}, {"k": ["clean", "cleaning", "hygiene", "hygienist", "prophylaxis", "checkup", "check up", "exam"], "a": "Hygiene visits are part of the annual dental membership: 3 prophylaxis visits on the Preventive pathway or 4 periodontal maintenance visits on the Periodontal pathway, with oral cancer screening at each visit."}, {"k": ["new patient", "special", "assessment", "first time", "promotion", "discount", "199", "x-ray", "xray", "microbiome", "3d scan"], "a": "The new patient comprehensive oral health assessment is $199 (listed value $725). It includes a comprehensive dental exam, full-series digital X-rays, an oral microbiome test, a 3D dental scan and an oral health evaluation. Mention the special when you schedule."}, {"k": ["first visit", "expect", "what happens", "first appointment", "what to expect", "rushed"], "a": "Your first visit is a conversation: the team talks through your goals, reviews your health and history, and maps out a plan connecting dentistry, vitality and esthetics. You will not feel rushed."}, {"k": ["vitality", "wellness", "energy", "tired", "fatigue", "longevity", "aging", "anti aging", "performance", "stress"], "a": "Vitality is the wellness side: energy, metabolism, hormone balance, sleep and recovery, stress, and healthy aging. It is for anyone who wants to feel and function better, not just look better."}, {"k": ["weight", "weight loss", "lose weight", "metabolism", "obesity", "diet"], "a": "Weight management and metabolism are part of Vitality, with medically supervised programs. The specifics depend on your labs and goals, so the clinical team will go over them with you."}, {"k": ["hormone", "hormones", "hormonal", "testosterone", "menopause", "thyroid"], "a": "Hormone balance is part of Vitality. Plans are personalized and usually start with diagnostics. Questions about your own health go to the clinical team, since I cannot give medical advice."}, {"k": ["lab", "labs", "bloodwork", "blood", "blood test", "diagnostics", "tests"], "a": "Usually yes. Vitality plans use diagnostics like bloodwork to personalize your plan."}, {"k": ["supervised", "supervision", "doctor", "medical", "nurse", "practitioner", "safe"], "a": "Yes, the vitality programs are medically supervised. The team includes a nurse practitioner, Angelica Gonzalez, APRN, and a medical director, Dr. John Childress."}, {"k": ["results", "how soon", "how long", "results last", "last", "timeline"], "a": "It depends on the treatment or protocol and your goals. The team sets clear expectations up front and walks you through what to expect for each one."}, {"k": ["esthetics", "esthetic", "aesthetic", "aesthetics", "skin", "facial", "face", "anti wrinkle", "wrinkles", "wrinkle", "botox", "filler", "fillers", "volume", "glow", "acne", "scars", "pigmentation", "sun damage", "hair", "hair loss", "eyes", "tired eyes", "contour", "contours", "tighten", "lift"], "a": "Esthetics covers restoring volume, reducing wrinkles, tightening and lifting loose skin, texture and glow, sun damage and pigmentation, acne and acne scars, hair growth, facial and body contours, and refreshing tired eyes. For the exact treatments for you, the team will confirm at a consult."}, {"k": ["natural", "overdone", "look natural", "fake", "frozen"], "a": "Natural is the whole point. VIKARA enhances your features without changing what makes you look like you."}, {"k": ["downtime", "recovery", "heal", "healing", "swelling"], "a": "It varies by treatment, and many options have little to no downtime. Your provider gives clear instructions after your evaluation."}, {"k": ["combine", "combined", "together", "microneedling", "prf", "package", "packages", "bundle"], "a": "Yes, treatments are often combined, for example microneedling with PRF, for better results. Packages bring together complementary services across dentistry, vitality and esthetics. Contact the team to discuss current options."}, {"k": ["price", "prices", "cost", "how much", "fee", "fees", "pricing", "expensive", "quote", "charge"], "a": "Treatment prices are not published on the site, apart from the $199 new patient assessment. The team will go over costs for your plan. VIKARA is fee-for-service and offers financing."}, {"k": ["insurance", "insured", "coverage", "covered", "reimburse", "reimbursement", "in network", "billing"], "a": "VIKARA is a fee-for-service practice. They bill your insurance as a courtesy, so any eligible reimbursement is paid directly to you. Coverage depends on your plan, and the team can explain more."}, {"k": ["financing", "finance", "carecredit", "cherry", "payment", "payments", "pay", "installments", "payment plan", "afford", "budget"], "a": "Yes. VIKARA offers CareCredit and Cherry financing. The team can discuss deposits and payment options that fit your budget."}, {"k": ["deposit", "refund", "refundable", "cancel", "cancellation", "reschedule"], "a": "A deposit is refundable if no treatment has been rendered. Ask the team about the cancellation and scheduling terms that apply to your appointment."}, {"k": ["membership", "memberships", "member", "plan", "passport", "360", "annual", "subscription", "savings", "15%"], "a": "There is an annual dental membership (Preventive or Periodontal pathway) with X-rays, scans, screenings, a whitening kit and 15% savings on eligible treatment. The optional VIKARA 360 Passport extends 15% savings across dentistry, vitality and esthetics. It is not insurance."}, {"k": ["kids", "kid", "child", "children", "family", "son", "daughter", "baby", "teen", "toddler"], "a": "Yes, children are welcome at VIKARA. Contact the team to plan your child's visit."}, {"k": ["dog", "dogs", "pet", "pets", "puppy"], "a": "Friendly dogs are welcome, but they stay in the reception area where the staff takes great care of them."}, {"k": ["same day", "same-day", "urgent", "emergency", "pain", "toothache", "broken", "knocked", "asap", "today appointment"], "a": "Same-day appointments are available, and the dental membership includes same-day dental emergency access when available. Call <a href=\"tel:3055721600\">305-572-1600</a> to check availability. For a medical emergency, call 911."}, {"k": ["team", "staff", "doctor", "dr", "dentists", "who", "founder", "hernandez", "gerardi", "oliver", "childress", "esthetician", "hygienist"], "a": "The team includes Dr. Julio E. Hernandez (founder, 30+ years), Dr. Cesar Hernandez DDS, Dr. Yaneth Gerardi DMD (facial esthetics), Dr. Francisco L. Oliver DMD (periodontal surgery and implantology), Abeer Altarsha RDH, Angelica Gonzalez APRN, esthetician Patricia Felizzola and medical director Dr. John Childress."}, {"k": ["forms", "paperwork", "patient forms", "intake"], "a": "Patient forms are on the VIKARA site. Contact the team for current forms and preparation instructions before your visit."}, {"k": ["language", "languages", "spanish", "espanol", "speak"], "a": "Languages are not listed on the website, so the team will confirm if you need a Spanish-speaking provider or another language."}, {"k": ["diagnose", "diagnosis", "symptoms", "prescription", "medication", "should i take"], "a": "I cannot diagnose or give medical advice. The dentists and clinical team will answer that at your visit. Would you like to request an appointment?"}]};</script>
+<script>/* assistant engine + widget (client-side only) */
+function waNorm(s){return String(s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function waStem(w){
+  if(w.length>4){
+    if(/ies$/.test(w))return w.slice(0,-3)+'y';
+    if(/ing$/.test(w)&&w.length>5)return w.slice(0,-3);
+    if(/ed$/.test(w)&&w.length>5)return w.slice(0,-2);
+    if(/es$/.test(w)&&w.length>5)return w.slice(0,-2);
+    if(/s$/.test(w)&&!/ss$/.test(w))return w.slice(0,-1);
+  }
+  return w;
+}
+function waLev(a,b){
+  if(Math.abs(a.length-b.length)>2)return 9;
+  var d=[],i,j;
+  for(i=0;i<=a.length;i++){d[i]=[i];}
+  for(j=0;j<=b.length;j++)d[0][j]=j;
+  for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++){
+    var c=a[i-1]===b[j-1]?0:1;
+    d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);
+    if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1);
+  }
+  return d[a.length][b.length];
+}
+function waWordEq(u,k){
+  if(u===k)return true;
+  var m=Math.min(u.length,k.length);
+  if(m<6)return false;
+  var d=waLev(u,k);
+  return d<=1||(m>=9&&d<=2);
+}
+function waMatcher(KB){
+  var idx=KB.map(function(e){var seen={},keys=[];(e.k||[]).forEach(function(p){var ph=waNorm(p).split(' ').map(function(w){return waStem(w);}),id=ph.join(' ');if(!seen[id]){seen[id]=1;keys.push(ph);}});return {e:e,keys:keys};});
+  return function(q){
+    var ws=waNorm(q).split(' ').filter(Boolean).map(waStem);
+    var best=null,bs=0;
+    idx.forEach(function(it){
+      var s=0;
+      it.keys.forEach(function(ph){
+        var all=ph.every(function(kw){return ws.some(function(u){return waWordEq(u,kw);});});
+        if(all)s+=ph.length*2+Math.min(ph.join('').length,10)/10;
+      });
+      if(s>bs){bs=s;best=it.e;}
+    });
+    return bs>=2?best:null;
+  };
+}
+if(typeof module!=='undefined')module.exports={waMatcher:waMatcher,waNorm:waNorm};
+
+(function(){
+  if(typeof document==='undefined'||typeof WA_CONFIG==='undefined')return;
+  var C=WA_CONFIG,match=waMatcher(C.kb);
+  var el=function(t,c,h){var n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n;};
+  var fab=el('button','wa-fab','<span class="wa-fab-ic" aria-hidden="true">'+C.fabIcon+'</span><span class="wa-fab-t">'+C.fabLabel+'</span>');
+  fab.setAttribute('aria-label',C.fabLabel);
+  var panel=el('div','wa-panel');panel.setAttribute('role','dialog');panel.setAttribute('aria-label',C.title);
+  var head=el('div','wa-head','<div><b>'+C.title+'</b><small>'+C.sub+'</small></div>');
+  var close=el('button','wa-x','×');close.setAttribute('aria-label','Close');head.appendChild(close);
+  var log=el('div','wa-log');log.setAttribute('aria-live','polite');
+  var chips=el('div','wa-chips');
+  var form=el('form','wa-form');
+  var inp=el('input','wa-in');inp.type='text';inp.placeholder=C.placeholder;inp.setAttribute('aria-label',C.placeholder);inp.autocomplete='off';
+  var go=el('button','wa-go','➜');go.type='submit';go.setAttribute('aria-label','Send');
+  form.appendChild(inp);form.appendChild(go);
+  panel.appendChild(head);panel.appendChild(log);panel.appendChild(chips);panel.appendChild(form);
+  document.body.appendChild(fab);document.body.appendChild(panel);
+  var flow=null,data={},started=false;
+  function say(html,me){var m=el('div','wa-m '+(me?'wa-me':'wa-bot'));if(me)m.textContent=html;else m.innerHTML=html;log.appendChild(m);log.scrollTop=log.scrollHeight;}
+  function setChips(list,fn){chips.innerHTML='';(list||[]).forEach(function(t){var b=el('button','wa-chip');b.type='button';b.textContent=t;b.onclick=function(){fn(t);};chips.appendChild(b);});}
+  function home(){setChips(C.chips,ask);}
+  function ask(t){say(t,true);reply(t);}
+  function reply(t){
+    if(flow){step(t);return;}
+    var e=match(t);
+    if(e&&e.action==='book'){startFlow();return;}
+    if(e){say(e.a);home();return;}
+    say(C.fallback);home();
+  }
+  function startFlow(){flow={i:-1};data={};say(C.flowIntro);next();}
+  function next(){
+    flow.i++;
+    if(flow.i>=C.flow.length){finish();return;}
+    var s=C.flow[flow.i];say(s.q);
+    if(s.options){setChips(s.options,function(o){say(o,true);step(o);});}else{setChips(['Cancel'],function(){say('Cancel',true);cancel();});}
+  }
+  function cancel(){flow=null;say(C.cancelMsg);home();}
+  function step(v){
+    if(/^(cancel|stop|never ?mind)$/i.test(v.trim())){cancel();return;}
+    var s=C.flow[flow.i];
+    if(s.type==='phone'&&!/^[+\d][\d\s\-()]{6,}$/.test(v.trim())){say('That does not look like a phone number. Could you type it again?');return;}
+    if(s.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())){say('That does not look like an email address. Could you type it again?');return;}
+    data[s.label]=v.trim();next();
+  }
+  function finish(){
+    var rows=Object.keys(data).map(function(k){return '<li><b>'+k+':</b> '+data[k].replace(/</g,'&lt;')+'</li>';}).join('');
+    say(C.doneMsg+'<ul class="wa-sum">'+rows+'</ul><small>Demo: nothing is actually sent.</small>');
+    flow=null;setChips([C.again],function(){say(C.again,true);startFlow();});
+  }
+  function open(){panel.classList.add('wa-open');fab.classList.add('wa-hide');if(!started){started=true;say(C.greeting);home();}setTimeout(function(){inp.focus();},50);}
+  function shut(){panel.classList.remove('wa-open');fab.classList.remove('wa-hide');}
+  fab.onclick=open;close.onclick=shut;
+  form.onsubmit=function(ev){ev.preventDefault();var v=inp.value.trim();if(!v)return;inp.value='';say(v,true);reply(v);};
+  document.querySelectorAll('[data-wa]').forEach(function(b){b.addEventListener('click',function(ev){ev.preventDefault();open();if(b.getAttribute('data-wa')==='book'&&!flow){say('I want to book',true);startFlow();}});});
+})();
+</script>
+</body>
+</html>

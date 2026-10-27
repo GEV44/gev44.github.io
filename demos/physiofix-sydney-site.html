@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PhysioFIX Sydney | Physiotherapy in Rose Bay (demo)</title>
+<meta name="description" content="Demo page for PhysioFIX Sydney, Rose Bay.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--g:#039881;--g2:#3dba94;--gd:#02705f;--ink:#25282c;--sl:#333539;--mist:#eef7f4;--line:#d6e6e1;--lime:#81d742;--w:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Outfit,system-ui,sans-serif;color:var(--ink);background:#fbfdfc;line-height:1.55;font-size:16px;overflow-x:hidden}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;font-weight:600;line-height:1.15;color:var(--sl)}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:20;background:var(--sl);color:#fff}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 16px;max-width:1080px;margin:0 auto}
+.logo{display:block;background:var(--sl);height:40px}
+.logo img{height:40px;width:auto;display:block}
+.hd nav{display:none}
+.hd .call{background:var(--g);color:#fff;text-decoration:none;padding:9px 14px;border-radius:99px;font-weight:600;font-size:14px;white-space:nowrap}
+@media(min-width:760px){.hd nav{display:flex;gap:22px;font-size:15px}.hd nav a{text-decoration:none;opacity:.9}.hd nav a:hover{opacity:1;color:var(--lime)}}
+.hero{display:grid;gap:22px;padding:30px 0 34px}
+.hero h1{font-size:clamp(30px,8vw,52px)}
+.hero h1 em{color:var(--g);font-style:italic}
+.hero p.lead{font-size:18px;margin:14px 0 20px;max-width:520px}
+.btn{display:inline-block;background:var(--g);color:#fff;border:0;border-radius:12px;padding:13px 20px;font:600 16px Outfit,sans-serif;text-decoration:none;cursor:pointer}
+.btn.alt{background:transparent;color:var(--gd);border:2px solid var(--g);margin-left:6px}
+.where{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(3,152,129,.08)}
+.where h2{font-size:21px;margin-bottom:4px}
+.where small{color:#5b6a66}
+.zones{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
+.zones button{background:var(--mist);border:1px solid var(--line);border-radius:10px;padding:11px 8px;font:500 15px Outfit,sans-serif;color:var(--sl);cursor:pointer;text-align:left}
+.zones button:hover,.zones button.on{background:var(--g);color:#fff;border-color:var(--g)}
+.zres{margin-top:12px;padding:12px;border-left:4px solid var(--g);background:#f4fbf8;border-radius:0 10px 10px 0;font-size:15px;min-height:60px}
+@media(min-width:820px){.hero{grid-template-columns:1.1fr .9fr;align-items:center;padding:56px 0}}
+.strip{background:var(--g);color:#fff}
+.strip .wrap{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-top:16px;padding-bottom:16px;text-align:center}
+.strip b{display:block;font:600 22px "Source Serif 4",serif}
+.strip span{font-size:13px;opacity:.92}
+@media(min-width:760px){.strip .wrap{grid-template-columns:repeat(4,1fr)}}
+section{padding:42px 0}
+section h2{font-size:clamp(26px,6vw,36px);margin-bottom:8px}
+.sub{color:#56655f;max-width:620px;margin-bottom:22px}
+.svc{display:grid;gap:10px}
+.svc div{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+.svc i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--mist);color:var(--g);display:grid;place-items:center;font:700 15px Outfit,sans-serif;font-style:normal}
+.svc b{display:block}
+.svc span{font-size:14px;color:#5b6a66}
+@media(min-width:760px){.svc{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.svc{grid-template-columns:repeat(3,1fr)}}
+.team{background:var(--mist)}
+.tg{display:grid;gap:12px}
+.tc{background:#fff;border-radius:16px;padding:16px;border-top:5px solid var(--g)}
+.tc h3{font-size:19px}
+.tc em{display:block;color:var(--gd);font-style:normal;font-size:14px;font-weight:600;margin:2px 0 8px}
+.tc p{font-size:14.5px;color:#4a5753}
+@media(min-width:700px){.tg{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.tg{grid-template-columns:repeat(3,1fr)}}
+.who{display:grid;gap:12px}
+.who div{background:#fff;border:1px solid var(--line);border-left:5px solid var(--g);border-radius:12px;padding:16px}
+.who h3{font-size:18px;margin-bottom:6px}.who p{font-size:14.5px;color:#4a5753;margin-bottom:8px}
+.who a{color:var(--gd);font-weight:600;font-size:14px}
+@media(min-width:760px){.who{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.who{grid-template-columns:repeat(3,1fr)}}
+.steps{display:grid;gap:12px}
+.st{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;position:relative}
+.st b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--g);color:#fff;margin-bottom:8px}
+.st h3{font-size:18px;margin-bottom:4px}.st p{font-size:14.5px;color:#4a5753}
+@media(min-width:760px){.steps{grid-template-columns:repeat(4,1fr)}}
+.chipcloud{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chipcloud span{background:#fff;border:1px solid var(--g);color:var(--gd);border-radius:99px;padding:6px 13px;font-size:14px}
+.spec h3{font-size:20px;margin-bottom:10px}
+.fees{display:grid;gap:22px}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+th,td{padding:12px 10px;text-align:left;font-size:15px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sl);color:#fff;font-weight:600}
+tr:last-child td{border-bottom:0}
+td.r{text-align:right;font-weight:700;color:var(--gd);white-space:nowrap}
+.hrs td:first-child{font-weight:600}
+.note{font-size:14px;color:#5b6a66;margin-top:8px}
+@media(min-width:820px){.fees{grid-template-columns:1fr 1fr}}
+.visit{display:grid;gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{margin:4px 0}
+@media(min-width:820px){.visit{grid-template-columns:1fr 1fr}}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:8px}
+summary{cursor:pointer;font-weight:600;color:var(--sl)}
+details p{margin-top:8px;font-size:15px;color:#4a5753}
+footer{background:var(--sl);color:#cfd8d5;padding:28px 0 90px;font-size:14px}
+footer a{color:var(--lime)}
+#a-fab{position:fixed;right:14px;bottom:14px;z-index:40;background:var(--g);color:#fff;border:0;border-radius:99px;padding:14px 18px;font:600 15px Outfit,sans-serif;box-shadow:0 8px 22px rgba(0,0,0,.25);cursor:pointer}
+#a-panel{position:fixed;right:10px;bottom:70px;z-index:41;width:min(370px,calc(100vw - 20px));height:min(520px,calc(100vh - 90px));background:#fff;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.28);display:none;flex-direction:column;overflow:hidden}
+#a-panel.open{display:flex}
+.ah{background:var(--sl);color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+.ah b{font-size:15px}.ah small{display:block;opacity:.75;font-size:12px}
+#a-x{background:none;border:0;color:#fff;font-size:22px;cursor:pointer}
+#a-log{flex:1;overflow:auto;padding:12px;background:#f5faf8}
+.m{max-width:86%;padding:9px 12px;border-radius:14px;margin-bottom:8px;font-size:14.5px;line-height:1.45}
+.m.b{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px}
+.m.u{background:var(--g);color:#fff;margin-left:auto;border-bottom-right-radius:4px}
+.m a{color:var(--gd);font-weight:600}
+#a-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px 0;background:#fff;max-height:92px;overflow:auto}
+#a-chips button{border:1px solid var(--g);background:#fff;color:var(--gd);border-radius:99px;padding:6px 11px;font:500 13px Outfit,sans-serif;cursor:pointer}
+#a-form{display:flex;gap:6px;padding:10px;background:#fff}
+#a-in{flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;padding:10px;font:15px Outfit,sans-serif}
+#a-form button{background:var(--g);color:#fff;border:0;border-radius:10px;padding:0 14px;font-weight:600;cursor:pointer}
+</style></head><body>
+<header><div class="hd"><a class="logo" href="#top"><img src="img/physiofix-sydney-logo.png" alt="PhysioFIX Sydney"></a>
+<nav><a href="#services">Services</a><a href="#team">Team</a><a href="#fees">Fees</a><a href="#visit">Visit</a><a href="#faq">FAQ</a></nav>
+<a class="call" href="tel:0293712750">Call (02) 9371 2750</a></div></header>
+<main id="top">
+<div class="wrap hero">
+ <div><h1>Physio with <em>one physio, one hour</em>, and no shared room.</h1>
+ <p class="lead">One-on-one physiotherapy in Rose Bay for pain, sports injuries and rehab after surgery. Founded in 2018 by Sam and Sara Bartlett.</p>
+ <a class="btn" href="#" data-ask="book an appointment">Request an appointment</a><a class="btn alt" href="https://physiofixsydney.com.au/contact/#book">Book online</a></div>
+ <div class="where"><h2>Where is it bothering you?</h2><small>Tap an area to see the services that cover it. This is a guide to the clinic's services, not a diagnosis.</small>
+ <div class="zones" id="zones"></div><div class="zres" id="zres">Pick an area above.</div></div>
+</div>
+<div class="strip"><div class="wrap"><div><b>1:1</b><span>private consultations</span></div><div><b>7am to 7pm</b><span>Mon to Fri</span></div><div><b>Rose Bay</b><span>736 New South Head Rd</span></div><div><b>Free parking</b><span>nearby, 1 hour on the road</span></div></div></div>
+
+<section id="services"><div class="wrap"><h2>What the clinic treats</h2><p class="sub">From elite athletes to desk workers and busy parents, as listed on the clinic's own site.</p>
+<div class="svc">
+<div><i>1</i><p><b>Neck and back pain</b><span>Musculoskeletal injuries and spinal care.</span></p></div>
+<div><i>2</i><p><b>Sports physiotherapy</b><span>Injury prevention and performance, including running.</span></p></div>
+<div><i>3</i><p><b>Orthopaedic rehab</b><span>Pre and post operative care, hip and knee replacement rehab.</span></p></div>
+<div><i>4</i><p><b>Workplace injuries and WorkCover</b><span>Workplace compensation related injuries.</span></p></div>
+<div><i>5</i><p><b>Kids and adolescents</b><span>Adolescent and growth-related injuries.</span></p></div>
+<div><i>6</i><p><b>Pregnancy and postnatal</b><span>Pregnancy related pain.</span></p></div>
+<div><i>7</i><p><b>Headaches and migraines</b><span>Assessment and treatment.</span></p></div>
+<div><i>8</i><p><b>Trigger point dry needling</b><span>Offered as part of treatment plans.</span></p></div>
+<div><i>9</i><p><b>Exercise physiology</b><span>Structured exercise programs, also Saturday mornings.</span></p></div>
+</div></div></section>
+
+<section><div class="wrap"><h2>Who the clinic helps</h2><p class="sub">The people the site says it treats, and where to start for each.</p>
+<div class="who">
+<div><h3>Athletes and weekend runners</h3><p>Sports physiotherapy, injury prevention and optimisation of performance. Running analysis is listed among the treatments. Sam and Lauren both come from sport.</p><a href="#" data-ask="sports and running">Ask about sport</a></div>
+<div><h3>Desk workers and busy parents</h3><p>Neck and back pain, headaches and migraines, and trigger point dry needling. Early starts from 7 am and late finishes until 7 pm on weekdays.</p><a href="#" data-ask="opening hours">See the hours</a></div>
+<div><h3>After surgery</h3><p>Orthopaedic pre and post operative care, with hip and knee replacement rehab. Harry works with surgeons, sports physicians and GPs.</p><a href="#" data-ask="surgery rehab">Ask about rehab</a></div>
+<div><h3>Kids and teens</h3><p>Adolescent and growth-related injuries. Sara has a particular interest in children and adolescents, and Harry also works with all ages.</p><a href="#" data-ask="do you treat children">Ask about kids</a></div>
+<div><h3>Pregnancy and postnatal</h3><p>Pregnancy related pain, with Sara treating pre and post-natal women and Alex building return-to-exercise programs.</p><a href="#" data-ask="pregnancy">Ask about pregnancy</a></div>
+<div><h3>Workplace injuries</h3><p>Workplace compensation related injuries, including WorkCover. The team will confirm the paperwork they need.</p><a href="#" data-ask="workcover">Ask about WorkCover</a></div>
+</div></div></section>
+<section id="visit1"><div class="wrap"><h2>How a visit runs</h2><p class="sub">Based on what the clinic describes: private, hands-on and with a clear path forward.</p>
+<div class="steps">
+<div class="st"><b>1</b><h3>Book</h3><p>Online with your chosen practitioner, or call (02) 9371 2750 if you are unsure which appointment fits. Referral, scan or history? Email it ahead.</p></div>
+<div class="st"><b>2</b><h3>Assessment, 60 minutes</h3><p>The first appointment is one-on-one and includes assessment, hands-on therapy, education and exercise prescription as required.</p></div>
+<div class="st"><b>3</b><h3>A plan, not a quick fix</h3><p>The clinic says it assesses, treats and gives you a clear path forward, with exercise programs you can follow between appointments.</p></div>
+<div class="st"><b>4</b><h3>Follow-ups, 45 minutes</h3><p>Standard follow-ups run 45 minutes. Exercise physiology also runs 45 minutes, including Saturday mornings.</p></div>
+</div></div></section>
+<section style="background:var(--mist)"><div class="wrap"><h2>Treatments the team uses</h2><p class="sub">From the services pages.</p>
+<div class="chipcloud"><span>Manual therapy</span><span>Trigger point dry needling</span><span>Exercise prescription</span><span>Running analysis</span><span>Pilates-informed rehab</span><span>Pre and post surgery rehab</span><span>Injury prevention</span><span>Performance optimisation</span><span>Headache and migraine treatment</span><span>Paediatric and adolescent care</span></div>
+<div class="spec"><div><h3>Special interests by practitioner</h3><table><tr><th>Who</th><th>Focus</th></tr>
+<tr><td>Sam</td><td>Sports injuries, lower limb tendinopathy, headache, triathlon, swimming, cycling and running</td></tr>
+<tr><td>Sara</td><td>Ribcage and pelvis, children and adolescents, pre and post-natal, post-surgical rehab</td></tr>
+<tr><td>Harry</td><td>Shoulder, knee, ankle, hip, lower back and neck. Works with surgeons, sports physicians and GPs</td></tr>
+<tr><td>Lauren</td><td>Spinal, upper and lower limb, women's health, rheumatology, orthopaedic rehab</td></tr>
+<tr><td>Alex</td><td>Exercise physiology, Pilates, return to exercise after injury or pregnancy</td></tr></table></div></div></div></section>
+<section class="team" id="team"><div class="wrap"><h2>Meet your physios</h2><p class="sub">Five practitioners. Ask for someone by name when you book.</p>
+<div class="tg">
+<div class="tc"><h3>Sam Bartlett</h3><em>Founder, musculoskeletal physio</em><p>Opened the clinic in 2018. University of Sydney graduate with a keen interest in swimming, cycling and running injuries.</p></div>
+<div class="tc"><h3>Sara Bartlett</h3><em>Founder, musculoskeletal physio</em><p>Ribcage and pelvis disorders, children and adolescents, pre and post-natal women, post-surgical rehab. Pilates background.</p></div>
+<div class="tc"><h3>Harry Forsythe</h3><em>Musculoskeletal physio and rehab specialist</em><p>Shoulder, knee, ankle, hip, lower back and neck. Works with all ages, from acute sport injuries to post-operative rehab.</p></div>
+<div class="tc"><h3>Lauren Richardson</h3><em>Musculoskeletal physio and rehab specialist</em><p>Spinal, upper and lower limb injuries, women's health, rheumatology and orthopaedic rehab. Previously worked in the UK NHS.</p></div>
+<div class="tc"><h3>Alex Cohen</h3><em>Exercise physiologist</em><p>Exercise programs for rehab and performance, from general fitness to returning after injury or pregnancy.</p></div>
+</div></div></section>
+
+<section id="fees"><div class="wrap fees">
+<div><h2>Fees</h2><table><tr><th>Appointment</th><th>Time</th><th style="text-align:right">Fee</th></tr>
+<tr><td>Initial physiotherapy</td><td>60 min</td><td class="r">$175</td></tr>
+<tr><td>Standard follow-up</td><td>45 min</td><td class="r">$150</td></tr>
+<tr><td>Exercise physiology</td><td>45 min</td><td class="r">$120</td></tr></table>
+<p class="note">Payment is taken at the consultation. EFTPOS accepted. Health fund rebates: the team will confirm.</p></div>
+<div><h2>Opening hours</h2><table class="hrs"><tr><td>Mon to Fri</td><td>7:00 am to 7:00 pm</td></tr><tr><td>Saturday</td><td>7:00 am to 1:00 pm<br><small>Exercise physiology only</small></td></tr><tr><td>Sunday</td><td>Closed</td></tr></table>
+<p class="note">Not sure which appointment to book? Call and the admin team will guide you.</p></div>
+</div></section>
+
+<section id="visit" style="background:var(--mist)"><div class="wrap visit">
+<div class="card"><h3>Find the clinic</h3><p><b>PhysioFIX Sydney</b><br>736 New South Head Road, Rose Bay NSW 2029</p><p>Minutes from Bondi, Double Bay and Edgecliff.</p><p><b>Parking:</b> 1-hour free on New South Head Road, 2-hour council parking via Wilberforce Ave or Newcastle St.</p></div>
+<div class="card"><h3>Get in touch</h3><p><a href="tel:0293712750">(02) 9371 2750</a></p><p><a href="mailto:info@physiofixsydney.com.au">info@physiofixsydney.com.au</a></p><p>Have a referral, scan or history? Email it and the team adds it to your file.</p><p style="margin-top:10px"><a class="btn" href="https://physiofixsydney.com.au/contact/#book">Book online</a></p></div>
+</div></section>
+
+<section id="faq"><div class="wrap"><h2>Quick answers</h2>
+<details><summary>Do I need a referral?</summary><p>The clinic's site does not say a referral is required. If you have one, scan or history, email it to info@physiofixsydney.com.au. For anything else the team will confirm.</p></details>
+<details><summary>Is the session really one-on-one?</summary><p>Yes. All consultations are private, with no shared rooms or handovers.</p></details>
+<details><summary>Can I choose who I see?</summary><p>Yes. The online booking lets you pick your practitioner and a time, and manage or reschedule bookings.</p></details>
+<details><summary>Do you treat children and pregnancy pain?</summary><p>Yes, both are listed services. Sara and Harry both work with children and adolescents.</p></details>
+<details><summary>What if I am not sure which appointment to book?</summary><p>Call (02) 9371 2750. The admin team will guide you through the process and answer questions.</p></details>
+<details><summary>Do you work with other health professionals?</summary><p>Harry's profile says he collaborates closely with surgeons, sports physicians and local GPs, and Alex works closely with the physiotherapists to bridge hands-on treatment and independent training.</p></details>
+<details><summary>Is there anything on Saturdays?</summary><p>Yes, 7:00 am to 1:00 pm, exercise physiology only.</p></details>
+<details><summary>How do I send a referral or scan?</summary><p>Email info@physiofixsydney.com.au and the team makes sure it is added to your file.</p></details>
+</div></section>
+</main>
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan<br>Content taken from physiofixsydney.com.au (home, team, services, fees and contact pages). This is a demo, not an official PhysioFIX site, and nothing entered here is sent anywhere. Facts the site does not state are left for the team to confirm.</div></footer>
+
+<button id="a-fab" type="button">Ask PhysioFIX</button>
+<div id="a-panel"><div class="ah"><div><b>PhysioFIX assistant</b><small>Demo. Answers from the clinic's site</small></div><button id="a-x" type="button" aria-label="Close">&times;</button></div>
+<div id="a-log"></div><div id="a-chips"></div><form id="a-form"><input id="a-in" autocomplete="off" placeholder="Type your question"><button>Send</button></form></div>
+<script>
+/* assistant engine: client-side only, sends nothing */
+(function(g){
+function norm(s){return String(s).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.replace(/(ing|ings|ed|es|s|ly)$/,function(m,x,o){return w.length-m.length>=3?'':m;});}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;var d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function tokens(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function tokScore(qt,kw){var k=stem(norm(kw));if(!k)return 0;
+ if(k.indexOf(' ')>-1){var parts=k.split(' ');var ok=parts.every(function(p){return qt.some(function(t){return t===p||(p.length>3&&lev(t,p)<=1);});});return ok?parts.length*2.2:0;}
+ for(var i=0;i<qt.length;i++){var t=qt[i];if(t===k)return 2;if(k.length>4&&t.length>4&&(k.indexOf(t)===0||t.indexOf(k)===0)&&Math.abs(k.length-t.length)<=3)return 1.6;var tol=k.length>=8?2:(k.length>=5?1:0);if(tol&&lev(t,k)<=tol)return 1.5;}
+ return 0;}
+function match(q,kb){var qt=tokens(q),best=null,bs=0;kb.forEach(function(e){var s=0;e.k.forEach(function(kw){s+=tokScore(qt,kw);});s*=(e.w||1);if(s>bs){bs=s;best=e;}});return bs>=1.5?best:null;}
+g.AsstEngine={norm:norm,match:match,lev:lev};
+if(typeof document==='undefined')return;
+g.AsstInit=function(C){
+ var $=function(i){return document.getElementById(i)};
+ var fab=$('a-fab'),pan=$('a-panel'),log=$('a-log'),inp=$('a-in'),chips=$('a-chips'),form=$('a-form');
+ var flow=null,data={};
+ function add(t,who){var d=document.createElement('div');d.className='m '+who;if(who==='b')d.innerHTML=t;else d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+ function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){say(c)};chips.appendChild(b);});}
+ function startFlow(){flow={i:0};data={};ask();}
+ function ask(){var s=C.flow[flow.i];add(s.q,'b');setChips(s.opts?s.opts.concat([C.cancel]):[C.cancel]);inp.placeholder=s.opts?C.pickHint:C.typeHint;}
+ function say(t){t=String(t).trim();if(!t)return;add(t,'u');inp.value='';
+  if(flow){if(norm(t)===norm(C.cancel)){flow=null;add(C.cancelled,'b');setChips(C.chips);return;}
+   var s=C.flow[flow.i];var v=t;if(s.opts){var f=null;s.opts.forEach(function(o){if(norm(o)===norm(t)||(norm(t).length>2&&norm(o).indexOf(norm(t))>-1))f=o;});if(!f){add(C.pickAgain,'b');return;}v=f;}
+   if(s.check&&!s.check(v)){add(s.err,'b');return;}
+   data[s.key]=v;flow.i++;if(flow.i<C.flow.length){ask();}else{var sum=C.flow.map(function(x){return '<b>'+x.label+':</b> '+esc(data[x.key]);}).join('<br>');flow=null;add(C.done(sum),'b');setChips(C.chips);inp.placeholder=C.typeHint;}return;}
+  if(C.bookRe.test(norm(t))&&!(C.noBook&&C.noBook.test(norm(t)))){startFlow();return;}
+  var m=match(t,C.kb);if(m){add(m.a,'b');if(m.book){}}else add(C.fallback,'b');setChips(C.chips);}
+ function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+ fab.onclick=function(){pan.classList.toggle('open');if(pan.classList.contains('open')&&!log.children.length){add(C.hello,'b');setChips(C.chips);}};
+ $('a-x').onclick=function(){pan.classList.remove('open')};
+ form.onsubmit=function(e){e.preventDefault();say(inp.value);};
+ window.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-ask]');if(t){e.preventDefault();pan.classList.add('open');if(!log.children.length){add(C.hello,'b');}say(t.getAttribute('data-ask'));}});
+};
+})(typeof window!=='undefined'?window:globalThis);
+
+(function(){
+var Z={"Neck":"Neck and back pain, headaches and migraines, trigger point dry needling.","Lower back":"Neck and back pain, sports physiotherapy and exercise prescription.","Shoulder":"Musculoskeletal injuries, sports physiotherapy and post-operative rehab. Harry lists shoulder as a special interest.","Hip":"Hip replacement rehab, orthopaedic pre and post operative care, musculoskeletal injuries.","Knee":"Knee replacement rehab, sports injuries and running performance. Lauren and Harry both treat knee conditions.","Ankle and foot":"Musculoskeletal and sports injuries. Harry lists ankle as a special interest.","Head":"Headaches and migraines are a listed service. Cervicogenic headache is a focus for Sam.","Pregnancy":"Pregnancy related pain. Sara treats pre and post-natal women."};
+if(typeof document!=='undefined'){var zb=document.getElementById('zones');Object.keys(Z).forEach(function(k){var b=document.createElement('button');b.textContent=k;b.onclick=function(){[].forEach.call(zb.children,function(x){x.classList.remove('on')});b.classList.add('on');document.getElementById('zres').innerHTML='<b>'+k+'</b><br>'+Z[k]+' <a href="#" data-ask="book an appointment">Request an appointment</a>';};zb.appendChild(b);});}
+var T='<a href="tel:0293712750">(02) 9371 2750</a>';
+var kb=[
+{k:['hours','open','opening','close','closing','late','early','weekend','time','when'],a:'Mon to Fri 7:00 am to 7:00 pm. Saturday 7:00 am to 1:00 pm, exercise physiology only. Sunday closed.'},
+{k:['sunday','saturday'],a:'Saturday 7:00 am to 1:00 pm is exercise physiology only. Sunday is closed.'},
+{k:['where','address','location','find','directions','rose bay','bondi','double bay','edgecliff'],a:'736 New South Head Road, Rose Bay NSW 2029. Minutes from Bondi, Double Bay and Edgecliff.'},
+{k:['park','parking','car'],a:'1-hour free parking on New South Head Road and 2-hour council parking via Wilberforce Ave or Newcastle St.'},
+{k:['phone','call','number','contact','email','reach','ring'],a:'Phone '+T+' or email info@physiofixsydney.com.au.'},
+{k:['price','cost','fee','fees','how much','charge','pay','payment','eftpos','card'],a:'Initial physio (60 min) $175, standard follow-up (45 min) $150, exercise physiology (45 min) $120. Payment is taken at the consultation, EFTPOS accepted.'},
+{k:['health fund','rebate','medicare','insurance','hicaps','private health'],a:'The clinic site does not list health fund rebates. The team will confirm, call '+T+'.'},
+{k:['referral','refer','scan','mri','xray','history','report'],a:'A referral is not mentioned as required on the site. If you have a referral, scan or medical history, email it to info@physiofixsydney.com.au and the team adds it to your file.'},
+{k:['team','physio','physios','physiotherapist','who','practitioner','staff','sam','sara','harry','lauren','alex'],a:'Sam and Sara Bartlett (founders), Harry Forsythe, Lauren Richardson (physiotherapists) and Alex Cohen (exercise physiologist). You can choose your practitioner in the online booking.'},
+{k:['kid','kids','child','children','adolescent','teen','son','daughter','paediatric','pediatric'],a:'Adolescent and children injuries are a listed service. Sara and Harry both work with children and adolescents.'},
+{k:['pregnant','pregnancy','postnatal','antenatal','prenatal','pelvic'],a:'Pregnancy related pain is a listed service. Sara treats pre and post-natal women.'},
+{k:['sport','sports','running','runner','athlete','marathon','triathlon','gym'],a:'Sports physiotherapy and running performance are core areas. Sam and Lauren have sports backgrounds, and Alex builds exercise programs for performance.'},
+{k:['surgery','operation','replacement','post-op','postop','rehab','rehabilitation','orthopaedic','orthopedic','knee replacement','hip replacement'],a:'Pre and post operative care and hip and knee replacement rehab are listed services. Harry, Lauren and Sara work with post-surgical clients.'},
+{k:['workcover','workers','compensation','work injury','workplace'],a:'Workplace compensation related injuries are a listed service. For claim paperwork the team will confirm what they need, call '+T+'.'},
+{k:['needle','needling','dry needling','acupuncture'],a:'Trigger point dry needling is one of the listed treatments.'},
+{k:['migraine','headache','headaches'],a:'Migraines and headaches are a listed service. Sam has done Watson Headache Institute courses on cervicogenic headache.'},
+{k:['exercise physiology','exercise physio','program','pilates'],a:'Exercise physiology appointments are 45 minutes. Alex Cohen runs structured programs, and Saturday 7 am to 1 pm is exercise physiology only.'},
+{w:.5,k:['neck','back','spine','sciatica','shoulder','knee','hip','ankle','pain','injury'],a:'The clinic treats neck and back pain and musculoskeletal injuries including shoulder, knee, hip and ankle. I cannot diagnose. <a href="#" data-ask="book an appointment">Request an appointment</a> and a physio will assess you.'},
+{k:['first','new','initial','expect','long','duration','minutes'],a:'The first appointment is 60 minutes, one-on-one, with assessment, hands-on treatment, education and exercise prescription as needed. Follow-ups are 45 minutes.'},
+{k:['cancel','cancellation','reschedule','change'],a:'Online booking lets you manage or reschedule. The cancellation policy is not on the site, so the team will confirm: '+T+'.'},
+{k:['online','portal','website'],a:'You can book online and choose your practitioner and time: <a href="https://physiofixsydney.com.au/contact/#book">physiofixsydney.com.au/contact</a>.'},
+{k:['harry'],a:'Harry Forsythe is a musculoskeletal physio and rehab specialist (Master of Physiotherapy, University of Sydney, 2022). Special interests: shoulder, knee, ankle, hip, lower back and neck. He works with all ages and collaborates with surgeons, sports physicians and GPs.'},
+{k:['lauren'],a:'Lauren Richardson graduated in the UK in 2020 and worked in the NHS for nearly five years. She treats spinal, upper and lower limb injuries, women\'s health, rheumatology and orthopaedic rehab.'},
+{k:['alex'],a:'Alex Cohen is the exercise physiologist (UNSW, 2015) with a Pilates certification. She works with rehab and performance clients and with children, adolescents and people returning after injury or pregnancy.'},
+{k:['sam bartlett','sam'],a:'Sam Bartlett founded the clinic in 2018. University of Sydney graduate (2011). Interests include sports injuries, lower limb tendinopathy, cervicogenic headache and swimming, cycling and running injuries.'},
+{k:['sara bartlett','sara'],a:'Sara Bartlett is a founder and musculoskeletal physio (University of Canberra, 2013). Interests: ribcage and pelvis, children and adolescents, pre and post-natal women, post-surgical rehab. She uses her Pilates background for rehab.'},
+{k:['one on one','private','shared','1:1','privacy'],a:'All consultations are private and one-on-one. No shared rooms or handovers.'},
+{k:['founded','since','history','about','story','2018'],a:'PhysioFIX Sydney was founded in 2018 by Sam Bartlett in Rose Bay, now with Sara Bartlett as co-founder.'},
+{k:['running analysis','run','runner'],a:'Running performance is one of the team specialties, alongside sports rehab, spinal care and post-operative hip and knee replacements.'},
+{k:['elderly','older','arthritis','osteoarthritis','seniors'],a:'Osteoarthritis and hip and knee replacement rehab are listed services, and Harry works with people of all ages and abilities.'},
+{k:['desk','office','posture','sitting'],a:'The clinic treats desk workers as well as athletes and parents. Neck and back pain is a listed service. A physio will assess you at the first appointment.'},
+{k:['tendon','tendinopathy','achilles','tennis elbow'],a:'Sam has completed courses on lower limb tendinopathy and Lauren has covered posterior tibial tendon dysfunction. A physio will assess you and explain the plan. I cannot diagnose, <a href="#" data-ask="book an appointment">request an appointment</a>.'},
+{k:['womens health','women','menopause','postpartum'],a:'Lauren lists women\'s health among her areas, and Sara treats pre and post-natal women. The team will confirm which practitioner fits your situation: '+T+'.'},
+{k:['pilates','core','strength','strengthening'],a:'Sara uses her Pilates background for rehab, and Alex Cohen holds a Pilates matwork and reformer certification. Exercise prescription is a listed treatment.'},
+{k:['gp','doctor','surgeon','specialist','sports physician'],a:'Harry\'s profile says he collaborates closely with surgeons, sports physicians and local GPs to support recovery. For medical questions please speak to your doctor or a physio.'},
+{k:['emergency','urgent','severe','chest','bleeding','fracture','broken'],a:'I cannot assess medical urgency. If this is an emergency call 000. For anything else call the clinic on '+T+' and the team will advise.'},
+{k:['language','speak','languages','interpreter'],a:'The site does not list the languages spoken. The team will confirm: '+T+'.'},
+{k:['wheelchair','accessible','access','stairs','lift'],a:'The site does not describe access details. The team will confirm: '+T+'.'},
+{k:['instagram','facebook','social'],a:'The clinic is on Instagram and Facebook, linked at the top of physiofixsydney.com.au.'},
+{k:['bring','wear','clothes','prepare','preparation'],a:'The site does not list what to bring. If you have a referral, scan or medical history, email it ahead. The team will confirm anything else.'},
+{k:['hi','hello','hey','thanks','thank'],a:'Hello. Ask about hours, fees, services or the team, or request an appointment.'}
+];
+var C={noBook:/(how much|price|cost|fee|hours|open|cancel)/,kb:kb,bookRe:/\b(book|booking|appointment|schedule|reserve)\b/,
+hello:'Hi, I am the PhysioFIX demo assistant. I answer from your site and can take an appointment request. I do not give medical advice.',
+chips:['Request an appointment','Opening hours','Fees','Parking','Who is on the team?','Do you treat kids?'],
+fallback:'I do not have that. The team will confirm, call '+T+' or email info@physiofixsydney.com.au. For medical questions please speak to a physio.',
+cancel:'Cancel',cancelled:'No problem, request cancelled.',pickHint:'Tap an option',typeHint:'Type your question',pickAgain:'Please tap one of the options.',
+flow:[
+{key:'who',label:'Who for',q:'Who is the appointment for?',opts:['Me','My child','Someone else']},
+{key:'type',label:'Appointment',q:'Which appointment?',opts:['Initial physio','Follow-up physio','Exercise physiology','Not sure']},
+{key:'area',label:'Area',q:'What area is it about? (a few words, no medical details needed)'},
+{key:'prac',label:'Practitioner',q:'Preferred practitioner?',opts:['No preference','Sam','Sara','Harry','Lauren','Alex']},
+{key:'when',label:'Preferred time',q:'Which days or times suit you?'},
+{key:'name',label:'Name',q:'Your name?'},
+{key:'phone',label:'Phone',q:'Best phone number?',check:function(v){return v.replace(/\D/g,'').length>=8},err:'Please enter a phone number with at least 8 digits.'}],
+done:function(s){return 'Thank you. Your request is with the team (demo: nothing was really sent).<br>'+s+'<br>The team will confirm a time. For urgent matters call '+T+'.';}};
+if(typeof document!=='undefined')AsstInit(C);else globalThis.__C=C;
+})();
+
+</script></body></html>

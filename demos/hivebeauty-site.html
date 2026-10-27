@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Hive Beauty | Skin specialists, South Melbourne</title>
+<meta name="description" content="Demo page for The Hive Beauty with a booking-request assistant. Prepared by Gevorg Hovhannisyan.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--esp:#2c211a;--esp2:#3b2d23;--cream:#faf3e8;--sand:#f0e4d1;--honey:#df8f40;--honeyd:#8f5412;--sage:#76866a;--w1:#df8f40;--w2:#241a13;--wb:#faf3e8;--wt:#2c211a;--wbub:#f0e4d1;--wr:14px;--wf:'Nunito Sans',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--esp);font:17px/1.6 'Nunito Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.08;margin:0}
+a{color:var(--honeyd)}img{max-width:100%}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+header.top{background:var(--esp);position:sticky;top:0;z-index:40}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 18px;max-width:1040px;margin:0 auto}
+.bar img{height:46px;width:auto;display:block}
+.bar nav{display:none;gap:22px}
+.bar nav a{color:#f0e4d1;text-decoration:none;font-size:14px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.btn{display:inline-block;border:0;border-radius:999px;background:var(--honey);color:#241a13;font:700 15px/1 'Nunito Sans',sans-serif;padding:14px 22px;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:#f6e9d6;box-shadow:inset 0 0 0 1.5px #f6e9d6}
+.hero{background:var(--esp) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34zM28 100L0 84V66m56 0v18L28 100' fill='none' stroke='%23df8f40' stroke-opacity='.16' stroke-width='1.5'/%3E%3C/svg%3E");color:#f6e9d6;padding:56px 0 64px}
+.hero .eyebrow{color:var(--honey);letter-spacing:.18em;text-transform:uppercase;font-size:12.5px;font-weight:700;margin:0 0 14px}
+.hero h1{font-size:clamp(40px,10vw,76px);max-width:11em}
+.hero h1 em{color:var(--honey);font-style:italic}
+.hero p.lead{max-width:34em;margin:18px 0 26px;color:#e7d6bd;font-size:18px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+section{padding:54px 0}
+section h2{font-size:clamp(32px,7vw,48px);margin-bottom:10px}
+.kick{color:var(--honeyd);letter-spacing:.16em;text-transform:uppercase;font-size:12.5px;font-weight:700;margin:0 0 8px}
+.sub{max-width:38em;margin:0 0 26px;color:#5a483a}
+.start{display:grid;gap:14px}
+.hex{background:var(--sand);padding:24px 22px;border-radius:6px 28px 6px 28px;border:1px solid #e3d2b8}
+.hex b{display:block;font:600 24px 'Cormorant Garamond',serif;margin-bottom:4px}
+.hex span{display:block;font-size:14px;color:#6a5646;margin:6px 0 12px}
+.hex a{font-weight:700;font-size:14px;cursor:pointer}
+.menu{background:var(--esp);color:#f6e9d6}
+.menu .kick{color:var(--honey)}.menu .sub{color:#d8c7ae}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;margin:0 -18px 12px;padding-left:18px;padding-right:18px;scrollbar-width:thin}
+.tabs button{flex:none;background:transparent;border:1.5px solid #6b563f;color:#f0e4d1;border-radius:999px;padding:10px 16px;font:700 14px 'Nunito Sans',sans-serif;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--honey);border-color:var(--honey);color:#241a13}
+.pane{display:none}.pane.on{display:block}
+.row{display:grid;grid-template-columns:1fr auto;gap:2px 14px;padding:15px 0;border-bottom:1px solid #4a3a2c}
+.row b{font:600 22px 'Cormorant Garamond',serif;color:#fff}
+.row .pr{font:600 22px 'Cormorant Garamond',serif;color:var(--honey);text-align:right}
+.row p{grid-column:1/-1;margin:2px 0 0;font-size:14.5px;color:#d8c7ae}
+.note{margin-top:16px;font-size:13.5px;color:#cdbb9f}
+.team{display:grid;gap:14px}
+.person{background:#fff;border:1px solid #eadcc6;border-radius:18px;padding:22px}
+.person .ini{width:52px;height:52px;border-radius:50%;background:var(--sage);color:#fff;display:grid;place-items:center;font:600 26px 'Cormorant Garamond',serif;margin-bottom:10px}
+.person b{font:600 25px 'Cormorant Garamond',serif;display:block}.person em{color:var(--honeyd);font-style:normal;font-weight:700;font-size:13.5px}
+.person p{margin:8px 0 0;font-size:15px;color:#5a483a}
+.steps{counter-reset:s;display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:s;position:relative;padding:4px 0 4px 54px}
+.steps li:before{content:counter(s);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:var(--honey);color:#241a13;display:grid;place-items:center;font:700 17px 'Nunito Sans'}
+.steps b{display:block}
+.tint{background:var(--sand)}
+details{border-bottom:1px solid #d9c7aa;padding:14px 0}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:'+';color:var(--honeyd);font-size:22px;line-height:1}details[open] summary::after{content:'\2212'}
+details p{margin:10px 0 0;color:#5a483a;font-size:16px}
+.contact{background:var(--esp);color:#f6e9d6;text-align:center}
+.contact h2{color:#fff}.contact a{color:var(--honey)}
+.contact .big{font:600 28px 'Cormorant Garamond',serif;margin:6px 0}
+.contact .btn{color:#241a13}
+footer{background:#1d1510;color:#bfae93;text-align:center;font-size:13.5px;padding:20px 18px}
+@media(min-width:760px){.bar nav{display:flex}.start{grid-template-columns:repeat(3,1fr)}.team{grid-template-columns:repeat(3,1fr)}.hero{padding:96px 0 104px}.steps{grid-template-columns:repeat(2,1fr)}}
+#aiBtn{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--w1);color:var(--w2);font:600 15px/1 var(--wf);padding:14px 18px;border-radius:var(--wr);box-shadow:0 6px 22px rgba(0,0,0,.28)}
+#aiBtn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#aiPanel{position:fixed;right:12px;bottom:12px;z-index:61;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:var(--wb);color:var(--wt);border-radius:calc(var(--wr) + 6px);box-shadow:0 14px 44px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden;font:15px/1.45 var(--wf)}
+#aiPanel[hidden]{display:none}
+.aih{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 14px;background:var(--w1);color:var(--w2)}
+.aih b{display:block;font-size:15px}.aih small{opacity:.85;font-size:12px}
+.aih button{background:transparent;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+#aiLog{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;overflow-wrap:anywhere}
+.m.b{background:var(--wbub);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--w1);color:var(--w2);align-self:flex-end;border-bottom-right-radius:4px}
+.m a{color:inherit;text-decoration:underline}
+.sum{margin-top:6px;padding:8px 10px;background:rgba(0,0,0,.06);border-radius:8px;font-size:13.5px}
+#aiChips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+#aiChips button{border:1px solid var(--w1);background:transparent;color:var(--wt);border-radius:999px;padding:6px 11px;font:500 13px var(--wf);cursor:pointer}
+#aiChips button:hover{background:var(--w1);color:var(--w2)}
+#aiForm{display:flex;gap:6px;padding:8px 12px;border-top:1px solid rgba(0,0,0,.1)}
+#aiForm input{flex:1;min-width:0;border:1px solid rgba(0,0,0,.25);border-radius:999px;padding:10px 14px;font:16px var(--wf);background:#fff;color:#111}
+#aiForm button{border:0;border-radius:999px;background:var(--w1);color:var(--w2);padding:0 16px;font:600 14px var(--wf);cursor:pointer}
+.aif{font-size:11.5px;opacity:.7;padding:0 12px 10px}
+@media(max-width:480px){#aiPanel{right:8px;bottom:8px;width:calc(100vw - 16px);height:calc(100vh - 16px)}}
+
+</style></head><body>
+<header class="top"><div class="bar"><a href="#top" aria-label="The Hive Beauty"><img src="img/hivebeauty-logo.svg" alt="The Hive Beauty" width="58" height="46"></a><nav><a href="#start">Start here</a><a href="#menu">Treatments</a><a href="#team">Team</a><a href="#booking">Booking</a><a href="#faq">Questions</a></nav><a class="btn" href="#" data-ai="Book an appointment">Request a booking</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap"><p class="eyebrow">Unisex skin clinic &middot; South Melbourne</p><h1>Skin specialists in a <em>quiet laneway</em>.</h1><p class="lead">Clinical and holistic treatments, customised each visit to your skin type, your concerns and how you are feeling that day. Appointment only.</p><div class="cta"><a class="btn" href="#" data-ai="Book an appointment">Request a booking</a><a class="btn ghost" href="#menu">See the treatments</a></div></div></div>
+
+<section id="start"><div class="wrap"><p class="kick">Where to start</p><h2>Three ways in</h2><p class="sub">Not sure which treatment is right? Most guests begin with one of these.</p>
+<div class="start">
+<div class="hex"><b>A first visit</b>The Initial Consultation Facial, 1 hr 15 min<span>A full skin analysis, a facial and a self-care prescription made for you. Suitable for all skin types and pregnancy-safe.</span><a href="#" data-ai="Tell me about the initial consultation facial">Ask about it</a></div>
+<div class="hex"><b>Short on time</b>Express facials, 30 min<span>Hydration, an AHA peel or Healite II LED light therapy, done in half an hour.</span><a href="#" data-ai="Tell me about express facials">Ask about it</a></div>
+<div class="hex"><b>Slow down</b>Relaxation Facial or Simple Time<span>Face and body care that calms the nervous system, with aromatherapy and breathwork.</span><a href="#" data-ai="Tell me about the relaxation facial">Ask about it</a></div>
+</div></div></section>
+
+<section class="menu" id="menu"><div class="wrap"><p class="kick">Treatment menu</p><h2 style="color:#fff">What we offer</h2><p class="sub">Prices and times as listed on the Hive website. The menu keeps evolving, so the team confirms current details when you book.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="pane on" data-t="Signature facials">
+<div class="row"><b>The Initial Consultation Facial</b><span class="pr">$240</span><p>1 hr 15 min. Skin analysis, double cleanse, exfoliation, extractions where needed, lymphatic massage, personalised mask and a self-care prescription.</p></div>
+<div class="row"><b>The Customised Facial</b><span class="pr">$215</span><p>1 hr. Tailored cleanse, masks, serums and actives with a soothing massage and skin education.</p></div>
+<div class="row"><b>Express LED Healite II Facial</b><span class="pr">$240</span><p>1 hr. Hands-on facial plus medical-grade Healite II LED therapy with a scalp and shoulder massage.</p></div></div>
+<div class="pane" data-t="Express">
+<div class="row"><b>Express AHA Lactobotanical Peel</b><span class="pr">$155.50</span><p>30 min. Brightening, skin-renewing. Pause retinol and AHA/BHA for 2 days before.</p></div>
+<div class="row"><b>Express Hydration Facial</b><span class="pr">$144.50</span><p>30 min. Double cleanse, enzymatic exfoliation, massage and a hyaluronate mask. Pregnancy-safe.</p></div>
+<div class="row"><b>Express LED Healite II Facial</b><span class="pr">$145</span><p>30 min. TGA-approved LED therapy with a shoulder massage and a probiotic mask.</p></div></div>
+<div class="pane" data-t="Peels">
+<div class="row"><b>Cosmedix Deep Sea Peel</b><span class="pr">$245</span><p>30 min. Non-acidic, medium-depth peel. Skin prep needed beforehand and about 7 days of downtime.</p></div>
+<div class="row"><b>Aspect Power Peel</b><span class="pr">$320</span><p>45 min. Intensive three-step peel, usually a course of three spaced six weeks apart. Not suitable in pregnancy or breastfeeding.</p></div>
+<p class="note">Unsure which peel fits? The team suggests booking a Customised Facial first.</p></div>
+<div class="pane" data-t="Body &amp; calm">
+<div class="row"><b>The Relaxation Facial</b><span class="pr">$275</span><p>1 hr 30 min. Face and body: foot and hand massage, double mask, scalp and shoulder massage, aromatherapy and breathwork.</p></div>
+<div class="row"><b>Simple Time</b><span class="pr">$175</span><p>45 min. Nervous-system calming touch therapy for scalp, neck, shoulders, feet and hands.</p></div>
+<div class="row"><b>The Back Facial</b><span class="pr">$165</span><p>45 min. Body brushing, exfoliation, extractions where needed and a full back mask.</p></div></div>
+<div class="pane" data-t="Needling">
+<div class="row"><b>Skin Needling for Face</b><span class="pr">$345</span><p>45 min. Needs a prior recommendation from your skin therapist.</p></div>
+<div class="row"><b>Body Microneedling</b><span class="pr">$380</span><p>60 min. Also by therapist recommendation only. Not suitable in several situations, so staff review it with you first.</p></div></div>
+<div class="pane" data-t="Lashes &amp; brows">
+<div class="row"><b>Brow Shape</b><span class="pr">$50</span><p>20 min.</p></div>
+<div class="row"><b>Brow Shape and Tint</b><span class="pr">$50</span><p>20 min.</p></div>
+<div class="row"><b>Brow Lamination, Shape and Tint</b><span class="pr">$150</span><p>45 min. Lasts about 6 to 8 weeks.</p></div>
+<div class="row"><b>Lash Lift and Tint</b><span class="pr">$129</span><p>50 min. Lift lasts up to 8 weeks, tint 3 to 4 weeks.</p></div>
+<div class="row"><b>The Works</b><span class="pr">$76</span><p>30 min. Lash tint, brow tint and brow shape.</p></div>
+<div class="row"><b>The Ultimate Brow and Lash Package</b><span class="pr">$210</span><p>1 hr 15 min. Brow lamination, tint, shape plus lash lift and tint.</p></div>
+<p class="note">More options on the website: overhaul and reshape, brow lightening, lash and brow tints. Waxing is also available.</p></div>
+</div></section>
+
+<section id="team"><div class="wrap"><p class="kick">The team</p><h2>Small on purpose</h2><p class="sub">The Hive was founded in 2016 to be personal and boutique, with time for genuine care.</p>
+<div class="team">
+<div class="person"><div class="ini">L</div><b>Lucy Redpath</b><em>Founder</em><p>In the industry for over 18 years. Lucy takes a holistic view of skin, from gut and sleep to stress and home care.</p></div>
+<div class="person"><div class="ini">M</div><b>Melanie</b><em>Lead Beauty Therapist</em><p>Known by guests for calm, welcoming treatments, including brows and lashes.</p></div>
+<div class="person"><div class="ini">E</div><b>Emily</b><em>Advanced Beauty Therapist</em><p>Over 7 years in skin and beauty, with a focus on cutting through the noise to find what works for your skin.</p></div>
+</div></div></section>
+
+<section class="tint" id="guests"><div class="wrap"><p class="kick">From guests</p><h2>In their words</h2><p class="sub">Quotes from public Google reviews shown on the Hive website.</p>
+<div class="team">
+<div class="person"><p style="margin:0;font:italic 500 21px/1.35 'Cormorant Garamond',serif">&ldquo;Not just fluffy feel good stuff, but real skin analysis and education. Lucy is a skin encyclopaedia.&rdquo;</p><p><em>Kate Muldoon</em></p></div>
+<div class="person"><p style="margin:0;font:italic 500 21px/1.35 'Cormorant Garamond',serif">&ldquo;Hive Beauty is tucked away down a little side street, which immediately gives a break from the world relaxed feeling.&rdquo;</p><p><em>Mitchell Creighton</em></p></div>
+<div class="person"><p style="margin:0;font:italic 500 21px/1.35 'Cormorant Garamond',serif">&ldquo;Mel provided a lovely calm environment for my eyebrow tinting. The end result was perfect.&rdquo;</p><p><em>Lauren Sloan</em></p></div>
+</div></div></section>
+
+<section id="care"><div class="wrap"><p class="kick">Before and after</p><h2>Prep and aftercare</h2><p class="sub">A few points straight from the treatment pages. Your therapist gives you the full guidance for your own skin.</p>
+<details><summary>Express AHA peel</summary><p>Pause retinol and AHA/BHA products for at least 2 days before, avoid heavy exercise for 24 hours after, and leave at least 2 weeks between the peel and any botox or filler.</p></details>
+<details><summary>Cosmedix Deep Sea Peel</summary><p>Skin prep is essential, typically a month or more on a retinol serum and a tyrosinase inhibitor as prescribed by your therapist. Avoid sun, vigorous exercise, saunas and hot showers for 72 hours, and allow for 7 days of downtime.</p></details>
+<details><summary>Skin needling</summary><p>Avoid makeup, heat, sweat and sun for 24 to 48 hours, use gentle hydrating skincare and SPF, and skip actives such as retinol, AHA/BHA and vitamin C for 3 to 5 days.</p></details>
+<details><summary>Lash and brow treatments</summary><p>If you have contact lenses, please make sure you can take them out before lash tinting. Brow shaping is recommended every 3 to 5 weeks, and a lash lift lasts up to 8 weeks.</p></details>
+</div></section>
+
+<section class="tint" id="booking"><div class="wrap"><p class="kick">Booking</p><h2>How it works</h2><p class="sub">The Hive is appointment only, so time is blocked out just for you.</p>
+<ol class="steps"><li><b>Pick a treatment</b>Browse the menu or ask what suits your skin.</li><li><b>Secure the time</b>A deposit holds your slot. Treatments over an hour need a full deposit, shorter ones 50%, and it can be used on the day.</li><li><b>Get reminders</b>An automatic message arrives a few days before. Reply YES to confirm.</li><li><b>Need to change?</b>Please give 24 hours' notice by SMS to 0431 328 112. Late changes and no-shows can be charged.</li></ol></div></section>
+
+<section id="faq"><div class="wrap"><p class="kick">Questions</p><h2>Good to know</h2>
+<details><summary>Do you treat men too?</summary><p>Yes. The Hive is a unisex clinic.</p></details>
+<details><summary>Are facials safe in pregnancy?</summary><p>The Initial Consultation Facial, Customised Facial and Express Hydration Facial are listed as pregnancy-safe. Strong peels and needling are not suitable, so tell the team when you book.</p></details>
+<details><summary>Where exactly is The Hive, and when is it open?</summary><p>The Hive is tucked away in a charming laneway in South Melbourne. It is appointment only, and the pages I read don't list a street address or opening hours, so the team confirms both when you book: 0431 328 112.</p></details>
+<details><summary>What if I need to cancel?</summary><p>Please give 24 hours' notice by SMS. This lets people on the waiting list be notified and your spot filled. You are also welcome to send a friend or family member in your place.</p></details>
+<details><summary>Can I buy a gift?</summary><p>Yes. Gift vouchers (physical and e-vouchers) and treatment packages are in the online shop.</p></details>
+<details><summary>What should I do after a peel or needling?</summary><p>The website has a Post-Treatment Care guide for peels, microneedling, waxing and facials. Your therapist will also talk you through it.</p></details>
+</div></section>
+
+<section class="contact"><div class="wrap"><h2>Book with us today</h2><p>Thank yourself later.</p><p class="big"><a href="tel:0431328112">0431 328 112</a></p><p><a href="mailto:lucy@thehivebeauty.com.au">lucy@thehivebeauty.com.au</a> &middot; @thehivebeauty</p><p style="margin-top:20px"><a class="btn" href="#" data-ai="Book an appointment">Request a booking</a></p></div></section>
+</main>
+<footer>Demo &middot; prepared by Gevorg Hovhannisyan</footer>
+
+<button id="aiBtn" type="button" aria-expanded="false" aria-controls="aiPanel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H9l-5 4z"/></svg><span>Ask the Hive</span></button>
+<div id="aiPanel" hidden role="dialog" aria-label="Assistant"><div class="aih"><div><b>The Hive Beauty</b><small>Questions or a booking request</small></div><button id="aiX" type="button" aria-label="Close">&times;</button></div><div id="aiLog" aria-live="polite"></div><div id="aiChips"></div><form id="aiForm"><input id="aiIn" autocomplete="off" placeholder="Type your question" aria-label="Your question"><button type="submit">Send</button></form><div class="aif">Demo assistant. It answers only from the Hive website, never gives skin or medical advice, and sends nothing.</div></div>
+<script>
+(function(){var t=document.getElementById('tabs'),p=document.querySelectorAll('.pane');p.forEach(function(e,i){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.innerHTML=e.getAttribute('data-t');b.setAttribute('aria-selected',i?'false':'true');b.onclick=function(){p.forEach(function(x,j){x.classList.toggle('on',j===i)});[].forEach.call(t.children,function(c,j){c.setAttribute('aria-selected',j===i?'true':'false')})};t.appendChild(b)})})();
+</script>
+<script>
+var AI={
+hello:"Hi! I answer from The Hive Beauty website: treatments, booking policy, the team. I can also put together a booking request for Lucy and the team.",
+chips:["Book an appointment","What's on the menu?","First visit","Cancellation policy","Is it pregnancy-safe?"],
+fallback:"I couldn't find that on the Hive website, so I'd rather not guess. The team can confirm it: 0431 328 112 or lucy@thehivebeauty.com.au. Want me to put together a booking request instead?",
+cancelled:"No problem, nothing was sent.",
+kb:[
+{id:'book',flow:1,k:['book','booking','appointment','reserve','schedule','enquiry','enquire','request a booking','make a booking','rebook']},
+{k:['diagnose','diagnosis','rash','rosacea','eczema','medication','roaccutane','medical','doctor','allergy','allergic','infection','mole','lump','skin condition'],a:"I can't give skin or medical advice. Your therapist reviews your skin, medications and health at your appointment, and anything medical is best discussed with them or your doctor first. Call 0431 328 112 and the team will help."},
+{k:['pregnant','pregnancy','pregnancy-safe','breastfeeding','expecting'],a:"The Initial Consultation Facial, Customised Facial and Express Hydration Facial are listed as pregnancy-safe. Strong peels such as the Aspect Power Peel, and needling, are not suitable during pregnancy or breastfeeding. Please tell the team when you book."},
+{k:['men','man','male','guys','unisex','gentlemen','husband','boyfriend','boys'],a:"Yes, The Hive is a unisex clinic, and men are very welcome for facials, brows, waxing and the rest of the menu."},
+{k:['menu','treatment','treatments','offer','services','what do you do','what do you have'],a:"The menu covers Signature Facials, Express facials, Advanced Peels, Body treatments, Skin Needling, and Lashes and Brows, plus waxing. Tap a tab in the Treatment menu above for times and prices, or tell me what you're after.",chips:["First visit","Express facial","Peels","Brows and lashes"]},
+{k:['price','prices','cost','how much','fee','pricing','expensive'],a:"Examples from the website: Initial Consultation Facial $240 (1 hr 15), Customised Facial $215 (1 hr), Express Hydration Facial $144.50 (30 min), Brow Shape $50, Lash Lift and Tint $129. The full list is in the Treatment menu above, and the team confirms current prices when you book."},
+{k:['first visit','first time','new client','new here','initial','consultation','start','beginner','where do i start','not sure which'],a:"For a first visit most guests choose the Initial Consultation Facial (1 hr 15 min, $240): a thorough skin analysis, facial and a personalised self-care prescription. It suits all skin types and is pregnancy-safe.",chips:["Book an appointment","Cancellation policy"]},
+{k:['customised facial','custom facial','customized','personalised facial','tailored facial','regular facial','facial','facials'],a:"The Customised Facial (1 hr, $215) is adjusted each visit to your skin type and concerns, with a consultation, tailored cleanse, masks, serums and a relaxing massage. Add-ons like LED therapy, custom peels or buccal massage can be added when you book."},
+{k:['led','healite','light therapy','acne light','red light'],a:"Healite II is a TGA-approved, medical-grade LED therapy used to support collagen, calm inflammation and tired skin. It is offered as a 1 hr facial ($240) or an express 30 min facial ($145). It's not suitable for people with photosensitivity, so staff will check with you first."},
+{k:['express','quick','short on time','lunch break','30 minute','half hour','fast'],a:"Express facials take 30 minutes: Hydration Facial ($144.50), AHA Lactobotanical Peel ($155.50) and LED Healite II Facial ($145).",chips:["Book an appointment"]},
+{k:['peel','peels','peeling','aha','deep sea','power peel','aspect','cosmedix','chemical peel'],a:"Advanced peels: Cosmedix Deep Sea Peel (30 min, $245, about 7 days downtime) and Aspect Power Peel (45 min, $320, usually a course of three, six weeks apart). Both need skin prep beforehand. If you're unsure, the team suggests booking a Customised Facial first."},
+{k:['needle','needling','microneedling','micro needling','collagen induction','stretch marks','scar','scars','scarring'],a:"Skin Needling for Face (45 min, $345) and Body Microneedling (60 min, $380) both need a prior recommendation from your skin therapist, so they can't be booked directly. Staff review suitability and prep with you."},
+{k:['relax','relaxation','massage','calm','stress','simple time','body treatment','back facial','back','unwind'],a:"For calm: The Relaxation Facial (1 hr 30, $275) with face and body care, aromatherapy and breathwork; Simple Time (45 min, $175), a nervous-system calming touch treatment; and The Back Facial (45 min, $165)."},
+{k:['brow','brows','eyebrow','eyebrows','lamination','tint','tinting','shape'],a:"Brows: Brow Shape $50 (20 min), Shape and Tint $50, Overhaul and Reshape $63, Lamination with Shape and Tint $150 (45 min, lasts about 6 to 8 weeks), Brow Lightening $60. Mel is mentioned by many guests for brows."},
+{k:['lash','lashes','eyelash','lash lift','mascara'],a:"Lash Lift and Tint is $129 (50 min); the lift lasts up to 8 weeks and the tint 3 to 4 weeks. There are also lash tint ($38), The Works ($76) and The Ultimate Brow and Lash Package ($210)."},
+{k:['wax','waxing','hair removal'],a:"Yes, waxing is available, and The Hive is unisex. Waxing details and aftercare are on the website, and the team can confirm what's offered for your area."},
+{k:['cancel','cancellation','reschedule','change','late','no show','noshow','notice','refund'],a:"The Hive asks for 24 hours' notice to cancel or change, by SMS to 0431 328 112. Late cancellations and no-shows can be charged, and extreme circumstances are considered by management. The team confirms the exact amount for your booking."},
+{k:['deposit','deposits','pay','payment','secure','prepay'],a:"Because it is appointment only, a treatment deposit is required: 100% for appointments over an hour and 50% for shorter ones. It can be used on the day or left on your account for future bookings."},
+{k:['hours','open','opening','closing','when are you','days','weekend','saturday','sunday'],a:"Opening hours aren't listed on the pages I read, and The Hive is appointment only. The team will confirm available days and times: 0431 328 112."},
+{k:['where','location','address','suburb','south melbourne','find you','directions','park','parking','laneway'],a:"The Hive is a cosy oasis tucked away in a laneway in South Melbourne. The exact address and any parking tips aren't on the pages I read, so the team will confirm them with your booking."},
+{k:['contact','phone','call','email','instagram','sms','text','number','reach'],a:"Phone or SMS: 0431 328 112. Email: lucy@thehivebeauty.com.au. Instagram: @thehivebeauty."},
+{k:['team','therapist','lucy','mel','melanie','emily','who','founder','staff'],a:"Lucy Redpath founded The Hive in 2016 and has 18+ years in the industry. Melanie is the Lead Beauty Therapist and Emily is an Advanced Beauty Therapist with 7+ years of experience."},
+{k:['voucher','gift','gift card','present','package','packages','bundle'],a:"Gift vouchers (physical and e-vouchers) and treatment packages are available in the online shop, for example bundles of three facials or peels."},
+{k:['aftercare','after care','post','post treatment','care after','recovery','downtime','sun'],a:"There is a Post-Treatment Care guide on the website covering peels, microneedling, waxing and facials, and your therapist will talk you through it. For anything about your own skin or a reaction, please contact the team directly."},
+{k:['review','reviews','testimonial','rating','recommend','reputation'],a:"Guests describe the Hive as calm, welcoming and knowledgeable, with real skin analysis and education rather than a standard facial. A few public Google review quotes are in the 'From guests' section of this page."},
+{k:['shop','skin shop','product','products','skincare','retail','buy'],a:"There is a Skin Shop on the website, plus treatment packages and gift vouchers. The team can recommend home-care products at your appointment."},
+{k:['newsletter','journal','blog','discount','offers','events'],a:"The Hive shares salon discounts, packages, product updates, client stories, educational videos and upcoming events through its newsletter. You can sign up at the bottom of the Hive website."},
+{k:['addon','add on','add-on','upgrade','upgrades','extra'],a:"Optional add-ons such as LED therapy, a customised peel, extended massage or buccal massage can be chosen when you book certain facials. The team can confirm what suits your treatment."},
+{k:['rebook','online','timely','portal','account','my booking','existing booking'],a:"The Hive website has a Timely booking plugin where you can log in to your account to rebook past appointments or manage bookings. You can also SMS 0431 328 112."},
+],
+flow:[
+{l:'Name',q:"Happy to put together a booking request. What's your name?",chips:['Cancel'],re:/\S{2,}/},
+{l:'Treatment',q:"Which treatment are you interested in?",chips:['Initial Consultation Facial','Customised Facial','Express facial','Peel','Brows and lashes','Not sure yet']},
+{l:'Preferred day and time',q:"When would suit you best? (The team will confirm what's available.)",chips:['Weekday morning','Weekday afternoon','Saturday','Cancel'],re:/\S{3,}/},
+{l:'Mobile',q:"What's the best mobile number for the confirmation message?",chips:['Cancel'],re:/\d[\d\s+()-]{6,}/,err:"Please enter a mobile number, for example 0400 000 000."},
+{l:'Note for the therapist',q:"Anything the therapist should know, such as pregnancy, medications or allergies? Type 'none' if not. They will review it with you, and I can't give advice on it.",chips:['None','Cancel']}
+],
+done:"Thank you! Here's your request:{S}In the real version this goes to Lucy and the team, who confirm the time and the deposit. In this demo nothing is sent."
+};
+(function(){
+var C=window.AI||{};
+var STOP='the a an is are do does you your i my me can to of for and or in on at it we what there have get with be this that about please hi hello would like want need'.split(' ').reduce(function(o,w){o[w]=1;return o},{});
+function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim()}
+function stem(w){var n=w.length;if(n>5&&/ing$/.test(w))return w.slice(0,-3);if(n>4&&/ies$/.test(w))return w.slice(0,-3)+'y';if(n>4&&/es$/.test(w))return w.slice(0,-2);if(n>3&&/s$/.test(w)&&!/ss$/.test(w))return w.slice(0,-1);if(n>4&&/ed$/.test(w))return w.slice(0,-2);return w}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[],c;for(i=0;i<=m;i++){d[i]=[i]}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++){c=a[i-1]===b[j-1]?0:1;d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c)}return d[m][n]}
+function same(q,k){if(q===k)return true;var sq=stem(q),sk=stem(k);if(sq===sk)return true;var l=Math.min(q.length,k.length);if(l>=4&&Math.abs(q.length-k.length)<=2&&(q.indexOf(k)===0||k.indexOf(q)===0))return true;if(q.length>=5&&k.length>=5&&Math.abs(q.length-k.length)<=2){var t=q.length>=9?2:1;if(lev(q,k)<=t)return true}return false}
+function match(text){var toks=norm(text).split(' ').filter(function(t){return t&&!STOP[t]});if(!toks.length)return null;var best=null,bs=0;(C.kb||[]).forEach(function(e){var cov={},n=0,bonus=0;e.k.forEach(function(p){var pw=norm(p).split(' '),idx=[],ok=true;for(var i=0;i<pw.length;i++){var f=-1;for(var j=0;j<toks.length;j++){if(same(toks[j],pw[i])){f=j;break}}if(f<0){ok=false;break}idx.push(f)}if(ok){idx.forEach(function(j){if(!cov[j]){cov[j]=1;n++}});if(pw.length>1)bonus+=1}});var sc=n?n*3+bonus+(e.boost||0):0;if(sc>bs){bs=sc;best=e}});return bs>=3?best:null}
+window.AI.match=match;window.AI.norm=norm;
+if(typeof document==='undefined')return;
+var btn=document.getElementById('aiBtn'),pan=document.getElementById('aiPanel'),log=document.getElementById('aiLog'),chips=document.getElementById('aiChips'),form=document.getElementById('aiForm'),inp=document.getElementById('aiIn'),x=document.getElementById('aiX');
+var st=null,opened=false;
+function add(cls,html,isText){var d=document.createElement('div');d.className='m '+cls;if(isText)d.textContent=html;else d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function setChips(list){chips.innerHTML='';(list||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b)})}
+function open(){pan.hidden=false;btn.setAttribute('aria-expanded','true');if(!opened){opened=true;add('b',C.hello);setChips(C.chips)}setTimeout(function(){inp.focus()},50)}
+function close(){pan.hidden=true;btn.setAttribute('aria-expanded','false')}
+btn.onclick=function(){pan.hidden?open():close()};x.onclick=close;
+window.AIopen=function(){open();setTimeout(function(){send(C.chips&&C.chips[0]||'Book')},0)};
+document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-ai]');if(t){e.preventDefault();open();send(t.getAttribute('data-ai'))}});
+function ask(){var s=C.flow[st.i];add('b',s.q);setChips(s.chips||['Cancel'])}
+function startFlow(){st={i:0,d:[]};ask()}
+function finish(){var lines=st.d.map(function(v,i){return C.flow[i].l+': '+v}).join('<br>');st=null;add('b',C.done.replace('{S}','<div class="sum">'+lines+'</div>'));setChips(C.chips)}
+function send(text){text=String(text||'').trim();if(!text)return;add('u',text,true);inp.value='';
+if(st){if(/^(cancel|stop|exit|quit|never ?mind|no thanks)$/i.test(text)){st=null;add('b',C.cancelled||'No problem, nothing was sent.');setChips(C.chips);return}
+var s=C.flow[st.i];if(s.re&&!s.re.test(text)){add('b',s.err||'Could you check that one?');return}st.d.push(text);st.i++;if(st.i>=C.flow.length)finish();else ask();return}
+var e=match(text);if(e&&e.flow){startFlow();return}
+add('b',e?e.a:C.fallback);setChips(e&&e.chips?e.chips:C.chips)}
+form.onsubmit=function(ev){ev.preventDefault();send(inp.value)};
+})();
+
+</script></body></html>

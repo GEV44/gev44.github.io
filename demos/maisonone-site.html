@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en-IE"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maison One | Beauty salon and skin clinic, Clontarf Dublin</title>
+<meta name="description" content="Demo page for Maison One with an appointment-request assistant. Prepared by Gevorg Hovhannisyan.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--br:#42312a;--br2:#5a4338;--cr:#f8f1e9;--bl:#ead3c4;--bl2:#f3e4da;--go:#8a5d3b;--gl:#d2a584;--w1:#42312a;--w2:#f8f1e9;--wb:#f8f1e9;--wt:#42312a;--wbub:#ead3c4;--wr:999px;--wf:'Jost',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cr);color:var(--br);font:17px/1.65 'Jost',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant',Georgia,serif;font-weight:600;margin:0;line-height:1.05}
+a{color:var(--go)}
+.wrap{max-width:1020px;margin:0 auto;padding:0 18px}
+header.top{background:var(--br);position:sticky;top:0;z-index:40}
+.bar{max-width:1020px;margin:0 auto;padding:8px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.bar img{height:48px;width:auto;display:block;border-radius:6px}
+.bar nav{display:none;gap:22px}.bar nav a{color:#ecdccd;text-decoration:none;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.btn{display:inline-block;border:0;background:var(--gl);color:#2c1f19;padding:13px 22px;border-radius:999px;font:600 14.5px/1 'Jost',sans-serif;letter-spacing:.04em;cursor:pointer;text-decoration:none}
+.btn.line{background:transparent;color:var(--br);box-shadow:inset 0 0 0 1.5px var(--br)}
+.hero{padding:44px 0 40px;background:linear-gradient(180deg,var(--bl2),var(--cr))}
+.hero .grid{display:grid;gap:26px;align-items:center}
+.hero h1{font-size:clamp(42px,10vw,78px);letter-spacing:-.01em}
+.hero h1 em{color:var(--go);font-weight:500}
+.hero p{max-width:30em;font-size:18px;margin:16px 0 22px}
+.hero .chip{background:var(--br);border-radius:22px;padding:18px;display:flex;justify-content:center;box-shadow:0 18px 40px -18px rgba(66,49,42,.55)}
+.hero .chip img{width:min(240px,60vw);height:auto;display:block;border-radius:10px}
+.ctas{display:flex;gap:10px;flex-wrap:wrap}
+section{padding:50px 0}
+.eyebrow{letter-spacing:.2em;text-transform:uppercase;font-size:12.5px;color:var(--go);font-weight:600;margin:0 0 8px}
+h2{font-size:clamp(34px,7.5vw,54px)}
+.lede{max-width:38em;margin:10px 0 24px;color:#5f4a3f}
+.tiles{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+.tile{display:block;text-align:left;background:#fff;border:1px solid #e4d2c3;border-radius:20px 20px 20px 4px;padding:16px;color:var(--br);text-decoration:none;font:inherit;cursor:pointer}
+.tile b{display:block;font:600 23px/1.1 'Cormorant',serif;margin-bottom:4px}
+.tile span{font-size:14px;color:#6c564a;line-height:1.4;display:block}
+.tile i{font:500 italic 15px 'Cormorant',serif;color:var(--go);display:block;margin-bottom:6px}
+.rooms{display:grid;gap:14px}
+.room{background:#fff;border-radius:22px;padding:22px;border:1px solid #e6d6c8}
+.room h3{font-size:30px;margin-bottom:6px}
+.room p{margin:6px 0 10px;color:#5f4a3f}
+.room ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.room li{background:var(--bl2);border-radius:999px;padding:6px 13px;font-size:14.5px;font-weight:500}
+.clin{background:var(--br);color:#f1e4d8}
+.clin h2{color:#fff}.clin .eyebrow{color:var(--gl)}.clin .lede{color:#dcc9ba}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:11px 8px 11px 0;border-bottom:1px solid #6a5144;vertical-align:top}
+th{font:600 12px 'Jost',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gl)}
+td b{display:block;font:600 19px/1.15 'Cormorant',serif;color:#fff}
+td small{color:#c9b3a2;font-size:12.5px}
+.fine{font-size:13.5px;color:#cdb8a8;margin:16px 0 0}
+.moments{display:grid;gap:12px}
+.mo{background:var(--bl);border-radius:6px 24px 6px 24px;padding:20px}
+.mo b{display:block;font:600 24px 'Cormorant',serif;margin-bottom:4px}
+.mo span{font-size:15.5px;color:#58433a}
+.calm{background:var(--bl2)}
+.calm .pill{display:inline-block;background:#fff;border:1px solid #dcc6b6;border-radius:999px;padding:7px 14px;margin:0 6px 8px 0;font-weight:500;font-size:15px}
+details{border-bottom:1px solid #dcc6b6;padding:14px 0}
+summary{cursor:pointer;font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:'+';color:var(--go);font-size:22px;line-height:1}details[open] summary::after{content:'\2212'}
+details p{margin:9px 0 0;color:#5f4a3f;font-size:16px}
+.fh{font:600 25px 'Cormorant',serif;margin:26px 0 4px;color:var(--go)}
+.visit{background:var(--bl);text-align:center}
+.visit .big{font:600 30px 'Cormorant',serif;margin:4px 0}
+.visit p{margin:4px 0}
+footer{background:var(--br);color:#d7c3b3;text-align:center;font-size:13.5px;padding:20px 18px}
+@media(min-width:760px){.bar nav{display:flex}.hero .grid{grid-template-columns:1.3fr .7fr}.tiles{grid-template-columns:repeat(3,1fr)}.rooms{grid-template-columns:1fr 1fr}.moments{grid-template-columns:repeat(2,1fr)}.hero{padding:76px 0 64px}}
+#aiBtn{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--w1);color:var(--w2);font:600 15px/1 var(--wf);padding:14px 18px;border-radius:var(--wr);box-shadow:0 6px 22px rgba(0,0,0,.28)}
+#aiBtn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#aiPanel{position:fixed;right:12px;bottom:12px;z-index:61;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:var(--wb);color:var(--wt);border-radius:calc(var(--wr) + 6px);box-shadow:0 14px 44px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden;font:15px/1.45 var(--wf)}
+#aiPanel[hidden]{display:none}
+.aih{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 14px;background:var(--w1);color:var(--w2)}
+.aih b{display:block;font-size:15px}.aih small{opacity:.85;font-size:12px}
+.aih button{background:transparent;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+#aiLog{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;overflow-wrap:anywhere}
+.m.b{background:var(--wbub);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--w1);color:var(--w2);align-self:flex-end;border-bottom-right-radius:4px}
+.m a{color:inherit;text-decoration:underline}
+.sum{margin-top:6px;padding:8px 10px;background:rgba(0,0,0,.06);border-radius:8px;font-size:13.5px}
+#aiChips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+#aiChips button{border:1px solid var(--w1);background:transparent;color:var(--wt);border-radius:999px;padding:6px 11px;font:500 13px var(--wf);cursor:pointer}
+#aiChips button:hover{background:var(--w1);color:var(--w2)}
+#aiForm{display:flex;gap:6px;padding:8px 12px;border-top:1px solid rgba(0,0,0,.1)}
+#aiForm input{flex:1;min-width:0;border:1px solid rgba(0,0,0,.25);border-radius:999px;padding:10px 14px;font:16px var(--wf);background:#fff;color:#111}
+#aiForm button{border:0;border-radius:999px;background:var(--w1);color:var(--w2);padding:0 16px;font:600 14px var(--wf);cursor:pointer}
+.aif{font-size:11.5px;opacity:.7;padding:0 12px 10px}
+@media(max-width:480px){#aiPanel{right:8px;bottom:8px;width:calc(100vw - 16px);height:calc(100vh - 16px)}}
+
+</style></head><body>
+<header class="top"><div class="bar"><a href="#top" aria-label="Maison One"><img src="img/maisonone-logo.png" alt="Maison One" width="64" height="48"></a><nav><a href="#rooms">Treatments</a><a href="#clinic">Skin clinic</a><a href="#moments">Celebrations</a><a href="#faq">Questions</a><a href="#visit">Visit</a></nav><a class="btn" href="#" data-ai="Book an appointment">Book</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap"><div class="grid"><div><p class="eyebrow">Clontarf, Dublin 3</p><h1>One-stop beauty, <em>in the heart of Clontarf.</em></h1><p>Maison One is the go-to space for women who deserve time, attention and care. Nails, brows, waxing, facials and an advanced skin and body clinic, with no rushing and no double-bookings.</p><div class="ctas"><a class="btn" href="#" data-ai="Book an appointment">Request an appointment</a><a class="btn line" href="#rooms">Browse treatments</a></div></div><div class="chip"><img src="img/maisonone-logo.png" alt="Maison One logo" width="240" height="180"></div></div></div></div>
+
+<section><div class="wrap"><p class="eyebrow">Find your treatment</p><h2>What are you here for?</h2><p class="lede">Tap a card and the assistant tells you what Maison One offers, from the website's own service pages.</p>
+<div class="tiles">
+<a class="tile" href="#" data-ai="Tell me about skin clinic treatments"><i>01</i><b>Skin &amp; body clinic</b><span>HIFU, Plasma Pen, microneedling, laser</span></a>
+<a class="tile" href="#" data-ai="Tell me about nails"><i>02</i><b>Nails</b><span>BIAB, Shellac, extensions, nail art</span></a>
+<a class="tile" href="#" data-ai="Tell me about pedicures"><i>03</i><b>Pedicures</b><span>Mini, luxury spa, callus removal, Shellac</span></a>
+<a class="tile" href="#" data-ai="Tell me about brows and lashes"><i>04</i><b>Brows &amp; lashes</b><span>Lamination, lash lift, tints</span></a>
+<a class="tile" href="#" data-ai="Tell me about waxing"><i>05</i><b>Waxing</b><span>Brazilian, Hollywood, Californian</span></a>
+<a class="tile" href="#" data-ai="Tell me about facials and massage"><i>06</i><b>Facials &amp; massage</b><span>Hydrating, Clear Complexion, lymphatic</span></a>
+</div></div></section>
+
+<section id="rooms" style="padding-top:10px"><div class="wrap"><p class="eyebrow">The menu</p><h2>Everything under one roof</h2><div class="rooms" style="margin-top:20px">
+<div class="room"><h3>Nails</h3><p>BIAB nails, Original CND Shellac manicures, nail extensions and custom nail art, from natural to full glam.</p><ul><li>BIAB</li><li>CND Shellac</li><li>Extensions</li><li>Nail art</li></ul></div>
+<div class="room"><h3>Pedicures</h3><p>Cuticle care, exfoliation, foot filing, massage and polish.</p><ul><li>Mini</li><li>Luxury spa</li><li>Callus removal</li><li>Shellac</li></ul></div>
+<div class="room"><h3>Brows &amp; lashes</h3><p>Brow and lash treatments in Clontarf, tailored to your features and face shape.</p><ul><li>Brow lamination</li><li>Lash lift</li><li>Tinting</li></ul></div>
+<div class="room"><h3>Body waxing</h3><p>Professional waxing with Waxperts products, tailored for sensitive skin when you let the team know in advance.</p><ul><li>Brazilian</li><li>Hollywood</li><li>Californian</li><li>Full body</li></ul></div>
+<div class="room"><h3>Facials &amp; massage</h3><p>Designed to improve skin health, promote relaxation and restore balance.</p><ul><li>Hydrating facial</li><li>Clear Complexion</li><li>Lymphatic drainage</li><li>Swedish massage</li></ul></div>
+<div class="room"><h3>Skin &amp; body clinic</h3><p>Non-invasive, results-driven treatments for rejuvenation, hair reduction and skin texture.</p><ul><li>HIFU</li><li>Plasma Pen</li><li>Microneedling</li><li>IPL / laser</li><li>Tattoo removal</li></ul></div>
+</div></div></section>
+
+<section class="clin" id="clinic"><div class="wrap"><p class="eyebrow">Skin &amp; body clinic</p><h2>The fact sheet</h2><p class="lede">Times, sessions and downtime as written on the Maison One services page. A consultation is required for the advanced treatments.</p>
+<table><thead><tr><th>Treatment</th><th>Time</th><th>Sessions</th></tr></thead><tbody>
+<tr><td><b>HIFU full face</b><small>No downtime</small></td><td>60&ndash;90 min</td><td>Usually 1, second after 8&ndash;12 weeks if advised</td></tr>
+<tr><td><b>HIFU jawline</b><small>No downtime</small></td><td>30&ndash;45 min</td><td>Usually 1, second after 8&ndash;12 weeks if advised</td></tr>
+<tr><td><b>HIFU arms</b><small>&ldquo;Bingo wings&rdquo;, no downtime</small></td><td>30&ndash;60 min</td><td>Usually 1, second after 8&ndash;12 weeks if advised</td></tr>
+<tr><td><b>Plasma Pen eye lift</b><small>Downtime: 5&ndash;10 days healing, swelling 2&ndash;3 days</small></td><td>30&ndash;45 min</td><td>Usually 1, second after 8&ndash;12 weeks if advised</td></tr>
+<tr><td><b>Liposonix</b><small>Plus lymphatic drainage</small></td><td>30&ndash;60 min</td><td>1 per area, drainage 3&ndash;6 sessions</td></tr>
+<tr><td><b>Microneedling</b><small>Korean microneedling</small></td><td>Ask the team</td><td>Course of 3&ndash;6</td></tr>
+<tr><td><b>IPL hair removal</b><small>Patch test may be needed</small></td><td>Ask the team</td><td>6&ndash;10 typical</td></tr></tbody></table>
+<p class="fine">Results build over weeks: HIFU is best at 8 to 12 weeks, and Plasma Pen at 6 to 8 weeks. Whether a treatment suits you is decided by the therapist at consultation, never by this page.</p></div></section>
+
+<section class="calm" id="moments"><div class="wrap"><p class="eyebrow">Celebrations</p><h2>Moments, not just appointments</h2><p class="lede">Maison One is a people-first salon: calm, personal and never rushed.</p>
+<div class="moments">
+<div class="mo"><b>Hen parties &amp; birthdays</b><span>Pamper sessions for the people you love, in a space made for bonding.</span></div>
+<div class="mo"><b>Confirmations &amp; get-togethers</b><span>Beauty for milestone days and girly afternoons.</span></div>
+<div class="mo"><b>Mom &amp; daughter</b><span>Her first manicure or a monthly tradition. Beauty becomes quality time.</span></div>
+<div class="mo"><b>Calm, not chaos</b><span>No double-bookings. No rushing. Therapists who listen.</span></div></div></div></section>
+
+<section id="reviews"><div class="wrap"><p class="eyebrow">Guest reviews</p><h2>Verified, in their words</h2><p class="lede">Short extracts from reviews shown on the Maison One website, verified through Phorest or Google.</p>
+<div class="moments" style="grid-template-columns:1fr">
+<div class="mo" style="background:#fff;border:1px solid #e6d6c8"><span style="font:italic 500 22px/1.3 'Cormorant',serif">&ldquo;Bia is very professional and results driven. She explained that it wouldn't give me the results I wanted so we decided to go for plasma pen around my eyes.&rdquo;</span><br><small>Julie B., verified through Phorest</small></div>
+<div class="mo" style="background:#fff;border:1px solid #e6d6c8"><span style="font:italic 500 22px/1.3 'Cormorant',serif">&ldquo;I am astounded by the attention to detail, speed and hospitality by the girls in here. Full BIAB refill and hand massage in exactly one hour.&rdquo;</span><br><small>Ella R., verified through Phorest</small></div>
+<div class="mo" style="background:#fff;border:1px solid #e6d6c8"><span style="font:italic 500 22px/1.3 'Cormorant',serif">&ldquo;What a lovely spot. They did such a great job on my nails and tinting my lashes.&rdquo;</span><br><small>Lori O., verified through Google</small></div></div>
+<p class="lede" style="margin:20px 0 0"><b>Our mantra:</b> for the women who do it all, a space to stop, breathe and feel beautiful again.</p></div></section>
+
+<section id="faq"><div class="wrap"><p class="eyebrow">Questions</p><h2>Good to know</h2>
+<div class="fh">The salon</div>
+<details><summary>Do I need to book in advance?</summary><p>Yes, booking ahead is recommended to secure your preferred date and time. Walk-ins may be available depending on availability.</p></details>
+<details><summary>What is your cancellation policy?</summary><p>Please give at least 24 hours' notice to cancel or reschedule. Late cancellations may be subject to a fee.</p></details>
+<details><summary>Who is Maison One for?</summary><p>Every woman: bold beauty lovers, busy mums and graceful older clients are all welcome. Each treatment is adjusted to your energy, lifestyle and schedule.</p></details>
+<details><summary>How do I book?</summary><p>Through the booking link on the website, by phone on 01 513 1144, on WhatsApp at 083 407 6382, or on social media. Vouchers can also be bought online.</p></details>
+<details><summary>How can I pay?</summary><p>Cash and card are both accepted.</p></details>
+<div class="fh">Nails &amp; pedicures</div>
+<details><summary>What are BIAB nails and how long do they last?</summary><p>BIAB (Builder In A Bottle) is a strengthening gel that helps natural nails grow, with a smooth, long-lasting finish. It typically lasts 2 to 4 weeks.</p></details>
+<details><summary>Does Shellac damage nails?</summary><p>When applied and removed correctly it does not damage the natural nail, and professional removal is always recommended.</p></details>
+<details><summary>What does a pedicure include?</summary><p>Cuticle care, exfoliation, foot filing, massage and polish. A pedicure usually lasts 2 to 3 weeks.</p></details>
+<div class="fh">Brows, lashes &amp; waxing</div>
+<details><summary>How long does brow lamination or a lash lift last?</summary><p>Brow lamination usually lasts 4 to 6 weeks, and a lash lift 6 to 8 weeks depending on your natural lash cycle.</p></details>
+<details><summary>Brazilian or Hollywood?</summary><p>Brazilian leaves a small strip or shape, and Hollywood removes all hair. Results last 3 to 5 weeks, and waxing can be tailored for sensitive skin if you tell the team in advance.</p></details>
+<div class="fh">Skin &amp; body clinic</div>
+<details><summary>How many sessions will I need?</summary><p>Most clients see best results from 3 to 6 microneedling sessions and 6 to 10 IPL sessions, depending on skin goals, area and hair type.</p></details>
+<details><summary>Does the laser work on different skin tones?</summary><p>The IPL system can treat a wide range of skin tones and hair types, and a consultation and patch test may be required.</p></details>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap"><p class="eyebrow">Visit</p><h2>Find us in Clontarf</h2><p class="big">193 Clontarf Road, Clontarf, Dublin D03 E9P6</p><p><a href="tel:+35315131144">01 513 1144</a> &middot; WhatsApp <a href="https://wa.me/353834076382">083 407 6382</a></p><p><a href="mailto:info@maisonone.ie">info@maisonone.ie</a> &middot; Instagram @maisonone_</p><p style="margin-top:18px"><a class="btn" href="#" data-ai="Book an appointment">Request an appointment</a></p></div></section>
+</main>
+<footer>Demo &middot; prepared by Gevorg Hovhannisyan</footer>
+
+<button id="aiBtn" type="button" aria-expanded="false" aria-controls="aiPanel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H9l-5 4z"/></svg><span>Ask Maison One</span></button>
+<div id="aiPanel" hidden role="dialog" aria-label="Assistant"><div class="aih"><div><b>Maison One</b><small>Questions or an appointment request</small></div><button id="aiX" type="button" aria-label="Close">&times;</button></div><div id="aiLog" aria-live="polite"></div><div id="aiChips"></div><form id="aiForm"><input id="aiIn" autocomplete="off" placeholder="Type your question" aria-label="Your question"><button type="submit">Send</button></form><div class="aif">Demo assistant. It answers only from the Maison One website, never gives medical advice, and sends nothing.</div></div>
+<script>
+var AI={
+hello:"Hello! I can answer from the Maison One website: nails, brows, waxing, facials and the skin clinic (HIFU, Plasma Pen, microneedling, laser). I can also put together an appointment request for the team.",
+chips:["Book an appointment","Skin clinic treatments","How long do BIAB nails last?","Cancellation policy","Where are you?"],
+fallback:"That isn't on the Maison One website pages I read, so I won't guess. The team can confirm: 01 513 1144, WhatsApp 083 407 6382 or info@maisonone.ie. Shall I put together an appointment request?",
+cancelled:"No problem, nothing was sent.",
+kb:[
+{id:'book',flow:1,k:['book','booking','appointment','reserve','schedule','enquiry','enquire','request an appointment','make an appointment','slot']},
+{k:['diagnose','diagnosis','rash','eczema','psoriasis','medication','medical','doctor','allergy','allergic','infection','mole','lump','skin condition','suitable for me','safe for me','pregnant','pregnancy','breastfeeding','keloid','diabetes','pacemaker','cancer'],a:"I can't advise on medical questions or whether a treatment is right for you. For the advanced skin clinic treatments a consultation is required so the therapist can assess suitability. Please tell the team about allergies, pregnancy or medication: 01 513 1144 or WhatsApp 083 407 6382."},
+{boost:3,k:['price','prices','cost','how much','pricing','fee','rates','expensive','cheap','voucher price'],a:"Prices aren't listed on the Maison One pages I read, so I won't guess. The team can give you exact prices: 01 513 1144, WhatsApp 083 407 6382 or info@maisonone.ie. Vouchers can be bought through the website's booking link."},
+{k:['menu','treatments','treatment','services','offer','what do you do','what do you have','list'],a:"Maison One offers nails (BIAB, Shellac, extensions, nail art), pedicures, brows and lashes, body waxing, facials and massages, and an advanced skin and body clinic (HIFU, Plasma Pen, microneedling, IPL laser, Liposonix, tattoo removal). Which would you like to hear about?",chips:["Skin clinic treatments","Nails","Waxing","Facials and massage"]},
+{k:['skin clinic','clinic','advanced','skin and body','skin treatments','skin clinic treatments','non invasive','rejuvenation','results driven'],a:"The skin and body clinic offers Plasma Pen, microneedling, IPL / laser hair removal, HIFU (face, jawline, arms and body), Liposonix with lymphatic drainage, and tattoo removals. Tell me which one you'd like to hear about.",chips:["HIFU","Plasma Pen","Microneedling","Laser hair removal"]},
+{k:['hifu','ultrasound','face lift','facelift','lifting','sagging','jowls','firming','jawline','bingo wings','arms','full face','tighten','tightening'],a:"HIFU uses focused ultrasound to stimulate collagen. Full face takes 60 to 90 minutes, jawline 30 to 45, arms (bingo wings) 30 to 60. It is usually one session, with a second after 8 to 12 weeks if advised, and there is no downtime beyond mild redness. Best results appear at 8 to 12 weeks.",chips:["Book an appointment","Plasma Pen"]},
+{k:['plasma','plasma pen','fibroblast','eye lift','hooded','eyelid','blepharoplasty','crows feet','crow feet'],a:"Plasma Pen eye lift targets hooded eyes, loose eyelid skin and fine lines. A session is 30 to 45 minutes, and it has downtime: small dots, mild swelling (especially 2 to 3 days) and a healing phase of 5 to 10 days. Results develop over 4 to 8 weeks. A consultation is required to assess suitability."},
+{k:['liposonix','fat','fat reduction','body contouring','sculpt','sculpting','lymphatic','drainage','lymph','cellulite','slimming'],a:"Liposonix uses high-intensity focused ultrasound to target fat in areas such as the abdomen, flanks, thighs or arms, paired with lymphatic drainage massage. It takes 30 to 60 minutes per area and is usually one session per area. Drainage is recommended as a course of 3 to 6 sessions, 1 to 2 times a week.",chips:["Book an appointment"]},
+{k:['microneedling','micro needling','needling','korean','collagen','texture','scar','scars','pores','acne scars'],a:"Korean microneedling helps improve skin texture and tone by stimulating collagen. Most clients see the best results from a course of 3 to 6 sessions, depending on skin goals."},
+{k:['laser','ipl','hair removal','laser hair removal','permanent hair','unwanted hair'],a:"IPL laser hair removal reduces hair growth over time. Most clients need 6 to 10 sessions depending on area and hair type. The system treats a wide range of skin tones and hair types, and a consultation and patch test may be required."},
+{k:['tattoo','tattoo removal','remove tattoo'],a:"Tattoo removal is listed among the skin and body clinic treatments. The team can explain the process and arrange a consultation: 01 513 1144."},
+{k:['downtime','recovery','heal','healing','swelling','redness','aftercare','after care'],a:"HIFU has no real downtime (mild redness settles within hours). Plasma Pen is a downtime treatment with swelling for 2 to 3 days and a healing phase of 5 to 10 days. For aftercare questions about your own skin, please contact the team."},
+{k:['results','how long until','timeline','when will i see','how soon','best results','visible'],a:"For HIFU, visible improvement shows at 4 to 6 weeks and best results at 8 to 12 weeks. Plasma Pen is visible from 2 to 4 weeks with best results at 6 to 8 weeks. Results vary, and the therapist can set expectations at consultation."},
+{k:['sessions','how many','course','how many sessions'],a:"Microneedling: usually a course of 3 to 6. IPL laser hair removal: 6 to 10. HIFU and Plasma Pen: typically one, with a second after 8 to 12 weeks if advised. Liposonix: one per area, with 3 to 6 lymphatic drainage sessions."},
+{k:['biab','builder in a bottle','gel nails','gel'],a:"BIAB (Builder In A Bottle) is a strengthening gel that helps natural nails grow, with a smooth, long-lasting finish. It typically lasts 2 to 4 weeks depending on nail growth and aftercare."},
+{k:['shellac','cnd','manicure','polish'],a:"Maison One offers Original CND Shellac manicures. When applied and removed correctly Shellac does not damage the natural nail, and professional removal is always recommended."},
+{k:['nail','nails','nail extensions','extension','extensions','nail art','acrylic','glam','tips'],a:"Nail services: BIAB, Original CND Shellac manicures, nail extensions and custom nail art, from natural nails to a full glam set.",chips:["How long do BIAB nails last?","Book an appointment"]},
+{k:['pedicure','pedicures','feet','foot','callus','spa pedicure','mini pedicure','toes'],a:"Pedicures: mini, luxury spa, callus removal and Shellac. They include cuticle care, exfoliation, foot filing, massage and polish, and last about 2 to 3 weeks."},
+{k:['brow','brows','eyebrow','eyebrows','lamination','brow lamination'],a:"Brow treatments are tailored to enhance your natural features and face shape. Brow lamination smooths and lifts the hairs for a fuller, more defined shape and usually lasts 4 to 6 weeks."},
+{k:['lash','lashes','eyelash','lash lift','lashes lift','tint','tinting','curl'],a:"A lash lift lifts and curls your natural lashes for a longer, more open-eyed look and typically lasts 6 to 8 weeks, depending on your natural lash cycle. Lash and brow tinting are also offered."},
+{k:['wax','waxing','brazilian','hollywood','californian','full body','waxperts','leg','legs','bikini'],a:"Body waxing uses Waxperts products: Brazilian, Hollywood, Californian and full body. Brazilian leaves a small strip or shape, Hollywood removes all hair, and results last 3 to 5 weeks. Waxing can be tailored for sensitive skin if you tell the team in advance."},
+{k:['facial','facials','massage','swedish','hydrating','clear complexion','relax','relaxing','spa'],a:"Facials and massages include Hydrating and Clear Complexion facials, lymphatic drainage and Swedish massage, each tailored to improve skin health, promote relaxation and restore balance."},
+{k:['party','parties','hen','hen party','birthday','celebration','celebrations','confirmation','group','bridal','girls','pamper'],a:"Maison One welcomes hen parties, birthday pamper sessions, confirmations and girly get-togethers in a comfortable space. Contact the team to plan a group booking: 01 513 1144.",chips:["Book an appointment"]},
+{k:['mom','mum','mother','daughter','kids','child','children','teen','first manicure'],a:"Mom and daughter moments are welcome, from a first manicure to a monthly tradition. For children's treatments and age rules, please check with the team."},
+{k:['cancel','cancellation','reschedule','late','no show','notice','policy'],a:"Please give at least 24 hours' notice if you need to cancel or reschedule. Late cancellations may be subject to a fee."},
+{k:['walk in','walkin','walk-in','without appointment','drop in'],a:"Booking in advance is recommended. Walk-ins may be available depending on availability."},
+{k:['pay','payment','card','cash','visa','revolut','credit card'],a:"Maison One accepts cash and card payments. If you're unsure, contact the team before your appointment."},
+{k:['hours','open','opening','closing','when','days','weekend','saturday','sunday','evening'],a:"Opening hours aren't on the pages I read, so I won't guess. Please contact the team: 01 513 1144 or WhatsApp 083 407 6382."},
+{k:['where','location','address','clontarf','dublin','find','directions','parking','park','bus','dart','d03'],a:"Maison One is at 193 Clontarf Road, Clontarf, Dublin D03 E9P6. For directions or parking information, the team is happy to help: 01 513 1144."},
+{k:['contact','phone','call','email','whatsapp','instagram','number','reach','message'],a:"Phone: 01 513 1144. WhatsApp: 083 407 6382. Email: info@maisonone.ie. Instagram: @maisonone_."},
+{k:['online','phorest','link','app','voucher','vouchers','gift','gift voucher','shop'],a:"You can book online through the Maison One booking link, buy vouchers from the website, or use the online shop. The team can also book you by phone or WhatsApp."},
+{k:['team','therapist','therapists','who','bia','natalia','staff','technician','review','reviews'],a:"Guests in verified reviews mention therapists such as Bia (Plasma Pen) and Natalia (BIAB) for professionalism and attention to detail. The team works with a no-rushing, people-first approach."},
+{k:['about','why','different','sanctuary','women','welcome','family'],a:"Maison One is described as Clontarf's trusted sanctuary for women who value time, care and connection, with tailored treatments, calm appointments and no double-bookings."}
+],
+flow:[
+{l:'Name',q:"Happy to put together an appointment request. What's your name?",chips:['Cancel'],re:/\S{2,}/},
+{l:'Treatment',q:"What would you like to book?",chips:['Skin clinic','Nails','Pedicure','Brows or lashes','Waxing','Facial or massage','Group or celebration','Not sure yet']},
+{l:'Preferred day and time',q:"When would suit you? The team will confirm what's available.",chips:['Weekday','Weekend','Evening','Cancel'],re:/\S{3,}/},
+{l:'Phone or WhatsApp',q:"What's the best phone number or WhatsApp number for the reply?",chips:['Cancel'],re:/\d[\d\s+().-]{6,}/,err:"Please enter a phone or WhatsApp number, for example 083 000 0000."},
+{l:'Note for the therapist',q:"Anything the therapist should know, such as allergies, pregnancy or medication? Type 'none' if not. They will go through it with you, and I can't advise on it.",chips:['None','Cancel']}
+],
+done:"Thank you! Here's your request:{S}In the real version this goes to the Maison One team, who confirm your appointment. In this demo nothing is sent."
+};
+(function(){
+var C=window.AI||{};
+var STOP='the a an is are do does you your i my me can to of for and or in on at it we what there have get with be this that about please hi hello would like want need'.split(' ').reduce(function(o,w){o[w]=1;return o},{});
+function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim()}
+function stem(w){var n=w.length;if(n>5&&/ing$/.test(w))return w.slice(0,-3);if(n>4&&/ies$/.test(w))return w.slice(0,-3)+'y';if(n>4&&/es$/.test(w))return w.slice(0,-2);if(n>3&&/s$/.test(w)&&!/ss$/.test(w))return w.slice(0,-1);if(n>4&&/ed$/.test(w))return w.slice(0,-2);return w}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[],c;for(i=0;i<=m;i++){d[i]=[i]}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++){c=a[i-1]===b[j-1]?0:1;d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c)}return d[m][n]}
+function same(q,k){if(q===k)return true;var sq=stem(q),sk=stem(k);if(sq===sk)return true;var l=Math.min(q.length,k.length);if(l>=4&&Math.abs(q.length-k.length)<=2&&(q.indexOf(k)===0||k.indexOf(q)===0))return true;if(q.length>=5&&k.length>=5&&Math.abs(q.length-k.length)<=2){var t=q.length>=9?2:1;if(lev(q,k)<=t)return true}return false}
+function match(text){var toks=norm(text).split(' ').filter(function(t){return t&&!STOP[t]});if(!toks.length)return null;var best=null,bs=0;(C.kb||[]).forEach(function(e){var cov={},n=0,bonus=0;e.k.forEach(function(p){var pw=norm(p).split(' '),idx=[],ok=true;for(var i=0;i<pw.length;i++){var f=-1;for(var j=0;j<toks.length;j++){if(same(toks[j],pw[i])){f=j;break}}if(f<0){ok=false;break}idx.push(f)}if(ok){idx.forEach(function(j){if(!cov[j]){cov[j]=1;n++}});if(pw.length>1)bonus+=1}});var sc=n?n*3+bonus+(e.boost||0):0;if(sc>bs){bs=sc;best=e}});return bs>=3?best:null}
+window.AI.match=match;window.AI.norm=norm;
+if(typeof document==='undefined')return;
+var btn=document.getElementById('aiBtn'),pan=document.getElementById('aiPanel'),log=document.getElementById('aiLog'),chips=document.getElementById('aiChips'),form=document.getElementById('aiForm'),inp=document.getElementById('aiIn'),x=document.getElementById('aiX');
+var st=null,opened=false;
+function add(cls,html,isText){var d=document.createElement('div');d.className='m '+cls;if(isText)d.textContent=html;else d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function setChips(list){chips.innerHTML='';(list||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b)})}
+function open(){pan.hidden=false;btn.setAttribute('aria-expanded','true');if(!opened){opened=true;add('b',C.hello);setChips(C.chips)}setTimeout(function(){inp.focus()},50)}
+function close(){pan.hidden=true;btn.setAttribute('aria-expanded','false')}
+btn.onclick=function(){pan.hidden?open():close()};x.onclick=close;
+window.AIopen=function(){open();setTimeout(function(){send(C.chips&&C.chips[0]||'Book')},0)};
+document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-ai]');if(t){e.preventDefault();open();send(t.getAttribute('data-ai'))}});
+function ask(){var s=C.flow[st.i];add('b',s.q);setChips(s.chips||['Cancel'])}
+function startFlow(){st={i:0,d:[]};ask()}
+function finish(){var lines=st.d.map(function(v,i){return C.flow[i].l+': '+v}).join('<br>');st=null;add('b',C.done.replace('{S}','<div class="sum">'+lines+'</div>'));setChips(C.chips)}
+function send(text){text=String(text||'').trim();if(!text)return;add('u',text,true);inp.value='';
+if(st){if(/^(cancel|stop|exit|quit|never ?mind|no thanks)$/i.test(text)){st=null;add('b',C.cancelled||'No problem, nothing was sent.');setChips(C.chips);return}
+var s=C.flow[st.i];if(s.re&&!s.re.test(text)){add('b',s.err||'Could you check that one?');return}st.d.push(text);st.i++;if(st.i>=C.flow.length)finish();else ask();return}
+var e=match(text);if(e&&e.flow){startFlow();return}
+add('b',e?e.a:C.fallback);setChips(e&&e.chips?e.chips:C.chips)}
+form.onsubmit=function(ev){ev.preventDefault();send(inp.value)};
+})();
+
+</script></body></html>
