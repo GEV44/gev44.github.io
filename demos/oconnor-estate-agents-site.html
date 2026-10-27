@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en-IE"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>O'Connor Estate Agents · Glasnevin, Dublin 9</title>
+<meta name="description" content="Demo page for O'Connor Estate Agents, Glasnevin: property sales, lettings, management and valuations.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--blk:#0c0c0c;--grn:#a4c95f;--grn2:#6d8f2c;--bg:#f6f6f1;--ln:#dcdcd2;--mut:#5b5f55}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 'Barlow',system-ui,sans-serif;color:#151515;background:var(--bg);-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:'Barlow Condensed','Arial Narrow',sans-serif;text-transform:uppercase;line-height:.98;margin:0 0 .45em;font-weight:800;letter-spacing:.01em}
+a{color:inherit}img{max-width:100%;display:block}
+.w{max-width:1040px;margin:0 auto;padding:0 16px}
+header{background:var(--blk);position:sticky;top:0;z-index:50}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:4px;padding-bottom:4px}
+header img{height:52px;width:auto}
+header nav{display:none;gap:20px;font:600 14px 'Barlow';text-transform:uppercase;letter-spacing:.06em;color:#fff}header nav a{text-decoration:none}header nav a:hover{color:var(--grn)}
+.ph{background:var(--grn);color:var(--blk);font:700 17px 'Barlow Condensed';text-decoration:none;padding:9px 13px;letter-spacing:.03em;white-space:nowrap}
+@media(min-width:880px){header nav{display:flex}header img{height:62px}}
+.hero{background:var(--blk);color:#fff;padding:30px 0 0;overflow:hidden;position:relative}
+.hero:after{content:"";position:absolute;right:-90px;top:30px;width:300px;height:300px;border-radius:50%;background:var(--grn);opacity:.9}
+.hero .w{position:relative;z-index:1}
+.tag{font:700 13px 'Barlow Condensed';letter-spacing:.2em;text-transform:uppercase;color:var(--grn)}
+.hero h1{font-size:clamp(54px,15vw,128px);margin:.12em 0 .18em;max-width:7em}
+.hero h1 span{color:var(--grn)}
+.hero p{max-width:30em;font-size:18px;color:#d9d9d0;margin:0 0 22px}
+.hbtn{display:flex;flex-wrap:wrap;gap:10px;padding-bottom:34px}
+.b{display:inline-block;border:0;padding:14px 22px;font:700 19px 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;cursor:pointer;text-decoration:none;background:var(--grn);color:var(--blk);text-align:center}
+.b.o{background:transparent;color:#fff;border:2px solid #fff}
+.strip{background:var(--grn);color:var(--blk)}
+.strip .w{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0}
+.strip div{padding:14px 6px;font:700 20px/1.05 'Barlow Condensed';text-transform:uppercase;border-left:2px solid rgba(0,0,0,.18);padding-left:12px;min-width:0}
+.strip small{display:block;font:500 13px 'Barlow';text-transform:none;opacity:.8;margin-top:2px}
+@media(min-width:880px){.strip .w{grid-template-columns:repeat(4,1fr)}}
+section{padding:50px 0}
+h2.t{font-size:clamp(34px,8vw,58px)}
+.lead{max-width:40em;color:var(--mut);font-size:17px}
+.svc{margin-top:22px;border-top:3px solid var(--blk)}
+.row{display:grid;grid-template-columns:54px minmax(0,1fr);gap:12px;padding:20px 0;border-bottom:1px solid var(--ln)}
+.num{font:800 40px/1 'Barlow Condensed';color:var(--grn2)}
+.row h3{font-size:32px;margin-bottom:.2em}.row p{margin:.2em 0 .6em;color:var(--mut)}
+.row ul{margin:.4em 0 .8em;padding-left:1.1em;columns:1;color:#2b2e27;font-size:15px}.row li{margin-bottom:4px}
+@media(min-width:880px){.row{grid-template-columns:90px minmax(0,1fr)}.row ul.two{columns:2;column-gap:28px}}
+.lk{display:inline-block;font:700 17px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.05em;border-bottom:3px solid var(--grn);text-decoration:none;cursor:pointer;background:none;border-top:0;border-left:0;border-right:0;padding:0;color:inherit}
+.dark{background:var(--blk);color:#fff}.dark h2.t{color:#fff}.dark .lead{color:#bfc4b6}
+.guides{display:grid;gap:22px;grid-template-columns:minmax(0,1fr);margin-top:22px}
+.g{min-width:0}.g h3{font-size:34px;color:var(--grn)}
+.g ol{list-style:none;margin:0;padding:0;counter-reset:q}
+.g li{counter-increment:q;padding:10px 0 10px 46px;border-bottom:1px solid #2b2b2b;position:relative}
+.g li:before{content:counter(q,decimal-leading-zero);position:absolute;left:0;top:10px;font:800 22px 'Barlow Condensed';color:var(--grn)}
+.g li b{display:block;font:700 19px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.03em}.g li span{color:#bfc4b6;font-size:14.5px}
+@media(min-width:880px){.guides{grid-template-columns:1fr 1fr;gap:40px}}
+.people{display:grid;gap:12px;grid-template-columns:minmax(0,1fr);margin-top:20px}
+.pp{border:3px solid var(--blk);padding:20px;background:#fff;min-width:0}
+.pp h3{font-size:34px;margin:0}.pp .r{font:700 16px 'Barlow Condensed';color:var(--grn2);letter-spacing:.08em;text-transform:uppercase}
+.pp p{margin:.5em 0 0;color:var(--mut);font-size:15px}.pp .q{display:inline-block;background:var(--blk);color:var(--grn);font:700 14px 'Barlow Condensed';letter-spacing:.1em;padding:3px 9px;margin-top:8px;text-transform:uppercase}
+@media(min-width:880px){.people{grid-template-columns:1fr 1fr}}
+.port{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.port span{border:2px solid var(--blk);padding:5px 12px;font:600 15px 'Barlow'}
+.areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.areas span{background:var(--blk);color:var(--grn);padding:6px 13px;font:700 16px 'Barlow Condensed';letter-spacing:.05em;text-transform:uppercase}
+.oh{width:100%;border-collapse:collapse;margin:10px 0 18px}.oh td{padding:10px 0;border-bottom:1px solid var(--ln)}.oh td:last-child{text-align:right;font-weight:600}
+.cgrid{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}.cgrid>div{min-width:0}
+@media(min-width:880px){.cgrid{grid-template-columns:1fr 1fr}}
+.fq details{border:3px solid var(--blk);margin:0 0 10px;padding:0 16px;background:var(--bg)}.fq summary{cursor:pointer;font:700 21px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.03em;padding:13px 0;list-style:none;display:flex;justify-content:space-between;gap:10px}.fq summary:after{content:'+';color:var(--grn2);font-weight:800}.fq details[open] summary:after{content:'–'}.fq p{margin:0 0 14px;color:var(--mut);font-size:15.5px}
+.big{font:800 36px/1 'Barlow Condensed';letter-spacing:.02em}
+footer{background:var(--blk);color:#aaa;padding:26px 0 92px;font-size:13px}footer b{color:var(--grn)}
+#as-fab{position:fixed;right:14px;bottom:14px;z-index:90;display:flex;align-items:center;gap:8px;background:#a4c95f;color:#0c0c0c;border:0;border-radius:0;padding:12px 16px;font:600 15px 'Barlow',system-ui,sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.3)}#as-fab .as-fi{font-size:18px;line-height:1}#as-fab.on{opacity:0;pointer-events:none}#as-panel{position:fixed;right:12px;bottom:12px;z-index:100;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:#f6f6f1;color:#111;border-radius:0;box-shadow:0 18px 50px rgba(0,0,0,.4);display:flex;flex-direction:column;overflow:hidden;font:15px/1.45 'Barlow',system-ui,sans-serif}#as-panel[hidden]{display:none}.as-h{background:#0c0c0c;color:#a4c95f;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}.as-h b{display:block;font-size:16px}.as-h small{display:block;opacity:.85;font-size:12px}.as-x{background:transparent;border:0;color:inherit;font-size:28px;line-height:1;cursor:pointer;padding:0 4px}.as-m{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;-webkit-overflow-scrolling:touch}.as-b{max-width:88%;padding:9px 12px;border-radius:4px;overflow-wrap:anywhere;word-break:break-word}.as-bot{background:rgba(127,127,127,.15);align-self:flex-start}.as-bot a{color:inherit;text-decoration:underline}.as-me{background:#a4c95f;color:#0c0c0c;align-self:flex-end}.as-c{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px 8px;max-height:112px;overflow-y:auto}.as-c button{background:transparent;color:#111;border:1px solid rgba(127,127,127,.55);border-radius:999px;padding:6px 11px;font:13px 'Barlow',system-ui,sans-serif;cursor:pointer}.as-c button:hover{background:#a4c95f;color:#0c0c0c;border-color:#a4c95f}.as-f{display:flex;gap:6px;padding:10px 12px;border-top:1px solid rgba(127,127,127,.3)}.as-f input{flex:1;min-width:0;padding:10px 12px;border-radius:0;border:1px solid rgba(127,127,127,.5);background:transparent;color:#111;font:16px 'Barlow',system-ui,sans-serif}.as-f button{background:#a4c95f;color:#0c0c0c;border:0;border-radius:0;padding:0 14px;font-size:16px;cursor:pointer}
+</style></head><body>
+<header><div class="w"><a href="#top" aria-label="O'Connor Estate Agents"><img src="img/oconnor-estate-agents-logo.svg" alt="O'Connor Estate Agents" width="130" height="52"></a>
+<nav><a href="#services">Services</a><a href="#guides">Guides</a><a href="#team">Team</a><a href="#contact">Contact</a></nav><a class="ph" href="tel:+35318603997">01 860 3997</a></div></header>
+<main id="top">
+<div class="hero"><div class="w"><div class="tag">Harts Corner &middot; Glasnevin &middot; Dublin 9</div>
+<h1>Professional. Prompt. <span>Personal.</span></h1>
+<p>Sales, lettings, property management and valuations from an owner-run office on Prospect Road. Thinking of selling your home, or buying one? Start with a free valuation or a chat.</p>
+<div class="hbtn"><button class="b" data-open-assistant data-q="Free valuation">Free valuation</button><button class="b o" data-open-assistant>Ask the O&rsquo;Connor assistant</button></div></div></div>
+<div class="strip"><div class="w"><div>Sales<small>marketing, valuation, advice</small></div><div>Lettings<small>photos, BER, tenant registration</small></div><div>Management<small>rent, repairs, PRTB support</small></div><div>Valuations<small>RICS registered valuer</small></div></div></div>
+
+<section id="services"><div class="w"><h2 class="t">Four services, one office</h2><p class="lead">Sell it, let it, manage it, or find out what it is worth. Listings are advertised on daft.ie, myhome.ie and the firm&rsquo;s own site, and the team covers Dublin 9, 11, 3, 15 and 17 from Glasnevin.</p>
+<div class="svc">
+<div class="row"><div class="num">01</div><div><h3>Property sales</h3><p>A comprehensive sales service including marketing and advertising, property valuations and professional advice, from a free no-obligation valuation right through to closing.</p><button class="lk" data-open-assistant data-q="I want to sell my property">Talk to us about selling</button></div></div>
+<div class="row"><div class="num">02</div><div><h3>Property lettings</h3><p>A residential lettings package, tailored to the property:</p><ul class="two"><li>Inspection to set the advised letting value</li><li>Interior and exterior photography</li><li>Advertising on daft.ie, myhome.ie, rent.ie, propertynews.ie, property.ie, let.ie and ocestates.ie</li><li>BER certificate arranged, as required by law before renting</li><li>Showing the property to prospective tenants</li><li>Lease contract management with any special conditions</li><li>Reference requests and tenant screening</li><li>Move-in and handover procedure, agreed inventory</li><li>Meter readings and utilities moved into the tenant&rsquo;s name</li><li>Security deposit and first month&rsquo;s rent, standing order set up</li><li>PRTB registration completed online</li></ul><button class="lk" data-open-assistant data-q="I want to let my property">Let my property</button></div></div>
+<div class="row"><div class="num">03</div><div><h3>Property management</h3><p>One seamless service that aims for optimum occupancy and tenant satisfaction, with a network of skilled tradespeople for repairs.</p><ul class="two"><li>Rent collection and monthly reports, with reconciliation</li><li>Lease renewals, Part 4 tenancies and rents brought in line with the market</li><li>Inspections with follow-up reports</li><li>14-day and 28-day notices and warning notices as the legislation requires</li><li>PRTB support, including attending hearings for a client</li><li>Key holding, anti-social behaviour and management agent issues</li><li>End of tenancy: move-out inspection, meter readings, deposit calculation, cleaning and re-letting</li></ul><button class="lk" data-open-assistant data-q="I want you to manage my property">Ask about management</button></div></div>
+<div class="row"><div class="num">04</div><div><h3>Valuations</h3><p>Independent valuations for residential property throughout Ireland, for bank funding, portfolios, taxation and legal purposes. Gerard O&rsquo;Connor is an associate member of the Society of Chartered Surveyors Ireland and follows the RICS Valuation Standards. The firm is a RICS registered valuer.</p><button class="lk" data-open-assistant data-q="Free valuation">Request a valuation</button></div></div></div></div></section>
+
+<section class="dark" id="guides"><div class="w"><h2 class="t">Know the steps</h2><p class="lead">The sellers and buyers guides on the site, step by step.</p>
+<div class="guides"><div class="g"><h3>Selling</h3><ol>
+<li><b>Valuation</b><span>A free, complimentary, no-obligation valuation.</span></li>
+<li><b>Pricing &amp; marketing</b><span>Agree pricing, fees, marketing strategy, budgets and timelines.</span></li>
+<li><b>Preparation</b><span>Declutter, clean, tidy lawns and shrubs, allow plenty of natural light, repaint and repair cracks.</span></li>
+<li><b>Launch</b><span>Sign, professional photography, floor plans, brochures, portals, newspaper, social media and a buyers database.</span></li>
+<li><b>Viewings</b><span>Private and open viewings with constant feedback.</span></li>
+<li><b>Negotiation / sale agreed</b><span>The best possible price, with constant advice.</span></li>
+<li><b>Legal</b><span>Your solicitor handles contracts, BER, compliance certificates, maps, title deeds, Irish Water certs and LPT.</span></li>
+<li><b>Closing</b><span>The agent liaises with solicitors, valuers and surveyors for a timely closure.</span></li></ol></div>
+<div class="g"><h3>Buying</h3><ol>
+<li><b>Mortgage</b><span>Approval in principle, so you know your budget.</span></li>
+<li><b>Viewings</b><span>Suitable listings on MyHome, Daft and ocestates.ie.</span></li>
+<li><b>Offers</b><span>A formal offer, sale agreed stage and the booking deposit.</span></li>
+<li><b>Legal</b><span>Appoint a solicitor for contractual matters.</span></li>
+<li><b>Valuation &amp; survey</b><span>A valuation and structural survey, strongly recommended before purchase.</span></li>
+<li><b>Loan offer</b><span>Formal loan offer, plus life assurance and home insurance.</span></li>
+<li><b>Contracts</b><span>Signed through your solicitor, with the 10% balance paid.</span></li>
+<li><b>Closing</b><span>A closing date, then outstanding costs such as mortgage drawdown and stamp duty. Then collect the keys.</span></li></ol></div></div></div></section>
+
+<section id="team"><div class="w"><h2 class="t">Two directors, one phone number</h2>
+<div class="people"><div class="pp"><div class="r">Director</div><h3>Gerard O&rsquo;Connor</h3><span class="q">Assoc SCSI &middot; RICS</span><p>Leads valuations. Contact: gerard@ocestates.ie, 01 860 3997.</p></div>
+<div class="pp"><div class="r">Director</div><h3>Gerard Carr</h3><span class="q">MSCSI &middot; MRICS</span><p>Contact: gercarr@ocestates.ie, 01 860 3997.</p></div></div>
+<h3 style="margin-top:28px;font-size:28px">Where listings come from</h3><div class="areas"><span>Glasnevin</span><span>Finglas</span><span>Drumcondra</span><span>Santry</span><span>Castleknock</span><span>Dublin 9</span><span>Dublin 11</span><span>Dublin 3</span><span>Dublin 15</span><span>Dublin 17</span></div>
+<h3 style="margin-top:28px;font-size:28px">Advertised on</h3><div class="port"><span>daft.ie</span><span>myhome.ie</span><span>rent.ie</span><span>propertynews.ie</span><span>property.ie</span><span>let.ie</span><span>ocestates.ie</span></div></div></section>
+
+<section id="faq" style="background:#fff"><div class="w"><h2 class="t">Asked a lot</h2>
+<div class="fq">
+<details><summary>Is the valuation really free?</summary><p>The site offers a free, complimentary, no-obligation valuation to determine the value of your property. Independent formal valuations for bank funding, taxation or legal purposes are a separate service; call to discuss.</p></details>
+<details><summary>What does the lettings service include?</summary><p>An inspection to set the advised letting value, photography, advertising on the main portals, a BER certificate if needed, tenant showings and screening, the lease, move-in handover with an agreed inventory, utilities, the deposit and first month&rsquo;s rent, standing order set-up and PRTB registration.</p></details>
+<details><summary>Do you look after tenants&rsquo; repairs?</summary><p>For managed properties, repairs and maintenance go through a network of skilled tradespeople, and the team advises on keeping the property&rsquo;s value up. There is also a Report an Issue page on the site.</p></details>
+<details><summary>What happens at the end of a tenancy?</summary><p>A move-out inspection to flag anything that could affect the deposit, key return, final meter readings, a property inspection against its initial condition, photos of any damage, a repair assessment, the deposit calculation, cleaning between tenancies and re-letting.</p></details>
+<details><summary>Do I need a solicitor?</summary><p>Yes. Both sellers and buyers appoint one once a sale is agreed. They handle contracts and certificates while the agent coordinates with them.</p></details>
+<details><summary>Who do I speak to?</summary><p>Either director, Gerard O&rsquo;Connor or Gerard Carr, on the one office number, 01 860 3997, or info@ocestates.ie.</p></details></div></div></section>
+
+<section id="contact" style="background:#fff"><div class="w"><h2 class="t">Visit or call</h2>
+<div class="cgrid"><div><div class="big">+353-1-860-3997</div><p>O&rsquo;Connor Estate Agents<br>9 Prospect Road, Harts Corner<br>Glasnevin, Dublin 9, D09 A3H1, Ireland<br>info@ocestates.ie</p><p><button class="b" data-open-assistant>Send a request</button></p></div>
+<div><h3 style="font-size:28px">Office hours</h3><table class="oh"><tr><td>Monday to Friday</td><td>9:00 AM to 5:30 PM</td></tr><tr><td>Saturday</td><td>By appointment</td></tr><tr><td>Sunday</td><td>By appointment</td></tr></table><p style="color:var(--mut);font-size:14px">Registered in Ireland, No. 709805. PSRA No. 004563. The site also has pages for Bookings &amp; Payments and for reporting an issue with a rented property.</p></div></div></div></section>
+</main>
+<footer><div class="w"><b>Demo · prepared by Gevorg Hovhannisyan</b><br>Built only from the public ocestates.ie site. The assistant runs in your browser and sends nothing.</div></footer>
+<script>
+
+/* matcher: keyword + fuzzy, word-form tolerant */
+function norm(s){return String(s).toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4){if(/(sses|shes|ches|xes)$/.test(w))w=w.slice(0,-2);else if(/(ing|ed)$/.test(w))w=w.replace(/(ing|ed)$/,'');else if(/[^s]s$/.test(w))w=w.slice(0,-1);}return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b,max){if(Math.abs(a.length-b.length)>max)return max+1;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i],mn=i;for(j=1;j<=b.length;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));if(c[j]<mn)mn=c[j];}if(mn>max)return max+1;p=c;}return p[b.length];}
+function tokHit(q,k){if(q===k)return 1;if(k.length<4||q.length<4)return 0;var m=k.length>=9?2:(k.length>=5?1:0);if(m&&lev(q,k,m)<=m)return 1;if(q.length>=5&&k.length>=5&&(k.indexOf(q)===0||q.indexOf(k)===0))return 1;return 0;}
+function makeMatcher(KB){
+  var idx=KB.map(function(e){return e.k.map(function(p){return toks(p);});});
+  return function(text){
+    var qt=toks(text),best=-1,bs=0;
+    if(!qt.length)return null;
+    for(var i=0;i<KB.length;i++){var s=0;
+      for(var j=0;j<idx[i].length;j++){var kt=idx[i][j],ok=true;
+        for(var t=0;t<kt.length;t++){var f=false;for(var u=0;u<qt.length;u++){if(tokHit(qt[u],kt[t])){f=true;break;}}if(!f){ok=false;break;}}
+        if(ok)s+=kt.length*2+(kt.length>1?1:0)+(KB[i].w||0);}
+      if(s>bs){bs=s;best=i;}}
+    return bs>=2?KB[best]:null;};
+}
+if(typeof module!=='undefined')module.exports={makeMatcher:makeMatcher,norm:norm,toks:toks};
+
+/* assistant widget: client-side only, sends nothing */
+function initAssistant(C){
+  var match=makeMatcher(C.kb),$=function(s){return document.querySelector(s);};
+  var fab=document.createElement('button');fab.id='as-fab';fab.type='button';fab.setAttribute('aria-label',C.fabLabel||'Open assistant');
+  fab.innerHTML='<span class="as-fi">'+(C.fabIcon||'?')+'</span><span class="as-ft">'+(C.fabText||'Ask')+'</span>';
+  var p=document.createElement('div');p.id='as-panel';p.setAttribute('role','dialog');p.hidden=true;
+  p.innerHTML='<div class="as-h"><div><b>'+C.title+'</b><small>'+C.sub+'</small></div><button type="button" class="as-x" aria-label="Close">&times;</button></div><div class="as-m" id="as-m" aria-live="polite"></div><div class="as-c" id="as-c"></div><form class="as-f" id="as-f"><input id="as-i" type="text" autocomplete="off" placeholder="'+C.ph+'"><button type="submit" aria-label="Send">&#10148;</button></form>';
+  document.body.appendChild(fab);document.body.appendChild(p);
+  var M=$('#as-m'),CH=$('#as-c'),IN=$('#as-i'),flow=null,data={},opened=false;
+  function add(t,who,html){var d=document.createElement('div');d.className='as-b as-'+who;if(html)d.innerHTML=t;else d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight;}
+  function chips(arr){CH.innerHTML='';arr.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){say(c);};CH.appendChild(b);});}
+  function home(){chips(C.chips);}
+  function ask(){var s=C.flow.steps[flow];add(s.q,'bot');if(s.opts)chips(s.opts.concat([C.flow.cancel]));else chips([C.flow.cancel]);IN.placeholder=s.ph||C.ph;}
+  function startFlow(pre){flow=0;data={};add(C.flow.intro,'bot');var s0=C.flow.steps[0];if(pre&&s0.opts){for(var i=0;i<s0.opts.length;i++){if(norm(s0.opts[i])===norm(pre)){data[s0.id]=s0.opts[i];flow=1;break;}}}ask();}
+  function endFlow(){flow=null;IN.placeholder=C.ph;}
+  function finish(){var out=C.flow.done(data);flow=null;add(out,'bot',true);IN.placeholder=C.ph;chips(C.chips);}
+  function say(t){t=String(t).trim();if(!t)return;add(t,'me');
+    if(flow!==null){
+      if(norm(t)===norm(C.flow.cancel)||/^(cancel|stop|exit|back)$/.test(norm(t))){endFlow();add(C.flow.cancelMsg,'bot');home();return;}
+      var s=C.flow.steps[flow];data[s.id]=t;flow++;
+      if(flow>=C.flow.steps.length)finish();else ask();return;}
+    if(C.flow.trigger(t)){startFlow(t);return;}
+    var e=match(t);
+    if(e){add(e.a,'bot',true);if(e.go){startFlow();return;}chips(e.c||C.chips);}
+    else{add(C.fallback,'bot',true);chips(C.chips);}
+  }
+  function open(){p.hidden=false;fab.classList.add('on');if(!opened){opened=true;add(C.greet,'bot',true);home();}if(window.__pick){var pk=window.__pick;window.__pick=null;setTimeout(function(){say(pk);},40);}setTimeout(function(){IN.focus({preventScroll:true});},50);}
+  function close(){p.hidden=true;fab.classList.remove('on');}
+  fab.onclick=function(){p.hidden?open():close();};
+  p.querySelector('.as-x').onclick=close;
+  $('#as-f').onsubmit=function(ev){ev.preventDefault();var v=IN.value;IN.value='';say(v);};
+  window.openAssistant=open;
+  var cta=document.querySelectorAll('[data-open-assistant]');for(var i=0;i<cta.length;i++){cta[i].addEventListener('click',function(ev){ev.preventDefault();open();});}
+}
+
+
+
+
+var KB=[
+{id:'hi',k:['hello','hi','hey','good morning','good afternoon','good evening'],a:'Hello, and welcome to O&rsquo;Connor Estate Agents in Glasnevin. Ask about sales, lettings, management, valuations or the buying and selling steps, or request a free valuation.'},
+{id:'hours',k:['hours','open','opening hours','what time','closed','weekend','saturday','sunday','when are you open','office hours'],a:'<b>Monday to Friday 9:00 AM to 5:30 PM.</b> Saturday and Sunday are <b>by appointment</b>.'},
+{id:'addr',k:['address','where is your office','where are you','office','location','directions','map','prospect road','harts corner','find you','eircode'],a:'<b>9 Prospect Road, Harts Corner, Glasnevin, Dublin 9, D09 A3H1.</b>'},
+{id:'phone',k:['phone','call','number','telephone','contact','reach','email','e-mail','mail','ring'],a:'Phone <b>+353-1-860-3997</b> or email <b>info@ocestates.ie</b>.',c:['Free valuation','Opening hours']},
+{id:'about',k:['about','who are you','company','history','firm','estate agents','psra','licence','regulated','registration number'],a:'O&rsquo;Connor Estate Agents offers <b>sales, lettings, property management and valuations</b>, with a professional, prompt and personal level of service. The firm is registered in Ireland (No. 709805) and holds PSRA licence No. 004563.'},
+{id:'valuation',k:['valuation','valuations','value','worth','how much is my house worth','appraisal','free valuation','market value','what is my house worth','what is my property worth'],w:3,a:'The site offers a <b>FREE valuation</b> with no obligation. Formal independent valuations are also available for bank funding, portfolios, taxation and legal purposes. Give me a few details and a director will be in touch.',go:true},
+{id:'rics',w:3,k:['rics','scsi','chartered','surveyor','qualified','credentials','registered valuer','qualifications'],a:'Gerard O&rsquo;Connor is an associate member of the Society of Chartered Surveyors Ireland (SCSI) and follows the RICS Valuation Standards. The firm is a <b>RICS registered valuer</b>. Gerard Carr is MSCSI and MRICS.'},
+{id:'sell',k:['sell','selling','seller','vendor','sell my house','sell my home','sell my property','i want to sell','sellers guide','list my property','put my house on the market'],w:3,a:'The sellers guide runs: free valuation, pricing and marketing, preparation, launch, viewings, negotiation and sale agreed, legal, closing. Want a director to contact you?',go:true},
+{id:'buy',k:['buy','buying','buyer','purchase','buyers guide','looking to buy','find a house','first time buyer','apartment for sale','houses for sale','for sale'],w:3,a:'The buyers guide covers mortgage approval in principle, viewings, offers, legal, valuation and survey, loan offer, contracts and closing. Listings are on MyHome, Daft and ocestates.ie.',go:true},
+{id:'listings',k:['listings','featured','properties','available','new homes','map search','sale agreed','sold listings','sold','current listings','what do you have'],a:'The site has Featured Listings, Map Search, New Homes, Sale Agreed and Sold listings. Recent examples include apartments in Finglas, Glasnevin and Drumcondra, and houses in Castleknock and Santry. I do not quote prices; see each listing.'},
+{id:'lettings',k:['letting','lettings','let my property','let my house','rent out','landlord','landlords','rental','to let','tenant screening','i want to let'],w:3,a:'The lettings package includes an advised letting value, photos, advertising on daft.ie, myhome.ie, rent.ie, propertynews.ie, property.ie, let.ie and ocestates.ie, BER arranged, showings, lease management, references, handover and inventory, utilities, deposit and standing order, and PRTB registration.',go:true},
+{id:'rent',k:['rent a property','looking to rent','apartment to rent','house to rent','tenant','tenants','renting'],a:'Lettings are on the Lettings page of the site. I can pass a rental enquiry to the team.',go:true},
+{id:'manage',k:['management','manage','property management','manage my property','managing agent','rent collection','manage my rental'],w:3,a:'Property management covers rent collection and monthly reports, lease renewals, inspections, notices, PRTB support including hearings, key holding, repairs through skilled tradespeople, and end-of-tenancy handover and re-letting.',go:true},
+{id:'prtb',w:3,k:['prtb','residential tenancies board','tenancy registration','part 4','notices','14 day notice','28 day notice','arrears','hearing','determination order','enforcement'],a:'The management service includes <b>PRTB registration</b> online, 14-day and 28-day notices as the legislation requires, support at PRTB hearings, and following through to enforcement and pursuing arrears where applicable.'},
+{id:'ber',k:['ber','energy rating','building energy rating','ber certificate'],a:'The lettings service can arrange a <b>Building Energy Rating (BER) certificate</b>, which is required by law for all existing buildings before they are offered for rent.'},
+{id:'repairs',w:5,k:['repairs','maintenance','report an issue','broken','leak','problem','fix','emergency','tradespeople','fault'],a:'The site has a <b>Report an Issue</b> page for rented properties, and managed properties get repairs through a network of skilled tradespeople. For urgent problems, call +353-1-860-3997.'},
+{id:'payments',k:['bookings','payments','pay','payment','pay rent','pay online'],a:'The site has a <b>Bookings &amp; Payments</b> page. I do not have its details, so please call +353-1-860-3997 and the team will confirm how to pay.'},
+{id:'commercial',k:['commercial','commercial property','office','retail','business premises'],a:'There is a Commercial section on the site, and the firm is active in both commercial and residential markets. Tell me what you need and a director will follow up.',go:true},
+{id:'team',k:['team','staff','directors','director','who works','people','agents','meet'],a:'Two directors: <b>Gerard O&rsquo;Connor</b> (Assoc SCSI, RICS) and <b>Gerard Carr</b> (MSCSI, MRICS). Phone +353-1-860-3997.'},
+{id:'gerardoc',k:['gerard','o connor','oconnor','gerard o connor'],w:2,a:'<b>Gerard O&rsquo;Connor</b> is a director and an associate member of SCSI. His email is gerard@ocestates.ie.'},
+{id:'carr',k:['carr','gerard carr','gercarr'],w:3,a:'<b>Gerard Carr</b> is a director, MSCSI and MRICS. His email is gercarr@ocestates.ie.'},
+{id:'areas',k:['areas','where do you work','which areas','glasnevin','finglas','drumcondra','santry','castleknock','dublin 9','dublin 11','dublin 3','dublin 15','dublin 17','dublin','ireland','service area'],a:'The office is in Glasnevin, Dublin 9. Current listings cover Glasnevin, Finglas, Drumcondra, Santry and Castleknock (Dublin 3, 9, 11, 15 and 17). Valuations are available for residential property throughout Ireland.'},
+{id:'prep',k:['prepare','preparation','stage','declutter','paint','tips for selling','natural light','get ready'],a:'The sellers guide says: declutter and clean, tidy lawns and shrubs, allow plenty of natural light, deal with outstanding maintenance, repaint where needed and repair wall cracks.'},
+{id:'legal',k:['solicitor','legal','lawyer','conveyancing','contracts','stamp duty','title deeds','lpt'],a:'Both buyers and sellers appoint a solicitor once a sale is agreed. They deal with contracts, BER certificates, compliance certificates, maps, title deeds, Irish Water certs and LPT. The agent liaises with them to close on time.'},
+{id:'mortgage',k:['mortgage','loan','finance','financing','approval in principle','deposit','booking deposit','loan offer','insurance'],a:'The buyers guide starts with <b>mortgage approval in principle</b> so you know your budget. Later come the formal loan offer, life assurance, home insurance, the 10% balance on contracts and costs such as stamp duty at closing.'},
+{id:'survey',k:['survey','structural survey','valuation before buying','inspect'],a:'A property valuation and <b>structural survey is strongly recommended</b> before purchase.'},
+{id:'fees',k:['commission','fee','fees','cost','price','prices','how much','charges','pricing','rates'],a:'Fees are not published on the site, so I will not guess. A director will agree pricing and fees with you during the valuation and marketing step.',go:true,w:10},
+{id:'reviews',k:['reviews','testimonials','what do clients say','reputation','feedback','references','recommend'],a:'The site has a Testimonials page, and the team can share more on request.'},
+{id:'news',k:['news','blog','articles','market update'],a:'There is a News page on the site; the team can point you to the latest post.'},
+{id:'inventory',k:['inventory','handover','move in','condition report','meter','meters','utilities','standing order','deposit protection'],a:'At move-in the team completes the handover, agrees an inventory of the contents with the tenant, reads the meters and transfers utilities into the tenant&rsquo;s name, then takes the security deposit and first month&rsquo;s rent and sets up the standing order.'},
+{id:'thanks',k:['thanks','thank you','thx','cheers','great','awesome'],a:'You are welcome. Anything else about O&rsquo;Connor Estate Agents?'},
+{id:'bye',k:['bye','goodbye','see you'],a:'Goodbye, and thanks for dropping in.'},
+{id:'book',k:['book','booking a viewing','appointment','enquiry','inquiry','request','speak to someone','talk to someone','get in touch','call me back','viewing','viewings'],a:'Happy to set that up. A few quick questions first.',go:true}
+];
+var CFG={title:'O’Connor assistant',sub:'Demo · answers from the O’Connor site',ph:'Ask about selling, letting, valuations...',fabText:'Ask O’Connor',fabIcon:'&#9679;',
+greet:'Welcome to O&rsquo;Connor Estate Agents, Glasnevin. Ask about selling, buying, lettings, management or valuations, or request a free valuation.',
+chips:['Free valuation','Selling steps','Buying steps','Let my property','Opening hours','Meet the directors'],
+fallback:'I do not have that from the O&rsquo;Connor site, so I will not guess. Call <b>+353-1-860-3997</b> or email <b>info@ocestates.ie</b> and a director will answer.',kb:KB,
+flow:{cancel:'Cancel',cancelMsg:'No problem, cancelled.',intro:'Great. A few quick questions so a director can get back to you.',
+trigger:function(t){return /^(free valuation|valuation|i want to sell my property|i want to let my property|i want you to manage my property|let my property|send a request|request|book|enquiry|inquiry|sell|buy)$/i.test(t.trim());},
+steps:[{id:'what',q:'How can we help?',opts:['Free valuation','Sell a property','Let a property','Manage my property','Buy a property','Commercial']},
+{id:'where',q:'Which property or area? (address, Eircode or neighbourhood)',ph:'e.g. Glasnevin, D09'},
+{id:'type',q:'Property type?',opts:['Apartment','Terraced house','Semi-detached','Detached','Other']},
+{id:'when',q:'Timing?',opts:['As soon as possible','Within 3 months','Later this year','Just exploring']},
+{id:'name',q:'Your name?',ph:'Name'},{id:'ct',q:'Best phone or email?',ph:'Phone or email'}],
+done:function(d){return '<b>Sent to O’Connor Estate Agents.</b><br>'+d.what+' &middot; '+d.where+'<br>'+d.type+' &middot; '+d.when+'<br>Contact: '+d.name+', '+d.ct+'<br>A director will reach out. (Demo: nothing is actually sent.)';}}};
+initAssistant(CFG);
+
+document.querySelectorAll('[data-q]').forEach(function(b){b.addEventListener('click',function(){window.__pick=b.getAttribute('data-q');window.openAssistant();});});
+</script></body></html>

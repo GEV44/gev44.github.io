@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Houston Broker Team · Houston, TX (demo)</title>
+<meta name="description" content="Demo page for the Houston Broker Team: buy, sell, lease or invest in Houston real estate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a202c;--ink2:#2a3345;--gold:#fbd605;--gold2:#d9b500;--cream:#faf6ea;--paper:#fffdf7;--line:#e7dfc6;--muted:#5c6475;--wa:#fbd605;--wt:#1a202c;--wi:#1a202c;--wf:'Inter',system-ui,sans-serif;--wr:6px;--wr2:10px;--wbub:#f3efe0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.65 'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.12;margin:0 0 .5em}
+a{color:inherit}
+img{max-width:100%;height:auto}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+section{padding:52px 0;position:relative}
+.eyebrow{font:600 12px 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);margin-bottom:10px;display:block}
+.top{background:var(--ink);color:#fff;position:sticky;top:0;z-index:40}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:64px}
+.logo{display:block;height:46px;width:auto}
+.top nav{display:none;gap:20px;font-size:14px;font-weight:500}
+.top nav a{text-decoration:none;opacity:.85}
+.top nav a:hover{opacity:1;color:var(--gold)}
+.call{background:var(--gold);color:var(--ink);padding:9px 14px;border-radius:6px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+@media(min-width:860px){.top nav{display:flex}}
+.btn{display:inline-block;border:0;border-radius:6px;padding:13px 20px;font:700 15px 'Inter',sans-serif;text-decoration:none;cursor:pointer;background:var(--gold);color:var(--ink)}
+.btn.dk{background:var(--ink);color:#fff}
+.btn.ol{background:transparent;border:2px solid currentColor;padding:11px 18px}
+/* hero */
+.hero{background:var(--ink);color:#fff;padding:54px 0 64px;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-90px;bottom:-90px;width:320px;height:320px;border:44px solid rgba(251,214,5,.12);border-radius:50%}
+.hero .wrap{display:grid;gap:30px;position:relative;z-index:1}
+.hero .wrap>*{min-width:0}
+.hero h1{font-size:clamp(34px,8vw,64px);font-weight:800}
+.hero h1 em{font-style:italic;color:var(--gold);font-weight:600}
+.hero p{font-size:18px;color:#d5d9e3;max-width:540px}
+.steps{border-left:3px solid var(--gold);padding-left:20px;display:grid;gap:18px;align-content:center}
+.steps div b{font:800 28px 'Playfair Display',serif;color:var(--gold);display:block;letter-spacing:.03em}
+.steps div span{color:#cfd4df;font-size:14px}
+@media(min-width:820px){.hero .wrap{grid-template-columns:1.5fr .7fr;align-items:center}}
+/* numbers */
+.nums{background:var(--gold);color:var(--ink)}
+.nums .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding-top:18px;padding-bottom:18px}
+.nums b{font:800 24px 'Playfair Display',serif;display:block;line-height:1.1}
+.nums span{font-size:13px;font-weight:500}
+@media(min-width:760px){.nums .wrap{grid-template-columns:repeat(4,minmax(0,1fr))}}
+/* doors */
+.doors{background:var(--cream)}
+.doors .grid{display:grid;gap:18px}
+.door{background:#fff;border:1px solid var(--line);border-top:6px solid var(--gold);padding:26px 22px;min-width:0}
+.door.dk{background:var(--ink);color:#fff;border-color:var(--ink);border-top-color:var(--gold)}
+.door ul{padding-left:18px;margin:10px 0 16px}
+.door li{margin:6px 0}
+@media(min-width:760px){.doors .grid{grid-template-columns:1fr 1fr}}
+/* neighborhoods */
+.nb input{width:100%;max-width:420px;padding:12px 14px;border:1px solid #bfb68f;border-radius:6px;font:inherit;background:#fff;margin:6px 0 16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags button{border:1px solid var(--ink);background:#fff;color:var(--ink);border-radius:999px;padding:8px 14px;font:500 14px 'Inter',sans-serif;cursor:pointer}
+.tags button:hover,.tags button.on{background:var(--ink);color:var(--gold)}
+.tags .sub{border-style:dashed}
+.nbmsg{margin-top:14px;min-height:28px;color:var(--muted)}
+/* team */
+.team{background:var(--ink);color:#fff}
+.team .cards{display:grid;gap:16px}
+.card{border:1px solid rgba(255,255,255,.18);padding:22px;min-width:0}
+.card .ini{width:54px;height:54px;border-radius:50%;background:var(--gold);color:var(--ink);font:800 20px 'Playfair Display',serif;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.card h3{font-size:22px;margin-bottom:2px}
+.card .role{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+.card p{font-size:15px;color:#d5d9e3;margin:0 0 8px}
+@media(min-width:800px){.team .cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* sell detail */
+.sell .cols{display:grid;gap:26px}
+.sell .cols>*{min-width:0}
+.check{list-style:none;padding:0;margin:0}
+.check li{padding:9px 0 9px 30px;border-bottom:1px solid var(--line);position:relative}
+.check li::before{content:"";position:absolute;left:4px;top:15px;width:12px;height:7px;border-left:3px solid var(--gold2);border-bottom:3px solid var(--gold2);transform:rotate(-45deg)}
+.note{background:var(--cream);border-left:5px solid var(--gold);padding:16px 18px}
+@media(min-width:800px){.sell .cols{grid-template-columns:1fr 1fr}}
+/* book */
+.book{background:var(--gold);color:var(--ink);text-align:center}
+.book h2{font-size:clamp(26px,5vw,40px)}
+.book p{max-width:560px;margin:0 auto 18px}
+/* contact */
+.contact .grid{display:grid;gap:22px}
+.contact .grid>*{min-width:0}
+.contact dl{margin:0}
+.contact dt{font:600 12px 'Inter';letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);margin-top:14px}
+.contact dd{margin:2px 0 0;font-size:17px}
+@media(min-width:760px){.contact .grid{grid-template-columns:1fr 1fr}}
+details{border-bottom:1px solid var(--line);padding:12px 0}
+summary{cursor:pointer;font:600 17px 'Playfair Display',serif}
+details p{margin:8px 0 0;color:var(--muted)}
+footer{background:#10151f;color:#aeb4c2;text-align:center;font-size:14px;padding:26px 0 92px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a href="#top" aria-label="Houston Broker Team"><img class="logo" src="img/houston-broker-team-logo.svg" alt="Houston Broker Team" width="102" height="46"></a>
+  <nav aria-label="Sections"><a href="#paths">Buy or sell</a><a href="#areas">Neighborhoods</a><a href="#team">The team</a><a href="#sell">Valuation</a><a href="#contact">Contact</a></nav>
+  <a class="call" href="tel:+17134948170">(713) 494-8170</a>
+</div></header>
+
+<section class="hero" id="top"><div class="wrap">
+  <div>
+    <span class="eyebrow">Houston real estate</span>
+    <h1>List. Buy. <em>Close.</em></h1>
+    <p>With over 25 years of combined experience, the Houston Broker Team helps you buy, sell, lease or invest across Houston, from Montrose bungalows to River Oaks and the suburbs. A relaxed, no-pressure approach, led by Daniela Antelo and Ashley Burton Smith.</p>
+    <a class="btn" href="#" data-aw="I want to book a call with the team">Book a 15-minute call</a>
+    <a class="btn ol" style="margin-left:6px" href="#areas">Browse neighborhoods</a>
+  </div>
+  <div class="steps" aria-label="How a move works">
+    <div><b>LIST</b><span>Pricing, staging, photography and a custom marketing plan.</span></div>
+    <div><b>BUY</b><span>Search, negotiate and sort the lender, inspector and contractor.</span></div>
+    <div><b>CLOSE</b><span>Guided to the finish, with the team beside you.</span></div>
+  </div>
+</div></section>
+
+<div class="nums"><div class="wrap">
+  <div><b>25+ yrs</b><span>combined experience</span></div>
+  <div><b>Since 2011</b><span>Daniela in Houston real estate</span></div>
+  <div><b>Top team</b><span>at Keller Williams Memorial</span></div>
+  <div><b>EN · ES · FR</b><span>languages across the team</span></div>
+</div></div>
+
+<section class="doors" id="paths"><div class="wrap">
+  <span class="eyebrow">Two ways in</span>
+  <h2>Looking to buy, or ready to sell?</h2>
+  <div class="grid">
+    <article class="door dk">
+      <h3>Buy a Houston home</h3>
+      <p>The team filters Houston listings to what you actually want, and negotiates for you.</p>
+      <ul><li>Home search by neighborhood or suburb</li><li>New listing alerts and open houses</li><li>Free buyer's guide and a mortgage calculator on the site</li><li>Introductions to lenders, inspectors and contractors</li></ul>
+      <a class="btn" href="#" data-aw="I want to buy a home">Start my search</a>
+    </article>
+    <article class="door">
+      <h3>Sell your property</h3>
+      <p>Pricing, staging, marketing and negotiating, to sell fast and for more.</p>
+      <ul><li>Professional photography</li><li>In-house staging division</li><li>Custom digital marketing plan</li><li>Free home valuation and a free seller's guide</li></ul>
+      <a class="btn dk" href="#" data-aw="I want to sell my home">Talk about selling</a>
+    </article>
+  </div>
+</div></section>
+
+<section class="nb" id="areas"><div class="wrap">
+  <span class="eyebrow">Where we work</span>
+  <h2>Houston neighborhoods and suburbs</h2>
+  <label for="nbq" style="font-size:14px;color:var(--muted)">Type a neighborhood or tap one</label><br>
+  <input id="nbq" type="search" placeholder="Try Montrose, Katy, River Oaks..." autocomplete="off">
+  <div class="tags" id="tags"></div>
+  <p class="nbmsg" id="nbmsg" aria-live="polite">The team has a page for each of these areas on its site.</p>
+</div></section>
+
+<section class="team" id="team"><div class="wrap">
+  <span class="eyebrow">Meet the team</span>
+  <h2>Full time professionals, led by two</h2>
+  <div class="cards">
+    <article class="card"><div class="ini">DA</div><h3>Daniela Antelo</h3><div class="role">CEO · Broker Associate</div>
+      <p>In Houston real estate since 2011, with a broker's license since 2018. Holds the CNE, ALHS and ABR designations.</p><p>Works with builders, investors and first-time buyers. English, Spanish and French.</p></article>
+    <article class="card"><div class="ini">AB</div><h3>Ashley Burton Smith</h3><div class="role">Team Lead · Realtor</div>
+      <p>Helps buyers, especially first-time buyers, in any market. Moved to Houston in 2014 and spent twelve years in the legal field before that, which helps with contracts.</p></article>
+    <article class="card"><div class="ini">RP</div><h3>Rafael Pardo</h3><div class="role">Director of Operations · Digital Marketing</div>
+      <p>Runs transactions, procedures and the team's online marketing for every listing. Engineering background; speaks English and Spanish.</p></article>
+  </div>
+</div></section>
+
+<section class="sell" id="sell"><div class="wrap">
+  <span class="eyebrow">What is my home worth?</span>
+  <h2>A free valuation from people, not an algorithm</h2>
+  <div class="cols">
+    <div>
+      <p>The team's own words: do not rely on a clunky algorithm. A valuation looks at similar homes sold and active nearby and produces a comparable market analysis. It takes about a minute to request. Have this ready:</p>
+      <ul class="check">
+        <li>Your contact information</li><li>Property type: single-family, condo, rental or multifamily</li><li>Condition, bedrooms and bathrooms</li><li>Special features and upgrades, such as a new roof or custom kitchen</li><li>Approximate size in square feet</li><li>Approximate age of kitchen and bathrooms</li>
+      </ul>
+    </div>
+    <div>
+      <div class="note"><b>Valuation, inspection, appraisal</b><br>A valuation estimates market value. An inspection checks the condition of the house. An appraisal is what your lender requires on a mortgage. The team's valuation page explains all three.</div>
+      <p style="margin-top:18px">Prefer to talk it through?</p>
+      <a class="btn dk" href="#" data-aw="I would like a free home valuation">Request a valuation</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="doors"><div class="wrap">
+  <span class="eyebrow">Why clients choose us</span>
+  <h2>Why sell with the team, and why buy with it</h2>
+  <div class="grid">
+    <article class="door">
+      <h3>Why sell with us</h3>
+      <p>The team leans on over 25 years of experience and advanced marketing tools to sell homes faster and at a higher price. It describes itself as an agent group that will fight for your best interest in the negotiation.</p>
+      <p>Daniela's own line: owning a home has been one of the most rewarding achievements of her life, and she wants to share that feeling with her clients.</p>
+    </article>
+    <article class="door">
+      <h3>Why buy with us</h3>
+      <p>Expert guidance, skilled negotiation and complete support so the buying journey is smooth, successful and tailored to you. Daniela also guides clients on choosing the right lender, inspector or contractor.</p>
+      <p>Clients quoted on the site call the team dedicated, professional, creative and fun to work with.</p>
+    </article>
+  </div>
+</div></section>
+
+<section class="book"><div class="wrap">
+  <h2>Pick a time for a quick 15-minute call</h2>
+  <p>Buying, selling, or just getting market insight. If no slot works, or you need a time outside regular hours, email the team.</p>
+  <a class="btn dk" href="#" data-aw="I want to book a call with the team">Request a call</a>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap grid">
+  <div>
+    <span class="eyebrow">Contact</span>
+    <h2>Houston Broker Team</h2>
+    <dl>
+      <dt>Phone</dt><dd><a href="tel:+17134948170">(713) 494-8170</a></dd>
+      <dt>Email</dt><dd><a href="mailto:daniela.antelo@houstonbroker.com">daniela.antelo@houstonbroker.com</a></dd>
+      <dt>Office</dt><dd>1220 Augusta Dr, Suite 300<br>Houston, TX 77057</dd>
+    </dl>
+  </div>
+  <div>
+    <h2>Good to know</h2>
+    <details><summary>Do you only work with buyers?</summary><p>No. The team helps you buy, sell, lease or invest.</p></details>
+    <details><summary>Is there a free guide?</summary><p>Yes, there is a free buyer's guide and a free seller's guide on the site.</p></details>
+    <details><summary>Do you help with staging?</summary><p>Yes, there is an in-house staging division, and a staging page on the site.</p></details>
+    <details><summary>Do you speak Spanish?</summary><p>Yes. Daniela and Rafael speak English and Spanish, and Daniela also speaks French.</p></details>
+  </div>
+</div></section>
+
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan<br>Facts taken from houstonbroker.com. Not the official site.</div></footer>
+
+<script>
+var CFG={
+ title:"Houston Broker Team",sub:"Answers from the team's own site",btn:"Ask the team",ph:"Ask about buying, selling, areas...",
+ note:"Demo assistant. It sends nothing; the team confirms details.",
+ welcome:"Hi! I can answer questions about the Houston Broker Team: buying, selling, valuations, neighborhoods and how to reach us. What are you looking for?",
+ fallback:"I do not have that from the team's site, so one of the agents will need to confirm it. You can call (713) 494-8170 or email daniela.antelo@houstonbroker.com, or I can take a request for the team.",
+ chips:["I want to buy","I want to sell","Home valuation","Neighborhoods","Book a call","Contact"],
+ flow:[
+  {k:"goal",lbl:"Looking to",q:"What would you like help with?",chips:["Buy a home","Sell my home","Home valuation","Lease","Invest"]},
+  {k:"area",lbl:"Area",q:"Which neighborhood or suburb? For example Montrose, River Oaks, Katy or The Woodlands.",re:/\S{3,}/,err:"Please tell me an area, or type \"not sure\"."},
+  {k:"when",lbl:"Timeline",q:"When are you hoping to move?",chips:["As soon as possible","1 to 3 months","3 to 6 months","Just exploring"],loose:1},
+  {k:"how",lbl:"Best way to reach you",q:"How should the team reach you?",chips:["Phone call","Text message","Email"]},
+  {k:"name",lbl:"Name",q:"What is your name?",re:/[a-zÀ-ɏЀ-ӿ]{2,}/i,err:"Please type your name."},
+  {k:"contact",lbl:"Phone or email",q:"What is the best phone number or email?",re:/(@.+\..+)|((\d[\s\-().+]*){7,})/,err:"That does not look like a phone number or email. Could you check it?"}
+ ],
+ done:"Thank you, your request was sent to the team. One of the agents will follow up with you.\n\n{summary}\n\n(Demo: nothing was actually sent.)",
+ kb:[
+  {k:["book a call","book call","schedule","appointment","consultation","15 minute","request a call","talk to someone","speak to","call me","contact me","get in touch","reach out","request","meet"],a:"Happy to set that up. I will take a few details for the team.",flow:"start"},
+  {k:["i want to buy","buy a home","buy a house","buying","buyer","buyers","purchase","looking for a home","find a home","home search","dream home","first time","search homes","homes for sale","houses for sale","listings","listing"],a:"The team helps buyers filter Houston homes to what they want, negotiates for them and points them to a lender, inspector or contractor. The site has home search, new listing alerts, open houses, a mortgage calculator and a free buyer's guide. Ashley Burton Smith focuses on buyers, especially first-time buyers.",chips:["Book a call","Neighborhoods","Free guide"]},
+  {k:["i want to sell","sell my home","sell my house","selling","seller","sellers","list my home","list my house","list my property","sell fast","sell for more","why sell"],a:"For sellers the team handles pricing, staging, marketing and negotiating. Listings include professional photography, strategic pricing, an in-house staging division and a custom digital marketing plan. The site says the team has been a top-selling team at Keller Williams Memorial.",chips:["Home valuation","Staging","Book a call"]},
+  {k:["valuation","valuate","value","worth","how much is my home","home value","estimate","appraisal","cma","comparable","market analysis","inspection","inspector"],a:"The team offers a free home valuation, done by an agent rather than an algorithm. It compares similar homes sold and active nearby (a comparable market analysis). Have ready: contact details, property type, condition, bedrooms and bathrooms, special features and upgrades, approximate size and the age of the kitchen and bathrooms. A valuation differs from an inspection (condition) and from a lender's appraisal.",chips:["Request a valuation","Book a call"]},
+  {k:["request a valuation","request valuation","book a valuation"],a:"Happy to arrange that. I will take a few details for the team.",flow:"start"},
+  {k:["staging","stage","stager","stagers","declutter","get my home ready","prepare my home","photography","photos","photographer","marketing"],a:"The team has an in-house staging division and a staging page on its site. Listings also get professional photography and a custom digital marketing strategy designed to attract serious buyers.",chips:["I want to sell","Book a call"]},
+  {k:["guide","guides","free guide","buyers guide","sellers guide","ebook","download","how to buy","how to sell"],a:"There is a free buyer's guide and a free seller's guide on the site, plus a 'How to buy a house' page and a mortgage calculator.",chips:["I want to buy","I want to sell"]},
+  {k:["mortgage","calculator","loan","lender","lenders","financing","finance","pre approval","preapproval","interest"],a:"The site has a mortgage calculator and a 'How to calculate a mortgage' page. Daniela also points clients toward the right lender for their situation, and the team can make an introduction.",chips:["Book a call"]},
+  {k:["lease","leasing","rent","rental","renting","tenant","landlord"],a:"The team says it helps clients buy, sell, lease or invest in the Houston market. Tell the team what you need and an agent will respond.",chips:["Book a call"]},
+  {k:["invest","investing","investment","investor","investors","flip"],a:"Investing is part of what the team does, and Daniela works with investors and builders as well as first-time buyers. An agent can discuss your goals on a call.",chips:["Book a call"]},
+  {k:["open house","open houses","viewing","view a home","see a house","showing","showings","tour"],a:"The site has an Open Houses page, and you can ask the team to arrange a showing. I can take a request for it.",chips:["Book a call","Neighborhoods"]},
+  {k:["alert","alerts","new listings","notify","notifications"],a:"The site has a New Listing Alerts page, and the team also shares market updates and local tips if you sign up. No spam, according to the contact page.",chips:["I want to buy"]},
+  {k:["neighborhood","neighborhoods","neighbourhood","area","areas","where do you work","suburb","suburbs","cover","serve","downtown","medical center","memorial","midtown","montrose","museum district","oak forest","oak forrest","river oaks","spring branch","tanglewood","west university","west u","bellaire","cypress","katy","pearland","spring","sugar land","sugarland","woodlands","the woodlands","heights","houston heights"],a:function(q){var n=" "+q.toLowerCase().replace(/[^a-z ]+/g," ").replace(/\s+/g," ")+" ",list=["Downtown","Medical Center","Memorial","Midtown","Montrose","Museum District","Oak Forest","River Oaks","Spring Branch","Tanglewood","West University","Bellaire","Cypress","Katy","Pearland","Spring","Sugar Land","The Woodlands","Houston Heights"],hit=null;list.forEach(function(x){if(n.indexOf(" "+x.toLowerCase()+" ")>-1&&(!hit||x.length>hit.length))hit=x});if(!hit&&/sugarland/.test(n))hit="Sugar Land";if(!hit&&/oak forrest/.test(n))hit="Oak Forest";if(!hit&&/ woodlands /.test(n))hit="The Woodlands";if(!hit&&/west u /.test(n))hit="West University";if(hit)return"Yes, "+hit+" is an area the team works in"+(hit==="Houston Heights"?" (the site mentions Houston Heights bungalows)":", and the site has a page for it")+". The team can send current listings and local insight for it.";return"The team has pages for Downtown, Medical Center, Memorial, Midtown, Montrose, Museum District, Oak Forest, River Oaks, Spring Branch, Tanglewood and West University, and for the suburbs Bellaire, Cypress, Katy, Pearland, Spring, Sugar Land and The Woodlands."},chips:["I want to buy","Book a call"]},
+  {k:["schools","school","school district","living in houston","pros and cons","moving to houston","relocate","relocating","move to houston"],a:"The site has pages on Schools in Houston, Living in Houston and the pros and cons of living in Houston, so you can compare areas before you decide.",chips:["Neighborhoods","Book a call"]},
+  {k:["phone","number","call","telephone","text","whatsapp","contact","email","mail","reach"],a:"Phone: (713) 494-8170. Email: daniela.antelo@houstonbroker.com. Office: 1220 Augusta Dr, Suite 300, Houston, TX 77057.",chips:["Book a call","Office address"]},
+  {k:["address","office","where are you","location","located","directions","augusta","visit","come by","77057"],a:"The office is at 1220 Augusta Dr, Suite 300, Houston, TX 77057.",chips:["Contact","Book a call"]},
+  {k:["hours","office hours","open","opening","closing","business hours","available","availability","weekend","saturday","sunday","evening","after hours"],a:"The site does not list office hours. It says to book a quick 15-minute call by picking a date, and to email if you need a time outside regular business hours. The team will confirm availability.",chips:["Book a call","Contact"]},
+  {k:["daniela","antelo","dani","ceo","broker","owner","founder"],a:"Daniela Antelo is CEO of the Houston Broker Team and a Platinum Agent. She has worked in Houston real estate since 2011, earned her broker's license in 2018 and is a Broker Associate with Keller Williams Memorial Realty. She holds the CNE, ALHS and ABR designations and speaks English, Spanish and French.",chips:["Meet the team","Book a call"]},
+  {k:["ashley","burton","burton smith","team lead"],a:"Ashley Burton Smith is the Team Lead and a Realtor who specializes in helping buyers, especially first-time buyers. She moved to Houston in 2014 and spent twelve years in the legal field before real estate, which gives her a strong grip on contracts.",chips:["Meet the team","Book a call"]},
+  {k:["rafael","pardo","operations","digital marketing manager"],a:"Rafael Pardo is the Director of Operations and Digital Marketing Manager. He runs the team's procedures and online presence, has an engineering degree, and speaks English and Spanish.",chips:["Meet the team"]},
+  {k:["team","meet the team","agents","who are you","about","about us","staff","realtors","realtor","experience","years","founded"],a:"The Houston Broker Team has over 25 years of combined experience. It is led by Daniela Antelo and Ashley Burton Smith, with Rafael Pardo running operations and digital marketing, and is a full time team of real estate professionals.",chips:["Daniela Antelo","Ashley Burton","Book a call"]},
+  {k:["spanish","espanol","french","language","languages","bilingual","hablan","habla"],a:"Daniela speaks English, Spanish and French, and Rafael speaks English and Spanish.",chips:["Meet the team","Book a call"]},
+  {k:["keller williams","kw","brokerage","franchise"],a:"The site says the Houston Broker Team is a top producing team at Keller Williams Memorial, and Daniela is a Broker Associate with Keller Williams Memorial Realty.",chips:["Meet the team"]},
+  {k:["fee","fees","price","prices","cost","commission","commissions","how much do you charge","charge","charges","percent","percentage","rate","rates"],a:"The site does not publish commission or fee details, so I will not guess. An agent will explain how it works on a call.",chips:["Book a call"]},
+  {k:["review","reviews","testimonial","testimonials","rating","google","recommend","reputation"],a:"The site shows client testimonials from Google reviews. Clients describe the team as dedicated, professional and fun to work with. You can read them on the home page.",chips:["Book a call"]},
+  {k:["blog","news","market update","market updates","tips","newsletter"],a:"There is a blog and news page, and the team shares market updates, new listings and local tips if you stay in touch. No spam, according to the contact page.",chips:["Contact"]},
+  {k:["hello","hi","hey","hola","good morning","good evening","thanks","thank you"],a:"Hello! Ask me about buying, selling, valuations or neighborhoods, or I can take a request for the team.",chips:["I want to buy","I want to sell","Book a call"]}
+ ]
+};
+/* assistant engine: pure matcher + floating widget. CFG is defined by the page before this block. */
+var STOP=new Set("a an the is are was be do does did you your yours i me my we our us it its of to in on at for and or with can could would should will what whats how much many any there this that these those about please tell am if so as by from have has get need want like know teach offer ok okay yes".split(" "));
+function norm(s){return String(s).toLowerCase().replace(/[’']/g,"").replace(/[^a-z0-9 ]+/g," ").replace(/\s+/g," ").trim()}
+function stem(w){if(w.length>5)w=w.replace(/(ing|ers|er|ed|es|ly)$/,"");else if(w.length>3)w=w.replace(/s$/,"");return w}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;if(Math.abs(m-n)>2)return 9;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var prev=p[0];p[0]=i;for(j=1;j<=n;j++){c=p[j];p[j]=Math.min(p[j]+1,p[j-1]+1,prev+(a[i-1]===b[j-1]?0:1));prev=c}}return p[n]}
+function toks(q){return norm(q).split(" ").filter(function(w){return w&&!STOP.has(w)}).map(stem)}
+function sim(t,k){if(t===k)return 1;if(t.length>=4&&k.length>=4&&(t.indexOf(k)===0||k.indexOf(t)===0))return .85;if(t.length>=5&&k.length>=5&&lev(t,k)<=(t.length>=8?2:1))return .75;return 0}
+function match(q){
+  var T=toks(q),nq=norm(q),best=null,bs=0;
+  CFG.kb.forEach(function(e){
+    var s=0,mx=0,extra=0;function sc(v){if(v>mx){if(mx>.8)extra++;mx=v}else if(v>.8)extra++}
+    e.k.forEach(function(kw){var before=s;
+      var kt=norm(kw).split(" ").map(stem);
+      if(kt.length>1){
+        if(nq.indexOf(norm(kw))>-1){s+=3;sc(s-before);return}
+        var all=1,sum=0;kt.forEach(function(x){var m=0;T.forEach(function(t){m=Math.max(m,sim(t,x))});if(!m)all=0;sum+=m});
+        if(all)s+=2.4*sum/kt.length
+      }else{var m=0;T.forEach(function(t){m=Math.max(m,sim(t,kt[0]))});s+=m*1.6}
+      sc(s-before)
+    });
+    s=mx+.2*extra;
+    if(s>bs){bs=s;best=e}
+  });
+  return bs>=1.2?best:null
+}
+function reply(q){var e=match(q);if(!e)return{a:CFG.fallback,chips:CFG.chips};return{a:typeof e.a==="function"?e.a(q):e.a,chips:e.chips||CFG.chips,flow:e.flow}}
+var FLOW=null;
+function chipHit(txt,ch){var t=toks(txt);var nt=norm(txt);for(var i=0;i<ch.length;i++){var c=norm(ch[i]);if(nt===c||nt.indexOf(c)>-1)return ch[i];var ct=c.split(" ").map(stem),ok=1;ct.forEach(function(x){var m=0;t.forEach(function(y){m=Math.max(m,sim(y,x))});if(!m)ok=0});if(ok&&t.length)return ch[i]}return null}
+function flowStart(){FLOW={i:0,ans:{}};return flowAsk()}
+function flowAsk(){var s=CFG.flow[FLOW.i];return{a:s.q,chips:s.chips||["Cancel"],flow:1}}
+function flowInput(txt){
+  var s=CFG.flow[FLOW.i],n=norm(txt);
+  if(/^(cancel|stop|exit|quit|no thanks|back off)$/.test(n)){FLOW=null;return{a:"No problem, nothing was saved. Ask me anything else.",chips:CFG.chips}}
+  var v=txt.trim();
+  if(s.chips){var h=chipHit(txt,s.chips);if(!h){var e=match(txt);if(e&&!s.loose){var r=reply(txt);r.a+="\n\nBack to your request: "+s.q;r.chips=s.chips;return r}v=txt.trim()}else v=h}
+  if(s.re&&!s.re.test(v)){return{a:s.err||"Could you rephrase that?",chips:s.chips||["Cancel"],flow:1}}
+  FLOW.ans[s.k]=v;FLOW.i++;
+  if(FLOW.i>=CFG.flow.length){var a=FLOW.ans,lines=CFG.flow.map(function(f){return f.lbl+": "+a[f.k]}).join("\n");FLOW=null;return{a:CFG.done.replace("{summary}",lines),chips:CFG.chips,done:1}}
+  return flowAsk()
+}
+function handle(txt){
+  if(FLOW)return flowInput(txt);
+  var r=reply(txt);
+  if(r.flow==="start")return flowStart();
+  return r
+}
+if(typeof module!=="undefined")module.exports={handle:handle,reply:reply,match:match,CFG:CFG,flowStart:flowStart,reset:function(){FLOW=null}};
+if(typeof document!=="undefined"){(function(){
+  var css=".aw-b{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--wa);color:var(--wt,#fff);font:600 14px/1 var(--wf,inherit);padding:13px 16px;border-radius:var(--wr,999px);box-shadow:0 8px 24px rgba(0,0,0,.28)}"+
+  ".aw-p{position:fixed;right:16px;bottom:76px;z-index:61;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 100px));display:none;flex-direction:column;background:var(--wb,#fff);color:var(--wi,#111);border-radius:var(--wr2,16px);box-shadow:0 18px 50px rgba(0,0,0,.35);overflow:hidden;font:14px/1.45 var(--wf,inherit);border:1px solid rgba(0,0,0,.08)}"+
+  ".aw-p.o{display:flex}.aw-h{background:var(--wa);color:var(--wt,#fff);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}.aw-h small{display:block;font-weight:400;opacity:.85;font-size:12px}"+
+  ".aw-h button{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}.aw-m{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:0}"+
+  ".aw-x{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-wrap;word-wrap:break-word}.aw-x.bot{background:var(--wbub,#eef1f6);align-self:flex-start}.aw-x.me{background:var(--wa);color:var(--wt,#fff);align-self:flex-end}"+
+  ".aw-c{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}.aw-c button{border:1px solid var(--wa);background:transparent;color:var(--wi,#111);border-radius:999px;padding:6px 11px;font:inherit;font-size:13px;cursor:pointer}.aw-c button:hover{background:var(--wa);color:var(--wt,#fff)}"+
+  ".aw-f{display:flex;gap:6px;padding:10px;border-top:1px solid rgba(0,0,0,.08)}.aw-f input{flex:1;min-width:0;border:1px solid #c9ced8;border-radius:10px;padding:9px 10px;font:inherit;background:#fff;color:#111}.aw-f button{border:0;background:var(--wa);color:var(--wt,#fff);border-radius:10px;padding:0 14px;font:600 14px var(--wf,inherit);cursor:pointer}.aw-n{font-size:11px;opacity:.6;padding:0 12px 8px}";
+  var st=document.createElement("style");st.textContent=css;document.head.appendChild(st);
+  var b=document.createElement("button");b.className="aw-b";b.setAttribute("aria-label",CFG.title);b.innerHTML="<span aria-hidden='true'>💬</span><span>"+CFG.btn+"</span>";
+  var p=document.createElement("div");p.className="aw-p";p.setAttribute("role","dialog");p.setAttribute("aria-label",CFG.title);
+  p.innerHTML="<div class='aw-h'><div>"+CFG.title+"<small>"+CFG.sub+"</small></div><button aria-label='Close'>×</button></div><div class='aw-m' aria-live='polite'></div><div class='aw-c'></div><form class='aw-f'><input type='text' placeholder='"+CFG.ph+"' aria-label='Message'><button type='submit'>Send</button></form><div class='aw-n'>"+CFG.note+"</div>";
+  document.body.appendChild(b);document.body.appendChild(p);
+  var M=p.querySelector(".aw-m"),C=p.querySelector(".aw-c"),F=p.querySelector("form"),I=p.querySelector("input"),started=0;
+  function add(t,w){var d=document.createElement("div");d.className="aw-x "+w;d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight}
+  function chips(a){C.innerHTML="";(a||[]).forEach(function(c){var x=document.createElement("button");x.type="button";x.textContent=c;x.onclick=function(){say(c)};C.appendChild(x)})}
+  function say(t){add(t,"me");var r=handle(t);setTimeout(function(){add(r.a,"bot");chips(r.chips)},180)}
+  function open(){p.classList.add("o");if(!started){started=1;add(CFG.welcome,"bot");chips(CFG.chips)}I.focus()}
+  b.onclick=function(){p.classList.contains("o")?p.classList.remove("o"):open()};
+  p.querySelector(".aw-h button").onclick=function(){p.classList.remove("o")};
+  F.onsubmit=function(e){e.preventDefault();var v=I.value.trim();if(!v)return;I.value="";say(v)};
+  window.awOpen=open;window.awAsk=function(t){open();say(t)};
+  document.querySelectorAll("[data-aw]").forEach(function(el){el.addEventListener("click",function(e){e.preventDefault();window.awAsk(el.getAttribute("data-aw"))})});
+})()}
+
+(function(){
+  var N=[["Downtown"],["Medical Center"],["Memorial"],["Midtown"],["Montrose"],["Museum District"],["Oak Forest"],["River Oaks"],["Spring Branch"],["Tanglewood"],["West University"],["Bellaire",1],["Cypress",1],["Katy",1],["Pearland",1],["Spring",1],["Sugar Land",1],["The Woodlands",1]];
+  var T=document.getElementById("tags"),Q=document.getElementById("nbq"),Mg=document.getElementById("nbmsg"),bs=[];
+  N.forEach(function(n){var b=document.createElement("button");b.type="button";b.textContent=n[0]+(n[1]?" (suburb)":"");if(n[1])b.className="sub";
+    b.onclick=function(){bs.forEach(function(x){x.classList.remove("on")});b.classList.add("on");Mg.innerHTML="";var s=document.createElement("span");s.textContent=n[0]+": the team has a page for this area. ";var a=document.createElement("a");a.href="#";a.textContent="Ask the assistant about "+n[0];a.setAttribute("data-aw","Tell me about "+n[0]);a.addEventListener("click",function(e){e.preventDefault();window.awAsk("Tell me about "+n[0])});Mg.appendChild(s);Mg.appendChild(a)};
+    T.appendChild(b);bs.push(b)});
+  Q.addEventListener("input",function(){var v=Q.value.toLowerCase().trim();bs.forEach(function(b){b.style.display=(!v||b.textContent.toLowerCase().indexOf(v)>-1)?"":"none"})});
+})();
+</script>
+</body>
+</html>

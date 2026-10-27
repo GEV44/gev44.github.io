@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KINETIKA · Physiotherapy &amp; Rehabilitation, Dubai Hills</title>
+<meta name="description" content="Specialist physiotherapy and rehabilitation in Dubai Hills. Demo page with a booking assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1A1A2E;--navy2:#23233d;--teal:#155776;--gold:#B8976A;--gold2:#A48A65;--sand:#F6F1E9;--ink:#232333;--mute:#6b6b7b;--line:#e4dccd;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Work Sans',system-ui,sans-serif;color:var(--ink);background:var(--sand);line-height:1.6;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:500;line-height:1.15}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{overflow:hidden;position:relative}
+.eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2);font-weight:600;margin-bottom:12px}
+header{background:var(--navy);position:sticky;top:0;z-index:30;border-bottom:1px solid rgba(184,151,106,.35)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px}
+.logo{display:flex;align-items:center;background:var(--navy);padding:4px 0}
+.logo img{height:22px;width:auto}
+.hd nav{display:none;gap:22px;font-size:.85rem}
+.hd nav a{color:#d9d2c3;text-decoration:none}
+.hd nav a:hover{color:var(--gold)}
+.btn{display:inline-block;border:1px solid var(--gold);background:var(--gold);color:var(--navy);padding:10px 18px;font-weight:600;font-size:.85rem;text-decoration:none;letter-spacing:.04em;cursor:pointer;font-family:inherit;border-radius:2px}
+.btn.ghost{background:transparent;color:var(--gold)}
+.btn:hover{filter:brightness(1.08)}
+.hero{background:var(--navy);color:#fff;padding:54px 0 64px}
+.hero:before{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;border:1px solid rgba(184,151,106,.3);border-radius:50%}
+.hero:after{content:"";position:absolute;right:-40px;top:-40px;width:220px;height:220px;border:1px solid rgba(184,151,106,.2);border-radius:50%}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:2.3rem;max-width:12ch}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero p.lead{margin:18px 0 26px;color:#cfcadb;max-width:46ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px}
+.perks{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:34px;font-size:.82rem;color:var(--gold);letter-spacing:.08em;text-transform:uppercase}
+.perks span:before{content:"\2726\00a0"}
+.rate{margin-top:26px;font-size:.9rem;color:#cfcadb}
+.rate b{color:var(--gold);font-size:1.05rem;letter-spacing:.1em}
+.process{padding:64px 0;background:var(--sand)}
+.process h2,.team h2,.treat h2,.visit h2,.faq h2{font-size:1.9rem;margin-bottom:26px}
+.steps{display:grid;gap:0;border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:54px 1fr;gap:6px;padding:22px 0;border-bottom:1px solid var(--line)}
+.step i{font-family:'Playfair Display',serif;font-style:normal;font-size:1.8rem;color:var(--gold)}
+.step h3{font-size:1.15rem;margin-bottom:4px}
+.step p{color:var(--mute);font-size:.95rem;min-width:0}
+.note{margin-top:22px;background:var(--navy);color:#e8e2d3;padding:18px 20px;border-left:3px solid var(--gold);font-size:.95rem}
+.treat{background:var(--white);padding:64px 0}
+.cols{display:grid;gap:26px}
+.cols>div{min-width:0}
+.cols h3{font-size:1.1rem;color:var(--teal);margin-bottom:12px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{border:1px solid var(--line);padding:6px 12px;font-size:.85rem;border-radius:99px;background:var(--sand)}
+.team{background:var(--navy2);color:#fff;padding:64px 0}
+.team h2{color:#fff}
+.tg{display:grid;gap:14px}
+.tc{background:var(--navy);border:1px solid rgba(184,151,106,.28);padding:20px;min-width:0}
+.tc .yrs{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.tc h3{font-size:1.25rem;margin:6px 0 2px}
+.tc .role{color:#cfcadb;font-size:.88rem;margin-bottom:8px}
+.tc p{font-size:.88rem;color:#b9b4c7}
+.tc .lang{margin-top:8px;font-size:.78rem;color:var(--gold)}
+.visit{padding:64px 0;background:var(--sand)}
+.vg{display:grid;gap:22px}
+.vg>div{min-width:0}
+.card{background:#fff;border:1px solid var(--line);padding:22px}
+.card h3{font-size:1.1rem;margin-bottom:10px;color:var(--teal)}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+td{padding:7px 0;border-bottom:1px dashed var(--line)}
+td:last-child{text-align:right;color:var(--mute)}
+.areas{margin-top:12px;font-size:.88rem;color:var(--mute)}
+.faq{padding:64px 0;background:#fff}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary:after{content:"+";color:var(--gold2);font-size:1.2rem}
+details[open] summary:after{content:"\2212"}
+details p{margin-top:8px;color:var(--mute);font-size:.95rem}
+.spec{padding:64px 0;background:var(--navy);color:#fff}
+.spec h2{color:#fff;font-size:1.9rem;margin-bottom:8px}
+.spec .sub{color:#cfcadb;max-width:56ch;margin-bottom:26px}
+.sg{display:grid;gap:0;border-top:1px solid rgba(184,151,106,.3)}
+.sr{padding:22px 0;border-bottom:1px solid rgba(184,151,106,.3);display:grid;gap:8px}
+.sr h3{font-size:1.25rem;color:var(--gold)}
+.sr p{color:#cfcadb;font-size:.95rem;min-width:0}
+.sr .who{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:#b9b4c7}
+.voices{padding:64px 0;background:var(--sand)}
+.voices h2{font-size:1.9rem;margin-bottom:8px}
+.vgrid{display:grid;gap:14px;margin-top:22px}
+.q{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);padding:20px;min-width:0}
+.q p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem}
+.q span{display:block;margin-top:10px;font-size:.8rem;color:var(--mute)}
+.sum{margin-top:18px;font-size:.9rem;color:var(--mute);max-width:70ch}
+@media(min-width:760px){.sr{grid-template-columns:240px 1fr 200px;align-items:start;gap:26px}.vgrid{grid-template-columns:1fr 1fr 1fr}}
+.pr{padding:64px 0;background:#fff}
+.pr h2{font-size:1.9rem;margin-bottom:24px}
+.pg{display:grid;gap:14px}
+.pc{border:1px solid var(--line);padding:20px;background:var(--sand);min-width:0}
+.pc b{font-family:'Playfair Display',serif;color:var(--gold2);font-size:1.4rem;font-weight:500}
+.pc h3{font-size:1.1rem;margin:4px 0 6px;color:var(--teal)}
+.pc p{font-size:.92rem;color:var(--mute)}
+@media(min-width:760px){.pg{grid-template-columns:repeat(3,1fr)}}
+.jr{padding:64px 0;background:var(--sand)}
+.jr h2{font-size:1.9rem;margin-bottom:22px}
+.jl{list-style:none;border-left:2px solid var(--gold);margin-left:8px}
+.jl li{padding:0 0 26px 24px;position:relative;min-width:0}
+.jl li:before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--sand)}
+.jl h3{font-size:1.15rem;margin-bottom:4px}
+.jl p{color:var(--mute);font-size:.95rem;max-width:60ch}
+.why{margin-top:10px;padding:18px 20px;background:var(--teal);color:#fff;font-size:.95rem}
+.band{background:var(--gold);color:var(--navy);padding:46px 0;text-align:center}
+.band h2{font-size:1.7rem;margin-bottom:8px}
+.band p{max-width:52ch;margin:0 auto 18px;font-size:.95rem}
+.band .row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.band .btn{background:var(--navy);color:#fff;border-color:var(--navy)}
+.band .btn.ghost{background:transparent;color:var(--navy)}
+footer{background:var(--navy);color:#b9b4c7;padding:30px 0 90px;font-size:.85rem;text-align:center}
+footer b{color:var(--gold);font-weight:500}
+#ab{position:fixed;right:16px;bottom:16px;z-index:50;background:var(--gold);color:var(--navy);border:0;border-radius:99px;padding:13px 18px;font-weight:600;font-family:inherit;font-size:.9rem;box-shadow:0 6px 20px rgba(0,0,0,.3);cursor:pointer}
+#ap{position:fixed;right:12px;bottom:12px;z-index:60;width:calc(100vw - 24px);max-width:380px;height:min(560px,calc(100vh - 24px));background:#fff;border:1px solid var(--gold);display:none;flex-direction:column;box-shadow:0 14px 40px rgba(0,0,0,.35);border-radius:4px;overflow:hidden}
+#ap.on{display:flex}
+.ah{background:var(--navy);color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-size:.9rem}
+.ah small{display:block;color:var(--gold);font-size:.72rem}
+.ah button{background:none;border:0;color:#fff;font-size:1.3rem;cursor:pointer}
+#am{flex:1;overflow-y:auto;padding:12px;background:var(--sand);display:flex;flex-direction:column;gap:8px}
+.m{max-width:86%;padding:9px 12px;font-size:.9rem;border-radius:10px;white-space:pre-line;overflow-wrap:anywhere}
+.m.b{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.m.u{background:var(--navy);color:#fff;align-self:flex-end}
+#ac{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;background:var(--sand);border-top:1px solid var(--line)}
+#ac button{border:1px solid var(--gold2);background:#fff;color:var(--navy);padding:5px 10px;font-size:.78rem;border-radius:99px;cursor:pointer;font-family:inherit}
+#af{display:flex;border-top:1px solid var(--line)}
+#ai{flex:1;border:0;padding:12px;font-family:inherit;font-size:16px;min-width:0;outline:none}
+#af button{border:0;background:var(--navy);color:var(--gold);padding:0 16px;cursor:pointer;font-family:inherit;font-weight:600}
+@media(min-width:760px){
+.hd nav{display:flex}.logo img{height:26px}
+.hero{padding:96px 0 110px}.hero h1{font-size:3.6rem}
+.steps{grid-template-columns:repeat(3,1fr);border-top:0;gap:30px}
+.step{display:block;border:0;border-top:2px solid var(--gold);padding:18px 0}
+.cols{grid-template-columns:1fr 1fr}
+.tg{grid-template-columns:repeat(3,1fr)}
+.vg{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+<a class="logo" href="#top" aria-label="KINETIKA"><img src="img/kinetika-logo.svg" alt="KINETIKA" width="172" height="32"></a>
+<nav><a href="#process">Approach</a><a href="#treat">Treatments</a><a href="#team">Team</a><a href="#visit">Visit</a><a href="#faq">FAQ</a></nav>
+<a class="btn" href="#" onclick="openA('book');return false">Book now</a>
+</div></header>
+
+<section class="hero" id="top"><div class="wrap">
+<div class="eyebrow">Premium clinic in Dubai Hills</div>
+<h1>Precision physiotherapy &amp; <em>rehabilitation</em></h1>
+<p class="lead">Focused on accurate diagnosis and long-term recovery. You see the same therapist every session, not a rotating roster.</p>
+<div class="cta"><a class="btn" href="#" onclick="openA('book');return false">Book an assessment</a><a class="btn ghost" href="#" onclick="openA();return false">Ask the assistant</a></div>
+<div class="perks"><span>Valet parking</span><span>Private rooms</span><span>Dedicated therapist</span><span>DHA licensed</span></div>
+<div class="rate"><b>&#9733;&#9733;&#9733;&#9733;&#9733;</b> 179 Google reviews</div>
+</div></section>
+
+<section class="process" id="process"><div class="wrap">
+<div class="eyebrow">The process</div><h2>Getting better, step by step</h2>
+<div class="steps">
+<div class="step"><i>01</i><div><h3>Detailed assessment</h3><p>A 60-minute session: full history, movement patterns, and a clear picture of the root cause before any treatment begins.</p></div></div>
+<div class="step"><i>02</i><div><h3>Your personalised plan</h3><p>Manual therapy, movement science and targeted exercise, built around your goals, with milestones and a realistic timeline.</p></div></div>
+<div class="step"><i>03</i><div><h3>Recovery &amp; beyond</h3><p>Discharge plans, return-to-sport protocols and prevention programmes, so the result lasts.</p></div></div>
+</div>
+<div class="note">Kinetika is not a volume clinic. Manual therapy leads; technology (Technogym, BTL, Magnetolith, Sidas) comes after. Your therapist also works alongside your GP or surgeon.</div>
+</div></section>
+
+<section class="jr" id="journey"><div class="wrap">
+<div class="eyebrow">Your journey with us</div><h2>From first contact to full recovery</h2>
+<ol class="jl">
+<li><h3>Initial assessment</h3><p>A comprehensive 60-minute session. We take your full history, identify movement patterns and map a clear picture of your condition before any treatment begins.</p></li>
+<li><h3>Treatment plan</h3><p>A personalised, phased plan combining manual therapy, targeted exercise and technology, with clear milestones and a realistic timeline for recovery.</p></li>
+<li><h3>Active rehabilitation</h3><p>Regular sessions with your dedicated practitioner, adapting the plan as you progress. Every session is purposeful, with no filler.</p></li>
+<li><h3>Discharge &amp; prevention</h3><p>When you are ready to leave, you get the tools, exercises and knowledge to maintain your recovery and prevent future injury.</p></li>
+</ol>
+<div class="why">Why Kinetika: unlike high-volume chains, your practitioner does not rotate. You see the same face every session, and that continuity helps recovery.</div>
+</div></section>
+
+<section class="treat" id="treat"><div class="wrap">
+<div class="eyebrow">What we treat</div><h2>Treatments &amp; conditions</h2>
+<div class="cols">
+<div><h3>Treatments</h3><div class="tags"><span>Physiotherapy</span><span>Pre &amp; post surgical rehab</span><span>Orthopaedic trauma rehab</span><span>Pain management</span><span>Rheumatology physiotherapy</span><span>Paediatric rehabilitation</span><span>Seniors rehabilitation</span><span>Sports physiotherapy</span><span>TMJ / jaw physiotherapy</span><span>Pelvic health</span><span>Women's health</span><span>Vestibular rehabilitation</span><span>Post-concussion physiotherapy</span><span>Emsella</span><span>Chiropractic care</span><span>Deep tissue &amp; relaxation massage</span><span>Slimming massage</span><span>Lymphatic drainage</span><span>Custom insoles</span></div></div>
+<div><h3>Conditions</h3><div class="tags"><span>Back pain</span><span>Neck pain &amp; tension</span><span>Sciatica</span><span>Poor posture</span><span>Knee pain</span><span>Shoulder pain</span><span>Hip pain</span><span>Foot pain &amp; plantar fasciitis</span><span>Jaw pain</span><span>Headaches &amp; neck tension</span><span>Dizziness &amp; balance issues</span><span>Post-concussion syndrome</span><span>Muscle tightness</span><span>Sports injuries</span><span>Pelvic floor dysfunction</span><span>Chronic pain</span><span>Post-surgery recovery</span><span>Bloating &amp; constipation</span><span>Age-related pain</span></div></div>
+</div>
+</div></section>
+
+<section class="pr" id="principles"><div class="wrap">
+<div class="eyebrow">What sets us apart</div><h2>Six principles of the practice</h2>
+<div class="pg">
+<div class="pc"><b>01</b><h3>Root cause diagnosis</h3><p>Every journey begins with a detailed, research-backed assessment that looks for the true origin of pain or movement dysfunction, not only its symptoms.</p></div>
+<div class="pc"><b>02</b><h3>Bespoke care plans</h3><p>No two patients are the same. Each protocol is designed around your body, your history, your goals and your timeline.</p></div>
+<div class="pc"><b>03</b><h3>Manual therapy expertise</h3><p>Practitioners lead with hands-on technique, movement analysis, mobilisation and soft tissue work before introducing technology.</p></div>
+<div class="pc"><b>04</b><h3>Rehabilitation technology</h3><p>Technogym, BTL, Magnetolith and Sidas are integrated to speed up outcomes beyond what manual therapy alone can do.</p></div>
+<div class="pc"><b>05</b><h3>Collaborative care</h3><p>The team works alongside your GP, surgeon and other healthcare professionals, so care is co-ordinated and not isolated.</p></div>
+<div class="pc"><b>06</b><h3>Long-term accountability</h3><p>Recovery does not end when the pain stops: discharge plans, return-to-sport protocols and preventive programmes keep you moving.</p></div>
+</div>
+</div></section>
+
+<section class="team" id="team"><div class="wrap">
+<div class="eyebrow">Our clinical team</div><h2>Meet your therapist</h2>
+<div class="tg">
+<div class="tc"><div class="yrs">12+ years</div><h3>Ali Deniz Baykara</h3><div class="role">Chiropractor &amp; physiotherapist</div><p>Chiropractic and sports physiotherapy, manual therapy, spinal disorders, TMJ, chronic pain, dry needling, cupping.</p><div class="lang">English · Turkish</div></div>
+<div class="tc"><div class="yrs">5+ years</div><h3>Alma Koudsi</h3><div class="role">Physiotherapist</div><p>Pelvic and women's health, musculoskeletal rehab, dry needling, visceral manipulation therapy.</p><div class="lang">English · Arabic</div></div>
+<div class="tc"><div class="yrs">8+ years</div><h3>Jimy Haddad</h3><div class="role">Senior physiotherapist</div><p>Vestibular and balance rehab, osteopathic manual therapy, paediatric and post-surgical rehab, custom insoles.</p><div class="lang">English · French · Arabic</div></div>
+<div class="tc"><div class="yrs">8+ years</div><h3>Nour Salman</h3><div class="role">Senior physiotherapist</div><p>Vestibular and balance rehabilitation, dizziness and vertigo, TMJ disorders, maxillofacial rehab, facial paralysis.</p><div class="lang">English · French · Arabic</div></div>
+<div class="tc"><div class="yrs">8+ years</div><h3>Youlie Warda</h3><div class="role">Senior physiotherapist</div><p>Pelvic and women's health, pregnancy, postpartum and menopause support, osteopathic manual therapy, chronic pain.</p><div class="lang">English · French · Arabic</div></div>
+<div class="tc"><div class="yrs">4+ years</div><h3>Katrine Gayle Ignacio</h3><div class="role">Massage therapist</div><p>Therapeutic and deep tissue massage, lymphatic drainage, recovery and relaxation.</p><div class="lang">Massage team</div></div>
+</div>
+</div></section>
+
+<section class="spec" id="spec"><div class="wrap">
+<div class="eyebrow">Specialist areas</div><h2>Who looks after what</h2>
+<p class="sub">Each practitioner has a clear focus, so you start with the person whose experience matches your problem.</p>
+<div class="sg">
+<div class="sr"><h3>Vestibular &amp; balance</h3><p>Dizziness, vertigo and balance issues, plus post-concussion care. Nour and Jimy lead this area, and patients mention it often in their reviews.</p><div class="who">Nour · Jimy</div></div>
+<div class="sr"><h3>Pelvic &amp; women's health</h3><p>Pelvic floor dysfunction, pregnancy, postpartum and menopause support, with Emsella also available.</p><div class="who">Alma · Youlie</div></div>
+<div class="sr"><h3>Spine, sports &amp; chiropractic</h3><p>Back and neck pain, sciatica, posture, sports injuries and return-to-sport protocols, with chiropractic care, dry needling and cupping.</p><div class="who">Ali</div></div>
+<div class="sr"><h3>Post-surgical &amp; orthopaedic</h3><p>Pre and post surgical rehab and orthopaedic trauma rehab, co-ordinated with your GP, surgeon or other healthcare professionals.</p><div class="who">Jimy</div></div>
+<div class="sr"><h3>TMJ, jaw &amp; headaches</h3><p>Jaw pain and headaches linked to neck tension, including maxillofacial rehabilitation.</p><div class="who">Nour · Youlie · Ali</div></div>
+<div class="sr"><h3>Massage &amp; recovery</h3><p>Deep tissue and relaxation massage, slimming massage and manual lymphatic drainage.</p><div class="who">Katrine</div></div>
+<div class="sr"><h3>Children &amp; seniors</h3><p>Paediatric rehabilitation, seniors rehabilitation and age-related pain, plus custom insoles.</p><div class="who">Jimy</div></div>
+</div>
+</div></section>
+
+<section class="voices" id="voices"><div class="wrap">
+<div class="eyebrow">What patients say</div><h2>179 Google reviews, 5.0</h2>
+<div class="vgrid">
+<div class="q"><p>Great physiotherapy. Jimy did an amazing job, and I can highly recommend it.</p><span>Lukas, Google review</span></div>
+<div class="q"><p>For vestibular issues, the team at kinetika especially Nour will support you fully on your recovery journey!</p><span>Omar Hanafy, Google review</span></div>
+<div class="q"><p>Youlie is an excellent therapist so calm and so patient.</p><span>Ahlaam S. A. Ba'Abbad, Google review</span></div>
+</div>
+<p class="sum">Patients say they come for vestibular rehab and vertigo, pelvic floor recovery, back and neck pain and sports injuries, and many notice progress within a few sessions. They also mention a calm, modern clinic and a warm, organised welcome at reception.</p>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap">
+<div class="eyebrow">Visit us</div><h2>Dubai Hills, with free valet parking</h2>
+<div class="vg">
+<div class="card"><h3>Opening hours</h3><table><tr><td>Monday to Friday</td><td>9:00 AM to 8:00 PM</td></tr><tr><td>Saturday</td><td>9:00 AM to 6:00 PM</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table><p class="areas">Same-week appointments are usually available. Most insurances are accepted.</p></div>
+<div class="card"><h3>Find us</h3><p>Unit 403, Floor 4, Park Heights Square 1<br>Al Khail Road, Dubai Hills Estate, Dubai</p><p style="margin-top:10px"><b>+971 50 800 3206</b><br><span class="areas">Phone and WhatsApp</span></p><p class="areas">Patients come from Business Bay, Downtown, DIFC, Abu Dhabi, Sharjah, Ajman and Fujairah.</p></div>
+</div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<h2>Ready to start your recovery?</h2>
+<p>Book your detailed assessment in a couple of minutes. Tell the assistant what is bothering you and your preferred days, and the team will confirm the time. Same-week appointments are usually available.</p>
+<div class="row"><a class="btn" href="#" onclick="openA('book');return false">Book your assessment</a><a class="btn ghost" href="https://wa.me/971508003206">WhatsApp</a><a class="btn ghost" href="tel:+971508003206">Call +971 50 800 3206</a></div>
+</div></section>
+
+<section class="faq" id="faq"><div class="wrap">
+<div class="eyebrow">Good to know</div><h2>Questions we hear often</h2>
+<details><summary>How long is the first appointment?</summary><p>The initial assessment is a comprehensive 60-minute session.</p></details>
+<details><summary>Will I see the same therapist each time?</summary><p>Yes. Unlike high-volume chains, your practitioner does not rotate.</p></details>
+<details><summary>Which languages do you speak?</summary><p>English, Arabic and French at the clinic, plus Turkish with Ali.</p></details>
+<details><summary>Is the clinic licensed?</summary><p>Yes, Kinetika is a DHA licensed clinic and every practitioner is individually registered.</p></details>
+<details><summary>Do you only treat pain?</summary><p>No. Physiotherapy here is also a proactive step towards optimal health and movement, including prevention programmes and return-to-sport protocols.</p></details>
+<details><summary>Do you work with my doctor or surgeon?</summary><p>Yes. The team works alongside your GP, surgeon and other healthcare professionals so your care plan is co-ordinated.</p></details>
+<details><summary>What does a typical plan look like?</summary><p>Assessment, a phased plan combining manual therapy, targeted exercise and technology, regular sessions with your therapist, then discharge and prevention.</p></details>
+<details><summary>What are your opening hours?</summary><p>Monday to Friday 9:00 AM to 8:00 PM, Saturday 9:00 AM to 6:00 PM, closed on Sunday.</p></details>
+<details><summary>Where do I park?</summary><p>Park Heights Square 1 has free valet parking on site.</p></details>
+<details><summary>Do you accept insurance?</summary><p>Most insurances are accepted. The team confirms your specific policy when you book.</p></details>
+</div></section>
+
+<footer><div class="wrap">&copy; KINETIKA&reg; &middot; DHA licensed clinic, Dubai Hills<br><b>Demo · prepared by Gevorg Hovhannisyan</b></div></footer>
+
+<button id="ab" onclick="openA()">Ask Kinetika &#10024;</button>
+<div id="ap" role="dialog" aria-label="Kinetika assistant">
+<div class="ah"><div>Kinetika assistant<small>Answers from this page. Not medical advice.</small></div><button onclick="closeA()" aria-label="Close">&times;</button></div>
+<div id="am"></div><div id="ac"></div>
+<form id="af" onsubmit="return send()"><input id="ai" placeholder="Type your question" autocomplete="off"><button>Send</button></form>
+</div>
+
+<script>
+/*MATCHER*/
+var KB=[
+{id:'hours',k:'hours open opening close closing time times when saturday sunday weekend monday friday evening late schedule working',a:'We are open Monday to Friday 9:00 AM to 8:00 PM and Saturday 9:00 AM to 6:00 PM. Sunday we are closed. Same-week appointments are usually available.'},
+{id:'where',k:'where address location find directions map located dubai hills heights khail road area',a:'Unit 403, Floor 4, Park Heights Square 1, Al Khail Road, Dubai Hills Estate, Dubai. It is a short drive from Downtown, Business Bay and DIFC.'},
+{id:'parking',k:'parking park valet car drive',a:'Valet parking is free on site at Park Heights Square 1.'},
+{id:'contact',k:'phone call number whatsapp contact email reach message telephone mobile',a:'Call or WhatsApp +971 50 800 3206. The team replies within one business day.'},
+{id:'assess',k:'assessment first visit initial appointment session long duration minutes consultation expect',a:'The first visit is a comprehensive 60-minute assessment: your full history, movement patterns and a clear picture of your condition before any treatment begins. Your therapist then builds a personalised plan.'},
+{id:'same',k:'same therapist rotate rotating dedicated continuity practitioner',a:'Yes. Unlike high-volume chains, your practitioner does not rotate. You see the same therapist every session.'},
+{id:'insure',k:'insurance insurances insured cover covered coverage policy billing claim',a:'Most insurances are accepted. The team will confirm your specific policy when you book.'},
+{id:'price',k:'price prices cost costs fee fees much pay payment charge rate rates expensive cheap',a:'Fees are not listed on this page. The team will confirm the cost of your appointment when you book.'},
+{id:'lang',k:'language languages english arabic french turkish speak speaks',a:'The team speaks English, Arabic and French, and Ali also speaks Turkish.'},
+{id:'licence',k:'licensed licence license dha registered authority regulated qualified',a:'Kinetika is a DHA licensed clinic and every practitioner is individually registered with the Dubai Health Authority.'},
+{id:'team',k:'team therapist therapists physiotherapist physio staff doctor practitioners ali alma jimy nour youlie katrine',a:'Our clinical team: Ali Deniz Baykara (chiropractic, sports), Alma Koudsi (pelvic and women\'s health), Jimy Haddad (vestibular, post-surgical, paediatric), Nour Salman (vestibular, TMJ), Youlie Warda (women\'s and pelvic health) and Katrine Gayle Ignacio (massage).'},
+{id:'vest',k:'vestibular dizziness dizzy vertigo balance giddy spinning',a:'Vestibular and balance rehabilitation is led by Nour Salman and Jimy Haddad. For your specific symptoms, the team is the right one to advise, so I can pass your details on.'},
+{id:'pelvic',k:'pelvic floor womens women pregnancy postpartum menopause incontinence emsella bladder',a:'Pelvic and women\'s health is covered by Alma Koudsi and Youlie Warda, including pregnancy, postpartum and menopause support. We also offer Emsella.'},
+{id:'sports',k:'sports sport injury injuries athlete athletes running return runner gym',a:'Sports physiotherapy and return-to-sport protocols are offered, led by Ali Deniz Baykara and Jimy Haddad.'},
+{id:'back',k:'back neck sciatica spine spinal posture shoulder knee hip foot plantar muscle stiffness',a:'We treat back pain, neck pain, sciatica, poor posture, and knee, shoulder, hip and foot pain. I cannot assess your symptoms here; a therapist does that in the first assessment.'},
+{id:'tmj',k:'tmj jaw headache headaches maxillofacial facial clicking',a:'Jaw (TMJ) physiotherapy and headaches linked to neck tension are treated here. Nour Salman, Youlie Warda and Ali Deniz Baykara have TMJ experience.'},
+{id:'chiro',k:'chiropractic chiropractor adjust adjustment cupping dry needling needle',a:'Chiropractic care is offered by Ali Deniz Baykara, who also uses dry needling and cupping.'},
+{id:'massage',k:'massage deep tissue relaxation slimming lymphatic drainage lymph',a:'We offer deep tissue and relaxation massage, slimming massage and manual lymphatic drainage with our massage therapist, Katrine.'},
+{id:'surg',k:'surgery surgical post pre operative orthopaedic orthopedic trauma fracture rehab rehabilitation recovery',a:'We offer pre and post surgical rehab and orthopaedic trauma rehab, and we work with your GP or surgeon so your plan is co-ordinated.'},
+{id:'kids',k:'child children kid kids paediatric pediatric baby senior seniors elderly geriatric age',a:'Paediatric rehabilitation and seniors rehabilitation are both offered. Jimy Haddad has paediatric and geriatric experience.'},
+{id:'insole',k:'insole insoles orthotic orthotics shoes feet custom',a:'Custom insoles are available, with Jimy Haddad.'},
+{id:'tech',k:'equipment technology technogym btl magnetolith sidas machines modalities',a:'Manual therapy leads, then we add rehabilitation technology: Technogym, BTL, Magnetolith and Sidas.'},
+{id:'reviews',k:'reviews review rating rated google stars reputation',a:'Kinetika has 179 five-star Google reviews.'},
+{id:'medical',k:'diagnose diagnosis symptoms hurt injured medication cure serious sick',a:'I cannot diagnose or give medical advice. Please describe it to the team in the booking, and a physiotherapist will advise at your assessment.'},
+{id:'concuss',k:'concussion post head injury brain',a:'Post-concussion physiotherapy and post-concussion syndrome are both on our list of treatments and conditions. For your specific situation, the team will advise at your assessment.'},
+{id:'pain',k:'chronic pain management rheumatology arthritis joint',a:'We offer pain management and rheumatology physiotherapy, and treat chronic pain. A therapist assesses your case at the first visit.'},
+{id:'gp',k:'gp surgeon referral referred doctor hospital',a:'The team works alongside your GP, surgeon and other healthcare professionals so your care plan is co-ordinated. Whether you need a referral is something the team will confirm.'},
+{id:'discharge',k:'discharge prevention prevent maintain long term plan approach philosophy root cause',a:'Kinetika is assessment-first: root cause diagnosis, a bespoke plan, active rehab with your own therapist, then discharge and prevention so you stay well.'},
+{id:'areas',k:'areas travel from sharjah abu dhabi downtown difc business bay ajman fujairah far',a:'Patients come from Business Bay, Downtown, DIFC, Abu Dhabi, Sharjah, Ajman and Fujairah to the Dubai Hills clinic.'},
+{id:'rooms',k:'private rooms room clinic modern premium',a:'The clinic has private treatment rooms, modern rehabilitation equipment and valet parking.'},
+{id:'weekend',k:'weekend saturdays sunday closed holiday',a:'We are open on Saturday 9:00 AM to 6:00 PM and closed on Sunday. Public holiday opening is not listed, so the team will confirm it.'},
+{id:'first',k:'bring prepare preparation wear clothes referral needed require',a:'I do not have a list of what to bring. The team will tell you how to prepare when they confirm your booking.'},
+{id:'soon',k:'soon urgent urgently available availability slot slots earliest quickly week',a:'Same-week appointments are usually available. Tell me your preferred days and the team will confirm a time.'},
+{id:'women',k:'female male woman man therapist gender prefer preference',a:'You can say which therapist you would like when you book, for example Alma or Youlie for women\'s health. The team will confirm availability.'},
+{id:'lymph',k:'lymphatic drainage swelling lymph',a:'Manual lymphatic drainage is offered by our massage team. The team can tell you which therapist suits your needs.'},
+{id:'about',k:'about kinetika clinic who premium specialist boutique',a:'Kinetika is a specialist physiotherapy and rehabilitation clinic in Dubai Hills, built around root cause diagnosis rather than high patient volume. It is DHA licensed and has 179 five-star Google reviews.'},
+{id:'cancel',k:'cancel cancellation reschedule policy late',a:'I do not have the cancellation policy. The team will confirm it when you book.'}
+];
+var STOP='the a an is are do does you your i to of for in on at we can my me it and or with have has be about what how any there this that please would like want'.split(' ');
+function norm(s){return s.toLowerCase().replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){if(w.length>4){w=w.replace(/(ing|ed|es|s)$/,'')}return w}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i]}for(j=0;j<=n;j++){d[0][j]=j}
+for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[m][n]}
+KB.forEach(function(e){e.w=norm(e.k).split(' ').map(stem)});
+function tokens(q){return norm(q).split(' ').filter(function(w){return w&&STOP.indexOf(w)<0}).map(stem)}
+function best(q){var t=tokens(q),top=null,sc=0;
+KB.forEach(function(e){var s=0;t.forEach(function(w){var h=0;e.w.forEach(function(k){if(k==w){h=Math.max(h,2)}else if(w.length>=4&&k.length>=4&&(k.indexOf(w)==0||w.indexOf(k)==0)){h=Math.max(h,1.5)}else if(w.length>=5&&lev(w,k)<=(w.length>=8?2:1)){h=Math.max(h,1.2)}});s+=h});
+if(s>sc){sc=s;top=e}});return sc>=1.2?top:null}
+function isBook(q){return /\b(book|booking|appointment|apointment|appoint|reserve|schedule|sign up)/.test(norm(q))}
+/*END*/
+var $=function(i){return document.getElementById(i)},M=$('am'),C=$('ac'),flow=null,data={};
+function say(t,u){var d=document.createElement('div');d.className='m '+(u?'u':'b');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight}
+function chips(a){C.innerHTML='';a.forEach(function(x){var b=document.createElement('button');b.textContent=x[0];b.onclick=function(){handle(x[1]||x[0],x[0])};C.appendChild(b)})}
+var home=[['Book an assessment','book'],['Opening hours','opening hours'],['Where are you?','where are you'],['Insurance','insurance'],['Our therapists','therapists'],['Parking','parking']];
+function openA(m){$('ap').classList.add('on');$('ab').style.display='none';if(!M.children.length){say('Hello! I answer questions about Kinetika in Dubai Hills and can pass a booking request to the team. I cannot give medical advice.');chips(home)}if(m=='book'&&!flow)startBook()}
+function closeA(){$('ap').classList.remove('on');$('ab').style.display='block'}
+function send(){var v=$('ai').value.trim();if(v){$('ai').value='';handle(v,v)}return false}
+var steps=[
+{k:'need',q:'What would you like help with?',c:['Back or neck pain','Sports injury','Dizziness or balance','Pelvic or women\'s health','Jaw or headaches','After surgery','Massage','Something else']},
+{k:'who',q:'Do you have a preferred therapist?',c:['No preference','Ali','Alma','Jimy','Nour','Youlie']},
+{k:'when',q:'Which days and times suit you? (Mon to Fri 9 to 8, Sat 9 to 6)',c:['Weekday morning','Weekday afternoon','Weekday evening','Saturday']},
+{k:'name',q:'Your name?',c:[]},
+{k:'phone',q:'A phone or WhatsApp number for the team to confirm?',c:[]}];
+var si=0;
+function startBook(){flow='book';si=0;data={};ask()}
+function ask(){var s=steps[si];say(s.q);chips(s.c)}
+function handle(v,label){say(label||v,1);
+if(flow){var s=steps[si];if(s.k=='phone'&&v.replace(/\D/g,'').length<6){say('Please enter a number with at least 6 digits.');return}
+data[s.k]=v;si++;if(si<steps.length){ask()}else{flow=null;say('Thank you, '+data.name+'. Your request is sent to the team ('+data.need+'; '+data.who.toLowerCase()+'; '+data.when.toLowerCase()+'). They will confirm the time on '+data.phone+' within one business day.');chips(home)}return}
+if(v=='book'||isBook(v)){startBook();return}
+var e=best(v);if(e){say(e.a);chips([['Book an assessment','book'],['Opening hours','opening hours'],['Insurance','insurance']])}
+else{say('I am not sure about that. The team can answer it on WhatsApp or by phone at +971 50 800 3206, or I can take your booking request.');chips([['Book an assessment','book'],['Opening hours','opening hours'],['Our therapists','therapists']])}}
+</script>
+</body>
+</html>

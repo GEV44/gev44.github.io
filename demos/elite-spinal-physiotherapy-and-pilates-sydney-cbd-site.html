@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Elite Spinal Physiotherapy and Pilates · Sydney CBD</title>
+<meta name="description" content="Demo page for Elite Spinal Physiotherapy and Pilates, 16a Loftus Street, Sydney CBD.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f8f5f0;--sand:#e1dbce;--tan:#d1b799;--stone:#6a6560;--char:#2a2926;--ink:#1a1a1a;--clay:#a9754f;--w-acc:#2a2926;--w-head:#2a2926;--w-font:'Karla',system-ui,sans-serif;--w-r:6px;--w-fr:6px;--w-log:#f8f5f0;--w-line:#e1dbce}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Karla',system-ui,sans-serif;background:var(--cream);color:var(--char);line-height:1.65;overflow-x:hidden;-webkit-text-size-adjust:100%;font-size:17px}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,.serif{font-family:'Marcellus',Georgia,serif;font-weight:400;line-height:1.12}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 18px}
+.kick{font:700 12px/1 'Karla';letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:13px 26px;border:1px solid var(--char);background:var(--char);color:var(--cream);text-decoration:none;font:700 14px 'Karla';letter-spacing:.12em;text-transform:uppercase;cursor:pointer;text-align:center}
+.btn.ghost{background:transparent;color:var(--char)}
+.btn.tan{background:var(--tan);border-color:var(--tan);color:var(--char)}
+/* header (dark chip for the white logo) */
+.hd{background:var(--char);color:var(--cream)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
+.hd img{height:50px;width:auto}
+.hd nav{display:none;gap:24px;font-size:14px;letter-spacing:.06em}
+.hd nav a{text-decoration:none;opacity:.85}.hd nav a:hover{opacity:1}
+.hd .btn{min-height:40px;padding:8px 16px;font-size:12px;background:var(--tan);border-color:var(--tan);color:var(--char)}
+@media(min-width:900px){.hd nav{display:flex}}
+/* hero */
+.hero{padding:44px 0 0;position:relative}
+.hero .wrap{display:grid;gap:30px;grid-template-columns:minmax(0,1fr)}
+.hero h1{font-size:clamp(38px,10vw,84px);margin:16px 0 20px;letter-spacing:-.02em}
+.hero h1 i{color:var(--clay);font-style:italic}
+.hero p{max-width:540px;color:var(--stone);font-size:18px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--char);margin-top:40px}
+.pillars div{padding:18px 4px 20px;border-bottom:1px solid var(--sand)}
+.pillars b{font:400 32px 'Marcellus';display:block;color:var(--clay)}
+.pillars span{font-size:14px;color:var(--stone)}
+@media(min-width:900px){.hero .wrap{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);align-items:end;gap:60px}.pillars{grid-template-columns:1fr;margin-top:0}.hero{padding-top:70px}}
+.rail{background:var(--sand);margin-top:48px;overflow:hidden}
+.rail .wrap{display:flex;flex-wrap:wrap;gap:6px 26px;padding-top:16px;padding-bottom:16px;font:400 18px 'Marcellus'}
+.rail span::before{content:"\2022";color:var(--clay);margin-right:10px}
+/* clinics */
+.sec{padding:72px 0}
+.title{max-width:700px;margin-bottom:30px}
+.title h2{font-size:clamp(30px,6.5vw,52px);margin-top:12px}
+.title p{margin-top:12px;color:var(--stone)}
+.tabs{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--char)}
+.tabs button{flex:1 1 140px;background:transparent;border:0;border-bottom:3px solid transparent;padding:14px 8px;font:400 19px 'Marcellus';color:var(--stone);cursor:pointer;margin-bottom:-1px}
+.tabs button[aria-selected=true]{color:var(--char);border-bottom-color:var(--clay)}
+.pane{display:none;padding:28px 0 0;grid-template-columns:minmax(0,1fr);gap:22px}
+.pane.on{display:grid}
+@media(min-width:800px){.pane.on{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.pane h3{font-size:28px;margin-bottom:10px}
+.pane address{font-style:normal;font-size:18px}
+.pane .tel{display:inline-block;margin-top:12px;font:400 26px 'Marcellus';text-decoration:none;border-bottom:1px solid var(--clay)}
+.hrs{background:#fff;border:1px solid var(--sand);padding:20px 22px}
+.hrs table{width:100%;border-collapse:collapse;font-size:16px}
+.hrs td{padding:9px 0;border-bottom:1px solid var(--sand)}
+.hrs td:last-child{text-align:right;font-weight:700}
+.hrs tr:last-child td{border:0}
+.hrs p{font-size:14px;color:var(--stone);margin-top:10px}
+/* services index */
+.idx{background:var(--char);color:var(--cream)}
+.idx .title p{color:#c9c2b6}.idx .kick{color:var(--tan)}
+.list{border-top:1px solid #4a4741}
+.row{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 14px;padding:20px 0;border-bottom:1px solid #4a4741}
+.row b{font:400 20px 'Marcellus';color:var(--tan);grid-row:span 2}
+.row h3{font-size:23px}
+.row p{color:#c9c2b6;font-size:15.5px;grid-column:2}
+@media(min-width:820px){.list{columns:2;column-gap:56px}.row{break-inside:avoid}}
+/* conditions */
+.cond{display:flex;flex-wrap:wrap;gap:10px}
+.cond span{border:1px solid var(--char);padding:9px 16px;font-size:15px;background:#fff}
+.cond span:nth-child(3n){background:var(--sand);border-color:var(--sand)}
+.fine{font-size:14px;color:var(--stone);margin-top:18px}
+/* pilates */
+.pil{background:var(--sand)}
+.pil .wrap{display:grid;gap:32px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:900px){.pil .wrap{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start}}
+.pil ul{list-style:none;display:grid;gap:8px;margin:18px 0}
+.pil li{padding-left:24px;position:relative}
+.pil li::before{content:"";position:absolute;left:0;top:.7em;width:12px;height:1px;background:var(--clay)}
+.sess{display:grid;gap:12px}
+.s{background:var(--cream);padding:18px 20px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;align-items:center}
+.s b{font:400 22px 'Marcellus'}
+.s em{font-style:normal;font-weight:700;color:var(--clay)}
+.bar{grid-column:1/-1;height:6px;background:var(--sand);position:relative}
+.bar i{position:absolute;left:0;top:0;bottom:0;background:var(--clay)}
+.s small{grid-column:1/-1;color:var(--stone);font-size:14px}
+/* team */
+.team{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.team{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.pp{background:#fff;border:1px solid var(--sand);padding:22px}
+.pp .ini{width:54px;height:54px;border-radius:50%;background:var(--tan);display:grid;place-items:center;font:400 20px 'Marcellus';margin-bottom:12px}
+.pp b{font:400 22px 'Marcellus';display:block}
+.pp span{font-size:14px;color:var(--stone)}
+.names{margin-top:22px;font-size:15px;color:var(--stone)}
+.names b{color:var(--char)}
+details{background:#fff;border:1px solid var(--sand);margin-bottom:10px;padding:0 20px}
+summary{cursor:pointer;list-style:none;font:400 20px 'Marcellus';padding:18px 30px 18px 0;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:14px;font:400 28px 'Marcellus';color:var(--clay)}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 0 18px;color:var(--stone);font-size:16px}
+/* begin */
+.begin{background:var(--tan)}
+.begin .wrap{display:grid;gap:24px;grid-template-columns:minmax(0,1fr);align-items:center}
+.begin h2{font-size:clamp(30px,6vw,50px)}
+.begin .cta{display:flex;flex-wrap:wrap;gap:12px}
+@media(min-width:860px){.begin .wrap{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}}
+footer{background:var(--char);color:#c9c2b6;padding:30px 0 96px;font-size:14px}
+footer .wrap{display:grid;gap:8px}
+.as-fab{position:fixed;right:16px;bottom:16px;z-index:9000;display:flex;align-items:center;gap:8px;border:0;border-radius:var(--w-fr,999px);padding:12px 18px 12px 14px;background:var(--w-acc,#0a6b76);color:var(--w-on,#fff);font:700 15px/1 var(--w-font,system-ui,sans-serif);box-shadow:0 8px 28px rgba(0,0,0,.28);cursor:pointer}
+.as-fab .as-fi{font-size:20px;line-height:1}.as-fab.on{opacity:0;pointer-events:none}
+.as-box{position:fixed;right:16px;bottom:16px;z-index:9001;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 32px));height:min(560px,calc(100dvh - 32px));background:var(--w-bg,#fff);color:var(--w-ink,#1b1b1b);border-radius:var(--w-r,18px);box-shadow:0 20px 60px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden;font:15px/1.45 var(--w-font,system-ui,sans-serif)}
+.as-box[hidden]{display:none}
+.as-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:var(--w-head,var(--w-acc,#0a6b76));color:var(--w-on,#fff)}
+.as-head b{display:block;font-size:16px}.as-head small{opacity:.85;font-size:12.5px}
+.as-x{background:transparent;border:0;color:inherit;font-size:28px;line-height:1;cursor:pointer;padding:0 4px}
+.as-log{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:9px;background:var(--w-log,#f6f6f6)}
+.as-m{max-width:88%;padding:9px 13px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.as-m.bot{background:var(--w-bot,#fff);align-self:flex-start;border:1px solid var(--w-line,#e3e3e3)}
+.as-m.me{background:var(--w-acc,#0a6b76);color:var(--w-on,#fff);align-self:flex-end}
+.as-m a{color:inherit;font-weight:700;text-decoration:underline}
+.as-sum{margin:6px 0 0;padding-left:18px}
+.as-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;max-height:104px;overflow-y:auto;border-top:1px solid var(--w-line,#e3e3e3);background:var(--w-bg,#fff)}
+.as-chip{border:1px solid var(--w-acc,#0a6b76);background:transparent;color:var(--w-acc,#0a6b76);border-radius:999px;padding:6px 12px;font:600 13px/1.2 inherit;cursor:pointer}
+.as-chip:hover{background:var(--w-acc,#0a6b76);color:var(--w-on,#fff)}
+.as-form{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--w-line,#e3e3e3);background:var(--w-bg,#fff)}
+.as-in{flex:1;min-width:0;border:1px solid var(--w-line,#cfcfcf);border-radius:999px;padding:10px 14px;font:16px inherit;background:#fff;color:#111}
+.as-go{border:0;border-radius:50%;width:42px;height:42px;background:var(--w-acc,#0a6b76);color:var(--w-on,#fff);font-size:16px;cursor:pointer;flex:none}
+@media(max-width:480px){.as-box{right:8px;bottom:8px;width:calc(100vw - 16px)}}
+
+</style>
+</head>
+<body>
+<header class="hd"><div class="wrap">
+<a href="#top" aria-label="Elite Spinal Physiotherapy and Pilates"><img src="img/elite-spinal-physiotherapy-and-pilates-sydney-cbd-logo.png" alt="Elite Spinal Physiotherapy and Pilates" width="167" height="51"></a>
+<nav><a href="#clinics">Clinics</a><a href="#services">Services</a><a href="#pilates">Pilates</a><a href="#team">Team</a></nav>
+<a class="btn" href="#" data-start-flow>Book</a>
+</div></header>
+<main id="top">
+<section class="hero"><div class="wrap">
+<div>
+<span class="kick">Spinal physiotherapy and Pilates · Sydney CBD</span>
+<h1>Leading experts in <i>spine</i> and headache treatment.</h1>
+<p>A boutique clinic with state of the art facilities, client-focused care, hands-on spinal treatment and physiotherapist-led clinical Pilates. We teach you to self-manage, so recovery keeps going after the session.</p>
+<div class="cta"><a class="btn" href="#" data-start-flow>Make a booking</a><a class="btn ghost" href="tel:0291887488">Call 02 9188 7488</a></div>
+</div>
+<div class="pillars">
+<div><b>16a Loftus St</b><span>Sydney CBD clinic, NSW 2000</span></div>
+<div><b>7am to 8pm</b><span>Monday to Friday. Saturday 8am to 4:30pm</span></div>
+<div><b>Max 4</b><span>people in a Pilates group session</span></div>
+<div><b>Rebates</b><span>Medicare and private health on the spot*</span></div>
+</div>
+</div>
+<div class="rail"><div class="wrap"><span>Lower back pain</span><span>Neck pain</span><span>Sciatica</span><span>Disc bulge</span><span>Headache and migraine</span><span>Upper back and rib pain</span><span>Post op rehabilitation</span></div></div>
+</section>
+
+<section class="sec" id="clinics"><div class="wrap">
+<div class="title"><span class="kick">Three clinics</span><h2>Where to find us</h2><p>Same listed hours at every clinic. Choose a location to see its address and number.</p></div>
+<div class="tabs" role="tablist">
+<button role="tab" aria-selected="true" data-p="p1">Sydney CBD</button>
+<button role="tab" aria-selected="false" data-p="p2">Bondi Junction</button>
+<button role="tab" aria-selected="false" data-p="p3">South Yarra</button>
+</div>
+<div class="pane on" id="p1"><div><h3>Sydney CBD</h3><address>16a Loftus Street<br>Sydney NSW 2000</address><a class="tel" href="tel:0291887488">02 9188 7488</a></div>
+<div class="hrs"><table><tr><td>Monday to Friday</td><td>7am to 8pm</td></tr><tr><td>Saturday</td><td>8am to 4:30pm</td></tr></table><p>Sunday hours are not published. Ask the team.</p></div></div>
+<div class="pane" id="p2"><div><h3>Bondi Junction</h3><address>6/360 Oxford St<br>Bondi Junction NSW 2022<br><small style="color:var(--stone)">Entrance around the corner on Vernon St</small></address><a class="tel" href="tel:0293873310">02 9387 3310</a></div>
+<div class="hrs"><table><tr><td>Monday to Friday</td><td>7am to 8pm</td></tr><tr><td>Saturday</td><td>8am to 4:30pm</td></tr></table><p>Parking listed by the clinic: Bondi Junction Westfield (free for 2 hours), Eastgate Shopping Centre, Care Park on Grafton St.</p></div></div>
+<div class="pane" id="p3"><div><h3>South Yarra, Melbourne</h3><address>21/299 Toorak Road<br>South Yarra VIC 3141</address><a class="tel" href="tel:0399893386">03 9989 3386</a></div>
+<div class="hrs"><table><tr><td>Monday to Friday</td><td>7am to 8pm</td></tr><tr><td>Saturday</td><td>8am to 4:30pm</td></tr></table><p>Sunday hours are not published. Ask the team.</p></div></div>
+</div></section>
+
+<section class="sec idx" id="services"><div class="wrap">
+<div class="title"><span class="kick">Services</span><h2>An index of what we do</h2><p>Treatment for the spine first, with the programs around it that help you recover and stay well.</p></div>
+<div class="list">
+<div class="row"><b>01</b><h3>Physiotherapy</h3><p>Back pain, lower back, neck pain, headache, scoliosis, ankylosing spondylitis, SIJ and women's health.</p></div>
+<div class="row"><b>02</b><h3>Physio group exercise and Pilates</h3><p>Timetabled small groups, private sessions, online Pilates and clinical yoga.</p></div>
+<div class="row"><b>03</b><h3>Pregnancy and post natal</h3><p>Pregnancy physiotherapy, group exercise and post-natal physio exercise.</p></div>
+<div class="row"><b>04</b><h3>Pre and post op rehab</h3><p>Rehabilitation around surgery, including an online spinal program, breast cancer and chronic pain rehabilitation.</p></div>
+<div class="row"><b>05</b><h3>Massage therapy</h3><p>Listed alongside physiotherapy at the Sydney clinics.</p></div>
+<div class="row"><b>06</b><h3>Mobile, emergency, corporate, online</h3><p>Other ways to receive care. Ask the team how each works.</p></div>
+</div></div></section>
+
+<section class="sec"><div class="wrap">
+<div class="title"><span class="kick">Conditions</span><h2>Problems of the spine, treated by experts</h2><p>We aim to eliminate your pain and correct your posture. A few of the conditions the clinic lists:</p></div>
+<div class="cond"><span>Cauda equina syndrome</span><span>Cervical instability</span><span>Coccydinia</span><span>Degenerative disc disease</span><span>Discogenic back pain</span><span>Facet joint syndrome</span><span>Myelopathy</span><span>Prolapsed or slipped disc</span><span>Sacroiliac joint dysfunction</span><span>Spinal stenosis</span><span>Spondylolysis</span><span>Spondylosis and osteoarthritis</span><span>Thoracic and upper back pain</span><span>Scoliosis</span><span>Sciatica</span></div>
+<p class="fine">*On-the-spot Medicare and Private Health Insurance rebates are mentioned on the clinic's site with conditions. The team will confirm what applies to you. The assistant does not assess symptoms.</p>
+</div></section>
+
+<section class="sec pil" id="pilates"><div class="wrap">
+<div><span class="kick">Physio group exercise and clinical Pilates</span><h2 style="font-size:clamp(30px,6vw,48px);margin:12px 0 14px">Small groups, physiotherapist led</h2>
+<p style="color:var(--stone)">Industry leaders in physio group exercise and clinical Pilates, with staff trained in the Polestar method. Classes are effective, tailored and fun, in a fully equipped studio.</p>
+<ul><li>Reduced neck and lower back pain</li><li>Better posture and core strength</li><li>Improved spinal stability and flexibility</li><li>Lower risk of injury from work and sport</li></ul>
+<a class="btn" href="#" data-start-flow>Book a class or consultation</a></div>
+<div class="sess">
+<div class="s"><b>Semi private</b><em>50 min</em><div class="bar"><i style="width:83%"></i></div><small>Maximum 4 people</small></div>
+<div class="s"><b>Private</b><em>60 min</em><div class="bar"><i style="width:100%"></i></div><small>One to one attention</small></div>
+<div class="s"><b>Private</b><em>30 min</em><div class="bar"><i style="width:50%"></i></div><small>A shorter one to one session</small></div>
+<div class="s"><b>Duet</b><em>60 min</em><div class="bar"><i style="width:100%"></i></div><small>Two people together</small></div>
+<p style="font-size:15px;color:var(--stone)">How to get started: the clinic recommends a private initial consultation, a thorough assessment followed by a personalised program.</p>
+</div></div></section>
+
+<section class="sec" id="team"><div class="wrap">
+<div class="title"><span class="kick">The team</span><h2>Physiotherapists who love spines</h2><p>An empathetic, experienced team with a deep understanding of spinal health.</p></div>
+<div class="team">
+<div class="pp"><div class="ini">ER</div><b>Elisha Renton</b><span>Clinic Founder and Director</span></div>
+<div class="pp"><div class="ini">BS</div><b>Brigitte Seelin</b><span>Clinic Founder and Director</span></div>
+<div class="pp"><div class="ini">AM</div><b>Alana McCormack</b><span>Co-Owner and Principal Physiotherapist</span></div>
+</div>
+<p class="names"><b>Featured on the Sydney CBD page:</b> Sherston Sheridan, Nicola Ying and Jordan Pink, physiotherapists. The full team page lists many more across the three clinics.</p>
+</div></section>
+
+<section class="sec" id="faq"><div class="wrap" style="max-width:860px">
+<div class="title"><span class="kick">Before you come</span><h2>Common questions</h2></div>
+<details><summary>Where do I start if I am new?</summary><p>The clinic recommends a private initial consultation. It involves a thorough assessment to discuss your needs and goals, followed by a personalised program built around you.</p></details>
+<details><summary>What are the opening hours?</summary><p>Monday to Friday 7am to 8pm and Saturday 8am to 4:30pm at Sydney CBD, Bondi Junction and South Yarra. Sunday hours are not published, so the team will confirm them.</p></details>
+<details><summary>How big are the Pilates groups?</summary><p>Semi private sessions have a maximum of 4 people and run for 50 minutes. Private sessions run for 60 or 30 minutes, and duet sessions for 60 minutes. All sessions are physiotherapist led.</p></details>
+<details><summary>Can I claim a rebate?</summary><p>The site mentions on-the-spot rebates from Medicare and Private Health Insurance, marked with an asterisk. Because conditions apply, the team will confirm what is available for your situation.</p></details>
+<details><summary>Can I book online?</summary><p>Yes. The clinic takes bookings through its online booking page, or by phone. The assistant on this page can also pass a request to the team.</p></details>
+<details><summary>What does the clinic mean by boutique?</summary><p>Small groups, modern facilities, a hands-on approach, non-invasive treatment and a commitment to recovery, with clear communication and trust between patient and physiotherapist.</p></details>
+</div></section>
+
+<section class="sec begin"><div class="wrap">
+<div><span class="kick" style="color:var(--char)">Book an appointment</span><h2 style="margin-top:12px">Expert physiotherapy treatment or group exercise classes.</h2></div>
+<div class="cta"><a class="btn" href="#" data-start-flow>Make a booking</a><a class="btn ghost" href="tel:0291887488">Call now</a></div>
+</div></section>
+</main>
+<footer><div class="wrap"><div>Elite Spinal Physiotherapy and Pilates · 16a Loftus Street, Sydney NSW 2000 · 02 9188 7488</div><div>This assistant does not diagnose or give clinical advice.</div><div>Demo · prepared by Gevorg Hovhannisyan</div></div></footer>
+<script>
+(function(){var t=document.querySelectorAll('.tabs button');t.forEach(function(b){b.addEventListener('click',function(){t.forEach(function(x){x.setAttribute('aria-selected','false')});b.setAttribute('aria-selected','true');document.querySelectorAll('.pane').forEach(function(p){p.classList.toggle('on',p.id===b.dataset.p)})})})})();
+</script>
+<script>(function(root){
+function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.length>4?w.replace(/(ing|ed|s)$/,''):w;}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];if(Math.abs(m-n)>2)return 9;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function wm(a,b){if(a===b)return true;var sa=stem(a),sb=stem(b);if(sa===sb)return true;var L=Math.min(a.length,b.length);if(L>=5&&(a.indexOf(b)===0||b.indexOf(a)===0))return true;if(L>=5&&lev(sa,sb)<=1)return true;if(L>=9&&lev(a,b)<=2)return true;return false;}
+function score(entry,qt){var s=0;for(var i=0;i<entry.k.length;i++){var kt=norm(entry.k[i]).split(' '),ok=true;for(var j=0;j<kt.length;j++){var f=false;for(var t=0;t<qt.length;t++){if(wm(kt[j],qt[t])){f=true;break;}}if(!f){ok=false;break;}}if(ok)s+=kt.length*2+1;}return s;}
+function match(kb,q){var qt=norm(q).split(' ').filter(Boolean),best=null,bs=0;for(var i=0;i<kb.length;i++){var s0=score(kb[i],qt),s=s0?s0+(kb[i].w||0):0;if(s>bs){bs=s;best=kb[i];}}return bs>=3?best:null;}
+var api={norm:norm,match:match,wm:wm};
+if(typeof document==='undefined'){if(typeof module!=='undefined')module.exports=api;return;}
+root.AsstEngine=api;
+function init(C){
+var $=function(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;};
+var fab=$('button','as-fab','<span class="as-fi">'+(C.icon||'?')+'</span><span class="as-ft">'+C.fabLabel+'</span>');fab.setAttribute('aria-label',C.fabLabel);
+var box=$('section','as-box');box.setAttribute('aria-label',C.title);box.hidden=true;
+var head=$('div','as-head','<div><b>'+C.title+'</b><small>'+C.sub+'</small></div>');
+var x=$('button','as-x','&times;');x.setAttribute('aria-label','Close');head.appendChild(x);
+var log=$('div','as-log');log.setAttribute('aria-live','polite');
+var chips=$('div','as-chips');
+var form=$('form','as-form');var inp=$('input','as-in');inp.type='text';inp.placeholder=C.placeholder;inp.setAttribute('aria-label',C.placeholder);inp.autocomplete='off';
+var go=$('button','as-go','&#10148;');go.type='submit';go.setAttribute('aria-label','Send');form.appendChild(inp);form.appendChild(go);
+box.appendChild(head);box.appendChild(log);box.appendChild(chips);box.appendChild(form);
+document.body.appendChild(fab);document.body.appendChild(box);
+var flow=null,data={},opened=false;
+function say(h,me){var m=$('div','as-m '+(me?'me':'bot'));if(me)m.textContent=h;else m.innerHTML=h;log.appendChild(m);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=$('button','as-chip');b.type='button';b.textContent=c;b.onclick=function(){ask(c);};chips.appendChild(b);});}
+function startFlow(){flow={i:0};data={};say(C.flow.intro);step();}
+function step(){var s=C.flow.steps[flow.i];say(s.q);setChips((s.opts||[]).concat(['Cancel']));inp.placeholder=s.ph||C.placeholder;}
+function valid(s,v){if(s.type==='phone')return v.replace(/\D/g,'').length>=7;if(s.type==='email')return /.+@.+\..+/.test(v);return v.trim().length>0;}
+function flowIn(v){
+ if(/^(cancel|stop|nevermind|never mind|exit)$/i.test(v.trim())){flow=null;say(C.flow.cancel);setChips(C.chips);inp.placeholder=C.placeholder;return;}
+ var s=C.flow.steps[flow.i];if(!valid(s,v)){say(s.bad||'Sorry, I did not catch that. Could you try again?');return;}
+ data[s.key]=v.trim();flow.i++;
+ if(flow.i<C.flow.steps.length){step();return;}
+ var rows='';C.flow.steps.forEach(function(st){rows+='<li><b>'+st.label+':</b> '+String(data[st.key]).replace(/[<>&]/g,'')+'</li>';});
+ say(C.flow.done.replace('{summary}','<ul class="as-sum">'+rows+'</ul>'));flow=null;setChips(C.chips);inp.placeholder=C.placeholder;
+}
+function ask(v){
+ v=String(v||'').trim();if(!v)return;say(v,true);
+ setTimeout(function(){
+  if(flow){flowIn(v);return;}
+  var n=norm(v);
+  if(C.flow.trigger.test(n)){startFlow();return;}
+  var e=match(C.kb,v);
+  if(e){say(e.a);setChips(C.chips);}
+  else{say(C.fallback);setChips(C.chips);}
+ },260);
+}
+function open(){box.hidden=false;fab.classList.add('on');if(!opened){opened=true;say(C.greet);setChips(C.chips);}setTimeout(function(){inp.focus();},50);}
+function close(){box.hidden=true;fab.classList.remove('on');}
+fab.onclick=function(){box.hidden?open():close();};x.onclick=close;
+form.onsubmit=function(ev){ev.preventDefault();var v=inp.value;inp.value='';ask(v);};
+window.openAssistant=open;
+var i,ob=document.querySelectorAll('[data-open-assistant]');for(i=0;i<ob.length;i++){ob[i].addEventListener('click',function(e){e.preventDefault();open();});}
+var sf=document.querySelectorAll('[data-start-flow]');for(i=0;i<sf.length;i++){sf[i].addEventListener('click',function(e){e.preventDefault();open();if(!flow)startFlow();});}
+}
+root.initAsst=init;
+})(typeof window!=='undefined'?window:this);
+</script>
+<script>var CFG={
+title:"Elite Spinal assistant",sub:"Demo · answers from the clinic's own site",icon:"&#10024;",fabLabel:"Ask the clinic",
+placeholder:"Ask about spine care, Pilates, clinics...",
+greet:"Hello, I can answer questions about Elite Spinal Physiotherapy and Pilates, or collect a booking request for the Sydney CBD, Bondi Junction or South Yarra clinic. I cannot assess symptoms; the physiotherapists do that in the initial consultation.",
+chips:["Book a visit","Sydney CBD address","Opening hours","Pilates sessions","Medicare and rebates","Back pain","Who is on the team?"],
+fallback:"I do not have that detail from the clinic's site, so I will not guess. The team can confirm it: Sydney CBD 02 9188 7488.",
+kb:[
+{k:["sydney cbd","cbd","loftus","city clinic","where is the cbd","address","location","where","directions","find you","located","street"],a:"<b>Sydney CBD:</b> 16a Loftus Street, Sydney NSW 2000, phone <a href='tel:0291887488'>02 9188 7488</a>.<br><b>Bondi Junction:</b> 6/360 Oxford St, entrance around the corner on Vernon St, phone 02 9387 3310.<br><b>South Yarra (Melbourne):</b> 21/299 Toorak Road, South Yarra VIC 3141, phone 03 9989 3386."},
+{k:["hours","opening hours","open","close","closing","saturday","sunday","weekend","late","evening","early","what time","monday"],a:"All three clinics list the same hours: Monday to Friday 7am to 8pm, Saturday 8am to 4:30pm. Sunday hours are not listed, so please ask the team."},
+{k:["bondi","bondi junction","oxford","vernon","westfield"],a:"Bondi Junction: 6/360 Oxford St, Bondi Junction NSW 2022, with the entrance around the corner on Vernon St. Phone 02 9387 3310. Parking options listed by the clinic include Bondi Junction Westfield (free for 2 hours), Eastgate Shopping Centre and Care Park on Grafton St."},
+{k:["melbourne","south yarra","yarra","toorak","victoria","vic"],a:"The Melbourne clinic is at 21/299 Toorak Road, South Yarra VIC 3141, phone 03 9989 3386. Same listed hours: Mon to Fri 7am to 8pm, Sat 8am to 4:30pm."},
+{k:["parking","park","car park"],a:"The CBD page does not list parking. For Bondi Junction the clinic lists Westfield (free for 2 hours), Eastgate Shopping Centre and Care Park on Grafton St. For the CBD, please ask the team."},
+{k:["phone","call","number","contact","telephone","ring","email","enquiry"],a:"Sydney CBD <a href='tel:0291887488'>02 9188 7488</a>, Bondi Junction 02 9387 3310, South Yarra 03 9989 3386. There is also an enquiry form on the clinic's contact page."},
+{k:["online booking","book online","nookal","booking link"],a:"The clinic takes bookings online through its Nookal booking page, or by phone. I can also pass a request to the team: tap <b>Book a visit</b>."},
+{k:["pilates","pilats","clinical pilates","pilatis","reformer","class","classes","group","group exercise","timetable","exercise class"],a:"Physio group exercise and clinical Pilates are physiotherapist-led, in small groups of a maximum of 4, in a fully equipped studio. Staff are trained in the Polestar method. Session types: semi-private (max 4) 50 minutes, private 60 minutes, private 30 minutes, duet 60 minutes. The clinic recommends a private initial consultation first."},
+{k:["private session","one on one","1:1","one to one","duet","semi private","semi-private","session length","how long","duration","minutes"],a:"Pilates and group exercise session types: semi-private (max 4 people) 50 minutes, private 60 minutes, private 30 minutes, duet 60 minutes."},
+{k:["first visit","initial","consultation","first appointment","what to expect","new patient","assessment","start","get started"],a:"The clinic recommends starting with a private initial consultation: a thorough assessment of your needs and goals, then a personalised program. Tap <b>Book a visit</b> and I will note your preferences for the team."},
+{k:["medicare","rebate","rebates","private health","health fund","insurance","hicaps","gap","cover","covered","claim","bupa","nib","hcf"],a:"The site says on-the-spot rebates from Medicare and Private Health Insurance are available (marked with an asterisk, so conditions apply). Which of your own benefits apply is something the team will confirm."},
+{k:["price","prices","cost","how much","fee","fees","charge","expensive","quote"],a:"I do not have prices from the site. The team can tell you when you call or enquire."},
+{k:["back pain","lower back","spine","spinal","backache","back","sciatica","disc","herniated","slipped","bulge","stenosis","facet","neck","neck pain","headache","migraine","migrane","upper back","rib","sij","sacroiliac","scoliosis","osteoarthritis","spondylosis","myelopathy","cauda"],w:1,a:"I cannot assess symptoms, but the clinic lists spine and headache care as its focus: lower back pain, neck pain, sciatica, stenosis, osteoarthritis, facet joint syndrome, herniated disc, myelopathy, upper back and rib pain, headache and migraine, scoliosis, and pre and post-operative rehab. A physiotherapist will assess you at the initial consultation."},
+{k:["pregnancy","pregnant","prenatal","post natal","postnatal","after birth","pelvic","women","womens health","baby"],w:1,a:"Pregnancy physiotherapy, pregnancy physio group exercise, post-natal physio exercise and women's health physiotherapy are listed among the services."},
+{k:["surgery","operation","post op","post-op","pre op","rehab","rehabilitation","after surgery","spinal surgery","breast cancer","cancer","chronic pain"],a:"Rehab services listed: pre and post-op rehabilitation, online spinal pre and post-operative rehabilitation, breast cancer rehabilitation and chronic pain rehabilitation."},
+{k:["massage","massage therapy","remedial"],a:"Massage therapy is listed among the services at the Sydney clinics. Ask the team about availability at your preferred clinic."},
+{k:["online","telehealth","video","remote","virtual","zoom","from home"],a:"Online physiotherapy and online Pilates sessions are listed, as is online spinal pre and post-operative rehabilitation. The team can explain how they work."},
+{k:["mobile","home visit","come to me","emergency physio","emergency physiotherapy","urgent","corporate","workplace","office"],a:"Mobile physiotherapy, emergency physiotherapy and corporate services are listed on the site. Details are not on the main pages, so please ask the team."},
+{k:["yoga","clinical yoga"],a:"Clinical yoga is listed for Bondi Junction."},
+{k:["services","offer","what do you do","physical therapy","what services"],a:"Services include physiotherapy (back, neck, headache, scoliosis, SIJ, women's health), massage therapy, physio group exercise and clinical Pilates, clinical yoga, pregnancy physio, pre and post-op rehab, breast cancer and chronic pain rehabilitation, mobile, emergency and online physiotherapy and corporate services."},
+{k:["team","who","founder","founders","director","owner","elisha","renton","brigitte","seelin","alana","staff","therapist","sherston","nicola","jordan"],a:"The clinic was founded by directors Elisha Renton and Brigitte Seelin; Alana McCormack is Co-Owner and Principal Physiotherapist. The Sydney CBD page features physiotherapists Sherston Sheridan, Nicola Ying and Jordan Pink, and the team page lists many more across the three clinics."},
+{k:["referral","doctor referral","gp","need a referral"],a:"The site does not say whether a referral is required, so the team will confirm that for you."},
+{k:["different","why choose","boutique","hands on","hands-on","approach","philosophy"],a:"The clinic describes itself as a boutique clinic with hands-on spinal treatment, modern facilities, non-invasive care and a focus on teaching you to self-manage your problem."},
+{k:["hello","hi","hey","thanks","thank you","help"],a:"Happy to help. Ask about the clinics, hours, Pilates sessions, or tap <b>Book a visit</b>."}
+],
+flow:{
+trigger:/^(?!(do|does|is|are|can|could|what|how|when|where|why|which|will|should|who)\b).*(appoint|apoint|appoit|book|bok |schedul|enquir|inquir|request|reserve)/,
+intro:"Happy to pass a booking request to the team. I will not assess symptoms; your physiotherapist does that at the visit.",
+cancel:"No problem, request cancelled. Anything else I can help with?",
+steps:[
+{key:"clinic",label:"Clinic",q:"Which clinic suits you?",opts:["Sydney CBD","Bondi Junction","South Yarra"],ph:"Clinic"},
+{key:"type",label:"Visit type",q:"What would you like to book?",opts:["Initial consultation","Physio follow-up","Pilates or group exercise","Massage"],ph:"Visit type"},
+{key:"note",label:"Reason (in your words)",q:"In a few words, what would you like help with? This is only a note for the team.",ph:"e.g. neck and headaches"},
+{key:"when",label:"Preferred day or time",q:"Which day or time works for you? Weekdays run 7am to 8pm, Saturday 8am to 4:30pm.",opts:["Weekday early","Weekday evening","Saturday"],ph:"Day or time"},
+{key:"name",label:"Name",q:"Your name?",ph:"Your name"},
+{key:"phone",label:"Phone",q:"Best phone number for the team?",type:"phone",ph:"Phone number",bad:"That does not look like a phone number. Could you retype it?"}
+],
+done:"Thank you. Your request is sent to the team:{summary}They will contact you to confirm a time. (Demo only: nothing leaves this page.)"
+}
+};
+if(typeof module!=='undefined')module.exports=CFG;
+
+initAsst(CFG);</script>
+</body>
+</html>

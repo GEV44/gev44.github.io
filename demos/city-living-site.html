@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>City Living · Walsh Bay, Sydney</title>
+<meta name="description" content="Demo page for City Living, Walsh Bay: sales, leasing, property management and commercial in the Sydney CBD since 1976.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#10222f;--navy2:#183446;--sand:#f4ede1;--sand2:#eadfca;--lime:#75f723;--limed:#3d8a0b;--ink:#17232d;--mut:#5b6a75}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 'Manrope',system-ui,sans-serif;color:var(--ink);background:var(--sand);-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.12;margin:0 0 .5em}
+a{color:inherit}img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;border-bottom:3px solid var(--lime)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 16px;max-width:1080px;margin:0 auto}
+.logo{display:block;flex:0 0 auto}.logo img{height:34px;width:auto}
+nav{display:none;gap:18px;font-size:14px;font-weight:600}nav a{text-decoration:none;opacity:.9}nav a:hover{opacity:1;color:var(--lime)}
+.call{background:var(--lime);color:var(--navy);font-weight:800;text-decoration:none;border-radius:999px;padding:9px 14px;font-size:14px;white-space:nowrap}
+@media(min-width:820px){nav{display:flex}.logo img{height:42px}}
+.hero{padding:34px 0 40px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-120px;top:-120px;width:340px;height:340px;border-radius:50%;background:var(--sand2);z-index:0}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:26px;grid-template-columns:minmax(0,1fr)}
+.kick{font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--limed)}
+.hero h1{font-size:clamp(38px,9vw,68px);font-weight:800;margin:.15em 0 .3em}
+.hero p.lead{font-size:18px;max-width:34em;color:#2b3a45}
+.val{background:var(--navy);color:#fff;border-radius:18px;padding:22px;box-shadow:0 14px 36px rgba(16,34,47,.25)}
+.val h2{font-size:24px;color:#fff}.val p{color:#cfdae2;font-size:14.5px;margin:0 0 14px}
+.val form{display:flex;flex-direction:column;gap:10px}
+.val input{padding:13px 14px;border-radius:10px;border:0;font:16px 'Manrope',sans-serif;min-width:0}
+.btn{display:inline-block;background:var(--lime);color:var(--navy);border:0;border-radius:10px;padding:13px 18px;font:800 15px 'Manrope',sans-serif;cursor:pointer;text-decoration:none;text-align:center}
+.btn.ghost{background:transparent;border:2px solid var(--navy);color:var(--navy)}
+@media(min-width:820px){.hero .wrap{grid-template-columns:1.3fr .8fr;align-items:center}.hero{padding:60px 0 70px}}
+.since{background:var(--navy);color:#fff;padding:18px 0}
+.since .wrap{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr));text-align:center}
+.since b{display:block;font:800 26px 'Fraunces',serif;color:var(--lime)}.since span{font-size:12.5px;opacity:.85}
+@media(min-width:820px){.since .wrap{grid-template-columns:repeat(4,1fr)}}
+section{padding:46px 0}
+.sec-h{max-width:40em;margin-bottom:22px}.sec-h h2{font-size:clamp(27px,5.4vw,40px)}
+.tri{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+.panel{background:#fff;border-radius:16px;padding:22px;border-top:6px solid var(--lime);box-shadow:0 6px 18px rgba(16,34,47,.08);min-width:0}
+.panel h3{font-size:24px}.panel p{color:var(--mut);margin:.2em 0 1em}
+.panel a.l{font-weight:800;text-decoration:none;color:var(--limed);border-bottom:2px solid var(--lime)}
+@media(min-width:820px){.tri{grid-template-columns:repeat(3,1fr)}}
+.dark{background:var(--navy);color:#fff}.dark .kick{color:var(--lime)}.dark h2{color:#fff}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:0;max-width:760px}
+.steps li{counter-increment:s;position:relative;padding:0 0 22px 58px;border-left:2px dashed rgba(117,247,35,.45);margin-left:19px}
+.steps li:last-child{border-color:transparent;padding-bottom:0}
+.steps li:before{content:counter(s);position:absolute;left:-20px;top:0;width:38px;height:38px;border-radius:50%;background:var(--lime);color:var(--navy);font:800 17px 'Fraunces',serif;display:grid;place-items:center}
+.steps b{font:700 19px 'Fraunces',serif;display:block}.steps span{color:#cfdae2;font-size:15px}
+.team{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.person{background:#fff;border-radius:14px;padding:16px;text-align:left;min-width:0}
+.mono{width:54px;height:54px;border-radius:50%;background:var(--navy);color:var(--lime);font:800 20px 'Fraunces',serif;display:grid;place-items:center;margin-bottom:10px}
+.person b{display:block;font:700 17px 'Fraunces',serif;line-height:1.2}.person span{font-size:13px;color:var(--mut)}
+@media(min-width:820px){.team{grid-template-columns:repeat(4,1fr)}}
+.rv{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}.rv figure{margin:0;background:#fff;border-radius:14px;padding:18px;border-left:5px solid var(--lime);min-width:0}.rv blockquote{margin:0 0 10px;font:400 16px/1.55 'Fraunces',serif}.rv figcaption{font-size:13px;font-weight:700;color:var(--mut)}@media(min-width:820px){.rv{grid-template-columns:repeat(2,1fr)}}
+.qs{display:flex;flex-wrap:wrap;gap:8px}.qs button{background:transparent;color:#fff;border:2px solid var(--lime);border-radius:999px;padding:9px 15px;font:700 14px 'Manrope',sans-serif;cursor:pointer}.qs button:hover{background:var(--lime);color:var(--navy)}
+.quote{background:var(--sand2);border-radius:16px;padding:22px;margin-top:18px;font:italic 400 19px/1.5 'Fraunces',serif}
+.quote small{display:block;font:700 13px 'Manrope',sans-serif;font-style:normal;color:var(--mut);margin-top:8px}
+details{background:#fff;border-radius:12px;margin:0 0 9px;padding:0 16px;box-shadow:0 3px 10px rgba(16,34,47,.06)}
+summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary:after{content:"+";font:800 20px 'Manrope';color:var(--limed)}details[open] summary:after{content:"\2013"}
+details p{margin:0 0 14px;color:var(--mut);font-size:15px}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:4px 0 14px}.tbl td{padding:7px 0;border-bottom:1px solid var(--sand2)}.tbl td:last-child{text-align:right;font-weight:700}
+.areas{display:flex;flex-wrap:wrap;gap:8px}.areas span{background:#fff;border:2px solid var(--lime);border-radius:999px;padding:7px 14px;font-weight:700;font-size:14px}
+.comm{background:linear-gradient(120deg,var(--navy2),var(--navy));color:#fff;border-radius:20px;padding:28px;display:grid;gap:12px;overflow:hidden;position:relative}
+.comm h2{color:#fff}.comm p{color:#cfdae2;margin:0}
+.contact{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+.card{background:#fff;border-radius:14px;padding:20px;min-width:0}.card h3{font-size:20px}.card p{margin:.2em 0;color:var(--mut)}
+@media(min-width:820px){.contact{grid-template-columns:repeat(2,1fr)}}
+footer{background:#0b1821;color:#9fb0bc;padding:26px 0 90px;font-size:13px}footer .wrap{display:grid;gap:6px}
+#as-fab{position:fixed;right:14px;bottom:14px;z-index:90;display:flex;align-items:center;gap:8px;background:#75f723;color:#10222f;border:0;border-radius:14px;padding:12px 16px;font:600 15px 'Manrope',system-ui,sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.3)}#as-fab .as-fi{font-size:18px;line-height:1}#as-fab.on{opacity:0;pointer-events:none}#as-panel{position:fixed;right:12px;bottom:12px;z-index:100;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:#f7f1e6;color:#10222f;border-radius:14px;box-shadow:0 18px 50px rgba(0,0,0,.4);display:flex;flex-direction:column;overflow:hidden;font:15px/1.45 'Manrope',system-ui,sans-serif}#as-panel[hidden]{display:none}.as-h{background:#10222f;color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}.as-h b{display:block;font-size:16px}.as-h small{display:block;opacity:.85;font-size:12px}.as-x{background:transparent;border:0;color:inherit;font-size:28px;line-height:1;cursor:pointer;padding:0 4px}.as-m{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;-webkit-overflow-scrolling:touch}.as-b{max-width:88%;padding:9px 12px;border-radius:14px;overflow-wrap:anywhere;word-break:break-word}.as-bot{background:rgba(127,127,127,.15);align-self:flex-start}.as-bot a{color:inherit;text-decoration:underline}.as-me{background:#75f723;color:#10222f;align-self:flex-end}.as-c{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px 8px;max-height:112px;overflow-y:auto}.as-c button{background:transparent;color:#10222f;border:1px solid rgba(127,127,127,.55);border-radius:999px;padding:6px 11px;font:13px 'Manrope',system-ui,sans-serif;cursor:pointer}.as-c button:hover{background:#75f723;color:#10222f;border-color:#75f723}.as-f{display:flex;gap:6px;padding:10px 12px;border-top:1px solid rgba(127,127,127,.3)}.as-f input{flex:1;min-width:0;padding:10px 12px;border-radius:14px;border:1px solid rgba(127,127,127,.5);background:transparent;color:#10222f;font:16px 'Manrope',system-ui,sans-serif}.as-f button{background:#75f723;color:#10222f;border:0;border-radius:14px;padding:0 14px;font-size:16px;cursor:pointer}
+</style></head><body>
+<header><div class="hd"><a class="logo" href="#top" aria-label="City Living"><img src="img/city-living-logo.jpg" alt="City Living" width="170" height="38"></a>
+<nav><a href="#buy">Buy &amp; sell</a><a href="#manage">Landlords</a><a href="#rent">Tenants</a><a href="#team">Team</a><a href="#reviews">Reviews</a><a href="#commercial">Commercial</a><a href="#contact">Contact</a></nav>
+<a class="call" href="tel:+61292990990">02 9299 0990</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap"><div>
+<div class="kick">Walsh Bay &middot; Sydney CBD &middot; since 1976</div>
+<h1>You&rsquo;re already home.</h1>
+<p class="lead">A boutique city agency with a personal service, tailored to each client. Residential and commercial sales and leasing, with a local footprint in the Walsh Bay community and a reach across the CBD, Harbour Foreshore, Lower North Shore, Inner West and Eastern Suburbs.</p>
+<p><button class="btn" data-open-assistant>Ask the City Living assistant</button> <a class="btn ghost" href="#buy">What we do</a></p></div>
+<div class="val"><h2>What is your property worth?</h2><p>Search the address for a Digital Property Report with recent sales, rental history and a suburb report. In this demo the assistant collects a valuation request for the team.</p>
+<form id="vf"><input id="vaddr" type="text" placeholder="Property address" aria-label="Property address" autocomplete="off"><button class="btn" type="submit">Request a free appraisal</button></form></div></div></div>
+<div class="since"><div class="wrap"><div><b>1976</b><span>established by the Fallshaw family</span></div><div><b>40+ yrs</b><span>managing CBD residential</span></div><div><b>25+ yrs</b><span>some landlords have stayed with us</span></div><div><b>2 sides</b><span>landlords and tenants treated fairly</span></div></div></div>
+
+<section id="buy"><div class="wrap"><div class="sec-h"><div class="kick">Sales and leasing</div><h2>Buy, sell, rent or manage, from one small office on Hickson Road</h2></div>
+<div class="tri">
+<div class="panel"><h3>Buy</h3><p>Browse apartments and units for sale around Walsh Bay, Barangaroo, Pyrmont and the city. Listings also appear on the national portals.</p><a class="l" href="#contact">Arrange an inspection</a></div>
+<div class="panel"><h3>Sell</h3><p>Request a free appraisal and talk to the sales team. Past results, including a Liverpool Street apartment overlooking Hyde Park and the harbour, are on the Recent Sales page.</p><a class="l" href="#contact">Request an appraisal</a></div>
+<div class="panel" id="rent"><h3>Rent</h3><p>Tenants apply through a PDF form on our own listings, or through the Ignite online platform if the property was found on a third-party site.</p><a class="l" href="#faq">Tenant FAQ</a></div></div></div></section>
+
+<section class="dark" id="manage"><div class="wrap"><div class="sec-h"><div class="kick">Landlords</div><h2>Managing a CBD rental the personal way</h2><p style="color:#cfdae2">Rapport, trust and open dialogue between you and your property manager. Our five stages:</p></div>
+<ol class="steps">
+<li><b>Marketing &amp; inspections</b><span>Maximum exposure across the national and international real estate portals.</span></li>
+<li><b>Tenant screening &amp; selection</b><span>Reference checks so the right tenant is placed.</span></li>
+<li><b>Lease signing</b><span>Legal documentation and a condition report on the property.</span></li>
+<li><b>Routine inspections</b><span>Twice-yearly inspections so repairs are noted and attended to.</span></li>
+<li><b>Maintain &amp; improve</b><span>Prompt maintenance, plus feedback on improvements that could lift the rental return.</span></li></ol></div></section>
+
+<section id="team"><div class="wrap"><div class="sec-h"><div class="kick">The team</div><h2>Four people you can name</h2></div>
+<div class="team">
+<div class="person"><div class="mono">TF</div><b>Tasman Fallshaw</b><span>Principal</span></div>
+<div class="person"><div class="mono">AK</div><b>Anthony Kannis</b><span>Sales &amp; Business Development</span></div>
+<div class="person"><div class="mono">LF</div><b>Lisa Fallshaw</b><span>Director</span></div>
+<div class="person"><div class="mono">AH</div><b>Alex Hendrikse</b><span>Leasing &amp; Property Manager</span></div></div>
+<div class="quote">&ldquo;We&rsquo;ve had a relationship with City Living for nearly 35 years, firstly as tenants, then as purchasers and finally as landlords.&rdquo;<small>Craig Newton, landlord / tenant, from the City Living reviews page</small></div></div></section>
+
+<section id="reviews"><div class="wrap"><div class="sec-h"><div class="kick">From the reviews page</div><h2>What landlords, vendors and tenants write</h2></div>
+<div class="rv">
+<figure><blockquote>&ldquo;City Living have managed an investment property for me for many years and also acted as agent on the recent sale of it. Tasman and his team are first class: reliable, hard working, informed, prompt, efficient and, above all, are honest in their advice and representations.&rdquo;</blockquote><figcaption>Peter Daly &middot; vendor / landlord</figcaption></figure>
+<figure><blockquote>&ldquo;In a real rarity, they have had continuity of staff over that time so it is no surprise that the original high standards have been maintained.&rdquo;</blockquote><figcaption>David Huey &middot; vendor / landlord, 15 years</figcaption></figure>
+<figure><blockquote>&ldquo;Quick to respond and sort out any issues that arose as well as any questions I had.&rdquo;</blockquote><figcaption>Bailey S &middot; tenant</figcaption></figure>
+<figure><blockquote>&ldquo;My wife and I rented a property with City Living for the past two years, and then were fortunate enough to be able to buy a property that they had listed.&rdquo;</blockquote><figcaption>Krishneel Singh &middot; tenant / purchaser</figcaption></figure></div></div></section>
+
+<section id="faq" style="background:var(--sand2)"><div class="wrap"><div class="sec-h"><div class="kick">Tenant FAQ</div><h2>Need to know before you rent</h2></div>
+<details><summary>How do I apply for a property?</summary><p>On a property listed on our website, use the Apply Now link to a PDF form, fill it in and send it to us. If you found it on a third-party site such as Domain or realestate.com.au, use the Apply Now link there, which goes through the Ignite platform.</p></details>
+<details><summary>What documents help an application?</summary><p>Examples: three recent payslips, a bank statement or summary, council or strata levy (if you own a home), rental ledger (if you rent), passport, driver licence, Medicare card, accountant letter or tax return. The landlord wants to see you can pay the rent diligently and look after the property as your own.</p></details>
+<details><summary>How do I report maintenance or repairs?</summary><p>Tell your Property Manager right away by phone and by email, with photos and as much detail as you can. For an after-hours emergency (no lights, no hot water, a major leak) you will be given emergency contact details, and you should follow up in writing.</p></details>
+<details><summary>Can I make changes, or keep a pet?</summary><p>Ask your Property Manager first, who seeks the landlord&rsquo;s permission. That includes holes in walls for pictures. Every property has its own pet policy, and in an apartment building the Strata Committee also has to approve, which can take time.</p></details>
+<details><summary>What if I need to break my lease?</summary><p>Give your Property Manager as much notice as possible. The break-lease penalty depends on how far into the lease you are:</p>
+<table class="tbl"><tr><td>First quarter of the lease</td><td>4 weeks rent</td></tr><tr><td>Second quarter</td><td>3 weeks rent</td></tr><tr><td>Third quarter</td><td>2 weeks rent</td></tr><tr><td>Fourth quarter</td><td>1 week rent</td></tr></table></details>
+<details><summary>When is rent due, and where do I pay?</summary><p>Weekly, fortnightly or monthly, as agreed when the lease starts. The bank account details are on your Lease Agreement. Ask your Property Manager if you want a different payment method.</p></details>
+</div></section>
+
+<section id="ask" style="background:var(--navy);color:#fff;padding:34px 0"><div class="wrap"><div class="sec-h" style="margin-bottom:14px"><div class="kick" style="color:var(--lime)">Try the assistant</div><h2 style="color:#fff">Questions tenants and landlords ask most</h2></div>
+<div class="qs"><button type="button" data-q="How do I apply for a rental?">How do I apply for a rental?</button><button type="button" data-q="What if I need to break my lease?">What if I need to break my lease?</button><button type="button" data-q="Can I have a pet?">Can I have a pet?</button><button type="button" data-q="My hot water stopped working">My hot water stopped working</button><button type="button" data-q="How often are routine inspections?">How often are routine inspections?</button><button type="button" data-q="Which areas do you cover?">Which areas do you cover?</button></div></div></section>
+
+<section id="commercial"><div class="wrap"><div class="comm"><div class="kick" style="color:var(--lime)">Commercial</div><h2>CBD offices and retail, leased and managed for over 40 years</h2><p>Whether you need a space for your business or want your property leased to the right tenant, the team will talk it through.</p><p><button class="btn" data-open-assistant>Start a commercial enquiry</button></p></div>
+<div class="sec-h" style="margin-top:34px"><div class="kick">Where we work</div></div><div class="areas"><span>Walsh Bay</span><span>Sydney CBD</span><span>Harbour Foreshore</span><span>Barangaroo</span><span>Pyrmont</span><span>Lower North Shore</span><span>Inner West</span><span>Eastern Suburbs</span></div></div></section>
+
+<section id="contact" style="padding-top:10px"><div class="wrap"><div class="sec-h"><div class="kick">Find us</div><h2>Say hello at the Walsh Bay office</h2></div>
+<div class="contact"><div class="card"><h3>City Living</h3><p>Shop 4, Foreshore Promenade<br>17A Hickson Road, Walsh Bay NSW 2000</p><p><b>T</b> <a href="tel:+61292990990">+61 2 9299 0990</a><br><b>E</b> info@cityliving.com.au</p></div>
+<div class="card"><h3>Office hours</h3><p>Opening hours are not listed on the site. The team will confirm them when you call.</p><p><button class="btn" data-open-assistant>Ask a question or book</button></p></div></div></div></section>
+</main>
+<footer><div class="wrap"><div>Demo · prepared by Gevorg Hovhannisyan</div><div>Built only from the public City Living website. Nothing on this page is sent anywhere; the assistant runs in your browser.</div></div></footer>
+<script>
+
+/* matcher: keyword + fuzzy, word-form tolerant */
+function norm(s){return String(s).toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4){if(/(sses|shes|ches|xes)$/.test(w))w=w.slice(0,-2);else if(/(ing|ed)$/.test(w))w=w.replace(/(ing|ed)$/,'');else if(/[^s]s$/.test(w))w=w.slice(0,-1);}return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b,max){if(Math.abs(a.length-b.length)>max)return max+1;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i],mn=i;for(j=1;j<=b.length;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));if(c[j]<mn)mn=c[j];}if(mn>max)return max+1;p=c;}return p[b.length];}
+function tokHit(q,k){if(q===k)return 1;if(k.length<4||q.length<4)return 0;var m=k.length>=9?2:(k.length>=5?1:0);if(m&&lev(q,k,m)<=m)return 1;if(q.length>=5&&k.length>=5&&(k.indexOf(q)===0||q.indexOf(k)===0))return 1;return 0;}
+function makeMatcher(KB){
+  var idx=KB.map(function(e){return e.k.map(function(p){return toks(p);});});
+  return function(text){
+    var qt=toks(text),best=-1,bs=0;
+    if(!qt.length)return null;
+    for(var i=0;i<KB.length;i++){var s=0;
+      for(var j=0;j<idx[i].length;j++){var kt=idx[i][j],ok=true;
+        for(var t=0;t<kt.length;t++){var f=false;for(var u=0;u<qt.length;u++){if(tokHit(qt[u],kt[t])){f=true;break;}}if(!f){ok=false;break;}}
+        if(ok)s+=kt.length*2+(kt.length>1?1:0)+(KB[i].w||0);}
+      if(s>bs){bs=s;best=i;}}
+    return bs>=2?KB[best]:null;};
+}
+if(typeof module!=='undefined')module.exports={makeMatcher:makeMatcher,norm:norm,toks:toks};
+
+/* assistant widget: client-side only, sends nothing */
+function initAssistant(C){
+  var match=makeMatcher(C.kb),$=function(s){return document.querySelector(s);};
+  var fab=document.createElement('button');fab.id='as-fab';fab.type='button';fab.setAttribute('aria-label',C.fabLabel||'Open assistant');
+  fab.innerHTML='<span class="as-fi">'+(C.fabIcon||'?')+'</span><span class="as-ft">'+(C.fabText||'Ask')+'</span>';
+  var p=document.createElement('div');p.id='as-panel';p.setAttribute('role','dialog');p.hidden=true;
+  p.innerHTML='<div class="as-h"><div><b>'+C.title+'</b><small>'+C.sub+'</small></div><button type="button" class="as-x" aria-label="Close">&times;</button></div><div class="as-m" id="as-m" aria-live="polite"></div><div class="as-c" id="as-c"></div><form class="as-f" id="as-f"><input id="as-i" type="text" autocomplete="off" placeholder="'+C.ph+'"><button type="submit" aria-label="Send">&#10148;</button></form>';
+  document.body.appendChild(fab);document.body.appendChild(p);
+  var M=$('#as-m'),CH=$('#as-c'),IN=$('#as-i'),flow=null,data={},opened=false;
+  function add(t,who,html){var d=document.createElement('div');d.className='as-b as-'+who;if(html)d.innerHTML=t;else d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight;}
+  function chips(arr){CH.innerHTML='';arr.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){say(c);};CH.appendChild(b);});}
+  function home(){chips(C.chips);}
+  function ask(){var s=C.flow.steps[flow];add(s.q,'bot');if(s.opts)chips(s.opts.concat([C.flow.cancel]));else chips([C.flow.cancel]);IN.placeholder=s.ph||C.ph;}
+  function startFlow(pre){flow=0;data={};add(C.flow.intro,'bot');var s0=C.flow.steps[0];if(pre&&s0.opts){for(var i=0;i<s0.opts.length;i++){if(norm(s0.opts[i])===norm(pre)){data[s0.id]=s0.opts[i];flow=1;break;}}}ask();}
+  function endFlow(){flow=null;IN.placeholder=C.ph;}
+  function finish(){var out=C.flow.done(data);flow=null;add(out,'bot',true);IN.placeholder=C.ph;chips(C.chips);}
+  function say(t){t=String(t).trim();if(!t)return;add(t,'me');
+    if(flow!==null){
+      if(norm(t)===norm(C.flow.cancel)||/^(cancel|stop|exit|back)$/.test(norm(t))){endFlow();add(C.flow.cancelMsg,'bot');home();return;}
+      var s=C.flow.steps[flow];data[s.id]=t;flow++;
+      if(flow>=C.flow.steps.length)finish();else ask();return;}
+    if(C.flow.trigger(t)){startFlow(t);return;}
+    var e=match(t);
+    if(e){add(e.a,'bot',true);if(e.go){startFlow();return;}chips(e.c||C.chips);}
+    else{add(C.fallback,'bot',true);chips(C.chips);}
+  }
+  function open(){p.hidden=false;fab.classList.add('on');if(!opened){opened=true;add(C.greet,'bot',true);home();}if(window.__pick){var pk=window.__pick;window.__pick=null;setTimeout(function(){say(pk);},40);}setTimeout(function(){IN.focus({preventScroll:true});},50);}
+  function close(){p.hidden=true;fab.classList.remove('on');}
+  fab.onclick=function(){p.hidden?open():close();};
+  p.querySelector('.as-x').onclick=close;
+  $('#as-f').onsubmit=function(ev){ev.preventDefault();var v=IN.value;IN.value='';say(v);};
+  window.openAssistant=open;
+  var cta=document.querySelectorAll('[data-open-assistant]');for(var i=0;i<cta.length;i++){cta[i].addEventListener('click',function(ev){ev.preventDefault();open();});}
+}
+
+
+
+
+var KB=[
+{id:'hi',k:['hello','hi','hey','good morning','good afternoon','g day','gday'],a:'Hello, and welcome to City Living in Walsh Bay. Ask me about buying, selling, renting, landlord management, commercial, or the team, or book an appraisal or inspection.'},
+{id:'hours',k:['hours','open','opening hours','what time','closed','weekend','saturday','sunday','when are you open'],a:'Office hours are not published on the website, so I will not guess. Call <b>+61 2 9299 0990</b> and the team will confirm.'},
+{id:'addr',k:['address','where is your office','where is the office','where are you','location','directions','map','hickson','walsh bay','find you','foreshore'],a:'The office is at <b>Shop 4, Foreshore Promenade, 17A Hickson Road, Walsh Bay NSW 2000</b>.'},
+{id:'phone',k:['phone','call','number','telephone','contact','reach','ring','email','e-mail','mail'],a:'Phone <b>+61 2 9299 0990</b> or email <b>info@cityliving.com.au</b>.',c:['Free appraisal','Rent a property']},
+{id:'about',k:['about','who are you','history','fallshaw','family','since 1976','1976','established','boutique','agency'],a:'City Living is a boutique city agency established in <b>1976 by the Fallshaw family</b>, with a personal, tailored approach to residential and commercial sales and leasing.'},
+{id:'areas',k:['areas','suburbs','where do you work','service area','cbd','harbour','lower north shore','inner west','eastern suburbs','barangaroo','pyrmont','millers point','dawes point'],a:'Local footprint in <b>Walsh Bay</b>, with reach across the <b>CBD, Harbour Foreshore, Lower North Shore, Inner West and Eastern Suburbs</b>. Current listings include Barangaroo, Pyrmont, Millers Point and Dawes Point.'},
+{id:'buy',k:['buy','buying','purchase','for sale','apartment for sale','looking to buy','property for sale','unit','inspect','inspection','open home'],a:'Listings for sale are on the For Sale page. I can take an inspection request for the team.',go:true},
+{id:'sell',k:['sell','selling','vendor','list my','my property','appraisal','appraise','valuation','value','worth','market value','digital property report','free appraisal'],w:3,a:'You can request a <b>free appraisal</b>. The site also offers a Digital Property Report with recent sales, rental history and a suburb report. I can take your request for the team.',go:true},
+{id:'recent',k:['recent sales','sold','past sales','results','sold prices','recently leased','success'],a:'The Recent Sales and Recently Leased pages show past results, such as 2402/187 Liverpool Street, Sydney, an apartment overlooking Hyde Park and the harbour.'},
+{id:'rent',k:['rent','renting','rental','lease','tenant','tenancy','to let','for rent','apartment for rent','looking to rent'],a:'Rentals are on the For Rent page. Apply through the PDF form on our own listings, or through Ignite if you found the property on another site. I can also take a rental enquiry.',go:true},
+{id:'apply',k:['apply','application','how do i apply','apply now','ignite','pdf form','domain','realestate'],w:2,a:'On a property listed on our website, use <b>Apply Now</b> for a PDF form to fill in and send to us. If the listing was on a third-party site such as Domain or realestate.com.au, its Apply Now link uses the <b>Ignite</b> online platform.'},
+{id:'docs',w:3,k:['documents needed','documents','payslips','payslip','what do i need','supporting documents','passport','reference','references','bank statement','tax return'],a:'Helpful documents: three recent payslips, a bank statement or summary, council or strata levy (if you own), rental ledger (if you rent), passport, driver licence, Medicare card, accountant letter or tax return.'},
+{id:'maint',k:['maintenance','repair','repairs','broken','leak','hot water','emergency','after hours','fix','report a problem','no lights'],w:2,a:'Tell your Property Manager right away by phone and by email, with photos. For an after-hours emergency (no lights, no hot water, a major leak) use the emergency details you were given, then notify your Property Manager in writing.'},
+{id:'pet',k:['pet','pets','dog','cat','animal','pet policy'],a:'Every property has its own pet policy. Ask your Property Manager first. They seek the owner&rsquo;s approval, and in an apartment building the Strata Committee also has to approve, which can take time.'},
+{id:'changes',k:['changes','alterations','paint','hole','holes','hang pictures','nail','modify','renovate'],a:'Ask your Property Manager before making changes, including holes in walls for pictures. They need the landlord&rsquo;s permission, and you can be held liable for unapproved changes.'},
+{id:'breaklease',k:['break lease','break my lease','leave early','end lease','terminate','vacate early','penalty','early exit','move out early','leave the lease early'],w:3,a:'Give your Property Manager as much notice as possible. The break-lease penalty is <b>4 weeks rent</b> in the first quarter of the lease, <b>3 weeks</b> in the second, <b>2 weeks</b> in the third and <b>1 week</b> in the fourth.'},
+{id:'rentdue',k:['rent due','pay rent','payment','bank account','pay by card','credit card','how do i pay','when is rent'],a:'Rent is due weekly, fortnightly or monthly, as agreed in your lease. Bank details are on your Lease Agreement. For another payment method, ask your Property Manager.'},
+{id:'landlord',k:['landlord','manage my property','property management','property manager','management','investor','investment property','become a landlord','manage rental','manage my rental'],w:2,a:'City Living has managed CBD residential properties for over 40 years. Five stages: marketing and inspections, tenant screening, lease signing, routine inspections twice a year, and maintenance with improvement advice.',go:true},
+{id:'inspections',k:['routine inspection','inspections','how often','twice a year','bi annual'],a:'Routine inspections happen <b>twice a year</b> so the property stays well maintained and repairs are noted and attended to.'},
+{id:'commercial',w:3,k:['commercial','offices','office space','retail','shop','business space','commercial lease','commercial property'],a:'City Living has leased and managed Sydney CBD office and retail space for over 40 years. Tell me what you need and the team will follow up.',go:true},
+{id:'team',k:['team','staff','who works','people','agent','agents','principal','director','meet'],a:'<b>Tasman Fallshaw</b> (Principal), <b>Anthony Kannis</b> (Sales &amp; Business Development), <b>Lisa Fallshaw</b> (Director) and <b>Alex Hendrikse</b> (Leasing &amp; Property Manager).'},
+{id:'tasman',k:['tasman'],w:3,a:'<b>Tasman Fallshaw</b> is the Principal. Clients describe him as easy to deal with and a genuine advocate during a sale.'},
+{id:'anthony',k:['anthony','kannis'],w:3,a:'<b>Anthony Kannis</b> is in Sales and Business Development and works with landlords and tenants.'},
+{id:'lisa',k:['lisa'],w:3,a:'<b>Lisa Fallshaw</b> is a Director of City Living.'},
+{id:'alex',k:['alex','hendrikse'],w:3,a:'<b>Alex Hendrikse</b> looks after leasing and property management.'},
+{id:'reviews',k:['reviews','testimonials','what do clients say','reputation','feedback','recommend'],a:'The Reviews page collects comments from landlords, tenants, vendors and purchasers. Several have been with City Living for 25 to 35 years.'},
+{id:'fees',k:['fee','fees','cost','price','prices','how much','commission','charges','pricing'],a:'Fees and prices are not published on the site, so I will not guess. The team will explain them for your property when you request an appraisal or call.',go:true,w:10},
+{id:'blog',k:['blog','news','market update','articles'],a:'There is a Blog with news from City Living; the team can point you to the latest posts.'},
+{id:'thanks',k:['thanks','thank you','thx','cheers','great','awesome'],a:'You are welcome. Anything else about City Living?'},
+{id:'bye',k:['bye','goodbye','see you','later'],a:'Goodbye, and thanks for dropping in.'},
+{id:'book',k:['book','booking','appointment','enquiry','inquiry','request','speak to someone','talk to someone','get in touch','call me back'],a:'Happy to set that up. A few quick questions first.',go:true}
+];
+var CFG={title:'City Living assistant',sub:'Demo · answers from the City Living site',ph:'Ask about buying, renting, appraisals...',fabText:'Ask City Living',fabIcon:'&#8962;',
+greet:'Welcome to City Living, Walsh Bay. Ask about renting, selling, landlord management or commercial space, or book an appraisal or inspection.',
+chips:['Free appraisal','Rent a property','Become a landlord','Break my lease','Commercial','Meet the team'],
+fallback:'I do not have that from the City Living site, so I will not guess. Call <b>+61 2 9299 0990</b> or email <b>info@cityliving.com.au</b> and the team will confirm.',kb:KB,
+flow:{cancel:'Cancel',cancelMsg:'No problem, cancelled.',intro:'Great. A few quick questions so the right person at City Living can get back to you.',
+trigger:function(t){return /^(free appraisal|book an appraisal|book an inspection|rent a property|become a landlord|rent|buy|sell|landlord|commercial|book|enquiry|inquiry|request)$/i.test(t.trim());},
+steps:[{id:'what',q:'What is this about?',opts:['Free appraisal','Buy','Rent','Landlord','Commercial']},
+{id:'prop',q:'Which property or suburb? (address, building or area)',ph:'e.g. Walsh Bay, Pyrmont'},
+{id:'when',q:'When suits you?',opts:['As soon as possible','This week','Next 2 to 4 weeks','Just exploring']},
+{id:'name',q:'Your name?',ph:'Name'},{id:'ct',q:'Best mobile or email?',ph:'Mobile or email'}],
+done:function(d){return '<b>Sent to the City Living team.</b><br>'+d.what+' &middot; '+d.prop+'<br>Timing: '+d.when+'<br>Contact: '+d.name+', '+d.ct+'<br>Someone from the team will reach out. (Demo: nothing is actually sent.)';}}};
+initAssistant(CFG);
+
+document.getElementById('vf').addEventListener('submit',function(e){e.preventDefault();window.__pick='Free appraisal';window.openAssistant();});
+document.querySelectorAll('.qs button').forEach(function(b){b.addEventListener('click',function(){window.__pick=b.getAttribute('data-q');window.openAssistant();});});
+</script></body></html>

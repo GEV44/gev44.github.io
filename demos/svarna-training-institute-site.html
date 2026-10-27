@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Svarna Training Institute · Dubai (demo)</title>
+<meta name="description" content="Demo page for Svarna Training Institute, Barsha Heights (TECOM), Dubai. IELTS, PTE, SAT, language and professional courses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0375fe;--indigo:#393efe;--ink:#0b1233;--soft:#eef4ff;--line:#d9e3f7;--sun:#ffb703;--muted:#4b5677;--wa:#0375fe;--wt:#fff;--wi:#0b1233;--wf:'Nunito Sans',system-ui,sans-serif;--wr:14px;--wr2:20px;--wbub:#eef4ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 'Nunito Sans',system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+h1,h2,h3{font-family:'Sora',system-ui,sans-serif;line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
+img{max-width:100%;height:auto}
+a{color:var(--indigo)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+section{padding:48px 0;position:relative}
+/* header */
+.top{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:62px}
+.brand img{display:block;height:38px;width:auto}
+.nav{display:none;gap:18px;font-weight:700;font-size:14px}
+.nav a{text-decoration:none;color:var(--ink)}
+.nav a:hover{color:var(--blue)}
+.btn{display:inline-block;border:0;border-radius:12px;padding:12px 18px;font:700 15px 'Nunito Sans',sans-serif;text-decoration:none;cursor:pointer;background:var(--blue);color:#fff;text-align:center}
+.btn.alt{background:var(--sun);color:var(--ink)}
+.btn.ghost{background:transparent;border:2px solid var(--blue);color:var(--blue)}
+.top .btn{padding:9px 14px;font-size:14px}
+@media(min-width:820px){.nav{display:flex}}
+/* hero: split with finder */
+.hero{background:linear-gradient(160deg,#071a5c 0%,#0b2a8f 55%,#1a4ff0 100%);color:#fff;overflow:hidden;padding:44px 0 56px}
+.hero::before{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(255,183,3,.35),transparent 70%)}
+.hero .wrap{display:grid;gap:28px;position:relative}.hero .wrap>*,.visit .wrap>*{min-width:0}
+.hero h1{font-size:clamp(28px,6.4vw,46px)}
+.hero p.lead{font-size:18px;max-width:520px;color:#dbe6ff}
+.chip{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);padding:5px 11px;border-radius:999px;font-size:13px;font-weight:700;margin:0 6px 8px 0}
+.finder{background:#fff;color:var(--ink);border-radius:20px;padding:20px;box-shadow:0 20px 50px rgba(0,0,0,.3);min-width:0}
+.finder h2{font-size:20px}
+.finder label{display:block;font-weight:700;font-size:13px;margin:10px 0 4px;color:var(--muted)}
+.finder select{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff;color:var(--ink)}
+.finder .res{margin-top:14px;background:var(--soft);border-radius:12px;padding:12px 14px;font-size:15px;min-height:60px}
+.finder .res b{display:block;font-family:'Sora',sans-serif}
+.finder .btn{margin-top:12px;width:100%}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1.15fr .85fr;align-items:center}}
+/* accreditations strip */
+.strip{background:var(--soft);padding:0}
+.strip .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0}
+.strip div.k{padding:18px 8px;text-align:center;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0}
+.strip b{font:800 26px 'Sora',sans-serif;color:var(--blue);display:block}
+.strip span{font-size:13px;color:var(--muted)}
+@media(min-width:720px){.strip .wrap{grid-template-columns:repeat(4,minmax(0,1fr))}}
+/* tests */
+.tests{display:grid;gap:14px}
+.tcard{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fff;min-width:0}
+.tcard h3{font-size:20px}
+.tcard .tag{display:inline-block;font-size:12px;font-weight:800;background:var(--sun);color:var(--ink);border-radius:6px;padding:2px 8px;margin-bottom:8px}
+.tcard.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tcard.dark a{color:var(--sun)}
+.tcard ul{padding-left:18px;margin:8px 0}
+@media(min-width:760px){.tests{grid-template-columns:1.3fr 1fr 1fr}}
+/* catalog tabs */
+.cat{background:var(--soft)}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 10px;-webkit-overflow-scrolling:touch}
+.tabs button{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 15px;font:700 14px 'Nunito Sans',sans-serif;cursor:pointer;color:var(--ink)}
+.tabs button[aria-selected=true]{background:var(--blue);border-color:var(--blue);color:#fff}
+.panel{display:none;background:#fff;border-radius:16px;padding:18px;border:1px solid var(--line)}
+.panel.on{display:block}
+.panel ul{columns:1;padding-left:18px;margin:8px 0 0}
+.panel li{margin:4px 0;break-inside:avoid}
+@media(min-width:640px){.panel ul{columns:2}}
+/* formats */
+.fmt{display:grid;gap:12px}
+.fmt div{border-left:5px solid var(--blue);padding:6px 14px;background:#fff;min-width:0}
+.fmt b{font-family:'Sora',sans-serif}
+@media(min-width:760px){.fmt{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* visit */
+.visit{background:var(--ink);color:#fff}
+.visit .wrap{display:grid;gap:26px}
+.visit a{color:var(--sun)}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+.hours td:last-child{text-align:right;font-weight:700}
+@media(min-width:760px){.visit .wrap{grid-template-columns:1fr 1fr}}
+/* faq */
+details{border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;background:#fff}
+summary{cursor:pointer;font-weight:800;font-family:'Sora',sans-serif;font-size:16px}
+details p{margin:8px 0 0}
+footer{padding:26px 0 90px;font-size:14px;color:var(--muted);text-align:center;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top" aria-label="Svarna Training Institute"><img src="img/svarna-training-institute-logo.png" alt="Svarna Training Institute" width="123" height="38"></a>
+  <nav class="nav" aria-label="Sections"><a href="#exams">Exam prep</a><a href="#courses">Courses</a><a href="#formats">How you learn</a><a href="#visit">Visit</a><a href="#faq">FAQ</a></nav>
+  <a class="btn" href="#" data-aw="I want to request a callback">Request a call back</a>
+</div></header>
+
+<section class="hero" id="top"><div class="wrap">
+  <div>
+    <span class="chip">KHDA permitted institute</span><span class="chip">IDP IELTS test venue</span><span class="chip">Open 7 days</span>
+    <h1>Exam scores and career skills, three minutes from Internet City Metro</h1>
+    <p class="lead">Svarna Training Institute has trained students and professionals in Barsha Heights (TECOM) since 2012. IELTS, PTE, SAT, English and Arabic, accounting, HR, IT and corporate programmes, in the classroom or online.</p>
+    <a class="btn alt" href="#" data-aw="I want to request a callback">Talk to the team</a>
+    <a class="btn ghost" style="color:#fff;border-color:#fff;margin-left:6px" href="#courses">Browse courses</a>
+  </div>
+  <div class="finder" aria-label="Course finder">
+    <h2>Which course fits you?</h2>
+    <label for="goal">My goal</label>
+    <select id="goal">
+      <option value="">Choose a goal</option>
+      <option value="ielts">Study, work or migrate abroad (English test)</option>
+      <option value="pte">Pearson PTE score</option>
+      <option value="sat">University entry, SAT</option>
+      <option value="eng">Speak English or Arabic with confidence</option>
+      <option value="job">Get job ready in the UAE</option>
+      <option value="it">Learn design, CAD or coding</option>
+      <option value="team">Train my team</option>
+    </select>
+    <div class="res" id="res" aria-live="polite">Pick a goal and we will point you to a course. The team confirms dates and fees.</div>
+    <a class="btn" id="ask" href="#" data-aw="I want to request a callback">Ask the assistant</a>
+  </div>
+</div></section>
+
+<div class="strip"><div class="wrap">
+  <div class="k"><b>2012</b><span>year founded in Dubai</span></div>
+  <div class="k"><b>10,000+</b><span>students in 12 years</span></div>
+  <div class="k"><b>800+</b><span>Google reviews</span></div>
+  <div class="k"><b>60+</b><span>KHDA permitted courses</span></div>
+</div></div>
+
+<section id="exams"><div class="wrap">
+  <h2>Exam preparation, and the exam itself</h2>
+  <p style="max-width:640px;color:var(--muted)">Students prepare and sit the IELTS in the same building, which several reviewers mention as a relief on exam day.</p>
+  <div class="tests">
+    <article class="tcard dark">
+      <span class="tag">IDP</span>
+      <h3>IELTS preparation</h3>
+      <p>Classes in Dubai, with IELTS pages for Abu Dhabi and Sharjah as well. The institute also runs an IELTS Unlimited Package, free mock tests and free resources.</p>
+      <ul><li>Full length mock exams</li><li>Trainers coach all four modules</li><li>Book the IDP exam through Svarna</li></ul>
+      <a href="#" data-aw="Tell me about IELTS">Ask about IELTS</a>
+    </article>
+    <article class="tcard">
+      <span class="tag">Pearson</span>
+      <h3>PTE</h3>
+      <p>Customised training of 36 to 63 hours, with morning, midday or evening sessions. Dubai and Sharjah.</p>
+      <a href="#" data-aw="Tell me about PTE">Ask about PTE</a>
+    </article>
+    <article class="tcard">
+      <span class="tag">Also</span>
+      <h3>SAT, GMAT, GRE, TOEFL, OET</h3>
+      <p>SAT coaching with timed mock exams. GMAT, GRE, TOEFL and OET programmes are listed too.</p>
+      <a href="#" data-aw="Tell me about SAT">Ask about SAT</a>
+    </article>
+  </div>
+</div></section>
+
+<section class="cat" id="courses"><div class="wrap">
+  <h2>Course catalogue</h2>
+  <p style="max-width:640px;color:var(--muted)">Course names as listed on the institute's own site. Tap a topic.</p>
+  <div class="tabs" role="tablist" aria-label="Course topics" id="tabs"></div>
+  <div id="panels"></div>
+</div></section>
+
+<section id="formats"><div class="wrap">
+  <h2>How you can learn</h2>
+  <div class="fmt">
+    <div><b>In person</b><br>Modern, fully equipped classrooms in Barsha Heights (TECOM).</div>
+    <div><b>Online or blended</b><br>Choose online sessions, or mix them with the classroom to suit your week.</div>
+    <div><b>Weekday and weekend batches</b><br>Batches run on weekdays and weekends, and the doors are open every day.</div>
+  </div>
+  <p style="margin-top:22px">Payment: flexible plans are offered, including instalments through Tabby. The team confirms what applies to your course.</p>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap">
+  <div>
+    <h2>Find us</h2>
+    <p><b>Svarna Training Institute L.L.C</b><br>Sheikha Noora Tower, Office 909<br>Barsha Heights (TECOM), Dubai<br>Dubai Internet City Metro, Exit 1 (about 3 minutes on foot)</p>
+    <p>Phone <a href="tel:+97148345551">+971 4 834 5551</a><br>WhatsApp <a href="https://wa.me/971585958799">+971 58 595 8799</a><br><a href="mailto:info@svarnainstitute.com">info@svarnainstitute.com</a></p>
+    <p>Call back requests on the official site are answered within 20 to 30 minutes, according to the form.</p>
+  </div>
+  <div>
+    <h2>Opening hours</h2>
+    <table class="hours" aria-label="Opening hours">
+      <tr><td>Monday</td><td>9:00 AM – 8:00 PM</td></tr>
+      <tr><td>Tuesday</td><td>9:00 AM – 8:00 PM</td></tr>
+      <tr><td>Wednesday</td><td>9:00 AM – 8:00 PM</td></tr>
+      <tr><td>Thursday</td><td>9:00 AM – 8:00 PM</td></tr>
+      <tr><td>Friday</td><td>9:00 AM – 8:00 PM</td></tr>
+      <tr><td>Saturday</td><td>9:00 AM – 8:00 PM</td></tr>
+      <tr><td>Sunday</td><td>9:00 AM – 8:00 PM</td></tr>
+    </table>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2>Quick answers</h2>
+  <details><summary>Is the institute approved?</summary><p>It describes itself as a KHDA permitted institute with more than 60 courses.</p></details>
+  <details><summary>Can I take the IELTS exam there?</summary><p>Yes, Svarna is an IDP IELTS test venue and has a page to book the exam. Fees and dates change, so the team confirms them.</p></details>
+  <details><summary>Do you teach online?</summary><p>Yes. Learning options are in person, online or blended.</p></details>
+  <details><summary>Can I pay in instalments?</summary><p>The site mentions flexible payment plans and instalments through Tabby. Ask the team which one applies to your course.</p></details>
+  <details><summary>Do you train companies?</summary><p>Yes. Corporate training includes leadership, communication, customer service, digital transformation, project management and more.</p></details>
+  <p><a href="#" class="btn" data-aw="I want to request a callback">Request a call back</a></p>
+</div></section>
+
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan<br>Facts taken from svarnainstitute.com. Not the official site.</div></footer>
+
+<script>
+var CFG={
+ title:"Svarna assistant",sub:"Answers from the institute's own site",btn:"Ask Svarna",ph:"Ask about a course, hours, IELTS...",
+ note:"Demo assistant. It sends nothing; the team confirms fees and dates.",
+ welcome:"Hello! I can answer questions about Svarna Training Institute: IELTS, PTE, SAT, language and professional courses, hours and location. What would you like to know?",
+ fallback:"I do not have that detail from the institute's site, so the team will need to confirm it. You can call +971 4 834 5551 or message WhatsApp +971 58 595 8799. I can also take a call back request.",
+ chips:["IELTS","PTE","SAT","English courses","Fees","Opening hours","Where are you?","Request a call back"],
+ flow:[
+  {k:"area",lbl:"Interested in",q:"Which area are you interested in?",chips:["IELTS","PTE","SAT","Spoken or Business English","Arabic or French","Professional course","Corporate training"],loose:1},
+  {k:"mode",lbl:"Learning style",q:"How would you like to learn?",chips:["In person","Online","Blended"]},
+  {k:"slot",lbl:"Preferred time",q:"Which batch suits you?",chips:["Weekday","Weekend","Morning","Evening"],loose:1},
+  {k:"goal",lbl:"Goal or level",q:"What is your target score or current level? A few words is enough, for example \"IELTS 7 overall\" or \"beginner\".",re:/\S{2,}/},
+  {k:"name",lbl:"Name",q:"What is your name?",re:/[a-zЀ-ӿ؀-ۿ]{2,}/i,err:"Please type your name."},
+  {k:"phone",lbl:"Phone or WhatsApp",q:"Which phone or WhatsApp number should the team call?",re:/(\d[\s\-()+]*){7,}/,err:"That does not look like a phone number. Please include the digits, for example +971 5X XXX XXXX."}
+ ],
+ done:"Thank you, your request was sent to the team. They usually reply quickly during opening hours (9 AM to 8 PM, every day).\n\n{summary}\n\n(Demo: nothing was actually sent.)",
+ kb:[
+  {k:["call back","callback","call me","contact me","enquiry","inquiry","enrol","enroll","register","sign up","join","apply","book a course","request"],a:"Happy to arrange that. I will take a few details for the team.",flow:"start"},
+  {k:["hours","open","opening","close","closing","time","timing","schedule","sunday","saturday","friday","weekend open","working hours"],a:"The institute lists the same hours every day: Monday to Sunday, 9:00 AM to 8:00 PM.",chips:["Where are you?","Request a call back"]},
+  {k:["where","address","location","located","find you","directions","metro","tecom","barsha","map","how to get","reach you"],a:"Svarna Training Institute L.L.C is at Sheikha Noora Tower, Office 909, Barsha Heights (TECOM), Dubai. It is about a 3 minute walk from Dubai Internet City Metro, Exit 1.",chips:["Opening hours","Phone number"]},
+  {k:["phone","number","whatsapp","call","email","mail","telephone","contact","reach"],a:"UAE phone: +971 4 834 5551. WhatsApp: +971 58 595 8799. Email: info@svarnainstitute.com.",chips:["Request a call back","Opening hours"]},
+  {k:["fee","fees","price","prices","cost","costs","how much","charge","charges","expensive","cheap","discount","afford"],a:"Fees are published per course on the institute's site and can change, so I will not quote one here. The team will confirm the current fee for your course. Flexible payment plans are offered, including instalments through Tabby.",chips:["Payment plans","Request a call back"]},
+  {k:["payment","pay","installment","instalment","installments","instalments","tabby","plan","plans","card"],a:"The institute mentions flexible payment plans and instalments through Tabby. The team will confirm which option applies to your course.",chips:["Request a call back"]},
+  {k:["ielts","ilets","iletes","ieltz","british council","band","academic","general training","idp"],a:"IELTS is the institute's main programme. It offers IELTS preparation in Dubai (with pages for Abu Dhabi and Sharjah), an IELTS Unlimited Package, free mock tests and free resources, and it is an IDP IELTS test venue. The site says nearly 99% of its students reach their target through its training.",chips:["Book the IELTS exam","IELTS mock test","Request a call back"]},
+  {k:["book exam","book ielts","exam booking","exam date","exam dates","test date","test dates","sit the exam","take the exam","exam center","exam centre","test centre","test center","test venue","venue"],a:"Yes, Svarna is an IDP IELTS test venue and has a page for booking the IELTS exam. Exam dates and fees are updated on the site, and the team confirms them. PTE exam dates and fees have their own pages too.",chips:["Request a call back","IELTS"]},
+  {k:["mock","mock test","practice test","free test","free resources","resources","sample"],a:"The site offers free IELTS mock tests and free IELTS resources, and full length mock exams are part of the preparation. SAT preparation also uses timed mock exams.",chips:["IELTS","SAT"]},
+  {k:["pte","pearson","pte academic","pte core"],a:"PTE preparation is offered in Dubai and Sharjah. Training is customised from 36 to 63 hours depending on your level, with morning, midday or evening sessions, and payment in up to four instalments. The site lists PTE exam fees and dates on separate pages.",chips:["Payment plans","Request a call back"]},
+  {k:["sat","scholastic","sat exam","sat classes","sat coaching","university entry","college"],a:"SAT coaching in Dubai: exam-mapped classes with timed mock exams and score strategies for students targeting university entry. The team will confirm the next batch.",chips:["Request a call back","Fees"]},
+  {k:["gmat","gre","toefl","oet","nurses","nursing","tests","exam prep","test prep","preparation"],a:"Besides IELTS, PTE and SAT, the institute lists GMAT, GRE, TOEFL and OET preparation. The team will confirm the next batch for each.",chips:["IELTS","PTE","SAT"]},
+  {k:["english","spoken english","speaking","speak","fluent","fluency","conversation","business english","english club","speaking club"],a:"English options: Spoken English, Business English, and an English Speaking Club in Dubai.",chips:["Arabic or French","Request a call back"]},
+  {k:["arabic","french","language","languages","francais"],a:"Language courses include Spoken English, Business English, Arabic Speaking and French Speaking.",chips:["English courses","Request a call back"]},
+  {k:["autocad","revit","3ds","3ds max","autodesk","cad","architecture","engineering","bim","mep","design software"],a:"IT and design courses include Autodesk AutoCAD, Revit MEP, Revit Structure and 3Ds Max.",chips:["Web design","Request a call back"]},
+  {k:["web design","web designing","graphic","graphic design","coding","programming","developer","developers","ai","python"],a:"The institute lists Web Designing Certification, Graphic Designing Certification and Coding with AI for Developers.",chips:["Request a call back"]},
+  {k:["accounting","accounts","finance","quickbooks","tally","vat","tax","corporate tax","bookkeeping","forensic","cfp"],a:"Finance courses include Accounting and Finance for Beginners, Accounting System and Basics, Advance Finance Professional (CFP), Investigative Forensic Accounting, Finance for Non Finance Managers, QuickBooks, Tally, UAE VAT and Corporate Tax Training.",chips:["Request a call back","HR courses"]},
+  {k:["hr","hr certificate","hr course","human resources","chrmp","labour law","labor law","payroll","wps","recruitment"],a:"HR options: Human Resources Management certifications (CHRMP and CHRMM), UAE Labour Law Training and WPS Payroll Management.",chips:["Request a call back"]},
+  {k:["excel","ms office","office","word","powerpoint","power bi","microsoft","computer","computers","computer course"],a:"Office courses: MS Office, MS Excel, MS Power BI, MS PowerPoint and an MS Office 365 certification.",chips:["Request a call back"]},
+  {k:["digital marketing","marketing","seo","google ads","social media","sales"],a:"Digital Marketing Certification (CDM), plus short courses in SEO, Google Ads and Social Media. There is also a Sales and Marketing Professional certification.",chips:["Request a call back"]},
+  {k:["logistics","supply chain","warehouse","procurement","retail","document controller","event","events","hospitality","tourism","secretarial","administration","business administration","train the trainer"],a:"Other professional programmes include Logistics and Supply Chain Management, Warehouse Management, Procurement, Retail Management, Document Controller, Event Management, Hospitality and Tourism, Administration and Secretarial, Business Administration (CBA) and Train The Trainer.",chips:["Request a call back"]},
+  {k:["corporate","company","companies","team training","staff","employees","business training","in-house","leadership","management training","soft skills"],a:"Corporate training covers strategic leadership, business communication, customer service, digital transformation, soft skills, project management, creativity and innovation, advanced sales negotiation, employee well being, change management, emotional intelligence and conflict management. The team will tailor a quote for your company.",chips:["Request a call back"]},
+  {k:["khda","approved","approval","accredited","accreditation","permitted","licensed","certified","certificate","certification","recognised","recognized"],a:"Svarna describes itself as a KHDA permitted institute with more than 60 courses, and an IDP IELTS test venue. For the exact certificate you receive on a given course, the team will confirm.",chips:["Request a call back"]},
+  {k:["online","remote","zoom","distance","blended","in person","classroom","format","formats","mode"],a:"You can learn in person, online or blended. Batches run on weekdays and weekends.",chips:["Request a call back","Opening hours"]},
+  {k:["batch","batches","weekday","evening","morning","midday","start date","next batch","when start","intake"],a:"Weekday and weekend batches are offered, and PTE has morning, midday and evening sessions. Start dates change, so the team will confirm the next batch for your course.",chips:["Request a call back"]},
+  {k:["about","history","founded","since","years","experience","students","reviews","rating","reputation","trusted","who are you"],a:"Svarna Training Institute was founded in 2012 in Dubai. The site mentions more than 10,000 students over 12 years and more than 800 Google reviews.",chips:["Where are you?","Request a call back"]},
+  {k:["trainer","trainers","teacher","teachers","tutor","instructor","instructors","faculty"],a:"The institute says it partners with experienced trainers. The team can tell you who teaches your batch.",chips:["Request a call back"]},
+  {k:["franchise","partner","partnership","career","careers","job","jobs","vacancy","work with you","hiring"],a:"The site has a Franchise page and a Careers page. The team handles both enquiries; email info@svarnainstitute.com.",chips:["Phone number"]},
+  {k:["abu dhabi","sharjah","other branch","other branches","branches","ajman","other city","other location"],a:"The site has IELTS class pages for Abu Dhabi and Sharjah and a PTE page for Sharjah. The team will confirm where those classes take place. The main address is Barsha Heights (TECOM), Dubai.",chips:["Where are you?","Request a call back"]},
+  {k:["hello","hi","hey","salam","marhaba","good morning","good evening","thanks","thank you"],a:"Hello! Ask me about courses, hours, location or IELTS, or I can take a call back request.",chips:["IELTS","Opening hours","Request a call back"]}
+ ]
+};
+/* assistant engine: pure matcher + floating widget. CFG is defined by the page before this block. */
+var STOP=new Set("a an the is are was be do does did you your yours i me my we our us it its of to in on at for and or with can could would should will what whats how much many any there this that these those about please tell am if so as by from have has get need want like know teach offer ok okay yes".split(" "));
+function norm(s){return String(s).toLowerCase().replace(/[’']/g,"").replace(/[^a-z0-9 ]+/g," ").replace(/\s+/g," ").trim()}
+function stem(w){if(w.length>5)w=w.replace(/(ing|ers|er|ed|es|ly)$/,"");else if(w.length>3)w=w.replace(/s$/,"");return w}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;if(Math.abs(m-n)>2)return 9;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var prev=p[0];p[0]=i;for(j=1;j<=n;j++){c=p[j];p[j]=Math.min(p[j]+1,p[j-1]+1,prev+(a[i-1]===b[j-1]?0:1));prev=c}}return p[n]}
+function toks(q){return norm(q).split(" ").filter(function(w){return w&&!STOP.has(w)}).map(stem)}
+function sim(t,k){if(t===k)return 1;if(t.length>=4&&k.length>=4&&(t.indexOf(k)===0||k.indexOf(t)===0))return .85;if(t.length>=5&&k.length>=5&&lev(t,k)<=(t.length>=8?2:1))return .75;return 0}
+function match(q){
+  var T=toks(q),nq=norm(q),best=null,bs=0;
+  CFG.kb.forEach(function(e){
+    var s=0,mx=0,extra=0;function sc(v){if(v>mx){if(mx>.8)extra++;mx=v}else if(v>.8)extra++}
+    e.k.forEach(function(kw){var before=s;
+      var kt=norm(kw).split(" ").map(stem);
+      if(kt.length>1){
+        if(nq.indexOf(norm(kw))>-1){s+=3;sc(s-before);return}
+        var all=1,sum=0;kt.forEach(function(x){var m=0;T.forEach(function(t){m=Math.max(m,sim(t,x))});if(!m)all=0;sum+=m});
+        if(all)s+=2.4*sum/kt.length
+      }else{var m=0;T.forEach(function(t){m=Math.max(m,sim(t,kt[0]))});s+=m*1.6}
+      sc(s-before)
+    });
+    s=mx+.2*extra;
+    if(s>bs){bs=s;best=e}
+  });
+  return bs>=1.2?best:null
+}
+function reply(q){var e=match(q);if(!e)return{a:CFG.fallback,chips:CFG.chips};return{a:typeof e.a==="function"?e.a(q):e.a,chips:e.chips||CFG.chips,flow:e.flow}}
+var FLOW=null;
+function chipHit(txt,ch){var t=toks(txt);var nt=norm(txt);for(var i=0;i<ch.length;i++){var c=norm(ch[i]);if(nt===c||nt.indexOf(c)>-1)return ch[i];var ct=c.split(" ").map(stem),ok=1;ct.forEach(function(x){var m=0;t.forEach(function(y){m=Math.max(m,sim(y,x))});if(!m)ok=0});if(ok&&t.length)return ch[i]}return null}
+function flowStart(){FLOW={i:0,ans:{}};return flowAsk()}
+function flowAsk(){var s=CFG.flow[FLOW.i];return{a:s.q,chips:s.chips||["Cancel"],flow:1}}
+function flowInput(txt){
+  var s=CFG.flow[FLOW.i],n=norm(txt);
+  if(/^(cancel|stop|exit|quit|no thanks|back off)$/.test(n)){FLOW=null;return{a:"No problem, nothing was saved. Ask me anything else.",chips:CFG.chips}}
+  var v=txt.trim();
+  if(s.chips){var h=chipHit(txt,s.chips);if(!h){var e=match(txt);if(e&&!s.loose){var r=reply(txt);r.a+="\n\nBack to your request: "+s.q;r.chips=s.chips;return r}v=txt.trim()}else v=h}
+  if(s.re&&!s.re.test(v)){return{a:s.err||"Could you rephrase that?",chips:s.chips||["Cancel"],flow:1}}
+  FLOW.ans[s.k]=v;FLOW.i++;
+  if(FLOW.i>=CFG.flow.length){var a=FLOW.ans,lines=CFG.flow.map(function(f){return f.lbl+": "+a[f.k]}).join("\n");FLOW=null;return{a:CFG.done.replace("{summary}",lines),chips:CFG.chips,done:1}}
+  return flowAsk()
+}
+function handle(txt){
+  if(FLOW)return flowInput(txt);
+  var r=reply(txt);
+  if(r.flow==="start")return flowStart();
+  return r
+}
+if(typeof module!=="undefined")module.exports={handle:handle,reply:reply,match:match,CFG:CFG,flowStart:flowStart,reset:function(){FLOW=null}};
+if(typeof document!=="undefined"){(function(){
+  var css=".aw-b{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--wa);color:var(--wt,#fff);font:600 14px/1 var(--wf,inherit);padding:13px 16px;border-radius:var(--wr,999px);box-shadow:0 8px 24px rgba(0,0,0,.28)}"+
+  ".aw-p{position:fixed;right:16px;bottom:76px;z-index:61;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 100px));display:none;flex-direction:column;background:var(--wb,#fff);color:var(--wi,#111);border-radius:var(--wr2,16px);box-shadow:0 18px 50px rgba(0,0,0,.35);overflow:hidden;font:14px/1.45 var(--wf,inherit);border:1px solid rgba(0,0,0,.08)}"+
+  ".aw-p.o{display:flex}.aw-h{background:var(--wa);color:var(--wt,#fff);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}.aw-h small{display:block;font-weight:400;opacity:.85;font-size:12px}"+
+  ".aw-h button{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}.aw-m{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:0}"+
+  ".aw-x{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-wrap;word-wrap:break-word}.aw-x.bot{background:var(--wbub,#eef1f6);align-self:flex-start}.aw-x.me{background:var(--wa);color:var(--wt,#fff);align-self:flex-end}"+
+  ".aw-c{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}.aw-c button{border:1px solid var(--wa);background:transparent;color:var(--wi,#111);border-radius:999px;padding:6px 11px;font:inherit;font-size:13px;cursor:pointer}.aw-c button:hover{background:var(--wa);color:var(--wt,#fff)}"+
+  ".aw-f{display:flex;gap:6px;padding:10px;border-top:1px solid rgba(0,0,0,.08)}.aw-f input{flex:1;min-width:0;border:1px solid #c9ced8;border-radius:10px;padding:9px 10px;font:inherit;background:#fff;color:#111}.aw-f button{border:0;background:var(--wa);color:var(--wt,#fff);border-radius:10px;padding:0 14px;font:600 14px var(--wf,inherit);cursor:pointer}.aw-n{font-size:11px;opacity:.6;padding:0 12px 8px}";
+  var st=document.createElement("style");st.textContent=css;document.head.appendChild(st);
+  var b=document.createElement("button");b.className="aw-b";b.setAttribute("aria-label",CFG.title);b.innerHTML="<span aria-hidden='true'>💬</span><span>"+CFG.btn+"</span>";
+  var p=document.createElement("div");p.className="aw-p";p.setAttribute("role","dialog");p.setAttribute("aria-label",CFG.title);
+  p.innerHTML="<div class='aw-h'><div>"+CFG.title+"<small>"+CFG.sub+"</small></div><button aria-label='Close'>×</button></div><div class='aw-m' aria-live='polite'></div><div class='aw-c'></div><form class='aw-f'><input type='text' placeholder='"+CFG.ph+"' aria-label='Message'><button type='submit'>Send</button></form><div class='aw-n'>"+CFG.note+"</div>";
+  document.body.appendChild(b);document.body.appendChild(p);
+  var M=p.querySelector(".aw-m"),C=p.querySelector(".aw-c"),F=p.querySelector("form"),I=p.querySelector("input"),started=0;
+  function add(t,w){var d=document.createElement("div");d.className="aw-x "+w;d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight}
+  function chips(a){C.innerHTML="";(a||[]).forEach(function(c){var x=document.createElement("button");x.type="button";x.textContent=c;x.onclick=function(){say(c)};C.appendChild(x)})}
+  function say(t){add(t,"me");var r=handle(t);setTimeout(function(){add(r.a,"bot");chips(r.chips)},180)}
+  function open(){p.classList.add("o");if(!started){started=1;add(CFG.welcome,"bot");chips(CFG.chips)}I.focus()}
+  b.onclick=function(){p.classList.contains("o")?p.classList.remove("o"):open()};
+  p.querySelector(".aw-h button").onclick=function(){p.classList.remove("o")};
+  F.onsubmit=function(e){e.preventDefault();var v=I.value.trim();if(!v)return;I.value="";say(v)};
+  window.awOpen=open;window.awAsk=function(t){open();say(t)};
+  document.querySelectorAll("[data-aw]").forEach(function(el){el.addEventListener("click",function(e){e.preventDefault();window.awAsk(el.getAttribute("data-aw"))})});
+})()}
+
+(function(){
+  var cats=[
+   ["Test prep",["IELTS preparation","IELTS Unlimited Package","PTE preparation","OET preparation","TOEFL preparation","SAT classes","GMAT classes","GRE classes"]],
+   ["Languages",["Spoken English","English Speaking Club","Business English","Arabic Speaking","French Speaking"]],
+   ["IT and design",["Autodesk Revit MEP","Autodesk AutoCAD","Autodesk 3Ds Max","Autodesk Revit Structure","Web Designing Certification","Graphic Designing Certification","Coding with AI for Developers"]],
+   ["Finance and accounting",["Advance Finance Professional (CFP)","Investigative Forensic Accounting","Accounting System and Basics","Accounting and Finance for Beginners","Building Finance Management (CBFM)","Finance for Non Finance Managers (CFNFM)","QuickBooks","Tally","UAE VAT","Corporate Tax Training"]],
+   ["Business and HR",["Business Administration Professional (CBA)","Human Resources Management (CHRMP)","Sales and Marketing Professional","Administration and Secretarial Training","Event Management","Hospitality and Tourism Management","UAE Labour Law Training","WPS Payroll Management","Document Controller","Train The Trainer"]],
+   ["Digital and Office",["Digital Marketing Certification (CDM)","SEO Training","Google Ads","Social Media","MS Office 365","MS Excel","MS Power BI","MS PowerPoint","Logistics and Supply Chain","Retail Management","Warehouse Management","Procurement Training"]],
+   ["Corporate",["Strategic Leadership and Management","Effective Business Communication","Customer Service Skills","Digital Transformation","Soft Skills","Project Management","Creativity and Innovation","Advanced Sales Negotiation","Employee Well Being and Mental Health","Agility and Change Management","Emotional Intelligence (EQ)","Conflict Management"]]
+  ];
+  var T=document.getElementById("tabs"),P=document.getElementById("panels");
+  cats.forEach(function(c,i){
+    var b=document.createElement("button");b.type="button";b.setAttribute("role","tab");b.id="t"+i;b.textContent=c[0];b.setAttribute("aria-selected",i?"false":"true");
+    var d=document.createElement("div");d.className="panel"+(i?"":" on");d.setAttribute("role","tabpanel");d.setAttribute("aria-labelledby","t"+i);
+    d.innerHTML="<b style='font-family:Sora,sans-serif'>"+c[0]+"</b><ul>"+c[1].map(function(x){return "<li>"+x+"</li>"}).join("")+"</ul>";
+    b.onclick=function(){T.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-selected","false")});P.querySelectorAll(".panel").forEach(function(x){x.classList.remove("on")});b.setAttribute("aria-selected","true");d.classList.add("on")};
+    T.appendChild(b);P.appendChild(d)
+  });
+  var out={
+   ielts:["IELTS preparation","Classes in Dubai, an IELTS Unlimited Package and free mock tests. The exam can be booked through the institute (IDP).","Tell me about IELTS"],
+   pte:["PTE preparation","36 to 63 hours depending on your level, with morning, midday or evening sessions.","Tell me about PTE"],
+   sat:["SAT classes","SAT coaching with timed mock exams, for students heading to university.","Tell me about SAT"],
+   eng:["Spoken English, Business English, Arabic or French","Language courses plus an English Speaking Club in Dubai.","What language courses do you have?"],
+   job:["Professional certifications","Accounting, HR (CHRMP), business administration, digital marketing, logistics, MS Office and more.","What professional courses do you have?"],
+   it:["IT and design courses","AutoCAD, Revit MEP, 3Ds Max, Revit Structure, web and graphic design, coding with AI.","What IT courses do you have?"],
+   team:["Corporate training","Leadership, communication, customer service, project management, digital transformation and more.","Tell me about corporate training"]
+  };
+  var g=document.getElementById("goal"),r=document.getElementById("res"),a=document.getElementById("ask");
+  g.onchange=function(){var o=out[g.value];if(!o){r.textContent="Pick a goal and we will point you to a course. The team confirms dates and fees.";return}r.innerHTML="<b>"+o[0]+"</b>"+o[1];a.setAttribute("data-aw",o[2]);a.textContent="Ask the assistant about this"};
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Biscayne Veterinary Center · Miami</title>
+<meta name="description" content="Demo page for Biscayne Veterinary Center, 5841 Biscayne Blvd, Miami. 24/7 emergency line 305-575-1190.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#073542;--teal:#0a6b76;--mint:#e5f6f3;--mist:#f5faf9;--red:#ff604b;--gold:#f2bd63;--line:#dbe8e7;--muted:#5b7177;--w-acc:#0a6b76;--w-head:#073542;--w-font:'Nunito Sans',system-ui,sans-serif;--w-r:22px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',system-ui,sans-serif;color:var(--ink);background:var(--mist);line-height:1.6;overflow-x:hidden;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.1;letter-spacing:-.01em}
+h2{font-size:clamp(28px,6vw,46px);font-weight:800}
+h3{font-size:20px;font-weight:600}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 16px}
+.eyebrow{display:inline-block;font:800 12px/1 'Nunito Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 22px;border-radius:999px;font-weight:800;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:16px;font-family:inherit;text-align:center}
+.btn.red{background:var(--red);color:#fff;box-shadow:0 10px 24px rgba(255,96,75,.35)}
+.btn.line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn.white{background:#fff;color:var(--ink)}
+/* emergency strip */
+.strip{background:var(--red);color:#fff;font-weight:800;position:sticky;top:0;z-index:50}
+.strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:9px;padding-bottom:9px;font-size:14px}
+.strip a{background:#fff;color:#b22d1d;border-radius:999px;padding:6px 14px;text-decoration:none;white-space:nowrap}
+.pulse{display:inline-block;width:9px;height:9px;border-radius:50%;background:#fff;margin-right:8px;animation:pl 1.6s infinite}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(255,255,255,.8)}100%{box-shadow:0 0 0 12px rgba(255,255,255,0)}}
+header.top{background:#fff;border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px}
+.brand img{height:44px;width:auto}
+nav.m{display:none;gap:22px;font-weight:700;font-size:15px}
+nav.m a{text-decoration:none;color:var(--ink)}nav.m a:hover{color:var(--teal)}
+@media(min-width:860px){nav.m{display:flex}}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:36px 0 56px;background:radial-gradient(1200px 500px at 85% -10%,#cfeee9 0,transparent 60%),var(--mist)}
+.hero::before{content:"";position:absolute;right:-120px;top:40px;width:420px;height:420px;border-radius:50%;border:60px solid rgba(10,107,118,.06)}
+.hero .wrap{position:relative;display:grid;gap:30px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:900px){.hero .wrap{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:48px}.hero{padding:64px 0 80px}}
+.hero h1{font-size:clamp(36px,9vw,66px);font-weight:800;margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--teal);display:block}
+.hero p.lead{font-size:18px;color:var(--muted);max-width:520px;margin-bottom:24px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:28px}
+.fact{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px;font-size:14px}
+.fact b{display:block;font-size:15px}
+/* triage card */
+.triage{background:var(--ink);color:#fff;border-radius:28px;padding:22px;box-shadow:0 30px 60px rgba(7,53,66,.28);position:relative}
+.triage h2{font-size:clamp(24px,5vw,32px);color:#fff;margin-bottom:6px}
+.triage p{color:#bcd9dc;font-size:15px;margin-bottom:16px}
+.sym{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:18px}
+.sym span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px 12px;font-size:14px;font-weight:700;min-width:0}
+.sym span::before{content:"! ";color:var(--gold);font-weight:800}
+.bigtel{display:block;text-align:center;background:var(--red);color:#fff;font:800 clamp(26px,8vw,38px)/1.1 'Fraunces',serif;padding:16px;border-radius:18px;text-decoration:none}
+.triage small{display:block;margin-top:10px;color:#9cc2c6;font-size:13px;text-align:center}
+/* steps */
+.sec{padding:64px 0}
+.sec.alt{background:#fff}
+.head{max-width:640px;margin-bottom:34px}
+.head p{color:var(--muted);margin-top:12px;font-size:17px}
+.steps{display:grid;gap:16px;counter-reset:s}
+@media(min-width:800px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.step{position:relative;background:var(--mint);border-radius:24px;padding:26px 22px 22px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:-16px;left:20px;width:38px;height:38px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font:800 18px 'Fraunces',serif}
+.step h3{margin:8px 0 6px}
+.step p{font-size:15px;color:#35565d}
+.tell{margin-top:26px;background:#fff;border:2px dashed var(--teal);border-radius:22px;padding:20px}
+.tell ul{list-style:none;display:grid;gap:8px;margin-top:10px}
+@media(min-width:700px){.tell ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tell li{padding-left:28px;position:relative;font-size:15px}
+.tell li::before{content:"\2713";position:absolute;left:0;color:var(--teal);font-weight:800}
+.warn{margin-top:14px;font-size:14px;color:#8a3b2f;background:#fff1ee;border-radius:12px;padding:10px 14px}
+/* bento services */
+.bento{display:grid;gap:14px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.tile{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px;min-width:0}
+.tile .ic{width:44px;height:44px;border-radius:14px;background:var(--mint);color:var(--teal);display:grid;place-items:center;font-size:22px;margin-bottom:12px}
+.tile h3{font-size:18px;margin-bottom:6px}
+.tile p{font-size:14.5px;color:var(--muted)}
+.tile ul{margin:10px 0 0 18px;font-size:14px;color:#35565d}
+.tile.big{grid-column:span 2;background:var(--ink);color:#fff;border-color:var(--ink)}
+.tile.big p,.tile.big ul{color:#bcd9dc}.tile.big .ic{background:rgba(255,255,255,.12);color:var(--gold)}
+@media(min-width:900px){.bento{grid-template-columns:repeat(4,minmax(0,1fr))}.tile.big{grid-column:span 2;grid-row:span 2}}
+@media(max-width:560px){.bento{grid-template-columns:minmax(0,1fr)}.tile.big{grid-column:auto}}
+.note{margin-top:18px;font-size:14px;color:var(--muted)}
+/* doctor */
+.doc{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.doc::after{content:"";position:absolute;left:-90px;bottom:-90px;width:300px;height:300px;border-radius:50%;background:rgba(242,189,99,.12)}
+.doc .wrap{position:relative;display:grid;gap:28px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:860px){.doc .wrap{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center}}
+.badge{background:#fff;color:var(--ink);border-radius:26px;padding:26px;text-align:center}
+.badge .mono{width:96px;height:96px;margin:0 auto 12px;border-radius:50%;background:var(--mint);display:grid;place-items:center;font:800 34px 'Fraunces',serif;color:var(--teal)}
+.badge b{display:block;font:800 22px 'Fraunces',serif}
+.badge span{font-size:14px;color:var(--muted)}
+.doc p{color:#cfe5e7;margin:14px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chips span{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:700}
+blockquote{margin-top:22px;border-left:4px solid var(--gold);padding-left:16px;font-family:'Fraunces',serif;font-size:19px;color:#fff}
+blockquote small{display:block;font:600 13px 'Nunito Sans';color:#9cc2c6;margin-top:6px}
+/* area */
+.area{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px}
+.area span{background:var(--mint);border-radius:999px;padding:8px 16px;font-weight:700;font-size:14px}
+.loc{display:grid;gap:18px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:800px){.loc{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px}
+.card dl{display:grid;gap:12px;margin-top:12px}
+.card dt{font:800 12px 'Nunito Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.card dd{font-size:16px;overflow-wrap:anywhere}
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:18px;padding:0 18px;margin-bottom:10px}
+summary{cursor:pointer;list-style:none;font-weight:800;padding:16px 28px 16px 0;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:12px;font-size:26px;color:var(--teal)}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 0 16px;color:#35565d;font-size:15.5px}
+/* final */
+.final{background:linear-gradient(135deg,var(--teal),var(--ink));color:#fff;text-align:center;padding:56px 0}
+.final h2{color:#fff;margin-bottom:10px}.final p{color:#cfe5e7;margin-bottom:22px}
+footer{background:#052631;color:#9cc2c6;font-size:13.5px;padding:26px 0 90px}
+footer .wrap{display:grid;gap:8px}
+.disc{opacity:.8}
+.as-fab{position:fixed;right:16px;bottom:16px;z-index:9000;display:flex;align-items:center;gap:8px;border:0;border-radius:var(--w-fr,999px);padding:12px 18px 12px 14px;background:var(--w-acc,#0a6b76);color:var(--w-on,#fff);font:700 15px/1 var(--w-font,system-ui,sans-serif);box-shadow:0 8px 28px rgba(0,0,0,.28);cursor:pointer}
+.as-fab .as-fi{font-size:20px;line-height:1}.as-fab.on{opacity:0;pointer-events:none}
+.as-box{position:fixed;right:16px;bottom:16px;z-index:9001;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 32px));height:min(560px,calc(100dvh - 32px));background:var(--w-bg,#fff);color:var(--w-ink,#1b1b1b);border-radius:var(--w-r,18px);box-shadow:0 20px 60px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden;font:15px/1.45 var(--w-font,system-ui,sans-serif)}
+.as-box[hidden]{display:none}
+.as-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:var(--w-head,var(--w-acc,#0a6b76));color:var(--w-on,#fff)}
+.as-head b{display:block;font-size:16px}.as-head small{opacity:.85;font-size:12.5px}
+.as-x{background:transparent;border:0;color:inherit;font-size:28px;line-height:1;cursor:pointer;padding:0 4px}
+.as-log{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:9px;background:var(--w-log,#f6f6f6)}
+.as-m{max-width:88%;padding:9px 13px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.as-m.bot{background:var(--w-bot,#fff);align-self:flex-start;border:1px solid var(--w-line,#e3e3e3)}
+.as-m.me{background:var(--w-acc,#0a6b76);color:var(--w-on,#fff);align-self:flex-end}
+.as-m a{color:inherit;font-weight:700;text-decoration:underline}
+.as-sum{margin:6px 0 0;padding-left:18px}
+.as-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;max-height:104px;overflow-y:auto;border-top:1px solid var(--w-line,#e3e3e3);background:var(--w-bg,#fff)}
+.as-chip{border:1px solid var(--w-acc,#0a6b76);background:transparent;color:var(--w-acc,#0a6b76);border-radius:999px;padding:6px 12px;font:600 13px/1.2 inherit;cursor:pointer}
+.as-chip:hover{background:var(--w-acc,#0a6b76);color:var(--w-on,#fff)}
+.as-form{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--w-line,#e3e3e3);background:var(--w-bg,#fff)}
+.as-in{flex:1;min-width:0;border:1px solid var(--w-line,#cfcfcf);border-radius:999px;padding:10px 14px;font:16px inherit;background:#fff;color:#111}
+.as-go{border:0;border-radius:50%;width:42px;height:42px;background:var(--w-acc,#0a6b76);color:var(--w-on,#fff);font-size:16px;cursor:pointer;flex:none}
+@media(max-width:480px){.as-box{right:8px;bottom:8px;width:calc(100vw - 16px)}}
+
+</style>
+</head>
+<body>
+<div class="strip"><div class="wrap"><span><span class="pulse"></span>Pet emergency? Emergency line 24/7</span><a href="tel:3055751190">Call 305-575-1190</a></div></div>
+<header class="top"><div class="wrap">
+<a class="brand" href="#top" aria-label="Biscayne Veterinary Center"><img src="img/biscayne-vet-center-logo.svg" alt="Biscayne Veterinary Center" width="200" height="44"></a>
+<nav class="m"><a href="#emergency">Emergency</a><a href="#services">Services</a><a href="#doctor">Dr. Jimenez</a><a href="#visit">Visit</a><a href="#faq">FAQ</a></nav>
+<a class="btn red" href="#" data-start-flow style="min-height:42px;padding:8px 16px;font-size:14px">Request visit</a>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+<div>
+<span class="eyebrow">Miami Upper Eastside · Dogs and cats</span>
+<h1>Expert care when your pet needs it most.<em>Day or night.</em></h1>
+<p class="lead">Biscayne Veterinary Center provides emergency response, advanced diagnostics, surgery, preventive care, dentistry and compassionate medical care for dogs and cats on Biscayne Boulevard.</p>
+<div class="cta"><a class="btn red" href="tel:3055751190">Call 305-575-1190</a><a class="btn line" href="#services">Explore services</a></div>
+<div class="facts">
+<div class="fact"><b>Dr. Raul Jimenez</b>Medical Director, DVM</div>
+<div class="fact"><b>Call before arriving</b>so the team can prepare</div>
+<div class="fact"><b>5841 Biscayne Blvd</b>Miami, FL 33137</div>
+<div class="fact"><b>Se habla Español</b>Bilingual care</div>
+</div>
+</div>
+<aside class="triage" id="emergency" aria-label="Emergency signs">
+<h2>Call right away if you see</h2>
+<p>Every minute can matter. These signs need a veterinarian immediately.</p>
+<div class="sym"><span>Difficulty breathing</span><span>Trauma or bleeding</span><span>Seizures or collapse</span><span>Possible poisoning</span><span>Persistent vomiting</span><span>Swollen abdomen</span></div>
+<a class="bigtel" href="tel:3055751190">305-575-1190</a>
+<small>Call before you leave. Tell the team what happened, your pet's age and weight, symptoms and your arrival time.</small>
+</aside>
+</div></section>
+
+<section class="sec alt"><div class="wrap">
+<div class="head"><span class="eyebrow">When it is an emergency</span><h2>What happens after you call</h2><p>The hospital describes a three-step emergency process, built around a phone call first.</p></div>
+<div class="steps">
+<div class="step"><h3>Phone assessment</h3><p>The team gathers key details and confirms the safest next step and current availability.</p></div>
+<div class="step"><h3>Arrival and triage</h3><p>Critical patients may be taken directly for rapid assessment, vital signs and stabilization.</p></div>
+<div class="step"><h3>Diagnostics and plan</h3><p>The veterinarian discusses recommended tests, treatment priorities, estimated costs and monitoring.</p></div>
+</div>
+<div class="tell"><b>What to tell the team on the phone</b>
+<ul><li>What happened and when</li><li>Species, breed, age and approximate weight</li><li>Current symptoms and breathing status</li><li>Known medications or medical conditions</li><li>Your estimated arrival time</li><li>Bring medications, records and any toxin packaging</li></ul>
+<div class="warn">Do not give medication or induce vomiting unless a veterinarian or poison-control professional tells you to. ASPCA Poison Control: 888-426-4435 (a consultation fee may apply).</div></div>
+</div></section>
+
+<section class="sec" id="services"><div class="wrap">
+<div class="head"><span class="eyebrow">One hospital, routine and urgent</span><h2>Complete veterinary care</h2><p>Modern medical care with direct communication, thoughtful treatment plans and a focus on your pet's comfort.</p></div>
+<div class="bento">
+<div class="tile big"><div class="ic">&#9877;</div><h3>Emergency and urgent care</h3><p>Assessment and treatment for sudden illness, injury, pain, poisoning concerns and unstable medical conditions.</p><ul><li>Triage and stabilization</li><li>Trauma and wound care</li><li>Emergency diagnostics</li><li>Hospital observation and treatment planning</li></ul></div>
+<div class="tile"><div class="ic">&#9825;</div><h3>Wellness and vaccines</h3><p>Puppy and kitten visits, adult exams, core and lifestyle vaccinations, parasite prevention, senior screening.</p></div>
+<div class="tile"><div class="ic">&#9678;</div><h3>Diagnostics</h3><p>Blood, urine, fecal and parasite testing, diagnostic imaging, pre-anesthetic screening.</p></div>
+<div class="tile"><div class="ic">&#10010;</div><h3>Surgery</h3><p>Spay and neuter, soft-tissue surgery, emergency procedures, mass removal, post-operative pain management.</p></div>
+<div class="tile"><div class="ic">&#9788;</div><h3>Dental care</h3><p>Oral exam, professional cleaning, treatment planning, extraction when medically indicated.</p></div>
+<div class="tile"><div class="ic">&#9998;</div><h3>Medical management</h3><p>Dermatology and allergy concerns, nutrition and weight, pain and mobility, behavior referrals, end-of-life care.</p></div>
+<div class="tile"><div class="ic">&#9673;</div><h3>Microchipping</h3><p>Permanent identification. Keep registration details current after implantation.</p></div>
+<div class="tile"><div class="ic">&#9874;</div><h3>Pharmacy and refills</h3><p>Prescription support for established patients. Call with the drug name, dose and supply.</p></div>
+</div>
+<p class="note">Service availability can vary by veterinarian, equipment needs and patient condition. Call 305-575-1190 to confirm the service your pet needs.</p>
+</div></section>
+
+<section class="sec doc" id="doctor"><div class="wrap">
+<div class="badge"><div class="mono">RJ</div><b>Dr. Raul Jimenez, DVM</b><span>Medical Director</span><div style="margin-top:14px;font-size:14px">Florida license VM8539<br>Licensed since April 2002</div></div>
+<div>
+<span class="eyebrow" style="color:var(--gold)">Meet the medical director</span>
+<h2>Direct, compassionate, clear.</h2>
+<p>Dr. Raul Jimenez leads Biscayne Veterinary Center with more than two decades of active Florida veterinary licensure. His approach centers on careful evaluation, practical communication and treating every patient with urgency and respect.</p>
+<div class="chips"><span>Emergency and general practice</span><span>Dogs and cats</span><span>English and Spanish</span></div>
+<blockquote>“They take the time to explain the problem and the stages of recovery and treatment.”<small>Public review, as quoted on the hospital's site</small></blockquote>
+</div></div></section>
+
+<section class="sec alt" id="visit"><div class="wrap">
+<div class="head"><span class="eyebrow">Your neighborhood hospital</span><h2>On Biscayne Boulevard</h2><p>Easy to reach from across central Miami.</p></div>
+<div class="area"><span>Upper Eastside</span><span>MiMo District</span><span>Morningside</span><span>Edgewater</span><span>Midtown</span><span>Design District</span><span>Downtown</span><span>Miami Beach</span></div>
+<div class="loc">
+<div class="card"><h3>Contact the hospital</h3><dl><div><dt>Emergency and main line</dt><dd><a href="tel:3055751190">305-575-1190</a></dd></div><div><dt>Address</dt><dd>5841 Biscayne Blvd<br>Miami, FL 33137</dd></div><div><dt>Email</dt><dd>info@biscaynevetcenter.com</dd></div><div><dt>Instagram</dt><dd>@biscaynevetcenter</dd></div></dl></div>
+<div class="card" style="background:var(--mint)"><h3>Routine visit request</h3><p style="margin:10px 0 16px;color:#35565d">Routine visits are scheduled by phone. The assistant can note your name, pet and preferred day for the team. Emergencies: call, do not use a form.</p><a class="btn red" href="#" data-start-flow>Request an appointment</a><p style="margin-top:14px;font-size:14px;color:#35565d">Free on-site parking is reported by local directories. Call for current access instructions.</p><a class="btn line" style="margin-top:6px" href="https://www.google.com/maps/search/?api=1&query=5841+Biscayne+Blvd+Miami+FL+33137" target="_blank" rel="noopener">Get directions</a></div>
+</div>
+</div></section>
+
+<section class="sec" id="faq"><div class="wrap" style="max-width:820px">
+<div class="head"><span class="eyebrow">Answers before you arrive</span><h2>Frequently asked questions</h2></div>
+<details><summary>Is the hospital available for emergencies?</summary><p>The emergency phone line is presented as available 24 hours a day. Call 305-575-1190 before traveling so the team can confirm immediate availability and prepare for arrival.</p></details>
+<details><summary>Do I need an appointment?</summary><p>Routine visits should be scheduled by phone. Emergencies are handled based on urgency and veterinary availability, so call immediately.</p></details>
+<details><summary>What animals do you treat?</summary><p>The hospital's public listings focus on dogs and cats. Call to ask about other species before bringing them in.</p></details>
+<details><summary>What should I bring for an emergency?</summary><p>Bring current medications, available medical records, any toxin packaging or product label, and information about when symptoms began.</p></details>
+<details><summary>Do you speak Spanish?</summary><p>Yes. The hospital promotes bilingual service in English and Spanish.</p></details>
+</div></section>
+
+<section class="final"><div class="wrap"><h2>Concerned about your pet?</h2><p>Call now. The veterinary team will help determine the next step.</p><a class="btn white" href="tel:3055751190">305-575-1190</a></div></section>
+</main>
+<footer><div class="wrap"><div>Biscayne Veterinary Center · 5841 Biscayne Blvd, Miami, FL 33137 · 305-575-1190</div><div class="disc">Veterinary information does not replace an examination by a veterinarian. The assistant on this page does not diagnose.</div><div>Demo · prepared by Gevorg Hovhannisyan</div></div></footer>
+<script>(function(root){
+function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.length>4?w.replace(/(ing|ed|s)$/,''):w;}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];if(Math.abs(m-n)>2)return 9;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function wm(a,b){if(a===b)return true;var sa=stem(a),sb=stem(b);if(sa===sb)return true;var L=Math.min(a.length,b.length);if(L>=5&&(a.indexOf(b)===0||b.indexOf(a)===0))return true;if(L>=5&&lev(sa,sb)<=1)return true;if(L>=9&&lev(a,b)<=2)return true;return false;}
+function score(entry,qt){var s=0;for(var i=0;i<entry.k.length;i++){var kt=norm(entry.k[i]).split(' '),ok=true;for(var j=0;j<kt.length;j++){var f=false;for(var t=0;t<qt.length;t++){if(wm(kt[j],qt[t])){f=true;break;}}if(!f){ok=false;break;}}if(ok)s+=kt.length*2+1;}return s;}
+function match(kb,q){var qt=norm(q).split(' ').filter(Boolean),best=null,bs=0;for(var i=0;i<kb.length;i++){var s0=score(kb[i],qt),s=s0?s0+(kb[i].w||0):0;if(s>bs){bs=s;best=kb[i];}}return bs>=3?best:null;}
+var api={norm:norm,match:match,wm:wm};
+if(typeof document==='undefined'){if(typeof module!=='undefined')module.exports=api;return;}
+root.AsstEngine=api;
+function init(C){
+var $=function(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;};
+var fab=$('button','as-fab','<span class="as-fi">'+(C.icon||'?')+'</span><span class="as-ft">'+C.fabLabel+'</span>');fab.setAttribute('aria-label',C.fabLabel);
+var box=$('section','as-box');box.setAttribute('aria-label',C.title);box.hidden=true;
+var head=$('div','as-head','<div><b>'+C.title+'</b><small>'+C.sub+'</small></div>');
+var x=$('button','as-x','&times;');x.setAttribute('aria-label','Close');head.appendChild(x);
+var log=$('div','as-log');log.setAttribute('aria-live','polite');
+var chips=$('div','as-chips');
+var form=$('form','as-form');var inp=$('input','as-in');inp.type='text';inp.placeholder=C.placeholder;inp.setAttribute('aria-label',C.placeholder);inp.autocomplete='off';
+var go=$('button','as-go','&#10148;');go.type='submit';go.setAttribute('aria-label','Send');form.appendChild(inp);form.appendChild(go);
+box.appendChild(head);box.appendChild(log);box.appendChild(chips);box.appendChild(form);
+document.body.appendChild(fab);document.body.appendChild(box);
+var flow=null,data={},opened=false;
+function say(h,me){var m=$('div','as-m '+(me?'me':'bot'));if(me)m.textContent=h;else m.innerHTML=h;log.appendChild(m);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=$('button','as-chip');b.type='button';b.textContent=c;b.onclick=function(){ask(c);};chips.appendChild(b);});}
+function startFlow(){flow={i:0};data={};say(C.flow.intro);step();}
+function step(){var s=C.flow.steps[flow.i];say(s.q);setChips((s.opts||[]).concat(['Cancel']));inp.placeholder=s.ph||C.placeholder;}
+function valid(s,v){if(s.type==='phone')return v.replace(/\D/g,'').length>=7;if(s.type==='email')return /.+@.+\..+/.test(v);return v.trim().length>0;}
+function flowIn(v){
+ if(/^(cancel|stop|nevermind|never mind|exit)$/i.test(v.trim())){flow=null;say(C.flow.cancel);setChips(C.chips);inp.placeholder=C.placeholder;return;}
+ var s=C.flow.steps[flow.i];if(!valid(s,v)){say(s.bad||'Sorry, I did not catch that. Could you try again?');return;}
+ data[s.key]=v.trim();flow.i++;
+ if(flow.i<C.flow.steps.length){step();return;}
+ var rows='';C.flow.steps.forEach(function(st){rows+='<li><b>'+st.label+':</b> '+String(data[st.key]).replace(/[<>&]/g,'')+'</li>';});
+ say(C.flow.done.replace('{summary}','<ul class="as-sum">'+rows+'</ul>'));flow=null;setChips(C.chips);inp.placeholder=C.placeholder;
+}
+function ask(v){
+ v=String(v||'').trim();if(!v)return;say(v,true);
+ setTimeout(function(){
+  if(flow){flowIn(v);return;}
+  var n=norm(v);
+  if(C.flow.trigger.test(n)){startFlow();return;}
+  var e=match(C.kb,v);
+  if(e){say(e.a);setChips(C.chips);}
+  else{say(C.fallback);setChips(C.chips);}
+ },260);
+}
+function open(){box.hidden=false;fab.classList.add('on');if(!opened){opened=true;say(C.greet);setChips(C.chips);}setTimeout(function(){inp.focus();},50);}
+function close(){box.hidden=true;fab.classList.remove('on');}
+fab.onclick=function(){box.hidden?open():close();};x.onclick=close;
+form.onsubmit=function(ev){ev.preventDefault();var v=inp.value;inp.value='';ask(v);};
+window.openAssistant=open;
+var i,ob=document.querySelectorAll('[data-open-assistant]');for(i=0;i<ob.length;i++){ob[i].addEventListener('click',function(e){e.preventDefault();open();});}
+var sf=document.querySelectorAll('[data-start-flow]');for(i=0;i<sf.length;i++){sf[i].addEventListener('click',function(e){e.preventDefault();open();if(!flow)startFlow();});}
+}
+root.initAsst=init;
+})(typeof window!=='undefined'?window:this);
+</script>
+<script>var CFG={
+title:"Biscayne assistant",sub:"Demo · answers from the hospital's own site",icon:"&#128062;",fabLabel:"Ask the hospital",
+placeholder:"Ask about hours, services, visits...",
+greet:"Hi! I can answer questions about Biscayne Veterinary Center, or collect a routine appointment request for the team. <b>For an emergency, call 305-575-1190 now.</b>",
+chips:["Emergency line","Request an appointment","Services","Where are you?","What do I bring?","Dr. Jimenez","Dogs and cats only?"],
+fallback:"I do not have that detail from the hospital's site, so I will not guess. The team can confirm it on <b>305-575-1190</b> or at info@biscaynevetcenter.com.",
+kb:[
+{k:["emergency","urgent","24/7","24 hours","24 hour","after hours","overnight","night","weekend","holiday","emergensy","emergancy","open now","open late"],w:1,a:"The emergency phone line is presented as available 24 hours a day: <a href='tel:3055751190'>305-575-1190</a>. Please call before you travel so the team can confirm immediate availability and prepare for your pet."},
+{k:["hours","opening hours","open","close","closing time","what time","schedule hours","walk in","walk-in"],a:"The emergency line is available around the clock. Regular opening hours for routine visits are not published on the site, so the team will confirm them: <a href='tel:3055751190'>305-575-1190</a>. For emergencies, call before arriving."},
+{k:["where","address","location","directions","find you","map","located","street","biscayne blvd","how to get"],a:"5841 Biscayne Blvd, Miami, FL 33137 (Upper Eastside), on Biscayne Boulevard. <a href='https://www.google.com/maps/search/?api=1&query=5841+Biscayne+Blvd+Miami+FL+33137' target='_blank' rel='noopener'>Open in Maps</a>."},
+{k:["neighborhood","mimo","morningside","edgewater","midtown","design district","downtown","miami beach","near me","close to"],a:"The hospital is easy to reach from the Upper Eastside, MiMo District, Morningside, Edgewater, Midtown, the Design District, Downtown and Miami Beach."},
+{k:["parking","park","valet","car park"],a:"Free on-site parking is reported by local directories. Please call for current access instructions: 305-575-1190."},
+{k:["phone","call","number","contact","telephone","reach","email","e-mail","mail","instagram"],a:"Phone and emergency line: <a href='tel:3055751190'>305-575-1190</a>. Email: info@biscaynevetcenter.com. Instagram: @biscaynevetcenter."},
+{k:["services","offer","procedures","full service","what services"],a:"Emergency and urgent care, wellness exams and vaccines, diagnostics and lab work, surgery, dental care, ongoing medical care (dermatology, nutrition, chronic conditions, pain support), microchipping, and pharmacy refills for established patients. Availability can vary by veterinarian and equipment, so call to confirm a specific service."},
+{k:["vaccine","vaccines","vaccination","shots","puppy","kitten","wellness","checkup","check up","exam","parasite","flea","tick","heartworm","senior"],a:"Wellness care covers puppy and kitten visits, adult wellness exams, core and lifestyle vaccinations, parasite prevention and testing, and senior pet screening. Routine visits are scheduled by phone, or I can take a request for the team."},
+{k:["surgery","spay","neuter","spaying","neutering","operation","mass removal","lump","anesthesia","anaesthesia","soft tissue"],a:"Surgery includes spay and neuter, soft-tissue surgery, emergency procedures, mass evaluation and removal, and post-operative pain management, with individualized anesthesia and recovery planning. The veterinarian decides what your pet needs after an exam."},
+{k:["dental","teeth","tooth","dentist","cleaning","gums","extraction","breath"],a:"Dental care: oral examination, professional cleaning, treatment planning, extraction when medically indicated, and at-home dental guidance."},
+{k:["lab","laboratory","blood test","urine","xray","x-ray","imaging","ultrasound","diagnostic","diagnostics","tests"],a:"Diagnostics include blood and urine testing, fecal and parasite testing, diagnostic imaging, pre-anesthetic screening and monitoring for chronic conditions. Call to confirm a specific test."},
+{k:["microchip","chip","microchipping","id"],a:"Microchipping is offered. Keep your registration details current after implantation so a lost pet can be returned to you."},
+{k:["pharmacy","refill","medication","prescription","medicine","meds"],a:"Prescription support is available for established patients. Call with the medication name, dose and current supply, and allow time for medical review."},
+{k:["skin","allergy","allergies","itching","dermatology","nutrition","diet","weight","behavior","behaviour","arthritis","chronic","pain","end of life","euthanasia","put down"],a:"Ongoing medical care covers dermatology and allergy concerns, nutrition and weight guidance, pain and mobility support, behavior discussions and referrals, and compassionate end-of-life care. These are best discussed with the veterinarian, so please call."},
+{k:["doctor","vet","veterinarian","dr jimenez","raul","jimenez","director","owner","who","license","licensed","staff","team"],a:"Dr. Raul Jimenez, DVM, is the medical director. His Florida veterinarian license (VM8539) is listed as current and active, and he has been licensed in Florida since April 2002. Public reviews describe him as knowledgeable, clear and empathetic."},
+{k:["spanish","espanol","habla","hablan","bilingual","language"],a:"Yes. The hospital promotes bilingual care in English and Spanish. Se habla espanol: <a href='tel:3055751190'>305-575-1190</a>."},
+{k:["dog","dogs","cat","cats","puppy","rabbit","bird","exotic","reptile","species","animals","hamster","other animals","only"],a:"The hospital's public listings focus on dogs and cats. For any other species, please call 305-575-1190 before bringing your pet in."},
+{k:["bring","documents","records","bring with me","prepare","what to bring","packaging","label"],a:"For an emergency, bring current medications, available medical records, any toxin packaging or product label, and note when symptoms began."},
+{k:["tell","say on the phone","information","what happened","details to give"],a:"When you call, say what happened and when, your pet's species, breed, age and approximate weight, current symptoms and breathing, known medications or conditions, and your estimated arrival time."},
+{k:["poison","poisoned","chocolate","xylitol","grapes","raisins","toxic","rat poison","ate","swallowed","ingested","antifreeze","medication ate","plant"],a:"I cannot assess this, and it may be urgent. Possible poisoning is on the hospital's list of reasons to call immediately: <a href='tel:3055751190'>305-575-1190</a>. Bring the packaging and estimate the amount. Do not induce vomiting or give anything unless a veterinarian or poison control tells you to. ASPCA Poison Control: 888-426-4435 (a consultation fee may apply)."},
+{k:["vomit","vomiting","bleeding","blood","seizure","seizures","collapse","collapsed","breathing","breathe","gums","swollen","swelling","hit by car","accident","injury","injured","limp","limping","sick","not eating","lethargic","diarrhea","pain","hurt","symptoms","urinate","fell","bitten","attack","heatstroke","eye"],w:1,a:"I cannot diagnose or judge how serious this is. The hospital lists these as reasons to call immediately: trouble breathing, collapse, seizures, uncontrolled bleeding or deep wounds, major injury, possible poisoning, a suddenly swollen abdomen, repeated vomiting, severe pain, inability to urinate. Please call <a href='tel:3055751190'>305-575-1190</a> before you leave so the team can prepare."},
+{k:["appointment","book","booking","routine","schedule","walk in","visit","need appointment","online"],a:"Routine visits are scheduled by phone at 305-575-1190. Emergencies are handled by urgency, so call right away. Tap <b>Request an appointment</b> and I will collect the details for the team."},
+{k:["price","prices","cost","how much","fee","fees","estimate","charge","expensive","quote"],a:"I do not have prices from the site. For emergencies, the veterinarian discusses recommended tests, treatment priorities and estimated costs after the exam. For routine care, the team can tell you when you call."},
+{k:["insurance","payment","pay","credit card","care credit","carecredit","trupanion","financing","payment plan"],a:"Accepted payment methods and insurance details are not listed on the site, so the team will confirm them: 305-575-1190."},
+{k:["what happens","process","after i call","triage","steps","emergency process","arrive"],a:"Emergency process: 1) phone assessment to confirm the safest next step and current availability, 2) arrival and triage, where critical patients may go straight to rapid assessment and stabilization, 3) diagnostics and a plan, with the veterinarian discussing tests, treatment priorities, estimated costs and monitoring."},
+{k:["reviews","rating","reputation","trusted","testimonials","good"],a:"Hundreds of public reviews mention the team's compassion, clear explanations and help during emergencies. You can read current ones on the hospital's Google listing."},
+{k:["how long","years","experience","established","history","since"],a:"The hospital has served Miami pet families for more than a decade, and Dr. Jimenez has more than twenty years of Florida licensure."},
+{k:["hello","hi","hey","thanks","thank you","help"],a:"Happy to help. Ask about the emergency line, services, location, or tap <b>Request an appointment</b>."}
+],
+flow:{
+trigger:/^(?!(do|does|is|are|can|could|what|how|when|where|why|which|will|should|who)\b).*(appoint|apoint|appoit|book|bok |schedul|enquir|inquir|request)/,
+intro:"Happy to pass a routine appointment request to the team. <b>If this is an emergency, call 305-575-1190 instead.</b>",
+cancel:"No problem, request cancelled. Anything else I can help with?",
+steps:[
+{key:"owner",label:"Your name",q:"What is your name?",ph:"Your name"},
+{key:"phone",label:"Phone",q:"Best phone number for the team to reach you?",type:"phone",ph:"Phone number",bad:"That does not look like a phone number. Could you retype it?"},
+{key:"pet",label:"Pet",q:"What is your pet's name and species?",opts:["Dog","Cat"],ph:"e.g. Luna, dog"},
+{key:"reason",label:"Reason",q:"What is the visit for? I will not assess symptoms, just note it for the staff.",opts:["Wellness exam","Vaccines","Dental","Surgery question","Medication refill"],ph:"Reason for visit"},
+{key:"when",label:"Preferred day or time",q:"Which day or time suits you best?",opts:["Weekday morning","Weekday afternoon","Saturday"],ph:"Preferred day or time"}
+],
+done:"Thank you. Your request is sent to the team:{summary}They will confirm the day and time by phone. (Demo only: nothing leaves this page.) For anything urgent, call 305-575-1190."
+}
+};
+if(typeof module!=='undefined')module.exports=CFG;
+
+initAsst(CFG);</script>
+</body>
+</html>
