@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sydney PTE Academy | PTE coaching in Sydney</title>
+<meta name="description" content="Demo page prepared for Sydney PTE Academy: small group PTE coaching with an assistant that answers course questions.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#2e3192;--navy2:#1e2170;--cyan:#23a3dd;--sky:#e8f5fc;--ink:#14163a;--mut:#5a5f80;--line:#dfe3f3;--gv-bg:#2e3192;--gv-fg:#fff;--gv-font:Inter,system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 Inter,system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+img,svg{max-width:100%}a{color:var(--navy)}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;line-height:1.15;margin:0 0 .5em}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:8px 16px;max-width:1080px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy)}
+.brand img{height:46px;width:auto;display:block}
+nav.links{display:none;gap:20px;font-weight:500;font-size:15px}nav.links a{text-decoration:none;color:var(--ink)}nav.links a:hover{color:var(--cyan)}
+.btn{display:inline-block;background:var(--cyan);color:#fff;text-decoration:none;font:600 15px Inter;padding:11px 18px;border-radius:10px;border:0;cursor:pointer}
+.btn.navy{background:var(--navy)}.btn.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+.hero{background:linear-gradient(160deg,var(--navy2),var(--navy) 55%,#3b6fc4);color:#fff;padding:44px 0 56px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(35,163,221,.55),transparent 70%)}
+.hero h1{font-size:clamp(30px,7vw,52px);font-weight:800;max-width:720px}
+.hero p.lead{font-size:18px;max-width:600px;color:#dfe6ff}
+.kick{display:inline-block;font:600 12px Inter;letter-spacing:.12em;text-transform:uppercase;color:#aee4ff;margin-bottom:12px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:34px;max-width:560px}
+.stats div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:10px 12px}
+.stats b{display:block;font:800 22px Sora}.stats span{font-size:12px;color:#cfe0ff}
+.ruler{margin-top:36px;max-width:640px}
+.ruler svg{width:100%;height:auto;display:block}
+section{padding:52px 0}
+section.alt{background:var(--sky)}
+h2{font-size:clamp(25px,5vw,36px);font-weight:700}
+.sub{color:var(--mut);max-width:640px}
+.pick{display:grid;gap:10px;margin:22px 0}
+.pick button{display:flex;flex-direction:column;align-items:flex-start;text-align:left;background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 16px;font:500 16px Inter;color:var(--ink);cursor:pointer}
+.pick button b{font:700 17px Sora;color:var(--navy)}.pick button span{color:var(--mut);font-size:14px}
+.pick button[aria-pressed=true]{border-color:var(--cyan);background:#f3fbff;box-shadow:0 0 0 3px rgba(35,163,221,.2)}
+#pickout{background:var(--navy);color:#fff;border-radius:14px;padding:18px;min-height:96px}
+#pickout b{font:700 20px Sora;display:block;margin-bottom:4px}
+.cards{display:grid;gap:16px;margin-top:24px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;position:relative}
+.card.pop{border:2px solid var(--cyan)}
+.tag{position:absolute;top:-12px;left:18px;background:var(--cyan);color:#fff;font:700 11px Inter;letter-spacing:.08em;padding:4px 10px;border-radius:999px;text-transform:uppercase}
+.card h3{font-size:22px;margin-bottom:2px}
+.dur{color:var(--cyan);font:600 14px Inter}
+.price{margin:12px 0;font:800 30px Sora;color:var(--navy)}.price s{font:500 16px Inter;color:var(--mut);margin-left:8px}
+.card ul{padding-left:18px;margin:10px 0 16px;color:var(--mut)}.card li{margin:4px 0}
+.small{font-size:13px;color:var(--mut)}
+.incl{display:grid;gap:10px;margin-top:22px}
+.incl div{display:flex;gap:10px;align-items:flex-start;background:#fff;border-radius:12px;padding:12px 14px;border:1px solid var(--line)}
+.incl i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--cyan);color:#fff;font:700 14px/26px Sora;text-align:center;font-style:normal}
+.team{display:grid;gap:14px;margin-top:22px}
+.tm{display:grid;grid-template-columns:56px 1fr;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+.av{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--cyan));color:#fff;font:800 22px/56px Sora;text-align:center}
+.tm h3{font-size:18px;margin:0}.tm .nat{font-size:13px;color:var(--cyan);font-weight:600}.tm p{margin:6px 0 0;color:var(--mut);font-size:15px}
+.why{display:grid;gap:12px;margin-top:22px;counter-reset:w}
+.why div{border-left:4px solid var(--cyan);padding:4px 0 4px 14px}.why b{font-family:Sora}.why p{margin:2px 0 0;color:var(--mut)}
+.quotes{display:grid;gap:14px;margin-top:22px}
+blockquote{margin:0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;color:var(--ink)}
+blockquote footer{margin-top:10px;font-size:13px;color:var(--mut);font-weight:600}
+.steps{list-style:none;counter-reset:s;padding:0;margin:22px 0;display:grid;gap:12px}.steps li{counter-increment:s;position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 62px}.steps li:before{content:counter(s);position:absolute;left:14px;top:14px;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font:700 16px/34px Sora;text-align:center}.steps b{display:block;font:700 17px Sora;color:var(--navy)}.steps span{color:var(--mut);font-size:15px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:0 16px}
+.faq summary{cursor:pointer;font:600 16px Sora;padding:14px 0;list-style:none}.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";float:right;color:var(--cyan);font-size:22px;line-height:1}
+.faq details[open] summary:after{content:"\2212"}.faq p{margin:0 0 14px;color:var(--mut)}
+.contact{display:grid;gap:18px;margin-top:20px}
+.cbox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+.cbox dl{margin:0}.cbox dt{font:600 12px Inter;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);margin-top:12px}.cbox dd{margin:2px 0 0}
+.hrs{width:100%;border-collapse:collapse;margin-top:6px}.hrs td{padding:5px 0;border-bottom:1px dashed var(--line)}.hrs td:last-child{text-align:right;font-weight:600}
+footer.f{background:var(--ink);color:#b9bedf;padding:26px 0 90px;font-size:14px}
+footer.f a{color:#fff}
+@media(min-width:760px){nav.links{display:flex}.cards{grid-template-columns:repeat(3,1fr)}.pick{grid-template-columns:repeat(3,1fr)}.incl{grid-template-columns:1fr 1fr}.team{grid-template-columns:1fr 1fr}.why{grid-template-columns:1fr 1fr}.quotes{grid-template-columns:repeat(3,1fr)}.contact{grid-template-columns:1fr 1fr}.hero{padding:70px 0 80px}}
+
+#gv-fab{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--gv-bg);color:var(--gv-fg);font:600 15px/1 var(--gv-font);padding:14px 18px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+#gv-fab svg{width:20px;height:20px}
+#gv-panel{position:fixed;right:16px;bottom:78px;z-index:61;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 100px));background:#fff;color:#1d1d1f;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--gv-font)}
+#gv-panel.on{display:flex}
+#gv-head{background:var(--gv-bg);color:var(--gv-fg);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+#gv-head b{display:block;font-size:15px}#gv-head span{font-size:12px;opacity:.85}
+#gv-x{background:transparent;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer;padding:2px 6px}
+#gv-log{flex:1;overflow:auto;padding:12px;background:#f4f5f7;display:flex;flex-direction:column;gap:8px}
+.gv-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.gv-m.bot{background:#fff;border:1px solid #e3e5e9;align-self:flex-start;border-bottom-left-radius:4px}
+.gv-m.me{background:var(--gv-bg);color:var(--gv-fg);align-self:flex-end;border-bottom-right-radius:4px}
+.gv-sum{margin:8px 0 6px;padding-left:18px;font-size:14px}.gv-m small{opacity:.65;font-size:12px}
+#gv-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px;background:#fff;border-top:1px solid #e8e9ec;max-height:112px;overflow:auto}
+.gv-chip{border:1px solid var(--gv-bg);background:#fff;color:var(--gv-bg);border-radius:999px;padding:6px 11px;font:500 13px/1.2 var(--gv-font);cursor:pointer}
+.gv-chip.opt,.gv-chip:hover{background:var(--gv-bg);color:var(--gv-fg)}
+#gv-form{display:flex;gap:6px;padding:8px 10px;border-top:1px solid #e8e9ec;background:#fff}
+#gv-in{flex:1;min-width:0;border:1px solid #cfd3d9;border-radius:10px;padding:10px;font:16px var(--gv-font)}
+#gv-form button{border:0;background:var(--gv-bg);color:var(--gv-fg);border-radius:10px;padding:0 14px;font:600 14px var(--gv-font);cursor:pointer}
+
+</style></head><body>
+<header class="top"><div class="bar">
+<a class="brand" href="#top" aria-label="Sydney PTE Academy"><img src="img/sydney-pte-academy-logo.png" alt="Sydney PTE Academy" width="55" height="48"></a>
+<nav class="links"><a href="#courses">Courses</a><a href="#teachers">Teachers</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="btn" href="#" data-gv="book">Book a session</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<span class="kick">PTE Academic only &middot; Glebe, Sydney &middot; since 2015</span>
+<h1>Small group PTE coaching, built around the score you need.</h1>
+<p class="lead">Live classes on Zoom with fewer than 10 students per intake, plus private 1 on 1 sessions. Every lesson is about the real PTE test: question types, scoring and timing, not general English.</p>
+<div class="cta"><a class="btn" href="#" data-gv="book">Book a session</a><a class="btn ghost" style="color:#fff;border-color:#fff" href="https://wa.me/61426496668">WhatsApp 0426 496 668</a></div>
+<div class="stats"><div><b>3,000+</b><span>students coached</span></div><div><b>4.9</b><span>Google, 233 reviews</span></div><div><b>&lt;10</b><span>students per intake</span></div></div>
+<div class="ruler"><svg viewBox="0 0 640 96" role="img" aria-label="PTE score scale from 10 to 90 with common targets 65 and 79"><line x1="20" y1="52" x2="620" y2="52" stroke="#7fb8e8" stroke-width="3" stroke-linecap="round"/>
+<g fill="#fff" font-family="Sora,sans-serif" font-size="12" text-anchor="middle"><circle cx="20" cy="52" r="6" fill="#23a3dd"/><text x="20" y="82">10</text>
+<circle cx="440" cy="52" r="8" fill="#fff"/><text x="440" y="30" font-weight="700">65</text><text x="440" y="82" fill="#aee4ff">Proficient</text>
+<circle cx="548" cy="52" r="8" fill="#fff"/><text x="548" y="30" font-weight="700">79</text><text x="548" y="82" fill="#aee4ff">Superior</text>
+<circle cx="620" cy="52" r="6" fill="#23a3dd"/><text x="620" y="82">90</text></g></svg></div>
+</div></div>
+
+<section id="courses"><div class="wrap">
+<h2>Which option fits your gap?</h2>
+<p class="sub">The school's own rule of thumb: it depends on the distance between your current score and your target. Tap the one that sounds like you.</p>
+<div class="pick" id="pick">
+<button type="button" data-k="e" aria-pressed="false"><b>5 to 10 points short</b><span>Good English, missed the score</span></button>
+<button type="button" data-k="a" aria-pressed="false"><b>15+ points, or new to PTE</b><span>Need language work alongside strategy</span></button>
+<button type="button" data-k="s" aria-pressed="false"><b>One section holds me back</b><span>The rest is fine</span></button></div>
+<div id="pickout" aria-live="polite"><b>Tap an option above</b>We will show the course the school suggests for that situation.</div>
+
+<div class="cards">
+<div class="card pop"><span class="tag">Most popular</span><h3>PTE Express Course</h3><div class="dur">2 weeks &middot; small group</div>
+<div class="price">$389<s>$489</s></div>
+<ul><li>Fewer than 10 students per intake, guaranteed</li><li>High-impact exam techniques</li><li>Strategy across Speaking, Writing, Reading, Listening</li><li>In-class slides and cheat sheets included</li></ul>
+<a class="btn" href="#" data-gv="Express course">Ask about Express</a></div>
+<div class="card"><span class="tag" style="background:var(--navy)">Most comprehensive</span><h3>PTE Advanced Course</h3><div class="dur">4 weeks &middot; group + private</div>
+<div class="price">$688<s>$845</s></div>
+<ul><li>Full Express Course included</li><li>Plus 4 private 1 on 1 sessions</li><li>Group strategy and personal coaching combined</li><li>Fewer than 10 students per intake</li></ul>
+<a class="btn navy" href="#" data-gv="Advanced course">Ask about Advanced</a></div>
+<div class="card"><h3>Supreme 1 on 1</h3><div class="dur">1 hour each &middot; live on Zoom</div>
+<div class="price" style="font-size:22px">15% off first session</div>
+<ul><li>Packages of 3, 5 or 7 sessions</li><li>Targeted at your weakest section</li><li>Evenings and weekends available</li><li>Materials and slides included</li></ul>
+<a class="btn ghost" href="#" data-gv="1 on 1 sessions">Ask about 1 on 1</a></div></div>
+<p class="small" style="margin-top:14px">Fees shown as listed on sydneypte.com.au at the time this page was prepared. The team confirms the current price.</p>
+<div class="incl">
+<div><i>1</i><span><b>Live teaching on Zoom</b><br>Never pre-recorded video.</span></div>
+<div><i>2</i><span><b>Sessions recorded</b><br>Review them afterwards.</span></div>
+<div><i>3</i><span><b>Everything included</b><br>Slides, cheat sheets and practice material, nothing extra to buy.</span></div>
+<div><i>4</i><span><b>Free PTE Practice Hub</b><br>All 22 question types, instant scoring on the 10 to 90 scale, 5 full mock tests.</span></div></div>
+</div></section>
+
+<section class="alt" id="teachers"><div class="wrap">
+<h2>Your PTE teachers</h2><p class="sub">Different backgrounds and different accents, so you hear the range you will meet on test day.</p>
+<div class="team">
+<div class="tm"><div class="av">M</div><div><h3>Michelle</h3><div class="nat">Australian native speaker</div><p>Languages degree from UNSW with distinction. Took the PTE herself and scored 90 overall. Favourite classes to teach: writing. Her advice: do the simple thing well.</p></div></div>
+<div class="tm"><div class="av">A</div><div><h3>Arwen</h3><div class="nat">Chinese, proficient speaker</div><p>Bachelor's in TESOL and a Master of Teaching, with over four years of intensive English teaching. Specialises in explicit teaching and step-by-step guidance.</p></div></div>
+<div class="tm"><div class="av">M</div><div><h3>Michael</h3><div class="nat">Italian roots, native-level English</div><p>More than ten years in Australia. 5+ years coaching PTE preparation and university-level support, and he sat the PTE himself.</p></div></div>
+<div class="tm"><div class="av">I</div><div><h3>Ismail</h3><div class="nat">Malaysian, native English speaker</div><p>UNSW and UTS graduate in Economics and Accounting. Scored a perfect 90 on his first try, then moved into teaching PTE.</p></div></div></div>
+</div></section>
+
+<section><div class="wrap"><h2>Why students stay with a specialist</h2>
+<div class="why">
+<div><b>PTE only</b><p>Every class is built around the exam and what moves the score.</p></div>
+<div><b>Small groups</b><p>More speaking time, more feedback, more accountability.</p></div>
+<div><b>Strategy plus 1 on 1</b><p>Technique in class, refinement in personal sessions.</p></div>
+<div><b>Study from anywhere</b><p>Students join from Australia, Europe and South America.</p></div></div>
+<div class="quotes">
+<blockquote>"I joined the class with score less than 58 on average and eventually passed the test with score 70 on average. Especially my speaking score boosted from 40 to 78."<footer>Emily, China</footer></blockquote>
+<blockquote>"After two failed attempts with scores less than 50 in speaking, I chose to take coaching ... I got perfect 90 in Speaking."<footer>Vishwanath, India</footer></blockquote>
+<blockquote>"I passed the PTE exam three times and I was getting around 75 overall ... I've decided to pass a three weeks course and got 90 overall."<footer>Dmitry, Russia</footer></blockquote></div>
+</div></section>
+
+<section id="steps"><div class="wrap"><h2>How it works, start to finish</h2><p class="sub">No sign-up maze. The first step is simply telling a teacher where you are.</p>
+<ol class="steps">
+<li><b>Send your numbers</b><span>Current PTE scores (or that you have not sat the test), the score you need and what it is for: visa, professional registration or university. Add your test date if it is booked.</span></li>
+<li><b>Get a recommendation</b><span>A teacher replies with the course that fits, usually Express, Advanced or private sessions, with no obligation.</span></li>
+<li><b>Join live on Zoom</b><span>Small group of fewer than 10, or one hour 1 on 1. Pick evenings or weekends if that suits your week.</span></li>
+<li><b>Practise between classes</b><span>Use the free PTE Practice Hub for all 22 question types and the 5 full mock tests, and replay the recorded sessions.</span></li>
+<li><b>Sit the test with a plan</b><span>Strategy for Speaking, Writing, Reading and Listening, so you know what to do with every question type and every minute.</span></li></ol>
+<p class="small">Tip from the school: if you are within 5 to 10 points of your target, the gap is almost always exam technique rather than English ability.</p></div></section>
+<section class="alt faq" id="faq"><div class="wrap"><h2>Quick answers</h2>
+<details><summary>What score do I need for Australian PR?</summary><p>It depends on your visa subclass (189, 190, 491, partner, employer sponsored). Check the English requirement on the Department of Home Affairs website, then message the team with your target score.</p></details>
+<details><summary>Do you teach general English?</summary><p>No. The academy teaches PTE Academic only: Speaking, Writing, Reading and Listening, aligned to the real test format and scoring.</p></details>
+<details><summary>Are classes in person?</summary><p>Classes run live online on Zoom, in small groups and 1 on 1, for students anywhere in Australia or overseas. The academy is based in Glebe, Sydney.</p></details>
+<details><summary>Can I review a missed class?</summary><p>Yes, sessions are recorded so you can review them afterwards.</p></details>
+<details><summary>Is the practice platform really free?</summary><p>Yes. Every student practises on PTE Practice Hub, the free platform built by the teachers. It covers all 22 question types with instant scoring on the 10 to 90 scale and 5 full mock tests.</p></details>
+<details><summary>How big are the groups?</summary><p>Every Express Course intake is capped at fewer than 10 students. The school calls that a guarantee, not a guideline.</p></details>
+<details><summary>Can I choose evenings or weekends?</summary><p>For 1 on 1 sessions, scheduling works around your availability, including evenings and weekends. The school is open Monday to Sunday, 9am to 9pm.</p></details>
+<details><summary>I am not sure which course to take.</summary><p>Take a free mock test on the PTE Practice Hub, then send your score on WhatsApp. A teacher recommends the option that fits, with no obligation.</p></details>
+</div></section>
+
+<section id="contact"><div class="wrap"><h2>Talk to a teacher</h2>
+<p class="sub">Fastest reply is WhatsApp. Send your current score, target score and test date.</p>
+<div class="contact"><div class="cbox"><dl><dt>WhatsApp / phone</dt><dd><a href="https://wa.me/61426496668">0426 496 668</a></dd><dt>Email</dt><dd><a href="mailto:contact@sydneypte.com.au">contact@sydneypte.com.au</a></dd><dt>Head office</dt><dd>2-12 Glebe Point Road, Glebe NSW 2037</dd></dl></div>
+<div class="cbox"><b style="font-family:Sora">Opening hours</b><table class="hrs"><tr><td>Monday to Sunday</td><td>9am to 9pm</td></tr></table><p class="small">1 on 1 scheduling works around your availability.</p><a class="btn" href="#" data-gv="book" style="margin-top:6px">Start an enquiry</a> <a class="btn ghost" href="https://sydneypteacademy.setmore.com/services/fe137900-664d-467d-a572-cab3a0246603" style="margin-top:6px">Book 1 on 1 online</a></div></div>
+</div></section>
+</main>
+<footer class="f"><div class="wrap">Demo · prepared by Gevorg Hovhannisyan<br>Built from public information on sydneypte.com.au. Not an official page of Sydney PTE Academy.</div></footer>
+
+<button id="gv-fab" type="button" aria-expanded="false" aria-controls="gv-panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/></svg><span>Ask the academy</span></button>
+<div id="gv-panel" role="dialog" aria-label="Sydney PTE Academy assistant"><div id="gv-head"><div><b>Sydney PTE Academy</b><span>Demo assistant · replies instantly</span></div><button id="gv-x" type="button" aria-label="Close">&times;</button></div><div id="gv-log" aria-live="polite"></div><div id="gv-chips"></div><form id="gv-form" autocomplete="off"><input id="gv-in" type="text" placeholder="Ask a question" aria-label="Your question"><button type="submit">Send</button></form></div>
+
+<script>
+(function(){var O={e:["PTE Express Course","Two weeks in a small group. Best when you already have solid English and missed your target by roughly 5 to 10 points: the gap is exam technique, not language."],a:["PTE Advanced Course","Four weeks: the full Express Course plus four private 1 on 1 sessions. Best when you are new to PTE or need 15 points or more."],s:["Supreme 1 on 1 sessions","Private hourly coaching on Zoom, in packages of 3, 5 or 7. Best when one section will not move while the rest is fine."]};
+var bs=document.querySelectorAll('#pick button'),out=document.getElementById('pickout');
+bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');var o=O[b.dataset.k];out.innerHTML='<b>'+o[0]+'</b>'+o[1];});});})();
+var CFG={"greeting": "Hi! I am the Sydney PTE Academy assistant. Ask about courses, small groups, teachers, hours or how to book. For a score-specific recommendation, send your current and target score and the team will reply.", "fallback": "I do not have that detail here, so I would rather not guess. The team can confirm it: WhatsApp 0426 496 668 (fastest reply) or contact@sydneypte.com.au.", "chips": ["Which course fits me?", "Express course", "Advanced course", "1 on 1 sessions", "Teachers", "Opening hours", "Book a session"], "bookChip": "Book a session", "bookRe": "\\b(book|enrol|enroll|sign up|reserve|register|join)\\b", "bookOffer": "Want me to take your details so the team can reply with the right course?", "flowIntro": "Great, a few quick questions and I will pass them to the team. Type cancel any time.", "flowDone": "Thank you, your enquiry is sent to the team. They usually answer fastest on WhatsApp.", "flow": [{"k": "name", "l": "Name", "q": "What is your first name?", "ph": "First name"}, {"k": "why", "l": "PTE needed for", "q": "What is the PTE for?", "o": ["Visa / PR", "University", "Professional registration", "Other"]}, {"k": "cur", "l": "Current score", "q": "What was your latest PTE score? Type a number, or say not sat yet.", "ph": "e.g. 62 or not sat yet"}, {"k": "tgt", "l": "Target score", "q": "And the score you need?", "ph": "e.g. 79"}, {"k": "date", "l": "Test date", "q": "Is your test date booked? Type the date or say not yet.", "ph": "e.g. 14 March or not yet"}, {"k": "course", "l": "Interested in", "q": "Which option sounds closest?", "o": ["Express (2 weeks)", "Advanced (4 weeks)", "1 on 1 sessions", "Not sure"]}, {"k": "ph", "l": "WhatsApp / phone", "q": "Best WhatsApp or phone number to reach you?", "ph": "04xx xxx xxx", "v": "phone", "err": "That does not look like a phone number. Please include digits, for example 0412 345 678."}], "kb": [{"id": "which", "k": ["which course", "right course", "fit me", "best course", "recommend", "choose", "what course", "gap", "difference between"], "a": "It mostly depends on the gap between your current score and your target. About 5 to 10 points short: the Express Course (exam technique). 15 points or more, or new to PTE: the Advanced Course. One section holding you back: private 1 on 1 sessions. Send your scores on WhatsApp and a teacher will tell you which one fits."}, {"id": "express", "k": ["express", "2 week", "two week", "crash course", "short course", "fast course", "quick course"], "a": "The PTE Express Course is a two week intensive in a small group, fewer than 10 students per intake. It suits students with good English who missed their score by roughly 5 to 10 points. It covers strategy for Speaking, Writing, Reading and Listening.", "book": true}, {"id": "advanced", "k": ["advanced", "4 week", "four week", "comprehensive", "full course", "longer course", "new to pte", "beginner"], "a": "The PTE Advanced Course runs 4 weeks. It includes the full Express Course plus 4 private 1 on 1 sessions, so it fits students who are new to PTE or need 15 points or more.", "book": true}, {"id": "oneone", "k": ["1 on 1", "one on one", "private", "individual", "tutor", "single session", "supreme", "personal coaching", "1:1", "one to one"], "a": "Supreme 1 on 1 sessions are private, one hour, live on Zoom, in packages of 3, 5 or 7 sessions. They work well when one section will not move, your test is close, or you plateaued after another course. You can pick a time that suits you, including evenings and weekends.", "book": true}, {"id": "price", "k": ["price", "cost", "fee", "how much", "pricing", "expensive", "cheap", "discount", "offer", "payment"], "a": "Listed on the website at the moment: Express Course $389 (listed as normally $489) and Advanced Course $688 (normally $845), with 15% off a first 1 on 1 session. Prices change, so the team confirms the current fee when you enquire."}, {"id": "size", "k": ["class size", "group size", "small group", "how many students", "students per", "intake", "crowded", "fewer than 10", "less than 10"], "a": "Every intake is capped at fewer than 10 students. That means more speaking time, more direct feedback and a teacher who knows where you lose marks."}, {"id": "online", "k": ["online", "zoom", "live", "recorded", "recording", "remote", "overseas", "from home", "in person", "classroom", "face to face"], "a": "Classes are taught live on Zoom, never pre-recorded, and sessions are recorded so you can review them afterwards. Students join from anywhere in Australia or overseas. The academy is based in Glebe, Sydney."}, {"id": "teachers", "k": ["teacher", "tutor", "instructor", "michelle", "arwen", "michael", "ismail", "accent", "native speaker", "who teaches", "coach"], "a": "Four teachers from different backgrounds and accents: Michelle (Australian, PTE overall 90, languages degree from UNSW), Arwen (TESOL degree and Master of Teaching, 4+ years teaching), Michael (5+ years coaching PTE and academic English) and Ismail (UNSW and UTS graduate, scored 90 on his first try)."}, {"id": "hours", "k": ["hours", "open", "opening", "time", "when are you open", "weekend", "sunday", "evening", "schedule", "available"], "a": "Open Monday to Sunday, 9am to 9pm. 1 on 1 scheduling works around your availability, including evenings and weekends."}, {"id": "location", "k": ["address", "location", "where", "glebe", "sydney", "office", "find you", "head office", "street"], "a": "Sydney PTE Academy, 2-12 Glebe Point Road, Glebe NSW 2037. Classes run live online, so you can join from anywhere."}, {"id": "contact", "k": ["contact", "phone", "whatsapp", "email", "call", "number", "reach", "message", "speak to someone", "talk to"], "a": "Fastest reply is WhatsApp on 0426 496 668. Email: contact@sydneypte.com.au. Include your current score, your target and your test date so a teacher can reply with the right course."}, {"id": "practice", "k": ["practice", "mock", "mock test", "free test", "practise", "practice hub", "question type", "materials", "slides", "cheat sheet"], "a": "Every student gets free access to PTE Practice Hub, built by the teachers: all 22 question types with instant scoring on the 10 to 90 scale and 5 full mock tests. Slides, cheat sheets and practice material are included, with nothing extra to buy."}, {"id": "pr", "k": ["pr", "permanent residency", "visa", "189", "190", "491", "migration", "points", "immigration", "partner visa", "score do i need"], "a": "The score you need depends on your visa subclass, for example 189, 190, 491, partner or employer sponsored. Check the English requirement on the official Home Affairs website, then send the team your target and they will plan around it. Higher scores can add migration points on points-tested visas."}, {"id": "sections", "k": ["speaking", "writing", "reading", "listening", "sections", "section", "module", "skills", "what do you cover"], "a": "Lessons cover all four PTE Academic sections: Speaking, Writing, Reading and Listening, built around the real test format, question types, scoring and time management. No generic English lessons."}, {"id": "about", "k": ["about", "experience", "how long", "since", "years", "who are you", "history", "3000", "students coached", "reviews", "rating", "google", "testimonial"], "a": "Specialist PTE Academic coaching since 2015, more than 3,000 students coached, rated 4.9 on Google from 233 reviews. They teach PTE only, nothing else."}, {"id": "trial", "k": ["trial", "free class", "try", "sample lesson", "first lesson", "taster"], "a": "I do not have a published free trial for the current courses. There is 15% off your first 1 on 1 session, and a free mock test on the PTE Practice Hub. Ask the team on WhatsApp if a trial is available."}, {"id": "book", "k": ["booking", "how do i book", "how to enrol", "next intake", "start date", "when does", "next course"], "a": "You can book a 1 on 1 session online and pick a time, or message the team on WhatsApp for the next Express or Advanced intake dates. I can take your details now if you like.", "book": true}]};
+
+function norm(s){return String(s).toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){
+  if(w.length<4) return w;
+  if(/sses$/.test(w)) return w.slice(0,-2);
+  if(/ies$/.test(w)) return w.slice(0,-3)+'y';
+  if(/(ch|sh|x|z)es$/.test(w)) return w.slice(0,-2);
+  if(/ing$/.test(w)&&w.length>5) w=w.slice(0,-3);
+  else if(/ed$/.test(w)&&w.length>4) w=w.slice(0,-2);
+  else if(/[^s]s$/.test(w)) w=w.slice(0,-1);
+  if(w.length>4&&/e$/.test(w)) w=w.slice(0,-1);
+  return w;
+}
+function lev(a,b){
+  if(a===b) return 0; if(Math.abs(a.length-b.length)>2) return 9;
+  var p=[],i,j; for(j=0;j<=b.length;j++)p[j]=j;
+  for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));}p=c;}
+  return p[b.length];
+}
+function same(a,b){
+  if(a===b) return true;
+  var m=Math.min(a.length,b.length);
+  if(m<5) return false;
+  return lev(a,b)<=(m>=8?2:1);
+}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function score(qt,entry){
+  var tot=0;
+  for(var i=0;i<entry.k.length;i++){
+    var kt=toks(entry.k[i]),ok=kt.length>0;
+    for(var j=0;j<kt.length&&ok;j++){
+      var f=false; for(var x=0;x<qt.length;x++){ if(same(qt[x],kt[j])){f=true;break;} }
+      if(!f) ok=false;
+    }
+    if(ok) tot+=kt.length*2+1;
+  }
+  return tot;
+}
+function answer(q){
+  var n=norm(q), qt=toks(q);
+  if(!qt.length) return {a:CFG.fallback};
+  if(/^(hi|hello|hey|hiya|good (morning|afternoon|evening)|hallo|yo)\b/.test(n)&&qt.length<=3) return {a:CFG.greeting};
+  if(/^(thanks|thank you|thx|cheers|ta|great thanks)/.test(n)) return {a:"You are welcome! Anything else you would like to know?"};
+  var best=null,bs=0;
+  for(var i=0;i<CFG.kb.length;i++){var s=score(qt,CFG.kb[i]); if(s>bs){bs=s;best=CFG.kb[i];}}
+  if(bs>=2&&best) return {a:best.a,id:best.id,book:!!best.book};
+  return {a:CFG.fallback};
+}
+
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var fab=$('#gv-fab'),panel=$('#gv-panel'),log=$('#gv-log'),chips=$('#gv-chips'),form=$('#gv-form'),inp=$('#gv-in');
+  var state={flow:-1,data:{}};
+  function esc(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+  function add(who,html){var d=document.createElement('div');d.className='gv-m '+who;d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function setChips(list,cls){chips.innerHTML='';list.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='gv-chip'+(cls?' '+cls:'');b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b);});}
+  function home(){setChips(CFG.chips);}
+  function open(){panel.classList.add('on');fab.setAttribute('aria-expanded','true');if(!log.children.length){add('bot',CFG.greeting);home();}setTimeout(function(){inp.focus()},50);}
+  function close(){panel.classList.remove('on');fab.setAttribute('aria-expanded','false');}
+  fab.onclick=function(){panel.classList.contains('on')?close():open();};
+  $('#gv-x').onclick=close;
+  function startFlow(){state.flow=0;state.data={};add('bot',CFG.flowIntro);ask();}
+  function ask(){var s=CFG.flow[state.flow];add('bot',s.q);if(s.o){setChips(s.o,'opt');inp.placeholder=s.ph||'Or type here';}else{chips.innerHTML='';inp.placeholder=s.ph||'Type here';}}
+  function valid(s,v){
+    if(s.v==='phone') return /[0-9][0-9 ()+\-]{6,}/.test(v);
+    if(s.v==='email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    return v.trim().length>0;
+  }
+  function flowInput(v){
+    var s=CFG.flow[state.flow];
+    if(/^(cancel|stop|never ?mind|exit)$/i.test(v.trim())){state.flow=-1;add('bot','No problem, nothing was sent. What else can I help with?');home();return;}
+    if(!valid(s,v)){add('bot',s.err||'Sorry, could you check that and try again?');return;}
+    state.data[s.k]=v;state.flow++;
+    if(state.flow>=CFG.flow.length){finish();}else ask();
+  }
+  function finish(){
+    var rows=CFG.flow.map(function(s){return '<li><b>'+esc(s.l)+':</b> '+esc(state.data[s.k]||'')+'</li>'}).join('');
+    add('bot',CFG.flowDone+'<ul class="gv-sum">'+rows+'</ul><small>Demo preview: nothing is actually transmitted.</small>');
+    state.flow=-1;home();inp.placeholder='Ask a question';
+  }
+  function send(v){
+    v=String(v||'').trim();if(!v)return;
+    add('me',esc(v));
+    if(state.flow>=0){flowInput(v);return;}
+    if(v===CFG.bookChip){startFlow();return;}
+    var n=norm(v);
+    if(CFG.bookRe&&new RegExp(CFG.bookRe,'i').test(n)){startFlow();return;}
+    var r=answer(v);
+    add('bot',r.a);
+    if(r.book){add('bot',CFG.bookOffer);setChips([CFG.bookChip].concat(CFG.chips.slice(0,3)));}
+    else home();
+  }
+  form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';send(v);};
+  document.querySelectorAll('[data-gv]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();var a=el.getAttribute('data-gv');open();if(a==='book'){if(state.flow<0){add('me',esc(CFG.bookChip));startFlow();}}else{send(a);}});});
+})();
+
+</script></body></html>

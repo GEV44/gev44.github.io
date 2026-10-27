@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Properties Miami · Buy, rent, sell and value with a local agent</title>
+<meta name="description" content="Demo page for Properties Miami, a Miami real estate agency.">
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#ff0545;--red2:#c30535;--ink:#14171f;--mute:#5a6170;--bg:#fbfaf7;--card:#fff;--line:#e8e4dc;--sea:#0f4c5c;--sand:#f3ede1;
+--w-ac:#ff0545;--w-hd:#14171f;--w-b:#f1ede4;--w-bg:#fff;--w-ink:#14171f;--w-font:'Karla',system-ui,sans-serif;--w-r:14px;--w-pr:18px;--w-chip:#c30535}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 'Karla',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.08;margin:0 0 .45em;letter-spacing:-.01em}
+h1{font-size:clamp(38px,9.5vw,68px);font-weight:800}h2{font-size:clamp(28px,6vw,42px);font-weight:800}h3{font-size:20px;font-weight:600}
+a{color:var(--red2)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.topbar{background:var(--ink);color:#e9e6df;font-size:14px}.topbar .wrap{display:flex;justify-content:space-between;gap:10px;padding-top:7px;padding-bottom:7px;flex-wrap:wrap}.topbar a{color:#fff;font-weight:700;text-decoration:none}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+.hrow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.hrow img{height:26px;width:auto;display:block}
+nav{display:none;gap:22px;font-weight:500}nav a{text-decoration:none;color:var(--ink)}nav a:hover{color:var(--red)}
+.pill{background:var(--red);color:#fff!important;text-decoration:none;font-weight:700;border-radius:999px;padding:10px 16px;font-size:15px;white-space:nowrap}
+@media(min-width:880px){nav{display:flex}.hrow img{height:30px}}
+.hero{padding:34px 0 20px;display:grid;gap:28px}
+@media(min-width:900px){.hero{grid-template-columns:1.1fr .9fr;align-items:center;padding:60px 0 40px}}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--red2);margin-bottom:12px}
+.lead{font-size:19px;color:var(--mute);max-width:30em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 20px 50px rgba(20,23,31,.09);overflow:hidden}
+.itabs{display:grid;grid-template-columns:repeat(4,1fr);background:var(--sand)}
+.itabs button{border:0;background:transparent;padding:15px 4px;font:700 15px 'Karla';cursor:pointer;color:var(--mute);border-bottom:3px solid transparent}
+.itabs button[aria-selected=true]{background:#fff;color:var(--ink);border-bottom-color:var(--red)}
+.ibody{padding:22px 20px 24px}.ibody h3{font-size:24px;margin-bottom:6px}.ibody p{margin:0 0 16px;color:var(--mute)}
+.btn{display:inline-block;border:0;cursor:pointer;font:700 16px 'Karla';padding:14px 20px;border-radius:12px;background:var(--red);color:#fff;text-decoration:none}
+.btn.d{background:var(--ink)}.btn.o{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.skyline{display:block;width:100%;height:auto;margin-top:6px}
+.strip{background:var(--ink);color:#fff;margin-top:26px}
+.strip .wrap{display:grid;gap:14px;padding-top:20px;padding-bottom:20px}@media(min-width:760px){.strip .wrap{grid-template-columns:repeat(3,1fr)}}
+.strip b{font:800 22px 'Fraunces',serif;display:block}.strip span{color:#cfd2da;font-size:15px}
+section{padding:58px 0}
+.areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.areas button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 16px;font:500 16px 'Karla';cursor:pointer;color:var(--ink)}
+.areas button:hover{border-color:var(--red);color:var(--red2)}
+.sv{display:grid;gap:14px;margin-top:24px}@media(min-width:720px){.sv{grid-template-columns:1fr 1fr}}@media(min-width:1000px){.sv{grid-template-columns:repeat(3,1fr)}}
+.s{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}.s i{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--sand);color:var(--red2);font:800 18px 'Fraunces';font-style:normal;margin-bottom:12px}
+.s p{margin:0 0 12px;color:var(--mute)}.s button{background:none;border:0;border-bottom:2px solid var(--red);font:700 15px 'Karla';cursor:pointer;padding:0;color:var(--ink)}
+.s.hl{background:var(--ink);color:#fff;border-color:var(--ink)}.s.hl p{color:#cfd2da}.s.hl i{background:var(--red);color:#fff}.s.hl button{color:#fff}
+.val{background:var(--sand)}.vgrid{display:grid;gap:26px}@media(min-width:860px){.vgrid{grid-template-columns:1fr 1fr;align-items:center}}
+.vsteps{counter-reset:v;list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.vsteps li{counter-increment:v;background:#fff;border-radius:14px;padding:14px 16px 14px 58px;position:relative;border:1px solid var(--line)}
+.vsteps li:before{content:counter(v);position:absolute;left:14px;top:12px;width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;font:800 16px/32px 'Fraunces';text-align:center}
+.vsteps b{display:block}.vsteps span{color:var(--mute);font-size:15px}
+.story{display:grid;gap:22px}@media(min-width:860px){.story{grid-template-columns:1fr 1fr}}
+.quote{border-left:5px solid var(--red);padding:6px 0 6px 18px;font:600 22px/1.3 'Fraunces',serif}
+.tl2{list-style:none;margin:0;padding:0;display:grid;gap:12px}.tl2 li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}.tl2 b{color:var(--red2)}
+.for{display:grid;gap:12px;margin-top:22px}@media(min-width:760px){.for{grid-template-columns:repeat(3,1fr)}}
+.for div{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff}.for h3{margin-bottom:6px}.for p{margin:0;color:var(--mute);font-size:16px}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;margin:0 0 10px;padding:0 16px}summary{cursor:pointer;font-weight:700;padding:14px 0}details p{margin:0 0 14px;color:var(--mute)}
+.contact{background:var(--ink);color:#fff}.contact a{color:#fff}
+.cg{display:grid;gap:20px}@media(min-width:800px){.cg{grid-template-columns:1fr 1fr}}
+.cbox{border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:20px}.cbox .ph{font:800 30px 'Fraunces',serif;text-decoration:none;display:block;margin:4px 0 8px}
+footer{background:#0c0e13;color:#aeb2bd;padding:24px 0 100px;font-size:14px}footer .demo{margin-top:8px}
+.ptypes{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}@media(min-width:760px){.ptypes{grid-template-columns:repeat(6,1fr)}}
+.pt{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 8px 12px;cursor:pointer;font:inherit;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:6px}.pt:hover{border-color:var(--red)}.pt svg{width:56px;height:50px}.pt b{font-size:15px;text-align:center}
+.cmp{width:100%;border-collapse:collapse;margin-top:18px;background:#fff;border:1px solid var(--line)}.cmp th,.cmp td{padding:10px 9px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);font-size:15px}.cmp th{background:var(--ink);color:#fff;font-size:13px}.cmp td:first-child{font-weight:700;width:20%}
+#bot-fab{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--w-ac);color:var(--w-acink,#fff);font:600 15px/1 var(--w-font,inherit);padding:14px 18px;border-radius:var(--w-r,999px);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+#bot-fab svg{width:20px;height:20px;fill:currentColor}
+#bot-panel{position:fixed;right:12px;bottom:78px;z-index:61;width:min(380px,calc(100vw - 24px));height:min(540px,calc(100vh - 100px));background:var(--w-bg,#fff);color:var(--w-ink,#222);border-radius:var(--w-pr,16px);box-shadow:0 18px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--w-font,inherit)}
+#bot-panel.open{display:flex}
+#bot-head{background:var(--w-hd,var(--w-ac));color:var(--w-hdink,#fff);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+#bot-head b{font-size:15px;display:block}#bot-head small{opacity:.8;font-size:12px}
+#bot-x{background:none;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer;padding:2px 6px}
+#bot-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--w-log,transparent)}
+#bot-log .m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+#bot-log .b{background:var(--w-b,#eee);align-self:flex-start;border-bottom-left-radius:4px}
+#bot-log .u{background:var(--w-ac);color:var(--w-acink,#fff);align-self:flex-end;border-bottom-right-radius:4px}
+#bot-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;border-top:1px solid rgba(128,128,128,.25);max-height:112px;overflow:auto}
+#bot-chips button{border:1px solid var(--w-ac);background:transparent;color:var(--w-chip,var(--w-ac));border-radius:999px;padding:6px 11px;font:600 13px/1.2 var(--w-font,inherit);cursor:pointer}
+#bot-form{display:flex;gap:6px;padding:10px 12px;border-top:1px solid rgba(128,128,128,.25)}
+#bot-in{flex:1;min-width:0;border:1px solid rgba(128,128,128,.5);border-radius:10px;padding:10px;font:16px var(--w-font,inherit);background:transparent;color:inherit}
+#bot-form button{border:0;background:var(--w-ac);color:var(--w-acink,#fff);border-radius:10px;padding:0 14px;font-weight:700;cursor:pointer}
+
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>Open 8 AM to 10 PM (EST)</span><a href="tel:+17865054939">+1 (786) 505-4939</a></div></div>
+<header><div class="wrap hrow">
+<a href="#top" aria-label="Properties Miami"><img src="img/properties-miami-logo.svg" alt="Properties Miami" width="185" height="26"></a>
+<nav><a href="#areas">Neighborhoods</a><a href="#services">Services</a><a href="#value">Home value</a><a href="#story">About</a><a href="#contact">Contact</a></nav>
+<a class="pill" href="tel:+17865054939">Call now</a>
+</div></header>
+<main id="top">
+<div class="wrap hero">
+<div><div class="eyebrow">Miami real estate agency · Spanish-speaking friendly</div>
+<h1>A local agent for every Miami block.</h1>
+<p class="lead">Each realtor-associate is assigned to an area of Miami where they live and interact daily, so the person answering your question already knows the neighborhood.</p>
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:22px"><button class="btn" data-ask="Request a viewing">Request a viewing</button><button class="btn o" data-ask="I want to know what my home is worth">What is my home worth?</button></div>
+</div>
+<div class="card" aria-label="What can we help with">
+<div class="itabs" role="tablist"><button role="tab" aria-selected="true" data-t="0">Buy</button><button role="tab" aria-selected="false" data-t="1">Rent</button><button role="tab" aria-selected="false" data-t="2">Sell</button><button role="tab" aria-selected="false" data-t="3">Value</button></div>
+<div class="ibody" role="tabpanel"><h3 id="it"></h3><p id="ip"></p><button class="btn" id="ib">Start</button></div>
+<svg class="skyline" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true"><rect width="400" height="70" fill="#f3ede1"/><g fill="#0f4c5c"><rect x="10" y="30" width="22" height="40"/><rect x="38" y="14" width="26" height="56"/><rect x="70" y="34" width="20" height="36"/><rect x="96" y="6" width="30" height="64"/><rect x="132" y="26" width="24" height="44"/><rect x="162" y="18" width="20" height="52"/><rect x="188" y="36" width="28" height="34"/><rect x="222" y="10" width="24" height="60"/><rect x="252" y="28" width="26" height="42"/><rect x="284" y="20" width="22" height="50"/><rect x="312" y="38" width="30" height="32"/><rect x="348" y="12" width="24" height="58"/><rect x="378" y="30" width="22" height="40"/></g><g fill="#ff0545" opacity=".9"><rect x="100" y="12" width="4" height="4"/><rect x="226" y="18" width="4" height="4"/><rect x="352" y="20" width="4" height="4"/></g><path d="M0 62c40-6 80 6 120 0s80-6 120 0 80 6 160 0v8H0z" fill="#ff0545" opacity=".25"/></svg>
+</div>
+</div>
+<div class="strip"><div class="wrap"><div><b>8 AM to 10 PM</b><span>Eastern time, the hours the site publishes</span></div><div><b>5 to 10 minutes</b><span>The contact page promises a response in that window</span></div><div><b>Miami-Dade and Broward</b><span>Flat fee MLS listings reach both counties</span></div></div></div>
+
+<section id="areas"><div class="wrap"><div class="eyebrow">Neighborhoods</div><h2>Tell us where. We have someone there.</h2>
+<p class="lead">Tap an area to start a viewing or listing request for it.</p>
+<div class="areas">
+<button data-ask="I want to request a viewing in Brickell">Brickell</button><button data-ask="I want to request a viewing in Brickell Key">Brickell Key</button><button data-ask="I want to request a viewing in Downtown Miami">Downtown Miami</button><button data-ask="I want to request a viewing in Edgewater">Edgewater</button><button data-ask="I want to request a viewing in Coconut Grove">Coconut Grove</button><button data-ask="I want to request a viewing in Coral Gables">Coral Gables</button><button data-ask="I want to request a viewing in Key Biscayne">Key Biscayne</button><button data-ask="I want to request a viewing in Eastern Shores">Eastern Shores</button><button data-ask="I want to request a viewing in Fisher Island">Fisher Island</button><button data-ask="I want to request a viewing in Aventura">Aventura</button><button data-ask="I want to request a viewing in Bal Harbour">Bal Harbour</button><button data-ask="I want to request a viewing in Bay Harbor Islands">Bay Harbor Islands</button><button data-ask="I want to request a viewing in Golden Beach">Golden Beach</button><button data-ask="I want to request a viewing in Indian Creek">Indian Creek</button><button data-ask="I want to request a viewing in Hallandale Beach">Hallandale Beach</button><button data-ask="I want to request a viewing in Hollywood">Hollywood</button><button data-ask="I want to request a viewing in Hollywood Beach">Hollywood Beach</button><button data-ask="I want to request a viewing in Fort Lauderdale">Fort Lauderdale</button>
+</div></div></section>
+
+<section id="services" style="padding-top:10px"><div class="wrap"><div class="eyebrow">Services</div><h2>Everything on the menu, in one place</h2>
+<div class="sv">
+<div class="s"><i>B</i><h3>Buy</h3><p>Condos, apartments, pre-construction buildings, single-family houses, townhouses and foreclosure properties.</p><button data-ask="Start a buyer request">Start a buyer request</button></div>
+<div class="s"><i>R</i><h3>Rent</h3><p>Rental apartments, penthouses and luxury rentals across Miami, with rental applications that can be handled remotely.</p><button data-ask="Start a rental request">Start a rental request</button></div>
+<div class="s"><i>S</i><h3>Sell</h3><p>List your house or condo with a realtor who knows your block, or take the flat fee route on your own.</p><button data-ask="Start a seller request">Start a seller request</button></div>
+<div class="s hl"><i>$</i><h3>Flat fee MLS</h3><p>List on the MLS of Miami-Dade and Broward with a flat fee, a six month term and no commission. Basic and more featured options exist, and you can start with a free account.</p><button data-ask="Tell me about the flat fee MLS">How it works</button></div>
+<div class="s"><i>P</i><h3>Property management</h3><p>Help for landlords, including a rental property manager service.</p><button data-ask="Request property management">Ask about management</button></div>
+<div class="s"><i>M</i><h3>Mortgage and hard money</h3><p>Financing pages for mortgage loans and hard money lenders sit next to the listings.</p><button data-ask="Do you help with mortgage loans?">Ask about financing</button></div>
+</div></div></section>
+
+<section id="value" class="val"><div class="wrap vgrid">
+<div><div class="eyebrow">Home value</div><h2>How much is your place worth?</h2><p class="lead">Give the address, add when you plan to sell, and a licensed agent analyses comparables. The site says an agent contacts you within 5 to 10 minutes.</p><button class="btn" data-ask="Request a valuation">Request a valuation</button></div>
+<ol class="vsteps"><li><b>Enter the full address</b><span>Street, unit number, city, state and zip, so the valuation is accurate.</span></li><li><b>Neighborhood comparison</b><span>The estimate first looks at the neighborhood and block.</span></li><li><b>A licensed agent follows up</b><span>For a formal valuation, talk to one of the agents directly.</span></li></ol>
+</div></section>
+
+<section id="story"><div class="wrap story">
+<div><div class="eyebrow">About</div><h2>Started by investors, in 2002</h2><p class="quote">"Each realtor-associate is assigned to a specific area of Miami where they live and interact daily."</p></div>
+<ul class="tl2"><li><b>2002</b> PropertiesMiami.com launched by three investors who each held a real estate license, tired of listing sites that did not give them the tools they needed.</li><li><b>One year later</b> The founders opened their own agency, first to serve investors, with a group of 10 realtors divided by areas around Miami.</li><li><b>Today</b> Realtor-listed properties plus exclusive opportunities with private sellers, buyers and investors.</li></ul>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap"><h2>What you can search</h2><div class="ptypes"><button class="pt" data-ask="Request a buyer search, condos"><svg viewBox="0 0 58 52" aria-hidden="true"><path d="M8 44V18h14v26M24 44V8h16v36M42 44V22h8v22M4 44h50" fill="none" stroke="#ff0545" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Condos</b></button><button class="pt" data-ask="Request a buyer search, apartments"><svg viewBox="0 0 58 52" aria-hidden="true"><path d="M6 44V14h30v30M36 44V26h16v18M12 20h6M12 28h6M12 36h6M24 20h6M24 28h6M24 36h6" fill="none" stroke="#ff0545" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Apartments</b></button><button class="pt" data-ask="Request a buyer search, penthouses"><svg viewBox="0 0 58 52" aria-hidden="true"><path d="M10 44V26h38v18M16 26V14h26v12M22 14V6h14v8" fill="none" stroke="#ff0545" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Penthouses</b></button><button class="pt" data-ask="Request a buyer search, houses"><svg viewBox="0 0 58 52" aria-hidden="true"><path d="M6 26L29 8l23 18M12 24v20h34V24M25 44V32h8v12" fill="none" stroke="#ff0545" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Houses</b></button><button class="pt" data-ask="Request a buyer search, townhouses"><svg viewBox="0 0 58 52" aria-hidden="true"><path d="M4 44V22l10-8 10 8v22M24 44V22l10-8 10 8v22M44 44h10V24" fill="none" stroke="#ff0545" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Townhouses</b></button><button class="pt" data-ask="Request a buyer search, pre-construction"><svg viewBox="0 0 58 52" aria-hidden="true"><path d="M6 44h46M14 44V16h24M38 16v10M14 24h24M14 32h24M44 44V30l6 0" fill="none" stroke="#ff0545" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Pre-construction</b></button></div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="card" style="padding:24px 20px;display:grid;gap:14px"><div><div class="eyebrow">For investors</div><h2 style="margin-bottom:8px">Built by investors, so they get the investor questions</h2><p class="lead" style="margin:0">The agency opened to serve investors first. Beyond realtor-listed properties, it partners with private sellers, buyers and investors to offer exclusive opportunities to preferred clients, and the site lists foreclosure properties, pre-construction buildings and hard money lenders.</p></div><div><button class="btn d" data-ask="Request an agent for investing">Tell an agent what you are buying</button></div></div></div></section>
+<section style="padding-top:0"><div class="wrap"><h2>Three ways to sell</h2><p class="lead">All three are described on the site. Pick the one that matches how hands-on you want to be.</p>
+<table class="cmp"><thead><tr><th></th><th>Realtor-listed</th><th>Flat fee MLS</th><th>Value first</th></tr></thead><tbody>
+<tr><td>Who leads</td><td>An agent assigned to your area</td><td>You, as a for-sale-by-owner</td><td>A licensed agent, after you ask</td></tr>
+<tr><td>Where it shows</td><td>Realtor-listed properties</td><td>MLS of Miami-Dade and Broward</td><td>Nothing is listed yet</td></tr>
+<tr><td>Good when</td><td>You want local guidance</td><td>You are an experienced owner who wants control</td><td>You are still deciding</td></tr>
+</tbody></table></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="card" style="padding:22px 20px"><div class="eyebrow">En español</div><h3 style="font-size:26px">¿Habla español? Aquí también.</h3><p style="margin:0;color:var(--mute)">La agencia se describe como amigable con el idioma español. Llame al +1 (786) 505-4939 y pregunte por un agente de su zona.</p></div></div></section>
+<section style="padding-top:0"><div class="wrap"><h2>Also here for agents</h2><div class="for">
+<div><h3>Join the team</h3><p>The site has a page for joining the brokerage and for getting your license.</p></div>
+<div><h3>100% commission brokerage</h3><p>A dedicated page covers the 100% commission model for agents.</p></div>
+<div><h3>Agent MLS website</h3><p>Realtors can get an agent MLS website through the agents menu.</p></div>
+</div></div></section>
+
+<section style="padding-top:0"><div class="wrap"><h2>Quick answers</h2>
+<details><summary>Do you speak Spanish?</summary><p>The contact page calls it a Spanish-speaking friendly real estate agency.</p></details>
+<details><summary>Do I pay anything to start a flat fee listing?</summary><p>The site says you create a free account and fill in the MLS flat fee fields, and that no payment is required at that stage. The team confirms the fee options.</p></details>
+<details><summary>What types of property can I search?</summary><p>Condos, apartments, pre-construction buildings, single-family houses, townhouses, foreclosures and anything listed for sale or rent in Miami.</p></details>
+<details><summary>How fast will someone call back?</summary><p>The contact form promises a response in 5 to 10 minutes between 8 AM and 10 PM Eastern.</p></details>
+<details><summary>Can I rent without visiting in person?</summary><p>The site mentions remote rental applications. The agent confirms how that works for the building you pick.</p></details>
+<details><summary>I am an investor, is this for me?</summary><p>Yes, the agency was founded by investors and focuses on investors first. Ask about foreclosures, pre-construction and private-seller opportunities.</p></details>
+<details><summary>Can agents join the team?</summary><p>There are pages for joining the brokerage, a 100% commission brokerage model, and an agent MLS website.</p></details>
+<details><summary>What does it cost to list with an agent?</summary><p>No prices appear on this page. An agent will explain terms after hearing about your property.</p></details>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap cg">
+<div><div class="eyebrow" style="color:#ff8ea8">Contact</div><h2>Let's work together</h2><p>Tell the team whether you want to sell, buy, rent, manage a property or something else, and an agent will come back to you.</p><button class="btn" data-ask="Request an agent callback">Talk to an agent</button></div>
+<div class="cbox"><a class="ph" href="tel:+17865054939">+1 (786) 505-4939</a><div>8 AM to 10 PM (EST)</div><p style="margin:12px 0 0">637 SW 3rd St, APT 306<br>Miami, FL 33130<br><a href="mailto:info@propertiesmiami.com">info@propertiesmiami.com</a></p></div>
+</div></section>
+</main>
+<footer><div class="wrap">Properties Miami · 637 SW 3rd St, Miami, FL 33130<div class="demo">Demo · prepared by Gevorg Hovhannisyan</div></div></footer>
+<button id="bot-fab" type="button" aria-expanded="false" aria-controls="bot-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>Ask an agent--></button>
+<section id="bot-panel" aria-label="Assistant"><div id="bot-head"><div><b>Properties Miami assistant--></b><small>Answers from this page. An agent confirms details.--></small></div><button id="bot-x" type="button" aria-label="Close">&times;</button></div><div id="bot-log" aria-live="polite"></div><div id="bot-chips"></div><form id="bot-form"><input id="bot-in" type="text" autocomplete="off" placeholder="Ask about buying, renting, selling...-->" aria-label="Your question"><button type="submit">Send</button></form></section>
+
+<script>
+var TABS=[["Buy a home or condo in Miami","Condos, apartments, pre-construction, houses and townhouses, plus foreclosures and exclusive off-market opportunities.","Start a buyer request"],["Rent in Miami","Apartments, penthouses and luxury rentals, with remote rental applications.","Start a rental request"],["Sell with a local agent","List with a realtor assigned to your area, or choose a flat fee MLS listing.","Start a seller request"],["See what your home is worth","Enter your address and a licensed agent analyses comparables for you.","Request a valuation"]];
+(function(){var tb=document.querySelectorAll('.itabs button');function set(i){document.getElementById('it').textContent=TABS[i][0];document.getElementById('ip').textContent=TABS[i][1];var b=document.getElementById('ib');b.setAttribute('data-ask',TABS[i][2]);b.textContent=['Start a buyer request','Start a rental request','Start a seller request','Request a valuation'][i];tb.forEach(function(t,j){t.setAttribute('aria-selected',j===i)})}
+tb.forEach(function(t,i){t.onclick=function(){set(i)}});set(0)})();
+</script>
+<script>
+/* assistant engine: client-side only, sends nothing */
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){return w.length>4?w.replace(/(ings|ing|ies|es|ed|s)$/,''):w}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i]}for(j=1;j<=n;j++){d[0][j]=j}
+for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n]}
+function wordHit(w,k){if(w===k)return true;if(k.length>=4&&w.length>=4&&(w.indexOf(k)===0||k.indexOf(w)===0)&&Math.abs(w.length-k.length)<=3)return true;
+var t=k.length>=8?2:(k.length>=5?1:0);return t>0&&Math.abs(w.length-k.length)<=t&&lev(w,k)<=t}
+function matchKB(q,KB){var nq=norm(q),ws=nq.split(' ').filter(Boolean).map(stem),best=null,bs=0;
+KB.forEach(function(e){var s=0;e.k.forEach(function(kw){var nk=norm(kw);if(!nk)return;
+if(nk.indexOf(' ')>-1){if((' '+nq+' ').indexOf(' '+nk+' ')>-1)s+=3;else{var parts=nk.split(' ').map(stem),hit=parts.filter(function(p){return ws.some(function(w){return wordHit(w,p)})}).length;if(hit===parts.length)s+=2}}
+else{var sk=stem(nk);if(ws.some(function(w){return wordHit(w,sk)}))s+=(e.w||1)}});
+if(s>bs){bs=s;best=e}});return bs>0?best:null}
+if(typeof window!=='undefined'){window.__match=matchKB}
+if(typeof globalThis!=='undefined'){globalThis.__match=matchKB}
+function initBot(CFG){var $=function(i){return document.getElementById(i)};var log=$('bot-log'),chips=$('bot-chips'),inp=$('bot-in'),panel=$('bot-panel'),fab=$('bot-fab');var flow=null;
+function add(t,who){var d=document.createElement('div');d.className='m '+who;d.innerHTML=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b)})}
+function startFlow(){flow={i:0,d:{}};ask()}
+function ask(){var s=CFG.flow[flow.i];add(s.q,'b');setChips((s.opts||[]).concat(['Cancel']))}
+function finish(){var d=flow.d,h='<b>'+CFG.flowTitle+'</b><br>';CFG.flow.forEach(function(s){h+=s.label+': '+(d[s.key]||'-')+'<br>'});
+add(h+'<br>'+CFG.flowDone,'b');flow=null;setChips(CFG.chips)}
+function send(t){t=String(t||'').trim();if(!t)return;add(t.replace(/</g,'&lt;'),'u');inp.value='';
+if(flow){if(norm(t)==='cancel'||norm(t)==='stop'){flow=null;add(CFG.cancelMsg,'b');setChips(CFG.chips);return}
+var s=CFG.flow[flow.i];flow.d[s.key]=t.replace(/</g,'&lt;');flow.i++;if(flow.i>=CFG.flow.length)finish();else ask();return}
+var e=matchKB(t,CFG.kb);setTimeout(function(){if(!e){add(CFG.fallback,'b');setChips(CFG.chips);return}
+add(e.a,'b');if(e.flow){startFlow()}else setChips(e.chips||CFG.chips)},180)}
+fab.onclick=function(){var o=panel.classList.toggle('open');fab.setAttribute('aria-expanded',o);if(o&&!log.children.length){add(CFG.hello,'b');setChips(CFG.chips)}};
+$('bot-x').onclick=function(){panel.classList.remove('open');fab.setAttribute('aria-expanded',false)};
+$('bot-form').onsubmit=function(ev){ev.preventDefault();send(inp.value)};
+document.querySelectorAll('[data-ask]').forEach(function(b){b.addEventListener('click',function(ev){ev.preventDefault();if(!panel.classList.contains('open'))fab.click();send(b.getAttribute('data-ask'))})})}
+
+var KB=[
+{k:['buy','buying','buyer','purchase','condo','condos','apartment','apartments','house','houses','townhouse','townhouses','pre construction','preconstruction','foreclosure','foreclosures','listing','listings','for sale'],a:'<b>Buying.</b> You can search condos, apartments, pre-construction buildings, single-family houses, townhouses and foreclosure properties, plus exclusive opportunities with private sellers and investors. An agent assigned to your area handles viewings.',chips:['Request a viewing','Neighborhoods','Phone number']},
+{k:['rent','renting','rental','rentals','lease','landlord','penthouse','penthouses','tenant','application','applications'],a:'<b>Renting.</b> Rental apartments, penthouses and luxury rentals across Miami. The site mentions remote rental applications and a rental property manager service for landlords.',chips:['Start a request','Property management']},
+{k:['sell','selling','seller','list my','list property','listing my','commission','agent fees'],w:2,a:'<b>Selling.</b> You can list with a realtor assigned to your area, or use the flat fee MLS service. A free home value estimate is also available. An agent explains the terms once they hear about your property.',chips:['Flat fee MLS','Home value','Phone number']},
+{k:['flat fee','mls','for sale by owner','fsbo','six month','6 month','no commission','broward','miami dade'],w:2,a:'<b>Flat fee MLS.</b> List your property on the MLS of Miami-Dade and Broward with a flat fee, a six month term and no commission. You create a free account and fill in the MLS flat fee fields, and no payment is needed at that stage. Basic and more featured options exist, and the team confirms the details.',chips:['Home value','Phone number']},
+{w:4,k:['value','valuation','worth','estimate','estimation','appraisal','appraise','comparables','comps','home value'],a:'<b>Home value.</b> Enter the full property address and when you plan to sell. The estimate looks at the neighborhood and block, and a licensed agent follows up, typically within 5 to 10 minutes. For a formal valuation, speak with an agent.',chips:['Request a valuation','Phone number']},
+{w:3,k:['management','manager','manage','property management','rental manager'],a:'Property management is listed as a service, along with a rental property manager page for landlords. The team confirms what is covered.'},
+{k:['mortgage','loan','loans','financing','finance','lender','lenders','hard money','bank'],a:'The site has financing pages for mortgage loans and hard money lenders. The team confirms what they can arrange.'},
+{k:['neighborhood','neighborhoods','area','areas','brickell','coconut grove','grove','coral gables','gables','downtown','edgewater','eastern shores','fisher island','key biscayne','aventura','bal harbour','bay harbor','golden beach','indian creek','hallandale','hollywood','fort lauderdale','lauderdale'],a:'Areas listed: Brickell, Brickell Key, Downtown Miami, Edgewater, Coconut Grove, Coral Gables, Key Biscayne, Eastern Shores, Fisher Island, Aventura, Bal Harbour, Bay Harbor Islands, Golden Beach, Indian Creek, Hallandale Beach, Hollywood, Hollywood Beach and Fort Lauderdale. Each agent is assigned to an area they live in.',chips:['Request a viewing','Phone number']},
+{k:['spanish','espanol','hablan','habla','language','languages','speak'],a:'Yes. The contact page describes the agency as Spanish-speaking friendly.'},
+{k:['phone','call','number','telephone','contact','email','mail','reach','talk','ring'],a:'Call +1 (786) 505-4939 or email info@propertiesmiami.com.',chips:['Opening hours','Address']},
+{k:['hours','open','opening','closing','available','when','time','late','evening'],a:'The team is available 8 AM to 10 PM Eastern, and the contact form promises a reply within 5 to 10 minutes in those hours.'},
+{k:['where are you','address','office','located','location','street','visit','find you','directions'],a:'637 SW 3rd St, APT 306, Miami, FL 33130.'},
+{k:['agent','agents','realtor','realtors','broker','brokerage','join','license','licence','career','careers','100 commission'],a:'For agents, the site has pages for joining the team, a 100% commission brokerage, an agent MLS website and getting your license. Each realtor-associate here is assigned to an area of Miami where they live.'},
+{k:['about','history','founded','started','who','investor','investors','2002','company','agency'],w:2,a:'PropertiesMiami.com launched in 2002 with three real estate investors who each held a license. A year later they opened an agency, first serving investors, with 10 realtors divided by area around Miami.'},
+{k:['price','prices','cost','fee','fees','how much','charge','pay','payment'],a:'No prices appear on this page. An agent explains fees and terms for your situation, and the flat fee MLS page lists its own options.',chips:['Flat fee MLS','Phone number']},
+{k:['viewing','viewings','showing','showings','appointment','book','booking','request','arrange','schedule'],w:8,flow:true,a:'Happy to pass this to an agent. A few quick questions.'},
+{k:['hello','hi','hey','hola','thanks','thank','good morning'],a:'Hello! Ask about buying, renting, selling or home values, or request a viewing or valuation.'}
+];
+var CFG={kb:KB,hello:'Hi! I am the demo assistant for Properties Miami. Ask about buying, renting, selling, flat fee MLS or home value, or request a viewing.',
+chips:['Buying','Renting','Selling','Flat fee MLS','Home value','Request a viewing'],
+fallback:'I do not have that on the page, so an agent will need to confirm it. Call +1 (786) 505-4939 or email info@propertiesmiami.com.',
+cancelMsg:'No problem, nothing recorded. What else can I help with?',flowTitle:'Request for an agent',
+flow:[
+{key:'want',label:'Request',q:'What would you like?',opts:['Book a viewing','Home valuation','List my property','Rental search','Buyer search','Property management']},
+{key:'area',label:'Area or address',q:'Which neighborhood or address is this about?'},
+{key:'type',label:'Property type',q:'What type of property?',opts:['Condo or apartment','House or townhouse','Penthouse','Pre-construction','Investment property']},
+{key:'when',label:'Timing',q:'How soon are you looking to move?',opts:['Now','In 1 to 3 months','In 6 months','Just exploring']},
+{key:'who',label:'Name and phone or email',q:'Last step: your name and best phone or email. English or Spanish is fine.'}],
+flowDone:'<b>Sent to the team.</b> (Demo: nothing is actually transmitted.) A live version would reach an agent, and the site promises a reply within 5 to 10 minutes between 8 AM and 10 PM Eastern.'};
+if(typeof document!=='undefined'){initBot(CFG)}
+</script>
+</body>
+</html>

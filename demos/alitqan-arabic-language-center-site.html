@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alitqan Arabic Language Center | Demo page</title>
+<meta name="description" content="Demo page for Alitqan Arabic Language Center in Dubai: Emirati accent classes, four levels, group, one-to-one and corporate Arabic training.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fbf5ea;--sand:#f3e8d3;--mar:#8c1d4e;--mar2:#6e163d;--teal:#1b7a82;--gold:#c9973b;--ink:#2a2226;--mute:#6d6166;--hd:'Cormorant Garamond',Georgia,serif;--bd:'Nunito Sans',system-ui,sans-serif;--ar:'Noto Naskh Arabic',serif;
+--w-bg:#fffaf1;--w-ink:#2a2226;--w-acc:#8c1d4e;--w-accink:#fff;--w-font:var(--bd);--w-r:18px;--w-hd:#6e163d;--w-hdink:#fff;--w-log:#f6ecda;--w-bot:#fff;--w-botink:#2a2226;--w-chip:#6e163d}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 var(--bd);color:var(--ink);background:var(--cream);-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--hd);font-weight:700;line-height:1.08;margin:0;color:var(--mar2)}
+.top{background:#fff;border-bottom:1px solid #eadfcb;position:sticky;top:0;z-index:40}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:66px}
+.top img{height:40px;width:auto;max-width:62vw;object-fit:contain}
+.nav{display:none;gap:20px;font-weight:600;font-size:14px;color:var(--mute)}
+.nav a{text-decoration:none}.nav a:hover{color:var(--mar)}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--mar);color:#fff;text-decoration:none;font:700 15px var(--bd);padding:12px 20px;border-radius:99px}
+.btn.alt{background:transparent;color:var(--mar2);border:2px solid var(--mar2)}
+.btn.sm{padding:9px 14px;font-size:13px}
+.hero{text-align:center;padding:44px 0 50px;position:relative;overflow:hidden;background:linear-gradient(180deg,#fff7ea,var(--cream))}
+.hero .ghost{font:700 clamp(120px,36vw,300px)/1 var(--ar);color:var(--mar);opacity:.06;position:absolute;left:0;right:0;top:-10px;pointer-events:none;white-space:nowrap}
+.hero .wrap{position:relative}
+.eyebrow{font:700 12px var(--bd);letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.hero h1{font-size:clamp(38px,9.5vw,70px);margin:12px auto 14px;max-width:760px}
+.hero h1 span{color:var(--teal)}
+.hero p{max-width:560px;margin:0 auto 22px;color:var(--mute);font-size:17px}
+.hero .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:24px}
+.badges span{background:#fff;border:1px solid #e7d9bd;border-radius:99px;padding:6px 13px;font-size:13px;font-weight:600;color:var(--mar2)}
+section{padding:46px 0}
+.h2{margin-bottom:22px}
+.h2 h2{font-size:clamp(30px,7vw,46px)}
+.h2 p{margin:8px 0 0;color:var(--mute);max-width:600px}
+.center{text-align:center}.center p{margin-left:auto;margin-right:auto}
+.courses{display:grid;gap:12px}
+.course{background:#fff;border-radius:16px;padding:18px 18px 18px 22px;border-left:6px solid var(--teal);box-shadow:0 2px 0 #eadfcb}
+.course:nth-child(even){border-left-color:var(--gold)}
+.course.star{border-left-color:var(--mar);background:#fff3f7}
+.course h3{font-size:24px;margin-bottom:6px}
+.course p{margin:0 0 10px;color:#4a3f45;font-size:15px}
+.course a,.lnk{font-weight:700;font-size:14px;color:var(--mar);text-decoration:none;background:none;border:0;padding:0;cursor:pointer;font-family:var(--bd)}
+.ladder{display:grid;gap:10px}
+.step{border-radius:14px;padding:16px 18px;color:#fff;display:flex;flex-direction:column;gap:6px}
+.step:nth-child(1){background:#2a8c94;width:70%}
+.step:nth-child(2){background:#1f7b82;width:80%}
+.step:nth-child(3){background:#17676e;width:90%}
+.step:nth-child(4){background:#0f5359;width:100%}
+.step small{font:700 11px var(--bd);letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.step b{font:700 24px var(--hd)}
+.step .fee{font:700 20px var(--bd)}
+.step ul{margin:0;padding-left:18px;font-size:13.5px;opacity:.95}
+.lnote{margin-top:14px;font-size:14px;color:var(--mute)}
+.modes{display:grid;gap:12px}
+.mode{background:var(--sand);border-radius:16px;padding:20px}
+.mode h3{font-size:24px;margin-bottom:6px}
+.mode p{margin:0;font-size:15px;color:#4a3f45}
+.teacher{background:var(--mar2);color:#fff}
+.teacher h2{color:#fff}
+.teacher .wrap{display:grid;gap:22px}
+.teacher .mono{width:92px;height:92px;border-radius:50%;background:var(--gold);color:var(--mar2);display:grid;place-items:center;font:700 54px var(--ar);padding-bottom:8px}
+.teacher p{margin:0 0 12px;color:#f1dfe7}
+.teacher .facts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.teacher .facts li{background:rgba(255,255,255,.1);border-radius:12px;padding:10px 14px;font-size:14.5px}
+.teacher .facts b{color:var(--gold);display:block;font:700 12px var(--bd);letter-spacing:.1em;text-transform:uppercase}
+.quotes{display:grid;gap:12px}
+.quotes blockquote{margin:0;background:#fff;border-radius:16px;padding:18px;box-shadow:0 2px 0 #eadfcb;font-size:15px}
+.quotes cite{display:block;margin-top:10px;font-style:normal;font-weight:700;font-size:13px;color:var(--teal)}
+.from{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.from span{background:var(--sand);padding:5px 12px;border-radius:99px;font-size:13px;font-weight:600;color:var(--mar2)}
+.visit{background:var(--sand)}
+.visit .wrap{display:grid;gap:18px}
+.card{background:#fff;border-radius:16px;padding:20px}
+.card dl{margin:0;display:grid;gap:12px}
+.card dt{font:700 12px var(--bd);letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.card dd{margin:2px 0 0}
+details{background:#fff;border-radius:14px;padding:14px 18px;margin-bottom:10px;box-shadow:0 2px 0 #eadfcb}
+summary{cursor:pointer;font-weight:700;color:var(--mar2)}
+details p{margin:10px 0 0;color:#4a3f45;font-size:15px}
+.cta{text-align:center;background:linear-gradient(135deg,var(--mar),var(--mar2));color:#fff}
+.cta h2{color:#fff}
+.cta p{color:#f6e4ec;max-width:520px;margin:10px auto 20px}
+.cta .btn{background:#fff;color:var(--mar2)}
+footer{padding:24px 0 90px;text-align:center;font-size:13px;color:var(--mute)}
+@media(min-width:760px){
+.nav{display:flex}
+.courses{grid-template-columns:repeat(3,1fr)}
+.modes,.quotes{grid-template-columns:repeat(3,1fr)}
+.ladder{grid-template-columns:repeat(4,1fr);align-items:end}
+.step{width:100%!important}
+.step:nth-child(1){min-height:200px}.step:nth-child(2){min-height:240px}.step:nth-child(3){min-height:280px}.step:nth-child(4){min-height:320px}
+.teacher .wrap{grid-template-columns:130px 1fr;gap:34px}
+.teacher .facts{grid-template-columns:1fr 1fr}
+.visit .wrap{grid-template-columns:1fr 1fr}
+}
+.goals{display:grid;gap:10px}
+.goals div{background:var(--cream);border-radius:14px;padding:16px 18px;border-top:4px solid var(--gold)}
+.goals div:nth-child(odd){border-top-color:var(--teal)}
+.goals b{display:block;font:700 21px var(--hd);color:var(--mar2);margin-bottom:4px}
+.goals p{margin:0;font-size:14.5px;color:#4a3f45}
+@media(min-width:760px){.goals{grid-template-columns:repeat(3,1fr)}}
+#aw-btn{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--w-acc);color:var(--w-accink);font:700 15px/1 var(--w-font);padding:14px 18px;border-radius:var(--w-r);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+#aw-btn.hide{display:none}
+#aw-btn svg{width:20px;height:20px}
+#aw-panel{position:fixed;right:12px;bottom:12px;z-index:61;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:var(--w-bg);color:var(--w-ink);border-radius:var(--w-r);box-shadow:0 18px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--w-font);border:1px solid rgba(0,0,0,.08)}
+#aw-panel.open{display:flex}
+.aw-h{background:var(--w-hd);color:var(--w-hdink);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.aw-h b{display:block;font-size:15px}.aw-h small{opacity:.8;font-size:12px}
+#aw-close{background:none;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer;padding:4px 8px}
+#aw-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--w-log)}
+.aw-m{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-line;word-wrap:break-word}
+.aw-m.bot{background:var(--w-bot);color:var(--w-botink);align-self:flex-start;border-bottom-left-radius:4px}
+.aw-m.me{background:var(--w-acc);color:var(--w-accink);align-self:flex-end;border-bottom-right-radius:4px}
+#aw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 2px;background:var(--w-log);max-height:30%;overflow-y:auto}
+.aw-chip{border:1px solid var(--w-acc);background:transparent;color:var(--w-chip);padding:6px 11px;border-radius:99px;font:600 13px var(--w-font);cursor:pointer}
+.aw-chip:hover{background:var(--w-acc);color:var(--w-accink)}
+.aw-x{border-color:#999;color:#777}
+#aw-form{display:flex;gap:6px;padding:10px 12px;background:var(--w-log);border-top:1px solid rgba(0,0,0,.08)}
+#aw-in{flex:1;min-width:0;padding:10px 12px;border:1px solid #bbb;border-radius:10px;font:16px var(--w-font);background:#fff;color:#111}
+#aw-form button{border:0;background:var(--w-acc);color:var(--w-accink);font:700 14px var(--w-font);padding:0 14px;border-radius:10px;cursor:pointer}
+.aw-f{font-size:11px;text-align:center;padding:4px;background:var(--w-log);opacity:.7}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a href="#top"><img src="img/alitqan-arabic-language-center-logo.jpg" alt="Alitqan Arabic Language Center" width="195" height="40"></a>
+<nav class="nav"><a href="#courses">Courses</a><a href="#levels">Levels and fees</a><a href="#teacher">Instructor</a><a href="#visit">Visit</a><a href="#faq">FAQ</a></nav>
+<button class="btn sm" data-aw="book">Free demo class</button>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="ghost" aria-hidden="true">&#1575;&#1604;&#1573;&#1578;&#1602;&#1575;&#1606;</div><div class="wrap">
+<div class="eyebrow">Arabic language center &middot; Dubai</div>
+<h1>Learn Arabic the way it is <span>spoken in the UAE</span></h1>
+<p>Emirati accent classes with credentialed, native-speaking teachers. Spoken Arabic, reading and writing, one-to-one lessons, group courses and corporate training in Dubai.</p>
+<div class="btns"><button class="btn" data-aw="book">Request a free demo class</button><a class="btn alt" href="#levels">See levels and fees</a></div>
+<div class="badges"><span>Emirati accent</span><span>Four levels of 20 hours</span><span>Group, one-to-one, corporate</span><span>Online classes available</span></div>
+</div></div>
+
+<section id="courses"><div class="wrap">
+<div class="h2"><h2>Choose the Arabic course that fits your life</h2><p>Select the course that suits your career, your family or just your daily conversations.</p></div>
+<div class="courses">
+<div class="course star"><h3>Speak with an Emirati accent</h3><p>For learners who want to sound like the people around them. Native-speaking, credentialed and friendly teachers.</p><button class="lnk" data-aw="book">Ask for a demo &rarr;</button></div>
+<div class="course"><h3>Learn and speak Arabic</h3><p>For beginners and professionals who know the alphabet or a few phrases and want the structure behind them: grammar, vocabulary and listening.</p><button class="lnk" data-aw="book">Ask for a demo &rarr;</button></div>
+<div class="course"><h3>Read and write Arabic</h3><p>Reading, writing, speaking and listening together, with pronunciation work and progress tracked by the trainer every lesson.</p><button class="lnk" data-aw="book">Ask for a demo &rarr;</button></div>
+<div class="course"><h3>Arabic for school students</h3><p>A dedicated course for younger learners. The team confirms age groups and timings with you.</p><button class="lnk" data-aw="book">Ask for details &rarr;</button></div>
+<div class="course"><h3>Flexible individual classes</h3><p>One-to-one, built around your language requirements, with classes arranged to your preferred times.</p><button class="lnk" data-aw="book">Ask for a demo &rarr;</button></div>
+<div class="course"><h3>Corporate Arabic training</h3><p>Held on your company premises, with time and days set around the company's needs.</p><button class="lnk" data-aw="book">Ask for details &rarr;</button></div>
+</div>
+</div></section>
+
+<section id="levels" style="background:#fff"><div class="wrap">
+<div class="h2"><h2>Four levels, twenty hours each</h2><p>Each step builds on the one before. Pick your plan, or ask the teacher to place you in the free demo class.</p></div>
+<div class="ladder">
+<div class="step"><small>Level 1</small><b>Beginners</b><span class="fee">AED 1200</span><ul><li>20 hours + basic Arabic rules</li><li>Read and write</li><li>Course books, stationery</li></ul></div>
+<div class="step"><small>Level 2</small><b>Elementary</b><span class="fee">AED 1300</span><ul><li>20 hours + daily-life vocabulary</li><li>Offline access listed</li><li>Course books, stationery</li></ul></div>
+<div class="step"><small>Level 3</small><b>Intermediate</b><span class="fee">AED 1400</span><ul><li>20 hours + full grammar</li><li>Offline access listed</li><li>Course books, stationery</li></ul></div>
+<div class="step"><small>Level 4</small><b>Secondary</b><span class="fee">AED 1500</span><ul><li>20 hours + word vocabulary</li><li>Course books, stationery</li></ul></div>
+</div>
+<p class="lnote">Every plan lists online classes, audio and video support and live support. Questions about a plan? <button class="lnk" data-aw="book">Request a free demo class</button></p>
+</div></section>
+
+<section><div class="wrap">
+<div class="h2 center"><h2>Group, one to one or at your company</h2><p>The course fee page offers three ways to study.</p></div>
+<div class="modes">
+<div class="mode"><h3>Group course</h3><p>You join a group of students starting at the same level as you.</p></div>
+<div class="mode"><h3>One to one</h3><p>A structured course shaped around your own language requirements. Classes are arranged to your preference.</p></div>
+<div class="mode"><h3>Corporate training</h3><p>Held on company premises. Time and days are flexible and based on what the company needs.</p></div>
+</div>
+</div></section>
+
+<section style="background:#fff"><div class="wrap">
+<div class="h2"><h2>What you will be able to do</h2><p>Objectives listed for the Spoken Arabic and Read and Write modules.</p></div>
+<div class="goals">
+<div><b>Understand the culture behind the language</b><p>See the main features of Arabic-speaking societies and how the language reflects them.</p></div>
+<div><b>Build everyday sentences</b><p>Use sentence constructions in simple spoken and written Arabic for daily life.</p></div>
+<div><b>Pronounce with confidence</b><p>Reach a reasonable standard of pronunciation, with elocution and presentation practice.</p></div>
+<div><b>Recognise signs and formal indicators</b><p>Read common signs and formal notices you meet around the city.</p></div>
+<div><b>Use the script in context</b><p>Recognise and use Arabic script, and compose short dialogues and notes.</p></div>
+<div><b>Track real progress</b><p>The trainer tracks every student's progress every lesson, so each hour counts.</p></div>
+</div>
+<p class="lnote" style="margin-top:20px"><b>The center's mission:</b> to spread the Arabic language so that it can serve as a common language in the local community, with an emphasis on reading, writing, speaking and listening and on shortening the time it takes to learn.</p>
+</div></section>
+
+<section id="teacher" class="teacher"><div class="wrap">
+<div class="mono" aria-hidden="true">&#1575;</div>
+<div>
+<h2>Abdul Qadir Sayed Kareem</h2>
+<p style="margin-top:6px"><b>Founder and instructor.</b> Raised and educated in the UAE, he started teaching Arabic in 2005 and designed a short-term syllabus so learners can fit into local life quickly.</p>
+<ul class="facts">
+<li><b>Background</b>Completed memorisation of the Quran at age 10; diploma in Islamic Finance.</li>
+<li><b>Teaching</b>Full-time class teacher for adult Arabs and international non-Arabic speakers.</li>
+<li><b>Languages</b>Speaks, reads and writes several languages.</li>
+<li><b>Direct line</b>+971 50 765 6199</li>
+</ul>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="h2"><h2>What learners say</h2><p>From the center's testimonials page.</p></div>
+<div class="quotes">
+<blockquote>Mr.Abdul Qadir is definitely one of the best teacher of Arabic Language. Whoever needs to learn Emirati Accent, this would be the best option!<cite>Grigoriy Konyukhov &middot; Russia</cite></blockquote>
+<blockquote>I really recommend Mr. Abdul Qader to help anyone learn Arabic, especially the Emirati/Gulf dialect. He is very helpful and always supportive.<cite>Winie Ariany &middot; Indonesia</cite></blockquote>
+<blockquote>Teacher Abdul is very professional Arabic teacher. He is patient and he has his own system to teach Arabic well.<cite>Tan Kathey &middot; China</cite></blockquote>
+</div>
+<div class="from"><span>South Korea</span><span>Bulgaria</span><span>Russia</span><span>Lithuania</span><span>Indonesia</span><span>USA</span><span>Turkmenistan</span><span>China</span><span>Poland</span></div>
+</div></section>
+
+<section id="visit" class="visit"><div class="wrap">
+<div><div class="h2" style="margin-bottom:12px"><h2>Visit the center</h2><p>Find us near Airport Free Zone Metro Station, Dubai.</p></div>
+<button class="btn" data-aw="book">Request a free demo class</button></div>
+<div class="card"><dl>
+<div><dt>Timings</dt><dd>Saturday to Thursday, 8:00 am to 8:00 pm</dd></div>
+<div><dt>Address</dt><dd>Villa 3, Street 19A, Airport Free Zone Metro Station, Dubai, U.A.E.</dd></div>
+<div><dt>Phone</dt><dd>+971 50 765 6199<br>+971 56 842 2274</dd></div>
+<div><dt>Email</dt><dd>abdulqader@alitqancenter.com</dd></div>
+</dl></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+<div class="h2"><h2>Good to know</h2></div>
+<details><summary>Why learn Arabic in the UAE?</summary><p>It makes you feel at home, helps you build real relationships with locals and native speakers, and gives you an edge in employability and career growth.</p></details>
+<details><summary>I only want to chat with friends. What do I need?</summary><p>The alphabet and its pronunciation, plus basic words, phrases and greetings for restaurants, malls and daily life. Speaking with real speakers teaches more than books alone, and mistakes are part of it.</p></details>
+<details><summary>Can I learn online?</summary><p>Yes. Registered students get e-learning modules, and every fee plan lists online classes with audio and video support.</p></details>
+<details><summary>How do I start?</summary><p>Request a free demo class. The team will contact you to confirm the details.</p></details>
+<details><summary>Can my company enrol its employees?</summary><p>Yes. Corporate training is held on your premises, with days and times set around your needs.</p></details>
+</div></section>
+
+<section class="cta"><div class="wrap">
+<h2>Start with a free demo class</h2>
+<p>Meet the teacher, hear the Emirati accent in a real lesson and find the level that suits you.</p>
+<button class="btn" data-aw="book">Request a free demo class</button>
+</div></section>
+</main>
+
+<footer><div class="wrap">Alitqan Arabic Language Center, Dubai &middot; Demo &middot; prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="aw-btn" type="button" aria-label="Open assistant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>Ask Alitqan</button>
+<div id="aw-panel" role="dialog" aria-label="Course assistant">
+<div class="aw-h"><div><b>Alitqan Arabic Language Center</b><small>Course assistant (demo)</small></div><button id="aw-close" aria-label="Close">&times;</button></div>
+<div id="aw-log"></div><div id="aw-chips"></div>
+<form id="aw-form"><input id="aw-in" autocomplete="off" placeholder="Ask a question" aria-label="Your message"><button>Send</button></form>
+<div class="aw-f">Demo only. Nothing is sent to the center.</div>
+</div>
+<script>
+window.CFG={
+greet:"Welcome to Alitqan Arabic Language Center. I can answer questions about courses, levels, fees, the Emirati accent classes and timings, or help you ask for a free demo class.",
+chips:["Free demo class","Course fees","Emirati accent","Which level am I?","Timings and location","Corporate training"],
+bookPhrase:"free demo class",
+fallback:"I don't have that detail from the center's website, so the team will confirm it. You can call +971 50 765 6199 or write to abdulqader@alitqancenter.com. Meanwhile, try one of the options below.",
+afterCancel:"Ask me anything else about the courses.",
+flowIntro:"Glad to help you request a free demo class. A few short questions, then the request goes to the team.",
+doneTitle:"Demo class request ready",
+doneNote:"Sent to the team (demo: nothing is actually sent). The center will contact you to confirm the demo class details.",
+flow:[
+{key:"course",label:"Course",type:"choice",q:"Which course interests you?",chips:["Spoken Arabic","Emirati accent","Read and write Arabic","Arabic for school students","Corporate training","Not sure yet"],opts:[
+{v:"Spoken Arabic",k:["spoken arabic","spoken","speak","speaking","conversation","learn and speak"]},
+{v:"Emirati accent",k:["emirati accent","emirati","accent","uae dialect","gulf","local dialect"]},
+{v:"Read and write Arabic",k:["read and write arabic","read","write","reading","writing","alphabet","script"]},
+{v:"Arabic for school students",k:["school students","school","kid","kids","child","children","student"]},
+{v:"Corporate training",k:["corporate training","corporate","company","staff","employees","business"]},
+{v:"Not sure yet",k:["not sure yet","not sure","dont know","help me choose","unsure"]}]},
+{key:"format",label:"Format",type:"choice",q:"How would you like to learn?",chips:["Group course","One to one","Online","On company premises"],opts:[
+{v:"Group course",k:["group course","group","together","with others","classmates"]},
+{v:"One to one",k:["one to one","individual","private","personal","one on one","1 to 1","flexible"]},
+{v:"Online",k:["online","zoom","remote","from home","e-learning","elearning"]},
+{v:"On company premises",k:["on company premises","premises","company","office","at work"]}]},
+{key:"level",label:"Level",type:"choice",q:"What is your current Arabic level?",chips:["Complete beginner","Know the alphabet","Intermediate","Not sure"],opts:[
+{v:"Complete beginner",k:["complete beginner","beginner","zero","nothing","none","level 1","starting"]},
+{v:"Know the alphabet",k:["know the alphabet","alphabet","basic","some words","elementary","level 2","few phrases"]},
+{v:"Intermediate",k:["intermediate","level 3","grammar","good","advanced","level 4","fluent"]},
+{v:"Not sure",k:["not sure","dont know","unsure","test me","no idea"]}]},
+{key:"days",label:"Preferred days and times",type:"text",q:"Which days and times suit you? The center is open Saturday to Thursday, 8am to 8pm.",ph:"e.g. Sunday evenings"},
+{key:"who",label:"Name",type:"name",q:"Your name?",ph:"Your name"},
+{key:"phone",label:"Phone or WhatsApp",type:"phone",q:"Best phone or WhatsApp number to reach you?",ph:"+971 ..."}
+],
+kb:[
+{id:"demo",book:true,k:["demo","free demo","demo class","free class","trial","try","book","register","registration","sign up","enrol","enroll","join","request","start learning"],a:""},
+{id:"fees",k:["fee","fees","price","prices","cost","how much","charge","payment","pay","pricing","plan","plans","aed","dirham"],a:"Each level is 20 hours. Level 1 (Beginners, plus basic Arabic rules): AED 1200. Level 2 (Elementary, plus daily-life vocabulary): AED 1300. Level 3 (Intermediate, plus full grammar): AED 1400. Level 4 (Secondary, plus word vocabulary): AED 1500. Group, one-to-one and corporate options are listed on the Fees page."},
+{id:"levels",k:["level","levels","which level","my level","beginner","beginners","intermediate","elementary","secondary","advanced","where do i start","placement"],a:"There are four levels of 20 hours each: Level 1 Beginners, Level 2 Elementary, Level 3 Intermediate, Level 4 Secondary. Not sure where you fit? Request the free demo class and the teacher will place you."},
+{id:"emirati",k:["emirati","emirati accent","accent","dialect","uae arabic","gulf","local","khaleeji","emarati"],a:"Yes, Alitqan teaches Arabic with an Emirati accent. The classes are taught by credentialed, native-speaking teachers. For details you can call the instructor directly on +971 50 765 6199."},
+{id:"spoken",k:["spoken","speaking","speak","conversation","conversational","talk","grammar","vocabulary","listening"],a:"The Spoken Arabic course is for beginners and professionals who know the alphabet or some phrases but lack the structure behind them. It covers grammar, vocabulary and listening sessions, aiming at simple everyday spoken and written sentences."},
+{id:"readwrite",k:["read","write","reading","writing","script","alphabet","letters","pronunciation","read and write"],a:"The Read and Write Arabic program covers speaking and vocabulary, grammar and structure, pronunciation, and comprehension with basic reading. The teacher tracks each student's progress every lesson."},
+{id:"reviews",k:["review","reviews","testimonial","testimonials","feedback","recommend","rating","students say","reputation"],a:"Learners from countries such as Russia, Poland, China, Indonesia, Lithuania, South Korea, Bulgaria, the USA and Turkmenistan have left testimonials on the website, many praising the teacher's patience and the Emirati accent classes."},
+{id:"school",k:["school","kids","kid","child","children","student","students","teenager","young"],a:"There is an Arabic for School Students course. For age groups, class sizes and timings the team will confirm the details with you."},
+{id:"group",k:["group","group course","group training","class size","together","classmates"],a:"In the group course you join students starting at the same level as you."},
+{id:"individual",k:["individual","one to one","one-to-one","private","personal","flexible","1 on 1","one on one","tutor"],a:"The one-to-one course is built around your language requirements, with classes arranged to suit your preferred times."},
+{id:"corporate",k:["corporate","company","companies","employees","staff","business","office","workplace","premises","team"],a:"Corporate training is held on your company premises, with time and days set around the company's needs. Companies regularly ask the center to enrol their employees."},
+{id:"online",k:["online","e-learning","elearning","zoom","remote","from home","distance","virtual","module","modules","books"],a:"Yes. Registered students get e-learning modules and online classes, with Arabic books and materials available to study anytime, anywhere. Online classes are listed in every fee plan."},
+{id:"hours",k:["hours","timing","timings","open","opening","schedule","when","time","days","friday","saturday","thursday","weekend","evening","available"],a:"The center is open Saturday to Thursday, 8:00 am to 8:00 pm. Friday is not listed as a working day."},
+{id:"location",k:["where","location","address","located","map","find you","directions","villa","metro","airport","dubai","come"],a:"Alitqan Arabic Language Center: Villa 3, Street 19A, Airport Free Zone Metro Station, Dubai, U.A.E."},
+{id:"contact",k:["contact","phone","call","whatsapp","email","number","mobile","reach","write","get in touch"],a:"Phone: +971 50 765 6199 or +971 56 842 2274. Email: abdulqader@alitqancenter.com. You can also use the contact form on the website."},
+{id:"instructor",k:["instructor","teacher","abdul","qader","qadir","founder","who teaches","native","tutor","experience","trainer"],a:"The founder and instructor is Abdul Qadir Sayed Kareem, raised and educated in the UAE. He has taught Arabic since 2005 and developed a short-term syllabus for learners who want to fit into local life quickly."},
+{id:"duration",k:["how long","duration","how many hours","how many weeks","months","long does","length","time to learn","fast","quickly"],a:"Each level is 20 hours. The center focuses on the basics of reading, writing, speaking and listening, and aims to shorten the duration of study."},
+{id:"materials",k:["materials","course books","book","stationery","stationary","support","live support","audio","video","offline"],a:"The plans list course books, full stationery, online classes, audio and video support and live support. Levels 2 and 3 also list offline access."},
+{id:"why",k:["why","learn arabic","important","benefit","benefits","jobs","career","work","employability","useful","need arabic"],a:"Arabic helps you feel at home in the UAE, build real relationships with Emiratis and native speakers, and it is an advantage for employability and career growth. Many companies ask the center to enrol their employees."},
+{id:"goals",k:["objectives","goals","outcome","outcomes","achieve","able to","learn to","signs","dialogues","pronunciation","mission","vision"],a:"By the end of the Read and Write module you can recognise and use Arabic script in context, compose short dialogues and notes, read common signs and formal indicators, build simple everyday sentences and reach a reasonable standard of pronunciation."},
+{id:"progress",k:["progress","track","tracked","assessment","homework","level up","improve","improvement"],a:"The trainer tracks every student's progress every lesson, so you get the most from your study package."},
+{id:"culture",k:["culture","traditions","islamic","quran","religion","muslim","non muslim"],a:"The courses aim to help you understand the Arabic language and the culture and traditions of the society around you. The center is also dedicated to spreading Arabic as a common language in the local community."},
+{id:"languages",k:["english","russian","translate","urdu","french","language of instruction","explain in"],a:"Please ask the team which languages the teacher can use to explain in class. The instructor speaks, reads and writes several languages, and they will confirm what is available for your course."},
+{id:"hello",k:["hello","hi","hey","salam","good morning","good evening","marhaba"],a:"Hello and welcome. Ask me about courses, levels, fees, timings or say free demo class."},
+{id:"thanks",k:["thanks","thank you","shukran","great","perfect"],a:"You are welcome. Anything else about the courses?"}
+]};
+
+</script>
+<script>
+(function(g){
+var C=g.CFG;
+function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9؀-ۿ\s]/g,' ').replace(/\s+/g,' ').trim();}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];if(Math.abs(m-n)>2)return 9;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));}return d[m][n];}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|s|ly)$/,''):w;}
+function tokScore(t,k){if(t===k)return 3;var a=stem(t),b=stem(k);if(a===b)return 2.6;if(a.length>=4&&b.length>=4&&(a.indexOf(b)===0||b.indexOf(a)===0))return 2.2;if(b.length>=5&&a.length>=4&&lev(a,b)<=1)return 2;if(b.length>=8&&lev(a,b)<=2)return 2;return 0;}
+function best(toks,p){var b=0;for(var i=0;i<toks.length;i++){var s=tokScore(toks[i],p);if(s>b)b=s;}return b;}
+function score(e,q,toks){var s=0,seen={};for(var i=0;i<e.k.length;i++){var k=norm(e.k[i]);if(!k)continue;if(k.indexOf(' ')<0){var sk=stem(k);if(seen[sk])continue;seen[sk]=1;}if(k.indexOf(' ')>0){if((' '+q+' ').indexOf(' '+k+' ')>-1)s+=4;else{var ps=k.split(' '),h=0;for(var j=0;j<ps.length;j++)if(best(toks,ps[j])>=2)h++;if(h===ps.length)s+=3;}}else s+=best(toks,k);}return s;}
+function match(text){var q=norm(text),toks=q.split(' ').filter(Boolean);if(!toks.length)return null;var top=null,ts=0;for(var i=0;i<C.kb.length;i++){var s=score(C.kb[i],q,toks);if(s>ts){ts=s;top=C.kb[i];}}return ts>=2?top:null;}
+g.__match=function(t){var r=match(t);return r?r.id:null;};
+g.__norm=norm;g.__score=function(q){var n=norm(q),t=n.split(' ');return C.kb.map(function(e){return [e.id,score(e,n,t)];}).filter(function(x){return x[1]>0;});};g.__tokScore=tokScore;
+if(typeof document==='undefined')return;
+var $=function(s){return document.querySelector(s);};
+var btn=$('#aw-btn'),panel=$('#aw-panel'),log=$('#aw-log'),chips=$('#aw-chips'),form=$('#aw-form'),inp=$('#aw-in');
+var flow=null,data={};
+function say(t,who){var d=document.createElement('div');d.className='aw-m '+(who||'bot');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.className='aw-chip';b.textContent=c;b.onclick=function(){handle(c);};chips.appendChild(b);});}
+function menu(){setChips(C.chips);}
+function ask(){var st=C.flow[flow];say(st.q);setChips(st.chips||['Cancel']);if(st.chips&&st.chips.indexOf('Cancel')<0)chips.appendChild(cancelChip());inp.placeholder=st.ph||'Type here';}
+function cancelChip(){var b=document.createElement('button');b.type='button';b.className='aw-chip aw-x';b.textContent='Cancel';b.onclick=function(){handle('Cancel');};return b;}
+function startFlow(){flow=0;data={};say(C.flowIntro);ask();}
+function finish(){var lines=[];C.flow.forEach(function(s){lines.push(s.label+': '+data[s.key]);});say(C.doneTitle+'\n'+lines.join('\n')+'\n\n'+C.doneNote);flow=null;inp.placeholder='Ask a question';setChips(C.chips);}
+function stepInput(t){var st=C.flow[flow];var v=t.trim();if(/^(cancel|stop|exit|nevermind|never mind)$/i.test(v)){flow=null;say('No problem, nothing was sent. '+C.afterCancel);menu();inp.placeholder='Ask a question';return;}
+if(st.type==='phone'){var dg=v.replace(/\D/g,'');if(dg.length<7){say('That number looks too short. Please include the digits including area code.');return;}}
+else if(st.type==='name'){if(v.length<2){say('Please type your name.');return;}}
+else if(st.type==='choice'&&st.opts){var m=null,nt=norm(v),tk=nt.split(' ');for(var i=0;i<st.opts.length;i++){var o=st.opts[i];var sc=score({k:o.k},nt,tk);if(sc>=2&&(!m||sc>m.s))m={s:sc,v:o.v};}if(m)v=m.v;else if(!st.free){say('Please pick one of the options below.');setChips(st.chips);return;}}
+data[st.key]=v;flow++;if(flow>=C.flow.length){finish();}else ask();}
+var bookRe=null;
+function handle(t){t=String(t).trim();if(!t)return;say(t,'me');if(flow!==null){stepInput(t);return;}
+var q=norm(t);var m=match(t);
+if(m&&m.book){startFlow();return;}
+if(m){say(m.a);setChips(m.chips||C.chips);return;}
+say(C.fallback);setChips(C.chips);}
+function open(){panel.classList.add('open');btn.classList.add('hide');if(!log.children.length){say(C.greet);menu();}setTimeout(function(){inp.focus();},50);}
+btn.onclick=open;$('#aw-close').onclick=function(){panel.classList.remove('open');btn.classList.remove('hide');};
+form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';handle(v);};
+document.addEventListener('click',function(e){var a=e.target.closest('[data-aw]');if(a){e.preventDefault();open();if(a.getAttribute('data-aw')==='book')handle(C.bookPhrase);}});
+})(typeof window!=='undefined'?window:globalThis);
+
+</script>
+</body>
+</html>

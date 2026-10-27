@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AutoVice Miami | Demo page</title>
+<meta name="description" content="Demo page for AutoVice auto repair in downtown Miami: services, makes, certifications, financing and appointment requests.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bk:#0f0f10;--bk2:#19191b;--bk3:#252528;--red:#ff3b1f;--red2:#d92b12;--wh:#f5f5f3;--mute:#a4a4a8;--line:#2f2f33;--hd:'Barlow Condensed','Arial Narrow',sans-serif;--bd:'Barlow',system-ui,sans-serif;
+--w-bg:#19191b;--w-ink:#f5f5f3;--w-acc:#ff3b1f;--w-accink:#fff;--w-font:var(--bd);--w-r:4px;--w-hd:#ff3b1f;--w-hdink:#fff;--w-log:#0f0f10;--w-bot:#2a2a2e;--w-botink:#f5f5f3;--w-chip:#f5f5f3}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.55 var(--bd);color:var(--wh);background:var(--bk);-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--hd);text-transform:uppercase;font-weight:800;line-height:.95;margin:0;letter-spacing:.01em}
+.top{background:var(--bk2);border-bottom:2px solid var(--red);position:sticky;top:0;z-index:40}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:62px}
+.chip{background:#fff;padding:6px 12px;border-radius:3px;display:block}
+.chip img{height:30px;width:auto}
+.tel{font:700 18px var(--hd);letter-spacing:.04em;text-decoration:none;color:var(--wh);display:none}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--red);color:#fff;text-decoration:none;font:700 17px var(--hd);letter-spacing:.06em;text-transform:uppercase;padding:12px 20px;border-radius:2px;clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+.btn.ghost{background:transparent;border:2px solid var(--wh);clip-path:none;padding:10px 18px}
+.btn.sm{padding:9px 18px;font-size:15px}
+.hero{padding:34px 0 0;background:repeating-linear-gradient(115deg,#121213 0 22px,#151516 22px 44px);position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-60px;top:0;bottom:0;width:38%;background:var(--red);transform:skewX(-14deg);opacity:.9}
+.hero .wrap{position:relative}
+.tag{display:inline-block;background:var(--red);padding:3px 10px;font:700 14px var(--hd);letter-spacing:.14em;text-transform:uppercase}
+.hero h1{font-size:clamp(56px,17vw,150px);margin:14px 0 8px}
+.hero h1 span{display:block;color:transparent;-webkit-text-stroke:2px var(--wh)}
+.hero p{max-width:520px;margin:0 0 20px;color:#e0e0dc;font-size:17px}
+.hero .btns{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.strip{background:var(--bk2);border-top:1px solid var(--line);position:relative}
+.strip .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.strip div{padding:14px 10px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
+.strip b{display:block;font:800 26px var(--hd);color:var(--red)}
+.strip span{font-size:13px;color:var(--mute)}
+section{padding:46px 0}
+.h2{margin-bottom:24px}
+.h2 h2{font-size:clamp(38px,9vw,64px)}
+.h2 h2 em{font-style:normal;color:var(--red)}
+.h2 p{color:var(--mute);margin:8px 0 0;max-width:560px}
+.jobs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.jobs li{display:grid;grid-template-columns:46px 1fr;gap:4px 12px;padding:16px 0;border-bottom:1px solid var(--line);align-items:start}
+.jobs .n{font:800 30px var(--hd);color:var(--red);grid-row:span 2}
+.jobs h3{font-size:26px}
+.jobs p{margin:0;color:#c8c8cc;font-size:15px}
+.jobs button{grid-column:2;justify-self:start;background:none;border:0;color:var(--red);font:700 15px var(--hd);letter-spacing:.08em;text-transform:uppercase;padding:2px 0;cursor:pointer}
+.makes{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.makes span{background:var(--bk3);padding:9px 12px;font:600 17px var(--hd);letter-spacing:.04em;text-transform:uppercase;border-left:3px solid var(--red)}
+.alt{background:var(--bk2)}
+.trust{display:grid;gap:12px}
+.trust div{background:var(--bk3);padding:18px;border-top:4px solid var(--red)}
+.trust h3{font-size:28px;margin-bottom:6px}
+.trust p{margin:0;color:#c8c8cc;font-size:15px}
+.certs{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.certs span{border:1px solid var(--red);color:var(--wh);padding:6px 12px;font:700 15px var(--hd);letter-spacing:.1em}
+.rev{display:grid;gap:14px;align-items:center}
+.rev .big{font:800 clamp(80px,22vw,150px)/.9 var(--hd);color:var(--red)}
+.rev .big small{display:block;font-size:.26em;color:var(--wh);letter-spacing:.1em}
+.rev blockquote{margin:0;background:var(--bk3);padding:20px;border-left:5px solid var(--red);font-size:17px}
+.rev cite{display:block;margin-top:10px;font:700 15px var(--hd);letter-spacing:.1em;text-transform:uppercase;font-style:normal;color:var(--mute)}
+.fin{display:flex;flex-wrap:wrap;gap:8px}
+.fin span{background:#fff;color:#111;padding:9px 16px;font:700 18px var(--hd);letter-spacing:.04em;border-radius:2px}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{cursor:pointer;font:700 22px var(--hd);text-transform:uppercase;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faq summary:after{content:"+";color:var(--red);font-size:26px}
+.faq details[open] summary:after{content:"\2212"}
+.faq p{margin:8px 0 0;color:#c8c8cc;font-size:15px}
+.visit{background:var(--red);color:#fff}
+.visit .wrap{display:grid;gap:18px}
+.visit h2{font-size:clamp(40px,10vw,76px)}
+.visit dl{margin:0;display:grid;gap:10px}
+.visit dt{font:700 14px var(--hd);letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.visit dd{margin:0;font:700 22px var(--hd);letter-spacing:.02em}
+.visit .btn{background:var(--bk);clip-path:none}
+footer{padding:22px 0 90px;font-size:13px;color:var(--mute);text-align:center;background:var(--bk)}
+@media(min-width:760px){
+.tel{display:block}
+.strip .wrap{grid-template-columns:repeat(4,1fr)}
+.jobs{display:grid;grid-template-columns:1fr 1fr;column-gap:36px}
+.makes{grid-template-columns:repeat(4,1fr)}
+.trust{grid-template-columns:repeat(3,1fr)}
+.rev{grid-template-columns:.8fr 1.2fr;gap:36px}
+.visit .wrap{grid-template-columns:1.2fr 1fr;align-items:center}
+}
+.flow{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:f;border-left:3px solid var(--red)}
+.flow li{counter-increment:f;padding:12px 0 12px 20px;position:relative;display:grid;gap:2px}
+.flow li:before{content:counter(f);position:absolute;left:-17px;top:12px;width:31px;height:31px;background:var(--red);display:grid;place-items:center;font:800 18px var(--hd)}
+.flow b{font:800 26px var(--hd);text-transform:uppercase}
+.flow span{color:#c8c8cc;font-size:15px}
+@media(min-width:760px){.flow{grid-template-columns:repeat(3,1fr);border-left:0;gap:0 24px}.flow li{padding:48px 0 14px 0;border-top:3px solid var(--red)}.flow li:before{left:0;top:-3px}}
+#aw-btn{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--w-acc);color:var(--w-accink);font:700 15px/1 var(--w-font);padding:14px 18px;border-radius:var(--w-r);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+#aw-btn.hide{display:none}
+#aw-btn svg{width:20px;height:20px}
+#aw-panel{position:fixed;right:12px;bottom:12px;z-index:61;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:var(--w-bg);color:var(--w-ink);border-radius:var(--w-r);box-shadow:0 18px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--w-font);border:1px solid rgba(0,0,0,.08)}
+#aw-panel.open{display:flex}
+.aw-h{background:var(--w-hd);color:var(--w-hdink);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.aw-h b{display:block;font-size:15px}.aw-h small{opacity:.8;font-size:12px}
+#aw-close{background:none;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer;padding:4px 8px}
+#aw-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--w-log)}
+.aw-m{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-line;word-wrap:break-word}
+.aw-m.bot{background:var(--w-bot);color:var(--w-botink);align-self:flex-start;border-bottom-left-radius:4px}
+.aw-m.me{background:var(--w-acc);color:var(--w-accink);align-self:flex-end;border-bottom-right-radius:4px}
+#aw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 2px;background:var(--w-log);max-height:30%;overflow-y:auto}
+.aw-chip{border:1px solid var(--w-acc);background:transparent;color:var(--w-chip);padding:6px 11px;border-radius:99px;font:600 13px var(--w-font);cursor:pointer}
+.aw-chip:hover{background:var(--w-acc);color:var(--w-accink)}
+.aw-x{border-color:#999;color:#777}
+#aw-form{display:flex;gap:6px;padding:10px 12px;background:var(--w-log);border-top:1px solid rgba(0,0,0,.08)}
+#aw-in{flex:1;min-width:0;padding:10px 12px;border:1px solid #bbb;border-radius:10px;font:16px var(--w-font);background:#fff;color:#111}
+#aw-form button{border:0;background:var(--w-acc);color:var(--w-accink);font:700 14px var(--w-font);padding:0 14px;border-radius:10px;cursor:pointer}
+.aw-f{font-size:11px;text-align:center;padding:4px;background:var(--w-log);opacity:.7}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="chip" href="#top"><img src="img/autovice-logo.png" alt="AutoVice" width="126" height="30"></a>
+<a class="tel" href="tel:+13055637272">(305) 563-7272</a>
+<button class="btn sm" data-aw="book">Book service now</button>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<span class="tag">Downtown Miami &middot; Mon&ndash;Sat 8&ndash;6</span>
+<h1>Auto repair<span>done right</span></h1>
+<p>Fully certified, full-service repair for all makes and models on W Flagler St. Honest recommendations, accurate diagnostics and fast turnarounds.</p>
+<div class="btns"><button class="btn" data-aw="book">Request an appointment</button><a class="btn ghost" href="#services">See services</a></div>
+</div>
+<div class="strip"><div class="wrap">
+<div><b>3333+</b><span>Google reviews</span></div>
+<div><b>ASE &middot; AAA</b><span>certified team</span></div>
+<div><b>ALL</b><span>makes and models</span></div>
+<div><b>6 DAYS</b><span>Mon&ndash;Sat, 8 AM&ndash;6 PM</span></div>
+</div></div></div>
+
+<section id="services"><div class="wrap">
+<div class="h2"><h2>The <em>job</em> board</h2><p>Nine service lines. Pick the one on your mind, or request a visit and the team will look at the car.</p></div>
+<ol class="jobs">
+<li><span class="n">01</span><h3>Oil change</h3><p>Keeps the engine clean, cool and protected from wear, which extends its life.</p><button data-aw="book">Book it &rarr;</button></li>
+<li><span class="n">02</span><h3>Brake repair</h3><p>Full inspection of pads, rotors, calipers, fluid and lines, then the repair is explained before work starts.</p><button data-aw="book">Book it &rarr;</button></li>
+<li><span class="n">03</span><h3>Transmission</h3><p>Fluid changes, diagnostics and repairs so your car shifts smoothly.</p><button data-aw="book">Book it &rarr;</button></li>
+<li><span class="n">04</span><h3>Engine repairs</h3><p>Certified diagnosis and repair to restore power, reliability and efficiency.</p><button data-aw="book">Book it &rarr;</button></li>
+<li><span class="n">05</span><h3>Battery services</h3><p>Battery services, checked by the certified team.</p><button data-aw="book">Book it &rarr;</button></li>
+<li><span class="n">06</span><h3>Tire services</h3><p>Inspections, rotations, repairs and replacements, with precision balancing and alignment.</p><button data-aw="book">Book it &rarr;</button></li>
+<li><span class="n">07</span><h3>Power steering</h3><p>Steering service by the same certified team.</p><button data-aw="book">Book it &rarr;</button></li>
+<li><span class="n">08</span><h3>Cooling system</h3><p>Cooling system service from the same certified team.</p><button data-aw="book">Book it &rarr;</button></li>
+<li><span class="n">09</span><h3>Body shop</h3><p>Dent removal, paint matching and collision and frame repair, including hybrid and electric vehicles.</p><button data-aw="book">Book it &rarr;</button></li>
+</ol>
+</div></section>
+
+<section><div class="wrap">
+<div class="h2"><h2>How a visit <em>goes</em></h2><p>As the shop describes its process on the brake and body shop pages.</p></div>
+<ol class="flow">
+<li><b>Book</b><span>Pick a date and time online or call the shop.</span></li>
+<li><b>Inspect</b><span>A full inspection, for brakes that means pads, rotors, calipers, fluid and lines.</span></li>
+<li><b>Explain</b><span>The team walks you through what is needed and gives a transparent estimate before repairs.</span></li>
+<li><b>Repair</b><span>Work with high-quality parts that meet or exceed OEM specs.</span></li>
+<li><b>Test</b><span>The system is tested thoroughly before you drive away.</span></li>
+<li><b>Updates</b><span>Ask for your vehicle's progress anytime while it is in the shop.</span></li>
+</ol>
+</div></section>
+
+<section class="alt"><div class="wrap">
+<div class="h2"><h2>Your car is <em>on the list</em></h2><p>AutoVice services all makes and models. The shop lists these makes on its site.</p></div>
+<div class="makes"><span>Acura</span><span>Audi</span><span>BMW</span><span>Buick</span><span>Cadillac</span><span>Chevrolet</span><span>Chrysler</span><span>Dodge</span><span>Fiat</span><span>Ford</span><span>GMC</span><span>Honda</span><span>Hummer</span><span>Hyundai</span><span>Infiniti</span><span>Isuzu</span><span>Jaguar</span><span>Jeep</span><span>Kia</span><span>Land Rover</span><span>Lexus</span><span>Lincoln</span><span>Mazda</span><span>Mercedes-Benz</span><span>Mercury</span><span>Mini</span><span>Mitsubishi</span><span>Nissan</span><span>Plymouth</span><span>Pontiac</span><span>Porsche</span><span>Saab</span><span>Saturn</span><span>Scion</span><span>Smart</span><span>Subaru</span><span>Suzuki</span><span>Toyota</span><span>Volkswagen</span><span>Volvo</span></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="h2"><h2>What <em>matters</em> here</h2></div>
+<div class="trust">
+<div><h3>Certified</h3><p>ASE and AAA certified team. Credentials include CAR, Technet and Worldpac, and the body shop is EV certified.</p></div>
+<div><h3>Streamlined</h3><p>From online scheduling to quick turnaround times, every step is simplified so you can get back on the road faster.</p></div>
+<div><h3>Backed</h3><p>Services are supported by warranty providers Silver Rock, GWC and Assurant.</p></div>
+</div>
+<div class="certs"><span>ASE</span><span>AAA</span><span>CAR</span><span>TECHNET</span><span>WORLDPAC</span><span>EV CERTIFIED</span></div>
+</div></section>
+
+<section class="alt"><div class="wrap rev">
+<div class="big">3333+<small>REVIEWS ON GOOGLE</small></div>
+<div><blockquote>Alex was AWESOME! Easy going, straight shooter. Advised me of what I needed, and without missing a beat on the things I wanted done. Easy process, no hassle and quick turn around shop. Can't recommend enough!<cite>Madison &middot; customer review</cite></blockquote></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="h2"><h2>Pay over <em>time</em></h2><p>Unexpected repair? The Financing page lists these options. Terms depend on the provider and your credit.</p></div>
+<div class="fin"><span>EasyPay</span><span>Snap Finance</span><span>Koalafi</span><span>Klarna</span><span>Affirm</span></div>
+</div></section>
+
+<section class="alt faq"><div class="wrap">
+<div class="h2"><h2>Quick <em>answers</em></h2></div>
+<details><summary>What are your hours?</summary><p>Monday through Saturday, 8:00 AM to 6:00 PM.</p></details>
+<details><summary>Where are you?</summary><p>875 W Flagler St, Miami, FL 33130, in downtown Miami.</p></details>
+<details><summary>What vehicles do you work on?</summary><p>All makes and models, with diagnostics and repairs backed by ASE, AAA and Technet certifications.</p></details>
+<details><summary>Can I book online?</summary><p>Yes. Scheduling an appointment online takes a few clicks to lock in a service date and time.</p></details>
+<details><summary>Is it a cost-effective alternative to the dealership?</summary><p>The shop says it provides dealership-quality repairs at more competitive rates, without inflated pricing.</p></details>
+<details><summary>Do you work on hybrid and electric vehicles?</summary><p>The body shop page says the team is EV certified and handles hybrid and electric vehicles. For other work on an EV, ask the team to confirm.</p></details>
+<details><summary>What if I have bad or no credit?</summary><p>The Financing page lists several providers, including a lease-to-own option for good, poor or no credit history. Approval and terms depend on the provider.</p></details>
+<details><summary>Any discounts?</summary><p>Service specials and discounts appear periodically. Ask the team or check the Coupons page.</p></details>
+<details><summary>Can I check on my car while it is in the shop?</summary><p>Yes. The team is happy to update you on your vehicle's progress anytime.</p></details>
+</div></section>
+
+<section class="visit"><div class="wrap">
+<div><h2>Bring it in</h2><p style="margin:10px 0 18px;font-size:17px">Tell us the car, the service and the day that works.</p><button class="btn" data-aw="book">Request an appointment</button></div>
+<dl><div><dt>Address</dt><dd>875 W Flagler St, Miami, FL 33130</dd></div><div><dt>Phone</dt><dd>(305) 563-7272</dd></div><div><dt>Hours</dt><dd>Mon &ndash; Sat, 8:00 AM &ndash; 6:00 PM</dd></div></dl>
+</div></section>
+</main>
+
+<footer>AutoVice, Miami &middot; Demo &middot; prepared by Gevorg Hovhannisyan</footer>
+
+<button id="aw-btn" type="button" aria-label="Open assistant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>Book or ask</button>
+<div id="aw-panel" role="dialog" aria-label="Shop assistant">
+<div class="aw-h"><div><b>AutoVice Miami</b><small>Shop assistant (demo)</small></div><button id="aw-close" aria-label="Close">&times;</button></div>
+<div id="aw-log"></div><div id="aw-chips"></div>
+<form id="aw-form"><input id="aw-in" autocomplete="off" placeholder="Ask a question" aria-label="Your message"><button>Send</button></form>
+<div class="aw-f">Demo only. Nothing is sent to the shop.</div>
+</div>
+<script>
+(function(){
+var MAKES=["Acura","Audi","BMW","Buick","Cadillac","Chevrolet","Chrysler","Dodge","Fiat","Ford","GMC","Honda","Hummer","Hyundai","Infiniti","Isuzu","Jaguar","Jeep","Kia","Land Rover","Lexus","Lincoln","Mazda","Mercedes-Benz","Mercury","Mini","Mitsubishi","Nissan","Plymouth","Pontiac","Porsche","Saab","Saturn","Scion","Smart","Subaru","Suzuki","Toyota","Volkswagen","Volvo"];
+var mk=MAKES.map(function(m){var k=[m];if(m==="Mercedes-Benz")k=["mercedes","benz","merc","mercedes benz"];if(m==="Volkswagen")k=["volkswagen","vw","wv"];if(m==="Chevrolet")k=["chevrolet","chevy","chevrolette"];if(m==="Land Rover")k=["land rover","landrover","range rover"];if(m==="GMC")k=["gmc","sierra"];if(m==="Mini")k=["mini cooper","mini"];return{v:m,k:k};});
+window.CFG={
+greet:"Hi, I'm the AutoVice assistant. Ask about services, the makes we work on, hours, financing or warranty, or request an appointment.",
+chips:["Book a service","Services","What makes do you service?","Hours and address","Financing","Certifications"],
+bookPhrase:"book a service",
+fallback:"I don't have that detail from the AutoVice website, so the team will confirm it. Call (305) 563-7272 and they will help. Meanwhile try one of the options below.",
+afterCancel:"Ask me anything else about the shop.",
+flowIntro:"Let's set up an appointment request. I'll ask for the car, the service and a preferred day.",
+doneTitle:"Appointment request ready",
+doneNote:"Sent to the team (demo: nothing is actually sent). The shop confirms the time and any estimate with you. Phone: (305) 563-7272.",
+flow:[
+{key:"make",label:"Car make",type:"choice",free:true,q:"What make is the car?",chips:["Toyota","Honda","Ford","Chevrolet","BMW","Mercedes-Benz","Nissan","Hyundai"],ph:"or type your make",opts:mk},
+{key:"model",label:"Model and year",type:"text",q:"Model and year? (for example Camry 2016)",ph:"Model and year"},
+{key:"service",label:"Service",type:"choice",free:true,q:"Which service do you need?",chips:["Oil change","Brake repair","Transmission","Engine repair","Battery","Tires","Power steering","Cooling system","Body shop","Not sure, need a check"],ph:"or describe the problem",opts:[
+{v:"Oil change",k:["oil change","oil","lube"]},
+{v:"Brake repair",k:["brake repair","brake","brakes","grinding","squealing"]},
+{v:"Transmission",k:["transmission","gearbox","shifting","gears"]},
+{v:"Engine repair",k:["engine repair","engine","motor","check engine","stalling"]},
+{v:"Battery",k:["battery","batery","dead battery","jump"]},
+{v:"Tires",k:["tires","tire","tyre","tyres","flat","alignment","rotation"]},
+{v:"Power steering",k:["power steering","steering"]},
+{v:"Cooling system",k:["cooling system","cooling","overheating","radiator","coolant"]},
+{v:"Body shop",k:["body shop","body","collision","dent","paint","accident","bumper"]},
+{v:"Not sure, need a check",k:["not sure, need a check","not sure","dont know","check","diagnostic","diagnosis","inspect"]}]},
+{key:"day",label:"Preferred day and time",type:"text",q:"Which day and time suit you? The shop is open Mon to Sat, 8 AM to 6 PM.",ph:"e.g. Saturday morning"},
+{key:"who",label:"Name",type:"name",q:"Your name?",ph:"Your name"},
+{key:"phone",label:"Phone",type:"phone",q:"Best phone number for the confirmation?",ph:"(305) ..."}
+],
+kb:[
+{id:"book",book:true,k:["book","booking","appointment","schedule","reserve","bring my car","drop off","drop my car","make an appointment","book a service","book service","request"],a:""},
+{id:"hours",k:["hours","open","opening","close","closing","when","time","saturday","sunday","weekend","days"],a:"AutoVice is open Monday to Saturday, 8:00 AM to 6:00 PM."},
+{id:"location",k:["where","address","location","located","directions","find you","flagler","downtown","miami","street","map"],a:"875 W Flagler St, Miami, FL 33130, in downtown Miami."},
+{id:"phone",k:["phone","call","number","contact","reach","talk","speak to"],a:"Call (305) 563-7272. You can also use the Book Service Now button on the website."},
+{id:"services",k:["services","service list","what do you do","what do you fix","what do you offer","offer","repair","repairs","maintenance"],a:"Services: oil change, brake repair, transmission services, engine repairs, battery services, tire services, power steering, cooling system, and body shop services."},
+{id:"oil",k:["oil","oil change","lube","synthetic","fluid"],a:"Oil changes keep your engine clean, cool and protected from wear, which helps extend its life and performance. You can book one online or by phone."},
+{id:"brake",k:["brake","brakes","brake repair","pads","rotors","grinding","squealing","vibration","stopping"],a:"Brake service starts with a full system inspection of pads, rotors, calipers, fluid and lines. The team walks you through what is needed before repairs, uses parts that meet or exceed OEM specs and tests the system before you drive away."},
+{id:"transmission",k:["transmission","gearbox","shifting","slipping","trans","gears"],a:"Transmission services include fluid changes, diagnostics and repairs by the certified team, to keep shifting smooth."},
+{id:"engine",k:["engine","motor","check engine","engine light","stalling","misfire","overheat"],a:"The certified team diagnoses and repairs engine issues to restore power, reliability and efficiency. For a warning light, book a visit so they can run diagnostics. I can't diagnose a problem from here."},
+{id:"battery",k:["battery","batteries","batery","dead battery","starter","alternator","jump start","wont start"],a:"Battery services are on the list. For a car that won't start, book a visit so the team can check what is going on. I can't tell the cause from here."},
+{id:"tires",k:["tire","tires","tyre","tyres","flat","puncture","alignment","balancing","rotation","tread"],a:"Tire services cover inspections, rotations, repairs and replacements, plus precision balancing and alignment. The team can recommend options for your driving style and budget."},
+{id:"steering",k:["power steering","steering","steering wheel","hard to steer"],a:"Power steering is on the service list. Book a visit and the team will inspect it."},
+{id:"cooling",k:["cooling","cooling system","coolant","radiator","overheating","ac","air conditioning","heat"],a:"Cooling system service is on the list. For overheating or leaks, book a visit so the team can inspect it. Air conditioning is not listed on the website, so please ask the team."},
+{id:"body",k:["body shop","body","collision","dent","dents","scratch","paint","accident","fender","frame","bumper","crash"],a:"The body shop handles everything from dent removal and paint matching to collision and frame repair, including hybrid and electric vehicles. It starts with an inspection, then a transparent estimate and repair options for you to approve."},
+{id:"makes",k:["make","makes","models","brand","brands","which cars","what cars","toyota","honda","ford","bmw","mercedes","nissan","chevy","chevrolet","hyundai","kia","audi","lexus","subaru","jeep","mazda","tesla","volkswagen","porsche","volvo","dodge","acura","infiniti","cadillac"],a:"AutoVice services all makes and models. The website lists Acura, Audi, BMW, Buick, Cadillac, Chevrolet, Chrysler, Dodge, Fiat, Ford, GMC, Honda, Hummer, Hyundai, Infiniti, Isuzu, Jaguar, Jeep, Kia, Land Rover, Lexus, Lincoln, Mazda, Mercedes-Benz, Mercury, Mini, Mitsubishi, Nissan, Plymouth, Pontiac, Porsche, Saab, Saturn, Scion, Smart, Subaru, Suzuki, Toyota, Volkswagen and Volvo. If yours is not listed, the team will confirm."},
+{id:"ev",k:["electric","ev","hybrid","tesla","prius"],a:"The body shop page says the team is EV certified and repairs hybrid and electric vehicles. For mechanical EV work, please ask the team to confirm."},
+{id:"certs",k:["certified","certification","certifications","ase","aaa","technet","worldpac","qualified","trained","credentials"],a:"The shop lists ASE, AAA, CAR, Technet and Worldpac certifications, and the body shop is also EV certified."},
+{id:"warranty",k:["warranty","guarantee","backed","silver rock","gwc","assurant","covered"],a:"Services are backed by warranty providers Silver Rock, GWC and Assurant. Ask the team how a warranty applies to your specific repair."},
+{id:"financing",k:["financing","finance","payment plan","payments","afford","klarna","affirm","snap","koalafi","easypay","monthly","credit","pay over time","installments"],a:"Financing options listed: EasyPay Finance, Snap Finance (lease-to-own), Koalafi, Klarna and Affirm. Terms depend on the provider and your credit, so apply through the Financing page or ask the team."},
+{id:"price",k:["how much for","how much is","how much does","price","prices","cost","how much","estimate","quote","expensive","cheap","charge","rates"],a:"I can't give a price without seeing the car. The shop provides estimates and explains the repair before starting. Request an appointment or call (305) 563-7272."},
+{id:"coupons",k:["coupon","coupons","discount","discounts","special","specials","deal","deals","offer","promo","savings"],a:"The shop periodically offers service specials and discounts. Ask the team or check the Coupons page for the latest."},
+{id:"status",k:["status","update","progress","ready","pick up","pickup","how is my car","done"],a:"Yes, the team will update you on your vehicle's progress anytime."},
+{id:"dealer",k:["dealership","dealer","vs dealer","cheaper","alternative","competitive"],a:"AutoVice positions itself as a dealership-quality alternative with more competitive rates and no inflated pricing. Ask for an estimate for your car."},
+{id:"turnaround",k:["how long","turnaround","fast","quick","same day","wait","waiting","takes"],a:"The shop is known for fast turnaround times, but the time depends on the job. The team will give you an estimate when you book."},
+{id:"reviews",k:["review","reviews","rating","reputation","trust","reliable","honest","google"],a:"AutoVice shows 3333+ reviews on Google. Customers mention clear communication and honest recommendations."},
+{id:"jobs",k:["job","jobs","career","careers","hiring","work for","employment","technician position"],a:"The shop is always looking for skilled, motivated professionals. See the Careers page or ask the team."},
+{id:"family",k:["family","family owned","owner","who owns","about","about us"],a:"The service pages describe AutoVice as family owned, with OEM-certified work, fast turnarounds and genuine parts."},
+{id:"process",k:["process","how does it work","what happens","steps","inspection","walk me through","estimate process","procedure"],a:"The shop starts with a full inspection, walks you through what is needed and gives a transparent estimate before any repair. Work uses high-quality parts that meet or exceed OEM specs, and the system is tested before you drive away."},
+{id:"parts",k:["parts","oem","genuine","aftermarket","quality parts"],a:"The service pages mention genuine parts and parts that meet or exceed OEM specs. Ask the team which parts apply to your car."},
+{id:"diag",k:["diagnostic","diagnostics","diagnose","diagnosis","check my car","what is wrong","warning light","noise","noises","strange"],a:"Accurate diagnostics are a core part of the shop's service. I can't diagnose from here, so request an appointment and the certified team will look at the car."},
+{id:"affirm",k:["affirm","3 months","6 months","12 months","term","terms"],a:"The Financing page lists Affirm with term options of 3, 6 or 12 months, subject to approval. The team can point you to the application."},
+{id:"snap",k:["bad credit","no credit","poor credit","lease to own","lease-to-own","bankruptcy"],a:"Snap Finance is listed as a lease-to-own option for good, poor or no credit history, with approval subject to the provider. Koalafi is also listed, with instant decisions. Details are on the Financing page."},
+{id:"ase",k:["what is ase","what does ase mean","aaa approved","approved auto repair"],a:"ASE and AAA are certifications the shop lists for its technicians and facility. For what a certification covers, the team can explain in person."},
+{id:"hello",k:["hello","hi","hey","good morning","good afternoon"],a:"Hello. Ask me about services, hours, financing or say book a service."},
+{id:"thanks",k:["thanks","thank you","cheers","great","perfect"],a:"You are welcome. Anything else about the shop?"}
+]};
+})();
+
+</script>
+<script>
+(function(g){
+var C=g.CFG;
+function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9؀-ۿ\s]/g,' ').replace(/\s+/g,' ').trim();}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];if(Math.abs(m-n)>2)return 9;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));}return d[m][n];}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|s|ly)$/,''):w;}
+function tokScore(t,k){if(t===k)return 3;var a=stem(t),b=stem(k);if(a===b)return 2.6;if(a.length>=4&&b.length>=4&&(a.indexOf(b)===0||b.indexOf(a)===0))return 2.2;if(b.length>=5&&a.length>=4&&lev(a,b)<=1)return 2;if(b.length>=8&&lev(a,b)<=2)return 2;return 0;}
+function best(toks,p){var b=0;for(var i=0;i<toks.length;i++){var s=tokScore(toks[i],p);if(s>b)b=s;}return b;}
+function score(e,q,toks){var s=0,seen={};for(var i=0;i<e.k.length;i++){var k=norm(e.k[i]);if(!k)continue;if(k.indexOf(' ')<0){var sk=stem(k);if(seen[sk])continue;seen[sk]=1;}if(k.indexOf(' ')>0){if((' '+q+' ').indexOf(' '+k+' ')>-1)s+=4;else{var ps=k.split(' '),h=0;for(var j=0;j<ps.length;j++)if(best(toks,ps[j])>=2)h++;if(h===ps.length)s+=3;}}else s+=best(toks,k);}return s;}
+function match(text){var q=norm(text),toks=q.split(' ').filter(Boolean);if(!toks.length)return null;var top=null,ts=0;for(var i=0;i<C.kb.length;i++){var s=score(C.kb[i],q,toks);if(s>ts){ts=s;top=C.kb[i];}}return ts>=2?top:null;}
+g.__match=function(t){var r=match(t);return r?r.id:null;};
+g.__norm=norm;g.__score=function(q){var n=norm(q),t=n.split(' ');return C.kb.map(function(e){return [e.id,score(e,n,t)];}).filter(function(x){return x[1]>0;});};g.__tokScore=tokScore;
+if(typeof document==='undefined')return;
+var $=function(s){return document.querySelector(s);};
+var btn=$('#aw-btn'),panel=$('#aw-panel'),log=$('#aw-log'),chips=$('#aw-chips'),form=$('#aw-form'),inp=$('#aw-in');
+var flow=null,data={};
+function say(t,who){var d=document.createElement('div');d.className='aw-m '+(who||'bot');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.className='aw-chip';b.textContent=c;b.onclick=function(){handle(c);};chips.appendChild(b);});}
+function menu(){setChips(C.chips);}
+function ask(){var st=C.flow[flow];say(st.q);setChips(st.chips||['Cancel']);if(st.chips&&st.chips.indexOf('Cancel')<0)chips.appendChild(cancelChip());inp.placeholder=st.ph||'Type here';}
+function cancelChip(){var b=document.createElement('button');b.type='button';b.className='aw-chip aw-x';b.textContent='Cancel';b.onclick=function(){handle('Cancel');};return b;}
+function startFlow(){flow=0;data={};say(C.flowIntro);ask();}
+function finish(){var lines=[];C.flow.forEach(function(s){lines.push(s.label+': '+data[s.key]);});say(C.doneTitle+'\n'+lines.join('\n')+'\n\n'+C.doneNote);flow=null;inp.placeholder='Ask a question';setChips(C.chips);}
+function stepInput(t){var st=C.flow[flow];var v=t.trim();if(/^(cancel|stop|exit|nevermind|never mind)$/i.test(v)){flow=null;say('No problem, nothing was sent. '+C.afterCancel);menu();inp.placeholder='Ask a question';return;}
+if(st.type==='phone'){var dg=v.replace(/\D/g,'');if(dg.length<7){say('That number looks too short. Please include the digits including area code.');return;}}
+else if(st.type==='name'){if(v.length<2){say('Please type your name.');return;}}
+else if(st.type==='choice'&&st.opts){var m=null,nt=norm(v),tk=nt.split(' ');for(var i=0;i<st.opts.length;i++){var o=st.opts[i];var sc=score({k:o.k},nt,tk);if(sc>=2&&(!m||sc>m.s))m={s:sc,v:o.v};}if(m)v=m.v;else if(!st.free){say('Please pick one of the options below.');setChips(st.chips);return;}}
+data[st.key]=v;flow++;if(flow>=C.flow.length){finish();}else ask();}
+var bookRe=null;
+function handle(t){t=String(t).trim();if(!t)return;say(t,'me');if(flow!==null){stepInput(t);return;}
+var q=norm(t);var m=match(t);
+if(m&&m.book){startFlow();return;}
+if(m){say(m.a);setChips(m.chips||C.chips);return;}
+say(C.fallback);setChips(C.chips);}
+function open(){panel.classList.add('open');btn.classList.add('hide');if(!log.children.length){say(C.greet);menu();}setTimeout(function(){inp.focus();},50);}
+btn.onclick=open;$('#aw-close').onclick=function(){panel.classList.remove('open');btn.classList.remove('hide');};
+form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';handle(v);};
+document.addEventListener('click',function(e){var a=e.target.closest('[data-aw]');if(a){e.preventDefault();open();if(a.getAttribute('data-aw')==='book')handle(C.bookPhrase);}});
+})(typeof window!=='undefined'?window:globalThis);
+
+</script>
+</body>
+</html>

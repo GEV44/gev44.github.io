@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A-Learn To Drive In BC | Driving lessons in Vancouver and Burnaby</title>
+<meta name="description" content="Demo page prepared for A-Learn To Drive In BC Driving School: lessons, road test rental and an assistant that books.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--k:#121111;--k2:#1d1c1c;--o:#f34c06;--o2:#ff7a3d;--paper:#faf7f2;--mut:#6b655f;--ln:#e6dfd6;--gv-bg:#121111;--gv-fg:#fff;--gv-font:Barlow,system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.55 Barlow,system-ui,sans-serif;background:var(--paper);color:var(--k);overflow-x:hidden}
+h1,h2,h3{font-family:"Archivo Black",Impact,sans-serif;font-weight:400;line-height:1.02;margin:0 0 .4em;text-transform:uppercase}
+a{color:inherit}img,svg{max-width:100%}
+.w{max-width:1060px;margin:0 auto;padding:0 16px}
+.top{background:var(--k);color:#fff;position:sticky;top:0;z-index:50}
+.top .in{max-width:1060px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.chip{background:#fff;border-radius:10px;padding:3px 6px;display:flex;flex:none}.chip img{height:44px;width:auto;display:block}
+.logo span{font:700 14px/1.1 Barlow;text-transform:uppercase;letter-spacing:.04em;min-width:0}
+.top .tel{margin-left:auto;background:var(--o);color:#fff;text-decoration:none;font:700 15px Barlow;padding:10px 14px;border-radius:8px;white-space:nowrap}
+.top nav{display:none}
+.hero{background:var(--k);color:#fff;position:relative;overflow:hidden;padding:38px 0 0}
+.hero h1{font-size:clamp(36px,10vw,88px);max-width:900px}
+.hero h1 em{font-style:normal;color:var(--o)}
+.hero p{max-width:560px;color:#ddd6cd;font-size:19px}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 34px}
+.b{display:inline-block;background:var(--o);color:#fff;text-decoration:none;font:700 17px Barlow;padding:14px 22px;border-radius:8px;border:0;cursor:pointer;text-transform:uppercase;letter-spacing:.03em}
+.b.l{background:transparent;border:2px solid #fff}
+.road{height:46px;background:#2a2827;position:relative;margin-top:10px}
+.road:before{content:"";position:absolute;left:0;right:0;top:21px;height:4px;background:repeating-linear-gradient(90deg,var(--o2) 0 34px,transparent 34px 68px)}
+.facts{background:var(--o);color:#fff}
+.facts .g{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.facts div.f{padding:16px 12px;border-bottom:1px solid rgba(255,255,255,.3)}
+.facts b{display:block;font:400 28px "Archivo Black"}.facts span{font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+section{padding:54px 0}
+h2{font-size:clamp(28px,6.5vw,46px)}
+.eyebrow{font:700 13px Barlow;color:var(--o);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+.strips{margin-top:22px;border-top:3px solid var(--k)}
+.strip{display:grid;grid-template-columns:50px 1fr;gap:12px;padding:18px 0;border-bottom:1px solid var(--ln)}
+.strip .n{font:400 30px "Archivo Black";color:var(--o)}
+.strip h3{font-size:22px;margin:0 0 4px}.strip p{margin:0;color:var(--mut)}
+.dark{background:var(--k);color:#fff}.dark .eyebrow{color:var(--o2)}.dark p{color:#d6cfc5}
+.calc{background:#fff;color:var(--k);border-radius:14px;padding:20px;margin-top:22px;border:2px solid var(--k)}
+.calc input[type=range]{width:100%;accent-color:var(--o);height:36px}
+.ticks{display:flex;justify-content:space-between;font:700 13px Barlow;color:var(--mut);margin-top:-4px}
+.out{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:14px}
+.out b{font:400 44px "Archivo Black";color:var(--o)}.out span{color:var(--mut)}
+.menu{display:grid;gap:14px;margin-top:22px}
+.tk{background:#fff;color:var(--k);border-radius:12px;padding:16px 18px;border-left:8px solid var(--o)}
+.tk h3{font-size:19px;margin-bottom:8px}
+.row{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--ln)}.row:last-child{border:0}.row b{white-space:nowrap}
+.note{font-size:14px;color:var(--mut);margin-top:12px}
+.tabs{display:flex;gap:8px;margin:18px 0}.tabs button{flex:1;background:#fff;border:2px solid var(--k);padding:12px;font:700 16px Barlow;text-transform:uppercase;border-radius:8px;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--k);color:#fff}
+.office{background:#fff;border:2px solid var(--k);border-radius:12px;padding:18px}
+.office h3{font-size:22px}.office p{margin:4px 0}
+.ppl{display:grid;gap:8px;margin-top:10px}.ppl a{display:block;background:var(--paper);border-radius:8px;padding:10px 12px;text-decoration:none;font-weight:600}
+.ppl small{display:block;font-weight:400;color:var(--mut)}
+.stn{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.stn span{background:var(--k);color:#fff;font:600 13px Barlow;padding:5px 10px;border-radius:999px}
+.two{display:grid;gap:16px;margin-top:22px}
+.big{border-radius:14px;padding:22px}.big.a{background:var(--o);color:#fff}.big.b2{background:#fff;border:2px solid var(--k)}
+.big h3{font-size:24px}.pill{display:inline-block;background:var(--k);color:#fff;border-radius:999px;padding:6px 14px;margin:4px 4px 0 0;font:600 15px Barlow}.big.b2 .pill{background:var(--k)}
+details{background:#fff;border:1px solid var(--ln);border-radius:10px;margin:10px 0;padding:0 16px}
+summary{cursor:pointer;font:700 17px Barlow;padding:14px 0;list-style:none;text-transform:uppercase}summary::-webkit-details-marker{display:none}
+summary:after{content:"+";float:right;color:var(--o);font-size:24px;line-height:1}details[open] summary:after{content:"\2212"}
+details p{margin:0 0 14px;color:var(--mut)}
+.hw{list-style:none;counter-reset:h;padding:0;margin:22px 0 0;display:grid;gap:12px}.hw li{counter-increment:h;position:relative;background:#fff;border:2px solid var(--k);border-radius:12px;padding:14px 16px 14px 70px}.hw li:before{content:counter(h);position:absolute;left:14px;top:10px;width:42px;height:42px;background:var(--o);color:#fff;border-radius:8px;font:400 24px/42px "Archivo Black";text-align:center}.hw b{display:block;font:400 18px "Archivo Black";text-transform:uppercase}.hw span{color:var(--mut)}
+.rv{display:grid;gap:14px;margin-top:22px}.rv figure{margin:0;background:#fff;border:2px solid var(--k);border-radius:12px;padding:18px;position:relative}.rv figure:before{content:"C";position:absolute;right:14px;top:-4px;font:400 64px "Archivo Black";color:var(--o)}.rv blockquote{margin:0 0 10px;font-size:17px}.rv figcaption{font:700 13px Barlow;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)}
+.cta{background:var(--o);color:#fff;text-align:center;padding:50px 0}.cta h2{margin-bottom:14px}.cta .b{background:var(--k)}
+footer{background:var(--k);color:#b8b0a6;padding:24px 0 90px;font-size:14px}
+@media(min-width:760px){.facts .g{grid-template-columns:repeat(4,1fr)}.facts div.f{border-bottom:0;border-right:1px solid rgba(255,255,255,.3)}.menu{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr 1fr}.top nav{display:flex;gap:18px;margin-left:auto;font:600 15px Barlow;text-transform:uppercase}.top nav a{text-decoration:none}.top .tel{margin-left:14px}.strip{grid-template-columns:70px 220px 1fr}.strip h3{margin:0}.strip p{align-self:center}.ppl{grid-template-columns:1fr 1fr}.rv{grid-template-columns:1fr 1fr}.hw{grid-template-columns:1fr 1fr}}
+
+#gv-fab{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--gv-bg);color:var(--gv-fg);font:600 15px/1 var(--gv-font);padding:14px 18px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+#gv-fab svg{width:20px;height:20px}
+#gv-panel{position:fixed;right:16px;bottom:78px;z-index:61;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 100px));background:#fff;color:#1d1d1f;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--gv-font)}
+#gv-panel.on{display:flex}
+#gv-head{background:var(--gv-bg);color:var(--gv-fg);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+#gv-head b{display:block;font-size:15px}#gv-head span{font-size:12px;opacity:.85}
+#gv-x{background:transparent;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer;padding:2px 6px}
+#gv-log{flex:1;overflow:auto;padding:12px;background:#f4f5f7;display:flex;flex-direction:column;gap:8px}
+.gv-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.gv-m.bot{background:#fff;border:1px solid #e3e5e9;align-self:flex-start;border-bottom-left-radius:4px}
+.gv-m.me{background:var(--gv-bg);color:var(--gv-fg);align-self:flex-end;border-bottom-right-radius:4px}
+.gv-sum{margin:8px 0 6px;padding-left:18px;font-size:14px}.gv-m small{opacity:.65;font-size:12px}
+#gv-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px;background:#fff;border-top:1px solid #e8e9ec;max-height:112px;overflow:auto}
+.gv-chip{border:1px solid var(--gv-bg);background:#fff;color:var(--gv-bg);border-radius:999px;padding:6px 11px;font:500 13px/1.2 var(--gv-font);cursor:pointer}
+.gv-chip.opt,.gv-chip:hover{background:var(--gv-bg);color:var(--gv-fg)}
+#gv-form{display:flex;gap:6px;padding:8px 10px;border-top:1px solid #e8e9ec;background:#fff}
+#gv-in{flex:1;min-width:0;border:1px solid #cfd3d9;border-radius:10px;padding:10px;font:16px var(--gv-font)}
+#gv-form button{border:0;background:var(--gv-bg);color:var(--gv-fg);border-radius:10px;padding:0 14px;font:600 14px var(--gv-font);cursor:pointer}
+
+</style></head><body>
+<header class="top"><div class="in">
+<a class="logo" href="#top" aria-label="A-Learn To Drive In BC Driving School"><span class="chip"><img src="img/a-learn-to-drive-in-bc-logo.svg" alt="A-Learn To Drive In BC logo" width="40" height="44"></span><span>A-Learn To Drive<br>In BC</span></a>
+<nav><a href="#lessons">Lessons</a><a href="#prices">Prices</a><a href="#offices">Offices</a><a href="#faq">FAQ</a></nav>
+<a class="tel" href="tel:+17783191626">(778) 319-1626</a></div></header>
+<main id="top">
+<div class="hero"><div class="w">
+<div class="eyebrow" style="color:var(--o2)">Vancouver &amp; Burnaby &middot; 15 years of instruction</div>
+<h1>Learn to drive in BC <em>with confidence.</em></h1>
+<p>Patient one-on-one lessons with male and female instructors, in a Tesla or a Toyota Corolla, in English, Farsi, Pashto or Russian. Road test prep and a vehicle for test day included in the menu.</p>
+<div class="btns"><a class="b" href="#" data-gv="book">Book a lesson</a><a class="b l" href="#prices">See prices</a></div></div>
+<div class="road"></div></div>
+<div class="facts"><div class="w"><div class="g">
+<div class="f"><b>96%</b><span>student passing rate</span></div>
+<div class="f"><b>15 yrs</b><span>teaching experience</span></div>
+<div class="f"><b>4.8</b><span>Google, ~600 reviews</span></div>
+<div class="f"><b>7am&ndash;8pm</b><span>open every day</span></div></div></div></div>
+
+<section id="lessons"><div class="w"><div class="eyebrow">What we teach</div><h2>Four ways to get road-ready</h2>
+<div class="strips">
+<div class="strip"><div class="n">01</div><h3>Beginner lessons</h3><p>Starting from scratch? Step-by-step instruction in a patient, supportive setting.</p></div>
+<div class="strip"><div class="n">02</div><h3>Refresher lessons</h3><p>Rebuild confidence after time away, or sharpen specific skills.</p></div>
+<div class="strip"><div class="n">03</div><h3>ICBC road test prep</h3><p>Focused, practical training on common test requirements, so you know what to fix before test day.</p></div>
+<div class="strip"><div class="n">04</div><h3>Road test vehicle rental</h3><p>A suitable car for your test, with delivery. Class 4, 5 and 7 lessons are available.</p></div></div></div></section>
+
+<section class="dark" id="prices"><div class="w"><div class="eyebrow">Listed prices</div><h2>Pick a package, see the total</h2>
+<p>Packages are 90-minute lessons. Drag the slider. Prices as listed on the school's site, plus 5% GST.</p>
+<div class="calc"><label for="rg" style="font:700 16px Barlow;text-transform:uppercase">Number of 90-minute lessons</label>
+<input id="rg" type="range" min="0" max="4" step="1" value="1" aria-describedby="pk">
+<div class="ticks"><span>6</span><span>8</span><span>10</span><span>11</span><span>12</span></div>
+<div class="out"><b id="pp">$790</b><span id="pk">Package B &middot; 8 lessons &middot; about $99 per lesson before GST</span></div>
+<div class="out" style="margin-top:2px"><span id="gst">With 5% GST: $829.50</span></div>
+<a class="b" href="#" data-gv="book" style="margin-top:14px">Book this package</a></div>
+
+<div class="menu">
+<div class="tk"><h3>Single lessons</h3>
+<div class="row"><span>Trial lesson, 45 min (first lesson)</span><b>$60</b></div>
+<div class="row"><span>1 hour</span><b>$70</b></div>
+<div class="row"><span>1.5 hours</span><b>$100</b></div>
+<div class="row"><span>Promo: two 90-minute lessons</span><b>$195</b></div></div>
+<div class="tk"><h3>Road test day</h3>
+<div class="row"><span>Vehicle for ICBC road test + 1 hour review lesson</span><b>$160</b></div>
+<div class="row"><span>Vehicle for ICBC road test only</span><b>$100</b></div>
+<p class="note">The $160 option includes gas, insurance and delivery.</p></div>
+<div class="tk"><h3>Restricted Class 4</h3>
+<div class="row"><span>Two-day package (2 x 1.5 h, vehicle on day two)</span><b>$380</b></div>
+<div class="row"><span>60 min pre-trip inspection training</span><b>$85</b></div>
+<div class="row"><span>1.5 h pre-trip practice and drive</span><b>$140</b></div>
+<div class="row"><span>1 h practice before test + vehicle</span><b>$180</b></div></div>
+<div class="tk"><h3>How you pay</h3><p style="margin:0">E-transfer or cash, at pick-up or after your lesson is confirmed. All prices plus 5% GST. The team confirms current prices when you book.</p></div></div></div></section>
+
+<section id="how"><div class="w"><div class="eyebrow">How booking works</div><h2>From message to first lesson</h2>
+<ol class="hw">
+<li><b>Tell us where you are</b><span>Your driving skills and what you would like to improve, first time behind the wheel or a refresher.</span></li>
+<li><b>Choose pick-up and package</b><span>Pick a station near you, then a trial lesson, an hourly lesson or one of the saving packages.</span></li>
+<li><b>Road test? Send the details</b><span>Test location, check-in time and appointment time, and whether you would like to rent the school car for the test.</span></li>
+<li><b>Drive</b><span>Your instructor, in the language you prefer, in the Tesla or the Corolla. Pay by e-transfer or cash.</span></li></ol></div></section>
+<section id="offices"><div class="w"><div class="eyebrow">Two offices</div><h2>Where we pick you up</h2>
+<div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-o="v">Vancouver</button><button role="tab" aria-selected="false" data-o="b">Burnaby</button></div>
+<div class="office" id="off"></div>
+<div class="stn" aria-label="Pick-up stations on the booking form"><span>29th Ave Station</span><span>Nanaimo Station</span><span>Rupert Station</span><span>Renfrew Station</span><span>Gilmore Station</span><span>Holdom Station</span><span>Brentwood Station</span></div>
+<p class="note">Pick-up points as listed on the school's booking form.</p>
+<div class="two"><div class="big a"><h3>Your language</h3><p>Lessons are available in</p><span class="pill">English</span><span class="pill">Farsi</span><span class="pill">Pashto</span><span class="pill">Russian</span></div>
+<div class="big b2"><h3>Your car</h3><p>Train in a comfortable, reliable vehicle.</p><span class="pill">Tesla</span><span class="pill">Toyota Corolla</span></div></div></div></section>
+
+<section id="reviews"><div class="w"><div class="eyebrow">What students write</div><h2>Passed on the first try, in their words</h2>
+<div class="rv">
+<figure><blockquote>"Max is a great teacher with very clear communication. I passed within my first attempt at the Burnaby ICBC thanks to his lessons. The Tesla is also great to learn on."</blockquote><figcaption>Tai Alva &middot; Google review</figcaption></figure>
+<figure><blockquote>"Instructor Shan is patient and knowledgeable, she pointed out exactly what I needed to improve ... We also practiced in the same area where I took my test, which helped me feel familiar with the routes."</blockquote><figcaption>Salwa Belhaj &middot; Google review</figcaption></figure>
+<figure><blockquote>"He scheduled lessons for me after work, even late in the evening, and was also available on weekends. He responded quickly to messages and helped book my appointments."</blockquote><figcaption>Assal &middot; Google review</figcaption></figure>
+<figure><blockquote>"Top notch instructor with high affordability and success rate at first try. I had just three classes and aced my road test the very first time."</blockquote><figcaption>Oluwafemi &middot; Google review</figcaption></figure></div>
+<p class="note">Rated 4.8 on Google from close to 600 reviews. Quotes shortened from the reviews shown on the school's own website.</p></div></section>
+<section class="dark" id="faq"><div class="w"><div class="eyebrow">Good to know</div><h2>Questions and policies</h2>
+<details><summary>What is your student passing rate?</summary><p>The school's FAQ lists 96%.</p></details>
+<details><summary>Which lessons are available?</summary><p>Class 4, 5 and 7 lessons, plus beginner, refresher and ICBC road test preparation.</p></details>
+<details><summary>Which languages and cars?</summary><p>Lessons are available in English, Farsi, Pashto and Russian. You practise in a Tesla or a Toyota Corolla.</p></details>
+<details><summary>Do you help nervous or elderly drivers?</summary><p>Yes.</p></details>
+<details><summary>Can I choose a male or female instructor?</summary><p>The school has certified male and female instructors. Max (male) and Shan (female) are listed on the contact page. Say which you prefer when you book.</p></details>
+<details><summary>What are your operating hours?</summary><p>7 am to 8 pm, Monday to Sunday.</p></details>
+<details><summary>Cancelling or rescheduling</summary><p>At least 48 hours notice is required. Lessons cancelled or moved with less than 48 hours notice are non-refundable and cannot be rescheduled. Arrive 10 minutes late and the lesson continues for the remaining time with the full fee. More than 15 minutes late, the instructor may leave and the fee is not refunded.</p></details>
+<details><summary>Refunds</summary><p>No refunds for lessons or road test sessions that already took place. Unused lessons can be refunded with at least 48 hours notice, minus a $25 processing fee. For packages, used lessons are charged at the regular single lesson rate.</p></details>
+</div></section>
+
+<div class="cta"><div class="w"><h2>Ready to get behind the wheel?</h2><a class="b" href="#" data-gv="book">Book a lesson</a>
+<p style="margin:16px 0 0;font-weight:600">Max (male) (778) 319-1626 &middot; Shan (female) (778) 384-8574<br>learntodriveinbc@gmail.com</p></div></div>
+</main>
+<footer><div class="w">Demo · prepared by Gevorg Hovhannisyan<br>Built from public information on learntodriveinbc.com. Not an official page of A-Learn To Drive In BC.</div></footer>
+
+<button id="gv-fab" type="button" aria-expanded="false" aria-controls="gv-panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/></svg><span>Ask & book a lesson</span></button>
+<div id="gv-panel" role="dialog" aria-label="A-Learn To Drive In BC assistant"><div id="gv-head"><div><b>A-Learn To Drive In BC</b><span>Demo assistant · instant answers</span></div><button id="gv-x" type="button" aria-label="Close">&times;</button></div><div id="gv-log" aria-live="polite"></div><div id="gv-chips"></div><form id="gv-form" autocomplete="off"><input id="gv-in" type="text" placeholder="Ask a question" aria-label="Your question"><button type="submit">Send</button></form></div>
+
+<script>
+(function(){
+var P=[["A",6,595],["B",8,790],["C",10,980],["D",11,1075],["E",12,1170]],r=document.getElementById('rg');
+function up(){var p=P[+r.value],g=(p[2]*1.05).toFixed(2);document.getElementById('pp').textContent='$'+p[2];document.getElementById('pk').textContent='Package '+p[0]+' \u00b7 '+p[1]+' lessons \u00b7 about $'+Math.round(p[2]/p[1])+' per lesson before GST';document.getElementById('gst').textContent='With 5% GST: $'+g;}
+r.addEventListener('input',up);up();
+var O={v:['Vancouver office','2323 Boundary Road, Vancouver BC, V5M 4V8',[['Max (male)','(778) 319-1626','tel:+17783191626']]],b:['Burnaby office','4567 Lougheed Hwy, Burnaby, BC V5C 3Z6',[['Max (male)','(778) 319-1626','tel:+17783191626'],['Shan (female)','(778) 384-8574','tel:+17783848574']]]};
+var off=document.getElementById('off'),tb=document.querySelectorAll('.tabs button');
+function show(k){var o=O[k];off.innerHTML='<h3>'+o[0]+'</h3><p>'+o[1]+'</p><div class="ppl">'+o[2].map(function(x){return '<a href="'+x[2]+'">'+x[0]+'<small>'+x[1]+'</small></a>'}).join('')+'</div><p class="note">Email: learntodriveinbc@gmail.com &middot; Cars: Corolla, Tesla</p>';tb.forEach(function(b){b.setAttribute('aria-selected',b.dataset.o===k?'true':'false')});}
+tb.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.o)})});show('v');
+})();
+var CFG={"greeting": "Hi! I am the A-Learn To Drive In BC assistant. Ask about lessons, the ICBC road test, vehicle rental, instructors, languages or hours, or tap Book a lesson.", "fallback": "I do not have that detail here, so I will not guess. Max can confirm it on (778) 319-1626 or Shan on (778) 384-8574, or write to learntodriveinbc@gmail.com.", "chips": ["Prices", "Road test rental", "Beginner lessons", "Languages", "Cars", "Hours", "Book a lesson"], "bookChip": "Book a lesson", "bookRe": "\\b(book|reserve|schedule|appointment|sign up|enrol|enroll)\\b", "bookOffer": "Want me to take your details so the team can set up your lesson?", "flowIntro": "Sure, a few quick questions and I will pass them to the team. Type cancel any time.", "flowDone": "Thanks, your lesson request is sent to the team. Max or Shan will confirm the time with you.", "flow": [{"k": "name", "l": "Name", "q": "What is your name?", "ph": "Your name"}, {"k": "ph", "l": "Phone", "q": "Best phone or text number?", "ph": "778 000 0000", "v": "phone", "err": "That does not look like a phone number. Please include the digits, for example 778 123 4567."}, {"k": "type", "l": "Lesson", "q": "What do you need?", "o": ["Beginner lessons", "Refresher lessons", "ICBC road test prep", "Road test vehicle rental", "Class 4 pre-trip"]}, {"k": "lvl", "l": "Experience", "q": "Where are you right now?", "o": ["First time behind the wheel", "Some experience", "Road test is booked", "Nervous driver"]}, {"k": "stn", "l": "Pick-up", "q": "Where should the instructor pick you up?", "o": ["29th Ave Station", "Nanaimo Station", "Rupert Station", "Renfrew Station", "Gilmore Station", "Holdom Station", "Brentwood Station", "Somewhere else"]}, {"k": "lang", "l": "Language", "q": "Which language for the lessons?", "o": ["English", "Farsi", "Pashto", "Russian"]}, {"k": "ins", "l": "Instructor", "q": "Do you prefer a male or female instructor?", "o": ["Max (male)", "Shan (female)", "No preference"]}, {"k": "when", "l": "Preferred time", "q": "Which days and times suit you? Lessons run 7 am to 8 pm, every day.", "ph": "e.g. weekday evenings"}], "kb": [{"id": "price", "k": ["price", "cost", "how much", "fee", "rate", "pricing", "expensive", "cheap", "charge", "hourly"], "a": "Listed rates: trial lesson (45 min) $60 for a first lesson. Hourly: $70 for 1 hour, $100 for 1.5 hours. Promotion: $195 for two 90-minute lessons. All prices plus 5% GST. Packages and road-test rental have their own prices, ask me about those.", "book": true}, {"id": "package", "k": ["package", "packages", "bundle", "saving", "6 lessons", "10 lessons", "12 lessons", "deal", "discount", "promotion", "promo"], "a": "Saving packages of 90-minute lessons: A (6 lessons) $595, B (8) $790, C (10) $980, D (11) $1075, E (12) $1170, plus 5% GST. Use the package slider on this page to compare. Current promotion: $195 for two 90-minute lessons.", "book": true}, {"id": "rental", "k": ["rental", "rent", "vehicle for test", "car for test", "road test vehicle", "use your car", "test car", "car for my road test", "vehicle rental"], "a": "Yes, road test vehicle rental is offered. $160 covers the vehicle for the ICBC road test plus a one hour review lesson, including gas, insurance and delivery. Vehicle for the ICBC road test on its own is $100. Plus 5% GST.", "book": true}, {"id": "roadtest", "k": ["road test", "icbc", "test prep", "prepare for test", "pass test", "exam", "passing rate", "pass rate", "success rate", "first try", "burnaby test"], "a": "ICBC road test preparation is focused, practical training on common test requirements and your weak spots, so you feel confident on test day. The school lists a 96% student passing rate. Practising near your test area is possible, ask your instructor.", "book": true}, {"id": "beginner", "k": ["beginner", "first time", "never driven", "from scratch", "new driver", "learner", "starting", "just starting", "novice", "zero experience"], "a": "Beginner lessons are step-by-step, patient and one-on-one, tailored to how you learn. Starting from zero is fine.", "book": true}, {"id": "refresher", "k": ["refresher", "been a while", "rusty", "lost confidence", "haven t driven", "not driven", "experienced driver", "brush up", "improve skills", "new to canada"], "a": "Refresher lessons are for experienced drivers who have not driven for a while or want to improve specific skills, such as parking or lane changes, and rebuild confidence.", "book": true}, {"id": "nervous", "k": ["nervous", "anxious", "scared", "afraid", "elderly", "senior", "old", "patient", "fear", "older"], "a": "Yes, nervous and elderly drivers are welcome. Instructors are described as patient, and lessons move at your pace.", "book": true}, {"id": "class", "k": ["class 4", "class 5", "class 7", "classes", "restricted", "pre trip", "pretrip", "inspection", "class four", "commercial", "taxi"], "a": "Lessons are available for Class 4, 5 and 7. For restricted Class 4: a two-day package $380 (first day 1.5 hours pre-trip practice and drive, second day the same plus the vehicle for your road test), 60 minutes of pre-trip training $85, 1.5 hour lesson $140, and one hour pre-trip practice plus vehicle for the test $180. Plus 5% GST."}, {"id": "languages", "k": ["language", "languages", "english", "farsi", "persian", "pashto", "russian", "speak", "multilingual", "translate", "russkiy"], "a": "Lessons are available in English, Farsi, Pashto and Russian."}, {"id": "cars", "k": ["car", "cars", "tesla", "corolla", "toyota", "vehicle", "electric", "automatic", "what do i drive", "training vehicle"], "a": "You train in a Tesla or a Toyota Corolla. Both are comfortable, reliable cars, so you can pick what feels best."}, {"id": "instructor", "k": ["instructor", "teacher", "male", "female", "woman", "man", "max", "shan", "who teaches", "certified", "female instructor", "male instructor"], "a": "There are certified male and female instructors. Max (male) and Shan (female) are listed on the contact page. Tell us which you prefer when you book."}, {"id": "hours", "k": ["hours", "open", "opening", "what time", "weekend", "sunday", "evening", "late", "available", "schedule", "flexible", "days"], "a": "Operating hours are 7 am to 8 pm, Monday to Sunday, with flexible lesson times."}, {"id": "location", "k": ["address", "location", "where", "vancouver", "burnaby", "office", "boundary", "lougheed", "area", "serve", "near"], "a": "Two offices: Vancouver at 2323 Boundary Road, V5M 4V8, and Burnaby at 4567 Lougheed Hwy, V5C 3Z6. Lessons start from your pick-up point, for example 29th Ave, Nanaimo, Rupert, Renfrew, Gilmore, Holdom or Brentwood station."}, {"id": "pickup", "k": ["pick up", "pickup", "station", "skytrain", "meet", "come to me", "home", "brentwood", "renfrew", "gilmore", "holdom", "nanaimo", "rupert", "29th"], "a": "The booking form lists these pick-up points: 29th Ave, Nanaimo, Rupert, Renfrew, Gilmore, Holdom and Brentwood stations. If yours is not listed, say so when you book and the team will confirm."}, {"id": "contact", "k": ["contact", "phone", "call", "number", "email", "text", "reach", "message", "whatsapp", "talk to"], "a": "Max (male): (778) 319-1626. Shan (female): (778) 384-8574. Email: learntodriveinbc@gmail.com."}, {"id": "payment", "k": ["payment", "pay", "etransfer", "e transfer", "cash", "card", "gst", "tax", "credit card", "how to pay"], "a": "Payment is by e-transfer or cash, at pick-up or after your lesson is confirmed. All prices are plus 5% GST."}, {"id": "cancel", "k": ["cancel", "cancellation", "reschedule", "late", "no show", "refund", "48 hours", "policy", "policies", "miss"], "a": "Cancel or reschedule with at least 48 hours notice. Under 48 hours the lesson is non-refundable and cannot be moved. Arriving 10 minutes late shortens the lesson but the full fee applies. Refunds for unused lessons need 48 hours notice and a $25 processing fee is deducted. Please read the full policy on the page."}, {"id": "about", "k": ["about", "experience", "how long", "years", "who are you", "reviews", "rating", "google", "stars", "trust", "reputation"], "a": "A-Learn To Drive In BC has 15 years of driving instruction experience in Vancouver and Burnaby, with a 4.8 rating on Google from close to 600 reviews."}, {"id": "trial", "k": ["trial", "first lesson", "try one", "45 minutes", "assessment", "initial", "one lesson", "single lesson"], "a": "A trial lesson (45 minutes) for a first lesson is $60, plus 5% GST. The contact form also offers a 1 hour initial assessment."}]};
+
+function norm(s){return String(s).toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){
+  if(w.length<4) return w;
+  if(/sses$/.test(w)) return w.slice(0,-2);
+  if(/ies$/.test(w)) return w.slice(0,-3)+'y';
+  if(/(ch|sh|x|z)es$/.test(w)) return w.slice(0,-2);
+  if(/ing$/.test(w)&&w.length>5) w=w.slice(0,-3);
+  else if(/ed$/.test(w)&&w.length>4) w=w.slice(0,-2);
+  else if(/[^s]s$/.test(w)) w=w.slice(0,-1);
+  if(w.length>4&&/e$/.test(w)) w=w.slice(0,-1);
+  return w;
+}
+function lev(a,b){
+  if(a===b) return 0; if(Math.abs(a.length-b.length)>2) return 9;
+  var p=[],i,j; for(j=0;j<=b.length;j++)p[j]=j;
+  for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));}p=c;}
+  return p[b.length];
+}
+function same(a,b){
+  if(a===b) return true;
+  var m=Math.min(a.length,b.length);
+  if(m<5) return false;
+  return lev(a,b)<=(m>=8?2:1);
+}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function score(qt,entry){
+  var tot=0;
+  for(var i=0;i<entry.k.length;i++){
+    var kt=toks(entry.k[i]),ok=kt.length>0;
+    for(var j=0;j<kt.length&&ok;j++){
+      var f=false; for(var x=0;x<qt.length;x++){ if(same(qt[x],kt[j])){f=true;break;} }
+      if(!f) ok=false;
+    }
+    if(ok) tot+=kt.length*2+1;
+  }
+  return tot;
+}
+function answer(q){
+  var n=norm(q), qt=toks(q);
+  if(!qt.length) return {a:CFG.fallback};
+  if(/^(hi|hello|hey|hiya|good (morning|afternoon|evening)|hallo|yo)\b/.test(n)&&qt.length<=3) return {a:CFG.greeting};
+  if(/^(thanks|thank you|thx|cheers|ta|great thanks)/.test(n)) return {a:"You are welcome! Anything else you would like to know?"};
+  var best=null,bs=0;
+  for(var i=0;i<CFG.kb.length;i++){var s=score(qt,CFG.kb[i]); if(s>bs){bs=s;best=CFG.kb[i];}}
+  if(bs>=2&&best) return {a:best.a,id:best.id,book:!!best.book};
+  return {a:CFG.fallback};
+}
+
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var fab=$('#gv-fab'),panel=$('#gv-panel'),log=$('#gv-log'),chips=$('#gv-chips'),form=$('#gv-form'),inp=$('#gv-in');
+  var state={flow:-1,data:{}};
+  function esc(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+  function add(who,html){var d=document.createElement('div');d.className='gv-m '+who;d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function setChips(list,cls){chips.innerHTML='';list.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='gv-chip'+(cls?' '+cls:'');b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b);});}
+  function home(){setChips(CFG.chips);}
+  function open(){panel.classList.add('on');fab.setAttribute('aria-expanded','true');if(!log.children.length){add('bot',CFG.greeting);home();}setTimeout(function(){inp.focus()},50);}
+  function close(){panel.classList.remove('on');fab.setAttribute('aria-expanded','false');}
+  fab.onclick=function(){panel.classList.contains('on')?close():open();};
+  $('#gv-x').onclick=close;
+  function startFlow(){state.flow=0;state.data={};add('bot',CFG.flowIntro);ask();}
+  function ask(){var s=CFG.flow[state.flow];add('bot',s.q);if(s.o){setChips(s.o,'opt');inp.placeholder=s.ph||'Or type here';}else{chips.innerHTML='';inp.placeholder=s.ph||'Type here';}}
+  function valid(s,v){
+    if(s.v==='phone') return /[0-9][0-9 ()+\-]{6,}/.test(v);
+    if(s.v==='email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    return v.trim().length>0;
+  }
+  function flowInput(v){
+    var s=CFG.flow[state.flow];
+    if(/^(cancel|stop|never ?mind|exit)$/i.test(v.trim())){state.flow=-1;add('bot','No problem, nothing was sent. What else can I help with?');home();return;}
+    if(!valid(s,v)){add('bot',s.err||'Sorry, could you check that and try again?');return;}
+    state.data[s.k]=v;state.flow++;
+    if(state.flow>=CFG.flow.length){finish();}else ask();
+  }
+  function finish(){
+    var rows=CFG.flow.map(function(s){return '<li><b>'+esc(s.l)+':</b> '+esc(state.data[s.k]||'')+'</li>'}).join('');
+    add('bot',CFG.flowDone+'<ul class="gv-sum">'+rows+'</ul><small>Demo preview: nothing is actually transmitted.</small>');
+    state.flow=-1;home();inp.placeholder='Ask a question';
+  }
+  function send(v){
+    v=String(v||'').trim();if(!v)return;
+    add('me',esc(v));
+    if(state.flow>=0){flowInput(v);return;}
+    if(v===CFG.bookChip){startFlow();return;}
+    var n=norm(v);
+    if(CFG.bookRe&&new RegExp(CFG.bookRe,'i').test(n)){startFlow();return;}
+    var r=answer(v);
+    add('bot',r.a);
+    if(r.book){add('bot',CFG.bookOffer);setChips([CFG.bookChip].concat(CFG.chips.slice(0,3)));}
+    else home();
+  }
+  form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';send(v);};
+  document.querySelectorAll('[data-gv]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();var a=el.getAttribute('data-gv');open();if(a==='book'){if(state.flow<0){add('me',esc(CFG.bookChip));startFlow();}}else{send(a);}});});
+})();
+
+</script></body></html>
