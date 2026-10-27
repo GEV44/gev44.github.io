@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Casey Kennedy Estate Agents | Demo</title>
+<meta name="description" content="Demo page for Casey Kennedy Estate Agents, Stillorgan, Dublin, with an assistant that answers from their own website.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--mag:#ec008b;--mag-d:#b8006d;--ink:#101418;--slate:#2d3e4f;--soft:#f3f4f7;--line:#e1e4ea;--mute:#5a6572;
+--aw-bg:#ec008b;--aw-fg:#fff;--aw-pane:#f3f4f7;--aw-font:"Work Sans",system-ui,sans-serif;--aw-r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font:16px/1.6 "Work Sans",system-ui,sans-serif;-webkit-text-size-adjust:100%;overflow-x:hidden}
+img{max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:Outfit,system-ui,sans-serif;font-weight:700;line-height:1.08;margin:0 0 .5em;letter-spacing:-.02em}
+h1{font-size:clamp(2.3rem,9vw,4.4rem);font-weight:800}
+h2{font-size:clamp(1.8rem,6vw,2.7rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 1em}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+.topline{background:var(--ink);color:#fff;font-size:.82rem}
+.topline .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;padding-top:7px;padding-bottom:7px}
+.topline a{text-decoration:none;font-weight:600}
+header.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;height:70px}
+.brand img{height:42px;width:auto;display:block}
+nav.main{display:none}
+nav.main a{text-decoration:none;font-weight:500;font-size:.92rem;margin-left:20px}
+nav.main a:hover{color:var(--mag)}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--mag);color:#fff;padding:13px 22px;font:600 .95rem "Work Sans",sans-serif;text-decoration:none;border-radius:99px}
+.btn.dark{background:var(--ink)}
+.btn.white{background:#fff;color:var(--ink)}
+.btn.line{background:transparent;border:2px solid currentColor;color:inherit}
+.btn.sm{padding:9px 16px;font-size:.84rem}
+.hero{background:var(--mag);color:#fff;padding:46px 0 0;position:relative}
+.hero h1{max-width:12em}
+.hero p.lead{font-size:1.1rem;max-width:32em;opacity:.95}
+.hero .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.hero .chips span{background:rgba(255,255,255,.18);padding:6px 12px;border-radius:99px;font-size:.84rem;font-weight:500}
+.valcards{display:grid;gap:12px;margin-top:34px;transform:translateY(34px)}
+.vcard{background:#fff;color:var(--ink);padding:22px;border-radius:16px;box-shadow:0 12px 30px rgba(16,20,24,.18)}
+.vcard h3{margin-bottom:.3em}
+.vcard p{color:var(--mute);font-size:.94rem}
+.vcard .tag{display:inline-block;font:700 .7rem Outfit,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--mag);margin-bottom:6px}
+.after-hero{padding-top:70px}
+section{padding:52px 0}
+section.soft{background:var(--soft)}
+section.dark{background:var(--slate);color:#fff}
+.kicker{font:700 .76rem Outfit,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--mag);display:block;margin-bottom:10px}
+.dark .kicker{color:#ff7cc6}
+.numbers{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.num{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.num b{display:block;font:800 2.2rem/1 Outfit,sans-serif;color:var(--mag)}
+.num span{font-size:.84rem;color:var(--mute)}
+.svcs{display:grid;gap:10px;margin-top:22px}
+.svc{display:grid;grid-template-columns:44px 1fr;gap:4px 14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.svc i{grid-row:span 2;font:800 1.5rem Outfit,sans-serif;color:var(--mag);font-style:normal}
+.svc h3{margin:0}
+.svc p{margin:0;color:var(--mute);font-size:.93rem}
+.split{display:grid;gap:26px}
+.team{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.person{background:rgba(255,255,255,.08);border-radius:12px;padding:15px}
+.person b{display:block;font:600 1rem Outfit,sans-serif}
+.person span{font-size:.82rem;opacity:.8}
+.areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.areas span{background:#fff;border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-size:.88rem;font-weight:500}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;padding:0 16px}
+.faq summary{cursor:pointer;padding:15px 0;font-weight:600;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";float:right;color:var(--mag);font-size:1.4rem;line-height:1}
+.faq details[open] summary:after{content:"\2212"}
+.faq details p{color:#3b4651;font-size:.95rem}
+.hours{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
+.hours dl{margin:0}
+.hours dt{font:700 .75rem Outfit,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--mag);margin-top:12px}
+.hours dd{margin:2px 0 0}
+.review{background:#fff;border-radius:14px;padding:20px;border:1px solid var(--line);margin-bottom:10px}
+.review p{margin:0 0 .5em;font-size:.96rem}
+.review small{color:var(--mute)}
+footer{background:var(--ink);color:#b5bcc6;padding:34px 0 90px;font-size:.88rem}
+footer a{color:#fff}
+footer .sig{margin-top:16px;padding-top:14px;border-top:1px solid #2b323a;color:#fff}
+@media(min-width:760px){
+nav.main{display:block}
+.hero{padding:70px 0 0}
+.valcards{grid-template-columns:1fr 1fr;transform:translateY(48px)}
+.after-hero{padding-top:90px}
+.numbers{grid-template-columns:repeat(4,1fr)}
+.svcs{grid-template-columns:1fr 1fr}
+.split{grid-template-columns:1fr 1fr;gap:48px}
+.team{grid-template-columns:repeat(3,1fr)}
+}
+.stp{list-style:none;margin:0;padding:0;counter-reset:q}
+.stp li{counter-increment:q;position:relative;padding:0 0 18px 54px}
+.stp li:before{content:counter(q);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:var(--mag);color:#fff;display:grid;place-items:center;font:700 1.05rem Outfit,sans-serif}
+.stp b{display:block;font-family:Outfit,sans-serif}
+.stp span{color:var(--mute);font-size:.93rem}
+#aw-fab{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;gap:8px;border:0;border-radius:99px;padding:13px 18px;background:var(--aw-bg);color:var(--aw-fg);font:600 15px/1 var(--aw-font);box-shadow:0 8px 24px rgba(0,0,0,.28);cursor:pointer}
+#aw-pn{position:fixed;right:12px;bottom:12px;z-index:60;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:#fff;color:#1b1b1b;border-radius:var(--aw-r);box-shadow:0 18px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--aw-font)}
+#aw-pn.open{display:flex}
+#aw-hd{background:var(--aw-bg);color:var(--aw-fg);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;font-weight:600}
+#aw-hd small{display:block;font-weight:400;opacity:.8;font-size:12px}
+#aw-x{background:none;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer;padding:0 4px}
+#aw-log{flex:1;overflow-y:auto;padding:12px;background:var(--aw-pane)}
+.aw-m{max-width:88%;padding:9px 12px;margin:0 0 8px;border-radius:12px;word-wrap:break-word}
+.aw-m ul{margin:6px 0 6px 18px;padding:0}
+.aw-m.bot{background:#fff;border:1px solid #e3e3e3;border-bottom-left-radius:3px}
+.aw-m.me{background:var(--aw-bg);color:var(--aw-fg);margin-left:auto;border-bottom-right-radius:3px}
+#aw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;background:var(--aw-pane);border-top:1px solid #e6e6e6;max-height:112px;overflow-y:auto}
+#aw-chips button{border:1px solid var(--aw-bg);background:#fff;color:var(--aw-bg);border-radius:99px;padding:6px 11px;font:13px var(--aw-font);cursor:pointer}
+#aw-form{display:flex;gap:6px;padding:10px;border-top:1px solid #e6e6e6;background:#fff}
+#aw-in{flex:1;min-width:0;border:1px solid #cfcfcf;border-radius:8px;padding:10px;font:16px var(--aw-font)}
+#aw-form button{border:0;border-radius:8px;background:var(--aw-bg);color:var(--aw-fg);padding:0 14px;font:600 14px var(--aw-font);cursor:pointer}
+
+</style>
+</head>
+<body>
+<div class="topline"><div class="wrap"><span>1 The Hill, Stillorgan, Co. Dublin</span><span>Open 9:00 to 17:00 &middot; <a href="tel:+35312883688">01 288 3688</a></span></div></div>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="#top" aria-label="Casey Kennedy Estate Agents"><img src="img/caseykennedy-logo.png" alt="Casey Kennedy Estate Agents" width="144" height="42"></a>
+<nav class="main"><a href="#valuation">Valuation</a><a href="#services">Services</a><a href="#team">Team</a><a href="#areas">Areas</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="btn sm" href="#valuation" onclick="awOpen('val');return false">Free valuation</a>
+</div></header>
+
+<main id="top">
+<div class="hero">
+<div class="wrap">
+<span class="kicker" style="color:#fff;opacity:.85">Stillorgan, South Dublin &middot; since 1985</span>
+<h1>Selling, letting and managing property in Dublin.</h1>
+<p class="lead">Established as Casey Properties in 1985 and now covering South Dublin, the Northside and the commuter belt. Sales, lettings, valuations and block management from one office on The Hill.</p>
+<div class="chips"><span>4.7 on Google, 281 reviews</span><span>29 days average on market</span><span>Blue Book valuations</span></div>
+<div class="valcards" id="valuation">
+<div class="vcard"><span class="tag">In person</span><h3>Home valuation visit</h3><p>An experienced agent visits your home. Free, with no obligation to engage CKP afterwards.</p><a class="btn" href="#contact" onclick="awOpen('val');return false">Book a valuation</a></div>
+<div class="vcard"><span class="tag">Online</span><h3>Instant valuation, 4Val</h3><p>An idea of what your property is worth, including the Local Property Tax, in a few minutes.</p><a class="btn dark" href="#contact" onclick="awOpen('val');return false">Start online</a></div>
+</div>
+</div>
+</div>
+
+<section class="after-hero soft" style="padding-bottom:46px"><div class="wrap">
+<span class="kicker">Track record</span>
+<h2>Numbers from the CKP site.</h2>
+<div class="numbers">
+<div class="num"><b>1,500+</b><span>properties sold by CKP agents</span></div>
+<div class="num"><b>5,000+</b><span>properties let</span></div>
+<div class="num"><b>7.95%</b><span>sold above asking, per their sales page</span></div>
+<div class="num"><b>528</b><span>units in the largest development managed</span></div>
+</div>
+</div></section>
+
+<section id="services"><div class="wrap">
+<span class="kicker">What CKP does</span>
+<h2>One office, several jobs.</h2>
+<p style="max-width:40em;color:var(--mute)">From pricing and presentation to negotiation, CKP says its local agents combine knowledge of their areas with experience. These are the services listed on the site.</p>
+<div class="svcs">
+<div class="svc"><i>01</i><h3>Residential sales</h3><p>Advice on pricing and presentation, targeted marketing and negotiation, with an obligation-free consultation.</p></div>
+<div class="svc"><i>02</i><h3>Lettings</h3><p>Letting agents for landlords, residential rentals for tenants, and a free letting consultation.</p></div>
+<div class="svc"><i>03</i><h3>Commercial</h3><p>Commercial sales and rentals, short-term office rentals and commercial investment property.</p></div>
+<div class="svc"><i>04</i><h3>Block and OMC management</h3><p>Management of residential and mixed developments, from single properties to 528 units.</p></div>
+<div class="svc"><i>05</i><h3>Probate and Fair Deal</h3><p>Help for executors selling a family home, and written valuations for the Fair Deal scheme.</p></div>
+<div class="svc"><i>06</i><h3>Buyer's agent</h3><p>Help purchasing a property in Dublin, plus property alerts so new listings reach you.</p></div>
+<div class="svc"><i>07</i><h3>Land and overseas</h3><p>Land sales and rentals, and overseas properties in Cyprus, Portugal and France.</p></div>
+<div class="svc"><i>08</i><h3>Blue Book valuations</h3><p>TEGoVA Residential Valuer status, for purchases, lending and refinancing.</p></div>
+</div>
+</div></section>
+
+<section class="dark" id="team"><div class="wrap split">
+<div>
+<span class="kicker">The team</span>
+<h2>A dedicated agent on your file.</h2>
+<p style="opacity:.9">CKP says each client gets a dedicated agent, and that agents bring ten or more years of experience in property services. The About Us page splits the staff into residential sales, lettings, commercial and OMC block management.</p>
+</div>
+<div class="team">
+<div class="person"><b>John Kennedy</b><span>CEO</span></div>
+<div class="person"><b>Shane O'Callaghan</b><span>Managing Director</span></div>
+<div class="person"><b>Nick Hughes</b><span>Commercial and Legal Director</span></div>
+<div class="person"><b>Phil Thompson</b><span>Sales Director</span></div>
+<div class="person"><b>Dei Healy</b><span>Residential Sales</span></div>
+<div class="person"><b>Valerie Cahill</b><span>Office and Marketing Manager</span></div>
+</div>
+</div></section>
+
+<section id="areas"><div class="wrap">
+<span class="kicker">Where CKP works</span>
+<h2>Search by area.</h2>
+<p style="max-width:40em;color:var(--mute)">Agents are based in the City Centre, on the Northside and on the Southside. The property search is grouped by these areas.</p>
+<div class="areas">
+<span>Blackrock</span><span>Booterstown</span><span>Bray</span><span>Cabinteely</span><span>Carrickmines</span><span>Christchurch</span><span>Dundrum</span><span>Dun Laoghaire</span><span>Foxrock</span><span>Goatstown</span><span>IFSC</span><span>Leopardstown</span><span>Loughlinstown</span><span>Lucan</span><span>Monkstown</span><span>Mount Merrion</span><span>Sandyford</span><span>Shankill</span><span>Stillorgan</span>
+</div>
+</div></section>
+
+<section class="soft"><div class="wrap split">
+<div>
+<span class="kicker">What clients say</span>
+<h2>Reviews on Google.</h2>
+<p style="color:var(--mute)">4.7 from 281 reviews, via the CKP site. Excerpts below are from clients quoted there.</p>
+</div>
+<div>
+<div class="review"><p>"Gary Wildman at Casey Kennedy Estate Agents was the agent for my first home purchase. He was very professional, engaged and efficient throughout the process."</p><small>Google review quoted on ckp.ie</small></div>
+<div class="review"><p>"Casey Kennedy Estate Agents are prompt to reply to any issues that arise and a resolution is resolved swiftly."</p><small>Google review quoted on ckp.ie</small></div>
+</div>
+</div></section>
+
+<section id="process"><div class="wrap split">
+<div>
+<span class="kicker">Selling with CKP</span>
+<h2>From valuation to sale agreed.</h2>
+<p style="color:var(--mute)">CKP's sales page promises expert advice on pricing and presentation, targeted marketing and skilled negotiation. Its figures: selling around 7.95% above asking price, and an average of 29 days on the market. Valuations are free, and there is no obligation to engage CKP afterwards.</p>
+<p style="color:var(--mute)">The FAQ answers the questions sellers actually ask, such as how long it takes from sale agreed to sold, whether a seller can change their mind after accepting an offer, and why a BER rating matters.</p>
+</div>
+<ol class="stp">
+<li><b>Free valuation</b><span>In person, or the instant online tool 4Val.</span></li>
+<li><b>Pricing and presentation</b><span>Advice on how to price and present the home.</span></li>
+<li><b>Targeted marketing</b><span>Marketing aimed at the likely buyers for your area.</span></li>
+<li><b>Negotiation</b><span>A dedicated agent negotiates until the sale is agreed.</span></li>
+</ol>
+</div></section>
+
+<section class="soft"><div class="wrap split">
+<div>
+<span class="kicker">Sensitive sales</span>
+<h2>Probate and Fair Deal.</h2>
+<p style="color:var(--mute)">Selling the family home as an executor is described on the site as an emotive process. CKP explains how Irish probate works, including grants of probate and of letters of administration, and provides probate valuations.</p>
+<p style="color:var(--mute)">For the Fair Deal nursing home support scheme, a written valuation of the home is part of the HSE's financial assessment, and CKP can organise one.</p>
+</div>
+<div>
+<span class="kicker">Good to know</span>
+<h2>Referrals, disclosed.</h2>
+<p style="color:var(--mute)">CKP states openly that clients may be referred to third-party providers such as Moneysherpa for mortgage advice, that CKP may earn a commission on those referrals, and that you are under no obligation to use them.</p>
+</div>
+</div></section>
+
+<section id="faq" class="faq"><div class="wrap" style="max-width:780px">
+<span class="kicker">Questions</span>
+<h2>Quick answers.</h2>
+<details><summary>Is the valuation really free?</summary><p>Yes. CKP says it provides free valuations with no obligation to use their services afterwards.</p></details>
+<details><summary>What is a Blue Book valuation?</summary><p>A valuation to European TEGoVA standards, used for purchases and lending or refinancing. CKP are TEGoVA Residential Valuers.</p></details>
+<details><summary>I am an executor. Can CKP help?</summary><p>Yes, there is a dedicated page for probate and selling a property as executor, and CKP also performs probate valuations.</p></details>
+<details><summary>Do you do Fair Deal valuations?</summary><p>Yes. A written valuation is needed for the Fair Deal scheme, and CKP can arrange one.</p></details>
+<details><summary>What does OMC stand for?</summary><p>Owners' management company. CKP has an OMC department managing common areas and finances of developments.</p></details>
+<details><summary>Where can I read more about buying and selling in Ireland?</summary><p>The FAQ on the CKP site covers around sixty topics, including BER, Local Property Tax, stamp duty, mortgages, solicitors and booking deposits.</p></details>
+<details><summary>How long does it take to sell?</summary><p>CKP quotes an average of 29 days on the market for its sales. Timing from sale agreed to closing is covered in the FAQ on ckp.ie.</p></details>
+<details><summary>Do you handle commercial property?</summary><p>Yes. CKP lists commercial sales, commercial rentals and short-term office rentals, and has pages on commercial investments, from converting use to financing a purchase.</p></details>
+<details><summary>Can I buy property overseas through CKP?</summary><p>CKP lists overseas properties in Cyprus, Portugal and France on its site.</p></details>
+<details><summary>Who manages the common areas of an apartment block?</summary><p>That is handled by the owners' management company, often with a managing agent. CKP's FAQ explains who is responsible for common areas and for damage in multi-unit developments in Ireland.</p></details>
+<details><summary>Do I need a solicitor, and when?</summary><p>CKP has an FAQ on how to choose a solicitor when buying or selling, and on conveyancing, legal searches and Land Registry fees.</p></details>
+<details><summary>Is the office open outside working hours?</summary><p>The site lists 9:00 to 17:00. Anything outside that, the team will confirm, and for a property issue use the Report Property Issue button.</p></details>
+<details><summary>Which areas does CKP cover?</summary><p>The property search lists Stillorgan, Blackrock, Dundrum, Sandyford, Foxrock, Dun Laoghaire, Bray and more, with agents based in the City Centre, on the Northside and on the Southside.</p></details>
+<details><summary>Can I register for new listings?</summary><p>Yes, there is a property alerts sign-up on the site.</p></details>
+<details><summary>What do you charge?</summary><p>Fees are not published on the site. The team will confirm them in a consultation.</p></details>
+</div></section>
+
+<section id="contact" class="soft"><div class="wrap split">
+<div>
+<span class="kicker">Contact</span>
+<h2>Casey Kennedy Estate Agents.</h2>
+<p>1 The Hill, Stillorgan, Co. Dublin, A94 CX66</p>
+<p><a href="tel:+35312883688" style="font-weight:600">+353 1 288 3688</a><br>enquiries@ckp.ie</p>
+<p><a class="btn" href="#contact" onclick="awOpen('view');return false">Request a viewing</a> <a class="btn dark" href="#contact" onclick="awOpen('let');return false">Landlord enquiry</a></p>
+</div>
+<div class="hours"><dl>
+<dt>Opening times</dt><dd>9:00 to 17:00</dd>
+<dt>Licence</dt><dd>PSRA No. 003493</dd>
+<dt>Property issue</dt><dd>Use the Report Property Issue button on ckp.ie</dd>
+<dt>Property alerts</dt><dd>Register on ckp.ie to hear about new listings</dd>
+</dl></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<div>Casey Kennedy Estate Agents &middot; 1 The Hill, Stillorgan, Co. Dublin &middot; PSRA No. 003493</div>
+<div class="sig">Demo · prepared by Gevorg Hovhannisyan</div>
+</div></footer>
+
+<button id="aw-fab" type="button" aria-label="Open assistant">Ask CKP assistant</button>
+<div id="aw-pn" role="dialog" aria-label="Assistant">
+<div id="aw-hd"><div>Casey Kennedy Estate Agents<small>Demo assistant &middot; answers from ckp.ie</small></div><button id="aw-x" type="button" aria-label="Close">&times;</button></div>
+<div id="aw-log"></div><div id="aw-chips"></div>
+<form id="aw-form"><input id="aw-in" autocomplete="off" aria-label="Your question"><button type="submit">Send</button></form>
+</div>
+
+<script>
+window.__CFG={
+"greet":"Hello, I'm a demo assistant for Casey Kennedy Estate Agents. I answer from the CKP website and can prepare a valuation, viewing or landlord enquiry for the team. How can I help?",
+"ph":"Ask about valuations, selling, letting...",
+"cancelLabel":"Cancel","cancelMsg":"No problem, nothing was saved. What else can I help with?",
+"moreLabel":"Other question","moreMsg":"Of course, go ahead.",
+"fallback":"I do not have that on the CKP website, so I will not guess. The office can confirm on 01 288 3688 or enquiries@ckp.ie, or you can leave an enquiry here and the team will come back to you.",
+"chips":[{"t":"Free valuation","flow":"val"},{"t":"Book a viewing","flow":"view"},{"t":"I am a landlord","flow":"let"},{"t":"Opening hours","v":"opening hours"},{"t":"Where are you?","v":"where is your office"}],
+"flows":{
+"val":{"chip":"Book my valuation","trigger":"free valuation,value my home,value my house,value my property,sell my home,sell my house,sell my property,sell house,sell apartment,sell property","intro":"Happy to prepare a free valuation request for the team. A few quick questions.","doneTitle":"Valuation request ready","done":"<p>This is a demo, so nothing was actually sent. On the live site this would reach the CKP team, who confirm the visit with you.</p>","steps":[
+{"key":"addr","label":"Property address or area","q":"What is the address or area of the property?","ph":"e.g. Stillorgan, Dublin 18"},
+{"key":"type","label":"Type","q":"What type of property?","chips":["House","Apartment","Site / land","Commercial"]},
+{"key":"how","label":"Valuation type","q":"Which kind of valuation do you need?","chips":["In-person visit","Instant online (4Val)","Probate / Fair Deal","Blue Book"]},
+{"key":"name","label":"Name","q":"Your name?","pat":"[a-z]{2}","err":"Please type your name."},
+{"key":"contact","label":"Phone or e-mail","q":"Best phone number or e-mail for the team to reach you?","pat":"@|\\d{6}","err":"Please give a phone number or an e-mail address."}]},
+"view":{"chip":"Request a viewing","trigger":"book viewing,viewing,view property,view apartment,view house,see property,open viewing,arrange viewing,buy house,buy apartment,buy property,looking to rent,looking to buy","intro":"Sure, I will prepare a viewing request.","doneTitle":"Viewing request ready","done":"<p>Demo only: nothing was sent. On the live site the team would confirm a time with you.</p>","steps":[
+{"key":"prop","label":"Property or area","q":"Which property or area are you interested in?","ph":"e.g. apartment in Sandyford","chips":["Stillorgan","Blackrock","Dundrum","Sandyford","Dun Laoghaire","Other area"]},
+{"key":"kind","label":"Buying or renting","q":"Are you buying or renting?","chips":["Buying","Renting"]},
+{"key":"day","label":"Preferred day","q":"Which day suits you? The office is open 9:00 to 17:00.","chips":["Weekday","Weekend","Any day"]},
+{"key":"name","label":"Name","q":"Your name?","pat":"[a-z]{2}","err":"Please type your name."},
+{"key":"contact","label":"Phone or e-mail","q":"Best phone number or e-mail?","pat":"@|\\d{6}","err":"Please give a phone number or an e-mail address."}]},
+"let":{"chip":"Book letting consultation","trigger":"landlord,letting,let my property,let my apartment,let my house,rent out,rent my property,rent my house,rent my apartment,property management,manage my property,tenant finding","intro":"Great, I will prepare a free letting consultation request.","doneTitle":"Letting enquiry ready","done":"<p>Demo only: nothing was sent. On the live site the lettings team would call you back.</p>","steps":[
+{"key":"addr","label":"Property","q":"Where is the property you want to let?","ph":"e.g. Mount Merrion, Dublin 18"},
+{"key":"beds","label":"Size","q":"How many bedrooms?","chips":["Studio / 1","2","3","4+"]},
+{"key":"mgmt","label":"Service","q":"What do you need?","chips":["Tenant finding only","Full management","Not sure yet"]},
+{"key":"name","label":"Name","q":"Your name?","pat":"[a-z]{2}","err":"Please type your name."},
+{"key":"contact","label":"Phone or e-mail","q":"Best phone number or e-mail?","pat":"@|\\d{6}","err":"Please give a phone number or an e-mail address."}]}
+},
+"kb":[
+{"k":"contact,phone,call,telephone,email,mail,reach,number,enquiries","a":"Phone <b>+353 1 288 3688</b> or e-mail enquiries@ckp.ie."},
+{"k":"address,office,located,location,where,find us,stillorgan,the hill,eircode","a":"Casey Kennedy Estate Agents, 1 The Hill, Stillorgan, Co. Dublin, A94 CX66. Agents are also based in City Centre, Northside and Southside."},
+{"k":"hours,opening hours,opening times,open,close,saturday,sunday,weekend,when","a":"Opening times are listed as 9:00 to 17:00. The site does not say which days, so the team will confirm weekend availability."},
+{"k":"about,history,since,established,founded,company,who,1985,how long","a":"Established as Casey Properties in 1985 in Stillorgan, now covering South Dublin, the Northside and the Dublin commuter belt. Agents have sold over 1,500 properties and let over 5,000."},
+{"k":"services,what do you do,offer,sales,lettings,management","a":"CKP handles residential and commercial sales, lettings, property management, block and OMC management, valuations including Blue Book, probate and executor sales, buyer's agent help, land and overseas properties."},
+{"k":"free valuation,valuation,worth,value,appraisal,4val,instant valuation,online valuation,how much is my","a":"Valuations are free with no obligation. You can book an in-person visit, or use the instant online tool, 4Val, which also includes Local Property Tax. I can start a request.","f":"val"},
+{"k":"blue book,tegova,trv,lending valuation,refinance","a":"CKP are TEGoVA Residential Valuers and provide European Blue Book valuations, for example for purchases and lending or refinancing. Ask the team about your specific purpose.","f":"val"},
+{"k":"sell,selling,sale,list,listing,market my home,asking price,time on market,how long to sell","a":"CKP's sales page says it has been selling around 7.95% above asking price, with an average time on market of 29 days, and offers an obligation-free consultation.","f":"val"},
+{"k":"buy,buying,buyer,purchase,buyers agent,help purchasing,find a property","a":"CKP has a buyer's agent service for people who want help purchasing in Dublin, plus property alerts and a search by area. I can request a viewing.","f":"view"},
+{"k":"rent,renting,tenant,tenants,lettings,to let,rental,apartments to rent","a":"CKP lists residential rentals in its property search, and tenants can report property issues through the site.","f":"view"},
+{"k":"landlord,landlords,let my,letting agent,tenant finding,rent review,property management,manage","a":"For landlords CKP offers letting and property management, including rent reviews, and a free letting consultation.","f":"let"},
+{"k":"block,omc,block management,management company,development,owners management,estate management","a":"CKP manages OMCs and residential developments, from single properties up to a development of 528 units. There is a dedicated OMC department."},
+{"k":"probate,executor,estate,died,deceased,will,inherit","a":"CKP helps executors sell a property and can provide probate valuations. It is an emotive process, and their page explains how Irish probate works.","f":"val"},
+{"k":"fair deal,nursing home,nursing homes support,hse","a":"For the Fair Deal scheme you need a written valuation of the home, and CKP can arrange one."},
+{"k":"commercial,office,retail,shop,unit,investment,short term office","a":"CKP lists commercial sales, commercial rentals and short-term office rentals, and has commercial investment pages."},
+{"k":"overseas,cyprus,portugal,france,abroad,international","a":"CKP lists overseas properties in Cyprus, Portugal and France."},
+{"k":"areas,area,locations,where do you cover,dublin 4,dublin 18,blackrock,dundrum,sandyford,foxrock,monkstown,bray,lucan,leopardstown,dun laoghaire","a":"Property search areas include Blackrock, Booterstown, Bray, Cabinteely, Carrickmines, Christchurch, Dundrum, Dun Laoghaire, Foxrock, Goatstown, IFSC, Leopardstown, Loughlinstown, Lucan, Monkstown, Mount Merrion, Sandyford, Shankill and Stillorgan."},
+{"k":"team,ceo,managing director,staff,agents,people,who works,john kennedy,shane,phil thompson,dei healy,nick hughes,director","a":"Leadership: John Kennedy (CEO), Shane O'Callaghan (Managing Director), Nick Hughes (Commercial and Legal Director). Phil Thompson is Sales Director. The About Us page lists the full team."},
+{"k":"reviews,review,rating,google,testimonials,reputation,trustindex","a":"CKP shows a 4.7 rating on Google from 281 reviews, and a testimonials page."},
+{"k":"faq,questions,stamp duty,ber,local property tax,lpt,mortgage,solicitor,conveyancing,deposit","a":"The FAQ page covers around sixty topics, including BER, Local Property Tax, stamp duty, mortgages, solicitors, booking deposits and the selling process in Ireland."},
+{"k":"alerts,alert,notify,notification,new listings","a":"You can register for property alerts on the site."},
+{"k":"maintenance,repair,issue,report,problem,broken,leak","a":"There is a Report Property Issue button on the site for maintenance requests. For anything urgent, phone 01 288 3688."},
+{"k":"fees,commission,fee,charge,cost,price,how much do you charge","a":"Fees are not published on the site, the team will confirm them during a consultation."},
+{"k":"licence,psra,licensed,regulated","a":"CKP's PSRA licence number is 003493, as shown on the contact page."},
+{"k":"language,languages,speak,polish,russian","a":"Languages are not listed on the site, the team will confirm."}
+]}
+;
+(function(root){
+var STOP="the a an and or of to in on at is are do does did you your we our i me my it for with can how what when where which who please about there this that be have has any if as by from am would could should will".split(" ");
+function norm(s){return (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g," ").trim();}
+function stem(w){if(w.length>5&&/ies$/.test(w))return w.slice(0,-3)+"y";if(w.length>4&&/(ing|ers)$/.test(w))return w.slice(0,-3);if(w.length>4&&/(ed|es)$/.test(w))return w.slice(0,-2);if(w.length>3&&/s$/.test(w))return w.slice(0,-1);return w;}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[m][n];}
+function toks(s){return norm(s).split(" ").filter(function(w){return w&&STOP.indexOf(w)<0;}).map(stem);}
+function sim(t,k){if(t===k)return 2;if(t.length>=4&&k.length>=4&&(k.indexOf(t)===0||t.indexOf(k)===0))return 1.6;var L=Math.max(t.length,k.length);if(L>=5&&Math.abs(t.length-k.length)<=2){var d=lev(t,k);if(d<=1)return 1.3;if(d<=2&&L>=8)return 1.1;}return 0;}
+function prep(kb){kb.forEach(function(e){e._k=[];e.k.split(",").forEach(function(p){var ts=toks(p);if(ts.length)e._k.push(ts);});});return kb;}
+function match(cfg,q){var qt=toks(q),qn=" "+norm(q)+" ",best=null,bs=0;if(!qt.length)return null;
+cfg.kb.forEach(function(e){var s=0;e._k.forEach(function(ks){var ph=ks.length>1;if(ph){var all=ks.every(function(k){return qt.some(function(t){return sim(t,k)>0;});});if(all)s+=2.5*ks.length*0.8;}else{var m=0;qt.forEach(function(t){m=Math.max(m,sim(t,ks[0]));});s+=m;}});
+if(s>bs){bs=s;best=e;}});return bs>=1.3?best:null;}
+function intent(cfg,q){var qt=toks(q);for(var id in cfg.flows){var f=cfg.flows[id];if(f._t.some(function(ks){return ks.every(function(k){return qt.some(function(t){return sim(t,k)>=1.3;});});}))return id;}return null;}
+function init(cfg){prep(cfg.kb);for(var id in cfg.flows){var f=cfg.flows[id];f._t=f.trigger.split(",").map(function(p){return toks(p);}).filter(function(a){return a.length;});}return cfg;}
+var api={norm:norm,toks:toks,match:match,intent:intent,init:init,sim:sim};
+if(typeof module!=="undefined"&&module.exports){module.exports=api;}else{root.AE=api;}
+})(typeof window!=="undefined"?window:this);
+
+(function(){var C=window.__CFG;AE.init(C);var $=function(i){return document.getElementById(i);};
+var fab=$("aw-fab"),pn=$("aw-pn"),log=$("aw-log"),chips=$("aw-chips"),inp=$("aw-in"),form=$("aw-form"),flow=null,step=0,data={};
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function say(h,me){var d=document.createElement("div");d.className="aw-m "+(me?"me":"bot");d.innerHTML=h;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML="";(a||[]).forEach(function(c){var b=document.createElement("button");b.type="button";b.textContent=c.t||c;b.onclick=function(){if(c.flow){say(esc(c.t),1);start(c.flow);}else send(c.v||c.t||c);};chips.appendChild(b);});}
+function home(){setChips(C.chips);}
+function ask(){var s=flow.steps[step];say(s.q);setChips((s.chips||[]).concat([{t:C.cancelLabel||"Cancel",v:"__cancel"}]));inp.placeholder=s.ph||C.ph;}
+function start(id){flow=C.flows[id];step=0;data={};say(flow.intro);ask();}
+function finish(){var h="<b>"+esc(flow.doneTitle||"Request ready")+"</b><ul>";flow.steps.forEach(function(s){h+="<li>"+esc(s.label)+": "+esc(data[s.key])+"</li>";});h+="</ul>"+flow.done;say(h);flow=null;inp.placeholder=C.ph;home();}
+function send(t){t=(t||"").trim();if(!t)return;if(t==="__cancel"){say(C.cancelLabel||"Cancel",1);say(C.cancelMsg);flow=null;inp.placeholder=C.ph;home();return;}
+if(t==="__more"){say(C.moreMsg);home();return;}
+say(esc(t),1);
+if(flow){var s=flow.steps[step];if(s.pat&&!new RegExp(s.pat,"i").test(t)){say(s.err||"Could you rephrase that?");return;}
+data[s.key]=t;step++;if(step>=flow.steps.length)finish();else ask();return;}
+var id=intent(C,t);if(id){start(id);return;}var m=AE.match(C,t);
+if(m){say(m.a);if(m.f){setChips([{t:C.flows[m.f].chip,flow:m.f},{t:C.moreLabel||"Other question",v:"__more"}]);} else home();}else{say(C.fallback);home();}}
+function intent(c,t){return AE.intent(c,t);}
+fab.onclick=function(){pn.classList.toggle("open");if(pn.classList.contains("open")&&!log.children.length){say(C.greet);home();}};
+$("aw-x").onclick=function(){pn.classList.remove("open");};
+form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value="";send(v);};
+window.awOpen=function(id){pn.classList.add("open");if(!log.children.length){say(C.greet);}if(id)start(id);else home();};
+})();
+
+</script>
+</body>
+</html>

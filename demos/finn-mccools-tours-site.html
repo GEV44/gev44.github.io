@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Finn McCools Tours | Demo site with booking assistant</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--g:#049347;--gd:#06502a;--o:#f69320;--cream:#fff8ec;--ink:#14231a;--mut:#58665d;--line:#e8dfcc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 Roboto,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;margin:0;line-height:1.05}
+a{color:inherit}.wrap{width:100%;max-width:1060px;margin:0 auto;padding:0 16px}
+.ann{background:var(--o);color:#2a1500;text-align:center;font:600 14px 'Barlow Semi Condensed';letter-spacing:.04em;padding:8px 12px}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header .wrap{display:flex;align-items:center;gap:14px;padding:8px 16px}
+.logo{height:48px;width:auto;display:block}
+header nav{margin-left:auto;display:none;gap:22px;font:700 15px 'Barlow Semi Condensed';text-transform:uppercase;letter-spacing:.06em}
+header nav a{text-decoration:none;color:var(--gd)}
+.hb{margin-left:auto;background:var(--g);color:#fff;font:700 15px 'Barlow Semi Condensed';text-transform:uppercase;letter-spacing:.06em;padding:11px 16px;border-radius:6px;border:0;cursor:pointer}
+.hero{position:relative;background:var(--g);color:#fff;overflow:hidden;padding:44px 0 70px}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 56%,rgba(255,255,255,.07) 56%,rgba(255,255,255,.07) 70%,transparent 70%)}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:34px;background:var(--cream);clip-path:polygon(0 100%,100% 0,100% 100%)}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(40px,10.5vw,82px);max-width:12ch;text-transform:uppercase}
+.hero h1 span{color:#ffd28a}
+.hero p{max-width:50ch;font-size:18px;margin:16px 0 24px;color:#e7f6ec}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;font:700 16px 'Barlow Semi Condensed';text-transform:uppercase;letter-spacing:.07em;padding:14px 22px;border-radius:6px;text-decoration:none;border:0;cursor:pointer}
+.bo{background:var(--o);color:#2a1500}.bw{background:#fff;color:var(--gd)}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.badges span{background:rgba(0,0,0,.22);padding:6px 11px;border-radius:999px;font-size:13px}
+section{padding:50px 0}
+h2{font-size:clamp(30px,7vw,46px);text-transform:uppercase;color:var(--gd);margin-bottom:10px}
+.lead{color:var(--mut);max-width:62ch}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 10px;margin-top:20px}
+.tabs button{flex:none;border:2px solid var(--g);background:#fff;color:var(--gd);font:700 15px 'Barlow Semi Condensed';text-transform:uppercase;letter-spacing:.05em;padding:10px 14px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--g);color:#fff}
+.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 18px;display:none}
+.panel.on{display:block}
+.panel h3{font-size:28px;color:var(--gd);text-transform:uppercase}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px}
+.meta span{background:#eaf7ef;color:var(--gd);font-size:13px;font-weight:500;padding:4px 10px;border-radius:999px}
+.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:3px solid var(--o)}
+.tl li{position:relative;padding:0 0 14px 14px}
+.tl li:before{content:"";position:absolute;left:-30px;top:6px;width:13px;height:13px;border-radius:50%;background:#fff;border:3px solid var(--g)}
+.tl b{font:700 17px 'Barlow Semi Condensed';color:var(--ink);text-transform:uppercase;letter-spacing:.03em}
+.tl small{display:block;color:var(--mut);font-size:14.5px}
+.note{font-size:13px;color:var(--mut);margin-top:6px}
+.why{display:grid;gap:12px;margin-top:22px}
+.why div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+.why h3{font-size:21px;color:var(--g);text-transform:uppercase;margin-bottom:4px}.why p{margin:0;color:var(--mut);font-size:15px}
+.band{background:var(--gd);color:#fff}.band h2{color:#fff}.band .lead{color:#cde9d8}
+.rules{display:grid;gap:10px;margin-top:20px}
+.rule{display:flex;gap:12px;background:rgba(255,255,255,.08);border-radius:10px;padding:14px}
+.rule b{flex:none;width:42px;height:42px;border-radius:50%;background:var(--o);color:#2a1500;font:800 18px/42px 'Barlow Semi Condensed';text-align:center}
+.rule p{margin:0;font-size:15.5px;color:#e5f4ea}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;padding:0 16px}
+.faq summary{cursor:pointer;padding:14px 0;font:700 17px 'Barlow Semi Condensed';text-transform:uppercase;letter-spacing:.03em;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faq summary:after{content:"+";color:var(--o);font-size:24px;line-height:1}.faq details[open] summary:after{content:"\2212"}
+.faq p{margin:0 0 14px;color:var(--mut);font-size:15.5px}
+.tr{display:grid;gap:12px;margin-top:18px}
+.tr blockquote{margin:0;background:#fff;border-left:5px solid var(--o);border-radius:8px;padding:14px 16px;font-size:15.5px}
+.tr cite{display:block;margin-top:6px;color:var(--g);font:700 14px 'Barlow Semi Condensed';text-transform:uppercase;letter-spacing:.06em;font-style:normal}
+.meet{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin-top:20px}
+.meet p{margin:6px 0}.meet a{color:var(--g);font-weight:500}
+footer{background:var(--ink);color:#b6c3bb;text-align:center;padding:24px 16px 90px;font-size:13px}
+@media(min-width:760px){header nav{display:flex}.hb{margin-left:20px}.why{grid-template-columns:repeat(3,1fr)}.rules{grid-template-columns:1fr 1fr}.tr{grid-template-columns:1fr 1fr}.panel{padding:26px}}
+
+#wBtn{position:fixed;right:16px;bottom:16px;z-index:50;border:0;cursor:pointer;background:#049347;color:#ffffff;font:600 15px/1 Roboto,system-ui,sans-serif;padding:14px 18px;border-radius:10px;box-shadow:0 6px 22px rgba(0,0,0,.28);display:flex;gap:8px;align-items:center}
+#wPan{position:fixed;right:12px;bottom:12px;z-index:60;width:calc(100vw - 24px);max-width:380px;height:min(560px,calc(100vh - 24px));background:#ffffff;color:#14231a;border-radius:10px;box-shadow:0 14px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 Roboto,system-ui,sans-serif}
+#wPan.open{display:flex}
+.wh{background:#06502a;color:#ffffff;padding:12px 14px;display:flex;align-items:center;gap:10px}
+.wh b{flex:1;font-size:15px}.wh small{display:block;font-weight:400;opacity:.75;font-size:12px}
+#wX{background:none;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1;padding:0 4px}
+#wLog{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.wm{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word}
+.wm.bot{background:rgba(127,127,127,.14);align-self:flex-start;border-bottom-left-radius:4px}
+.wm.me{background:#049347;color:#ffffff;align-self:flex-end;border-bottom-right-radius:4px}
+.wm a{color:inherit;text-decoration:underline}
+#wChips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px;max-height:112px;overflow:auto}
+.wc{border:1px solid #049347;background:transparent;color:inherit;border-radius:999px;padding:6px 11px;font:13px Roboto,system-ui,sans-serif;cursor:pointer}
+.wc:hover{background:#049347;color:#ffffff}
+#wForm{display:flex;gap:6px;padding:10px 12px;border-top:1px solid rgba(127,127,127,.25)}
+#wInp{flex:1;min-width:0;border:1px solid rgba(127,127,127,.4);border-radius:10px;padding:10px;font:16px Roboto,system-ui,sans-serif;background:transparent;color:inherit}
+#wForm button{border:0;background:#049347;color:#ffffff;border-radius:10px;padding:0 14px;font:600 14px Roboto,system-ui,sans-serif;cursor:pointer}
+.wnote{font-size:11px;opacity:.6;text-align:center;padding:0 12px 8px}
+
+</style></head><body>
+<div class="ann">100% refund if you cancel 24 hours before the tour departs</div>
+<header><div class="wrap"><a href="#top" aria-label="Finn McCools Tours"><img class="logo" src="img/finn-mccools-tours-logo.png" alt="Finn McCools Tours"></a>
+<nav><a href="#tours">Day tours</a><a href="#why">Why us</a><a href="#know">Before you go</a><a href="#faq">FAQ</a></nav>
+<button class="hb" type="button" onclick="document.getElementById('wBtn').click()">Book now</button></div></header>
+
+<div class="hero" id="top"><div class="wrap">
+<h1>Day tours from <span>Dublin</span> and Belfast</h1>
+<p>Giant's Causeway, the Cliffs of Moher, Glendalough and more, with a separate professionally trained guide and driver on every coach.</p>
+<div class="row"><button class="btn bo" type="button" onclick="document.getElementById('wBtn').click()">Start a booking request</button><a class="btn bw" href="#tours">See the day tours</a></div>
+<div class="badges"><span>Top 20 Tour Company in Northern Europe</span><span>TripAdvisor Travellers' Choice</span><span>Free cancellation up to 24h</span></div>
+</div></div>
+
+<section id="tours"><div class="wrap">
+<h2>Pick your day</h2>
+<p class="lead">Dublin tours board outside Dublin City Gallery The Hugh Lane on Parnell Square North. All times are approximate and stops can change with traffic and weather.</p>
+<div class="tabs" role="tablist" aria-label="Tours">
+<button role="tab" aria-selected="true" data-t="t1">Giant's Causeway</button>
+<button role="tab" aria-selected="false" data-t="t2">Cliffs of Moher</button>
+<button role="tab" aria-selected="false" data-t="t3">Glendalough &amp; Kilkenny</button>
+<button role="tab" aria-selected="false" data-t="t4">From Belfast</button>
+</div>
+
+<div class="panel on" id="t1"><h3>Giant's Causeway, Dark Hedges &amp; Belfast</h3>
+<div class="meta"><span>From Dublin</span><span>Leave 06:45</span><span>Back about 19:30 to 20:30</span></div>
+<ul class="tl">
+<li><b>06:45 Depart Parnell Square North</b><small>Legends, myths and history on the way, with a rest stop at a service station for coffee and snacks.</small></li>
+<li><b>Dark Hedges, about 20 minutes</b><small>The beech-lined lane made famous by Game of Thrones, and a photographer's dream.</small></li>
+<li><b>Dunluce Castle photo stop</b><small>A bonus 5-minute stop in summer.</small></li>
+<li><b>Giant's Causeway, 1.5 to 2 hours</b><small>40,000 interlocking basalt columns and the Finn McCool legend.</small></li>
+<li><b>Glens of Antrim</b><small>The old coastal road home, with views to Scotland on a clear day.</small></li>
+<li><b>Belfast on your own, about 1 hour</b><small>City Hall, shopping streets and lunch. Northern Ireland uses pounds sterling.</small></li>
+</ul></div>
+
+<div class="panel" id="t2"><h3>Cliffs of Moher, Burren &amp; Galway</h3>
+<div class="meta"><span>From Dublin</span><span>Leave 06:45</span><span>Back about 19:30</span></div>
+<ul class="tl">
+<li><b>06:45 Depart Parnell Square North</b><small>West across Ireland in one day, with stories from the guide.</small></li>
+<li><b>Galway Plaza rest stop, 15 minutes</b><small>Coffee and last-minute essentials. A different service station may be used depending on traffic.</small></li>
+<li><b>Wild Atlantic Way</b><small>Through Ennistymon and Lahinch.</small></li>
+<li><b>Cliffs of Moher, about 2 hours</b><small>Includes access to the Cliffs of Moher Visitor Experience.</small></li>
+<li><b>The Burren, about 15 minutes</b><small>Limestone plateau with rare wildflowers.</small></li>
+<li><b>Galway, about 1.5 hours</b><small>Passing Kinvara and Dunguaire Castle on the way, then time to explore the city.</small></li>
+</ul></div>
+
+<div class="panel" id="t3"><h3>Glendalough, Wicklow &amp; Kilkenny</h3>
+<div class="meta"><span>From Dublin</span><span>Includes sheepdog demonstration</span><span>Finish about 17:30 to 18:00</span></div>
+<ul class="tl">
+<li><b>Kilkenny, 2 hours</b><small>Medieval streets, Black Abbey, St Canice's Cathedral and free entry to the castle park and courtyard.</small></li>
+<li><b>Glendalough, about 2 hours</b><small>Monastic city from the 10th century, lakes, waterfalls and woodland walks.</small></li>
+<li><b>Wicklow Mountains photo stop, 10 minutes</b><small>Panoramic views from an elevated spot.</small></li>
+<li><b>Sheepdog herding demonstration</b><small>The farmer explains each command as the dogs work the flock.</small></li>
+</ul><p class="note">The exact departure time is on the tour page; the team will confirm yours in writing.</p></div>
+
+<div class="panel" id="t4"><h3>Giant's Causeway and Titanic, from Belfast</h3>
+<div class="meta"><span>From Belfast</span><span>Titanic museum entrance included</span></div>
+<ul class="tl">
+<li><b>Giant's Causeway, Dark Hedges and the rope bridge</b><small>A relaxed day built around Northern Ireland's two must-see attractions.</small></li>
+<li><b>Titanic museum in Belfast</b><small>Entrance is part of this tour.</small></li>
+<li><b>Shorter option</b><small>A separate Giant's Causeway tour from Belfast finishes at around 3pm.</small></li>
+<li><b>Game of Thrones tours</b><small>Run from both Dublin and Belfast.</small></li>
+</ul><p class="note">Also on the site: Shore Excursions for cruise passengers, private tours and coach hire.</p></div>
+</div></section>
+
+<section id="why" style="background:#fff"><div class="wrap">
+<h2>Why people choose us</h2>
+<div class="why">
+<div><h3>Free cancellation</h3><p>Full refund up to 24 hours before your tour departs.</p></div>
+<div><h3>Guide and driver</h3><p>A separate, professionally trained guide and driver on each tour.</p></div>
+<div><h3>Honest about lunch</h3><p>No paid lunch stop, so you spend the time at the sights. Bring your own or pick something up on the way.</p></div>
+</div>
+<div class="tr">
+<blockquote>&ldquo;Our tour guide was Derek and our driver was Nikolai and they were a great pairing. The Dark Hedges, so awesome!&rdquo;<cite>Carlona G &middot; Game of Thrones tour</cite></blockquote>
+<blockquote>&ldquo;The surprise stop at the Kilmacduagh Monastery was especially lovely. With a 4 hour drive to the Cliffs of Moher the stories along the way made the day.&rdquo;<cite>Megan A &middot; Cliffs of Moher</cite></blockquote>
+<blockquote>&ldquo;The tour guide (Godfrey) was very educated and attentive, constantly giving us updates on history, singing songs, playing live music and answering our questions.&rdquo;<cite>Heally K &middot; Giant's Causeway</cite></blockquote>
+<blockquote>&ldquo;I was worried it would be too much to do in the day, but that's not true at all. Nick was timely, but not pressuring us to get everything done.&rdquo;<cite>Amelia S &middot; Causeway and Belfast</cite></blockquote>
+</div></div></section>
+
+<section class="band" id="know"><div class="wrap">
+<h2>Before you go</h2><p class="lead">The practical answers people ask most.</p>
+<div class="rules">
+<div class="rule"><b>24</b><p>Cancel up to 24 hours before departure for a full refund. Later cancellations and no-shows are not refunded.</p></div>
+<div class="rule"><b>15</b><p>Children are under 15 and each needs their own seat. Bring a child seat for each child.</p></div>
+<div class="rule"><b>16+</b><p>Students aged 16 to 25 with a valid student ID can book a student ticket.</p></div>
+<div class="rule"><b>2h</b><p>The longest time on the bus is around 2 hours, with bathroom stops pointed out by the guide.</p></div>
+<div class="rule"><b>10+</b><p>Tours run with about 10 to 60 people, in a minicoach or coach depending on bookings.</p></div>
+<div class="rule"><b>@</b><p>Confirmations are written, by email. The team cannot confirm a tour by phone.</p></div>
+</div></div></section>
+
+<section id="private" style="background:#fff"><div class="wrap">
+<h2>Private tours &amp; coach hire</h2>
+<p class="lead">Regular tours cannot take big groups, so groups book privately. Finn McCools can build a completely custom tour of Ireland, from a day tour with an extra stop to a unique itinerary, and offers coach and minibus hire in Dublin, Belfast and across Ireland and Northern Ireland.</p>
+<div class="why">
+<div><h3>Private day tours</h3><p>For example the private Giant's Causeway and Rope Bridge Express from Dublin.</p></div>
+<div><h3>Coach and minibus hire</h3><p>Dublin, Belfast and onward anywhere in Ireland or Northern Ireland.</p></div>
+<div><h3>Package tours</h3><p>Tours that include accommodation and food, planned around your budget and timescales.</p></div>
+</div>
+<div class="meet" style="margin-top:20px"><h3 style="color:var(--gd);text-transform:uppercase">Cruise ship in port?</h3><p>The site has a Shore Excursions section for cruise passengers. Send your ship, date and port to the team and they will advise what fits your time ashore.</p></div>
+</div></section>
+
+<section class="faq" id="faq"><div class="wrap">
+<h2>Questions</h2><div style="margin-top:18px">
+<details><summary>Is lunch included?</summary><p>No. The tours have no lunch stops, so bring a packed lunch or pick something up at a stop on the way to the main attraction.</p></details>
+<details><summary>Can I bring luggage?</summary><p>Yes, there is a storage compartment underneath the coach or at the back of the minicoach. Tell the guide if you are not returning to the starting city.</p></details>
+<details><summary>Is there a discount for groups or booking more than one tour?</summary><p>Not at the moment. Big groups need to book a private tour; email the team with the date and group size.</p></details>
+<details><summary>I have limited mobility. Can I join?</summary><p>The Cliffs of Moher, Glendalough and Titanic tours involve less walking and are more relaxed.</p></details>
+<details><summary>I booked the wrong date. What do I do?</summary><p>Subject to availability and the cancellation policy, the date or tour can be changed. Email the team with your request so they can amend the booking.</p></details>
+<details><summary>I left something on the bus.</summary><p>Send the tour date, tour name, seat location and a description. If it is found you can collect it from the pick-up point the next morning.</p></details>
+<details><summary>Is there WiFi on board?</summary><p>Some coaches have it, but it is not advertised or guaranteed because the vehicle depends on the day.</p></details>
+<details><summary>Can I choose my seat?</summary><p>Seats are first come, first served. Special needs can be noted on your booking, and people who get motion sickness often prefer the middle of the bus.</p></details>
+<details><summary>Where can I pay in cash?</summary><p>The head office is not open to the public. Visit the official tourist offices: Things to do in Dublin (12 Aston Quay, Dublin 2) or the Belfast Welcome Centre (9 Donegall Square N).</p></details>
+</div>
+<div class="meet"><h3 style="color:var(--gd);text-transform:uppercase">Talk to the team</h3>
+<p>Email <a href="mailto:bookings@finnmccoolstours.ie">bookings@finnmccoolstours.ie</a></p><p>Phone <a href="tel:+353871137493">00353 87 113 7493</a></p>
+<div class="row" style="margin-top:12px"><button class="btn bo" type="button" onclick="document.getElementById('wBtn').click()">Start a booking request</button></div></div>
+</div></section>
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+
+<button id="wBtn" type="button" aria-expanded="false" aria-controls="wPan"><span aria-hidden="true">&#9992;</span> Book / ask</button>
+<div id="wPan" role="dialog" aria-label="Finn McCools assistant">
+<div class="wh"><b>Finn McCools assistant<small>Demo &middot; answers from the Finn McCools site</small></b><button id="wX" type="button" aria-label="Close">&times;</button></div>
+<div id="wLog" aria-live="polite"></div><div id="wChips"></div>
+<form id="wForm" autocomplete="off"><input id="wInp" type="text" aria-label="Your message" placeholder="Ask about tours, kids, cancellation&hellip;"><button type="submit">Send</button></form>
+<div class="wnote">Demo only. Nothing is sent to the team.</div></div>
+
+<script>
+window.CFG={"hello": "Hi, I'm the Finn McCools assistant (demo). Ask about tours from Dublin or Belfast, cancellation, kids, lunch or private hire, or start a booking request.", "chips": ["Book a tour", "Cancellation policy", "Cliffs of Moher", "Giant's Causeway", "Is lunch included?", "Private tour"], "kb": [{"k": ["cancel", "cancellation", "refund", "refunds", "money back", "policy", "cancelled", "no show", "noshow"], "a": "Cancel up to 24 hours before departure for a full refund. Less than 24 hours before departure, or a no-show, means no refund. Changes up to 24 hours before departure are subject to availability; inside 24 hours no changes are allowed.", "go": ["Change my date", "Book a tour"]}, {"k": ["change date", "change tour", "wrong date", "wrong tour", "amend", "reschedule", "change booking", "switch"], "a": "Subject to availability and the cancellation policy, the team can change the date or tour for you. They need it in writing, so email bookings@finnmccoolstours.ie with your request and they will amend the booking."}, {"k": ["lunch", "food", "eat", "meal", "packed lunch", "hungry", "snacks", "coffee"], "a": "Lunch is not included, and the tours deliberately have no dedicated lunch stop. Bring a packed lunch so you get more time at the scenery, or pick something up at one of the stops on the way."}, {"k": ["bathroom", "toilet", "toilets", "restroom", "comfort break", "loo", "rest stop"], "a": "Yes. The longest you are on the bus is around 2 hours, and the driver or guide points out the bathrooms at every stop."}, {"k": ["child", "children", "kids", "kid", "baby", "babies", "infant", "toddler", "child seat", "family"], "a": "A child is anyone under 15 (including infants). Each child needs their own seat, so book one ticket per child, and you need to bring your own child seat for each. Most tours are not recommended for young children or babies. The more family-friendly tours are Cliffs of Moher, Giant's Causeway and Titanic, and Glendalough, Wicklow and Kilkenny."}, {"k": ["student", "students", "student ticket", "student id", "discount", "discounts", "cheaper"], "a": "Anyone aged 16 to 25 with a valid student ID, from any country, can book a student ticket. There is no discount for booking more than one tour, and no group discount at the moment."}, {"k": ["mobility", "wheelchair", "walking", "disabled", "accessible", "limited mobility", "elderly", "older", "easy"], "a": "The Cliffs of Moher tour, the Glendalough tour and the Titanic tour have less walking and are the more relaxed options. Tell the team about any needs when you book and they can note it on your booking."}, {"k": ["group", "private", "private tour", "coach hire", "bus hire", "minibus", "charter", "custom tour", "bespoke", "big group", "large group"], "a": "Big groups need to book a private tour rather than join the regular tours. Finn McCools also offers custom tours and private coach and minibus hire in Dublin, Belfast and across Ireland and Northern Ireland. Email bookings@finnmccoolstours.ie with the date and group size.", "go": ["Contact the team"]}, {"k": ["giants causeway", "causeway", "dark hedges", "belfast tour", "northern ireland", "game of thrones", "got", "titanic", "rope bridge", "glens of antrim", "dunluce"], "a": "The Giant's Causeway tour from Dublin leaves at 06:45 and visits a rest stop, the Dark Hedges (about 20 minutes), a Dunluce Castle photo stop, the Giant's Causeway (1.5 to 2 hours), the Glens of Antrim road and about an hour in Belfast, returning to Dublin around 19:30 to 20:30. There are also Giant's Causeway and Titanic Experience tours from Dublin and Belfast.", "go": ["Cliffs of Moher", "Book a tour"]}, {"k": ["cliffs", "cliffs of moher", "moher", "burren", "galway", "wild atlantic way", "west ireland", "lahinch", "ennistymon"], "a": "The Cliffs of Moher tour leaves Parnell Square North at 06:45: rest stop at Galway Plaza, the Wild Atlantic Way through Ennistymon and Lahinch, about 2 hours at the Cliffs with access to the Visitor Experience, the Burren (about 15 minutes) and about 1.5 hours in Galway. Back in Dublin around 19:30.", "go": ["Giant's Causeway", "Book a tour"]}, {"k": ["glendalough", "wicklow", "kilkenny", "sheepdog", "sheep", "monastic", "mountains", "braveheart"], "a": "The Glendalough, Wicklow Mountains and Kilkenny tour has about 2 hours in Kilkenny (free entry to the castle park and courtyard), about 2 hours at Glendalough's monastic site, a 10-minute photo stop in the Wicklow Mountains and a sheepdog herding demonstration. It finishes around 17:30 to 18:00."}, {"k": ["pickup", "pick up", "meeting point", "depart", "departure", "leave", "where start", "meet", "boarding", "parnell", "hugh lane", "start time"], "a": "Dublin tours board outside Dublin City Gallery The Hugh Lane on Parnell Square North, about 06:30 to 06:35 for a 06:45 departure (Giant's Causeway and Cliffs of Moher tours). The Glendalough tour's departure time is on its tour page, and the team will confirm yours in writing."}, {"k": ["walking tour", "dublin tour", "tours from dublin", "dublin", "city tour", "things to do dublin"], "a": "From Dublin the day tours are Giant's Causeway, Cliffs of Moher with the Burren and Galway, Glendalough with Wicklow and Kilkenny, Giant's Causeway and Titanic Distillers, a Walking Tour in Dublin, and a private Giant's Causeway and Rope Bridge Express."}, {"k": ["shore excursion", "shore excursions", "cruise", "cruise ship", "port", "ship", "cruise passengers"], "a": "Finn McCools has a Shore Excursions section for cruise passengers. Send your ship, arrival date and port to bookings@finnmccoolstours.ie and the team will advise."}, {"k": ["vehicle", "big", "type", "minicoach", "size", "how many people", "seats", "seat", "front seat", "window seat", "motion sickness", "comfortable"], "a": "Group size ranges from about 10 to 60 depending on the day, in a minicoach or a full coach, and the vehicle type cannot be guaranteed. Seats are first come, first served, and special needs can be noted on your booking (people prone to motion sickness often prefer the middle of the bus)."}, {"k": ["wifi", "wi fi", "internet", "usb", "charging", "charge", "plug"], "a": "Some coaches have WiFi, but it is not advertised or guaranteed. Newer coaches may also have USB charging."}, {"k": ["guide", "guides", "driver", "drivers", "storytelling", "history", "music", "knowledgeable"], "a": "Tours have a separate professionally trained guide and driver, and guides share Irish history, legends and folklore along the way. Reviews often name guides who sing songs or play live music."}, {"k": ["luggage", "bags", "bag", "suitcase", "backpack", "storage", "baggage"], "a": "Yes, there is a storage compartment underneath the coach or at the back of the minicoach. If you are not returning to your starting city, tell the guide when you leave so they do not wait for you. Visa requirements are your own responsibility."}, {"k": ["lost", "left", "forgot", "forgotten", "lost property", "lost item", "left something"], "a": "Call or email with the tour date, tour name, your seat location and a description of the item. If it is found, collect it from the pick-up point the next morning."}, {"k": ["voucher", "gift", "gift ticket", "code", "reference number", "reference"], "a": "Gift tickets and vouchers still need booking ahead because tours may be full. Email bookings@finnmccoolstours.ie with your reference numbers or codes and you will get a written confirmation back; they cannot confirm tours by phone."}, {"k": ["pay", "payment", "card", "cash", "deposit", "pay guide", "pay on the day", "office", "ticket office"], "a": "Book through the website or call 00353 87 113 7493 and pay by card. If the tour is not busy they may accept a booking without a deposit and you pay the guide on the day. The head office is not open to the public; for cash, visit the official tourist offices: Things to do in Dublin (12 Aston Quay, Dublin 2) or the Belfast Welcome Centre (9 Donegall Square N, Belfast BT1 5GJ)."}, {"k": ["price", "prices", "cost", "how much", "expensive", "cheap", "fare", "fares"], "a": "Prices are on each tour page and depend on the tour and ticket type (adult, student, child), so I do not quote numbers here. The team's stated guarantee is that you will not find the same or better quality tours in Dublin for a better price."}, {"k": ["contact", "phone", "call", "email", "number", "reach", "speak", "talk"], "a": "Email bookings@finnmccoolstours.ie or call 00353 87 113 7493. Written confirmation is by email, as tours cannot be confirmed by phone."}, {"k": ["about", "who", "company", "award", "awards", "tripadvisor", "best tour", "reviews", "review", "rating", "rated", "reputation"], "a": "According to the company site: Top 20 Tour Company in Northern Europe, voted 4th Best Day Tour Worldwide 2019 and Best Tour in Ireland 2019 on TripAdvisor, with Travellers' Choice and Certificate of Excellence every year since they started. They are also listed on Viator and GetYourGuide."}, {"k": ["career", "careers", "job", "jobs", "work for you", "hiring", "vacancy", "driver job"], "a": "There is a Careers page in the footer of the site for guides and drivers."}], "fallback": "I do not have that detail and will not guess. The team will confirm it by email: bookings@finnmccoolstours.ie or phone 00353 87 113 7493.", "flow": {"intro": "Let's get a booking request together (type cancel to stop).", "cancelled": "No problem, nothing was sent.", "doneTitle": "Booking request ready for the team", "done": "Sent to the team (demo: nothing is actually sent). They confirm in writing by email, subject to availability.", "steps": [{"key": "tour", "label": "Tour", "q": "Which tour?", "opts": ["Giant's Causeway from Dublin", "Cliffs of Moher from Dublin", "Glendalough, Wicklow & Kilkenny", "Giant's Causeway & Titanic (Belfast)", "Private tour or coach hire", "Not sure yet"]}, {"key": "date", "label": "Date", "q": "Which date would you like to travel?", "ph": "e.g. 14 March"}, {"key": "pax", "label": "Passengers", "q": "How many passengers, and how many are students (16-25 with ID) or children (under 15)?", "ph": "e.g. 4 adults, 1 student, 1 child"}, {"key": "city", "label": "Departing from", "q": "Departing from?", "opts": ["Dublin", "Belfast", "Cruise port"]}, {"key": "name", "label": "Name", "q": "Your name?", "ph": "First name"}, {"key": "email", "label": "Email", "q": "Which email should the team confirm to?", "ph": "you@example.com", "err": "That does not look like an email address, could you check it?"}]}};
+CFG.flowRe=new RegExp("\\b(book|enquire|enquiry|inquire|inquiry|reserve|reservation)\\b|(make|send|get|start|request)\\s+(a|an|my|the)?\\s*(booking|reservation|request|enquiry|inquiry|quote|message)|get in touch|talk to (someone|the team|a human)");
+CFG.flow.steps[5].re=new RegExp("^\\S+@\\S+\\.\\S+$");
+
+</script>
+<script>
+/*PURE*/
+function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9$£€ ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))w=w.slice(0,-1);if(w.length>5)w=w.replace(/(ing|ed)$/,'');w=w.replace(/([b-df-hj-np-tv-z])$/,'$1');return w.length>5?w.slice(0,5):w;}
+function lev(a,b){if(Math.abs(a.length-b.length)>1)return 9;var m=[],i,j;for(i=0;i<=a.length;i++){m[i]=[i];}for(j=1;j<=b.length;j++)m[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return m[a.length][b.length];}
+function same(a,b){if(a.s===b.s)return true;var n=Math.min(a.w.length,b.w.length);if(n<5)return false;return lev(a.w,b.w)<=1;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(function(w){return{w:w,s:stem(w)};});}
+function makeMatcher(CFG){
+  var STOP={the:1,a:1,an:1,do:1,you:1,i:1,is:1,are:1,to:1,of:1,and:1,or:1,can:1,my:1,we:1,it:1,in:1,on:1,for:1,me:1,how:1,what:1,there:1,your:1,does:1,have:1,with:1,this:1,that:1};
+  var kb=CFG.kb.map(function(e){var seen={};var ks=[];e.k.forEach(function(p){var t=toks(p).filter(function(x){return !STOP[x.w];}),key=t.map(function(x){return x.s;}).join(' ');if(!seen[key]){seen[key]=1;ks.push(t);}});return{e:e,k:ks};});
+  return function(q){
+    var qt=toks(q).filter(function(t){return !STOP[t.w];});
+    if(!qt.length)return null;
+    var best=null,bs=0;
+    kb.forEach(function(x){
+      var s=0;
+      x.k.forEach(function(kt){
+        var ok=kt.every(function(t){return qt.some(function(u){return same(u,t);});});
+        if(ok)s+=kt.length*2+1;
+      });
+      if(s>bs){bs=s;best=x.e;}
+    });
+    return best;
+  };
+}
+/*ENDPURE*/
+(function(){
+  var C=window.CFG,match=makeMatcher(C);
+  var $=function(i){return document.getElementById(i);};
+  var btn=$('wBtn'),pan=$('wPan'),log=$('wLog'),chips=$('wChips'),form=$('wForm'),inp=$('wInp');
+  var flow=null,data={};
+  function add(t,who,html){var d=document.createElement('div');d.className='wm '+who;if(html)d.innerHTML=t;else d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function setChips(list){chips.innerHTML='';list.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='wc';b.textContent=c.t||c;b.onclick=function(){send(c.v||c.t||c);};chips.appendChild(b);});}
+  function home(){setChips(C.chips);}
+  function startFlow(){flow={i:0};data={};ask();}
+  function ask(){
+    var s=C.flow.steps[flow.i];add(s.q,'bot');
+    if(s.opts){setChips(s.opts.map(function(o){return{t:o,v:o};}));}else{chips.innerHTML='';}
+    inp.placeholder=s.ph||'';inp.focus();
+  }
+  function finish(){
+    var h='<b>'+C.flow.doneTitle+'</b><br>';
+    C.flow.steps.forEach(function(s){if(data[s.key])h+=s.label+': '+esc(data[s.key])+'<br>';});
+    h+='<br>'+C.flow.done;
+    add(h,'bot',1);flow=null;home();
+  }
+  function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function send(t){
+    t=(t||'').trim();if(!t)return;add(t,'me');inp.value='';
+    if(flow){
+      if(/^(cancel|stop|reset)$/i.test(t)){flow=null;add(C.flow.cancelled,'bot');home();return;}
+      var s=C.flow.steps[flow.i];
+      if(s.re&&!s.re.test(t)){add(s.err,'bot');return;}
+      data[s.key]=t;flow.i++;
+      if(flow.i>=C.flow.steps.length)finish();else ask();
+      return;
+    }
+    var n=norm(t);
+    if(C.flowRe.test(n)){add(C.flow.intro,'bot');startFlow();return;}
+    var m=match(t);
+    if(m){add(m.a,'bot',1);if(m.go){setChips(m.go.map(function(x){return{t:x};}));}else home();}
+    else{add(C.fallback,'bot',1);home();}
+  }
+  function open(o){pan.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);if(o&&!log.children.length){add(C.hello,'bot');home();}}
+  btn.onclick=function(){open(!pan.classList.contains('open'));};
+  $('wX').onclick=function(){open(false);};
+  window.wAsk=function(q){open(true);send(q);};
+  form.onsubmit=function(e){e.preventDefault();send(inp.value);};
+})();
+
+var tb=document.querySelectorAll('.tabs button');
+tb.forEach(function(b){b.onclick=function(){tb.forEach(function(x){x.setAttribute('aria-selected',x===b);});document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on',p.id===b.getAttribute('data-t'));});};});
+</script>
+</body></html>

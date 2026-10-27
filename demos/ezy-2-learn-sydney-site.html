@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EZY 2 LEARN Driving School | Edmondson Park, Sydney</title>
+<meta name="description" content="Demo page for EZY 2 LEARN Driving School with an assistant that answers questions from the school's website.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#02296e;--sun:#ffca18;--sun2:#fff3c4;--ink:#10213f;--mut:#5b6785;--bg:#f6f8fd}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 'DM Sans',system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+h1,h2,h3{font-family:'Poppins','DM Sans',sans-serif;margin:0;line-height:1.12;color:var(--navy)}
+a{color:inherit}.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.bar{background:#fff;border-bottom:1px solid #e3e8f4;position:sticky;top:0;z-index:20}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 16px}
+.bar img{height:44px;width:auto;display:block}
+.pill{display:inline-block;border:0;border-radius:999px;background:var(--navy);color:#fff;font:600 15px 'DM Sans',sans-serif;padding:11px 20px;text-decoration:none;cursor:pointer}
+.pill.sun{background:var(--sun);color:var(--navy);font-weight:700}
+.pill.line{background:transparent;border:2px solid var(--navy);color:var(--navy)}
+.hero{background:linear-gradient(180deg,var(--bg),#fff);padding:28px 0 12px;position:relative}
+.hero .grid{display:grid;gap:22px;align-items:center}
+.lplate{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:10px;background:var(--sun);color:#000;font:800 30px 'Poppins',sans-serif;transform:rotate(-6deg);box-shadow:0 4px 0 rgba(2,41,110,.18)}
+.hero h1{font-size:clamp(32px,8.4vw,56px);margin:14px 0 12px}
+.hero h1 span{background:linear-gradient(transparent 62%,var(--sun) 62%)}
+.hero p{color:var(--mut);max-width:32em;margin:0 0 18px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px}
+.badges{display:grid;gap:10px}
+.badge{background:#fff;border:1px solid #dfe5f3;border-radius:16px;padding:14px 16px;display:flex;gap:12px;align-items:center;box-shadow:0 6px 18px rgba(2,41,110,.06)}
+.badge b{font:700 26px 'Poppins',sans-serif;color:var(--navy);min-width:64px}
+.badge span{font-size:14px;color:var(--mut)}
+section{padding:44px 0}
+h2{font-size:clamp(26px,6vw,38px);margin-bottom:8px}
+.lead{color:var(--mut);max-width:40em;margin:0 0 22px}
+.road{position:relative;display:grid;gap:14px;counter-reset:s}
+.road:before{content:"";position:absolute;left:22px;top:8px;bottom:8px;border-left:4px dashed #c8d3ee}
+.road div{position:relative;padding:4px 0 4px 64px;counter-increment:s}
+.road div:before{content:counter(s);position:absolute;left:0;top:0;width:46px;height:46px;border-radius:50%;background:var(--navy);color:#fff;font:700 20px/46px 'Poppins',sans-serif;text-align:center}
+.road div:nth-child(4):before{background:var(--sun);color:var(--navy)}
+.road b{display:block;font:600 18px 'Poppins',sans-serif;color:var(--navy)}
+.road p{margin:2px 0 0;color:var(--mut);font-size:15px}
+.tick{display:grid;gap:12px}
+.t{background:#fff;border:2px solid var(--navy);border-radius:18px;padding:18px;position:relative}
+.t.hot{background:var(--sun2)}
+.t small{font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.06em;font-size:12px}
+.t .pr{font:800 36px 'Poppins',sans-serif;color:var(--navy);margin:4px 0}
+.t .lb{display:inline-block;background:var(--navy);color:#fff;border-radius:8px;padding:3px 10px;font-size:13px;font-weight:700;margin-bottom:8px}
+.t p{margin:0 0 12px;color:#3a4a6b;font-size:15px}
+.t .save{color:#0a7a3d;font-weight:700;font-size:14px}
+.band{background:var(--navy);color:#fff}
+.band h2{color:#fff}.band .lead{color:#c1cdea}
+.svc{display:grid;gap:12px}
+.svc div{background:#0b3a8a;border-radius:16px;padding:16px}
+.svc b{font:600 18px 'Poppins',sans-serif;color:var(--sun);display:block;margin-bottom:4px}
+.svc p{margin:0;color:#dbe4f7;font-size:15px}
+.who{display:grid;gap:14px;background:var(--bg);border-radius:22px;padding:20px}
+.who h3{font-size:24px}
+.sf{width:100%;border:2px solid #c8d3ee;border-radius:12px;padding:12px 14px;font:16px 'DM Sans',sans-serif;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:#fff;border:1px solid #cfd8ee;border-radius:999px;padding:6px 13px;font-size:14px}
+.chips span.on{background:var(--sun);border-color:var(--sun);font-weight:700}
+.chips span[hidden]{display:none}
+#sfmsg{color:var(--mut);font-size:14px;margin:0 0 10px;min-height:1.4em}
+details{border-bottom:1px solid #e3e8f4;padding:2px 0}
+summary{cursor:pointer;padding:13px 0;font-weight:700;color:var(--navy)}
+details p{margin:0 0 14px;color:#3a4a6b}
+footer{overflow-wrap:anywhere;background:#071a40;color:#b7c4e3;padding:28px 0 96px;font-size:14px}
+footer a{color:var(--sun)}footer .demo{margin-top:12px;font-size:13px;opacity:.85}
+@media(min-width:720px){.hero .grid{grid-template-columns:1.25fr 1fr}.tick{grid-template-columns:repeat(3,1fr)}.svc{grid-template-columns:repeat(2,1fr)}.who{grid-template-columns:1fr 1fr;align-items:start}}
+
+.wd{position:fixed;right:14px;bottom:14px;z-index:99;font-family:'DM Sans',system-ui,sans-serif;color:#10213f}
+.wd-fab{display:flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:13px 18px;background:#02296e;color:#ffffff;font:700 15px/1 'DM Sans',system-ui,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.28);cursor:pointer}
+.wd-panel{position:absolute;right:0;bottom:62px;width:min(380px,calc(100vw - 28px));height:min(560px,calc(100vh - 100px));display:flex;flex-direction:column;background:#ffffff;border-radius:20px;box-shadow:0 14px 44px rgba(0,0,0,.35);overflow:hidden}
+.wd-panel[hidden]{display:none}
+.wd-h{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#02296e;color:#ffffff}
+.wd-h small{display:block;opacity:.85;font-size:12px}
+.wd-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer}
+.wd-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.wd-m{max-width:86%;padding:9px 12px;border-radius:12px;font-size:14px;line-height:1.4;white-space:pre-wrap;background:rgba(127,127,127,.15)}
+.wd-m.me{align-self:flex-end;background:#02296e;color:#ffffff}
+.wd-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+.wd-chips button{border:1px solid #02296e;background:#fff7d6;background:transparent;color:#10213f;border-radius:999px;padding:6px 11px;font:600 12.5px 'DM Sans',system-ui,sans-serif;cursor:pointer}
+.wd-f{display:flex;gap:6px;padding:8px 12px;border-top:1px solid rgba(127,127,127,.25)}
+.wd-in{flex:1;min-width:0;border:1px solid rgba(127,127,127,.4);border-radius:10px;padding:9px 10px;font:14px 'DM Sans',system-ui,sans-serif;background:#fff;color:#111}
+.wd-s{border:0;border-radius:10px;background:#02296e;color:#ffffff;padding:0 14px;font-size:16px;cursor:pointer}
+.wd-note{font-size:11px;opacity:.65;padding:0 12px 9px}
+</style></head><body>
+<header class="bar"><div class="wrap"><a href="#top" aria-label="EZY 2 LEARN"><img src="img/ezy-2-learn-sydney-logo.png" alt="EZY 2 LEARN, learn with confidence" width="147" height="44"></a><a class="pill sun" href="tel:0405477217">0405 477 217</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap grid"><div>
+<span class="lplate" aria-hidden="true">L</span>
+<h1>Fast-track your NSW licence <span>without the stress</span></h1>
+<p>Patient, structured lessons in Western Sydney from an award-winning team. Automatic or manual, female instructors on request, and a dual-control car for test day.</p>
+<div class="cta"><button class="pill sun" type="button" data-assist="book">Book a lesson</button><a class="pill line" href="#packages">See packages</a></div></div>
+<div class="badges">
+<div class="badge"><b>5.0</b><span>on Google, 365+ reviews</span></div>
+<div class="badge"><b>2021</b><span>Australian Enterprise Awards winner, Best Driving Education Provider, Sydney</span></div>
+<div class="badge"><b>2018</b><span>Kevin, founder, named Driving Instructor of the Year</span></div></div></div></div>
+
+<section><div class="wrap"><h2>Your driving journey</h2><p class="lead">The school's four-step approach, from first nerves to test day.</p>
+<div class="road">
+<div><b>A gentle start</b><p>They listen to your concerns first and get you comfortable. Always your pace, zero pressure.</p></div>
+<div><b>Building confidence</b><p>Essential skills, step by step, turning nervousness into real confidence.</p></div>
+<div><b>Mastering road driving</b><p>Road rules and manoeuvres explained clearly and calmly, with everything needed for the test.</p></div>
+<div><b>Test day success</b><p>You arrive ready to pass, with skills and with assurance.</p></div></div></div></section>
+
+<section id="packages" style="padding-top:8px"><div class="wrap"><h2>Packages</h2><p class="lead">As listed on the school's website. The team confirms current prices.</p>
+<div class="tick">
+<div class="t"><small>Starter</small><div class="pr">$365</div><span class="lb">5 hours = 15 logbook hours</span><p>Five hours of driving lessons.</p><div class="save">Save $10</div></div>
+<div class="t hot"><small>Popular</small><div class="pr">$725</div><span class="lb">10 hours = 30 logbook hours</span><p>Ten hours of driving lessons.</p><div class="save">Save $25</div></div>
+<div class="t"><small>Full course</small><div class="pr">$1,400</div><span class="lb">20 hours = 40 logbook hours</span><p>Twenty hours of driving lessons.</p><div class="save">Save $100</div></div>
+<div class="t"><small>Test day</small><div class="pr">$299</div><span class="lb">Car hire + 45 min lesson</span><p>Max 2.5 hours including pick-up and drop-off.</p></div>
+<div class="t"><small>RED P</small><div class="pr">$199</div><span class="lb">2 hours</span><p>Driving test assessment including an RMS mock driving test.</p></div>
+<div class="t"><small>Female instructor</small><div class="pr">$75<span style="font-size:16px">/hr</span></div><span class="lb">Automatic, from</span><p>Sonya Khanam, 5.0 from 14 ratings, for learners who prefer a female instructor.</p></div></div>
+<p style="margin-top:18px"><button class="pill" type="button" data-assist="Packages">Ask about packages</button></p></div></section>
+
+<section class="band"><div class="wrap"><h2>What you can learn</h2><p class="lead">Manual and automatic lessons, built around what you need.</p>
+<div class="svc">
+<div><b>Nervous and anxious drivers</b><p>Quiet, low-traffic starts, your pace, no judgment. Led by Kevin, whose gift is turning "what if" into "I can".</p></div>
+<div><b>Driving test car hire</b><p>A modern, dual-controlled, inspected car for the actual test, so you only worry about your driving.</p></div>
+<div><b>Overseas licence conversion</b><p>Precise lessons for the Australian practical driving assessment, nothing extra.</p></div>
+<div><b>Refresher course</b><p>A few relaxed sessions if you haven't driven in a while or want to polish one skill.</p></div>
+<div><b>Test preparation</b><p>Test-route practice, parking, hazard awareness, reverse parking, wet weather, lane changing and merging, highway driving.</p></div>
+<div><b>More lessons</b><p>Night driving, defensive driving, pre-test assessment, TORT, Aged Assessment.</p></div></div></div></section>
+
+<section id="why"><div class="wrap"><h2>Why learners pick EZY 2 LEARN</h2><p class="lead">Four things the school promises on its site.</p>
+<div class="tick">
+<div class="t"><small>01</small><h3 style="font-size:20px;margin:6px 0">Goal-focused training</h3><p>Structured, personalised lessons designed to help you pass your test quickly.</p></div>
+<div class="t"><small>02</small><h3 style="font-size:20px;margin:6px 0">Modern techniques</h3><p>Current skills and knowledge for safe, confident driving on today's roads.</p></div>
+<div class="t"><small>03</small><h3 style="font-size:20px;margin:6px 0">Supportive learning</h3><p>Stress-free, compassionate lessons in a friendly, non-judgmental atmosphere.</p></div>
+<div class="t hot"><small>04</small><h3 style="font-size:20px;margin:6px 0">Dual-control cars</h3><p>Clean, reliable, 5-star ANCAP rated cars that are easy and fun to handle for beginners.</p></div></div></div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="who" style="background:var(--navy);color:#fff"><div><h2 style="color:#fff">Meet Kevin</h2><p style="color:#c1cdea;margin:0">EZY 2 LEARN is led by Kevin, one of Sydney's most respected driving instructors and the 2018 Driving Instructor of the Year. He has a real heart for helping people who feel stuck by anxiety, from beginners to older drivers.</p></div>
+<div><p style="margin:0 0 14px;color:#e5ecfb">The team brings experience from leading, multi-award-winning driving schools. EZY 2 LEARN was a finalist in the 2021 Liverpool City Local Business Awards.</p><button class="pill sun" type="button" data-assist="book">Book a lesson</button></div></div></div></section>
+
+<section id="suburbs"><div class="wrap"><div class="who"><div><h2>Is my suburb covered?</h2><p class="lead" style="margin-bottom:12px">Lessons run from Western Sydney to the Eastern Suburbs. Type yours to check the list on the school's site.</p>
+<input class="sf" id="sf" type="search" placeholder="Type a suburb, e.g. Oran Park" aria-label="Suburb"><p id="sfmsg"></p></div>
+<div class="chips" id="subs"><span>Austral</span><span>Bankstown</span><span>Camden</span><span>Campbelltown</span><span>Campsie</span><span>Casula</span><span>Catherine Field</span><span>Denham Court</span><span>Edmondson Park</span><span>Elderslie</span><span>Gledswood Hills</span><span>Gregory Hills</span><span>Hoxton Park</span><span>Ingleburn</span><span>Lakemba</span><span>Leppington</span><span>Liverpool</span><span>Macquarie Fields</span><span>Minto</span><span>Mount Annan</span><span>Narellan</span><span>Oran Park</span><span>Prestons</span><span>Raby</span></div></div></div></section>
+
+<section style="padding-top:0"><div class="wrap"><h2>Quick answers</h2><p class="lead">Or ask the assistant in the corner.</p><details><summary>How long does it usually take to learn to drive?</summary><p>Since the lessons are so focused, most people need fewer lessons than they expect. The team makes a personalised plan to get you ready for your test as quickly as possible, with no rushing.</p></details><details><summary>What kind of car will I learn in?</summary><p>A modern, comfortable car, automatic or manual, with dual controls for safety. The cars carry a 5-star ANCAP rating.</p></details><details><summary>Is it better to learn in an automatic or a manual car?</summary><p>It depends on your goal. Automatic is usually easier and faster to learn. Manual gives you more options for future cars but needs more focused practice and time.</p></details><details><summary>What happens if I need to reschedule?</summary><p>The school asks for 24 hours' notice if you need to change your booking.</p></details><details><summary>Can I book a female instructor?</summary><p>Yes. Experienced female instructors are available for learners of every level.</p></details><details><summary>Do you help with the NSW driving test?</summary><p>Yes: test-route practice, parking, hazard awareness and reverse parking, plus car hire for test day.</p></details><details><summary>Where will my lessons take place?</summary><p>Across Western Sydney and beyond, from Liverpool, Campbelltown and Oran Park to Bankstown, Campsie and Lakemba. You will learn the exact skills the examiner looks for.</p></details><details><summary>Why choose EZY 2 LEARN?</summary><p>Experienced instructors, safe driving techniques, personalised training and driving test preparation, to help learner drivers build confidence and pass their NSW driving test.</p></details><details><summary>Do you offer both automatic and manual lessons?</summary><p>Yes. Whether you are a beginner or preparing for your NSW driving test, qualified instructors will help you develop the skills to drive safely and confidently.</p></details><details><summary>Do you offer test-day car hire?</summary><p>Yes. A modern, dual-controlled car for your actual driving test, with a 45-minute lesson, so you skip the vehicle stress.</p></details></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="who"><div><h2>Visit or call</h2><p class="lead" style="margin:0">The school is based in Edmondson Park and travels to you across Sydney's south west and beyond.</p></div>
+<div><p style="margin:0 0 6px"><b>Address</b><br>Ground Floor, 49 Poziers Rd, Edmondson Park NSW 2174</p><p style="margin:0 0 6px"><b>Phone</b><br><a href="tel:0405477217">0405 477 217</a></p><p style="margin:0 0 14px"><b>E-mail</b><br><a href="mailto:info@ezy2learndrivingschool.com.au" style="word-break:break-all">info@ezy2learndrivingschool.com.au</a></p><button class="pill sun" type="button" data-assist="book">Book a lesson</button></div></div></div></section>
+</main>
+<footer><div class="wrap"><b style="color:#ffca18">EZY 2 LEARN Driving School</b><br>Ground Floor, 49 Poziers Rd, Edmondson Park NSW 2174 · <a href="tel:0405477217">0405 477 217</a> · <a href="mailto:info@ezy2learndrivingschool.com.au">info@ezy2learndrivingschool.com.au</a><br>Open 24 hours, 7 days a week (as listed on the school's website)
+<div class="demo">Demo · prepared by Gevorg Hovhannisyan</div></div></footer>
+<script>
+(function(){var sf=document.getElementById('sf'),msg=document.getElementById('sfmsg'),chips=[].slice.call(document.querySelectorAll('#subs span'));
+sf.addEventListener('input',function(){var q=sf.value.trim().toLowerCase(),n=0;chips.forEach(function(c){var m=q&&c.textContent.toLowerCase().indexOf(q)>-1;c.className=m?'on':'';c.hidden=!!q&&!m;if(m)n++;});
+msg.textContent=!q?'':(n?'Yes, listed: '+chips.filter(function(c){return c.className==='on';}).map(function(c){return c.textContent;}).join(', ')+'.':'Not on the list. Ask the team on 0405 477 217, they may still be able to help.');});})();
+</script>
+<script>
+window.WIDGET_CFG={"fab":"Ask EZY","icon":"🚗","title":"EZY 2 LEARN assistant","sub":"Driving school, Edmondson Park NSW","note":"Demo. Answers come from the school's website; nothing is sent from this page.","placeholder":"Ask about packages, car hire, suburbs...","greet":"Hi! I can answer questions about lesson packages, test car hire, female instructors, nervous-driver lessons and the suburbs we cover, or prepare a lesson booking for the team.","chips":["Packages","Test car hire","Female instructor","Nervous drivers","Suburbs","Book a lesson"],"fallback":"I can't see that on the EZY 2 LEARN website, so I won't guess. The team can confirm: 0405 477 217 or info@ezy2learndrivingschool.com.au. Or tap Book a lesson and I'll prepare your details.","flow":{"me":"I'd like to book a lesson","cancel":"Cancel","stop":"^(cancel|stop|quit|never ?mind|exit)$","trigger":"^(?!.*cancel)(?=.*(\\bbook|enquir|inquir|reserve|sign ?up|schedule|get started|start lessons|register|\\bapply))","cancelled":"No problem, nothing was sent. Ask me anything else.","done":"Thank you! Here is your booking request:\n{summary}\n\nSent to the team. They will call or message to confirm the time. (Demo: this page sends nothing.)","steps":[{"id":"name","label":"Name","q":"Let's prepare your booking. What's your name?","pat":".{2,}","err":"Please type a name."},{"id":"sub","label":"Suburb","q":"Which suburb should the lesson start in? (For example Liverpool, Oran Park, Campbelltown.)","pat":".{3,}","err":"Please type a suburb."},{"id":"goal","label":"What for","q":"What do you need?","opts":["Beginner lessons","Nervous driver lessons","Refresher","Overseas licence conversion","Test car hire","RED P assessment","Not sure yet"]},{"id":"gear","label":"Car","q":"Automatic or manual?","opts":["Automatic","Manual"]},{"id":"who","label":"Instructor","q":"Do you have an instructor preference?","opts":["No preference","Female instructor"]},{"id":"when","label":"Preferred days / times","q":"Which days and times suit you?","pat":".{3,}","err":"Please type a day or time."},{"id":"tel","label":"Contact","q":"Last one: a mobile number or e-mail for the team to reply to?","pat":"\\d[\\d\\s+()\\-]{6,}|\\S+@\\S+\\.\\S+","err":"Please type a phone number or e-mail so the team can reply."}]},"kb":[{"id":"price","k":["price","prices","cost","how much","rate","rates","fee","fees","charge","pricing","per hour","hourly","one lesson","single lesson","cheap","afford"],"a":"Packages on the site: 5 hours $365, 10 hours $725, 20 hours $1,400. Automatic lessons with a female instructor start from $75 per hour. Test day car hire with a 45-minute lesson is $299, and the RED P test assessment is $199. The team confirms current prices.","next":["Packages","Test car hire","Book a lesson"]},{"id":"packages","k":["package","packages","5 hours","10 hours","20 hours","five hours","ten hours","twenty hours","logbook","log book","logbook hours","bundle","deal","discount","save","hours package","lesson package"],"a":"Lesson packages: 5 hours for $365 (counts as 15 logbook hours), 10 hours for $725 (30 logbook hours), 20 hours for $1,400 (40 logbook hours). That is a saving of $10, $25 and $100 against single hours.","next":["Test car hire","Prices","Book a lesson"]},{"id":"carhire","k":["car hire","hire","rent","rental","test car","car for test","car for my test","driving test car","use your car","dual control","dual controlled","vehicle for test","borrow"],"a":"Driving test car hire is $299 and includes a 45-minute lesson (max 2.5 hours in total including pick-up and drop-off). The cars are modern, dual-controlled and inspected, so you can focus on showing your driving.","next":["RED P assessment","Packages","Book a lesson"]},{"id":"redp","k":["red p","redp","assessment","mock test","mock driving test","mock","rms","pre test","pre-test","pretest","test assessment","practice test","tort","trent"],"a":"The RED P driving test assessment is $199: 2 hours of lessons including an RMS mock driving test. The site also lists pre-test assessments and TORT (Trent On Road Test) among its lessons.","next":["Test car hire","Packages","Book a lesson"]},{"id":"female","k":["female","woman","women","lady","ladies","girl","female instructor","female only","sonya","she"],"a":"Yes. There are experienced female instructors for learners who prefer one, including Sonya Khanam (5.0, 14 ratings). Automatic lessons with a female instructor start from $75 per hour.","next":["Prices","Book a lesson"]},{"id":"nervous","k":["nervous","anxious","anxiety","scared","afraid","fear","worried","panic","stress","stressed","older","overwhelmed","confidence","gentle","patient"],"a":"Nervous and anxious drivers are a speciality. Lessons begin in quiet, low-traffic areas, go at your pace, and move on only when you feel ready. The school is led by Kevin, named Driving Instructor of the Year in 2018.","next":["Female instructor","Packages","Book a lesson"]},{"id":"overseas","k":["overseas","overseas licence","overseas license","foreign","international","convert","conversion","licence conversion","license conversion","from another country","abroad","skills test","assessment overseas"],"a":"Overseas licence conversion lessons focus only on what you need to know to pass the Australian practical driving assessment quickly and confidently.","next":["Packages","Test car hire","Book a lesson"]},{"id":"refresher","k":["refresher","rusty","haven't driven","havent driven","not driven","long time","polish","update skills","aged","older driver","aged assessment"],"a":"The refresher course is for people who haven't driven in a while or want to polish a skill, in a few relaxed sessions. The site also lists an Aged Assessment among the lessons.","next":["Packages","Book a lesson"]},{"id":"transmission","k":["manual","stick","stick shift","automatic","auto","transmission","gears","clutch"],"a":"Both automatic and manual lessons are available. Automatic is usually quicker to learn; manual opens more options for future cars but needs more focused practice and time.","next":["Prices","Book a lesson"]},{"id":"suburbs","k":["suburb","suburbs","area","areas","where","cover","covered","coverage","location","locations","liverpool","campbelltown","camden","bankstown","campsie","lakemba","leppington","oran park","gregory hills","narellan","ingleburn","minto","prestons","casula","raby","austral","hoxton park","macquarie fields","mount annan","elderslie","edmondson park","denham court","gledswood hills","catherine field","western sydney","south west","sydney"],"a":"Lessons run from Western Sydney to the Eastern Suburbs, including: Austral, Bankstown, Camden, Campbelltown, Campsie, Casula, Catherine Field, Denham Court, Edmondson Park, Elderslie, Gledswood Hills, Gregory Hills, Hoxton Park, Ingleburn, Lakemba, Leppington, Liverpool, Macquarie Fields, Minto, Mount Annan, Narellan, Oran Park, Prestons, Raby. If your suburb isn't listed, ask the team.","next":["Contact","Book a lesson"]},{"id":"contact","k":["phone","call","number","email","e mail","contact","reach","talk","speak","whatsapp","text","address","office","edmondson park","poziers","visit","where are you"],"a":"Phone 0405 477 217, e-mail info@ezy2learndrivingschool.com.au. Address: Ground Floor, 49 Poziers Rd, Edmondson Park NSW 2174. The site lists the business as open 24 hours, 7 days a week.","next":["Suburbs","Book a lesson"]},{"id":"hours","k":["hours","open","opening","when","what time","weekend","weekends","sunday","saturday","evening","night","late","early","flexible","24","availability","available"],"a":"The website says EZY 2 LEARN is open 24 hours, 7 days a week, with flexible all-day lessons. Night driving lessons are also listed. For a specific time, the team will confirm.","next":["Contact","Book a lesson"]},{"id":"cancel","k":["cancel","cancellation","reschedule","change booking","change my booking","postpone","notice","24 hours notice","refund"],"a":"If you need to change a lesson, the school asks for 24 hours' notice. Refund details aren't on the site, so the team will confirm.","next":["Contact","Book a lesson"]},{"id":"howlong","k":["how long","how many lessons","how many hours","how soon","fast","quickly","fast track","fast-track","time to learn","ready for test","learn to drive"],"a":"Lessons are focused, so most people need fewer than they expect. The team builds a personalised plan to get you test-ready as quickly as possible, without rushing.","next":["Packages","Book a lesson"]},{"id":"instructors","k":["instructor","instructors","teacher","kevin","founder","award","awards","winner","experienced","qualified","who teaches","best","reviews","review","rating","google"],"a":"The school is led by Kevin, Driving Instructor of the Year in 2018. EZY 2 LEARN won the 2021 Australian Enterprise Awards (Best Driving Education Provider, Sydney) and rates 5.0 on Google with 365+ reviews.","next":["Nervous drivers","Book a lesson"]},{"id":"test","k":["test","nsw test","driving test","pass","first go","first attempt","test route","test routes","hazard","hazard perception","parking","reverse parking","prepare","preparation"],"a":"Test preparation includes test-route practice, parking techniques, hazard awareness and reverse parking. The aim is to pass the NSW driving test at the first attempt whenever possible, though no result can be promised.","next":["RED P assessment","Test car hire","Book a lesson"]},{"id":"car","k":["car","cars","vehicle","ancap","safety","safe","modern","clean"],"a":"You learn in a modern, comfortable, 5-star ANCAP-rated dual-control car, so the instructor can step in for safety.","next":["Test car hire","Book a lesson"]},{"id":"voucher","k":["gift","voucher","gift voucher","present","birthday","gift card"],"a":"The site has a Gift Voucher page. I don't have the details, so please ask the team on 0405 477 217.","next":["Contact"]},{"id":"skills","k":["night","night driving","highway","freeway","motorway","wet weather","rain","defensive","defensive driving","lane change","lane changing","merging","parking skills","topics","syllabus","lessons include","teach","taught","cover in lessons"],"a":"Lessons the site lists: manual and automatic lessons, night driving, parking skills, defensive driving, refresher lessons, pre-test assessment, TORT (Trent On Road Test), aged assessment, wet weather training, lane changing and merging, overseas licence conversion and highway driving.","next":["Packages","Book a lesson"]},{"id":"gallery","k":["gallery","photos","pictures","videos","student success","success stories"],"a":"The school has a student success gallery and videos on its website. Take a look under Gallery on ezy2learndrivingschool.com.au.","next":["Reviews","Book a lesson"]},{"id":"first","k":["first lesson","first time","what to expect","expect","beginner","beginners","never driven","new driver","learner","learners","l plates","l plate","learner permit","logbook"],"a":"The first lesson is a gentle start: the instructor listens to your concerns, gets you comfortable, and goes at your pace with zero pressure. Lesson hours also count towards your logbook (for example, 5 hours counts as 15 logbook hours).","next":["Packages","Nervous drivers","Book a lesson"]},{"id":"hello","k":["hi","hello","hey","good morning","good afternoon"],"a":"Hi! Ask about packages, test car hire, suburbs or nervous-driver lessons, or tap Book a lesson.","next":null},{"id":"thanks","k":["thanks","thank you","cheers","great","awesome"],"a":"You're welcome! Anything else?","next":null}]};
+(function(){
+//CORE-START
+function norm(s){return String(s).toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9а-я\s]/g,' ').replace(/\s+/g,' ').trim();}
+var CYR=/[а-я]/;
+function stem(w){if(CYR.test(w)){return w.length<=3?w:w.slice(0,Math.max(3,Math.min(5,w.length-2)));}if(w.length>4){w=w.replace(/(ing|ed|es|s)$/,'');}return w;}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++){d[0][j]=j;}
+for(i=1;i<=m;i++){for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1]){d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1);}}}return d[m][n];}
+function score(qn,toks,entry){var s=0;for(var i=0;i<entry.k.length;i++){var kw=norm(entry.k[i]);if(!kw)continue;
+var parts=kw.split(' ');
+if(parts.length>1){if((' '+qn+' ').indexOf(' '+kw+' ')>-1){s+=3*parts.length;}else{var hit=0;for(var p=0;p<parts.length;p++){if(toks.indexOf(stem(parts[p]))>-1)hit++;}if(hit===parts.length)s+=2*parts.length;}continue;}
+var ks=stem(kw);
+if(toks.indexOf(ks)>-1){s+=3;continue;}
+if(CYR.test(kw))continue;
+for(var t=0;t<toks.length;t++){var tk=toks[t];if(ks.length>=5&&tk.length>=4){var lim=ks.length>=9?2:1;if(Math.abs(tk.length-ks.length)<=lim&&lev(tk,ks)<=lim){s+=2;break;}}
+else if(ks.length>=4&&tk.length>=5&&tk.indexOf(ks)===0){s+=1.5;break;}}}
+return s;}
+function match(q,kb){var qn=norm(q),toks=qn.split(' ').filter(Boolean).map(stem);var best=null,bs=0;
+for(var i=0;i<kb.length;i++){var sc=score(qn,toks,kb[i]);if(sc>bs){bs=sc;best=kb[i];}}
+return bs>=2?best:null;}
+//CORE-END
+if(typeof window==='undefined'){module.exports={match:match,norm:norm};return;}
+var C=window.WIDGET_CFG,lang='en',ES=C.es?new RegExp(C.es,'i'):null;
+function L(x){if(x==null)return '';if(typeof x==='string')return x;if(Array.isArray(x))return x;return x[lang]||x.en;}
+function detect(t,inflow){if(!C.multi)return;if(/[Ѐ-ӿ]/.test(t)){lang='ru';}else if(ES&&ES.test(t)){lang='es';}else if(!inflow&&/[a-z]{2}/i.test(t)){lang='en';}}
+var root=document.createElement('div');root.className='wd';
+root.innerHTML='<button class="wd-fab" type="button" aria-expanded="false"><span aria-hidden="true">'+(C.icon||'💬')+'</span><span class="wd-fab-t"></span></button>'+
+'<section class="wd-panel" role="dialog" aria-label="Assistant" hidden><header class="wd-h"><div><b class="wd-title"></b><small class="wd-sub"></small></div><button class="wd-x" type="button" aria-label="Close">×</button></header>'+
+'<div class="wd-log" aria-live="polite"></div><div class="wd-chips"></div><form class="wd-f" autocomplete="off"><input class="wd-in" type="text" maxlength="300" aria-label="Your message"><button class="wd-s" type="submit" aria-label="Send">➤</button></form>'+
+'<footer class="wd-note"></footer></section>';
+document.body.appendChild(root);
+var $=function(s){return root.querySelector(s);};
+var fab=$('.wd-fab'),panel=$('.wd-panel'),log=$('.wd-log'),chips=$('.wd-chips'),inp=$('.wd-in'),form=$('.wd-f');
+$('.wd-fab-t').textContent=L(C.fab);$('.wd-title').textContent=C.title;$('.wd-sub').textContent=C.sub;$('.wd-note').textContent=L(C.note);inp.placeholder=L(C.placeholder);
+var flow=null,data={},opened=false;
+function say(t,who){var d=document.createElement('div');d.className='wd-m '+(who||'bot');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+function setChips(list){chips.innerHTML='';(list||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.addEventListener('click',function(){handle(c,true);});chips.appendChild(b);});}
+function open(){panel.hidden=false;fab.setAttribute('aria-expanded','true');if(!opened){opened=true;say(L(C.greet));setChips(L(C.chips));}inp.focus();}
+function close(){panel.hidden=true;fab.setAttribute('aria-expanded','false');}
+fab.addEventListener('click',function(){if(panel.hidden){open();}else{close();}});
+$('.wd-x').addEventListener('click',close);
+function startFlow(){flow={i:0};data={};ask();}
+document.querySelectorAll('[data-assist]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();open();var a=b.getAttribute('data-assist');if(a==='book'){if(!flow){say(L(C.flow.me),'me');startFlow();}}else if(a){handle(a);}});});
+function ask(){var st=C.flow.steps[flow.i];say(L(st.q));setChips((L(st.opts)||[]).concat([L(C.flow.cancel)]));}
+function finish(){var lines=C.flow.steps.map(function(s){return L(s.label)+': '+data[s.id];}).join('\n');say(L(C.flow.done).replace('{summary}',lines));flow=null;setChips(L(C.chips));}
+function stepInput(t){if(new RegExp(C.flow.stop,'i').test(t.trim())){flow=null;say(L(C.flow.cancelled));setChips(L(C.chips));return;}
+var st=C.flow.steps[flow.i];
+if(st.pat&&!(new RegExp(st.pat,'i')).test(t)){say(L(st.err));return;}
+data[st.id]=t.trim();flow.i++;if(flow.i>=C.flow.steps.length){finish();}else{ask();}}
+var TRIG=new RegExp(C.flow.trigger,'i');
+function handle(t,chip){t=String(t).trim();if(!t)return;if(!chip)detect(t,!!flow);say(t,'me');
+if(flow){stepInput(t);return;}
+if(TRIG.test(t)){startFlow();return;}
+var m=match(t,C.kb);
+if(m){say(L(m.a));setChips(L(m.next)||L(C.chips));}else{say(L(C.fallback));setChips(L(C.chips));}}
+form.addEventListener('submit',function(e){e.preventDefault();var v=inp.value;inp.value='';handle(v);});
+})();
+</script>
+</body></html>

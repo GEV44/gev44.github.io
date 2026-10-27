@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Finisterra Travel | Demo site with trip assistant</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f0e17;--ink2:#1c1b29;--paper:#f4efe6;--tl:#00c1cf;--or:#f88025;--mut:#6c6a78;--line:#ddd6c8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 'Source Sans 3',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.os{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;letter-spacing:.02em;margin:0;line-height:1.05}
+a{color:inherit}.wrap{width:100%;max-width:1100px;margin:0 auto;padding:0 16px}
+header{background:var(--ink);color:#fff;position:sticky;top:0;z-index:20}
+header .wrap{display:flex;align-items:center;gap:14px;padding:8px 16px}
+.logo{width:46px;height:46px;border-radius:50%;display:block;flex:none}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand span{font:600 15px/1.1 Oswald;letter-spacing:.14em;text-transform:uppercase}
+.brand small{display:block;font:400 11px 'Source Sans 3';letter-spacing:.06em;color:#a9a7b8;text-transform:none}
+header nav{margin-left:auto;display:none;gap:20px;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+header nav a{text-decoration:none;color:#d9d7e6}
+.hbtn{margin-left:auto;background:var(--or);color:#1a1000;font:600 13px Oswald;letter-spacing:.1em;text-transform:uppercase;padding:10px 14px;border-radius:4px;text-decoration:none;border:0;cursor:pointer}
+.hero{background:var(--ink);color:#fff;padding:52px 0 0;position:relative;overflow:hidden}
+.hero .wrap{position:relative}
+.hero:before{content:"";position:absolute;right:-140px;top:30px;width:420px;height:420px;border-radius:50%;border:2px solid rgba(0,193,207,.35);box-shadow:0 0 0 26px rgba(0,193,207,.06),0 0 0 56px rgba(248,128,37,.05)}
+.tag{display:inline-block;color:var(--tl);font:600 13px Oswald;letter-spacing:.24em;text-transform:uppercase;border-bottom:2px solid var(--or);padding-bottom:4px;margin-bottom:18px}
+.hero h1{font-size:clamp(40px,11vw,92px);max-width:11ch}
+.hero h1 b{color:var(--or);font-weight:700}
+.hero p{max-width:48ch;color:#c9c7d8;margin:18px 0 24px;font-size:18px}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;font:600 15px Oswald;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;border-radius:4px;text-decoration:none;border:0;cursor:pointer}
+.bo{background:var(--or);color:#1a1000}.bl{border:2px solid var(--tl);color:var(--tl);background:transparent}
+.ticker{margin-top:42px;background:var(--tl);color:#02242a;font:600 13px/1 Oswald;letter-spacing:.16em;text-transform:uppercase;padding:13px 0;overflow:hidden;white-space:nowrap}
+.ticker div{display:inline-block;padding-left:100%;animation:tk 28s linear infinite}
+@keyframes tk{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:16px}}
+section{padding:56px 0}
+h2{font-size:clamp(28px,7vw,48px);margin-bottom:12px}
+.k{font:600 13px Oswald;letter-spacing:.22em;color:var(--or);text-transform:uppercase;margin-bottom:8px}
+.lead{max-width:62ch;color:var(--mut)}
+.bento{display:grid;grid-template-columns:1fr;gap:12px;margin-top:26px}
+.tile{border-radius:10px;padding:20px;min-height:136px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;position:relative;overflow:hidden}
+.tile h3{font-size:22px}.tile p{margin:6px 0 0;font-size:15px;opacity:.92}
+.t1{background:linear-gradient(150deg,#0b4f56,#00a3b0)}.t2{background:linear-gradient(150deg,#7c3a07,#f88025)}.t3{background:linear-gradient(150deg,#27243d,#5b57a0)}.t4{background:linear-gradient(150deg,#1d4a31,#4f9d6b)}.t5{background:linear-gradient(150deg,#5a1d3b,#c4457c)}.t6{background:linear-gradient(150deg,#3a3530,#8b7e6c)}
+.dark{background:var(--ink);color:#fff}.dark .lead{color:#b9b7c8}
+.stepper{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:12px;counter-reset:s}
+.stepper li{counter-increment:s;background:var(--ink2);border:1px solid #302f44;border-radius:10px;padding:16px 16px 16px 66px;position:relative;color:#d2d0e0;font-size:16px}
+.stepper li:before{content:counter(s);position:absolute;left:14px;top:10px;font:700 36px Oswald;color:var(--or)}
+.stepper li b{display:block;color:#fff;font:600 16px Oswald;letter-spacing:.06em;text-transform:uppercase}
+.tours{display:grid;gap:10px;margin-top:22px}
+.tour{background:#fff;border:1px solid var(--line);border-left:5px solid var(--tl);border-radius:6px;padding:14px 16px}
+.tour:nth-child(even){border-left-color:var(--or)}
+.tour b{font:600 18px Oswald;text-transform:uppercase;letter-spacing:.03em;display:block}
+.tour span{color:var(--mut);font-size:15px}
+.two{display:grid;gap:26px}
+.team{display:grid;gap:14px;margin-top:20px}
+.person{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px}
+.person h3{font-size:24px}.person em{display:block;color:var(--or);font:600 13px Oswald;letter-spacing:.14em;text-transform:uppercase;font-style:normal;margin:4px 0 8px}
+.person p{margin:0;color:var(--mut);font-size:16px}
+.pol{display:grid;gap:12px;margin-top:22px}
+.pol div{border:1px solid #302f44;border-radius:10px;padding:16px;background:var(--ink2)}
+.pol h3{font-size:18px;color:var(--tl);margin-bottom:6px}.pol p{margin:0;color:#c9c7d8;font-size:15.5px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:8px;margin-bottom:8px;padding:0 16px}
+.faq summary{cursor:pointer;padding:14px 0;font:600 16px Oswald;letter-spacing:.04em;text-transform:uppercase;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faq summary:after{content:"+";color:var(--or);font-size:24px;line-height:1}.faq details[open] summary:after{content:"\2212"}
+.faq p{margin:0 0 14px;color:var(--mut);font-size:16px}
+.quote{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px;margin-top:14px;font-size:17px}
+.quote cite{display:block;margin-top:8px;color:var(--or);font:600 13px Oswald;letter-spacing:.12em;text-transform:uppercase;font-style:normal}
+.cta{background:var(--or);color:#1a1000;border-radius:12px;padding:26px 20px;margin-top:10px}
+.cta h2{margin-bottom:10px}.cta p{margin:4px 0}.cta a{font-weight:600}
+footer{background:var(--ink);color:#a9a7b8;text-align:center;font-size:13px;padding:24px 16px 90px}
+@media(min-width:760px){header nav{display:flex}.hbtn{margin-left:20px}.bento{grid-template-columns:repeat(3,1fr)}.t1{grid-column:span 2}.stepper{grid-template-columns:1fr 1fr}.tours{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr 1fr}.team{grid-template-columns:1fr 1fr}.pol{grid-template-columns:1fr 1fr}}
+
+#wBtn{position:fixed;right:16px;bottom:16px;z-index:50;border:0;cursor:pointer;background:#f88025;color:#1a1000;font:600 15px/1 'Source Sans 3',system-ui,sans-serif;padding:14px 18px;border-radius:12px;box-shadow:0 6px 22px rgba(0,0,0,.28);display:flex;gap:8px;align-items:center}
+#wPan{position:fixed;right:12px;bottom:12px;z-index:60;width:calc(100vw - 24px);max-width:380px;height:min(560px,calc(100vh - 24px));background:#171622;color:#ecebf5;border-radius:12px;box-shadow:0 14px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 'Source Sans 3',system-ui,sans-serif}
+#wPan.open{display:flex}
+.wh{background:#0f0e17;color:#00c1cf;padding:12px 14px;display:flex;align-items:center;gap:10px}
+.wh b{flex:1;font-size:15px}.wh small{display:block;font-weight:400;opacity:.75;font-size:12px}
+#wX{background:none;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1;padding:0 4px}
+#wLog{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.wm{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word}
+.wm.bot{background:rgba(127,127,127,.14);align-self:flex-start;border-bottom-left-radius:4px}
+.wm.me{background:#f88025;color:#1a1000;align-self:flex-end;border-bottom-right-radius:4px}
+.wm a{color:inherit;text-decoration:underline}
+#wChips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px;max-height:112px;overflow:auto}
+.wc{border:1px solid #f88025;background:transparent;color:inherit;border-radius:999px;padding:6px 11px;font:13px 'Source Sans 3',system-ui,sans-serif;cursor:pointer}
+.wc:hover{background:#f88025;color:#1a1000}
+#wForm{display:flex;gap:6px;padding:10px 12px;border-top:1px solid rgba(127,127,127,.25)}
+#wInp{flex:1;min-width:0;border:1px solid rgba(127,127,127,.4);border-radius:10px;padding:10px;font:16px 'Source Sans 3',system-ui,sans-serif;background:transparent;color:inherit}
+#wForm button{border:0;background:#f88025;color:#1a1000;border-radius:10px;padding:0 14px;font:600 14px 'Source Sans 3',system-ui,sans-serif;cursor:pointer}
+.wnote{font-size:11px;opacity:.6;text-align:center;padding:0 12px 8px}
+
+</style></head><body>
+<header><div class="wrap">
+<a class="brand" href="#top" aria-label="Finisterra Travel"><img class="logo" src="img/finisterra-travel-ltd-logo.png" alt="Finisterra Travel Ltd. Global Local"><span>Finisterra<small>Curated adventures worldwide</small></span></a>
+<nav><a href="#styles">Travel style</a><a href="#process">Planning</a><a href="#groups">Small groups</a><a href="#team">Team</a><a href="#faq">FAQ</a></nav>
+<button class="hbtn" type="button" onclick="document.getElementById('wBtn').click()">Plan your trip</button></div></header>
+
+<div class="hero" id="top"><div class="wrap">
+<div class="tag">Vancouver &middot; Global &middot; Local</div>
+<h1>Experience the world, <b>differently.</b></h1>
+<p>Authentic, tailor-made adventures where Keri and Nicola handle the planning and logistics, and you get the trip of your dreams. No two journeys are alike.</p>
+<div class="row"><button class="btn bo" type="button" onclick="document.getElementById('wBtn').click()">Start a trip enquiry</button><a class="btn bl" href="#groups">See small-group trips</a></div>
+</div>
+<div class="ticker"><div>Custom travel &nbsp;&#9670;&nbsp; Wildlife &nbsp;&#9670;&nbsp; Women-only tours &nbsp;&#9670;&nbsp; Culinary &nbsp;&#9670;&nbsp; Creative retreats &nbsp;&#9670;&nbsp; Surf &amp; yoga &nbsp;&#9670;&nbsp; Cultural tours &nbsp;&#9670;&nbsp; Student travel &nbsp;&#9670;&nbsp; Corporate travel &nbsp;&#9670;&nbsp; Adventure cruises &nbsp;&#9670;&nbsp;</div></div></div>
+
+<section id="styles"><div class="wrap">
+<div class="k">Explore by travel style</div><h2>Pick a feeling, we build the trip</h2>
+<p class="lead">&ldquo;Not your typical online travel agency, nor are we quite a tour operator.&rdquo; International travel designers with a flair for unique experiences.</p>
+<div class="bento">
+<div class="tile t1"><h3>Custom travel</h3><p>Tailor-made adventures and bespoke trips for solo travellers, couples, families and groups.</p></div>
+<div class="tile t2"><h3>Wildlife adventures</h3><p>Curated wildlife experiences from Africa to the Americas.</p></div>
+<div class="tile t3"><h3>Active &amp; retreats</h3><p>Hike, surf, yoga and more.</p></div>
+<div class="tile t4"><h3>Cultural tours</h3><p>Historical sites, landscapes, local connections.</p></div>
+<div class="tile t5"><h3>Culinary experiences</h3><p>Gastronomy and wine tours.</p></div>
+<div class="tile t6"><h3>Creative &amp; photography</h3><p>Writing, painting and photography workshops.</p></div>
+</div></div></section>
+
+<section class="dark" id="process"><div class="wrap">
+<div class="k">Custom trip planning</div><h2>Eight steps from idea to departure</h2>
+<p class="lead">&ldquo;We start with how you want to feel.&rdquo; Most itineraries on the site are fully customisable for 1 to 20 people.</p>
+<ol class="stepper">
+<li><b>Start</b>Submit the Travel Questionnaire.</li>
+<li><b>Conversation</b>The team asks a few more questions about the what, when and where.</li>
+<li><b>Sample outline</b>You review a first itinerary outline.</li>
+<li><b>Planning fee</b>A planning fee is requested to go forward and applied to your final payment.</li>
+<li><b>Fine-tuning</b>The itinerary is adjusted and the ingredients added.</li>
+<li><b>Final itinerary</b>A 25% deposit is requested.</li>
+<li><b>Bookings</b>Everything is booked and final payment is due 60 days before departure.</li>
+<li><b>Go</b>Off you go, with 24-hour support.</li>
+</ol></div></section>
+
+<section id="groups"><div class="wrap">
+<div class="k">Small-group tours</div><h2>Scheduled departures to amazing places</h2>
+<p class="lead">Curated by experts for groups of like-minded travellers. Group leaders of 10 or more travel free on custom group trips.</p>
+<div class="tours">
+<div class="tour"><b>Uganda with Keri &amp; Nicola</b><span>10-day wildlife journey into the realm of the great apes.</span></div>
+<div class="tour"><b>South Korea with Keri + Nicola</b><span>Ancient traditions meet cutting-edge culture.</span></div>
+<div class="tour"><b>Southern Japan with Keri + Nicola</b><span>The energetic heart of Kyushu.</span></div>
+<div class="tour"><b>Hokkaido self-drive</b><span>An independent road-trip format.</span></div>
+<div class="tour"><b>El Salvador surf &amp; yoga</b><span>9-day women-only retreat with Surf Sister.</span></div>
+<div class="tour"><b>Panama surf camp</b><span>Women-only camp with the Surf Sisters.</span></div>
+<div class="tour"><b>Colombia creative adventure</b><span>Caribbean to Andes with writer Claudia Laroye.</span></div>
+<div class="tour"><b>Costa Rica empowerment retreat</b><span>Wellness retreat with Kristina Vetter.</span></div>
+<div class="tour"><b>Tanzania photography tour</b><span>With the photography duo behind Follow Me North.</span></div>
+<div class="tour"><b>Mexico City Art Week</b><span>Zona Maco week with Miret Rodriguez of Curated Tastes.</span></div>
+</div></div></section>
+
+<section id="team" style="background:#fff"><div class="wrap">
+<div class="k">Meet the Worldly Girlies</div><h2>Who plans your trip</h2>
+<div class="team">
+<div class="person"><h3>Keri Montgomery</h3><em>Founder, co-owner &amp; travel designer</em><p>Twenty years leading hundreds of tours, from the plains of Tanzania to Greenland. Founded Finisterra in 2012 to create carefully curated experiences that benefit travellers and the communities they visit.</p></div>
+<div class="person"><h3>Nicola Wilson</h3><em>Co-owner &amp; adventure curator</em><p>Has visited over 80 countries and specialises in crafting extraordinary trips and curating group adventures for niche markets.</p></div>
+</div>
+<div class="quote">&ldquo;Keri helped me live out my dreams of surfing in the warm waters of El Salvador! She met the group at the airport and helped people form connections right away.&rdquo;<cite>Carly S</cite></div>
+<div class="quote">&ldquo;This was our 3rd trip put together by Finisterra and we look forward to planning our 4th!&rdquo;<cite>Google review &middot; Turkey trip</cite></div>
+</div></section>
+
+<section class="dark"><div class="wrap">
+<div class="k" style="color:var(--tl)">Before you commit</div><h2>The practical bits</h2>
+<div class="pol">
+<div><h3>Cancellation</h3><p>Deposits are non-refundable from July 1, 2022; more than 60 days out you may apply it to a future trip. Under 60 days, all monies paid are non-refundable. Air tickets are 100% non-refundable.</p></div>
+<div><h3>Insurance</h3><p>Proof of travel medical insurance is mandatory. Finisterra is licensed to sell Manulife policies and encourages Cancel for Any Reason cover.</p></div>
+<div><h3>Passport &amp; visas</h3><p>Passport valid for 6 months beyond your return date. Visas and documents are each traveller's responsibility.</p></div>
+<div><h3>Currency</h3><p>Trips are priced in US dollars. The team can also tell you what cash to bring for your region.</p></div>
+</div></div></section>
+
+<section class="faq" id="faq"><div class="wrap">
+<div class="k">FAQ</div><h2>Little questions, big questions</h2><div style="margin-top:20px">
+<details><summary>Do you charge a planning fee?</summary><p>Yes, a non-refundable per-trip planning fee because curated trips take a lot of time to plan. It is applied toward your final balance.</p></details>
+<details><summary>Are the itineraries customisable?</summary><p>Most are, for 1 to 20 people, although pricing varies. Contact the team for a custom trip.</p></details>
+<details><summary>Do I need vaccinations?</summary><p>It depends on the destination. The team cannot give medical advice, so check with your doctor or a travel clinic at least 6 weeks before departure.</p></details>
+<details><summary>How much luggage can I bring?</summary><p>Airline rules vary. Most allow 1 checked bag per person up to 50 lbs; one larger bag plus a backpack is the usual advice.</p></details>
+<details><summary>Why are prices in USD?</summary><p>Finisterra is a Canadian company, but the US dollar is a world currency and the Canadian dollar fluctuates against it.</p></details>
+<details><summary>Can you help with Canada and British Columbia trips?</summary><p>Yes, for example a stay at Great Bear Rainforest for grizzly viewing, kayaking the Broken Group Islands or polar bear viewing in Manitoba.</p></details>
+</div></div></section>
+
+<section style="background:#fff"><div class="wrap">
+<div class="k">Services we offer</div><h2>More than one way to travel with us</h2>
+<div class="tours" style="margin-top:20px">
+<div class="tour"><b>Custom trips</b><span>Travelling alone or with your 20 best friends. Group leaders of 10 or more travel free.</span></div>
+<div class="tour"><b>Small-group travel</b><span>Culturally immersive, escorted tours with hands-on experiences, plus interests like yoga, painting, hiking, diving and photography.</span></div>
+<div class="tour"><b>Educational tours</b><span>Built with educators and institutions, because travel is part of every young person's education.</span></div>
+<div class="tour"><b>Travel consultations</b><span>45 to 60 minutes with a destination specialist, while planning or to review your final itinerary.</span></div>
+<div class="tour"><b>Travel insurance</b><span>Trip cancellation, missed connections, baggage and emergency medical, through Manulife.</span></div>
+<div class="tour"><b>Canada and BC</b><span>Great Bear Rainforest grizzly viewing, kayaking the Broken Group Islands, polar bears in Manitoba, culinary Quebec.</span></div>
+</div></div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="cta">
+<h2>Plan your next adventure</h2>
+<p>Email <a href="mailto:info@finisterra.ca">info@finisterra.ca</a></p>
+<p>Phone <a href="tel:+18008060761">1 800 806 0761</a> &middot; WhatsApp +1 604 505 2472 or +1 604 762 5851</p>
+<p>Vancouver, BC &middot; Consumer Protection BC Reg 70260</p>
+<div class="row" style="margin-top:14px"><button class="btn" style="background:#0f0e17;color:#fff" type="button" onclick="document.getElementById('wBtn').click()">Start a trip enquiry</button></div>
+</div></div></section>
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+
+<button id="wBtn" type="button" aria-expanded="false" aria-controls="wPan"><span aria-hidden="true">&#9678;</span> Plan a trip</button>
+<div id="wPan" role="dialog" aria-label="Finisterra planning assistant">
+<div class="wh"><b>Finisterra planning assistant<small>Demo &middot; answers from the Finisterra site</small></b><button id="wX" type="button" aria-label="Close">&times;</button></div>
+<div id="wLog" aria-live="polite"></div><div id="wChips"></div>
+<form id="wForm" autocomplete="off"><input id="wInp" type="text" aria-label="Your message" placeholder="Ask about trips, policies, insurance&hellip;"><button type="submit">Send</button></form>
+<div class="wnote">Demo only. Nothing is sent to the team.</div></div>
+
+<script>
+window.CFG={"hello": "Hi, I'm the Finisterra planning assistant (demo). Ask about custom trips, small-group departures, cancellation or insurance, or start a trip enquiry.", "chips": ["Start a trip enquiry", "How planning works", "Small-group trips", "Cancellation policy", "Travel insurance", "Women only tours"], "kb": [{"k": ["about", "story", "who", "founded", "owners", "keri", "nicola", "team", "travel designers", "worldly girlies", "female owned", "women owned"], "a": "Finisterra Travel is run by Keri Montgomery (founder, 2012, 20 years leading tours from Tanzania to Greenland) and Nicola Wilson (co-owner, 80+ countries), travel designers based in Vancouver. The name means 'land's end': Finis = end, Terra = land."}, {"k": ["custom", "tailor made", "bespoke", "private trip", "personalised", "customised", "itinerary", "designed"], "a": "Custom trips are designed around how you want to feel. Most itineraries on the site can be customised for 1 to 20 people. Not sure where to go? Tell the designers what you enjoy and they will build it from there.", "go": ["Start a trip enquiry", "How planning works"]}, {"k": ["process", "steps", "how planning works", "planning process", "how start", "questionnaire", "how works"], "a": "Eight steps: 1) submit the Travel Questionnaire, 2) a few follow-up questions, 3) a sample outline, 4) a planning fee that is applied to your final payment, 5) fine-tuning, 6) final itinerary and a 25% deposit, 7) bookings made and final payment 60 days before departure, 8) you travel, with 24-hour support.", "go": ["Planning fee", "Start a trip enquiry"]}, {"k": ["planning fee", "fee", "fees", "plan fee"], "a": "There is a $500 per-trip planning fee because curated trips take a lot of time. It is non-refundable but applied toward your final balance."}, {"k": ["deposit", "25%", "final payment", "payment", "pay", "payments", "installment"], "a": "A 25% deposit is requested once the final itinerary is agreed, and final payment is due 60 days before departure. From July 1, 2022 all deposits are non-refundable, though if you cancel more than 60 days ahead you may be able to apply the deposit to a future trip with Finisterra."}, {"k": ["cancel", "cancellation", "refund", "refunds", "cancelled", "money back", "policy", "policies"], "a": "Deposits are non-refundable (from July 1, 2022), but with more than 60 days' notice you may be able to apply it to a future trip. Less than 60 days: all monies paid are non-refundable. Air tickets are 100% non-refundable. Exceptions may apply, so ask the team. Cancel for Any Reason insurance is strongly encouraged.", "go": ["Travel insurance", "Contact the team"]}, {"k": ["insurance", "insured", "manulife", "john hancock", "cancel for any reason", "medical cover", "travel insurance"], "a": "Proof of travel medical insurance is mandatory on Finisterra trips. They are licensed to sell Manulife policies (John Hancock for Americans) and can quote trip cancellation and interruption, Cancel for Any Reason and medical cover. Write to nicola@finisterra.ca or ask the team."}, {"k": ["visa", "visas", "passport", "documents", "entry requirements"], "a": "Every destination requires a passport valid for 6 months beyond your return date. You may need a visa; check travel.gc.ca for current rules. Travel documents are the individual traveller's responsibility."}, {"k": ["vaccination", "vaccinations", "vaccines", "shots", "health", "doctor", "malaria", "medical advice"], "a": "The team are not physicians and cannot give medical advice. Check with your doctor or a travel clinic at least 6 weeks before departure (2 months is better) and see travel.gc.ca or cdc.gov/travel."}, {"k": ["luggage", "baggage", "bags", "suitcase", "pack", "packing", "weight", "carry on"], "a": "Airline rules vary. Most carriers allow 1 checked bag per person up to 50 lbs, and Finisterra suggests one larger bag plus a backpack carry-on. They can provide packing lists for many adventures."}, {"k": ["currency", "usd", "dollars", "cad", "canadian", "prices usd", "exchange", "cash", "money", "atm"], "a": "Trips are priced in US dollars, because the USD is a world currency while the Canadian dollar fluctuates against it. For spending money, they recommend some new, crisp USD for Latin America and Asia, Euros for Europe and Africa, and withdrawing local currency from airport ATMs."}, {"k": ["price", "prices", "cost", "how much", "expensive", "cheap", "budget", "rates", "afford"], "a": "Prices depend on destination, group size and style, so I do not quote numbers here. Small-group itineraries show a 'starting from' price in USD on each trip page, and custom trips are quoted after your outline. The designers will confirm for your plans.", "go": ["Start a trip enquiry"]}, {"k": ["small group", "group tour", "scheduled departure", "departures", "join a group", "group trip", "calendar", "dates"], "a": "Small-group trips run on scheduled departures: Colombia Creative Adventure, Costa Rica Empowerment Retreat, Panama Surf Camp and El Salvador Surf & Yoga (with Surf Sister), Uganda, South Korea and Southern Japan (Keri and Nicola), Tanzania Photography Tour (with Follow Me North), Mexico City Art Week and a self-drive Hokkaido tour. Check the schedule for current dates.", "go": ["Women only tours", "Start a trip enquiry"]}, {"k": ["women", "women only", "female", "solo woman", "surf sister", "ladies", "girls trip"], "a": "Finisterra runs women-only tours, including the Surf Sister surf and yoga retreats in El Salvador (9 days) and Panama, plus trips led by Keri and Nicola. The company is proudly female-owned and operated."}, {"k": ["wildlife", "safari", "gorilla", "gorillas", "apes", "uganda", "tanzania", "animals", "africa"], "a": "Wildlife adventures range from Africa to the Americas. Highlights include a 10-day small-group Uganda journey into the realm of the great apes with Keri and Nicola, and a Tanzania photography tour with Follow Me North. Keri has led tours in Tanzania for years."}, {"k": ["surf", "surfing", "yoga", "active", "hike", "hiking", "trek", "adventure", "el salvador", "panama"], "a": "Active adventures cover hiking, surfing, yoga and more. The Surf Sister retreats in El Salvador and Panama are women-only and beginner friendly, and the team also arranges remote trekking such as the Ancascocha trek in Peru."}, {"k": ["photography", "creative", "painting", "writing", "workshop", "retreat", "retreats", "colombia", "art", "mexico city"], "a": "Creative retreats and photography workshops include the Colombia Creative Adventure (with writer Claudia Laroye), a Tanzania photography tour, and Mexico City Art Week with Curated Tastes."}, {"k": ["culinary", "food", "foodie", "wine", "cooking", "gastronomy", "cuisine"], "a": "Culinary tours and experiences cover gastronomy and wine, built as tailor-made trips for foodies."}, {"k": ["family", "families", "kids", "children", "child", "teen", "daughter"], "a": "Family holidays are a travel style, and custom trips suit solo travel, couples, families and groups. Reviewers mention trips to Peru with a daughter and a trip for a group of six. Share ages and interests and the designers will tailor it."}, {"k": ["student", "students", "educational", "school group", "school trips", "school", "teacher", "education", "class trip", "youth"], "a": "Finisterra works closely with educators and institutions on educational tours. Use Request Information on the Contact page or start an enquiry."}, {"k": ["corporate", "incentive", "team", "company retreat", "business", "staff", "conference"], "a": "Corporate and team travel, incentive trips and retreats are part of the services. Tell the team your group size and goals."}, {"k": ["group leader", "10 people", "free", "free trip", "leader", "large group", "20 people"], "a": "If you are a group leader of 10 or more, you travel for free. Custom itineraries work for 1 to 20 people."}, {"k": ["consultation", "consult", "advice", "review itinerary", "independent", "diy", "call with"], "a": "For independent travellers there are 45 to 60 minute consultations with a destination specialist, either during planning or to review your finished itinerary."}, {"k": ["sustainable", "sustainability", "responsible", "ethical", "environment", "eco", "local", "community", "responsibly"], "a": "Sustainability is a commitment: supporting small, locally owned businesses, authentic exchanges between visitors and locals, and long-term benefit for communities and environments. There is a Sustainability Commitment page on the site."}, {"k": ["destinations", "where go", "countries", "japan", "korea", "hokkaido", "peru", "turkey", "kenya", "guatemala", "ecuador", "sri lanka", "greenland", "europe", "asia", "latin america", "middle east", "north america"], "a": "The designers work across Africa, Asia, Latin America, the Middle East, North America and Europe. Past trips mentioned in reviews include Peru, Turkey, Kenya and Tanzania, Mexico City, Ecuador, El Salvador and South Africa; current small-group trips include Uganda, South Korea, Southern Japan and Hokkaido. Further-flung is better.", "go": ["Start a trip enquiry"]}, {"k": ["contact", "phone", "call", "email", "number", "whatsapp", "text", "reach", "speak"], "a": "Email info@finisterra.ca, phone 1 800 806 0761 or WhatsApp +1 604 505 2472 / +1 604 762 5851. The team is based in Vancouver, BC."}, {"k": ["vancouver", "office", "address", "based", "located", "where located", "british columbia", "bc", "canada", "local"], "a": "Finisterra Travel LTD is based in Vancouver, BC, Canada and registered with Consumer Protection BC (Reg 70260). They also arrange trips within BC and across Canada, such as the Great Bear Rainforest or kayaking the Broken Group Islands."}, {"k": ["review", "reviews", "rating", "testimonial", "trust", "legit", "reputable", "feedback", "stars"], "a": "Finisterra Travel LTD shows 5.0 on Google from 78 reviews on its Contact page, and the home page has traveller testimonials. Repeat clients mention planning their third and fourth trips with the team."}, {"k": ["support", "emergency", "24hr", "24 hour", "during trip", "problem", "help abroad", "airport pickup", "pick up"], "a": "Once you travel there is 24-hour support. Reviewers mention being met at the airport by local representatives and being only a call or text away if something goes wrong."}, {"k": ["trip login", "login", "log in", "account", "my trip", "portal"], "a": "There is a Trip Login in the top menu of the site for travellers who have booked. If you cannot get in, email info@finisterra.ca."}], "fallback": "I do not have that detail and will not guess. Keri and Nicola's team will confirm: info@finisterra.ca or 1 800 806 0761.", "flow": {"intro": "Lovely, let's start with how you want to feel, like the designers do (type cancel to stop).", "cancelled": "No problem, nothing was sent.", "doneTitle": "Trip enquiry ready for the travel designers", "done": "Sent to the team (demo: nothing is actually sent). A designer would reply by email, usually with the Travel Questionnaire as a next step.", "steps": [{"key": "feel", "label": "Feel", "q": "How do you want the trip to feel?", "opts": ["Adventurous", "Wild and wildlife", "Cultural and local", "Creative", "Restorative", "Foodie"]}, {"key": "kind", "label": "Trip type", "q": "Which format fits?", "opts": ["Custom trip", "Small-group departure", "Women-only trip", "Family trip", "Corporate or team", "Student or educational"]}, {"key": "where", "label": "Destination", "q": "Any destination in mind? Or type 'open'.", "ph": "e.g. Uganda, Japan, open"}, {"key": "when", "label": "When", "q": "Roughly when would you travel?", "ph": "e.g. next spring"}, {"key": "who", "label": "Travellers", "q": "How many travellers, and any ages?", "ph": "e.g. 2 adults, 1 teen"}, {"key": "name", "label": "Name", "q": "Your name?", "ph": "First name"}, {"key": "email", "label": "Email", "q": "Which email should the designers reply to?", "ph": "you@example.com", "err": "That does not look like an email address, could you check it?"}]}};
+CFG.flowRe=new RegExp("\\b(book|enquire|enquiry|inquire|inquiry|reserve|reservation)\\b|(plan|start|make|send|get|begin)\\s+(a|an|my|the)?\\s*(trip|journey|adventure|enquiry|inquiry|message|quote)|get in touch|talk to (someone|the team|a human|a designer)|travel questionnaire");
+CFG.flow.steps[6].re=new RegExp("^\\S+@\\S+\\.\\S+$");
+
+</script>
+<script>
+/*PURE*/
+function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9$£€ ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))w=w.slice(0,-1);if(w.length>5)w=w.replace(/(ing|ed)$/,'');w=w.replace(/([b-df-hj-np-tv-z])$/,'$1');return w.length>5?w.slice(0,5):w;}
+function lev(a,b){if(Math.abs(a.length-b.length)>1)return 9;var m=[],i,j;for(i=0;i<=a.length;i++){m[i]=[i];}for(j=1;j<=b.length;j++)m[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return m[a.length][b.length];}
+function same(a,b){if(a.s===b.s)return true;var n=Math.min(a.w.length,b.w.length);if(n<5)return false;return lev(a.w,b.w)<=1;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(function(w){return{w:w,s:stem(w)};});}
+function makeMatcher(CFG){
+  var STOP={the:1,a:1,an:1,do:1,you:1,i:1,is:1,are:1,to:1,of:1,and:1,or:1,can:1,my:1,we:1,it:1,in:1,on:1,for:1,me:1,how:1,what:1,there:1,your:1,does:1,have:1,with:1,this:1,that:1};
+  var kb=CFG.kb.map(function(e){var seen={};var ks=[];e.k.forEach(function(p){var t=toks(p).filter(function(x){return !STOP[x.w];}),key=t.map(function(x){return x.s;}).join(' ');if(!seen[key]){seen[key]=1;ks.push(t);}});return{e:e,k:ks};});
+  return function(q){
+    var qt=toks(q).filter(function(t){return !STOP[t.w];});
+    if(!qt.length)return null;
+    var best=null,bs=0;
+    kb.forEach(function(x){
+      var s=0;
+      x.k.forEach(function(kt){
+        var ok=kt.every(function(t){return qt.some(function(u){return same(u,t);});});
+        if(ok)s+=kt.length*2+1;
+      });
+      if(s>bs){bs=s;best=x.e;}
+    });
+    return best;
+  };
+}
+/*ENDPURE*/
+(function(){
+  var C=window.CFG,match=makeMatcher(C);
+  var $=function(i){return document.getElementById(i);};
+  var btn=$('wBtn'),pan=$('wPan'),log=$('wLog'),chips=$('wChips'),form=$('wForm'),inp=$('wInp');
+  var flow=null,data={};
+  function add(t,who,html){var d=document.createElement('div');d.className='wm '+who;if(html)d.innerHTML=t;else d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function setChips(list){chips.innerHTML='';list.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='wc';b.textContent=c.t||c;b.onclick=function(){send(c.v||c.t||c);};chips.appendChild(b);});}
+  function home(){setChips(C.chips);}
+  function startFlow(){flow={i:0};data={};ask();}
+  function ask(){
+    var s=C.flow.steps[flow.i];add(s.q,'bot');
+    if(s.opts){setChips(s.opts.map(function(o){return{t:o,v:o};}));}else{chips.innerHTML='';}
+    inp.placeholder=s.ph||'';inp.focus();
+  }
+  function finish(){
+    var h='<b>'+C.flow.doneTitle+'</b><br>';
+    C.flow.steps.forEach(function(s){if(data[s.key])h+=s.label+': '+esc(data[s.key])+'<br>';});
+    h+='<br>'+C.flow.done;
+    add(h,'bot',1);flow=null;home();
+  }
+  function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function send(t){
+    t=(t||'').trim();if(!t)return;add(t,'me');inp.value='';
+    if(flow){
+      if(/^(cancel|stop|reset)$/i.test(t)){flow=null;add(C.flow.cancelled,'bot');home();return;}
+      var s=C.flow.steps[flow.i];
+      if(s.re&&!s.re.test(t)){add(s.err,'bot');return;}
+      data[s.key]=t;flow.i++;
+      if(flow.i>=C.flow.steps.length)finish();else ask();
+      return;
+    }
+    var n=norm(t);
+    if(C.flowRe.test(n)){add(C.flow.intro,'bot');startFlow();return;}
+    var m=match(t);
+    if(m){add(m.a,'bot',1);if(m.go){setChips(m.go.map(function(x){return{t:x};}));}else home();}
+    else{add(C.fallback,'bot',1);home();}
+  }
+  function open(o){pan.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);if(o&&!log.children.length){add(C.hello,'bot');home();}}
+  btn.onclick=function(){open(!pan.classList.contains('open'));};
+  $('wX').onclick=function(){open(false);};
+  window.wAsk=function(q){open(true);send(q);};
+  form.onsubmit=function(e){e.preventDefault();send(inp.value);};
+})();
+
+</script>
+</body></html>

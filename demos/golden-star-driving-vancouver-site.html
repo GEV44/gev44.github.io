@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Golden Star Driving School | Vancouver, Richmond, Burnaby</title>
+<meta name="description" content="Demo page for Golden Star Driving School with an assistant that answers questions from the school's website.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#16130c;--gold:#f3bd00;--gold2:#ffd84d;--cream:#fbf6e6;--char:#1d1a12;--mut:#6c6554}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.55 'Inter',system-ui,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+h1,h2,h3{font-family:'Barlow Condensed','Inter',sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1;margin:0}
+a{color:inherit}
+.wrap{max-width:1060px;margin:0 auto;padding:0 16px}
+header.top{background:#111008;position:sticky;top:0;z-index:20;border-bottom:3px solid var(--gold)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0}
+.hd img{height:46px;width:auto;display:block}
+.hd nav{display:none;gap:18px;font-weight:600;font-size:14px}
+.hd nav a{color:#e9e2c8;text-decoration:none}
+.btn{display:inline-block;border:0;border-radius:6px;background:var(--gold);color:#111;font:700 15px 'Inter',sans-serif;padding:11px 18px;text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;border:2px solid var(--gold);color:var(--gold)}
+.btn.dark{background:#111008;color:var(--gold)}
+.hero{background:#111008;color:#fff;padding:34px 0 0;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-90px;top:-70px;width:340px;height:340px;background:var(--gold);opacity:.1;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.hero h1{font-size:clamp(40px,10vw,76px);max-width:11em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p{max-width:34em;color:#d8d1b8;margin:14px 0 20px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;padding-bottom:30px}
+.facts{background:var(--gold);color:#111}
+.facts ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr}
+.facts li{padding:13px 10px;font-weight:700;font-size:14px;border-bottom:1px solid rgba(0,0,0,.15)}
+.facts li small{display:block;font-weight:500;opacity:.75}
+section{padding:46px 0}
+h2{font-size:clamp(30px,7vw,46px);margin-bottom:8px}
+h2 + p.lead{color:var(--mut);max-width:40em;margin:0 0 22px}
+.steps{display:grid;gap:12px}
+.step{background:#fff;border-left:6px solid var(--gold);padding:14px 16px;border-radius:0 10px 10px 0;box-shadow:0 2px 0 rgba(0,0,0,.05)}
+.step b{display:block;font-size:17px}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:2px 0 12px;scrollbar-width:thin}
+.tabs button{flex:none;border:2px solid #111008;background:transparent;border-radius:999px;padding:8px 14px;font:700 13.5px 'Inter',sans-serif;cursor:pointer;color:#111008}
+.tabs button[aria-selected=true]{background:#111008;color:var(--gold)}
+.cards{display:grid;gap:12px}
+.card{background:#fff;border-radius:12px;padding:16px;border:1px solid #e6dcb4;display:flex;flex-direction:column;gap:6px}
+.card h3{font-size:26px}
+.card .pr{font:700 30px 'Barlow Condensed',sans-serif;color:#111008}
+.card .pr small{font:500 13px 'Inter',sans-serif;color:var(--mut)}
+.card ul{margin:4px 0 8px;padding-left:18px;color:#3b3626;font-size:14.5px}
+.card .btn{margin-top:auto;text-align:center}
+.dark{background:#111008;color:#f1ecd7}
+.dark h2{color:var(--gold)}
+.dark .lead{color:#bdb594}
+.loc{display:grid;gap:12px}
+.loc div{background:#1d1a12;border:1px solid #3a3420;border-radius:12px;padding:16px}
+.loc h3{color:var(--gold);font-size:26px;margin-bottom:6px}
+.loc p{margin:0;color:#d9d2b6;font-size:15px}
+.loc small{display:block;color:#a99f7b;margin-top:6px}
+.cls{display:grid;gap:12px}
+.cls article{background:#fff;border-radius:12px;padding:16px;border-top:5px solid var(--gold)}
+.cls h3{font-size:28px;margin-bottom:6px}
+.cls p{margin:0;font-size:14.5px;color:#3b3626}
+.extras{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.extras span{background:#fff;border:1px solid #e1d6a8;border-radius:999px;padding:7px 13px;font-size:14px;font-weight:600}
+details{background:#fff;border-radius:10px;border:1px solid #e6dcb4;margin-bottom:8px;padding:0 14px}
+summary{cursor:pointer;padding:13px 0;font-weight:700}
+details p{margin:0 0 14px;color:#3b3626}
+.step b{color:#111008}.portal{background:var(--gold);padding:26px 0}
+.portal .wrap{display:flex;flex-direction:column;gap:12px}
+.portal h2{font-size:34px}
+footer{overflow-wrap:anywhere;background:#0b0a05;color:#a99f7b;padding:26px 0 90px;font-size:14px}
+footer a{color:var(--gold)}
+footer .demo{margin-top:12px;font-size:13px;opacity:.85}
+@media(min-width:720px){.hd nav{display:flex}.facts ul{grid-template-columns:repeat(4,1fr)}.facts li{border-bottom:0;border-right:1px solid rgba(0,0,0,.15)}
+.steps{grid-template-columns:repeat(3,1fr)}.cards{grid-template-columns:repeat(2,1fr)}.loc,.cls{grid-template-columns:repeat(3,1fr)}.portal .wrap{flex-direction:row;align-items:center;justify-content:space-between}}
+@media(min-width:960px){.cards{grid-template-columns:repeat(3,1fr)}}
+
+.wd{position:fixed;right:14px;bottom:14px;z-index:99;font-family:'Inter',system-ui,sans-serif;color:#16130c}
+.wd-fab{display:flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:13px 18px;background:#f3bd00;color:#111008;font:700 15px/1 'Inter',system-ui,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.28);cursor:pointer}
+.wd-panel{position:absolute;right:0;bottom:62px;width:min(380px,calc(100vw - 28px));height:min(560px,calc(100vh - 100px));display:flex;flex-direction:column;background:#fffaf0;border-radius:14px;box-shadow:0 14px 44px rgba(0,0,0,.35);overflow:hidden}
+.wd-panel[hidden]{display:none}
+.wd-h{border-bottom:3px solid #f3bd00;display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#111008;color:#f3bd00}
+.wd-h small{display:block;opacity:.85;font-size:12px}
+.wd-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer}
+.wd-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.wd-m{max-width:86%;padding:9px 12px;border-radius:12px;font-size:14px;line-height:1.4;white-space:pre-wrap;background:rgba(127,127,127,.15)}
+.wd-m.me{align-self:flex-end;background:#f3bd00;color:#111008}
+.wd-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+.wd-chips button{border:1px solid #f3bd00;background:transparent;color:#16130c;border-radius:999px;padding:6px 11px;font:600 12.5px 'Inter',system-ui,sans-serif;cursor:pointer}
+.wd-f{display:flex;gap:6px;padding:8px 12px;border-top:1px solid rgba(127,127,127,.25)}
+.wd-in{flex:1;min-width:0;border:1px solid rgba(127,127,127,.4);border-radius:10px;padding:9px 10px;font:14px 'Inter',system-ui,sans-serif;background:#fff;color:#111}
+.wd-s{border:0;border-radius:10px;background:#f3bd00;color:#111008;padding:0 14px;font-size:16px;cursor:pointer}
+.wd-note{font-size:11px;opacity:.65;padding:0 12px 9px}
+</style></head><body>
+<header class="top"><div class="wrap hd">
+<a href="#top" aria-label="Golden Star Driving School"><img src="img/golden-star-driving-vancouver-logo.png" alt="Golden Star Driving School" width="123" height="46"></a>
+<nav><a href="#packages">Packages</a><a href="#classes">Licence classes</a><a href="#locations">Locations</a><a href="#faq">FAQ</a></nav>
+<a class="btn" href="tel:+16043413300">Call</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<h1>Learn to drive with <em>confidence</em> in Greater Vancouver</h1>
+<p>Step-by-step lessons with instructors licensed under the Motor Vehicle Act, a car for your road test, and practice on the routes where tests are usually held.</p>
+<div class="cta"><button class="btn" type="button" data-assist="book">Request lessons</button><a class="btn ghost" href="#packages">See packages</a></div>
+</div>
+<div class="facts"><div class="wrap"><ul>
+<li>Class 7, 5 and 4<small>road test preparation</small></li>
+<li>Pick-up and drop-off<small>work, school or home</small></li>
+<li>Vancouver, Richmond, Burnaby<small>meeting points by appointment</small></li>
+<li>Any order, your pace<small>flexible class system</small></li></ul></div></div></div>
+
+<section><div class="wrap"><h2>How lessons work</h2><p class="lead">The school teaches a see-think-do strategy and builds from vehicle control to real traffic.</p>
+<div class="steps">
+<div class="step"><b>1. Certified instructors</b>Licensed under the Motor Vehicle Act, patient with beginners and anxious students.</div>
+<div class="step"><b>2. Test-route practice</b>Road practice along routes where road tests are usually held, at different times of day and in different weather.</div>
+<div class="step"><b>3. Test day covered</b>Warm-up and the vehicle for your road test are part of the packages.</div></div></div></section>
+
+<section id="packages" style="padding-top:0"><div class="wrap"><h2>Packages and lessons</h2><p class="lead">Prices as listed on the school's website, plus tax. Ask the team to confirm current rates.</p>
+<div class="tabs" role="tablist"><button type="button" role="tab" aria-selected="true" data-t="auto">Automatic packages</button><button type="button" role="tab" aria-selected="false" data-t="single">Single and road test</button><button type="button" role="tab" aria-selected="false" data-t="c4">Class 4</button><button type="button" role="tab" aria-selected="false" data-t="mock">Mock test</button></div><div class="cards" data-p="auto"><div class="card"><small>32 lessons</small><h3>Beginner</h3><div class="pr">$3,800 <small>+ tax</small></div><ul><li>50 hours of practice</li><li>45 min practice before the test</li><li>Warm-up and vehicle for the road test</li><li>Pick-up and drop-off</li></ul><button class="btn" type="button" data-assist="Beginner package">Ask about this</button></div><div class="card"><small>19 lessons</small><h3>Novice</h3><div class="pr">$2,300 <small>+ tax</small></div><ul><li>30 hours of practice</li><li>45 min practice before the test</li><li>Warm-up and vehicle for the road test</li><li>Pick-up and drop-off</li></ul><button class="btn" type="button" data-assist="Novice package">Ask about this</button></div><div class="card"><small>12 lessons</small><h3>Intermediate</h3><div class="pr">$1,600 <small>+ tax</small></div><ul><li>20 hours of practice</li><li>45 min practice before the test</li><li>Warm-up and vehicle for the road test</li><li>Pick-up and drop-off</li></ul><button class="btn" type="button" data-assist="Intermediate package">Ask about this</button></div><div class="card"><small>6 lessons</small><h3>Advanced</h3><div class="pr">$880 <small>+ tax</small></div><ul><li>10 hours of practice</li><li>1 hour practice before the test</li><li>Warm-up and vehicle for the road test</li><li>Pick-up and drop-off</li></ul><button class="btn" type="button" data-assist="Advanced package">Ask about this</button></div><div class="card"><small>3 lessons</small><h3>Refresher</h3><div class="pr">$560 <small>+ tax</small></div><ul><li>1 hour practice before the test</li><li>1.5 hour lessons</li><li>Warm-up and vehicle for the road test</li><li>Pick-up and drop-off</li></ul><button class="btn" type="button" data-assist="Refresher package">Ask about this</button></div></div><div class="cards" data-p="single" hidden><div class="card"><small>Single lesson</small><h3>Individual 1.5 h</h3><div class="pr">$130 <small>+ tax</small></div><ul><li>Automatic</li><li>1.5 hour lesson</li></ul><button class="btn" type="button" data-assist="Lesson prices">Ask about this</button></div><div class="card"><small>Single lesson</small><h3>Individual 1 h</h3><div class="pr">$100 <small>+ tax</small></div><ul><li>Automatic</li><li>1 hour lesson</li></ul><button class="btn" type="button" data-assist="Lesson prices">Ask about this</button></div><div class="card"><small>Test day</small><h3>Road Test Package 1</h3><div class="pr">$200 <small>+ tax</small></div><ul><li>1 hour practice before the test</li><li>Vehicle for the road test</li><li>Pick-up and drop-off</li></ul><button class="btn" type="button" data-assist="Road test package">Ask about this</button></div><div class="card"><small>Test day</small><h3>Road Test Package 2</h3><div class="pr">$160 <small>+ tax</small></div><ul><li>30 minutes practice before the road test</li><li>Vehicle for the road test</li></ul><button class="btn" type="button" data-assist="Road test package">Ask about this</button></div></div><div class="cards" data-p="c4" hidden><div class="card"><small>Individual</small><h3>Restricted Class 4</h3><div class="pr">$150 <small>+ tax</small></div><ul><li>1.5 hours of practice</li><li>Class 4 restricted pre-trip and driving</li></ul><button class="btn" type="button" data-assist="Class 4">Ask about this</button></div><div class="card"><small>Class 4</small><h3>Restricted road test prep</h3><div class="pr">$220 <small>+ tax</small></div><ul><li>1 hour of practice</li><li>Vehicle for the road test</li></ul><button class="btn" type="button" data-assist="Class 4">Ask about this</button></div><div class="card"><small>Individual</small><h3>Unrestricted Class 4</h3><div class="pr">$200 <small>+ tax</small></div><ul><li>1.5 hours of practice</li><li>Pre-trip and basic driving</li></ul><button class="btn" type="button" data-assist="Class 4">Ask about this</button></div><div class="card"><small>Class 4</small><h3>Unrestricted road test</h3><div class="pr">$300 <small>+ tax</small></div><ul><li>1 hour of practice</li><li>Van for the road test</li></ul><button class="btn" type="button" data-assist="Class 4">Ask about this</button></div></div><div class="cards" data-p="mock" hidden><div class="card"><small>90 minutes</small><h3>Mock Test</h3><div class="pr">$150 <small>+ tax</small></div><ul><li>30 min road practice</li><li>30 min explanation and correction</li><li>30 min mock test</li><li>Assessed to ICBC standards</li></ul><button class="btn" type="button" data-assist="Mock test">Ask about this</button></div></div></div></section>
+
+<section id="classes"><div class="wrap"><h2>Which licence class?</h2><p class="lead">Short guide to the road tests the school prepares you for.</p>
+<div class="cls">
+<article><h3>Class 7</h3><p>The road test for your N (Novice) licence. The school makes sure you know what is expected of an N driver before test day.</p></article>
+<article><h3>Class 5</h3><p>Possible after 24 consecutive months as a Novice driver with no prohibitions, or after 18 months with an approved GLP driver training course.</p></article>
+<article><h3>Class 4</h3><p>Commercial licence for taxis, limousines, ambulances and shuttles. Pre-trip inspection and road test on the same day.</p></article></div>
+<div class="extras"><span>Program for Seniors</span><span>Winter Driving</span><span>Emergency Maneuvers</span><span>Defensive Driving</span><span>Adult Driving Refresher</span><span>Teen Driver Education</span></div>
+<h3 style="margin:26px 0 4px;font-size:26px">Skills practised before the test</h3><p class="lead" style="margin:0 0 6px">Not every skill is part of the test, but practising them all gives you the best chance of being prepared.</p><div class="extras"><span>Intersections</span><span>Left and right turns</span><span>Pulling out into traffic</span><span>Pulling over and stopping</span><span>Changing lanes</span><span>Parking on a hill</span><span>Starting on a hill</span><span>Backing up</span><span>Angle parking</span><span>Parallel parking</span><span>Stall parking</span><span>Two- and three-point turns</span><span>Merging on and off a highway</span><span>Curves and hills</span><span>Emergency vehicles</span><span>Hazard awareness</span></div>
+</div></section>
+
+<section id="lessonsonly" style="padding-top:0"><div class="wrap"><h2>Only looking for lessons?</h2><p class="lead">Whether you are an experienced driver or a new one preparing for your road test, there is an option for you: teenage first-time drivers, new adult learners, and drivers with an expired licence. Contact the team to discuss a custom course tailored to your needs.</p>
+<div class="steps">
+<div class="step"><b>Extra support</b>Anxious students get special care, and lessons never feel rushed.</div>
+<div class="step"><b>Vehicles provided</b>The school supplies the training vehicle and, with the packages, the car for test day.</div>
+<div class="step"><b>Pick-up service</b>Pick-up from work, school or home, so lessons fit around your day.</div></div>
+<p style="margin-top:18px"><button class="btn dark" type="button" data-assist="book">Request lessons</button></p></div></section>
+
+<section class="dark" id="locations"><div class="wrap"><h2>Where to find us</h2><p class="lead">Head office in Vancouver, lessons in three cities. Meeting points are by appointment only.</p>
+<div class="loc">
+<div><h3>Vancouver</h3><p>Head office: 1165 E 61st Ave, Vancouver, BC V5X 2C5</p><small>Mailing address: 2912 W Broadway Suite #112, V6K 0E9</small></div>
+<div><h3>Richmond</h3><p>8600 Lansdowne Rd #107, Richmond, BC V6X 3L6</p><small>+1 604 341 3300, +1 778 636 7848</small></div>
+<div><h3>Burnaby</h3><p>4189 Halifax St #3307, Burnaby, BC V5C 0H9</p><small>+1 604 341 3300, +1 778 636 7848</small></div></div></div></section>
+
+<section id="faq"><div class="wrap"><h2>Quick answers</h2><p class="lead">Or ask the assistant in the corner.</p><details><summary>Do you offer lessons for beginners in Vancouver?</summary><p>Yes. Beginner lessons start with basic vehicle control and gradually move to real-traffic driving, so you build confidence safely.</p></details><details><summary>Which road tests do you prepare students for?</summary><p>Class 7 (N licence), Class 5 and Class 4. The school practises on routes where road tests are usually held and offers a Mock Test assessed to ICBC standards.</p></details><details><summary>Can I take the classes in any order?</summary><p>Yes. The flexible class system lets students take courses in any order and at their own pace, which suits busy schedules.</p></details><details><summary>Do you pick students up?</summary><p>Pick-up and drop-off is part of the packages, and the school says it can pick students up from work, school and home.</p></details><details><summary>Where do lessons happen?</summary><p>Vancouver, Richmond and Burnaby. The head office is at 1165 E 61st Ave, Vancouver. Meeting points are by appointment only.</p></details><details><summary>What if I get nervous?</summary><p>The school gives extra support to anxious students and teaches a see-think-do approach, step by step.</p></details></div></section>
+
+<div class="portal"><div class="wrap"><div><h2>Student portal</h2><div>Profile, online course fee payment and training progress in one place.</div></div><a class="btn dark" href="https://student.goldenstardriving.ca">Student login</a></div></div>
+</main>
+<footer><div class="wrap"><b style="color:#f3bd00">Golden Star Driving School</b><br>1165 E 61st Ave, Vancouver, BC V5X 2C5 · <a href="tel:+16043413300">+1 604 341 3300</a> · <a href="mailto:contact@goldenstardriving.ca">contact@goldenstardriving.ca</a>
+<div class="demo">Demo · prepared by Gevorg Hovhannisyan</div></div></footer>
+<script>
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
+document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false');});
+document.querySelectorAll('[data-p]').forEach(function(p){p.hidden=p.getAttribute('data-p')!==b.getAttribute('data-t');});});});
+</script>
+<script>
+window.WIDGET_CFG={"fab":"Ask Golden Star","icon":"⭐","title":"Golden Star assistant","sub":"Golden Star Driving School, Vancouver","note":"Demo. Answers come from the school's website; nothing is sent from this page.","placeholder":"Ask about packages, road test, Class 4...","greet":"Hi! I can answer questions about packages, road test options, Class 7, 5 and 4, and our Vancouver, Richmond and Burnaby locations, or prepare a lesson request for the team.","chips":["Packages","Road test package","Mock test","Class 4","Locations","Request lessons"],"fallback":"I don't see that on the school's website, so I won't guess. The team can confirm: +1 604 341 3300 or contact@goldenstardriving.ca. Or tap Request lessons and I'll prepare your details.","flow":{"me":"I'd like to request lessons","cancel":"Cancel","stop":"^(cancel|stop|quit|never ?mind|exit)$","trigger":"^(?!.*cancel)(?=.*(\\bbook|enquir|inquir|reserve|sign ?up|schedule|get started|start lessons|request lessons|register|\\bapply))","cancelled":"No problem, nothing was sent. Ask me anything else.","done":"Thank you! Here is your request:\n{summary}\n\nSent to the team. They will call or e-mail to confirm details. (Demo: this page sends nothing.)","steps":[{"id":"name","label":"Student","q":"Let's prepare your request. What is the student's name?","pat":".{2,}","err":"Please type a name."},{"id":"area","label":"Area","q":"Which area do you want lessons in?","opts":["Vancouver","Richmond","Burnaby"]},{"id":"goal","label":"Goal","q":"What are you aiming for?","opts":["Class 7 (N licence)","Class 5","Class 4","Refresher","Road test only","Not sure yet"]},{"id":"pkg","label":"Package of interest","q":"Which option interests you? You can also just say 'not sure' and the team will recommend one.","opts":["Beginner (32)","Novice (19)","Intermediate (12)","Advanced (6)","Refresher (3)","Single lessons","Road test package","Mock test","Not sure"]},{"id":"when","label":"Start / availability","q":"When would you like to start, and which days or times work best?","pat":".{3,}","err":"Please type a date or time."},{"id":"tel","label":"Contact","q":"Last one: a phone number or e-mail for the team to reply to?","pat":"\\d[\\d\\s+()\\-]{6,}|\\S+@\\S+\\.\\S+","err":"Please type a phone number or e-mail so the team can reply."}]},"kb":[{"id":"price","k":["price","prices","cost","how much","rate","rates","fee","fees","charge","pricing","single lesson","individual lesson","one lesson","per hour","hourly","afford","cheap"],"a":"Individual automatic lessons: 1.5 hours $130 or 1 hour $100 (plus tax). Packages run from the Refresher (3 lessons, $560) up to the Beginner (32 lessons, $3,800), all plus tax. The package cards on this page list what each one includes.","next":["Packages","Road test package","Request lessons"]},{"id":"packages","k":["package","packages","beginner","novice","intermediate","advanced","refresher","bundle","bundles","how many lessons","lessons included","32 lessons","19 lessons","12 lessons","6 lessons","3 lessons","deal"],"a":"Automatic packages (all plus tax, 1.5 hour lessons, with warm-up and vehicle for the road test, pick-up and drop-off):\nBeginner 32 lessons, 50 hours: $3,800\nNovice 19 lessons, 30 hours: $2,300\nIntermediate 12 lessons, 20 hours: $1,600\nAdvanced 6 lessons, 10 hours: $880\nRefresher 3 lessons: $560","next":["Road test package","Class 4","Request lessons"]},{"id":"roadtest","k":["road test package","road test","roadtest","test car","car for test","vehicle for road test","use your car","rent car","car rental","hire","warm up","warmup","warm-up","icbc test","take my test","book my test"],"a":"Road Test Package 1 is $200 + tax: 1 hour of practice before the test, the vehicle for the road test, and pick-up and drop-off. Package 2 is $160 + tax: 30 minutes of practice before the test and the vehicle. The school also practises on routes where road tests are usually held.","next":["Mock test","Packages","Request lessons"]},{"id":"mock","k":["mock","mock test","practice test","trial test","trial run","simulate","simulation","assessment","assess","evaluate"],"a":"The Mock Test is $150 + tax, 90 minutes in total: 30 minutes of road practice, 30 minutes of explanation and correction, then a 30-minute mock test. Your driving is assessed against ICBC standards.","next":["Road test package","Packages","Request lessons"]},{"id":"class7","k":["class 7","class7","n licence","n license","novice licence","novice license","learner","learners","l licence","l license","new driver","first licence","first license","beginner driver","never driven","start from scratch","zero experience"],"a":"For your N (Novice) licence you need to pass the Class 7 road test. The school makes sure you know what's expected, and offers practice at different times of day, in various weather and in unfamiliar neighbourhoods. Beginners are welcome: lessons start with vehicle control and move gradually to real traffic.","next":["Packages","Class 5","Request lessons"]},{"id":"class5","k":["class 5","class5","full licence","full license","unrestricted licence","graduate","glp","24 months","18 months","novice stage","get my 5"],"a":"You can take the Class 5 road test after 24 consecutive months as a Novice driver with no driving prohibitions. It may be possible after 18 months if you completed an approved Graduated Licensing Program course and met the other requirements. The school practises the usual test skills: intersections, lane changes, hill starts, parking, merging, and more.","next":["Road test package","Mock test","Request lessons"]},{"id":"class4","k":["class 4","class4","commercial","taxi","limo","limousine","ambulance","shuttle","uber","pre trip","pretrip","pre-trip","restricted","unrestricted","van","passenger"],"a":"Class 4 options: Restricted individual lesson $150 (1.5 hours), Restricted road test preparation $220 (1 hour plus vehicle), Unrestricted individual $200 (1.5 hours), Unrestricted road test package $300 (1 hour plus van). All plus tax. The Class 4 test has a pre-trip inspection and a road test on the same day.","next":["Packages","Contact","Request lessons"]},{"id":"locations","k":["location","locations","where","address","office","head office","richmond","burnaby","vancouver","lansdowne","halifax","broadway","61st","area","areas","serve","service area","meeting point","meet","greater vancouver"],"a":"Head office: 1165 E 61st Ave, Vancouver, BC V5X 2C5. Lessons are also offered in Richmond (8600 Lansdowne Rd #107) and Burnaby (4189 Halifax St #3307), plus a Vancouver mailing address at 2912 W Broadway Suite #112. Meeting points are by appointment only.","next":["Pick-up","Contact","Request lessons"]},{"id":"pickup","k":["pick up","pickup","pick-up","drop off","drop-off","dropoff","come to me","come to my","home","work","school pickup","at my house"],"a":"The packages and road test packages include pick-up and drop-off, and the school says it can pick students up from work, school and home. Exact pick-up areas: the team will confirm.","next":["Locations","Request lessons"]},{"id":"contact","k":["phone","call","number","email","e mail","contact","reach","talk","speak","whatsapp","text","message","enquiry","inquiry"],"a":"Phone: +1 604 341 3300 (Richmond and Burnaby also list +1 778 636 7848). E-mail: contact@goldenstardriving.ca. The site also has a Book Your Driving Lesson enquiry form.","next":["Locations","Request lessons"]},{"id":"portal","k":["portal","student portal","login","log in","sign in","pay online","online payment","progress","track","profile"],"a":"The student portal lets drivers manage their profile, pay course fees online and track training progress. The link is at student.goldenstardriving.ca.","next":["Packages","Contact"]},{"id":"special","k":["senior","seniors","winter","snow","emergency","emergency maneuvers","defensive","teen","teenager","teen driver","refresher course","adult refresher","special programs","other courses"],"a":"Besides the packages, the school lists: Program for Seniors, Winter Driving, Emergency Maneuvers, Defensive Driving, Adult Driving Refresher and Teen Driver Education. Contact the team to discuss a custom course.","next":["Contact","Request lessons"]},{"id":"nervous","k":["nervous","anxious","anxiety","scared","afraid","fear","worried","stress","stressed","panic","confidence"],"a":"The school says it gives extra support to anxious students, and lessons follow a step-by-step see-think-do approach so you build confidence gradually.","next":["Packages","Request lessons"]},{"id":"instructors","k":["instructor","instructors","teacher","teachers","certified","licensed","qualified","experienced","who teaches"],"a":"Instructors are licensed under the Motor Vehicle Act. The school describes them as certified, experienced and passionate about helping students become safe, responsible drivers.","next":["Packages","Contact"]},{"id":"manual","k":["manual","stick","stick shift","standard","automatic","auto","transmission"],"a":"The packages on the site are listed as automatic lessons. If you want manual transmission lessons, please ask the team to confirm.","next":["Packages","Contact"]},{"id":"schedule","k":["schedule","flexible","time","times","hours","open","weekend","weekends","evening","evenings","availability","available","when","any order","pace"],"a":"The classes are designed for busy students: you can take them in any order and at your own pace. Office hours and exact availability are not published on the site, so the team will confirm.","next":["Contact","Request lessons"]},{"id":"language","k":["language","languages","punjabi","hindi","chinese","mandarin","cantonese","korean","farsi","persian","spanish","english"],"a":"The site doesn't say which languages the instructors speak besides English. The team can confirm; call +1 604 341 3300.","next":["Contact"]},{"id":"passrate","k":["pass rate","first time","first try","pass","guarantee","guaranteed","success","success rate","reviews","rating"],"a":"The school says it has a high pass rate for ICBC road tests and helps students get licensed on the first try. It can't promise a result for any one student.","next":["Mock test","Packages"]},{"id":"cancel","k":["cancel","cancellation","reschedule","refund","policy","policies","terms","no show"],"a":"The school has a Policies and Regulations page on its website. I don't have the details of cancellation or refund rules, so please check that page or ask the team.","next":["Contact"]},{"id":"hello","k":["hi","hello","hey","good morning","good afternoon"],"a":"Hello! Ask about packages, road test options, locations or Class 4, or tap Request lessons.","next":null},{"id":"thanks","k":["thanks","thank you","cheers","great","awesome"],"a":"You're welcome! Anything else?","next":null}]};
+(function(){
+//CORE-START
+function norm(s){return String(s).toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9а-я\s]/g,' ').replace(/\s+/g,' ').trim();}
+var CYR=/[а-я]/;
+function stem(w){if(CYR.test(w)){return w.length<=3?w:w.slice(0,Math.max(3,Math.min(5,w.length-2)));}if(w.length>4){w=w.replace(/(ing|ed|es|s)$/,'');}return w;}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++){d[0][j]=j;}
+for(i=1;i<=m;i++){for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1]){d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1);}}}return d[m][n];}
+function score(qn,toks,entry){var s=0;for(var i=0;i<entry.k.length;i++){var kw=norm(entry.k[i]);if(!kw)continue;
+var parts=kw.split(' ');
+if(parts.length>1){if((' '+qn+' ').indexOf(' '+kw+' ')>-1){s+=3*parts.length;}else{var hit=0;for(var p=0;p<parts.length;p++){if(toks.indexOf(stem(parts[p]))>-1)hit++;}if(hit===parts.length)s+=2*parts.length;}continue;}
+var ks=stem(kw);
+if(toks.indexOf(ks)>-1){s+=3;continue;}
+if(CYR.test(kw))continue;
+for(var t=0;t<toks.length;t++){var tk=toks[t];if(ks.length>=5&&tk.length>=4){var lim=ks.length>=9?2:1;if(Math.abs(tk.length-ks.length)<=lim&&lev(tk,ks)<=lim){s+=2;break;}}
+else if(ks.length>=4&&tk.length>=5&&tk.indexOf(ks)===0){s+=1.5;break;}}}
+return s;}
+function match(q,kb){var qn=norm(q),toks=qn.split(' ').filter(Boolean).map(stem);var best=null,bs=0;
+for(var i=0;i<kb.length;i++){var sc=score(qn,toks,kb[i]);if(sc>bs){bs=sc;best=kb[i];}}
+return bs>=2?best:null;}
+//CORE-END
+if(typeof window==='undefined'){module.exports={match:match,norm:norm};return;}
+var C=window.WIDGET_CFG,lang='en',ES=C.es?new RegExp(C.es,'i'):null;
+function L(x){if(x==null)return '';if(typeof x==='string')return x;if(Array.isArray(x))return x;return x[lang]||x.en;}
+function detect(t,inflow){if(!C.multi)return;if(/[Ѐ-ӿ]/.test(t)){lang='ru';}else if(ES&&ES.test(t)){lang='es';}else if(!inflow&&/[a-z]{2}/i.test(t)){lang='en';}}
+var root=document.createElement('div');root.className='wd';
+root.innerHTML='<button class="wd-fab" type="button" aria-expanded="false"><span aria-hidden="true">'+(C.icon||'💬')+'</span><span class="wd-fab-t"></span></button>'+
+'<section class="wd-panel" role="dialog" aria-label="Assistant" hidden><header class="wd-h"><div><b class="wd-title"></b><small class="wd-sub"></small></div><button class="wd-x" type="button" aria-label="Close">×</button></header>'+
+'<div class="wd-log" aria-live="polite"></div><div class="wd-chips"></div><form class="wd-f" autocomplete="off"><input class="wd-in" type="text" maxlength="300" aria-label="Your message"><button class="wd-s" type="submit" aria-label="Send">➤</button></form>'+
+'<footer class="wd-note"></footer></section>';
+document.body.appendChild(root);
+var $=function(s){return root.querySelector(s);};
+var fab=$('.wd-fab'),panel=$('.wd-panel'),log=$('.wd-log'),chips=$('.wd-chips'),inp=$('.wd-in'),form=$('.wd-f');
+$('.wd-fab-t').textContent=L(C.fab);$('.wd-title').textContent=C.title;$('.wd-sub').textContent=C.sub;$('.wd-note').textContent=L(C.note);inp.placeholder=L(C.placeholder);
+var flow=null,data={},opened=false;
+function say(t,who){var d=document.createElement('div');d.className='wd-m '+(who||'bot');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+function setChips(list){chips.innerHTML='';(list||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.addEventListener('click',function(){handle(c,true);});chips.appendChild(b);});}
+function open(){panel.hidden=false;fab.setAttribute('aria-expanded','true');if(!opened){opened=true;say(L(C.greet));setChips(L(C.chips));}inp.focus();}
+function close(){panel.hidden=true;fab.setAttribute('aria-expanded','false');}
+fab.addEventListener('click',function(){if(panel.hidden){open();}else{close();}});
+$('.wd-x').addEventListener('click',close);
+function startFlow(){flow={i:0};data={};ask();}
+document.querySelectorAll('[data-assist]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();open();var a=b.getAttribute('data-assist');if(a==='book'){if(!flow){say(L(C.flow.me),'me');startFlow();}}else if(a){handle(a);}});});
+function ask(){var st=C.flow.steps[flow.i];say(L(st.q));setChips((L(st.opts)||[]).concat([L(C.flow.cancel)]));}
+function finish(){var lines=C.flow.steps.map(function(s){return L(s.label)+': '+data[s.id];}).join('\n');say(L(C.flow.done).replace('{summary}',lines));flow=null;setChips(L(C.chips));}
+function stepInput(t){if(new RegExp(C.flow.stop,'i').test(t.trim())){flow=null;say(L(C.flow.cancelled));setChips(L(C.chips));return;}
+var st=C.flow.steps[flow.i];
+if(st.pat&&!(new RegExp(st.pat,'i')).test(t)){say(L(st.err));return;}
+data[st.id]=t.trim();flow.i++;if(flow.i>=C.flow.steps.length){finish();}else{ask();}}
+var TRIG=new RegExp(C.flow.trigger,'i');
+function handle(t,chip){t=String(t).trim();if(!t)return;if(!chip)detect(t,!!flow);say(t,'me');
+if(flow){stepInput(t);return;}
+if(TRIG.test(t)){startFlow();return;}
+var m=match(t,C.kb);
+if(m){say(L(m.a));setChips(L(m.next)||L(C.chips));}else{say(L(C.fallback));setChips(L(C.chips));}}
+form.addEventListener('submit',function(e){e.preventDefault();var v=inp.value;inp.value='';handle(v);});
+})();
+</script>
+</body></html>

@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Boutique Property Agents | Sydney apartments (demo)</title><meta name="description" content="Demo page prepared for Boutique Property Agents, Sydney.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#212432;--navy2:#2e3246;--sand:#efe7da;--paper:#faf7f1;--brick:#ad0000;--ink:#1d1f2a;--mute:#5d6070}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 'DM Sans',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;margin:0;line-height:1.1}
+a{color:var(--brick)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header{background:var(--navy);position:sticky;top:0;z-index:50}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;height:64px}
+.chip{display:flex;align-items:center;background:var(--navy)}
+.chip img{height:40px;width:auto;display:block}
+.ph{background:var(--sand);color:var(--navy);text-decoration:none;font-weight:700;padding:9px 14px;border-radius:8px;font-size:14px;white-space:nowrap}
+nav{display:none;gap:22px;font-size:14px}nav a{color:#e9e4da;text-decoration:none}
+@media(min-width:900px){nav{display:flex}}
+.hero{background:var(--sand);padding:36px 0 40px}
+.hero .wrap{display:grid;gap:28px}
+@media(min-width:880px){.hero .wrap{grid-template-columns:1.25fr 1fr;align-items:center;gap:48px}}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--brick);font-weight:700}
+.hero h1{font-size:clamp(36px,8vw,62px);margin:10px 0 14px;color:var(--navy)}
+.hero p{max-width:34em;font-size:17px;color:#3b3e4d}
+.help{background:var(--navy);color:#fff;border-radius:18px;padding:22px}
+.help h3{font-size:24px;margin-bottom:12px}
+.help button{display:flex;width:100%;justify-content:space-between;align-items:center;background:var(--navy2);color:#fff;border:1px solid #444a63;border-radius:12px;padding:14px 16px;margin-top:9px;font:600 15px 'DM Sans';cursor:pointer;text-align:left}
+.help button:hover{background:var(--brick);border-color:var(--brick)}
+.help button span{opacity:.6}
+section{padding:46px 0}
+h2{font-size:clamp(28px,5vw,42px);color:var(--navy);margin:8px 0 12px}
+.lede{max-width:40em;color:var(--mute)}
+.seg{display:inline-flex;background:var(--sand);border-radius:999px;padding:4px;margin:12px 0 18px}
+.seg button{border:0;background:transparent;font:600 15px 'DM Sans';padding:9px 22px;border-radius:999px;cursor:pointer;color:var(--navy)}
+.seg button[aria-selected=true]{background:var(--navy);color:#fff}
+.panel{display:none;gap:10px}.panel.on{display:grid}
+@media(min-width:760px){.panel.on{grid-template-columns:repeat(3,1fr)}}
+.panel div{background:#fff;border:1px solid #e2dccf;border-radius:14px;padding:16px}
+.panel b{display:block;font:400 20px 'DM Serif Display';color:var(--navy)}
+.panel p{margin:4px 0 0;font-size:14px;color:var(--mute)}
+.band{background:var(--navy);color:#fff}
+.band h2{color:#fff}.band .lede{color:#c8cad6}
+.subs{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.subs span{border:1px solid #565c78;border-radius:999px;padding:7px 16px;font-size:14px}
+.subs span:first-child{background:var(--brick);border-color:var(--brick)}
+.desk{display:grid;gap:12px;margin-top:20px}
+@media(min-width:700px){.desk{grid-template-columns:repeat(3,1fr)}}
+.desk button{background:#fff;border:1px solid #e2dccf;border-left:5px solid var(--brick);border-radius:12px;padding:16px;text-align:left;font:15px 'DM Sans';cursor:pointer;color:var(--ink)}
+.desk b{display:block;font:400 20px 'DM Serif Display';color:var(--navy);margin-bottom:4px}
+.team ul{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:10px}
+@media(min-width:700px){.team ul{grid-template-columns:repeat(3,1fr)}}
+.team li{display:grid;grid-template-columns:48px 1fr;column-gap:12px;align-items:center;background:#fff;border:1px solid #e2dccf;border-radius:14px;padding:12px}
+.av{grid-row:span 2;width:48px;height:48px;border-radius:50%;background:var(--navy);color:var(--sand);display:grid;place-items:center;font:400 18px 'DM Serif Display'}
+.team li i{font-style:normal;font-size:13px;color:var(--mute)}
+.q{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 18px 14px;margin:18px -18px 0;-webkit-overflow-scrolling:touch}
+.q blockquote{flex:0 0 84%;max-width:380px;scroll-snap-align:start;margin:0;background:var(--sand);border-radius:16px;padding:20px}
+.q blockquote p{margin:0 0 10px;font:400 19px/1.35 'DM Serif Display';color:var(--navy)}
+.q cite{font-style:normal;font-size:13px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em}
+.faq details{border-bottom:1px solid #ddd5c6;padding:13px 0}
+.faq summary{cursor:pointer;font:400 21px 'DM Serif Display';list-style:none;display:flex;justify-content:space-between;gap:10px;color:var(--navy)}
+.faq summary::after{content:"+";color:var(--brick)}
+.faq details[open] summary::after{content:"\2212"}
+.faq p{margin:8px 0 0;color:var(--mute)}
+.contact{display:grid;gap:14px;margin-top:16px}
+@media(min-width:760px){.contact{grid-template-columns:1fr 1fr}}
+.contact div{background:#fff;border:1px solid #e2dccf;border-radius:14px;padding:18px}
+.btn{display:inline-block;background:var(--brick);color:#fff;border:0;border-radius:10px;padding:12px 18px;font:700 15px 'DM Sans';cursor:pointer;text-decoration:none}
+footer{background:var(--navy);color:#b9bccb;font-size:13px;padding:22px 0}
+
+#as-fab{position:fixed;right:14px;bottom:14px;z-index:90;display:flex;align-items:center;gap:8px;background:#ad0000;color:#ffffff;border:0;border-radius:18px;padding:12px 16px;font:600 15px 'DM Sans',system-ui,sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+#as-fab .as-fi{font-size:18px;line-height:1}#as-fab.on{opacity:.0;pointer-events:none}
+#as-panel{position:fixed;right:12px;bottom:12px;z-index:100;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:#faf7f1;color:#1d1f2a;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden;font:15px/1.45 'DM Sans',system-ui,sans-serif}
+#as-panel[hidden]{display:none}
+.as-h{background:#212432;color:#ffffff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.as-h b{display:block;font-size:16px}.as-h small{display:block;opacity:.85;font-size:12px}
+.as-x{background:transparent;border:0;color:inherit;font-size:28px;line-height:1;cursor:pointer;padding:0 4px}
+.as-m{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;-webkit-overflow-scrolling:touch}
+.as-b{max-width:88%;padding:9px 12px;border-radius:12px;overflow-wrap:anywhere;word-break:break-word}
+.as-bot{background:rgba(127,127,127,.14);align-self:flex-start}.as-bot a{color:inherit;text-decoration:underline}
+.as-me{background:#ad0000;color:#ffffff;align-self:flex-end}
+.as-c{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px 8px;max-height:112px;overflow-y:auto}
+.as-c button{background:transparent;color:#1d1f2a;border:1px solid rgba(127,127,127,.55);border-radius:999px;padding:6px 11px;font:13px 'DM Sans',system-ui,sans-serif;cursor:pointer}
+.as-c button:hover{background:#ad0000;color:#ffffff;border-color:#ad0000}
+.as-f{display:flex;gap:6px;padding:10px 12px;border-top:1px solid rgba(127,127,127,.3)}
+.as-f input{flex:1;min-width:0;padding:10px 12px;border-radius:10px;border:1px solid rgba(127,127,127,.5);background:transparent;color:#1d1f2a;font:16px 'DM Sans',system-ui,sans-serif}
+.as-f button{background:#ad0000;color:#ffffff;border:0;border-radius:10px;padding:0 14px;font-size:16px;cursor:pointer}
+</style></head><body>
+
+<header><div class="wrap"><a class="chip" href="#top"><img src="img/boutique-property-agents-logo.png" alt="Boutique Property Agents" width="132" height="40"></a>
+<nav><a href="#services">Buy, sell, rent</a><a href="#tenants">Tenant help</a><a href="#team">Team</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="ph" href="tel:+61288158195">02 8815 8195</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<div><div class="eyebrow">Sydney CBD apartments &middot; sales and property management</div>
+<h1>Opening doors to Sydney's finest apartments</h1>
+<p>Vibrant living, contemporary apartments and heritage buildings. Boutique Property Agents manages several of Sydney's key apartment blocks and is people-focused: concierge-level service across buying, selling, renting and managing.</p></div>
+<div class="help"><h3>How can we help today?</h3>
+<button data-open-assistant data-pick="Book an inspection">Book an inspection <span>&rarr;</span></button>
+<button data-open-assistant data-pick="Free market appraisal">Free market appraisal <span>&rarr;</span></button>
+<button data-open-assistant data-pick="Rental application help">Rental application help <span>&rarr;</span></button>
+<button data-open-assistant data-pick="Maintenance request">Maintenance request <span>&rarr;</span></button></div>
+</div></div>
+
+<section style="background:#fff;border-top:1px solid #e2dccf"><div class="wrap">
+<div class="eyebrow">The website, mapped</div><h2>Where to find what you need</h2>
+<p class="lede">The agency's own site menu, grouped so a visitor (or the assistant) can send people to the right page quickly.</p>
+<div class="panel on" style="margin-top:16px">
+<div><b>Buy</b><p>Browse all properties, residential, commercial, open for inspection, priority buyer alerts, calculators.</p></div>
+<div><b>Sell</b><p>Free market appraisal and recently sold.</p></div>
+<div><b>Rent</b><p>Browse rental, commercial leases, upcoming rental inspections, leased properties, rental alerts.</p></div>
+<div><b>Tenant services</b><p>Tenancy application, online rental application form, maintenance request, notice to vacate, tenant guide, tenant emergency repairs, rental appraisal.</p></div>
+<div><b>Insights</b><p>Market updates and tips, plus a newsletter for the latest prices and hot deals as they come to market.</p></div>
+<div><b>About us</b><p>Company profile, our team and testimonials.</p></div>
+</div></div></section>
+
+<section><div class="wrap two" style="display:grid;gap:22px">
+<div><div class="eyebrow">How the team works</div><h2>We listen, we hear, we understand</h2>
+<p class="lede">The agency describes itself as people-focused, offering high quality concierge-level services across all aspects of the property market. Its background in property valuation is why it says its price guides are accurate and transparent.</p></div>
+<div class="q" style="margin:0;padding:0;display:grid;gap:12px;overflow:visible">
+<blockquote style="max-width:none"><p>"Tolga from day 1 demonstrated the highest level of professionalism to deliver the best sale outcome for us in a challenging environment."</p><cite>Jessie, vendor</cite></blockquote>
+<blockquote style="max-width:none"><p>"Both Brad and Tolga are always available and respond swiftly, particularly when I need them most."</p><cite>Fran, landlord</cite></blockquote>
+<blockquote style="max-width:none"><p>"Tolga knows about the current and historical markets, potential capital gains and local knowledge."</p><cite>Chris and Maria, buyers</cite></blockquote>
+</div></div></section>
+
+<section style="padding:22px 0;background:var(--navy);color:#fff"><div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;text-align:center">
+<div><b style="font:400 30px 'DM Serif Display'">9</b><br><span style="font-size:13px;color:#c8cad6">people across sales, leasing, management and accounts</span></div>
+<div><b style="font:400 30px 'DM Serif Display'">1</b><br><span style="font-size:13px;color:#c8cad6">office on Elizabeth Street, Sydney CBD</span></div>
+<div><b style="font:400 30px 'DM Serif Display'">3</b><br><span style="font-size:13px;color:#c8cad6">ways in: buy, sell or rent, plus tenant services</span></div>
+</div></section>
+
+<section id="services"><div class="wrap">
+<div class="eyebrow">What the website offers</div><h2>Buy, sell or rent, in one place</h2>
+<div class="seg" role="tablist"><button role="tab" aria-selected="true" data-t="buy">Buy</button><button role="tab" aria-selected="false" data-t="sell">Sell</button><button role="tab" aria-selected="false" data-t="rent">Rent</button></div>
+<div class="panel on" id="p-buy"><div><b>Browse all properties</b><p>Residential and commercial listings for sale.</p></div><div><b>Open for inspection</b><p>Upcoming open homes listed on the site.</p></div><div><b>Priority buyer alerts</b><p>Subscribe to hear about new listings first.</p></div><div><b>Calculators</b><p>Including a borrowing capacity calculator.</p></div><div><b>Recently sold</b><p>See what the agency has sold lately.</p></div><div><b>Talk to a sales associate</b><p>Veronika, Rozina, Jesse or director Tolga Ozer.</p></div></div>
+<div class="panel" id="p-sell"><div><b>Free market appraisal</b><p>A background in property valuation keeps price guides accurate and transparent.</p></div><div><b>Marketing and sales strategy</b><p>A proven approach built to get results.</p></div><div><b>Recently sold</b><p>Examples across Sydney, Darlinghurst, Barangaroo and Woolloomooloo.</p></div></div>
+<div class="panel" id="p-rent"><div><b>Browse rentals</b><p>Residential rentals plus commercial leases.</p></div><div><b>Upcoming rental inspections</b><p>Book a time to see a property.</p></div><div><b>Rental alerts</b><p>Be told when a matching rental appears.</p></div><div><b>Leased properties</b><p>See what has already been leased.</p></div><div><b>Rental appraisal</b><p>For landlords who want to know the market rent.</p></div><div><b>Manage my property</b><p>A property management team with fresh ideas and industry experience.</p></div></div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<div class="eyebrow" style="color:#ffb3a8">Where the agency works</div><h2>Key apartment blocks across the city</h2>
+<p class="lede">Listings on the site recently included apartments in these areas, with the agency based on Elizabeth Street in the CBD.</p>
+<div class="subs"><span>Sydney CBD</span><span>Darlinghurst</span><span>Surry Hills</span><span>Barangaroo</span><span>Woolloomooloo</span><span>Alexandria</span></div>
+</div></section>
+
+<section id="tenants"><div class="wrap">
+<div class="eyebrow">Tenant services</div><h2>Everything a tenant asks for, one tap away</h2>
+<p class="lede">Each of these has a page on the site. The assistant points to the right one and takes your details for the team.</p>
+<div class="desk">
+<button data-open-assistant data-pick="Rental application help"><b>Tenancy application</b>Online rental application form for prospective tenants.</button>
+<button data-open-assistant data-pick="Maintenance request"><b>Maintenance request</b>Report a repair to the property management team.</button>
+<button data-open-assistant data-pick="Maintenance request"><b>Emergency repairs</b>A dedicated tenant emergency repairs page.</button>
+<button data-open-assistant data-pick="Notice to vacate"><b>Notice to vacate</b>Tell the agency you are moving out.</button>
+<button data-open-assistant data-pick="Tenant guide"><b>Tenant guide</b>The guide for tenants of managed properties.</button>
+<button data-open-assistant data-pick="Manage my property"><b>Landlords</b>Rental appraisal and property management.</button>
+</div></div></section>
+
+<section id="team" class="team" style="background:#fff;border-top:1px solid #e2dccf"><div class="wrap">
+<div class="eyebrow">Meet the team</div><h2>Get to know the local team</h2>
+<p class="lede">Sales, leasing, property management and the trust account, all under one roof at 251 Elizabeth Street.</p>
+<ul><li><span class="av">TO</span><b>Tolga Ozer</b><i>Director</i></li><li><span class="av">VP</span><b>Veronika Poduskova</b><i>Sales Associate</i></li><li><span class="av">RG</span><b>Rozina Gardner</b><i>Sales Associate</i></li><li><span class="av">JB</span><b>Jesse Barker</b><i>Sales Associate</i></li><li><span class="av">JV</span><b>Joyce Voon</b><i>Property Consultant</i></li><li><span class="av">SB</span><b>Sabrina Bonaccorsi</b><i>Property Manager</i></li><li><span class="av">HS</span><b>Hasan Sasmaz</b><i>Leasing Executive</i></li><li><span class="av">CS</span><b>Carlita Spanos</b><i>Property Management Associate</i></li><li><span class="av">LG</span><b>Leanne Gorman</b><i>Trust Accountant</i></li></ul></div></section>
+
+<section><div class="wrap">
+<div class="eyebrow">What people say</div><h2>Honest, open, never pressured</h2>
+<div class="q">
+<blockquote><p>"Open, honest and transparent."</p><cite>Raj, vendor</cite></blockquote>
+<blockquote><p>"Always respected and never felt pressured in the entire process."</p><cite>Jessie, vendor</cite></blockquote>
+<blockquote><p>"The team have always performed and given me the confidence to let them manage everything."</p><cite>Fran, landlord</cite></blockquote>
+<blockquote><p>"Trustworthy advice, friendly service and diligent and detailed attention."</p><cite>Paulette, owner</cite></blockquote>
+</div></div></section>
+
+<section style="background:var(--sand)"><div class="wrap">
+<div class="eyebrow">Who to ask</div><h2>The right person for each request</h2>
+<div class="panel on" style="margin-top:16px">
+<div><b>Buying or selling</b><p>Director Tolga Ozer with sales associates Veronika Poduskova, Rozina Gardner and Jesse Barker, and property consultant Joyce Voon.</p></div>
+<div><b>Leasing and applications</b><p>Leasing executive Hasan Sasmaz handles the rental side.</p></div>
+<div><b>Managing a property or a repair</b><p>Property manager Sabrina Bonaccorsi and property management associate Carlita Spanos.</p></div>
+<div><b>Accounts</b><p>Trust accountant Leanne Gorman looks after the trust account.</p></div>
+</div></div></section>
+
+<section id="faq"><div class="wrap faq">
+<div class="eyebrow">Before you ring</div><h2>Quick answers</h2>
+<details><summary>Do you manage apartment blocks?</summary><p>Yes. The agency says it manages several of Sydney's key apartment blocks and is the preferred agent for sales and property management in them.</p></details>
+<details><summary>Can landlords get a rental appraisal?</summary><p>Yes, a rental appraisal is listed under Rent. The property management team also takes enquiries from owners who want their property managed.</p></details>
+<details><summary>Is there a way to hear about new listings first?</summary><p>There are Priority Buyer Alerts and Rental Alerts on the site, and a newsletter with insider tips and market updates.</p></details>
+<details><summary>Do you list commercial properties?</summary><p>Yes. The Buy menu has a commercial section and the Rent menu has commercial leases. The team confirms what is currently available.</p></details>
+<details><summary>Can I see what has already been leased?</summary><p>There is a Leased Properties page, alongside Recently Sold, so you can see recent results.</p></details>
+<details><summary>Who looks after trust accounting?</summary><p>The team page lists Leanne Gorman as Trust Accountant. For questions about your statement, the assistant routes you to the office.</p></details>
+<details><summary>Is there a borrowing capacity calculator?</summary><p>Yes, under Buy, then Calculators. For advice on your own finances, speak to a lender.</p></details>
+<details><summary>Is the website the only way to enquire?</summary><p>No. You can call the office on 02 8815 8195, email, or visit Shop 1 at 251 Elizabeth Street. The assistant simply gathers your details so the right person can reply.</p></details>
+<details><summary>Where is the office?</summary><p>Shop 1, 251 Elizabeth Street, Sydney NSW 2000.</p></details>
+<details><summary>How do I contact the team?</summary><p>Call 02 8815 8195 or email info@boutiquepropertyagents.com.</p></details>
+<details><summary>What are the opening hours?</summary><p>They are not published on the website, so the team will confirm them.</p></details>
+<details><summary>How do I report a repair?</summary><p>Use the maintenance request page, or the tenant emergency repairs page for urgent issues. In a life-threatening emergency call 000.</p></details>
+<details><summary>Can I get a free appraisal?</summary><p>Yes, a free market appraisal is offered. The assistant takes your address and a good time to call.</p></details>
+</div></section>
+
+<section id="contact" style="background:var(--sand)"><div class="wrap">
+<div class="eyebrow">Contact</div><h2>Boutique Property Agents</h2>
+<div class="contact"><div><b>Shop 1, 251 Elizabeth Street<br>Sydney NSW 2000</b><p><a href="tel:+61288158195">02 8815 8195</a><br><a href="mailto:info@boutiquepropertyagents.com">info@boutiquepropertyagents.com</a></p></div>
+<div><b>Not sure who to ask?</b><p>Tell the assistant whether it is a sale, a rental or a repair and it passes it to the right person.</p><button class="btn" data-open-assistant>Start a request</button></div></div>
+</div></section>
+</main>
+<footer><div class="wrap">Demo &middot; prepared by Gevorg Hovhannisyan</div></footer>
+<script>
+(function(){var b=document.querySelectorAll('.seg button');b.forEach(function(x){x.onclick=function(){b.forEach(function(y){y.setAttribute('aria-selected',y===x);});document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on',p.id==='p-'+x.dataset.t);});};});
+document.addEventListener('click',function(e){var t=e.target.closest('[data-pick]');if(t)window.__pick=t.getAttribute('data-pick');},true);})();
+</script>
+
+<script>
+/* matcher: keyword + fuzzy, word-form tolerant */
+function norm(s){return String(s).toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4){if(/(sses|shes|ches|xes)$/.test(w))w=w.slice(0,-2);else if(/(ing|ed)$/.test(w))w=w.replace(/(ing|ed)$/,'');else if(/[^s]s$/.test(w))w=w.slice(0,-1);}return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b,max){if(Math.abs(a.length-b.length)>max)return max+1;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i],mn=i;for(j=1;j<=b.length;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));if(c[j]<mn)mn=c[j];}if(mn>max)return max+1;p=c;}return p[b.length];}
+function tokHit(q,k){if(q===k)return 1;if(k.length<4||q.length<4)return 0;var m=k.length>=9?2:(k.length>=5?1:0);if(m&&lev(q,k,m)<=m)return 1;if(q.length>=5&&k.length>=5&&(k.indexOf(q)===0||q.indexOf(k)===0))return 1;return 0;}
+function makeMatcher(KB){
+  var idx=KB.map(function(e){return e.k.map(function(p){return toks(p);});});
+  return function(text){
+    var qt=toks(text),best=-1,bs=0;
+    if(!qt.length)return null;
+    for(var i=0;i<KB.length;i++){var s=0;
+      for(var j=0;j<idx[i].length;j++){var kt=idx[i][j],ok=true;
+        for(var t=0;t<kt.length;t++){var f=false;for(var u=0;u<qt.length;u++){if(tokHit(qt[u],kt[t])){f=true;break;}}if(!f){ok=false;break;}}
+        if(ok)s+=kt.length*2+(kt.length>1?1:0)+(KB[i].w||0);}
+      if(s>bs){bs=s;best=i;}}
+    return bs>=2?KB[best]:null;};
+}
+if(typeof module!=='undefined')module.exports={makeMatcher:makeMatcher,norm:norm,toks:toks};
+
+/* assistant widget: client-side only, sends nothing */
+function initAssistant(C){
+  var match=makeMatcher(C.kb),$=function(s){return document.querySelector(s);};
+  var fab=document.createElement('button');fab.id='as-fab';fab.type='button';fab.setAttribute('aria-label',C.fabLabel||'Open assistant');
+  fab.innerHTML='<span class="as-fi">'+(C.fabIcon||'?')+'</span><span class="as-ft">'+(C.fabText||'Ask')+'</span>';
+  var p=document.createElement('div');p.id='as-panel';p.setAttribute('role','dialog');p.hidden=true;
+  p.innerHTML='<div class="as-h"><div><b>'+C.title+'</b><small>'+C.sub+'</small></div><button type="button" class="as-x" aria-label="Close">&times;</button></div><div class="as-m" id="as-m" aria-live="polite"></div><div class="as-c" id="as-c"></div><form class="as-f" id="as-f"><input id="as-i" type="text" autocomplete="off" placeholder="'+C.ph+'"><button type="submit" aria-label="Send">&#10148;</button></form>';
+  document.body.appendChild(fab);document.body.appendChild(p);
+  var M=$('#as-m'),CH=$('#as-c'),IN=$('#as-i'),flow=null,data={},opened=false;
+  function add(t,who,html){var d=document.createElement('div');d.className='as-b as-'+who;if(html)d.innerHTML=t;else d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight;}
+  function chips(arr){CH.innerHTML='';arr.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){say(c);};CH.appendChild(b);});}
+  function home(){chips(C.chips);}
+  function ask(){var s=C.flow.steps[flow];add(s.q,'bot');if(s.opts)chips(s.opts.concat([C.flow.cancel]));else chips([C.flow.cancel]);IN.placeholder=s.ph||C.ph;}
+  function startFlow(pre){flow=0;data={};add(C.flow.intro,'bot');var s0=C.flow.steps[0];if(pre&&s0.opts){for(var i=0;i<s0.opts.length;i++){if(norm(s0.opts[i])===norm(pre)){data[s0.id]=s0.opts[i];flow=1;break;}}}ask();}
+  function endFlow(){flow=null;IN.placeholder=C.ph;}
+  function finish(){var out=C.flow.done(data);flow=null;add(out,'bot',true);IN.placeholder=C.ph;chips(C.chips);}
+  function say(t){t=String(t).trim();if(!t)return;add(t,'me');
+    if(flow!==null){
+      if(norm(t)===norm(C.flow.cancel)||/^(cancel|stop|exit|back)$/.test(norm(t))){endFlow();add(C.flow.cancelMsg,'bot');home();return;}
+      var s=C.flow.steps[flow];data[s.id]=t;flow++;
+      if(flow>=C.flow.steps.length)finish();else ask();return;}
+    if(C.flow.trigger(t)){startFlow(t);return;}
+    var e=match(t);
+    if(e){add(e.a,'bot',true);if(e.go){startFlow();return;}chips(e.c||C.chips);}
+    else{add(C.fallback,'bot',true);chips(C.chips);}
+  }
+  function open(){p.hidden=false;fab.classList.add('on');if(!opened){opened=true;add(C.greet,'bot',true);home();}if(window.__pick){var pk=window.__pick;window.__pick=null;setTimeout(function(){say(pk);},40);}setTimeout(function(){IN.focus({preventScroll:true});},50);}
+  function close(){p.hidden=true;fab.classList.remove('on');}
+  fab.onclick=function(){p.hidden?open():close();};
+  p.querySelector('.as-x').onclick=close;
+  $('#as-f').onsubmit=function(ev){ev.preventDefault();var v=IN.value;IN.value='';say(v);};
+  window.openAssistant=open;
+  var cta=document.querySelectorAll('[data-open-assistant]');for(var i=0;i<cta.length;i++){cta[i].addEventListener('click',function(ev){ev.preventDefault();open();});}
+}
+
+
+var KB=[
+{k:['hello','hi','hey','good morning','good afternoon','g day','gday'],a:'Hello! I can help with inspections, appraisals, rental applications, maintenance requests and getting in touch with the team.'},
+{k:['hours','open','opening hours','what time','working hours','weekend','saturday','sunday','closed','when are you open'],a:'Opening hours are not published on the website, so I will not guess. Call <b>02 8815 8195</b> and the team will confirm.'},
+{k:['address','office','where are you','location','elizabeth street','find you','directions','map','visit'],a:'The office is at <b>Shop 1, 251 Elizabeth Street, Sydney NSW 2000</b>.'},
+{k:['phone','call','number','telephone','contact','reach','mobile','ring'],a:'Call <b>02 8815 8195</b> or email <b>info@boutiquepropertyagents.com</b>.'},
+{k:['email','mail','e-mail'],a:'Email <b>info@boutiquepropertyagents.com</b>, or call 02 8815 8195.'},
+{k:['team','staff','who','people','agents','meet the team'],a:'Director <b>Tolga Ozer</b>; sales associates Veronika Poduskova, Rozina Gardner and Jesse Barker; property consultant Joyce Voon; property manager Sabrina Bonaccorsi; leasing executive Hasan Sasmaz; property management associate Carlita Spanos; trust accountant Leanne Gorman.',c:['Book an inspection','Free market appraisal']},
+{k:['tolga','ozer','director','boss'],a:'<b>Tolga Ozer</b> is the director. Reviewers on the site describe him as honest, thorough and never pushy.'},
+{k:['property manager','property management','sabrina','manage my property','landlord','landlords','investor','investment','manage'],a:'Property management is handled by <b>Sabrina Bonaccorsi</b> (Property Manager), Carlita Spanos (Property Management Associate) and Hasan Sasmaz (Leasing Executive). Landlords can also ask for a rental appraisal.',go:true},
+{k:['buy','buying','purchase','buyer','for sale','sales','apartment for sale','listings','listing'],a:'For buyers the site has residential and commercial listings, open-for-inspection times, <b>priority buyer alerts</b> and calculators including borrowing capacity. A sales associate follows up on request.',c:['Book an inspection','Alerts']},
+{k:['alert','alerts','notify','subscribe','newsletter','priority buyer','rental alerts'],a:'There are <b>Priority Buyer Alerts</b> and <b>Rental Alerts</b> on the site, plus a newsletter with market updates and tips.'},
+{k:['sell','selling','seller','vendor','list my','my property','my home','home worth','appraisal','free appraisal','market appraisal','valuation','worth','how much is my'],a:'A <b>free market appraisal</b> is offered. The agency\'s background in property valuation is behind its price guides. I can take your address and a good time to call.',go:true,w:2},
+{k:['rent','rental','rentals','lease','renting','tenant','tenancy','apartment for rent','to let'],a:'The site lists residential rentals, commercial leases, upcoming rental inspections and leased properties, plus rental alerts. A leasing executive can help with the application.',c:['Rental application help','Book an inspection']},
+{k:['application','apply','rental application','tenancy application','application form','rental application help'],w:4,a:'There is an <b>online rental application form</b> and a tenancy application page. I can note your details so the leasing team can help you complete it.',go:true},
+{k:['maintenance','repair','repairs','fix','broken','leak','leaking','plumber','electrician','maintenance request','emergency','urgent'],a:'Use the <b>Maintenance Request</b> page, or the <b>Tenant Emergency Repairs</b> page for urgent issues. If anyone is in danger call 000. I can take the details for the property management team.',go:true},
+{k:['vacate','notice to vacate','move out','moving out','end lease','terminate','end of lease'],a:'There is a <b>Notice to Vacate</b> page for tenants who are moving out. The property manager confirms the next steps for your lease.'},
+{k:['guide','tenant guide','handbook','rules'],a:'The site has a <b>Tenant Guide</b> for tenants of managed properties.'},
+{k:['inspection','inspections','open home','open house','viewing','view','see a property','book an inspection','open for inspection'],w:3,a:'There are <b>Open For Inspection</b> times for sales and <b>Upcoming Rental Inspections</b> for rentals. I can request a private inspection for you.',go:true},
+{k:['calculator','calculators','borrowing','borrowing capacity','mortgage','loan','finance'],a:'The Buy menu has calculators, including a <b>borrowing capacity calculator</b>. For anything about your own finances speak to a lender.'},
+{k:['sold','recently sold','results','past sales','sales results','leased'],a:'The site shows <b>Recently Sold</b> and <b>Leased Properties</b> pages so you can see recent results.'},
+{k:['suburb','suburbs','area','areas','darlinghurst','surry hills','barangaroo','woolloomooloo','alexandria','cbd','sydney','where'],a:'Recent listings on the site were in <b>Sydney CBD, Darlinghurst, Surry Hills, Barangaroo, Woolloomooloo and Alexandria</b>, with the office on Elizabeth Street.'},
+{k:['commercial','commercial lease','commercial leases','office space','shop'],a:'The site lists commercial properties for sale and commercial leases. The team confirms what is currently available.'},
+{k:['review','reviews','testimonial','testimonials','trust','reliable','honest','pressure'],a:'Testimonials on the site praise honesty and transparency, with vendors saying they never felt pressured and landlords saying they could hand over the management with confidence.'},
+{k:['about','agency','company','who are you','boutique','concierge','heritage','apartment blocks'],a:'Boutique Property Agents is a Sydney agency for apartment sales and property management, managing several of the city\'s key apartment blocks, with concierge-level service and a valuation background.'},
+{k:['fee','fees','price','prices','cost','commission','how much','rent price','charges'],a:'I do not quote fees or prices here. Listing prices are on each property page and the team explains management costs for your property.',go:true,w:3},
+{k:['book','booking','request','enquiry','inquiry','appointment','start a request','speak to someone','call me back'],a:'Of course. A few quick questions first.',go:true},
+{k:['trust account','trust accountant','leanne','gorman','statement','accounts','accounting','rent payment','bond'],a:'The team page lists <b>Leanne Gorman</b> as Trust Accountant. For questions about a statement or payment call 02 8815 8195 and the office will confirm.'},
+{k:['insights','market update','market updates','news','tips','insider tips','hot deals','hottest deals'],a:'The Insights section and the newsletter share insider tips, market updates and the latest on prices and deals as they come on the market.'},
+{k:['leased properties','leased'],a:'The Rent menu includes a <b>Leased Properties</b> page showing what has recently been leased.'},
+{k:['thanks','thank you','thx','cheers','great'],a:'No worries! Anything else I can help with?'},
+{k:['bye','goodbye','see you'],a:'Goodbye, have a great day.'}
+];
+var CFG={title:'Boutique assistant',sub:'Demo · answers from the Boutique Property Agents site',ph:'Ask about inspections, rentals, repairs...',fabText:'Ask the team',fabIcon:'&#8962;',
+greet:'Hello, I am the Boutique Property Agents assistant. Ask about buying, selling, renting, repairs, or request an inspection or appraisal.',
+chips:['Book an inspection','Free market appraisal','Rental application help','Maintenance request','Contact'],
+fallback:'I do not have that from the Boutique Property Agents site, so I will not guess. Call <b>02 8815 8195</b> or email <b>info@boutiquepropertyagents.com</b> and the team will help.',
+kb:KB,
+flow:{cancel:'Cancel request',cancelMsg:'No problem, request cancelled.',intro:'Sure. A few quick questions for the team.',
+trigger:function(t){var n=t.trim().toLowerCase();return ['book an inspection','free appraisal','rental application help','maintenance request','free market appraisal','notice to vacate','manage my property','start a request'].indexOf(n)>-1;},
+steps:[{id:'type',q:'What do you need?',opts:['Book an inspection','Free market appraisal','Rental application help','Maintenance request','Manage my property','Notice to vacate']},
+{id:'prop',q:'Property address or building and suburb?',ph:'Unit, street, suburb'},
+{id:'name',q:'Your name?',ph:'Name'},
+{id:'ph',q:'Best phone number?',ph:'04..'},
+{id:'when',q:'When is a good time to call you?',opts:['Morning','Afternoon','Evening','Any time']}],
+done:function(d){var u=/maintenance/i.test(d.type)?'<br>If this is urgent, call 02 8815 8195 now. For danger to life call 000.':'';return '<b>Sent to the Boutique Property Agents team.</b><br>'+d.type+' &middot; '+d.prop+'<br>'+d.name+', '+d.ph+' ('+d.when+')'+u+'<br>The team will confirm. (Demo: nothing is actually sent.)';}}};
+
+initAssistant(CFG);
+</script></body></html>

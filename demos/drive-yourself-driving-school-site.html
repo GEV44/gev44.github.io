@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Drive Yourself Driving School · Automatic lessons in Dublin 3</title>
+<meta name="description" content="Automatic driving lessons north of the Liffey, from a Dublin 3 school in Fairview. Demo page with a booking assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--asph:#1c1d20;--asph2:#2a2c31;--red:#ba0101;--yel:#fcae16;--grn:#00a24b;--paper:#f6f4ee;--ink:#17181a;--mute:#5d6068;--line:#dcd8cc;
+--cw-a:#ba0101;--cw-at:#fff;--cw-f:'Barlow',system-ui,sans-serif;--cw-r:12px;--cw-l:#f1efe8;--cw-mr:10px;--cw-br:999px;--cw-cr:999px;--cw-ir:10px;--cw-h:#1c1d20;--cw-ht:#fcae16;--cw-bg:#fff;--cw-bb:#fff;--cw-ink:#17181a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 'Barlow',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.02;margin:0}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+/* top strip */
+.strip{background:var(--asph);color:#d9d9d9;font-size:14px}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:4px 18px;padding-top:8px;padding-bottom:8px;justify-content:space-between}
+.strip b{color:var(--yel);font-weight:600}
+/* header */
+header{background:#fff;border-bottom:5px solid var(--red);position:sticky;top:0;z-index:40}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:8px;padding-bottom:8px}
+.brand img{display:block;height:50px;width:auto;max-width:62vw}
+nav{display:none;gap:22px;font:700 17px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.04em}
+nav a{text-decoration:none}
+nav a:hover{color:var(--red)}
+.hcta{background:var(--grn);color:#fff;text-decoration:none;font:700 16px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.04em;padding:10px 14px;border-radius:6px;white-space:nowrap}
+@media(min-width:820px){nav{display:flex}}
+/* hero: road */
+.hero{background:var(--asph);color:#fff;position:relative;overflow:hidden;padding:36px 0 0}
+.hero:before{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:repeating-linear-gradient(90deg,var(--yel) 0 38px,transparent 38px 76px)}
+.hero .wrap{display:grid;gap:26px;position:relative}
+.kick{display:inline-block;background:var(--yel);color:#111;font:700 15px 'Barlow Condensed';letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:3px}
+.hero h1{font-size:clamp(46px,13vw,92px);font-weight:800;margin:14px 0 12px}
+.hero h1 em{font-style:normal;color:var(--yel)}
+.hero p.lead{color:#d6d6d6;max-width:34em;margin:0 0 20px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:0;cursor:pointer;font:700 18px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.05em;padding:13px 20px;border-radius:6px}
+.btn.g{background:var(--grn);color:#fff}
+.btn.r{background:var(--red);color:#fff}
+.btn.o{background:transparent;color:#fff;border:2px solid #fff}
+.lplate{justify-self:start;margin-bottom:34px;background:#fff;color:var(--red);border-radius:10px;padding:16px 18px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;max-width:360px;box-shadow:0 10px 0 rgba(0,0,0,.35)}
+.L{width:74px;height:74px;background:#fff;border:6px solid var(--red);display:grid;place-items:center;font:800 54px/1 'Barlow Condensed'}
+.lplate b{display:block;font:800 26px/1 'Barlow Condensed';text-transform:uppercase;color:var(--ink)}
+.lplate span{font-size:14px;color:var(--mute);line-height:1.3;display:block;margin-top:4px}
+@media(min-width:820px){.hero{padding-top:56px}.hero .wrap{grid-template-columns:1.5fr 1fr;align-items:end}.lplate{justify-self:end}}
+/* facts band */
+.facts{background:var(--yel)}
+.facts .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.facts div{padding:16px 10px;border-right:2px solid rgba(0,0,0,.12);font:600 15px/1.25 'Barlow'}
+.facts div:nth-child(2n){border-right:0}
+.facts strong{display:block;font:800 26px/1 'Barlow Condensed';text-transform:uppercase}
+@media(min-width:760px){.facts .wrap{grid-template-columns:repeat(4,1fr)}.facts div:nth-child(2n){border-right:2px solid rgba(0,0,0,.12)}.facts div:last-child{border-right:0}}
+section{padding:46px 0}
+h2{font-size:clamp(34px,8vw,52px);font-weight:800}
+h2 small{display:block;font:600 15px 'Barlow';text-transform:none;letter-spacing:0;color:var(--mute);margin-top:8px;max-width:38em}
+/* lessons: numbered steps */
+.lessons{display:grid;gap:12px;margin-top:22px;counter-reset:l}
+.les{background:#fff;border:2px solid var(--ink);border-radius:8px;padding:16px 16px 16px 66px;position:relative;counter-increment:l}
+.les:before{content:counter(l);position:absolute;left:14px;top:12px;width:38px;height:38px;border-radius:50%;background:var(--red);color:#fff;font:800 24px/38px 'Barlow Condensed';text-align:center}
+.les h3{font-size:25px;margin-bottom:4px}
+.les p{margin:0;color:var(--mute);font-size:15.5px}
+@media(min-width:760px){.lessons{grid-template-columns:1fr 1fr}}
+/* prices: ticket */
+.pricebg{background:var(--asph);color:#fff}
+.pricebg h2 small{color:#b9b9b9}
+.tickets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.tk{background:#fff;color:var(--ink);border-radius:8px;padding:12px 12px 12px;text-align:center;border-bottom:6px solid var(--yel)}
+.tk b{display:block;font:800 40px/1 'Barlow Condensed';color:var(--red)}
+.tk span{font:700 15px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.05em}
+@media(min-width:760px){.tickets{grid-template-columns:repeat(4,1fr)}}
+.hire{display:grid;gap:10px;margin-top:14px}
+.hire div{border:2px dashed var(--yel);border-radius:8px;padding:14px;color:#ececec}
+.hire b{color:var(--yel);font:800 22px 'Barlow Condensed';text-transform:uppercase;display:block}
+@media(min-width:760px){.hire{grid-template-columns:1fr 1fr}}
+.notes{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:15px;color:#cfcfcf}
+.notes li:before{content:"\2713\00a0";color:var(--grn);font-weight:700}
+/* areas */
+.areas{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+.areas span{background:#fff;border:1.5px solid var(--line);border-radius:6px;padding:5px 10px;font:600 14.5px 'Barlow'}
+.areas span.d{background:var(--grn);color:#fff;border-color:var(--grn)}
+.cars{display:grid;gap:12px;margin-top:22px}
+.cars div{background:#fff;border-left:7px solid var(--grn);padding:14px 16px;border-radius:0 8px 8px 0}
+.cars b{font:800 22px 'Barlow Condensed';text-transform:uppercase;display:block}
+@media(min-width:760px){.cars{grid-template-columns:repeat(3,1fr)}}
+.how{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px}
+.how li{border-left:6px solid var(--red);padding:6px 0 6px 16px;color:var(--mute)}
+.how b{display:block;color:var(--ink);font:800 24px 'Barlow Condensed';text-transform:uppercase}
+@media(min-width:760px){.how{grid-template-columns:1fr 1fr}}
+/* faq */
+details{background:#fff;border:1.5px solid var(--line);border-radius:8px;margin-top:10px}
+summary{cursor:pointer;padding:14px 16px;font-weight:600;list-style:none;position:relative;padding-right:44px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:16px;top:9px;font:800 28px 'Barlow Condensed';color:var(--red)}
+details[open] summary:after{content:"\2212"}
+details p{margin:0;padding:0 16px 14px;color:var(--mute)}
+/* contact */
+.contact{background:var(--red);color:#fff}
+.contact .wrap{display:grid;gap:22px}
+.contact h2 small{color:#ffd9d9}
+.cbox{background:#fff;color:var(--ink);border-radius:10px;padding:18px}
+.cbox p{margin:0 0 8px}
+.cbox a.btn{margin:4px 6px 4px 0}
+.hrs{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-weight:600}
+@media(min-width:760px){.contact .wrap{grid-template-columns:1fr 1fr;align-items:center}}
+footer{background:var(--asph);color:#a9a9a9;font-size:14px;padding:20px 0 90px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between}
+.cw-btn{position:fixed;right:16px;bottom:16px;z-index:60;border:0;cursor:pointer;display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--cw-a);color:var(--cw-at,#fff);font:700 15px/1 var(--cw-f,inherit);border-radius:var(--cw-br,999px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.cw-btn svg{width:20px;height:20px}
+.cw-panel{position:fixed;right:12px;bottom:76px;z-index:61;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 100px));background:var(--cw-bg,#fff);color:var(--cw-ink,#111);border-radius:var(--cw-r,16px);box-shadow:0 18px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--cw-f,inherit)}
+.cw-panel.open{display:flex}
+.cw-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--cw-h,var(--cw-a));color:var(--cw-ht,#fff);font-weight:700}
+.cw-head small{display:block;font-weight:400;opacity:.85;font-size:12px}
+.cw-head button{background:none;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer}
+.cw-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--cw-l,#f4f5f7)}
+.cw-m{max-width:86%;padding:9px 12px;border-radius:var(--cw-mr,14px);word-wrap:break-word}
+.cw-b{background:var(--cw-bb,#fff);align-self:flex-start;border:1px solid rgba(0,0,0,.08)}
+.cw-u{background:var(--cw-a);color:var(--cw-at,#fff);align-self:flex-end}
+.cw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 0;background:var(--cw-bg,#fff);max-height:112px;overflow:auto}
+.cw-chips button{border:1px solid var(--cw-a);background:transparent;color:var(--cw-ink,#111);padding:6px 10px;border-radius:var(--cw-cr,999px);font:600 13px var(--cw-f,inherit);cursor:pointer}
+.cw-chips button:hover{background:var(--cw-a);color:var(--cw-at,#fff)}
+.cw-form{display:flex;gap:6px;padding:10px 12px;background:var(--cw-bg,#fff)}
+.cw-form input{flex:1;min-width:0;border:1px solid #c8ccd2;border-radius:var(--cw-ir,10px);padding:10px;font:15px var(--cw-f,inherit)}
+.cw-form button{border:0;background:var(--cw-a);color:var(--cw-at,#fff);border-radius:var(--cw-ir,10px);padding:0 14px;font:700 14px var(--cw-f,inherit);cursor:pointer}
+
+</style>
+</head>
+<body>
+<div class="strip"><div class="wrap"><span><b>Mon-Fri</b> 7am-10pm &nbsp; <b>Sat</b> 9am-5pm</span><span>WhatsApp <b>087 7822888</b></span></div></div>
+<header><div class="wrap">
+<a class="brand" href="#top" aria-label="Drive Yourself Driving School"><img src="img/drive-yourself-driving-school-logo.png" alt="Drive Yourself Driving School" width="234" height="70"></a>
+<nav><a href="#lessons">Lessons</a><a href="#prices">Pricelist</a><a href="#areas">Areas</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="hcta" href="#contact">Book a lesson</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<span class="kick">Automatic lessons only</span>
+<h1>Learn to drive <em>automatic</em>, north of the Liffey</h1>
+<p class="lead">A Dublin 3 school in Fairview run by one patient, straight-talking instructor. Lessons for nervous first-timers, pre-test polish, motorway and refresher practice, in your car or ours.</p>
+<div class="btns"><a class="btn g" href="#contact">WhatsApp 087 7822888</a><a class="btn o" href="#prices">See the pricelist</a></div>
+</div>
+<div class="lplate" aria-hidden="true"><div class="L">L</div><div><b>Safe driving for life</b><span>Not just the test: starting, steering, slowing down and stopping.</span></div></div>
+</div></div>
+
+<div class="facts"><div class="wrap">
+<div><strong>Dublin 3</strong>Fairview, north Dublin</div>
+<div><strong>Automatic</strong>No manual lessons</div>
+<div><strong>Your car or ours</strong>One lesson in theirs first</div>
+<div><strong>Finglas + Raheny</strong>Test centres covered</div>
+</div></div>
+
+<section id="lessons"><div class="wrap">
+<h2>Lessons to match where you are<small>Each lesson is tailored to your learning style and ability, from a first hour in the car to the week before the test.</small></h2>
+<div class="lessons">
+<div class="les"><h3>EDT lessons</h3><p>The Essential Driver Training for learners. Bring your learner permit and the EDT logbook the instructor gives you to be stamped.</p></div>
+<div class="les"><h3>Pre-test lessons</h3><p>Planned preparation against the test standard, so the day itself holds no surprises.</p></div>
+<div class="les"><h3>Intensive lessons</h3><p>Longer blocks of lessons booked in close together if you are on a deadline.</p></div>
+<div class="les"><h3>Motorway lessons</h3><p>Join, lane discipline and exits with an instructor beside you.</p></div>
+<div class="les"><h3>Refresher lessons</h3><p>Back behind the wheel after a break, or new to an automatic.</p></div>
+<div class="les"><h3>For nervous drivers</h3><p>An empathetic, calm approach. Automatic means no gear changes and no stalling, but the test standard is the same.</p></div>
+</div>
+</div></section>
+
+<section id="prices" class="pricebg"><div class="wrap">
+<h2>Pricelist<small>Prices are based on 2-hour lessons. Pay per appointment, or book 6 or 12 hours ahead for a discount.</small></h2>
+<div class="tickets">
+<div class="tk"><b>&euro;75</b><span>1 hour</span></div>
+<div class="tk"><b>&euro;120</b><span>2 hours</span></div>
+<div class="tk"><b>&euro;200</b><span>4 hours</span></div>
+<div class="tk"><b>&euro;300</b><span>6 hours</span></div>
+<div class="tk"><b>&euro;400</b><span>8 hours</span></div>
+<div class="tk"><b>&euro;500</b><span>10 hours</span></div>
+<div class="tk"><b>&euro;580</b><span>12 hours</span></div>
+</div>
+<div class="hire">
+<div><b>Test car rental &euro;320</b>2 hours for an assessment plus 2 hours beforehand, then the driving test.</div>
+<div><b>General test hire &euro;220</b>2 hours beforehand, with a home-coming service. Needs a minimum 2-hour lesson first.</div>
+</div>
+<ul class="notes">
+<li>All lessons must be paid ahead, in cash or by bank transfer (details on request).</li>
+<li>At least one lesson in the school's car first, to assess your driving.</li>
+<li>48 hours' notice to cancel any lesson or car hire.</li>
+</ul>
+</div></section>
+
+<section id="areas"><div class="wrap">
+<h2>Areas covered<small>North of the River Liffey only: Dublin 1, 3, 5, 7, 9, 11, 13 and the inner city, with the Finglas and Raheny test centres.</small></h2>
+<div class="areas">
+<span class="d">Fairview (base)</span><span>Artane</span><span>Baldoyle</span><span>Ballymun</span><span>Bayside</span><span>Beaumont</span><span>Belmayne</span><span>Clontarf</span><span>Coolock</span><span>Darndale</span><span>Eastpoint</span><span>East Wall</span><span>Phibsborough</span><span>Donaghmede</span><span>Drumcondra</span><span>Edenmore</span><span>Finglas</span><span>Foxhill</span><span>Glasnevin</span><span>Harmonstown</span><span>Kilbarrack</span><span>Killester</span><span>Marino</span><span>North Wall</span><span>North Strand</span><span>The Quays</span><span>Raheny</span><span>Santry</span><span>Sutton</span><span>Whitehall</span>
+</div>
+<div class="cars">
+<div><b>Your own car</b>Bring your own automatic, after the first assessment lesson.</div>
+<div><b>The school's car</b>Learn in an automatic provided by the school.</div>
+<div><b>Test day</b>Car hire with a lesson beforehand, then to the test centre.</div>
+</div>
+</div></section>
+
+<section id="how" style="background:#fff;border-top:6px solid var(--yel)"><div class="wrap">
+<h2>How it works<small>From first message to first lesson, using only what the school publishes.</small></h2>
+<ol class="how">
+<li><b>Message the school</b>Email or WhatsApp with your area and the lesson you need. The reply comes from the instructor.</li>
+<li><b>Meet and pay ahead</b>You can meet before starting. Pay by cash or bank transfer; lessons are paid in advance.</li>
+<li><b>First lesson in the school's car</b>At least one lesson in the school's vehicle so the instructor can assess your driving, even if you will use your own car later.</li>
+<li><b>Build towards the test</b>Planned preparation for the test standard, with car hire for the day and the Finglas or Raheny test centres.</li>
+</ol>
+</div></section>
+
+<section id="faq" style="background:#ebe8df"><div class="wrap">
+<h2>Questions learners ask<small>Straight answers from the school's own FAQ. Anything not covered here, the assistant passes to the team.</small></h2>
+<details><summary>Do you teach manual?</summary><p>No. The school only teaches automatic cars.</p></details>
+<details><summary>Can I drive a manual if I pass in an automatic?</summary><p>No. You get code 78 on your licence, automatic only. All electric and hybrid cars are automatic, though.</p></details>
+<details><summary>Is automatic easier for nervous drivers?</summary><p>There is no changing gears and no stalling, so there is less to focus on. The test standard on the day is the same as any other B licence test.</p></details>
+<details><summary>How many hours before I can pass?</summary><p>The RSA recommends 50 to 120 hours on the road. It depends on the individual, and the instructor can talk you through it.</p></details>
+<details><summary>What do I bring to a lesson?</summary><p>Your learner permit or licence, an eye test, and the EDT logbook from the RSA, which the instructor provides to be stamped.</p></details>
+<details><summary>How do I book?</summary><p>By email or WhatsApp. The booking assistant on this page collects the details first.</p></details>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+<div><h2>Book your automatic lessons<small>Email or WhatsApp is the way in. Tell the school your area and the kind of lesson you need.</small></h2></div>
+<div class="cbox">
+<p><a class="btn g" href="https://wa.me/353877822888">WhatsApp</a><a class="btn r" href="mailto:info@driveyourself.ie">Email</a></p>
+<p>087 7822888<br>info@driveyourself.ie<br>Dublin 3, Ireland</p>
+<div class="hrs"><span>Mon-Fri</span><span>7am-10pm</span><span>Saturday</span><span>9am-5pm</span></div>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>Demo &middot; prepared by Gevorg Hovhannisyan</span><span>Content from driveyourself.ie &middot; Dublin 3, Ireland &middot; info@driveyourself.ie &middot; WhatsApp 087 7822888</span></div></footer>
+
+<button class="cw-btn" id="cwBtn" aria-expanded="false" aria-controls="cwPanel"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg><span>Book a lesson</span></button>
+<div class="cw-panel" id="cwPanel" role="dialog" aria-label="Drive Yourself assistant"><div class="cw-head"><div>Drive Yourself assistant<small>Answers from driveyourself.ie</small></div><button id="cwClose" aria-label="Close">&times;</button></div><div class="cw-log" id="cwLog" aria-live="polite"></div><div class="cw-chips" id="cwChips"></div><form class="cw-form" id="cwForm"><input id="cwIn" autocomplete="off" placeholder="Ask a question..." aria-label="Your message"><button>Send</button></form></div>
+
+<script id="kb">
+function nrm(s){s=(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();return s.split(' ').map(function(w){return SYN[w]||w}).join(' ');}
+function stem(w){if(w.length>4)return w.replace(/(ing|ed|es|s)$/,'');return w.replace(/s$/,'');}
+function toks(s){return nrm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[m][n];}
+function scoreEntry(e,T){var s=0;for(var i=0;i<e.k.length;i++){var parts=toks(e.k[i]);if(!parts.length)continue;if(parts.length>1){var all=parts.every(function(p){return T.indexOf(p)>-1});if(all)s+=3;}else{var p=parts[0];if(T.indexOf(p)>-1)s+=2;else if(p.length>=5){for(var j=0;j<T.length;j++){var t=T[j];if(t.length>=5&&lev(t,p)<=(p.length>=8?2:1)){s+=1.5;break;}}}}}return s;}
+function best(q){var T=toks(q),b=null,bs=0;for(var i=0;i<KB.length;i++){var sc=scoreEntry(KB[i],T);if(sc>bs){bs=sc;b=KB[i];}}return {e:b,s:bs};}
+function answerFor(q){var r=best(q);return r.s>=1.5?r.e:null;}
+
+var SYN={lessons:'lesson',lesons:'lesson',lessen:'lesson',lessens:'lesson',leson:'lesson',classes:'lesson',class:'lesson',automatics:'automatic',automatc:'automatic',autmatic:'automatic',automactic:'automatic',auto:'automatic',gearbox:'manual',stick:'manual',cost:'price',costs:'price',prices:'price',pricing:'price',pricelist:'price',charge:'price',fee:'price',fees:'price',expensive:'price',cheap:'price',rates:'price',rate:'price',whatsap:'whatsapp',watsapp:'whatsapp',whatsup:'whatsapp',wa:'whatsapp',mail:'email',emial:'email',adress:'address',adres:'address',fairveiw:'fairview',motorways:'motorway',motorwy:'motorway',refreshers:'refresher',refresh:'refresher',nervus:'nervous',nervious:'nervous',anxious:'nervous',scared:'nervous',afraid:'nervous',insructor:'instructor',instuctor:'instructor',teacher:'instructor',cancelation:'cancellation',cancelling:'cancellation',canceling:'cancellation',cancle:'cancellation',finlgas:'finglas',rahney:'raheny',clontarff:'clontarf',tests:'test',exam:'test',hire:'rental',rent:'rental',theroy:'theory',holiday:'closed',sundays:'sunday',sat:'saturday',hrs:'hours',hr:'hour'};
+var KB=[
+{id:'book',f:1,k:['book','booking','book a lesson','book lessons','book a lesson','sign up','enrol','enroll','get started','start lessons','want lessons','need lessons','arrange a lesson','appointment','reserve','schedule a lesson','take lessons']},
+{id:'hello',k:['hello','hi','hey','good morning','good afternoon','good evening','howdy'],a:'Hello! Ask me about automatic lessons, the pricelist, areas covered, test car hire or opening hours, or start a lesson booking.'},
+{id:'services',k:['services','what do you do','offer','types of lessons','kinds of lessons','which lessons','what lessons','lesson types','what do you teach','range of lessons'],a:'Drive Yourself teaches automatic driving only: EDT lessons for learners, pre-test lessons, intensive lessons, motorway lessons and refresher lessons, each tailored to your ability and learning style.',c:['EDT lessons','Pre-test lessons','Motorway lessons','Prices']},
+{id:'edt',k:['edt','essential driver training','logbook','log book','learner lessons','learner driver','beginner','beginners','first lesson','never driven','complete beginner'],a:'EDT (Essential Driver Training) lessons are for learners. Bring your learner permit and the EDT logbook the instructor provides, to be stamped after each lesson.'},
+{id:'pretest',k:['pre test','pretest','before my test','test preparation','test prep','prepare for test','ready for test','mock test','driving test lesson','pass my test','pass the test'],a:'Pre-test lessons prepare you for the driving test standard through planned preparation and training. The school also covers the Finglas and Raheny test centres, and offers test-day car hire.'},
+{id:'intensive',k:['intensive','crash course','fast','quickly','urgent','deadline','short notice','soon','block of lessons'],a:'Intensive automatic lessons are available, booked in close together. Tell the team your timeline and they will confirm what fits.'},
+{id:'motorway',k:['motorway','motorways','m50','m1','highway','dual carriageway','fast road'],a:'Yes, motorway lessons are offered, with the instructor beside you.'},
+{id:'refresher',k:['refresher','refreshers','been a while','rusty','after a break','not driven for years','lost confidence','return to driving','back to driving'],a:'Refresher lessons are available for people returning to the wheel after a break, or switching to an automatic.'},
+{id:'nervous',k:['nervous','scared','anxious','worried','confidence','confident','panic','fear','calm','patient','easier'],a:'The instructor is patient, empathetic and straight-talking, and lessons are tailored to your confidence. An automatic means no gear changes and no stalling, but the test standard is the same as for any B licence test.'},
+{id:'automatic',k:['automatic','automatic only','manual','manual lessons','gears','gear','clutch','stall','teach manual','do you teach manual'],a:'The school teaches automatic cars only and does not offer manual lessons.'},
+{id:'code78',k:['code 78','78','licence','license','pass automatic','drive a manual','manual after','switch to manual','restriction'],a:'If you pass the test in an automatic you get code 78 on your licence: automatic only. All electric and hybrid cars are automatic, though.'},
+{id:'prices',k:['price','how much','rate per lesson','per lesson','one hour','1 hour','2 hours','two hours','hourly','package','packages','discount','12 hours','10 hours','6 hours','deal','money'],a:'Pricelist: 1 hour 75 euro, 2 hours 120, 4 hours 200, 6 hours 300, 8 hours 400, 10 hours 500, 12 hours 580. Prices are based on 2-hour lessons, and booking 6 or 12 hours ahead earns a discount. All lessons are paid ahead.',c:['Test car hire','Payment','Areas covered','Book a lesson']},
+{id:'hire',k:['rental','car rental','car for test','test car','test day','day of test','day of the test','use your car for the test','hire a car','test hire','homecoming','home coming'],a:'Test car rental is 320 euro for a 2-hour assessment plus 2 hours beforehand, then the test. General test hire is 220 euro for 2 hours beforehand, with a home-coming service. Car hire needs a minimum 2-hour lesson first.'},
+{id:'payment',k:['pay','payment','paying','cash','bank transfer','transfer','card','pay ahead','upfront','deposit','invoice'],a:'All lessons must be paid ahead. You can meet before starting and pay by cash or bank transfer; bank details are given on request. I cannot confirm card payments from the website.'},
+{id:'owncar',k:['own car','my car','your car','whose car','use my car','bring my car','school car','their car','car provided','which car','vehicle','learn in my car'],a:'You can learn in your own car or the school\'s. Either way, the first lesson needs at least one lesson in the school\'s vehicle to assess your driving.'},
+{id:'areas',k:['areas','area','areas covered','where do you teach','where do you go','north dublin','northside','north side','south dublin','liffey','near me','dublin 1','dublin 3','dublin 5','dublin 7','dublin 9','dublin 11','dublin 13','inner city','city centre'],a:'Lessons run north of the River Liffey only: Dublin 1, 3, 5, 7, 9, 11 and 13 and the northside inner city. Towns and suburbs include Artane, Ballymun, Clontarf, Coolock, Drumcondra, Finglas, Glasnevin, Marino, Phibsborough, Raheny, Santry and Sutton.',c:['Test centres','Hours','Book a lesson']},
+{id:'areas2',k:['artane','baldoyle','ballymun','bayside','beaumont','belmayne','clontarf','coolock','darndale','eastpoint','east wall','phibsborough','donaghmede','drumcondra','edenmore','foxhill','glasnevin','harmonstown','kilbarrack','killester','marino','north wall','north strand','quays','santry','sutton','whitehall','swords','malahide','howth','tallaght','dun laoghaire','blanchardstown'],a:'The covered areas are Dublin 1, 3, 5, 7, 9, 11, 13 and the inner city north of the Liffey, including Artane, Baldoyle, Ballymun, Bayside, Beaumont, Belmayne, Clontarf, Coolock, Darndale, East Wall, Phibsborough, Donaghmede, Drumcondra, Edenmore, Fairview, Finglas, Foxhill, Glasnevin, Harmonstown, Kilbarrack, Killester, Marino, North Strand, North Wall, The Quays, Raheny, Santry, Sutton and Whitehall. If yours is not listed, the team will confirm. South of the Liffey is not covered.'},
+{id:'testcentre',k:['test centre','test centres','testing centre','finglas','raheny','rsa','driving test centre','where is the test'],a:'The areas page lists the Finglas and Raheny test centres.'},
+{id:'hours',k:['hours','open','opening','closed','when are you open','saturday','sunday','weekend','weekday','evening','evenings','early','late','time','times','availability','available'],a:'Monday to Friday 7am to 10pm and Saturday 9am to 5pm. Sunday is not listed, so the team will confirm if you need it.'},
+{id:'contact',k:['contact','phone','call','number','telephone','whatsapp','email','mail','reach','message','text','talk','speak'],a:'WhatsApp 087 7822888 or email info@driveyourself.ie. Booking is by email or WhatsApp.'},
+{id:'address',k:['address','where are you','located','location','based','fairview','office','map','directions','dublin 3 school'],a:'The school is based in Fairview, Dublin 3, Ireland, and teaches across the northside.'},
+{id:'cancel',k:['cancellation','cancel','48 hour','48 hours','notice','reschedule','change my lesson','miss a lesson','cant make it'],a:'There is a 48 hour notice cancellation policy on all lessons and car hire services.'},
+{id:'hoursneeded',k:['how many hours','how many lessons','how long to learn','how long does it take','hours to pass','50 hours','120 hours','sponsor','how long'],a:'The RSA recommends 50 to 120 hours of driving before the test. It depends on the individual, and the instructor can talk you through it. A sponsor can cover part of the hours.'},
+{id:'bring',k:['bring','what do i need','need to bring','permit','learner permit','eye test','theory test','documents','what to bring','requirements','require'],a:'Bring your learner permit or licence, which you get after passing the theory test, plus an eye test, and the EDT logbook the instructor provides to be stamped.'},
+{id:'instructor',k:['instructor','who teaches','your instructor','experienced','experience','qualified','sdlc','owner','who are you','about','about you','years'],a:'The school is owned and run by a skilled instructor with many years of experience, described as patient, empathetic and professional. I do not have a name or qualifications from the website, so the team will confirm those.'},
+{id:'thanks',k:['thanks','thank','thank you','great','cheers','bye','brilliant','perfect'],a:'You are welcome! Anything else about Drive Yourself?'}
+];
+var CFG={
+greet:'Hello, I am the Drive Yourself assistant. Ask about automatic lessons, prices, areas and test car hire, or book a lesson.',
+chips:['Prices','Areas covered','Test car hire','Opening hours','Book a lesson'],
+fallback:'I do not have that detail and I will not guess. The team will confirm it by WhatsApp 087 7822888 or info@driveyourself.ie. I can also take a lesson booking now.',
+flowIntro:'Let us set up your lesson request. A few quick questions, then it goes to the team. (Type cancel to stop.)',
+steps:[
+{k:'type',label:'Lesson type',q:'Which kind of lesson do you need?',chips:['EDT lessons','Pre-test lessons','Intensive lessons','Motorway lesson','Refresher','Test car hire'],ph:'Pick one or type'},
+{k:'level',label:'Experience',q:'How much have you driven before?',chips:['Never driven','A few lessons','Test coming up','Back after a break'],ph:'Pick one or type'},
+{k:'car',label:'Car',q:'Which car will you learn in? (The first lesson is in the school\'s car.)',chips:['School\'s car','My own automatic','Not sure'],ph:'Pick one'},
+{k:'area',label:'Pickup area',q:'Where should the lesson start? (North of the Liffey only.)',chips:['Dublin 3','Dublin 5','Dublin 9','Dublin 11','Dublin 13'],ph:'Area or Eircode'},
+{k:'when',label:'Preferred days and times',q:'Which days and times suit you? (Mon-Fri 7am-10pm, Sat 9am-5pm)',chips:['Weekday mornings','Weekday evenings','Saturday','Flexible'],ph:'e.g. Tuesday evenings'},
+{k:'name',label:'Name',q:'Your name?',type:'name',err:'Please type a name.'},
+{k:'phone',label:'WhatsApp or email',q:'Best WhatsApp number or email to reach you?',type:'any',err:'Please type a phone number or email.'}
+],
+doneTitle:'Here is your lesson request:',
+doneNote:'✅ Sent to the team. They will reply on WhatsApp or by email, and payment is arranged ahead of your first lesson.<br><small>This is a demo: nothing is actually transmitted.</small>',
+after:['Prices','Areas covered','Opening hours']
+};
+
+</script>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)};
+var btn=$('#cwBtn'),panel=$('#cwPanel'),log=$('#cwLog'),chipsEl=$('#cwChips'),form=$('#cwForm'),inp=$('#cwIn');
+var flow=null,data={},stepI=0,opened=false;
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function add(who,html){var d=document.createElement('div');d.className='cw-m cw-'+who;d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function chips(list){chipsEl.innerHTML='';(list||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chipsEl.appendChild(b);});}
+function bot(h,c){setTimeout(function(){add('b',h);chips(c);},250);}
+function fmt(a){return a.replace(/\n/g,'<br>')}
+function nextStep(){while(stepI<CFG.steps.length&&CFG.steps[stepI].skip&&CFG.steps[stepI].skip(data))stepI++;if(stepI>=CFG.steps.length){finish();return;}var s=CFG.steps[stepI];bot(fmt(typeof s.q==='function'?s.q(data):s.q),s.chips);inp.placeholder=s.ph||'Type here...';}
+function startFlow(){flow=true;data={};stepI=0;bot(fmt(CFG.flowIntro));setTimeout(nextStep,600);}
+function finish(){flow=false;var rows=CFG.steps.filter(function(s){return data[s.k]}).map(function(s){return '<b>'+esc(s.label)+':</b> '+esc(data[s.k])}).join('<br>');bot(fmt(CFG.doneTitle)+'<br><br>'+rows+'<br><br>'+fmt(CFG.doneNote),CFG.after);inp.placeholder='Ask a question...';}
+function valid(s,t){if(s.type==='any')return /@/.test(t)||t.replace(/\D/g,'').length>=7;if(s.type==='phone')return t.replace(/\D/g,'').length>=7;if(s.type==='name')return t.length>=2;return t.length>=1;}
+function send(t){t=(t||'').trim();if(!t)return;add('u',esc(t));inp.value='';chipsEl.innerHTML='';
+ if(flow){var n=nrm(t);if(/^(cancel|stop|quit|exit|never mind|nevermind)$/.test(n)){flow=false;bot('No problem, nothing was sent. What else can I help with?',CFG.chips);return;}
+  var s=CFG.steps[stepI];var r=best(t);
+  if(/\?\s*$/.test(t)&&r.s>=2&&!r.e.f){bot(fmt(r.e.a)+'<br><br><i>Back to your request:</i>');setTimeout(function(){var s2=CFG.steps[stepI];bot(fmt(typeof s2.q==='function'?s2.q(data):s2.q),s2.chips);},700);return;}
+  if(!valid(s,t)){bot(s.err||'Could you try that again?',s.chips);return;}
+  data[s.k]=t;stepI++;nextStep();return;}
+ var e=answerFor(t);
+ if(e&&e.f){startFlow();return;}
+ if(e){bot(fmt(e.a),e.c||CFG.chips);return;}
+ bot(fmt(CFG.fallback),CFG.chips);}
+function open(){panel.classList.add('open');btn.setAttribute('aria-expanded','true');if(!opened){opened=true;add('b',fmt(CFG.greet));chips(CFG.chips);}setTimeout(function(){inp.focus()},50);}
+function close(){panel.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+btn.onclick=function(){panel.classList.contains('open')?close():open()};
+$('#cwClose').onclick=close;
+form.onsubmit=function(ev){ev.preventDefault();send(inp.value);};
+})();
+
+</script>
+</body>
+</html>

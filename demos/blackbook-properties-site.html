@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blackbook Properties | Miami luxury condos (demo)</title><meta name="description" content="Demo page prepared for Blackbook Properties, Miami.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0b0b0b;--gold:#cebf7f;--gold2:#8a7a32;--stone:#d2cfca;--ivory:#faf8f3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--ink);font:16px/1.65 'Jost',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;margin:0;line-height:1.05}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid var(--stone);position:sticky;top:0;z-index:50}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:62px}
+.mark{display:block;height:15px;width:auto;max-width:56vw}
+.tel{font-size:14px;letter-spacing:.04em;text-decoration:none;border:1px solid var(--ink);padding:8px 14px;white-space:nowrap}
+nav{display:none}
+@media(min-width:900px){nav{display:flex;gap:26px;font-size:13px;letter-spacing:.14em;text-transform:uppercase}nav a{text-decoration:none}}
+.hero{background:var(--ink);color:#fff;padding:54px 0 60px;position:relative}
+.hero:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--gold)}
+.k{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.hero h1{font-size:clamp(40px,10vw,88px);margin:14px 0 18px;max-width:11em}
+.hero h1 i{color:var(--gold);font-weight:400}
+.hero p{max-width:38em;color:#d9d6cf;font-size:17px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{font:500 14px 'Jost';letter-spacing:.12em;text-transform:uppercase;padding:14px 22px;border:1px solid var(--gold);background:var(--gold);color:var(--ink);cursor:pointer;text-decoration:none}
+.btn.o{background:transparent;color:var(--gold)}
+.award{margin-top:30px;padding-top:18px;border-top:1px solid #333;font-size:14px;color:#bdb9ae;max-width:42em}
+.award b{color:var(--gold);font-weight:500}
+section{padding:54px 0}
+h2{font-size:clamp(32px,6vw,52px);margin:10px 0 14px}
+.lede{max-width:40em;color:#3b3a36}
+.hoods{margin-top:26px;border-top:1px solid var(--ink)}
+.hoods a{display:grid;grid-template-columns:44px 1fr;gap:6px 12px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--stone);text-decoration:none}
+.hoods .n{font:500 22px 'Cormorant Garamond';color:var(--gold2)}
+.hoods h3{font-size:32px}
+.hoods p{grid-column:2;margin:0;color:#55534d;font-size:15px}
+@media(min-width:800px){.hoods a{grid-template-columns:64px 280px 1fr}.hoods p{grid-column:auto}}
+.two{display:grid;gap:26px}
+@media(min-width:860px){.two{grid-template-columns:1fr 1fr;gap:56px}}
+.plan{background:#fff;border:1px solid var(--stone);padding:26px;position:relative}
+.plan svg{width:100%;height:auto;display:block;margin-bottom:12px}
+.lists{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.lists span{border:1px solid var(--ink);padding:7px 14px;font-size:14px;letter-spacing:.03em}
+.lists span:nth-child(3n+1){background:var(--ink);color:var(--gold)}
+.team{background:#fff;border-top:1px solid var(--stone);border-bottom:1px solid var(--stone)}
+.team ul{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:0}
+@media(min-width:760px){.team ul{grid-template-columns:1fr 1fr;column-gap:48px}}
+.team li{padding:16px 0;border-bottom:1px solid var(--stone)}
+.tn{font:500 26px 'Cormorant Garamond'}
+.tr{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
+.tl{font-size:14px;margin-top:4px}.tl:before{content:"Speaks: ";color:#777}
+.team p{margin:4px 0 0;font-size:14px;color:#55534d}
+.vals{display:grid;gap:16px;margin-top:22px}
+@media(min-width:800px){.vals{grid-template-columns:repeat(3,1fr)}}
+.vals div{border-left:3px solid var(--gold);padding:2px 0 2px 16px}
+.vals b{font:500 24px 'Cormorant Garamond';display:block}
+.steps{counter-reset:s;margin:20px 0 0;padding:0;list-style:none;display:grid;gap:14px}
+@media(min-width:800px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps li{counter-increment:s;padding-top:42px;position:relative;border-top:1px solid var(--ink)}
+.steps li:before{content:"0" counter(s);position:absolute;top:8px;left:0;font:500 26px 'Cormorant Garamond';color:var(--gold2)}
+.faq details{border-bottom:1px solid var(--stone);padding:14px 0}
+.faq summary{cursor:pointer;font:500 24px 'Cormorant Garamond';list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faq summary::after{content:"+";color:var(--gold2)}
+.faq details[open] summary::after{content:"\2212"}
+.faq p{margin:8px 0 0;color:#4a4943}
+.visit{background:var(--ink);color:#fff}
+.visit a{color:var(--gold)}
+.visit .grid{display:grid;gap:18px;margin-top:18px}
+@media(min-width:760px){.visit .grid{grid-template-columns:1fr 1fr}}
+footer{background:#000;color:#9a978d;padding:22px 0;font-size:13px}
+.fh{margin-top:8px;font-size:12px}
+
+#as-fab{position:fixed;right:14px;bottom:14px;z-index:90;display:flex;align-items:center;gap:8px;background:#cebf7f;color:#0b0b0b;border:0;border-radius:2px;padding:12px 16px;font:600 15px 'Jost',system-ui,sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+#as-fab .as-fi{font-size:18px;line-height:1}#as-fab.on{opacity:.0;pointer-events:none}
+#as-panel{position:fixed;right:12px;bottom:12px;z-index:100;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:#faf8f3;color:#0b0b0b;border-radius:2px;box-shadow:0 18px 50px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden;font:15px/1.45 'Jost',system-ui,sans-serif}
+#as-panel[hidden]{display:none}
+.as-h{background:#0b0b0b;color:#0b0b0b;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.as-h b{display:block;font-size:16px}.as-h small{display:block;opacity:.85;font-size:12px}
+.as-x{background:transparent;border:0;color:inherit;font-size:28px;line-height:1;cursor:pointer;padding:0 4px}
+.as-m{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;-webkit-overflow-scrolling:touch}
+.as-b{max-width:88%;padding:9px 12px;border-radius:12px;overflow-wrap:anywhere;word-break:break-word}
+.as-bot{background:rgba(127,127,127,.14);align-self:flex-start}.as-bot a{color:inherit;text-decoration:underline}
+.as-me{background:#cebf7f;color:#0b0b0b;align-self:flex-end}
+.as-c{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px 8px;max-height:112px;overflow-y:auto}
+.as-c button{background:transparent;color:#0b0b0b;border:1px solid rgba(127,127,127,.55);border-radius:999px;padding:6px 11px;font:13px 'Jost',system-ui,sans-serif;cursor:pointer}
+.as-c button:hover{background:#cebf7f;color:#0b0b0b;border-color:#cebf7f}
+.as-f{display:flex;gap:6px;padding:10px 12px;border-top:1px solid rgba(127,127,127,.3)}
+.as-f input{flex:1;min-width:0;padding:10px 12px;border-radius:10px;border:1px solid rgba(127,127,127,.5);background:transparent;color:#0b0b0b;font:16px 'Jost',system-ui,sans-serif}
+.as-f button{background:#cebf7f;color:#0b0b0b;border:0;border-radius:10px;padding:0 14px;font-size:16px;cursor:pointer}
+</style></head><body>
+
+<header><div class="wrap"><a href="#top" aria-label="Condo Blackbook"><img class="mark" src="img/blackbook-properties-logo.svg" alt="Condo Blackbook" width="230" height="15"></a>
+<nav><a href="#hoods">Neighborhoods</a><a href="#plans">Floor plans</a><a href="#team">Team</a><a href="#faq">FAQ</a><a href="#visit">Contact</a></nav>
+<a class="tel" href="tel:+13056977667">(305) 697-7667</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<div class="k">Blackbook Properties &middot; Miami luxury brokerage</div>
+<h1>Every coastal neighborhood. <i>One dedicated team.</i></h1>
+<p>Building-level knowledge of South Florida's most sought-after condos, from Edgewater and Brickell to South Beach and Sunny Isles Beach. Browse at your own pace, and when you are ready, the agents are here to represent you.</p>
+<div class="cta"><button class="btn" data-open-assistant>Request a viewing</button><a class="btn o" href="#hoods">Choose a neighborhood</a></div>
+<div class="award"><b>2025 International Property Awards:</b> CondoBlackbook.com named Best Real Estate Agency Website in the U.S.</div>
+</div></div>
+
+<section id="hoods"><div class="wrap">
+<div class="k" style="color:var(--gold2)">The insider's guide to condos</div>
+<h2>Four neighborhoods, building by building</h2>
+<p class="lede">The site covers each coastal neighborhood with its own page. Here is what the team focuses on.</p>
+<div class="hoods">
+<a href="#visit" data-open-assistant><span class="n">01</span><h3>Edgewater</h3><p>Its own neighborhood page with condos for sale and rent. Katia Bon is well known in Edgewater and Wynwood.</p></a>
+<a href="#visit" data-open-assistant><span class="n">02</span><h3>Brickell</h3><p>Rated Walker's Paradise (99) on the neighborhood page, with Michelin-rated dining and Mary Brickell Village.</p></a>
+<a href="#visit" data-open-assistant><span class="n">03</span><h3>South Beach</h3><p>Its own neighborhood page, and several agents were born and raised on Miami Beach.</p></a>
+<a href="#visit" data-open-assistant><span class="n">04</span><h3>Sunny Isles Beach</h3><p>Its own neighborhood page on the site, with the same curated lists and floor plans.</p></a>
+</div></div></section>
+
+<section id="plans" style="background:#fff;border-top:1px solid var(--stone)"><div class="wrap two">
+<div><div class="k" style="color:var(--gold2)">The floor plans</div><h2>Images only tell part of the story</h2>
+<p class="lede">Listings are matched with detailed floor plans so you can judge space, flow and livability before you ever tour. The agents also keep curated lists, and will build one just for you if none fits.</p>
+<div class="lists"><span>Beachfront</span><span>Penthouses</span><span>Water View</span><span>Preconstruction</span><span>Pet Friendly</span><span>Short-term Friendly</span></div></div>
+<div class="plan"><svg viewBox="0 0 300 150" role="img" aria-label="Floor plan sketch"><rect x="4" y="4" width="292" height="142" fill="none" stroke="#0b0b0b" stroke-width="2"/><path d="M4 70H120V4M120 70V146M200 4V80H296M200 80V146" fill="none" stroke="#0b0b0b" stroke-width="2"/><path d="M120 40a16 16 0 0 1 16-16" fill="none" stroke="#8a7a32"/><rect x="214" y="10" width="70" height="34" fill="#cebf7f" opacity=".55"/><circle cx="60" cy="108" r="14" fill="none" stroke="#8a7a32"/><text x="14" y="22" font-size="9" font-family="Jost">LIVING</text><text x="130" y="22" font-size="9" font-family="Jost">BED</text><text x="210" y="100" font-size="9" font-family="Jost">TERRACE</text></svg><b style="font-family:'Cormorant Garamond';font-size:22px">Match the plan to the way you live</b><p style="margin:6px 0 0;font-size:14px;color:#55534d">Illustration only. Real plans are on each building and unit page of CondoBlackbook.com.</p></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="k" style="color:var(--gold2)">Buy, rent or sell</div><h2>How the brokerage works with you</h2>
+<ol class="steps">
+<li><b style="font:500 24px 'Cormorant Garamond'">Explore on your own</b><p>Real-time condo search, floor plans and hyper-local market intelligence, with direct access to building and neighborhood details.</p></li>
+<li><b style="font:500 24px 'Cormorant Garamond'">Talk to an agent</b><p>Boutique, client-first, multilingual. Buying, renting, pre-construction or investment.</p></li>
+<li><b style="font:500 24px 'Cormorant Garamond'">Negotiate with confidence</b><p>Strategic negotiation and a concierge approach to buying and selling.</p></li>
+</ol>
+<div class="vals" style="margin-top:34px"><div><b>Clear &amp; honest communication</b>Open, transparent, consistent dialogue.</div><div><b>Meaningful contribution</b>Elevating clients, colleagues and community.</div><div><b>Unwavering commitment</b>Integrity, purpose and dedication to the best outcome.</div></div>
+</div></section>
+
+<section style="background:#fff;border-top:1px solid var(--stone)"><div class="wrap">
+<div class="k" style="color:var(--gold2)">Neighborhood pages</div><h2>What each page tells you</h2>
+<p class="lede">Every neighborhood page pairs market figures with the everyday detail buyers ask about. Brickell, as an example, lists:</p>
+<div class="vals" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+<div><b>Walkability 99</b>Walker's Paradise</div><div><b>Bikeability 80</b>Very bikable</div><div><b>Transit 100</b>Excellent public transportation</div>
+<div><b>Groceries</b>Publix, Whole Foods and local markets</div><div><b>Dining</b>Michelin-rated and world-class options</div><div><b>Fitness</b>Equinox, Anatomy and private studios</div>
+<div><b>Dog friendly</b>Mary Brickell Village Dog Park and great vets</div><div><b>Parks</b>Simpson Park, Mary Brickell Park and trails</div><div><b>Commute</b>Vizcaya about 10 minutes by car, Kaseya Center about 15</div>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="k" style="color:var(--gold2)">From the blog</div><h2>Reading before the viewing</h2>
+<div class="two" style="margin-top:12px"><div><b style="font:500 26px 'Cormorant Garamond'">619 Brickell by Nobu</b><p>An unprecedented wellness-forward offering on the bayfront, where Japanese hospitality, British architectural precision and Miami waterfront living meet.</p></div>
+<div><b style="font:500 26px 'Cormorant Garamond'">Miami condo association HOA contact page</b><p>A list of condo associations in the Miami area with their phone numbers and addresses, so owners and buyers can get the facts.</p></div></div>
+</div></section>
+
+<section style="background:var(--ink);color:#fff"><div class="wrap">
+<div class="k">Multilingual by design</div><h2 style="color:#fff">Who speaks what</h2>
+<p class="lede" style="color:#d9d6cf">The site says the team is multilingual. Here is the language list as published on each agent's profile.</p>
+<div class="vals" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr))">
+<div><b style="color:var(--gold)">English</b>The whole team</div>
+<div><b style="color:var(--gold)">Spanish</b>Sep Niakan, Stephanie Bienstock, Katia Bon, Tatiana Rodriguez Fenn</div>
+<div><b style="color:var(--gold)">Russian</b>Vera Berezhnaya</div>
+<div><b style="color:var(--gold)">Persian (Farsi)</b>Sep Niakan</div>
+<div><b style="color:var(--gold)">French, Czech, Slovak</b>Richard Ostertag</div>
+<div><b style="color:var(--gold)">Bilingual</b>Lysandra Gibreal</div>
+</div></div></section>
+
+<section style="background:#fff;border-top:1px solid var(--stone)"><div class="wrap two">
+<div><div class="k" style="color:var(--gold2)">Selling a condo</div><h2>Your home's value</h2>
+<p class="lede">The site invites owners to request a valuation. The team's approach is built on protecting your interests: expert guidance, strategic negotiation and a concierge approach to buying and selling.</p></div>
+<div><ol class="steps" style="grid-template-columns:1fr"><li><b style="font:500 22px 'Cormorant Garamond'">Send the address</b><p>The assistant collects the building, unit and your contact details.</p></li><li><b style="font:500 22px 'Cormorant Garamond'">An agent follows up</b><p>The team reviews your request and reaches out, and you can name your preferred language.</p></li><li><b style="font:500 22px 'Cormorant Garamond'">Decide at your pace</b><p>The team confirms the next steps with you directly.</p></li></ol></div>
+</div></section>
+
+<section id="team" class="team"><div class="wrap">
+<div class="k" style="color:var(--gold2)">The experts</div><h2>Meet the team</h2>
+<p class="lede">Agents with decades of local experience and deep building-level expertise. Languages spoken across the team include English, Spanish, Russian, Persian, French, Czech and Slovak.</p>
+<ul><li><div class="tn">Sep Niakan</div><div class="tr">Founder &amp; Licensed Real Estate Broker</div><div class="tl">English, Spanish, Persian (Farsi)</div><p>Founder of Blackbook Properties and CondoBlackbook.com. Member of NAR, Florida Realtors and NAHREP.</p></li><li><div class="tn">Stephanie Bienstock</div><div class="tr">Director of Luxury Sales</div><div class="tl">English, Spanish</div><p>A Miami Beach native who joined the city's transformation at 16.</p></li><li><div class="tn">Jessica Turner</div><div class="tr">Licensed Real Estate Associate</div><div class="tl">English</div><p>Pre-construction and new-construction luxury condos. 2025 MIAMI Realtors 20 Under 40 Award.</p></li><li><div class="tn">Vera Berezhnaya</div><div class="tr">Licensed Real Estate Associate</div><div class="tl">English, Russian</div><p>In South Florida residential real estate since 2014.</p></li><li><div class="tn">Katia Bon</div><div class="tr">Licensed Real Estate Associate</div><div class="tl">English, Spanish</div><p>Known in Edgewater and Wynwood. Originally from Mexico, formerly a master baker.</p></li><li><div class="tn">Richard Ostertag</div><div class="tr">Licensed Real Estate Associate</div><div class="tl">Slovak, Czech, English, French</div><p>2025 Rookie of the Year, South Florida Agent Magazine.</p></li><li><div class="tn">Tatiana Rodriguez Fenn</div><div class="tr">Licensed Real Estate Associate</div><div class="tl">English, Spanish</div><p>Raised in Bay Harbor Islands.</p></li><li><div class="tn">Eric Lieberbaum</div><div class="tr">Licensed Real Estate Associate</div><div class="tl">English</div><p>Born and raised in Miami Beach.</p></li><li><div class="tn">Evan Schechtman</div><div class="tr">Licensed Real Estate Associate</div><div class="tl">English</div><p>Holds the Accredited Buyer's Representative (ABR) designation.</p></li><li><div class="tn">Lysandra Gibreal</div><div class="tr">Licensed Real Estate Associate</div><div class="tl">Bilingual</div><p>A Miami Beach local with 20+ years of luxury customer service.</p></li><li><div class="tn">Joshua Brown</div><div class="tr">Licensed Real Estate Associate</div></li><li><div class="tn">Mia Curson</div><div class="tr">Real Estate Associate</div></li></ul>
+<p class="lede" style="margin-top:18px">Client reviews are linked from the About page on Zillow, Realtor.com, Google and Yelp.</p>
+</div></section>
+
+<section id="faq"><div class="wrap faq">
+<div class="k" style="color:var(--gold2)">Good to know</div><h2>Before you call</h2>
+<details><summary>Can I talk to someone in my language?</summary><p>The team lists English, Spanish, Russian, Persian (Farsi), French, Czech and Slovak. Tell the assistant your language and it passes the request to the right agent.</p></details>
+<details><summary>Do you handle pre-construction?</summary><p>Yes. Pre-construction is one of the curated lists and the site has a pre-construction condos section. Jessica Turner specializes in pre-construction and new-construction luxury condos.</p></details>
+<details><summary>What is my home worth?</summary><p>The site has a "Your home's value" request. An agent follows up, so the assistant collects your address and contact details.</p></details>
+<details><summary>Do you help with rentals?</summary><p>Yes, there is a Rent section and a Short-term Friendly list. The team confirms what suits your building and dates.</p></details>
+<details><summary>Can I browse before I contact anyone?</summary><p>Yes. The platform is built so you can search condos, view floor plans and read neighborhood intelligence on your own, and reach out when you are ready.</p></details>
+<details><summary>Who handles investment purchases?</summary><p>The brokerage specializes in residential, pre-construction and investment properties. The assistant can route an investment enquiry to the team.</p></details>
+<details><summary>Do you work with buyers from abroad?</summary><p>The team speaks several languages, listed above. How they support out-of-town buyers is something the team confirms directly.</p></details>
+<details><summary>Where can I find condo association contacts?</summary><p>The blog has a Miami Condo Association HOA contact page listing associations with their phone numbers and addresses, compiled to help current and future condo residents make informed decisions.</p></details>
+<details><summary>Do you support fair housing?</summary><p>Yes. Blackbook Properties states that it fully supports the principles of the Fair Housing Act and the Equal Opportunity Act.</p></details>
+<details><summary>Where is the office?</summary><p>1900 N Bayshore Dr #1A, Miami, FL 33132. Opening hours are not published, so the team will confirm by phone.</p></details>
+</div></section>
+
+<section id="visit" class="visit"><div class="wrap">
+<div class="k">Contact</div><h2>Blackbook Properties</h2>
+<div class="grid"><div><p>1900 N Bayshore Dr #1A<br>Miami, FL 33132</p><p><a href="tel:+13056977667">+1 (305) 697-7667</a><br><a href="mailto:contact@condoblackbook.com">contact@condoblackbook.com</a></p></div>
+<div><p>Tell the assistant what you are looking for and the team follows up in your language.</p><p><button class="btn" data-open-assistant>Request a viewing</button></p></div></div>
+</div></section>
+</main>
+<footer><div class="wrap">Demo &middot; prepared by Gevorg Hovhannisyan<div class="fh">Blackbook Properties supports the principles of the Fair Housing Act and the Equal Opportunity Act.</div></div></footer>
+
+<script>
+/* matcher: keyword + fuzzy, word-form tolerant */
+function norm(s){return String(s).toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4){if(/(sses|shes|ches|xes)$/.test(w))w=w.slice(0,-2);else if(/(ing|ed)$/.test(w))w=w.replace(/(ing|ed)$/,'');else if(/[^s]s$/.test(w))w=w.slice(0,-1);}return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b,max){if(Math.abs(a.length-b.length)>max)return max+1;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i],mn=i;for(j=1;j<=b.length;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));if(c[j]<mn)mn=c[j];}if(mn>max)return max+1;p=c;}return p[b.length];}
+function tokHit(q,k){if(q===k)return 1;if(k.length<4||q.length<4)return 0;var m=k.length>=9?2:(k.length>=5?1:0);if(m&&lev(q,k,m)<=m)return 1;if(q.length>=5&&k.length>=5&&(k.indexOf(q)===0||q.indexOf(k)===0))return 1;return 0;}
+function makeMatcher(KB){
+  var idx=KB.map(function(e){return e.k.map(function(p){return toks(p);});});
+  return function(text){
+    var qt=toks(text),best=-1,bs=0;
+    if(!qt.length)return null;
+    for(var i=0;i<KB.length;i++){var s=0;
+      for(var j=0;j<idx[i].length;j++){var kt=idx[i][j],ok=true;
+        for(var t=0;t<kt.length;t++){var f=false;for(var u=0;u<qt.length;u++){if(tokHit(qt[u],kt[t])){f=true;break;}}if(!f){ok=false;break;}}
+        if(ok)s+=kt.length*2+(kt.length>1?1:0)+(KB[i].w||0);}
+      if(s>bs){bs=s;best=i;}}
+    return bs>=2?KB[best]:null;};
+}
+if(typeof module!=='undefined')module.exports={makeMatcher:makeMatcher,norm:norm,toks:toks};
+
+/* assistant widget: client-side only, sends nothing */
+function initAssistant(C){
+  var match=makeMatcher(C.kb),$=function(s){return document.querySelector(s);};
+  var fab=document.createElement('button');fab.id='as-fab';fab.type='button';fab.setAttribute('aria-label',C.fabLabel||'Open assistant');
+  fab.innerHTML='<span class="as-fi">'+(C.fabIcon||'?')+'</span><span class="as-ft">'+(C.fabText||'Ask')+'</span>';
+  var p=document.createElement('div');p.id='as-panel';p.setAttribute('role','dialog');p.hidden=true;
+  p.innerHTML='<div class="as-h"><div><b>'+C.title+'</b><small>'+C.sub+'</small></div><button type="button" class="as-x" aria-label="Close">&times;</button></div><div class="as-m" id="as-m" aria-live="polite"></div><div class="as-c" id="as-c"></div><form class="as-f" id="as-f"><input id="as-i" type="text" autocomplete="off" placeholder="'+C.ph+'"><button type="submit" aria-label="Send">&#10148;</button></form>';
+  document.body.appendChild(fab);document.body.appendChild(p);
+  var M=$('#as-m'),CH=$('#as-c'),IN=$('#as-i'),flow=null,data={},opened=false;
+  function add(t,who,html){var d=document.createElement('div');d.className='as-b as-'+who;if(html)d.innerHTML=t;else d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight;}
+  function chips(arr){CH.innerHTML='';arr.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){say(c);};CH.appendChild(b);});}
+  function home(){chips(C.chips);}
+  function ask(){var s=C.flow.steps[flow];add(s.q,'bot');if(s.opts)chips(s.opts.concat([C.flow.cancel]));else chips([C.flow.cancel]);IN.placeholder=s.ph||C.ph;}
+  function startFlow(pre){flow=0;data={};add(C.flow.intro,'bot');var s0=C.flow.steps[0];if(pre&&s0.opts){for(var i=0;i<s0.opts.length;i++){if(norm(s0.opts[i])===norm(pre)){data[s0.id]=s0.opts[i];flow=1;break;}}}ask();}
+  function endFlow(){flow=null;IN.placeholder=C.ph;}
+  function finish(){var out=C.flow.done(data);flow=null;add(out,'bot',true);IN.placeholder=C.ph;chips(C.chips);}
+  function say(t){t=String(t).trim();if(!t)return;add(t,'me');
+    if(flow!==null){
+      if(norm(t)===norm(C.flow.cancel)||/^(cancel|stop|exit|back)$/.test(norm(t))){endFlow();add(C.flow.cancelMsg,'bot');home();return;}
+      var s=C.flow.steps[flow];data[s.id]=t;flow++;
+      if(flow>=C.flow.steps.length)finish();else ask();return;}
+    if(C.flow.trigger(t)){startFlow(t);return;}
+    var e=match(t);
+    if(e){add(e.a,'bot',true);if(e.go){startFlow();return;}chips(e.c||C.chips);}
+    else{add(C.fallback,'bot',true);chips(C.chips);}
+  }
+  function open(){p.hidden=false;fab.classList.add('on');if(!opened){opened=true;add(C.greet,'bot',true);home();}if(window.__pick){var pk=window.__pick;window.__pick=null;setTimeout(function(){say(pk);},40);}setTimeout(function(){IN.focus({preventScroll:true});},50);}
+  function close(){p.hidden=true;fab.classList.remove('on');}
+  fab.onclick=function(){p.hidden?open():close();};
+  p.querySelector('.as-x').onclick=close;
+  $('#as-f').onsubmit=function(ev){ev.preventDefault();var v=IN.value;IN.value='';say(v);};
+  window.openAssistant=open;
+  var cta=document.querySelectorAll('[data-open-assistant]');for(var i=0;i<cta.length;i++){cta[i].addEventListener('click',function(ev){ev.preventDefault();open();});}
+}
+
+
+var KB=[
+{k:['hello','hi','hey','good morning','good evening','hola','privet'],a:'Hello, and welcome to Blackbook Properties. I can tell you about the neighborhoods, the team, floor plans, pre-construction, or set up a viewing request.'},
+{k:['hours','open','opening hours','what time','working hours','weekend','saturday','sunday','closed'],a:'Office hours are not published on the site, so I will not guess. Call <b>+1 (305) 697-7667</b> and the team will confirm.'},
+{k:['address','office','where are you','location','visit','bayshore','directions','map','find you'],a:'The office is at <b>1900 N Bayshore Dr #1A, Miami, FL 33132</b>.'},
+{k:['phone','call','number','telephone','contact','reach','mobile','text'],a:'Main line: <b>+1 (305) 697-7667</b>. Email: <b>contact@condoblackbook.com</b>.'},
+{k:['email','mail','e-mail'],a:'Email <b>contact@condoblackbook.com</b>, or call +1 (305) 697-7667.'},
+{k:['neighborhood','neighborhoods','neighbourhood','area','areas','where','coastal','which area'],a:'The site covers four coastal neighborhoods: <b>Edgewater, Brickell, South Beach and Sunny Isles Beach</b>, each with its own page.',c:['Edgewater','Brickell','South Beach','Sunny Isles Beach']},
+{k:['edgewater','wynwood'],w:6,a:'<b>Edgewater</b> has its own neighborhood page with market data and condos for sale and rent. Katia Bon, who speaks English and Spanish, is well known in Edgewater and Wynwood.',c:['Request a viewing','Meet the team']},
+{k:['brickell','downtown'],w:6,a:'<b>Brickell</b>: the neighborhood page lists Walkability 99 (Walker\'s Paradise), Bikeability 80 and Transit 100, with Publix and Whole Foods nearby, Michelin-rated restaurants, and about 10 minutes by car to Vizcaya.',c:['Request a viewing','Meet the team']},
+{k:['south beach','miami beach','beach','sobe','art deco'],w:6,a:'<b>South Beach</b> is one of the four neighborhoods covered. Stephanie Bienstock, Eric Lieberbaum and Lysandra Gibreal are all Miami Beach natives or locals.',c:['Request a viewing','Meet the team']},
+{k:['sunny isles','sunny isles beach','sib','north beach','sunny'],w:6,a:'<b>Sunny Isles Beach</b> has its own neighborhood page on the site. The team will confirm what is currently available.',c:['Request a viewing','Pre-construction']},
+{k:['buy','buying','purchase','buyer','for sale','invest','investment','investor','own'],a:'For buyers there is a real-time condo search, floor plans, curated lists and agents who represent you in negotiations. Share neighborhood, bedrooms and timeline and the team follows up.',go:true},
+{k:['rent','rental','rentals','lease','renting','tenant','short term','short-term','airbnb'],a:'There is a Rent section on the site and a <b>Short-term Friendly</b> curated list. The team will confirm which buildings fit your dates and rules.',c:['Request a viewing']},
+{k:['sell','selling','seller','list my','my home','home value','valuation','appraisal','worth','market value'],a:'The site has a <b>Your home\'s value</b> request. I can take your address and contact details for an agent to follow up.',go:true},
+{k:['pre construction','preconstruction','pre-construction','new construction','presale','nobu','619 brickell','developer','off plan'],a:'Pre-construction is a curated list and a dedicated section. The blog covers <b>619 Brickell by Nobu</b>. Jessica Turner specializes in pre-construction and new-construction luxury condos.',c:['Request a viewing','Meet the team']},
+{k:['floor plan','floor plans','floorplan','layout','square feet','sq ft','blueprint'],a:'Listings are matched with detailed floor plans so you can evaluate space, flow and livability before you tour.'},
+{k:['curated','list','lists','collection','beachfront','penthouse','penthouses','water view','pet friendly','pets','dog','dogs'],a:'Curated lists: <b>Beachfront, Penthouses, Water View, Preconstruction, Pet Friendly, Short-term Friendly</b>. The agents will also build a selection just for you.',c:['Request a viewing']},
+{k:['team','agents','realtor','meet the team','people','staff'],a:'The team is led by founder and broker <b>Sep Niakan</b> with Stephanie Bienstock (Director of Luxury Sales) and associates Evan Schechtman, Jessica Turner, Katia Bon, Eric Lieberbaum, Tatiana Rodriguez Fenn, Vera Berezhnaya, Richard Ostertag, Lysandra Gibreal, Joshua Brown and Mia Curson.',c:['Languages','Request a viewing']},
+{k:['sep','niakan','founder','owner','broker','who is the broker'],w:2,a:'<b>Sep Niakan</b> is the founder and licensed broker of Blackbook Properties and CondoBlackbook.com. He speaks English, Spanish and Persian (Farsi).'},
+{k:['language','languages','speak','spanish','russian','persian','farsi','french','czech','slovak','multilingual','bilingual','espanol','russkiy'],w:3,a:'Languages across the team: <b>English, Spanish, Russian (Vera Berezhnaya), Persian/Farsi (Sep Niakan), French, Czech and Slovak (Richard Ostertag)</b>. Tell me yours and I will note it on your request.',c:['Request a viewing']},
+{k:['award','awards','best','winner','recognized','recognition','international property awards'],a:'In 2025, CondoBlackbook.com was recognized as <b>Best Real Estate Agency Website in the U.S.</b> by The International Property Awards.'},
+{k:['about','who are you','company','brokerage','boutique','condoblackbook','blackbook','blackbook properties','founded'],a:'Blackbook Properties is a Miami-based luxury boutique brokerage with a client-first philosophy. It built CondoBlackbook.com, the condo search and market-insight platform.'},
+{k:['blog','news','article','articles','market update','events','things to do'],a:'The blog covers Miami real estate news, neighborhood deep dives, buying and selling advice and lifestyle pieces, such as things to do in Miami this month.'},
+{k:['hoa','association','condo association','board','homeowners'],a:'The blog has a <b>Miami Condo Association HOA contact page</b> with phone numbers and addresses of associations across Miami.'},
+{k:['commission','fee','fees','price','prices','cost','how much','budget','afford','mortgage','financing'],a:'I do not quote prices or fees here. The agents explain costs for your situation, and listing prices are on the property pages.',go:true,w:3},
+{k:['fair housing','equal opportunity','discrimination'],a:'Blackbook Properties states that it supports the principles of the Fair Housing Act and the Equal Opportunity Act.'},
+{k:['viewing','tour','showing','visit a unit','see a unit','schedule','book','appointment','request','enquiry','inquiry','request a viewing'],a:'Happy to set that up. A few quick questions first.',go:true},
+{k:['walk score','walkability','walkable','transit','bike','groceries','restaurants','parks','commute','vizcaya','lifestyle'],a:'Neighborhood pages list walk, bike and transit scores, groceries, dining, gyms, parks and commute times. For Brickell: Walkability 99, Bikeability 80, Transit 100, Vizcaya about 10 minutes by car.'},
+{k:['abroad','overseas','foreign','international','out of town','from another country','non resident','remote'],a:'The team speaks several languages and handles residential, pre-construction and investment purchases. How they support out-of-town buyers is something an agent confirms directly.',go:true},
+{k:['browse','search','search condos','explore','on my own','website','site','online'],a:'You can explore on your own: real-time condo search, floor plans, curated lists, neighborhood pages and the blog. When you are ready, an agent represents you.'},
+{k:['review','reviews','testimonial','testimonials','zillow','yelp','google reviews','reputation','accolades','references','clients say'],a:'The About page links to client reviews on <b>Zillow, Realtor.com, Google and Yelp</b>, so you can read what working with the team is like before you reach out.'},
+{k:['thanks','thank you','thx','cheers','great'],a:'My pleasure. Anything else about Miami condos?'},
+{k:['bye','goodbye','see you'],a:'Goodbye, and enjoy exploring Miami.'}
+];
+var CFG={title:'Blackbook assistant',sub:'Demo · answers from the Blackbook Properties site',ph:'Ask about neighborhoods, the team...',fabText:'Ask Blackbook',fabIcon:'&#9670;',
+greet:'Welcome to Blackbook Properties. Ask about neighborhoods, floor plans, pre-construction or the team, or request a viewing.',
+chips:['Neighborhoods','Pre-construction','Meet the team','Languages','Request a viewing'],
+fallback:'I do not have that from the Blackbook site, so I will not guess. Call <b>+1 (305) 697-7667</b> or email <b>contact@condoblackbook.com</b> and an agent will answer.',
+kb:KB,
+flow:{cancel:'Cancel request',cancelMsg:'No problem, request cancelled.',intro:'Wonderful. Five quick questions so the right agent can reach out.',
+trigger:function(t){return /^(request a viewing|viewing|book a viewing|schedule a viewing)$/i.test(t.trim());},
+steps:[{id:'goal',q:'What would you like to do?',opts:['Buy','Rent','Sell','Pre-construction']},
+{id:'area',q:'Which neighborhood?',opts:['Edgewater','Brickell','South Beach','Sunny Isles Beach','Not sure yet']},
+{id:'need',q:'Bedrooms and must-haves? (water view, pets, floor plan...)',ph:'2 bed, water view'},
+{id:'when',q:'Timeline?',opts:['As soon as possible','1 to 3 months','3 to 6 months','Just exploring']},
+{id:'lang',q:'Preferred language?',opts:['English','Spanish','Russian','Persian','Other']},
+{id:'name',q:'Your name?',ph:'Name'},
+{id:'ct',q:'Best phone or email?',ph:'Phone or email'}],
+done:function(d){return '<b>Sent to the Blackbook team.</b><br>'+d.goal+' &middot; '+d.area+'<br>Looking for: '+d.need+'<br>Timeline: '+d.when+' &middot; Language: '+d.lang+'<br>Contact: '+d.name+', '+d.ct+'<br>An agent will follow up. (Demo: nothing is actually sent.)';}}};
+
+initAssistant(CFG);
+</script></body></html>

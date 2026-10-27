@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Euro Travel | Dubai travel agency since 1996 (demo)</title><meta name="description" content="Demo page prepared for Euro Travel, Dubai.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1976bc;--deep:#104c78;--green:#8dc645;--moss:#65922d;--ink:#14202b;--mist:#f2f8fc;--line:#d6e4ee}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.55 'Inter',system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Sora','Inter',sans-serif;line-height:1.15;margin:0}
+a{color:var(--blue)}img{max-width:100%}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:62px}
+.logo{display:block;height:46px;width:auto}
+nav{display:none;gap:18px;font-size:14px}nav a{color:var(--ink);text-decoration:none;font-weight:500}
+.call{background:var(--green);color:#10300a;text-decoration:none;font-weight:700;border-radius:999px;padding:9px 15px;font-size:14px;white-space:nowrap}
+@media(min-width:820px){nav{display:flex}}
+.hero{background:linear-gradient(160deg,var(--mist) 0%,#e6f3da 100%);padding:34px 0 44px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-90px;top:-70px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(25,118,188,.2),transparent 70%)}
+.since{display:inline-block;background:var(--deep);color:#fff;font:600 12px 'Sora';letter-spacing:.08em;text-transform:uppercase;border-radius:6px;padding:5px 10px;margin-bottom:14px}
+.hero h1{font-size:clamp(30px,7vw,54px);max-width:14em}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero p.lead{font-size:18px;max-width:34em;margin:14px 0 22px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;border:0;cursor:pointer;font:700 15px 'Sora';padding:13px 20px;border-radius:12px;text-decoration:none}
+.b1{background:var(--blue);color:#fff}.b2{background:#fff;color:var(--deep);border:2px solid var(--deep)}
+.ribbon{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px}
+.ribbon div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14px}
+.ribbon b{display:block;font:700 15px 'Sora';color:var(--deep)}
+@media(min-width:760px){.ribbon{grid-template-columns:repeat(4,1fr)}}
+section{padding:42px 0}
+.eyebrow{font:700 12px 'Sora';letter-spacing:.12em;text-transform:uppercase;color:var(--moss);margin-bottom:6px}
+h2{font-size:clamp(24px,5vw,36px);margin-bottom:10px}
+.sub{max-width:40em;margin:0 0 22px;color:#3b4a58}
+.svc{display:grid;gap:12px}
+@media(min-width:700px){.svc{grid-template-columns:repeat(3,1fr)}}
+.svc div{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff}
+.svc h3{font-size:18px;margin-bottom:6px;color:var(--deep)}
+.svc div:nth-child(odd){border-top:5px solid var(--blue)}.svc div:nth-child(even){border-top:5px solid var(--green)}
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 16px 14px;margin:0 -16px;-webkit-overflow-scrolling:touch}
+.tc{flex:0 0 220px;scroll-snap-align:start;border-radius:16px;padding:16px;color:#fff;min-height:150px;display:flex;flex-direction:column;justify-content:flex-end;position:relative}
+.tc.d{background:linear-gradient(150deg,#1976bc,#104c78)}.tc.a{background:linear-gradient(150deg,#65922d,#2f5a1a)}.tc.h{background:linear-gradient(150deg,#14202b,#35546d)}
+.tc h4{font-size:17px}.tc p{margin:4px 0 0;font-size:13px;opacity:.92}
+.tag{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.18);border-radius:999px;padding:3px 10px;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+.railh{display:flex;justify-content:space-between;align-items:baseline;margin:22px 0 6px;gap:8px}
+.railh h3{font-size:19px}.railh span{font-size:13px;color:#587}
+.pay{background:var(--deep);color:#fff}
+.pay h2{color:#fff}.pay .eyebrow{color:var(--green)}
+.steps{display:grid;gap:12px;counter-reset:s}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps div{background:rgba(255,255,255,.08);border-radius:16px;padding:18px 18px 18px 60px;position:relative}
+.steps div:before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;width:30px;height:30px;border-radius:50%;background:var(--green);color:#10300a;font:700 15px 'Sora';display:grid;place-items:center}
+.steps b{display:block;font-family:'Sora'}
+.dest{display:flex;flex-wrap:wrap;gap:8px}
+.dest span{border:1px solid var(--line);background:var(--mist);border-radius:999px;padding:7px 14px;font-size:14px}
+.dest .uae{background:var(--blue);color:#fff;border-color:var(--blue)}
+.dhow{display:grid;gap:18px;background:var(--mist);border-radius:20px;padding:22px;border:1px solid var(--line)}
+@media(min-width:760px){.dhow{grid-template-columns:1.2fr 1fr}}
+.dhow ul{margin:8px 0 0;padding-left:18px}
+.dhow li{margin:4px 0}
+.faq details{border-bottom:1px solid var(--line);padding:12px 0}
+.faq summary{cursor:pointer;font:600 16px 'Sora';list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";color:var(--blue);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq p{margin:8px 0 0;color:#3b4a58}
+.contact{display:grid;gap:14px}
+@media(min-width:760px){.contact{grid-template-columns:1fr 1fr}}
+.card{border:1px solid var(--line);border-radius:16px;padding:18px}
+.card h3{font-size:17px;margin-bottom:8px}
+.card p{margin:4px 0}
+footer{background:#0b1620;color:#b9c7d3;padding:26px 0;font-size:14px}
+footer b{color:#fff}
+.rev{font:700 34px 'Sora';color:var(--deep)}
+
+#as-fab{position:fixed;right:14px;bottom:14px;z-index:90;display:flex;align-items:center;gap:8px;background:#1976bc;color:#fff;border:0;border-radius:16px;padding:12px 16px;font:600 15px 'Inter',system-ui,sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+#as-fab .as-fi{font-size:18px;line-height:1}#as-fab.on{opacity:.0;pointer-events:none}
+#as-panel{position:fixed;right:12px;bottom:12px;z-index:100;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:#fff;color:#14202b;border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden;font:15px/1.45 'Inter',system-ui,sans-serif}
+#as-panel[hidden]{display:none}
+.as-h{background:#104c78;color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.as-h b{display:block;font-size:16px}.as-h small{display:block;opacity:.85;font-size:12px}
+.as-x{background:transparent;border:0;color:inherit;font-size:28px;line-height:1;cursor:pointer;padding:0 4px}
+.as-m{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;-webkit-overflow-scrolling:touch}
+.as-b{max-width:88%;padding:9px 12px;border-radius:12px;overflow-wrap:anywhere;word-break:break-word}
+.as-bot{background:rgba(127,127,127,.14);align-self:flex-start}.as-bot a{color:inherit;text-decoration:underline}
+.as-me{background:#1976bc;color:#fff;align-self:flex-end}
+.as-c{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px 8px;max-height:112px;overflow-y:auto}
+.as-c button{background:transparent;color:#14202b;border:1px solid rgba(127,127,127,.55);border-radius:999px;padding:6px 11px;font:13px 'Inter',system-ui,sans-serif;cursor:pointer}
+.as-c button:hover{background:#1976bc;color:#fff;border-color:#1976bc}
+.as-f{display:flex;gap:6px;padding:10px 12px;border-top:1px solid rgba(127,127,127,.3)}
+.as-f input{flex:1;min-width:0;padding:10px 12px;border-radius:10px;border:1px solid rgba(127,127,127,.5);background:transparent;color:#14202b;font:16px 'Inter',system-ui,sans-serif}
+.as-f button{background:#1976bc;color:#fff;border:0;border-radius:10px;padding:0 14px;font-size:16px;cursor:pointer}
+</style></head><body>
+
+<header><div class="wrap"><a href="#top"><img class="logo" src="img/euro-travels-logo.png" alt="Euro Travel - Your world. Your way." width="122" height="46"></a>
+<nav><a href="#services">Services</a><a href="#tours">Tours</a><a href="#pay">Pay online</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="call" href="tel:+97143470227">Call +971 4 347 0227</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<span class="since">Your trusted agency since 1996</span>
+<h1>Flights, visas and <em>Dubai days out</em>, sorted from one counter in Al Quoz</h1>
+<p class="lead">Euro Travel books flights, hotels, holiday packages and UAE tourist visas, and sells tours and attractions across Dubai, Abu Dhabi and the northern emirates. Plan from home or office and we issue tickets, vouchers and confirmations for you.</p>
+<div class="btns"><button class="btn b1" data-open-assistant>Plan my trip</button><a class="btn b2" href="#tours">See UAE tours</a></div>
+<div class="ribbon"><div><b>Since 1996</b>serving travellers from Dubai</div><div><b>4.7 on Google</b>588 reviews shown on the site</div><div><b>Visa assistance</b>UAE tourist and worldwide</div><div><b>Pay by link</b>card, call centre or cash</div></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+<div class="eyebrow">What we arrange</div><h2>One agency for the whole trip</h2>
+<p class="sub">The services listed on the Euro Travel pay-online form and across the site.</p>
+<div class="svc">
+<div><h3>Flight booking</h3><p>Tickets issued remotely, with the booking confirmed to you by the team.</p></div>
+<div><h3>Hotel booking</h3><p>Stays for UAE city breaks and for the destinations below.</p></div>
+<div><h3>Holiday packages</h3><p>Packages plus group tours, with last-minute offers listed on the home page.</p></div>
+<div><h3>UAE tourist visa</h3><p>Plus worldwide visa assistance. Reviewers mention UK visa applications handled by the visa team.</p></div>
+<div><h3>Travel insurance</h3><p>Listed as a service on the payment form. The team confirms cover options.</p></div>
+<div><h3>Tours and attractions</h3><p>Boat, desert, sky, water, theme park and city tours across the emirates.</p></div>
+</div></div></section>
+
+<section id="tours" style="background:var(--mist)"><div class="wrap">
+<div class="eyebrow">UAE attractions</div><h2>Tours your guests can book today</h2>
+<p class="sub">Every tour has its own page with price, inclusions and transfer options. Swipe through what is listed.</p>
+<div class="railh"><h3>Dubai packages</h3><span>swipe</span></div><div class="rail"><article class="tc d"><span class="tag">Entertainment</span><h4>Play DXB Dubai (VR Park)</h4><p>Duration on the tour page</p></article><article class="tc d"><span class="tag">Transport</span><h4>The Palm Monorail</h4><p>15 min</p></article><article class="tc d"><span class="tag">Boat</span><h4>Dubai Fountain Show and Lake Ride</h4><p>30 min</p></article><article class="tc d"><span class="tag">Cruise</span><h4>Dhow Cruise Dinner Creek</h4><p>2 h 30 min</p></article><article class="tc d"><span class="tag">Water activity</span><h4>Deep Dive Dubai</h4><p>30 min</p></article><article class="tc d"><span class="tag">Sky</span><h4>Gyrocopter Flight in Dubai</h4><p>4 h</p></article><article class="tc d"><span class="tag">Indoor</span><h4>Madame Tussauds Dubai</h4><p>90 min</p></article><article class="tc d"><span class="tag">City tour</span><h4>Dubai Frame</h4><p>2 h</p></article><article class="tc d"><span class="tag">Water activity</span><h4>Yellow Boats Dubai</h4><p>60-90 min</p></article><article class="tc d"><span class="tag">Indoor show</span><h4>La Perle by Dragone Dubai</h4><p>1.5 h</p></article></div>
+<div class="railh"><h3>Abu Dhabi packages</h3><span>swipe</span></div><div class="rail"><article class="tc a"><span class="tag">Sky</span><h4>Skydive Abu Dhabi</h4><p>2-4 h</p></article><article class="tc a"><span class="tag">Daily tour</span><h4>Quad Biking Abu Dhabi</h4><p>4 h</p></article><article class="tc a"><span class="tag">Camel trekking</span><h4>Camel Trekking in Abu Dhabi</h4><p>30 min</p></article><article class="tc a"><span class="tag">Daily tour</span><h4>Falcon Tour Abu Dhabi</h4><p>4 h</p></article><article class="tc a"><span class="tag">Daily tour</span><h4>Louvre Abu Dhabi</h4><p>2 h</p></article><article class="tc a"><span class="tag">Water activity</span><h4>Yas Waterworld</h4><p>9 h</p></article><article class="tc a"><span class="tag">City tour</span><h4>Abu Dhabi City Tour</h4><p>9 h</p></article><article class="tc a"><span class="tag">Water activity</span><h4>Love Boat from Abu Dhabi</h4><p>90 min</p></article><article class="tc a"><span class="tag">Indoor</span><h4>KidZania Abu Dhabi</h4><p>5 h</p></article><article class="tc a"><span class="tag">City tour</span><h4>Emirates Park Zoo</h4><p>5 h</p></article></div>
+<div class="railh"><h3>Book them while they are hot</h3><span>last minute</span></div><div class="rail"><article class="tc h"><span class="tag">Water activity</span><h4>Deep Sea Cruising</h4><p>2 or 4 h</p></article><article class="tc h"><span class="tag">Water activity</span><h4>Atlantis Water Park</h4><p>Duration on the tour page</p></article><article class="tc h"><span class="tag">Water activity</span><h4>Banana Boat Ride</h4><p>15 min</p></article><article class="tc h"><span class="tag">Indoor</span><h4>Dubai Ice Rink</h4><p>2 h</p></article><article class="tc h"><span class="tag">Lunch / dinner</span><h4>Flying Cup Dubai</h4><p>20 min</p></article><article class="tc h"><span class="tag">Theme park</span><h4>Ferrari World Theme Park</h4><p>8 h</p></article></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="eyebrow">Beyond the UAE</div><h2>Where else we can send you</h2>
+<div class="dest"><span class="uae">Dubai</span><span class="uae">Abu Dhabi</span><span class="uae">Sharjah</span><span class="uae">Ajman</span><span class="uae">Umm Al Quwain</span><span class="uae">Ras Al Khaimah</span><span class="uae">Fujairah</span><span>Georgia</span><span>Turkey</span><span>Singapore</span><span>Thailand</span><span>Vietnam</span></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="eyebrow">Example: Dhow Cruise Dinner Creek</div><h2>The details guests ask about first</h2>
+<div class="dhow"><div>
+<p>A 2 h 30 min dinner on a traditional dhow along Dubai Creek between Bur Dubai and Deira. Welcome drink, international buffet with BBQ items, open-air upper deck and air-conditioned lower deck.</p>
+<ul><li>Departs 8:30 pm. Without transfer, report 30 minutes before departure.</li><li>Departure point: Al Seef Road Marsa, Al Seef Walk, Bur Dubai, opposite the British Embassy.</li><li>Hotel pick-up from Dubai hotels or residences only, not the airport.</li></ul></div>
+<div><b>Policies on that page</b><ul><li>Free cancellation up to 24 hours before departure, then 100% charge.</li><li>Refunds, if eligible, return within 7 working days.</li><li>Under 3 free, 3 to 10 child rate, over 10 adult rate.</li><li>In Ramadan or on dry days: no live entertainment or alcohol.</li></ul></div></div>
+</div></section>
+
+<section id="pay" class="pay"><div class="wrap">
+<div class="eyebrow">Pay online</div><h2>Book from your sofa</h2>
+<p class="sub" style="color:#cfe1ee">Euro Travel plans the trip remotely and issues the ticket, voucher or holiday confirmation.</p>
+<div class="steps"><div><b>Card payment link</b>Fill the pay-online form to generate a payment link for credit or debit card.</div><div><b>Call centre</b>No booking yet? The back-office call centre can create one by phone or WhatsApp on +971 4 347 0227.</div><div><b>Cash at the office</b>Shop 6, Al Quoz Mall, Al Quoz Industrial Area 3, Dubai.</div></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="eyebrow">Browse by kind</div><h2>Tour categories on the site</h2>
+<p class="sub">The tour pages are grouped like this, so a guest can jump straight to what they feel like doing.</p>
+<div class="dest"><span>Boat</span><span>Camel trekking</span><span>City tour</span><span>Cruises</span><span>Daily tour</span><span>Entertainment</span><span>Indoor activity</span><span>Lunch / dinner</span><span>Sky dive</span><span>Theme park</span><span>Transport</span><span>Water activity</span></div>
+</div></section>
+
+<section style="background:var(--mist)"><div class="wrap">
+<div class="eyebrow">What guests write</div><h2>4.7 from 588 Google reviews</h2>
+<div class="svc">
+<div><h3>Visa in under 24 hours</h3><p>"...he stood around my visa request and obtained the visa in less than 24 hours." A guest who contacted the visa team on a Friday evening.</p></div>
+<div><h3>Flights without stress</h3><p>"They made our flight and travel arrangements very easy and stress-free." A recent review of the flight desk.</p></div>
+<div><h3>Smooth UK visa</h3><p>"The entire process was smooth and stress-free." A couple applying for UK visas through the agency.</p></div>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="eyebrow">Why choose us</div><h2>Our specialities, in the agency's own words</h2>
+<p class="sub">Claims as stated on the Euro Travel home page. The team can back them up in person.</p>
+<div class="svc">
+<div><h3>Serving you since 1996</h3><p>Standards of service built on reliable, cost-effective solutions, with VIP protocol for clients who trust the agency.</p></div>
+<div><h3>5M+ trusted customers</h3><p>A premier travel and tourism agency in the UAE, in the words of its About page.</p></div>
+<div><h3>Instant service sign-in</h3><p>Clients sign in for instant service when planning and paying remotely.</p></div>
+<div><h3>Best price guaranteed</h3><p>Listed as a speciality on the home page. Ask the team how it applies to your trip.</p></div>
+<div><h3>5 star from 25,000+ trips</h3><p>The agency's own count of trips rated five stars.</p></div>
+<div><h3>Travel partners</h3><p>A partner strip on the home page shows the airlines and suppliers behind the bookings.</p></div>
+</div></div></section>
+
+<section id="faq"><div class="wrap faq">
+<div class="eyebrow">Quick answers</div><h2>Before you ask the team</h2>
+<details><summary>Where is the office?</summary><p>Shop no. 6, Al Quoz Mall, Al Quoz Industrial Area 3, P.O. Box 251352, Dubai, UAE.</p></details>
+<details><summary>How do I reach you?</summary><p>Phone or WhatsApp +971 4 347 0227, or info@eurotravel.ae.</p></details>
+<details><summary>What are your opening hours?</summary><p>The website does not list them. The team will confirm by phone or WhatsApp.</p></details>
+<details><summary>Do you handle visas?</summary><p>Yes, UAE tourist visas and worldwide visa assistance. Processing times depend on the case, so the visa team confirms.</p></details>
+<details><summary>How can I pay?</summary><p>By card through a payment link from the pay-online form, through the back-office call centre if you have no booking yet, or in cash at the Al Quoz office.</p></details>
+<details><summary>Is hotel pick-up included?</summary><p>Where a tour offers it, you choose sharing or private transfer when booking. On the Dhow Cruise page, pick-up is from Dubai hotels or residences only, not the airport, and timing can move 30 to 60 minutes with traffic.</p></details>
+<details><summary>What if I cancel?</summary><p>The Dhow Cruise page allows free cancellation until 24 hours before departure and charges 100% after that. Unused inclusions are non-refundable. Other tours can differ, so the team confirms.</p></details>
+<details><summary>Can children join the tours?</summary><p>Each tour page states its child policy. The Dhow Cruise page treats under 3 as infants (free), 3 to 10 as children and over 10 as adults.</p></details>
+</div></section>
+
+<section id="contact" style="background:var(--mist)"><div class="wrap">
+<div class="eyebrow">Come in or message us</div><h2>Euro Travel, Al Quoz</h2>
+<div class="contact">
+<div class="card"><h3>Visit</h3><p>Shop no. 6, Al Quoz Mall<br>Al Quoz Industrial Area 3<br>P.O. Box 251352, Dubai, UAE</p></div>
+<div class="card"><h3>Reach the team</h3><p><a href="tel:+97143470227">+971 4 347 0227</a> (call or WhatsApp)</p><p><a href="mailto:info@eurotravel.ae">info@eurotravel.ae</a></p><p><button class="btn b1" data-open-assistant style="margin-top:8px">Start a booking request</button></p></div>
+</div></div></section>
+</main>
+<footer><div class="wrap"><b>Euro Travel</b> &middot; Your world. Your way.<br>Demo &middot; prepared by Gevorg Hovhannisyan</div></footer>
+
+<script>
+/* matcher: keyword + fuzzy, word-form tolerant */
+function norm(s){return String(s).toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4){if(/(sses|shes|ches|xes)$/.test(w))w=w.slice(0,-2);else if(/(ing|ed)$/.test(w))w=w.replace(/(ing|ed)$/,'');else if(/[^s]s$/.test(w))w=w.slice(0,-1);}return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b,max){if(Math.abs(a.length-b.length)>max)return max+1;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i],mn=i;for(j=1;j<=b.length;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));if(c[j]<mn)mn=c[j];}if(mn>max)return max+1;p=c;}return p[b.length];}
+function tokHit(q,k){if(q===k)return 1;if(k.length<4||q.length<4)return 0;var m=k.length>=9?2:(k.length>=5?1:0);if(m&&lev(q,k,m)<=m)return 1;if(q.length>=5&&k.length>=5&&(k.indexOf(q)===0||q.indexOf(k)===0))return 1;return 0;}
+function makeMatcher(KB){
+  var idx=KB.map(function(e){return e.k.map(function(p){return toks(p);});});
+  return function(text){
+    var qt=toks(text),best=-1,bs=0;
+    if(!qt.length)return null;
+    for(var i=0;i<KB.length;i++){var s=0;
+      for(var j=0;j<idx[i].length;j++){var kt=idx[i][j],ok=true;
+        for(var t=0;t<kt.length;t++){var f=false;for(var u=0;u<qt.length;u++){if(tokHit(qt[u],kt[t])){f=true;break;}}if(!f){ok=false;break;}}
+        if(ok)s+=kt.length*2+(kt.length>1?1:0)+(KB[i].w||0);}
+      if(s>bs){bs=s;best=i;}}
+    return bs>=2?KB[best]:null;};
+}
+if(typeof module!=='undefined')module.exports={makeMatcher:makeMatcher,norm:norm,toks:toks};
+
+/* assistant widget: client-side only, sends nothing */
+function initAssistant(C){
+  var match=makeMatcher(C.kb),$=function(s){return document.querySelector(s);};
+  var fab=document.createElement('button');fab.id='as-fab';fab.type='button';fab.setAttribute('aria-label',C.fabLabel||'Open assistant');
+  fab.innerHTML='<span class="as-fi">'+(C.fabIcon||'?')+'</span><span class="as-ft">'+(C.fabText||'Ask')+'</span>';
+  var p=document.createElement('div');p.id='as-panel';p.setAttribute('role','dialog');p.hidden=true;
+  p.innerHTML='<div class="as-h"><div><b>'+C.title+'</b><small>'+C.sub+'</small></div><button type="button" class="as-x" aria-label="Close">&times;</button></div><div class="as-m" id="as-m" aria-live="polite"></div><div class="as-c" id="as-c"></div><form class="as-f" id="as-f"><input id="as-i" type="text" autocomplete="off" placeholder="'+C.ph+'"><button type="submit" aria-label="Send">&#10148;</button></form>';
+  document.body.appendChild(fab);document.body.appendChild(p);
+  var M=$('#as-m'),CH=$('#as-c'),IN=$('#as-i'),flow=null,data={},opened=false;
+  function add(t,who,html){var d=document.createElement('div');d.className='as-b as-'+who;if(html)d.innerHTML=t;else d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight;}
+  function chips(arr){CH.innerHTML='';arr.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){say(c);};CH.appendChild(b);});}
+  function home(){chips(C.chips);}
+  function ask(){var s=C.flow.steps[flow];add(s.q,'bot');if(s.opts)chips(s.opts.concat([C.flow.cancel]));else chips([C.flow.cancel]);IN.placeholder=s.ph||C.ph;}
+  function startFlow(pre){flow=0;data={};add(C.flow.intro,'bot');var s0=C.flow.steps[0];if(pre&&s0.opts){for(var i=0;i<s0.opts.length;i++){if(norm(s0.opts[i])===norm(pre)){data[s0.id]=s0.opts[i];flow=1;break;}}}ask();}
+  function endFlow(){flow=null;IN.placeholder=C.ph;}
+  function finish(){var out=C.flow.done(data);flow=null;add(out,'bot',true);IN.placeholder=C.ph;chips(C.chips);}
+  function say(t){t=String(t).trim();if(!t)return;add(t,'me');
+    if(flow!==null){
+      if(norm(t)===norm(C.flow.cancel)||/^(cancel|stop|exit|back)$/.test(norm(t))){endFlow();add(C.flow.cancelMsg,'bot');home();return;}
+      var s=C.flow.steps[flow];data[s.id]=t;flow++;
+      if(flow>=C.flow.steps.length)finish();else ask();return;}
+    if(C.flow.trigger(t)){startFlow(t);return;}
+    var e=match(t);
+    if(e){add(e.a,'bot',true);if(e.go){startFlow();return;}chips(e.c||C.chips);}
+    else{add(C.fallback,'bot',true);chips(C.chips);}
+  }
+  function open(){p.hidden=false;fab.classList.add('on');if(!opened){opened=true;add(C.greet,'bot',true);home();}if(window.__pick){var pk=window.__pick;window.__pick=null;setTimeout(function(){say(pk);},40);}setTimeout(function(){IN.focus({preventScroll:true});},50);}
+  function close(){p.hidden=true;fab.classList.remove('on');}
+  fab.onclick=function(){p.hidden?open():close();};
+  p.querySelector('.as-x').onclick=close;
+  $('#as-f').onsubmit=function(ev){ev.preventDefault();var v=IN.value;IN.value='';say(v);};
+  window.openAssistant=open;
+  var cta=document.querySelectorAll('[data-open-assistant]');for(var i=0;i<cta.length;i++){cta[i].addEventListener('click',function(ev){ev.preventDefault();open();});}
+}
+
+
+var KB=[
+{k:['hello','hi','hey','good morning','good evening','salam','marhaba'],a:'Hello! I can help with tours, visas, flights, hotels, payment and how to reach the team.'},
+{k:['hours','open','opening hours','closing','what time are you open','working hours','timings','weekend','friday'],a:'The website does not publish opening hours, so I will not guess. Call or WhatsApp <b>+971 4 347 0227</b> and the team will confirm.'},
+{k:['address','where are you','location','office','visit you','how to find','shop','al quoz','mall','directions','map'],a:'The office is at <b>Shop no. 6, Al Quoz Mall, Al Quoz Industrial Area 3, P.O. Box 251352, Dubai, UAE</b>.'},
+{k:['phone','call','whatsapp','number','contact','reach','telephone','mobile'],a:'Phone or WhatsApp: <b>+971 4 347 0227</b>. Email: <b>info@eurotravel.ae</b>.'},
+{k:['email','mail','e-mail'],a:'Email the team at <b>info@eurotravel.ae</b>, or call and WhatsApp +971 4 347 0227.'},
+{k:['visa','visas','tourist visa','uae visa','visit visa','uk visa','schengen','passport','vise'],a:'Euro Travel offers <b>UAE tourist visas</b> and worldwide visa assistance. Required documents and timing depend on your nationality and the destination, so the visa team will confirm after your request.',c:['Book a trip','Pay online','Contact']},
+{k:['flight','flights','ticket','tickets','air ticket','plane','fly','airline','flite'],a:'Yes, flight booking is one of the services. Tickets are issued remotely and the team confirms the itinerary with you. Use the booking request to tell us route and dates.',c:['Book a trip','Pay online']},
+{k:['hotel','hotels','accommodation','stay','room','resort','hostel'],a:'Hotel booking is listed among the services. Tell the team the city, dates and guests and they will confirm options.',c:['Book a trip']},
+{k:['package','packages','holiday','holidays','vacation','honeymoon','group tour','group tours','tour package'],a:'Holiday packages and group tours are offered, plus last-minute offers on the home page. The team will confirm what is available for your dates.',c:['Book a trip','Destinations']},
+{k:['destination','destinations','country','countries','abroad','international','georgia','turkey','singapore','thailand','vietnam','tbilisi','istanbul','bangkok'],a:'Beyond the UAE the site lists <b>Georgia, Turkey, Singapore, Thailand and Vietnam</b>. Inside the UAE: Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah.',c:['Book a trip','UAE tours']},
+{k:['tour','tours','things to do','attraction','attractions','activity','activities','sightseeing','excursion','uae tours','city tour'],a:'Dubai tours include the Dhow Cruise Dinner, Dubai Frame, Madame Tussauds, Dubai Fountain Show and Lake Ride, Palm Monorail, VR Park, La Perle, Yellow Boats and Deep Dive. Abu Dhabi has Louvre, Falcon Tour, Quad Biking, Camel Trekking, Skydive, Yas Waterworld, KidZania, Emirates Park Zoo and city tours.',c:['Dhow cruise','Adventure','Theme parks','Book a trip']},
+{k:['dhow','dinner cruise','creek','cruise','cruises','dinner','buffet','bbq','boat dinner'],a:'<b>Dhow Cruise Dinner Creek</b>: 2 h 30 min on Dubai Creek, welcome drink, international buffet with BBQ, upper open deck and air-conditioned lower deck. It departs at 8:30 pm from Al Seef Road Marsa, Bur Dubai (opposite the British Embassy). Arrive 30 minutes early if you have no transfer.',c:['Cancellation','Kids','Hotel pickup']},
+{k:['adventure','skydive','sky dive','skydiving','gyrocopter','deep dive','diving','quad','quad bike','quad biking','camel','falcon','desert','banana boat','parachute'],a:'Adventure options listed: <b>Skydive Abu Dhabi, Gyrocopter Flight in Dubai, Deep Dive Dubai, Quad Biking and Camel Trekking and Falcon Tour in Abu Dhabi</b>, Banana Boat Ride and Deep Sea Cruising. Each tour page has its own details; the team confirms age and health requirements.',c:['Book a trip','Theme parks']},
+{k:['theme park','theme parks','ferrari','ferrari world','yas','waterworld','water park','atlantis','kidzania','zoo','madame tussauds','vr park','ice rink','amusement','park'],w:2,a:'Parks and indoor attractions listed: <b>Ferrari World, Yas Waterworld, Atlantis Water Park, KidZania Abu Dhabi, Emirates Park Zoo, Madame Tussauds, VR Park (Play DXB), Dubai Ice Rink</b> and the Flying Cup.',c:['Book a trip','Kids']},
+{k:['price','prices','cost','how much','fee','discount','cheap','offer','offers','last minute','deal','deals','coupon'],w:9,a:'Prices and current offers are shown on each tour page and I will not quote numbers from memory. The team confirms the exact price for your date and group. Coupon codes can be redeemed through the online booking process.',c:['Book a trip','Pay online']},
+{k:['pay','payment','pay online','card','credit card','debit card','payment link','cash','how to pay','transfer money'],a:'Three ways: a <b>card payment link</b> generated from the pay-online form, the <b>back-office call centre</b> (+971 4 347 0227) if you have no booking yet, or <b>cash at the Al Quoz office</b>.',c:['Book a trip','Contact']},
+{k:['cancel','cancellation','refund','refunds','money back','change booking','reschedule','no show','no-show'],a:'On the Dhow Cruise page: cancel 24 hours or more before departure with no charge; inside 24 hours it is 100% charged. Eligible refunds return within 7 working days. Other tours can differ, so the team confirms for your booking.',c:['Contact','Book a trip']},
+{k:['child','children','kid','kids','infant','baby','family','age','under 3','toddler'],a:'On the Dhow Cruise page, under 3 are infants (free), ages 3 to 10 pay the child rate and over 10 pay adult rate. Other tours have their own policy on the tour page, and the team will confirm.',c:['Book a trip']},
+{k:['pickup','pick up','hotel pickup','transfer','transfers','drop off','airport','private transfer','transport','sharing'],a:'Where offered, transfers are <b>sharing or private</b>. Pick-up is from Dubai hotels or residences, not the airport. Sharing transfers cover Deira, Bur Dubai and Sheikh Zayed up to Marina. Other areas on request with a surcharge. Pick-up times can shift 30 to 60 minutes with traffic.',c:['Book a trip']},
+{k:['ramadan','dry day','dry days','alcohol','live music','entertainment'],a:'During Ramadan or dry days there is no live entertainment or alcohol on the Dhow Cruise, in line with government guidelines.'},
+{k:['review','reviews','rating','ratings','trust','reliable','google','stars','testimonial'],a:'The site shows <b>4.7 from 588 Google reviews</b>, with guests praising fast visa handling and flight arrangements. The agency says it has served travellers since 1996.'},
+{k:['about','since','history','who are you','company','agency','euro travel','euro travels','experience','1996'],a:'Euro Travel is a Dubai travel agency serving clients <b>since 1996</b>, offering flights, hotels, holidays, visas and UAE tours.'},
+{k:['insurance','travel insurance','cover'],a:'Travel insurance is listed on the payment form as a service. The team will confirm the options available.'},
+{k:['sharjah','ajman','umm al quwain','ras al khaimah','fujairah','emirates','emirate','rak'],a:'The site has pages for Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah.'},
+{k:['book','booking','reserve','reservation','enquiry','enquire','request','plan my trip','book a trip','start'],a:'Happy to take a request. I will ask a few quick things.',go:true},
+{k:['why choose','best price','guarantee','specialities','speciality','premier','vip','trusted'],a:'The agency lists: serving since 1996, 5M+ trusted customers, instant service sign-in, best price guaranteed and a 5-star rating from 25,000+ trips. The team can explain how each applies to your booking.'},
+{k:['monorail','palm monorail','palm jumeirah','the palm'],a:'<b>The Palm Monorail</b> is listed as a 15-minute daily tour in the transport category. The tour page has the current price and times.'},
+{k:['dubai frame','frame'],a:'<b>Dubai Frame</b> is listed as a 2-hour city tour. Check the tour page for inclusions and transfer options.'},
+{k:['fountain','fountain show','lake ride'],a:'<b>Dubai Fountain Show and Lake Ride</b> is a 30-minute boat experience. The tour page has timings and price.'},
+{k:['yellow boats','yellow boat','la perle','perle','dragone','louvre','abu dhabi city tour','emirates park zoo'],a:'Listed durations: Yellow Boats Dubai 60 to 90 minutes, La Perle by Dragone 1.5 hours, Louvre Abu Dhabi 2 hours, Abu Dhabi City Tour 9 hours, Emirates Park Zoo 5 hours. Prices and times are on each tour page.'},
+{k:['thanks','thank you','thx','cheers','great'],a:'You are welcome! Anything else about your trip?'},
+{k:['bye','goodbye','see you'],a:'Goodbye, and safe travels!'}
+];
+var CFG={title:'Euro Travel assistant',sub:'Demo · answers from the Euro Travel site',ph:'Ask about tours, visas, payment...',fabText:'Ask Euro Travel',fabIcon:'&#9992;',
+greet:'Hello, I am the Euro Travel assistant. Ask about tours, visas, flights or payment, or start a booking request.',
+chips:['UAE tours','Visa','Pay online','Book a trip','Contact'],
+fallback:'I do not have that from the Euro Travel site, so I will not guess. The team can confirm on <b>+971 4 347 0227</b> (call or WhatsApp) or <b>info@eurotravel.ae</b>.',
+kb:KB,
+flow:{cancel:'Cancel request',cancelMsg:'No problem, request cancelled.',intro:'Great, a few quick questions for the team.',
+trigger:function(t){return /^(book a trip|plan my trip|book|booking)$/i.test(t.trim());},
+steps:[{id:'svc',q:'What do you need?',opts:['Dubai tour or activity','Abu Dhabi tour','UAE tourist visa','Flights or hotel','Holiday package']},
+{id:'what',q:'Which tour, destination or route? (for example Dhow Cruise, Georgia, Dubai to London)',ph:'Tour or destination'},
+{id:'date',q:'Travel date or date range?',ph:'e.g. 14 December'},
+{id:'grp',q:'How many adults and children (ages)?',ph:'2 adults, 1 child (6)'},
+{id:'name',q:'Your name?',ph:'Name'},
+{id:'ct',q:'Best phone or WhatsApp number?',ph:'+971 ...'}],
+done:function(d){return '<b>Request sent to the Euro Travel team.</b><br>'+d.svc+': '+d.what+'<br>When: '+d.date+' &middot; Guests: '+d.grp+'<br>Contact: '+d.name+', '+d.ct+'<br>The team will confirm availability and price. (Demo: nothing is actually sent.)';}}};
+
+initAssistant(CFG);
+</script></body></html>

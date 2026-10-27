@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TravelPearls | Demo site with booking assistant</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--g:#1a3c34;--gd:#0d1f1a;--gold:#c9a84c;--cream:#f8f4ea;--ink:#1d2a26;--mut:#5d6b66;--line:#e2dccb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+img,svg{max-width:100%}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:700;line-height:1.15;margin:0}
+a{color:inherit}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 16px}
+.top{background:#fff;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:20}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px}
+.logo{height:30px;width:auto;display:block}
+.top nav{display:none;gap:22px;font-size:14px;font-weight:500}
+.top nav a{text-decoration:none;color:var(--g)}
+.tel{font-size:14px;font-weight:600;color:var(--g);text-decoration:none;white-space:nowrap}
+.strip{background:var(--gd);color:#e9dfbf;font-size:13px;text-align:center;padding:7px 12px;letter-spacing:.02em}
+.hero{background:linear-gradient(160deg,var(--g),var(--gd));color:#fff;padding:54px 0 64px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border:1px solid rgba(201,168,76,.35);border-radius:50%;box-shadow:0 0 0 38px rgba(201,168,76,.06),0 0 0 80px rgba(201,168,76,.04)}
+.kick{color:var(--gold);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:14px}
+.hero h1{font-size:clamp(34px,8vw,60px);max-width:14ch}
+.hero h1 em{color:var(--gold);font-style:italic;font-weight:500}
+.hero p{max-width:52ch;color:#d4ddd9;margin:18px 0 26px;font-size:17px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+.b1{background:var(--gold);color:var(--gd)}.b2{border:1px solid rgba(255,255,255,.45);color:#fff;background:transparent}
+.pill{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:30px;font-size:13px;color:#cfd9d5}
+.pill span:before{content:"\2713";color:var(--gold);margin-right:6px}
+section{padding:54px 0}
+.eyebrow{color:#9a7d2c;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+h2{font-size:clamp(26px,5.5vw,38px);margin-bottom:12px}
+.lead{color:var(--mut);max-width:60ch}
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:20px 16px 10px;margin:0 -16px;-webkit-overflow-scrolling:touch}
+.card{flex:0 0 78%;max-width:300px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:0;overflow:hidden}
+.card .band{height:84px;display:flex;align-items:flex-end;padding:10px 14px;color:#fff;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.m{background:linear-gradient(135deg,#0f5a63,#2c8c96)}.t{background:linear-gradient(135deg,#7a4b1f,#c9893c)}.i{background:linear-gradient(135deg,#1f5a3a,#5aa06c)}.c{background:linear-gradient(135deg,#34364f,#6b6f99)}
+.card .bd{padding:14px}.card h3{font-size:18px;margin-bottom:4px}.card p{font-size:14px;color:var(--mut);margin:0}
+.card .nt{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;color:var(--g);background:#eef3ef;padding:3px 9px;border-radius:999px}
+.steps{list-style:none;margin:28px 0 0;padding:0 0 0 28px;border-left:2px solid var(--gold)}
+.steps li{position:relative;padding:0 0 26px 18px}
+.steps li:before{content:attr(data-n);position:absolute;left:-44px;top:-2px;width:30px;height:30px;border-radius:50%;background:var(--g);color:var(--gold);font:700 14px/30px 'Playfair Display',serif;text-align:center}
+.steps b{display:block;font-family:'Playfair Display',serif;font-size:19px;margin-bottom:2px}
+.steps span{color:var(--mut)}
+.dark{background:var(--g);color:#fff}.dark .lead{color:#c8d4cf}.dark .eyebrow{color:var(--gold)}
+.dest{display:grid;gap:22px;margin-top:22px}
+.dest h3{font-size:15px;font-family:Inter;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{padding:7px 13px;border-radius:999px;font-size:14px;border:1px solid rgba(255,255,255,.35)}
+.tag.on{background:var(--gold);color:var(--gd);border-color:var(--gold);font-weight:600}
+.split{display:grid;gap:26px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.panel h3{font-size:21px;margin-bottom:8px}
+.panel ul{padding-left:18px;margin:10px 0 0;color:var(--mut)}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;padding:0 16px}
+.faq summary{cursor:pointer;padding:15px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faq summary:after{content:"+";color:#9a7d2c;font-size:22px;line-height:1}
+.faq details[open] summary:after{content:"\2212"}
+.faq p{margin:0 0 16px;color:var(--mut);font-size:15px}
+.contact{background:var(--gd);color:#fff;border-radius:18px;padding:28px 22px}
+.contact a{color:var(--gold)}.contact .row{margin:6px 0}
+footer{padding:26px 0 90px;font-size:13px;color:var(--mut);text-align:center}
+.chipb{font:500 14px Inter,sans-serif;padding:8px 14px;border-radius:999px;border:1px solid var(--g);background:transparent;color:var(--g);cursor:pointer}.chipb:hover{background:var(--g);color:#fff}
+.qs{display:grid;gap:14px;margin-top:22px}
+blockquote{margin:0;background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:18px 18px 14px;font-family:'Playfair Display',serif;font-size:18px;line-height:1.4}
+blockquote cite{display:block;margin-top:10px;font:500 13px Inter,sans-serif;color:var(--mut);font-style:normal}
+@media(min-width:760px){.qs{grid-template-columns:1fr 1fr}.top nav{display:flex}.card{flex-basis:260px}.rail{margin:0;padding-left:0;overflow:visible;flex-wrap:wrap}.dest{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr 1fr}}
+
+#wBtn{position:fixed;right:16px;bottom:16px;z-index:50;border:0;cursor:pointer;background:#c9a84c;color:#0d1f1a;font:600 15px/1 Inter,system-ui,sans-serif;padding:14px 18px;border-radius:16px;box-shadow:0 6px 22px rgba(0,0,0,.28);display:flex;gap:8px;align-items:center}
+#wPan{position:fixed;right:12px;bottom:12px;z-index:60;width:calc(100vw - 24px);max-width:380px;height:min(560px,calc(100vh - 24px));background:#fffdf7;color:#1d2a26;border-radius:16px;box-shadow:0 14px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 Inter,system-ui,sans-serif}
+#wPan.open{display:flex}
+.wh{background:#1a3c34;color:#f1e7c6;padding:12px 14px;display:flex;align-items:center;gap:10px}
+.wh b{flex:1;font-size:15px}.wh small{display:block;font-weight:400;opacity:.75;font-size:12px}
+#wX{background:none;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1;padding:0 4px}
+#wLog{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.wm{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word}
+.wm.bot{background:rgba(127,127,127,.14);align-self:flex-start;border-bottom-left-radius:4px}
+.wm.me{background:#c9a84c;color:#0d1f1a;align-self:flex-end;border-bottom-right-radius:4px}
+.wm a{color:inherit;text-decoration:underline}
+#wChips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px;max-height:112px;overflow:auto}
+.wc{border:1px solid #c9a84c;background:transparent;color:inherit;border-radius:999px;padding:6px 11px;font:13px Inter,system-ui,sans-serif;cursor:pointer}
+.wc:hover{background:#c9a84c;color:#0d1f1a}
+#wForm{display:flex;gap:6px;padding:10px 12px;border-top:1px solid rgba(127,127,127,.25)}
+#wInp{flex:1;min-width:0;border:1px solid rgba(127,127,127,.4);border-radius:10px;padding:10px;font:16px Inter,system-ui,sans-serif;background:transparent;color:inherit}
+#wForm button{border:0;background:#c9a84c;color:#0d1f1a;border-radius:10px;padding:0 14px;font:600 14px Inter,system-ui,sans-serif;cursor:pointer}
+.wnote{font-size:11px;opacity:.6;text-align:center;padding:0 12px 8px}
+
+</style></head><body>
+<header class="top"><div class="wrap"><a href="#top" aria-label="TravelPearls"><img class="logo" src="img/travel-pearls-logo.svg" alt="TravelPearls"></a>
+<nav><a href="#escapes">This week</a><a href="#how">How it works</a><a href="#where">Destinations</a><a href="#groups">Groups</a><a href="#faq">FAQ</a></nav>
+<a class="tel" href="tel:+61253008033">(02) 5300 8033</a></div></header>
+<div class="strip" id="top">Buy Now, Book Later &middot; flexible cancellation on selected deals</div>
+
+<div class="hero"><div class="wrap">
+<div class="kick">Handcrafted luxury travel</div>
+<h1>One extraordinary escape, <em>every Monday.</em></h1>
+<p>Five-star and boutique stays across Asia-Pacific, privately negotiated with the hotel, so you will not find the same rates on Booking.com or Expedia. Backed by a Sydney concierge team before, during and after your stay.</p>
+<div class="btns"><a class="btn b1" href="#escapes">See this week&rsquo;s escapes</a><button class="btn b2" type="button" onclick="document.getElementById('wBtn').click()">Ask the concierge assistant</button></div>
+<div class="pill"><span>No platform fees</span><span>No membership fees</span><span>Land-only, bring your own flights</span><span>AUD pricing</span></div>
+</div></div>
+
+<section id="escapes"><div class="wrap">
+<div class="eyebrow">Live on the site</div><h2>Escapes to choose from</h2>
+<p class="lead">Every deal is negotiated directly with the property. These were on the site when this demo was prepared; the live list changes weekly.</p>
+<div class="rail">
+<div class="card"><div class="band m">Maldives</div><div class="bd"><h3>Hideaway Beach Resort &amp; Spa</h3><p>5-star all-inclusive with seaplane transfers.</p><span class="nt">5 nights</span></div></div>
+<div class="card"><div class="band m">Maldives</div><div class="bd"><h3>Angsana Velavaru</h3><p>Dhaalu Atoll, all-inclusive with seaplane transfers and an InOcean pool villa.</p><span class="nt">5 nights</span></div></div>
+<div class="card"><div class="band t">Thailand</div><div class="bd"><h3>Ananea Beyond Khaolak</h3><p>Beachfront all-inclusive resort in Khao Lak.</p><span class="nt">6 nights</span></div></div>
+<div class="card"><div class="band t">Thailand</div><div class="bd"><h3>Pimalai Resort &amp; Spa</h3><p>Award-winning 5-star on Koh Lanta, meals and transfers included.</p><span class="nt">5 nights</span></div></div>
+<div class="card"><div class="band c">Bangkok</div><div class="bd"><h3>AVANI Sukhumvit</h3><p>A city escape in Bangkok.</p><span class="nt">1 night</span></div></div>
+<div class="card"><div class="band i">Bali</div><div class="bd"><h3>Leedon Villa Seminyak</h3><p>New luxury pool villa in Seminyak.</p><span class="nt">5 nights</span></div></div>
+<div class="card"><div class="band i">Bali</div><div class="bd"><h3>Avani Vacation Club Seminyak</h3><p>5-star with meals, cocktails and kids stay free.</p><span class="nt">5 nights</span></div></div>
+<div class="card"><div class="band i">Bali</div><div class="bd"><h3>Merusaka Nusa Dua</h3><p>Beachfront all-inclusive resort.</p><span class="nt">5 nights</span></div></div>
+</div></div></section>
+
+<section id="how" style="background:#fff"><div class="wrap">
+<div class="eyebrow">How it works</div><h2>Three steps, no surprises</h2>
+<ol class="steps">
+<li data-n="1"><b>A new deal every week</b><span>Each Monday a hand-selected escape is released. Properties are privately negotiated and never listed on public booking sites.</span></li>
+<li data-n="2"><b>Choose your dates and book</b><span>Browse room types, pick your dates and pay securely through Stripe. Most deals include complimentary upgrades or resort credits.</span></li>
+<li data-n="3"><b>Travel with concierge support</b><span>Your digital voucher arrives instantly, and the Australian-based team is there before, during and after your stay.</span></li>
+</ol></div></section>
+
+<section class="dark" id="where"><div class="wrap">
+<div class="eyebrow">Destinations</div><h2>Where the deals are</h2>
+<p class="lead">Negotiated directly with each hotel. Browse by destination to see what is live, and what is coming.</p>
+<div class="dest">
+<div><h3>Live now</h3><div class="tags"><span class="tag on">Thailand</span><span class="tag on">Bali &amp; Lombok</span><span class="tag on">Maldives</span><span class="tag on">Australia</span></div></div>
+<div><h3>Coming soon</h3><div class="tags"><span class="tag">Japan</span><span class="tag">New Zealand</span><span class="tag">Fiji</span><span class="tag">Vietnam</span><span class="tag">Cook Islands</span><span class="tag">Sri Lanka</span><span class="tag">Singapore</span><span class="tag">Vanuatu</span><span class="tag">Philippines</span><span class="tag">South Korea</span></div></div>
+</div></div></section>
+
+<section id="groups"><div class="wrap"><div class="split">
+<div><div class="eyebrow">Group bookings</div><h2>Taking everyone? Share one link.</h2>
+<p class="lead">Tell the team the rooms and dates. They hold them for you with no card and no deposit, and your group picks rooms from a single page.</p></div>
+<div class="panel"><h3>Two ways to pay</h3>
+<ul><li><b>Everyone pays their own:</b> each person picks their own dates and room, and you watch the page fill up.</li><li><b>I am paying for some or all:</b> cover several rooms in one payment; every room still gets its own confirmation.</li><li>Only room types the resort has actually contracted, checked against live availability.</li></ul></div>
+</div></div></section>
+
+<section id="finder"><div class="wrap"><div class="split">
+<div><div class="eyebrow">Pearl Finder</div><h2>Tell us where and who, we match the escape.</h2>
+<p class="lead">The home page search understands plain requests. Tap one to see how the concierge assistant would pick it up.</p></div>
+<div class="panel"><h3>Try asking</h3><div class="tags" style="margin-top:12px">
+<button class="chipb" type="button" data-q="Do escapes include flights?">Bali in the school holidays</button>
+<button class="chipb" type="button" data-q="Kids stay free?">Thailand, 2 adults + 2 kids</button>
+<button class="chipb" type="button" data-q="What are the current escapes?">A pool villa for two</button>
+<button class="chipb" type="button" data-q="Which destinations do you have?">Maldives for a week</button></div>
+<p style="font-size:13px;color:var(--mut);margin:14px 0 0">The assistant on this demo answers from the public TravelPearls pages only.</p></div>
+</div></div></section>
+
+<section class="dark" id="refunds"><div class="wrap">
+<div class="eyebrow">Refunds &amp; cancellations</div><h2>Plans change. The process is short.</h2>
+<p class="lead">Everything happens inside your account, with no phone calls needed.</p>
+<ol class="steps" style="border-color:var(--gold)">
+<li data-n="1"><b>Log in</b><span style="color:#c8d4cf">Use the email you booked with. Guest checkouts get an account and a sign-in code by email.</span></li>
+<li data-n="2"><b>Open the booking</b><span style="color:#c8d4cf">Your exact terms show right there: a refundable-until date, or your change-of-mind and credit dates.</span></li>
+<li data-n="3"><b>Request the refund</b><span style="color:#c8d4cf">Full or partial. Deals with a change-of-mind window show a Cancel booking button instead.</span></li>
+<li data-n="4"><b>Team reviews and confirms</b><span style="color:#c8d4cf">Confirmed by email. Approved refunds can take up to 10 business days to reach your card.</span></li>
+</ol>
+<p class="lead" style="font-size:14px">Cancellation terms vary by deal and refunds go back to the original payment method. No-shows are not refundable. Your rights under the Australian Consumer Law are not limited.</p>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+<div class="eyebrow">In their words</div><h2>What travellers say</h2>
+<div class="qs">
+<blockquote>&ldquo;Julian went out of his way to answer all our questions. That confirmed us to book.&rdquo;<cite>Kim M. &middot; Grand Mercure Khao Lak Bangsak</cite></blockquote>
+<blockquote>&ldquo;Julian responded to me so quickly and was very accommodating when I asked lots of questions about our group booking!&rdquo;<cite>Jasmine S. &middot; Pullman Khao Lak</cite></blockquote>
+<blockquote>&ldquo;It was so easy to book online, left very safe, so looking forward to our trip to this beautiful hotel.&rdquo;<cite>Rita M. &middot; Merusaka Nusa Dua</cite></blockquote>
+<blockquote>&ldquo;It was great dealing with Travel Pearls. I received awesome service and was able to book an amazing deal at 50% off!&rdquo;<cite>Nicole M. &middot; Maldives overwater villa</cite></blockquote>
+</div></div></section>
+
+<section class="faq" id="faq" style="background:#fff"><div class="wrap">
+<div class="eyebrow">Good to know</div><h2>Questions before booking</h2><div style="margin-top:20px">
+<details><summary>Do escapes include flights?</summary><p>No. TravelPearls is land-only, so you can use frequent-flyer points or your preferred airline.</p></details>
+<details><summary>Are there booking or membership fees?</summary><p>No platform surcharge and no membership fees. Only hotel-set amounts, such as peak-date or extra-guest surcharges, can apply and they are shown on the escape page.</p></details>
+<details><summary>How do refunds and cancellations work?</summary><p>Terms are negotiated per property and shown when you choose a room. Request a refund from My Bookings; approved refunds can take up to 10 business days to reach your card. Some deals have a change-of-mind window followed by 12 months of credit.</p></details>
+<details><summary>Can I change my dates instead?</summary><p>Often yes. Email hello@travelpearls.com.au and the team will do their best, subject to availability and supplier approval.</p></details>
+<details><summary>Which currency do you charge in?</summary><p>Australian dollars only, for prices, balances and refunds.</p></details>
+<details><summary>I cannot find my confirmation.</summary><p>Log into My Account with the email you booked with. Guest checkouts get an account automatically, using a sign-in code sent by email.</p></details>
+<details><summary>Can I ask for a bedding setup that is not listed?</summary><p>Email the team and they will confirm availability with the hotel directly.</p></details>
+<details><summary>What standard of property do you work with?</summary><p>Five-star and recognised premium boutique only. Each property is personally inspected by the team or sourced through a long-standing relationship with the hotel; mid-range and budget stock is not listed.</p></details>
+<details><summary>How are the rates exclusive?</summary><p>The team works directly with hotel revenue managers to secure private allotments during shoulder and value windows. Each advertised rate is benchmarked against public booking sites before it is published.</p></details>
+<details><summary>Where is TravelPearls based?</summary><p>At 55 Pyrmont Bridge Rd, Pyrmont (Sydney), and operated entirely by Australian travel specialists. Concierge support runs during AEST business hours.</p></details>
+<details><summary>Is paying online safe?</summary><p>Bookings run through Stripe with fraud protection, and your card details are never stored on TravelPearls servers.</p></details>
+</div></div></section>
+
+<section><div class="wrap"><div class="eyebrow">Insights</div><h2>Reading before you decide</h2>
+<div class="qs" style="margin-top:18px"><div class="panel"><h3>Bali vs Phuket</h3><p style="margin:0;color:var(--mut)">An honest comparison written for Australian travellers choosing between the two.</p></div>
+<div class="panel"><h3>Group travel booking guide</h3><p style="margin:0;color:var(--mut)">How to organise holidays with friends and family without one person being the bank.</p></div></div></div></section>
+
+<section><div class="wrap"><div class="contact">
+<div class="eyebrow" style="color:var(--gold)">Concierge team</div><h2>Talk to a person</h2>
+<div class="row">Phone <a href="tel:+61253008033">(02) 5300 8033</a></div>
+<div class="row">Email <a href="mailto:hello@travelpearls.com.au">hello@travelpearls.com.au</a></div>
+<div class="row">55 Pyrmont Bridge Rd, Pyrmont NSW 2009</div>
+<div class="row" style="opacity:.75;font-size:14px">Support runs during AEST business hours.</div>
+<div class="btns" style="margin-top:18px"><button class="btn b1" type="button" onclick="document.getElementById('wBtn').click()">Send an enquiry</button></div>
+</div></div></section>
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="wBtn" type="button" aria-expanded="false" aria-controls="wPan"><span aria-hidden="true">&#10022;</span> Concierge</button>
+<div id="wPan" role="dialog" aria-label="TravelPearls assistant">
+<div class="wh"><b>TravelPearls assistant<small>Demo &middot; answers from the TravelPearls site</small></b><button id="wX" type="button" aria-label="Close">&times;</button></div>
+<div id="wLog" aria-live="polite"></div><div id="wChips"></div>
+<form id="wForm" autocomplete="off"><input id="wInp" type="text" aria-label="Your message" placeholder="Ask about flights, refunds, groups&hellip;"><button type="submit">Send</button></form>
+<div class="wnote">Demo only. Nothing is sent to the team.</div></div>
+
+<script>
+window.CFG={"hello": "Hi, I'm the TravelPearls assistant (demo). Ask about escapes, refunds, groups or flights, or send an enquiry to the concierge team.", "chips": ["Send an enquiry", "Do escapes include flights?", "Refunds and cancellations", "Group bookings", "Any extra fees?", "Contact the team"], "kb": [{"k": ["about", "story", "founded", "founders", "launched", "who run", "who owns", "australian owned", "company"], "a": "TravelPearls is an Australian-owned curator of handcrafted premium escapes, founded in Sydney by two travel industry veterans with over 20 years of experience sourcing premium deals. It launched in April 2026."}, {"k": ["weekly deal", "every week", "monday", "new deal", "this week", "deal alert", "subscribe", "newsletter", "subscriber", "mailing list"], "a": "One curated luxury escape is released each Monday. Subscribers get the deal alert before it sells out; joining is free, with no membership fees and no spam. Use the Subscribe box on the site.", "go": ["Send an enquiry", "Group bookings"]}, {"k": ["fee", "fees", "membership", "hidden charges", "surcharge", "extra charges", "platform fee", "booking fee"], "a": "No platform booking surcharge and no membership or club fees: the price at checkout is the full price. The only exceptions are amounts set by the hotel itself, such as peak-date or extra-guest surcharges payable at the property, and those are shown on the escape page."}, {"k": ["flight", "flights", "fly", "airfare", "airline", "land only", "frequent flyer", "points"], "a": "TravelPearls escapes are land-only, so they do not include flights. That lets you use frequent-flyer points or your preferred airline for the best fare on your dates."}, {"k": ["currency", "aud", "dollar", "dollars", "usd", "exchange"], "a": "Australian dollars only. All prices, balances and refunds are in AUD, wherever you are travelling from or living."}, {"k": ["price", "prices", "cost", "how much", "cheap", "expensive", "afford", "rate", "rates"], "a": "Rates change with each weekly escape and room type, so I do not quote numbers here. The exact price, inclusions and cancellation terms are on each escape page before you book. Every advertised rate is benchmarked against public booking sites before it is published.", "go": ["Current escapes", "Send an enquiry"]}, {"k": ["refund", "cancel", "cancellation", "money back", "change mind", "credit", "no show", "noshow"], "a": "Terms are negotiated per property, so they vary by escape and are shown at room selection and on your booking. Refund requests go through My Account, then My Bookings, then Request Refund; the team reviews them against your terms and confirms by email. Approved refunds can take up to 10 business days to show on your card. Some deals have a change-of-mind window, then credit valid for 12 months. No-shows are not refundable.", "go": ["Change my dates", "Contact the team"]}, {"k": ["change dates", "date change", "different dates", "reschedule", "amend", "move booking", "change booking", "new dates"], "a": "A date change is often a good alternative to cancelling. Email hello@travelpearls.com.au and the team will do their best, subject to availability and supplier approval."}, {"k": ["confirmation", "booking reference", "find booking", "voucher", "itinerary", "login", "log in", "account", "sign in", "password", "sign code"], "a": "Log in under My Account with the email you booked with. Your confirmation, booking reference, itinerary, payment status and any balance are there. Guest checkouts get an account automatically; use the sign-in code sent to your email. Still stuck? The concierge team can help."}, {"k": ["pay", "payment", "stripe", "card", "secure", "safe", "fraud", "encrypted", "ssl"], "a": "Bookings are processed through Stripe with fraud protection, and your card details are never stored on TravelPearls servers. Prices are in AUD."}, {"k": ["group fee", "group booking", "group", "friends", "reunion", "wedding", "birthday", "host", "invite link", "share link", "multiple rooms", "many rooms", "setup fee", "set up fee"], "a": "Group bookings: tell the team the rooms and dates (only room types the resort has actually contracted), and they hold them free, with no card and no deposit. You share one link; each person picks their own dates and room and pays their own, or you cover several rooms in one payment. If the hotel has to be asked for more rooms there is a A$50 set-up fee, credited to your own room when you book.", "go": ["Send an enquiry"]}, {"k": ["contact", "phone", "call", "email", "number", "reach", "speak", "talk", "human", "concierge", "hours", "support", "opening hours"], "a": "Concierge team: +61 2 5300 8033 or hello@travelpearls.com.au. Support runs during AEST business hours."}, {"k": ["where based", "address", "located", "office", "pyrmont", "sydney", "headquarters", "visit"], "a": "TravelPearls is headquartered at 55 Pyrmont Bridge Rd, Pyrmont (Sydney) NSW 2009 and operated by Australian travel specialists. Concierge support runs during AEST business hours."}, {"k": ["destination", "destinations", "where go", "bali", "thailand", "maldives", "phuket", "khao lak", "krabi", "bangkok", "lombok", "indonesia", "japan", "fiji", "vietnam", "new zealand", "singapore", "korea", "countries", "coming soon", "hua hin", "samui", "chiang mai", "melbourne"], "a": "Live now on the site: Thailand, Indonesia (Bali and Lombok), the Maldives and Australia. Coming soon: Japan, New Zealand, Fiji, Vietnam, the Cook Islands, Sri Lanka, Singapore, Vanuatu, the Philippines and South Korea.", "go": ["Current escapes", "Pearl Finder"]}, {"k": ["deals", "hotels", "resorts", "properties", "pool villa", "all inclusive", "seaplane", "hideaway", "ananea", "merusaka", "pimalai", "avani", "angsana", "leedon", "on now", "available now", "current escapes"], "a": "Escapes on the site when this demo was prepared: Hideaway Beach Resort (Maldives), Angsana Velavaru (Maldives), Ananea Beyond Khaolak (Thailand), Pimalai Resort Koh Lanta (Thailand), AVANI Sukhumvit Bangkok, Leedon Villa Seminyak, Avani Vacation Club Seminyak and Merusaka Nusa Dua (Bali). The live list changes every week, so check All Deals.", "go": ["Send an enquiry", "Pearl Finder"]}, {"k": ["five star", "5 star", "star", "standard", "quality", "boutique", "luxury", "inspect", "budget", "mid range"], "a": "Five-star and recognised premium boutique properties only. Each is either personally inspected by the team or sourced through a long-standing relationship with the hotel. No mid-range or budget stock, and no aggregated third-party feeds."}, {"k": ["exclusive", "negotiate", "negotiated", "cheaper", "best price", "booking com", "expedia", "compare", "benchmark", "allotment"], "a": "Deals are privately negotiated with each hotel's revenue team through private allotments, so they are not listed on Booking.com or Expedia. Every advertised rate is benchmarked against public booking sites before publication."}, {"k": ["pearl finder", "finder", "search", "match", "suggest", "recommend", "help choose", "where should"], "a": "Pearl Finder is the search box on the home page. Type where you want to go and who is going, for example 'Thailand, 2 adults + 2 kids' or 'a pool villa for two', and it matches you to escapes that fit.", "go": ["Send an enquiry"]}, {"k": ["bedding", "twin", "beds", "bed", "king", "room type", "room request", "special request"], "a": "The site shows every room and bedding option available for each property. If a configuration such as twin beds is not listed, email hello@travelpearls.com.au and the team will try to confirm it with the hotel directly."}, {"k": ["kids", "children", "child", "family", "families", "school holidays", "infant", "toddler"], "a": "Families are welcome: some escapes include perks like kids stay free (for example Avani Seminyak), and Pearl Finder understands requests like 'Thailand, 2 adults + 2 kids'. Child and extra-guest rules are on each escape page; the team will confirm anything specific to your family."}, {"k": ["blog", "insights", "guide", "bali vs phuket", "comparison", "read", "article"], "a": "The Insights section has guides such as Bali vs Phuket for Australian travellers, and a group-travel booking guide."}, {"k": ["review", "reviews", "testimonial", "trust", "legit", "reputable", "real company", "feedback"], "a": "There is a Reviews page. Travellers mention how easy booking is and how quickly the team answers questions, including group bookings."}], "fallback": "I do not have that detail, so I will not guess. The concierge team will confirm: +61 2 5300 8033 or hello@travelpearls.com.au (AEST business hours).", "flow": {"intro": "Happy to pass that on. A few quick questions (type cancel to stop).", "cancelled": "No problem, nothing was sent.", "doneTitle": "Enquiry ready for the concierge team", "done": "Sent to the team (demo: nothing is actually sent). They will reply by email and confirm availability and terms.", "steps": [{"key": "dest", "label": "Where to", "q": "Where would you like to go?", "opts": ["Maldives", "Bali", "Thailand", "Bangkok city stay", "Not sure yet"]}, {"key": "when", "label": "Travel dates", "q": "Roughly when, and for how many nights?", "ph": "e.g. late January, 5 nights"}, {"key": "who", "label": "Travelling", "q": "Who is travelling?", "opts": ["Two adults", "Family with kids", "Group of friends or family", "Solo"]}, {"key": "style", "label": "Stay style", "q": "Which style suits you?", "opts": ["Pool villa", "All-inclusive", "City stay", "Not sure"]}, {"key": "name", "label": "Name", "q": "Your name?", "ph": "First name"}, {"key": "email", "label": "Email", "q": "Which email should the team reply to?", "ph": "you@example.com", "err": "That does not look like an email address, could you check it?"}]}};
+CFG.flowRe=new RegExp("\\b(book|enquire|enquiry|inquire|inquiry|reserve|reservation)\\b|(plan|start|make|send|get|hold)\\s+(a|an|my|the)?\\s*(trip|stay|enquiry|inquiry|message|rooms|quote)|get in touch|talk to (someone|the team|a human)");
+CFG.flow.steps[5].re=new RegExp("^\\S+@\\S+\\.\\S+$");
+
+</script>
+<script>
+/*PURE*/
+function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9$£€ ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))w=w.slice(0,-1);if(w.length>5)w=w.replace(/(ing|ed)$/,'');w=w.replace(/([b-df-hj-np-tv-z])$/,'$1');return w.length>5?w.slice(0,5):w;}
+function lev(a,b){if(Math.abs(a.length-b.length)>1)return 9;var m=[],i,j;for(i=0;i<=a.length;i++){m[i]=[i];}for(j=1;j<=b.length;j++)m[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return m[a.length][b.length];}
+function same(a,b){if(a.s===b.s)return true;var n=Math.min(a.w.length,b.w.length);if(n<5)return false;return lev(a.w,b.w)<=1;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(function(w){return{w:w,s:stem(w)};});}
+function makeMatcher(CFG){
+  var STOP={the:1,a:1,an:1,do:1,you:1,i:1,is:1,are:1,to:1,of:1,and:1,or:1,can:1,my:1,we:1,it:1,in:1,on:1,for:1,me:1,how:1,what:1,there:1,your:1,does:1,have:1,with:1,this:1,that:1};
+  var kb=CFG.kb.map(function(e){var seen={};var ks=[];e.k.forEach(function(p){var t=toks(p).filter(function(x){return !STOP[x.w];}),key=t.map(function(x){return x.s;}).join(' ');if(!seen[key]){seen[key]=1;ks.push(t);}});return{e:e,k:ks};});
+  return function(q){
+    var qt=toks(q).filter(function(t){return !STOP[t.w];});
+    if(!qt.length)return null;
+    var best=null,bs=0;
+    kb.forEach(function(x){
+      var s=0;
+      x.k.forEach(function(kt){
+        var ok=kt.every(function(t){return qt.some(function(u){return same(u,t);});});
+        if(ok)s+=kt.length*2+1;
+      });
+      if(s>bs){bs=s;best=x.e;}
+    });
+    return best;
+  };
+}
+/*ENDPURE*/
+(function(){
+  var C=window.CFG,match=makeMatcher(C);
+  var $=function(i){return document.getElementById(i);};
+  var btn=$('wBtn'),pan=$('wPan'),log=$('wLog'),chips=$('wChips'),form=$('wForm'),inp=$('wInp');
+  var flow=null,data={};
+  function add(t,who,html){var d=document.createElement('div');d.className='wm '+who;if(html)d.innerHTML=t;else d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function setChips(list){chips.innerHTML='';list.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='wc';b.textContent=c.t||c;b.onclick=function(){send(c.v||c.t||c);};chips.appendChild(b);});}
+  function home(){setChips(C.chips);}
+  function startFlow(){flow={i:0};data={};ask();}
+  function ask(){
+    var s=C.flow.steps[flow.i];add(s.q,'bot');
+    if(s.opts){setChips(s.opts.map(function(o){return{t:o,v:o};}));}else{chips.innerHTML='';}
+    inp.placeholder=s.ph||'';inp.focus();
+  }
+  function finish(){
+    var h='<b>'+C.flow.doneTitle+'</b><br>';
+    C.flow.steps.forEach(function(s){if(data[s.key])h+=s.label+': '+esc(data[s.key])+'<br>';});
+    h+='<br>'+C.flow.done;
+    add(h,'bot',1);flow=null;home();
+  }
+  function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function send(t){
+    t=(t||'').trim();if(!t)return;add(t,'me');inp.value='';
+    if(flow){
+      if(/^(cancel|stop|reset)$/i.test(t)){flow=null;add(C.flow.cancelled,'bot');home();return;}
+      var s=C.flow.steps[flow.i];
+      if(s.re&&!s.re.test(t)){add(s.err,'bot');return;}
+      data[s.key]=t;flow.i++;
+      if(flow.i>=C.flow.steps.length)finish();else ask();
+      return;
+    }
+    var n=norm(t);
+    if(C.flowRe.test(n)){add(C.flow.intro,'bot');startFlow();return;}
+    var m=match(t);
+    if(m){add(m.a,'bot',1);if(m.go){setChips(m.go.map(function(x){return{t:x};}));}else home();}
+    else{add(C.fallback,'bot',1);home();}
+  }
+  function open(o){pan.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);if(o&&!log.children.length){add(C.hello,'bot');home();}}
+  btn.onclick=function(){open(!pan.classList.contains('open'));};
+  $('wX').onclick=function(){open(false);};
+  window.wAsk=function(q){open(true);send(q);};
+  form.onsubmit=function(e){e.preventDefault();send(inp.value);};
+})();
+
+document.querySelectorAll('.chipb').forEach(function(b){b.onclick=function(){window.wAsk(b.getAttribute('data-q'));};});
+</script>
+</body></html>
