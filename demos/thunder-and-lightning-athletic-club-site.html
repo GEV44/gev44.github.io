@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thunder and Lightning Athletic Club · Downtown Vancouver</title>
+<meta name="description" content="Coaching-first gym at 427 Granville St, Vancouver. Group classes, powerlifting, personal training and a free 30-minute No Sweat Intro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f1115;--ink2:#171a21;--ink3:#1f2430;--line:#2c3342;--txt:#e9ecf2;--mut:#9aa3b5;--bolt:#ffd21f;--bolt2:#ffe680;--ice:#6cc6ff;--rad:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--ink);color:var(--txt);line-height:1.6;font-size:16px;overflow-x:hidden}
+h1,h2,h3,.os{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}
+a{color:inherit}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 18px}
+/* header */
+header{position:sticky;top:0;z-index:30;background:rgba(15,17,21,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 18px;max-width:1120px;margin:0 auto}
+.logo{background:#0b0c10;border:1px solid var(--line);border-radius:10px;padding:2px 8px;display:flex}
+.logo img{height:46px;width:auto;display:block}
+nav{display:none;gap:22px;font-size:.92rem;color:var(--mut)}
+nav a{text-decoration:none}
+nav a:hover{color:var(--bolt)}
+.btn{display:inline-block;background:var(--bolt);color:#14130a;font-weight:600;border:0;border-radius:999px;padding:12px 22px;text-decoration:none;cursor:pointer;font-size:.95rem;font-family:Inter,sans-serif}
+.btn:hover{background:var(--bolt2)}
+.btn.ghost{background:transparent;color:var(--txt);border:1.5px solid var(--line)}
+.btn.ghost:hover{border-color:var(--bolt);color:var(--bolt)}
+@media(min-width:820px){nav{display:flex}}
+/* hero: split with bolt */
+.hero{position:relative;padding:44px 0 70px;background:linear-gradient(135deg,#10131a 0%,#10131a 55%,#171b26 55.1%,#171b26 100%);overflow:hidden}
+.hero:before{content:"";position:absolute;right:-60px;top:-40px;width:340px;height:520px;background:linear-gradient(160deg,var(--bolt),#ff9d00);clip-path:polygon(58% 0,12% 56%,44% 56%,30% 100%,92% 38%,56% 38%);opacity:.14}
+.hero .wrap{position:relative}
+.tag{display:inline-block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bolt);border:1px solid var(--line);padding:5px 12px;border-radius:999px;margin-bottom:18px}
+.hero h1{font-size:clamp(2.5rem,9vw,5.2rem);max-width:12ch}
+.hero h1 em{font-style:normal;color:var(--bolt)}
+.hero p.lead{max-width:540px;color:var(--mut);margin:18px 0 26px;font-size:1.05rem}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:34px;max-width:620px}
+.facts div{background:var(--ink2);border:1px solid var(--line);border-radius:var(--rad);padding:12px 14px;font-size:.88rem;color:var(--mut)}
+.facts b{display:block;color:var(--txt);font-family:Oswald;font-size:1.15rem;letter-spacing:.02em;text-transform:uppercase}
+/* sections */
+section{padding:58px 0}
+.sh{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;flex-wrap:wrap}
+.sh h2{font-size:clamp(1.9rem,6vw,3rem)}
+.sh span{color:var(--mut);font-size:.95rem}
+/* class tabs */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:16px;-webkit-overflow-scrolling:touch}
+.tabs button{flex:0 0 auto;background:var(--ink2);color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font:500 .9rem Inter;cursor:pointer;white-space:nowrap}
+.tabs button.on{background:var(--bolt);color:#14130a;border-color:var(--bolt)}
+.pane{display:none;background:var(--ink2);border:1px solid var(--line);border-left:4px solid var(--bolt);border-radius:var(--rad);padding:22px}
+.pane.on{display:block}
+.pane h3{font-size:1.7rem;margin-bottom:8px}
+.pane p{color:#c9cfdb;margin-bottom:12px}
+.pane .k{color:var(--bolt);font-size:.85rem;text-transform:uppercase;letter-spacing:.08em}
+/* pricing ladder */
+.ladder{display:grid;gap:12px}
+.step{display:flex;justify-content:space-between;align-items:center;gap:14px;background:var(--ink2);border:1px solid var(--line);border-radius:var(--rad);padding:16px 18px}
+.step:nth-child(1){margin-left:0}.step:nth-child(2){margin-left:0}
+.step h3{font-size:1.25rem}
+.step small{display:block;color:var(--mut);font-size:.84rem;margin-top:4px;text-transform:none;font-family:Inter;letter-spacing:0}
+.step .pr{font-family:Oswald;font-size:1.55rem;color:var(--bolt);white-space:nowrap;text-align:right}
+.step .pr small{color:var(--mut);font-family:Inter;font-size:.74rem}
+.note{color:var(--mut);font-size:.85rem;margin-top:12px}
+@media(min-width:820px){.step:nth-child(2){margin-left:34px}.step:nth-child(3){margin-left:68px}.step:nth-child(4){margin-left:102px}.step:nth-child(5){margin-left:136px}}
+/* coaches */
+.duo{display:grid;gap:14px}
+.coach{border-radius:var(--rad);padding:24px;border:1px solid var(--line)}
+.coach.t{background:linear-gradient(160deg,#1a1d27,#12151c)}
+.coach.l{background:linear-gradient(160deg,#1b2430,#11171f)}
+.coach h3{font-size:2rem}
+.coach .r{color:var(--bolt);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin:4px 0 12px}
+.coach.l .r{color:var(--ice)}
+.coach ul{list-style:none;margin-top:10px}
+.coach li{padding:5px 0 5px 20px;position:relative;color:#c9cfdb;font-size:.93rem}
+.coach li:before{content:"";position:absolute;left:0;top:13px;width:8px;height:8px;background:var(--bolt);transform:skew(-20deg)}
+.coach.l li:before{background:var(--ice)}
+@media(min-width:760px){.duo{grid-template-columns:1fr 1fr}}
+/* intro band */
+.band{background:var(--bolt);color:#14130a;border-radius:20px;padding:30px 22px;display:grid;gap:18px}
+.band h2{font-size:clamp(1.8rem,6vw,2.8rem)}
+.band ol{list-style:none;counter-reset:s;display:grid;gap:10px}
+.band li{counter-increment:s;padding-left:38px;position:relative;font-weight:500}
+.band li:before{content:counter(s);position:absolute;left:0;top:-1px;width:28px;height:28px;border-radius:50%;background:#14130a;color:var(--bolt);display:flex;align-items:center;justify-content:center;font:600 .9rem Oswald}
+.band .btn{background:#14130a;color:var(--bolt);justify-self:start}
+@media(min-width:820px){.band{grid-template-columns:1.1fr 1fr;align-items:center;padding:38px}}
+/* faq */
+details{background:var(--ink2);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;padding:0 16px}
+summary{cursor:pointer;padding:15px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--bolt);font-size:1.3rem;line-height:1}
+details[open] summary:after{content:"-"}
+details p{padding:0 0 16px;color:#c9cfdb;font-size:.95rem}
+/* visit */
+.visit{display:grid;gap:14px}
+.box{background:var(--ink2);border:1px solid var(--line);border-radius:var(--rad);padding:20px}
+.box h3{font-size:1.3rem;margin-bottom:10px;color:var(--bolt)}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+td{padding:7px 0;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right;color:var(--mut)}
+@media(min-width:760px){.visit{grid-template-columns:1fr 1fr}}
+footer{border-top:1px solid var(--line);padding:26px 0 90px;color:var(--mut);font-size:.85rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+/* assistant widget */
+#abtn{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;gap:8px;background:var(--bolt);color:#14130a;border:0;border-radius:999px;padding:13px 18px;font:600 .95rem Inter;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.5)}
+#abtn svg{width:18px;height:18px}
+#apan{position:fixed;z-index:60;left:0;right:0;bottom:0;height:min(78vh,560px);background:#12151c;border:1px solid var(--line);border-radius:18px 18px 0 0;display:none;flex-direction:column;box-shadow:0 -12px 40px rgba(0,0,0,.55)}
+#apan.on{display:flex}
+@media(min-width:560px){#apan{left:auto;right:16px;bottom:16px;width:380px;border-radius:18px}}
+.ah{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--ink3);border-radius:18px 18px 0 0;border-bottom:1px solid var(--line)}
+.ah b{font-family:Oswald;text-transform:uppercase;letter-spacing:.04em}
+.ah small{display:block;color:var(--mut);font-size:.74rem}
+#aclose{background:none;border:0;color:var(--txt);font-size:1.5rem;cursor:pointer;line-height:1;padding:2px 8px}
+#alog{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px}
+.m{max-width:86%;padding:9px 12px;border-radius:14px;font-size:.92rem;line-height:1.45;word-wrap:break-word}
+.m.b{background:var(--ink3);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--bolt);color:#14130a;align-self:flex-end;border-bottom-right-radius:4px}
+.m a{color:var(--ice)}
+#achips{display:flex;gap:6px;overflow-x:auto;padding:6px 12px;border-top:1px solid var(--line)}
+#achips button{flex:0 0 auto;background:transparent;color:var(--bolt);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font:500 .8rem Inter;cursor:pointer;white-space:nowrap}
+#afrm{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--line)}
+#ainp{flex:1;min-width:0;background:var(--ink);color:var(--txt);border:1px solid var(--line);border-radius:999px;padding:10px 14px;font:inherit;font-size:16px}
+#afrm button{background:var(--bolt);border:0;border-radius:999px;padding:0 16px;font-weight:600;cursor:pointer}
+</style>
+</head>
+<body>
+<header><div class="hd">
+  <a class="logo" href="#top" aria-label="Thunder and Lightning Athletic Club"><img src="img/thunder-and-lightning-athletic-club-logo.png" alt="Thunder and Lightning Athletic Club" width="92" height="46"></a>
+  <nav><a href="#classes">Classes</a><a href="#training">Personal training</a><a href="#coaches">Coaches</a><a href="#intro">Free intro</a><a href="#visit">Visit</a></nav>
+  <a class="btn" href="#intro" data-ask="Book a free intro">Free intro</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <span class="tag">Community through fitness</span>
+  <h1>Get <em>stronger</em> with coaches who know your name</h1>
+  <p class="lead">A coaching-first gym in the Financial District of downtown Vancouver. Powerlifting, CrossTraining and personal training for every experience level, with real attention on every set.</p>
+  <div class="cta"><a class="btn" href="#intro" data-ask="Book a free intro">Book your free No Sweat Intro</a><a class="btn ghost" href="#classes">See the classes</a></div>
+  <div class="facts">
+    <div><b>427 Granville St</b>at Hastings, V6C 1T1</div>
+    <div><b>Waterfront</b>steps from the station</div>
+    <div><b>Mon-Sat</b>mornings from 6am Mon-Fri</div>
+    <div><b>Free 30 min</b>goal-setting intro</div>
+  </div>
+</div></div>
+
+<section id="classes"><div class="wrap">
+  <div class="sh"><h2>Classes</h2><span>Pick a style, every one scales to your level</span></div>
+  <div class="tabs" role="tablist" id="tabs">
+    <button class="on" data-p="p0">CrossTraining</button><button data-p="p1">Powerlifting</button><button data-p="p2">CardioBlast</button><button data-p="p3">Strength + Conditioning</button><button data-p="p4">Team Training</button><button data-p="p5">Kids Strength</button><button data-p="p6">Mom &amp; Baby</button>
+  </div>
+  <div class="pane on" id="p0"><h3>CrossTraining</h3><p>Safe, efficient, functional movements done with high variety and intensity. Workouts bring in powerlifting, Olympic lifting and gymnastics, adapted to any fitness level, in an inclusive and fun atmosphere with a competitive, supportive community.</p><span class="k">Highly trained coaches on the floor</span></div>
+  <div class="pane" id="p1"><h3>Powerlifting</h3><p>Dial in your squat, bench and deadlift technique, or learn the lifts for the first time. Competitive lifters follow an 11-week periodised program that builds toward a meet, with competition rules taught and an in-house mini powerlifting meet.</p><span class="k">Downtown Vancouver's powerlifting specialists</span></div>
+  <div class="pane" id="p2"><h3>CardioBlast</h3><p>A 45-minute bootcamp with full-body bodyweight, kettlebell and dumbbell work, tailored to your experience. Fun but intense: show up, sweat, work hard, maybe laugh a little.</p><span class="k">45 minutes</span></div>
+  <div class="pane" id="p3"><h3>Strength + Conditioning</h3><p>A full-body class without the competition of CrossTraining. A strength portion of compound barbell, kettlebell and dumbbell lifts, then a conditioning portion of intervals or a circuit that isn't scored.</p><span class="k">Strength first, then conditioning</span></div>
+  <div class="pane" id="p4"><h3>Team Training</h3><p>Private sessions for your sports team or work team, useful for sport-specific training and team building. Beside Waterfront SkyTrain, so it fits a work lunch break.</p><span class="k">Tell us about your group</span></div>
+  <div class="pane" id="p5"><h3>Kids Strength</h3><p>A class for children (around ages 7-14) to build strength and confidence in how they move.</p><span class="k">Ask the team for current times</span></div>
+  <div class="pane" id="p6"><h3>Mom &amp; Baby Fitness</h3><p>An 8-week specialty program for postpartum recovery and fitness. Bring your baby, rebuild your strength and meet other moms without needing a babysitter. Tuesdays and Thursdays at 10am and 11am, in focused blocks.</p><span class="k">Medical questions: ask your doctor and our team</span></div>
+</div></section>
+
+<section id="training" style="background:var(--ink2)"><div class="wrap">
+  <div class="sh"><h2>Personal training</h2><span>Climb the ladder at your own pace</span></div>
+  <div class="ladder">
+    <div class="step"><div><h3>Onramp package</h3><small>4 one-on-one sessions: technique, safety, class flow. Clears you for any class.</small></div><div class="pr">$520<small> + GST</small></div></div>
+    <div class="step"><div><h3>Small group PT</h3><small>Up to 4 people, custom programming. Our most popular option.</small></div><div class="pr">from $52.50<small> /session pp</small></div></div>
+    <div class="step"><div><h3>Partner training</h3><small>Train with a friend, both individually coached.</small></div><div class="pr">$75<small> pp + GST</small></div></div>
+    <div class="step"><div><h3>1-on-1 training</h3><small>Built around your goals, injuries, progress and schedule.</small></div><div class="pr">from $130<small> + GST</small></div></div>
+    <div class="step"><div><h3>Meet coaching</h3><small>Shared $250 or dedicated meet-day coach $400.</small></div><div class="pr">$250-400<small> + GST</small></div></div>
+  </div>
+  <p class="note">Group membership from $180/month. Prices as published on thundernlightning.ca, GST 5% extra. Nutrition coaching is available with Precision Nutrition certified Teri-Lynn.</p>
+</div></section>
+
+<section id="coaches"><div class="wrap">
+  <div class="sh"><h2>The thunder and the lightning</h2><span>Two coaches, one community</span></div>
+  <div class="duo">
+    <div class="coach t"><h3>David Sims</h3><div class="r">The thunder</div><p style="color:#c9cfdb">Strong, motivating and sharp on technique. Each session is tailored to you, whether the goal is fitness, fat loss, strength or confidence.</p><ul><li>Powerlifting Level 1 &amp; 2</li><li>Strength Training Specialist</li><li>Kettlebell Training Specialist</li><li>Hand balancing courses, CPR C</li></ul></div>
+    <div class="coach l"><h3>Teri-Lynn Moffatt</h3><div class="r">The lightning</div><p style="color:#c9cfdb">Fast, positive and a personal trainer since 2010. Helps with injuries, strength, endurance and athleticism, and brings a competitive-sport background.</p><ul><li>Precision Nutrition coach</li><li>Figure skating, soccer, muay thai, jiu jitsu</li><li>Olympic lifting, CrossFit, powerlifting</li><li>Overcoming injury, building endurance</li></ul></div>
+  </div>
+</div></section>
+
+<section id="intro"><div class="wrap">
+  <div class="band">
+    <div><h2>No Sweat Intro</h2><p style="margin:10px 0 16px">A free 30-minute consultation and goal-setting session. No workout, just a conversation about what you want.</p><a class="btn" href="#" data-ask="Book a free intro">Book it with the assistant</a></div>
+    <ol><li>Schedule your free intro</li><li>Choose your custom plan: classes, Onramp, personal training, nutrition</li><li>Join the community</li><li>Regular check-ins on your progress</li></ol>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sh"><h2>In their words</h2><span>Members on the T&amp;L website</span></div>
+  <div class="duo">
+    <div class="box"><p style="font-size:1.05rem;color:#dfe3ec">&ldquo;Their group training is scalable for all fitness levels and I promise that you'll come out of their class feeling stronger and with a smile on your face.&rdquo;</p><p class="note">K.S., trained with both coaches for over 3 years</p></div>
+    <div class="box"><p style="font-size:1.05rem;color:#dfe3ec">&ldquo;Since I started attending classes I'm comfortable doing all sorts of Olympic lifts, and have become stronger than I ever was, even during my playing days.&rdquo;</p><p class="note">N.D., former semi-pro soccer player</p></div>
+  </div>
+  <div class="box" style="margin-top:14px"><p style="font-size:1.05rem;color:#dfe3ec">&ldquo;They create such a wonderful community that makes you want to be a part of it. T&amp;L celebrates your achievements with you.&rdquo;</p><p class="note">D.W., member for over 7 years</p></div>
+</div></section>
+
+<section style="background:var(--ink2)"><div class="wrap">
+  <div class="sh"><h2>Questions</h2></div>
+  <details><summary>I have never lifted. Is this for me?</summary><p>Yes. Beginners are welcome. Most people start with the free intro and the 4-session Onramp so they are comfortable with technique before joining classes.</p></details>
+  <details><summary>Do I have to compete in powerlifting?</summary><p>No. Competing is optional. If you do want to, the program builds toward a meet and meet-day coaching is available.</p></details>
+  <details><summary>I have an old injury.</summary><p>The coaches scale movements and work around injuries. Mention it in your intro, and check with your doctor or physio for anything medical.</p></details>
+  <details><summary>I am visiting Vancouver. Can I train?</summary><p>Fill in the visitor form on the website or message the team on WhatsApp and they will email you about booking classes.</p></details>
+  <details><summary>Is there an app?</summary><p>Yes, a Thunder and Lightning Athletic Club app is available on the App Store and Google Play.</p></details>
+</div></section>
+
+<section id="visit"><div class="wrap">
+  <div class="sh"><h2>Visit us</h2></div>
+  <div class="visit">
+    <div class="box"><h3>Hours</h3><table><tr><td>Mon - Thu</td><td>6:00am - 7:00pm</td></tr><tr><td>Friday</td><td>6:00am - 1:00pm</td></tr><tr><td>Saturday</td><td>8:00am - 12:00pm</td></tr><tr><td>Sunday</td><td>not listed</td></tr></table></div>
+    <div class="box"><h3>Find us</h3><p>427 Granville Street<br>Vancouver, BC V6C 1T1<br>Steps from Waterfront Station</p><p style="margin-top:12px"><a href="https://wa.me/16049080130" style="color:var(--ice)">WhatsApp 604-908-0130</a><br><a href="mailto:admin@thundernlightning.ca" style="color:var(--ice)">admin@thundernlightning.ca</a></p></div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>Thunder and Lightning Athletic Club · 427 Granville St, Vancouver</span><span>Demo · prepared by Gevorg Hovhannisyan</span></div></footer>
+
+<button id="abtn" aria-expanded="false" aria-controls="apan"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>Ask T&amp;L</button>
+<div id="apan" role="dialog" aria-label="T&amp;L assistant">
+  <div class="ah"><div><b>T&amp;L assistant</b><small>Answers from this site · demo</small></div><button id="aclose" aria-label="Close">&times;</button></div>
+  <div id="alog" aria-live="polite"></div>
+  <div id="achips"></div>
+  <form id="afrm"><input id="ainp" autocomplete="off" placeholder="Ask about classes, prices, hours..." aria-label="Your question"><button type="submit">Send</button></form>
+</div>
+<script>
+(function(){var t=document.querySelectorAll('#tabs button');t.forEach(function(b){b.onclick=function(){t.forEach(function(x){x.classList.remove('on')});document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('on')});b.classList.add('on');document.getElementById(b.dataset.p).classList.add('on');};});})();
+var CFG = {
+  hello: "Hi, I'm the T&amp;L assistant. Ask me about classes, personal training, prices, hours or the free No Sweat Intro.",
+  chips: ["Book a free intro", "Class types", "Prices", "Hours", "Where are you", "I'm a beginner", "Kids & Mom & Baby"],
+  fallback: "I don't have that one in front of me, so I won't guess. The team can answer it: WhatsApp <a href='https://wa.me/16049080130'>604-908-0130</a> or <a href='mailto:admin@thundernlightning.ca'>admin@thundernlightning.ca</a>. Or I can set up your free intro.",
+  cancelMsg: "No problem, nothing was sent. What else can I help with?",
+  bookWords: ["book", "booking", "sign up", "signup", "register", "reserve", "schedule intro", "no sweat", "free consultation", "free intro", "free consult", "consultation", "get started", "join", "try a class", "trial", "i want to start", "enrol", "enroll", "appointment"],
+  done: "Done. Your request is with the T&amp;L team and a coach will reach out to confirm a time:<br>{sum}<br><br>Anything else?",
+  flow: [
+    {key: "what", label: "Interested in", q: "Great. What would you like to start with?", chips: ["Free No Sweat Intro", "Group classes", "Small group PT", "1-on-1 PT", "Powerlifting", "Cancel"]},
+    {key: "level", label: "Experience", q: "How would you describe your training so far?", chips: ["New to training", "Some experience", "Experienced lifter", "Cancel"]},
+    {key: "coach", label: "Coach", q: "Would you like to meet David or Teri-Lynn, or no preference?", chips: ["David", "Teri-Lynn", "No preference", "Cancel"]},
+    {key: "when", label: "Preferred time", q: "Which day and time suits you? Gym hours are Mon-Thu 6am-7pm, Fri 6am-1pm, Sat 8am-12pm."},
+    {key: "name", label: "Name", q: "Your name?"},
+    {key: "contact", label: "Contact", q: "Best email or phone number to reach you?", check: function (t) { return /@/.test(t) || (t.replace(/\D/g, "").length >= 7); }, err: "That doesn't look like an email or phone number. Could you try again?"}
+  ],
+  kb: [
+    {k: ["hours", "open", "opening hours", "when are you open", "close", "closing", "what time", "schedule", "timetable", "weekend", "saturday", "sunday", "friday"],
+     a: "Gym hours as listed:<br>Mon-Thu 6:00am-7:00pm<br>Fri 6:00am-1:00pm<br>Sat 8:00am-12:00pm<br>Sunday isn't listed. The class timetable itself is booked through the team, so ask them for current class times."},
+    {k: ["address", "where are you", "location", "located", "find you", "directions", "granville", "downtown", "vancouver", "skytrain", "waterfront", "transit", "parking", "how to get"],
+     a: "We're at 427 Granville Street (at Hastings), Vancouver, BC V6C 1T1, in the Financial District, steps from Waterfront Station and the Granville SkyTrain stop. For parking details, please ask the team."},
+    {k: ["phone", "call", "contact", "number", "reach", "whatsapp", "message", "email", "mail", "get in touch"],
+     a: "Phone / WhatsApp: <a href='https://wa.me/16049080130'>604-908-0130</a><br>Email: <a href='mailto:admin@thundernlightning.ca'>admin@thundernlightning.ca</a><br>Instagram: @thundernlightning.ca"},
+    {k: ["1on1", "1 on 1", "one on one", "1-1", "private", "personal training", "personal trainer", "one to one", "pt", "individual"],
+     a: "1-on-1 personal training starts at $130 + 5% GST. The program is built around your goals, injury history, progress and schedule, with full coach attention every session, form corrections and nutrition support. Good if you want maximum individualisation or have specific limitations."},
+    {k: ["partner", "partner training", "friend", "couple", "spouse", "husband", "wife", "together", "buddy"],
+     a: "Partner training is $75 + 5% GST per person. You train with a friend, partner or family member in one private session, and both get individualised coaching."},
+    {k: ["small group", "small group personal training", "group pt", "four people", "4 people", "popular"],
+     a: "Small group personal training is capped at 4 people, from $52.50 + GST per session per person. You get custom programming and real-time coaching, more personal than a class and cheaper than 1-on-1. It's the most popular option."},
+    {k: ["price", "prices", "cost", "how much", "pricing", "rate", "rates", "fee", "fees", "afford", "expensive", "cheap", "membership", "memberships", "monthly"],
+     a: "Published prices (plus 5% GST):<br>1-on-1 PT from $130<br>Partner training $75 per person<br>Small group PT from $52.50 per session per person<br>Onramp (4 sessions) $520<br>Group membership from $180/month<br>Powerlifting meet coaching $250-$400<br>Ask me about any of them for details.",
+     next: ["1-on-1 PT", "Small group PT", "Onramp", "Meet coaching"]},
+    {k: ["onramp", "on ramp", "on-ramp", "intro program", "four sessions", "4 sessions", "cleared", "prepare for classes", "before classes", "before joining"],
+     a: "The Onramp is 4 one-on-one sessions ($520 + GST) that teach technique, safety and class flow across barbell, kettlebell, dumbbell and bodyweight work. Once done you're cleared to join any class. You may also qualify through previous experience, at the coach's discretion."},
+    {k: ["free", "no sweat", "no sweat intro", "consult", "consultation", "assessment", "intro", "first visit", "30 minute", "30 min", "goal setting"],
+     a: "The No Sweat Intro is a free 30-minute consultation and goal-setting session. You and a coach talk through your goals and options, choose the mix of classes, Onramp, personal training and nutrition, then get regular check-ins. Want me to set one up?",
+     next: ["Book a free intro", "Prices", "Class types"]},
+    {k: ["classes", "class types", "group", "group class", "group classes", "group fitness", "what do you offer", "offer", "programs", "services", "options", "training styles"],
+     a: "Group classes: CrossTraining, Powerlifting, CardioBlast, Strength + Conditioning, Team Training, Kids Strength and Mom & Baby Fitness. Plus personal training in 1-on-1, partner and small group formats. Which one sounds like you?",
+     next: ["CrossTraining", "Powerlifting", "CardioBlast", "Strength + Conditioning"]},
+    {k: ["crosstraining", "cross training", "crossfit", "cross fit", "olympic", "gymnastics", "functional"],
+     a: "CrossTraining uses safe, functional movements at high variety and intensity, with powerlifting, Olympic lifting and gymnastics, all scalable to any fitness level, in a competitive but supportive community."},
+    {k: ["powerlifting", "power lifting", "squat", "bench", "deadlift", "lifting", "heavy", "strength sport"],
+     a: "The Powerlifting class covers squat, bench and deadlift technique, for first-timers and competitors. Competitive lifters follow an 11-week periodised program with competition rules taught and an in-house mini meet. Classes are coached, not just supervised."},
+    {k: ["meet", "meet coaching", "competition", "compete", "competing", "contest", "platform", "meet day"],
+     a: "Powerlifting meet coaching: dedicated one-on-one meet-day coaching is $400 + GST, shared meet coaching is $250 + GST per lifter. Competing is never required, but it's there if you want it."},
+    {k: ["cardioblast", "cardio blast", "cardio", "bootcamp", "boot camp", "hiit", "sweat", "conditioning workout"],
+     a: "CardioBlast is a 45-minute bootcamp: full-body bodyweight, kettlebell and dumbbell work with lots of variety, tailored to your level. Show up, sweat and feel great after."},
+    {k: ["strength and conditioning", "strength conditioning", "s&c", "strength + conditioning", "compound", "kettlebell", "barbell"],
+     a: "Strength + Conditioning is a full-body class without the competition of CrossTraining: a strength part with compound barbell, kettlebell and dumbbell lifts, then a conditioning part (intervals or a circuit) that isn't scored."},
+    {k: ["team", "team training", "work team", "sports team", "corporate", "office", "lunch", "team building", "company"],
+     a: "We run private Team Training for sports teams and work teams, for sport-specific training or team building. We're beside Waterfront SkyTrain so it works for a work lunch break. Tell us about your group and the team will plan it."},
+    {k: ["kids", "kid", "children", "child", "son", "daughter", "teen", "youth", "junior", "boy", "girl", "age"],
+     a: "Kids Strength Class is designed for children around ages 7-14 to build strength and confidence. Ask the team for the current class time and spots."},
+    {k: ["mom", "moms", "mum", "baby", "mom and baby", "postpartum", "pregnant", "newborn", "mother", "maternity", "postnatal"],
+     a: "Mom & Baby Fitness is an 8-week specialty program for postpartum recovery and fitness: bring your baby, no babysitter needed. It runs Tuesdays and Thursdays at 10am and 11am, in blocks. For any medical questions, please check with your doctor and our team."},
+    {k: ["coach", "coaches", "trainer", "trainers", "staff", "who", "owner", "owners", "instructor"],
+     a: "Meet David Sims (the thunder) and Teri-Lynn Moffatt (the lightning). Everything is coached by people who know your name. Ask me about either of them.",
+     next: ["David Sims", "Teri-Lynn", "Book a free intro"]},
+    {k: ["david", "dave", "sims", "david sims"],
+     a: "David Sims is the thunder: strong, motivating, great at technique cues. Certifications: Powerlifting Level 1 & 2, Strength Training Specialist, Kettlebell Training Specialist, hand balancing courses, CPR C. He works with people who want to get fitter, lose fat and get stronger."},
+    {k: ["teri", "lynn", "teri-lynn", "terilynn", "moffatt", "lightning"],
+     a: "Teri-Lynn Moffatt is the lightning. She's been a personal trainer since 2010, is a Precision Nutrition coach, and has an athletic background including figure skating, soccer, Olympic lifting, muay thai, jiu jitsu, CrossFit and powerlifting. She helps with injuries, strength, endurance and athleticism."},
+    {k: ["nutrition", "nutrition coaching", "nutritionist", "diet", "eat", "food", "meal", "weight loss", "lose weight", "fat loss", "lose fat", "macros", "calories"],
+     a: "Nutrition coaching is part of the offer, and Teri-Lynn is a Precision Nutrition certified coach. It's usually combined with training. Ask in your free No Sweat Intro and the coach will explain how it fits your plan."},
+    {k: ["beginner", "beginners", "new", "never", "first time", "start", "starting", "out of shape", "scared", "nervous", "intimidated", "no experience", "newbie", "inexperienced"],
+     a: "Beginners are welcome and expected. Most newcomers start with the free No Sweat Intro, then the Onramp (4 one-on-one sessions) so you're confident with technique before you join classes. Workouts scale to any level.",
+     next: ["Book a free intro", "Onramp", "Prices"]},
+    {k: ["injury", "injuries", "injured", "hurt", "pain", "surgery", "knee", "back", "shoulder", "acl", "limitation", "limitations"],
+     a: "The coaches work around injuries and scale movements to you. I can't give medical advice, so please mention it in your free intro and check with your doctor or physio for anything medical."},
+    {k: ["app", "application", "download", "pushpress", "phone app", "ios", "android"],
+     a: "There's a T&L Athletic Club app (PushPress) on the App Store and Google Play, linked from the website."},
+    {k: ["visiting", "visitor", "out of town", "tourist", "drop in", "dropin", "drop-in", "travelling", "traveling", "guest", "holiday"],
+     a: "Visiting from out of town? The website has a form, and the team will email you about booking classes. You can also WhatsApp them on 604-908-0130."},
+    {k: ["review", "reviews", "rating", "testimonial", "results", "success"],
+     a: "Members talk about the community, the form coaching and getting stronger than they ever were. The website has client stories, and the Google reviews are the best place to read more."},
+    {k: ["language", "english", "french", "speak"],
+     a: "The website is in English. For any other language request, ask the team directly."},
+    {k: ["thanks", "thank", "thank you", "ok", "great", "cool", "awesome"],
+     a: "Anytime. Want me to set up a free No Sweat Intro?",
+     next: ["Book a free intro", "Prices"]},
+    {k: ["hi", "hello", "hey", "hiya", "good morning", "good evening"],
+     a: "Hi! Ask me about classes, personal training, prices, hours or booking your free intro."}
+  ]
+};
+
+function makeMatcher(C){
+  function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();}
+  function stem(w){if(w.length>5&&/ing$/.test(w))return w.slice(0,-3);if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))return w.slice(0,-1);return w;}
+  function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;
+    for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+  function same(x,w){if(x===w)return true;var L=Math.min(x.length,w.length);if(L<5)return false;var t=L>=9?2:1;return lev(x,w)<=t;}
+  function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+  function match(q){
+    var qw=toks(q),best=null,bs=0;
+    for(var i=0;i<C.kb.length;i++){var e=C.kb[i],s=0;
+      for(var j=0;j<e.k.length;j++){var kw=toks(e.k[j]);
+        if(kw.every(function(w){return qw.some(function(x){return same(x,w);});}))s+=kw.length*kw.length;}
+      if(s>bs){bs=s;best=e;}}
+    return best;
+  }
+  function isBook(q){var qw=toks(q);return C.bookWords.some(function(k){var kw=toks(k);return kw.every(function(w){return qw.some(function(x){return same(x,w);});});});}
+  return {match:match,isBook:isBook,norm:norm};
+}
+if(typeof module!=='undefined'){module.exports=makeMatcher;}
+else (function(){
+  var C=window.CFG,M=makeMatcher(C),$=function(s){return document.querySelector(s)};
+  var btn=$('#abtn'),pan=$('#apan'),log=$('#alog'),chips=$('#achips'),inp=$('#ainp'),frm=$('#afrm');
+  var flow=null,step=0,data={};
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
+  function say(h,who){var d=document.createElement('div');d.className='m '+who;d.innerHTML=h;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function setChips(a){chips.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){ask(t)};chips.appendChild(b);});}
+  function open(){pan.classList.add('on');btn.setAttribute('aria-expanded','true');if(!log.children.length){say(C.hello,'b');setChips(C.chips);}setTimeout(function(){inp.focus()},50);}
+  function close(){pan.classList.remove('on');btn.setAttribute('aria-expanded','false');}
+  btn.onclick=function(){pan.classList.contains('on')?close():open();};
+  $('#aclose').onclick=close;
+  var qo=document.querySelectorAll('[data-ask]');for(var i=0;i<qo.length;i++){qo[i].addEventListener('click',function(e){e.preventDefault();open();ask(this.getAttribute('data-ask'));});}
+  function startFlow(){flow=C.flow;step=0;data={};nextQ();}
+  function nextQ(){var s=flow[step];say(s.q,'b');setChips(s.chips||['Cancel']);}
+  function feed(t){
+    var s=flow[step];
+    if(/^\s*(cancel|stop|never ?mind)\s*$/i.test(t)){flow=null;say(C.cancelMsg,'b');setChips(C.chips);return;}
+    if(s.check&&!s.check(t)){say(s.err,'b');return;}
+    data[s.key]=t;step++;
+    if(step>=flow.length){var sum=flow.map(function(f){return f.label+': '+esc(data[f.key])}).join('<br>');flow=null;say(C.done.replace('{sum}',sum),'b');setChips(C.chips);}
+    else nextQ();
+  }
+  function ask(t){
+    t=String(t).trim();if(!t)return;say(esc(t),'u');
+    if(flow){feed(t);return;}
+    if(M.isBook(t)){startFlow();return;}
+    var e=M.match(t);
+    if(e){say(e.a,'b');setChips(e.next||C.chips);}
+    else{say(C.fallback,'b');setChips(C.chips);}
+  }
+  frm.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';ask(v);};
+})();
+
+</script>
+</body>
+</html>

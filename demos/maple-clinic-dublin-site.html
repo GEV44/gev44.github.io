@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Maple Clinic · Physical Therapy, Blackrock</title>
+<meta name="description" content="Demo page for The Maple Clinic, physical therapy in Seafield Park, Blackrock, Co. Dublin.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#221d4c;--sky:#7bc9dd;--sky2:#dff2f7;--paper:#f7f4ee;--ink:#1d1a3a;--mute:#5d5a7a;--line:#e2ddd0;
+--w-a:#221d4c;--w-fg:#fff;--w-bg:#fff;--w-ink:#1d1a3a;--w-line:#e2ddd0;--w-b:#dff2f7;--w-font:'Figtree',system-ui,sans-serif;--w-br:6px;--w-r:6px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:17px/1.6 'Figtree',system-ui,sans-serif;overflow-x:hidden}
+img{max-width:100%;height:auto}
+a{color:inherit}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:400;line-height:1.12;letter-spacing:-.01em}
+h2{font-size:clamp(28px,5vw,42px)}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-bottom:12px}
+header{position:sticky;top:0;z-index:30;background:rgba(247,244,238,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 18px;max-width:1080px;margin:0 auto}
+.brand img{height:54px;width:auto;display:block}
+nav{display:none;gap:22px;font-size:15px}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--navy)}
+.btn{display:inline-block;background:var(--navy);color:#fff;border:0;border-radius:4px;padding:13px 20px;font:600 15px 'Figtree',sans-serif;text-decoration:none;cursor:pointer}
+.btn.alt{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+.hero{padding:34px 0 50px}
+.hero .wrap{display:grid;gap:30px}
+.hero h1{font-size:clamp(36px,8.4vw,64px)}
+.hero h1 em{font-style:italic;color:#3a7f93}
+.hero p.lead{font-size:19px;color:var(--mute);margin:18px 0 24px;max-width:520px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.week{background:var(--navy);color:#fff;border-radius:6px;padding:22px 20px}
+.week h3{font-size:21px;margin-bottom:4px}
+.week .sub{font-size:13px;opacity:.7;margin-bottom:16px}
+.day{display:grid;grid-template-columns:44px 1fr 98px;align-items:center;gap:10px;padding:7px 0;border-top:1px solid rgba(255,255,255,.14);font-size:14px}
+.day .bar{height:8px;border-radius:4px;background:rgba(255,255,255,.12);position:relative}
+.day .bar i{position:absolute;top:0;bottom:0;background:var(--sky);border-radius:4px}
+.day span:last-child{text-align:right;font-size:13px;opacity:.9}
+.week .foot{font-size:12px;opacity:.65;margin-top:12px}
+section{padding:54px 0}
+.facts{background:var(--sky2);border-block:1px solid var(--line)}.facts .wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;padding-top:18px;padding-bottom:18px}.facts b{display:block;font:600 20px 'Fraunces',serif;color:var(--navy)}.facts span{font-size:14px;color:var(--mute);line-height:1.35;display:block}@media(min-width:760px){.facts .wrap{grid-template-columns:repeat(4,1fr)}}
+.root{background:#fff;border-block:1px solid var(--line)}
+.root .grid{display:grid;gap:26px;margin-top:26px}
+.step{display:grid;grid-template-columns:54px 1fr;gap:14px;align-items:start}
+.step b{font-family:'Fraunces',serif;font-size:40px;color:var(--sky);line-height:1;font-weight:600}
+.step h3{font-size:21px;margin-bottom:4px}
+.step p{color:var(--mute);font-size:16px}
+.conds{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.conds span{border:1px solid var(--line);background:var(--paper);padding:6px 13px;border-radius:99px;font-size:14px}
+.dn{margin-top:18px;border:1px solid var(--line);background:var(--paper);border-radius:6px;padding:14px 16px}.dn summary{cursor:pointer;font-weight:600}.dn p{margin-top:10px;color:var(--mute);font-size:16px}
+.needle{margin-top:26px;border-left:3px solid var(--sky);padding:4px 0 4px 16px;color:var(--mute);font-size:16px}
+.who{display:grid;gap:28px}
+.who .card{background:var(--sky2);padding:26px 22px;border-radius:6px}
+.who .card h3{font-size:26px}
+.who .role{font-size:14px;color:var(--mute);margin:3px 0 14px}
+.who .creds{list-style:none;padding:0;font-size:15px;color:var(--ink)}
+.who .creds li{padding:7px 0;border-top:1px solid rgba(34,29,76,.14)}
+.who p{margin-bottom:12px;color:#3a3760}
+.quote{font-family:'Fraunces',serif;font-style:italic;font-size:20px;line-height:1.4;color:var(--navy);margin:20px 0 6px}
+.quote small{display:block;font:500 13px 'Figtree',sans-serif;color:var(--mute);margin-top:6px;font-style:normal}
+.fees{background:var(--navy);color:#fff}
+.fees h2{color:#fff}
+.fees .eyebrow{color:var(--sky)}
+.fg{display:grid;gap:14px;margin-top:26px}
+.fee{border:1px solid rgba(255,255,255,.22);border-radius:6px;padding:20px}
+.fee .n{font-family:'Fraunces',serif;font-size:44px;line-height:1;color:var(--sky)}
+.fee h3{font-size:19px;margin:8px 0 4px}
+.fee p{font-size:14px;opacity:.8}
+.vouch{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:15px}
+.vouch b{background:var(--sky);color:var(--navy);border-radius:4px;padding:6px 12px;font-weight:600}
+.ins{margin-top:18px;font-size:15px;opacity:.85}
+.faq details{border-top:1px solid var(--line);padding:16px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font:600 17px 'Figtree',sans-serif;list-style:none;display:flex;justify-content:space-between;gap:14px}
+.faq summary::after{content:"+";font-size:22px;color:var(--navy);line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin-top:10px;color:var(--mute);font-size:16px}
+.visit{background:#fff;border-top:1px solid var(--line)}
+.vg{display:grid;gap:26px}
+.vg dl{display:grid;gap:14px}
+.vg dt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600}
+.vg dd{font-size:17px}
+.route{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:20px;font-size:15px;color:var(--mute)}
+.route b{color:var(--ink)}
+.route p+p{margin-top:10px}
+footer{padding:26px 0 90px;font-size:13px;color:var(--mute);border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+@media(min-width:760px){
+nav{display:flex}
+.hero .wrap{grid-template-columns:1.25fr .9fr;align-items:center;gap:56px}
+.root .grid{grid-template-columns:1fr 1fr}
+.who{grid-template-columns:.9fr 1.1fr;gap:56px}
+.fg{grid-template-columns:repeat(3,1fr)}
+.vg{grid-template-columns:1fr 1fr;gap:56px}
+}
+.revs{background:#fff;border-block:1px solid var(--line)}
+.rg{display:grid;gap:16px;margin-top:24px}
+.rg figure{background:var(--paper);border-left:3px solid var(--sky);padding:18px 18px 14px;border-radius:0 6px 6px 0}
+.rg blockquote{font-family:'Fraunces',serif;font-size:18px;line-height:1.45;color:var(--navy)}
+.rg figcaption{margin-top:10px;font-size:13px;color:var(--mute);font-weight:600}
+.blog .bl{list-style:none;padding:0;margin-top:22px;display:grid;gap:0}
+.blog .bl li{padding:16px 0;border-top:1px solid var(--line)}
+.blog .bl li:last-child{border-bottom:1px solid var(--line)}
+.blog .bl b{display:block;font:600 18px 'Fraunces',serif}
+.blog .bl span{color:var(--mute);font-size:15px}
+@media(min-width:760px){.rg{grid-template-columns:1fr 1fr}}
+#as-fab{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:9px;border:0;cursor:pointer;background:var(--w-a);color:var(--w-fg);font:600 15px/1 var(--w-font);padding:14px 18px;border-radius:var(--w-r,999px);box-shadow:0 8px 28px rgba(0,0,0,.28)}
+#as-fab svg{width:20px;height:20px}
+#as-box{position:fixed;right:16px;bottom:78px;z-index:60;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 110px));background:var(--w-bg);color:var(--w-ink);border:1px solid var(--w-line);border-radius:var(--w-br,16px);display:none;flex-direction:column;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.32);font:15px/1.45 var(--w-font)}
+#as-box.on{display:flex}
+.as-h{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--w-a);color:var(--w-fg)}
+.as-h b{font-size:15px}.as-h small{display:block;opacity:.8;font-size:12px}
+#as-x{background:none;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer;padding:2px 8px}
+#as-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.as-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.as-m.bot{background:var(--w-b);align-self:flex-start;border-bottom-left-radius:4px}
+.as-m.me{background:var(--w-a);color:var(--w-fg);align-self:flex-end;border-bottom-right-radius:4px}
+#as-chips{display:flex;flex-wrap:wrap;gap:6px;padding:4px 12px 8px}
+#as-chips button{font:13px/1.2 var(--w-font);border:1px solid var(--w-a);background:transparent;color:var(--w-ink);border-radius:999px;padding:7px 11px;cursor:pointer}
+#as-chips button:hover{background:var(--w-b)}
+#as-form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--w-line)}
+#as-in{flex:1;min-width:0;font:15px var(--w-font);padding:10px 12px;border:1px solid var(--w-line);border-radius:10px;background:var(--w-bg);color:var(--w-ink)}
+#as-form button{border:0;background:var(--w-a);color:var(--w-fg);border-radius:10px;padding:0 14px;font:600 14px var(--w-font);cursor:pointer}
+.as-note{font-size:11px;opacity:.6;text-align:center;padding:0 10px 8px}
+
+</style>
+</head>
+<body>
+<header><div class="hd">
+<a class="brand" href="#top" aria-label="The Maple Clinic"><img src="img/maple-clinic-dublin-logo.png" width="98" height="54" alt="The Maple Clinic, Physical Therapy"></a>
+<nav><a href="#approach">How a visit works</a><a href="#karen">Karen</a><a href="#fees">Fees</a><a href="#faq">FAQ</a><a href="#visit">Find us</a></nav>
+<a class="btn" href="#" data-as>Book an appointment</a>
+</div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<div class="eyebrow">Physical therapy &middot; Seafield Park, Blackrock</div>
+<h1>We aim to resolve the <em>root cause</em> of the problem, not just the symptoms.</h1>
+<p class="lead">Back and neck pain, tendon pain, shoulder injuries, ankle sprains, knee pain, and rehab before or after surgery. Forty minutes with one therapist, every visit.</p>
+<div class="cta"><a class="btn" href="#" data-as>Request an appointment</a><a class="btn alt" href="tel:+35315441225">Call 01-544 1225</a></div>
+</div>
+<aside class="week" aria-label="Opening hours">
+<h3>The clinic week</h3><div class="sub">Opening hours as published</div>
+<div class="day"><span>Mon</span><span class="bar"><i style="left:0;right:0"></i></span><span>10:00&ndash;20:00</span></div>
+<div class="day"><span>Tue</span><span class="bar"><i style="left:0;right:66%"></i></span><span>10:00&ndash;14:00</span></div>
+<div class="day"><span>Wed</span><span class="bar"></span><span>Closed</span></div>
+<div class="day"><span>Thu</span><span class="bar"><i style="left:0;right:0"></i></span><span>07:30&ndash;20:00</span></div>
+<div class="day"><span>Fri</span><span class="bar"><i style="left:0;right:66%"></i></span><span>07:30&ndash;14:00</span></div>
+<div class="day"><span>Sat</span><span class="bar"></span><span>Closed</span></div>
+<div class="foot">Sunday is not listed. Ask the team if you need it.</div>
+</aside>
+</div></div>
+
+<div class="facts"><div class="wrap"><div><b>40 min</b><span>per appointment, first visit and follow-ups</span></div><div><b>No referral</b><span>needed from your doctor to book</span></div><div><b>Rehab plan</b><span>emailed after each visit, with exercise videos</span></div><div><b>Insurers</b><span>Irish Life Health, Laya and VHI recognise the clinic</span></div></div></div>
+
+<section class="root" id="approach"><div class="wrap">
+<div class="eyebrow">How a visit works</div>
+<h2>Forty minutes, start to finish, every time</h2>
+<div class="grid">
+<div class="step"><b>1</b><div><h3>Assessment of the real cause</h3><p>The area of injury is assessed, and so is how you use it in your sport or activity, looking for weakness or imbalance that makes you load it unevenly.</p></div></div>
+<div class="step"><b>2</b><div><h3>Hands-on treatment</h3><p>Trigger point release, fascial work, joint mobilisations or stretching. Dry needling is offered for those who like it, and skipped if you do not.</p></div></div>
+<div class="step"><b>3</b><div><h3>A personal rehab plan</h3><p>Emailed to you after the appointment, with a video and clear explanation for each exercise. Open it in an app on your phone or download a PDF.</p></div></div>
+<div class="step"><b>4</b><div><h3>Follow-ups that fit the problem</h3><p>As a rough example, a knee problem might mean 5 to 6 visits over 10 to 12 weeks, spaced out to every 2 to 3 weeks once you are working on the exercises.</p></div></div>
+</div>
+<div class="conds"><span>Back pain</span><span>Neck pain</span><span>Tendon pain</span><span>Shoulder injuries</span><span>Ankle sprains</span><span>Knee pain</span><span>Pre-surgery rehab</span><span>Post-surgery rehab</span><span>Sports massage</span></div>
+<p class="needle">Dry needling uses fine acupuncture needles on tender trigger points. It combines with hands-on treatment and rehab where appropriate. If you do not like needles, they will not be used on you.</p>
+<details class="dn"><summary>Read more about dry needling</summary><p>It is called &ldquo;dry&rdquo; needling because it developed from an older practice of injecting trigger points. Trigger points are knots of tight tissue that are tender to touch and can cause pain and dysfunction. Today fine needles are used with no injection. The needles affect the chemical mix of the trigger point so that it releases and eases out. The clinic describes it as very useful for back and neck pain, sports injuries, and assisting with chronic pain syndromes, and many clients find it effective for tender or acute areas that can be too sore for hands-on treatment.</p></details>
+</div></section>
+
+<section id="karen"><div class="wrap who">
+<div class="card">
+<div class="eyebrow">Your therapist</div>
+<h3>Karen Doyle</h3>
+<div class="role">Physical Therapist, Pilates Instructor</div>
+<ul class="creds">
+<li>Registered with the CORU Physiotherapist Registration Board</li>
+<li>Member of the Irish Association of Physical Therapists (IAPT)</li>
+<li>Bachelor of Applied Science, with Distinction</li>
+<li>BSc (Hons) Biochemistry, University College Dublin</li>
+</ul>
+</div>
+<div>
+<div class="eyebrow">Sport is the common thread</div>
+<h2>Many patients arrive from climbing, running and cycling</h2>
+<p style="margin-top:16px">Karen worked with the Irish National Cycling teams from 2008 to 2012, mostly the Track Team, travelling to training camps and World Cup competitions. She climbs, runs and hill walks herself, and assesses the whole kinetic chain to find the imbalance behind an injury.</p>
+<p>She also writes the clinic blog, with plain-language posts on topics like neck pain and flexible fingers and wrists for rock climbers.</p>
+<p class="quote">&ldquo;I have been receiving treatment for neck and shoulder pain for years with various professionals and by far Karen's treatment has been the most effective.&rdquo;<small>Google review on the clinic site</small></p>
+</div>
+</div></section>
+
+<section class="fees" id="fees"><div class="wrap">
+<div class="eyebrow">Fees and vouchers</div>
+<h2>Simple, published fees</h2>
+<div class="fg">
+<div class="fee"><div class="n">&euro;75</div><h3>Physical therapy</h3><p>Appointments last 40 minutes end to end, unless indicated otherwise.</p></div>
+<div class="fee"><div class="n">&euro;65</div><h3>Student rate</h3><p>With a full-time student card. Card payments accepted.</p></div>
+<div class="fee"><div class="n">12 mo</div><h3>Gift vouchers</h3><p>Valid for twelve months, for physical therapy or sports massage. Posted by An Post within 24 hours of payment, or emailed during office hours to print.</p></div>
+</div>
+<div class="vouch">Voucher values: <b>&euro;25</b><b>&euro;65</b><b>&euro;130</b></div>
+<p class="ins">Recognised by the major insurers. The amount you can claim depends on your plan, so check with your insurer. Insurers named on the clinic site: Irish Life Health, Laya, VHI.</p>
+</div></section>
+
+<section class="faq" id="faq"><div class="wrap">
+<div class="eyebrow">Before you come</div>
+<h2 style="margin-bottom:24px">Questions people ask first</h2>
+<details><summary>Do I need a referral from my doctor?</summary><p>No. Appointments can be made without a referral. If the assessment shows your condition needs medical attention, you will be referred on.</p></details>
+<details><summary>What should I wear?</summary><p>Loose-fitting clothing. For the lower back, hips or legs, shorts help, and the clinic keeps spare shorts if you forget a pair. For back, rib, shoulder or neck problems you may be asked to remove your top (except underwear). Towels preserve modesty, so tell the team about any concerns.</p></details>
+<details><summary>How many treatments will I need?</summary><p>It depends on the condition, how long it has been there and how you respond. Your therapist will discuss the expected number after the first appointment.</p></details>
+<details><summary>What will I feel after treatment?</summary><p>Sometimes some discomfort that is short term and quickly subsides. For any concern, call the clinic on 01-5441225.</p></details>
+<details><summary>Is it covered by private medical insurance?</summary><p>Physical therapy is recognised by all the major insurance companies, but the amount you can claim depends on your healthcare plan. Your insurer can advise. Some insurers recognising the clinic: Irish Life Health, Laya, VHI.</p></details>
+<details><summary>Do I have to have the needles?</summary><p>No. Dry needling is part of the clinic's physical therapy treatments, but if you do not like needles they will not use them on you.</p></details>
+<details><summary>Is there parking?</summary><p>There is parking outside the clinic. Paid parking applies until 6pm, Monday to Friday.</p></details>
+</div></section>
+
+<section class="revs"><div class="wrap">
+<div class="eyebrow">What patients write</div>
+<h2>5.0 on Google, in patients' own words</h2>
+<div class="rg">
+<figure><blockquote>&ldquo;Karen is not only very skilled with her hands she's also very good at listening to you and your issues and combines both to give you the best treatment.&rdquo;</blockquote><figcaption>Kav</figcaption></figure>
+<figure><blockquote>&ldquo;I'm a climber and Karen has guided me back from all kinds of climbing and non-climbing related injuries over the last few years.&rdquo;</blockquote><figcaption>Gareth Ebbs</figcaption></figure>
+<figure><blockquote>&ldquo;Karen was lovely and took the time to go through a range of exercises with me to ensure I understood correct form.&rdquo;</blockquote><figcaption>James Callanan</figcaption></figure>
+<figure><blockquote>&ldquo;I had been trying to find ways to help my lower back pain for months on the internet to no avail but she helped really break down the root of where it was coming from.&rdquo;</blockquote><figcaption>Oscar Daly</figcaption></figure>
+</div></div></section>
+
+<section class="blog"><div class="wrap">
+<div class="eyebrow">From the clinic blog</div>
+<h2>Plain-language reading before your visit</h2>
+<ul class="bl">
+<li><b>Neck pain: if I could change one thing</b><span>Karen's take on what she would change first for neck pain.</span></li>
+<li><b>Flexible fingers and wrists for rock climbing</b><span>For the climbers who make up a good share of the clinic's patients.</span></li>
+<li><b>Sports massage: how often?</b><span>The clinic's FAQ says there is no one correct answer. Some come when they need it, others book regularly, such as when training volume rises ahead of an ironman or marathon.</span></li>
+</ul>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap vg">
+<div>
+<div class="eyebrow">Find us</div>
+<h2 style="margin-bottom:22px">4A Seafield House, Seafield Park</h2>
+<dl>
+<dt>Address</dt><dd>The Maple Physical Therapy Clinic<br>4A Seafield House, Seafield Park<br>Blackrock, Co. Dublin A94 XH72</dd>
+<dt>Phone</dt><dd><a href="tel:+35315441225">01-544 1225</a></dd>
+<dt>Hours</dt><dd>Mon 10&ndash;20 &middot; Tue 10&ndash;14 &middot; Wed closed<br>Thu 07:30&ndash;20 &middot; Fri 07:30&ndash;14 &middot; Sat closed</dd>
+</dl>
+<div class="cta" style="margin-top:22px"><a class="btn" href="#" data-as>Request an appointment</a></div>
+</div>
+<div class="route">
+<p><b>Bus.</b> N11 routes 46A, 116, 118, 145, 17, 47, 7b and 7d to the Seafield Rd stop. Rock Road routes 4, 7 and 8 to St Helens Rd or Bellevue Ave.</p>
+<p><b>Dart.</b> Booterstown station is about a 20 minute walk.</p>
+<p><b>From the N11.</b> From the UCD flyover take the slip road parallel to the N11, pass the student apartments, and take the second left, opposite the footbridge and signposted Seafield. Continue about 200m to the office complex before the green. The clinic is number 4A, on the corner to the right with your back to the green.</p>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>Demo &middot; prepared by Gevorg Hovhannisyan</span><span>Content taken from mapleclinic.ie</span></div></footer>
+<button id="as-fab" type="button" aria-expanded="false" aria-controls="as-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span>Ask us</span></button>
+<section id="as-box" role="dialog" aria-label="The Maple Clinic assistant"><div class="as-h"><div><b>The Maple Clinic</b><small>Questions, fees, appointment requests</small></div><button id="as-x" type="button" aria-label="Close">&times;</button></div><div id="as-log" aria-live="polite"></div><div id="as-chips"></div><form id="as-form"><input id="as-in" autocomplete="off" placeholder="Ask a question" aria-label="Your message"><button type="submit">Send</button></form><div class="as-note">Demo assistant. Nothing you type here is sent anywhere.</div></section>
+
+<script>
+/* assistant core: matcher */
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>1)return 2;var p=[],i,j;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var c=[i];for(j=1;j<=n;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));}p=c;}return p[n];}
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function score(e,toks,qn){var s=0;e.k.forEach(function(k){if(k.indexOf(' ')>-1){if(qn.indexOf(k)>-1)s+=2.5;return;}for(var i=0;i<toks.length;i++){var t=toks[i];if(t===k){s+=1.6;return;}if(k.length>=4&&t.length>=k.length&&t.indexOf(k)===0){s+=1.4;return;}if(k.length>=5&&t.length>=5&&lev(t,k)<=1){s+=1.1;return;}}});return s*(e.w||1);}
+function match(KB,q){var qn=norm(q),toks=qn.split(' ').filter(Boolean);var best=null,bs=0;KB.forEach(function(e){var s=score(e,toks,qn);if(s>bs){bs=s;best=e;}});return bs>=1.1?best:null;}
+if(typeof module!=='undefined')module.exports={match:match,norm:norm};
+/* assistant core: UI */
+function initAssistant(C){
+var KB=C.kb,$=function(s){return document.querySelector(s)};
+var fab=$('#as-fab'),box=$('#as-box'),log=$('#as-log'),chips=$('#as-chips'),inp=$('#as-in'),form=$('#as-form');
+var flow=null,data={};
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]});}
+function say(t,who){var d=document.createElement('div');d.className='as-m '+(who||'bot');d.innerHTML=esc(t).replace(/\n/g,'<br>');log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b);});}
+function open(){box.classList.add('on');fab.setAttribute('aria-expanded','true');if(!log.children.length){say(C.hello);setChips(C.chips);}setTimeout(function(){inp.focus()},50);}
+function close(){box.classList.remove('on');fab.setAttribute('aria-expanded','false');}
+function startFlow(){flow={i:0};data={};ask();}
+function ask(){var s=C.flow.steps[flow.i];say(s.q);setChips(s.chips||['Cancel']);inp.placeholder=s.ph||'Type here';}
+function finish(){var L=C.flow.steps.map(function(s){return s.label+': '+data[s.key]}).join('\n');say(C.flow.done.replace('{summary}',L));flow=null;setChips(C.chips);inp.placeholder='Ask a question';}
+function send(t){t=String(t).trim();if(!t)return;say(t,'me');inp.value='';
+ if(flow){if(/^(cancel|stop|no thanks)$/i.test(t)){flow=null;say('No problem, nothing was sent. Ask me anything else.');setChips(C.chips);inp.placeholder='Ask a question';return;}
+  var s=C.flow.steps[flow.i];if(s.check&&!s.check(t)){say(s.err);return;}data[s.key]=t;flow.i++;if(flow.i>=C.flow.steps.length)finish();else ask();return;}
+ var qn=norm(t);
+ if(C.flowRe&&C.flowRe.test(qn)){say(C.flow.intro);startFlow();return;}
+ var e=match(KB,t);
+ if(e){say(e.a);if(e.flow){setChips([C.flow.cta,'Opening hours','Ask something else']);}else setChips(e.c||C.chips);}
+ else{say(C.miss);setChips(C.chips);}}
+function route(t){if(t===C.flow.cta){say(C.flow.intro);startFlow();return true;}return false;}
+var _send=send;send=function(t){t=String(t).trim();if(!flow&&route(t)){say(t,'me');return;}_send(t);};
+fab.onclick=function(){box.classList.contains('on')?close():open();};
+$('#as-x').onclick=close;
+form.onsubmit=function(ev){ev.preventDefault();send(inp.value);};
+document.querySelectorAll('[data-as]').forEach(function(b){b.onclick=function(ev){ev.preventDefault();open();if(!flow){say(C.flow.intro);startFlow();}};});
+}
+
+var CFG={
+hello:"Hi, I'm the Maple Clinic assistant. I can answer questions about visits, fees, hours and finding the clinic, or take an appointment request. I can't give medical advice.",
+miss:"I don't have that on the clinic's website, so I'd rather not guess. The team will confirm: call 01-5441225 or email info@mapleclinic.ie. Want to leave an appointment request?",
+chips:["Book an appointment","Fees","Opening hours","What to wear","Where are you?"],
+flowRe:/\b(book|booking|appoint|appointm|schedul|reserve|reserv|see karen|make an appointment)/,
+kb:[
+{k:["fee","fees","price","cost","charge","how much","pay","payment","card","cash","euro","rate"],a:"Physical therapy is €75 per appointment. The student rate is €65 with a full-time student card. Card payments are accepted. Appointments last 40 minutes end to end.",c:["Student rate","Gift vouchers","Insurance"]},
+{k:["student","students","discount","concession"],a:"The student rate is €65 (instead of €75) with a full-time student card.",c:["Fees","Book an appointment"]},
+{k:["voucher","vouchers","gift","present","gifts"],a:"Gift vouchers come in €25, €65 and €130 and can be used for physical therapy or sports massage. They are valid for twelve months, and are posted by An Post within 24 hours of payment, or emailed during office hours so you can print them yourself.",c:["Fees","Opening hours"]},
+{k:["insurance","insurer","insured","vhi","laya","irish life","health insurance","claim","refund","reimburse"],a:"Physical therapy is recognised by all the major insurers, but what you can claim depends on your plan, so check with your insurer. Insurers named on the clinic site: Irish Life Health, Laya and VHI.",c:["Fees","Referral needed?"]},
+{k:["hour","hours","open","opening","close","closing","closed","when","time","times","week","weekend","saturday","sunday","monday","tuesday","wednesday","thursday","friday","late","evening","early","morning"],a:"Opening hours: Mon 10:00 to 20:00, Tue 10:00 to 14:00, Wed closed, Thu 07:30 to 20:00, Fri 07:30 to 14:00, Sat closed. Sunday isn't listed, so ask the team if you need it.",c:["Book an appointment","Where are you?"]},
+{k:["where","address","location","find","directions","map","located","seafield","blackrock","dublin","eircode","get there","how to get"],a:"The Maple Physical Therapy Clinic is at 4A Seafield House, Seafield Park, Blackrock, Co. Dublin A94 XH72. It's the office complex before the green, number 4A, on the corner to the right with your back to the green.",c:["Parking","Bus and Dart","Opening hours"]},
+{k:["park","parking","car","drive","driving"],a:"There is parking outside the clinic. Paid parking applies until 6pm, Monday to Friday.",c:["Where are you?","Bus and Dart"]},
+{k:["bus","dart","train","public transport","transport","luas","buses","walk","booterstown"],a:"Bus: N11 routes 46A, 116, 118, 145, 17, 47, 7b and 7d to the Seafield Rd stop. Rock Road routes 4, 7 and 8 to St Helens Rd or Bellevue Ave. Dart: Booterstown station is about a 20 minute walk.",c:["Parking","Where are you?"]},
+{k:["wear","clothes","clothing","shorts","dress","bring","change","top","towel","modesty","comfortable"],a:"Wear loose-fitting clothing. For the lower back, hips or legs, shorts help, and the clinic has spare shorts if you forget. For back, rib, shoulder or neck problems you may be asked to remove your top (except underwear). Towels are used to preserve modesty, so tell the team about any concerns.",c:["How long is a visit?","Book an appointment"]},
+{k:["long","duration","minutes","minute","length","how long","40","45","forty"],a:"Appointments are 40 minutes end to end for the first visit and all follow-ups, unless indicated otherwise. That gives time to assess the area, rehab and treat.",c:["What happens at a visit?","Fees"]},
+{k:["referral","refer","gp","doctor","letter"],a:"No referral from your doctor is needed to make an appointment. If the assessment shows your condition needs medical attention, you will be referred on.",c:["Book an appointment","Insurance"]},
+{k:["needle","needles","needling","acupuncture","dry"],a:"Dry needling uses fine acupuncture needles on tender trigger points, combined with hands-on treatment and rehab where appropriate. It's offered for those who like it. If you don't like needles, they won't be used on you.",c:["What happens at a visit?","Book an appointment"]},
+{k:["happens","expect","first visit","first appointment","process","assessment","treatment","treatments","treat","approach","session","root cause","what do you do"],a:"A visit has an assessment of the injury and its root cause (including how you use the area in your sport or activity), hands-on treatment such as trigger point release, fascial work, joint mobilisations or stretching, and a personal rehab plan emailed after the appointment with videos for each exercise.",c:["Dry needling","How long is a visit?","Rehab plan"]},
+{k:["rehab","plan","exercise","exercises","app","video","videos","pdf","homework"],a:"After the appointment you're emailed a personalised rehab plan with a video and explanation for each exercise. You can open it in an app on your mobile device or download it as a PDF.",c:["What happens at a visit?","Book an appointment"]},
+{k:["many","sessions","number","visits","follow","followup","how often","often","weeks"],a:"The number of treatments depends on the condition, how long you've had it and how you respond. Your therapist will talk it through after the first appointment. As a rough example, a knee problem might mean 5 to 6 visits over 10 to 12 weeks, spaced out to every 2 to 3 weeks after the first or second visit.",c:["Fees","Book an appointment"]},
+{k:["condition","conditions","back","neck","shoulder","knee","ankle","tendon","sprain","sprains","surgery","pre surgery","post surgery","injury","injuries","sports","climbing","climber","running","runner","cycling"],a:"The clinic treats back and neck pain, tendon pain, shoulder injuries, ankle sprains, knee pain, and pre and post surgery rehab, and many patients come from sporting backgrounds such as climbing, running and cycling. For whether your specific problem is suitable, the therapist will assess it at the first visit.",c:["What happens at a visit?","Book an appointment"]},
+{k:["massage","massages","deep tissue","sports massage"],a:"The clinic also offers sports massage, and gift vouchers can be used for it. Massage prices and availability aren't on the pages I have, so the team will confirm: 01-5441225.",c:["Gift vouchers","Book an appointment"]},
+{k:["karen","doyle","therapist","physio","physiotherapist","who","team","qualified","qualifications","registered","coru","iapt","pilates","experience"],a:"Karen Doyle is a Physical Therapist and Pilates Instructor, registered with the CORU Physiotherapist Registration Board and a member of the Irish Association of Physical Therapists. She has a Distinction in a Bachelor of Applied Science and a BSc (Hons) in Biochemistry from UCD, and worked with the Irish National Cycling teams from 2008 to 2012.",c:["What happens at a visit?","Book an appointment"]},
+{k:["phone","call","telephone","number","email","contact","mail","reach","talk"],a:"Phone: 01-5441225. Email: info@mapleclinic.ie. Hours are Mon 10 to 20, Tue 10 to 14, Thu 07:30 to 20, Fri 07:30 to 14.",c:["Book an appointment","Opening hours"]},
+{k:["diagnose","diagnosis","serious","worried","worry","what is wrong","what is wrong","safe","medication","medicine","emergency","swollen","numb","numbness"],w:1.3,a:"I can't give medical advice or say what's wrong, and I'd rather not guess. Karen assesses the problem at your appointment and refers you on if it needs medical attention. If it feels urgent, please contact a doctor or emergency services.",c:["Book an appointment","Referral needed?"]},
+{k:["language","irish","polish","russian"],a:"That isn't on the clinic's website, so the team will confirm: 01-5441225.",c:["Book an appointment"]},
+{k:["hello","hi","hey","thanks","thank","bye"],a:"Happy to help. Ask about fees, hours, what to wear, or request an appointment.",c:["Book an appointment","Fees","Opening hours"]}
+],
+flow:{cta:"Book an appointment",intro:"Happy to take a request. A few quick questions, then the team confirms a time. (I can't give medical advice, and this demo sends nothing.)",
+steps:[
+{key:"name",label:"Name",q:"What's your name?",ph:"Your name",check:function(t){return t.length>1},err:"Please type your name."},
+{key:"area",label:"Area of concern",q:"Which area is bothering you? (e.g. lower back, shoulder, knee)",chips:["Back","Neck","Shoulder","Knee","Ankle","Other"],ph:"Area"},
+{key:"type",label:"Visit",q:"Is this a first visit or a follow-up?",chips:["First visit","Follow-up"],ph:"First visit or follow-up"},
+{key:"day",label:"Preferred day",q:"Which day suits you? The clinic is open Mon, Tue, Thu and Fri.",chips:["Monday","Tuesday","Thursday","Friday"],ph:"Day"},
+{key:"time",label:"Time of day",q:"Morning or later in the day? (Mon and Thu run until 20:00.)",chips:["Morning","Afternoon","Evening"],ph:"Time"},
+{key:"contact",label:"Contact",q:"What's the best phone number or email to confirm with you?",ph:"Phone or email",check:function(t){return /@|\d{6,}/.test(t.replace(/[\s-]/g,''))},err:"Please give a phone number or an email address."}
+],
+done:"Thanks! Here's your request:\n{summary}\n\nSent to the team. They'll confirm a time with you. (Demo: nothing was actually sent.)"}
+};
+
+initAssistant(CFG);
+</script>
+</body>
+</html>
