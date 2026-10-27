@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Key 2 Success Driving School · Macquarie Park, Sydney</title>
+<meta name="description" content="Driving lessons, log book hours, trial tests and overseas licence conversions in Sydney's north-west with Key 2 Success. Demo page with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fbf6ea;--paper:#fffdf7;--ink:#1f2430;--ink2:#4a5163;--gold:#e7a500;--gold2:#c98a00;--gold3:#fff0c2;--steel:#8a8f98;--line:#e6dcc3;--hd:'Fraunces',Georgia,serif;--bd:'DM Sans',system-ui,sans-serif;--as-font:var(--bd);--as-a:#1f2430;--as-at:#ffd34d;--as-bg:#fffdf7;--as-bg2:#fbf6ea;--as-bubble:#fff;--as-ink:#1f2430;--as-line:#e6dcc3;--as-r:14px;--as-pr:22px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font:17px/1.6 var(--bd);overflow-x:hidden;-webkit-text-size-adjust:100%}
+a{color:inherit}img{max-width:100%;display:block}
+.w{max-width:980px;margin:0 auto;padding:0 20px}
+/* masthead: logo left, quick info right, no sticky nav bar */
+.mast{background:var(--paper);border-bottom:3px solid var(--gold)}
+.mast .w{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px;padding-top:12px;padding-bottom:12px}
+.logo{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 10px}
+.logo img{height:46px;width:auto}
+.info{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14.5px;color:var(--ink2)}
+.info a{text-decoration:none;font-weight:700;color:var(--ink)}
+.info span b{color:var(--gold2)}
+/* hero: big serif statement + stat rail */
+.hero{padding:52px 0 40px}
+.hero h1{font:800 clamp(40px,9.5vw,76px)/1.02 var(--hd);letter-spacing:-.02em;max-width:11em}
+.hero h1 span{color:var(--gold2);font-style:italic;font-weight:700}
+.hero p{max-width:34em;margin-top:18px;color:var(--ink2);font-size:18px}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.b{display:inline-block;text-decoration:none;cursor:pointer;border:2px solid var(--ink);font:700 16px var(--bd);padding:13px 22px;border-radius:999px;background:transparent;color:var(--ink)}
+.b.main{background:var(--ink);color:#ffd34d}
+.rail{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--ink);border-radius:20px;background:var(--paper);margin-top:34px;overflow:hidden}
+.rail div{padding:16px 16px;border-bottom:1px solid var(--line)}
+.rail div:nth-child(odd){border-right:1px solid var(--line)}
+.rail div:nth-last-child(-n+2){border-bottom:0}
+.rail b{display:block;font:800 clamp(28px,7vw,40px)/1 var(--hd);color:var(--gold2)}
+.rail small{color:var(--ink2);font-size:14px}
+@media(min-width:760px){.rail{grid-template-columns:repeat(4,1fr)}.rail div{border-bottom:0!important;border-right:1px solid var(--line)}.rail div:last-child{border-right:0}}
+/* generic block */
+.blk{padding:46px 0}
+.blk h2{font:800 clamp(30px,6.5vw,46px)/1.05 var(--hd);letter-spacing:-.015em;margin-bottom:8px}
+.blk .k{font:700 13px var(--bd);letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);margin-bottom:8px;display:block}
+.blk .lead{color:var(--ink2);max-width:38em;margin-bottom:24px}
+/* why: numbered margin notes */
+.why{counter-reset:n;display:grid;gap:0;border-top:2px solid var(--ink)}
+.why li{list-style:none;counter-increment:n;display:grid;grid-template-columns:44px 1fr;gap:6px 10px;padding:16px 0;border-bottom:1px solid var(--line)}
+.why li::before{content:counter(n,decimal-leading-zero);font:800 24px/1.1 var(--hd);color:var(--gold)}
+.why h3{font:700 20px/1.2 var(--hd)}.why p{grid-column:2;color:var(--ink2);font-size:16px}
+@media(min-width:760px){.why{grid-template-columns:1fr 1fr;column-gap:40px}}
+/* what we teach: simple dl */
+.teach{display:grid;gap:14px}
+@media(min-width:760px){.teach{grid-template-columns:repeat(2,1fr)}}
+.tc{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px}
+.tc h3{font:700 22px var(--hd);margin-bottom:6px}
+.tc p{color:var(--ink2);font-size:16px}
+.tc.hl{background:var(--gold3);border-color:#f0d98a}
+/* price menu with dotted leaders */
+.menu{background:var(--ink);color:#fff;border-radius:24px;padding:26px 20px}
+.menu h2{color:#fff}.menu .k{color:#ffd34d}.menu .lead{color:#cfd3dd}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:14px 0;border-bottom:1px dashed #4b5266;align-items:baseline}
+.row:last-of-type{border-bottom:0}
+.row h3{font:700 20px/1.2 var(--hd)}
+.row .pr{font:800 28px/1 var(--hd);color:#ffd34d}
+.row p{grid-column:1/-1;color:#c3c8d4;font-size:15px}
+.row .m{font-size:13.5px;color:#ffd34d;font-weight:600;letter-spacing:.02em}
+.first{margin-top:18px;background:#ffd34d;color:var(--ink);padding:14px 18px;border-radius:14px;font-weight:700}
+.first small{display:block;font-weight:500;opacity:.8}
+/* reviews */
+.rv{display:grid;gap:14px}
+@media(min-width:760px){.rv{grid-template-columns:repeat(2,1fr)}}
+blockquote{background:var(--paper);border:1px solid var(--line);border-left:6px solid var(--gold);border-radius:14px;padding:18px 18px 14px;font-size:16px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-weight:700;color:var(--gold2);font-size:14px}
+/* contact */
+.contact{background:var(--paper);border:2px solid var(--ink);border-radius:24px;padding:24px;display:grid;gap:18px}
+@media(min-width:760px){.contact{grid-template-columns:1fr 1fr}}
+.contact h3{font:700 22px var(--hd);margin-bottom:4px}
+.contact a{font-weight:700}
+dl.hrs{display:grid;grid-template-columns:auto 1fr;gap:4px 14px}
+dl.hrs dt{color:var(--ink2)}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:2px solid var(--ink)}
+summary{cursor:pointer;padding:15px 2px;font:700 19px/1.25 var(--hd);list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--gold2);font-size:24px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 2px 16px;color:var(--ink2)}
+footer{padding:30px 0 110px;color:var(--ink2);font-size:14.5px;text-align:center}
+.demo{margin-top:8px;font-size:13px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.as-root{position:fixed;right:14px;bottom:14px;z-index:99;font-family:var(--as-font,inherit);color:var(--as-ink,#111)}
+.as-fab{display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--as-a,#111);color:var(--as-at,#fff);padding:12px 18px;border-radius:var(--as-r,999px);font:600 15px var(--as-font,inherit);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.as-fab-i{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--as-at,#fff);color:var(--as-a,#111);font-weight:800;font-size:14px}
+.as-panel{position:fixed;right:10px;bottom:10px;width:min(380px,calc(100vw - 20px));height:min(560px,calc(100vh - 20px));display:flex;flex-direction:column;background:var(--as-bg,#fff);border:1px solid var(--as-line,#ddd);border-radius:var(--as-pr,16px);overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.as-panel[hidden]{display:none}
+.as-h{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--as-a,#111);color:var(--as-at,#fff)}
+.as-h b{display:block;font-size:15px}.as-h small{opacity:.85;font-size:12px}
+.as-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+.as-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--as-bg2,#f6f6f6)}
+.as-m{max-width:86%;padding:9px 12px;border-radius:14px;font-size:14.5px;line-height:1.45;white-space:pre-wrap;word-wrap:break-word}
+.as-bot{align-self:flex-start;background:var(--as-bubble,#fff);border:1px solid var(--as-line,#ddd)}
+.as-me{align-self:flex-end;background:var(--as-a,#111);color:var(--as-at,#fff)}
+.as-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;border-top:1px solid var(--as-line,#ddd);background:var(--as-bg,#fff);max-height:112px;overflow-y:auto}
+.as-c{border:1px solid var(--as-a,#111);background:transparent;color:var(--as-ink,#111);border-radius:999px;padding:6px 11px;font:500 13px var(--as-font,inherit);cursor:pointer}
+.as-c:hover{background:var(--as-a,#111);color:var(--as-at,#fff)}
+.as-f{display:flex;gap:6px;padding:8px 10px;background:var(--as-bg,#fff);border-top:1px solid var(--as-line,#ddd)}
+.as-in{flex:1;min-width:0;border:1px solid var(--as-line,#ccc);border-radius:10px;padding:10px;font:16px var(--as-font,inherit);background:var(--as-bg,#fff);color:var(--as-ink,#111)}
+.as-go{border:0;background:var(--as-a,#111);color:var(--as-at,#fff);border-radius:10px;padding:0 14px;cursor:pointer;font-size:16px}
+.as-note{margin:0;padding:0 10px 8px;font-size:11px;opacity:.65;background:var(--as-bg,#fff)}
+
+</style>
+</head>
+<body>
+<header class="mast"><div class="w">
+ <a class="logo" href="#top" aria-label="Key 2 Success Driving School"><img src="img/key-2-success-logo.png" alt="Key 2 Success Driving School" width="136" height="46"></a>
+ <div class="info"><span><b>Open</b> Mon to Sun, 6am to 8pm</span><a href="tel:+61438423331">+61 438 423 331</a></div>
+</div></header>
+
+<main id="top">
+<div class="w hero">
+ <h1>Drive with <span>confidence</span> in Sydney's north-west.</h1>
+ <p>Driving lessons for every level, log book hours, trial tests, and overseas licence conversions, with free pickup and drop-off before and after each session. Based at Macquarie Park, open seven days.</p>
+ <div class="acts"><a class="b main" href="#book" data-ask="Book a lesson">Book a lesson</a><a class="b" href="#prices">See lesson prices</a></div>
+ <div class="rail" role="list">
+  <div role="listitem"><b>30</b><small>years of driving experience</small></div>
+  <div role="listitem"><b>99%</b><small>success rate on first attempt, as stated on the school's site</small></div>
+  <div role="listitem"><b>300</b><small>5-star Google ratings</small></div>
+  <div role="listitem"><b>Free</b><small>pickup and drop-off</small></div>
+ </div>
+</div>
+
+<section class="blk"><div class="w">
+ <span class="k">Why students pick Key 2 Success</span>
+ <h2>Strengths and achievements</h2>
+ <p class="lead">Six things the school promises on its own site.</p>
+ <ul class="why">
+  <li><h3>Quick licence</h3><p>A high percentage clear the driving test on their first attempt; the school says over 99% of its students score more than 90%.</p></li>
+  <li><h3>Honest feedback</h3><p>Prompt feedback on what you did well and what to work on. Questions are encouraged.</p></li>
+  <li><h3>Test route knowledge</h3><p>Thorough knowledge of the testing tracks, and a walk-through of how you will be assessed on test day.</p></li>
+  <li><h3>Experienced instructors</h3><p>Over 30 years of driving experience, an ex L-TRENT driving instructor, and RMS accredited.</p></li>
+  <li><h3>Modern, clean cars</h3><p>Latest-model cars fitted with modern technology and dual controls for your safety.</p></li>
+  <li><h3>Flexible bookings</h3><p>Lessons fitted around your availability, with pickup and drop-off before and after the session.</p></li>
+ </ul>
+</div></section>
+
+<section class="blk" style="padding-top:10px"><div class="w">
+ <span class="k">What we offer</span>
+ <h2>Four ways to learn</h2>
+ <div class="teach">
+  <article class="tc"><h3>Normal driving</h3><p>Beginner to expert, taught in a safe, stress-free environment.</p></article>
+  <article class="tc hl"><h3>Log book</h3><p>Each hourly lesson is equivalent to 3 hours in your log book, for up to 10 lessons.</p></article>
+  <article class="tc hl"><h3>Pre-assessment</h3><p>Your skills are assessed and you get a pre-assessment scoresheet before the real driving test.</p></article>
+  <article class="tc"><h3>Overseas licence conversions and refreshers</h3><p>Transferring a licence from another country, refresher courses for existing drivers, and discounted packages.</p></article>
+ </div>
+</div></section>
+
+<section class="blk" style="padding-top:10px"><div class="w">
+ <span class="k">Which one is for me?</span>
+ <h2>Pick by situation</h2>
+ <p class="lead">A quick guide built only from the descriptions on the school's price list.</p>
+ <div class="teach">
+  <article class="tc"><h3>I have never driven</h3><p>The 10-lesson package is designed for beginners, with structured lessons that progress as you do. Each lesson counts as 3 hours in the log book, for up to 10 lessons.</p></article>
+  <article class="tc"><h3>I have some hours already</h3><p>The 5-lesson package (intermediate) builds confidence, and the 3-lesson package (advanced) refreshes knowledge and practises in the test area.</p></article>
+  <article class="tc"><h3>My test is booked</h3><p>Book the trial test with an assessment sheet, then car hire for the test: an extra lesson that starts 1 hour before the exam.</p></article>
+  <article class="tc"><h3>I hold a licence from another country</h3><p>Ask about overseas licence conversion. Students who transferred a licence say the instructor went through every requirement for the driving test.</p></article>
+  <article class="tc"><h3>I drive, but I am rusty</h3><p>Refresher courses are on the list, and a single 1-hour lesson is open to all levels.</p></article>
+  <article class="tc"><h3>I want more than the test route</h3><p>City driving covers highways, one-way streets, shared zones and parking. Country driving covers full or partial North-Western Sydney routes.</p></article>
+ </div>
+</div></section>
+
+<section class="blk" style="padding-top:10px"><div class="w">
+ <span class="k">Test day</span>
+ <h2>From first lesson to test</h2>
+ <ul class="why">
+  <li><h3>Assess</h3><p>Your skills are assessed and you receive a pre-assessment scoresheet before the real driving test.</p></li>
+  <li><h3>Practise in the test area</h3><p>Lessons refresh knowledge and practise in the area where the test happens, using the school's knowledge of the testing tracks.</p></li>
+  <li><h3>Trial test</h3><p>A 1.5-hour trial similar to the actual driving test, with an assessment sheet showing your results.</p></li>
+  <li><h3>Test day</h3><p>Car hire for the test: 2 hours 15 minutes, with one extra lesson that starts 1 hour before the test.</p></li>
+ </ul>
+</div></section>
+
+<section class="blk" id="prices"><div class="w">
+ <div class="menu">
+  <span class="k">Pricing plan</span>
+  <h2>Lessons and packages</h2>
+  <p class="lead">Prices as published on the school's website.</p>
+  <div class="row"><h3>Single lesson</h3><span class="pr">$70</span><p>1 hour, all levels. Refresh knowledge and practise in the test area.</p></div>
+  <div class="row"><h3>3-lesson package</h3><span class="pr">$205</span><p>1 hour each, advanced. Refresh knowledge and practise in the test area.</p></div>
+  <div class="row"><h3>5-lesson package</h3><span class="pr">$335</span><p>1 hour each, intermediate. Gain confidence and become a professional.</p></div>
+  <div class="row"><h3>10-lesson package</h3><span class="pr">$650</span><p>1 hour each, for beginners. A structured program that progresses at your pace.</p></div>
+  <div class="row"><h3>Trial test and feedback</h3><span class="pr">$110</span><p>1.5 hours. Like the real driving test, with an assessment sheet of your results.</p></div>
+  <div class="row"><h3>Car hire for test</h3><span class="pr">$175</span><p>2 hours 15 minutes: one extra lesson before the test, starting 1 hour early. Price varies by test location.</p></div>
+  <div class="row"><h3>City driving</h3><span class="pr">$140</span><p>2 hours, intermediate to advanced: highway driving, one-way streets, shared zones, parking and more.</p></div>
+  <div class="row"><h3>Country driving</h3><span class="pr">$210</span><p>3 hours, intermediate to advanced: full or partial routes across North-Western Sydney.</p></div>
+  <div class="first">First lesson at $65*<small>Shown on the site with an asterisk. The team confirms the conditions when you book.</small></div>
+ </div>
+</div></section>
+
+<section class="blk"><div class="w">
+ <span class="k">Testimonials</span>
+ <h2>What students say</h2>
+ <p class="lead">Quotes from the school's own testimonials.</p>
+ <div class="rv">
+  <blockquote>"Paul is a great instructor! Without his calmness, patience and guidance in the passenger seat, I probably would not have passed my driving test in first attempt."<cite>Nauman</cite></blockquote>
+  <blockquote>"I was transferring my Brazilian licence, he was very professional and went through all the requirements for the driving test. I was able to pass on my first attempt."<cite>Juliana Mansur</cite></blockquote>
+  <blockquote>"He adapts his teaching style to the student's experience and learning style... helped me build up my confidence in driving."<cite>Jayasri K</cite></blockquote>
+  <blockquote>"He encouraged me when I drove well and also pointed out what I must improve on... gave me tips on what the inspector will look out for."<cite>Iniga</cite></blockquote>
+ </div>
+</div></section>
+
+<section class="blk" id="book"><div class="w">
+ <span class="k">Contact</span>
+ <h2>Book your first lesson</h2>
+ <p class="lead">The school replies to enquiries within 24 hours. The assistant on this demo page gathers your details first, so the reply can be specific.</p>
+ <div class="contact">
+  <div><h3>Call or message</h3><p><a href="tel:+61438423331">+61 438 423 331</a><br><a href="mailto:admin@key2successdrivingschool.com.au" style="word-break:break-all">admin@key2successdrivingschool.com.au</a></p><p style="margin-top:10px"><a href="https://www.instagram.com/key2successdrivingschool/">Instagram</a></p></div>
+  <div><h3>Where and when</h3><p>Waterloo Road, Macquarie Park<br>NSW 2113, Australia</p><dl class="hrs" style="margin-top:10px"><dt>Mon to Sun</dt><dd>6am to 8pm</dd></dl></div>
+  <div style="grid-column:1/-1"><button class="b main" type="button" data-ask="Book a lesson">Start a booking request</button></div>
+ </div>
+</div></section>
+
+<section class="blk" style="padding-top:0"><div class="w">
+ <span class="k">Questions</span>
+ <h2>Quick answers</h2>
+ <details style="margin-top:14px"><summary>Do you pick me up?</summary><p>Yes. Pickup and drop-off are free before and after each session.</p></details>
+ <details><summary>Can I convert my overseas licence?</summary><p>Overseas licence conversions are on the list of services. A trial test with an assessment sheet is also available.</p></details>
+ <details><summary>How does the log book count?</summary><p>Each hourly lesson is equivalent to 3 hours in your log book, for up to 10 lessons.</p></details>
+ <details><summary>Are the cars safe for nervous learners?</summary><p>The cars are the latest models and fitted with dual controls for your safety.</p></details>
+ <details><summary>Can I book on weekends?</summary><p>The school lists its hours as Monday to Sunday, 6am to 8pm.</p></details>
+ <details><summary>What is the difference between a lesson package and a single lesson?</summary><p>A single lesson is $70 for 1 hour. The 3, 5 and 10 lesson packages ($205, $335 and $650) are 1-hour lessons bundled at a lower per-lesson cost, each aimed at a different level: advanced, intermediate and beginner.</p></details>
+ <details><summary>What does the trial test include?</summary><p>It is 1.5 hours, similar to the real driving test, and ends with an assessment sheet that shows your results and what to work on.</p></details>
+ <details><summary>How fast does the school reply?</summary><p>The site says enquiries are answered within 24 hours, by phone on +61 438 423 331 or by email.</p></details>
+ <details><summary>Where does the school teach?</summary><p>The base is Waterloo Road, Macquarie Park NSW 2113, and country driving covers North-Western Sydney routes. The team confirms whether your suburb is covered.</p></details>
+ <details><summary>Is there an offer for a first lesson?</summary><p>The site advertises a first lesson at $65 with an asterisk. The conditions are not published, so ask the team when you book.</p></details>
+ <details><summary>Do lessons help with the test route itself?</summary><p>Yes. The school knows the testing tracks well and talks you through how you will be assessed, then offers a trial test with a scoresheet so there are no surprises on the day.</p></details>
+ <details><summary>I am transferring a licence from overseas. Where do I start?</summary><p>Start with a trial test and feedback session, which shows how you score against the real assessment, then add lessons or a pre-test lesson as needed. The team can confirm the steps for your country.</p></details>
+</div></section>
+</main>
+
+<footer><div class="w"><div>Key 2 Success Driving School · Macquarie Park NSW 2113</div><div class="demo">Demo · prepared by Gevorg Hovhannisyan</div></div></footer>
+
+<script>
+/* assistant engine: client-side only, nothing is sent anywhere */
+(function(){
+var $=function(s,r){return (r||document).querySelector(s)};
+function norm(s){return String(s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9$+ ]+/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){if(w.length>5&&/ing$/.test(w))return w.slice(0,-3);if(w.length>4&&/ies$/.test(w))return w.slice(0,-3)+'y';if(w.length>4&&/es$/.test(w))return w.slice(0,-2);if(w.length>3&&/ed$/.test(w))return w.slice(0,-2);if(w.length>3&&/s$/.test(w))return w.slice(0,-1);return w}
+function lev(a,b,m){if(Math.abs(a.length-b.length)>m)return m+1;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i],mn=i;for(j=1;j<=b.length;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));if(c[j]<mn)mn=c[j]}if(mn>m)return m+1;p=c}return p[b.length]}
+function tokMatch(q,k){if(q===k)return true;if(k.length>=4&&q.length>=4&&(q.indexOf(k)===0||k.indexOf(q)===0))return true;var m=k.length>=8?2:(k.length>=5?1:0);return m>0&&lev(q,k,m)<=m}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem)}
+function kwHit(qt,kw){var kt=toks(kw);if(!kt.length)return 0;for(var i=0;i<kt.length;i++){var ok=false;for(var j=0;j<qt.length;j++){if(tokMatch(qt[j],kt[i])){ok=true;break}}if(!ok)return 0}return 1+0.6*(kt.length-1)}
+function pick(cfg,q){var qt=toks(q),best=null,bs=0;for(var i=0;i<cfg.kb.length;i++){var e=cfg.kb[i],s=0;for(var j=0;j<e.k.length;j++)s+=kwHit(qt,e.k[j]);s*=(e.w||1);if(s>bs){bs=s;best=e}}return best}
+function wantsFlow(cfg,q){var qt=toks(q);for(var i=0;i<cfg.flowWords.length;i++){if(kwHit(qt,cfg.flowWords[i]))return true}return false}
+function matchOpt(opts,t){var n=norm(t),qt=toks(t),i;for(i=0;i<opts.length;i++){if(norm(opts[i])===n)return opts[i]}var bi=-1,bs=0;for(i=0;i<opts.length;i++){var s=kwHit(qt,opts[i]);if(!s){var ot=toks(opts[i]);for(var a=0;a<ot.length;a++)for(var b=0;b<qt.length;b++)if(ot[a].length>3&&tokMatch(qt[b],ot[a]))s+=1}if(s>bs){bs=s;bi=i}}return bi>=0?opts[bi]:null}
+window.Assistant=function(cfg){
+var st={flow:null,i:0,data:{}};
+var root=document.createElement('div');root.className='as-root';
+root.innerHTML='<button class="as-fab" aria-label="Open assistant" type="button"><span class="as-fab-i">?</span><span class="as-fab-t"></span></button><section class="as-panel" hidden role="dialog" aria-label="Assistant"><header class="as-h"><div><b class="as-n"></b><small class="as-s"></small></div><button class="as-x" type="button" aria-label="Close">&times;</button></header><div class="as-log" aria-live="polite"></div><div class="as-chips"></div><form class="as-f" autocomplete="off"><input class="as-in" type="text" maxlength="200" aria-label="Your message"><button class="as-go" type="submit" aria-label="Send">&#10148;</button></form><p class="as-note"></p></section>';
+document.body.appendChild(root);
+var fab=$('.as-fab',root),pan=$('.as-panel',root),log=$('.as-log',root),chips=$('.as-chips',root),inp=$('.as-in',root),form=$('.as-f',root);
+$('.as-n',root).textContent=cfg.name;$('.as-s',root).textContent=cfg.sub||'';$('.as-fab-t',root).textContent=cfg.fab||'Ask';$('.as-note',root).textContent=cfg.note||'';inp.placeholder=cfg.ph||'Type a question';
+function say(t,me){var d=document.createElement('div');d.className='as-m '+(me?'as-me':'as-bot');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='as-c';b.textContent=c;b.onclick=function(){handle(c)};chips.appendChild(b)})}
+function home(){setChips(cfg.chips)}
+function ask(){var s=cfg.flow[st.i];say(typeof s.q==='function'?s.q(st.data):s.q);if(s.opts)setChips(s.opts.concat(['Cancel']));else setChips(['Cancel'])}
+function startFlow(){st.flow=true;st.i=0;st.data={};say(cfg.flowIntro);ask()}
+function finish(){var d=st.data,lines=cfg.flow.map(function(s){return s.label+': '+d[s.id]}).join('\n');say(cfg.done(d)+'\n\n'+lines);st.flow=null;home()}
+function handle(t){t=String(t||'').trim();if(!t)return;say(t,1);inp.value='';
+ if(st.flow){var n=norm(t);if(n==='cancel'||n==='stop'||n==='nevermind'||n==='never mind'){st.flow=null;say('No problem, nothing was sent. Ask me anything else.');home();return}
+  var s=cfg.flow[st.i],v=t;
+  if(s.opts){v=matchOpt(s.opts,t);if(!v){say('Please pick one of the options below.');setChips(s.opts.concat(['Cancel']));return}}
+  else if(s.re&&!s.re.test(t)){say(s.err||'Could you rephrase that?');return}
+  st.data[s.id]=v;st.i++;if(st.i>=cfg.flow.length)finish();else ask();return}
+ var n2=norm(t);if(/^(hi|hello|hey|hola|yo|good (morning|afternoon|evening)|gday)$/.test(n2)){say(cfg.hello||'Hi! How can I help?');home();return}
+ if(wantsFlow(cfg,t)&&!(cfg.noFlowIf&&cfg.noFlowIf.test(n2))){startFlow();return}
+ var e=pick(cfg,t);if(e){say(e.a);setChips(e.next||cfg.chips);return}
+ say(cfg.fallback);home()}
+form.onsubmit=function(ev){ev.preventDefault();handle(inp.value)};
+function open(){pan.hidden=false;fab.style.display='none';if(!log.children.length){say(cfg.intro);home()}setTimeout(function(){inp.focus()},50)}
+fab.onclick=open;$('.as-x',root).onclick=function(){pan.hidden=true;fab.style.display=''};
+window.__asOpen=open;window.__asAsk=function(t){open();handle(t)};
+window.__asTest={pick:pick,wantsFlow:wantsFlow,cfg:cfg,matchOpt:matchOpt};
+};
+})();
+
+(function(){
+var cfg={
+ name:'Key 2 Success assistant',sub:'Lessons, tests, log book',fab:'Ask a question',ph:'Ask about lessons, prices, tests',
+ note:'Demo only. Nothing is sent from this chat; the school confirms every booking.',
+ intro:'G\'day! I can answer questions about lessons, packages, trial tests, log book hours and licence conversions, or take your lesson request.',
+ hello:'Hi there! Looking for a lesson, a trial test or prices?',
+ fallback:'I do not have that on the school\'s website, so the team will need to confirm it. Call +61 438 423 331 or email admin@key2successdrivingschool.com.au. Want to send a lesson request?',
+ chips:['Book a lesson','Lesson prices','Trial test','Log book hours','Overseas licence','Pickup and hours'],
+ flowWords:['book','booking','reserve','sign up','make a booking','schedule','enrol','enroll','arrange lesson','first lesson'],
+ noFlowIf:/\b(how|what|why|where|which|do you|does|is it|are you|can i)\b.*\b(book|booking|schedule)/,
+ kb:[
+  {w:1.5,k:['price','cost','how much','fee','pricing','prices','rates','cheap','afford','pay','payment','charge'],a:'Published prices: single lesson $70 (1 hr), 3 lessons $205, 5 lessons $335, 10 lessons $650, trial test and feedback $110 (1.5 hr), car hire for test $175 (2 hr 15 min, varies by test location), city driving $140 (2 hr), country driving $210 (3 hr). The site also shows a first lesson at $65*; the team confirms the conditions.',next:['Book a lesson','Trial test','Packages']},
+  {k:['package','packages','discount','bulk','5 lesson','10 lesson','3 lesson','bundle'],a:'Packages: 3 lessons $205 (advanced), 5 lessons $335 (intermediate), 10 lessons $650 (beginners, structured progression). Each lesson is 1 hour. The school also mentions discounted packages.',next:['Lesson prices','Book a lesson']},
+  {k:['single lesson','one lesson','1 hour','hourly','one hour'],a:'A single lesson is $70 for 1 hour and is open to all skill levels, to refresh your knowledge and practise in the test area.'},
+  {k:['trial test','mock test','practice test','pre assessment','assessment','scoresheet','score','test feedback','mock'],a:'The trial test costs $110 and runs 1.5 hours. It is similar to the real driving test and you get an assessment sheet with results. The school also gives a pre-assessment scoresheet before the real driving test.',next:['Car hire for test','Book a lesson']},
+  {k:['car hire','hire car','use your car','test day car','own car','hire for test','test car','car for test'],a:'Car hire for the test is $175 for 2 hours 15 minutes: one extra lesson before the test, starting 1 hour early. The price varies by driving test location.'},
+  {k:['log book','logbook','hours','supervised','120 hours','log hours','3 hours','three hours'],a:'For log book hours, each hourly lesson counts as 3 hours in your log book, for up to 10 lessons.',next:['Lesson prices','Book a lesson']},
+  {k:['overseas','international','convert','conversion','transfer licence','transfer license','foreign','brazil','india','abroad','another country','overseas licence'],a:'Yes, overseas licence conversions are offered. Students say Paul walked them through the driving test requirements. A trial test with an assessment sheet is also available.',next:['Trial test','Book a lesson']},
+  {k:['refresher','rusty','been a while','nervous','scared','anxious','confidence','confident','lost confidence','afraid'],a:'Refresher courses for existing drivers are offered, and instructors work at your pace. Students describe the instructor as calm, patient and encouraging. The cars have dual controls for safety.',next:['Book a lesson','Lesson prices']},
+  {k:['beginner','first time','never driven','new driver','learner','l plate','learn to drive','from scratch','novice'],a:'Beginners are welcome. The 10-lesson package ($650) is designed for beginners, with a structured program that progresses at your pace. Single lessons are $70.',next:['Packages','Book a lesson']},
+  {k:['pickup','pick up','drop off','dropoff','collect','transport','pick me up','come to me','home'],a:'Pickup and drop-off are free, before and after each session. Tell the team your suburb when you book.'},
+  {k:['hours','open','opening','weekend','sunday','saturday','what time','early','evening','night','available','availability'],a:'The school lists Monday to Sunday, 6am to 8pm, and tries to fit lessons around your availability.'},
+  {k:['location','address','where','suburb','area','macquarie','north west','sydney','waterloo','ryde','drive to','service area'],a:'The school is on Waterloo Road, Macquarie Park NSW 2113, and country driving covers routes across North-Western Sydney. I do not have a list of every suburb served, so the team will confirm yours.'},
+  {k:['phone','call','number','contact','email','instagram','message'],a:'Phone +61 438 423 331 (Mon to Sun, 6am to 8pm). Email admin@key2successdrivingschool.com.au. The school replies to enquiries within 24 hours.'},
+  {k:['instructor','paul','teacher','accredited','rms','experience','qualified','l trent','ltrent','who teaches'],a:'The school says its instructors have over 30 years of driving experience, are RMS accredited, and include an ex L-TRENT driving instructor. Student reviews name Paul as their instructor.'},
+  {k:['pass','success','rate','first attempt','first try','pass rate','results','99'],a:'The school states that over 99% of its students score more than 90% on the driving test, and many pass on the first attempt. It also has about 300 5-star Google ratings.'},
+  {w:1.4,k:['car','vehicle','dual control','automatic','manual','transmission','model','safe','safety'],a:'The cars are late models, clean, fitted with modern technology and dual controls. I do not have transmission details (automatic or manual), so the team will confirm.'},
+  {k:['city','highway','one way','shared zone','parking','traffic','city driving'],a:'City driving is $140 for 2 hours, for intermediate to advanced drivers: highway driving, one-way streets, shared zones, parking and other key situations.'},
+  {k:['country','rural','long drive','route','north western','country driving','long trip'],a:'Country driving is $210 for 3 hours and covers full or partial routes of North-Western Sydney, for intermediate to advanced drivers.'},
+  {k:['first lesson','65','introductory','special offer','offer','deal','promo','promotion'],a:'The site advertises a first lesson at $65*. The asterisk conditions are not shown, so the team will confirm them when you book.'},
+  {k:['reviews','testimonial','rating','google','trust','good','recommend','reputation'],a:'The school has about 300 5-star Google ratings, and students on its site praise the instructor as patient, professional and encouraging.'},
+  {k:['thanks','thank you','cheers','great','ok thanks','bye','goodbye'],a:'No worries! If you want to lock in a time, tap Book a lesson, or call +61 438 423 331.'},
+  {k:['language','speak','english','hindi','portuguese','mandarin','chinese','arabic','interpreter'],a:'The site does not say which languages the instructor teaches in. The team will confirm if you need lessons in a language other than English.'},
+  {k:['payment','pay by card','cash','bank transfer','invoice','payid','afterpay','voucher','gift'],a:'The website does not explain payment methods, gift vouchers or invoicing, so the team will confirm how to pay when you book.'},
+  {k:['age','how old','under 18','teenager','teen','my son','my daughter','parent','kid','child'],a:'The site does not state an age limit. Lessons are for every level from beginner to expert, and parents can ask the team about their teen when they call.'},
+  {k:['wet','rain','weather','night driving','dark','night'],a:'I do not have details about weather or night lessons. The school is open 6am to 8pm and tries to fit lessons around your availability; the team will confirm.'},
+  {k:['cancel','reschedule','change lesson','missed','late','refund'],a:'I do not have the cancellation or rescheduling policy. Please call +61 438 423 331 and the team will confirm.'},
+  {k:['test location','test centre','centre','service nsw','rms test','driving test','test'],a:'The school knows the testing tracks well and talks you through how you will be assessed. Car hire for the test is $175 and varies by test location. Tell the team which test centre you booked.',next:['Trial test','Car hire for test']}
+ ],
+ flowIntro:'Happy to take a lesson request. I will gather a few details for the school. They normally reply within 24 hours.',
+ flow:[
+  {id:'svc',label:'Lesson',q:'What would you like to book?',opts:['Single lesson','3-lesson package','5-lesson package','10-lesson package','Trial test','Car hire for test','City driving','Country driving']},
+  {id:'lvl',label:'Experience',q:'Which best describes you?',opts:['Complete beginner','Some experience','Preparing for test','Overseas licence']},
+  {id:'sub',label:'Pickup suburb',q:'Which suburb should we pick you up from? Pickup and drop-off are free.',re:/\S{3,}/,err:'Please type a suburb.'},
+  {id:'when',label:'Preferred day and time',q:'Which day and time suit you? The school is open Mon to Sun, 6am to 8pm.',re:/\S{3,}/,err:'Please type a day and time, for example Saturday 10am.'},
+  {id:'name',label:'Name',q:'Your name?',re:/^[^\d]{2,60}$/,err:'Please type your name.'},
+  {id:'phone',label:'Mobile',q:'A mobile number for the school to call or text?',re:/^[+\d][\d\s().-]{7,}$/,err:'Please type a phone number with digits only.'}
+ ],
+ done:function(d){return 'Thanks, '+d.name+'! Your request is ready to go to the Key 2 Success team, who will confirm the time and any package conditions. (Demo only, nothing was actually sent.)'}
+};
+Assistant(cfg);
+document.addEventListener('click',function(e){var b=e.target.closest('[data-ask]');if(!b)return;e.preventDefault();window.__asAsk(b.getAttribute('data-ask'));});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Granville Island Hotel · Assistant demo</title>
+<meta name="description" content="Demo page and booking assistant for Granville Island Hotel, Vancouver.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2536;--deep:#143a4f;--sea:#2b6b7d;--gold:#cd9b62;--sand:#f4eee3;--ink:#13212b;--mist:#dfe9ec;--hf:'Cormorant Garamond',Georgia,serif;--bf:'Jost',system-ui,sans-serif;
+--wa:#cd9b62;--wat:#0d2536;--wbg:#fffdf9;--wtx:#13212b;--wbd:#e4dccd;--wbub:#f1ebde}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 var(--bf);color:var(--ink);background:var(--sand);overflow-x:hidden}
+img{max-width:100%}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--hf);font-weight:600;line-height:1.08;margin:0}
+h2{font-size:clamp(30px,6vw,46px);color:var(--navy)}
+.eyebrow{font:600 12px var(--bf);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
+header.top{position:sticky;top:0;z-index:40;background:var(--navy);color:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.brand{display:flex;align-items:center;background:var(--navy);padding:4px 0}
+.brand img{height:42px;width:auto;display:block}
+nav.main{display:none;gap:22px;font-size:14px}
+nav.main a{text-decoration:none;opacity:.85}
+nav.main a:hover{opacity:1;color:var(--gold)}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font:600 14px var(--bf);padding:12px 20px;border-radius:999px;text-decoration:none;border:0;cursor:pointer}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.55);color:#fff}
+@media(min-width:820px){nav.main{display:flex}}
+.hero{position:relative;background:linear-gradient(180deg,var(--navy) 0%,var(--deep) 62%,var(--sea) 100%);color:#fff;padding:56px 0 110px;overflow:hidden}
+.hero h1{font-size:clamp(40px,10vw,84px);max-width:11em}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero p.lead{max-width:34em;font-size:17px;opacity:.9;margin:18px 0 26px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px}
+.hero .facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;font-size:13px;opacity:.85}
+.hero .facts span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-right:8px;vertical-align:middle}
+.waves{position:absolute;left:0;right:0;bottom:-1px;height:70px;width:100%}
+section{padding:56px 0}
+.intro{display:grid;gap:26px}
+.intro p{margin:0 0 12px;max-width:36em}
+.stat{display:flex;gap:18px;flex-wrap:wrap}
+.stat div{background:#fff;border:1px solid var(--mist);border-radius:14px;padding:14px 16px;min-width:130px;flex:1}
+.stat b{display:block;font:600 26px var(--hf);color:var(--sea)}
+.stat span{font-size:13px;color:#4c5d68}
+@media(min-width:820px){.intro{grid-template-columns:1.2fr 1fr;align-items:center}}
+.rooms{background:var(--navy);color:#fff}
+.rooms h2{color:#fff}
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:22px 16px 10px;margin:0 -16px;-webkit-overflow-scrolling:touch}
+.rcard{flex:0 0 78%;max-width:300px;scroll-snap-align:start;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.rcard .tag{font:600 11px var(--bf);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.rcard h3{font-size:26px}
+.rcard p{margin:0;font-size:14px;opacity:.88}
+.rcard ul{margin:0;padding:0;list-style:none;font-size:13px;opacity:.85}
+.rcard li{padding:3px 0;border-top:1px dashed rgba(255,255,255,.18)}
+.rcard a{margin-top:auto;font-size:13px;color:var(--gold);cursor:pointer}
+.hint{font-size:12px;opacity:.6;margin:4px 0 0}
+.offers{display:grid;gap:12px;margin-top:24px}
+.offer{background:#fff;border-radius:14px;padding:18px 18px 18px 22px;border-left:6px solid var(--gold);display:grid;gap:4px}
+.offer h3{font-size:22px;color:var(--navy)}
+.offer p{margin:0;font-size:14px;color:#41525d}
+@media(min-width:700px){.offers{grid-template-columns:1fr 1fr}}
+.dock{background:linear-gradient(135deg,#f7e8d2,#efd7b4);}
+.dock .grid{display:grid;gap:22px}
+.dock .card{background:var(--navy);color:#fff;border-radius:18px;padding:24px}
+.dock .card big{display:block;font:600 40px var(--hf);color:var(--gold)}
+@media(min-width:820px){.dock .grid{grid-template-columns:1.3fr 1fr;align-items:center}}
+.amen{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.amen div{background:#fff;border:1px solid var(--mist);border-radius:12px;padding:14px;font-size:14px}
+.amen b{display:block;font:600 18px var(--hf);color:var(--sea);margin-bottom:2px}
+@media(min-width:820px){.amen{grid-template-columns:repeat(4,1fr)}}
+.faq details{background:#fff;border:1px solid var(--mist);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:500;color:var(--navy)}
+.faq details p{margin:10px 0 0;font-size:15px;color:#41525d}
+.visit{background:var(--deep);color:#fff}
+.visit h2{color:#fff}
+.visit .cols{display:grid;gap:20px;margin-top:18px}
+.visit .cols div{font-size:15px;opacity:.92}
+.visit h3{font-size:22px;color:var(--gold);margin-bottom:6px}
+@media(min-width:820px){.visit .cols{grid-template-columns:repeat(3,1fr)}}
+footer{background:var(--navy);color:#b9c8d0;padding:26px 0 90px;font-size:13px;text-align:center}
+.wb,.wp{font-family:var(--bf)}
+.evgrid{display:grid;gap:14px;margin-top:20px}
+.evgrid>div{background:#fff;border:1px solid var(--mist);border-radius:16px;padding:22px}
+.evgrid h3{font-size:24px;color:var(--sea);margin-bottom:8px}
+.evgrid p{margin:0 0 10px;font-size:15px;color:#41525d}
+.lnk{font-size:14px;font-weight:500;color:var(--navy)}
+@media(min-width:760px){.evgrid{grid-template-columns:1fr 1fr}}
+.steps{list-style:none;counter-reset:s;margin:20px 0 0;padding:0;display:grid;gap:10px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:2px 12px;align-items:center;background:#fff;border-radius:14px;padding:14px;border:1px solid var(--mist)}
+.steps li::before{content:counter(s);grid-row:span 2;width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font:600 20px var(--hf)}
+.steps b{color:var(--navy)}
+.steps span{font-size:14px;color:#4c5d68}
+.faq details p{margin:10px 0 0}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="#top" aria-label="Granville Island Hotel"><img src="img/granville-island-hotel-logo.png" alt="Granville Island Hotel" width="156" height="42"></a>
+<nav class="main"><a href="#rooms">Rooms</a><a href="#offers">Offers</a><a href="#dockside">Dockside</a><a href="#amenities">Amenities</a><a href="#faq">FAQ</a><a href="#visit">Find us</a></nav>
+<a class="btn" href="#" data-ask="__book">Request a stay</a>
+</div></header>
+
+<div id="top" class="hero">
+<div class="wrap">
+<p class="eyebrow">Boutique waterfront hotel · Vancouver</p>
+<h1>Wake up to passing boats on <em>False Creek</em></h1>
+<p class="lead">Granville Island Hotel sits on the island itself: market, artisan shops, live music and the seawall at the door, downtown a short water taxi or drive away. This page is a demo of how your guests could get answers and send stay requests without waiting for office hours.</p>
+<div class="cta"><a class="btn" href="#" data-ask="__book">Request a stay</a><a class="btn ghost" href="#rooms">See the rooms</a></div>
+<div class="facts"><span>Check-in 4 PM</span><span>Check-out 12 PM</span><span>Pet friendly</span><span>Dockside Restaurant on site</span></div>
+</div>
+<svg class="waves" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C150 10 300 70 450 40 S750 10 900 40 1050 65 1200 35 V70 H0Z" fill="#f4eee3"/></svg>
+</div>
+
+<section class="wrap intro">
+<div>
+<p class="eyebrow">Why Granville Island</p>
+<h2>A quieter Vancouver, still minutes from downtown</h2>
+<p style="margin-top:14px">Staying on the island means the Public Market, Kids Market, theatres and galleries are steps away, and the seawall runs right past the hotel. The hotel describes itself as a calm, intimate base for couples, creatives and families.</p>
+<p>Many rooms overlook False Creek or the marina, and the hotel has been named among Vancouver's best by Cond&eacute; Nast Traveller, Tripadvisor and Travel + Leisure.</p>
+</div>
+<div class="stat">
+<div><b>5&ndash;10 min</b><span>drive or water taxi to downtown</span></div>
+<div><b>9</b><span>room and suite types</span></div>
+<div><b>7:30&ndash;11</b><span>Dockside open daily</span></div>
+<div><b>2 pets</b><span>welcome in the pet friendly room</span></div>
+</div>
+</section>
+
+<section class="rooms" id="rooms"><div class="wrap">
+<p class="eyebrow">Rooms &amp; suites</p>
+<h2>Nine ways to wake up on the water</h2>
+<div class="rail" role="list">
+<article class="rcard" role="listitem"><span class="tag">Suite</span><h3>Waterfront Executive Suite</h3><p>Floor-to-ceiling windows frame the waterfront and the city skyline.</p><ul><li>2 bathrobes, Lavazza coffee maker</li><li>2 TVs</li><li>Pull-out sofa bed</li></ul><a data-ask="Tell me about the Waterfront Executive Suite">Ask the assistant &rarr;</a></article>
+<article class="rcard" role="listitem"><span class="tag">Suite &middot; guest favourite</span><h3>Boardwalk Suite</h3><p>Described as guests' favourite room, with the best of the waterfront views.</p><ul><li>2 bathrobes, Lavazza coffee maker</li><li>TV with HD channels</li><li>Small pull-out sofa bed</li></ul><a data-ask="Tell me about the Boardwalk Suite">Ask the assistant &rarr;</a></article>
+<article class="rcard" role="listitem"><span class="tag">Room</span><h3>Superior Waterfront</h3><p>More space and waterfront views.</p><ul><li>2 bathrobes, coffee maker</li><li>TV with HD channels</li><li>Small pull-out sofa bed</li></ul><a data-ask="Tell me about Superior Waterfront rooms">Ask the assistant &rarr;</a></article>
+<article class="rcard" role="listitem"><span class="tag">Room &middot; 2 guests</span><h3>Premium Balcony Kings</h3><p>A private balcony for a slow morning on Granville Island.</p><ul><li>Balcony</li><li>Coffee maker, TV</li></ul><a data-ask="Tell me about Premium Balcony rooms">Ask the assistant &rarr;</a></article>
+<article class="rcard" role="listitem"><span class="tag">Room &middot; up to 4 guests</span><h3>Premium Balcony Doubles</h3><p>The same balcony, with space for the whole family.</p><ul><li>Balcony</li><li>Coffee maker, TV</li></ul><a data-ask="Do you have family rooms for 4?">Ask the assistant &rarr;</a></article>
+<article class="rcard" role="listitem"><span class="tag">Room &middot; 2 guests</span><h3>Granville Island Kings</h3><p>Designed for comfort with an essence of luxury.</p><ul><li>Standing shower or tub</li><li>Coffee maker, TV</li></ul><a data-ask="Tell me about the King rooms">Ask the assistant &rarr;</a></article>
+<article class="rcard" role="listitem"><span class="tag">Room &middot; up to 4 guests</span><h3>Granville Island Doubles</h3><p>For the whole family, or to keep the space to yourself.</p><ul><li>Standing shower or tub</li><li>Coffee maker, TV</li></ul><a data-ask="Tell me about the Double rooms">Ask the assistant &rarr;</a></article>
+<article class="rcard" role="listitem"><span class="tag">Penthouse</span><h3>Pelican Bay</h3><p>A private waterfront penthouse for a special occasion.</p><ul><li>Large terrace</li><li>2 TVs, Lavazza coffee maker</li></ul><a data-ask="Tell me about the penthouses">Ask the assistant &rarr;</a></article>
+<article class="rcard" role="listitem"><span class="tag">Penthouse</span><h3>False Creek</h3><p>Overlooks downtown Vancouver and False Creek.</p><ul><li>2 large terraces</li><li>2 TVs, Lavazza coffee maker</li></ul><a data-ask="Tell me about the penthouses">Ask the assistant &rarr;</a></article>
+</div>
+<p class="hint">Swipe for more. Pet friendly rooms take up to 2 pets, with treats from the Granville Island Pet Treatery.</p>
+</div></section>
+
+<section class="wrap" id="offers">
+<p class="eyebrow">Special offers</p>
+<h2>Current packages on the hotel's site</h2>
+<div class="offers">
+<div class="offer"><h3>A Special Escape</h3><p>Up to a $225 prepaid Mastercard with a 2-night stay.</p></div>
+<div class="offer"><h3>Early Booking Savings</h3><p>Book a Vancouver getaway early and save 20%.</p></div>
+<div class="offer"><h3>West Coast Residents</h3><p>15% savings and daily complimentary breakfast for two.</p></div>
+<div class="offer"><h3>Dine &amp; Stay</h3><p>Save 15% and receive a $60 dining voucher for Dockside Restaurant.</p></div>
+<div class="offer"><h3>Arrive, Park &amp; Unwind</h3><p>Parking for one vehicle included.</p></div>
+<div class="offer"><h3>Call direct</h3><p>Booking by phone can save up to 15% (not combinable with other promotions).</p></div>
+</div>
+<p style="font-size:13px;color:#53636e;margin-top:14px">Also listed: Bed &amp; Breakfast, Moments of Joy, Pet Friendly Stay and Seniors Rate. Terms are on the hotel's offers page.</p>
+</section>
+
+<section class="dock" id="dockside"><div class="wrap grid">
+<div>
+<p class="eyebrow" style="color:#9a6a30">Dockside Restaurant</p>
+<h2>Breakfast, lunch and dinner with the skyline as a backdrop</h2>
+<p style="max-width:34em;margin-top:14px">Home to what the hotel calls Vancouver's best patio for 11 years running. A good answer for guests who ask "where do we eat tonight?" before they even book.</p>
+<p><a class="btn" href="#" data-ask="What are the Dockside Restaurant hours?">Ask about Dockside</a></p>
+</div>
+<div class="card"><big>7:30&ndash;11</big><div>Open daily, 7:30 AM to 11 PM</div><div style="margin-top:10px;font-size:14px;opacity:.85">Tables: +1 604-685-7070</div></div>
+</div></section>
+
+<section class="wrap" id="amenities">
+<p class="eyebrow">Activities &amp; amenities</p>
+<h2>Everything between the market and the water</h2>
+<div class="amen">
+<div><b>Fitness room</b>Ellipticals, treadmills, bikes, weights, yoga mats</div>
+<div><b>Dry cedar sauna</b>Start or end the day warm</div>
+<div><b>Jacuzzi</b>Sun-dappled, for after sightseeing</div>
+<div><b>E-bikes</b>Seasonal rental</div>
+<div><b>Kayaks &amp; boats</b>Steps away on the island, some seasonal</div>
+<div><b>Seawall</b>Walk, run or ride from the door</div>
+<div><b>Parking</b>Guest lot, $39 + tax per night, limited</div>
+<div><b>Business centre</b>Free, 24 hours, Wi-Fi and printers</div>
+</div>
+</section>
+
+<section class="wrap" id="island">
+<p class="eyebrow">Around the island</p>
+<h2>What is on the doorstep</h2>
+<div class="amen" style="margin-top:20px">
+<div><b>Public Market</b>Fresh food and the farmers market, steps from the hotel</div>
+<div><b>Kids Market</b>A family stop next to the theatres</div>
+<div><b>Artisan boutiques</b>Local makers and galleries on the island</div>
+<div><b>Live music</b>And theatres, within walking distance</div>
+<div><b>Water taxis</b>To Science World and downtown</div>
+<div><b>Stanley Park</b>Close by, along the seawall</div>
+<div><b>Kitsilano Beach</b>An easy trip from the island</div>
+<div><b>Yaletown</b>Restaurants and shops across False Creek</div>
+</div>
+</section>
+
+<section class="wrap" id="events">
+<p class="eyebrow">Celebrations &amp; meetings</p>
+<h2>Events, retreats and small gatherings</h2>
+<div class="evgrid">
+<div><h3>Events &amp; celebrations</h3><p>The hotel hosts celebrations on the waterfront. Capacity, rooms and catering are handled by the team, so the assistant passes event questions straight to them instead of guessing.</p><a class="lnk" href="#" data-ask="Do you host weddings or events?">Ask about events &rarr;</a></div>
+<div><h3>Meetings &amp; retreats</h3><p>A 24-hour business centre with Wi-Fi, printers and two computers is free for guests, and Dockside Restaurant is on site for working lunches.</p><a class="lnk" href="#" data-ask="Do you have a business centre?">Ask about the business centre &rarr;</a></div>
+</div>
+</section>
+
+<section class="wrap" id="getting-here">
+<p class="eyebrow">Getting here</p>
+<h2>By land, by water or from the airport</h2>
+<ol class="steps">
+<li><b>From the airport</b><span>Limousine service, car rental pick-ups, taxis and Uber are all available.</span></li>
+<li><b>By bus</b><span>Bus #50 False Creek, from Gastown.</span></li>
+<li><b>By water</b><span>False Creek Ferries or Aquabus, a short ride from downtown.</span></li>
+<li><b>By car</b><span>Guest parking lot on site, $39.00 plus taxes per night, limited spaces.</span></li>
+</ol>
+</section>
+
+<section class="wrap faq" id="faq">
+<p class="eyebrow">Quick answers</p>
+<h2>What guests ask first</h2>
+<div style="margin-top:20px">
+<details><summary>Is the hotel close to downtown?</summary><p>About a 5 to 10 minute drive or a short water taxi ride. Bus #50 False Creek runs from Gastown, and False Creek Ferries and Aquabus serve the island.</p></details>
+<details><summary>Is it a good fit for families?</summary><p>The hotel calls itself family friendly: Doubles and Premium Balcony Doubles sleep up to 4, and the Kids Market, theatres and water taxis to Science World are close.</p></details>
+<details><summary>Can I bring my dog?</summary><p>Yes, it is a pet friendly hotel; the pet friendly room takes up to 2 pets. Any fee or house rules are confirmed by the team.</p></details>
+<details><summary>What times are check-in and check-out?</summary><p>Check-in is 4 PM and check-out is 12 PM.</p></details>
+<details><summary>How do I get from the airport?</summary><p>Limousine service, car rental pick-ups, taxis and Uber are available from the airport.</p></details>
+</div>
+</section>
+
+<section class="visit" id="visit"><div class="wrap">
+<p class="eyebrow">Find us</p>
+<h2>1253 Johnston Street, Vancouver</h2>
+<div class="cols">
+<div><h3>Address</h3>1253 Johnston Street<br>Vancouver, BC V6H 3R9, Canada</div>
+<div><h3>Reservations</h3>1-604-683-7373<br>Toll free 1-800-663-1840<br>reservations@granvilleislandhotel.com</div>
+<div><h3>Nearby</h3>Granville Island Public Market, Stanley Park, Kitsilano Beach, Yaletown. Close to UBC, Emily Carr University and major hospitals.</div>
+</div>
+</div></section>
+
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button class="wb" id="wb" type="button" aria-expanded="false" aria-controls="wp">Ask the hotel</button>
+<div class="wp" id="wp" role="dialog" aria-label="Hotel assistant">
+<div class="wh"><div>Granville Island Hotel<small>Assistant (demo)</small></div><button id="wx" type="button" aria-label="Close">&times;</button></div>
+<div class="wl" id="wl" aria-live="polite"></div>
+<div class="wc" id="wc"></div>
+<form class="wf" id="wf"><input id="wi" type="text" placeholder="Ask about rooms, parking, pets…" aria-label="Your message" autocomplete="off"><button type="submit">Send</button></form>
+</div>
+<style>.wb{position:fixed;right:16px;bottom:16px;z-index:60;border:0;border-radius:999px;padding:13px 18px;font:600 14px/1 var(--bf);background:var(--wa);color:var(--wat);box-shadow:0 8px 24px rgba(0,0,0,.28);cursor:pointer;display:flex;gap:8px;align-items:center}
+.wp{position:fixed;right:16px;bottom:74px;z-index:61;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 100px));background:var(--wbg);color:var(--wtx);border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--wbd)}
+.wp.open{display:flex}
+.wh{background:var(--wa);color:var(--wat);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font:600 14px var(--bf)}
+.wh small{display:block;font-weight:400;opacity:.85;font-size:11px;margin-top:2px}
+.wh button{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}
+.wl{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;font:14px/1.45 var(--bf)}
+.wm{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word}
+.wm.b{background:var(--wbub);align-self:flex-start;border-bottom-left-radius:4px}
+.wm.u{background:var(--wa);color:var(--wat);align-self:flex-end;border-bottom-right-radius:4px}
+.wc{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px}
+.wc button{border:1px solid var(--wa);background:transparent;color:var(--wtx);border-radius:999px;padding:6px 11px;font:12.5px var(--bf);cursor:pointer}
+.wc button:hover{background:var(--wa);color:var(--wat)}
+.wf{display:flex;gap:6px;padding:10px 12px;border-top:1px solid var(--wbd)}
+.wf input{flex:1;min-width:0;border:1px solid var(--wbd);border-radius:10px;padding:10px;font:14px var(--bf);background:var(--wbg);color:var(--wtx)}
+.wf button{border:0;border-radius:10px;padding:0 14px;background:var(--wa);color:var(--wat);font:600 13px var(--bf);cursor:pointer}
+</style>
+<script>
+var CFG={ph:'Ask about rooms, parking, pets…',cancelLabel:'Cancel',cancelMsg:'No problem, nothing was saved. Ask me anything else.',dateRetry:'Please pick a date with the calendar field or type it like 2026-12-18.',
+greet:'Hello, I am the Granville Island Hotel assistant. I know the rooms, Dockside Restaurant, parking, pets and how to get here. What would you like to know?',
+chips:['Rooms and suites','Pet friendly','Parking','Dockside hours','Getting here','Request a stay'],
+bookWords:['book','booking','reserve','reservation','availability','available','request a stay','stay request'],
+fallback:'I do not have that detail yet, so I will not guess. The team can confirm it: reservations@granvilleislandhotel.com, 1-604-683-7373 or toll free 1-800-663-1840.',
+flowIntro:'Happy to pass a stay request to the team. A few quick questions.',
+flow:[{id:'in',label:'Arrival',q:'What is your arrival date?',type:'date'},{id:'out',label:'Departure',q:'And your departure date?',type:'date'},{id:'g',label:'Guests',q:'Who is travelling?',opts:['1 adult','2 adults','2 adults + kids','3 to 4 guests']},{id:'r',label:'Room',q:'Which kind of room interests you?',opts:['Waterfront suite','Balcony room','King or Double','Penthouse','Pet friendly room','Not sure yet']},{id:'n',label:'Name',q:'Your name, please?',ph:'Full name'},{id:'c',label:'Contact',q:'Best e-mail or phone for the team to reply?',ph:'e-mail or phone'}],
+doneTitle:'Your stay request is ready for the team:',doneNote:'In this demo nothing is actually sent. On the live site this goes to the reservations team, who confirm availability and rates.',
+kb:[
+{k:['room','rooms','suite','suites','accommodation','types of rooms','what rooms'],a:'There are suites (Waterfront Executive Suite, Boardwalk Suite), rooms (Granville Island Kings and Doubles, Premium Balcony Kings and Doubles, Superior Waterfront Rooms) and two penthouses (Pelican Bay and False Creek). Ask about any of them by name.'},
+{k:['boardwalk','boardwalk suite','favourite room','favorite room'],a:'The Boardwalk Suite is described as the guests’ favourite room: a waterfront suite with two bathrobes, a Lavazza coffee maker, a TV and a small pull-out sofa bed.'},
+{k:['executive suite','waterfront executive','floor to ceiling','skyline view'],a:'The Waterfront Executive Suite has floor-to-ceiling windows framing the waterfront and skyline, two TVs, a Lavazza coffee maker, two bathrobes and a pull-out sofa bed.'},
+{k:['penthouse','penthouses','pelican bay','false creek penthouse','terrace'],a:'Two private waterfront penthouses: Pelican Bay (large terrace) and False Creek (two large terraces, view over downtown). Both have two TVs, a Lavazza coffee maker and two bathrobes.'},
+{k:['balcony','premium balcony','private balcony'],a:'Premium Balcony Kings (2 guests) and Premium Balcony Doubles (4 guests) each have a private balcony, coffee maker and TV.'},
+{k:['king','kings','double','doubles','granville island kings','granville island doubles','family','kids','children','four guests','4 guests'],a:'Granville Island Kings suit 2 guests; Granville Island Doubles and Premium Balcony Doubles suit up to 4, so they work for families. Bathroom is a choice of standing shower or tub in the standard rooms. The hotel is described as family friendly, close to the Kids Market and water taxis.'},
+{k:['superior waterfront','waterfront room','waterfront view','views','view','marina'],a:'Superior Waterfront Rooms add space and waterfront views, with two bathrobes, a coffee maker, TV and a small pull-out sofa bed. Many rooms look over False Creek or the marina.'},
+{k:['pet','pets','dog','dogs','cat','pet friendly','animal','puppy'],a:'Yes, it is a pet friendly hotel. The pet friendly room takes up to 2 pets, and your four-legged guest gets treats from the Granville Island Pet Treatery. Any pet fee or rules: the team will confirm.'},
+{k:['parking','park','car','garage','valet','vehicle'],a:'There is an exclusive guest parking lot, $39.00 plus taxes per night, spaces are limited. The “Arrive, Park & Unwind” offer includes parking for one vehicle.'},
+{k:['checkin','check in','check-in','arrival time','arrive','early check','late check'],a:'Check-in is 4 PM. Early check-in is not mentioned on the site, so the team will confirm.'},
+{k:['checkout','check out','check-out','departure time','leave','late checkout'],a:'Check-out is 12 PM (noon).'},
+{k:['dockside','restaurant','dine','dining','eat','food','breakfast','lunch','dinner','patio','brunch','menu'],a:'Dockside Restaurant serves breakfast, lunch and dinner daily, 7:30 AM to 11 PM, with the skyline and waterfront as a backdrop and a patio voted Vancouver’s best for 11 years running. Phone +1 604-685-7070 for a table.'},
+{k:['hours','open','opening','dockside hours','when open','time'],a:'Dockside Restaurant: 7:30 AM to 11 PM daily. Reception: please call 1-604-683-7373; the site does not list front-desk hours, so the team will confirm.'},
+{k:['gym','fitness','workout','exercise','treadmill','yoga'],a:'There is a fitness room with ellipticals, treadmills, bikes, weights and yoga mats.'},
+{k:['sauna','jacuzzi','hot tub','spa','relax','wellness'],a:'Guests can use a dry cedar sauna and a sun-dappled Jacuzzi. Spa treatments are not listed on the site; the team will confirm.'},
+{k:['bike','bikes','ebike','e-bike','cycle','kayak','paddle','water bike','boat','activities','things to do'],a:'E-bike rental is available (seasonal). Kayaks, water bikes and boat rentals are steps away on Granville Island (some seasonal). The seawall path is right outside.'},
+{k:['wifi','wi-fi','internet','business centre','business center','printer','computer','work'],a:'There is a complimentary 24-hour business centre with Wi-Fi, printers and two computers.'},
+{k:['offer','offers','deal','deals','special','discount','promo','package','packages','save'],a:'Current offers listed: A Special Escape (up to a $225 prepaid Mastercard with a 2-night stay), Early Booking Savings (20%), West Coast Residents (15% plus daily breakfast for two), Dine & Stay (15% and a $60 Dockside voucher), Arrive, Park & Unwind (parking included). Also Bed & Breakfast, Moments of Joy, Pet Friendly Stay and Seniors Rate. Terms are on the offers page.'},
+{k:['direct','call direct','phone discount','book direct','best rate'],a:'Calling the hotel directly can save up to 15%, not combinable with other promotions. Toll free 1-800-663-1840, local 1-604-683-7373.'},
+{k:['price','prices','rate','rates','cost','how much','tariff','per night'],a:'Nightly rates change by date and are not published as a fixed list, so the team will confirm. Use “Request a stay” and give your dates.'},
+{k:['address','where','location','located','directions','find you','map'],a:'1253 Johnston Street, Vancouver, BC V6H 3R9, on Granville Island, about a 5 to 10 minute drive or water taxi from downtown Vancouver.'},
+{k:['transit','bus','ferry','aquabus','water taxi','get there','getting here','airport','taxi','uber','transfer','limo'],a:'Bus #50 False Creek (from Gastown); False Creek Ferries or Aquabus by water; from the airport limousine, car rental, taxi and Uber are all available.'},
+{k:['phone','call','telephone','number','contact','email','e-mail','reach'],a:'Phone 1-604-683-7373 or toll free 1-800-663-1840. E-mail reservations@granvilleislandhotel.com.'},
+{k:['near','nearby','attractions','market','public market','stanley park','kitsilano','yaletown','walk','seawall','shops'],a:'Steps from the Granville Island Public Market, Kids Market, theatres, artisan shops and the seawall. Stanley Park, Kitsilano Beach, Yaletown and downtown are all close.'},
+{k:['meeting','meetings','event','events','celebration','celebrations','wedding','retreat','conference'],a:'The hotel hosts celebrations and meetings or retreats. Capacity, rooms and catering are not on the site, so the team will confirm: reservations@granvilleislandhotel.com.'},
+{k:['hospital','ubc','university','emily carr','visiting','medical'],a:'The hotel is near Vancouver General, BC Children’s, Mount Saint Joseph and St. Paul’s hospitals, and is described as the closest hotel to UBC (via West 4th or West Broadway) and near Emily Carr University.'},
+{k:['award','awards','best','rated','recognized','conde nast','review','reviews'],a:'The hotel lists recognition from Condé Nast Traveller (2026 Readers’ Choice Awards), Tripadvisor and Travel + Leisure among the best hotels in Vancouver.'},
+{k:['couple','romantic','honeymoon','anniversary','birthday','occasion'],a:'The calm waterfront setting suits couples. The penthouses are pitched for special occasions, and a “Moments of Joy” offer exists. Ask the team about arranging anything special.'},
+{k:['cancel','cancellation','refund','change booking','modify','amend','deposit','policy'],a:'Cancellation, deposit and change rules are not on the pages I can see, so I will not guess. The reservations team will confirm: 1-604-683-7373 or reservations@granvilleislandhotel.com.'},
+{k:['accessible','accessibility','wheelchair','disabled','elevator','lift','step free'],a:'Accessibility details are not listed on the site, so the team will confirm what is available: 1-604-683-7373.'},
+{k:['smoking','smoke','non smoking'],a:'The site does not state a smoking policy here, so the team will confirm.'},
+{k:['breakfast included','bed and breakfast','bed & breakfast','b&b','west coast','resident','senior','seniors'],a:'Breakfast appears in two offers: West Coast Residents (daily breakfast for two) and Bed & Breakfast. A Seniors Rate offer also exists. Details and dates are on the offers page; the team confirms eligibility.'},
+{k:['coffee','lavazza','bathrobe','robe','tv','television','amenities in room','in room'],a:'Suites and penthouses have Lavazza coffee makers and two bathrobes; standard rooms have a coffee maker and a TV with HD channels. Superior Waterfront rooms also have two bathrobes.'},
+{k:['sofa','sofa bed','pull out','extra bed','rollaway','crib'],a:'Waterfront Executive Suite, Boardwalk Suite and Superior Waterfront Rooms have a pull-out sofa bed. Cribs and rollaways are not listed, so the team will confirm.'},
+{k:['market','farmers market','public market','shopping','artisan','music','live music','theatre','theater'],a:'Granville Island has the Public Market, the Kids Market, artisan boutiques, live music and theatres, all within a few steps of the hotel.'},
+{k:['stanley park','science world','kids market','downtown','yaletown','kits','kitsilano'],a:'Downtown, Yaletown, Kitsilano Beach and Stanley Park are all close; water taxis connect to Science World and downtown.'},
+{k:['hello','hi','hey','thanks','thank you'],a:'Happy to help. Ask about rooms, Dockside, parking, pets, offers, or request a stay.'}
+]};
+
+/* assistant engine: matcher + UI. CFG is defined before this block. */
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9€$ ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.replace(/(ing|ed|es|s)$/,function(m,a,off){return w.length-m.length>=3?'':m;});}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;var p=[],i,j;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var c=[i];for(j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[n];}
+var STOP={the:1,a:1,an:1,is:1,are:1,do:1,does:1,you:1,your:1,i:1,we:1,can:1,my:1,to:1,of:1,at:1,in:1,on:1,for:1,it:1,there:1,and:1,or:1,have:1,has:1,what:1,whats:1,how:1,with:1,me:1,us:1,please:1,any:1,about:1,tell:1,much:1,get:1,be:1,this:1,that:1};
+function wmatch(t,k){if(t===k)return true;var st=stem(t),sk=stem(k);if(st===sk)return true;if(k.length<5||t.length<5)return false;var d=Math.min(lev(st,sk),lev(t,k));return d<=(sk.length>=8?2:1);}
+function match(q){var qn=norm(q);if(!qn)return null;var toks=qn.split(' ').filter(function(t){return t&&!STOP[t];});if(!toks.length)toks=qn.split(' ');var best=null,bs=0;
+CFG.kb.forEach(function(e){var s=0,used={};e.k.forEach(function(kw){var kn=norm(kw);if(!kn)return;if(kn.indexOf(' ')>-1){if((' '+qn+' ').indexOf(' '+kn+' ')>-1){s+=3*kn.split(' ').length;return;}var parts=kn.split(' '),idx=[];var ok=parts.every(function(p){var f=-1;toks.some(function(t,i){if(wmatch(t,p)){f=i;return true;}return false;});if(f>-1)idx.push(f);return f>-1;});if(ok)s+=2*parts.length;}else{var f=-1;toks.some(function(t,i){if(!used[i]&&wmatch(t,kn)){f=i;return true;}return false;});if(f>-1){used[f]=1;s+=(kn.length>=6?3:2.5);}}});
+if(s>bs){bs=s;best=e;}});return bs>=2.5?best:null;}
+function isBook(q){var qn=norm(q);return CFG.bookWords.some(function(w){return (' '+qn+' ').indexOf(' '+norm(w)+' ')>-1||qn.split(' ').some(function(t){return t.length>4&&wmatch(t,norm(w));});});}
+if(typeof module!=='undefined')module.exports={match:match,isBook:isBook,norm:norm};
+/* ---- UI ---- */
+function initWidget(){var $=function(i){return document.getElementById(i)};var btn=$('wb'),pn=$('wp'),log=$('wl'),form=$('wf'),inp=$('wi'),chips=$('wc');if(!btn)return;
+var flow=null,data={};
+function add(t,who,html){var d=document.createElement('div');d.className='wm '+who;if(html)d.innerHTML=t;else d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+function setChips(list,cb){chips.innerHTML='';list.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){cb(c);};chips.appendChild(b);});}
+function home(){setChips(CFG.chips,function(c){say(c);});}
+function say(t){add(t,'u');reply(t);}
+function reply(t){if(flow){stepIn(t);return;}
+if(isBook(t)){startFlow();return;}
+var m=match(t);if(m){add(m.a,'b');if(m.flow){startFlow();return;}home();}else{add(CFG.fallback,'b');home();}}
+function startFlow(){flow={i:0};data={};add(CFG.flowIntro,'b');ask();}
+function ask(){var s=CFG.flow[flow.i];add(s.q,'b');inp.type=s.type==='date'?'date':'text';inp.placeholder=s.ph||'';if(s.opts){setChips(s.opts,function(c){say(c);});}else{chips.innerHTML='';var b=document.createElement('button');b.type='button';b.textContent=CFG.cancelLabel;b.onclick=cancel;chips.appendChild(b);}
+if(s.opts){var b2=document.createElement('button');b2.type='button';b2.textContent=CFG.cancelLabel;b2.onclick=cancel;chips.appendChild(b2);}}
+function cancel(){flow=null;inp.type='text';inp.placeholder=CFG.ph;add(CFG.cancelMsg,'b');home();}
+function stepIn(t){var s=CFG.flow[flow.i];t=t.trim();if(!t)return;if(s.type==='date'&&!/^\d{4}-\d\d-\d\d$/.test(t)&&!/\d/.test(t)){add(CFG.dateRetry,'b');return;}
+data[s.id]=t;flow.i++;if(flow.i<CFG.flow.length){ask();return;}
+var sum=CFG.flow.map(function(x){return '<b>'+x.label+':</b> '+esc(data[x.id]);}).join('<br>');
+add(CFG.doneTitle+'<br><br>'+sum+'<br><br>'+CFG.doneNote,'b',true);flow=null;inp.type='text';inp.placeholder=CFG.ph;home();}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+btn.onclick=function(){var o=pn.classList.toggle('open');btn.setAttribute('aria-expanded',o);if(o&&!log.children.length){add(CFG.greet,'b');home();}if(o)inp.focus();};
+$('wx').onclick=function(){pn.classList.remove('open');btn.setAttribute('aria-expanded','false');};
+form.onsubmit=function(e){e.preventDefault();var v=inp.value;if(!v.trim())return;inp.value='';say(v);};
+document.querySelectorAll('[data-ask]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();if(!pn.classList.contains('open'))btn.click();var q=a.getAttribute('data-ask');if(q==='__book')window.__openBook();else say(q);});});
+window.__openBook=function(){if(!pn.classList.contains('open'))btn.click();if(!flow)startFlow();};
+}
+if(typeof document!=='undefined')document.addEventListener('DOMContentLoaded',initWidget);
+
+</script>
+</body>
+</html>

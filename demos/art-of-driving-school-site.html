@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Art of Driving School, South Dublin | Demo</title>
+<meta name="description" content="Demo page prepared for Art of Driving School, Dublin School of Motoring.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--coral:#f2514e;--orange:#f58a2c;--yellow:#ffc20e;--sky:#17a8ea;--purple:#4a3da8;--ink:#111318;--paper:#fffdf8;--grey:#5b5f6b;--w-brand:#17a8ea;--w-ink:#fff;--w-bg:#fffdf8;--w-ring:#f2514e;--w-r:99px;--w-font:'DM Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.6 'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden}
+h1,h2,h3{font-family:'Fredoka',system-ui,sans-serif;line-height:1.1;font-weight:600}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.stripe{height:8px;background:linear-gradient(90deg,var(--coral) 0 20%,var(--orange) 0 40%,var(--yellow) 0 60%,var(--sky) 0 80%,var(--purple) 0)}
+.btn{display:inline-block;background:var(--coral);color:#fff;font:600 17px 'Fredoka',sans-serif;text-decoration:none;padding:14px 26px;border-radius:99px;border:0;cursor:pointer;box-shadow:0 4px 0 #b52f2c}
+.btn:active{transform:translateY(2px);box-shadow:0 2px 0 #b52f2c}
+.btn.alt{background:var(--ink);box-shadow:0 4px 0 #000}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+header.top{background:#fff;position:sticky;top:0;z-index:20;border-bottom:1px solid #eee}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:8px;padding-bottom:8px}
+header.top img{height:42px;width:auto;display:block}
+header.top nav{display:none;gap:20px;font-weight:500}
+header.top nav a{text-decoration:none;font-size:15px}
+header.top .btn{padding:9px 16px;font-size:15px;white-space:nowrap}
+@media(min-width:800px){header.top nav{display:flex}header.top img{height:52px}}
+.hero{padding:44px 0 30px;position:relative}
+.hero .wrap{display:grid;gap:26px}
+.tag{display:inline-block;background:var(--yellow);font:600 14px 'Fredoka',sans-serif;padding:5px 14px;border-radius:99px;margin-bottom:14px}
+.hero h1{font-size:clamp(2.2rem,8.5vw,4rem)}
+.hero h1 span{color:var(--coral)}
+.hero h1 b{color:var(--sky);font-weight:600}
+.hero p{max-width:32em;color:var(--grey);margin:14px 0 22px}
+.road{background:#262932;border-radius:22px;padding:26px 20px;color:#fff;position:relative;overflow:hidden}
+.road:before{content:"";position:absolute;left:0;right:0;top:50%;height:4px;background:repeating-linear-gradient(90deg,#fff 0 26px,transparent 0 48px);opacity:.25}
+.road ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative}
+.road li{background:rgba(255,255,255,.1);border-radius:14px;padding:10px 12px;font-size:15px;font-weight:500}
+.road li:before{content:"\2713 ";color:var(--yellow);font-weight:700}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1.1fr 1fr;align-items:center}}
+section{padding:52px 0}
+h2{font-size:clamp(1.8rem,5.5vw,2.6rem);margin-bottom:12px}
+.lead{color:var(--grey);max-width:38em;margin-bottom:26px}
+/* journey */
+.journey{background:#fff}
+.j{list-style:none;padding:0;counter-reset:j;position:relative}
+.j:before{content:"";position:absolute;left:20px;top:8px;bottom:8px;width:6px;background:repeating-linear-gradient(var(--ink) 0 14px,transparent 0 24px);border-radius:3px;opacity:.15}
+.j li{counter-increment:j;position:relative;padding:0 0 22px 62px}
+.j li:before{content:counter(j);position:absolute;left:0;top:0;width:42px;height:42px;border-radius:50%;background:var(--c,var(--coral));color:#fff;font:600 19px 'Fredoka',sans-serif;display:grid;place-items:center}
+.j li:nth-child(2){--c:var(--orange)}.j li:nth-child(3){--c:#d9a400}.j li:nth-child(4){--c:var(--sky)}.j li:nth-child(5){--c:var(--purple)}.j li:nth-child(6){--c:#1d9a6c}
+.j b{font:600 19px 'Fredoka',sans-serif;display:block}
+.j p{color:var(--grey);font-size:16px}
+/* prices */
+.tix{display:grid;gap:14px}
+.tk{background:#fff;border:3px solid var(--ink);border-radius:20px;padding:18px 18px 18px;position:relative;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.tk:before,.tk:after{content:"";position:absolute;top:50%;width:18px;height:18px;border-radius:50%;background:var(--paper);border:3px solid var(--ink);margin-top:-9px}
+.tk:before{left:-12px}.tk:after{right:-12px}
+.tk h3{font-size:1.15rem}
+.tk p{color:var(--grey);font-size:15px}
+.tk .pr{font:700 30px 'Fredoka',sans-serif;color:var(--coral);white-space:nowrap}
+.tk.free .pr{color:#1d9a6c}
+.tk:nth-child(even) .pr{color:var(--sky)}
+@media(min-width:760px){.tix{grid-template-columns:1fr 1fr}}
+.promise{margin-top:22px;display:grid;gap:12px}
+.promise div{background:#fff6d6;border-radius:16px;padding:16px 18px}
+.promise div:nth-child(2){background:#e6f6fd}
+@media(min-width:760px){.promise{grid-template-columns:1fr 1fr}}
+/* why */
+.why{background:var(--ink);color:#fff}
+.why h2{color:#fff}.why .lead{color:#c6c9d4}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{background:#fff;color:var(--ink);font-weight:600;padding:10px 16px;border-radius:99px}
+.chips span:nth-child(5n+1){background:var(--yellow)}.chips span:nth-child(5n+2){background:#9fdcf7}.chips span:nth-child(5n+3){background:#ffb3ae}
+/* two cars */
+.cars{display:grid;gap:16px}
+.car{border-radius:22px;padding:24px;color:#fff}
+.car.m{background:var(--purple)}.car.a{background:var(--sky)}
+.car h3{font-size:1.5rem;margin-bottom:8px}
+.car ul{padding-left:18px;margin-top:8px}
+@media(min-width:760px){.cars{grid-template-columns:1fr 1fr}}
+.who{background:#fff}
+.wg{display:grid;gap:14px}
+.wg div{border:3px solid var(--ink);border-radius:20px;padding:18px;border-bottom-width:8px}
+.wg div:nth-child(1){border-color:var(--coral)}.wg div:nth-child(2){border-color:var(--yellow)}.wg div:nth-child(3){border-color:var(--sky)}.wg div:nth-child(4){border-color:var(--purple)}
+.wg h3{font-size:1.2rem;margin-bottom:6px}
+.wg p{color:var(--grey);font-size:16px}
+@media(min-width:760px){.wg{grid-template-columns:1fr 1fr}}
+.bl{list-style:none;padding:0;display:grid;gap:10px}
+.bl li{background:#fff;border-radius:14px;padding:14px 16px;border-left:6px solid var(--orange);display:flex;flex-direction:column;gap:2px}
+.bl span{color:var(--grey);font-size:14px}
+.day{background:var(--purple);color:#fff}
+.day h2{color:#fff}.day .lead{color:#d8d4f5}
+.dg{display:grid;gap:12px}
+.dg div{background:rgba(255,255,255,.12);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:4px}
+.dg b{font:600 19px 'Fredoka',sans-serif;color:var(--yellow)}
+@media(min-width:760px){.dg{grid-template-columns:1fr 1fr}}
+/* reviews */
+.rv{background:#fff6d6}
+.score{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.score b{font:700 56px 'Fredoka',sans-serif;line-height:1}
+.score span{color:var(--grey)}
+.q{display:grid;gap:14px}
+.q blockquote{background:#fff;border-radius:18px;padding:18px;font-size:16px;box-shadow:0 3px 0 rgba(0,0,0,.08)}
+.q cite{display:block;margin-top:8px;font:600 14px 'Fredoka',sans-serif;font-style:normal;color:var(--purple)}
+@media(min-width:760px){.q{grid-template-columns:1fr 1fr}}
+/* faq */
+details{background:#fff;border:2px solid #ececec;border-radius:16px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font:600 18px 'Fredoka',sans-serif}
+details p{color:var(--grey);margin-top:8px;font-size:16px}
+/* contact */
+.ct{background:var(--sky);color:#fff}
+.ct h2{color:#fff}
+.cb{background:#fff;color:var(--ink);border-radius:22px;padding:24px;display:grid;gap:12px}
+.cb p{overflow-wrap:anywhere}
+.cb a.big{font:700 28px 'Fredoka',sans-serif;color:var(--coral);text-decoration:none}
+footer{background:var(--ink);color:#aeb2bf;text-align:center;padding:24px 16px;font-size:14px}
+#as-btn{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--w-brand);color:var(--w-ink);font:600 15px/1 var(--w-font);padding:14px 18px;border-radius:var(--w-r);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#as-btn:focus-visible,#as-pan button:focus-visible,#as-in:focus-visible{outline:3px solid var(--w-ring);outline-offset:2px}
+#as-pan{position:fixed;right:12px;bottom:76px;z-index:51;width:min(380px,calc(100vw - 24px));max-height:min(560px,calc(100vh - 100px));display:none;flex-direction:column;background:#fff;color:#1d1d24;border-radius:calc(var(--w-r) + 4px);box-shadow:0 16px 48px rgba(0,0,0,.3);overflow:hidden;font:15px/1.45 var(--w-font)}
+#as-pan.open{display:flex}
+#as-pan header{background:var(--w-brand);color:var(--w-ink);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:600}
+#as-pan header small{display:block;font-weight:400;opacity:.8;font-size:12px}
+#as-x{background:none;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1;padding:4px 8px}
+#as-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--w-bg)}
+#as-log .m{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-line;overflow-wrap:anywhere}
+#as-log .b{background:#fff;border:1px solid rgba(0,0,0,.08);align-self:flex-start;border-bottom-left-radius:4px}
+#as-log .u{background:var(--w-brand);color:var(--w-ink);align-self:flex-end;border-bottom-right-radius:4px}
+#as-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 0;background:#fff}
+#as-chips button{border:1px solid var(--w-brand);background:#fff;color:#1d1d24;border-radius:99px;padding:6px 11px;font:13px var(--w-font);cursor:pointer}
+#as-chips button:hover{background:var(--w-bg)}
+#as-form{display:flex;gap:6px;padding:10px 12px;background:#fff}
+#as-in{flex:1;min-width:0;border:1px solid #c9c9d2;border-radius:10px;padding:10px;font:16px var(--w-font)}
+#as-form button{border:0;background:var(--w-brand);color:var(--w-ink);border-radius:10px;padding:0 14px;font:600 15px var(--w-font);cursor:pointer}
+#as-note{font-size:11px;color:#777;text-align:center;padding:0 12px 8px;background:#fff}
+
+</style>
+</head>
+<body>
+<div class="stripe"></div>
+<header class="top"><div class="wrap"><a href="#top" aria-label="Art of Driving School, Dublin School of Motoring"><img src="img/art-of-driving-school-logo.png" alt="Art of Driving, Dublin School of Motoring" width="184" height="42"></a><nav aria-label="Main"><a href="#journey">Your road to a licence</a><a href="#prices">Prices</a><a href="#cars">Manual &amp; automatic</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav><a class="btn" href="#" data-ask="book">Book a lesson</a></div></header>
+
+<div class="hero" id="top"><div class="wrap"><div><span class="tag">ADI qualified &middot; South Dublin</span><h1>Dublin's roads, <span>your journey</span>, <b>our expertise.</b></h1><p>Driving lessons for complete beginners, learners with some experience, international drivers and anyone who just needs a confidence refresher. We pick you up from home, work, college or school and practise on the real test routes.</p><a class="btn" href="#" data-ask="book">Book a lesson</a> &nbsp; <a class="btn alt" href="#prices">See prices</a></div>
+<div class="road"><ul><li>Affordable EDT lessons</li><li>Pre-test lessons</li><li>Test car hire</li><li>Mock test lessons</li><li>No hidden costs</li><li>Free door-to-door service</li><li>New dual-control cars</li><li>Manual or automatic</li></ul></div></div></div>
+
+<section class="journey" id="journey"><div class="wrap"><h2>Your road to a licence</h2><p class="lead">The Irish steps in order, with where Art of Driving helps at each one.</p><ol class="j">
+<li><b>Pass the Driver Theory Test</b><p>Booked online. It checks the Rules of the Road and traffic signs, and comes before your learner permit.</p></li>
+<li><b>Get your learner permit</b><p>From age 17, through NDLS online or at an NDLS centre. Bring it to every lesson.</p></li>
+<li><b>Complete 12 EDT lessons</b><p>Essential Driver Training with an Approved Driving Instructor. Your free logbook is filled in lesson by lesson.</p></li>
+<li><b>Practise between lessons</b><p>With someone who has held a full licence in the category for at least two years, and L plates on the car.</p></li>
+<li><b>Warm up, mock test and hire the car</b><p>A mock test shows where you lose marks. On the day, a one-hour warm-up and a test car from us.</p></li>
+<li><b>Book and take the test</b><p>Book online with the RSA once EDT is done and the permit is six months old. The test lasts about 30 to 40 minutes.</p></li></ol></div></section>
+
+<section id="prices"><div class="wrap"><h2>Prices, no surprises</h2><p class="lead">As published on the Pricing page.</p><div class="tix">
+<div class="tk"><div><h3>12 EDT lessons</h3><p>Essential Driver Training: the full 12-lesson programme.</p></div><div class="pr">&euro;720</div></div>
+<div class="tk"><div><h3>6 EDT lessons</h3><p>A condensed block for learners who need fewer lessons.</p></div><div class="pr">&euro;360</div></div>
+<div class="tk"><div><h3>Test car hire + warm-up</h3><p>Car for your test day with a 1-hour warm-up.</p></div><div class="pr">&euro;190</div></div>
+<div class="tk"><div><h3>1-hour lesson</h3><p>Extra practice and skill building.</p></div><div class="pr">&euro;60</div></div>
+<div class="tk"><div><h3>2-hour lesson</h3><p>Longer sessions for a deeper dive.</p></div><div class="pr">&euro;120</div></div>
+<div class="tk free"><div><h3>EDT logbooks</h3><p>Supplied for tracking your progress.</p></div><div class="pr">FREE</div></div></div>
+<div class="promise"><div><b>Refund promise.</b> Not satisfied after your first lesson, or feel you have not learned as expected? You get your payment back in full, without hard feelings.</div><div><b>Insurance saving.</b> Finish 10 or more lessons and receive a certificate for Drivefirst discounts with First Ireland Insurance, for young and first-time drivers.</div></div></div></section>
+
+<section class="why" id="why"><div class="wrap"><h2>Lessons built around you</h2><p class="lead">Complete novice, returning learner or full licence holder who has not driven in a while: the lesson adapts to your pace and your progress, not the other way round.</p><div class="chips"><span>Pick-up from home, work, college or school</span><span>Real test routes</span><span>ADI qualified instructors</span><span>New dual-control vehicle</span><span>Pre-test lessons</span><span>Mock test lessons</span><span>Refresher lessons</span><span>International drivers welcome</span><span>Gift vouchers</span></div></div></section>
+
+<section id="cars"><div class="wrap"><h2>Manual or automatic</h2><p class="lead">Both are on offer. Not sure which suits you? Ask Ronny when you book.</p><div class="cars">
+<div class="car m"><h3>Manual lessons</h3><p>Learn to manage gear shifts and clutch control, with a more hands-on drive.</p><ul><li>Greater control over speed and power</li><li>Prepares you for a wider range of vehicles</li><li>Personalised curriculum at your pace</li></ul></div>
+<div class="car a"><h3>Automatic lessons</h3><p>Intuitive controls, so you focus on the road, road awareness and safety.</p><ul><li>Good for stop-and-go city traffic</li><li>Shorter learning curve</li><li>Confidence from the first lessons</li></ul></div></div></div></section>
+
+<section class="day" id="testday"><div class="wrap"><h2>Test day, step by step</h2><p class="lead">Nothing on the day should be a surprise.</p><div class="dg"><div><b>1. Warm-up</b><span>Your instructor meets you for a brief warm-up lesson before the test.</span></div><div><b>2. Drive to the test centre</b><span>You drive there and meet the examiner. Hire a test car from us if you need one.</span></div><div><b>3. Questions and inspection</b><span>Questions about the car and the Rules of the Road, then a brief visual inspection.</span></div><div><b>4. The practical test</b><span>About 30 to 40 minutes, including one manoeuvre: reverse around a corner, hill start or turnabout.</span></div></div></div></section>
+
+<section class="who" id="who"><div class="wrap"><h2>Which lesson is for you?</h2><p class="lead">Lessons are customised to your pace. Four common starting points:</p><div class="wg">
+<div><h3>Complete novice</h3><p>Starting from scratch? Begin with EDT. Each of the 12 lessons is logged in your logbook, and we match the pace to how you progress.</p></div>
+<div><h3>Learner with some experience</h3><p>Already holding a permit and some hours? Extra lessons, pre-test lessons and a mock test fill the gaps before test day.</p></div>
+<div><h3>International driver</h3><p>Want an Irish licence? Lessons are tailored to your objectives and get you used to Irish roads, rules and test expectations.</p></div>
+<div><h3>Full licence, out of practice</h3><p>Full Irish or European licence but not behind the wheel for a while? A few refresher lessons rebuild skill and confidence.</p></div></div></div></section>
+
+<section class="blogs" id="blog"><div class="wrap"><h2>From the blog</h2><p class="lead">Seasonal tips for Irish learner drivers, latest posts:</p><ul class="bl"><li><b>How to Drive Safely Around Horses on Irish Roads</b><span>October 23, 2026</span></li><li><b>Driving in Strong Winds in Ireland: Safety Tips for Learner Drivers</b><span>October 16, 2026</span></li><li><b>Driving on Narrow Country Roads in Ireland: Tips for Learner Drivers</b><span>October 9, 2026</span></li></ul></div></section>
+
+<section class="rv" id="reviews"><div class="wrap"><h2>What learners say</h2><div class="score"><b>5.0</b><span>Rating shown on the site, based on 381 reviews</span></div><div class="q">
+<blockquote>"Huge thanks to Ronny for helping me pass my driving test in D&uacute;n Laoghaire on my very first try! His pre-test lessons were top-class and gave me a great understanding of the local routes."<cite>Vishal Chand</cite></blockquote>
+<blockquote>"After a failed driving test, I reached out to the team for help breaking bad habits, reviewing my mistakes, and learning new techniques. Tomek was an absolute angel."<cite>JimJams</cite></blockquote>
+<blockquote>"Ronny, Dominika: patience, professionalism and support throughout my lessons. They explain things clearly, give constructive feedback and build confidence behind the wheel."<cite>Farah Nakib</cite></blockquote>
+<blockquote>"The lessons were well structured, the theory material was thorough... thank you to Tomek for his guidance and to Rony for the mock test, which gave me a valuable second perspective."<cite>Ritika Mehta, passed at Tallaght</cite></blockquote></div></div></section>
+
+<section id="faq"><div class="wrap"><h2>Quick answers</h2>
+<details><summary>How many lessons do I need?</summary><p>First-time learners must complete 12 EDT lessons. That is the mandatory minimum; most learners need extra lessons and private practice to be test-ready.</p></details>
+<details><summary>What should I bring to my first lesson?</summary><p>Your valid learner permit and EDT logbook, comfortable closed-toe shoes, and glasses or contact lenses if you need them.</p></details>
+<details><summary>What if I fail my test?</summary><p>It is very common. The examiner's report shows where you lost marks, and your instructor builds a tailored lesson plan around those areas before you re-apply.</p></details>
+<details><summary>What will I be asked to do on the test?</summary><p>One of: a reverse around a corner, a hill start or a turnabout, plus questions on the car controls and the Rules of the Road.</p></details>
+<details><summary>When can I book the practical test?</summary><p>Online through the RSA, after completing all 12 EDT lessons and holding your learner permit for at least six months. Check with your instructor first.</p></details>
+<details><summary>Can I start with a few lessons only?</summary><p>Yes. Besides the 12-lesson and 6-lesson EDT blocks, there are single 1-hour and 2-hour lessons for extra practice, plus refresher lessons for returning drivers.</p></details>
+<details><summary>Where do lessons start?</summary><p>At home, work, college or school: the door-to-door service is free. Lessons can run on the actual test routes so the test environment feels familiar.</p></details>
+<details><summary>Can I get a gift voucher?</summary><p>Yes. Contact the team directly and they will help you choose and organise it.</p></details></div></section>
+
+<section class="ct" id="contact"><div class="wrap"><h2>Say hello</h2><div class="cb"><a class="big" href="tel:0830059919">083 005 9919</a><p>info@artofdriving.ie</p><p>51 Bracken Road, Dublin, D18 CV48<br>Instructor and contact: Ronny Tjahjadi</p><p>Opening hours are not published; the team agrees lesson times with you.</p><p><a class="btn" href="#" data-ask="book">Book a lesson here</a></p></div></div></section>
+
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+<button id="as-btn" type="button" aria-label="Open assistant"><span aria-hidden="true">💬</span> Ask Art of Driving</button>
+<div id="as-pan" role="dialog" aria-label="Assistant"><header><div>Art of Driving assistant<small>Demo, answers from the school's site</small></div><button id="as-x" type="button" aria-label="Close">×</button></header><div id="as-log" aria-live="polite"></div><div id="as-chips"></div><form id="as-form"><input id="as-in" autocomplete="off" aria-label="Your message"><button type="submit">Send</button></form><div id="as-note">Demo assistant. Nothing is sent; the team confirms every detail.</div></div>
+
+<script>
+/* assistant engine: matcher + widget (client-side only) */
+(function(root){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9Ѐ-ӿ؀-ۿ\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4)w=w.replace(/(ing|ed|es|s)$/,'');return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function hit(t,q){for(var i=0;i<q.length;i++){var w=q[i];if(w===t)return 1;if(t.length>=6&&w.length>=5){var lim=t.length>=8?2:1;if(Math.abs(t.length-w.length)<=lim&&lev(t,w)<=lim)return 1;}}return 0;}
+function answer(q,kb){var qt=toks(q),best=null,bs=0;if(!qt.length)return null;
+for(var i=0;i<kb.length;i++){var sc=0;for(var k=0;k<kb[i].k.length;k++){var pt=toks(kb[i].k[k]),ok=1;for(var p=0;p<pt.length;p++){if(!hit(pt[p],qt)){ok=0;break;}}if(ok)sc+=pt.length*2+1;}
+if(sc>bs){bs=sc;best=kb[i];}}
+return bs>=3?best:null;}
+function init(C){
+var $=function(s){return document.querySelector(s)};
+var btn=$('#as-btn'),pan=$('#as-pan'),log=$('#as-log'),inp=$('#as-in'),chips=$('#as-chips'),form=$('#as-form');
+var st={flow:-1,data:{}};
+function msg(t,who){var d=document.createElement('div');d.className='m '+who;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b);});}
+function ask(){var s=C.flow[st.flow];msg(s.q,'b');setChips(s.opts||[]);inp.placeholder=s.ph||'';inp.focus&&0;}
+function startFlow(){st.flow=0;st.data={};ask();}
+function finish(){var sum=C.flow.map(function(s){return s.label+': '+st.data[s.key]}).join('\n');msg(C.done+'\n\n'+sum,'b');st.flow=-1;setChips(C.chips);inp.placeholder=C.ph;}
+function send(t){t=(t||'').trim();if(!t)return;msg(t,'u');inp.value='';
+if(st.flow>=0){var n=norm(t);if(/^(cancel|stop|exit|back)$/.test(n)||(C.cancel&&C.cancel.test&&C.cancel.test(n))){st.flow=-1;msg(C.cancelMsg,'b');setChips(C.chips);return;}
+var s=C.flow[st.flow];if(s.opts&&!s.free){var m=s.opts.filter(function(o){return norm(o)===n||norm(o).indexOf(n)===0&&n.length>2})[0];if(!m){msg(s.retry||'Please pick one of the options.','b');setChips(s.opts);return;}t=m;}
+if(s.re&&!s.re.test(t)){msg(s.retry,'b');return;}
+st.data[s.key]=t;st.flow++;if(st.flow>=C.flow.length)finish();else ask();return;}
+var r=answer(t,C.kb);
+setTimeout(function(){if(r){msg(r.a,'b');if(r.flow)startFlow();else setChips(r.chips||C.chips);}else{msg(C.fallback,'b');setChips(C.chips);}},250);}
+btn.onclick=function(){pan.classList.toggle('open');if(pan.classList.contains('open')&&!log.children.length){msg(C.greet,'b');setChips(C.chips);}};
+$('#as-x').onclick=function(){pan.classList.remove('open')};
+form.onsubmit=function(e){e.preventDefault();send(inp.value)};
+document.querySelectorAll('[data-ask]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();if(!pan.classList.contains('open'))btn.onclick();var v=a.getAttribute('data-ask');if(v==='book')send(C.bookWord);else send(v);});});
+inp.placeholder=C.ph;}
+root.AS={norm:norm,answer:answer,init:init};
+if(typeof module!=='undefined')module.exports=root.AS;
+})(typeof window!=='undefined'?window:globalThis);
+
+var CFG={
+ph:'Ask about lessons, EDT, test day, prices...',bookWord:'Book a lesson',
+greet:'Hi, I am the demo assistant for Art of Driving. Ask about EDT lessons, pre-test and mock test lessons, car hire for the test, manual or automatic, or book a lesson.',
+chips:['What is EDT?','Lesson prices','Test car hire','Manual or automatic?','Mock test','Book a lesson'],
+fallback:'I do not have that detail and would rather not guess. Ronny and the team will confirm it: 083 005 9919 or info@artofdriving.ie.',
+cancelMsg:'No problem, booking cancelled. Anything else?',
+done:'Sent to the team. Ronny will confirm a time and pick-up details (demo only: nothing is actually sent).',
+flow:[
+{key:'type',label:'Lesson',q:'Which lesson do you need?',opts:['EDT lessons','Single lesson','Pre-test lesson','Mock test','Test car hire','Refresher'],retry:'Please choose one of the options.'},
+{key:'gear',label:'Car',q:'Manual or automatic?',opts:['Manual','Automatic','Not sure'],retry:'Please choose one of the options.'},
+{key:'stage',label:'Stage',q:'Where are you in your driving journey?',opts:['Complete beginner','Have a learner permit','Failed a test before','Foreign licence holder','Full licence, out of practice'],retry:'Please choose one of the options.'},
+{key:'pickup',label:'Pick-up area',q:'Where should the lesson start (home, work, college or school)? Type the area.',free:true,ph:'Area or Eircode',re:/\S{3}/,retry:'Please type an area or Eircode.'},
+{key:'name',label:'Name',q:'Your name?',free:true,ph:'Your name',re:/\S{2}/,retry:'Please type your name.'},
+{key:'contact',label:'Contact',q:'Best phone number or e-mail?',free:true,ph:'Phone or e-mail',re:/(\d{6,})|(@.+\..+)/,retry:'Please type a phone number or an e-mail address.'}
+],
+kb:[
+{k:['hello','hi','hey','good morning','good evening','howya'],a:'Hello! Ask me about lessons, EDT, test day, prices or booking.'},
+{k:['book a lesson','book','booking','reserve','schedule a lesson','enrol','sign up','first lesson','start lessons','get started'],a:'Happy to help with that.',flow:true},
+{k:['edt','essential driver training','12 lessons','twelve lessons','mandatory lessons','logbook','log book'],a:'EDT (Essential Driver Training) is the mandatory course for first-time learner permit holders in Ireland: 12 one-hour lessons with an Approved Driving Instructor, logged in your EDT logbook. You must complete all 12 before you can book your driving test. Art of Driving supplies the EDT logbooks free.'},
+{k:['price','pricing','cost','how much','fee','rates','charge','afford','cheap'],a:'Published prices: 12 EDT lessons EUR720, 6 EDT lessons EUR360, test car hire with 1-hour warm-up EUR190, single 1-hour lesson EUR60, 2-hour lesson EUR120. EDT logbooks are free. The site says there are no hidden costs.'},
+{k:['car hire','hire a car','test car','rent car','car for the test','car for test','use your car','dual control'],a:'Test car hire with a 1-hour warm-up lesson is EUR190. The cars are new dual-control vehicles, manual or automatic.'},
+{k:['pre test','pretest','before my test','lesson before test','warm up','warmup','test day','day of the test','what happens on the day'],a:'On test day your instructor typically meets you for a brief warm-up lesson, then you drive to the test centre. The test has car and Rules of the Road questions, a brief visual inspection, then the practical test of about 30 to 40 minutes. Lessons can take place on the actual test routes.'},
+{k:['mock test','mock','practice test','trial test','simulate'],a:'Mock test lessons are offered: a test-style drive where the instructor shows exactly where you gain and lose marks, so you can fix those habits before the real test.'},
+{k:['manual or automatic','which car','manual vs automatic','manual versus automatic','which gearbox'],a:'Both are available. Manual teaches gear shifts and clutch control and gives more control over speed and power; automatic is simpler, good for stop-and-go Dublin traffic, and lets you focus on road awareness. Tell Ronny which you prefer when you book, or ask him to help you choose.'},
+{k:['manual','stick','gears','clutch','gearbox','standard'],a:'Manual lessons are available, covering gear shifts and clutch control. Cars are new dual-control vehicles.'},
+{k:['automatic','auto','no gears','automatik'],a:'Automatic lessons are available too, popular for stop-and-go Dublin traffic and for a quicker learning curve.'},
+{k:['theory test','theory','rules of the road','learner permit','provisional','permit','ndls','rsa'],a:'The Driver Theory Test comes first, booked online. After passing it, and being at least 17, you apply for your first learner permit online through NDLS or in person at an NDLS centre. Bring your valid learner permit to every lesson.'},
+{k:['bring','first lesson bring','what to bring','glasses','shoes','what do i need'],a:'Bring your valid learner permit and your EDT logbook, wear comfortable closed-toe shoes, and bring glasses or contacts if you need them.'},
+{k:['fail','failed','failing','failed test','retake','resit','re apply','reapply','second attempt'],a:'It is very common. The examiner gives a report of where marks were lost, and your instructor builds a tailored lesson plan around those areas. You can re-apply after a waiting period; several reviewers mention coming to Art of Driving after a failed test.'},
+{k:['book test','book driving test','driving test booking','when can i do the test','six months','6 months'],a:'You book the practical test online through the RSA website, only after completing all 12 EDT lessons and holding your learner permit for at least six months. Talk to your instructor before booking so you are both available and ready.'},
+{k:['maneuver','manoeuvre','maneuvres','reverse','hill start','turnabout','test requirements','parallel'],a:'On test you may be asked for one of: a reverse around a corner, a hill start or a turnabout. The examiner also checks your knowledge of the car controls and may ask Rules of the Road questions.'},
+{k:['pick up','pickup','pick me up','door to door','collect','from home','from work','college','school','meet me','where do lessons start'],a:'Free door-to-door service: lessons can start from home, work, college or school.'},
+{k:['refund','money back','not satisfied','unhappy','guarantee','satisfaction'],a:'If after your first lesson you are not satisfied or feel you have not learned as expected, the site says you get a full refund, without hard feelings.'},
+{k:['insurance','first ireland','drivefirst','discount','certificate','young driver'],a:'After 10 or more lessons you receive a certificate that qualifies you for discounts under the Drivefirst programme with First Ireland Insurance, a partner of Art of Driving, for young and first-time drivers.'},
+{k:['gift','voucher','present','birthday','christmas','gift card'],a:'Gift vouchers are available. To buy one, contact the team directly (083 005 9919 or info@artofdriving.ie); they confirm details and payment.'},
+{k:['international','foreign licence','foreign license','abroad','exchange licence','overseas','non irish','immigrant'],a:'Yes, lessons are tailored for international drivers who want an Irish licence, as well as complete novices and learners with some experience.'},
+{k:['refresher','out of practice','confidence','nervous','scared','haven t driven','not driven','full licence','full license','years'],a:'Refresher lessons are offered for people with a full Irish or European licence who have not driven for a while, to rebuild skills and confidence.'},
+{k:['instructor','instructors','adi','teacher','who teaches','ronny','tomek','dominika','approved driving instructor','qualified'],a:'Lessons are given by ADI-qualified (Approved Driving Instructors). Reviewers mention Ronny, Tomek and Dominika by name. Ask the team who is available for your area and time.'},
+{k:['how many lessons','how many driving lessons','number of lessons','enough lessons','how long to learn'],a:'First-time learners must do the 12 EDT lessons, but that is the minimum; most learners need extra lessons and private practice to be test-ready. The RSA recommends spreading EDT sessions out.'},
+{k:['practice','practise','practice outside','accompanied','l plates','family drive','supervise','private practice'],a:'A learner permit holder practising outside lessons must be accompanied by someone with a full, valid licence in the same category for at least two years, and the car must display L plates.'},
+{k:['location','address','where','dublin','south dublin','area','areas','cover','bracken','d18','sandyford','tallaght','dun laoghaire'],a:'Art of Driving is based at 51 Bracken Road, Dublin D18 CV48, serving South Dublin. Reviewers mention preparing on the Tallaght and Dun Laoghaire test routes. Ask the team to confirm your pick-up area.'},
+{k:['contact','phone','call','number','email','mail','reach','talk to','whatsapp'],a:'Phone 083 005 9919, email info@artofdriving.ie.'},
+{k:['hours','open','opening','weekend','saturday','sunday','evening','availability','available','times'],a:'Opening and lesson times are not published on the site; the team arranges lesson times with you. Call 083 005 9919 or email info@artofdriving.ie.'},
+{k:['pay','payment','card','cash','transfer','revolut'],a:'The site does not list payment methods. The team confirms them when you book.'},
+{k:['review','reviews','rating','trustpilot','google','recommend','pass rate','passed'],a:'The site shows a 5.0 rating based on 381 reviews, and many reviewers mention passing first time. The school does not publish a pass-rate figure, so I will not quote one.'},
+{k:['blog','tips','wind','horses','narrow roads','country roads','weather'],a:'The blog has tips for learners, for example on driving around horses, in strong winds and on narrow country roads in Ireland.'},
+{k:['mission','about','who are you','about you','story'],a:'Art of Driving School is a Dublin school of motoring whose mission is to help you become a safe, responsible and confident driver, from complete beginner to refresher.'},
+{k:['custom','tailored','my pace','slow learner','adapt','personalised','personalized','individual needs'],a:'Lessons are highly customisable: each session follows your pace and adapts to your progress, whether you are a complete novice, a learner with experience, an international driver or a returning driver.'},
+{k:['safe','safety','defensive','weather','heavy traffic','parking','parallel parking','advanced techniques'],a:'The curriculum covers all aspects of safe driving: from basic vehicle control to parallel parking, heavy traffic and adverse weather, with a focus on road safety, traffic rules and defensive driving.'},
+{k:['test routes','real routes','test centre','test center','examiner','routes'],a:'Lessons are designed to take place on the actual test routes so you know the test environment and expectations. Reviewers mention preparing for Tallaght and Dun Laoghaire.'},
+{k:['logbook free','free logbook','free'],a:'All EDT logbooks are supplied for free, and the door-to-door pick-up is free too.'},
+{k:['age','how old','17','minimum age','teenager','young'],a:'You can apply for your first learner permit once you have passed the Driver Theory Test and are at least 17 years old.'},
+{k:['hidden','extra charges','extra cost','hidden fees','surprise'],a:'The site promises no hidden costs and top results. Prices are the published ones; the team confirms the total when you book.'},
+{k:['thanks','thank you','great','perfect','ok thanks'],a:'You are welcome! Anything else I can help with?'}
+]};
+
+
+AS.init(CFG);
+</script>
+</body>
+</html>

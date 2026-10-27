@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Physio Osteo · Physical Therapy and Osteopathy, Brickell Miami</title>
+<!--BTN=Ask or request a visit-->
+<!--TITLE=Physio Osteo assistant-->
+<!--SUB=Care, visits, out-of-network, appointment requests-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Prata&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1c2228;--ink2:#262e36;--blue:#239ddb;--blue-d:#1678ac;--bone:#f4f0e9;--sand:#e8e1d4;--mut:#5d666f;--ax-a:#1c2228;--ax-ac:#fff;--ax-bg:#fbf9f5;--ax-t:#1c2228;--ax-b:#ece6da;--ax-r:6px;--ax-f:Barlow,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.65 Barlow,system-ui,sans-serif;color:var(--ink);background:var(--bone);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--blue-d)}
+h1,h2,h3{font-family:Prata,Georgia,serif;font-weight:400;line-height:1.2}
+.w{width:min(1040px,100% - 32px);margin:0 auto}
+header{background:var(--ink);position:sticky;top:0;z-index:20}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.logo img{height:30px;width:auto}
+nav{display:none;gap:24px;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+nav a{color:#d6dbe0;text-decoration:none}
+nav a:hover{color:#fff}
+.btn{display:inline-block;border:0;border-radius:2px;padding:12px 20px;background:var(--blue);color:#fff;font:600 14px Barlow,sans-serif;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--blue-d)}
+.btn.line{background:transparent;border:1px solid rgba(255,255,255,.55)}
+.btn.line:hover{background:#fff;color:var(--ink)}
+.btn.dark{background:var(--ink)}
+.btn.dark:hover{background:var(--ink2)}
+.hero{background:var(--ink);color:#fff;text-align:center;padding:58px 0 64px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:50%;bottom:-120px;width:560px;height:560px;margin-left:-280px;border:1px solid rgba(35,157,219,.35);border-radius:50%}
+.hero .w{position:relative;z-index:1}
+.eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#7fc8ee}
+.hero h1{font-size:clamp(34px,8vw,64px);margin:14px 0 14px}
+.hero h1 span{color:#7fc8ee}
+.hero p{max-width:34em;margin:0 auto;color:#c4cbd2;font-size:18px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);max-width:620px;margin:34px auto 0;border-top:1px solid rgba(255,255,255,.2)}
+.pillars div{padding:14px 4px 0;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#b7c0c8}
+section{padding:54px 0}
+h2{font-size:clamp(27px,5.4vw,40px);margin-bottom:10px}
+.lede{color:var(--mut);max-width:38em;margin-bottom:26px}
+.two{display:grid;gap:26px;align-items:start}
+.panel{background:#fff;border:1px solid var(--sand);padding:24px}
+.panel h3{font-size:22px;margin-bottom:8px}
+.panel p{color:var(--mut);font-size:16px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.tab{border:1px solid var(--ink);background:transparent;color:var(--ink);padding:8px 14px;font:500 14px Barlow,sans-serif;cursor:pointer}
+.tab.on{background:var(--ink);color:#fff}
+.tabbody{display:none}
+.tabbody.on{display:block}
+.tabbody h3{font-size:23px;margin-bottom:8px}
+.tabbody p{color:var(--mut)}
+.dark{background:var(--ink);color:#fff}
+.dk{background:var(--ink2);color:#fff}
+.dk h2{color:#fff}
+.dk .lede{color:#b9c2ca}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{border:1px solid rgba(255,255,255,.28);padding:7px 13px;font-size:15px;color:#e6eaee}
+.founder{display:grid;gap:20px}
+.mono{width:86px;height:86px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font:28px Prata,serif}
+.cred{list-style:none;margin-top:12px;border-top:1px solid var(--sand)}
+.cred li{padding:10px 0;border-bottom:1px solid var(--sand);font-size:15.5px;color:var(--mut)}
+.cred b{color:var(--ink);font-weight:600}
+.steps{display:grid;gap:0;border-left:2px solid var(--blue);margin-left:8px}
+.steps div{padding:0 0 22px 22px;position:relative}
+.steps div::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bone);border:3px solid var(--blue)}
+.steps b{display:block;font:20px Prata,serif;margin-bottom:2px}
+.steps p{color:var(--mut);font-size:16px}
+.net{border-left:4px solid var(--blue)}
+details{border-bottom:1px solid var(--sand)}
+summary{cursor:pointer;padding:16px 36px 16px 0;font:600 17px Barlow,sans-serif;list-style:none;position:relative}
+summary::after{content:"+";position:absolute;right:4px;top:12px;font-size:24px;color:var(--blue-d)}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 0 16px;color:var(--mut)}
+.contact{display:grid;gap:12px}
+.contact a{color:#fff}
+.contact dt{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#7fc8ee}
+.contact dd{margin-bottom:10px;font-size:18px}
+footer{background:#12171b;color:#97a2ad;padding:26px 0 92px;font-size:14px}
+footer p+p{margin-top:8px}
+@media(min-width:780px){nav{display:flex}.two{grid-template-columns:1fr 1fr}.founder{grid-template-columns:100px 1fr}.contact{grid-template-columns:1fr 1fr}.steps{grid-template-columns:repeat(4,1fr);border-left:0;border-top:2px solid var(--blue);margin-left:0}.steps div{padding:22px 16px 0 0}.steps div::before{left:0;top:-9px}}
+#ax-btn{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:13px 18px;background:var(--ax-a);color:var(--ax-ac);font:600 15px/1 var(--ax-f);cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+#ax-btn svg{width:20px;height:20px}
+#ax-panel{position:fixed;right:16px;bottom:76px;z-index:51;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 100px));display:none;flex-direction:column;background:var(--ax-bg);color:var(--ax-t);border-radius:var(--ax-r);overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35);font-family:var(--ax-f)}
+#ax-panel.open{display:flex}
+.ax-h{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--ax-a);color:var(--ax-ac);font-weight:600;font-size:15px}
+.ax-h small{display:block;font-weight:400;opacity:.85;font-size:12px}
+#ax-x{background:none;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer;padding:4px 8px}
+#ax-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.ax-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:14px;line-height:1.45;white-space:pre-line}
+.ax-bot{background:var(--ax-b);align-self:flex-start}
+.ax-me{background:var(--ax-a);color:var(--ax-ac);align-self:flex-end}
+#ax-chips{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px}
+#ax-chips button{border:1px solid var(--ax-a);background:transparent;color:var(--ax-t);border-radius:999px;padding:6px 11px;font:13px var(--ax-f);cursor:pointer}
+#ax-chips button:hover{background:var(--ax-a);color:var(--ax-ac)}
+#ax-form{display:flex;gap:6px;padding:10px 12px;border-top:1px solid rgba(128,128,128,.25)}
+#ax-in{flex:1;min-width:0;border:1px solid rgba(128,128,128,.45);background:transparent;color:inherit;border-radius:8px;padding:9px 10px;font:14px var(--ax-f)}
+#ax-form button{border:0;background:var(--ax-a);color:var(--ax-ac);border-radius:8px;padding:0 14px;font:600 14px var(--ax-f);cursor:pointer}
+.ax-note{font-size:11px;opacity:.65;padding:0 12px 8px}
+
+</style>
+</head>
+<body>
+<header><div class="w bar">
+<a class="logo" href="#top" aria-label="Physio Osteo"><img src="img/physio-osteo-logo.png" alt="Physio Osteo" width="157" height="30"></a>
+<nav><a href="#care">Care</a><a href="#conditions">Conditions</a><a href="#founder">Dr. Ben</a><a href="#visit">Your visit</a><a href="#faq">FAQ</a></nav>
+<a class="btn" href="#" data-open-assistant data-go="1">Request a visit</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="w">
+<p class="eyebrow">Brickell, Miami</p>
+<h1>Physical therapy<br><span>and</span> osteopathy</h1>
+<p>Personalized, hands-on care for acute and chronic pain, sports injuries, post-surgical recovery and movement limitations, designed to support lasting recovery and better function.</p>
+<div class="cta"><a class="btn" href="#" data-open-assistant data-go="1">Request an appointment</a><a class="btn line" href="https://myphysioosteo.janeapp.com/">Book online</a></div>
+<div class="pillars"><div>Precision</div><div>Alignment</div><div>Performance</div></div>
+</div></div>
+
+<section id="care"><div class="w">
+<h2>Two disciplines, one plan</h2>
+<p class="lede">Dr. Ben combines physical therapy with European osteopathy, looking for the root of the problem instead of only treating symptoms.</p>
+<div class="two">
+<div class="panel">
+<h3>Physical therapy</h3>
+<p>Relieving pain and restoring movement through manual therapy, physiotherapy and rehabilitation exercises, with techniques tailored to your needs.</p>
+<div class="tabs" role="tablist" style="margin-top:16px">
+<button class="tab on" data-t="t1">Manual therapy</button><button class="tab" data-t="t2">Exercises</button><button class="tab" data-t="t3">Neuromuscular</button><button class="tab" data-t="t4">Dry needling</button><button class="tab" data-t="t5">Compression</button><button class="tab" data-t="t6">Taping</button>
+</div>
+<div class="tabbody on" id="t1"><p>Therapeutic massage, guided stretching, gentle joint mobilization and precise adjustments to relieve pain, improve function and support structural balance.</p></div>
+<div class="tabbody" id="t2"><p>Exercises customized for strength, mobility, flexibility and endurance, to rehabilitate injuries and boost physical health.</p></div>
+<div class="tabbody" id="t3"><p>Training with advanced equipment, including the Huber 360 Evolution. Each program starts with an assessment of flexibility, mobility, balance, strength and coordination. Used for sports injury recovery, post-surgical rehab and posture, for athletes, post-op patients, desk workers, seniors and children.</p></div>
+<div class="tabbody" id="t4"><p>Fine needles at trigger points to ease muscular pain and tension and promote healing.</p></div>
+<div class="tabbody" id="t5"><p>Specialized garments to improve circulation, reduce swelling and aid recovery, including for chronic venous insufficiency, lymphedema and post-exercise recovery.</p></div>
+<div class="tabbody" id="t6"><p>Kinesiology and other taping to support joints and muscles without restricting movement.</p></div>
+</div>
+<div class="panel">
+<h3>European osteopathy</h3>
+<p>Osteopaths see the body as a unified whole. Three families of techniques restore overall body motion.</p>
+<div class="tabs" role="tablist" style="margin-top:16px">
+<button class="tab on" data-t="o1">Structural</button><button class="tab" data-t="o2">Cranial sacral</button><button class="tab" data-t="o3">Visceral</button>
+</div>
+<div class="tabbody on" id="o1"><p>Structural manipulation realigns the body's framework to improve function, ease pain, improve joint mobility and restore balance. Described as effective for back pain, postural imbalances and joint stiffness.</p></div>
+<div class="tabbody" id="o2"><p>A gentle, hands-on approach to the central nervous system, using subtle work on the cranial bones and sacrum to release tension. Headaches, stress and relaxation are mentioned.</p></div>
+<div class="tabbody" id="o3"><p>Specific, gentle pressures to improve the mobility and function of the internal organs and address restrictions in the visceral system.</p></div>
+<p style="margin-top:16px"><a href="#" data-open-assistant>Ask about the difference</a></p>
+</div>
+</div>
+</div></section>
+
+<section id="who"><div class="w">
+<h2>Where people start</h2>
+<p class="lede">Four situations the clinic describes, and how the two disciplines meet them.</p>
+<div class="two" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+<div class="panel"><h3>Pain that won't settle</h3><p>Acute or chronic. Assessment first, then hands-on work aimed at the root rather than only the symptom.</p></div>
+<div class="panel"><h3>Sports injuries</h3><p>Treatment and prevention, with equipment-based neuromuscular training to improve motor control, joint stability and proprioception.</p></div>
+<div class="panel"><h3>After surgery</h3><p>Post-surgical rehabilitation with exercises customized to your recovery and technology-assisted assessment.</p></div>
+<div class="panel"><h3>Movement limits</h3><p>Stiffness, posture or balance concerns, from desk workers to seniors, with a plan built around the individual.</p></div>
+</div>
+<div class="panel" style="margin-top:20px;border-left:4px solid var(--blue)"><h3>Wellness plans</h3><p>For people who want more than a single course of treatment, the clinic offers customized wellness plans designed to enhance overall health with long-term benefits. The team can explain what one would look like for you.</p></div>
+</div></section>
+
+<section class="dk" id="conditions"><div class="w">
+<h2>Conditions treated</h2>
+<p class="lede">Every plan begins with a detailed interview about history, past injuries, lifestyle and habits, then a comprehensive assessment. These are the conditions the clinic lists:</p>
+<div class="tags">
+<span>Back and neck pain</span><span>Sciatica</span><span>Disc herniation</span><span>Arthritis</span><span>Tendonitis / bursitis</span><span>Sports injuries</span><span>Posture and scoliosis</span><span>Headaches and migraines</span><span>Shoulder, elbow, wrist, hip, knee and foot injuries</span><span>Carpal tunnel syndrome</span><span>Fertility concerns</span><span>Stress management</span><span>Smoking cessation</span><span>Digestive disorders</span><span>Temporomandibular disorder</span>
+</div>
+<p style="margin-top:22px;color:#b9c2ca;max-width:38em">Whether something fits your situation is for Dr. Ben to assess in person. Prevention is part of the offer too: drug-free, hands-on care for general health or for athletes who want to avoid injury.</p>
+</div></section>
+
+<section id="founder"><div class="w">
+<div class="founder">
+<div class="mono" aria-hidden="true">BP</div>
+<div>
+<h2>Dr. Benjamin Petrolati</h2>
+<p class="lede" style="margin-bottom:0">Founder. His approach is to diagnose the root of the problem and teach patients to take part in their own recovery.</p>
+<ul class="cred">
+<li><b>2006</b> · Graduated from the School of Medicine and Physical Therapy in Nancy, France</li>
+<li><b>2011</b> · Osteopathy diploma, Osteopathic School of Paris, in partnership with the European School of Osteopathy, Maidstone UK</li>
+<li><b>Doctorate</b> · Doctor of Physical Therapy, Utica University, New York</li>
+</ul>
+</div>
+</div>
+</div></section>
+
+<section class="dark" style="color:#fff" id="visit"><div class="w">
+<h2 style="color:#fff">Your visit</h2>
+<p class="lede" style="color:#b9c2ca">Florida allows direct access to physical therapy for up to 30 days, so no referral is needed to begin.</p>
+<div class="steps" style="color:#fff">
+<div><b>Intake form</b><p style="color:#b9c2ca">Fill it out before you come, so the session goes to treatment.</p></div>
+<div><b>Interview</b><p style="color:#b9c2ca">Medical history and lifestyle, in depth. The first appointment is 1 hour.</p></div>
+<div><b>Assessment</b><p style="color:#b9c2ca">A thorough physical assessment to tailor your plan.</p></div>
+<div><b>Treatment</b><p style="color:#b9c2ca">A combination of techniques. Follow-ups run 30 to 45 minutes.</p></div>
+</div>
+</div></section>
+
+<section id="network"><div class="w two">
+<div class="panel net">
+<h3>Out-of-network, on purpose</h3>
+<p>Physio Osteo does not work directly with insurance companies, which keeps sessions one-on-one with the doctor. The clinic says this often means effective treatment in fewer sessions. Most insurers allow out-of-network care, so check your reimbursement options.</p>
+</div>
+<div class="panel">
+<h3>Not sure about your benefits?</h3>
+<p>Ask your insurer about your deductible, out-of-pocket expenses, co-payment and whether physical therapy needs pre-authorization. The team can help: send a photo of your insurance card (front and back) and your date of birth.</p>
+<p style="margin-top:14px"><a class="btn dark" href="#" data-open-assistant data-go="1">Request help</a></p>
+</div>
+</div></section>
+
+<section style="padding-top:0" id="faq"><div class="w">
+<h2>Questions</h2>
+<p class="lede">The assistant knows these too.</p>
+<details><summary>What is the difference between physical therapy and European osteopathy?</summary><p>Physical therapy focuses on relieving pain and restoring movement through manual therapy, physiotherapy and rehabilitation exercises. European osteopathy employs craniosacral therapy, visceral manipulation and musculoskeletal techniques to restore overall body motion. They complement each other in addressing the root cause.</p></details>
+<details><summary>How do I schedule?</summary><p>Phone the clinic, fill in the contact form on the website, or book online. The team finds a convenient time.</p></details>
+<details><summary>How long is a session?</summary><p>The first session is 1 hour. Follow-ups vary with your plan, from 30 minutes to 1 hour.</p></details>
+<details><summary>How should I prepare?</summary><p>Arrive on time, wear comfortable clothing that allows easy movement, and complete the intake form beforehand.</p></details>
+<details><summary>Do I need a referral from my doctor?</summary><p>Not to begin. In the state of Florida you have direct access to physical therapy services for up to 30 days without a physician's referral, so you can start care at Physio Osteo right away.</p></details>
+<details><summary>How do I know if I have out-of-network benefits?</summary><p>Contact your insurance provider about your deductible, out-of-pocket expenses and co-payment requirements, and ask whether physical therapy needs pre-authorization. If you prefer, the team can assist: send a photo of your insurance card (front and back) and your date of birth.</p></details>
+<details><summary>Why is Physio Osteo out of network?</summary><p>Not working directly with insurers lets the practice focus on tailored one-on-one sessions with the doctor, which often leads to effective treatment in fewer sessions.</p></details>
+</div></section>
+
+<section class="dk" id="contact"><div class="w">
+<h2>Find us</h2>
+<p class="lede">Brickell, Miami. Opening hours are not listed on the pages this demo is based on, so mention your preferred times and the team will confirm.</p>
+<dl class="contact">
+<div><dt>Address</dt><dd><a href="https://www.google.com/maps/dir/?api=1&amp;destination=1390+brickell+avenue+Miami+FL+33131">1390 Brickell Avenue, Suite 330<br>Miami, FL 33131</a></dd></div>
+<div><dt>Phone</dt><dd><a href="tel:7866228069">786-622-8069</a></dd><dt>E-mail</dt><dd><a href="mailto:info@myphysioosteo.com">info@myphysioosteo.com</a></dd></div>
+</dl>
+<p style="margin-top:12px"><a class="btn" href="#" data-open-assistant data-go="1">Request an appointment</a></p>
+</div></section>
+</main>
+
+<footer><div class="w">
+<p><b style="color:#d6dbe0">Physio Osteo</b> · 1390 Brickell Avenue, Suite 330, Miami, FL 33131 · 786-622-8069 · info@myphysioosteo.com</p>
+<p>Demo · prepared by Gevorg Hovhannisyan</p>
+</div></footer>
+
+<button id="ax-btn" type="button" aria-expanded="false" aria-controls="ax-panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>Ask or request a visit</button>
+<div id="ax-panel" role="dialog" aria-label="Physio Osteo assistant"><div class="ax-h"><div>Physio Osteo assistant<small>Care, visits, out-of-network, appointment requests</small></div><button id="ax-x" type="button" aria-label="Close">&times;</button></div><div id="ax-log" aria-live="polite"></div><div id="ax-chips"></div><form id="ax-form" autocomplete="off"><input id="ax-in" type="text" placeholder="Ask a question" aria-label="Your message"><button type="submit">Send</button></form><div class="ax-note">Demo assistant. It does not give medical advice and sends nothing.</div></div>
+
+<script>
+window.CFG={
+hello:"Hello, I'm the Physio Osteo assistant. Ask me about physical therapy, osteopathy, what a visit involves, out-of-network care, or send a request for an appointment to the team.",
+fallback:"I don't have that detail and don't want to guess. The team can confirm it at 786-622-8069 or info@myphysioosteo.com. I can also take an appointment request.",
+chips:["Request an appointment","Out-of-network?","What is osteopathy?","First visit","Where are you?","Dry needling","Conditions treated"],
+done:"Thank you. Your request is ready for the team at Physio Osteo, who will get back to you to find a time. (In this demo nothing is actually sent.)",
+flow:[
+{key:"svc",label:"Care",q:"Which kind of care are you interested in?",opts:["Physical therapy","Osteopathy","Not sure yet"]},
+{key:"area",label:"What brings you in",q:"In a few words, what would you like help with? (The team assesses everything in person, I can't diagnose.)",ph:"e.g. lower back pain, knee after surgery"},
+{key:"ins",label:"Insurance",q:"Physio Osteo is out-of-network. Would you like the team to help check your out-of-network benefits?",opts:["Yes, please","No, thanks","Not sure"]},
+{key:"when",label:"Preferred day and time",q:"Which days or times work best? The team will confirm availability.",ph:"e.g. weekday mornings"},
+{key:"name",label:"Name",q:"Your name?",ph:"Full name"},
+{key:"contact",label:"Phone or e-mail",q:"Best phone number or e-mail for the team to reach you?",ph:"Phone or e-mail"}
+]};
+window.KB=[
+{k:["out of network","out-of-network","in network","in-network","insurance","insurer","insured","aetna","cigna","blue cross","united","coverage","covered","reimburse","reimbursement","superbill"],a:"Physio Osteo is an out-of-network provider. Most insurance companies allow out-of-network care, so patients are encouraged to check with their insurer about reimbursement. Contact your insurer about your deductible, out-of-pocket costs and co-payment, and ask whether physical therapy needs pre-authorization. If you prefer, the team can help: send a photo of your insurance card (front and back) and your date of birth."},
+{k:["why out of network","why not take insurance","why do you not work with insurance"],a:"By not working directly with insurance companies, the practice can focus on one-on-one sessions with the doctor. The clinic says this often leads to effective treatment in fewer sessions."},
+{k:["price","prices","pricing","cost","how much","fee","fees","rate","self pay","cash"],a:"I don't have session prices listed, so I won't guess. Please ask the team at 786-622-8069 or info@myphysioosteo.com."},
+{k:["direct access","referral","referal","prescription","doctor note","need a referral"],a:"In Florida you have direct access to physical therapy for up to 30 days without a physician's referral, so you can start care at Physio Osteo without preliminary steps."},
+{k:["address","where","location","located","find you","directions","parking","brickell","miami","building","suite","map"],a:"1390 Brickell Avenue, Suite 330, Miami, FL 33131 (Brickell neighborhood)."},
+{k:["phone","call","number","telephone","text","contact","email","e-mail","mail","reach"],a:"Phone 786-622-8069, e-mail info@myphysioosteo.com. There is also a contact form and online booking on the website."},
+{k:["hours","open","opening","closing","close","weekend","saturday","sunday","evening"],a:"Opening hours aren't listed on the pages I know, so I won't guess. Please call 786-622-8069 or mention your preferred times in your request."},
+{k:["first visit","first appointment","initial","what to expect","what happens","new patient","course of session","how long","session length","duration","minutes"],a:"Your first appointment is 1 hour. It starts with an in-depth interview about medical history and lifestyle, then a thorough physical assessment, then a treatment plan and techniques for you. Follow-ups are usually 30 to 45 minutes (the FAQ says 30 minutes to 1 hour depending on your plan)."},
+{k:["what should i wear","prepare","preparation","wear","clothes","clothing","bring","intake form","form","arrive"],a:"Arrive on time and wear comfortable clothing that allows easy movement. Please fill out the intake form before your appointment so more of the session goes to treatment."},
+{k:["difference","difference between","therapy and osteopathy","versus","vs","osteopath physical","physiotherapy and osteopathy"],a:"Physical therapy focuses on relieving pain and restoring movement with manual therapy, physiotherapy and rehabilitation exercises. European osteopathy uses craniosacral therapy, visceral manipulation and musculoskeletal techniques to restore overall body motion. The two complement each other in looking for the root cause."},
+{k:["osteopathy","osteopath","osteopathic","european osteopathy","what is osteopathy"],a:"European osteopathy views the body as a unified whole and uses three kinds of techniques: structural manipulation, cranial sacral therapy and visceral manipulation. The aim is to address the root cause, not just the symptoms."},
+{k:["structural","manipulation","adjust","adjustment","crack","joint manipulation"],a:"Structural manipulation realigns the body's framework to improve overall function, using careful adjustment of the musculoskeletal system to ease pain, improve joint mobility and restore balance. The clinic mentions back pain, postural imbalances and joint stiffness."},
+{k:["cranial","craniosacral","cranio sacral","cranial sacral","sacrum","skull"],a:"Cranial sacral therapy is a gentle, hands-on approach that targets the central nervous system, using subtle work on the cranial bones and sacrum to release tension. The clinic mentions headaches, stress and relaxation."},
+{k:["visceral","organ","organs","digestion","digestive","gut"],a:"Visceral manipulation uses specific, gentle pressure to improve the mobility and function of the internal organs, and addresses restrictions in the visceral system. The clinic lists digestive disorders among conditions it treats. Ask the team if it is right for you."},
+{k:["dry needling","needling","needle","needles","trigger point","acupuncture"],a:"Dry needling targets trigger points with fine needles to ease muscular pain and tension and promote healing."},
+{k:["manual therapy","massage","stretching","mobilization","mobilisation","hands on"],a:"Manual therapy is a cornerstone of care: therapeutic massage, stretching, gentle joint mobilization and precise adjustments to relieve pain, improve function and support structural balance."},
+{k:["neuromuscular","huber","balance","coordination","equipment","technology","scoliosis","proprioception"],a:"Neuromuscular training uses advanced equipment, including the Huber 360 Evolution, starting with an assessment of flexibility, mobility, balance, strength and coordination. It is used for sports injury recovery, post-surgical rehab and posture, for athletes, post-op patients, desk workers, seniors and children, with scoliosis as one example."},
+{k:["exercise","exercises","therapeutic exercise","strengthening","rehab","rehabilitation","post surgical","post-surgical"],a:"Therapeutic exercises are customized for strengthening, mobility, flexibility and endurance, to rehabilitate injuries and boost physical health. Post-surgical recovery is among the conditions the clinic works with."},
+{k:["compression","lymphedema","swelling","venous","circulation"],a:"Compression therapy uses specialized garments to improve circulation, reduce swelling and aid recovery. It is used for chronic venous insufficiency, lymphedema and post-exercise recovery."},
+{k:["taping","tape","kinesiology","kinesio"],a:"Taping, including kinesiology taping, supports joints and muscles without restricting movement, to ease pain, reduce inflammation and prevent further injury in rehab and sport."},
+{k:["condition","conditions","treat","treated","what do you treat","help with","back pain","neck pain","sciatica","disc","herniation","arthritis","tendonitis","bursitis","sports injury","headache","migraine","carpal","tmj","jaw","fertility","stress","smoking","shoulder","knee","hip","elbow","wrist","foot"],a:"Conditions the clinic lists: back and neck pain, sciatica, disc herniation, arthritis, tendonitis/bursitis, sports injuries, posture and scoliosis issues, headaches and migraines, extremity injuries (shoulder, elbow, wrist, hip, knee, foot), carpal tunnel syndrome, fertility concerns, stress management, smoking cessation, digestive disorders and temporomandibular disorder. I can't say if it fits your case; the doctor assesses that."},
+{k:["prevention","prevent","preventive","injury prevention","maintain"],a:"Prevention is a cornerstone: European osteopathy and physical therapy are used to help prevent injuries and keep joints and the neuromusculoskeletal system healthy, in a drug-free, hands-on way, for general health or athletes."},
+{k:["ben","benjamin","petrolati","doctor","dr","founder","therapist","who","practitioner","team","france","french"],a:"Dr. Benjamin Petrolati, the founder, was born and raised in France and graduated from the School of Medicine and Physical Therapy in Nancy in 2006. He earned his osteopathy diploma in 2011 at the Osteopathic School of Paris (in partnership with the European School of Osteopathy, Maidstone UK), and completed his Doctorate of Physical Therapy at Utica University in New York. He looks for the root of the problem and teaches patients to help their own recovery."},
+{k:["athlete","athletes","sports","sport","runner","gym","performance"],a:"The clinic works with sports injuries and with athletes who want to prevent them. Neuromuscular training with the Huber 360 Evolution is described as suitable for athletes, and taping and dry needling are part of the toolkit. The doctor assesses what suits your sport."},
+{k:["child","children","kids","senior","seniors","elderly","age","pregnant","pregnancy"],a:"The neuromuscular training page says it suits athletes, post-operative patients, desk workers, seniors and children. For any other group, or for pregnancy, please ask the team."},
+{k:["desk","office","sitting","computer","posture","postural"],a:"Posture and postural imbalances are among the things the clinic works on, including with neuromuscular training for desk workers. A first assessment would look at your own situation."},
+{k:["wellness plan","wellness plans","plan","plans","long term","maintenance"],a:"The clinic offers customized wellness plans to improve overall health with long-term benefits. The team can explain how one would look for you."},
+{k:["book","booking","online","schedule","appointment","jane"],a:"You can use Book Online on the website, call 786-622-8069, or leave your details here for the team to follow up."},
+{k:["diagnose","diagnosis","what is wrong","hurt","pain","symptom","medical","emergency","urgent"],a:"I can't diagnose or give medical advice. For a symptom you are worried about, book an assessment, and for anything urgent contact a doctor or emergency services."},
+{k:["hello","hi","hey","good morning","thanks","thank"],a:"Hello! Ask me about the services, a visit, out-of-network care or an appointment."}
+];
+
+(function(g){
+var C=g.CFG,KB=g.KB;
+function norm(s){return s.toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4){w=w.replace(/(ing|ed|es|s)$/,'');}return w;}
+function lev(a,b){if(Math.abs(a.length-b.length)>1)return 9;var m=[],i,j;for(i=0;i<=a.length;i++){m[i]=[i];}for(j=1;j<=b.length;j++)m[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return m[a.length][b.length];}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function hit(t,kw){var k=norm(kw).split(' ').map(stem);if(k.length>1){var j=toks(t.join(' ')).join(' ');return j.indexOf(k.join(' '))>-1?2:0;}
+ var w=k[0];for(var i=0;i<t.length;i++){if(t[i]==w)return 1;if(w.length>=4&&t[i].length>=4&&t[i][0]==w[0]&&lev(t[i],w)<=1)return 0.8;if(w.length>=5&&t[i].indexOf(w)==0)return 0.8;}return 0;}
+function answer(q){var t=toks(q),best=null,bs=0;
+ KB.forEach(function(e){var s=0;e.k.forEach(function(kw){s+=hit(t,kw);});if(s>bs){bs=s;best=e;}});
+ return bs>=0.8?best:null;}
+function wantsBooking(q){var t=toks(q);return ['book','booking','appointment','schedule','reserve','reservation','reschedule','see someone'].some(function(w){return hit(t,w)>0;})||/make (an )?appoint/.test(norm(q));}
+g.__answer=answer;g.__wants=wantsBooking;
+if(typeof document==='undefined')return;
+var $=function(s){return document.querySelector(s);};
+var btn=$('#ax-btn'),pan=$('#ax-panel'),log=$('#ax-log'),chips=$('#ax-chips'),form=$('#ax-form'),inp=$('#ax-in');
+var flow=null,data={};
+function add(txt,me){var d=document.createElement('div');d.className='ax-m '+(me?'ax-me':'ax-bot');d.textContent=txt;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+function setChips(a,fn){chips.innerHTML='';a.forEach(function(x){var b=document.createElement('button');b.type='button';b.textContent=x;b.onclick=function(){fn(x);};chips.appendChild(b);});}
+function home(){setChips(C.chips,ask);}
+function ask(q){add(q,1);if(flow!==null){step(q);return;}
+ if(wantsBooking(q)){startFlow();return;}
+ var e=answer(q);
+ if(e){add(e.a);if(e.go){startFlow();return;}}
+ else add(C.fallback);
+ home();}
+function startFlow(){flow=0;data={};add(C.flow[0].q);showStep();}
+function showStep(){var s=C.flow[flow];if(s.opts)setChips(s.opts,ask);else chips.innerHTML='';inp.placeholder=s.ph||'Type here';}
+function step(v){var s=C.flow[flow];if(/^(cancel|stop|nevermind|never mind)$/i.test(v.trim())){flow=null;add('No problem, nothing was sent.');home();return;}
+ data[s.key]=v;flow++;
+ if(flow>=C.flow.length){var sum=C.flow.map(function(x){return x.label+': '+data[x.key];}).join('\n');flow=null;add(C.done+'\n\n'+sum);setChips(['Opening hours','Where are you?','Start over'],function(x){x=='Start over'?(log.innerHTML='',add(C.hello),home()):ask(x);});inp.placeholder='Ask a question';return;}
+ add(C.flow[flow].q);showStep();}
+btn.onclick=function(){var o=pan.classList.toggle('open');btn.setAttribute('aria-expanded',o);if(o&&!log.children.length){add(C.hello);home();}if(o)setTimeout(function(){inp.focus();},50);};
+$('#ax-x').onclick=function(){pan.classList.remove('open');btn.setAttribute('aria-expanded',false);};
+form.onsubmit=function(ev){ev.preventDefault();var v=inp.value.trim();if(!v)return;inp.value='';ask(v);};
+document.querySelectorAll('[data-open-assistant]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();if(!pan.classList.contains('open'))btn.click();if(a.dataset.go&&flow===null){startFlow();}});});
+})(typeof window!=='undefined'?window:globalThis);
+
+(function(){document.querySelectorAll('.tabs').forEach(function(g){g.querySelectorAll('.tab').forEach(function(b){b.addEventListener('click',function(){g.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on');document.getElementById(x.dataset.t).classList.remove('on');});b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on');});});});})();
+</script>
+</body>
+</html>

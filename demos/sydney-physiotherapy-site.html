@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sydney Physiotherapy · Sydney CBD since 1993</title>
+<!--BTN=Ask or book-->
+<!--TITLE=Sydney Physiotherapy assistant-->
+<!--SUB=Fees, cover, services, booking requests-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f356a;--teal:#038489;--teal-d:#026c70;--ink:#16243a;--mut:#53627a;--bg:#f6f8fb;--card:#fff;--line:#dde4ee;--ax-a:#0f356a;--ax-ac:#fff;--ax-bg:#fff;--ax-t:#16243a;--ax-b:#eaf1f6;--ax-r:16px;--ax-f:Inter,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.6 Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--teal-d)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;color:var(--navy)}
+.w{width:min(1080px,100% - 32px);margin:0 auto}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+.logo img{height:34px;width:auto}
+nav{display:none;gap:22px;font-size:14px;font-weight:500}
+nav a{text-decoration:none;color:var(--ink)}
+nav a:hover{color:var(--teal)}
+.btn{display:inline-block;border:0;border-radius:8px;padding:11px 18px;background:var(--teal);color:#fff;font:600 15px Inter,sans-serif;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--teal-d)}
+.btn.ghost{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+.btn.ghost:hover{background:var(--navy);color:#fff}
+.hero{padding:44px 0 30px}
+.hero .w{display:grid;gap:28px}
+.kick{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--teal)}
+.hero h1{font-size:clamp(32px,7.4vw,56px);margin:10px 0 14px}
+.hero p.lead{font-size:18px;color:var(--mut);max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.glance{background:var(--navy);color:#fff;border-radius:16px;padding:22px}
+.glance h2{color:#fff;font-size:20px;margin-bottom:12px}
+.glance dl{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:14.5px}
+.glance dt{opacity:.7}
+.glance dd a{color:#9ee8ea}
+section{padding:40px 0}
+section>.w>h2{font-size:clamp(26px,5vw,36px);margin-bottom:6px}
+.sub{color:var(--mut);margin-bottom:22px;max-width:40em}
+.svc{list-style:none;border-top:1px solid var(--line)}
+.svc li{display:grid;grid-template-columns:44px 1fr;gap:4px 12px;padding:18px 0;border-bottom:1px solid var(--line)}
+.svc .n{font:700 22px Fraunces,serif;color:var(--teal)}
+.svc h3{font-size:20px;margin-bottom:4px}
+.svc p{color:var(--mut);font-size:15px}
+.split{display:grid;gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{font-size:21px;margin-bottom:10px}
+.card ul{padding-left:18px;color:var(--mut);font-size:15px}
+.card li{margin:4px 0}
+.team{border-left:4px solid var(--teal)}
+.fees{width:100%;border-collapse:collapse;font-size:15px}
+.fees td{padding:12px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.fees td:last-child{text-align:right;font-weight:600;color:var(--navy)}
+.fees small{display:block;color:var(--mut);font-weight:400}
+.band{background:var(--navy);color:#fff}
+.band h2,.band h3{color:#fff}
+.band .sub{color:#c6d4ea}
+.pay{display:grid;gap:14px}
+.pay .card{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18)}
+.pay .card p{color:#d9e4f4;font-size:15px}
+.chip{border:1.5px solid var(--teal);background:#fff;color:var(--teal-d);border-radius:999px;padding:8px 14px;font:500 14px Inter,sans-serif;cursor:pointer}.chip:hover,.chip.on{background:var(--teal);color:#fff}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:8px}
+summary{cursor:pointer;padding:14px 16px;font-weight:600;color:var(--navy);list-style:none;position:relative;padding-right:40px}
+summary::after{content:"+";position:absolute;right:16px;top:12px;font-size:20px;color:var(--teal)}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 16px 16px;color:var(--mut);font-size:15px}
+.visit{display:grid;gap:12px;counter-reset:s}
+.visit div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 16px 16px 58px;position:relative;font-size:15px;color:var(--mut)}
+.visit div::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;text-align:center;line-height:28px}
+.visit b{color:var(--navy);display:block}
+.book{text-align:center}
+.book h2{margin-bottom:10px}
+footer{background:#0a2447;color:#b8c6dc;padding:28px 0 90px;font-size:14px}
+footer a{color:#9ee8ea}
+.sig{margin-top:12px;opacity:.85}
+@media(min-width:760px){nav{display:flex}.hero .w{grid-template-columns:1.4fr 1fr;align-items:center}.split{grid-template-columns:1fr 1fr}.pay{grid-template-columns:1fr 1fr}.visit{grid-template-columns:repeat(3,1fr)}}
+#ax-btn{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:13px 18px;background:var(--ax-a);color:var(--ax-ac);font:600 15px/1 var(--ax-f);cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+#ax-btn svg{width:20px;height:20px}
+#ax-panel{position:fixed;right:16px;bottom:76px;z-index:51;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 100px));display:none;flex-direction:column;background:var(--ax-bg);color:var(--ax-t);border-radius:var(--ax-r);overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35);font-family:var(--ax-f)}
+#ax-panel.open{display:flex}
+.ax-h{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--ax-a);color:var(--ax-ac);font-weight:600;font-size:15px}
+.ax-h small{display:block;font-weight:400;opacity:.85;font-size:12px}
+#ax-x{background:none;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer;padding:4px 8px}
+#ax-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.ax-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:14px;line-height:1.45;white-space:pre-line}
+.ax-bot{background:var(--ax-b);align-self:flex-start}
+.ax-me{background:var(--ax-a);color:var(--ax-ac);align-self:flex-end}
+#ax-chips{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px}
+#ax-chips button{border:1px solid var(--ax-a);background:transparent;color:var(--ax-t);border-radius:999px;padding:6px 11px;font:13px var(--ax-f);cursor:pointer}
+#ax-chips button:hover{background:var(--ax-a);color:var(--ax-ac)}
+#ax-form{display:flex;gap:6px;padding:10px 12px;border-top:1px solid rgba(128,128,128,.25)}
+#ax-in{flex:1;min-width:0;border:1px solid rgba(128,128,128,.45);background:transparent;color:inherit;border-radius:8px;padding:9px 10px;font:14px var(--ax-f)}
+#ax-form button{border:0;background:var(--ax-a);color:var(--ax-ac);border-radius:8px;padding:0 14px;font:600 14px var(--ax-f);cursor:pointer}
+.ax-note{font-size:11px;opacity:.65;padding:0 12px 8px}
+
+</style>
+</head>
+<body>
+<header><div class="w bar">
+<a class="logo" href="#top" aria-label="Sydney Physiotherapy"><img src="img/sydney-physiotherapy-logo.png" alt="Sydney Physiotherapy" width="235" height="38"></a>
+<nav><a href="#services">Services</a><a href="#team">Team</a><a href="#fees">Fees</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="btn" href="#" data-open-assistant data-go="1">Book</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="w">
+<div>
+<p class="kick">Sydney CBD · Est. 1993</p>
+<h1>Fast, effective care for every musculoskeletal injury.</h1>
+<p class="lead">A purpose-built clinic on Pitt Street with a large central gymnasium and semi-private treatment rooms. Hands-on treatment that varies with the person, not just the diagnosis.</p>
+<div class="cta"><a class="btn" href="#" data-open-assistant data-go="1">Request an appointment</a><a class="btn ghost" href="tel:0292322311">(02) 9232 2311</a></div>
+</div>
+<aside class="glance" aria-label="At a glance">
+<h2>At a glance</h2>
+<dl>
+<dt>Where</dt><dd>Suite 1604, Level 16, Randstad House, 109 Pitt Street, Sydney NSW 2000</dd>
+<dt>Phone</dt><dd><a href="tel:0292322311">(02) 9232 2311</a></dd>
+<dt>E-mail</dt><dd><a href="mailto:mail@sydneyphysio.com.au">mail@sydneyphysio.com.au</a></dd>
+<dt>Cover</dt><dd>HICAPS on the spot, WorkCover and CTP treated</dd>
+<dt>Referral</dt><dd>Not needed for private patients</dd>
+</dl>
+</aside>
+</div></div>
+
+<section id="services"><div class="w">
+<h2>What we treat</h2>
+<p class="sub">Six areas, one clinic. Not sure which fits? Ask the assistant or call the team.</p>
+<ol class="svc">
+<li><span class="n">01</span><div><h3>Physiotherapy</h3><p>Diagnosing, rehabilitating and improving movement disorders with evidence-based, natural methods: exercise, manual therapy, motivation, adapted equipment and advocacy.</p></div></li>
+<li><span class="n">02</span><div><h3>Sports physiotherapy</h3><p>Prevention, evaluation and management of sport and exercise injuries, fresh, old, recurring or post-surgical, coordinated with surgeons, sports physicians and coaches when needed.</p></div></li>
+<li><span class="n">03</span><div><h3>ACL rehabilitation</h3><p>Exercise before surgery to restore range of motion and strength, then rehab from day one to return to sport. The clinic works closely with three ACL surgeons.</p></div></li>
+<li><span class="n">04</span><div><h3>Shoulder rehabilitation</h3><p>Rotator cuff and shoulder blade strengthening for overuse problems, and coordination and strength training after dislocations or surgery.</p></div></li>
+<li><span class="n">05</span><div><h3>Pilates</h3><p>Mat-based and equipment-based classes tailored to the individual, to complement treatment, improve posture and build core strength.</p></div></li>
+<li><span class="n">06</span><div><h3>WorkCover and motor vehicle accidents</h3><p>All WorkCover and CTP injuries are treated. Bring your claim number and your doctor's and insurer's details to the first visit.</p></div></li>
+</ol>
+</div></section>
+
+<section id="who"><div class="w">
+<h2>Who we see</h2>
+<p class="sub">Patients arrive from desks, pitches, pools and operating theatres. A few of the situations the clinic describes:</p>
+<div class="split" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
+<div class="card"><h3>Pain at your desk</h3><p style="color:var(--mut);font-size:15px">Prolonged sitting often leads to poor posture and back or neck pain. Treatment is hands-on and based on you, not a label.</p></div>
+<div class="card"><h3>Just had surgery</h3><p style="color:var(--mut);font-size:15px">Rehab planned with your surgeon in mind, using the gym on site, from day one through to return to activity.</p></div>
+<div class="card"><h3>A sports injury</h3><p style="color:var(--mut);font-size:15px">Fresh, old or recurring. Evaluation and treatment first, then neuromuscular control and strengthening to avoid re-injury.</p></div>
+<div class="card"><h3>Getting back to sport</h3><p style="color:var(--mut);font-size:15px">The aim is to return you to the field, coordinating with orthopaedic surgeons, sports physicians and coaches when needed.</p></div>
+</div>
+</div></section>
+
+<section id="pilates" style="padding-top:0"><div class="w">
+<div class="card" style="border-left:4px solid var(--teal)">
+<h3>Pilates at the clinic</h3>
+<p style="color:var(--mut);font-size:15px;margin-bottom:10px">Pilates is a gentle form of exercise that improves posture, flexibility and core strength, using mat-based exercises and specialised equipment to retrain and restore movement. The clinic offers classes to complement treatment, tailored to individual needs.</p>
+<ul>
+<li>Recovering from injury or surgery: regain strength, balance and motor control</li>
+<li>Office desk setting: correct posture and stretch sore or tight areas</li>
+<li>Sports enthusiast: fine-tune skills and help prevent injuries</li>
+<li>Maintaining strength and balance as you age</li>
+</ul>
+<p style="margin-top:14px"><a class="btn ghost" href="#" data-open-assistant data-go="1">Ask about classes</a></p>
+</div>
+</div></section>
+
+<section class="band" id="visit"><div class="w">
+<h2>Your first visit</h2>
+<p class="sub">The physio starts with your story and a physical examination, then builds a plan around you.</p>
+<div class="visit">
+<div><b>History and examination</b>The physio takes a history of the problem and performs a physical examination.</div>
+<div><b>A plan for you</b>Exercise, movement correction, advice and manual techniques, depending on what you need.</div>
+<div><b>A program for home</b>You are often given advice and a program to work on between visits, plus an idea of the timeline.</div>
+</div>
+</div></section>
+
+<section id="surgeons" style="padding-bottom:0"><div class="w">
+<h2>Working with surgeons</h2>
+<p class="sub">Since 2005 the clinic has had a partnership with orthopaedic specialists, so assessment and rehabilitation are in one central place. For ACL injuries it liaises closely with A/Prof Leo Pinczewski, Dr Jonathan Herald and A/Prof Justin Roe.</p>
+</div></section>
+
+<section id="team"><div class="w split">
+<div class="card team">
+<h3>Jerome Murphy</h3>
+<p style="color:var(--mut);font-size:15px;margin-bottom:10px">Senior therapist. Graduated at University Hospitals Bradford, UK, in 1986, and began private practice in Sydney in 1993, founding Sydney Physiotherapy in Australia Square.</p>
+<ul>
+<li>Particular interest in sports injuries, especially the knee and ACL</li>
+<li>Assisted in physiotherapy at the Rugby World Cups of 1987, 1991, 1995 and 1999</li>
+<li>Post Graduate Diploma in Orthopaedic Manipulative Therapy</li>
+<li>Presented "Rehabilitation in the Swimmer's Shoulder" at the 2019 NSW Masters Swimming lecture</li>
+</ul>
+</div>
+<div class="card">
+<h3>The clinic</h3>
+<p style="color:var(--mut);font-size:15px;margin-bottom:10px">In the CBD for over 25 years, with patients who return and now bring their adult children. The whole team holds post-graduate qualifications or keeps up ongoing education.</p>
+<ul>
+<li>Large central gymnasium</li>
+<li>Semi-private treatment rooms</li>
+<li>Partnership with orthopaedic specialists since 2005, so orthopaedic care and physiotherapy sit under one roof</li>
+</ul>
+</div>
+</div></section>
+
+<section id="fees" style="padding-top:0"><div class="w split">
+<div class="card">
+<h3>Clinic fees</h3>
+<table class="fees"><tbody>
+<tr><td>Initial consultation<small>Jerome Murphy, 45 minutes</small></td><td>$160</td></tr>
+<tr><td>Follow-up consultation<small>30 minutes</small></td><td>$110</td></tr>
+<tr><td>Strapping consultation<small>15 minutes</small></td><td>$50</td></tr>
+</tbody></table>
+</div>
+<div class="card">
+<h3>Paying and claiming</h3>
+<ul>
+<li>HICAPS, EFTPOS, Visa and MasterCard accepted</li>
+<li>Private health: HICAPS means you pay only the gap. Check your fund for an estimate</li>
+<li>Medicare: $52.95 back for up to 5 services a year with a GP's Enhanced Primary Care Plan, if you qualify</li>
+<li>WorkCover and CTP need a current referral and claim details</li>
+</ul>
+</div>
+</div></section>
+
+<section id="finder" style="padding-top:0"><div class="w">
+<div class="card" style="background:#eaf3f4;border-color:#c5dfe1">
+<h3>Which service fits? A quick guide</h3>
+<p style="color:var(--mut);font-size:15px;margin-bottom:12px">Tap what sounds closest. This is a pointer to the clinic's own service pages, not a diagnosis. A physio will assess you at your visit.</p>
+<div id="fnd" style="display:flex;flex-wrap:wrap;gap:8px">
+<button class="chip" data-k="desk">Sore from desk work</button>
+<button class="chip" data-k="sport">Sports or exercise injury</button>
+<button class="chip" data-k="acl">Knee / ACL</button>
+<button class="chip" data-k="shoulder">Shoulder</button>
+<button class="chip" data-k="surgery">After surgery</button>
+<button class="chip" data-k="work">Work or car accident claim</button>
+<button class="chip" data-k="pilates">Core and posture</button>
+</div>
+<p id="fndout" style="margin-top:14px;font-size:15px;min-height:3.2em" aria-live="polite">Pick an option above.</p>
+</div>
+</div></section>
+
+<section id="plan" style="padding-top:0"><div class="w split">
+<div class="card"><h3>Before you come</h3><ul>
+<li>Check your private health extras for physiotherapy; the clinic will process the claim on the spot through HICAPS</li>
+<li>Bring recent x-rays or reports if you have them</li>
+<li>For WorkCover or CTP, bring your claim number, doctor's details and insurer details</li>
+<li>Wear something you can move in, or borrow shorts, a t-shirt or gown at the clinic</li>
+</ul></div>
+<div class="card"><h3>Getting here</h3><p style="color:var(--mut);font-size:15px;margin-bottom:10px">Level 16, Randstad House, 109 Pitt Street, in the heart of the Sydney CBD. Suite 1604.</p><p style="color:var(--mut);font-size:15px">Opening hours are not listed here, so ask the team when you request a time or call <a href="tel:0292322311">(02) 9232 2311</a>.</p></div>
+</div></section>
+
+<section id="faq" style="padding-top:0"><div class="w">
+<h2>Common questions</h2>
+<p class="sub">The same answers are in the assistant, so you can just ask.</p>
+<details><summary>Do I need a referral?</summary><p>Not as a private patient. A current referral is needed if you are claiming under WorkCover or CTP.</p></details>
+<details><summary>What should I bring?</summary><p>Any recent, relevant x-rays or reports. If you need to change clothing, the clinic has shorts, t-shirts and gowns you can borrow, or bring your own.</p></details>
+<details><summary>How often will I need to come?</summary><p>It varies with the condition. The physio will give you an idea of the timeline at your initial visit.</p></details>
+<details><summary>What if I have WorkCover but missing paperwork?</summary><p>Bring your doctor's referral, claim number, insurer and claims officer details. If the insurer has not accepted liability, or you don't have them, you are billed at the time of the consultation.</p></details>
+</div></section>
+
+<section class="band book" id="contact"><div class="w">
+<h2>Ready when you are</h2>
+<p class="sub" style="margin:0 auto 20px">Send the team a request with your preferred time. They confirm what is free.</p>
+<a class="btn" href="#" data-open-assistant data-go="1">Request an appointment</a>
+</div></section>
+</main>
+
+<footer><div class="w">
+<p><a href="https://www.google.com/maps/search/?api=1&amp;query=109+Pitt+Street+Sydney+NSW+2000">Open in maps</a></p>
+<p><b>Sydney Physiotherapy</b> · Suite 1604, Level 16, Randstad House, 109 Pitt Street, Sydney NSW 2000 · <a href="tel:0292322311">(02) 9232 2311</a> · <a href="mailto:mail@sydneyphysio.com.au">mail@sydneyphysio.com.au</a></p>
+<p class="sig">Demo · prepared by Gevorg Hovhannisyan</p>
+</div></footer>
+
+<button id="ax-btn" type="button" aria-expanded="false" aria-controls="ax-panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>Ask or book</button>
+<div id="ax-panel" role="dialog" aria-label="Sydney Physiotherapy assistant"><div class="ax-h"><div>Sydney Physiotherapy assistant<small>Fees, cover, services, booking requests</small></div><button id="ax-x" type="button" aria-label="Close">&times;</button></div><div id="ax-log" aria-live="polite"></div><div id="ax-chips"></div><form id="ax-form" autocomplete="off"><input id="ax-in" type="text" placeholder="Ask a question" aria-label="Your message"><button type="submit">Send</button></form><div class="ax-note">Demo assistant. It does not give medical advice and sends nothing.</div></div>
+
+<script>
+window.CFG={
+hello:"Hi, I'm the Sydney Physiotherapy assistant. I can answer questions about the clinic, services, fees and payments, or take your booking request for the team to confirm.",
+fallback:"I don't have that detail, so I'd rather not guess. The team can confirm it on (02) 9232 2311 or mail@sydneyphysio.com.au. I can also take a booking request.",
+chips:["Book an appointment","Fees","Private health cover","WorkCover","Where are you?","Pilates","Opening hours"],
+done:"Thanks. Your request is ready for the team at Sydney Physiotherapy, who will confirm a time with you. (In this demo nothing is actually sent.)",
+flow:[
+{key:"svc",label:"Service",q:"What do you need help with?",opts:["Physiotherapy","Sports physio","ACL rehab","Shoulder rehab","Pilates","WorkCover / CTP"]},
+{key:"vis",label:"Visit",q:"Is this your first visit to Sydney Physiotherapy?",opts:["First visit","I've been before"]},
+{key:"when",label:"Preferred day and time",q:"Which day and time would suit you? The team will confirm what is free.",ph:"e.g. Tuesday morning"},
+{key:"name",label:"Name",q:"Your name?",ph:"Full name"},
+{key:"contact",label:"Phone or e-mail",q:"Best phone number or e-mail for the team to reach you?",ph:"Phone or e-mail"}
+]};
+window.KB=[
+{k:["fee","fees","cost","price","how much","charge","consultation","initial","follow up"],a:"Published clinic fees: initial consultation with Jerome Murphy (senior therapist) $160 for 45 minutes; follow-up consultation $110 for 30 minutes; strapping consultation $50 for 15 minutes."},
+{k:["pay","payment","eftpos","visa","mastercard","card","accept"],a:"The clinic accepts HICAPS, EFTPOS, Visa and MasterCard."},
+{k:["private health","health fund","insurance","insurer","hicaps","rebate","gap","extras cover","fund"],a:"Yes. The clinic is connected to HICAPS, so with private health cover you only pay the gap. Every fund is different, so check your cover with your fund for an estimate."},
+{k:["medicare","enhanced primary care","epc","gp plan","chronic"],a:"Medicare can refund $52.95 for up to 5 services per calendar year (1 Jan to 31 Dec) under the Enhanced Primary Care initiative. It needs a referral from your GP under an Enhanced Primary Care Plan, and not everyone qualifies. Your GP can tell you if you do."},
+{k:["workcover","work cover","ctp","compensation","claim","motor vehicle","accident","car accident","workers"],a:"Yes, the clinic treats WorkCover and motor vehicle accident injuries. Bring your claim number, your doctor's details, your insurer's details and claims officer details to the first visit. If liability hasn't been accepted or you lack these details, you are billed at the consultation."},
+{k:["referral","refer","gp","doctor letter","need a referral"],a:"No referral is needed as a private patient. A current referral is needed if you claim under WorkCover or CTP."},
+{k:["address","where","location","find","directions","parking","cbd","pitt","street","located","map"],a:"Suite 1604, Level 16, Randstad House, 109 Pitt Street, Sydney NSW 2000 (Sydney CBD)."},
+{k:["phone","call","number","telephone","contact","email","e-mail","mail","reach"],a:"Phone (02) 9232 2311, e-mail mail@sydneyphysio.com.au. Online booking is also available through the Book Online button."},
+{k:["hours","open","opening","closing","close","time","weekend","saturday","sunday","late"],a:"I don't have the opening hours listed, so I won't guess. Please call (02) 9232 2311 or ask the team when sending your booking request."},
+{k:["pilates","reformer","mat","core","posture class","class"],a:"The clinic offers Pilates classes to complement treatment, tailored to individual needs, using mat-based exercises and specialised equipment. It suits recovery after injury or surgery, desk workers, sports and keeping strength as you age. The team can tell you the class times."},
+{k:["acl","anterior cruciate","knee reconstruction","cruciate","knee surgery"],a:"ACL rehabilitation: pre-operative exercise to restore range of motion, neuromuscular control and strength, then post-operative rehab from day one to return to sport. The clinic liaises closely with three ACL surgeons: A/Prof Leo Pinczewski, Dr Jonathan Herald and A/Prof Justin Roe."},
+{k:["shoulder","rotator cuff","dislocation","subluxation","swimmer","swimming","throwing"],a:"Shoulder rehabilitation covers overuse problems (swimming, throwing, computer work) with rotator cuff and shoulder blade strengthening, and recovery after dislocations or surgery with coordination and strength training. The physio will assess what is right for your shoulder."},
+{k:["sport","sports","athlete","rugby","injury","injuries","return to sport","exercise injury"],a:"Sports physiotherapy covers prevention, evaluation and management of injuries from sport or exercise, fresh, old, recurring or post-surgical, finishing with neuromuscular control and strengthening. The clinic coordinates with orthopaedic surgeons, sports physicians and coaches when needed."},
+{k:["physio","physiotherapy","physiotherapist","treatment","hands on","manual","what do you treat","services","musculoskeletal","back","neck"],a:"The clinic manages all musculoskeletal injuries. Treatment is hands-on and varies by the individual, not the diagnosis. Services: physiotherapy, sports physiotherapy, ACL rehabilitation, shoulder rehabilitation, Pilates and WorkCover/CTP."},
+{k:["first visit","initial visit","first appointment","what happens","expect","new patient","first time"],a:"On the first visit the physio takes a history of the problem, does a physical examination, then builds a treatment plan that may include exercise, movement correction, advice and manual techniques. You often get a home program too."},
+{k:["what should i bring","what to bring","bring","wear","clothes","clothing","xray","x-ray","scan","report","shorts","gown"],a:"Depending on the area treated you may be asked to change. The clinic has shorts, t-shirts and gowns to borrow, or bring your own. Bring any recent, relevant x-rays or reports."},
+{k:["how often","how many sessions","how long","timeline","recovery time","visits needed"],a:"It varies by condition. The physio will give you an idea of the timeline at the initial visit."},
+{k:["jerome","murphy","therapist","who is","who treats","team","staff","senior"],a:"The senior therapist is Jerome Murphy, who graduated in Bradford UK in 1986 and established Sydney Physiotherapy in 1993. He has a special interest in sports injuries, especially the knee and ACL. The team holds post-graduate qualifications or keeps up ongoing education."},
+{k:["orthopaedic","orthopedic","surgeon","specialist","ortho"],a:"Since 2005 the clinic has partnered with orthopaedic specialists, so orthopaedic management and physiotherapy are in one central CBD location."},
+{k:["since","established","history","about","experience","years","1993","gym","gymnasium","facility","rooms"],a:"Sydney Physiotherapy was established in 1993 and has been in the Sydney CBD for 25+ years. The purpose-built clinic has a large central gymnasium and semi-private treatment rooms."},
+{k:["diagnose","diagnosis","what is wrong","pain","hurt","sore","medical","symptom"],a:"I can't diagnose or give medical advice. Please book an assessment so a physio can look at it, and for anything urgent contact your doctor or emergency services."},
+{k:["qualification","qualifications","courses","training","postgraduate","post graduate","diploma","mckenzie","mulligan","tendinopathy","tendon","headache","cervical","patella","hip","experienced"],a:"Jerome Murphy holds a Post Graduate Diploma in Orthopaedic Manipulative Therapy and has completed post-graduate courses including sports levels 1 to 3, spinal and peripheral courses, McKenzie principles, Mulligan peripherals, lower limb and rotator cuff tendinopathy, headaches and the upper cervical spine, hip pathologies with real-time ultrasound, and patellofemoral syndrome."},
+{k:["strapping","tape","taping","brace"],a:"A strapping consultation is a 15-minute appointment, listed at $50."},
+{k:["desk","office","sitting","posture","computer","work pain"],a:"Pain from desk work is common. The clinic mentions physiotherapy for it, and Pilates to correct posture and stretch sore or tight areas. A physio will assess what is right for you, so I'd suggest a first visit."},
+{k:["surgery","operation","post op","post-op","after surgery","surgical","rehab","rehabilitation"],a:"Rehabilitation after surgery is part of the clinic's work (for example ACL and shoulder), using the on-site gymnasium and working with your surgeon. Bring any relevant reports to the first visit."},
+{k:["shop","buy","product","products","store"],a:"The website has a Shop page, but I don't have its contents. The team can tell you what is available on (02) 9232 2311."},
+{k:["blog","article","news"],a:"The clinic has a blog on its main website with articles from the team."},
+{k:["instagram","facebook","social","follow"],a:"The clinic is on Facebook and Instagram (sydneyphysiotherapy). You'll find the links on the main website."},
+{k:["cancel","cancellation","late fee","no show","reschedule"],a:"I don't have the cancellation policy, so I won't guess. Please ask the team on (02) 9232 2311."},
+{k:["child","children","kids","adult children","family","age","elderly","senior citizen"],a:"The clinic says patients return for the quality of care and it now treats some of their adult children. For a specific age group or condition, please ask the team."},
+{k:["swim","swimmer","swimming","masters"],a:"Jerome Murphy presented 'Rehabilitation in the Swimmer's Shoulder' at the 2019 NSW Masters Swimming lecture, and the clinic treats overuse shoulder problems from swimming and throwing."},
+{k:["rugby","world cup","lions","woollahra"],a:"Jerome Murphy assisted in physiotherapy at the Rugby World Cups of 1987, 1991, 1995 and 1999 and the British Lions tours of Australia (1989) and New Zealand (1993). He was honorary physiotherapist for Woollahra Colleagues RFC from 1993 to 2017."},
+{k:["online","booking"],a:"Use the Book Online button at the top of this page, or I can take your request here for the team to confirm."},
+{k:["hello","hi","hey","good morning","thanks","thank"],a:"Hello! Ask me about fees, cover, services or booking."}
+];
+
+(function(g){
+var C=g.CFG,KB=g.KB;
+function norm(s){return s.toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4){w=w.replace(/(ing|ed|es|s)$/,'');}return w;}
+function lev(a,b){if(Math.abs(a.length-b.length)>1)return 9;var m=[],i,j;for(i=0;i<=a.length;i++){m[i]=[i];}for(j=1;j<=b.length;j++)m[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return m[a.length][b.length];}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function hit(t,kw){var k=norm(kw).split(' ').map(stem);if(k.length>1){var j=toks(t.join(' ')).join(' ');return j.indexOf(k.join(' '))>-1?2:0;}
+ var w=k[0];for(var i=0;i<t.length;i++){if(t[i]==w)return 1;if(w.length>=4&&t[i].length>=4&&t[i][0]==w[0]&&lev(t[i],w)<=1)return 0.8;if(w.length>=5&&t[i].indexOf(w)==0)return 0.8;}return 0;}
+function answer(q){var t=toks(q),best=null,bs=0;
+ KB.forEach(function(e){var s=0;e.k.forEach(function(kw){s+=hit(t,kw);});if(s>bs){bs=s;best=e;}});
+ return bs>=0.8?best:null;}
+function wantsBooking(q){var t=toks(q);return ['book','booking','appointment','schedule','reserve','reservation','reschedule','see someone'].some(function(w){return hit(t,w)>0;})||/make (an )?appoint/.test(norm(q));}
+g.__answer=answer;g.__wants=wantsBooking;
+if(typeof document==='undefined')return;
+var $=function(s){return document.querySelector(s);};
+var btn=$('#ax-btn'),pan=$('#ax-panel'),log=$('#ax-log'),chips=$('#ax-chips'),form=$('#ax-form'),inp=$('#ax-in');
+var flow=null,data={};
+function add(txt,me){var d=document.createElement('div');d.className='ax-m '+(me?'ax-me':'ax-bot');d.textContent=txt;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+function setChips(a,fn){chips.innerHTML='';a.forEach(function(x){var b=document.createElement('button');b.type='button';b.textContent=x;b.onclick=function(){fn(x);};chips.appendChild(b);});}
+function home(){setChips(C.chips,ask);}
+function ask(q){add(q,1);if(flow!==null){step(q);return;}
+ if(wantsBooking(q)){startFlow();return;}
+ var e=answer(q);
+ if(e){add(e.a);if(e.go){startFlow();return;}}
+ else add(C.fallback);
+ home();}
+function startFlow(){flow=0;data={};add(C.flow[0].q);showStep();}
+function showStep(){var s=C.flow[flow];if(s.opts)setChips(s.opts,ask);else chips.innerHTML='';inp.placeholder=s.ph||'Type here';}
+function step(v){var s=C.flow[flow];if(/^(cancel|stop|nevermind|never mind)$/i.test(v.trim())){flow=null;add('No problem, nothing was sent.');home();return;}
+ data[s.key]=v;flow++;
+ if(flow>=C.flow.length){var sum=C.flow.map(function(x){return x.label+': '+data[x.key];}).join('\n');flow=null;add(C.done+'\n\n'+sum);setChips(['Opening hours','Where are you?','Start over'],function(x){x=='Start over'?(log.innerHTML='',add(C.hello),home()):ask(x);});inp.placeholder='Ask a question';return;}
+ add(C.flow[flow].q);showStep();}
+btn.onclick=function(){var o=pan.classList.toggle('open');btn.setAttribute('aria-expanded',o);if(o&&!log.children.length){add(C.hello);home();}if(o)setTimeout(function(){inp.focus();},50);};
+$('#ax-x').onclick=function(){pan.classList.remove('open');btn.setAttribute('aria-expanded',false);};
+form.onsubmit=function(ev){ev.preventDefault();var v=inp.value.trim();if(!v)return;inp.value='';ask(v);};
+document.querySelectorAll('[data-open-assistant]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();if(!pan.classList.contains('open'))btn.click();if(a.dataset.go&&flow===null){startFlow();}});});
+})(typeof window!=='undefined'?window:globalThis);
+
+(function(){var M={desk:"Pain at a desk is common. The clinic describes physiotherapy for this, and Pilates for posture and core strength. Book a physiotherapy visit and the physio will assess you.",sport:"That is Sports physiotherapy: evaluation, treatment, then neuromuscular control and strengthening to return to sport.",acl:"See ACL rehabilitation: exercise before surgery if needed, then rehab from day one, working with the clinic's three ACL surgeons.",shoulder:"See Shoulder rehabilitation: rotator cuff and shoulder blade strengthening, or post-surgery coordination and strength training.",surgery:"Rehab after surgery is part of the clinic's work (ACL, shoulder and other musculoskeletal surgery), using the gym on site. Bring any reports you have.",work:"The clinic treats WorkCover and motor vehicle accident injuries. Bring your claim number, doctor's details and insurer details to the first visit.",pilates:"Pilates classes build deep core strength and improve posture and flexibility, tailored to the individual."};
+var out=document.getElementById('fndout');document.querySelectorAll('#fnd .chip').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#fnd .chip').forEach(function(x){x.classList.remove('on');});b.classList.add('on');out.textContent=M[b.dataset.k];});});})();
+</script>
+</body>
+</html>

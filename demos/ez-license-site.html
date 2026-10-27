@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EZ License · Traffic and Driving School, Miami</title>
+<meta name="description" content="Driving exam, learner's permit exam, driving lessons and traffic school at EZ License in Miami-Dade and Broward. Demo page with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#ff1a1a;--yel:#ffe600;--grn:#19e619;--asp:#14161b;--asp2:#1d2027;--asp3:#272b34;--line:#383d49;--tx:#f2f3f5;--mut:#a9afbb;--hd:'Barlow Condensed','Arial Narrow',sans-serif;--bd:'Barlow',system-ui,sans-serif;--as-font:var(--bd);--as-a:#ffe600;--as-at:#14161b;--as-bg:#1d2027;--as-bg2:#14161b;--as-bubble:#272b34;--as-ink:#f2f3f5;--as-line:#383d49;--as-r:12px;--as-pr:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--asp);color:var(--tx);font:17px/1.55 var(--bd);overflow-x:hidden;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 18px}
+.top{position:sticky;top:0;z-index:50;background:rgba(20,22,27,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.chip{background:#fff;border-radius:12px;padding:3px;width:54px;height:54px;flex:none;display:grid;place-items:center}
+.chip img{width:48px;height:48px;object-fit:contain}
+.brand span{font:700 15px/1.1 var(--hd);letter-spacing:.08em;text-transform:uppercase;color:var(--mut);display:none}
+.nav{display:none;gap:22px;font:600 16px var(--hd);letter-spacing:.06em;text-transform:uppercase}
+.nav a{text-decoration:none;color:var(--mut)}.nav a:hover{color:var(--yel)}
+.call{background:var(--grn);color:#06240a;text-decoration:none;font:700 17px var(--hd);letter-spacing:.04em;padding:9px 14px;border-radius:8px;white-space:nowrap}
+@media(min-width:760px){.nav{display:flex}.brand span{display:block}}
+/* hero */
+.hero{position:relative;padding:44px 0 38px;border-bottom:1px solid var(--line);background:radial-gradient(900px 300px at 85% -10%,rgba(255,26,26,.16),transparent 60%),radial-gradient(700px 300px at 10% 110%,rgba(25,230,25,.1),transparent 60%)}
+.hero .wrap{display:grid;gap:28px}
+.eyebrow{font:700 15px var(--hd);letter-spacing:.18em;text-transform:uppercase;color:var(--yel)}
+h1{font:800 clamp(40px,10vw,84px)/.95 var(--hd);text-transform:uppercase;margin:10px 0 14px}
+h1 em{font-style:normal;color:var(--red)}h1 u{text-decoration:none;color:var(--yel)}h1 b{color:var(--grn)}
+.lede{color:var(--mut);max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{display:inline-block;text-decoration:none;font:700 18px var(--hd);letter-spacing:.05em;text-transform:uppercase;padding:13px 20px;border-radius:10px;border:2px solid transparent;cursor:pointer}
+.btn.r{background:var(--red);color:#fff}.btn.y{background:var(--yel);color:#14161b}.btn.o{border-color:var(--line);color:var(--tx)}
+.light{justify-self:start;display:flex;gap:12px;align-items:center}
+.light i{display:block;width:clamp(58px,17vw,96px);aspect-ratio:1;border-radius:50%}
+.light i:nth-child(1){background:var(--red);box-shadow:0 0 40px rgba(255,26,26,.5)}.light i:nth-child(2){background:var(--yel);margin-left:-26px;mix-blend-mode:normal;box-shadow:0 0 40px rgba(255,230,0,.4)}.light i:nth-child(3){background:var(--grn);margin-left:-26px;box-shadow:0 0 40px rgba(25,230,25,.4)}
+.perks{display:grid;grid-template-columns:1fr;gap:8px;margin-top:6px;list-style:none}
+.perks li{padding:9px 12px;border:1px solid var(--line);background:var(--asp2);border-radius:10px;font-size:15px}
+.perks li::before{content:"\2714";color:var(--grn);margin-right:8px}
+@media(min-width:760px){.hero .wrap{grid-template-columns:1.35fr .9fr;align-items:center}.perks{grid-template-columns:1fr}.light{justify-self:center}}
+/* sections */
+section{padding:54px 0;border-bottom:1px solid var(--line)}
+h2{font:800 clamp(32px,7vw,52px)/1 var(--hd);text-transform:uppercase;margin-bottom:8px}
+.sub{color:var(--mut);margin-bottom:26px;max-width:40em}
+.three{display:grid;gap:14px}
+@media(min-width:760px){.three{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--asp2);border:1px solid var(--line);border-radius:14px;padding:20px;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;left:0;top:0;height:5px;width:100%;background:var(--c,var(--red))}
+.card h3{font:700 26px/1.05 var(--hd);text-transform:uppercase;margin:6px 0 8px}
+.card p{color:var(--mut);font-size:16px}
+.card .tag{font:700 13px var(--hd);letter-spacing:.14em;color:var(--c,var(--red));text-transform:uppercase}
+/* road */
+.road{position:relative;margin-top:8px;padding-left:46px}
+.road::before{content:"";position:absolute;left:17px;top:4px;bottom:4px;width:0;border-left:4px dashed var(--yel)}
+.step{position:relative;padding:0 0 26px}
+.step::before{content:attr(data-n);position:absolute;left:-46px;top:0;width:36px;height:36px;border-radius:50%;background:var(--yel);color:#14161b;font:800 20px/36px var(--hd);text-align:center;box-shadow:0 0 0 6px var(--asp)}
+.step h3{font:700 26px/1.1 var(--hd);text-transform:uppercase}
+.step p{color:var(--mut);max-width:42em}
+.step a{color:var(--yel);font-weight:600}
+/* packages */
+.pk{display:grid;gap:12px}
+@media(min-width:700px){.pk{grid-template-columns:repeat(2,1fr)}}@media(min-width:1000px){.pk{grid-template-columns:repeat(4,1fr)}}
+.pkc{background:var(--asp2);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px}
+.pkc .hrs{font:800 54px/1 var(--hd);color:var(--c)}
+.pkc .hrs small{font-size:20px;color:var(--mut);margin-left:4px;font-weight:600}
+.pkc h3{font:700 22px var(--hd);text-transform:uppercase;letter-spacing:.04em}
+.pkc .who{font-size:14px;color:var(--yel);font-weight:600}
+.pkc p{font-size:15px;color:var(--mut)}
+/* exam */
+.split{display:grid;gap:22px}
+@media(min-width:860px){.split{grid-template-columns:1fr 1fr}}
+.list{list-style:none;display:grid;gap:9px}
+.list li{padding:11px 14px;background:var(--asp2);border-left:4px solid var(--grn);border-radius:6px}
+.list li b{color:var(--yel)}
+.panel{background:var(--asp3);border:1px solid var(--line);border-radius:14px;padding:22px}
+.panel h3{font:700 26px var(--hd);text-transform:uppercase;margin-bottom:8px}
+/* courses */
+.tbl{width:100%;border-collapse:collapse;font-size:15.5px}
+.tbl th{font:700 14px var(--hd);letter-spacing:.12em;text-transform:uppercase;color:var(--mut);text-align:left;padding:8px 6px;border-bottom:2px solid var(--line)}
+.tbl td{padding:12px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl td:first-child{font:700 20px/1.1 var(--hd);text-transform:uppercase;width:34%;color:var(--yel)}
+/* locations */
+.loc{display:grid;gap:12px}
+@media(min-width:760px){.loc{grid-template-columns:repeat(3,1fr)}}
+.lc{background:var(--asp2);border:1px solid var(--line);border-radius:14px;padding:20px}
+.lc h3{font:700 26px var(--hd);text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.lc h3::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--c)}
+.lc address{font-style:normal;color:var(--mut);margin:6px 0 10px}
+.lc a{font:700 22px var(--hd);color:var(--tx);text-decoration:none;border-bottom:2px solid var(--c)}
+/* faq */
+details{background:var(--asp2);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+summary{cursor:pointer;padding:15px 18px;font:700 21px/1.2 var(--hd);text-transform:uppercase;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"+";color:var(--yel);font-size:26px;line-height:.9}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 18px 16px;color:var(--mut)}
+footer{padding:34px 0 120px;color:var(--mut);font-size:15px}
+footer .wrap{display:grid;gap:8px}
+.demo{font-size:13px;opacity:.8;margin-top:10px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.as-root{position:fixed;right:14px;bottom:14px;z-index:99;font-family:var(--as-font,inherit);color:var(--as-ink,#111)}
+.as-fab{display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--as-a,#111);color:var(--as-at,#fff);padding:12px 18px;border-radius:var(--as-r,999px);font:600 15px var(--as-font,inherit);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.as-fab-i{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--as-at,#fff);color:var(--as-a,#111);font-weight:800;font-size:14px}
+.as-panel{position:fixed;right:10px;bottom:10px;width:min(380px,calc(100vw - 20px));height:min(560px,calc(100vh - 20px));display:flex;flex-direction:column;background:var(--as-bg,#fff);border:1px solid var(--as-line,#ddd);border-radius:var(--as-pr,16px);overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.as-panel[hidden]{display:none}
+.as-h{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--as-a,#111);color:var(--as-at,#fff)}
+.as-h b{display:block;font-size:15px}.as-h small{opacity:.85;font-size:12px}
+.as-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+.as-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--as-bg2,#f6f6f6)}
+.as-m{max-width:86%;padding:9px 12px;border-radius:14px;font-size:14.5px;line-height:1.45;white-space:pre-wrap;word-wrap:break-word}
+.as-bot{align-self:flex-start;background:var(--as-bubble,#fff);border:1px solid var(--as-line,#ddd)}
+.as-me{align-self:flex-end;background:var(--as-a,#111);color:var(--as-at,#fff)}
+.as-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;border-top:1px solid var(--as-line,#ddd);background:var(--as-bg,#fff);max-height:112px;overflow-y:auto}
+.as-c{border:1px solid var(--as-a,#111);background:transparent;color:var(--as-ink,#111);border-radius:999px;padding:6px 11px;font:500 13px var(--as-font,inherit);cursor:pointer}
+.as-c:hover{background:var(--as-a,#111);color:var(--as-at,#fff)}
+.as-f{display:flex;gap:6px;padding:8px 10px;background:var(--as-bg,#fff);border-top:1px solid var(--as-line,#ddd)}
+.as-in{flex:1;min-width:0;border:1px solid var(--as-line,#ccc);border-radius:10px;padding:10px;font:16px var(--as-font,inherit);background:var(--as-bg,#fff);color:var(--as-ink,#111)}
+.as-go{border:0;background:var(--as-a,#111);color:var(--as-at,#fff);border-radius:10px;padding:0 14px;cursor:pointer;font-size:16px}
+.as-note{margin:0;padding:0 10px 8px;font-size:11px;opacity:.65;background:var(--as-bg,#fff)}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+ <a class="brand" href="#top"><span class="chip"><img src="img/ez-license-logo.png" alt="EZ License" width="48" height="48"></span><span>Traffic &amp; Driving School</span></a>
+ <nav class="nav" aria-label="Sections"><a href="#steps">Steps</a><a href="#lessons">Lessons</a><a href="#exam">Exam</a><a href="#classes">Traffic school</a><a href="#locations">Locations</a></nav>
+ <a class="call" href="tel:+13052382000">(305) 238-2000</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+ <div>
+  <div class="eyebrow">Miami-Dade &amp; Broward · since 2004</div>
+  <h1>Get your <em>license</em>.<br><u>Skip</u> the <b>wait.</b></h1>
+  <p class="lede">Your learner's permit exam, driving lessons, driving exam and traffic school, under one roof. Classes run 7 days a week and exam appointments are available Monday through Saturday, with a free cheat sheet review before you go out on the road.</p>
+  <div class="cta"><a class="btn r" href="#exam" data-ask="Book a driving exam">Schedule driving exam</a><a class="btn y" href="#lessons">See lesson packages</a><a class="btn o" href="#classes">Traffic tickets</a></div>
+ </div>
+ <div>
+  <div class="light" aria-hidden="true"><i></i><i></i><i></i></div>
+  <ul class="perks" style="margin-top:20px">
+   <li>Certified instructors with background checks</li>
+   <li>English first, also bilingual</li>
+   <li>New vehicles with dual brakes</li>
+   <li>Thousands of 5-star Google reviews</li>
+  </ul>
+ </div>
+</div></div>
+
+<section id="start"><div class="wrap">
+ <h2>Where are you starting?</h2>
+ <p class="sub">Three kinds of people walk in. Pick the one that sounds like you.</p>
+ <div class="three">
+  <article class="card" style="--c:var(--red)"><span class="tag">Stop · first time</span><h3>First-time driver</h3><p>Take the learner's permit exam and the Drug &amp; Alcohol class in the office, daily. You get a free review before the test, and 95% of students pass the permit exam on the first try.</p></article>
+  <article class="card" style="--c:var(--yel)"><span class="tag">Get ready · new in Florida</span><h3>Need a Florida license</h3><p>Just arrived in the Sunshine State? EZ License can help you get your Florida driver's license in 24 hours.</p></article>
+  <article class="card" style="--c:var(--grn)"><span class="tag">Go · got a ticket</span><h3>Traffic ticket</h3><p>Courses to take points off your license: 4, 8 and 12 hour options, in person, online or on DVD if you would rather not come in.</p></article>
+ </div>
+</div></section>
+
+<section id="steps"><div class="wrap">
+ <h2>Four steps to your license</h2>
+ <p class="sub">The route the school lays out on its own site.</p>
+ <div class="road">
+  <div class="step" data-n="1"><h3>Drug &amp; Alcohol class</h3><p>First step for a first-time driver, done in the office.</p></div>
+  <div class="step" data-n="2"><h3>Learner's permit exam</h3><p>Taken in the office as well, with a free review beforehand. You need the Florida learner's permit before you can sit the driving exam.</p></div>
+  <div class="step" data-n="3"><h3>Driving lessons</h3><p>Four packages from 2 to 20 hours of on-the-road training, built around how much driving you have already done. <a href="#lessons">See packages</a></p></div>
+  <div class="step" data-n="4"><h3>Driving license exam</h3><p>Take the exam at EZ License, then bring your certificate to the State office, where the permit is traded for a driver's license for free. <a href="#exam">Exam details</a></p></div>
+ </div>
+</div></section>
+
+<section id="lessons"><div class="wrap">
+ <h2>Driving lessons</h2>
+ <p class="sub">The most popular choice for parents whose teen lacks confidence is the Silver package. Prices are not listed online, so the team confirms them when you book.</p>
+ <div class="pk">
+  <article class="pkc" style="--c:#cd7f32"><div class="hrs">2<small>hours</small></div><h3>Bronze · 1 day</h3><div class="who">Refresher or highway practice</div><p>Review of the exam, a refresher, or highway practice for drivers with experience who took time off or want to rehearse the exam route before testing.</p></article>
+  <article class="pkc" style="--c:#c9d1d9"><div class="hrs">6<small>hours</small></div><h3>Silver · 3 days</h3><div class="who">Needs confidence</div><p>Defensive driving, the highway, merging and left turns at intersections, for students with some hours behind the wheel facing South Florida traffic.</p></article>
+  <article class="pkc" style="--c:var(--yel)"><div class="hrs">12<small>hours</small></div><h3>Gold · 6 days</h3><div class="who">Beginners who know how to steer</div><p>For students who have driven a few times to school or work but still lack confidence in heavy traffic: merging, lane changes, highways, accident avoidance.</p></article>
+  <article class="pkc" style="--c:#7fe7ff"><div class="hrs">20<small>hours</small></div><h3>Platinum · 10 days</h3><div class="who">New drivers, no experience</div><p>For nervous students or those with little to no time behind the wheel who have not practiced lane changes or left turns across traffic on main roads.</p></article>
+ </div>
+ <div class="cta"><a class="btn y" href="#top" data-ask="Book driving lessons">Book lessons</a></div>
+</div></section>
+
+<section id="exam"><div class="wrap split">
+ <div>
+  <h2>Take your driving exam today</h2>
+  <p class="sub">Same-day appointments, a quick route, and no long lines.</p>
+  <ul class="list">
+   <li><b>Same-day</b> appointments are always available.</li>
+   <li><b>Free</b> cheat sheet review before each exam.</li>
+   <li>Exams run <b>Monday through Saturday</b>.</li>
+   <li>The route is chosen by the State and takes about <b>15 to 20 minutes</b>.</li>
+   <li>You must hold a <b>Florida learner's permit</b> to take the exam.</li>
+   <li>After you pass, go to the State office with your certificate; the permit-to-license swap is <b>free</b>.</li>
+  </ul>
+ </div>
+ <div class="panel">
+  <h3>How booking works today</h3>
+  <p style="color:var(--mut);margin-bottom:12px">The website form asks for your name, phone, email, a time preference (morning, mid-day, afternoon or first available), the location (Miami-Dade at Cutler Bay or Broward at Miramar) and the day you want. The team replies by email within 24 hours with available times, and you confirm.</p>
+  <p style="margin-bottom:14px">The assistant on this demo page collects the same details in a chat and hands them to the team as one clean request.</p>
+  <button class="btn r" type="button" data-ask="Book a driving exam">Try it: book an exam</button>
+ </div>
+</div></section>
+
+<section id="classes"><div class="wrap">
+ <h2>Traffic school</h2>
+ <p class="sub">Every course gives a same-day certificate. Take it in person or online.</p>
+ <table class="tbl">
+  <thead><tr><th>Course</th><th>Good for</th></tr></thead>
+  <tbody>
+   <tr><td>4-hour Basic Driver Improvement</td><td>Traffic ticket, court ordered, defensive driving, or an insurance discount for drivers with no recent violation. Also available on DVD.</td></tr>
+   <tr><td>8-hour Basic Driver Improvement</td><td>Meets court requirements for an 8-hour basic and 8-hour intermediate course. Court ordered, habitual traffic offender.</td></tr>
+   <tr><td>8-hour Aggressive Driver Improvement</td><td>Fulfils court requirements for an 8-hour aggressive driving course.</td></tr>
+   <tr><td>12-hour Advanced Driver Improvement</td><td>Reinstate a revoked or suspended license, hardship license, three crashes in three years. Not for DUI-related suspensions. Completion is reported to the Florida DMV electronically.</td></tr>
+  </tbody>
+ </table>
+</div></section>
+
+<section id="locations"><div class="wrap">
+ <h2>Three locations</h2>
+ <p class="sub">Pick the one closest to you.</p>
+ <div class="loc">
+  <article class="lc" style="--c:var(--red)"><h3>Miami-Dade</h3><address>20900 S. Dixie Highway<br>Miami, FL 33189<br>In front of Walmart</address><a href="tel:+13052382000">(305) 238-2000</a></article>
+  <article class="lc" style="--c:var(--yel)"><h3>Pembroke Pines</h3><address>6720 Pines Blvd<br>Pembroke Pines, FL 33024<br>In front of McArthur High School</address><a href="tel:+19547432118">954-743-2118</a></article>
+  <article class="lc" style="--c:var(--grn)"><h3>Miramar</h3><address>7512 Pembroke Road<br>Miramar, FL 33023<br>In front of North Perry Airport</address><a href="tel:+19543627435">(954) 362-7435</a></article>
+ </div>
+ <p style="margin-top:18px;color:var(--mut)">Email: <a href="mailto:info@EZLicenseFL.com" style="color:var(--yel)">info@EZLicenseFL.com</a></p>
+</div></section>
+
+<section id="faq"><div class="wrap">
+ <h2>Quick answers</h2>
+ <p class="sub">The same answers the assistant gives.</p>
+ <details><summary>Do I need a permit before the driving exam?</summary><p>Yes. You must have a Florida learner's permit to complete the driving exam.</p></details>
+ <details><summary>How long is the driving exam?</summary><p>The route is chosen by the State and takes about 15 to 20 minutes.</p></details>
+ <details><summary>What happens after I pass?</summary><p>Head to the State office with your certificate. They trade your permit for a driver's license for free.</p></details>
+ <details><summary>I just moved to Florida. Can you help?</summary><p>Yes. The school says it can help you get a Florida driver's license in 24 hours.</p></details>
+ <details><summary>Do you speak other languages?</summary><p>English first, but the school is also bilingual. Ask the team which language you need.</p></details>
+ <details><summary>Is the traffic school course available online?</summary><p>Yes, courses are offered in person, online, and the 4-hour course also on DVD.</p></details>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+ <div><b style="color:var(--tx)">EZ License · Drivers License Center</b></div>
+ <div>Miami-Dade · Pembroke Pines · Miramar · (305) 238-2000</div>
+ <div class="demo">Demo · prepared by Gevorg Hovhannisyan</div>
+</div></footer>
+
+<script>
+/* assistant engine: client-side only, nothing is sent anywhere */
+(function(){
+var $=function(s,r){return (r||document).querySelector(s)};
+function norm(s){return String(s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9$+ ]+/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){if(w.length>5&&/ing$/.test(w))return w.slice(0,-3);if(w.length>4&&/ies$/.test(w))return w.slice(0,-3)+'y';if(w.length>4&&/es$/.test(w))return w.slice(0,-2);if(w.length>3&&/ed$/.test(w))return w.slice(0,-2);if(w.length>3&&/s$/.test(w))return w.slice(0,-1);return w}
+function lev(a,b,m){if(Math.abs(a.length-b.length)>m)return m+1;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i],mn=i;for(j=1;j<=b.length;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));if(c[j]<mn)mn=c[j]}if(mn>m)return m+1;p=c}return p[b.length]}
+function tokMatch(q,k){if(q===k)return true;if(k.length>=4&&q.length>=4&&(q.indexOf(k)===0||k.indexOf(q)===0))return true;var m=k.length>=8?2:(k.length>=5?1:0);return m>0&&lev(q,k,m)<=m}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem)}
+function kwHit(qt,kw){var kt=toks(kw);if(!kt.length)return 0;for(var i=0;i<kt.length;i++){var ok=false;for(var j=0;j<qt.length;j++){if(tokMatch(qt[j],kt[i])){ok=true;break}}if(!ok)return 0}return 1+0.6*(kt.length-1)}
+function pick(cfg,q){var qt=toks(q),best=null,bs=0;for(var i=0;i<cfg.kb.length;i++){var e=cfg.kb[i],s=0;for(var j=0;j<e.k.length;j++)s+=kwHit(qt,e.k[j]);s*=(e.w||1);if(s>bs){bs=s;best=e}}return best}
+function wantsFlow(cfg,q){var qt=toks(q);for(var i=0;i<cfg.flowWords.length;i++){if(kwHit(qt,cfg.flowWords[i]))return true}return false}
+function matchOpt(opts,t){var n=norm(t),qt=toks(t),i;for(i=0;i<opts.length;i++){if(norm(opts[i])===n)return opts[i]}var bi=-1,bs=0;for(i=0;i<opts.length;i++){var s=kwHit(qt,opts[i]);if(!s){var ot=toks(opts[i]);for(var a=0;a<ot.length;a++)for(var b=0;b<qt.length;b++)if(ot[a].length>3&&tokMatch(qt[b],ot[a]))s+=1}if(s>bs){bs=s;bi=i}}return bi>=0?opts[bi]:null}
+window.Assistant=function(cfg){
+var st={flow:null,i:0,data:{}};
+var root=document.createElement('div');root.className='as-root';
+root.innerHTML='<button class="as-fab" aria-label="Open assistant" type="button"><span class="as-fab-i">?</span><span class="as-fab-t"></span></button><section class="as-panel" hidden role="dialog" aria-label="Assistant"><header class="as-h"><div><b class="as-n"></b><small class="as-s"></small></div><button class="as-x" type="button" aria-label="Close">&times;</button></header><div class="as-log" aria-live="polite"></div><div class="as-chips"></div><form class="as-f" autocomplete="off"><input class="as-in" type="text" maxlength="200" aria-label="Your message"><button class="as-go" type="submit" aria-label="Send">&#10148;</button></form><p class="as-note"></p></section>';
+document.body.appendChild(root);
+var fab=$('.as-fab',root),pan=$('.as-panel',root),log=$('.as-log',root),chips=$('.as-chips',root),inp=$('.as-in',root),form=$('.as-f',root);
+$('.as-n',root).textContent=cfg.name;$('.as-s',root).textContent=cfg.sub||'';$('.as-fab-t',root).textContent=cfg.fab||'Ask';$('.as-note',root).textContent=cfg.note||'';inp.placeholder=cfg.ph||'Type a question';
+function say(t,me){var d=document.createElement('div');d.className='as-m '+(me?'as-me':'as-bot');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='as-c';b.textContent=c;b.onclick=function(){handle(c)};chips.appendChild(b)})}
+function home(){setChips(cfg.chips)}
+function ask(){var s=cfg.flow[st.i];say(typeof s.q==='function'?s.q(st.data):s.q);if(s.opts)setChips(s.opts.concat(['Cancel']));else setChips(['Cancel'])}
+function startFlow(){st.flow=true;st.i=0;st.data={};say(cfg.flowIntro);ask()}
+function finish(){var d=st.data,lines=cfg.flow.map(function(s){return s.label+': '+d[s.id]}).join('\n');say(cfg.done(d)+'\n\n'+lines);st.flow=null;home()}
+function handle(t){t=String(t||'').trim();if(!t)return;say(t,1);inp.value='';
+ if(st.flow){var n=norm(t);if(n==='cancel'||n==='stop'||n==='nevermind'||n==='never mind'){st.flow=null;say('No problem, nothing was sent. Ask me anything else.');home();return}
+  var s=cfg.flow[st.i],v=t;
+  if(s.opts){v=matchOpt(s.opts,t);if(!v){say('Please pick one of the options below.');setChips(s.opts.concat(['Cancel']));return}}
+  else if(s.re&&!s.re.test(t)){say(s.err||'Could you rephrase that?');return}
+  st.data[s.id]=v;st.i++;if(st.i>=cfg.flow.length)finish();else ask();return}
+ var n2=norm(t);if(/^(hi|hello|hey|hola|yo|good (morning|afternoon|evening)|gday)$/.test(n2)){say(cfg.hello||'Hi! How can I help?');home();return}
+ if(wantsFlow(cfg,t)&&!(cfg.noFlowIf&&cfg.noFlowIf.test(n2))){startFlow();return}
+ var e=pick(cfg,t);if(e){say(e.a);setChips(e.next||cfg.chips);return}
+ say(cfg.fallback);home()}
+form.onsubmit=function(ev){ev.preventDefault();handle(inp.value)};
+function open(){pan.hidden=false;fab.style.display='none';if(!log.children.length){say(cfg.intro);home()}setTimeout(function(){inp.focus()},50)}
+fab.onclick=open;$('.as-x',root).onclick=function(){pan.hidden=true;fab.style.display=''};
+window.__asOpen=open;window.__asAsk=function(t){open();handle(t)};
+window.__asTest={pick:pick,wantsFlow:wantsFlow,cfg:cfg,matchOpt:matchOpt};
+};
+})();
+
+(function(){
+var LOC=['Miami-Dade (Cutler Bay)','Broward (Miramar)','Pembroke Pines'];
+var cfg={
+ name:'EZ License assistant',sub:'Exams, lessons, traffic school',fab:'Ask EZ',ph:'Ask about exams, lessons, tickets',
+ note:'Demo only. Nothing is sent from this chat; the team confirms every booking.',
+ intro:'Hi, I am the EZ License assistant. Ask me about the driving exam, learner\'s permit, lessons, traffic school or our locations.',
+ hello:'Hi! What do you need help with: the exam, lessons or a traffic ticket?',
+ fallback:'I do not have that detail on the website, so the EZ License team will need to confirm it. You can call (305) 238-2000 or email info@EZLicenseFL.com. Want me to start an exam request?',
+ chips:['Book a driving exam','Driving lessons','Learner\'s permit','Traffic ticket course','Locations and phones','Just moved to Florida'],
+ flowWords:['book','schedule','appointment','reserve','sign up','make a booking','set up exam','want to take exam','available time'],
+ noFlowIf:/\b(how|what|why|where|which|can i bring|do you|does|is it|are you)\b.*\b(book|schedule|appointment)/,
+ kb:[
+  {k:['driving exam','road test','driving test','license exam','take exam','exam'],a:'Driving exams run Monday through Saturday, same-day appointments are always available, and you get a FREE cheat sheet review before you go. The route is chosen by the State and takes about 15 to 20 minutes. Want to request a slot?',next:['Book a driving exam','What do I bring','After I pass']},
+  {k:['permit','learners permit','learner permit','first time driver','first time','written test','permit exam'],a:'First-time drivers take the learner\'s permit exam and the Drug & Alcohol class in the office, daily. There is a free review first, and 95% of students pass the permit exam on the first try.',next:['Driving lessons','Book a driving exam','Locations and phones']},
+  {k:['drug alcohol','alcohol class','drug class','dandd','dna class'],a:'The Drug & Alcohol class is the first step for a first-time driver and is held in the office, together with the learner\'s permit exam.'},
+  {k:['driving lesson','lesson','practice','behind the wheel','learn to drive','package','training','road training'],a:'There are four lesson packages: Bronze 2 hours (1 day), Silver 6 hours (3 days), Gold 12 hours (6 days) and Platinum 20 hours (10 days). Which one fits depends on how much you have driven. Prices are not on the website, so the team confirms them.',next:['Which package for a beginner','Book driving lessons','Locations and phones']},
+  {k:['bronze','2 hour','two hour','refresher','highway practice'],a:'Bronze is 2 hours of on-the-road training: a review of the exam, a refresher, or highway practice for people who have driven before.'},
+  {k:['silver','6 hour','six hour','defensive driving lesson','confidence teen'],a:'Silver is 6 hours over 3 days, the most popular package for parents whose child lacks confidence. It focuses on defensive driving, the highway, merging and left turns at intersections.'},
+  {k:['gold','12 hour','twelve hour'],a:'Gold is 12 hours over 6 days, for beginners who know how to steer but lack confidence in heavy traffic: merging, lane changes, highways and accident avoidance.'},
+  {w:1.4,k:['platinum','20 hour','twenty hour','no experience','never driven','nervous','scared','beginner'],a:'For new drivers with no experience the Platinum package fits best: 20 hours over 10 days, covering lane changes and left turns across traffic on main roads. Gold (12 hours) suits beginners who already know how to steer.',next:['Book driving lessons','Driving lessons']},
+  {k:['traffic ticket','ticket','points','traffic school','driver improvement','court','point on license','citation','defensive driving course','insurance discount'],a:'Traffic school courses: 4-hour Basic Driver Improvement (ticket, court ordered, insurance discount), 8-hour Basic, 8-hour Aggressive and 12-hour Advanced. All give a same-day certificate, and you can take them in person or online.',next:['4 hour course','12 hour course','Online or DVD']},
+  {k:['4 hour','four hour','4hour','bdi'],a:'The 4-hour Basic Driver Improvement course is for drivers with a traffic violation who want to keep points off their license, or drivers with a clean record who want an insurance discount. It can be done in person or on a DVD at your own pace.'},
+  {k:['8 hour','eight hour','aggressive','habitual','intermediate'],a:'The 8-hour Basic course meets court requirements for an 8-hour basic and intermediate course. The 8-hour Aggressive course is for court-ordered aggressive driving classes. Both give a same-day certificate.'},
+  {k:['12 hour','twelve hour','advanced','suspended','revoked','hardship','reinstate','3 crashes','crash'],a:'The 12-hour Advanced Driver Improvement course is for reinstating a revoked or suspended license, hardship licenses, or three crashes in three years. It is not for DUI-related suspensions. EZ License reports completion to the Florida DMV electronically.'},
+  {k:['online','dvd','at home','remote','distance'],a:'Traffic school courses are offered in person or online. The 4-hour course can also be done from a DVD if you do not want to come in. Certificates are same-day.'},
+  {k:['immigrant','new in florida','just moved','moved','arrived','new to florida','out of state','foreign','abroad','another country'],a:'If you just arrived in Florida, the school says it can help you get your Florida driver\'s license in 24 hours. Call (305) 238-2000 so the team can tell you which documents to bring.'},
+  {k:['bring','documents','id','requirements','need to take','what do i need'],a:'You must have a Florida learner\'s permit for the driving exam. I do not have the full document list, so the team will confirm what to bring for your case. Call (305) 238-2000.'},
+  {k:['after pass','once passed','certificate','state office','dmv','trade','permit for license','get license'],a:'After you pass, head to the State office with your certificate. They trade your permit for a driver\'s license for free.'},
+  {k:['location','address','where','branch','office','directions','near me','miami','broward','pembroke','miramar','cutler','dixie'],a:'Locations: Miami-Dade, 20900 S. Dixie Highway, Miami FL 33189 (in front of Walmart), (305) 238-2000. Pembroke Pines, 6720 Pines Blvd, FL 33024 (in front of McArthur High School), 954-743-2118. Miramar, 7512 Pembroke Road, FL 33023 (in front of North Perry Airport), (954) 362-7435.'},
+  {k:['phone','call','number','contact','email','talk to someone'],a:'Phones: Miami-Dade (305) 238-2000, Pembroke Pines 954-743-2118, Miramar (954) 362-7435. Email: info@EZLicenseFL.com.'},
+  {k:['hours','open','opening','what time','close','sunday','saturday','weekend','monday'],a:'Classes run 7 days a week and driving exams are available Monday through Saturday. I do not have exact opening hours for each office, so please call to confirm.'},
+  {w:1.5,k:['price','cost','how much','fee','pay','payment','cheap','expensive','free'],a:'The website does not list prices, so I will not guess. What is free: the cheat sheet review before the exam, and the permit-to-license swap at the State office. The team will confirm prices when you book.'},
+  {k:['spanish','language','bilingual','english','russian','creole','espanol','speak'],a:'The school teaches in English first, but it is also bilingual. Ask the team which other language you need when you book.'},
+  {k:['instructor','certified','background','teacher','safe','car','vehicle','dual brake'],a:'Instructors are certified and have background checks. Lessons use new vehicles with dual brakes.'},
+  {k:['review','rating','reputation','best','rated','google','trust'],a:'EZ License describes itself as the number one rated school in Miami-Dade and Broward, with thousands of 5-star Google reviews, serving the community since 2004.'},
+  {k:['how long','duration','minutes','takes'],a:'The driving exam route takes about 15 to 20 minutes. Lessons come in 2, 6, 12 and 20 hour packages.'},
+  {k:['teen','child','son','daughter','kid','parent','my son','my daughter'],a:'For teens, parents often choose the Silver package (6 hours, 3 days), which focuses on defensive driving, highways, merging and left turns. Gold and Platinum cover less experienced teens.'},
+  {k:['cancel','reschedule','change appointment','late','no show'],a:'I do not have the cancellation or rescheduling policy. Please call your location, or reply to the email confirmation.'}
+ ],
+ flowIntro:'Sure, I will collect the details for the team. They normally reply within 24 hours with available times.',
+ flow:[
+  {id:'svc',label:'Service',q:'What would you like to book?',opts:['Driving exam','Driving lessons','Learner\'s permit exam','Traffic school course']},
+  {id:'loc',label:'Location',q:'Which location is best for you?',opts:LOC},
+  {id:'day',label:'Preferred day',q:'Which day would you like? You can type a date or a weekday (exams run Monday to Saturday).',re:/\S{3,}/,err:'Please type a day or a date, for example Saturday or Nov 14.'},
+  {id:'time',label:'Time',q:'What time suits you?',opts:['Morning','Mid-day','Afternoon','First available']},
+  {id:'name',label:'Name',q:'Your full name?',re:/^[^\d]{2,60}$/,err:'Please type your name.'},
+  {id:'phone',label:'Phone',q:'A phone number the team can reach you on?',re:/^[+\d][\d\s().-]{6,}$/,err:'Please type a phone number with digits only.'}
+ ],
+ done:function(d){return 'Thank you, '+d.name+'! This is ready to be sent to the EZ License team ('+d.loc+'). They will reply to confirm times. (Demo only, nothing was actually sent.)'}
+};
+Assistant(cfg);
+document.addEventListener('click',function(e){var b=e.target.closest('[data-ask]');if(!b)return;e.preventDefault();window.__asAsk(b.getAttribute('data-ask'));});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Penny Williamsburg, Brooklyn | Demo</title>
+<meta name="description" content="Demo page prepared for The Penny Williamsburg boutique hotel, Brooklyn.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:ital,wght@1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f4efeb;--ink:#050707;--tomato:#ef5b34;--pink:#d6509b;--plum:#c54a8a;--sky:#5897fb;--mut:#54504c;--w-brand:#ef5b34;--w-ink:#fff;--w-bg:#f4efeb;--w-ring:#050707;--w-r:6px;--w-font:'Work Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.6 'Work Sans',system-ui,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.02;font-weight:800;letter-spacing:-.02em}
+.it{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-weight:400}
+a{color:inherit}
+.wrap{max-width:1060px;margin:0 auto;padding:0 16px}
+.btn{display:inline-block;background:var(--ink);color:var(--cream);font:600 16px 'Work Sans',sans-serif;text-decoration:none;padding:14px 24px;border-radius:4px;border:2px solid var(--ink);cursor:pointer}
+.btn.hot{background:var(--tomato);border-color:var(--tomato);color:#fff}
+.btn.line{background:transparent;color:var(--ink)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+header.top{background:var(--cream);position:sticky;top:0;z-index:20;border-bottom:2px solid var(--ink)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:10px;padding-bottom:10px}
+header.top img{height:24px;width:auto;display:block}
+header.top nav{display:none;gap:22px;font-weight:500;font-size:15px}
+header.top nav a{text-decoration:none}
+header.top .btn{padding:9px 16px;font-size:14px;white-space:nowrap}
+@media(min-width:820px){header.top nav{display:flex}header.top img{height:28px}}
+/* hero poster */
+.hero{padding:40px 0 0;overflow:hidden}
+.hero h1{font-size:clamp(2.6rem,12.5vw,7.4rem);text-transform:uppercase}
+.hero h1 span{color:var(--tomato)}
+.hero h1 em{font-family:'Source Serif 4',serif;font-weight:400;text-transform:none;color:var(--plum);letter-spacing:0}
+.hero .sub{display:grid;gap:18px;margin:22px 0 30px}
+.hero .sub p{max-width:30em}
+.stick{background:var(--tomato);color:#fff;border-radius:50%;width:132px;height:132px;display:grid;place-items:center;text-align:center;font:800 15px/1.15 'Bricolage Grotesque',sans-serif;transform:rotate(-9deg);padding:14px;flex:none}
+@media(min-width:800px){.hero .sub{grid-template-columns:1fr auto;align-items:center}.stick{width:156px;height:156px;font-size:17px}}
+.marq{background:var(--ink);color:var(--cream);font:700 15px 'Bricolage Grotesque',sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.marq .wrap{display:flex;flex-wrap:wrap;gap:6px 22px;padding-top:12px;padding-bottom:12px}
+.marq span:before{content:"\2022\00a0";color:var(--tomato)}
+section{padding:56px 0}
+h2{font-size:clamp(2rem,7vw,3.4rem);margin-bottom:14px;text-transform:uppercase}
+.lead{color:var(--mut);max-width:36em;margin-bottom:28px}
+/* rooms */
+.rl{border-top:2px solid var(--ink)}
+.rm{display:grid;grid-template-columns:78px 1fr;gap:4px 16px;padding:20px 0;border-bottom:2px solid var(--ink)}
+.rm .sq{font:800 38px/1 'Bricolage Grotesque',sans-serif;color:var(--tomato)}
+.rm .sq small{display:block;font:600 11px 'Work Sans',sans-serif;color:var(--mut);letter-spacing:.08em;margin-top:4px}
+.rm h3{font-size:1.5rem;text-transform:none}
+.rm p{color:var(--mut)}
+.rm ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;grid-column:2}
+.rm li{border:1.5px solid var(--ink);border-radius:99px;padding:3px 11px;font-size:13px;font-weight:500}
+.allin{margin-top:26px;background:#fff;border-radius:8px;padding:20px;border:2px solid var(--ink)}
+.allin h3{font-size:1.3rem;margin-bottom:8px}
+.allin ul{columns:1;padding-left:18px;color:var(--mut)}
+@media(min-width:700px){.allin ul{columns:2}.rm{grid-template-columns:110px 1fr 1.1fr}.rm ul{grid-column:auto;margin-top:0;align-content:flex-start}.rm .sq{font-size:52px}}
+/* art + dog */
+.duo{display:grid;gap:0}
+.duo>div{padding:34px 20px}
+.art{background:var(--plum);color:#fff}.art h2{color:#fff}
+.dog{background:var(--sky);color:var(--ink)}
+.duo p{max-width:30em}
+.duo ul{padding-left:18px;margin-top:10px}
+@media(min-width:800px){.duo{grid-template-columns:1fr 1fr}.duo>div{padding:56px 36px}}
+/* offers */
+.of{display:grid;gap:14px}
+.of div{background:#fff;border:2px solid var(--ink);border-radius:8px;padding:18px;position:relative}
+.of b{font:800 34px/1 'Bricolage Grotesque',sans-serif;color:var(--tomato);display:block;margin-bottom:6px}
+.of h3{font-size:1.15rem;text-transform:none;margin-bottom:4px}
+.of p{color:var(--mut);font-size:15px}
+@media(min-width:760px){.of{grid-template-columns:1fr 1fr}}
+.fine{font-size:14px;color:var(--mut);margin-top:14px}
+.hd{display:grid;gap:0;border-top:2px solid var(--ink)}
+.hd div{padding:18px 0;border-bottom:2px solid var(--ink)}
+.hd h3{font-size:1.35rem;margin-bottom:6px;color:var(--plum)}
+.hd p{color:var(--mut)}
+@media(min-width:760px){.hd{grid-template-columns:1fr 1fr;column-gap:36px}}
+/* elnico */
+.el{background:var(--tomato);color:#fff}
+.el h2{color:#fff}
+.el p{max-width:36em;margin-bottom:12px}
+.el .btn{background:var(--ink);border-color:var(--ink)}
+.menu{display:grid;gap:6px 24px;margin-top:20px;font-size:15px}
+.menu div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dotted rgba(255,255,255,.6);padding:4px 0}
+@media(min-width:700px){.menu{grid-template-columns:1fr 1fr}}
+/* info */
+.tb{width:100%;border-collapse:collapse;background:#fff;border:2px solid var(--ink);font-size:16px}
+.tb th,.tb td{padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid #ddd}
+.tb th{width:38%;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;background:var(--cream)}
+/* faq */
+details{border-bottom:2px solid var(--ink);padding:14px 0}
+summary{cursor:pointer;font:700 19px 'Bricolage Grotesque',sans-serif}
+details p{margin-top:8px;color:var(--mut)}
+/* contact */
+.ct{background:var(--ink);color:var(--cream)}
+.ct h2{color:var(--cream)}
+.ct .big{font:800 clamp(1.8rem,8vw,3rem) 'Bricolage Grotesque',sans-serif;color:var(--tomato);text-decoration:none;display:block}
+.ct p{margin:4px 0;overflow-wrap:anywhere}
+footer{background:var(--ink);color:#9a948f;border-top:1px solid #333;text-align:center;padding:22px 16px;font-size:14px}
+#as-btn{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--w-brand);color:var(--w-ink);font:600 15px/1 var(--w-font);padding:14px 18px;border-radius:var(--w-r);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#as-btn:focus-visible,#as-pan button:focus-visible,#as-in:focus-visible{outline:3px solid var(--w-ring);outline-offset:2px}
+#as-pan{position:fixed;right:12px;bottom:76px;z-index:51;width:min(380px,calc(100vw - 24px));max-height:min(560px,calc(100vh - 100px));display:none;flex-direction:column;background:#fff;color:#1d1d24;border-radius:calc(var(--w-r) + 4px);box-shadow:0 16px 48px rgba(0,0,0,.3);overflow:hidden;font:15px/1.45 var(--w-font)}
+#as-pan.open{display:flex}
+#as-pan header{background:var(--w-brand);color:var(--w-ink);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:600}
+#as-pan header small{display:block;font-weight:400;opacity:.8;font-size:12px}
+#as-x{background:none;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1;padding:4px 8px}
+#as-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--w-bg)}
+#as-log .m{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-line;overflow-wrap:anywhere}
+#as-log .b{background:#fff;border:1px solid rgba(0,0,0,.08);align-self:flex-start;border-bottom-left-radius:4px}
+#as-log .u{background:var(--w-brand);color:var(--w-ink);align-self:flex-end;border-bottom-right-radius:4px}
+#as-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 0;background:#fff}
+#as-chips button{border:1px solid var(--w-brand);background:#fff;color:#1d1d24;border-radius:99px;padding:6px 11px;font:13px var(--w-font);cursor:pointer}
+#as-chips button:hover{background:var(--w-bg)}
+#as-form{display:flex;gap:6px;padding:10px 12px;background:#fff}
+#as-in{flex:1;min-width:0;border:1px solid #c9c9d2;border-radius:10px;padding:10px;font:16px var(--w-font)}
+#as-form button{border:0;background:var(--w-brand);color:var(--w-ink);border-radius:10px;padding:0 14px;font:600 15px var(--w-font);cursor:pointer}
+#as-note{font-size:11px;color:#777;text-align:center;padding:0 12px 8px;background:#fff}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><a href="#top" aria-label="The Penny Williamsburg"><img src="img/the-penny-hotel-williamsburg-logo.png" alt="Penny" width="112" height="24"></a><nav aria-label="Main"><a href="#rooms">Rooms</a><a href="#art">Art &amp; dogs</a><a href="#offers">Offers</a><a href="#elnico">elNico</a><a href="#know">Good to know</a><a href="#faq">FAQ</a></nav><a class="btn hot" href="#" data-ask="book">Request a stay</a></div></header>
+
+<div class="hero" id="top"><div class="wrap"><h1>The best of <span>Brooklyn,</span> <em>just around the corner.</em></h1><div class="sub"><div><p>An artful boutique hotel in the heart of Williamsburg, named in honour of a small dog with a large personality. Apartment-style rooms with kitchenettes, a rooftop above you, and your dog is always welcome.</p><p style="margin-top:18px"><a class="btn hot" href="#" data-ask="book">Request a stay</a> &nbsp; <a class="btn line" href="#rooms">See the rooms</a></p></div><div class="stick">Pets stay free</div></div></div>
+<div class="marq"><div class="wrap"><span>288 N 8th St</span><span>Check-in 3pm</span><span>Check-out 11am</span><span>L and G trains, 5 min walk</span></div></div></div>
+
+<section id="rooms"><div class="wrap"><h2>Rooms &amp; stays</h2><p class="lead">Boutique comfort with the flexibility of an extended-stay hotel: hardwood floors, kitchenettes, pour-over coffee, and room to settle in for a night or a month.</p>
+<div class="rl">
+<div class="rm"><div class="sq">Q<small>QUEEN</small></div><div><h3>Queen Room</h3><p>For guests who like it simple but stylish. Queen bed with premium linens, a flexible dining and work table.</p></div><ul><li>Kitchenette</li><li>Pour-over coffee</li><li>Free Wi-Fi</li><li>ADA rooms</li></ul></div>
+<div class="rm"><div class="sq">220<small>SQ FT</small></div><div><h3>Niche Queen</h3><p>Access to the bed from both sides and a lounge seating nook, for guests who cannot decide which side to wake up on.</p></div><ul><li>Lounge nook</li><li>Kitchenette</li><li>Penny Mart</li></ul></div>
+<div class="rm"><div class="sq">240<small>SQ FT</small></div><div><h3>Sleeper Queen</h3><p>For a third wheel: a lounge chair folds out into a cozy single bed.</p></div><ul><li>Fold-out single</li><li>Kitchenette</li><li>Bikes to borrow</li></ul></div>
+<div class="rm"><div class="sq">S<small>SUPREME</small></div><div><h3>Supreme Queen</h3><p>Queen bed, a lounge area, kitchenette with mini fridge, freezer and microwave, and a dining or work space.</p></div><ul><li>Extra seating</li><li>Freezer</li><li>ADA rooms</li></ul></div>
+<div class="rm"><div class="sq">700<small>SQ FT</small></div><div><h3>Your Majesty Suite</h3><p>Brooklyn loft living: one bedroom with a soaking tub, a living room with a 63-inch TV, a second full bathroom, an oversized kitchenette and a private terrace.</p></div><ul><li>Private terrace</li><li>Two bathrooms</li><li>Connecting room on request</li><li>Accessible</li></ul></div></div>
+<div class="allin"><h3>In every room</h3><ul><li>Pour-over coffee and tea setup with complimentary coffee</li><li>Unlimited filtered water, reusable bottles on request</li><li>Free high-speed Wi-Fi, HDTV with Chromecast</li><li>Robes and private-label bath products</li><li>Penny Mart digital minibar by QR code, delivered to your room</li><li>Penny bikes to borrow, free lobby coffee every morning</li></ul></div></div></section>
+
+<div class="duo" id="art"><div class="art"><h2>Art is everything</h2><p>The Penny partners with the non-profit LAND Gallery. Guest rooms show hundreds of works by New York artists with developmental disabilities, among them Byron Smith, Garrol Gayden, James Rosa, Robert Latchman and Racquel Albarran.</p><p style="margin-top:12px" class="it">"I am because my little dog knows me." Gertrude Stein</p></div>
+<div class="dog" id="dogs"><h2>Dogs welcome</h2><p>Pets stay free: up to two dogs per room, each under 75 lbs, in designated dog-friendly rooms. Water bowls, treats and dog beds are available at the front desk.</p><ul><li>Dogs only, on a leash in public areas</li><li>Never left alone in the room</li><li>Not allowed in elNico dining areas</li><li>McCarren Park dog run is a 12 minute walk</li></ul></div></div>
+
+<section id="offers"><div class="wrap"><h2>Offers</h2><p class="lead">Booking direct gets the best available rates and flexible terms. Seasonal offers listed on the site:</p><div class="of">
+<div><b>20%</b><h3>Fall For Brooklyn</h3><p>Up to 20% off your stay and a $40 dining credit at elNico.</p></div>
+<div><b>15%</b><h3>Golden Hour Getaway</h3><p>Up to 15% off, plus two cocktails with chips and guac waiting at elNico rooftop.</p></div>
+<div><b>30%</b><h3>Home Away From Home</h3><p>Stay 14 days or more: up to 30% off plus a $100 elNico dining credit.</p></div>
+<div><b>15%</b><h3>The Penny Saver</h3><p>Travel plans set in stone? 15% off when you pay at time of booking.</p></div></div><p class="fine">Check the Offers page for current terms and dates.</p></div></section>
+
+<section class="el" id="elnico"><div class="wrap"><h2>elNico, upstairs</h2><p>The rooftop bar and restaurant at The Penny: imaginative modern Mexican food, a cocktail programme focused on agave spirits, and skyline views of Brooklyn and Manhattan with every visit. Dinner and drinks, brunch, indoor and outdoor seating, private dining and event spaces.</p><p class="it">From the brunch menu</p><div class="menu"><div><span>Guac, chive oil, totopos</span><b>12</b></div><div><span>Esquites</span><b>9</b></div><div><span>Ceviche, rock fish, aji amarillo</span><b>16</b></div><div><span>Huevos rancheros</span><b>14</b></div><div><span>Birria benedict</span><b>21</b></div><div><span>Tacos, from</span><b>5</b></div></div></div></section>
+
+<section id="hood"><div class="wrap"><h2>Step outside</h2><p class="lead">Williamsburg began as an industrial waterfront and became a home for artists, musicians and makers. The neighbourhood page lists favourites within a short walk:</p><div class="hd">
+<div><h3>Eat</h3><p>Frankel's Delicatessen for a smoked-fish bagel or a deli sandwich to take to McCarren Park. Leo, ten minutes away, for handmade pizzas and pastas. The Four Horsemen for natural wine and small plates.</p></div>
+<div><h3>Walk</h3><p>McCarren Park, the Williamsburg waterfront and Domino Park. Further out: Brooklyn Bridge Park, a 1.3-mile stretch along the East River, and Prospect Park with its 60-acre lake.</p></div>
+<div><h3>With your dog</h3><p>Dog runs at McCarren Park (12 min), Marsha P. Johnson State Park (15 min) and Domino Park (20 min). Dog-friendly bars: Lucky Dog, Blinky's backyard, Tacocina on the waterfront, Dolly's Swing and Dive, Horses &amp; Divorces.</p></div>
+<div><h3>Shop</h3><p>Independent boutiques and vintage finds are a short walk from the hotel, along with galleries and cafes.</p></div></div></div></section>
+
+<section id="know"><div class="wrap"><h2>Good to know</h2><table class="tb"><tbody>
+<tr><th>Check-in / out</th><td>3pm / 11am. Early arrivals and late departures subject to availability.</td></tr>
+<tr><th>Getting here</th><td>L and G at Lorimer St. or L at Bedford Ave, a 5 minute walk. LaGuardia 7.5 mi, JFK 14 mi, Newark 15 mi.</td></tr>
+<tr><th>Parking</th><td>Limited street parking, or the iPark lot at 247 N. 7th St, guest rate $25 per 24 hours.</td></tr>
+<tr><th>Gym</th><td>None on site. Discounted day passes at Chalk Gym, $25 per day.</td></tr>
+<tr><th>Room service</th><td>No traditional room service. Penny Mart digital minibar by QR code.</td></tr>
+<tr><th>Cancellation</th><td>Refundable rates: free up to 24 hours before arrival. Non-refundable rates cannot be cancelled.</td></tr></tbody></table></div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap"><h2>FAQ</h2>
+<details><summary>Is the hotel good for longer stays?</summary><p>Yes. Kitchenettes, work space and flexible layouts make many rooms ideal for a few nights or an extended Williamsburg stay.</p></details>
+<details><summary>Is there a gym?</summary><p>Not on property. Guests can buy discounted day passes from nearby Chalk Gym for $25 per day through the QR code on the in-room corkboard.</p></details>
+<details><summary>Is the hotel accessible?</summary><p>ADA-accessible Queen, Supreme Queen and suite rooms are available. Mention it when you book so the front desk can confirm.</p></details>
+<details><summary>What is Penny Mart?</summary><p>The hotel's digital minibar, available via QR code, 24 hours, with items delivered to your room.</p></details>
+<details><summary>Can I buy things I like from my room?</summary><p>Yes, please ask at the front desk.</p></details>
+<details><summary>Which animals are allowed?</summary><p>Dogs only, in dog-friendly rooms: up to two per room, each under 75 lbs. Any damage or extra cleaning caused by a pet may be charged.</p></details>
+<details><summary>How do I contact the hotel for group sales?</summary><p>Email the hotel and your request will be directed to the appropriate member of the team.</p></details>
+<details><summary>What is there to do nearby?</summary><p>Cafes, galleries, independent shops, McCarren Park and the Domino Park waterfront, with Manhattan a short subway ride away.</p></details></div></section>
+
+<section class="ct" id="contact"><div class="wrap"><h2>Get in touch</h2><a class="big" href="tel:+19295942020">(929) 594-2020</a><p>info@penny-hotel.com</p><p>288 North 8th St., Brooklyn, NY 11211</p><p style="margin-top:18px"><a class="btn hot" href="#" data-ask="book">Request a stay</a></p></div></section>
+
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+<button id="as-btn" type="button" aria-label="Open assistant"><span aria-hidden="true">💬</span> Ask The Penny</button>
+<div id="as-pan" role="dialog" aria-label="Assistant"><header><div>Penny assistant<small>Demo, answers from the hotel's site</small></div><button id="as-x" type="button" aria-label="Close">×</button></header><div id="as-log" aria-live="polite"></div><div id="as-chips"></div><form id="as-form"><input id="as-in" autocomplete="off" aria-label="Your message"><button type="submit">Send</button></form><div id="as-note">Demo assistant. Nothing is sent or booked; the front desk confirms every detail.</div></div>
+
+<script>
+/* assistant engine: matcher + widget (client-side only) */
+(function(root){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9Ѐ-ӿ؀-ۿ\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4)w=w.replace(/(ing|ed|es|s)$/,'');return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function hit(t,q){for(var i=0;i<q.length;i++){var w=q[i];if(w===t)return 1;if(t.length>=6&&w.length>=5){var lim=t.length>=8?2:1;if(Math.abs(t.length-w.length)<=lim&&lev(t,w)<=lim)return 1;}}return 0;}
+function answer(q,kb){var qt=toks(q),best=null,bs=0;if(!qt.length)return null;
+for(var i=0;i<kb.length;i++){var sc=0;for(var k=0;k<kb[i].k.length;k++){var pt=toks(kb[i].k[k]),ok=1;for(var p=0;p<pt.length;p++){if(!hit(pt[p],qt)){ok=0;break;}}if(ok)sc+=pt.length*2+1;}
+if(sc>bs){bs=sc;best=kb[i];}}
+return bs>=3?best:null;}
+function init(C){
+var $=function(s){return document.querySelector(s)};
+var btn=$('#as-btn'),pan=$('#as-pan'),log=$('#as-log'),inp=$('#as-in'),chips=$('#as-chips'),form=$('#as-form');
+var st={flow:-1,data:{}};
+function msg(t,who){var d=document.createElement('div');d.className='m '+who;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b);});}
+function ask(){var s=C.flow[st.flow];msg(s.q,'b');setChips(s.opts||[]);inp.placeholder=s.ph||'';inp.focus&&0;}
+function startFlow(){st.flow=0;st.data={};ask();}
+function finish(){var sum=C.flow.map(function(s){return s.label+': '+st.data[s.key]}).join('\n');msg(C.done+'\n\n'+sum,'b');st.flow=-1;setChips(C.chips);inp.placeholder=C.ph;}
+function send(t){t=(t||'').trim();if(!t)return;msg(t,'u');inp.value='';
+if(st.flow>=0){var n=norm(t);if(/^(cancel|stop|exit|back)$/.test(n)||(C.cancel&&C.cancel.test&&C.cancel.test(n))){st.flow=-1;msg(C.cancelMsg,'b');setChips(C.chips);return;}
+var s=C.flow[st.flow];if(s.opts&&!s.free){var m=s.opts.filter(function(o){return norm(o)===n||norm(o).indexOf(n)===0&&n.length>2})[0];if(!m){msg(s.retry||'Please pick one of the options.','b');setChips(s.opts);return;}t=m;}
+if(s.re&&!s.re.test(t)){msg(s.retry,'b');return;}
+st.data[s.key]=t;st.flow++;if(st.flow>=C.flow.length)finish();else ask();return;}
+var r=answer(t,C.kb);
+setTimeout(function(){if(r){msg(r.a,'b');if(r.flow)startFlow();else setChips(r.chips||C.chips);}else{msg(C.fallback,'b');setChips(C.chips);}},250);}
+btn.onclick=function(){pan.classList.toggle('open');if(pan.classList.contains('open')&&!log.children.length){msg(C.greet,'b');setChips(C.chips);}};
+$('#as-x').onclick=function(){pan.classList.remove('open')};
+form.onsubmit=function(e){e.preventDefault();send(inp.value)};
+document.querySelectorAll('[data-ask]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();if(!pan.classList.contains('open'))btn.onclick();var v=a.getAttribute('data-ask');if(v==='book')send(C.bookWord);else send(v);});});
+inp.placeholder=C.ph;}
+root.AS={norm:norm,answer:answer,init:init};
+if(typeof module!=='undefined')module.exports=root.AS;
+})(typeof window!=='undefined'?window:globalThis);
+
+var CFG={
+ph:'Ask about rooms, dogs, parking, check-in...',bookWord:'Request a stay',
+greet:'Hi, I am the demo assistant for The Penny Williamsburg. Ask about rooms, dogs, parking, check-in, offers or elNico, or send a stay request.',
+chips:['Room types','Bring my dog','Parking','Check-in time','Current offers','Request a stay'],
+fallback:'I do not have that detail and would rather not guess. The front desk can confirm it: (929) 594-2020 or info@penny-hotel.com.',
+cancelMsg:'No problem, request cancelled. Anything else?',
+done:'Sent to the team. The front desk will reply to confirm availability for your dates (demo only: nothing is actually sent, and nothing is booked here).',
+flow:[
+{key:'in',label:'Arrival',q:'Let us start a stay request. What is your arrival date? (for example Nov 14)',free:true,ph:'Arrival date',re:/\d/,retry:'Please type a date, for example Nov 14.'},
+{key:'out',label:'Departure',q:'And your departure date?',free:true,ph:'Departure date',re:/\d/,retry:'Please type a date, for example Nov 17.'},
+{key:'guests',label:'Guests',q:'How many guests?',opts:['1','2','3','4 or more'],retry:'Please choose one of the options.'},
+{key:'room',label:'Room',q:'Which room type?',opts:['Queen','Niche Queen','Sleeper Queen','Supreme Queen','Your Majesty Suite','Not sure'],retry:'Please choose one of the options.'},
+{key:'dog',label:'Dog',q:'Are you travelling with a dog? (dogs only, up to two under 75 lbs each)',opts:['No dog','1 dog','2 dogs'],retry:'Please choose one of the options.'},
+{key:'name',label:'Name',q:'Your name?',free:true,ph:'Your name',re:/\S{2}/,retry:'Please type your name.'},
+{key:'contact',label:'Contact',q:'Best e-mail or phone for the front desk to reply?',free:true,ph:'E-mail or phone',re:/(\d{7,})|(@.+\..+)/,retry:'Please type an e-mail address or phone number.'}
+],
+kb:[
+{k:['hello','hi','hey','good morning','good evening'],a:'Hello! Ask me about rooms, dogs, parking, check-in or elNico.'},
+{k:['request a stay','book','booking','reserve','reservation','availability','available','stay request','check availability','book a room','reserve a room','make a reservation','request a stay'],a:'Happy to start a request for the front desk.',flow:true},
+{k:['room','rooms','room types','types of room','accommodation','which room','kinds of rooms'],a:'Five room types: Queen, Niche Queen (220 sq ft, bed accessible from both sides, lounge nook), Sleeper Queen (240 sq ft, with a fold-out single bed), Supreme Queen (queen bed, lounge area, kitchenette with mini fridge and freezer), and Your Majesty Suite (700 sq ft one-bedroom with soaking tub and private terrace). Accessible (ADA) queen rooms and the suite are available.'},
+{k:['queen','queen room','standard room','basic room'],a:'The Queen room: queen bed with premium linens, kitchenette with microwave, mini fridge and pour-over coffee, a flexible dining and work table, free high-speed Wi-Fi, rotating LAND Gallery art, robes, unlimited filtered water and bikes to borrow. ADA-accessible Queen rooms are available on request.'},
+{k:['niche','niche queen','both sides'],a:'Niche Queen: 220 sq ft, with access to the bed from both sides and a lounge seating nook, plus the kitchenette, pour-over coffee, filtered water, Penny Mart digital minibar and bikes.'},
+{k:['sleeper','sleeper queen','third person','three guests','three people','extra guest','third guest','pull out','sofa bed','fold out'],a:'The Sleeper Queen (240 sq ft) is for a group of three: queen bed plus a lounge chair that folds out into a single bed.'},
+{k:['supreme','supreme queen','lounge area'],a:'Supreme Queen: a queen bed, a lounge area with additional seating, a kitchenette with mini fridge, freezer and microwave, and a dining or work space.'},
+{k:['majesty','suite','your majesty','one bedroom','one-bedroom','700','terrace','soaking tub','bathtub','loft','apartment'],a:'Your Majesty Suite: 700 sq ft one-bedroom with a queen bed, large bathroom with soaking tub, a living room with a 63-inch TV, a second full bathroom, an oversized kitchenette, and a private outdoor terrace. A connecting second bedroom can be requested by emailing the hotel. The suite is accessible.'},
+{k:['extended stay','long stay','longer stay','month','weeks','kitchenette','kitchen','cook','monthly'],a:'Many rooms suit longer stays, with kitchenettes, work space and flexible layouts. The "Home Away From Home" offer is for stays of 14 days or more, up to 30% off plus a $100 elNico dining credit.'},
+{k:['dog','dogs','pet','pets','puppy','bring my dog','bring a dog','dog friendly','pet friendly','cat','cats'],a:'Dogs are welcome and stay free: up to two dogs per room, each under 75 lbs, in designated dog-friendly rooms. Dogs only (no other animals), on a leash in public areas, never left alone in the room, and not allowed in elNico dining areas. Damage or extra cleaning can be charged. Water bowls, treats and dog beds are available at the front desk.'},
+{k:['check in','checkin','check-in','arrive','arrival time','early check in','early arrival','what time can i check in','late arrival'],a:'Check-in is at 3pm. Early arrival is subject to availability: ask the front desk.'},
+{k:['check out','checkout','check-out','departure time','late check out','late checkout','leave'],a:'Check-out is at 11am. Early or late departures are subject to availability: ask the front desk.'},
+{k:['parking','park','car','garage','valet','drive','ipark'],a:'Street parking is limited. The hotel partners with the iPark lot at 247 N. 7th St, with a guest rate of $25 per 24-hour cycle. Tell the attendant you are staying at The Penny.'},
+{k:['airport','airports','jfk','laguardia','lga','newark','ewr','taxi','cab','uber','town car','get there from the airport'],a:'Nearest airports: LaGuardia 7.5 miles, JFK 14 miles, Newark 15 miles. A cab or town car from the airport usually costs $60 to $100 depending on mode, time of day and demand.'},
+{k:['subway','train','metro','bus','transit','public transport','l train','g train','lorimer','bedford','how to get'],a:'The nearest subway is the L and G at Lorimer St. or the L at Bedford Ave, both about a 5-minute walk.'},
+{k:['address','where','location','located','williamsburg','brooklyn','north 8th','n 8th','map'],a:'The Penny Williamsburg is at 288 N 8th St, Brooklyn, NY 11211, in the heart of Williamsburg.'},
+{k:['phone','call','number','telephone','contact','email','e-mail','mail','reach'],a:'Reservations and the front desk: (929) 594-2020 or info@penny-hotel.com.'},
+{k:['group','groups','group sales','event','events','wedding','private dining','party','corporate'],a:'For group sales, email the hotel and the request goes to the right person on the team. elNico also has private dining and event spaces.'},
+{k:['offer','offers','deal','deals','discount','special rate','special rates','promotion','promo','sale','cheaper'],a:'Offers listed on the site: Fall For Brooklyn (up to 20% off plus a $40 elNico dining credit), Golden Hour Getaway (up to 15% off plus two cocktails with chips and guac at elNico), Home Away From Home (14+ nights, up to 30% off plus a $100 elNico credit), and The Penny Saver (15% off when you pay at booking). Check the Offers page for current terms.'},
+{k:['book direct','direct booking','best rate','cheapest','third party','booking site','expedia','booking.com'],a:'The site says booking directly gives the best available rates, flexible terms and early access to packages and priority availability.'},
+{k:['cancel','cancellation','refund','refundable','change my booking','non refundable','cancelling'],a:'For refundable rates, cancelling 24 hours or more before arrival carries no fee. Non-refundable rates cannot be cancelled.'},
+{k:['elnico','el nico','restaurant','rooftop','roof','bar','dinner','brunch','mexican','tacos','cocktails','eat','food','drink'],a:'elNico is the rooftop Mexican restaurant and bar above the hotel, with Manhattan skyline views, imaginative Mexican food, agave-focused cocktails, brunch, and indoor and outdoor seating. Dogs are not permitted in the dining areas.'},
+{k:['wifi','wi-fi','internet','tv','television','chromecast','phone in room'],a:'Free high-speed Wi-Fi, HDTVs with Chromecast, and landline phones (call rates vary).'},
+{k:['gym','fitness','workout','exercise','chalk'],a:'There is no gym on property. Guests can buy discounted day passes at nearby Chalk Gym for $25 per day, via the QR code on the in-room corkboard.'},
+{k:['room service','minibar','mini bar','snacks','penny mart','digital minibar','late night food'],a:'No traditional room service. Penny Mart, the digital minibar, is available via QR code, with items delivered to your room.'},
+{k:['amenities','coffee','robe','robes','bikes','bike','bicycle','water','linens','toiletries','bath'],a:'In-room: pour-over coffee system with complimentary coffee and tea, unlimited filtered water, mini fridge, microwave, robes, quality linens and private-label bath products. Penny bikes can be borrowed, and there is free coffee in the lobby every morning.'},
+{k:['accessible','ada','wheelchair','disability','disabled','mobility'],a:'ADA-accessible Queen, Supreme Queen and suite rooms are available. Ask when you book so the front desk can confirm.'},
+{k:['art','gallery','land gallery','artwork','artists','paintings','art hotel'],a:'The Penny partners with the non-profit LAND Gallery: guest rooms show hundreds of works by New York artists with developmental disabilities.'},
+{k:['name','why penny','why is it called','named','history','story','stein'],a:'The Penny is named in honour of a small dog with a large personality. The site quotes Gertrude Stein: "I am because my little dog knows me."'},
+{k:['neighborhood','neighbourhood','nearby','things to do','what to do','attractions','sightsee','restaurants nearby','shops','domino park','mccarren'],a:'Williamsburg is walkable: cafes, galleries, independent shops, McCarren Park and the waterfront (Domino Park). The Neighborhood page lists favourite spots like Frankel\'s Delicatessen, Leo and The Four Horsemen.'},
+{k:['purchase','buy items','take home','souvenir','shop in the hotel'],a:'Yes, you can ask the front desk about buying items you like from your room.'},
+{k:['pay','payment','card','deposit','price','prices','how much','cost','rate','rates','per night'],a:'Rates change with dates and demand, so the site shows them live in the booking widget rather than as fixed prices. The front desk can quote your dates.'},
+{k:['dog run','dog park','walk my dog','where to walk','dog walks','dog friendly bars','dog bar','dog friendly restaurant'],a:'Nearby dog runs: McCarren Park (12 minute walk), Marsha P. Johnson State Park (15 minutes) and Domino Park (20 minutes). Dog-friendly bars and restaurants the site lists: Lucky Dog, Blinky’s (backyard), Tacocina at Domino Park (outdoor seating), Dolly’s Swing and Dive, and Horses & Divorces.'},
+{k:['pet fee','pet charge','pet deposit','dog fee','extra fee for dog','damage','dog damage'],a:'Pets stay free. You will be charged if a pet damages something in the room or creates a need for extra cleaning, calculated by the amount of damage.'},
+{k:['dog alone','leave my dog','unattended','dog in room','leave dog'],a:'Dogs may not be left unattended in guest rooms at any time.'},
+{k:['big dog','large dog','weight limit','75 lbs','size limit','two dogs','how many dogs'],a:'Up to two dogs per room, each under 75 lbs, in the designated dog-friendly rooms.'},
+{k:['frankel','leo','four horsemen','bagel','pizza','wine bar','where to eat','restaurant recommendations','recommend'],a:'The Neighborhood page suggests Frankel’s Delicatessen (bagels and deli sandwiches, ideal for a McCarren Park picnic), Leo (handmade pizzas and pastas, ten minutes away) and The Four Horsemen (natural wine and small plates), plus elNico upstairs.'},
+{k:['brunch menu','menu','guac','birria','ceviche','esquites','vegetarian','vegan','food menu'],a:'The elNico brunch menu includes guac, esquites, fruit bowl, avo tostada, ceviche, huevos rancheros, birria benedict, quesadilla, corn cakes and tacos (al pastor, rock shrimp, chicken tinga, carnitas, broccolini, quesabirria). Ask elNico about current dinner menus and dietary needs.'},
+{k:['private dining','private event','celebration','birthday','special occasion','rooftop event','buyout'],a:'elNico offers private dining and event spaces. For group sales or events, email the hotel and the request goes to the right team member.'},
+{k:['pour over','coffee machine','tea','lobby coffee','morning coffee','free coffee'],a:'Each room has a pour-over coffee and tea setup with complimentary coffee, and there is free coffee in the lobby every morning.'},
+{k:['bike','bikes','bicycle','cycling','penny bike'],a:'Penny bikes are available to borrow so you can explore the neighbourhood. Ask the front desk.'},
+{k:['connecting','connecting room','adjoining','two rooms','family room','second bedroom','large family'],a:'A second connecting bedroom can be reserved with the Your Majesty Suite by emailing the hotel.'},
+{k:['view','skyline','views','rooftop view','manhattan view'],a:'Skyline views of Brooklyn and Manhattan come with every visit to the elNico rooftop.'},
+{k:['smoking','smoke','vape','quiet','noise','loud'],a:'I do not have the smoking or noise policy from the site. The front desk will confirm: (929) 594-2020.'},
+{k:['kids','children','child','baby','crib','family','infant'],a:'The site does not list a children or crib policy. The front desk will confirm: (929) 594-2020 or info@penny-hotel.com. The Sleeper Queen suits a third guest and the suite has extra space.'},
+{k:['press','media','journalist','interview'],a:'The site lists a separate contact for press inquiries. Check the footer of the website or ask the front desk.'},
+{k:['career','careers','job','jobs','work for you','hiring','employment'],a:'There is a Careers page on the site. Check it for current openings.'},
+{k:['instagram','social media','follow','@thepennyhotel','@elnicony'],a:'Instagram: @thepennyhotel for the hotel and @elnicony for elNico.'},
+{k:['thanks','thank you','great','perfect','ok thanks'],a:'You are welcome! Anything else I can help with?'}
+]};
+
+
+AS.init(CFG);
+</script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Wilder Townhouse · Assistant demo</title>
+<meta name="description" content="Demo page and booking assistant for The Wilder Townhouse, Dublin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#244e51;--slate:#253036;--brick:#9a3d2c;--cream:#f6efe3;--blush:#ead8c3;--ink:#22292c;--line:#d9c9b2;--hf:'DM Serif Display',Georgia,serif;--bf:'Karla',system-ui,sans-serif;
+--wa:#9a3d2c;--wat:#fff;--wbg:#fffaf2;--wtx:#22292c;--wbd:#e2d3bd;--wbub:#f1e5d3}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.65 var(--bf);color:var(--ink);background:var(--cream);overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--hf);font-weight:400;margin:0;line-height:1.1}
+h2{font-size:clamp(30px,6vw,44px);color:var(--teal)}
+.kicker{font:700 12px var(--bf);letter-spacing:.18em;text-transform:uppercase;color:var(--brick);margin:0 0 10px}
+.bar{background:var(--teal);color:#fff}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:60px;padding-top:6px;padding-bottom:6px}
+.bar img{height:38px;width:auto;display:block}
+.bar .tel{font-size:14px;text-decoration:none;opacity:.9}
+.hero{background:var(--teal);color:#fff;padding:34px 0 0}
+.arch{background:var(--cream);color:var(--ink);border-radius:999px 999px 0 0;padding:70px 24px 44px;margin:0 auto;max-width:640px;text-align:center}
+.arch h1{font-size:clamp(38px,9vw,66px);color:var(--teal)}
+.arch h1 i{color:var(--brick)}
+.arch p{max-width:30em;margin:16px auto 22px}
+.btn{display:inline-block;background:var(--brick);color:#fff;border-radius:6px;padding:13px 22px;font:700 14px var(--bf);text-decoration:none;border:0;cursor:pointer;letter-spacing:.03em}
+.btn.alt{background:transparent;color:var(--teal);border:1.5px solid var(--teal);margin-left:6px}
+.ticker{background:var(--slate);color:#e9d8bd;font-size:13px;overflow:hidden}
+.ticker .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 24px;padding-top:10px;padding-bottom:10px}
+section{padding:54px 0}
+.story{display:grid;gap:22px}
+.story blockquote{margin:0;font:italic 24px/1.35 var(--hf);color:var(--brick);border-left:3px solid var(--brick);padding-left:16px}
+.story p{margin:0 0 12px}
+@media(min-width:800px){.story{grid-template-columns:1fr 1.2fr;gap:44px;align-items:start}}
+.rooms{background:var(--blush)}
+.rlist{margin-top:24px;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:1fr;gap:8px;padding:20px 0;border-bottom:1px solid var(--line)}
+.row h3{font-size:28px;color:var(--slate)}
+.row p{margin:0;font-size:15px;color:#4a5558}
+.meter{height:8px;background:rgba(36,78,81,.15);border-radius:4px;overflow:hidden;max-width:260px}
+.meter b{display:block;height:100%;background:var(--teal)}
+.meta{font-size:13px;color:var(--teal);font-weight:700}
+.row a{font-size:13px;color:var(--brick);font-weight:700;cursor:pointer}
+@media(min-width:760px){.row{grid-template-columns:230px 1fr 190px;align-items:center;gap:22px}}
+.inc{margin-top:26px;display:grid;gap:8px;grid-template-columns:1fr 1fr;font-size:14px}
+.inc span{background:var(--cream);border-radius:8px;padding:10px 12px}
+@media(min-width:760px){.inc{grid-template-columns:repeat(3,1fr)}}
+.day{counter-reset:d}
+.tl{margin:26px 0 0;padding:0;list-style:none;position:relative}
+.tl::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl li{position:relative;padding:0 0 26px 40px}
+.tl li::before{content:"";position:absolute;left:3px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--cream);border:4px solid var(--brick)}
+.tl h3{font-size:24px;color:var(--teal)}
+.tl small{display:block;font:700 11px var(--bf);letter-spacing:.14em;text-transform:uppercase;color:var(--brick)}
+.tl p{margin:4px 0 0;font-size:15px;color:#4a5558;max-width:40em}
+.ticket{background:var(--teal);color:#fff;border-radius:14px;padding:28px 22px;position:relative;margin-top:6px}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:26px;height:26px;border-radius:50%;background:var(--cream);margin-top:-13px}
+.ticket::before{left:-13px}.ticket::after{right:-13px}
+.ticket h2{color:#fff}
+.ticket ul{list-style:none;margin:18px 0 20px;padding:0;display:grid;gap:8px}
+.ticket li::before{content:"\2713";color:#e9c9a0;margin-right:10px;font-weight:700}
+.ticket .btn{background:#fff;color:var(--teal)}
+.offers{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.offers span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-size:14px}
+.good{background:var(--slate);color:#efe4d2}
+.good h2{color:#fff}
+.good dl{margin:24px 0 0;display:grid;gap:0}
+.good dt{font:700 12px var(--bf);letter-spacing:.14em;text-transform:uppercase;color:#e9c9a0;padding-top:16px}
+.good dd{margin:4px 0 0;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.15);font-size:15px}
+@media(min-width:760px){.good dl{grid-template-columns:200px 1fr;column-gap:30px}.good dt{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.15)}.good dd{margin:0;padding:16px 0}}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:700;color:var(--teal)}
+.faq details p{margin:10px 0 0;font-size:15px;color:#4a5558}
+.find{text-align:center}
+.find address{font-style:normal;font:400 26px/1.3 var(--hf);color:var(--teal);margin:14px 0}
+.find p{margin:4px 0}
+.gcards{display:grid;gap:10px;margin-top:22px}
+.gc{display:block;background:#fff;border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:8px;padding:14px 16px;text-decoration:none;cursor:pointer}
+.gc b{display:block;font:400 21px var(--hf);color:var(--teal)}
+.gc span{font-size:14px;color:#566063}
+.hint2{font-size:13px;color:#5a6366;margin-top:14px}
+@media(min-width:760px){.gcards{grid-template-columns:repeat(3,1fr)}}
+footer{background:var(--teal);color:#cfe0de;padding:26px 0 90px;font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap">
+<a href="#top" aria-label="The Wilder Townhouse"><img src="img/the-wilder-townhouse-logo.png" alt="The Wilder Townhouse" width="131" height="38"></a>
+<a class="tel" href="tel:+35319696598">+353 1 969 6598</a>
+</div></div>
+
+<header class="hero" id="top"><div class="wrap">
+<div class="arch">
+<p class="kicker">22 Adelaide Road · Dublin</p>
+<h1>A private Dublin residence, <i>not a hotel lobby</i></h1>
+<p>Forty-two individually designed rooms behind a Victorian red-brick fa&ccedil;ade, a welcome G&amp;T in the Gin &amp; Tea Rooms and breakfast in the Garden Room. This is a demo page showing how a guest could ask questions and send a stay request any time of day.</p>
+<a class="btn" href="#" data-ask="__book">Request a stay</a><a class="btn alt" href="#rooms">The rooms</a>
+</div>
+</div></header>
+<div class="ticker"><div class="wrap"><span>Michelin Key</span><span>Check-in 15:00</span><span>Check-out 12:00</span><span>Free cancellation 24h before arrival</span></div></div>
+
+<section class="wrap story">
+<div>
+<p class="kicker">The house</p>
+<blockquote>Tucked away on Adelaide Road, just moments from the vibrant streets of Dublin city centre.</blockquote>
+</div>
+<div>
+<p>The Wilder Townhouse sits on a quiet residential street a short stroll from St. Stephen's Green, with the cafes, shops and cultural life of the capital on the doorstep.</p>
+<p>It suits a weekend getaway, a city shopping break or a discreet, homely base for business. With only 42 rooms, mornings begin in the light-filled Garden Room and the secluded garden terrace offers a rare pause in the city.</p>
+<p>In 2025 it kept its Michelin Key for the second year running, and it is the one Irish property listed with Mr &amp; Mrs Smith, Small Luxury Hotels of the World and Ireland's Blue Book.</p>
+</div>
+</section>
+
+<section class="rooms" id="rooms"><div class="wrap">
+<p class="kicker">Rooms &amp; suites</p>
+<h2>Six sizes, one sense of humour</h2>
+<div class="rlist">
+<div class="row"><div><h3>Shoe Box</h3><div class="meta">12 sq m · 1 king · max 2</div></div><p>Compact but full of personality, overlooking Adelaide Road. Ideal for solo travellers and shorter stays.</p><div><div class="meter" aria-hidden="true"><b style="width:34%"></b></div><a data-ask="How big is the Shoe Box room?">Ask the assistant</a></div></div>
+<div class="row"><div><h3>Small Room</h3><div class="meta">14&ndash;16 sq m · 1 king · max 2</div></div><p>A plush 5 foot king bed under a velvet headboard, bold fabrics and playful touches.</p><div><div class="meter" aria-hidden="true"><b style="width:43%"></b></div><a data-ask="Tell me about the Small Room">Ask the assistant</a></div></div>
+<div class="row"><div><h3>Popular</h3><div class="meta">17&ndash;22 sq m · 1 king · max 2</div></div><p>More space and colour, with patterned cushions and chosen artwork. Twin option available on request.</p><div><div class="meter" aria-hidden="true"><b style="width:56%"></b></div><a data-ask="Tell me about the Popular room">Ask the assistant</a></div></div>
+<div class="row"><div><h3>Townhouse Deluxe</h3><div class="meta">20&ndash;24 sq m · king or twin · max 2</div></div><p>Among the more spacious regular rooms: for a city break, a staycation or a few nights for work.</p><div><div class="meter" aria-hidden="true"><b style="width:63%"></b></div><a data-ask="Tell me about Townhouse Deluxe">Ask the assistant</a></div></div>
+<div class="row"><div><h3>Townhouse Suite</h3><div class="meta">35+ sq m · super king · max 2</div></div><p>The townhouse at its most generous: lofty ceilings, tall sash windows and fireplaces.</p><div><div class="meter" aria-hidden="true"><b style="width:92%"></b></div><a data-ask="Tell me about the Townhouse Suite">Ask the assistant</a></div></div>
+<div class="row"><div><h3>Lady Jane Suite</h3><div class="meta">about 35 sq m · super king · max 2</div></div><p>The signature suite: Victorian foundations, playful interiors, striking artwork, a living area and a bath with overhead shower.</p><div><div class="meter" aria-hidden="true"><b style="width:100%"></b></div><a data-ask="Tell me about the Lady Jane Suite">Ask the assistant</a></div></div>
+</div>
+<div class="inc"><span>Air conditioning</span><span>Smart TV</span><span>Walk-in rainfall shower</span><span>Nespresso machine</span><span>Mini fridge and safe</span><span>Complimentary mineral water</span><span>Ortigia toiletries</span><span>Luxury slippers</span><span>Local treats and cookies</span></div>
+</div></section>
+
+<section class="wrap day">
+<p class="kicker">A day at the townhouse</p>
+<h2>From soda bread to the snug</h2>
+<ol class="tl">
+<li><small>Morning</small><h3>Garden Room breakfast</h3><p>A buffet-style table of fruit, yoghurt, granola, pastries and house-baked breads, including the Guinness soda bread, plus cooked dishes to order: Full Irish, Eggs Benedict or brioche French toast.</p></li>
+<li><small>Afternoon</small><h3>Light bites</h3><p>Cheese and charcuterie boards, soup of the day, fresh salads and toasted sourdough, served in the Garden Room for the in-between moments.</p></li>
+<li><small>Evening</small><h3>Gin &amp; Tea Rooms</h3><p>A darker, candlelit snug with leather seating. Every guest receives a complimentary G&amp;T here on arrival. Dinner is a short walk to one of Dublin's restaurants.</p></li>
+<li><small>Night</small><h3>Turndown and poetry</h3><p>A chocolate treat and a booklet of 42 poems by Poet in Residence Paul Yates.</p></li>
+</ol>
+<p style="font-size:14px;color:#5a6366">Ingredients come from Irish suppliers such as Quigley's Family Butchers, Keelings, La Rousse Foods and Atlantis of Kilmore Quay.</p>
+</section>
+
+<section class="wrap">
+<div class="ticket">
+<p class="kicker" style="color:#e9c9a0">Book direct</p>
+<h2>What booking with the house includes</h2>
+<ul><li>Save &euro;20 per night</li><li>Free cancellation 24 hours before arrival</li><li>Turndown service included</li><li>Complimentary Gin &amp; Tonic on arrival</li><li>Complimentary car parking, subject to availability</li></ul>
+<a class="btn" href="#" data-ask="__book">Request a stay</a>
+</div>
+<div class="offers"><span>Stay Longer and Save</span><span>Hidden Dublin Escape</span><span>A Taste of the City</span><span>The Dublin Edit</span><span>Tale of Two Cities</span><span>Midnight at The Wilder</span><span>Ireland's Blue Book voucher upgrade</span></div>
+<p style="font-size:14px;color:#566063;margin-top:14px;max-width:44em">Stay Longer and Save starts from &euro;280 per night. Tale of Two Cities pairs the townhouse with a second stay, and Midnight at The Wilder is the New Year's Eve celebration. Dates, terms and availability sit on the Special Offers page and are confirmed by the team.</p>
+</section>
+
+<section class="good" id="good"><div class="wrap">
+<p class="kicker" style="color:#e9c9a0">Good to know</p>
+<h2>The practical bits</h2>
+<dl>
+<dt>Check-in / out</dt><dd>Check-in 15:00, check-out 12:00. Early check-in or late check-out: call the team.</dd>
+<dt>Payment</dt><dd>An in-person credit card is needed at check-in for a pre-authorisation of the stay plus a small supplement for incidentals.</dd>
+<dt>Cancellation</dt><dd>Free up to 24 hours before arrival. Direct bookings are amended through the reservations team; third-party bookings through that site.</dd>
+<dt>Wi-Fi</dt><dd>Fast 300MB Wi-Fi, complimentary.</dd>
+<dt>Parking</dt><dd>Limited car park, first come first served, plus on-street parking nearby. No electric vehicle charging.</dd>
+<dt>Pets</dt><dd>Not pet friendly, except registered assistance dogs.</dd>
+</dl>
+</div></section>
+
+<section class="explore wrap" id="explore">
+<p class="kicker">Explore Dublin</p>
+<h2>Five guides on the hotel's own site</h2>
+<p style="max-width:38em;margin-top:12px">The Wilder website already carries local guides. An assistant can point guests to the right one the moment they ask, instead of leaving them to find it in the menu.</p>
+<div class="gcards">
+<a class="gc" data-ask="What is there to do for arts and culture nearby?"><b>Arts &amp; Culture</b><span>Galleries and cultural life around St. Stephen's Green</span></a>
+<a class="gc" data-ask="Where should I eat and drink nearby?"><b>Local Food &amp; Drink</b><span>Dublin restaurants a short walk from the door</span></a>
+<a class="gc" data-ask="Where can I go shopping nearby?"><b>Shopping</b><span>Shops and cafes close to the townhouse</span></a>
+<a class="gc" data-ask="What is there to do outdoors?"><b>Outdoors &amp; City Wanders</b><span>Walks from a quiet residential street</span></a>
+<a class="gc" data-ask="Are there sports or events nearby?"><b>Sports &amp; Events</b><span>Match days and city events</span></a>
+</div>
+<p class="hint2">The assistant only repeats what the hotel has published, and sends everything else to the team.</p>
+</section>
+
+<section class="wrap faq">
+<p class="kicker">Quick answers</p>
+<h2>What guests ask first</h2>
+<div style="margin-top:20px">
+<details><summary>Is there a restaurant?</summary><p>Breakfast and light bites are served in the Garden Room, and drinks in the Gin &amp; Tea Rooms. For dinner guests head to nearby Dublin restaurants.</p></details>
+<details><summary>How many people sleep in a room?</summary><p>Every room type lists a maximum of 2 guests.</p></details>
+<details><summary>Can I add a late check-out?</summary><p>Check-out is at 12:00. For early check-in or late check-out, call +353 1 969 6598 and the team will let you know.</p></details>
+<details><summary>Is there a lift or step-free access?</summary><p>That is not stated on the website, so the assistant passes it to the team rather than guessing: stay@thewilder.ie.</p></details>
+<details><summary>Can I bring a car?</summary><p>There is a limited car park on a first come first served basis, and on-street parking around the house. Complimentary parking is part of booking direct, subject to availability.</p></details>
+<details><summary>Is breakfast served in the room?</summary><p>Breakfast is served in the Garden Room, overlooking the garden terrace. Serving times are confirmed by the team.</p></details>
+<details><summary>Do I need to bring a card?</summary><p>Yes, an in-person credit card is needed at check-in.</p></details>
+<details><summary>Do I get anything on arrival?</summary><p>Yes, a complimentary G&amp;T in the Gin &amp; Tea Rooms.</p></details>
+<details><summary>I have an Ireland's Blue Book voucher.</summary><p>Mention it when booking and you receive a complimentary room upgrade.</p></details>
+</div>
+</section>
+
+<section class="wrap find">
+<p class="kicker">Find us</p>
+<address>22 Adelaide Road<br>Dublin D02 ET61, Ireland</address>
+<p>+353 1 969 6598 · stay@thewilder.ie</p>
+<p style="font-size:14px;color:#5a6366">A short stroll from St. Stephen's Green</p>
+</section>
+
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button class="wb" id="wb" type="button" aria-expanded="false" aria-controls="wp">Ask the house</button>
+<div class="wp" id="wp" role="dialog" aria-label="Hotel assistant">
+<div class="wh"><div>The Wilder Townhouse<small>Assistant (demo)</small></div><button id="wx" type="button" aria-label="Close">&times;</button></div>
+<div class="wl" id="wl" aria-live="polite"></div>
+<div class="wc" id="wc"></div>
+<form class="wf" id="wf"><input id="wi" type="text" placeholder="Ask about rooms, breakfast, parking…" aria-label="Your message" autocomplete="off"><button type="submit">Send</button></form>
+</div>
+<style>.wb{position:fixed;right:16px;bottom:16px;z-index:60;border:0;border-radius:999px;padding:13px 18px;font:600 14px/1 var(--bf);background:var(--wa);color:var(--wat);box-shadow:0 8px 24px rgba(0,0,0,.28);cursor:pointer;display:flex;gap:8px;align-items:center}
+.wp{position:fixed;right:16px;bottom:74px;z-index:61;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 100px));background:var(--wbg);color:var(--wtx);border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--wbd)}
+.wp.open{display:flex}
+.wh{background:var(--wa);color:var(--wat);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font:600 14px var(--bf)}
+.wh small{display:block;font-weight:400;opacity:.85;font-size:11px;margin-top:2px}
+.wh button{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}
+.wl{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;font:14px/1.45 var(--bf)}
+.wm{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word}
+.wm.b{background:var(--wbub);align-self:flex-start;border-bottom-left-radius:4px}
+.wm.u{background:var(--wa);color:var(--wat);align-self:flex-end;border-bottom-right-radius:4px}
+.wc{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px}
+.wc button{border:1px solid var(--wa);background:transparent;color:var(--wtx);border-radius:999px;padding:6px 11px;font:12.5px var(--bf);cursor:pointer}
+.wc button:hover{background:var(--wa);color:var(--wat)}
+.wf{display:flex;gap:6px;padding:10px 12px;border-top:1px solid var(--wbd)}
+.wf input{flex:1;min-width:0;border:1px solid var(--wbd);border-radius:10px;padding:10px;font:14px var(--bf);background:var(--wbg);color:var(--wtx)}
+.wf button{border:0;border-radius:10px;padding:0 14px;background:var(--wa);color:var(--wat);font:600 13px var(--bf);cursor:pointer}
+</style>
+<script>
+var CFG={ph:'Ask about rooms, breakfast, parking…',cancelLabel:'Cancel',cancelMsg:'No problem, nothing was saved. Ask me anything else.',dateRetry:'Please pick a date with the calendar field or type it like 2026-12-18.',
+greet:'Welcome to The Wilder Townhouse. I can tell you about the rooms, breakfast in the Garden Room, the Gin & Tea Rooms, parking and booking direct. What would you like to know?',
+chips:['Rooms','Book direct perks','Breakfast','Parking','Check-in times','Request a stay'],
+bookWords:['book','booking','reserve','reservation','availability','available','request a stay','stay request'],
+fallback:'I do not have that detail, so I will not guess. The team can confirm it: stay@thewilder.ie or +353 1 969 6598.',
+flowIntro:'Happy to pass a stay request to the team. A few quick questions.',
+flow:[{id:'in',label:'Arrival',q:'What is your arrival date?',type:'date'},{id:'out',label:'Departure',q:'And your departure date?',type:'date'},{id:'g',label:'Guests',q:'How many guests? (every room sleeps up to 2)',opts:['1 guest','2 guests','2 rooms']},{id:'r',label:'Room',q:'Which room appeals to you?',opts:['Shoe Box','Small Room','Popular','Townhouse Deluxe','Townhouse Suite','Lady Jane Suite','Not sure yet']},{id:'n',label:'Name',q:'Your name, please?',ph:'Full name'},{id:'c',label:'Contact',q:'Best e-mail or phone for the team to reply?',ph:'e-mail or phone'}],
+doneTitle:'Your stay request is ready for the team:',doneNote:'In this demo nothing is actually sent. On the live site this goes to the reservations team, who confirm availability and rates.',
+kb:[
+{k:['room','rooms','bedroom','bedrooms','accommodation','types of rooms','which room','suite','suites'],a:'There are 42 individually designed rooms: Shoe Box (12 sq m), Small Room (14 to 16 sq m), Popular (17 to 22 sq m), Townhouse Deluxe (20 to 24 sq m), Townhouse Suite (35+ sq m) and the Lady Jane Suite (about 35 sq m). Every room sleeps up to 2.'},
+{k:['shoe box','shoebox','smallest','cheapest','compact','solo','solo traveller','single'],a:'The Shoe Box rooms are 12 sq m with a king bed, overlooking Adelaide Road: a snug base for solo travellers or short stays, with the same features as the other rooms.'},
+{k:['small room','small double','small'],a:'The Small Room is 14 to 16 sq m with a 5 foot king bed under a velvet headboard, max 2 guests.'},
+{k:['popular','popular double','bigger room','more space'],a:'The Popular room is 17 to 22 sq m with a 5 foot king bed (twin on request), velvet headboards and patterned cushions, max 2 guests.'},
+{k:['deluxe','townhouse deluxe','twin','twin beds'],a:'Townhouse Deluxe is 20 to 24 sq m with 1 king or 2 twin beds, among the more spacious regular rooms. Max 2 guests.'},
+{k:['townhouse suite','suite','fireplace','high ceilings','victorian','sash'],a:'Townhouse Suites are 35+ sq m with a super king bed, lofty ceilings, tall sash windows and fireplaces, celebrating the original Victorian building. Max 2 guests.'},
+{k:['lady jane','lady jane suite','signature suite','bath','bathtub'],a:'The Lady Jane Suite is the signature suite: about 35 sq m, super king bed, a living area, artwork throughout, and a bath with overhead shower.'},
+{k:['features','in room','amenities','nespresso','minibar','mini fridge','safe','air conditioning','shower','slippers','toiletries','ortigia','tv'],a:'Rooms have air conditioning, a smart TV, a walk-in rainfall shower, mini fridge, in-room safe, Nespresso machine, complimentary mineral water, local sweet treats and cookies, Ortigia toiletries and slippers.'},
+{k:['gin','g&t','gin and tonic','welcome drink','welcome','complimentary','gin and tea','gin & tea','tea rooms','bar','cocktail','drink','drinks','snug'],a:'Every guest gets a complimentary G&T on arrival in the Gin & Tea Rooms, a darker, candlelit snug with leather seating that works for cocktails or bubbles in the evening.'},
+{k:['breakfast','garden room','full irish','eggs','continental','soda bread','guinness'],a:'Breakfast is served each morning in the Garden Room: a buffet-style spread (fruit, yoghurt, granola, pastries, house-baked breads including the Guinness soda bread) plus cooked dishes to order such as Full Irish, Eggs Benedict or brioche French toast. Exact serving hours: the team will confirm.'},
+{k:['light bites','lunch','snack','food','menu','soup','charcuterie','sandwich','eat','dinner','restaurant','dining'],a:'There is no dinner service listed; Light bites are served in the Garden Room: cheese and charcuterie boards, soup of the day, fresh salads and toasted sourdough. Many Dublin restaurants are a short walk away.'},
+{k:['irish','provenance','local','suppliers','sustainable','quigley','keelings','sourcing'],a:'The kitchen sources from Irish suppliers: Quigley’s Family Butchers, Keelings, La Rousse Foods and Atlantis of Kilmore Quay. Breads are baked in-house each morning.'},
+{k:['direct','book direct','direct benefits','perks','best rate','booking.com','third party','benefits'],a:'Booking direct includes: save €20 per night, free cancellation up to 24 hours before arrival, turndown service, a complimentary Gin & Tonic on arrival and complimentary parking subject to availability.'},
+{k:['offer','offers','deal','deals','package','packages','special','stay longer','discount','hidden dublin','taste of the city','dublin edit','tale of two cities','nye','new year','midnight'],a:'Current offers include Stay Longer and Save (from €280 per night), Hidden Dublin Escape, A Taste of the City, The Dublin Edit, Tale of Two Cities, and Midnight at The Wilder for New Year’s Eve. Details are on the Special Offers page.'},
+{k:['blue book','voucher','upgrade','ireland blue book','gift voucher','gift'],a:'Ireland’s Blue Book voucher holders get a complimentary room upgrade: mention the voucher when booking. Gift vouchers are also on the website.'},
+{k:['checkin','check in','check-in','arrival time','arrive','early check','early arrival'],a:'Check-in is at 15:00. For early check-in please call +353 1 969 6598; the team will confirm.'},
+{k:['checkout','check out','check-out','late checkout','departure','leave'],a:'Check-out is at 12:00. For a late check-out please call +353 1 969 6598.'},
+{k:['credit card','card','id','preauthorisation','pre-authorisation','authorisation','incidentals','payment','pay'],a:'An in-person credit card is required at check-in. The hotel takes a pre-authorisation for the value of the stay plus a small supplement for incidentals.'},
+{k:['cancel','cancellation','refund','change booking','amend','modify','policy','free cancellation'],a:'Free cancellation up to 24 hours before arrival. To cancel or amend a direct booking, contact the team on stay@thewilder.ie or +353 1 969 6598; if you booked on a third-party site such as Booking.com, change it there.'},
+{k:['wifi','wi-fi','internet','broadband','connection'],a:'Fast 300MB Wi-Fi is complimentary for guests.'},
+{k:['parking','park','car','garage','vehicle','on street'],a:'There is a limited car park, first come first served, and on-street parking around the house. Complimentary parking is included with booking direct, subject to availability.'},
+{k:['electric','ev','charging','charger','tesla'],a:'There are no electric vehicle charging facilities.'},
+{k:['pet','pets','dog','dogs','cat','animal','assistance dog','guide dog'],a:'The townhouse is not pet friendly, except for registered assistance dogs.'},
+{k:['address','where','location','located','directions','find you','map','adelaide road'],a:'22 Adelaide Road, Dublin D02 ET61, a quiet residential street a short stroll from St. Stephen’s Green and the city centre.'},
+{k:['near','nearby','stephen','green','walk','attractions','shops','cafes','christ church','explore','things to do','arts','culture'],a:'St. Stephen’s Green, cafes, shops and Dublin’s cultural life are a short stroll away. The website also has guides to arts and culture, local food and drink, shopping, outdoors and sports.'},
+{k:['phone','call','telephone','number','contact','email','e-mail','reach'],a:'Phone +353 1 969 6598, e-mail stay@thewilder.ie.'},
+{k:['michelin','key','award','awards','accolade','blue','mr and mrs smith','slh','small luxury'],a:'The Wilder Townhouse holds a Michelin Key (retained in 2025 for the second year) and is listed with Mr & Mrs Smith, Small Luxury Hotels of the World and Ireland’s Blue Book.'},
+{k:['poet','poem','poetry','paul yates','turndown','chocolate','cookies'],a:'Each evening turndown service leaves a chocolate treat and a booklet of 42 poems by Poet in Residence Paul Yates.'},
+{k:['wedding','weddings','event','events','celebration','function','venue'],a:'The website lists a Weddings page. Capacity and arrangements are not something I can confirm, so the team will help: stay@thewilder.ie.'},
+{k:['garden','terrace','outdoor','patio'],a:'There is a secluded garden terrace that the Garden Room overlooks, a quiet spot for breakfast or a pause in the city.'},
+{k:['price','prices','rate','rates','cost','how much','per night','tariff'],a:'Rates depend on dates and room, so the team will confirm exact figures. Stay Longer and Save starts from €280 per night. Use “Request a stay” and give your dates.'},
+{k:['how many rooms','size','small hotel','intimate','boutique','42'],a:'The townhouse has just 42 individually designed rooms behind a Victorian red-brick façade, so the atmosphere stays intimate.'},
+{k:['shopping','shops','shop','boutique'],a:'Shops and cafes are a short stroll away around St. Stephen’s Green; the hotel’s website has a Shopping guide.'},
+{k:['sports','match','matches','stadium','events nearby','concert','gaa','rugby'],a:'The hotel website has a Sports & Events guide. Specific fixtures and dates change, so please check it or ask the team.'},
+{k:['outdoors','city wanders','walks','park','running','jog'],a:'The website has an Outdoors & City Wanders guide; St. Stephen’s Green is a short stroll from the house.'},
+{k:['accessible','accessibility','wheelchair','disabled','lift','elevator','step free','mobility'],a:'Accessibility details such as lifts and step-free rooms are not stated on the website, so the team will confirm: stay@thewilder.ie or +353 1 969 6598.'},
+{k:['family','kids','children','child','baby','cot','crib','extra bed'],a:'Every room type lists a maximum of 2 guests, and cots or extra beds are not mentioned, so please ask the team before booking with children: stay@thewilder.ie.'},
+{k:['late','late night','reception hours','front desk','24 hour','night'],a:'Reception hours are not published on the site, so the team will confirm: +353 1 969 6598.'},
+{k:['smoking','smoke','non smoking'],a:'A smoking policy is not stated on the pages I can see, so the team will confirm.'},
+{k:['laundry','iron','ironing','dry cleaning','luggage','storage','bags'],a:'Laundry and luggage storage are not listed on the website, so the team will confirm what they can arrange.'},
+{k:['hello','hi','hey','thanks','thank you'],a:'Happy to help. Ask about rooms, breakfast, the Gin & Tea Rooms, parking or booking direct.'}
+]};
+
+/* assistant engine: matcher + UI. CFG is defined before this block. */
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9€$ ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.replace(/(ing|ed|es|s)$/,function(m,a,off){return w.length-m.length>=3?'':m;});}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;var p=[],i,j;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var c=[i];for(j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[n];}
+var STOP={the:1,a:1,an:1,is:1,are:1,do:1,does:1,you:1,your:1,i:1,we:1,can:1,my:1,to:1,of:1,at:1,in:1,on:1,for:1,it:1,there:1,and:1,or:1,have:1,has:1,what:1,whats:1,how:1,with:1,me:1,us:1,please:1,any:1,about:1,tell:1,much:1,get:1,be:1,this:1,that:1};
+function wmatch(t,k){if(t===k)return true;var st=stem(t),sk=stem(k);if(st===sk)return true;if(k.length<5||t.length<5)return false;var d=Math.min(lev(st,sk),lev(t,k));return d<=(sk.length>=8?2:1);}
+function match(q){var qn=norm(q);if(!qn)return null;var toks=qn.split(' ').filter(function(t){return t&&!STOP[t];});if(!toks.length)toks=qn.split(' ');var best=null,bs=0;
+CFG.kb.forEach(function(e){var s=0,used={};e.k.forEach(function(kw){var kn=norm(kw);if(!kn)return;if(kn.indexOf(' ')>-1){if((' '+qn+' ').indexOf(' '+kn+' ')>-1){s+=3*kn.split(' ').length;return;}var parts=kn.split(' '),idx=[];var ok=parts.every(function(p){var f=-1;toks.some(function(t,i){if(wmatch(t,p)){f=i;return true;}return false;});if(f>-1)idx.push(f);return f>-1;});if(ok)s+=2*parts.length;}else{var f=-1;toks.some(function(t,i){if(!used[i]&&wmatch(t,kn)){f=i;return true;}return false;});if(f>-1){used[f]=1;s+=(kn.length>=6?3:2.5);}}});
+if(s>bs){bs=s;best=e;}});return bs>=2.5?best:null;}
+function isBook(q){var qn=norm(q);return CFG.bookWords.some(function(w){return (' '+qn+' ').indexOf(' '+norm(w)+' ')>-1||qn.split(' ').some(function(t){return t.length>4&&wmatch(t,norm(w));});});}
+if(typeof module!=='undefined')module.exports={match:match,isBook:isBook,norm:norm};
+/* ---- UI ---- */
+function initWidget(){var $=function(i){return document.getElementById(i)};var btn=$('wb'),pn=$('wp'),log=$('wl'),form=$('wf'),inp=$('wi'),chips=$('wc');if(!btn)return;
+var flow=null,data={};
+function add(t,who,html){var d=document.createElement('div');d.className='wm '+who;if(html)d.innerHTML=t;else d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+function setChips(list,cb){chips.innerHTML='';list.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){cb(c);};chips.appendChild(b);});}
+function home(){setChips(CFG.chips,function(c){say(c);});}
+function say(t){add(t,'u');reply(t);}
+function reply(t){if(flow){stepIn(t);return;}
+if(isBook(t)){startFlow();return;}
+var m=match(t);if(m){add(m.a,'b');if(m.flow){startFlow();return;}home();}else{add(CFG.fallback,'b');home();}}
+function startFlow(){flow={i:0};data={};add(CFG.flowIntro,'b');ask();}
+function ask(){var s=CFG.flow[flow.i];add(s.q,'b');inp.type=s.type==='date'?'date':'text';inp.placeholder=s.ph||'';if(s.opts){setChips(s.opts,function(c){say(c);});}else{chips.innerHTML='';var b=document.createElement('button');b.type='button';b.textContent=CFG.cancelLabel;b.onclick=cancel;chips.appendChild(b);}
+if(s.opts){var b2=document.createElement('button');b2.type='button';b2.textContent=CFG.cancelLabel;b2.onclick=cancel;chips.appendChild(b2);}}
+function cancel(){flow=null;inp.type='text';inp.placeholder=CFG.ph;add(CFG.cancelMsg,'b');home();}
+function stepIn(t){var s=CFG.flow[flow.i];t=t.trim();if(!t)return;if(s.type==='date'&&!/^\d{4}-\d\d-\d\d$/.test(t)&&!/\d/.test(t)){add(CFG.dateRetry,'b');return;}
+data[s.id]=t;flow.i++;if(flow.i<CFG.flow.length){ask();return;}
+var sum=CFG.flow.map(function(x){return '<b>'+x.label+':</b> '+esc(data[x.id]);}).join('<br>');
+add(CFG.doneTitle+'<br><br>'+sum+'<br><br>'+CFG.doneNote,'b',true);flow=null;inp.type='text';inp.placeholder=CFG.ph;home();}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+btn.onclick=function(){var o=pn.classList.toggle('open');btn.setAttribute('aria-expanded',o);if(o&&!log.children.length){add(CFG.greet,'b');home();}if(o)inp.focus();};
+$('wx').onclick=function(){pn.classList.remove('open');btn.setAttribute('aria-expanded','false');};
+form.onsubmit=function(e){e.preventDefault();var v=inp.value;if(!v.trim())return;inp.value='';say(v);};
+document.querySelectorAll('[data-ask]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();if(!pn.classList.contains('open'))btn.click();var q=a.getAttribute('data-ask');if(q==='__book')window.__openBook();else say(q);});});
+window.__openBook=function(){if(!pn.classList.contains('open'))btn.click();if(!flow)startFlow();};
+}
+if(typeof document!=='undefined')document.addEventListener('DOMContentLoaded',initWidget);
+
+</script>
+</body>
+</html>

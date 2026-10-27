@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arabic Language Centre, Dubai | Demo</title>
+<meta name="description" content="Demo page prepared for the Arabic Language Centre, Dubai World Trade Centre.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1b1340;--indigo:#37247a;--deep:#241658;--blue:#008bcb;--sky:#e6f4fb;--sand:#f7f2e8;--gold:#e3a93a;--text:#2b2840;--mut:#625f78;--w-brand:#e3a93a;--w-ink:#1b1340;--w-bg:#f7f2e8;--w-ring:#008bcb;--w-r:14px;--w-font:'Outfit',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.6 'Outfit',system-ui,sans-serif;color:var(--text);background:var(--sand);overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.12;color:var(--ink)}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.btn{display:inline-block;background:var(--gold);color:var(--ink);font-weight:600;text-decoration:none;padding:14px 22px;border-radius:99px;border:0;font-size:16px;cursor:pointer;font-family:inherit}
+.btn.ghost{background:transparent;border:2px solid #fff;color:#fff}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+/* header */
+.top{background:var(--deep);position:sticky;top:0;z-index:20}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px}
+.chip{background:#fff;border-radius:10px;padding:4px 10px;display:flex}
+.chip img{height:46px;width:auto;display:block}
+.top nav{display:none;gap:20px}
+.top nav a{color:#dcd6f5;text-decoration:none;font-size:15px}
+.top .btn{padding:10px 16px;font-size:14px}
+@media(min-width:800px){.top nav{display:flex}}
+/* hero */
+.hero{background:linear-gradient(160deg,var(--deep),var(--indigo) 60%,#1f6fa8);color:#fff;position:relative;overflow:hidden}
+.hero .wrap{display:grid;gap:28px;padding-top:44px;padding-bottom:56px}
+.hero h1{color:#fff;font-size:clamp(2rem,7.5vw,3.6rem)}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p{color:#e3def8;max-width:34em;margin:16px 0 24px}
+.since{display:inline-block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.calli{font-family:'Amiri',serif;font-size:clamp(5rem,26vw,11rem);line-height:.9;color:rgba(255,255,255,.1);position:absolute;right:-8px;top:6px;pointer-events:none;direction:rtl}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.facts div{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:12px 14px;font-size:14px;color:#e3def8}
+.facts b{display:block;font:700 22px 'Fraunces',serif;color:#fff}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1.25fr 1fr;align-items:center}.facts{grid-template-columns:1fr 1fr}}
+section{padding:52px 0}
+h2{font-size:clamp(1.7rem,5vw,2.4rem);margin-bottom:14px}
+.lead{color:var(--mut);max-width:40em;margin-bottom:26px}
+/* ladder */
+.ladder{display:flex;align-items:flex-end;gap:6px;height:150px;margin:6px 0 10px}
+.ladder span{flex:1;background:linear-gradient(var(--blue),var(--indigo));border-radius:8px 8px 3px 3px;color:#fff;font:700 13px 'Fraunces',serif;text-align:center;padding-top:6px}
+.ladder span:nth-child(1){height:22%}.ladder span:nth-child(2){height:30%}.ladder span:nth-child(3){height:40%}.ladder span:nth-child(4){height:50%}.ladder span:nth-child(5){height:62%}.ladder span:nth-child(6){height:74%}.ladder span:nth-child(7){height:86%}.ladder span:nth-child(8){height:100%;background:linear-gradient(var(--gold),#c78a14);color:var(--ink)}
+.ladcap{display:flex;justify-content:space-between;font-size:13px;color:var(--mut)}
+.why{display:grid;gap:14px;margin-top:26px}
+.why div{background:#fff;border-radius:16px;padding:18px;border-left:5px solid var(--blue)}
+.why div:nth-child(even){border-left-color:var(--gold)}
+.why h3{font-size:1.1rem;margin-bottom:4px}
+@media(min-width:760px){.why{grid-template-columns:1fr 1fr}.ladder{height:200px}}
+/* tracks */
+.tracks{background:#fff}
+.tr{display:grid;gap:16px}
+.card{border:1px solid #e3deef;border-radius:18px;padding:22px;background:var(--sand)}
+.card h3{font-size:1.3rem;margin-bottom:6px}
+.card ul{padding-left:18px;margin:10px 0 16px;color:var(--mut);font-size:15px}
+.card a.l{font-weight:600;color:var(--indigo)}
+@media(min-width:820px){.tr{grid-template-columns:repeat(3,1fr)}}
+/* pricing */
+.pt{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;font-size:15px}
+.pt th,.pt td{padding:12px 10px;text-align:left;vertical-align:top;border-bottom:1px solid #ece8f5}
+.pt thead th{background:var(--indigo);color:#fff;font-weight:500}
+.pt td:first-child{font-weight:600;color:var(--ink)}
+.pnote{font-size:14px;color:var(--mut);margin-top:12px}
+.disc{display:grid;gap:10px;margin-top:18px}
+.disc div{background:var(--sky);border-radius:12px;padding:12px 14px;font-size:15px}
+@media(min-width:700px){.disc{grid-template-columns:1fr 1fr}}
+/* schedule */
+.sched{background:var(--deep);color:#e3def8}
+.sched h2{color:#fff}.sched .lead{color:#bdb6e0}
+.tl{list-style:none;padding:0;border-left:3px solid var(--gold);margin-left:6px}
+.tl li{padding:0 0 18px 18px;position:relative}
+.tl li:before{content:"";position:absolute;left:-10px;top:6px;width:15px;height:15px;border-radius:50%;background:var(--gold);border:3px solid var(--deep)}
+.tl b{color:#fff;display:block}
+.story{background:linear-gradient(180deg,#fff,var(--sky))}
+.sg{display:grid;gap:18px;margin-bottom:18px}
+blockquote{background:#fff;border-radius:16px;padding:18px 20px;border-top:4px solid var(--gold);font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink)}
+blockquote cite{display:block;margin-top:8px;font:500 14px 'Outfit',sans-serif;color:var(--mut);font-style:normal}
+.quotes{display:grid;gap:14px}
+@media(min-width:820px){.sg{grid-template-columns:1fr 1fr}.quotes{grid-template-columns:repeat(3,1fr)}}
+.steps{background:#fff}
+.st{list-style:none;padding:0;counter-reset:n;display:grid;gap:12px}
+.st li{counter-increment:n;background:var(--sand);border-radius:16px;padding:16px 16px 16px 62px;position:relative}
+.st li:before{content:counter(n);position:absolute;left:14px;top:14px;width:36px;height:36px;border-radius:50%;background:var(--indigo);color:#fff;font:700 18px 'Fraunces',serif;display:grid;place-items:center}
+.ml{list-style:none;padding:0;display:grid;gap:10px}
+.ml li{background:#fff;border-radius:14px;padding:14px 16px;border-left:5px solid var(--blue)}
+@media(min-width:820px){.st{grid-template-columns:1fr 1fr}.ml{grid-template-columns:1fr 1fr}}
+/* faq */
+details{background:#fff;border-radius:14px;padding:14px 18px;margin-bottom:10px;border:1px solid #ebe6f4}
+summary{cursor:pointer;font-weight:600;color:var(--ink)}
+details p{margin-top:8px;color:var(--mut);font-size:16px}
+/* contact */
+.contact{background:#fff}
+.cg{display:grid;gap:18px}
+.cbox{background:var(--sand);border-radius:18px;padding:22px}
+.cbox h3{font-size:1.2rem;margin-bottom:8px}
+.cbox p{margin:4px 0;overflow-wrap:anywhere}
+@media(min-width:760px){.cg{grid-template-columns:1fr 1fr 1fr}}
+footer{background:var(--ink);color:#b9b3d9;text-align:center;padding:26px 16px;font-size:14px}
+#as-btn{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--w-brand);color:var(--w-ink);font:600 15px/1 var(--w-font);padding:14px 18px;border-radius:var(--w-r);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#as-btn:focus-visible,#as-pan button:focus-visible,#as-in:focus-visible{outline:3px solid var(--w-ring);outline-offset:2px}
+#as-pan{position:fixed;right:12px;bottom:76px;z-index:51;width:min(380px,calc(100vw - 24px));max-height:min(560px,calc(100vh - 100px));display:none;flex-direction:column;background:#fff;color:#1d1d24;border-radius:calc(var(--w-r) + 4px);box-shadow:0 16px 48px rgba(0,0,0,.3);overflow:hidden;font:15px/1.45 var(--w-font)}
+#as-pan.open{display:flex}
+#as-pan header{background:var(--w-brand);color:var(--w-ink);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:600}
+#as-pan header small{display:block;font-weight:400;opacity:.8;font-size:12px}
+#as-x{background:none;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1;padding:4px 8px}
+#as-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--w-bg)}
+#as-log .m{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-line;overflow-wrap:anywhere}
+#as-log .b{background:#fff;border:1px solid rgba(0,0,0,.08);align-self:flex-start;border-bottom-left-radius:4px}
+#as-log .u{background:var(--w-brand);color:var(--w-ink);align-self:flex-end;border-bottom-right-radius:4px}
+#as-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 0;background:#fff}
+#as-chips button{border:1px solid var(--w-brand);background:#fff;color:#1d1d24;border-radius:99px;padding:6px 11px;font:13px var(--w-font);cursor:pointer}
+#as-chips button:hover{background:var(--w-bg)}
+#as-form{display:flex;gap:6px;padding:10px 12px;background:#fff}
+#as-in{flex:1;min-width:0;border:1px solid #c9c9d2;border-radius:10px;padding:10px;font:16px var(--w-font)}
+#as-form button{border:0;background:var(--w-brand);color:var(--w-ink);border-radius:10px;padding:0 14px;font:600 15px var(--w-font);cursor:pointer}
+#as-note{font-size:11px;color:#777;text-align:center;padding:0 12px 8px;background:#fff}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="chip" href="#top" aria-label="Arabic Language Centre"><img src="img/arabic-language-centre-logo.svg" alt="The Arabic Language Centre" width="80" height="46"></a><nav aria-label="Main"><a href="#method">Method</a><a href="#courses">Courses</a><a href="#fees">Fees</a><a href="#dates">Dates</a><a href="#faq">FAQ</a><a href="#visit">Contact</a></nav><a class="btn" href="#" data-ask="book">Free trial class</a></div></header>
+
+<div class="hero" id="top"><div class="calli" aria-hidden="true">عربي</div><div class="wrap"><div><span class="since">Dubai World Trade Centre &middot; since 1980</span><h1>Speak Arabic with <em>confidence</em>, not just rules.</h1><p>Dubai's most established Arabic language centre teaches spoken Levantine Arabic with the Maliha Wehbe Method: logical, practical and conversation-first. Face-to-face and online, for adults, children and teens, companies and schools.</p><a class="btn" href="#" data-ask="book">Book a free trial class</a> &nbsp; <a class="btn ghost" href="#courses">See courses</a></div><div class="facts"><div><b>45+</b>years of teaching</div><div><b>7,000+</b>graduates</div><div><b>100+</b>companies trained</div><div><b>KHDA</b>licensed institute</div></div></div></div>
+
+<section id="method"><div class="wrap"><h2>A clear path, level by level</h2><p class="lead">Eight levels remove the guesswork: you always know where you are between your first greeting and fluent conversation. Adults can expect a certificate at the end of each level.</p>
+<div class="ladder" aria-label="Eight levels"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div><div class="ladcap"><span>Beginners I</span><span>Fluent speaker</span></div>
+<div class="why"><div><h3>A method that clicks</h3><p>The Maliha Wehbe Method replaces overwhelming rules with clear logic, so patterns become visible and speaking starts early.</p></div><div><h3>Native Levantine teachers</h3><p>Teachers from Lebanon, Jordan and Syria, each with at least a BA in education and continuous training.</p></div><div><h3>Real Arabic for daily life</h3><p>Everyday vocabulary you can use the same day in cafes, offices and shops across Dubai.</p></div><div><h3>Small groups, speaking first</h3><p>Groups are small so everybody talks. Missed a lesson? Adults get the recording and notes.</p></div></div></div></section>
+
+<section class="tracks" id="courses"><div class="wrap"><h2>Pick your track</h2><p class="lead">The same method, adapted to who is learning.</p><div class="tr">
+<div class="card"><h3>Adults</h3><p>From Beginners I to confident conversation. Open from age 17.</p><ul><li>Group, semi-private or private</li><li>Flexible dates and timings</li><li>Online or in person</li><li>Free level assessment</li></ul><a class="l" href="#" data-ask="book">Join a free trial &rarr;</a></div>
+<div class="card"><h3>Children &amp; teens</h3><p>Ages 3 to 16, from Reception level up to GCSE and AS level.</p><ul><li>Games, songs, stories and role play</li><li>Groups of 8 to 10, by age and level</li><li>One free make-up session per term</li><li>Seasonal intensive courses</li></ul><a class="l" href="#" data-ask="kids classes">Ask about kids classes &rarr;</a></div>
+<div class="card"><h3>Companies &amp; schools</h3><p>Tailored Arabic and English programmes, on-site, online or hybrid.</p><ul><li>Trusted by 100+ companies in the UAE</li><li>Programmes for nurseries and schools</li><li>English for Business Professionals</li></ul><a class="l" href="#" data-ask="corporate training">Ask about corporate &rarr;</a></div></div></div></section>
+
+<section id="fees"><div class="wrap"><h2>Fees at a glance</h2><p class="lead">As published on the centre's course pages.</p>
+<table class="pt"><thead><tr><th></th><th>Adults</th><th>Children &amp; teens</th></tr></thead><tbody>
+<tr><td>Group</td><td>from AED1,950</td><td>from AED95 / hour, min. 10 weeks per term</td></tr>
+<tr><td>Semi-private</td><td>AED120</td><td>from AED120 / hour, group of 3, min. 8 sessions</td></tr>
+<tr><td>Private</td><td>from AED240</td><td>from AED240 / hour, min. 8 sessions</td></tr></tbody></table>
+<p class="pnote">Payment by cash, card at the office, online payment link or bank transfer. The team confirms the exact quote for your case.</p>
+<div class="disc"><div><b>Referral</b>: 10% off tuition when a friend you refer enrols (children and teens).</div><div><b>Sibling discount</b>: 5% off for the 2nd and 3rd child.</div></div></div></section>
+
+<section class="sched" id="dates"><div class="wrap"><h2>Upcoming Beginners I classes</h2><p class="lead">Dates listed on the site; the team confirms free seats.</p><ul class="tl">
+<li><b>Sunday class</b>Nov 1 to Dec 27</li><li><b>Mon and Wed (LT)</b>Nov 2 to Dec 16</li><li><b>Tue and Thu (AM and PM)</b>Nov 3 to Dec 17</li><li><b>Intensive, Mon to Fri (LT and PM)</b>Dec 7 to Dec 23</li></ul><p style="margin-top:18px"><a class="btn" href="#" data-ask="book">Reserve a free trial</a></p></div></section>
+
+<section class="steps" id="start"><div class="wrap"><h2>How you get started</h2><p class="lead">Four steps, none of them a commitment until you decide.</p><ol class="st">
+<li><b>Try a class.</b> Join a free trial in a small group where speaking comes first. For children, the teachers use it to assess their level.</li>
+<li><b>Find your level.</b> Arabic: a short interview with the head teacher. English: a free online placement test. Already read and write? You still start at Beginners I if you cannot yet speak.</li>
+<li><b>Choose a format.</b> Group, semi-private or private; online or at the World Trade Centre; evening, daytime or intensive.</li>
+<li><b>Learn and collect certificates.</b> Course materials are provided. Adults receive a certificate at the end of each level, children after three consecutive terms.</li></ol></div></section>
+
+<section class="meth" id="whymethod"><div class="wrap"><h2>What sets the method apart</h2><ul class="ml">
+<li><b>Proven for over 44 years.</b> Tested and refined across four decades.</li><li><b>Levantine dialect focus.</b> The most neutral and widely understood spoken Arabic.</li><li><b>Real-life communication.</b> Task-based lessons built around real conversations.</li><li><b>Balanced skills.</b> Listening, speaking, reading and writing together, with a strong focus on conversation.</li><li><b>Simplified and enjoyable.</b> Logical, step-by-step, repetition with practical use.</li><li><b>Everyday vocabulary.</b> Topics come from daily situations, so you can use them immediately.</li></ul>
+<p class="pnote">Also on offer: Seasonal Arabic Courses for children and teens, Study Abroad in Dubai, English courses for adults and professionals, and Arabic for nurseries and schools.</p></div></section>
+
+<section class="story" id="story"><div class="wrap"><h2>A family legacy in Arabic education</h2><p class="lead">As featured in Khaleej Times, ALC began in 1980 when Lebanese educator Maliha Wehbe opened the centre at the Dubai World Trade Centre and introduced her signature method: simplicity, cultural immersion and practical conversation.</p>
+<div class="sg"><div><p>Today her son Fadeel and grandson Georges keep refining the method. Proprietary materials such as the <b>Business and Social Arabic</b> series and the <b>Arabic Alphabet Guide</b> help students build confidence in real-world situations.</p><p style="margin-top:12px">In 2025 ALC joined the <b>International Association of Language Centres (IALC)</b>, the first member in Dubai, and added a new course, <b>English for Business Professionals</b>.</p></div>
+<blockquote>"Anyone who is serious to learn how to speak regular spoken Arabic in the region, must opt for ALC course... at ALC you really feel that you are seriously learning Arabic to start using it in your day to day life."<cite>Gurpreet Singh Anand, Beginners I</cite></blockquote></div>
+<div class="quotes"><blockquote>"The teacher is excellent and she ensures the class is not only productive but also enjoyable. I always look forward to my weekly class."<cite>Tameem Khader, Beginners I</cite></blockquote><blockquote>"Patient, well-informed teachers and a very friendly, supportive atmosphere. The emphasis is on everyday communication."<cite>Yani Lopez, Beginners III</cite></blockquote><blockquote>"The teachers use so many interactive games and activities that he doesn't even realize he's learning."<cite>Noor L., parent of a student</cite></blockquote></div></div></section>
+
+<section id="faq"><div class="wrap"><h2>Before you ask</h2>
+<details><summary>Which Arabic do you teach?</summary><p>Spoken Levantine Arabic, widely understood across the Arab world. Modern Standard Arabic is mostly formal writing and news; many students add it later.</p></details>
+<details><summary>I can read and write but not speak. Which level?</summary><p>Beginners I. The focus is speaking and conversation; the head teacher can run a short level interview.</p></details>
+<details><summary>Do I need the alphabet first?</summary><p>No. You can start with spoken Arabic right away and add reading and writing as you go.</p></details>
+<details><summary>What if I miss a class?</summary><p>Adults receive the class recording and notes, or can book a paid private make-up class. Children and teens get one fixed free make-up session per term.</p></details>
+<details><summary>Can we try before enrolling?</summary><p>Yes, there is a free trial class, with no pressure and no commitment.</p></details>
+<details><summary>Are books included?</summary><p>Course materials are provided by the centre.</p></details>
+<details><summary>How big are the classes?</summary><p>Adult group classes typically have 6 to 10 students; children and teens 8 to 10. Small enough that everyone speaks every lesson.</p></details>
+<details><summary>Do you offer online classes?</summary><p>Yes. Online and in-person options are both available, so you can pick the format that suits your schedule.</p></details>
+<details><summary>Is there a certificate?</summary><p>Adults receive a certificate of achievement at the end of each level. Children and teens receive one after three consecutive terms.</p></details>
+<details><summary>Do you run classes in school holidays?</summary><p>Yes, there are special intensive Seasonal Arabic Courses, and the centre also runs immersion programmes that mix language learning with cultural activities.</p></details>
+<details><summary>How old do children need to be?</summary><p>From age 3 (Reception level) up to 16, through to GCSE and AS level, grouped by age and level.</p></details>
+<details><summary>What about the refund policy?</summary><p>The centre has a strict refund and cancellation policy. Please read the terms or ask the office before enrolling.</p></details>
+</div></section>
+
+<section class="contact" id="visit"><div class="wrap"><h2>Visit or call</h2><div class="cg">
+<div class="cbox"><h3>Find us</h3><p>Arabic Language Centre<br>World Trade Centre, 4th Floor (Sheikh Rashid Tower), Dubai</p><p>Mon to Fri, 9:00 to 18:00</p></div>
+<div class="cbox"><h3>Adults &amp; corporate</h3><p>+971 4 331 5600</p><p>WhatsApp +971 54 321 6459</p><p>info@arabiclanguagecentre.com</p></div>
+<div class="cbox"><h3>Children &amp; teens</h3><p>WhatsApp +971 50 784 1165</p><p>alcc@arabiclanguagecentre.com</p></div></div></div></section>
+
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+<button id="as-btn" type="button" aria-label="Open assistant"><span aria-hidden="true">💬</span> Ask ALC</button>
+<div id="as-pan" role="dialog" aria-label="Assistant"><header><div>ALC assistant<small>Demo, answers from the centre's site</small></div><button id="as-x" type="button" aria-label="Close">×</button></header><div id="as-log" aria-live="polite"></div><div id="as-chips"></div><form id="as-form"><input id="as-in" autocomplete="off" aria-label="Your message"><button type="submit">Send</button></form><div id="as-note">Demo assistant. Nothing is sent; the team confirms every detail.</div></div>
+
+<script>
+/* assistant engine: matcher + widget (client-side only) */
+(function(root){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9Ѐ-ӿ؀-ۿ\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4)w=w.replace(/(ing|ed|es|s)$/,'');return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function hit(t,q){for(var i=0;i<q.length;i++){var w=q[i];if(w===t)return 1;if(t.length>=6&&w.length>=5){var lim=t.length>=8?2:1;if(Math.abs(t.length-w.length)<=lim&&lev(t,w)<=lim)return 1;}}return 0;}
+function answer(q,kb){var qt=toks(q),best=null,bs=0;if(!qt.length)return null;
+for(var i=0;i<kb.length;i++){var sc=0;for(var k=0;k<kb[i].k.length;k++){var pt=toks(kb[i].k[k]),ok=1;for(var p=0;p<pt.length;p++){if(!hit(pt[p],qt)){ok=0;break;}}if(ok)sc+=pt.length*2+1;}
+if(sc>bs){bs=sc;best=kb[i];}}
+return bs>=3?best:null;}
+function init(C){
+var $=function(s){return document.querySelector(s)};
+var btn=$('#as-btn'),pan=$('#as-pan'),log=$('#as-log'),inp=$('#as-in'),chips=$('#as-chips'),form=$('#as-form');
+var st={flow:-1,data:{}};
+function msg(t,who){var d=document.createElement('div');d.className='m '+who;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b);});}
+function ask(){var s=C.flow[st.flow];msg(s.q,'b');setChips(s.opts||[]);inp.placeholder=s.ph||'';inp.focus&&0;}
+function startFlow(){st.flow=0;st.data={};ask();}
+function finish(){var sum=C.flow.map(function(s){return s.label+': '+st.data[s.key]}).join('\n');msg(C.done+'\n\n'+sum,'b');st.flow=-1;setChips(C.chips);inp.placeholder=C.ph;}
+function send(t){t=(t||'').trim();if(!t)return;msg(t,'u');inp.value='';
+if(st.flow>=0){var n=norm(t);if(/^(cancel|stop|exit|back)$/.test(n)||(C.cancel&&C.cancel.test&&C.cancel.test(n))){st.flow=-1;msg(C.cancelMsg,'b');setChips(C.chips);return;}
+var s=C.flow[st.flow];if(s.opts&&!s.free){var m=s.opts.filter(function(o){return norm(o)===n||norm(o).indexOf(n)===0&&n.length>2})[0];if(!m){msg(s.retry||'Please pick one of the options.','b');setChips(s.opts);return;}t=m;}
+if(s.re&&!s.re.test(t)){msg(s.retry,'b');return;}
+st.data[s.key]=t;st.flow++;if(st.flow>=C.flow.length)finish();else ask();return;}
+var r=answer(t,C.kb);
+setTimeout(function(){if(r){msg(r.a,'b');if(r.flow)startFlow();else setChips(r.chips||C.chips);}else{msg(C.fallback,'b');setChips(C.chips);}},250);}
+btn.onclick=function(){pan.classList.toggle('open');if(pan.classList.contains('open')&&!log.children.length){msg(C.greet,'b');setChips(C.chips);}};
+$('#as-x').onclick=function(){pan.classList.remove('open')};
+form.onsubmit=function(e){e.preventDefault();send(inp.value)};
+document.querySelectorAll('[data-ask]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();if(!pan.classList.contains('open'))btn.onclick();var v=a.getAttribute('data-ask');if(v==='book')send(C.bookWord);else send(v);});});
+inp.placeholder=C.ph;}
+root.AS={norm:norm,answer:answer,init:init};
+if(typeof module!=='undefined')module.exports=root.AS;
+})(typeof window!=='undefined'?window:globalThis);
+
+var CFG={
+ph:'Ask about courses, trial class, prices...',bookWord:'Book a free trial class',
+greet:'Hi! I am the demo assistant for the Arabic Language Centre. Ask me about courses, levels, schedules or the free trial class.',
+chips:['Free trial class','Course prices','Kids classes','Upcoming schedule','Which dialect?','Book a free trial class'],
+fallback:'I do not have that detail, and I would rather not guess. The ALC team will confirm it: +971 4 331 5600, info@arabiclanguagecentre.com (Mon to Fri, 9:00 to 18:00).',
+cancelMsg:'No problem, request cancelled. Anything else?',
+done:'Sent to the team. The ALC team will confirm your trial class date and level (demo only: nothing is actually sent).',
+flow:[
+{key:'who',label:'For',q:'Great, let us set up a free trial class. Who is it for?',opts:['Myself (adult)','My child or teen','Our company team'],retry:'Please choose one of the options.'},
+{key:'fmt',label:'Format',q:'Which format interests you?',opts:['Group','Semi-private','Private','Not sure yet'],retry:'Please choose one of the options.'},
+{key:'lvl',label:'Level',q:'What is the starting level?',opts:['Complete beginner','Know some Arabic','Can read but not speak','Not sure'],retry:'Please choose one of the options.'},
+{key:'name',label:'Name',q:'Your name?',free:true,ph:'Your name',re:/\S{2}/,retry:'Please type your name.'},
+{key:'contact',label:'Contact',q:'Best phone number or e-mail for the team to reach you?',free:true,ph:'Phone or e-mail',re:/(\d{6,})|(@.+\..+)/,retry:'Please type a phone number or an e-mail address.'}
+],
+kb:[
+{k:['hello','hi','hey','good morning','good evening','salam','marhaba'],a:'Hello! Ask me about courses, prices, the free trial class or the schedule.'},
+{k:['trial','try a class','free class','sample class','test class','introductory'],a:'Yes, there is a free trial class: you join a small group, speaking comes first, no pressure and no commitment. For children the trial also lets the teachers assess their level. Type "book" and I will take your details for the team.'},
+{k:['book a free trial class','book','booking','enrol','enroll','register','sign up','reserve','join a class'],a:'Happy to help with that.',flow:true},
+{k:['price','pricing','cost','fee','how much','tuition','rate','afford'],a:'Prices published on the site. Adults: private from AED240, semi-private AED120, group from AED1,950. Children and teens (ages 3 to 16): group from AED95 per hour (min. 10 weeks per term), semi-private from AED120 per hour (group of 3, min. 8 sessions), private from AED240 per hour (min. 8 sessions). The team confirms the exact quote for your case.'},
+{k:['discount','promotion','offer','sibling','referral','refer a friend'],a:'For children and teens: 10% off tuition when you refer a friend who enrols, and 5% off for the 2nd and 3rd child (sibling discount). Other promotions come up occasionally; ask the team for current offers.'},
+{k:['dialect','levantine','standard arabic','msa','which arabic','what arabic','gulf','khaleeji'],a:'ALC teaches spoken Levantine Arabic, understood widely across the Arab world. Modern Standard Arabic is used mostly in formal writing and news; many students start with spoken Arabic and add MSA later.'},
+{k:['method','maliha','approach','how do you teach','teaching style','different'],a:'The Maliha Wehbe Method: Arabic made logical and practical, focused on real conversation, with listening, speaking, reading and writing taught together. It has been refined for over 45 years.'},
+{k:['level','levels','8 level','beginner','beginners','advanced','placement','assessment','my level','which level'],a:'ALC uses an 8-level system, from Beginners I to fluent speaker. If you already read and write but cannot speak, Beginners I is still the right start. For Arabic, the head teacher interviews you to place you; for English there is a free online placement test.'},
+{k:['schedule','upcoming','dates','start date','next course','when does','timetable','term','intake'],a:'Listed on the site for Beginners I: Sunday class Nov 1 to Dec 27; Mon and Wed (LT) Nov 2 to Dec 16; Tue and Thu (AM and PM) Nov 3 to Dec 17; intensive Mon to Fri Dec 7 to Dec 23 (LT and PM). The team confirms free seats.'},
+{k:['year old','years old','kid','kids','child','children','teen','teens','son','daughter','age','how old','school age','toddler'],a:'Children and teens from age 3 (Reception level) up to 16, through to GCSE and AS level, grouped by age and level. Games, songs, stories and role play; groups of 8 to 10; one fixed free make-up session per term; certificate after three consecutive terms.'},
+{k:['adult','adults','professional','working','part time','busy','evening'],a:'Adult courses are open from age 17. Group classes typically have 6 to 10 students, with flexible dates and timings. The aim stated on the site is practical spoken Arabic in about 6 weeks, with a certificate.'},
+{k:['corporate','company','companies','business','team training','staff','embassy','employees','b2b'],a:'Corporate Arabic and English programmes are tailored to the company and delivered on-site, online or hybrid. ALC has worked with over 100 organisations since 1980, including the British Embassy and Ducab. Use "Book a Meeting" on the Corporate page or contact the team.'},
+{k:['english','english course','business english','ielts'],a:'ALC also offers English courses, including English for Business Professionals (announced Feb 2025) and corporate English. There is a free online English placement test.'},
+{k:['online','zoom','remote','hybrid','distance','virtual'],a:'Yes, both online and in-person classes are offered, so you can choose the format that fits your schedule.'},
+{k:['location','address','where','world trade','wtc','metro','directions','find you','map','parking','sheikh rashid'],a:'ALC is on the 4th floor of the Dubai World Trade Centre (Sheikh Rashid Tower), with direct metro access.'},
+{k:['hours','open','opening','close','closing','time','weekend','saturday','sunday'],a:'Office hours: Monday to Friday, 9:00 to 18:00. Class times vary by course.'},
+{k:['phone','call','whatsapp','number','contact','email','mail','reach','talk to'],a:'Main line +971 4 331 5600. Adults and corporate: WhatsApp +971 54 321 6459, info@arabiclanguagecentre.com. Children and teens: WhatsApp +971 50 784 1165, alcc@arabiclanguagecentre.com.'},
+{k:['certificate','certified','accredited','khda','licensed','diploma'],a:'ALC is licensed by KHDA as an official education institute. Adults get a certificate of achievement at the end of each level; children and teens get one after three consecutive terms. ALC is also a member of the International Association of Language Centres (IALC).'},
+{k:['teacher','teachers','instructor','tutor','native','who teaches'],a:'Teachers are native Arabic speakers from the Levant (Lebanon, Jordan, Syria), hold at least a BA in education and receive continuous training.'},
+{k:['class size','how many students','group size','small group','students per'],a:'Adult group classes typically have 6 to 10 students (7 to 12 is also mentioned on the site); children and teens 8 to 10. The team confirms the size of your class.'},
+{k:['miss','missed','absent','make up','makeup','catch up','recording'],a:'Adults who miss a group lesson get the recording and notes, or can book a paid private make-up class. Children and teens get one fixed free make-up session per term.'},
+{k:['pay','payment','card','cash','transfer','bank','invoice','link'],a:'Payment is accepted in cash, by card at the office, through an online payment link, or by bank transfer.'},
+{k:['refund','cancel','cancellation','money back','policy'],a:'ALC has a strict refund and cancellation policy; please read the terms or ask the team for the current details before enrolling.'},
+{k:['material','buy books','need books','textbook','course material','handout'],a:'Course materials are provided by the centre; you do not need to buy books.'},
+{k:['holiday','summer','seasonal','intensive','school break','camp','vacation'],a:'There are special intensive Arabic courses during school holidays (Seasonal Arabic Courses for children and teens).'},
+{k:['immersion','study abroad','abroad','cultural'],a:'ALC runs immersion and study-abroad style programmes that combine language learning with cultural activities in Dubai. The team will confirm current dates and details.'},
+{k:['nursery','nurseries','schools','school partnership','partner'],a:'ALC works with schools and nurseries, with Arabic language programmes for them. Contact the team to discuss a programme.'},
+{k:['alphabet','read','write','reading','writing','script','letters'],a:'You do not need the alphabet first: you can start with spoken Arabic right away and develop reading and writing alongside speaking and listening.'},
+{k:['how long','fast','fluent','fluency','how quickly','weeks','speak'],a:'It varies by person. After one term students can typically hold conversations on Beginners I topics, and the course page aims at practical spoken Arabic in under 6 weeks of regular classes.'},
+{k:['difficult','hard','easy','scared','intimidating','struggle'],a:'Arabic has a reputation for being hard, but the Maliha Method makes the logic visible and focuses on practical conversation, so complete beginners can get going quickly.'},
+{k:['history','founded','since','established','story','maliha wehbe','family','7000','graduates'],a:'ALC was founded in 1980 at the Dubai World Trade Centre by Lebanese educator Maliha Wehbe. Over 45 years and more than 7,000 graduates; her son Fadeel and grandson Georges continue her method.'},
+{k:['minimum age','too old','too young','age limit','17'],a:'Adult courses are open from age 17. Children and teens classes cover ages 3 to 16.'},
+{k:['placement test','level test','english test','free test','english level'],a:'For English there is a free online placement test on the site. For Arabic, the head teacher holds a short interview to find the right level; contact the team to schedule it.'},
+{k:['semi private','semi-private','with a friend','with my wife','with my husband','partner class','two people'],a:'Semi-private lets you learn with a partner, friend or family member: shared goals, more personal attention than a group and more dynamic than private. Adults AED120; children and teens from AED120 per hour in a group of 3 (min. 8 sessions).'},
+{k:['private','one to one','1 to 1','individual','personal tutor','one on one'],a:'Private classes: a flexible schedule built around your lifestyle, your exact goals (work, daily life, travel, exams) and your speed. Adults from AED240; children and teens from AED240 per hour (min. 8 sessions).'},
+{k:['group class','group lesson','group course','classroom'],a:'Group classes: learn with like-minded students at your level in interactive, speaking-focused sessions. Adults from AED1,950; children and teens from AED95 per hour (min. 10 weeks per term).'},
+{k:['wait','waiting list','full','seats','availability','available'],a:'I cannot see live seat availability. The team confirms free seats for each class, so please contact them or use the booking option here.'},
+{k:['expat','foreigner','tourist','new to dubai','relocat','moving'],a:'Many students are expats who want to use Arabic at work and in daily life in Dubai; you do not need any prior Arabic to start.'},
+{k:['news','blog','khaleej','press','article'],a:'ALC was featured in Khaleej Times (March 2025) in a piece about how one family keeps the centre legacy alive. News and updates are on the site blog.'},
+{k:['gallery','photos','pictures','classroom photos'],a:'There is a Gallery page on the site with photos of the centre and classes.'},
+{k:['social','instagram','facebook','linkedin'],a:'ALC is on Facebook, Instagram (arabiclanguagecentre.ae) and LinkedIn.'},
+{k:['thanks','thank you','ok thanks','great','perfect'],a:'You are welcome! Anything else I can help with?'}
+]};
+
+
+AS.init(CFG);
+</script>
+</body>
+</html>
