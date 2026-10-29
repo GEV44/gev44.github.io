@@ -1,0 +1,98 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>대한관광여행사 OTT Sydney · 데모</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d1a2d;--ink:#161922;--teal:#14b3c6;--mint:#4edceb;--sand:#f3f1ea;--gv:#0d1a2d;--gvt:#fff;--gvf:'Noto Sans KR',sans-serif;--gvr:14px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:var(--sand);line-height:1.65;overflow-x:hidden}
+img{max-width:100%}a{color:inherit}
+header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:3px solid var(--teal);display:flex;align-items:center;justify-content:space-between;padding:8px 16px;gap:10px}
+.lg{background:#fff;display:flex;align-items:center}.lg img{height:34px;width:auto;display:block}
+nav{display:none;gap:18px;font-size:14px;font-weight:500}nav a{text-decoration:none}
+.call{background:var(--navy);color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:9px 14px;border-radius:999px;white-space:nowrap}
+.hero{background:var(--navy);color:#fff;padding:44px 16px 56px;position:relative;overflow:hidden}
+.hero:after{content:"1976";position:absolute;right:-10px;bottom:-34px;font:900 150px/1 'Noto Serif KR',serif;color:rgba(78,220,235,.09)}
+.hero .in{max-width:1060px;margin:auto;position:relative;z-index:1}
+.eyebrow{color:var(--mint);font-weight:700;letter-spacing:.08em;font-size:13px}
+h1{font:900 clamp(30px,8vw,56px)/1.18 'Noto Serif KR',serif;margin:10px 0 16px}
+.hero p{max-width:560px;color:#cfd8e6;margin:0 0 22px}
+.btn{display:inline-block;background:var(--mint);color:var(--navy);font-weight:700;border:0;font-family:inherit;font-size:15px;padding:13px 22px;border-radius:12px;text-decoration:none;cursor:pointer}
+.btn.o{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);margin-left:8px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#d9d5c8;max-width:1060px;margin:-28px 16px 0;position:relative;z-index:2;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.stats div{background:#fff;padding:16px;text-align:center}.stats b{display:block;font:900 26px 'Noto Serif KR',serif;color:var(--teal)}.stats span{font-size:12.5px;color:#555}
+section{padding:54px 16px;max-width:1060px;margin:auto}h2{font:900 clamp(24px,5vw,34px)/1.25 'Noto Serif KR',serif;margin:0 0 6px}.sub{color:#5b6070;margin:0 0 26px}
+.grid{display:grid;grid-template-columns:1fr;gap:12px}
+.t{background:#fff;border-radius:14px;padding:18px;border-left:5px solid var(--teal);min-width:0}.t h3{margin:2px 0 4px;font-size:17px}.t p{margin:0 0 10px;font-size:14px;color:#555}.t b{font:900 20px 'Noto Serif KR',serif;color:var(--navy)}.tm{font-size:12px;font-weight:700;color:var(--teal);letter-spacing:.04em}
+.band{background:var(--navy);color:#fff;max-width:none}.band .w{max-width:1060px;margin:auto}.svc{display:grid;grid-template-columns:1fr;gap:10px;margin-top:20px}.svc div{border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 16px;min-width:0}.svc b{color:var(--mint);display:block}
+details{background:#fff;border-radius:12px;margin-bottom:8px;padding:2px 16px}summary{cursor:pointer;font-weight:700;padding:13px 0}details p{margin:0 0 14px;color:#444}
+.ct{display:grid;gap:12px;grid-template-columns:1fr}.ct div{background:#fff;border-radius:14px;padding:18px;min-width:0;word-wrap:break-word}.ct b{display:block;color:var(--teal);font-size:13px}
+footer{background:#0a1220;color:#9aa6bb;text-align:center;padding:22px 16px;font-size:13px}
+@media(min-width:760px){nav{display:flex}.grid{grid-template-columns:1fr 1fr 1fr}.svc{grid-template-columns:repeat(3,1fr)}.ct{grid-template-columns:repeat(3,1fr)}.stats{grid-template-columns:repeat(4,1fr);margin:-28px auto 0}.hero{padding:80px 24px 90px}header{padding:10px 32px}}
+#gv-assistant{position:fixed;right:14px;bottom:14px;z-index:99;font-family:var(--gvf,system-ui,sans-serif)}
+#gv-assistant .gv-fab{border:0;cursor:pointer;background:var(--gv,#0a7);color:var(--gvt,#fff);font:600 15px var(--gvf,system-ui);padding:13px 18px;border-radius:var(--gvr,999px);box-shadow:0 6px 22px rgba(0,0,0,.28)}
+#gv-assistant .gv-panel{display:none;position:fixed;right:10px;bottom:10px;width:min(370px,calc(100vw - 20px));height:min(540px,calc(100vh - 20px));background:#fff;color:#1b1b1b;border-radius:16px;box-shadow:0 14px 50px rgba(0,0,0,.35);flex-direction:column;overflow:hidden}
+#gv-assistant.open .gv-panel{display:flex}#gv-assistant.open .gv-fab{display:none}
+.gv-head{background:var(--gv,#0a7);color:var(--gvt,#fff);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:15px}
+.gv-head small{display:block;font-weight:400;opacity:.85;font-size:12px}
+.gv-x{background:none;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1}
+.gv-log{flex:1;overflow-y:auto;padding:12px;background:#f4f5f7;display:flex;flex-direction:column;gap:8px}
+.gv-m{max-width:86%;padding:9px 12px;border-radius:14px;font-size:14px;line-height:1.45;white-space:pre-wrap;word-wrap:break-word}
+.gv-bot{background:#fff;align-self:flex-start;border:1px solid #e3e5ea}.gv-me{background:var(--gv,#0a7);color:var(--gvt,#fff);align-self:flex-end}
+.gv-chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px 0;background:#fff;max-height:92px;overflow-y:auto}
+.gv-chips button{border:1px solid var(--gv,#0a7);background:#fff;color:var(--gv,#0a7);border-radius:999px;padding:6px 11px;font-size:13px;cursor:pointer;font-family:inherit}
+.gv-form{display:flex;gap:6px;padding:8px 10px 10px;background:#fff}
+.gv-in{flex:1;min-width:0;border:1px solid #cfd3da;border-radius:10px;padding:10px;font-size:16px;font-family:inherit}
+.gv-form button{border:0;background:var(--gv,#0a7);color:var(--gvt,#fff);border-radius:10px;padding:0 14px;font-size:14px;cursor:pointer;font-family:inherit}
+
+</style></head><body>
+<header><a class="lg" href="#"><img src="img/orient-express-tour-travel-logo.jpg" alt="대한관광여행사 OTT Sydney"></a><nav><a href="#tours">투어</a><a href="#policy">규정</a><a href="#about">회사 소개</a><a href="#contact">연락처</a></nav><a class="call" href="tel:+61292350000">투어 문의</a></header>
+<div class="hero"><div class="in"><div class="eyebrow">SYDNEY · 한국어 가이드 투어</div><h1>1976년부터,<br>시드니 한인 여행의 기준</h1><p>일일투어부터 항공권, 숙박, 전세버스까지. 시드니 타운홀과 스트라스필드에서 매년 5만 명 이상의 고객과 함께하는 대한관광여행사입니다.</p><button class="btn" onclick="__startFlow()">투어 예약 접수</button><a class="btn o" href="#tours">투어 보기</a></div></div>
+<div class="stats"><div><b>1976</b><span>설립</span></div><div><b>5만+</b><span>연간 고객</span></div><div><b>90+</b><span>항공사 즉석 발권</span></div><div><b>4곳</b><span>시드니 · 서울 · 오클랜드</span></div></div>
+<section id="tours"><h2>시드니 일일투어</h2><p class="sub">홈페이지에 게시된 상품입니다. 최소 4명 모객 시 출발합니다.</p><div class="grid"><article class="t"><div class="tm">1일 · 매일 출발</div><h3>포트스테판</h3><p>시드니에서 약 2시간 반, 자연과 액티비티</p><b>AU $145</b></article><article class="t"><div class="tm">1일 · 매일 출발</div><h3>블루마운틴 + 페더데일 동물원</h3><p>세자매봉, 에코포인트, 유칼립투스 숲</p><b>AU $105</b></article><article class="t"><div class="tm">1일 · 화/금 출발</div><h3>블루마운틴 + 지그재그 레일웨이</h3><p>NEW 일정</p><b>AU $165</b></article><article class="t"><div class="tm">별밤A 매일 출발</div><h3>선셋 별보기 블루마운틴</h3><p>동물원 포함 별밤B AU $100</p><b>AU $80</b></article><article class="t"><div class="tm">1일 · 월/수/토</div><h3>헌터밸리 와인투어 + 감성카페</h3><p>시음비 포함</p><b>AU $170</b></article><article class="t"><div class="tm">1일 · 화/목/일</div><h3>시드니 남부투어</h3><p>울릉공 · 심비오 동물원 · 키야마 · 로열내셔널 파크</p><b>AU $155</b></article><article class="t"><div class="tm">1일</div><h3>시드니 시티 야경투어</h3><p>현지 가이드와 함께</p><b>AU $100</b></article><article class="t"><div class="tm">반일 · 화/목</div><h3>모닝 / 선셋 워킹 투어</h3><p>시드니 도심 도보</p><b>AU $30</b></article><article class="t"><div class="tm">반일 · 약 3시간</div><h3>공항 픽업 + 동부해안</h3><p>본다이 · 갭 파크 · 더들리 페이지</p><b>AU $95</b></article><article class="t"><div class="tm">1일 · 토 출발</div><h3>캔버라 투어</h3><p>호주의 수도</p><b>AU $190</b></article></div></section>
+<section class="band" id="services"><div class="w"><h2>여행에 필요한 모든 것</h2><div class="svc"><div><b>일일관광 · 인바운드</b>시드니와 호주 전역 투어</div><div><b>항공권</b>IATA 회원사, 90개 이상 항공사 즉석 발권</div><div><b>숙박 · 허니문 · 배낭여행</b>FIT, 배낭여행객, 허니문 투어</div><div><b>전세버스(Charter)</b>회사 직접 보유 버스</div><div><b>멜번 · 케언즈 · 울룰루</b>퍼스, 브리즈번/골드코스트도</div><div><b>뉴질랜드 · 고국 여행</b>한국 여행 상품 포함</div></div></div></section>
+<section id="policy"><h2>예약 전 확인하세요</h2><p class="sub">공식 홈페이지 안내 기준입니다.</p>
+<details open><summary>취소 · 환불 규정</summary><p>여행일 4일 전까지: 전액 환불<br>3일 전까지: 상품 금액의 50% 공제<br>2일 전~당일 또는 노쇼: 취소/변경/환불 불가<br>날짜 변경은 출발 3일 전 1회 가능 (현지 시각 기준)</p></details>
+<details><summary>필수 안내 사항</summary><p>미팅 시간에 늦으면 참여 및 중간 합류가 불가합니다. 여행자 보험은 불포함입니다. 투어는 비가 와도 진행됩니다. 캐리어 반입과 카시트 제공은 불가합니다.</p></details>
+<details><summary>공항 픽업 투어 미팅 장소</summary><p>국제선은 입국장 맥도날드 앞, 국내선은 짐 찾는 곳 앞입니다. 예약 시 항공 일정, 호텔명과 주소, 비상 연락처, 카톡 ID가 필요합니다. 1인당 캐리어 1개로 제한됩니다.</p></details></section>
+<section id="faq"><h2>자주 묻는 질문</h2><p class="sub">오른쪽 아래 도우미에게 바로 물어봐도 됩니다.</p>
+<details><summary>최소 몇 명이 모여야 출발하나요?</summary><p>최소 4명입니다. 모객이 부족하면 투어가 취소될 수 있으며, 이 경우 변경 또는 환불이 가능합니다.</p></details>
+<details><summary>투어에 무엇이 포함되나요?</summary><p>한국어 가이드와 차량이 포함됩니다. 개인 비용, 여행자 보험, 점심, 아기용 카시트는 포함되지 않습니다. 상품별 세부 사항은 직원이 확인해 드립니다.</p></details>
+<details><summary>비가 오면 어떻게 되나요?</summary><p>투어 당일 비가 와도 진행됩니다. 현지 상황이나 천재지변으로 일정 순서와 일부 일정이 바뀔 수 있습니다.</p></details>
+<details><summary>날짜를 바꿀 수 있나요?</summary><p>출발 3일 전까지 1회 변경할 수 있습니다. 여행일은 현지 시각 기준입니다.</p></details>
+<details><summary>짐은 가져갈 수 있나요?</summary><p>일일투어에는 캐리어 반입이 불가합니다. 공항 픽업 상품은 1인당 캐리어 1개까지 가능하며 그 이상은 담당자 확인이 필요합니다.</p></details>
+<details><summary>항공권도 여기서 구매할 수 있나요?</summary><p>IATA 회원사로서 90개 이상의 해외 항공사 티켓을 즉석 발권합니다. 항공 문의 전화로 연락해 주세요.</p></details>
+<details><summary>시드니 외 지역 투어도 있나요?</summary><p>멜번, 케언즈, 브리즈번/골드코스트, 울룰루, 퍼스와 뉴질랜드, 고국 여행 상품이 있습니다. 목록은 공식 홈페이지에서 확인할 수 있습니다.</p></details>
+</section>
+<section id="about"><h2>대한관광여행사 소개</h2><p>1976년 남태평양 한인 사회에 최초로 설립되어 호주에서 가장 큰 아시아 여행사 중 하나로 성장했습니다. 시드니 타운홀과 스트라스필드에 있으며 서울과 오클랜드에 직영 지점이 있습니다.</p></section>
+<section id="contact"><h2>연락처</h2><div class="ct"><div><b>투어 문의</b>+61 (0) 2 9235 0000<br>tours@ottsydney.com</div><div><b>항공 문의</b>+61 (0) 2 9744 2000<br>+61 (0) 2 9235 1111</div><div><b>스트라스필드 사무실</b>102 / 4 The Boulevarde, Strathfield NSW 2135<br>카카오톡 채널: 대한관광여행사</div></div><p class="sub" style="margin-top:14px">영업시간은 직원에게 확인해 주세요.</p></section>
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+<div id="gv-assistant"><button class="gv-fab" type="button">💬 투어 문의</button><div class="gv-panel" role="dialog" aria-label="OTT 투어 도우미"><div class="gv-head"><div>OTT 투어 도우미<small>대한관광여행사 · 데모</small></div><button class="gv-x" type="button" aria-label="x">&times;</button></div><div class="gv-log"></div><div class="gv-chips"></div><form class="gv-form"><input class="gv-in" autocomplete="off" aria-label="OTT 투어 도우미"><button type="submit">전송</button></form></div></div><script>(function(){
+var C={"ui": {"fab": "💬 투어 문의", "hello": "안녕하세요! 대한관광여행사(OTT Sydney) 안내 도우미입니다. 투어, 취소 규정, 공항 픽업, 항공권 등을 물어보세요.", "ph": "질문을 입력하세요", "cancel": "취소", "cancelled": "접수를 취소했습니다. 궁금한 점을 계속 물어보세요.", "sum": "접수 내용을 정리했어요.", "done": "팀에 전달되었습니다 (데모이므로 실제로는 전송되지 않습니다). 담당자가 확인 후 연락드립니다.", "unknown": "정확한 정보는 직원이 확인해 드려야 합니다. 투어 문의 +61 (0) 2 9235 0000 또는 tours@ottsydney.com 으로 연락해 주세요."}, "chips": ["시드니 일일투어", "공항 픽업 투어", "취소·환불 규정", "항공권 문의", "투어 예약 접수"], "bookRe": "(예약|신청|접수|book)", "kb": [{"k": ["일일투어", "일일 투어", "데이투어", "당일", "day tour", "시드니 투어", "어떤 투어", "투어 종류", "추천"], "a": "시드니 일일투어는 포트스테판, 블루마운틴(페더데일 동물원 포함), 지그재그 레일웨이, 별보기 선셋 블루마운틴, 울릉공·키야마 남부투어, 헌터밸리 와인투어, 시드니 시티 야경·워킹 투어, 캔버라 투어 등이 있습니다. 출발 요일과 요금은 아래 투어 목록에서 확인하세요."}, {"k": ["포트스테판", "포트 스테판", "port stephens", "사막", "모래언덕", "샌드보딩"], "a": "포트스테판 1일 투어는 매일 출발, AU $145입니다. 시드니에서 약 2시간 반 거리입니다. 블루마운틴과 묶은 2일 콤보(사막+블루 콤보)는 AU $240입니다."}, {"k": ["블루마운틴", "블루 마운틴", "blue mountain", "페더데일", "featherdale", "동물원", "코알라", "캥거루", "쿼카"], "a": "블루마운틴 + 페더데일 동물원 투어는 매일 출발, AU $105입니다. 지그재그 레일웨이를 포함한 투어는 화/금 출발, AU $165입니다. 캥거루/쿼카 먹이 제공은 예고 없이 종료될 수 있습니다."}, {"k": ["별", "별보기", "별밤", "선셋 별", "stargaz"], "a": "선셋 별보기 블루마운틴은 매일 출발입니다. 별밤A(기본) AU $80, 별밤B(페더데일 동물원 포함) AU $100입니다."}, {"k": ["헌터밸리", "헌터 밸리", "와인", "hunter", "시음"], "a": "헌터밸리 와인투어 + 감성카페는 월/수/토 출발, AU $170이며 시음비가 포함되어 있습니다."}, {"k": ["울릉공", "키야마", "심비오", "남부", "wollongong", "kiama", "로열내셔널"], "a": "시드니 남부투어(울릉공 + 심비오 동물원 + 키야마 + 로열내셔널 파크)는 화/목/일 출발, AU $155입니다."}, {"k": ["워킹", "걷기", "도보", "walking", "야경", "시티 투어", "시내"], "a": "시드니 모닝 워킹 투어와 선셋 워킹 투어는 화/목 출발, 각 AU $30입니다. 시드니 시티 야경투어는 AU $100입니다."}, {"k": ["캔버라", "canberra", "수도"], "a": "캔버라 투어(호주 수도)는 토요일 출발, AU $190입니다. 시드니에서 약 280km 거리입니다."}, {"k": ["공항", "픽업", "pickup", "pick up", "airport", "도착", "드랍"], "a": "공항 픽업 + 동부해안 투어는 약 3시간, 한국어 가이드와 함께 공항 미팅 후 본다이 비치, 갭 파크, 더들리 페이지를 둘러보고 시티 숙소까지 드랍합니다 (AU $95). 예약 시 항공 일정, 도착 시간, 호텔명과 주소, 비상 연락처, 카톡 ID가 필요합니다. 국제선은 입국장 맥도날드 앞, 국내선은 짐 찾는 곳 앞에서 미팅하며, 가이드님의 안내에 따라 주차장에서 만날 수도 있습니다."}, {"k": ["취소", "환불", "변경", "날짜 변경", "노쇼", "noshow", "no show", "refund", "cancel"], "a": "취소/환불 규정: 여행일 4일 전까지 취소하면 전액 환불, 3일 전까지는 상품 금액의 50% 공제, 2일 전~당일 또는 노쇼는 취소/변경/환불이 불가합니다 (여행일은 현지 시각 기준). 날짜 변경은 출발 3일 전까지 1회 가능합니다."}, {"k": ["최소", "인원", "4명", "모객"], "a": "투어는 최소 4명이 모여야 진행되며, 모객이 부족하면 취소될 수 있습니다. 이 경우 변경 또는 환불해 드립니다."}, {"k": ["포함", "불포함", "보험", "점심", "식사"], "a": "한국어 가이드와 차량이 포함됩니다. 여행자 보험, 개인 비용, 점심, 아기용 카시트는 포함되지 않으며 여행자 보험은 개별 준비를 권해 드립니다. 상품별 세부 포함 사항은 직원이 확인해 드립니다."}, {"k": ["카시트", "캐리어", "짐", "가방", "유모차"], "a": "투어에는 캐리어 반입과 카시트 제공이 불가합니다. 공항 픽업 상품은 1인당 캐리어 1개로 제한되며 추가 짐은 담당자와 확인이 필요합니다."}, {"k": ["늦", "지각", "미팅 시간", "합류"], "a": "미팅 시간에 늦으면 투어에 참여할 수 없고 중간 합류도 불가합니다. 미팅 시간은 손님 항공 일정과 모객 상황에 따라 개별 안내됩니다."}, {"k": ["비가", "우천", "날씨", "비 오", "비오"], "a": "투어 당일 비가 와도 투어는 진행됩니다. 현지 상황이나 천재지변으로 일정 일부가 변동될 수 있습니다."}, {"k": ["항공권", "항공", "비행기", "발권", "iata"], "a": "항공권은 IATA 회원사로서 90개 이상의 해외 항공사 티켓을 즉석 발권합니다. 항공 문의 +61 (0) 2 9744 2000 또는 +61 (0) 2 9235 1111 로 연락해 주세요."}, {"k": ["호텔", "숙박", "숙소"], "a": "숙박 예약도 취급합니다. 호텔 예약 조건은 직원이 확인 후 안내드립니다."}, {"k": ["멜번", "멜버른", "케언즈", "브리즈번", "골드코스트", "울룰루", "퍼스", "뉴질랜드", "한국 여행", "고국"], "a": "시드니 외에도 멜번, 케언즈, 브리즈번/골드코스트, 울룰루, 퍼스 투어와 뉴질랜드, 고국(한국) 여행 상품이 있습니다. 상품 목록은 공식 홈페이지 ottsydney.com 에서 확인할 수 있습니다."}, {"k": ["버스", "전세", "charter", "차터", "단체"], "a": "회사가 직접 보유한 버스로 전세(charter) 서비스를 제공합니다. 단체 일정은 직원이 확인 후 안내드립니다."}, {"k": ["회사", "소개", "역사", "1976", "설립", "위치", "어디", "주소", "지점", "스트라스필드", "타운홀", "서울", "오클랜드"], "a": "1976년 남태평양 한인 사회에 최초로 설립되어 호주에서 가장 큰 아시아 여행사 중 하나로 성장했습니다. 시드니 타운홀과 스트라스필드에 있으며 서울과 오클랜드에 직영 지점이 있습니다. 주소: 102 / 4 The Boulevarde, Strathfield NSW 2135."}, {"k": ["전화", "연락", "카카오", "카톡", "이메일", "메일", "문의", "번호", "연락처"], "a": "투어 문의 +61 (0) 2 9235 0000, 항공 문의 +61 (0) 2 9744 2000 / +61 (0) 2 9235 1111, 이메일 tours@ottsydney.com, 카카오톡 채널 대한관광여행사."}, {"k": ["영업", "운영 시간", "몇 시", "시간", "휴무"], "a": "영업시간은 홈페이지에 표시되어 있지 않아 직원이 확인해 드립니다. 전화 +61 (0) 2 9235 0000 으로 문의해 주세요."}, {"k": ["한국어", "가이드", "영어"], "a": "투어는 한국어 가이드 안내로 진행됩니다. 일부 상품에는 영어 투어 안내(Korea English Tour)도 있으며, 자세한 내용은 직원이 확인해 드립니다."}], "flow": [{"q": "어떤 투어를 원하시나요?", "l": "투어", "opts": ["포트스테판", "블루마운틴 + 페더데일", "별보기 블루마운틴", "헌터밸리 와인", "공항 픽업 투어", "캔버라"]}, {"q": "희망 날짜를 알려주세요. (예: 11월 20일)", "l": "희망 날짜", "ph": "날짜"}, {"q": "참가 인원은 몇 명인가요?", "l": "인원", "opts": ["1명", "2명", "3명", "4명 이상"]}, {"q": "성함과 연락처(카톡 ID 또는 전화번호)를 남겨주세요.", "l": "성함/연락처", "ph": "이름, 카톡 ID"}]};
+function norm(s){return (s||'').toLowerCase().replace(/[’']/g,'').replace(/[^\p{L}\p{N}\s]/gu,' ').replace(/\s+/g,' ').trim();}
+function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;var m=[],i,j;for(i=0;i<=a.length;i++){m[i]=[i];}for(j=1;j<=b.length;j++)m[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return m[a.length][b.length];}
+function score(q,e){var qt=q.split(' '),s=0;e.k.forEach(function(kw){kw=norm(kw);if(!kw)return;
+ if(q.indexOf(kw)>-1){s+=kw.length+2;return;}
+ if(kw.indexOf(' ')<0&&/^[a-z0-9]+$/.test(kw)&&kw.length>=5){for(var i=0;i<qt.length;i++){var t=qt[i];if(t.length<4)continue;
+  if(t.length>=5&&(t.indexOf(kw.slice(0,Math.max(4,kw.length-2)))===0)){s+=kw.length*0.8;break;}
+  var d=lev(t,kw);if(d<=(kw.length>=8?2:1)){s+=kw.length*0.7;break;}}}});return s;}
+function answer(text){var q=norm(text);if(!q)return null;var best=null,bs=0;C.kb.forEach(function(e){var s=score(q,e);if(s>bs){bs=s;best=e;}});return bs>=3?best:null;}
+window.__answer=answer;
+var root=document.getElementById('gv-assistant');if(!root)return;
+var $=function(s){return root.querySelector(s)};
+var log=$('.gv-log'),inp=$('.gv-in'),chips=$('.gv-chips');
+var flow=null;
+function add(t,who){var d=document.createElement('div');d.className='gv-m gv-'+who;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b);});}
+function startFlow(){flow={i:0,a:[]};ask();}
+function ask(){var s=C.flow[flow.i];add(s.q,'bot');setChips((s.opts||[]).concat([C.ui.cancel]));inp.placeholder=s.ph||C.ui.ph;}
+function finish(){var lines=C.flow.map(function(s,i){return s.l+': '+flow.a[i]}).join('\n');add(C.ui.sum+'\n'+lines+'\n\n'+C.ui.done,'bot');flow=null;setChips(C.chips);inp.placeholder=C.ui.ph;}
+function send(text){text=(text||'').trim();if(!text)return;add(text,'me');inp.value='';
+ if(flow){if(norm(text)===norm(C.ui.cancel)){flow=null;add(C.ui.cancelled,'bot');setChips(C.chips);return;}
+  flow.a.push(text);flow.i++;if(flow.i>=C.flow.length)finish();else ask();return;}
+ var q=norm(text);if(C.bookRe&&new RegExp(C.bookRe,'u').test(q)){startFlow();return;}
+ var e=answer(text);if(e){add(e.a,'bot');if(e.then==='flow'){startFlow();}else setChips(C.chips);}else{add(C.ui.unknown,'bot');setChips(C.chips);}}
+$('.gv-fab').onclick=function(){root.classList.toggle('open');if(root.classList.contains('open')&&!log.children.length){add(C.ui.hello,'bot');setChips(C.chips);}};
+$('.gv-x').onclick=function(){root.classList.remove('open')};
+$('.gv-form').onsubmit=function(e){e.preventDefault();send(inp.value)};
+window.__openGv=function(){if(!root.classList.contains('open'))$('.gv-fab').onclick();};
+window.__startFlow=function(){window.__openGv();startFlow();};
+})();
+</script></body></html>

@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Vagabond Hotel Miami | Retro boutique hotel in the MiMo District</title>
+<meta name="description" content="Demo page for The Vagabond Hotel Miami: rooms, direct-booking perks, policies and a stay-request assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f7edda;--paper:#fffaf0;--teal:#0e6f73;--deep:#093c40;--coral:#e4572e;--sun:#f2b134;--ink:#1c2a2b;--mute:#5b6b6c;--line:#e3d4b4;
+--wa:#0e6f73;--wa2:#e4572e;--wt:#fff;--wt2:#fff;--wb:#fffaf0;--wi:#1c2a2b;--wl:#e3d4b4;--wbot:#f0e3c7;--wf:'Outfit',system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:17px/1.55 'Outfit',system-ui,sans-serif;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Abril Fatface',Georgia,serif;font-weight:400;line-height:1.05;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+/* header */
+header.top{position:sticky;top:0;z-index:40;background:var(--deep);color:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px}
+.brand{display:flex;align-items:center;background:var(--teal);padding:7px 14px;border-radius:0 0 14px 14px;margin-bottom:-14px;box-shadow:0 4px 0 var(--coral)}
+.brand img{height:38px;width:auto}
+nav.menu{display:none;gap:22px;font-weight:500;font-size:15px}
+nav.menu a{text-decoration:none;opacity:.9}
+nav.menu a:hover{opacity:1;color:var(--sun)}
+.btn{display:inline-block;border:0;border-radius:999px;padding:12px 22px;font:600 16px 'Outfit',sans-serif;text-decoration:none;cursor:pointer;background:var(--coral);color:#fff;box-shadow:0 4px 0 #a73a1a;transition:transform .12s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:var(--sun);color:var(--ink);box-shadow:0 4px 0 #b9831c}
+.btn.sm{padding:9px 16px;font-size:14px}
+/* hero */
+.hero{position:relative;background:var(--teal);color:#fff;overflow:hidden;padding:56px 0 70px}
+.hero::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:repeating-radial-gradient(circle,var(--sun) 0 10px,transparent 10px 26px);opacity:.35}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:26px;background:radial-gradient(circle at 18px 26px,var(--cream) 17px,transparent 18px) 0 0/36px 26px repeat-x}
+.hero .wrap{position:relative;display:grid;gap:26px}
+.eyebrow{font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--sun)}
+.hero h1{font-size:clamp(40px,10vw,76px);margin:10px 0 14px}
+.hero p.lead{font-size:19px;max-width:520px;margin:0 0 22px;color:#e8f6f4}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.badges{display:grid;gap:12px;align-content:start;min-width:0}
+.badge{background:var(--paper);color:var(--ink);border-radius:18px;padding:14px 16px;display:flex;gap:14px;align-items:center;box-shadow:6px 6px 0 var(--deep)}
+.badge b{font-family:'Abril Fatface',serif;font-size:30px;color:var(--coral);line-height:1;min-width:54px;text-align:center}
+.badge span{font-size:15px;line-height:1.3}
+/* sections */
+section{padding:58px 0}
+.sec-h{margin-bottom:26px;max-width:640px}
+.sec-h h2{font-size:clamp(32px,7vw,48px);color:var(--deep)}
+.sec-h p{color:var(--mute);margin:10px 0 0}
+.strip{background:var(--deep);color:#fff;padding:34px 0}
+.strip h2{font-size:clamp(28px,6vw,40px);color:var(--sun);margin-bottom:18px}
+.dist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.dist div{border:2px dashed rgba(255,255,255,.35);border-radius:14px;padding:12px;font-size:14px;line-height:1.3}
+.dist b{display:block;font-family:'Abril Fatface',serif;font-size:30px;color:var(--sun);font-weight:400}
+.rooms{display:grid;gap:18px}
+.room{position:relative;background:var(--paper);border-radius:22px;padding:22px 22px 24px;border:2px solid var(--ink);overflow:hidden;min-width:0}
+.room .tag{position:absolute;right:14px;top:14px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--sun)}
+.room h3{font-size:28px;margin:26px 0 8px}
+.room p{margin:0 0 12px;color:#394a4b}
+.room ul{margin:0;padding-left:18px;color:var(--mute);font-size:15px}
+.room:nth-child(1){background:#d8efec}.room:nth-child(2){background:#fde3d8}.room:nth-child(3){background:#fbeec1}.room:nth-child(4){background:#e3e8f6}
+.direct{background:var(--coral);color:#fff;border-radius:26px;padding:30px 24px;display:grid;gap:18px;position:relative;overflow:hidden}
+.direct::after{content:"10%";position:absolute;right:-6px;bottom:-34px;font:400 150px/1 'Abril Fatface',serif;opacity:.16}
+.direct h2{font-size:clamp(32px,7vw,50px)}
+.direct ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.direct li::before{content:"\2605";color:var(--sun);margin-right:8px}
+.two{display:grid;gap:26px;align-items:start}
+.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;margin:0;padding:0;list-style:none;font-size:15px}
+.checks li{padding-left:22px;position:relative}
+.checks li::before{content:"";position:absolute;left:0;top:.5em;width:10px;height:10px;border-radius:50%;background:var(--teal)}
+.pool{background:var(--paper);border-radius:26px;padding:26px;border:2px solid var(--ink);box-shadow:8px 8px 0 var(--teal)}
+.facts{display:grid;gap:0;border:2px solid var(--ink);border-radius:18px;overflow:hidden;background:var(--paper)}
+.facts div{display:flex;justify-content:space-between;gap:12px;padding:13px 16px;border-bottom:1px solid var(--line)}
+.facts div:last-child{border-bottom:0}
+.facts b{font-weight:600}.facts span{text-align:right;color:var(--mute);min-width:0}
+details{background:var(--paper);border:2px solid var(--ink);border-radius:16px;padding:0 18px;margin-bottom:10px}
+summary{cursor:pointer;padding:15px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"+";font-size:22px;color:var(--coral);line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{margin:0 0 15px;color:#394a4b}
+.contact{background:var(--deep);color:#fff;border-radius:26px;padding:30px 24px;display:grid;gap:18px}
+.contact h2{font-size:clamp(30px,6vw,44px);color:var(--sun)}
+.contact a{color:var(--sun)}
+footer{padding:30px 0 90px;text-align:center;color:var(--mute);font-size:14px}
+@media(min-width:760px){
+nav.menu{display:flex}
+.hero .wrap{grid-template-columns:1.25fr .9fr;align-items:center}
+.dist{grid-template-columns:repeat(5,minmax(0,1fr))}
+.rooms{grid-template-columns:repeat(2,minmax(0,1fr))}
+.direct{grid-template-columns:1.2fr 1fr;align-items:center;padding:40px}
+.two{grid-template-columns:1fr 1fr}
+.contact{grid-template-columns:1.3fr 1fr;padding:40px}
+}
+@media(min-width:1000px){.rooms{grid-template-columns:repeat(4,minmax(0,1fr))}}
+#gw-fab{position:fixed;right:16px;bottom:16px;z-index:60;border:0;border-radius:999px;padding:13px 18px;font:600 15px/1 var(--wf,inherit);background:var(--wa);color:var(--wt);box-shadow:0 8px 24px rgba(0,0,0,.28);cursor:pointer;display:flex;gap:8px;align-items:center}
+#gw-fab:focus-visible,#gw button:focus-visible,#gw input:focus-visible{outline:3px solid var(--wa2);outline-offset:2px}
+#gw{position:fixed;right:12px;bottom:76px;z-index:61;width:min(380px,calc(100vw - 24px));height:min(540px,calc(100vh - 100px));display:none;flex-direction:column;background:var(--wb);color:var(--wi);border:1px solid var(--wl);border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.35);font:15px/1.4 var(--wf,inherit)}
+#gw.open{display:flex}
+#gw header{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--wa);color:var(--wt)}
+#gw header b{font-size:15px}#gw header small{display:block;opacity:.85;font-size:12px}
+#gw-x{background:none;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1;padding:0 4px}
+#gw-msgs{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.gw-m{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-wrap;word-wrap:break-word;overflow-wrap:anywhere}
+.gw-m.bot{background:var(--wbot);align-self:flex-start;border-bottom-left-radius:4px}
+.gw-m.me{background:var(--wa2);color:var(--wt2);align-self:flex-end;border-bottom-right-radius:4px}
+#gw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px;max-height:110px;overflow:auto}
+#gw-chips button{border:1px solid var(--wa);background:transparent;color:var(--wi);border-radius:999px;padding:6px 11px;font:13px var(--wf,inherit);cursor:pointer}
+#gw-chips button:hover{background:var(--wa);color:var(--wt)}
+#gw-form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--wl)}
+#gw-in{flex:1;min-width:0;border:1px solid var(--wl);border-radius:10px;padding:10px;font:15px var(--wf,inherit);background:#fff;color:#222}
+#gw-form button{border:0;border-radius:10px;padding:0 14px;background:var(--wa);color:var(--wt);font:600 14px var(--wf,inherit);cursor:pointer}
+#gw .gw-foot{font-size:11px;opacity:.6;text-align:center;padding:0 8px 8px}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="#top" aria-label="The Vagabond Hotel Miami"><img src="img/the-vagabond-hotel-miami-logo.png" alt="The Vagabond Hotel Miami" width="322" height="121"></a>
+<nav class="menu"><a href="#rooms">Rooms</a><a href="#direct">Book direct</a><a href="#pool">Pool &amp; amenities</a><a href="#info">Good to know</a><a href="#faq">FAQ</a><a href="#visit">Find us</a></nav>
+<a class="btn sm" href="#visit" data-gw="book">Request a stay</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<div class="eyebrow">7301 Biscayne Boulevard &middot; Miami</div>
+<h1>Stay here. Go everywhere.</h1>
+<p class="lead">A restored mid-century hotel in Miami's historic MiMo District. Palm trees, a vintage pool with a mermaid at the bottom, free parking and no resort fees.</p>
+<div class="cta"><a class="btn" href="#" data-gw="book">Request a stay</a><a class="btn alt" href="#rooms">See the rooms</a></div>
+</div>
+<div class="badges">
+<div class="badge"><b>2026</b><span>Selected in the MICHELIN Guide</span></div>
+<div class="badge"><b>11</b><span>years in a row, Tripadvisor Travelers' Choice</span></div>
+<div class="badge"><b>NRHP</b><span>Listed on the National Register of Historic Places</span></div>
+</div>
+</div></div>
+
+<div class="strip"><div class="wrap">
+<h2>Close enough. Calm enough.</h2>
+<div class="dist">
+<div><b>10</b>min to Midtown &amp; the Design District</div>
+<div><b>12</b>min to Wynwood's murals and galleries</div>
+<div><b>15</b>min to Downtown and its venues</div>
+<div><b>20</b>min to PortMiami and the airport</div>
+<div><b>25</b>min to South Beach</div>
+</div></div></div>
+
+<section id="rooms"><div class="wrap">
+<div class="sec-h"><h2>Pick your room</h2><p>Four room types around the courtyard pool. Rooms are on two floors; the hotel has no elevator, so ask for the ground floor if stairs are a problem.</p></div>
+<div class="rooms">
+<article class="room"><span class="tag">Most space</span><h3>Electra Deluxe</h3><p>310-355 sq ft, with an extra sitting area, sofa, mini-fridge and Keurig coffeemaker.</p><ul><li>Room for the whole playlist</li><li>Mini-fridge and coffeemaker</li></ul></article>
+<article class="room"><span class="tag">King</span><h3>Galaxie King</h3><p>Retro-chic and spacious: king bed with a hypoallergenic mattress, plush bedding, a cozy sitting bench and a work desk.</p><ul><li>Work desk and sitting bench</li></ul></article>
+<article class="room"><span class="tag">Two beds</span><h3>Skylark Double</h3><p>Two full-size, super comfy beds for family or friends traveling together.</p><ul><li>Connecting rooms are limited; request when booking</li></ul></article>
+<article class="room"><span class="tag">ADA</span><h3>Catalina King</h3><p>Ground-floor accessible room with a roll-in rain shower, a larger vanity and added visual alarms, plus extra space to move.</p><ul><li>Keurig coffeemaker included</li></ul></article>
+</div>
+</div></section>
+
+<section id="direct" style="padding-top:0"><div class="wrap">
+<div class="direct">
+<div><h2>Book direct, save up to 10%</h2><p style="margin:12px 0 0;max-width:420px">The best available rate, no third-party layers, and a front desk that can actually help.</p></div>
+<div><b>Stay 3 nights or more, take 10% off the whole stay</b>
+<ul style="margin-top:12px"><li>Free high-speed Wi-Fi</li><li>Complimentary parking</li><li>All-day tea and coffee</li><li>2 bottles of water daily</li></ul>
+<p style="font-size:14px;opacity:.9;margin:12px 0 16px">Subject to availability; offer is for a limited time.</p>
+<a class="btn alt" href="#" data-gw="book">Ask about my dates</a></div>
+</div>
+<div class="rooms" style="margin-top:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))">
+<article class="room" style="background:var(--paper);padding:18px"><h3 style="margin:0 0 6px;font-size:22px">No hidden fees</h3><p style="margin:0">No resort fees, free parking and free Wi-Fi are part of the stay.</p></article>
+<article class="room" style="background:var(--paper);padding:18px"><h3 style="margin:0 0 6px;font-size:22px">Flexible options</h3><p style="margin:0">Request a ground-floor room, connecting rooms or an early check-in when you book.</p></article>
+<article class="room" style="background:var(--paper);padding:18px"><h3 style="margin:0 0 6px;font-size:22px">A real desk</h3><p style="margin:0">Staffed 24 hours at 305-400-8420, before and during your stay.</p></article>
+</div>
+</div></section>
+
+<section id="pool" style="padding-top:20px"><div class="wrap two">
+<div class="pool"><h2 style="font-size:clamp(30px,6vw,42px);color:var(--deep);margin-bottom:12px">The pool is the plan</h2>
+<p style="margin:0 0 14px">A vintage outdoor pool in a landscaped courtyard, open year-round for guests. Loungers, palms and a mermaid posed at the bottom.</p>
+<p style="margin:0;color:var(--mute);font-size:15px">Rumored to be a former Rat Pack hideaway. We'll never tell.</p></div>
+<div><h3 style="font-size:28px;margin-bottom:14px;color:var(--deep)">In every room</h3>
+<ul class="checks"><li>Free high-speed Wi-Fi</li><li>Smart 40-inch TVs</li><li>Hypoallergenic Italian mattresses</li><li>Rainfall walk-in showers</li><li>Robes and bedding</li><li>Free bottled water</li><li>Work station</li><li>Laptop safe</li><li>Hairdryer and iron</li><li>Individual AC, ceiling fans</li><li>1950s-style custom furniture</li><li>Original terrazzo floors</li></ul>
+<p style="color:var(--mute);font-size:14px;margin-top:14px">Mini-fridge and Keurig: Electra Deluxe and Catalina King rooms.</p></div>
+</div></section>
+
+<section id="info" style="background:var(--paper);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)"><div class="wrap two">
+<div class="sec-h" style="margin:0"><h2>Good to know</h2><p>The questions guests ask before they book, straight from the hotel's policies page.</p></div>
+<div class="facts">
+<div><b>Check-in</b><span>from 3:00 PM</span></div>
+<div><b>Check-out</b><span>11:00 AM</span></div>
+<div><b>Front desk</b><span>staffed 24 hours</span></div>
+<div><b>Minimum age</b><span>21 with photo ID</span></div>
+<div><b>Deposit</b><span>one night + taxes, 72 h before</span></div>
+<div><b>Cancel free until</b><span>3 PM ET, 72 h before arrival</span></div>
+<div><b>Parking / resort fee</b><span>free / none</span></div>
+<div><b>Pets</b><span>service animals only</span></div>
+</div></div></section>
+
+<section id="hood" style="padding-top:10px"><div class="wrap">
+<div class="sec-h"><h2>The MiMo neighborhood</h2><p>Miami Modernism, on Biscayne Boulevard. The hotel sits in the historic district, away from the noise but close to everything.</p></div>
+<div class="rooms" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))">
+<article class="room" style="background:#fff"><h3 style="margin-top:6px;font-size:24px">Wynwood</h3><p>Murals, bars and indie galleries, about 12 minutes by car.</p></article>
+<article class="room" style="background:#fff"><h3 style="margin-top:6px;font-size:24px">Design District</h3><p>Fashion, dining and contemporary art, about 10 minutes away in Midtown.</p></article>
+<article class="room" style="background:#fff"><h3 style="margin-top:6px;font-size:24px">Downtown</h3><p>Kaseya Center, Bayfront Park, PAMM, Frost Science and the Arsht Center, about 15 minutes.</p></article>
+<article class="room" style="background:#fff"><h3 style="margin-top:6px;font-size:24px">Beach &amp; port</h3><p>South Beach in about 25 minutes; PortMiami and the airport in about 20.</p></article>
+</div>
+<blockquote style="margin:28px 0 0;padding:18px 20px;border-left:6px solid var(--coral);background:var(--paper);border-radius:0 16px 16px 0;font-size:18px"><span style="font-family:'Abril Fatface',serif;font-size:24px;display:block;color:var(--deep)">&ldquo;We hit the jackpot in Miami.&rdquo;</span>Guest review shown on the hotel's site: an impeccably restored hotel that feels like a hidden treasure, with a pool and outdoor space of pure vintage glamour.<span style="display:block;font-size:14px;color:var(--mute);margin-top:6px">Joe Cioffi, Google</span></blockquote>
+</div></section>
+
+<section id="faq"><div class="wrap" style="max-width:780px">
+<div class="sec-h"><h2>Quick answers</h2></div>
+<details><summary>Can I check in early or late?</summary><p>Early check-in may be available on the day, subject to room availability, and a fee may apply. The front desk is staffed 24 hours, so you can arrive at any time, even after midnight. They will store your luggage if you arrive early.</p></details>
+<details><summary>Is breakfast included? Is there a restaurant?</summary><p>No free breakfast, but complimentary coffee is in the lobby 24 hours a day. The hotel's restaurant space is under renovation and not operating right now. The MiMo District has several breakfast spots within walking distance.</p></details>
+<details><summary>Are children and pets welcome?</summary><p>Children are welcome; guests under 21 must be accompanied by an adult. Pets are not allowed, except service animals as required by law.</p></details>
+<details><summary>Is there an elevator?</summary><p>No. The hotel has two floors, with rooms on both around the courtyard pool. You can request a ground-floor room when booking, subject to availability.</p></details>
+<details><summary>Can I host a group or an event?</summary><p>Yes: private events, meetings, group room blocks and full-property buyouts. Call 305-400-8420 or email enquiries@thevagabondhotelmiami.com.</p></details>
+<details><summary>What payments do you accept?</summary><p>All major credit and debit cards. Personal and company checks are not accepted. The name on the card must match the guest checking in, and a valid government photo ID is required. A refundable incidental authorization is placed at check-in.</p></details>
+<details><summary>Is smoking allowed?</summary><p>Rooms are non-smoking; there is a designated outdoor smoking area. A cleaning fee applies if someone smokes inside a room.</p></details>
+<details><summary>How far is the hotel from the airport, the beach and the cruise port?</summary><p>By the hotel's own figures: about 2 miles to Wynwood, 2.5 to the Design District, 5 to PortMiami (15-20 minutes), 6 to Miami Beach (15-20 minutes) and 8 to Miami International Airport (15-20 minutes), depending on traffic.</p></details>
+<details><summary>Do rooms have coffee makers and mini-fridges?</summary><p>Keurig coffee makers are in Electra Deluxe and Catalina King (ADA) rooms. Mini-fridges come with the deluxe rooms. Other room types do not have in-room coffee makers, but coffee is free in the lobby.</p></details>
+<details><summary>Is there a gym or a business center?</summary><p>Yes to both: an on-site fitness room, and a small workstation in the lobby for email and printing boarding passes. Ask the front desk for photocopies.</p></details>
+<details><summary>Can the hotel receive my package?</summary><p>Yes, for registered guests, for a fee per package per day. The charge applies only to packages delivered before your arrival.</p></details>
+<details><summary>Is there a best-rate guarantee?</summary><p>Booking through the hotel's website or by phone gets you the best available rate, avoids third-party fees and puts you in direct contact with the team before and during your stay.</p></details>
+</div></section>
+
+
+<section id="visit" style="padding-top:0"><div class="wrap">
+<div class="contact">
+<div><h2>Find the Vagabond</h2><p style="margin:12px 0 0">7301 Biscayne Boulevard, in the historic MiMo District, Miami.</p>
+<p style="margin:10px 0 0">Front desk: <a href="tel:+13054008420">305-400-8420</a><br>Reservations: <a href="mailto:reservations@thevagabondhotelmiami.com" style="overflow-wrap:anywhere">reservations@thevagabondhotelmiami.com</a><br>Groups and events: <a href="mailto:enquiries@thevagabondhotelmiami.com" style="overflow-wrap:anywhere">enquiries@thevagabondhotelmiami.com</a></p></div>
+<div style="align-self:center"><a class="btn" href="#" data-gw="book">Request a stay</a><p style="font-size:14px;opacity:.85;margin:14px 0 0">Or ask the assistant in the corner about parking, check-in, rooms and more.</p></div>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap">Demo &middot; prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="gw-fab" type="button" aria-expanded="false" aria-controls="gw">Ask the front desk</button>
+<section id="gw" aria-label="Hotel assistant">
+<header><div><b>Vagabond assistant</b><small>Answers from the hotel's own pages</small></div><button id="gw-x" type="button" aria-label="Close">&times;</button></header>
+<div id="gw-msgs" aria-live="polite"></div>
+<div id="gw-chips"></div>
+<form id="gw-form" autocomplete="off"><input id="gw-in" type="text" placeholder="Type your question" aria-label="Your message"><button type="submit">Send</button></form>
+<div class="gw-foot">Demo assistant. Nothing you type is sent anywhere.</div>
+</section>
+<script>
+var CFG={
+hello:"Hi! I'm the Vagabond assistant. Ask about rooms, check-in, parking, the pool or how to book direct.",
+fallback:"I don't have that on the site. The front desk will confirm: 305-400-8420 or enquiries@thevagabondhotelmiami.com. Want to send a stay request instead?",
+chips:["Book a stay","Check-in / check-out","Parking & fees","Pets?","Rooms","Where are you?"],
+kb:[
+{k:["hello","hi","hey","good morning","good evening"],a:"Hello! What would you like to know about the Vagabond?"},
+{k:["book","reserve","reservation","booking","stay request","availability","available","request a room","i want a room"],flow:true},
+{k:["check in","checkin","arrive","arrival","early check in","what time check in","luggage","bags"],a:"Check-in starts at 3:00 PM. Early check-in may be possible on the day, subject to availability, and a fee may apply. The front desk is staffed 24 hours, so late arrivals are fine, and they will store your luggage if you arrive early.",chips:["Check-out","Book a stay","Cancellation"]},
+{k:["check out","checkout","late check out","leave","departure","what time check out"],a:"Check-out is 11:00 AM. Late check-out may be available depending on occupancy; ask the front desk that morning. A late check-out fee may apply.",chips:["Check-in","Book a stay"]},
+{k:["room","rooms","room type","suite","electra","galaxie","skylark","catalina","king","double","bed","beds","sleep"],a:"Four room types: Electra Deluxe (310-355 sq ft, sitting area with sofa, mini-fridge, Keurig), Galaxie King (king bed, sitting bench, work desk), Skylark Double (two full-size beds) and Catalina King (ADA, ground floor, roll-in rain shower). All have hypoallergenic bedding, Smart TVs and rainfall showers.",chips:["Accessible rooms","Connecting rooms","Book a stay"]},
+{k:["ada","accessible","accessibility","wheelchair","disabled","disability","mobility","roll in shower","ground floor"],a:"The Catalina King is ADA-accessible on the ground floor, with a roll-in rain shower, a larger vanity and visual alarms. Ground-floor rooms can also be requested when booking, subject to availability. There is no elevator.",chips:["Book a stay","Elevator"]},
+{k:["elevator","lift","stairs","floors","floor","how many floors","two floors"],a:"The hotel has two floors, with rooms on the ground and second floor around the courtyard pool. There is no elevator; ask for a ground-floor room when booking.",chips:["Accessible rooms","Book a stay"]},
+{k:["connecting","connect","adjoining","family rooms","two rooms next"],a:"A limited number of connecting rooms exist (two sets). Request one when booking; it depends on availability.",chips:["Book a stay","Rooms"]},
+{k:["pool","swim","swimming","mermaid","courtyard","sun","loungers"],a:"There is a vintage outdoor pool in a landscaped courtyard, open year-round for guests (with a mermaid at the bottom). Pool opening hours are not listed on the site, so the front desk will confirm.",chips:["Rooms","Gym"]},
+{k:["gym","fitness","workout","exercise"],a:"Yes, guests can use the on-site fitness room.",chips:["Pool","Amenities"]},
+{k:["parking","park","car","self parking","valet","garage"],a:"Complimentary on-site self-parking is included for hotel guests.",chips:["Resort fees","Book a stay"]},
+{k:["resort fee","resort fees","hidden fee","extra charge","extra fees","no fees","fees"],a:"No resort fees. Parking and Wi-Fi are free, and the site promises no hidden fees when you book direct. Some optional things carry fees: early check-in, late check-out, and package handling. A refundable incidental authorization is held at check-in.",chips:["Parking","Deposit","Book a stay"]},
+{k:["wifi","wi fi","internet","wireless"],a:"Complimentary high-speed Wi-Fi in all rooms and across the property.",chips:["Amenities"]},
+{k:["breakfast","coffee","food","restaurant","bar","eat","dining","drink","hungry","lunch","dinner"],a:"No free breakfast, but there is complimentary coffee in the lobby around the clock. The hotel restaurant is under renovation and not operating right now. The MiMo District has breakfast spots within walking distance; the site has a neighborhood dining guide.",chips:["Where are you?","Amenities"]},
+{k:["pet","pets","dog","cat","animal","service animal","puppy"],a:"Pets are not allowed, except service animals as required by law.",chips:["Smoking","Age policy"]},
+{k:["smoke","smoking","cigarette","vape","non smoking"],a:"Rooms are non-smoking. Smoking is allowed only in the designated outdoor area. Smoking in a room brings a cleaning fee.",chips:["Pets?","Parking"]},
+{k:["age","21","minimum age","kids","children","child","family","under 21","minor"],a:"Guests must be 21 or older to check in, with a government photo ID and a credit card in the reservation name. Children are welcome, and anyone under 21 must be with an adult for the whole stay.",chips:["Payment & ID","Connecting rooms"]},
+{k:["payment","pay","card","credit card","cash","cheque","check payment","id","photo id","identification","incidental"],a:"All major credit and debit cards are accepted; personal and company checks are not. The card name must match the guest checking in, with a valid government photo ID. A refundable incidental authorization is placed at check-in and released after departure.",chips:["Deposit","Cancellation"]},
+{k:["deposit","prepay","charged","72 hours","charge before arrival"],a:"A deposit equal to one night's room rate plus taxes is charged to the card on file 72 hours before arrival.",chips:["Cancellation","Payment & ID"]},
+{k:["cancel","cancellation","refund","cancel booking","change booking","modify","policy"],a:"To avoid a charge of one night plus taxes, cancel by 3:00 PM Eastern, at least 72 hours before arrival. Specials, packages and prepaid bookings can differ, so check your confirmation.",chips:["Deposit","Book a stay"]},
+{k:["where","address","location","directions","find you","biscayne","mimo","map"],a:"7301 Biscayne Boulevard, in Miami's historic MiMo District.",chips:["Distances","Parking","Contact"]},
+{k:["near","far","distance","how far","wynwood","design district","beach","south beach","airport","port","portmiami","cruise","downtown","kaseya","midtown","minutes","drive"],a:"By car: about 10 minutes to Midtown and the Design District, 12 to Wynwood, 15 to Downtown, 20 to PortMiami and Miami International, 25 to South Beach. The FAQ lists miles too: Wynwood about 2, South Beach about 6, the airport about 8, PortMiami about 5.",chips:["Parking","Book a stay"]},
+{k:["phone","call","telephone","contact","email","mail","reach","talk to","speak","human","staff","front desk"],a:"Front desk: 305-400-8420 (staffed 24 hours). Groups and events: enquiries@thevagabondhotelmiami.com. Reservations: reservations@thevagabondhotelmiami.com.",chips:["Book a stay","Groups & events"]},
+{k:["group","event","events","meeting","wedding","buyout","party","corporate","film shoot","private"],a:"Yes: private events, meetings, group room blocks and full-property buyouts. Call 305-400-8420 or write enquiries@thevagabondhotelmiami.com to discuss dates.",chips:["Contact","Book a stay"]},
+{k:["price","prices","rate","rates","cost","how much","cheap","expensive","per night","tariff"],a:"Rates depend on dates and room type, so I won't guess. Booking direct on the site or by phone gives the best available rate with no third-party fees, and there are no resort fees. Send a stay request and the team will quote.",chips:["Book a stay","Direct booking perks"]},
+{k:["direct","book direct","discount","deal","special","offer","promo","promotion","save","3 nights","three nights","10%","perks","coupon"],a:"Booking direct saves up to 10% and gets the best available rate. The current special: stay 3 nights or more for 10% off, including free Wi-Fi, parking, all-day tea and coffee and 2 bottles of water daily. Subject to availability and limited time.",chips:["Book a stay","Cancellation"]},
+{k:["amenities","amenity","tv","fridge","mini fridge","robe","coffee maker","keurig","hairdryer","hair dryer","iron","safe","shower","toiletries","desk","bedding"],a:"In-room: hypoallergenic Italian mattresses, Smart 40-inch TVs, rainfall walk-in showers, robes, laptop safe, hairdryer, iron, work station, individual AC and free bottled water. Mini-fridge and Keurig come with Electra Deluxe and Catalina King rooms only.",chips:["Rooms","Wi-Fi"]},
+{k:["history","historic","rat pack","michelin","tripadvisor","award","landmark","mid century","retro","vintage","about"],a:"A restored mid-century landmark on the National Register of Historic Places, rumored to be a former Rat Pack hideaway. Selected in the MICHELIN Guide 2026, and a Tripadvisor Travelers' Choice winner 11 years running.",chips:["Rooms","Pool"]},
+{k:["package","packages","delivery","deliver","parcel"],a:"Packages can be accepted for registered guests for a fee per package per day; it only applies to deliveries that arrive before check-in.",chips:["Contact"]},
+{k:["business center","workstation","print","printing","boarding pass","work","laptop"],a:"There is a small workstation in the lobby for email and printing boarding passes. Ask the front desk for photocopies.",chips:["Wi-Fi","Amenities"]},
+{k:["thanks","thank","thank you","great","cheers"],a:"You're welcome! Anything else about the Vagabond?"}
+],
+flow:{intro:"Happy to pass a stay request to the front desk. A few quick questions (type cancel to stop).",
+steps:[
+{key:"name",label:"Name",q:"What name should the reservation be under?",ph:"Full name"},
+{key:"arr",label:"Arrival",q:"Arrival date? Check-in starts at 3 PM.",ph:"e.g. 14 Nov"},
+{key:"nights",label:"Nights",q:"How many nights? (3 or more qualifies for the direct special.)",chips:["1","2","3","4+"]},
+{key:"guests",label:"Guests",q:"How many guests? Everyone must be 21+ unless with an adult.",chips:["1","2","3","4"]},
+{key:"room",label:"Room",q:"Which room type?",chips:["Electra Deluxe","Galaxie King","Skylark Double","Catalina King (ADA)","No preference"]},
+{key:"note",label:"Requests",q:"Any request? Ground floor, connecting rooms, early check-in.",chips:["Ground floor","Connecting rooms","Early check-in","None"]},
+{key:"contact",label:"Contact",q:"Best email or phone for the reply?",ph:"email or phone"}],
+done:"Thank you! Your stay request is sent to the team. They will reply with availability and the best direct rate. (Demo: nothing is actually sent.)"}
+};
+
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem1(w){if(w.length>4)w=w.replace(/(ing|ed|ly)$/,'');if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))w=w.slice(0,-1);return w;}
+function stem(w){return stem1(stem1(w));}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function same(a,b){if(a===b)return true;var l=Math.min(a.length,b.length);if(l>=5&&lev(a,b)<=1)return true;if(l>=9&&lev(a,b)<=2)return true;return false;}
+function idx(qt,t){for(var i=0;i<qt.length;i++)if(same(qt[i],t))return i;return -1;}
+function prep(KB){KB.forEach(function(it){it._k=it.k.map(function(k){return toks(k);});});return KB;}
+function match(KB,q){var qt=toks(q);if(!qt.length)return null;var best=null,bs=0;KB.forEach(function(it){var cov={},bonus=0;it._k.forEach(function(kt){if(!kt.length)return;var ids=[];for(var a=0;a<kt.length;a++){var x=idx(qt,kt[a]);if(x<0)return;ids.push(x);}ids.forEach(function(x){cov[x]=1;});if(kt.length>1)bonus+=1;});var s=Object.keys(cov).length*2+bonus;if(s>bs){bs=s;best=it;}});return bs>=2?best:null;}
+
+(function(){
+var KB=prep(CFG.kb),$=function(i){return document.getElementById(i)};
+var box=$('gw-msgs'),chips=$('gw-chips'),form=$('gw-form'),inp=$('gw-in'),panel=$('gw'),fab=$('gw-fab');
+var flow=null,fi=0,ans={};
+function add(t,me){var d=document.createElement('div');d.className='gw-m '+(me?'me':'bot');d.textContent=t;box.appendChild(d);box.scrollTop=box.scrollHeight;}
+function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c);};chips.appendChild(b);});}
+function ask(){var s=CFG.flow.steps[fi];add(s.q);setChips(s.chips);inp.placeholder=s.ph||'Type here';}
+function startFlow(){flow=true;fi=0;ans={};add(CFG.flow.intro);ask();}
+function finish(){var lines=CFG.flow.steps.map(function(s){return s.label+': '+(ans[s.key]||'-');});add(CFG.flow.done+'\n\n'+lines.join('\n'));flow=null;setChips(CFG.chips);}
+function send(t){t=(t||'').trim();if(!t)return;add(t,true);inp.value='';
+ if(flow){if(/^(cancel|stop|exit)$/i.test(t)){flow=null;add('No problem, request cancelled.');setChips(CFG.chips);return;}
+  var s=CFG.flow.steps[fi];ans[s.key]=t;fi++;if(fi>=CFG.flow.steps.length)finish();else ask();return;}
+ var m=match(KB,t);
+ if(m&&m.flow){startFlow();return;}
+ if(m){setTimeout(function(){add(m.a);setChips(m.chips||CFG.chips);},150);}
+ else{setTimeout(function(){add(CFG.fallback);setChips(CFG.chips);},150);}
+}
+form.onsubmit=function(e){e.preventDefault();send(inp.value);};
+function open(o){panel.classList.toggle('open',o);fab.setAttribute('aria-expanded',o);if(o&&!box.children.length){add(CFG.hello);setChips(CFG.chips);}}
+fab.onclick=function(){open(!panel.classList.contains('open'));};
+$('gw-x').onclick=function(){open(false);};
+document.querySelectorAll('[data-gw]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();open(true);var v=a.getAttribute('data-gw');if(v==='book')startFlow();});});
+})();
+
+</script>
+</body>
+</html>

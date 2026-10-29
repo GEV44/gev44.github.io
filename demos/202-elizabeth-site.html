@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>202 Elizabeth | Boutique hotel in Surry Hills, Sydney</title>
+<meta name="description" content="Demo page for 202 Elizabeth, Surry Hills: rooms, rooftop, dog-friendly stays, offers and a booking-request assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#12100e;--bg2:#1a1612;--panel:#211c17;--gold:#c9a45c;--gold2:#e6cf9d;--rose:#8f2f45;--ivory:#f3ead8;--mute:#a79c88;--line:rgba(201,164,92,.35);
+--wa:#c9a45c;--wa2:#8f2f45;--wt:#14100c;--wt2:#fff;--wb:#1a1612;--wi:#f3ead8;--wl:rgba(201,164,92,.4);--wbot:#2a231c;--wf:'Jost',system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ivory);font:300 17px/1.65 'Jost',system-ui,sans-serif;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;margin:0;line-height:1.05}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.gold{color:var(--gold)}
+/* header: centered logo, links under */
+header.top{background:var(--bg);border-bottom:1px solid var(--line);text-align:center;padding:16px 0 10px;position:sticky;top:0;z-index:40}
+header.top img{height:40px;width:auto;margin:0 auto 6px}
+header.top nav{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 22px;font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+header.top nav a{text-decoration:none;color:var(--gold2);padding:4px 0}
+header.top nav a:hover{color:#fff}
+.btn{display:inline-block;border:1px solid var(--gold);background:var(--gold);color:#14100c;padding:13px 30px;font:500 13px 'Jost',sans-serif;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.btn:hover{background:transparent;color:var(--gold)}
+.btn.ghost{background:transparent;color:var(--gold)}
+.btn.ghost:hover{background:var(--gold);color:#14100c}
+/* hero */
+.hero{position:relative;text-align:center;padding:84px 0 90px;background:radial-gradient(ellipse at 50% 0,#2c231a 0,var(--bg) 70%);overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;left:50%;top:0;width:2px;height:46px;background:var(--gold)}
+.hero::after{top:auto;bottom:0}
+.deco{position:absolute;inset:18px;border:1px solid var(--line);pointer-events:none}
+.deco::before{content:"";position:absolute;inset:6px;border:1px solid rgba(201,164,92,.15)}
+.hero .kick{font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold)}
+.hero h1{font-size:clamp(46px,12vw,104px);margin:18px 0 6px;font-weight:400;letter-spacing:.02em}
+.hero h1 em{font-style:italic;color:var(--gold2)}
+.hero p{max-width:560px;margin:14px auto 28px;color:#d8ccb4;font-size:18px}
+.welcome{display:inline-block;margin-bottom:26px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:10px 18px;font-size:14px;letter-spacing:.06em;color:var(--gold2)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+section{padding:70px 0}
+.h2{text-align:center;margin-bottom:38px}
+.h2 small{display:block;font-size:12px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.h2 h2{font-size:clamp(34px,7vw,56px)}
+.h2 p{max-width:560px;margin:12px auto 0;color:var(--mute)}
+/* rooms: numbered rows */
+.row{display:grid;gap:6px 24px;padding:26px 0;border-top:1px solid var(--line);align-items:baseline;min-width:0}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row .n{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--gold);line-height:1}
+.row h3{font-size:clamp(30px,6vw,40px)}
+.row p{margin:0;color:#d8ccb4}
+.row .meta{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+/* feature panels */
+.feat{display:grid;gap:0;border:1px solid var(--line)}
+.feat>div{padding:34px 26px;min-width:0}
+.feat>div+div{border-top:1px solid var(--line)}
+.feat h3{font-size:34px;margin-bottom:10px;color:var(--gold2)}
+.feat p{margin:0 0 10px;color:#d8ccb4}
+.feat .tagline{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px}
+.dog{background:linear-gradient(135deg,#2a1b20,#1a1214);position:relative;overflow:hidden}
+.dog::after{content:"";position:absolute;right:-40px;bottom:-40px;width:150px;height:150px;border:1px solid var(--rose);border-radius:50%;opacity:.7}
+/* offers */
+.offers{display:grid;gap:16px}
+.offer{background:var(--panel);border:1px solid var(--line);padding:26px 24px;position:relative;min-width:0}
+.offer .pct{font-family:'Cormorant Garamond',serif;font-size:60px;color:var(--gold);line-height:.9}
+.offer h3{font-size:28px;margin:8px 0 10px}
+.offer ul{padding-left:18px;margin:0 0 12px;color:#d8ccb4;font-size:15px}
+.offer small{color:var(--mute);display:block;font-size:12px;letter-spacing:.04em}
+/* location */
+.loc{display:grid;gap:0;border:1px solid var(--line);background:var(--bg2)}
+.loc div{display:flex;justify-content:space-between;gap:12px;padding:15px 20px;border-bottom:1px solid var(--line)}
+.loc div:last-child{border-bottom:0}
+.loc b{font-weight:400;color:var(--gold2)}
+.loc span{text-align:right;min-width:0}
+.cols{display:grid;gap:28px}
+details{border-bottom:1px solid var(--line);padding:0}
+summary{cursor:pointer;list-style:none;padding:16px 0;font-family:'Cormorant Garamond',serif;font-size:22px;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"+";color:var(--gold)}
+details[open] summary::after{content:"\2212"}
+details p{margin:0 0 16px;color:#d8ccb4}
+.contact{text-align:center;background:radial-gradient(ellipse at 50% 100%,#2c231a 0,var(--bg) 70%);border-top:1px solid var(--line)}
+.contact h2{font-size:clamp(36px,8vw,64px);margin-bottom:12px}
+.contact p{margin:6px 0;color:#d8ccb4}
+.contact a{color:var(--gold2)}
+footer{text-align:center;color:var(--mute);font-size:13px;padding:24px 0 96px;border-top:1px solid var(--line)}
+@media(min-width:760px){
+.row{grid-template-columns:70px 1.1fr 2fr auto}
+.feat{grid-template-columns:1fr 1fr}
+.feat>div+div{border-top:0;border-left:1px solid var(--line)}
+.feat.three{grid-template-columns:1fr 1fr 1fr}
+.offers{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cols{grid-template-columns:1fr 1fr;gap:50px}
+header.top{padding:18px 0 12px}
+}
+#gw-fab{position:fixed;right:16px;bottom:16px;z-index:60;border:0;border-radius:999px;padding:13px 18px;font:600 15px/1 var(--wf,inherit);background:var(--wa);color:var(--wt);box-shadow:0 8px 24px rgba(0,0,0,.28);cursor:pointer;display:flex;gap:8px;align-items:center}
+#gw-fab:focus-visible,#gw button:focus-visible,#gw input:focus-visible{outline:3px solid var(--wa2);outline-offset:2px}
+#gw{position:fixed;right:12px;bottom:76px;z-index:61;width:min(380px,calc(100vw - 24px));height:min(540px,calc(100vh - 100px));display:none;flex-direction:column;background:var(--wb);color:var(--wi);border:1px solid var(--wl);border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.35);font:15px/1.4 var(--wf,inherit)}
+#gw.open{display:flex}
+#gw header{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--wa);color:var(--wt)}
+#gw header b{font-size:15px}#gw header small{display:block;opacity:.85;font-size:12px}
+#gw-x{background:none;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1;padding:0 4px}
+#gw-msgs{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.gw-m{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-wrap;word-wrap:break-word;overflow-wrap:anywhere}
+.gw-m.bot{background:var(--wbot);align-self:flex-start;border-bottom-left-radius:4px}
+.gw-m.me{background:var(--wa2);color:var(--wt2);align-self:flex-end;border-bottom-right-radius:4px}
+#gw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px;max-height:110px;overflow:auto}
+#gw-chips button{border:1px solid var(--wa);background:transparent;color:var(--wi);border-radius:999px;padding:6px 11px;font:13px var(--wf,inherit);cursor:pointer}
+#gw-chips button:hover{background:var(--wa);color:var(--wt)}
+#gw-form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--wl)}
+#gw-in{flex:1;min-width:0;border:1px solid var(--wl);border-radius:10px;padding:10px;font:15px var(--wf,inherit);background:#fff;color:#222}
+#gw-form button{border:0;border-radius:10px;padding:0 14px;background:var(--wa);color:var(--wt);font:600 14px var(--wf,inherit);cursor:pointer}
+#gw .gw-foot{font-size:11px;opacity:.6;text-align:center;padding:0 8px 8px}
+
+#gw-fab{border-radius:0;letter-spacing:.12em;text-transform:uppercase;font-size:13px}
+#gw,.gw-m,#gw-chips button,#gw-in,#gw-form button{border-radius:0}
+a:focus-visible,summary:focus-visible,.btn:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.good{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 30px;padding:22px 20px;border-bottom:1px solid var(--line);background:var(--bg2);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2)}
+.good span::before{content:"C6";color:var(--gold);margin-right:10px;font-size:9px;vertical-align:middle}
+@media print{#gw,#gw-fab,header.top{display:none}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<header class="top">
+<a href="#top" aria-label="202 Elizabeth"><img src="img/202-elizabeth-logo.png" alt="202 Elizabeth" width="120" height="49"></a>
+<nav><a href="#stay">Stay</a><a href="#offers">Offers</a><a href="#rooftop">Rooftop</a><a href="#dogs">Dogs</a><a href="#city">City</a><a href="#find">Find us</a><a href="#book" data-gw="book">Book</a></nav>
+</header>
+
+<main id="top">
+<div class="hero"><div class="deco"></div><div class="wrap" style="position:relative">
+<div class="kick">Surry Hills &middot; Sydney</div>
+<h1>A design-led <em>retreat</em><br>minutes from the CBD</h1>
+<div class="welcome">Welcome Back: 20% off, with continental breakfast, when you book direct</div>
+<p>Individually crafted rooms, a private rooftop six stories up, a courtyard garden and a warm welcome for dogs. Art Deco charm with the edge of the city.</p>
+<div class="cta"><a class="btn" href="#" data-gw="book">Request a booking</a><a class="btn ghost" href="#stay">The rooms</a></div>
+</div></div>
+
+<div class="good"><span>Date nights</span><span>Dog owners</span><span>City breaks</span><span>Rooftop evenings</span><span>Quiet nights</span></div>
+
+<section id="stay"><div class="wrap">
+<div class="h2"><small>Stay</small><h2>Five rooms, five characters</h2><p>Large windows, dreamy beds and soundproofing for real quiet. Every room has sustainability in mind and hand-selected vegan amenities.</p></div>
+<div>
+<div class="row"><div class="n">I</div><h3>The Lizzy</h3><p>Poised on the top floor, grand design at its finest. Quirky curated artworks, designer furniture, a double vanity, a walk-in rain shower for two and a bathtub.</p><div class="meta">Top floor</div></div>
+<div class="row"><div class="n">II</div><h3>The William</h3><p>A favourite of the house, with discreet style. An inviting king bed, an exquisite bathroom and a rain shower.</p><div class="meta">King bed</div></div>
+<div class="row"><div class="n">III</div><h3>The Oxford</h3><p>The playful son of The Lizzy, with the largest balcony in the hotel. Watch the sun rest over a tree-lined view from a plush king bed.</p><div class="meta">Largest balcony</div></div>
+<div class="row"><div class="n">IV</div><h3>The Sussex</h3><p>A Surry Hills secret with edgy bathroom finishes and designer furnishings. Sunset drink, mini bar and high-speed internet.</p><div class="meta">Mini bar</div></div>
+<div class="row"><div class="n">V</div><h3>The Surry</h3><p>For those who want to live like a local: sleek bathroom, rain shower and a heavenly king bed.</p><div class="meta">King bed</div></div>
+</div>
+</div></section>
+
+<section id="offers" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+<div class="h2"><small>Offers</small><h2>Stay longer, pay less</h2><p>Select the offer from the drop-down in the booking engine. Terms and blackout dates apply; the team can confirm what is live for your dates.</p></div>
+<div class="offers">
+<div class="offer"><div class="pct">20%</div><h3>Welcome Back</h3><ul><li>20% off your stay</li><li>Complimentary continental breakfast</li><li>When you book direct</li></ul><small>Limited time. T&amp;Cs apply.</small></div>
+<div class="offer"><div class="pct">&#9825;</div><h3>Date Night</h3><ul><li>Bubbles and chocolate on arrival</li><li>Super-late 12pm check-out</li><li>Complimentary parking</li></ul><small>Minimum 1 night. Blackout dates apply.</small></div>
+<div class="offer"><div class="pct">&#9733;</div><h3>Le Love Cinema</h3><ul><li>Golden Age Cinema tickets for two</li><li>Gourmet popcorn and a drink voucher</li><li>All-day coffee, free on-site parking</li></ul><small>Minimum 3 nights. Any room type.</small></div>
+</div>
+</div></section>
+
+<section id="rooftop"><div class="wrap">
+<div class="h2"><small>Around the hotel</small><h2>Up on the roof, down in the garden</h2></div>
+<div class="feat three">
+<div><span class="tagline">Six stories up</span><h3>The rooftop</h3><p>A private VIP area with sweeping views of the city. Arrive at dusk, sink into a comfy chair with a cocktail and watch the sun set behind the Sydney skyline.</p><p style="color:var(--mute);font-size:15px">A rotation of DJs, bands and guest mixologists keeps the vibe right.</p></div>
+<div><span class="tagline">In the heart of Surry Hills</span><h3>The courtyard garden</h3><p>A peaceful retreat with al fresco seating and lush greenery. The garden menu has artisanal coffee, cold-pressed juices and locally made pastries.</p></div>
+<div class="dog" id="dogs"><span class="tagline">Four-legged guests</span><h3>Dog friendly</h3><p>Your pooch is in for a treat, with a puppy welcome drink and doggy menus. The Director of Pet Relations has a list of dog-friendly cafes and restaurants nearby.</p><p style="margin:0"><a class="btn ghost" href="#" data-gw="book" style="padding:10px 20px">Book with my dog</a></p></div>
+</div>
+</div></section>
+
+<section id="city"><div class="wrap">
+<div class="h2"><small>From Hyde Park to the harbour</small><h2>The city on your doorstep</h2><p>Surry Hills is five minutes on foot to hundreds of small experiences; Sydney's big names are a short ride away.</p></div>
+<div class="feat three">
+<div><span class="tagline">Surry Hills</span><h3>Eat, drink, browse</h3><p>Organic brunches and new kicks by day, award-winning restaurants and late-night parties after dark. Victorian terraces, hip bars, stylish cafes and unique boutiques.</p></div>
+<div><span class="tagline">Culture</span><h3>Art and history</h3><p>Get your art fix at the Art Gallery of New South Wales, or explore the Hyde Park Barracks Museum.</p></div>
+<div><span class="tagline">City centre</span><h3>Views and ferries</h3><p>Take in the city from Centre Point Tower or Australia Square. From Central Station reach Bondi Beach; from Circular Quay, catch a ferry to Manly.</p></div>
+</div>
+</div></section>
+
+<section id="amen" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap cols">
+<div><div class="h2" style="text-align:left;margin-bottom:18px"><small>In every room</small><h2>The small luxuries</h2></div>
+<p style="color:#d8ccb4;margin:0">Rooms are design-centric, with a warm yet vogue feel: large windows, dreamy beds, super-luxe bathrooms and soundproofing for privacy. It never feels cold or clinical, more like a home away from home.</p></div>
+<div class="loc">
+<div><b>Bathrooms</b><span>rain showers, some with bath</span></div>
+<div><b>Beds</b><span>king beds, dreamy linen</span></div>
+<div><b>Artwork</b><span>curated, quirky, room by room</span></div>
+<div><b>Amenities</b><span>hand-selected, vegan</span></div>
+<div><b>Sound</b><span>soundproofed for privacy</span></div>
+</div></div></section>
+
+<section id="find"><div class="wrap cols">
+<div><div class="h2" style="text-align:left;margin-bottom:22px"><small>Location</small><h2>At the centre of it</h2></div>
+<p style="color:#d8ccb4;margin:0 0 20px">Surry Hills is the creative hub of Sydney: Victorian terraces, hip bars, stylish cafes, boutiques and award-winning restaurants within a 5 minute walk.</p>
+<div class="loc">
+<div><b>Central Station</b><span>6-minute walk</span></div>
+<div><b>Circular Quay</b><span>2.2 km</span></div>
+<div><b>Bondi Beach</b><span>about 20 minutes</span></div>
+<div><b>Airport</b><span>about 20 minutes</span></div>
+</div></div>
+<div><div class="h2" style="text-align:left;margin-bottom:12px"><small>Good to know</small><h2>Quick answers</h2></div>
+<details><summary>Check-in and check-out</summary><p>Check-in is at 3 PM and check-out at 11 AM. Early arrival or late check-out depends on the day's business and is not guaranteed, so please tell the team in advance.</p></details>
+<details><summary>Cancellation</summary><p>As a small boutique hotel the policy is strict: cancellations within 24 hours or less of arrival incur 100% of the accommodation cost. When booking you will see which options offer free cancellation, and travel insurance is recommended.</p></details>
+<details><summary>Parking</summary><p>Please contact the hotel for parking options. Complimentary parking comes with the Date Night and Le Love Cinema packages.</p></details>
+<details><summary>Getting around</summary><p>Central Station takes you to Bondi Beach; from Circular Quay you can catch a ferry to Manly. Local public transport makes the itinerary easy.</p></details>
+<details><summary>Is it quiet?</summary><p>Yes. Rooms are soundproofed for privacy, even though the CBD is minutes away.</p></details>
+<details><summary>Can I bring my dog?</summary><p>Yes. 202 Elizabeth is a dog-friendly hotel, with a puppy welcome drink and doggy menus on request. Specific pet fees and rules are not on the website, so the team confirms them when you book.</p></details>
+<details><summary>What is on the garden menu?</summary><p>Artisanal coffee, a variety of fresh cold-pressed juices and locally made pastries, served among the greenery of the courtyard garden.</p></details>
+<details><summary>Is the hotel sustainable?</summary><p>Every room is designed with sustainability in mind, and the amenities are hand-selected and vegan.</p></details>
+<details><summary>Do you have a restaurant?</summary><p>The site describes a garden menu and a rooftop with cocktails, but no separate restaurant. The team can point you to nearby favourites in Surry Hills.</p></details>
+<details><summary>What is a room like if I want peace and quiet?</summary><p>Every room is soundproofed, with large windows and dreamy beds. The Oxford adds the hotel's largest balcony; The Lizzy sits on the top floor.</p></details>
+</div>
+</div></section>
+
+<section id="how"><div class="wrap">
+<div class="h2"><small>How it works</small><h2>Redeeming an offer</h2><p>It is that simple, as the hotel puts it. Or ask the concierge in the corner and it will pass a request to the team instead.</p></div>
+<div class="offers">
+<div class="offer"><div class="pct">1</div><h3>Press Book</h3><p style="margin:0;color:#d8ccb4;font-size:15px">Use the Book button on the hotel's site and choose your dates and guests.</p></div>
+<div class="offer"><div class="pct">2</div><h3>Open the drop-down</h3><p style="margin:0;color:#d8ccb4;font-size:15px">Look for your offer in the list: Welcome Back, Date Night, Le Love Cinema or another current special.</p></div>
+<div class="offer"><div class="pct">3</div><h3>Arrive from 3 PM</h3><p style="margin:0;color:#d8ccb4;font-size:15px">The team welcomes you. Bringing a dog? Tell them in advance so the puppy welcome is ready.</p></div>
+</div>
+<p style="text-align:center;margin:34px 0 0;color:var(--mute);font-size:15px">Want the latest? The hotel's newsletter, Love from Lizzy, sends special attention and offers.</p>
+</div></section>
+
+<section class="contact" id="book"><div class="wrap">
+<h2>See your stay</h2>
+<p>202-210 Elizabeth Street, Surry Hills, Sydney NSW 2010</p>
+<p>Phone <a href="tel:0280299090">02 8029 9090</a> &middot; <a href="mailto:stay@202elizabeth.com.au">stay@202elizabeth.com.au</a></p>
+<p style="margin-top:26px"><a class="btn" href="#" data-gw="book">Request a booking</a></p>
+</div></section>
+</main>
+<footer><div class="wrap">Demo &middot; prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="gw-fab" type="button" aria-expanded="false" aria-controls="gw">Ask the team</button>
+<section id="gw" aria-label="Hotel assistant">
+<header><div><b>202 Elizabeth concierge</b><small>Answers from the hotel's own pages</small></div><button id="gw-x" type="button" aria-label="Close">&times;</button></header>
+<div id="gw-msgs" aria-live="polite"></div>
+<div id="gw-chips"></div>
+<form id="gw-form" autocomplete="off"><input id="gw-in" type="text" placeholder="Type your question" aria-label="Your message"><button type="submit">Send</button></form>
+<div class="gw-foot">Demo assistant. Nothing you type is sent anywhere.</div>
+</section>
+<script>
+var CFG={
+hello:"Welcome to 202 Elizabeth. Ask about the rooms, the rooftop, bringing your dog, offers or how to get here.",
+fallback:"I don't have that on the site, so I won't guess. The team will confirm: 02 8029 9090 or stay@202elizabeth.com.au. Shall I take a booking request?",
+chips:["Request a booking","Bring my dog","Rooms","Offers","Rooftop","How to get here"],
+kb:[
+{k:["hello","hi","hey","good morning","good evening","g'day"],a:"Hello, and welcome to 202 Elizabeth. How can I help?"},
+{k:["book","reserve","reservation","booking","request a booking","availability","available","stay with you","i want a room","enquire","enquiry"],flow:true},
+{k:["dog","dogs","pet","pets","puppy","pooch","pooches","doggy","dog friendly","pet friendly","bring my dog","canine"],a:"Yes, 202 Elizabeth is dog friendly. Ask the team about the puppy welcome drink and doggy menus, and the Director of Pet Relations has a list of dog-friendly cafes and restaurants nearby. Fees and rules for pets are not published on the site, so the team will confirm them when you book.",chips:["Request a booking","Rooms","Garden menu"]},
+{k:["balcony","largest balcony","biggest balcony","biggest room","terrace","outdoor","sunset","view","views"],a:"The Oxford has the largest balcony in the hotel, tree-lined, for watching the sunset. The rooftop, six stories up, has sweeping views of the Sydney skyline.",chips:["Rooftop","Rooms"]},
+{k:["rooftop","roof","roof top","bar","cocktail","dj","djs","band","bands","music","nightlife","mixologist","sit under the stars","stars"],a:"The rooftop is a private VIP area six stories above downtown Sydney, with city views. Arrive at dusk for a cocktail at sunset. The site mentions a rotation of DJs, bands and guest mixologists. Opening hours are not published, so the team will confirm.",chips:["Garden menu","Request a booking"]},
+{k:["garden","courtyard","garden menu","coffee","juice","pastry","pastries","cafe","breakfast","food","eat","restaurant","drink","brunch","dining"],a:"The courtyard garden has al fresco seating and a garden menu with artisanal coffee, cold-pressed juices and locally made pastries. Some offers include a complimentary continental breakfast when you book direct. A full restaurant is not listed on the site.",chips:["Offers","Rooftop"]},
+{k:["offer","offers","special","specials","deal","deals","discount","promo","promotion","20%","welcome back","direct","book direct","save"],a:"Current offers on the site: Welcome Back, 20% off your stay including a complimentary continental breakfast when you book direct (T&Cs, limited time); the Date Night package; the Le Love Cinema package (minimum 3 nights); and a Book Now & Save offer. Terms and blackout dates apply, so the team will confirm what is live for your dates.",chips:["Date night","Cinema package","Request a booking"]},
+{k:["date night","romantic","bubbles","chocolate","anniversary","couple","couples","honeymoon"],a:"The Date Night package: bubbles and chocolate on arrival, a super-late 12pm check-out and complimentary parking. Minimum 1-night stay; T&Cs and blackout dates apply.",chips:["Cinema package","Request a booking"]},
+{k:["cinema","movie","movies","film","popcorn","le love","golden age","tickets"],a:"Le Love Cinema package: Golden Age Cinema tickets for two, complimentary gourmet popcorn, a drink voucher to use at 202, all-day coffee and free on-site parking, available with any room type. Minimum 3-night stay; T&Cs and blackout dates apply.",chips:["Date night","Request a booking"]},
+{k:["check in","checkin","check-in","arrive","arrival","early check in","early arrival","what time check in","luggage"],a:"Check-in is at 3 PM. For early arrival, tell the team in advance; it depends on the day's business and is not guaranteed, but they will do their best.",chips:["Check-out","Request a booking"]},
+{k:["check out","checkout","late check out","late checkout","departure","leave","what time check out","11am"],a:"Check-out is at 11 AM. Late check-out depends on the day's business and is not guaranteed, so ask in advance. The Date Night package includes a 12pm check-out.",chips:["Check-in","Date night"]},
+{k:["cancel","cancellation","refund","change booking","free cancellation","policy","insurance"],a:"As a small boutique hotel, the cancellation policy is strict: cancelling within 24 hours or less of arrival incurs 100% of the accommodation cost. When booking you will see which options offer free cancellation. The hotel suggests travel insurance.",chips:["Request a booking","Check-in"]},
+{k:["parking","park","car","garage","valet","car park"],a:"Please contact the hotel directly for parking options. Complimentary parking is included in the Date Night package and the Le Love Cinema package.",chips:["Offers","How to get here"]},
+{k:["where","address","location","directions","find you","surry hills","street","map","how to get here","get there","central station","train","transport","public transport","bus"],a:"202-210 Elizabeth Street, Surry Hills, Sydney NSW 2010. It is a 6-minute walk to Central Station, 2.2 km to Circular Quay, about 20 minutes to Bondi Beach and about 20 minutes to Kingsford Smith International Airport.",chips:["Parking","Contact","Request a booking"]},
+{k:["airport","bondi","beach","circular quay","manly","ferry","far","distance","how far","near","close","cbd","city","minutes"],a:"6-minute walk to Central Station, 2.2 km to Circular Quay, about 20 minutes to Bondi Beach and about 20 minutes to Kingsford Smith International Airport. From Circular Quay a ferry goes to Manly.",chips:["How to get here","Parking"]},
+{k:["phone","call","telephone","contact","email","mail","reach","talk","speak","human","staff","reception","number"],a:"Phone 02 8029 9090 or email stay@202elizabeth.com.au.",chips:["Request a booking","Parking"]},
+{k:["sustainable","sustainability","eco","vegan","environment","green","toiletries","amenities","amenity"],a:"Every room is designed with sustainability in mind, and the hotel provides hand-selected vegan amenities.",chips:["Rooms","Offers"]},
+{k:["quiet","noise","noisy","soundproof","soundproofing","sleep","privacy","peaceful","tranquil","serene"],a:"The rooms are soundproofed for privacy and calm, even though the hotel is minutes from the Sydney CBD.",chips:["Rooms","Largest balcony"]},
+{k:["wifi","wi fi","internet","high speed","wireless","mini bar","minibar"],a:"The Sussex room mentions a mini bar and high-speed internet. The site does not list Wi-Fi for every room, so the team will confirm.",chips:["Rooms","Contact"]},
+{k:["style","design","art deco","deco","boutique","about","history","vibe","luxury","chic"],a:"A design-centric boutique hotel in Surry Hills that blends the edgy style of the CBD with Art Deco charm. Each room is individually crafted, with curated artworks and designer furniture.",chips:["Rooms","Rooftop"]},
+{k:["price","prices","rate","rates","cost","how much","cheap","expensive","per night","tariff"],a:"Rates depend on your dates and room, and I won't guess. Booking direct shows live offers, and the team can quote: 02 8029 9090.",chips:["Offers","Request a booking"]},
+{k:["kids","children","child","family","baby","cot","age"],a:"The site does not state a children policy, so the team will confirm: 02 8029 9090 or stay@202elizabeth.com.au.",chips:["Contact","Request a booking"]},
+{k:["room","rooms","suite","suites","lizzy","william","oxford","sussex","surry","bed","king","bathroom","bath","bathtub"],a:"Five rooms, each different: The Lizzy (top floor, double vanity, rain shower for two, bathtub), The William (king bed, rain shower, discreet style), The Oxford (the largest, tree-lined balcony), The Sussex (edgy bathroom finishes, mini bar) and The Surry (live like a local, king bed). All use vegan amenities.",chips:["Largest balcony","Request a booking","Offers"]},
+{k:["museum","art gallery","gallery","hyde park","barracks","centre point","tower","australia square","sightseeing","things to do","attractions","walk","explore","neighbourhood","neighborhood","restaurants","shopping","boutique shops","bars"],a:"Around the hotel: Surry Hills has Victorian terraces, hip bars, cafes, boutiques and award-winning restaurants within a 5-minute walk. In the city you can visit the Art Gallery of New South Wales, the Hyde Park Barracks Museum, Centre Point Tower and Australia Square. Ferries to Manly leave from Circular Quay.",chips:["How to get here","Garden menu"]},
+{k:["newsletter","sign up","subscribe","love from lizzy","updates"],a:"The site has a sign-up called Love from Lizzy for special attention and offers. You can subscribe at the bottom of the hotel's website.",chips:["Offers"]},
+{k:["accessible","accessibility","wheelchair","lift","elevator","stairs","disabled","mobility"],a:"The site does not describe accessibility or lifts, so I won't guess. Please ask the team before booking: 02 8029 9090 or stay@202elizabeth.com.au.",chips:["Contact","Request a booking"]},
+{k:["smoking","smoke","non smoking"],a:"Smoking rules are not published on the site. The team will confirm them: 02 8029 9090.",chips:["Contact"]},
+{k:["event","events","wedding","party","function","buyout","private hire","corporate","meeting"],a:"Events and private hire are not described on the site. Please ask the team: 02 8029 9090 or stay@202elizabeth.com.au.",chips:["Contact","Rooftop"]},
+{k:["gallery photos","photos","pictures","images"],a:"The hotel's website has an image gallery of the rooms, rooftop and garden. Open the Gallery link in their menu.",chips:["Rooms"]},
+{k:["vegan","vegetarian","dietary","allergy","allergies","gluten","special diet"],a:"The amenities in every room are hand-selected vegan ones. For dietary needs on the garden menu, the site gives no details, so please ask the team: 02 8029 9090.",chips:["Garden menu","Contact"]},
+{k:["night","nights","minimum stay","how long","length of stay","weekend"],a:"Minimum stays only appear on some offers: 1 night for Date Night and 3 nights for the Le Love Cinema package. Terms and blackout dates apply, so the team will confirm for your dates.",chips:["Date night","Cinema package"]},
+{k:["window","windows","light","bright","floor","top floor","highest","best room","recommend","favourite","favorite"],a:"For the top floor, ask for The Lizzy. For the biggest balcony, The Oxford. The William is described as the house favourite. The team can match a room to what you want.",chips:["Request a booking","Rooms"]},
+{k:["thanks","thank","thank you","great","cheers"],a:"My pleasure. Anything else about 202 Elizabeth?"}
+],
+flow:{intro:"Happy to pass a booking request to the team. A few quick questions (type cancel to stop).",
+steps:[
+{key:"name",label:"Name",q:"Who is the stay for?",ph:"Full name"},
+{key:"dates",label:"Dates",q:"Arrival and departure dates? Check-in is 3 PM, check-out 11 AM.",ph:"e.g. 12 to 14 Nov"},
+{key:"guests",label:"Guests",q:"How many guests?",chips:["1","2","3","4"]},
+{key:"room",label:"Room",q:"Which room appeals?",chips:["The Lizzy","The William","The Oxford","The Sussex","The Surry","No preference"]},
+{key:"dog",label:"Dog",q:"Is a dog joining you?",chips:["Yes","No"]},
+{key:"offer",label:"Offer",q:"Interested in an offer?",chips:["Welcome Back","Date Night","Cinema package","Not sure"]},
+{key:"contact",label:"Contact",q:"Best email or phone for the reply?",ph:"email or phone"}],
+done:"Thank you. Your booking request is sent to the team, who will reply with availability and what each offer includes. (Demo: nothing is actually sent.)"}
+};
+
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem1(w){if(w.length>4)w=w.replace(/(ing|ed|ly)$/,'');if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))w=w.slice(0,-1);return w;}
+function stem(w){return stem1(stem1(w));}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function same(a,b){if(a===b)return true;var l=Math.min(a.length,b.length);if(l>=5&&lev(a,b)<=1)return true;if(l>=9&&lev(a,b)<=2)return true;return false;}
+function idx(qt,t){for(var i=0;i<qt.length;i++)if(same(qt[i],t))return i;return -1;}
+function prep(KB){KB.forEach(function(it){it._k=it.k.map(function(k){return toks(k);});});return KB;}
+function match(KB,q){var qt=toks(q);if(!qt.length)return null;var best=null,bs=0;KB.forEach(function(it){var cov={},bonus=0;it._k.forEach(function(kt){if(!kt.length)return;var ids=[];for(var a=0;a<kt.length;a++){var x=idx(qt,kt[a]);if(x<0)return;ids.push(x);}ids.forEach(function(x){cov[x]=1;});if(kt.length>1)bonus+=1;});var s=Object.keys(cov).length*2+bonus;if(s>bs){bs=s;best=it;}});return bs>=2?best:null;}
+
+(function(){
+var KB=prep(CFG.kb),$=function(i){return document.getElementById(i)};
+var box=$('gw-msgs'),chips=$('gw-chips'),form=$('gw-form'),inp=$('gw-in'),panel=$('gw'),fab=$('gw-fab');
+var flow=null,fi=0,ans={};
+function add(t,me){var d=document.createElement('div');d.className='gw-m '+(me?'me':'bot');d.textContent=t;box.appendChild(d);box.scrollTop=box.scrollHeight;}
+function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c);};chips.appendChild(b);});}
+function ask(){var s=CFG.flow.steps[fi];add(s.q);setChips(s.chips);inp.placeholder=s.ph||'Type here';}
+function startFlow(){flow=true;fi=0;ans={};add(CFG.flow.intro);ask();}
+function finish(){var lines=CFG.flow.steps.map(function(s){return s.label+': '+(ans[s.key]||'-');});add(CFG.flow.done+'\n\n'+lines.join('\n'));flow=null;setChips(CFG.chips);}
+function send(t){t=(t||'').trim();if(!t)return;add(t,true);inp.value='';
+ if(flow){if(/^(cancel|stop|exit)$/i.test(t)){flow=null;add('No problem, request cancelled.');setChips(CFG.chips);return;}
+  var s=CFG.flow.steps[fi];ans[s.key]=t;fi++;if(fi>=CFG.flow.steps.length)finish();else ask();return;}
+ var m=match(KB,t);
+ if(m&&m.flow){startFlow();return;}
+ if(m){setTimeout(function(){add(m.a);setChips(m.chips||CFG.chips);},150);}
+ else{setTimeout(function(){add(CFG.fallback);setChips(CFG.chips);},150);}
+}
+form.onsubmit=function(e){e.preventDefault();send(inp.value);};
+function open(o){panel.classList.toggle('open',o);fab.setAttribute('aria-expanded',o);if(o&&!box.children.length){add(CFG.hello);setChips(CFG.chips);}}
+fab.onclick=function(){open(!panel.classList.contains('open'));};
+$('gw-x').onclick=function(){open(false);};
+document.querySelectorAll('[data-gw]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();open(true);var v=a.getAttribute('data-gw');if(v==='book')startFlow();});});
+})();
+
+</script>
+</body>
+</html>
