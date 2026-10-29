@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RSA School of Motoring · Dublin driving lessons (demo)</title>
+<meta name="description" content="Demo page for RSA School of Motoring, Dublin: EDT lessons, automatic lessons, pretest and car hire, with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#DA2A23;--red-d:#B3201A;--ink:#121214;--cream:#F7F4EC;--paper:#fff;--green:#1E7A3C;--lime:#8EDB4F;--amber:#FFAE3B;--mute:#5d5d63;--line:#e4dfd2;
+--wa-accent:#DA2A23;--wa-on:#fff;--wa-bg:#fff;--wa-ink:#121214;--wa-bot:#f1ede2;--wa-line:#e4dfd2;--wa-font:'DM Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.55 'DM Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Archivo',sans-serif;line-height:1.05;letter-spacing:-.01em}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 16px}
+.topbar{background:var(--ink);color:#fff;font-size:13px;padding:7px 0}
+.topbar .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.topbar a{text-decoration:none;color:var(--lime);font-weight:700}
+header.site{background:#fff;border-bottom:4px solid var(--red);position:sticky;top:0;z-index:40}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px}
+.brand{display:flex;align-items:center;min-width:0}
+.brand img{height:50px;width:auto}
+nav.main{display:none;gap:20px;font-weight:700;font-size:15px}
+nav.main a{text-decoration:none}
+nav.main a:hover{color:var(--red)}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font:800 15px/1 'Archivo',sans-serif;text-transform:uppercase;letter-spacing:.03em;padding:14px 20px;border-radius:6px;border:0;cursor:pointer;box-shadow:0 3px 0 var(--red-d)}
+.btn:active{transform:translateY(2px);box-shadow:none}
+.btn.alt{background:var(--ink);box-shadow:0 3px 0 #000}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink);box-shadow:none}
+@media(min-width:820px){nav.main{display:flex}}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:36px 0 46px;background:var(--cream)}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:var(--red);opacity:.09}
+.hero .grid{display:grid;grid-template-columns:minmax(0,1fr);gap:26px}
+.eyebrow{display:inline-block;background:var(--lime);color:#13310a;font:800 12px/1 'Archivo';letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:4px;margin-bottom:14px}
+.hero h1{font-size:clamp(38px,9vw,70px);font-weight:900;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero p.lede{margin:16px 0 22px;font-size:18px;max-width:34em;color:#2c2c30}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.plate{background:#fff;border:3px solid var(--ink);border-radius:12px;padding:18px;box-shadow:8px 8px 0 var(--ink);align-self:start}
+.plate h3{font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:10px}
+.stat{display:flex;align-items:baseline;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line)}
+.stat:last-child{border:0}
+.stat b{font:900 32px/1 'Archivo';min-width:3.2ch}
+.stat span{color:var(--mute);font-size:15px}
+@media(min-width:820px){.hero .grid{grid-template-columns:minmax(0,1.35fr) minmax(0,.8fr);align-items:center}}
+/* sections */
+section{padding:54px 0}
+section.dark{background:var(--ink);color:#fff}
+section.white{background:#fff}
+.kick{font:800 12px/1 'Archivo';letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.dark .kick{color:var(--lime)}
+h2{font-size:clamp(28px,6vw,44px);font-weight:900;margin-bottom:14px;text-transform:uppercase}
+.sub{max-width:42em;color:var(--mute);margin-bottom:26px}
+.dark .sub{color:#c6c6cb}
+/* paths */
+.paths{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+@media(min-width:700px){.paths{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:980px){.paths{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.card{background:#fff;border:2px solid var(--ink);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.card h3{font-size:21px;font-weight:800}
+.card p{color:#3a3a40;font-size:16px;flex:1}
+.card a.more{font:800 13px 'Archivo';text-transform:uppercase;letter-spacing:.05em;color:var(--red);text-decoration:none}
+.card .tag{align-self:flex-start;background:var(--amber);font:800 11px 'Archivo';letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px}
+/* edt tracker */
+.track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:8px 0 26px}
+@media(min-width:760px){.track{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.lesson{background:#1c1c20;border:1px solid #34343a;border-radius:10px;padding:12px 10px;min-height:118px}
+.lesson i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font:900 16px 'Archivo';font-style:normal;margin-bottom:8px}
+.lesson.l9 i,.lesson.l10 i,.lesson.l11 i,.lesson.l12 i{background:var(--lime);color:#11260a}
+.lesson span{font-size:13px;line-height:1.3;color:#e6e6ea;display:block}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;color:#c6c6cb}
+.legend b{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+/* pricing */
+.ptable{width:100%;border-collapse:collapse;background:#fff;border:2px solid var(--ink);border-radius:12px;overflow:hidden}
+.ptable th,.ptable td{padding:12px 8px;text-align:left;border-bottom:1px solid var(--line);font-size:15px}
+.ptable th{background:var(--ink);color:#fff;font:800 12px 'Archivo';letter-spacing:.06em;text-transform:uppercase}
+.ptable td b{font:900 18px 'Archivo'}
+.ptable small{display:block;color:var(--mute);font-size:12px}
+.ptable tr.best td{background:#eef9e2}
+.note{margin-top:12px;font-size:14px;color:var(--mute)}
+/* centres */
+.centres{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media(min-width:760px){.centres{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.centre{background:#fff;border:2px solid var(--ink);border-radius:10px;padding:14px;font-weight:700;display:flex;gap:10px;align-items:center}
+.centre span{display:grid;place-items:center;flex:none;width:32px;height:32px;background:var(--green);color:#fff;border-radius:6px;font:900 13px 'Archivo'}
+.areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.areas span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px}
+/* how */
+.steps{counter-reset:s;display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.step{position:relative;background:#fff;border-radius:12px;padding:22px 18px 18px 18px;border:1px solid var(--line)}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:-14px;left:16px;background:var(--red);color:#fff;font:900 16px 'Archivo';width:30px;height:30px;border-radius:50%;display:grid;place-items:center}
+.step h3{font-size:19px;margin:4px 0 6px}
+.step p{font-size:15.5px;color:#3a3a40}
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:10px;padding:0}
+details summary{cursor:pointer;padding:15px 16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details summary::after{content:"+";font:900 20px 'Archivo';color:var(--red)}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 16px 16px;color:#3a3a40}
+/* quotes */
+.quotes{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.quotes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+blockquote{background:#1c1c20;border-radius:12px;padding:18px;color:#e9e9ec;font-size:16px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13px;color:var(--lime)}
+.stars{color:var(--amber);letter-spacing:2px;margin-bottom:6px}
+/* contact */
+.contact{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.contact{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.ci{background:#fff;border:2px solid var(--ink);border-radius:12px;padding:18px}
+.ci b{display:block;font:800 12px 'Archivo';letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.ci a{font-weight:700}
+footer{background:#000;color:#bdbdc2;padding:26px 0 90px;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+#wa-btn{position:fixed;right:14px;bottom:14px;z-index:60;display:flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 16px;background:var(--wa-accent);color:var(--wa-on);font:600 15px/1 var(--wa-font);cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.28)}
+#wa-btn .wa-ico{font-size:18px}
+#wa-panel{position:fixed;right:12px;bottom:70px;z-index:61;width:min(360px,calc(100vw - 24px));height:min(520px,calc(100vh - 100px));display:none;flex-direction:column;background:var(--wa-bg);color:var(--wa-ink);border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.35);overflow:hidden;font:15px/1.4 var(--wa-font);border:1px solid var(--wa-line)}
+#wa-panel.open{display:flex}
+#wa-head{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--wa-accent);color:var(--wa-on)}
+#wa-head b{display:block;font-size:16px}#wa-head small{opacity:.85;font-size:12px}
+#wa-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer}
+#wa-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:0}
+.wa-m{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-wrap;word-wrap:break-word}
+.wa-bot{background:var(--wa-bot);align-self:flex-start;border-bottom-left-radius:4px}
+.wa-me{background:var(--wa-accent);color:var(--wa-on);align-self:flex-end;border-bottom-right-radius:4px}
+#wa-chips{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px;max-height:112px;overflow:auto}
+#wa-chips button{border:1px solid var(--wa-accent);background:transparent;color:var(--wa-ink);border-radius:999px;padding:6px 11px;font:13px var(--wa-font);cursor:pointer}
+#wa-form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--wa-line)}
+#wa-form input{flex:1;min-width:0;border:1px solid var(--wa-line);border-radius:10px;padding:10px;font:15px var(--wa-font);background:#fff;color:#111}
+#wa-form button{border:0;border-radius:10px;background:var(--wa-accent);color:var(--wa-on);padding:0 14px;font:600 14px var(--wa-font);cursor:pointer}
+
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>Call (01) 902 3100 · Mon-Fri 9am-5pm</span><a href="tel:+35319023100">Call now</a></div></div>
+<header class="site"><div class="wrap">
+<a class="brand" href="#top" aria-label="RSA School of Motoring"><img src="img/rsa-school-of-motoring-logo.png" alt="RSA School of Motoring" width="93" height="50"></a>
+<nav class="main"><a href="#paths">Lessons</a><a href="#edt">EDT</a><a href="#prices">Prices</a><a href="#tests">Test centres</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="btn" href="#contact">Book now</a>
+</div></header>
+<main id="top">
+<div class="hero"><div class="wrap grid">
+<div>
+<span class="eyebrow">Dublin driving school</span>
+<h1>Driving lessons from someone who <em>knows your roads</em></h1>
+<p class="lede">Pick-up at home, college or work, a local RSA-approved instructor, a dual-control car, and the same price in every Dublin area. From your first EDT lesson to the pretest at your own test centre.</p>
+<div class="cta"><a class="btn" href="#contact">Book a lesson</a><a class="btn ghost" href="#prices">See prices</a></div>
+</div>
+<aside class="plate"><h3>RSA School of Motoring</h3>
+<div class="stat"><b>4.7</b><span>stars from 814+ Google reviews</span></div>
+<div class="stat"><b>85%</b><span>first-time pass rate</span></div>
+<div class="stat"><b>35</b><span>certified instructors across Dublin</span></div>
+<div class="stat"><b>184</b><span>locations in Dublin and 25 counties</span></div>
+</aside>
+</div></div>
+
+<section id="paths"><div class="wrap">
+<div class="kick">Pick your starting point</div>
+<h2>Get in your lane</h2>
+<p class="sub">Four ways in, depending on where you are on the road to a full licence.</p>
+<div class="paths">
+<div class="card"><span class="tag">Just got your permit</span><h3>Dublin EDT lessons</h3><p>Your 12 Essential Driver Training lessons with a local ADI instructor who picks you up from home and builds your confidence one session at a time. No experience needed.</p><a class="more" href="#edt">See the 12 lessons</a></div>
+<div class="card"><h3>Pretest lessons</h3><p>Test booked at Tallaght, Finglas, Raheny or another centre? Drill the real test routes, run a mock test with a fault sheet, and hire the car for test day.</p><a class="more" href="#tests">Your test centre</a></div>
+<div class="card"><h3>Automatic lessons</h3><p>Skip the clutch. The same EDT syllabus, the same test centres, with fewer stalls at the roundabout. Remember an automatic licence covers automatic cars only.</p><a class="more" href="#prices">Automatic prices</a></div>
+<div class="card"><h3>Gift lessons</h3><p>Buying for a son, daughter or partner? Pick a lesson pack, pay online and the voucher arrives by email. Personalised, printable and valid for 5 years.</p><a class="more" href="#contact">Ask about vouchers</a></div>
+</div>
+</div></section>
+
+<section id="edt" class="dark"><div class="wrap">
+<div class="kick">Essential Driver Training</div>
+<h2>12 lessons. One approved instructor.</h2>
+<p class="sub">EDT is set by the RSA and every first-time Irish learner permit holder has to complete it before the driving test. Lessons 1 to 8 go in order; 9 to 12 can be taken in any order. Each lesson is one hour and your instructor signs it off on the RSA system.</p>
+<div class="track">
+<div class="lesson"><i>1</i><span>Car controls and safety checks</span></div>
+<div class="lesson"><i>2</i><span>Correct positioning</span></div>
+<div class="lesson"><i>3</i><span>Changing direction</span></div>
+<div class="lesson"><i>4</i><span>Progression management</span></div>
+<div class="lesson"><i>5</i><span>Positioning, more complex (reversing and parking starts)</span></div>
+<div class="lesson"><i>6</i><span>Anticipation and reaction</span></div>
+<div class="lesson"><i>7</i><span>Sharing the road</span></div>
+<div class="lesson"><i>8</i><span>Driving safely through traffic</span></div>
+<div class="lesson l9"><i>9</i><span>Changing direction, more complex</span></div>
+<div class="lesson l10"><i>10</i><span>Speed management</span></div>
+<div class="lesson l11"><i>11</i><span>Driving calmly</span></div>
+<div class="lesson l12"><i>12</i><span>Night driving</span></div>
+</div>
+<div class="legend"><span><b style="background:var(--red)"></b>Lessons 1-8, in order</span><span><b style="background:var(--lime)"></b>Lessons 9-12, any order</span></div>
+<p class="sub" style="margin-top:18px">Holding a recognised foreign licence? You may only need a reduced 6-lesson EDT. The team can tell you what applies to you.</p>
+</div></section>
+
+<section id="prices" class="white"><div class="wrap">
+<div class="kick">Prices published by the school</div>
+<h2>One rate, any Dublin area</h2>
+<p class="sub">All prices include VAT, the dual-control car and pickup. No area surcharge for South Dublin or the city centre.</p>
+<table class="ptable">
+<thead><tr><th>Package</th><th>Manual</th><th>Automatic</th></tr></thead>
+<tbody>
+<tr class="best"><td><b>12 lessons</b><small>Full EDT, best value</small></td><td><b>&euro;587.95</b><small>&euro;49.00 each</small></td><td><b>&euro;659.24</b><small>&euro;54.94 each</small></td></tr>
+<tr><td><b>6 lessons</b><small>Reduced EDT</small></td><td><b>&euro;315.01</b><small>&euro;52.50 each</small></td><td><b>&euro;353.71</b><small>&euro;58.95 each</small></td></tr>
+<tr><td><b>3 lessons</b></td><td><b>&euro;158.17</b></td><td><b>&euro;180.57</b></td></tr>
+<tr><td><b>1 lesson</b></td><td><b>&euro;53.27</b></td><td><b>&euro;61.41</b></td></tr>
+<tr><td><b>Pretest + car hire</b><small>Test routes, then the car for test day</small></td><td><b>&euro;183.63</b></td><td><b>&euro;193.81</b></td></tr>
+</tbody></table>
+<p class="note">Prices as listed on the school's site (updated March 2026). The team confirms the current rate when you book.</p>
+</div></section>
+
+<section id="tests"><div class="wrap">
+<div class="kick">Know your test centre</div>
+<h2>Learn the routes before test day</h2>
+<p class="sub">Pretest lessons run on the roads your tester will actually send you down. Your instructor works the same area week in, week out, so the local tricky spots are second nature.</p>
+<div class="centres">
+<div class="centre"><span>T</span>Tallaght</div>
+<div class="centre"><span>F</span>Finglas</div>
+<div class="centre"><span>R</span>Raheny</div>
+<div class="centre"><span>K</span>Killester</div>
+<div class="centre"><span>M</span>Mulhuddart</div>
+<div class="centre"><span>D</span>D&uacute;n Laoghaire</div>
+</div>
+<p class="note">The school lists 7 test centres in total; ask the team about yours.</p>
+<div class="areas" aria-label="Some areas covered"><span>Tallaght</span><span>Swords</span><span>Lucan</span><span>Blanchardstown</span><span>Blackrock</span><span>D&uacute;n Laoghaire</span><span>Dublin 1-24</span><span>Naas</span><span>+ 25 counties</span></div>
+</div></section>
+
+<section class="dark"><div class="wrap">
+<div class="kick">Why local matters</div>
+<h2>Your instructor knows your roads</h2>
+<p class="sub">Every instructor works the same area week in, week out, so the roundabouts and junctions that catch learners on test day are familiar ground.</p>
+<div class="paths">
+<div class="card" style="background:#1c1c20;border-color:#34343a"><h3 style="color:#fff">Tallaght</h3><p style="color:#d6d6da">The N81 merge, the Belgard roundabout, and exactly where learners get caught on test day.</p></div>
+<div class="card" style="background:#1c1c20;border-color:#34343a"><h3 style="color:#fff">Finglas</h3><p style="color:#d6d6da">The tricky right turn at Charlestown, practised until it is routine.</p></div>
+<div class="card" style="background:#1c1c20;border-color:#34343a"><h3 style="color:#fff">Raheny</h3><p style="color:#d6d6da">The school-zone speed limits that trip people up on the test route.</p></div>
+<div class="card" style="background:#1c1c20;border-color:#34343a"><h3 style="color:#fff">Swords</h3><p style="color:#d6d6da">The Estuary roundabout and the R132 dual carriageway.</p></div>
+</div>
+<p class="sub" style="margin-top:22px">Pretest lessons run on the actual test centre routes, with a mock test under real conditions and a fault sheet at the end, so you know exactly where to tighten up.</p>
+</div></section>
+
+<section class="white"><div class="wrap">
+<div class="kick">How it works</div>
+<h2>Three steps to your first lesson</h2>
+<div class="steps" style="margin-top:26px">
+<div class="step"><h3>Tell us what you need</h3><p>EDT, pretest, automatic or a gift voucher, plus your area. The assistant in the corner can take it step by step.</p></div>
+<div class="step"><h3>Meet your local instructor</h3><p>We match you with an RSA-approved instructor in your area and pick you up at home, college or work.</p></div>
+<div class="step"><h3>Drive, log, pass</h3><p>Each lesson is logged on the RSA system, so your progress follows you even if you switch instructor.</p></div>
+</div></div></section>
+
+<section class="dark"><div class="wrap">
+<div class="kick">What learners say</div>
+<h2>Real Dubliners, real tests</h2>
+<div class="quotes">
+<blockquote><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>I completed my lessons with John and couldn't recommend him more. I just passed my test in Tallaght with only 1 fault.<cite>Rachel Shanahan, Tallaght (Google review)</cite></blockquote>
+<blockquote><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>I did my lessons in Finglas with Richard. He was very patient with me and helped me greatly. It's thanks to him that I passed my test.<cite>Adam Sheridan, Finglas (Google review)</cite></blockquote>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="kick">Learn before you drive</div>
+<h2>Guides on the school's site</h2>
+<p class="sub">Free reading and practice for every stage, from the permit application to the morning of your test.</p>
+<div class="paths">
+<div class="card"><h3>Learn to drive in Dublin</h3><p>The full guide: every step, every cost and every Dublin-specific detail from theory test to full licence.</p></div>
+<div class="card"><h3>Applying for the learner permit</h3><p>What you need, where to go and how long it takes, from start to finish.</p></div>
+<div class="card"><h3>A parent's guide</h3><p>Insurance, costs, sponsoring driver rules and how to help with practice between lessons.</p></div>
+<div class="card"><span class="tag">Free</span><h3>Mock theory test</h3><p>20 real-style questions, timed, with instant results, so you know if you are ready before the real one.</p></div>
+</div>
+<div class="areas" style="margin-top:24px"><span>What to expect on test day</span><span>EDT explained</span><span>Automatic vs manual</span><span>Gift vouchers valid 5 years</span><span>Refund requests handled in 48 hours</span></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+<div class="kick">Common questions</div>
+<h2>Before you book</h2>
+<details><summary>Do I need EDT for an automatic licence?</summary><p>Yes. EDT is required whether you learn manual or automatic. The 12 lessons are identical in structure; only the car changes.</p></details>
+<details><summary>Can I switch instructor mid-course?</summary><p>Yes. Your EDT logbook transfers between any RSA-approved instructor and each lesson is signed off individually.</p></details>
+<details><summary>How long should I leave between lessons?</summary><p>There is no minimum gap. Most learners do one a week, some two, and the full course often takes 3 to 6 months.</p></details>
+<details><summary>What if my learner permit expires during EDT?</summary><p>You need a valid permit for every lesson. Renew it before the next session; completed lessons stay on record.</p></details>
+<details><summary>Do you charge extra for city centre pickups?</summary><p>No. The rate is the same in Tallaght, Swords, the city centre or anywhere else in Dublin.</p></details>
+<details><summary>Can I get a refund or make a complaint?</summary><p>Yes, both go through the contact page. Refunds are reviewed within 48 hours and a manager replies to complaints within 24 hours.</p></details>
+</div></section>
+
+<section id="contact" class="white"><div class="wrap">
+<div class="kick">Get in touch</div>
+<h2>Book, ask or call back</h2>
+<div class="contact">
+<div class="ci"><b>Phone</b><a href="tel:+35319023100">(01) 902 3100</a><br>Callbacks within about 2 hours, Mon-Fri 9am-5pm.</div>
+<div class="ci"><b>Email</b><a href="mailto:info@rsaschoolofmotoring.ie">info@rsaschoolofmotoring.ie</a><br>Usually a reply within 24 hours.</div>
+<div class="ci"><b>Office</b>Premier Business Park<br>52 Broomhill Road, Tallaght</div>
+</div>
+<p style="margin-top:22px"><button class="btn" type="button" onclick="document.getElementById('wa-btn').click()">Start a booking request</button></p>
+</div></section>
+</main>
+<footer><div class="wrap"><span>RSA School of Motoring, Dublin</span><span>Demo &middot; prepared by Gevorg Hovhannisyan</span></div></footer>
+<script>window.WA_CFG={title:"RSA lesson helper",sub:"Answers from the RSA School of Motoring site",btnLabel:"Ask about lessons",icon:"\u{1F697}",ph:"Ask about EDT, prices, test centres...",send:"Send",
+hello:"Hi! I can answer questions about EDT lessons, automatic lessons, pretest and car hire, areas, vouchers and how to book. What would you like to know?",
+fallback:"I don't have that detail from the site, so the team will confirm it. You can call (01) 902 3100 (office hours Mon-Fri 9am-5pm) or tap 'Book a lesson'.",
+chips:["Book a lesson","How much are lessons?","What is EDT?","Automatic lessons","Test centres","Gift vouchers"],cancel:"Cancel",cancelMsg:"No problem. Ask me anything else.",
+flow:{trig:["book","booking","sign up","start lessons","reserve","enquire","enrol","schedule"],done:"Thanks, your request is sent to the team. They will call or email to confirm your first lesson. (Demo: nothing is actually sent.)",
+steps:[
+{key:"type",label:"Lesson",q:"What would you like to book?",opts:["Full EDT (12 lessons)","6 EDT lessons","Single lesson","Pretest + car hire","Gift voucher"]},
+{key:"gear",label:"Car",q:"Manual or automatic?",opts:["Manual","Automatic"]},
+{key:"area",label:"Area",q:"Which area of Dublin should we pick you up in? (e.g. Tallaght, Swords, Dublin 6)"},
+{key:"name",label:"Name",q:"Your name?"},
+{key:"phone",label:"Phone",q:"Best phone number for a callback?"}]},
+kb:[
+{k:["price","prices","cost","how much","fee","fees","pricing","expensive","cheap","rate"],a:"Manual: single lesson 53.27 euro, 3 lessons 158.17, 6 lessons 315.01, 12 lessons 587.95 (49.00 per lesson). Automatic: single 61.41, 3 lessons 180.57, 6 lessons 353.71, 12 lessons 659.24. All include VAT, the dual-control car and pickup, and the same rate applies across Dublin with no area surcharge.",chips:["Book a lesson","Pretest + car hire price"]},
+{k:["pretest car hire price","car hire cost","pretest price","pretest and car hire","car hire","hire the car"],a:"Pretest lesson plus car hire for the test: 183.63 euro for manual, 193.81 for automatic. It is a one-hour lesson on the test routes, then you take the car for the test itself.",chips:["Book a lesson"]},
+{k:["edt","essential driver training","12 lessons","twelve lessons","mandatory","required lessons","syllabus","how many lessons"],a:"EDT is the RSA's 12-lesson Essential Driver Training. Every first-time Irish learner permit holder must complete it before the driving test. Lessons 1 to 8 go in order, 9 to 12 can be taken in any order, and each lesson is signed off on the RSA system by your instructor.",chips:["How much are lessons?","Foreign licence","Book a lesson"]},
+{k:["foreign licence","foreign license","reduced edt","6 lessons","six lessons","exchange licence","other country","polish licence","licence from abroad"],a:"If you hold a recognised foreign licence you may only need a reduced 6-lesson EDT (manual 315.01 euro, automatic 353.71). Check with the NDLS whether you qualify.",chips:["Book a lesson"]},
+{k:["automatic","auto","automatics","no clutch","gearbox","transmission","manual"],a:"Yes, we offer automatic lessons with the same EDT syllabus and the same test centres. Automatic costs about 6 euro more per lesson than manual because there are fewer automatic instructors. Note an automatic licence restricts you to automatic cars; a manual licence covers both.",chips:["How much are lessons?","Book a lesson"]},
+{k:["pretest","pre test","pre-test","test routes","mock test","before my test","driving test","test day"],a:"Pretest lessons are done at your actual test centre: your instructor drives the real routes with you, runs a mock test with a fault sheet, and can supply the car for the test itself. Most learners book this after finishing EDT.",chips:["Test centres","Pretest + car hire price","Book a lesson"]},
+{k:["test centre","test center","tallaght","finglas","raheny","killester","mulhuddart","charlestown","dun laoghaire","where is my test"],a:"We prepare learners for Dublin test centres including Tallaght, Finglas, Raheny, Killester, Mulhuddart and Dun Laoghaire (the site lists 7 centres in total). Tell your instructor which one you are booked at and the pretest will drill its routes.",chips:["Pretest and car hire","Book a lesson"],w:1.2},
+{k:["area","areas","where","cover","pickup","pick up","collect","my area","location","locations","dublin 6","swords","lucan","blanchardstown","naas"],a:"We cover 184 locations across Dublin and 25 counties, with 35 instructors. Pickup is from your home, college or workplace at no extra charge, and every Dublin area has the same price. Tell me your area when you book and the team will match you with a local instructor.",chips:["Book a lesson"]},
+{k:["gift","voucher","vouchers","present","birthday","gift card"],a:"Gift vouchers are delivered instantly by email, can be personalised and printed, and are valid for 5 years. Choose a single lesson, a pack or the full EDT. The recipient redeems by calling (01) 902 3100 with the voucher reference.",chips:["Book a lesson"]},
+{k:["phone","call","number","telephone","contact","ring","callback","call back"],a:"Call (01) 902 3100. Office hours are Monday to Friday, 9am to 5pm, and callback requests are answered within about 2 hours in those hours. The office is at Premier Business Park, 52 Broomhill Road, Tallaght.",chips:["Book a lesson"]},
+{k:["email","e-mail","mail","write to","message"],a:"You can email info@rsaschoolofmotoring.ie. The team usually replies within 24 hours.",chips:["Book a lesson"]},
+{k:["address","office","tallaght office","broomhill","premier business park","visit"],a:"The office is at Premier Business Park, 52 Broomhill Road, Tallaght. Lessons start from your own pickup point, so you do not need to come to the office.",chips:["Opening hours"]},
+{k:["hours","open","opening","office hours","when are you open","evening","weekend","saturday","sunday","morning"],a:"Office hours are Monday to Friday, 9am to 5pm. Lessons are scheduled flexibly from morning to evening. For weekend slots the team will confirm with your instructor.",chips:["Book a lesson"]},
+{k:["learner permit","permit","provisional","theory test","apply for permit"],a:"You need a valid learner permit for every lesson. The site has a step-by-step guide to applying for the learner permit, and a free 20-question timed mock theory test to try before you book the real one.",chips:["What is EDT?"]},
+{k:["instructor","instructors","teacher","adi","approved","qualified","who teaches","change instructor","switch instructor"],a:"All lessons are with RSA-approved driving instructors (ADI) in a dual-control car. Your EDT logbook transfers between any approved instructor, so switching does not reset your progress.",chips:["Book a lesson"]},
+{k:["lesson length","how long","duration","one hour","60 minutes","length of lesson"],a:"Each lesson is one hour. Most learners take one lesson a week, and the full EDT usually spreads over 3 to 6 months.",chips:["What is EDT?"]},
+{k:["pass rate","reviews","rating","reputation","stars","trust","good","experience","years"],a:"The site shows a 4.7 star rating from 814+ Google reviews, an 85% first-time pass rate and 35 certified instructors.",chips:["Book a lesson"]},
+{k:["refund","refunds","cancel","cancellation","reschedule","complaint","complain"],a:"Refund requests and complaints go through the contact page. Refunds are reviewed within 48 hours and a manager replies to complaints within 24 hours. For rescheduling a lesson, contact the office on (01) 902 3100.",chips:[]},
+{k:["pay","payment","pay now","card","invoice","vat"],a:"All prices include VAT. There is a Pay Now page on the site, and I can note your booking request so the team confirms details with you.",chips:["Book a lesson"]},
+{k:["parent","parents","son","daughter","child","teenager","sponsor"],a:"There is a parents' guide on the site covering insurance, costs and sponsoring driver rules. You can also buy a gift voucher for a son or daughter.",chips:["Gift vouchers"]}
+]};
+</script>
+<script>/*CORE*/
+function waNorm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9\u0400-\u04ff\s]/g,' ').replace(/\s+/g,' ').trim();}
+function waStem(w){if(w.length>4){w=w.replace(/(ing|ed|es|s)$/,'');}return w;}
+function waLev(a,b){var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;var d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=0;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));}return d[m][n];}
+function waTokMatch(t,k){if(t===k)return 1;var ts=waStem(t),ks=waStem(k);if(ts===ks)return 1;if(k.length>=4&&t.length>=4&&(ts.indexOf(ks)===0||ks.indexOf(ts)===0)&&Math.min(ts.length,ks.length)>=4)return .9;var L=Math.min(t.length,k.length);if(L>=5){var d=waLev(ts,ks);if(d<=1)return .8;if(L>=8&&d<=2)return .7;}return 0;}
+function waAnswer(kb,q){var nq=waNorm(q),toks=nq.split(' ').filter(Boolean),best=null,bs=0;
+for(var i=0;i<kb.length;i++){var e=kb[i],sc=0;
+for(var j=0;j<e.k.length;j++){var kw=waNorm(e.k[j]),kt=kw.split(' ');
+if(kt.length>1){if(nq.indexOf(kw)>-1){sc+=2*kt.length;continue;}var hit=0;for(var a=0;a<kt.length;a++){for(var b=0;b<toks.length;b++){if(waTokMatch(toks[b],kt[a])>=.8){hit++;break;}}}if(hit===kt.length)sc+=1.5*kt.length;}
+else{var bm=0;for(var b2=0;b2<toks.length;b2++){var m=waTokMatch(toks[b2],kt[0]);if(m>bm)bm=m;}sc+=bm*2;}}
+if(e.w)sc*=e.w;if(sc>bs){bs=sc;best=e;}}
+return bs>=1.5?best:null;}
+/*ENDCORE*/
+</script>
+<script>/*UI*/
+(function(){
+var C=window.WA_CFG;if(!C)return;
+var $=function(s){return document.querySelector(s)};
+var btn=document.createElement('button');btn.id='wa-btn';btn.type='button';btn.setAttribute('aria-label',C.btnLabel||'Chat');btn.innerHTML='<span class="wa-ico">'+(C.icon||'?')+'</span><span class="wa-lbl">'+(C.btnLabel||'Ask us')+'</span>';
+var p=document.createElement('div');p.id='wa-panel';p.setAttribute('role','dialog');p.setAttribute('aria-label',C.title);
+p.innerHTML='<div id="wa-head"><div><b>'+C.title+'</b><small>'+C.sub+'</small></div><button type="button" id="wa-x" aria-label="Close">&times;</button></div><div id="wa-log" aria-live="polite"></div><div id="wa-chips"></div><form id="wa-form" autocomplete="off"><input id="wa-in" type="text" placeholder="'+C.ph+'" aria-label="'+C.ph+'"><button type="submit">'+(C.send||'Send')+'</button></form>';
+document.body.appendChild(btn);document.body.appendChild(p);
+var log=$('#wa-log'),chips=$('#wa-chips'),inp=$('#wa-in'),flow=null,data={},started=false;
+function add(t,who){var d=document.createElement('div');d.className='wa-m wa-'+who;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a,fn){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){fn(c)};chips.appendChild(b);});}
+function home(){setChips(C.chips,function(c){say(c)});}
+function startFlow(){flow={i:0};data={};ask();}
+function ask(){var s=C.flow.steps[flow.i];add(s.q,'bot');if(s.opts){setChips(s.opts.concat([C.cancel||'Cancel']),function(c){if(c===(C.cancel||'Cancel')){flow=null;add(C.cancelMsg||'No problem.','bot');home();return;}answerStep(c)});}else{chips.innerHTML='';setChips([C.cancel||'Cancel'],function(){flow=null;add(C.cancelMsg||'No problem.','bot');home();});}}
+function answerStep(v){var s=C.flow.steps[flow.i];add(v,'me');data[s.key]=v;flow.i++;if(flow.i>=C.flow.steps.length){var sum=C.flow.steps.map(function(x){return x.label+': '+data[x.key]}).join(' | ');add(C.flow.done+'\n'+sum,'bot');flow=null;home();}else ask();}
+function isBook(q){var n=waNorm(q);return (C.flow.trig||[]).some(function(t){return n.indexOf(waNorm(t))>-1;});}
+function say(q){q=q.trim();if(!q)return;if(flow){answerStep(q);return;}add(q,'me');if(isBook(q)){startFlow();return;}var e=waAnswer(C.kb,q);if(e){add(e.a,'bot');if(e.chips)setChips(e.chips,function(c){say(c)});else home();}else{add(C.fallback,'bot');home();}}
+btn.onclick=function(){p.classList.toggle('open');if(p.classList.contains('open')&&!started){started=true;add(C.hello,'bot');home();}if(p.classList.contains('open'))setTimeout(function(){inp.focus()},50);};
+$('#wa-x').onclick=function(){p.classList.remove('open')};
+$('#wa-form').onsubmit=function(ev){ev.preventDefault();var v=inp.value;inp.value='';say(v);};
+})();
+/*ENDUI*/
+</script>
+</body>
+</html>

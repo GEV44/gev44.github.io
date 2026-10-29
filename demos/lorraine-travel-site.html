@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lorraine Travel · Luxury travel advisors, Coral Gables (demo)</title>
+<meta name="description" content="Demo page for Lorraine Travel: luxury travel advisors since 1948, with an advisor-desk assistant that gathers a trip outline.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0B1B2B;--mid:#10243A;--bone:#F6F1E7;--sand:#EDE3CF;--champ:#C8A96A;--gold:#B08D4C;--rouge:#7A2E2A;--mute:#5c6772;
+--wa-accent:#10243A;--wa-on:#F6F1E7;--wa-bg:#F6F1E7;--wa-ink:#0B1B2B;--wa-bot:#EDE3CF;--wa-line:#d9ccb0;--wa-font:'Jost',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.65 'Jost',system-ui,sans-serif;background:var(--bone);color:var(--ink);overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.08}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+header.site{background:rgba(246,241,231,.95);border-bottom:1px solid #e0d5bb;position:sticky;top:0;z-index:40}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;height:66px}
+.wordmark{font:600 24px/1 'Cormorant Garamond',serif;letter-spacing:.03em;text-decoration:none;background:linear-gradient(90deg,#8d6b2c,#C8A96A 50%,#8d6b2c);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav.main{display:none;gap:22px;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+nav.main a{text-decoration:none}
+nav.main a:hover{color:var(--gold)}
+.btn{display:inline-block;text-decoration:none;font:500 13px/1 'Jost';letter-spacing:.12em;text-transform:uppercase;padding:14px 20px;border:1px solid var(--gold);background:var(--ink);color:var(--bone);cursor:pointer}
+.btn.gold{background:var(--champ);color:var(--ink);border-color:var(--champ)}
+.btn.line{background:transparent;color:inherit;border-color:currentColor}
+@media(min-width:900px){nav.main{display:flex}}
+/* hero */
+.hero{background:var(--ink);color:var(--bone);position:relative;overflow:hidden;padding:58px 0 64px}
+.hero::before{content:"";position:absolute;right:-120px;bottom:-140px;width:420px;height:420px;border:1px solid rgba(200,169,106,.35);border-radius:50%}
+.hero::after{content:"";position:absolute;right:-60px;bottom:-80px;width:300px;height:300px;border:1px solid rgba(200,169,106,.2);border-radius:50%}
+.hero .in{position:relative;z-index:1;max-width:760px}
+.est{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--champ);margin-bottom:18px}
+.hero h1{font-size:clamp(46px,11vw,96px);font-weight:500}
+.hero h1 i{color:var(--champ)}
+.hero p{margin:20px 0 28px;max-width:34em;color:#d8d2c3;font-size:18px}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin-top:44px;border-top:1px solid rgba(200,169,106,.35);position:relative;z-index:1}
+.facts div{padding:16px 0;border-bottom:1px solid rgba(200,169,106,.2)}
+.facts b{display:block;font:600 26px 'Cormorant Garamond';color:var(--champ)}
+.facts span{font-size:13px;color:#b9b4a6;letter-spacing:.05em}
+@media(min-width:760px){.facts{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;border-bottom:0}.facts div{border-bottom:0}}
+.aff{background:var(--mid);color:#cfc7b2;padding:14px 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-align:center}
+.aff .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px}
+section{padding:60px 0}
+section.sand{background:var(--sand)}
+section.navy{background:var(--mid);color:var(--bone)}
+.k{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.navy .k{color:var(--champ)}
+h2{font-size:clamp(32px,6.5vw,52px);margin-bottom:16px}
+.lead{max-width:40em;color:var(--mute);margin-bottom:28px;font-size:18px}
+.navy .lead{color:#c8c2b3}
+/* four ways */
+.ways{display:grid;gap:0;grid-template-columns:minmax(0,1fr);border-top:1px solid #d9ccb0}
+@media(min-width:760px){.ways{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.way{padding:26px 4px;border-bottom:1px solid #d9ccb0}
+@media(min-width:760px){.way:nth-child(odd){padding-right:30px;border-right:1px solid #d9ccb0}.way:nth-child(even){padding-left:30px}}
+.way small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--rouge)}
+.way h3{font-size:30px;margin:6px 0}
+.way p{color:#3d4852}
+/* compare */
+.cmp{width:100%;border-collapse:collapse;font-size:15px}
+.cmp th,.cmp td{padding:13px 8px;text-align:left;border-bottom:1px solid rgba(200,169,106,.28);vertical-align:top}
+.cmp th{font:500 11px 'Jost';letter-spacing:.14em;text-transform:uppercase;color:var(--champ)}
+.cmp td:first-child{font-weight:500;color:#fff}
+.cmp td:nth-child(2){color:var(--champ)}
+.cmp td:nth-child(3){color:#a39d8e}
+/* perks */
+.perks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media(min-width:900px){.perks{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.perk{background:#fff;border:1px solid #e0d5bb;padding:18px 16px}
+.perk h3{font-size:22px;margin-bottom:4px}
+.perk p{font-size:15px;color:#4a555f}
+.perk::before{content:"";display:block;width:26px;height:2px;background:var(--champ);margin-bottom:12px}
+/* story */
+.story{display:grid;gap:26px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:860px){.story{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:50px}}
+.tl{border-left:2px solid var(--champ);padding-left:20px}
+.tl div{margin-bottom:22px;position:relative}
+.tl div::before{content:"";position:absolute;left:-27px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--bone);border:2px solid var(--champ)}
+.tl b{font:600 30px 'Cormorant Garamond';display:block;color:var(--rouge)}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{border:1px solid rgba(200,169,106,.55);padding:7px 13px;font-size:14px;letter-spacing:.03em}
+.sand .chips span{border-color:#b9a56f}
+/* faq */
+details{border-bottom:1px solid #d9ccb0}
+details summary{cursor:pointer;list-style:none;padding:18px 0;font:600 22px 'Cormorant Garamond';display:flex;justify-content:space-between;gap:14px}
+details summary::after{content:"+";color:var(--gold)}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 0 18px;color:#3d4852}
+/* contact */
+.cg{display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:800px){.cg{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cg h3{font-size:22px;color:var(--champ);margin-bottom:6px}
+.cg a{color:#fff}
+footer{background:#060f18;color:#9aa4ae;padding:26px 0 96px;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px}
+#wa-btn{position:fixed;right:14px;bottom:14px;z-index:60;display:flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 16px;background:var(--wa-accent);color:var(--wa-on);font:600 15px/1 var(--wa-font);cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.28)}
+#wa-btn .wa-ico{font-size:18px}
+#wa-panel{position:fixed;right:12px;bottom:70px;z-index:61;width:min(360px,calc(100vw - 24px));height:min(520px,calc(100vh - 100px));display:none;flex-direction:column;background:var(--wa-bg);color:var(--wa-ink);border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.35);overflow:hidden;font:15px/1.4 var(--wa-font);border:1px solid var(--wa-line)}
+#wa-panel.open{display:flex}
+#wa-head{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--wa-accent);color:var(--wa-on)}
+#wa-head b{display:block;font-size:16px}#wa-head small{opacity:.85;font-size:12px}
+#wa-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer}
+#wa-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:0}
+.wa-m{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-wrap;word-wrap:break-word}
+.wa-bot{background:var(--wa-bot);align-self:flex-start;border-bottom-left-radius:4px}
+.wa-me{background:var(--wa-accent);color:var(--wa-on);align-self:flex-end;border-bottom-right-radius:4px}
+#wa-chips{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px;max-height:112px;overflow:auto}
+#wa-chips button{border:1px solid var(--wa-accent);background:transparent;color:var(--wa-ink);border-radius:999px;padding:6px 11px;font:13px var(--wa-font);cursor:pointer}
+#wa-form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--wa-line)}
+#wa-form input{flex:1;min-width:0;border:1px solid var(--wa-line);border-radius:10px;padding:10px;font:15px var(--wa-font);background:#fff;color:#111}
+#wa-form button{border:0;border-radius:10px;background:var(--wa-accent);color:var(--wa-on);padding:0 14px;font:600 14px var(--wa-font);cursor:pointer}
+
+#wa-btn{border-radius:2px;letter-spacing:.06em;text-transform:uppercase;font-size:13px}
+#wa-panel{border-radius:2px}
+.wa-m{border-radius:2px!important}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="wordmark" href="#top" aria-label="Lorraine Travel">Lorraine Travel</a>
+<nav class="main"><a href="#ways">Journeys</a><a href="#advisor">Why an advisor</a><a href="#hotels">Hotels</a><a href="#story">Our story</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="btn" href="#contact">Plan my journey</a>
+</div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<div class="in">
+<div class="est">Established 1948 &middot; Havana &middot; Coral Gables</div>
+<h1>The world, <i>curated.</i> Since 1948.</h1>
+<p>A family-owned luxury travel house advocating for discerning travelers for nearly eight decades. Bespoke vacations, private cruises and preferred hotel programs, planned by senior advisors, never algorithms.</p>
+<a class="btn gold" href="#contact">Plan my journey</a> &nbsp; <a class="btn line" href="#story">Our story</a>
+</div>
+<div class="facts">
+<div><b>1948</b><span>Founded in Havana</span></div>
+<div><b>1960</b><span>Incorporated in Florida</span></div>
+<div><b>Four Seasons</b><span>Preferred Partner</span></div>
+<div><b>Coral Gables</b><span>Family-owned, Florida</span></div>
+</div>
+</div></div>
+<div class="aff"><div class="wrap"><span>Signature Travel Network</span><span>ASTA</span><span>Hickory Global Partners</span><span>Four Seasons Preferred Partner</span></div></div>
+
+<section id="ways"><div class="wrap">
+<div class="k">What we plan</div>
+<h2>Four ways to travel. One standard of care.</h2>
+<p class="lead">From a private villa in Capri to a polar expedition with Quark Expeditions, every journey is shaped by the same instinct: travel should feel like a privilege, not a transaction.</p>
+<div class="ways">
+<div class="way"><small>Bespoke</small><h3>Bespoke Vacations</h3><p>Private itineraries crafted around your interests, season and pace, from Tuscan estates to Bhutanese monasteries.</p></div>
+<div class="way"><small>At sea</small><h3>Luxury Cruises</h3><p>Ocean, expedition and river cruises with advisor perks like onboard credits, stateroom upgrades and complimentary shore excursions.</p></div>
+<div class="way"><small>On land</small><h3>Preferred Hotels</h3><p>Four Seasons Preferred Partner. Confirmed upgrades, daily breakfast for two and resort credits at luxury properties worldwide.</p></div>
+<div class="way"><small>Editorial</small><h3>Travel Guides</h3><p>Guides written by advisors who travel the world: the Amalfi Coast and Capri, Paris, the Maldives, Japan, the Galapagos and beyond.</p></div>
+</div>
+</div></section>
+
+<section id="advisor" class="navy"><div class="wrap">
+<div class="k">The Lorraine difference</div>
+<h2>An advocate, not a booking engine.</h2>
+<p class="lead">We work for you, never for the suppliers. Every itinerary is hand-built by a senior advisor with 15+ years of experience and the authority to act the moment something changes.</p>
+<table class="cmp">
+<thead><tr><th>Experience</th><th>Lorraine Travel</th><th>Online booking</th></tr></thead>
+<tbody>
+<tr><td>Personal advisor</td><td>Senior advisor, 15+ years</td><td>Call-center agent</td></tr>
+<tr><td>Hotel perks</td><td>Preferred-partner perks at luxury hotels</td><td>Rare or none</td></tr>
+<tr><td>Cruise upgrades</td><td>Group rates, onboard credit, prepaid gratuities</td><td>Standard public rates</td></tr>
+<tr><td>When things go wrong</td><td>Reached directly, 24/7</td><td>Hours on hold</td></tr>
+<tr><td>Itinerary</td><td>Built by hand for you</td><td>Auto-generated package</td></tr>
+<tr><td>Accountability</td><td>Your advocate. Period.</td><td>Suppliers pay the platform</td></tr>
+</tbody></table>
+</div></section>
+
+<section id="hotels"><div class="wrap">
+<div class="k">Four Seasons Preferred Partner</div>
+<h2>More than a room. A relationship.</h2>
+<p class="lead">For every property we recommend there is a name to call: a general manager, a concierge who knows our travelers. Perks vary by property, and your advisor confirms the exact package before booking.</p>
+<div class="perks">
+<div class="perk"><h3>Room upgrade</h3><p>Complimentary on arrival, subject to availability, often to the next category or higher.</p></div>
+<div class="perk"><h3>Daily breakfast</h3><p>For two, at the property's primary restaurant. No vouchers, no fine print.</p></div>
+<div class="perk"><h3>Resort or spa credit</h3><p>Typically $100 per stay for dining, spa or other on-property services.</p></div>
+<div class="perk"><h3>Early check-in, late check-out</h3><p>When available, no extra charge, confirmed in advance.</p></div>
+<div class="perk"><h3>Wi-Fi</h3><p>High-speed in-room internet where not already included.</p></div>
+<div class="perk"><h3>Personal welcome</h3><p>A greeting from senior staff who know you are a Lorraine Travel guest.</p></div>
+</div>
+</div></section>
+
+<section class="sand"><div class="wrap">
+<div class="k">Cruise, air and corporate</div>
+<h2>Booked across the industry</h2>
+<p class="lead">Cruise pricing is identical between the line and your advisor; the difference is what is layered on top. Through Signature Travel Network that can mean group rates applied to individual passengers, onboard credit and prepaid gratuities.</p>
+<div class="chips"><span>Royal Caribbean</span><span>Norwegian</span><span>Celebrity</span><span>Explora Journeys</span><span>Virgin Voyages</span><span>Windstar</span><span>SeaDream</span><span>Ponant</span><span>Lindblad</span><span>Quark</span><span>UnCruise</span><span>Uniworld</span><span>Paul Gauguin</span><span>Star Clippers</span></div>
+<div class="ways" style="margin-top:34px">
+<div class="way"><small>Airline tickets</small><h3>The right flights</h3><p>Domestic and international fares, first and business class, complex multi-city itineraries, seats and upgrades, and group air.</p></div>
+<div class="way"><small>Corporate travel</small><h3>Built on technology, backed by people</h3><p>Full-service or self-service online, dedicated portals, preferred hotel rates and 24-hour global emergency assistance.</p></div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="k">Cruise advantage</div>
+<h2>What advisor-booked sailings can include</h2>
+<div class="perks">
+<div class="perk"><h3>Suite upgrades</h3><p>When available on the sailing.</p></div>
+<div class="perk"><h3>Onboard credit</h3><p>Added to your account for use onboard.</p></div>
+<div class="perk"><h3>Prepaid gratuities</h3><p>On select sailings.</p></div>
+<div class="perk"><h3>Shore excursions</h3><p>Complimentary on select sailings.</p></div>
+<div class="perk"><h3>Specialty dining</h3><p>Reservations arranged in advance.</p></div>
+<div class="perk"><h3>Group rates</h3><p>Applied to individual passengers through Signature Travel Network.</p></div>
+</div>
+</div></section>
+
+<section class="sand"><div class="wrap">
+<div class="k">Planning tools</div>
+<h2>Resources for the road ahead</h2>
+<p class="lead">The site keeps a shelf of practical pages for travelers, whether you are mid-plan or already packing.</p>
+<div class="ways">
+<div class="way"><small>Protect</small><h3>Insurance</h3><p>A dedicated resource page on the site. For coverage that fits a particular itinerary, from a cruise to a safari, ask your advisor.</p></div>
+<div class="way"><small>Explore</small><h3>Sightseeing</h3><p>A sightseeing resource page, alongside editorial guides to the Amalfi Coast, Paris and the Maldives written by advisors who travel.</p></div>
+<div class="way"><small>Families</small><h3>Disney Parks</h3><p>A Disney Parks resource page, and a team that plans family and multi-generational journeys by hand.</p></div>
+<div class="way"><small>Stay informed</small><h3>Travel advisories</h3><p>An advisories page for the places you plan to visit, plus a currency converter, climate guide and time zone tool.</p></div>
+</div>
+<div class="chips" style="margin-top:26px"><span>Currency converter</span><span>Climate</span><span>Time zones</span><span>Special offers</span><span>Blog</span><span>E-brochure</span></div>
+</div></section>
+
+<section class="navy"><div class="wrap">
+<div class="k">Corporate travel</div>
+<h2>Full-service, self-service or both</h2>
+<p class="lead">Backed by a travel house in business since 1948: proven booking technology, veteran consultants and a choice of service configurations.</p>
+<div class="chips"><span>Dedicated travel portals</span><span>Free airfare quotes</span><span>Preferred hotel rate programs</span><span>24-hour global emergency assistance</span><span>Meeting and incentive planning</span><span>Travel management reports</span><span>Passport and visa services</span><span>Duty of care and risk management</span><span>Corporate travel insurance</span><span>Employee vacation clubs</span></div>
+</div></section>
+
+<section id="story"><div class="wrap story">
+<div>
+<div class="k">Our story</div>
+<h2>From Havana, 1948, to the world.</h2>
+<p>John and Luisa Guiteras opened Lorraine Travel in Havana in 1948, when air travel was still a rite of passage. In 1960 the family carried the firm and its standard of care to Coral Gables, Florida, where it grew into one of the largest privately owned travel companies in the state.</p>
+<p style="margin-top:14px">Few travel houses survive nearly eighty years. Lorraine Travel did, by doing it the old way: by hand, by relationship, by name.</p>
+</div>
+<div class="tl">
+<div><b>1948</b>Opened in Havana by John and Luisa Guiteras.</div>
+<div><b>1960</b>Re-established and incorporated in Coral Gables, Florida.</div>
+<div><b>Today</b>Four Seasons Preferred Partner, with Signature Travel Network, ASTA and Hickory Global Partners.</div>
+</div>
+</div></section>
+
+<section class="sand"><div class="wrap">
+<div class="k">Where advisors are sending travelers</div>
+<h2>Frequently booked</h2>
+<div class="chips"><span>Italy and the Amalfi Coast</span><span>Paris</span><span>Greece</span><span>Portugal</span><span>United Kingdom</span><span>Japan</span><span>The Maldives</span><span>St. Barth's</span><span>Anguilla</span><span>Turks and Caicos</span><span>Kenya</span><span>Tanzania</span><span>Botswana</span><span>South Africa</span><span>Galapagos</span><span>Antarctica</span></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+<div class="k">Considering a travel advisor?</div>
+<h2>Frequently asked</h2>
+<details><summary>Do travel advisors cost more?</summary><p>In most cases, no. Luxury suppliers pay the advisor, not the traveler. For complex bespoke itineraries a modest planning fee is quoted in advance.</p></details>
+<details><summary>What happens during a flight cancellation or missed connection?</summary><p>You call your senior advisor. Advisors have direct supplier lines and rebooking authority, and are reachable 24/7 during active travel.</p></details>
+<details><summary>Which cruise lines do you book?</summary><p>Across the industry, from Royal Caribbean and Norwegian to Explora Journeys, Ponant, Lindblad, Quark and Uniworld River Cruises.</p></details>
+<details><summary>Can you plan honeymoons and milestone trips?</summary><p>Yes. Honeymoons, anniversaries, milestone birthdays, family reunions and bucket-list journeys are all planned by hand.</p></details>
+<details><summary>Where are you located?</summary><p>377 Alhambra Circle, Coral Gables, Florida 33134, serving clients across the United States and worldwide by phone, email and text.</p></details>
+<details><summary>Is Lorraine Travel a Four Seasons Preferred Partner?</summary><p>Yes. Clients receive the Preferred-Partner amenity package at every Four Seasons hotel and resort worldwide.</p></details>
+<details><summary>Why book a cruise through an advisor?</summary><p>Pricing is identical to the cruise line's, but advisors layer on onboard credit, prepaid gratuities, group rates applied to individual passengers and complimentary shore excursions on select sailings.</p></details>
+<details><summary>What does an advisor actually do for me?</summary><p>Listens to what you want, designs a tailored itinerary, books air, hotels, cruises, transfers and guides, secures preferred-partner perks, and manages rebookings and supplier mistakes in real time.</p></details>
+<details><summary>How do advisors get paid if I am not paying more?</summary><p>Hotels, cruise lines and tour operators pay a commission for booking with them, at no additional cost to you. The rate is the same as, or better than, booking direct.</p></details>
+<details><summary>Can I reach someone when I am traveling?</summary><p>Yes. During active travel your senior advisor is reachable by phone, text and email around the clock, and an after-hours emergency service covers clients in transit anywhere.</p></details>
+</div></section>
+
+<section id="contact" class="navy"><div class="wrap">
+<div class="k">Begin your journey</div>
+<h2>Speak with a senior advisor.</h2>
+<p class="lead">Complimentary consultation, no obligation. Every inquiry is reviewed by a senior advisor and answered personally within one business day.</p>
+<div class="cg">
+<div><h3>Telephone</h3><a href="tel:+13054464433">305.446.4433</a><br>800.666.8911 toll-free (call or text)</div>
+<div><h3>Email</h3><a href="mailto:info@lorrainetravel.com">info@lorrainetravel.com</a></div>
+<div><h3>Office and hours</h3>377 Alhambra Circle, Coral Gables, FL 33134<br>Mon to Fri, 9:00am to 6:00pm ET</div>
+</div>
+<p style="margin-top:28px"><button class="btn gold" type="button" onclick="document.getElementById('wa-btn').click()">Outline my journey</button></p>
+</div></section>
+</main>
+<footer><div class="wrap"><span>Lorraine Travel &middot; Coral Gables</span><span>Demo &middot; prepared by Gevorg Hovhannisyan</span></div></footer>
+<script>window.WA_CFG={title:"Advisor desk",sub:"Quick answers, then a senior advisor takes over",btnLabel:"Plan a journey",icon:"✨",ph:"Ask about cruises, hotels, perks...",send:"Send",
+hello:"Welcome to Lorraine Travel. I can answer common questions from our site and gather the outline of your trip so a senior advisor can reply personally within one business day. What are you thinking of?",
+fallback:"I do not have that detail from the site, so one of our senior advisors will confirm it. Call 305.446.4433 (Mon-Fri 9am-6pm ET) or tap 'Plan my journey' and I will pass your outline along.",
+chips:["Plan my journey","Why use an advisor?","Cruises","Hotel perks","Fees","Contact"],cancel:"Cancel",cancelMsg:"Of course. Ask me anything else.",
+flow:{trig:["plan my journey","plan a trip","plan","book","booking","inquiry","enquiry","consultation","request","quote","honeymoon","vacation"],done:"Thank you. Your outline has been passed to the team and a senior advisor will reply personally within one business day. (Demo: nothing is actually sent.)",
+steps:[
+{key:"kind",label:"Journey",q:"What may we help you plan?",opts:["Bespoke luxury vacation","Luxury cruise","Luxury hotel stay","Honeymoon / anniversary","Family / multi-generational","Safari / expedition","Corporate travel","Airline tickets"]},
+{key:"where",label:"Where",q:"Do you have a destination or region in mind? (or 'not sure yet')"},
+{key:"when",label:"When",q:"Approximate travel date?"},
+{key:"who",label:"Travelers",q:"How many travelers, and who is coming?"},
+{key:"name",label:"Name",q:"Your name?"},
+{key:"contact",label:"Contact",q:"Best email or phone for the advisor to reach you?"}]},
+kb:[
+{k:["why advisor","travel advisor","why use","worth it","instead of expedia","online booking","expedia","book myself","do it myself","advocate"],a:"A travel advisor works for the traveler, not the supplier. You get preferred-partner perks, real human advocacy when something goes wrong, and access that online booking engines do not have. Lorraine Travel advisors are senior, with 15+ years of experience, and every itinerary is built by hand.",chips:["Fees","Plan my journey"]},
+{k:["fee","fees","free","cost","price","pricing","charge","how much","commission","pay","paid","expensive","planning fee"],a:"For hotel-only and standard cruise bookings there is generally no cost to you, because the supplier pays the advisor's commission. For complex bespoke itineraries with many components, a planning fee is quoted in advance and is typically a small fraction of the trip value.",chips:["Plan my journey"]},
+{k:["cruise","cruises","cruising","ship","ships","sailing","river cruise","expedition cruise","cruise line","cruise lines","royal caribbean","norwegian","celebrity","viking","uniworld","lindblad","quark","ponant"],a:"We book across the cruise industry, including Royal Caribbean, Norwegian, Carnival, Holland America, Princess, Celebrity, Explora Journeys, Virgin Voyages, Windstar, SeaDream, Star Clippers, Paul Gauguin, Ponant, Lindblad, Quark, UnCruise and Uniworld. Perks can include suite upgrades, onboard credit, prepaid gratuities and complimentary shore excursions on select sailings.",chips:["Plan my journey"]},
+{k:["hotel","hotels","resort","resorts","perks","upgrade","upgrades","breakfast","spa credit","four seasons","vip","amenities","whatahotel","preferred partner"],a:"As a Four Seasons Preferred Partner we confirm perks such as a room upgrade on arrival (subject to availability), daily breakfast for two, a resort or spa credit (typically $100 per stay), early check-in and late check-out when available, Wi-Fi and a personal welcome. Amenities vary by property; your advisor confirms the exact package before booking.",chips:["Plan my journey"]},
+{k:["app","whatahotel app","phone app","ios","android","download"],a:"The WhataHotel! app is free on iOS and Android and adds complimentary perks such as daily breakfast, room upgrades and resort credits to hotel stays.",chips:["Hotel perks"]},
+{k:["flight","flights","airline","airlines","ticket","tickets","airfare","business class","first class","fly","air travel","seat","seats"],a:"Our advisors price and ticket domestic and international flights, first and business class, complex multi-city and round-the-world itineraries, seats, upgrades and group air. Send your route and dates and an advisor will price it.",chips:["Plan my journey"]},
+{k:["corporate","business travel","company travel","employees","meetings","incentive","convention"],a:"We run corporate travel programs, full-service or self-service online, with dedicated portals, preferred hotel rates, 24-hour global emergency assistance, meeting and incentive planning, and travel management reports. Fees are negotiable.",chips:["Contact"]},
+{k:["destination","destinations","italy","paris","france","maldives","japan","greece","safari","africa","galapagos","antarctica","caribbean","europe","amalfi","capri"],a:"We plan worldwide. Frequently booked: Italy, France, Greece, Portugal, the UK, Japan, the Maldives, the Caribbean (St. Barth's, Anguilla, Turks and Caicos), Africa (Kenya, Tanzania, Botswana, South Africa), the Galapagos, Antarctica and the great European cities. There are advisor guides for the Amalfi Coast, Paris and the Maldives.",chips:["Plan my journey"]},
+{k:["honeymoon","anniversary","milestone","birthday","family reunion","multigenerational","multi generational","bucket list","wedding"],w:1.5,a:"Yes. Honeymoons, anniversaries, milestone birthdays, family reunions and bucket-list journeys are a core part of what we plan. Tap 'Plan my journey' and tell us the occasion.",chips:["Plan my journey"]},
+{k:["bespoke","custom","tailored","itinerary","private guide","concierge","private transfers","hand built","hand-built"],a:"Bespoke means fully custom: not a package or a pre-set tour. Your senior advisor learns who is travelling and what you love, then designs and books everything, including private guides, restaurant reservations, off-hour museum access and private transfers.",chips:["Plan my journey"]},
+{k:["emergency","disruption","cancel","cancelled","delay","missed connection","weather","something goes wrong","24/7","after hours","while traveling","on the trip"],a:"During active travel your senior advisor is reachable by phone, text and email around the clock, and there is an after-hours emergency service for clients in transit anywhere. Advisors have direct supplier lines and rebooking authority for delays and missed connections.",chips:["Contact"]},
+{k:["history","since when","in business","since 1948","family owned","family-owned","havana","founded","about","story","how long","years","established"],a:"Lorraine Travel was founded in Havana in 1948 by John and Luisa Guiteras and re-established in Coral Gables, Florida in 1960. It is one of the largest privately owned, family-run travel companies in Florida, a Four Seasons Preferred Partner, and a member of Signature Travel Network, ASTA and Hickory Global Partners.",chips:["Why use an advisor?"]},
+{k:["phone","call","telephone","number","toll free","text","ring","speak"],a:"Call 305.446.4433, or toll-free and text on 800.666.8911. Office hours are Monday to Friday, 9am to 6pm ET, with emergencies for travelers handled around the clock.",chips:["Plan my journey"]},
+{k:["address","where is your office","office","located","location","coral gables","alhambra","visit","miami"],a:"Our office is at 377 Alhambra Circle, Coral Gables, Florida 33134. We serve clients across the United States and worldwide by phone, email and text.",chips:["Contact"]},
+{k:["email","e-mail","mail","write"],a:"Email info@lorrainetravel.com, or use the inquiry form. Every inquiry is reviewed by a senior advisor and answered within one business day.",chips:["Plan my journey"]},
+{k:["hours","open","opening","weekend","saturday","sunday","office hours"],a:"Monday to Friday, 9:00am to 6:00pm Eastern. Active-travel emergencies are handled 24/7.",chips:["Contact"]},
+{k:["insurance","travel insurance","protect","coverage"],a:"The site has an insurance resource page, and corporate programs include travel insurance. Your advisor can talk through coverage for your particular trip.",chips:["Contact"]},
+{k:["offers","deals","special offers","promotion","sale","discount"],a:"Current promotions are on the Special Offers page of the site, and your advisor will mention any that fit your dates.",chips:["Plan my journey"]},
+{k:["contact","reach","get in touch","talk to someone","human","speak to someone"],a:"You can call 305.446.4433, email info@lorrainetravel.com, or tap 'Plan my journey' and I will pass your outline to a senior advisor, who replies within one business day.",chips:["Plan my journey"]}
+]};
+</script>
+<script>/*CORE*/
+function waNorm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9\u0400-\u04ff\s]/g,' ').replace(/\s+/g,' ').trim();}
+function waStem(w){if(w.length>4){w=w.replace(/(ing|ed|es|s)$/,'');}return w;}
+function waLev(a,b){var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;var d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=0;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));}return d[m][n];}
+function waTokMatch(t,k){if(t===k)return 1;var ts=waStem(t),ks=waStem(k);if(ts===ks)return 1;if(k.length>=4&&t.length>=4&&(ts.indexOf(ks)===0||ks.indexOf(ts)===0)&&Math.min(ts.length,ks.length)>=4)return .9;var L=Math.min(t.length,k.length);if(L>=5){var d=waLev(ts,ks);if(d<=1)return .8;if(L>=8&&d<=2)return .7;}return 0;}
+function waAnswer(kb,q){var nq=waNorm(q),toks=nq.split(' ').filter(Boolean),best=null,bs=0;
+for(var i=0;i<kb.length;i++){var e=kb[i],sc=0;
+for(var j=0;j<e.k.length;j++){var kw=waNorm(e.k[j]),kt=kw.split(' ');
+if(kt.length>1){if(nq.indexOf(kw)>-1){sc+=2*kt.length;continue;}var hit=0;for(var a=0;a<kt.length;a++){for(var b=0;b<toks.length;b++){if(waTokMatch(toks[b],kt[a])>=.8){hit++;break;}}}if(hit===kt.length)sc+=1.5*kt.length;}
+else{var bm=0;for(var b2=0;b2<toks.length;b2++){var m=waTokMatch(toks[b2],kt[0]);if(m>bm)bm=m;}sc+=bm*2;}}
+if(e.w)sc*=e.w;if(sc>bs){bs=sc;best=e;}}
+return bs>=1.5?best:null;}
+/*ENDCORE*/
+</script>
+<script>/*UI*/
+(function(){
+var C=window.WA_CFG;if(!C)return;
+var $=function(s){return document.querySelector(s)};
+var btn=document.createElement('button');btn.id='wa-btn';btn.type='button';btn.setAttribute('aria-label',C.btnLabel||'Chat');btn.innerHTML='<span class="wa-ico">'+(C.icon||'?')+'</span><span class="wa-lbl">'+(C.btnLabel||'Ask us')+'</span>';
+var p=document.createElement('div');p.id='wa-panel';p.setAttribute('role','dialog');p.setAttribute('aria-label',C.title);
+p.innerHTML='<div id="wa-head"><div><b>'+C.title+'</b><small>'+C.sub+'</small></div><button type="button" id="wa-x" aria-label="Close">&times;</button></div><div id="wa-log" aria-live="polite"></div><div id="wa-chips"></div><form id="wa-form" autocomplete="off"><input id="wa-in" type="text" placeholder="'+C.ph+'" aria-label="'+C.ph+'"><button type="submit">'+(C.send||'Send')+'</button></form>';
+document.body.appendChild(btn);document.body.appendChild(p);
+var log=$('#wa-log'),chips=$('#wa-chips'),inp=$('#wa-in'),flow=null,data={},started=false;
+function add(t,who){var d=document.createElement('div');d.className='wa-m wa-'+who;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a,fn){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){fn(c)};chips.appendChild(b);});}
+function home(){setChips(C.chips,function(c){say(c)});}
+function startFlow(){flow={i:0};data={};ask();}
+function ask(){var s=C.flow.steps[flow.i];add(s.q,'bot');if(s.opts){setChips(s.opts.concat([C.cancel||'Cancel']),function(c){if(c===(C.cancel||'Cancel')){flow=null;add(C.cancelMsg||'No problem.','bot');home();return;}answerStep(c)});}else{chips.innerHTML='';setChips([C.cancel||'Cancel'],function(){flow=null;add(C.cancelMsg||'No problem.','bot');home();});}}
+function answerStep(v){var s=C.flow.steps[flow.i];add(v,'me');data[s.key]=v;flow.i++;if(flow.i>=C.flow.steps.length){var sum=C.flow.steps.map(function(x){return x.label+': '+data[x.key]}).join(' | ');add(C.flow.done+'\n'+sum,'bot');flow=null;home();}else ask();}
+function isBook(q){var n=waNorm(q);return (C.flow.trig||[]).some(function(t){return n.indexOf(waNorm(t))>-1;});}
+function say(q){q=q.trim();if(!q)return;if(flow){answerStep(q);return;}add(q,'me');if(isBook(q)){startFlow();return;}var e=waAnswer(C.kb,q);if(e){add(e.a,'bot');if(e.chips)setChips(e.chips,function(c){say(c)});else home();}else{add(C.fallback,'bot');home();}}
+btn.onclick=function(){p.classList.toggle('open');if(p.classList.contains('open')&&!started){started=true;add(C.hello,'bot');home();}if(p.classList.contains('open'))setTimeout(function(){inp.focus()},50);};
+$('#wa-x').onclick=function(){p.classList.remove('open')};
+$('#wa-form').onsubmit=function(ev){ev.preventDefault();var v=inp.value;inp.value='';say(v);};
+})();
+/*ENDUI*/
+</script>
+</body>
+</html>

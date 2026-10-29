@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coast Warriors Sydney Tours · Blue Mountains day tour (demo)</title>
+<meta name="description" content="Demo page for Coast Warriors Sydney Tours: small-group Blue Mountains day tour and private group tours, with a built-in assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--olive:#454128;--olive-d:#2e2b19;--rock:#C65A1E;--rock-d:#a24714;--sand:#EBDDBB;--cream:#FBF6EA;--sky:#9CC4D6;--ink:#241f12;--mute:#665f48;
+--wa-accent:#454128;--wa-on:#FBF6EA;--wa-bg:#FBF6EA;--wa-ink:#241f12;--wa-bot:#EBDDBB;--wa-line:#d8c99f;--wa-font:'Nunito',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.6 'Nunito',system-ui,sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3{font-family:'Oswald',Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.05}
+.wrap{max-width:1060px;margin:0 auto;padding:0 16px}
+header.site{background:var(--olive);color:var(--cream);position:sticky;top:0;z-index:40;border-bottom:4px solid var(--rock)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:6px;padding-bottom:6px}
+.brand{display:flex;align-items:center;background:var(--cream);border-radius:10px;padding:3px 8px}
+.brand img{height:50px;width:auto}
+nav.main{display:none;gap:22px;font:600 15px 'Oswald';letter-spacing:.06em;text-transform:uppercase}
+nav.main a{text-decoration:none}
+nav.main a:hover{color:var(--sand)}
+.btn{display:inline-block;background:var(--rock);color:#fff;text-decoration:none;font:700 16px/1 'Oswald';letter-spacing:.07em;text-transform:uppercase;padding:14px 22px;border-radius:999px;border:0;cursor:pointer}
+.btn:hover{background:var(--rock-d)}
+.btn.out{background:transparent;border:2px solid currentColor;color:inherit}
+@media(min-width:880px){nav.main{display:flex}}
+/* hero */
+.hero{background:var(--olive);color:var(--cream);position:relative;overflow:hidden;padding:40px 0 70px}
+.hero::before{content:"";position:absolute;left:-80px;bottom:-110px;width:520px;height:260px;background:var(--rock);opacity:.85;border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero::after{content:"";position:absolute;right:-50px;bottom:-60px;width:380px;height:190px;background:var(--sand);opacity:.22;border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero .g{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+@media(min-width:860px){.hero .g{grid-template-columns:minmax(0,1.4fr) minmax(0,.7fr);align-items:center}}
+.tagline{font:600 14px 'Oswald';letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin-bottom:12px}
+.hero h1{font-size:clamp(44px,11vw,88px);font-weight:700}
+.hero h1 span{color:var(--sand)}
+.hero p{margin:18px 0 24px;max-width:33em;font-size:18px;color:#efe6cf}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.stamp{background:var(--cream);color:var(--ink);border-radius:22px;padding:22px;transform:rotate(2deg);box-shadow:0 10px 0 rgba(0,0,0,.25);justify-self:start;max-width:320px;width:100%}
+.stamp small{display:block;font:600 13px 'Oswald';letter-spacing:.14em;text-transform:uppercase;color:var(--rock)}
+.stamp b{display:block;font:700 62px/1 'Oswald';margin:4px 0}
+.stamp b sup{font-size:22px;vertical-align:top;margin-right:3px}
+.stamp ul{list-style:none;font-size:15px}
+.stamp li{padding:5px 0;border-top:1px dashed #cdbd92}
+.stamp li::before{content:"\2713\00a0";color:var(--rock);font-weight:800}
+.promo{margin-top:10px;background:var(--olive);color:var(--sand);font:600 13px 'Oswald';letter-spacing:.08em;padding:8px 10px;border-radius:8px;text-transform:uppercase}
+/* sections */
+section{padding:58px 0}
+section.sand{background:var(--sand)}
+section.dark{background:var(--olive-d);color:var(--cream)}
+.k{font:600 13px 'Oswald';letter-spacing:.2em;text-transform:uppercase;color:var(--rock);margin-bottom:8px}
+.dark .k{color:var(--sand)}
+h2{font-size:clamp(32px,7vw,54px);font-weight:700;margin-bottom:14px}
+.lead{max-width:40em;color:var(--mute);margin-bottom:26px;font-size:18px}
+.dark .lead{color:#d9cfb3}
+/* why grid */
+.why{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:640px){.why{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:960px){.why{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.w{background:#fff;border-radius:16px;padding:18px;border:2px solid var(--olive)}
+.w h3{font-size:22px;margin-bottom:6px;color:var(--olive)}
+.w p{font-size:16px;color:#43391f}
+.w .em{font-size:28px;display:block;margin-bottom:6px}
+/* day timeline */
+.day{list-style:none;position:relative;margin-left:14px;border-left:3px dashed var(--rock);padding-left:24px}
+.day li{position:relative;margin-bottom:22px}
+.day li::before{content:"";position:absolute;left:-35px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--rock);border:4px solid var(--olive-d)}
+.day h3{font-size:24px;color:var(--sand);margin-bottom:2px}
+.day p{color:#e4dbc1;font-size:16px}
+.day em{font-style:normal;font:600 13px 'Oswald';letter-spacing:.12em;color:var(--rock);background:var(--cream);border-radius:999px;padding:2px 9px;margin-left:8px;vertical-align:3px}
+/* private */
+.pv{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:700px){.pv{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:980px){.pv{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.p{border-radius:18px;padding:20px 16px;color:#fff;min-height:210px;position:relative;overflow:hidden}
+.p h3{font-size:24px;margin-bottom:8px}
+.p ul{list-style:none;font-size:15px}
+.p li{padding:3px 0}
+.p.a{background:#2f6b50}.p.b{background:#7a2d4a}.p.c{background:#1d6c8f}.p.d{background:#9a6a1c}
+.p::after{content:"";position:absolute;right:-30px;bottom:-30px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.12)}
+.sizes{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.sizes span{background:var(--cream);border:2px solid var(--olive);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px}
+/* faq */
+details{background:#fff;border-radius:14px;margin-bottom:10px;border:2px solid var(--sand)}
+details summary{cursor:pointer;list-style:none;padding:15px 16px;font:600 19px 'Oswald';letter-spacing:.02em;display:flex;justify-content:space-between;gap:12px;text-transform:uppercase}
+details summary::after{content:"+";color:var(--rock);font-size:24px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 16px 16px;color:#43391f}
+/* reviews */
+.rv{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.rv{grid-template-columns:repeat(3,minmax(0,1fr))}}
+blockquote{background:var(--cream);color:var(--ink);border-radius:16px;padding:18px;font-size:16px}
+blockquote cite{display:block;font-style:normal;font-weight:800;margin-top:8px;font-size:14px;color:var(--rock)}
+.st{color:#e0a416;letter-spacing:2px}
+/* contact */
+.cg{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.cg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cc{background:#fff;border:2px solid var(--olive);border-radius:16px;padding:18px}
+.cc b{display:block;font:600 13px 'Oswald';letter-spacing:.14em;text-transform:uppercase;color:var(--rock);margin-bottom:4px}
+.cc a{font-weight:800}
+footer{background:var(--olive-d);color:#cfc5a8;padding:26px 0 96px;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px}
+#wa-btn{position:fixed;right:14px;bottom:14px;z-index:60;display:flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 16px;background:var(--wa-accent);color:var(--wa-on);font:600 15px/1 var(--wa-font);cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.28)}
+#wa-btn .wa-ico{font-size:18px}
+#wa-panel{position:fixed;right:12px;bottom:70px;z-index:61;width:min(360px,calc(100vw - 24px));height:min(520px,calc(100vh - 100px));display:none;flex-direction:column;background:var(--wa-bg);color:var(--wa-ink);border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.35);overflow:hidden;font:15px/1.4 var(--wa-font);border:1px solid var(--wa-line)}
+#wa-panel.open{display:flex}
+#wa-head{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--wa-accent);color:var(--wa-on)}
+#wa-head b{display:block;font-size:16px}#wa-head small{opacity:.85;font-size:12px}
+#wa-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer}
+#wa-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:0}
+.wa-m{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-wrap;word-wrap:break-word}
+.wa-bot{background:var(--wa-bot);align-self:flex-start;border-bottom-left-radius:4px}
+.wa-me{background:var(--wa-accent);color:var(--wa-on);align-self:flex-end;border-bottom-right-radius:4px}
+#wa-chips{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px;max-height:112px;overflow:auto}
+#wa-chips button{border:1px solid var(--wa-accent);background:transparent;color:var(--wa-ink);border-radius:999px;padding:6px 11px;font:13px var(--wa-font);cursor:pointer}
+#wa-form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--wa-line)}
+#wa-form input{flex:1;min-width:0;border:1px solid var(--wa-line);border-radius:10px;padding:10px;font:15px var(--wa-font);background:#fff;color:#111}
+#wa-form button{border:0;border-radius:10px;background:var(--wa-accent);color:var(--wa-on);padding:0 14px;font:600 14px var(--wa-font);cursor:pointer}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="#top" aria-label="Coast Warriors Sydney Tours"><img src="img/coast-warriors-sydney-tours-logo.png" alt="Coast Warriors Sydney Tours" width="53" height="50"></a>
+<nav class="main"><a href="#tour">Blue Mountains day tour</a><a href="#private">Private tours</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="btn" href="#contact">Enquire</a>
+</div></header>
+<main id="top">
+<div class="hero"><div class="wrap g">
+<div>
+<div class="tagline">Sydney small-group adventures</div>
+<h1>The chillest way to see the <span>Blue Mountains</span></h1>
+<p>A friendly, flexible Sydney tour company running fun, social days out since 2015. A small minibus instead of a 50-seat coach, local guides who love their job, a waterfall hike to the base of the falls, and lunch included.</p>
+<div class="cta"><a class="btn" href="#tour">See the day</a><a class="btn out" href="#private">Private group tours</a></div>
+</div>
+<aside class="stamp">
+<small>Blue Mountains day tour</small>
+<b><sup>$</sup>120</b>
+<ul><li>AUD per person, lunch included</li><li>7:30am to about 5:30pm</li><li>One easy city pickup, Haymarket</li><li>Adult-tour vibe, ages 14 and over</li></ul>
+<div class="promo">10 Years Celebration: use code 10years at booking</div>
+</aside>
+</div></div>
+
+<section id="why"><div class="wrap">
+<div class="k">Why Coast Warriors</div>
+<h2>Small group, big views</h2>
+<p class="lead">Owner-operated by Trent and Kristel, so every booking genuinely means a lot. Each year the company also donates to charities protecting Australia's coastline, which is where the name comes from.</p>
+<div class="why">
+<div class="w"><span class="em">&#128652;</span><h3>Minibus, not a coach</h3><p>Less touristy small-group tours run by fun Aussie guides, great for solo and social travellers wanting to make new mates in Sydney.</p></div>
+<div class="w"><span class="em">&#129406;</span><h3>The best hike</h3><p>A guided Wentworth Falls bushwalk of 90 minutes to 2 hours, with waterfalls, clifftops and one of the only tours to walk to the base of the big fall.</p></div>
+<div class="w"><span class="em">&#127857;</span><h3>Lunch is included</h3><p>A fresh-made picnic lunch overlooking the Jamison Valley. Vegetarian, vegan, coeliac, nut-free and dairy-free are all fine.</p></div>
+<div class="w"><span class="em">&#128205;</span><h3>One simple pickup</h3><p>No hotel-hopping around Sydney. Meet at 812 George Street, Haymarket and spend the saved time in the mountains.</p></div>
+<div class="w"><span class="em">&#127775;</span><h3>Highly rated guides</h3><p>Only guides who love their job. Recent travellers name Zach, Chris and Abbey in their Google reviews.</p></div>
+<div class="w"><span class="em">&#128170;</span><h3>No surprises</h3><p>A genuine, good-value day with no financial surprises. Fully licensed, insured and TransportNSW accredited.</p></div>
+</div>
+</div></section>
+
+<section class="sand"><div class="wrap">
+<div class="k">At a glance</div>
+<h2>The public day tour in one look</h2>
+<div class="why">
+<div class="w"><h3>Departs</h3><p>7:30am from 812 George Street, Haymarket. Check in at 7:20am.</p></div>
+<div class="w"><h3>Returns</h3><p>About 5:10 to 5:40pm, depending on traffic.</p></div>
+<div class="w"><h3>Walk</h3><p>Guided nature walk of about 90 minutes to 2 hours, with an optional skip of the steep stairs.</p></div>
+<div class="w"><h3>Included</h3><p>Fresh-made lunch, guide, minibus, Glenbrook coffee stop and Tim Tams and Vegemite to taste.</p></div>
+<div class="w"><h3>Best for</h3><p>Solo and social travellers, friends and couples who want the best spots without a 50-seat coach.</p></div>
+<div class="w"><h3>Not for</h3><p>Anyone who struggles with basic walking, or families with younger children; ask about private tours instead.</p></div>
+</div>
+</div></section>
+
+<section id="tour" class="dark"><div class="wrap">
+<div class="k">The Blue Mountains day tour</div>
+<h2>How the day unfolds</h2>
+<p class="lead">Roughly in order, depending on traffic and the group. Tim Tams and Vegemite are on the bus for tasting.</p>
+<ol class="day">
+<li><h3>Meet in Haymarket <em>7:20am</em></h3><p>Be at 812 George Street, in front of St Laurence church with the big red door, close to Central Station and the light rail. Departure is 7:30am.</p></li>
+<li><h3>The drive up</h3><p>About an hour through tunnels, motorways and western Sydney. Chat with your seat neighbours, enjoy the playlist or grab a bit of sleep.</p></li>
+<li><h3>Glenbrook coffee stop</h3><p>A relaxed morning stop in the guide's home town for coffee, a smoothie or a chai, plus bathrooms and takeaway brekkie.</p></li>
+<li><h3>Secret lookout</h3><p>Where you feel like you are standing on the edge of the world, looking over the Jamison Valley to Mt Solitary. Stay 2 metres from the edges, there is no fence.</p></li>
+<li><h3>Wentworth Falls waterfall walk</h3><p>The guided Overcliff-Undercliff bushwalk, about 90 minutes to 2 hours, past multiple waterfalls including the 187 metre fall. About 15 minutes of steep stairs on the way back is optional to skip.</p></li>
+<li><h3>Picnic lunch with a view</h3><p>Back up the Stairs of Doom for lunch overlooking the Jamison Valley. Bring a refillable water bottle.</p></li>
+<li><h3>Three Sisters, Katoomba</h3><p>The iconic rock formations and the Aboriginal Dreamtime story behind them, with around 30 minutes of free time and wild white cockatoos for photos.</p></li>
+<li><h3>Back to Sydney <em>5:10 to 5:40pm</em></h3><p>The tour finishes at Haymarket in time for evening plans, with plenty of dinner and drink options a short walk from the drop-off.</p></li>
+</ol>
+</div></section>
+
+<section id="private"><div class="wrap">
+<div class="k">Private tours</div>
+<h2>Your group. No strangers. Your way.</h2>
+<p class="lead">A flexible itinerary to suit your abilities and budget, in buses and luxury vans, with pickup from your hotel, a private location, a cruise terminal or the airport. Footy teams, student groups, colleges and friends welcome.</p>
+<div class="pv">
+<div class="p a"><h3>Blue Mountains</h3><ul><li>Wildlife park visit</li><li>Scenic World cable cars</li><li>Lunch with a view</li><li>Three Sisters and waterfalls</li></ul></div>
+<div class="p b"><h3>Hunter Valley wine</h3><ul><li>Guided wine or spirits tastings</li><li>Chocolate and cheese shop</li><li>Lunch by a lake or at a brewery</li><li>Vineyard photos</li></ul></div>
+<div class="p c"><h3>Port Stephens</h3><ul><li>Dolphin cruise, Nelson Bay</li><li>Sand boarding and 4WD dunes</li><li>Lunch with a view</li><li>Mount Tomaree views</li></ul></div>
+<div class="p d"><h3>Jervis Bay and South Coast</h3><ul><li>White-sand beach time</li><li>Berry famous donut van</li><li>Lunch with a view</li><li>Lookouts and rainforest walk</li></ul></div>
+</div>
+<p class="lead" style="margin-top:20px">Private groups can start from a quick enquiry: tell the team the date, group size and what you would like to see, and the itinerary is shaped around your abilities and budget. Lunch options are discussed in advance, and dietary needs are no problem.</p>
+<div class="sizes"><span>7 to about 60 people</span><span>Royal National Park</span><span>Canberra</span><span>Multi-day trips</span><span>Hotel, airport or cruise terminal pickup</span></div>
+</div></section>
+
+<section class="sand"><div class="wrap">
+<div class="k">Straight from the FAQ</div>
+<h2>Know before you go</h2>
+<details><summary>What should I wear and bring?</summary><p>Enclosed walking shoes (hiking boots are not needed), clothing for the weather, a refillable water bottle, and sunscreen, hat and sunnies. Check the Katoomba forecast rather than Blue Mountains in general.</p></details>
+<details><summary>Can I bring luggage?</summary><p>Small backpacks are fine. There are no luggage lockers on the minibus, but there is a storage facility a few minutes' walk away near Platform 1 at Central Station.</p></details>
+<details><summary>Do I need to print my booking?</summary><p>No. They have your name and booking in the system. Bring a smile, you are on holiday.</p></details>
+<details><summary>Can I book last minute?</summary><p>Yes, if there is space it shows on the website up until 60 minutes before the tour. Sometimes there are last-minute cancellations, so also try WhatsApp or email.</p></details>
+<details><summary>What is the cancellation policy?</summary><p>For the public tour, changes and cancellations are accepted 24 or more hours before the start time on your voucher, usually through the website where you booked. No-shows and late arrivals are not eligible for a refund. Travel insurance is recommended.</p></details>
+<details><summary>Is it suitable for kids?</summary><p>The public tour is advertised for 14 and over, with some flexibility on request. Private tours have no age guidelines.</p></details>
+</div></section>
+
+<section class="dark"><div class="wrap">
+<div class="k">What travellers say</div>
+<h2>Google reviews</h2>
+<div class="rv">
+<blockquote><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div>We did the Blue Mountain tour that included the waterfall hike. My three teenage boys loved it. As did I. It was one of our highlights of our trip to Australia.<cite>Heidi Shreck</cite></blockquote>
+<blockquote><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div>Highly recommend. Our guide Chris was excellent. Beautiful waterfalls and vistas.<cite>Soumya Ganapathy</cite></blockquote>
+<blockquote><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div>The Australian trivia during the van ride helped keep things entertaining and it was cool to learn a lot of the local lingo.<cite>Aaron Shray</cite></blockquote>
+</div></div></section>
+
+<section class="sand"><div class="wrap">
+<div class="k">After the tour</div>
+<h2>Dinner and a drink with your new mates</h2>
+<p class="lead">The Haymarket drop-off is central to plenty of food. A few options the guides suggest, with walking times from the drop-off point.</p>
+<div class="why">
+<div class="w"><h3>Great Southern Hotel</h3><p>Pub meals, about 1 minute on foot.</p></div>
+<div class="w"><h3>Sushi Hub</h3><p>Sushi and quick takeaway, about 2 minutes.</p></div>
+<div class="w"><h3>Spice Alley</h3><p>Asian food and a cool vibe, 5+ minutes.</p></div>
+<div class="w"><h3>Hay Street Market</h3><p>Many food options and a food-hall feel, about 5 minutes.</p></div>
+<div class="w"><h3>Darling Square</h3><p>Numerous options, 5+ minutes, with Darling Harbour waterfront a little further on.</p></div>
+<div class="w"><h3>Circular Quay</h3><p>Waterfront eating and drinking, 20+ minutes by tram and walk.</p></div>
+</div>
+<p class="lead" style="margin-top:20px">Public transport in Sydney works with any contactless bank card or Apple, Google or Samsung Pay, so there is no need to buy an Opal card on arrival.</p>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<div class="k">Get in touch</div>
+<h2>Ask a question or enquire</h2>
+<div class="cg">
+<div class="cc"><b>Call or text</b><a href="tel:+61425285563">0425 285 563</a><br>Also on WhatsApp: +61 425 285 563</div>
+<div class="cc"><b>Email</b><a href="mailto:info@coastwarriors.com.au">info@coastwarriors.com.au</a><br>Bookings: bookings@coastwarriors.com.au</div>
+<div class="cc"><b>Public tour pickup</b>812 George Street, Haymarket<br>In front of St Laurence church, 60 seconds from the light rail</div>
+<div class="cc"><b>Private tours</b>Send the date and group size and Trent will come back with a plan.<br><br><button class="btn" type="button" onclick="document.getElementById('wa-btn').click()">Enquire about a trip</button></div>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>Coast Warriors Sydney Tours &middot; Haymarket</span><span>Demo &middot; prepared by Gevorg Hovhannisyan</span></div></footer>
+<script>window.WA_CFG={title:"Coast Warriors crew chat",sub:"Answers from the Coast Warriors site",btnLabel:"Ask the crew",icon:"\u{1F97E}",ph:"Ask about the tour, pickup, lunch...",send:"Send",
+hello:"G'day! Ask me about the Blue Mountains day tour, pickup at Haymarket, lunch, the hike, or private group tours. I can also take your trip details for the team.",
+fallback:"Not sure on that one from the site, so Trent and the team will confirm it. You can call or text 0425 285 563, WhatsApp, or tap 'Enquire about a trip' and I will pass your details along.",
+chips:["Enquire about a trip","Where do we meet?","Is lunch included?","Tell me about the hike","Private tours","Cancellation policy"],cancel:"Cancel",cancelMsg:"No worries. Ask me anything else.",
+flow:{trig:["enquire","enquiry","book","booking","reserve","private quote","quote","trip details","availability","available"],done:"Thanks, sent to the team. Trent or a guide will get back to you by email or phone. (Demo: nothing is actually sent.)",
+steps:[
+{key:"tour",label:"Tour",q:"Which tour are you after?",opts:["Blue Mountains day tour (public)","Private: Blue Mountains","Private: Hunter Valley wine","Private: Port Stephens","Private: Jervis Bay / South Coast","Something else"]},
+{key:"date",label:"Date",q:"What date are you thinking of?"},
+{key:"size",label:"Group",q:"How many people in your group?"},
+{key:"name",label:"Name",q:"Your name?"},
+{key:"contact",label:"Contact",q:"Best email or WhatsApp number for the reply?"}]},
+kb:[
+{k:["meet","meeting point","pickup","pick up","pick-up","where do we meet","departure","depart","george street","haymarket","central station","st laurence","church","drop off","dropoff","collect"],a:"The public Blue Mountains tour leaves from 812 George Street, Haymarket, in front of St Laurence church (big red door), close to Central Station and the light rail (about 60 seconds). Please be there at 7:20am for the 7:30am departure; we are back around 5:10 to 5:40pm.",chips:["Hotel pickup?","Enquire about a trip"]},
+{k:["hotel pickup","pick up from hotel","hotel","airport","cruise terminal","pickup from my hotel","from my hotel"],a:"The public Blue Mountains tour has one simple city pickup, with no hotel stops, so more of the day is spent in the mountains. Hotel, airport and cruise terminal pickups are available for private tours only. Most accommodation is a 5 to 15 minute walk away, or use public transport with a contactless card.",chips:["Private tours"]},
+{k:["time","what time","start","starts","return","back","finish","end","how long","duration","hours","7.30","730","all day","long"],a:"The public Blue Mountains day tour runs from 7:30am to about 5:30pm: check-in is at 7:20am and we are back at Haymarket around 5:10 to 5:40pm depending on traffic.",chips:["Where do we meet?"]},
+{k:["price","prices","cost","how much","fee","fees","pricing","expensive","cheap","dollars","aud","promo","promo code","10years","discount"],a:"The public Blue Mountains day tour is $120 AUD with lunch included, and the site shows a 10 Years Celebration promo code (10years) at booking. Private tour pricing is quoted per group, so send your enquiry.",chips:["Private tours","Enquire about a trip"]},
+{k:["lunch","food","eat","meal","included","picnic","sandwich","wrap","breakfast","coffee","snacks","hungry"],a:"Yes, lunch is included on the public tour: usually a fresh cafe-made sandwich or chicken wrap, eaten as a picnic overlooking the Jamison Valley. There is a coffee and breakfast stop in Glenbrook. You can bring your own drinks to have with lunch. Private tour lunch options are discussed in advance.",chips:["Dietary needs"]},
+{k:["vegetarian","vegan","coeliac","celiac","gluten","dietary","allergy","allergies","nut free","dairy free","diet","vego"],a:"Vegetarian, vegan, coeliac, nut-free and dairy-free are all fine. On the public tour we go through dietary requests together on the bus in the morning; on private tours it is arranged in advance. If you have concerns, reach out beforehand.",chips:["Enquire about a trip"]},
+{k:["hike","walk","walking","bushwalk","waterfall","wentworth falls","wenty","stairs","fitness","difficult","hard","easy","fit","moderate","steep","active"],a:"The guided Wentworth Falls bushwalk takes about 90 minutes to 2 hours, mostly moderate-easy, with views, several waterfalls including the 187 metre fall, and a steep stair section of about 15 minutes on the way back up that is optional to skip. It is an active tour, so if basic walking is a struggle ask the team for details first.",chips:["What to wear?","Age limit"]},
+{k:["wear","bring","pack","shoes","clothes","clothing","sunscreen","hat","water bottle","backpack","what to bring","what to wear"],a:"Enclosed walking shoes (hiking boots not needed), clothing for the weather, a refillable water bottle, and sunscreen, hat and sunnies. Check the Katoomba forecast rather than Blue Mountains in general. No printed booking is needed; they have your name in the system.",chips:["Luggage"]},
+{k:["age","year old","years old","kids","children","child","family","families","teenager","teen","minimum age","14","young","baby"],a:"The public Blue Mountains tour is advertised for ages 14 and over, with some flexibility on request for a family, so email the team. Private tours have no age guidelines.",chips:["Private tours"]},
+{k:["luggage","bags","suitcase","backpack storage","locker","lockers","baggage"],a:"Small backpacks are fine. They may be able to help with a medium suitcase or two per bus at most, but there are no luggage lockers on the minibus. There is a luggage storage facility a few minutes' walk away near Platform 1 at Central Station.",chips:[]},
+{k:["private","private tour","private tours","group","groups","football","footy","team","student","university","college","school","corporate","hens","bucks","birthday","wedding","big group","bus","minibus","luxury van"],a:"Private tours are for your group only, from 7 to about 60 people, in buses and luxury vans, with a flexible itinerary to suit your abilities and budget. Pickup can be from your hotel, a private location, a cruise terminal or the airport. Send an enquiry with the date and group size.",chips:["Enquire about a trip","Hunter Valley"]},
+{k:["hunter valley","wine","winery","wineries","brewery","tasting","vineyard","cheese","chocolate","spirits"],a:"Private Hunter Valley wine tours include guided wine and/or spirits tastings, a chocolate and cheese shop visit, lunch over a lake or at a vibrant brewery, and vineyard photo stops.",chips:["Enquire about a trip"]},
+{k:["port stephens","dolphin","sand boarding","sandboarding","nelson bay","tomaree","beach","dunes"],a:"Private Port Stephens beach days can include a dolphin cruise in Nelson Bay, sand boarding with a 4WD transfer on the dunes, lunch with a view and panoramic views from Mount Tomaree.",chips:["Enquire about a trip"]},
+{k:["jervis bay","south coast","berry","donut","white sand","royal national park","canberra","multi day","multi-day","other destinations"],a:"Private groups also go to Jervis Bay (white-sand beach time and the famous Berry donut van), the South Coast, the Royal National Park, Canberra and multi-day trips.",chips:["Enquire about a trip"]},
+{k:["cancel","cancle","cancelling","cancellation","refund","reschedule","change date","amend","amendment","no show","late","missed"],a:"For the public Blue Mountains tour, cancellations or date changes are accepted 24 or more hours before the start time on your voucher, usually through the website where you booked. No-shows and late arrivals are not eligible for a refund or reschedule. Travel insurance is recommended.",chips:[]},
+{k:["last minute","last-minute","today","tomorrow","space","seats","sold out","full","spots"],a:"Yes, last-minute bookings work if there is space: availability shows on the website until 60 minutes before the tour. Sometimes there are last-minute cancellations, so also try WhatsApp or email.",chips:["Enquire about a trip"]},
+{k:["highlights","what do we see","three sisters","katoomba","lookout","cockatoo","wildlife","animals","glenbrook","itinerary","see","included","what is included","what's included","megalong","jamison"],a:"The day includes a coffee stop in Glenbrook, a secret lookout over the Jamison Valley, the guided Wentworth Falls waterfall walk, a picnic lunch, and the Three Sisters at Katoomba with the Aboriginal Dreamtime story. You often see cockatoos, kookaburras and rosellas, and there are Tim Tams and Vegemite to taste on the bus. Megalong Valley is added on efficient days.",chips:["Tell me about the hike","Is lunch included?"]},
+{k:["scenic world","cable car","zoo","wildlife park","ferry","taronga"],a:"The public tour used to include Scenic World, wildlife parks and the return ferry; they were swapped for more time in the mountains and the Wentworth Falls walk, which keeps the price down. Private tours can include a wildlife park visit and Scenic World cable cars.",chips:["Private tours"]},
+{k:["phone","call","text","number","telephone","whatsapp","contact","ring"],a:"Call or text 0425 285 563 (+61 425 285 563), message on WhatsApp, or email info@coastwarriors.com.au or bookings@coastwarriors.com.au.",chips:["Enquire about a trip"]},
+{k:["email","e-mail","mail","write"],a:"Email info@coastwarriors.com.au for general questions or bookings@coastwarriors.com.au for bookings. Private tour enquiries also go to Trent via the contact form.",chips:[]},
+{k:["safe","safety","licensed","insured","insurance","accredited","accreditation","legal","guide","guides","who","trent","kristel","owner","about","company","since 2015","charity"],a:"Coast Warriors is a small owner-operated Sydney company run by Trent and Kristel since 2015. It is fully licensed, insured and TransportNSW accredited, with local guides who love their job, and it donates each year to charities protecting Australia's coastline.",chips:["Private tours"]},
+{k:["small group","minibus","big bus","coach","bus size","how big","group size","solo","alone","single","travelling alone","social","friends","meet people"],a:"It is a small-group minibus tour rather than a 50-seat coach, great for solo and social travellers, with an adult-tour vibe and plenty of chat and games on the bus.",chips:["Where do we meet?"]}
+]};
+</script>
+<script>/*CORE*/
+function waNorm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9\u0400-\u04ff\s]/g,' ').replace(/\s+/g,' ').trim();}
+function waStem(w){if(w.length>4){w=w.replace(/(ing|ed|es|s)$/,'');}return w;}
+function waLev(a,b){var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;var d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=0;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));}return d[m][n];}
+function waTokMatch(t,k){if(t===k)return 1;var ts=waStem(t),ks=waStem(k);if(ts===ks)return 1;if(k.length>=4&&t.length>=4&&(ts.indexOf(ks)===0||ks.indexOf(ts)===0)&&Math.min(ts.length,ks.length)>=4)return .9;var L=Math.min(t.length,k.length);if(L>=5){var d=waLev(ts,ks);if(d<=1)return .8;if(L>=8&&d<=2)return .7;}return 0;}
+function waAnswer(kb,q){var nq=waNorm(q),toks=nq.split(' ').filter(Boolean),best=null,bs=0;
+for(var i=0;i<kb.length;i++){var e=kb[i],sc=0;
+for(var j=0;j<e.k.length;j++){var kw=waNorm(e.k[j]),kt=kw.split(' ');
+if(kt.length>1){if(nq.indexOf(kw)>-1){sc+=2*kt.length;continue;}var hit=0;for(var a=0;a<kt.length;a++){for(var b=0;b<toks.length;b++){if(waTokMatch(toks[b],kt[a])>=.8){hit++;break;}}}if(hit===kt.length)sc+=1.5*kt.length;}
+else{var bm=0;for(var b2=0;b2<toks.length;b2++){var m=waTokMatch(toks[b2],kt[0]);if(m>bm)bm=m;}sc+=bm*2;}}
+if(e.w)sc*=e.w;if(sc>bs){bs=sc;best=e;}}
+return bs>=1.5?best:null;}
+/*ENDCORE*/
+</script>
+<script>/*UI*/
+(function(){
+var C=window.WA_CFG;if(!C)return;
+var $=function(s){return document.querySelector(s)};
+var btn=document.createElement('button');btn.id='wa-btn';btn.type='button';btn.setAttribute('aria-label',C.btnLabel||'Chat');btn.innerHTML='<span class="wa-ico">'+(C.icon||'?')+'</span><span class="wa-lbl">'+(C.btnLabel||'Ask us')+'</span>';
+var p=document.createElement('div');p.id='wa-panel';p.setAttribute('role','dialog');p.setAttribute('aria-label',C.title);
+p.innerHTML='<div id="wa-head"><div><b>'+C.title+'</b><small>'+C.sub+'</small></div><button type="button" id="wa-x" aria-label="Close">&times;</button></div><div id="wa-log" aria-live="polite"></div><div id="wa-chips"></div><form id="wa-form" autocomplete="off"><input id="wa-in" type="text" placeholder="'+C.ph+'" aria-label="'+C.ph+'"><button type="submit">'+(C.send||'Send')+'</button></form>';
+document.body.appendChild(btn);document.body.appendChild(p);
+var log=$('#wa-log'),chips=$('#wa-chips'),inp=$('#wa-in'),flow=null,data={},started=false;
+function add(t,who){var d=document.createElement('div');d.className='wa-m wa-'+who;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a,fn){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){fn(c)};chips.appendChild(b);});}
+function home(){setChips(C.chips,function(c){say(c)});}
+function startFlow(){flow={i:0};data={};ask();}
+function ask(){var s=C.flow.steps[flow.i];add(s.q,'bot');if(s.opts){setChips(s.opts.concat([C.cancel||'Cancel']),function(c){if(c===(C.cancel||'Cancel')){flow=null;add(C.cancelMsg||'No problem.','bot');home();return;}answerStep(c)});}else{chips.innerHTML='';setChips([C.cancel||'Cancel'],function(){flow=null;add(C.cancelMsg||'No problem.','bot');home();});}}
+function answerStep(v){var s=C.flow.steps[flow.i];add(v,'me');data[s.key]=v;flow.i++;if(flow.i>=C.flow.steps.length){var sum=C.flow.steps.map(function(x){return x.label+': '+data[x.key]}).join(' | ');add(C.flow.done+'\n'+sum,'bot');flow=null;home();}else ask();}
+function isBook(q){var n=waNorm(q);return (C.flow.trig||[]).some(function(t){return n.indexOf(waNorm(t))>-1;});}
+function say(q){q=q.trim();if(!q)return;if(flow){answerStep(q);return;}add(q,'me');if(isBook(q)){startFlow();return;}var e=waAnswer(C.kb,q);if(e){add(e.a,'bot');if(e.chips)setChips(e.chips,function(c){say(c)});else home();}else{add(C.fallback,'bot');home();}}
+btn.onclick=function(){p.classList.toggle('open');if(p.classList.contains('open')&&!started){started=true;add(C.hello,'bot');home();}if(p.classList.contains('open'))setTimeout(function(){inp.focus()},50);};
+$('#wa-x').onclick=function(){p.classList.remove('open')};
+$('#wa-form').onsubmit=function(ev){ev.preventDefault();var v=inp.value;inp.value='';say(v);};
+})();
+/*ENDUI*/
+</script>
+</body>
+</html>
