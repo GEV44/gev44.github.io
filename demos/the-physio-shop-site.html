@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Physio Shop | Physiotherapy on Commercial Drive, Vancouver</title>
+<meta name="description" content="Physiotherapy, RMT, kinesiology, orthotics and more on Commercial Drive in East Vancouver. Demo page.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cu:#944929;--cu-d:#6e3219;--cr:#f7f1e8;--cr2:#efe5d4;--ch:#2b2623;--mu:#6b625b;--w1:#944929;--w2:#fff;--wf:'Open Sans',system-ui,sans-serif;--wr:10px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16.5px/1.65 'Open Sans',system-ui,sans-serif;color:var(--ch);background:var(--cr);overflow-x:hidden}
+h1,h2,h3{font-family:'Bitter',Georgia,serif;margin:0 0 .45em;line-height:1.15;color:var(--ch)}
+a{color:var(--cu)}
+img{max-width:100%}
+.wrap{max-width:1060px;margin:0 auto;padding:0 16px}
+.pole{height:10px;background:repeating-linear-gradient(135deg,var(--cu) 0 14px,var(--cr) 14px 28px,#2b4a6b 28px 42px,var(--cr) 42px 56px)}
+header.top{background:#fff;position:sticky;top:0;z-index:40;box-shadow:0 1px 0 var(--cr2)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:8px;padding-bottom:8px}
+.brand img{width:113px;height:50px;display:block}
+nav.main{display:none;gap:20px;font-weight:700;font-size:14.5px}
+nav.main a{color:var(--ch);text-decoration:none}
+nav.main a:hover{color:var(--cu)}
+.btn{display:inline-block;background:var(--cu);color:#fff;text-decoration:none;padding:12px 22px;border-radius:8px;font:700 15px 'Open Sans',sans-serif;border:2px solid var(--cu);cursor:pointer}
+.btn.ol{background:transparent;color:var(--cu)}
+.btn.lt{background:#fff;color:var(--cu-d);border-color:#fff}
+@media(min-width:900px){nav.main{display:flex}}
+.hero .wrap{display:grid;gap:26px;grid-template-columns:minmax(0,1fr);padding-top:42px;padding-bottom:46px}
+@media(min-width:900px){.hero .wrap{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);align-items:center;padding-top:64px;padding-bottom:70px}}
+.hero .pill{display:inline-block;background:var(--cr2);color:var(--cu-d);font-weight:700;font-size:13px;padding:5px 12px;border-radius:99px;margin-bottom:14px}
+.hero h1{font-size:clamp(34px,8vw,62px);font-weight:800;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--cu)}
+.hero p{font-size:18px;color:var(--mu);max-width:540px}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.board{background:var(--ch);color:#f2ebe0;border:6px solid #5a4636;border-radius:10px;padding:20px 20px 16px}
+.board h2{color:#fff;font-size:22px;margin-bottom:10px;border-bottom:1px dashed #6d5b4b;padding-bottom:8px}
+.board table{width:100%;border-collapse:collapse;font-size:16px}
+.board td{padding:6px 0}
+.board td:last-child{text-align:right;font-weight:700;color:#f0c9a6}
+.board .cl td{color:#a99b8c;font-weight:400}
+.board p{margin:10px 0 0;font-size:14.5px;color:#cbbfb1}
+section{padding:54px 0}
+.sh{margin-bottom:24px;max-width:660px}
+.sh .k{font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--cu)}
+.sh h2{font-size:clamp(26px,5vw,38px);margin-top:4px}
+.sh p{margin:0;color:var(--mu)}
+.menu{background:#fff;border:1px solid var(--cr2);border-radius:14px;padding:6px 20px}
+.mi{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;padding:16px 0;border-bottom:1px dashed #d9cbb6}
+.mi:last-child{border-bottom:0}
+.mi h3{font-size:19px;margin:0}
+.mi h3 span{display:inline-block;background:var(--cr2);color:var(--cu-d);font:700 11.5px 'Open Sans',sans-serif;border-radius:99px;padding:2px 9px;margin-left:6px;vertical-align:middle}
+.mi p{margin:0;color:var(--mu);font-size:15.5px}
+.ins{background:var(--cu);color:#fff;position:relative;overflow:hidden}
+.ins::after{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.08)}
+.ins .wrap{position:relative}
+.ins h2,.ins h3{color:#fff}
+.ins .k{color:#f4d2b8}
+.ins .sh p{color:#f6e3d3}
+.cols{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.panel{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:20px}
+.panel h3{font-size:21px}
+.panel p{margin:0 0 8px;font-size:15.5px;color:#fbefe4}
+.insurers{display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:0;margin:18px 0 0}
+.insurers li{background:#fff;color:var(--ch);border-radius:8px;padding:5px 11px;font-size:13.5px;font-weight:600}
+.small{font-size:14px;color:#f6e3d3;margin-top:14px}
+.roster{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:620px){.roster{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:940px){.roster{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.rc{background:#fff;border:1px solid var(--cr2);border-radius:14px;padding:16px;border-top:5px solid var(--cu)}
+.rc b{display:block;font:700 17px 'Bitter',serif}
+.rc span{display:block;color:var(--cu);font-weight:700;font-size:13.5px}
+.rc.own{background:var(--ch);color:#f2ebe0;border-top-color:#f0c9a6}
+.rc.own b{color:#fff}.rc.own span{color:#f0c9a6}
+.rc p{margin:6px 0 0;font-size:14px;color:var(--mu)}
+.rc.own p{color:#cbbfb1}
+.tiers{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:640px){.tiers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:980px){.tiers{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.tier{background:#fff;border:2px solid var(--cr2);border-radius:14px;padding:16px;text-align:center;position:relative}
+.tier.pop{border-color:var(--cu)}
+.tier .fl{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--cu);color:#fff;font-size:11px;font-weight:700;padding:2px 10px;border-radius:99px;white-space:nowrap}
+.tier h3{font-size:18px;margin-bottom:2px}
+.tier .v{color:var(--mu);font-size:13.5px}
+.tier .p{font:800 30px 'Bitter',serif;color:var(--cu);margin:8px 0 0}
+.tier .p small{display:block;font:600 12px 'Open Sans',sans-serif;color:var(--mu)}
+.tier p{margin:8px 0 0;font-size:13.5px;color:var(--mu)}
+.inc{margin-top:22px;background:#fff;border:1px solid var(--cr2);border-radius:14px;padding:18px 20px}
+.inc ul{margin:8px 0 0;padding-left:20px;color:var(--mu)}
+details{background:#fff;border:1px solid var(--cr2);border-radius:12px;margin-bottom:10px}
+summary{cursor:pointer;padding:14px 16px;font:700 16.5px 'Bitter',serif;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"+";color:var(--cu);font-size:22px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{margin:0;padding:0 16px 16px;color:var(--mu);font-size:15.5px}
+.visit{background:var(--ch);color:#e9dfd1}
+.visit h2{color:#fff}
+.visit .g{display:grid;gap:24px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.visit .g{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.visit a{color:#f0c9a6}
+.visit .big{font:700 24px/1.3 'Bitter',serif;color:#fff;margin:0 0 10px}
+footer{background:#1c1816;color:#9d9186;font-size:14px;padding:22px 0 90px}
+</style>
+</head>
+<body>
+<div class="pole"></div>
+<header class="top"><div class="wrap">
+<a class="brand" href="#top" aria-label="The Physio Shop"><img src="img/the-physio-shop-logo.png" alt="The Physio Shop" width="113" height="50"></a>
+<nav class="main"><a href="#services">Services</a><a href="#team">Team</a><a href="#billing">Billing</a><a href="#membership">Membership</a><a href="#faq">FAQ</a><a href="#visit">Visit</a></nav>
+<a class="btn" href="#" data-ask="book">Book a visit</a>
+</div></header>
+
+<section class="hero" id="top" style="padding:0"><div class="wrap">
+<div>
+<span class="pill">Commercial Drive, East Vancouver &middot; since 2017</span>
+<h1>Got an injury? Let's get you back to <em>feeling like yourself.</em></h1>
+<p>Physiotherapists, RMTs, kinesiologists and chiropractors under one roof, with barbershop friendliness and evidence informed care. One block from Broadway-Commercial SkyTrain.</p>
+<div class="ctas"><a class="btn" href="#" data-ask="book">Book an appointment</a><a class="btn ol" href="#services">See services</a></div>
+</div>
+<aside class="board">
+<h2>Open hours</h2>
+<table><tr><td>Weekdays</td><td>7:00 am - 7:00 pm</td></tr><tr><td>Saturday</td><td>8:00 am - 4:00 pm</td></tr><tr class="cl"><td>Sunday</td><td>Closed</td></tr></table>
+<p>2260 Commercial Drive<br>(604) 262-0909</p>
+</aside>
+</div></section>
+<div class="pole"></div>
+
+<section id="services"><div class="wrap">
+<div class="sh"><span class="k">The service menu</span><h2>Everything to recover, rebuild and perform</h2><p>A personalized plan that fits your needs, lifestyle and pace, from the first session to the last.</p></div>
+<div class="menu">
+<div class="mi"><h3>Physiotherapy <span>1-on-1</span></h3><p>Manual therapy, IMS and therapeutic exercise, tailored to your goals. Your physio works with you for the whole appointment.</p></div>
+<div class="mi"><h3>IMS, Intramuscular Stimulation</h3><p>Often combined with physio. Expect a thorough assessment, an explanation of how it should work for your body, minor discomfort and positive results typically within a few days.</p></div>
+<div class="mi"><h3>Post-Operative Rehabilitation</h3><p>The right care on the road back to mobility after surgery, built on current research.</p></div>
+<div class="mi"><h3>Registered Massage Therapy</h3><p>Soft tissue work performed by a Registered Massage Therapist.</p></div>
+<div class="mi"><h3>Kinesiology (Active Rehab)</h3><p>Exercise-based intervention to improve function. Think personal training through a healthcare provider's lens.</p></div>
+<div class="mi"><h3>Personal Training <span>group or individual</span></h3><p>Group sessions for motivation and camaraderie, or individual sessions with custom plans and progress tracking.</p></div>
+<div class="mi"><h3>Foot Orthotics</h3><p>Custom orthotics from doctors of chiropractic: consultation, examination, diagnosis and, if necessary, fitting and dispensing. Uses 3D foot scan technology and an electronic gait scan.</p></div>
+<div class="mi"><h3>OssKins Knee Brace</h3><p>3D printed EVOKE and PROVOKE braces for fluid knee motion that reduces strain on joints.</p></div>
+<div class="mi"><h3>Bike Fitting</h3><p>Comfort, efficiency and performance on the bike, for weekend riders and competitive athletes.</p></div>
+<div class="mi"><h3>TPI Golf Assessment <span>90 min</span></h3><p>A Titleist Performance Institute golf-specific analysis, treatment and exercise plan, with an in-depth look at your swing mechanics.</p></div>
+</div>
+</div></section>
+
+<section class="ins" id="billing"><div class="wrap">
+<div class="sh"><span class="k">Billing &amp; claims</span><h2>Direct billing, ICBC and WorkSafeBC</h2><p>Confirm your coverage with your insurer before booking. The team can walk you through the rest.</p></div>
+<div class="cols">
+<div class="panel"><h3>ICBC covered treatment</h3><p>Hurt in a motor vehicle accident as a driver, passenger, pedestrian or cyclist? Your recovery treatment may be covered by ICBC.</p><p>The clinic has been treating ICBC clients for four years, with 1-on-1 physio using manual therapy and exercise prescription.</p></div>
+<div class="panel"><h3>WorkSafeBC</h3><p>Work-related injury or disease? Physio may be covered through WorkSafeBC, including sprains, strains, fractures and low back pain.</p><p>Since April 1, 2026, kinesiology / PTSW support sessions can be part of approved claims. They need your physio's approval first.</p></div>
+</div>
+<h3 style="margin-top:28px">The clinic direct bills most major insurers, as your plan allows</h3>
+<ul class="insurers"><li>Pacific Blue Cross</li><li>Sun Life</li><li>Manulife</li><li>Canada Life</li><li>Green Shield Canada</li><li>Medavie Blue Cross</li><li>Alberta Blue Cross</li><li>Desjardins</li><li>Beneva</li><li>Empire Life</li><li>Equitable Life</li><li>Industrial Alliance</li><li>TELUS AdjudiCare</li><li>SSQ Insurance</li><li>Johnson Inc.</li><li>Cowan</li><li>Claim Secure</li><li>Group Health</li><li>First Canadian</li><li>ICBC</li><li>MSP</li><li>WCB (WorkSafeBC)</li><li>and more on the clinic's list</li></ul>
+<p class="small">Insurer list as published on the clinic's direct billing page.</p>
+</div></section>
+
+<section id="team"><div class="wrap">
+<div class="sh"><span class="k">The roster</span><h2>Who you will meet</h2><p>A group of people who care about what they do and who they do it with.</p></div>
+<div class="roster">
+<div class="rc own"><b>Trevor Potts</b><span>Owner &amp; Founder, Physiotherapist</span><p>Founded the clinic in 2017. UBC Master of Physical Therapy; works with golfers to Olympic lifters on movement efficiency.</p></div>
+<div class="rc"><b>Raahat Irfan</b><span>Physiotherapist</span></div>
+<div class="rc"><b>David Finn</b><span>Physiotherapist</span></div>
+<div class="rc"><b>Aaron Chew</b><span>Massage Therapist</span></div>
+<div class="rc"><b>Sadie Wilson</b><span>Kinesiologist</span></div>
+<div class="rc"><b>Cayden Orallo</b><span>Kinesiologist</span></div>
+<div class="rc"><b>Michael Horowitz</b><span>Chiropractor</span></div>
+<div class="rc"><b>Daniel Zhou</b><span>Chiropractor</span></div>
+</div>
+</div></section>
+
+<section id="membership" style="background:var(--cr2)"><div class="wrap">
+<div class="sh"><span class="k">Rehab &amp; Performance Membership</span><h2>More than a gym. More than treatment.</h2><p>It bridges physiotherapy, kinesiology and independent exercise for people finishing or continuing physio, building strength, or returning to activity.</p></div>
+<div class="tiers">
+<div class="tier"><h3>Foundation</h3><div class="v">4 visits / month</div><div class="p">$119<small>/month + tax</small></div><p>15-min kinesiology check-in</p></div>
+<div class="tier pop"><span class="fl">MOST POPULAR</span><h3>Consistency</h3><div class="v">8 visits / month</div><div class="p">$199<small>/month + tax</small></div><p>15-min kinesiology check-in</p></div>
+<div class="tier"><h3>Progress</h3><div class="v">12 visits / month</div><div class="p">$279<small>/month + tax</small></div><p>30-min 1:1 kinesiology session + check-in</p></div>
+<div class="tier"><h3>Performance</h3><div class="v">16 visits / month</div><div class="p">$349<small>/month + tax</small></div><p>45-min 1:1 kinesiology session + check-in</p></div>
+<div class="tier"><span class="fl">BEST VALUE</span><h3>Elite</h3><div class="v">20 visits / month</div><div class="p">$429<small>/month + tax</small></div><p>60-min 1:1 kinesiology session + check-in</p></div>
+</div>
+<div class="inc"><b>Every membership includes</b><ul><li>A structured onboarding session for safe, effective programming</li><li>Access to the rehab and performance training facility (75-minute sessions)</li><li>A required monthly 15-minute kinesiology check-in: program updates, progress review, exercise modifications</li></ul></div>
+</div></section>
+
+<section style="padding-bottom:10px"><div class="wrap">
+<div class="sh"><span class="k">Why the shop</span><h2>A modern mix of barbershop friendliness and evidence informed practice</h2></div>
+<div class="roster">
+<div class="rc"><b>Warmth</b><p>An inclusive, welcoming space where everyone's individuality is celebrated.</p></div>
+<div class="rc"><b>Community</b><p>Many of the team grew up in BC, and hike, bike, climb and play sports like you.</p></div>
+<div class="rc"><b>Customer service</b><p>Approachable, practical physio and massage therapy, with flexible and personalized plans.</p></div>
+<div class="rc"><b>Co-operation</b><p>Physios, RMTs, kinesiologists and chiropractors work together on your plan.</p></div>
+</div>
+<p style="margin-top:18px;color:var(--mu);max-width:700px">Sprained an ankle hiking The Chief? Years of running Stanley Park grating your knees? Want to get back to weekend soccer, tennis or basketball? The clinic says it will work with you on a personalized game plan to get you back to feeling like yourself.</p>
+</div></section>
+
+<section id="faq"><div class="wrap" style="max-width:780px">
+<div class="sh"><span class="k">Quick answers</span><h2>Before you book</h2></div>
+<details><summary>Do you direct bill my insurance?</summary><p>Most major insurers are direct billed when your plan coverage allows it. Please confirm your coverage with your insurer before booking.</p></details>
+<details><summary>Can ICBC cover my physio after a car accident?</summary><p>If you were hurt as a driver, passenger, pedestrian or cyclist, treatment may be covered by ICBC. The clinic has treated ICBC clients for four years.</p></details>
+<details><summary>What is new for WorkSafeBC claims?</summary><p>As of April 1, 2026, WorkSafeBC allows kinesiology / PTSW support sessions as part of approved claims. Sessions must be approved by your physio before attending.</p></details>
+<details><summary>What does IMS feel like?</summary><p>The practitioner explains the treatment and the sensations you may feel first. The clinic describes minor discomfort, with positive results typically within a few days.</p></details>
+<details><summary>How do I book?</summary><p>Online through the clinic's booking page, by phone at (604) 262-0909, or tell the assistant what you need and the team follows up.</p></details>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap g">
+<div><h2>Find the shop</h2><p class="big">2260 Commercial Drive<br>Vancouver, BC V5N 4B5</p><p>Just a block from the Broadway and Commercial SkyTrain station.</p></div>
+<div><h2>Get in touch</h2><p class="big"><a href="tel:6042620909">(604) 262-0909</a></p><p><a href="mailto:info@thephysioshop.ca">info@thephysioshop.ca</a></p><a class="btn lt" href="#" data-ask="book">Book a visit</a></div>
+</div></section>
+<div class="pole"></div>
+<footer><div class="wrap">Demo &middot; prepared by Gevorg Hovhannisyan</div></footer>
+
+<style>
+#bwb{position:fixed;right:16px;bottom:16px;z-index:60;border:0;cursor:pointer;background:var(--w1);color:var(--w2);font:700 15px/1 var(--wf);padding:14px 18px;border-radius:var(--wr);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+#bw{position:fixed;right:12px;bottom:76px;z-index:60;width:min(380px,calc(100vw - 24px));height:min(540px,calc(100vh - 100px));background:#fff;color:#1b1b1f;border-radius:var(--wr);box-shadow:0 16px 48px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden;font:15px/1.4 var(--wf)}
+#bw.open{display:flex}
+#bw header{background:var(--w1);color:var(--w2);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}
+#bw header small{display:block;font-weight:400;opacity:.8;font-size:12px}
+#bwx{background:none;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1}
+#bwm{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:#f6f6f8}
+.m{max-width:86%;padding:9px 12px;border-radius:14px;white-space:pre-line;word-wrap:break-word}
+.m.bot{background:#fff;border:1px solid #e3e3e8;align-self:flex-start}
+.m.me{background:var(--w1);color:var(--w2);align-self:flex-end}
+#bwc{display:flex;gap:6px;flex-wrap:wrap;padding:8px 12px;background:#f6f6f8;border-top:1px solid #e8e8ec}
+#bwc button{border:1px solid var(--w1);background:#fff;color:var(--w1);border-radius:999px;padding:6px 11px;font:600 13px var(--wf);cursor:pointer}
+#bwf{display:flex;border-top:1px solid #e3e3e8}
+#bwi{flex:1;min-width:0;border:0;padding:13px;font:15px var(--wf);outline:0}
+#bwf button{border:0;background:var(--w1);color:var(--w2);padding:0 16px;font:700 14px var(--wf);cursor:pointer}
+</style>
+<button id="bwb" type="button" aria-expanded="false">Ask us</button>
+<div id="bw" role="dialog" aria-label="Assistant"><header><div>Physio Shop Assistant<small>Demo assistant, answers from this site</small></div><button id="bwx" type="button" aria-label="Close">&times;</button></header><div id="bwm"></div><div id="bwc"></div><form id="bwf"><input id="bwi" autocomplete="off" aria-label="Your message" placeholder="Ask a question"><button type="submit">Send</button></form></div>
+
+<script>var CFG={
+hello:"Hey, welcome to The Physio Shop on Commercial Drive. Ask me about services, direct billing, ICBC and WorkSafeBC, the Rehab & Performance Membership, hours or the team, or start a booking request. I cannot give medical advice; your practitioner will assess you in person.",
+fallback:"I do not have that from the clinic's site. The team can confirm: call (604) 262-0909 or email info@thephysioshop.ca.",
+chips:["Book a visit","Direct billing","ICBC","WorkSafeBC","Membership","Hours","Our team"],
+flowTrigger:["book","booking","appointment","schedule","schedual","sign up","reserve","make an appointment","come in","new patient","first visit"],
+flow:{intro:"Sure thing. A few quick questions and the front desk will follow up.",
+steps:[
+{k:"svc",label:"Service",q:"What are you looking to book?",chips:["Physiotherapy","IMS","Massage (RMT)","Kinesiology","Chiropractic / orthotics","Post-op rehab","TPI golf assessment","Bike fitting","Membership","Not sure yet"]},
+{k:"pay",label:"Coverage",q:"How will this be covered?",chips:["Extended health (direct bill)","ICBC claim","WorkSafeBC claim","Paying myself","Not sure"]},
+{k:"ins",label:"Insurer",only:"extended",ok:"pay",q:"Which insurer or plan? (so the team can check direct billing)",ph:"e.g. Pacific Blue Cross"},
+{k:"when",label:"Preferred time",q:"When suits you? The clinic is open weekdays 7:00 am-7:00 pm and Saturday 8:00 am-4:00 pm.",chips:["Weekday morning","Weekday evening","Saturday"]},
+{k:"name",label:"Name",q:"Your name?",ph:"Full name"},
+{k:"phone",label:"Phone",q:"Best phone number to reach you?",type:"phone",ph:"Phone number"}],
+done:"Thanks, your request is sent to the team. They will reach out to confirm a time."},
+kb:[
+{id:"diag",w:2,k:["diagnose me","what is wrong","should i worry","serious","emergency","medication","medicine","urgent","broken","is it broken"],a:"I cannot assess symptoms or give medical advice. Your practitioner will assess you in person. In an emergency call 911.",f:["Book a visit","Phone"]},
+{id:"hours",k:["hours","open","opening","closing","what time","saturday","sunday","weekend","evening","late","early","weekday","weekdays"],a:"Weekdays 7:00 am - 7:00 pm, Saturday 8:00 am - 4:00 pm, Sunday closed.",f:["Book a visit","Location"]},
+{id:"loc",k:["location","address","where","directions","find you","map","commercial drive","skytrain","broadway","east van","east vancouver","parking","transit","bus","v5n"],a:"2260 Commercial Drive, Vancouver, BC V5N 4B5, on Commercial Drive in East Vancouver, about a block from the Broadway-Commercial SkyTrain station.",f:["Hours","Phone"]},
+{id:"phone",k:["phone","call","number","contact","email","email address","reach","text"],a:"Phone (604) 262-0909. Email info@thephysioshop.ca.",f:["Book a visit","Hours"]},
+{id:"book",k:["book","booking","appointment","schedule","sign up","make an appointment","reserve","online booking","first visit","new patient"],a:"Let me take a few details for the team."},
+{id:"bill",k:["direct billing","direct bill","insurance","insurer","extended health","benefits","coverage","covered","sun life","manulife","canada life","blue cross","pacific blue cross","green shield","greenshield","telus","desjardins","claim","claims","msp","plan","plans","pay"],a:"The clinic direct bills most major insurers when your plan allows it, including Pacific Blue Cross, Sun Life, Manulife, Canada Life, Green Shield, Medavie Blue Cross, Desjardins, Telus AdjudiCare, ICBC, MSP and WCB (WorkSafeBC), among others. Please confirm your coverage with your insurer before booking.",f:["ICBC","WorkSafeBC","Phone"]},
+{id:"icbc",k:["icbc","car accident","motor vehicle","mva","crash","collision","accident","driver","passenger","pedestrian","cyclist"],a:"If you were hurt in a motor vehicle accident as a driver, passenger, pedestrian or cyclist, treatment may be covered by ICBC. The clinic has been treating ICBC clients for four years, with 1-on-1 physio using manual therapy and exercise prescription.",f:["Book a visit","Direct billing"]},
+{id:"wsbc",k:["worksafe","worksafebc","at work","on the job","job","wcb","work injury","workplace","work related","work-related","workers compensation","return to work"],a:"Work-related injuries may be covered through WorkSafeBC. As of April 1, 2026 WorkSafeBC allows kinesiology / PTSW support sessions as part of approved claims, which need your physio's approval first. The team can walk you through whether you qualify.",f:["Book a visit","Phone"]},
+{id:"mem",w:2.5,k:["membership","member","gym","rehab and performance","performance membership","tier","tiers","visits per month","monthly","check-in","checkin","onboarding"],a:"The Rehab & Performance Membership gives access to the rehab-focused training space (75-minute sessions) with a required monthly 15-minute kinesiology check-in. Tiers per month plus tax: Foundation 4 visits $119, Consistency 8 visits $199, Progress 12 visits $279, Performance 16 visits $349, Elite 20 visits $429. Higher tiers add 1:1 kinesiology time.",f:["Kinesiology","Book a visit"]},
+{id:"physio",k:["physio","physiotherapy","physiotherapist","physical therapy","manual therapy","exercise","injury","injured","sprain","strain","back pain","knee","ankle","shoulder","neck","treatment"],a:"Physiotherapy here is 1-on-1 for the whole appointment: manual therapy, IMS and therapeutic exercise tailored to your goals. Physiotherapists on the team: Trevor Potts, Raahat Irfan and David Finn. For what is causing your pain, the physio assesses you in person.",f:["Book a visit","Our team"]},
+{id:"ims",k:["ims","intramuscular","intramuscular stimulation","dry needling","needling","needle"],a:"IMS (Intramuscular Stimulation) is often used alongside physio treatment. Expect a thorough assessment, an explanation of how it should work for your body, minor discomfort, and positive results typically within a few days.",f:["Book a visit"]},
+{id:"postop",k:["post op","post operative","postoperative","surgery","after surgery","operation","replacement","surgical"],a:"Post-operative rehabilitation is offered for recovery after surgery, with a physio guiding you back to mobility.",f:["Book a visit"]},
+{id:"rmt",k:["massage","rmt","registered massage","massage therapist","soft tissue","aaron","tight muscles"],a:"Registered Massage Therapy is soft tissue work by a Registered Massage Therapist. Aaron Chew is the massage therapist on the team.",f:["Book a visit","Direct billing"]},
+{id:"kin",k:["kinesiology","kinesiologist","active rehab","kin","sadie","cayden","strength","exercise program"],a:"Kinesiology (active rehab) is exercise-based intervention to improve function, like personal training through a healthcare lens. The kinesiologists are Sadie Wilson and Cayden Orallo.",f:["Membership","Book a visit"]},
+{id:"pt",k:["personal training","trainer","group training","group class","individual session","fitness"],a:"Personal training is offered as group and individual sessions, with custom workout plans and progress tracking in the individual option.",f:["Book a visit"]},
+{id:"chiro",k:["chiropractor","chiropractic","chiro","michael","horowitz","daniel","zhou","adjustment"],a:"Chiropractors on the team are Michael Horowitz and Daniel Zhou. Custom orthotics are provided by the doctors of chiropractic.",f:["Orthotics","Book a visit"]},
+{id:"ortho",k:["orthotic","orthotics","insoles","inserts","foot","feet","flat feet","gait scan","3d foot scan","custom orthotics"],a:"Custom orthotics come from the doctors of chiropractic: a consultation, examination, diagnosis, and if needed fitting, production and dispensing of custom inserts, using 3D foot scan technology and an electronic gait scan.",f:["Book a visit","Direct billing"]},
+{id:"brace",k:["osskin","osskins","brace","knee brace","evoke","provoke","3d printed"],a:"OssKins knee brace fitting is offered: 3D printed EVOKE and PROVOKE braces designed for fluid knee motion that reduces strain on joints.",f:["Book a visit"]},
+{id:"golf",k:["golf","golfer","tpi","titleist","swing"],a:"The Titleist Performance Institute golf assessment is 90 minutes: a golf-specific analysis, treatment and exercise plan for average golfers and tour players, with an in-depth look at your swing mechanics.",f:["Book a visit"]},
+{id:"bike",k:["bike","bike fit","bike fitting","cycling","cyclist","bicycle","saddle","ride"],a:"Bike fitting aims at comfort, efficiency and performance on the bike, for weekend riders and competitive athletes.",f:["Book a visit"]},
+{id:"team",k:["team","who","staff","trevor","potts","raahat","irfan","david","finn","owner","founder","practitioners","therapists"],a:"Trevor Potts (owner and founder, physiotherapist), Raahat Irfan and David Finn (physiotherapists), Aaron Chew (massage therapist), Sadie Wilson and Cayden Orallo (kinesiologists), Michael Horowitz and Daniel Zhou (chiropractors).",f:["Book a visit","Services"]},
+{id:"svc",k:["services","service","offer","what do you do","treat","specialties","menu","everything"],a:"Physiotherapy, IMS, post-operative rehab, registered massage therapy, kinesiology (active rehab), personal training, bike fitting, foot orthotics, OssKins knee braces, TPI golf assessments, and the Rehab & Performance Membership.",f:["Membership","ICBC","Direct billing"]},
+{id:"about",k:["about","history","founded","since","2017","community","barbershop","mission","inclusive","values"],a:"Founded in 2017 by Trevor Potts: evidence informed physio, massage, personal training and more, with barbershop friendliness and an inclusive, welcoming space.",f:["Our team","Book a visit"]},
+{id:"price",k:["price","prices","cost","how much","fee","fees","rate","rates","charge","afford","expensive"],a:"The site only publishes membership pricing (see Membership); for other visit prices please ask the team at (604) 262-0909.",f:["Membership","Phone"]},
+{id:"blog",k:["blog","article","articles","ankle sprain","reviews","review"],a:"The blog has articles such as 'Ankle sprain explained: a physiotherapist's perspective', and there is a client reviews page on the site.",f:["Book a visit"]}
+]};
+</script>
+<script>(function(g){
+var C=CFG;
+function norm(s){return (s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9Ѐ-ӿ\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|s|ly)$/,''):w;}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var q=[i];for(j=1;j<=n;j++){c=a[i-1]===b[j-1]?0:1;q[j]=Math.min(p[j]+1,q[j-1]+1,p[j-1]+c);}p=q;}return p[n];}
+function wm(a,b){if(a===b)return 2;var sa=stem(a),sb=stem(b);if(sa===sb)return 2;
+ if(Math.min(sa.length,sb.length)>=5&&(sa.indexOf(sb)===0||sb.indexOf(sa)===0))return 1.6;
+ var m=Math.max(sa.length,sb.length);if(m>=5){var d=lev(sa,sb);if(d<=1)return 1.6;if(m>=8&&d<=2)return 1.4;}return 0;}
+function toks(q){return norm(q).split(' ').filter(function(t){return t.length>2||/^(pt|ot|ac)$/.test(t);});}
+function score(e,q,tk){var s=0;e.k.forEach(function(kw){var n=norm(kw),kt=n.split(' ');
+ if(kt.length>1){if((' '+q+' ').indexOf(' '+n+' ')>=0){s+=3*kt.length;return;}
+  var hit=0,sub=0;kt.forEach(function(t){var b=0;tk.forEach(function(w){b=Math.max(b,wm(w,t));});if(b>0)hit++;sub+=b;});
+  if(hit===kt.length)s+=sub*1.2;}
+ else{var b=0;tk.forEach(function(w){b=Math.max(b,wm(w,n));});s+=b*1.5;}});return s*(e.w||1);}
+function answer(text){var q=norm(text),tk=toks(text);
+ if(C.flowTrigger&&score({k:C.flowTrigger},q,tk)>=2.4)return{flow:1};
+ var best=null,bs=0;C.kb.forEach(function(e){var s=score(e,q,tk);if(s>bs){bs=s;best=e;}});
+ if(best&&bs>=2.4)return{a:best.a,f:best.f,id:best.id};
+ return{a:C.fallback,f:C.chips,id:'fallback'};}
+g.__bot={answer:answer,norm:norm,score:score,toks:toks,kb:C.kb};
+if(typeof document==='undefined')return;
+var $=function(i){return document.getElementById(i);};
+var box=$('bw'),msgs=$('bwm'),chips=$('bwc'),inp=$('bwi'),form=$('bwf'),btn=$('bwb'),st=null,data={};
+function add(t,me){var d=document.createElement('div');d.className='m '+(me?'me':'bot');d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
+function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c);};chips.appendChild(b);});}
+function startFlow(){st=0;data={};add(C.flow.intro);ask();}
+function ask(){var s=C.flow.steps[st];add(s.q);setChips(s.chips);inp.placeholder=s.ph||'Type your answer';}
+function flowIn(t){var s=C.flow.steps[st];t=t.trim();
+ if(s.type==='phone'&&t.replace(/\D/g,'').length<7){add('That does not look like a phone number. Could you re-enter it?');return;}
+ if(!t){return;}
+ data[s.k]=t;st++;
+ while(st<C.flow.steps.length&&C.flow.steps[st].only&&!new RegExp(C.flow.steps[st].only,'i').test(data[C.flow.steps[st].ok||'svc']||''))st++;
+ if(st>=C.flow.steps.length){var lines=C.flow.steps.filter(function(x){return data[x.k];}).map(function(x){return x.label+': '+data[x.k];}).join('\n');
+  add(C.flow.done+'\n\n'+lines+'\n\n(Demo preview: nothing is actually transmitted.)');st=null;setChips(C.chips);inp.placeholder='Ask a question';}
+ else ask();}
+function send(t){t=(t||'').trim();if(!t)return;add(t,1);inp.value='';
+ if(st!==null){flowIn(t);return;}
+ var r=answer(t);if(r.flow){startFlow();return;}
+ add(r.a);setChips(r.f||C.chips);if(r.id==='book')startFlow();}
+form.onsubmit=function(e){e.preventDefault();send(inp.value);};
+function open(v){box.classList.toggle('open',v);btn.setAttribute('aria-expanded',v);if(v&&!msgs.children.length){add(C.hello);setChips(C.chips);}if(v)setTimeout(function(){inp.focus();},50);}
+btn.onclick=function(){open(!box.classList.contains('open'));};
+$('bwx').onclick=function(){open(false);};
+document.querySelectorAll('[data-ask]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();open(true);var v=a.getAttribute('data-ask');if(v==='book'){if(st===null)startFlow();}else send(v);});});
+})(typeof globalThis!=='undefined'?globalThis:window);
+</script>
+</body>
+</html>
