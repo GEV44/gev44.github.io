@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SGIC Vancouver · St. George International College</title>
+<meta name="description" content="Demo page for St. George International College, Vancouver campus: English programs, tuition estimator, homestay and an enquiry assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#2c2a47;--navy2:#1d1c33;--navy3:#3d3b62;--cream:#f7f3ea;--cream2:#ede6d4;--maple:#c8102e;--gold:#b8964b;--gold2:#e2c987;--ink:#22212f;--mute:#5f5e72;--white:#fff;--r:6px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Source Sans 3',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:17px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Libre Baskerville',Georgia,serif;font-weight:700;line-height:1.18;color:var(--navy)}
+.wrap{width:100%;max-width:1100px;margin:0 auto;padding:0 16px}
+/* header */
+header{background:#fff;border-bottom:1px solid #ddd5c0;position:sticky;top:0;z-index:40}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px}
+.brand img{height:46px;width:auto}
+nav{display:none;gap:24px;font-weight:600;font-size:15px}
+nav a{text-decoration:none;color:var(--navy);padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--maple)}
+@media(min-width:900px){nav{display:flex}}
+.btn{display:inline-block;background:var(--maple);color:#fff;font-weight:700;font-size:15px;padding:11px 20px;border-radius:var(--r);text-decoration:none;border:0;cursor:pointer;letter-spacing:.02em}
+.btn:hover{background:#a50d26}
+.btn.o{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+.btn.o:hover{background:var(--navy);color:#fff}
+.btn.sm{padding:9px 14px;font-size:14px}
+/* hero */
+.hero{background:var(--cream);padding:44px 0 36px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border-radius:50%;border:60px solid var(--cream2)}
+.hero .wrap{position:relative;display:grid;gap:30px}
+.crest{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--maple);margin-bottom:12px}
+.crest:before{content:"";width:28px;height:2px;background:var(--maple)}
+.hero h1{font-size:clamp(32px,8vw,56px);margin-bottom:16px}
+.hero p.lead{font-size:19px;color:#3e3d55;max-width:560px;margin-bottom:22px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.campus{background:var(--navy);color:#fff;border-radius:10px;padding:24px;position:relative}
+.campus:before{content:"";position:absolute;left:12px;top:12px;right:12px;bottom:12px;border:1px solid rgba(226,201,135,.45);border-radius:6px;pointer-events:none}
+.campus h2{color:#fff;font-size:22px;margin-bottom:10px}
+.campus p{color:#d5d4e6;font-size:15px;margin-bottom:12px}
+.campus ul{list-style:none;display:grid;gap:10px}
+.campus li{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.campus li b{flex:none;color:var(--gold2);font-family:'Libre Baskerville',serif;font-size:22px;min-width:46px;line-height:1.1}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1.25fr 1fr;align-items:center}.hero{padding:70px 0 56px}}
+/* facts band */
+.band{background:var(--navy);color:#fff}
+.band .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0}
+.band div{padding:18px 10px;text-align:center;border-right:1px solid rgba(255,255,255,.14)}
+.band b{display:block;font-family:'Libre Baskerville',serif;font-size:26px;color:var(--gold2)}
+.band span{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#c4c3d8}
+@media(min-width:760px){.band .wrap{grid-template-columns:repeat(4,minmax(0,1fr))}}
+section{padding:56px 0}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--maple)}
+h2{font-size:clamp(26px,5.5vw,38px);margin:6px 0 12px}
+.sub{color:var(--mute);max-width:640px;margin-bottom:26px}
+/* programs tabs */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.tabs button{background:#fff;border:1px solid #d8cfb8;color:var(--navy);padding:10px 18px;font:700 15px 'Source Sans 3',sans-serif;border-radius:999px;cursor:pointer}
+.tabs button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pg{display:none;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px}
+.pg.on{display:grid}
+.card{background:#fff;border:1px solid #e2d9c3;border-radius:10px;padding:20px;border-top:4px solid var(--gold);min-width:0}
+.card h3{font-size:19px;margin-bottom:6px}
+.card p{font-size:15px;color:var(--mute)}
+.card small{display:block;margin-top:10px;font-weight:700;color:var(--navy3);font-size:13px}
+/* tuition */
+#tuition{background:var(--navy2);color:#fff;overflow:hidden;position:relative}
+#tuition:before{content:"";position:absolute;left:-120px;bottom:-160px;width:380px;height:380px;border-radius:50%;background:rgba(184,150,75,.12)}
+#tuition h2{color:#fff}
+#tuition .sub{color:#c4c3d8}
+#tuition .eyebrow{color:var(--gold2)}
+.calc{position:relative;display:grid;gap:20px}
+.calc>*{min-width:0}
+@media(min-width:860px){.calc{grid-template-columns:1fr 1fr;align-items:start}}
+.panel{background:var(--navy3);border-radius:12px;padding:22px}
+.panel label{display:block;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold2);margin:0 0 6px}
+.panel select,.panel input[type=range]{width:100%}
+.panel select{background:#fff;color:var(--ink);border:0;border-radius:6px;padding:11px 12px;font:600 16px 'Source Sans 3',sans-serif;margin-bottom:18px}
+.panel input[type=range]{accent-color:var(--maple);margin:6px 0 4px}
+.wk{display:flex;justify-content:space-between;color:#c4c3d8;font-size:14px;margin-bottom:6px}
+.wk b{color:#fff;font-size:22px;font-family:'Libre Baskerville',serif}
+.res{background:#fff;color:var(--ink);border-radius:12px;padding:22px}
+.res h3{font-size:20px;margin-bottom:10px}
+.line{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed #d6cdb6;font-size:15px}
+.line span:last-child{font-weight:700;white-space:nowrap}
+.tot{display:flex;justify-content:space-between;gap:12px;padding-top:14px;font-family:'Libre Baskerville',serif;font-size:20px;color:var(--navy)}
+.fine{font-size:13px;color:var(--mute);margin-top:12px}
+.sp{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));margin-top:20px;position:relative}
+.sp div{background:rgba(255,255,255,.07);border:1px solid rgba(226,201,135,.35);border-radius:10px;padding:16px;min-width:0}
+.sp b{display:block;color:var(--gold2);font-family:'Libre Baskerville',serif;font-size:17px;margin-bottom:4px}
+.sp span{font-size:14px;color:#d5d4e6}
+/* campuses */
+.two{display:grid;gap:16px}
+.two>*{min-width:0}
+@media(min-width:860px){.two{grid-template-columns:1fr 1fr}}
+.cc{background:#fff;border-radius:12px;border:1px solid #e2d9c3;padding:24px;position:relative;overflow:hidden}
+.cc.main{border:2px solid var(--navy)}
+.cc .tag{position:absolute;right:0;top:0;background:var(--maple);color:#fff;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-bottom-left-radius:10px}
+.cc h3{font-size:22px;margin-bottom:10px}
+.cc dl{display:grid;gap:8px;font-size:15px}
+.cc dt{font-weight:700;color:var(--maple);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.cc dd{overflow-wrap:anywhere}
+/* steps */
+.steps{list-style:none;display:grid;gap:14px;counter-reset:st}
+.steps li{background:#fff;border-radius:10px;padding:18px 18px 18px 64px;position:relative;border:1px solid #e2d9c3;min-width:0}
+.steps li:before{counter-increment:st;content:counter(st);position:absolute;left:16px;top:16px;width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--gold2);font-family:'Libre Baskerville',serif;display:grid;place-items:center;font-size:18px}
+.steps h3{font-size:18px;margin-bottom:2px}
+.steps p{font-size:15px;color:var(--mute)}
+@media(min-width:860px){.steps{grid-template-columns:repeat(4,minmax(0,1fr))}.steps li{padding:62px 16px 18px}.steps li:before{left:16px;top:16px}}
+/* homestay + voices */
+#stay{background:var(--cream2)}
+.q{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))}
+blockquote{background:#fff;border-radius:10px;padding:22px;border-left:5px solid var(--maple);font-size:15px;color:#3a3951;min-width:0}
+blockquote footer{margin-top:12px;font-weight:700;color:var(--navy);font-size:14px}
+blockquote footer span{display:block;font-weight:400;color:var(--mute)}
+.lang{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.lang span{background:#fff;border:1px solid #d8cfb8;border-radius:999px;padding:6px 14px;font-weight:600;font-size:14px;color:var(--navy)}
+/* faq + contact */
+details{background:#fff;border:1px solid #e2d9c3;border-radius:8px;margin-bottom:10px}
+details[open]{border-color:var(--navy)}
+summary{cursor:pointer;padding:14px 16px;font-weight:700;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--maple);font-size:22px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{padding:0 16px 16px;color:var(--mute);font-size:15px}
+#contact{background:var(--navy);color:#fff}
+#contact h2{color:#fff}
+#contact .eyebrow{color:var(--gold2)}
+#contact .sub{color:#c4c3d8}
+.ct{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.ct div{background:var(--navy3);border-radius:10px;padding:18px;min-width:0;overflow-wrap:anywhere}
+.ct b{display:block;color:var(--gold2);font-family:'Libre Baskerville',serif;margin-bottom:6px}
+.ct a{text-decoration:none;display:block;font-size:16px}
+footer{background:var(--navy2);color:#aeadc6;font-size:13px;padding:22px 0 92px;text-align:center}
+/* assistant */
+#ab{position:fixed;right:14px;bottom:14px;z-index:90;display:flex;align-items:center;gap:8px;background:var(--maple);color:#fff;border:0;border-radius:999px;padding:13px 20px;font:700 16px 'Source Sans 3',sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(29,28,51,.45)}
+#ab i{width:9px;height:9px;border-radius:50%;background:#7dffb0;display:inline-block}
+#ap{position:fixed;right:10px;bottom:10px;z-index:100;width:min(395px,calc(100vw - 20px));height:min(620px,calc(100vh - 20px));background:#fff;border-radius:14px;box-shadow:0 16px 50px rgba(29,28,51,.5);display:none;flex-direction:column;overflow:hidden}
+#ap.on{display:flex}
+.ah{background:var(--navy);color:#fff;padding:13px 15px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:3px solid var(--gold)}
+.ah b{font-family:'Libre Baskerville',serif;font-size:16px;display:block}
+.ah small{color:#c4c3d8;font-size:12px}
+.ah button{background:none;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1}
+#am{flex:1;overflow-y:auto;padding:14px;background:var(--cream);display:flex;flex-direction:column;gap:9px}
+.m{max-width:88%;padding:10px 13px;border-radius:12px;font-size:15px;line-height:1.45;overflow-wrap:anywhere;white-space:pre-line}
+.m.b{background:#fff;border:1px solid #e2d9c3;align-self:flex-start}
+.m.u{background:var(--navy);color:#fff;align-self:flex-end}
+#ac{display:flex;gap:7px;flex-wrap:wrap;padding:8px 12px;background:var(--cream);border-top:1px solid #e2d9c3;max-height:122px;overflow-y:auto}
+#ac button{background:#fff;border:1px solid var(--navy);color:var(--navy);border-radius:999px;padding:6px 12px;font:600 14px 'Source Sans 3',sans-serif;cursor:pointer}
+#ac button:hover{background:var(--navy);color:#fff}
+#af{display:flex;gap:8px;padding:10px;border-top:1px solid #e2d9c3;background:#fff}
+#ai{flex:1;min-width:0;border:1px solid #cfc6ae;border-radius:8px;padding:10px 12px;font:16px 'Source Sans 3',sans-serif}
+#af button{background:var(--maple);color:#fff;border:0;border-radius:8px;padding:0 16px;font:700 15px 'Source Sans 3',sans-serif;cursor:pointer}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<a class="brand" href="#top" aria-label="St. George International College"><img src="img/sgic-vancouver-english-school-logo.png" alt="St. George International College" width="120" height="44"></a>
+<nav><a href="#programs">Programs</a><a href="#tuition">Tuition</a><a href="#campuses">Campuses</a><a href="#apply">How to apply</a><a href="#stay">Homestay</a><a href="#contact">Contact</a></nav>
+<a class="btn sm" href="#contact" data-open="1">Contact an advisor</a>
+</div>
+</header>
+
+<main id="top">
+<div class="hero">
+<div class="wrap">
+<div>
+<span class="crest">SGIC Vancouver · since 1994</span>
+<h1>English on Canada's West Coast, five minutes from the SkyTrain</h1>
+<p class="lead">Study General English, IELTS preparation or a university pathway in downtown Vancouver, with classmates from more than 70 countries and an advisor who speaks your language.</p>
+<div class="cta"><a class="btn" href="#programs">See the programs</a><a class="btn o" href="#tuition">Estimate your tuition</a></div>
+</div>
+<aside class="campus">
+<h2>The Vancouver campus</h2>
+<p>605 Robson St, Suite 200, in the middle of the city.</p>
+<ul>
+<li><b>5 min</b><span>walk to SkyTrain stations and bus stops</span></li>
+<li><b>2 min</b><span>walk to Pacific Centre and Robson Street</span></li>
+<li><b>Mon</b><span>new students can start every Monday</span></li>
+</ul>
+</aside>
+</div>
+</div>
+
+<div class="band"><div class="wrap">
+<div><b>31+</b><span>Years teaching English</span></div>
+<div><b>135,000+</b><span>Students</span></div>
+<div><b>70+</b><span>Countries</span></div>
+<div><b>2</b><span>Campuses in Canada</span></div>
+</div></div>
+
+<section id="programs">
+<div class="wrap">
+<span class="eyebrow">Programs</span>
+<h2>Choose the English you need</h2>
+<p class="sub">From everyday speaking to exam preparation and university entry. Not sure which fits? Take the free online test or ask an advisor.</p>
+<div class="tabs" role="tablist">
+<button class="on" data-t="esl">General English</button>
+<button data-t="path">Pathway</button>
+<button data-t="spec">Specialized</button>
+<button data-t="more">Camps and more</button>
+</div>
+<div class="pg on" id="esl">
+<div class="card"><h3>General English (ESL)</h3><p>Reading, writing, listening and speaking every day, from Starter to Advanced. Each level lasts 8 weeks, and a B (70%) or higher moves you up.</p><small>Start any Monday · placement test on arrival</small></div>
+<div class="card"><h3>Conversation Club</h3><p>A relaxed way to practise speaking and make friends from around the world.</p><small>Alongside your classes</small></div>
+<div class="card"><h3>Activities and excursions</h3><p>School tournaments and daily activities, plus a monthly all-day excursion with students from other levels.</p><small>Student life</small></div>
+</div>
+<div class="pg" id="path">
+<div class="card"><h3>University and College Pathway (UCPP)</h3><p>Prepares you for English-taught post-secondary programs. Graduates can enter SGIC partner universities and colleges in Canada without an IELTS or TOEFL score.</p><small>Also available online</small></div>
+<div class="card"><h3>Pre-Pathway (PPP)</h3><p>A pathway-level program listed on the tuition page.</p><small>25 hours per week</small></div>
+</div>
+<div class="pg" id="spec">
+<div class="card"><h3>IELTS Preparation</h3><p>Techniques for Reading, Writing, Listening and Speaking, with a practice Cambridge test every second week. Entry: completed level 6 at SGIC (oral test).</p><small>Advanced at both campuses · Intermediate in Toronto only</small></div>
+<div class="card"><h3>Speaking for Success (SSP)</h3><p>Built to improve your natural speaking style. Intermediate and Advanced versions.</p><small>SSP-I and SSP-A</small></div>
+<div class="card"><h3>Business English</h3><p>English for the workplace: cover letters, CVs, cold calling and elevator pitches, as one student described it.</p><small>BEDP</small></div>
+<div class="card"><h3>English for Professionals</h3><p>Focused English for working professionals.</p><small>EFP</small></div>
+<div class="card"><h3>English for Medicine</h3><p>A specialized program for people working in or heading into medicine.</p><small>EFM</small></div>
+<div class="card"><h3>i-TESOL and TYCP</h3><p>Teacher-training style programs, including TYCP, where students make learning kits and observe classes outside school.</p><small>Ask an advisor for entry details</small></div>
+</div>
+<div class="pg" id="more">
+<div class="card"><h3>Summer and Winter Camps</h3><p>Seasonal camps are listed on the school's site.</p><small>Dates: ask an advisor</small></div>
+<div class="card"><h3>High School</h3><p>SGIC also runs a high school in Toronto (North York).</p><small>Toronto campus</small></div>
+<div class="card"><h3>Free online English test</h3><p>Find out your level before you apply.</p><small>On the school's website</small></div>
+</div>
+</div>
+</section>
+
+<section id="tuition">
+<div class="wrap">
+<span class="eyebrow">Tuition estimator</span>
+<h2>General English, week by week</h2>
+<p class="sub">The same tuition applies at both campuses, in Canadian dollars. Pick a course and your length of study.</p>
+<div class="calc">
+<div class="panel">
+<label for="course">Course</label>
+<select id="course">
+<option value="0">Intensive · 17.5 hours/week</option>
+<option value="1" selected>Full Time Intensive · 25 hours/week</option>
+<option value="2">X-Intensive · 25 hours/week + 1:1 tutor</option>
+</select>
+<label for="weeks">Length of study</label>
+<div class="wk"><span>Weeks</span><b id="wv">12</b></div>
+<input type="range" id="weeks" min="1" max="40" value="12">
+<p class="fine" style="color:#c4c3d8">Longer stays have a lower weekly rate.</p>
+</div>
+<div class="res">
+<h3>Your estimate</h3>
+<div class="line"><span>Weekly rate</span><span id="r1"></span></div>
+<div class="line"><span>Tuition</span><span id="r2"></span></div>
+<div class="line"><span>Materials</span><span id="r3"></span></div>
+<div class="line"><span>Registration fee</span><span>CA$250</span></div>
+<div class="tot"><span>Estimated total</span><span id="r4"></span></div>
+<p class="fine">Before accommodation, insurance and promotions. An advisor confirms the final amount.</p>
+</div>
+</div>
+<div class="sp">
+<div><b>Special programs</b><span>SSP, EFM, Business English, EFP, IELTS and TOEFL iBT preparation: CA$1,875 for 4 weeks, CA$3,700 for 8 weeks (25 hours/week).</span></div>
+<div><b>Pathway</b><span>UCPP: CA$1,950 for 4 weeks, CA$3,800 for 8, CA$5,450 for 12. PPP: CA$1,875 for 4 weeks, CA$3,700 for 8.</span></div>
+<div><b>Other fees</b><span>Health insurance CA$3.50 per day. Custodian letter for minors CA$200.</span></div>
+</div>
+</div>
+</section>
+
+<section id="campuses">
+<div class="wrap">
+<span class="eyebrow">Two cities, one college</span>
+<h2>Vancouver and Toronto</h2>
+<p class="sub">Choose a climate and a city. If you cannot decide, you can transfer between the two campuses.</p>
+<div class="two">
+<div class="cc main"><span class="tag">This page</span>
+<h3>SGIC Vancouver</h3>
+<dl>
+<dt>Address</dt><dd>605 Robson St, Suite 200, Vancouver, BC V6B 5J3</dd>
+<dt>Phone</dt><dd>+1 604 605 0220</dd>
+<dt>E-mail</dt><dd>join-us@sgiccanada.com</dd>
+<dt>Getting there</dt><dd>SkyTrain and bus stops within a 5-minute walk; Pacific Centre and Robson Street 2 minutes away.</dd>
+<dt>Facilities</dt><dd>Classrooms, a computer station, and a cafeteria with kitchenettes. Notice boards carry newsletters, volunteering and the activity calendar.</dd>
+</dl></div>
+<div class="cc"><h3>SGIC Toronto</h3>
+<dl>
+<dt>Address</dt><dd>543 Yonge St, 2nd Floor, Toronto, ON M4Y 1Y5</dd>
+<dt>Phone</dt><dd>+1 416 929 4050</dd>
+<dt>E-mail</dt><dd>info@sgiccanada.com</dd>
+<dt>Rating</dt><dd>4.8 out of 5 on Google from 600+ student reviews (Toronto, as stated on the school's tuition page).</dd>
+</dl></div>
+</div>
+</div>
+</section>
+
+<section id="apply" style="background:var(--cream2)">
+<div class="wrap">
+<span class="eyebrow">How to apply</span>
+<h2>Four steps, with an advisor beside you</h2>
+<ol class="steps">
+<li><h3>Choose a program</h3><p>Decide what you want to study and talk with a student advisor.</p></li>
+<li><h3>Send the form</h3><p>Complete the application form and send it to your advisor, or apply online.</p></li>
+<li><h3>Pay tuition</h3><p>Options include Flywire and e-Transfer to the campus you chose.</p></li>
+<li><h3>Apply for your visa</h3><p>After payment you receive an invoice and a letter of acceptance for the visa application.</p></li>
+</ol>
+</div>
+</section>
+
+<section id="stay">
+<div class="wrap">
+<div class="two">
+<div>
+<span class="eyebrow">Accommodation</span>
+<h2>Live with a local family</h2>
+<p class="sub" style="margin-bottom:12px">Homestay places you with Canadian hosts who provide three meals a day and a comfortable room with a bed, desk and furnishings, with public transport nearby. It is a good way to practise English every evening.</p>
+<p class="sub">A residence option is also listed on the school's site. Ask an advisor for details and availability.</p>
+<a class="btn" href="#contact" data-open="1">Ask about homestay</a>
+</div>
+<div>
+<span class="eyebrow">Student voices</span>
+<h2>From the classroom</h2>
+<div class="q">
+<blockquote>"Mostly, I like the vocabulary. We can learn about cover letters, CVs, cold calling and elevator pitches. It gives us a good prospect of the business culture in North America."<footer>Emely Antonella<span>Ecuador · ESL Program</span></footer></blockquote>
+<blockquote>"IELTS class helped me a lot. I always had a question and the teacher always explained in the best way."<footer>Bruno<span>Brazil · IELTS Preparation</span></footer></blockquote>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="faq">
+<div class="wrap">
+<span class="eyebrow">Good to know</span>
+<h2>Frequently asked</h2>
+<details><summary>When can I start?</summary><p>New students can start every Monday. The calendar on the school's site lists the dates.</p></details>
+<details><summary>How is my level decided?</summary><p>On registration you take an oral and a written assessment, so you are placed in the class that matches your English. You can also take the free online test first.</p></details>
+<details><summary>Can I talk to someone in my own language?</summary><p>Yes. The school lists advisors who speak Spanish, Portuguese, Japanese, Korean, Vietnamese, Turkish, Mandarin, Russian, Thai, Italian and more.</p></details>
+<details><summary>Do I need IELTS to enter university?</summary><p>Students who complete the University and College Pathway Program can enter SGIC partner universities and colleges in Canada without an IELTS or TOEFL score.</p></details>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap">
+<span class="eyebrow">Talk to an advisor</span>
+<h2>Start your English in Vancouver</h2>
+<p class="sub">Advisors speak many languages:</p>
+<div class="lang"><span>Español</span><span>Português</span><span>日本語</span><span>한국어</span><span>Tiếng Việt</span><span>Türkçe</span><span>中文</span><span>Русский</span><span>ไทย</span><span>Italiano</span></div>
+<div class="ct" style="margin-top:22px">
+<div><b>Vancouver campus</b><a href="tel:+16046050220">+1 604 605 0220</a><a href="mailto:join-us@sgiccanada.com">join-us@sgiccanada.com</a><a href="#contact">605 Robson St, Suite 200</a></div>
+<div><b>Toronto campus</b><a href="tel:+14169294050">+1 416 929 4050</a><a href="mailto:info@sgiccanada.com">info@sgiccanada.com</a><a href="#contact">543 Yonge St, 2nd Floor</a></div>
+<div><b>Designated learning institutes</b><a href="#contact">Toronto: O212206178197</a><a href="#contact">Vancouver: O19352161652</a></div>
+</div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">St. George International College · 605 Robson St, Vancouver, BC<br>Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="ab" aria-label="Open the SGIC assistant"><i></i>Ask SGIC</button>
+<div id="ap" role="dialog" aria-label="SGIC assistant">
+<div class="ah"><div><b>SGIC assistant</b><small>Answers from the college site. Advisors confirm the rest.</small></div><button id="ax" aria-label="Close">×</button></div>
+<div id="am"></div>
+<div id="ac"></div>
+<form id="af" autocomplete="off"><input id="ai" placeholder="Type your question" aria-label="Your question"><button>Send</button></form>
+</div>
+
+<script id="kb">
+var KB=[
+{k:["tuition","price","prices","cost","fee","fees","how much","pay","payment","expensive","weekly rate","per week"],a:"Tuition is the same at both campuses, in Canadian dollars. General English, Full Time Intensive (25 h/week): CA$415 per week for 1-3 weeks, down to CA$365 for 32+ weeks. Intensive (17.5 h/week) starts at CA$315 and X-Intensive (with a 1:1 tutor) at CA$520. Registration is CA$250. Try the estimator on this page for your exact length of study."},
+{k:["esl","general english","general","english course","regular course","level","levels","starter","advanced","intermediate","placement"],a:"General English (ESL) covers reading, writing, listening and speaking every day, from Starter to Advanced. Each level lasts 8 weeks, and a B (70%) or higher moves you to the next. New students take an oral and written placement test."},
+{k:["ielts","exam","test prep","toefl","cambridge","exam preparation","band score"],a:"IELTS Preparation focuses on Reading, Writing, Listening and Speaking, with a practice Cambridge test every second week. Entry requires completing level 6 at SGIC (oral test). It runs 2 to 6 terms, each about 100 hours over 4 weeks. Advanced is at both campuses, Intermediate in Toronto only. TOEFL iBT preparation is also listed."},
+{k:["pathway","ucpp","university","college","post secondary","degree","partner","ppp","pre pathway"],a:"The University and College Pathway Program (UCPP) prepares you for English-taught post-secondary studies. Graduates can enter SGIC partner universities and colleges in Canada without an IELTS or TOEFL score. There is also a Pre-Pathway (PPP) and an online UCPP."},
+{k:["business","business english","bedp","professionals","efp","work","career","job","cv","resume"],a:"Business English (BEDP) and English for Professionals (EFP) are 25 hours per week. Students mention learning cover letters, CVs, cold calling and elevator pitches."},
+{k:["medicine","medical","nurse","doctor","efm","health","healthcare"],a:"English for Medicine (EFM) is one of the specialized 25 hour per week programs. An advisor can tell you the entry level and start dates."},
+{k:["speaking","ssp","conversation","speak","fluency","club"],a:"Speaking for Success (SSP-I Intermediate and SSP-A Advanced) is built to improve your natural speaking style. There is also a Conversation Club for relaxed practice and making friends."},
+{k:["tesol","tycp","teacher","teaching","children","kids","young learners"],a:"i-TESOL and TYCP are teacher-training style programs; the tuition page lists TYCP as English for Children and TESOL as English for Adults. Please ask an advisor for entry requirements."},
+{k:["camp","camps","summer","winter","holiday","teen","teenager","junior"],a:"Summer and Winter Camps are listed on the school's website. Dates and ages are not on the page I have, so an advisor will confirm them."},
+{k:["high school","secondary","academy","grade"],a:"SGIC also runs a high school in Toronto (North York), at 5 Park Home Ave. For Vancouver programs, ask an advisor."},
+{k:["homestay","host","family","accommodation","housing","stay","live","room","residence","dorm","meals"],a:"Homestay places you with Canadian hosts who provide three meals a day and a comfortable furnished room with a bed and desk, close to public transport. A residence option is also listed; an advisor will give details and availability."},
+{k:["start","start date","begin","when","monday","calendar","intake","dates"],a:"Students can start every Monday. See the course calendar on the school's website, or tell me your month and I will pass it to an advisor."},
+{k:["apply","application","admission","admissions","enrol","enroll","register","registration","how to apply","visa","letter of acceptance","study permit"],a:"Four steps: choose a program, send the application form to an advisor, pay tuition (Flywire or e-Transfer), then use the invoice and letter of acceptance to apply for your visa. Visa decisions are made by the Canadian authorities; the advisors can guide you on the documents."},
+{k:["vancouver","robson","address","where","location","located","downtown","skytrain","pacific centre","transit","find"],a:"SGIC Vancouver is at 605 Robson St, Suite 200, Vancouver, BC V6B 5J3. SkyTrain stations and bus stops are within a 5-minute walk, and Pacific Centre and Robson Street are 2 minutes away."},
+{k:["toronto","toronto campus","yonge","other campus","transfer","two campuses","north york"],a:"The Toronto campus is at 543 Yonge St, 2nd Floor, Toronto, ON M4Y 1Y5 (+1 416 929 4050). You can transfer between the two campuses during your studies."},
+{k:["contact","phone","call","email","mail","reach","advisor","advisors","speak to","talk to","language","spanish","portuguese","japanese","korean","russian","mandarin","turkish","vietnamese","thai","italian"],a:"Vancouver: +1 604 605 0220, join-us@sgiccanada.com. Toronto: +1 416 929 4050, info@sgiccanada.com. The school lists advisors who speak Spanish, Portuguese, Japanese, Korean, Vietnamese, Turkish, Mandarin, Russian, Thai and Italian."},
+{k:["facilities","cafeteria","computer","classroom","kitchen","wifi","library"],a:"The Vancouver campus has classrooms, a computer station and a cafeteria with kitchenettes. Notice boards show newsletters, volunteering opportunities and activity calendars."},
+{k:["activities","excursion","student life","events","social","tournament","friends","trip"],a:"There are school tournaments, daily activities, and once a month an all-day excursion with students from other levels. A Conversation Club helps you meet people."},
+{k:["free test","online test","level test","test my english","assessment","check my level"],a:"You can take the free online English test on the school's website before applying. On registration you also do an oral and written placement."},
+{k:["accredited","licensed","dli","designated","legal","recognised","recognized","trusted"],a:"The college lists designated learning institute numbers: Vancouver O19352161652 and Toronto O212206178197. It has taught English since 1994."},
+{k:["about","history","founded","experience","years","students","countries","who are you","sgic"],a:"St. George International College has taught English for more than 31 years (open since 1994), with 135,000+ students from over 70 countries, at campuses in Toronto and Vancouver."},
+{k:["insurance","health insurance","medical insurance","custodian","minor","under 18","underage"],a:"Health insurance is CA$3.50 per day. A custodian letter for minors is CA$200. An advisor can explain what applies to you."},
+{k:["hello","hi","hey","hola","good morning","good afternoon","bonjour"],a:"Hello! I can answer questions about programs, tuition, homestay and applying to SGIC Vancouver, or take your enquiry for an advisor."},
+{k:["thanks","thank you","thx","great","ok","okay","cool"],a:"You are welcome. Would you like an advisor to contact you?"},
+{k:["enquiry","inquiry","interested","information","more info","join","want to study","sign up","contact me","call me"],a:"Happy to pass your details to an advisor. A few quick questions first.",f:1}
+];
+var FLOW=[
+ {key:"country",q:"Which country are you from? (so we can match an advisor who speaks your language)",free:true},
+ {key:"program",q:"Which program interests you?",chips:["General English","IELTS preparation","Pathway","Business English","English for Medicine","Not sure yet"]},
+ {key:"campus",q:"Which campus?",chips:["Vancouver","Toronto","Either"]},
+ {key:"start",q:"When would you like to start? (new students start on Mondays)",free:true},
+ {key:"stay",q:"Do you want homestay?",chips:["Yes, homestay","No","Tell me about residence"]},
+ {key:"name",q:"What is your name?",free:true},
+ {key:"email",q:"Your e-mail address for the advisor to reply to?",free:true,email:true}
+];
+</script>
+<script id="engine">
+function norm(s){return String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|s)$/,""):w}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i]}for(j=1;j<=n;j++){d[0][j]=j}for(i=1;i<=m;i++){for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1))}}return d[m][n]}
+function tm(t,k){if(t===k)return 1;if(t.length>3&&k.length>3&&stem(t)===stem(k))return .9;if(t.length>=5&&k.length>=5&&lev(t,k)<=(k.length>7?2:1))return .7;return 0}
+function find(q){
+ var nq=norm(q),toks=nq.split(" "),best=null,bs=0;
+ for(var i=0;i<KB.length;i++){var s=0,ks=KB[i].k;
+  for(var j=0;j<ks.length;j++){var k=norm(ks[j]);
+   if(k.indexOf(" ")>-1){if((" "+nq+" ").indexOf(" "+k+" ")>-1)s+=2.5}
+   else{var m=0;for(var t=0;t<toks.length;t++){var v=tm(toks[t],k);if(v>m)m=v}s+=m*1.2}}
+  if(s>bs){bs=s;best=KB[i]}}
+ return bs>=1?best:null}
+</script>
+<script id="ui">
+(function(){
+var $=function(i){return document.getElementById(i)},am=$("am"),ac=$("ac"),ap=$("ap"),flow=null,step=0,data={};
+var FALL="I do not have that detail on the page, so an advisor will confirm it. You can call +1 604 605 0220, or I can take your enquiry.";
+var CH=["Programs","Tuition","Homestay","How to apply","Send an enquiry"];
+function say(t,u){var d=document.createElement("div");d.className="m "+(u?"u":"b");d.textContent=t;am.appendChild(d);am.scrollTop=am.scrollHeight}
+function chips(a){ac.innerHTML="";a.forEach(function(c){var b=document.createElement("button");b.type="button";b.textContent=c;b.onclick=function(){handle(c)};ac.appendChild(b)})}
+function open(){ap.classList.add("on");$("ab").style.display="none";if(!am.children.length){say("Hello, I am the SGIC assistant for the Vancouver campus. Ask me about programs, tuition, homestay or how to apply, or leave an enquiry for an advisor.");chips(CH)}}
+function close(){ap.classList.remove("on");$("ab").style.display="flex"}
+function ask(){if(step<FLOW.length){var f=FLOW[step];say(f.q);chips(f.chips||[]);$("ai").focus()}else done()}
+function done(){flow=null;say("Thank you, "+data.name+". Your enquiry has been sent to the advisors:\n- From: "+data.country+"\n- Program: "+data.program+"\n- Campus: "+data.campus+"\n- Start: "+data.start+"\n- Homestay: "+data.stay+"\n- E-mail: "+data.email+"\nAn advisor will reply. (Demo only: nothing is actually sent.)");chips(CH)}
+function startFlow(){flow=1;step=0;data={};ask()}
+function handle(t){
+ t=String(t).trim();if(!t)return;say(t,1);
+ if(flow){
+  var f=FLOW[step];
+  if(/^(cancel|stop|never ?mind)$/i.test(t)){flow=null;say("No problem, enquiry cancelled.");chips(CH);return}
+  if(f.email&&!/^\S+@\S+\.\S+$/.test(t)){say("That does not look like an e-mail address. Please type it again.");return}
+  data[f.key]=t;step++;ask();return}
+ if(norm(t)==="send an enquiry"){say("Happy to pass your details to an advisor. A few quick questions first.");startFlow();return}
+ var h=find(t);
+ if(!h){say(FALL);chips(["Send an enquiry","Programs","Tuition"]);return}
+ say(h.a);
+ if(h.f){startFlow();return}
+ chips(CH)}
+$("ab").onclick=open;$("ax").onclick=close;
+$("af").onsubmit=function(e){e.preventDefault();var i=$("ai");var v=i.value;i.value="";handle(v)};
+Array.prototype.forEach.call(document.querySelectorAll("[data-open]"),function(a){a.addEventListener("click",function(e){e.preventDefault();open();if(!flow)setTimeout(function(){handle("Send an enquiry")},50)})});
+/* tabs */
+Array.prototype.forEach.call(document.querySelectorAll(".tabs button"),function(b){b.onclick=function(){Array.prototype.forEach.call(document.querySelectorAll(".tabs button"),function(x){x.classList.remove("on")});b.classList.add("on");Array.prototype.forEach.call(document.querySelectorAll(".pg"),function(p){p.classList.remove("on")});$(b.getAttribute("data-t")).classList.add("on")}});
+/* estimator */
+var RATES=[[315,305,295,285,275,265],[415,405,395,385,375,365],[520,510,500,490,480,470]];
+function fmt(n){return "CA$"+n.toLocaleString("en-US")}
+function calc(){
+ var c=+$("course").value,w=+$("weeks").value,t=w<4?0:w<12?1:w<16?2:w<24?3:w<32?4:5;
+ var rate=RATES[c][t],mat=Math.ceil(w/4)*(c===2?70:60);
+ $("wv").textContent=w;$("r1").textContent=fmt(rate)+" / week";$("r2").textContent=fmt(rate*w);$("r3").textContent=fmt(mat);$("r4").textContent=fmt(rate*w+mat+250)}
+$("course").onchange=calc;$("weeks").oninput=calc;calc();
+})();
+</script>
+</body>
+</html>

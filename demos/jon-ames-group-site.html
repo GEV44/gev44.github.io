@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en-CA"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jon Ames Group · Vancouver Real Estate</title>
+<meta name="description" content="Demo page for the Jon Ames Group, Vancouver residential and development real estate.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b3d57;--deep:#07293b;--sand:#f4efe6;--sand2:#e9e0d0;--cop:#c0703a;--ink:#1c2a33;--mut:#56646d;--wa:#0b3d57;--wf:#fff;--wh:#0b3d57;--wfont:'Karla',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--sand);color:var(--ink);font:17px/1.65 'Karla',system-ui,sans-serif;-webkit-text-size-adjust:100%;overflow-x:hidden}
+h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:600;color:var(--navy);line-height:1.15;margin:0 0 .5em}
+a{color:inherit}img{max-width:100%}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 18px}
+header{background:#fff;border-bottom:1px solid var(--sand2);position:sticky;top:0;z-index:50}
+.hd{max-width:1080px;margin:0 auto;padding:8px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo img{height:46px;width:auto;display:block}
+nav{display:none;gap:22px}nav a{text-decoration:none;font-weight:500;color:var(--navy);font-size:15px}nav a:hover{color:var(--cop)}
+.tel{background:var(--navy);color:#fff;border-radius:999px;padding:9px 16px;text-decoration:none;font-weight:700;font-size:15px;white-space:nowrap}
+@media(min-width:860px){nav{display:flex}}
+.hero{padding:44px 0 36px;border-bottom:1px solid var(--sand2)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:26px}
+.kick{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--cop);font-weight:700}
+.hero h1{font-size:clamp(34px,8vw,64px);letter-spacing:-.01em;margin:.3em 0 .35em}
+.hero h1 em{color:var(--cop);font-style:italic;font-weight:400}
+.lede{font-size:19px;color:var(--mut);max-width:32em}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.b{display:inline-block;border:2px solid var(--navy);background:var(--navy);color:#fff;padding:12px 20px;border-radius:999px;font:700 16px 'Karla',sans-serif;text-decoration:none;cursor:pointer}
+.b.g{background:transparent;color:var(--navy)}
+.side{background:#fff;border:1px solid var(--sand2);border-radius:14px;padding:20px}
+.side h3{font-size:20px}.side dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 14px;font-size:16px}.side dt{color:var(--mut)}.side dd{margin:0;font-weight:700;overflow-wrap:anywhere}
+@media(min-width:860px){.hero .wrap{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:end;gap:48px}}
+section{padding:52px 0}
+.h2{max-width:36em;margin-bottom:26px}.h2 h2{font-size:clamp(26px,5vw,38px)}.h2 p{color:var(--mut);margin:0}
+.tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.tabs button{border:2px solid var(--navy);background:transparent;color:var(--navy);padding:9px 18px;border-radius:999px;font:700 15px 'Karla',sans-serif;cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--navy);color:#fff}
+.steps{counter-reset:n;display:grid;gap:12px}
+.steps[hidden]{display:none}
+.s{background:#fff;border-radius:12px;padding:16px 18px 16px 62px;position:relative;border:1px solid var(--sand2)}
+.s::before{counter-increment:n;content:counter(n);position:absolute;left:16px;top:14px;width:32px;height:32px;border-radius:50%;background:var(--cop);color:#fff;text-align:center;font:700 16px/32px 'Karla',sans-serif}
+.s b{display:block;font-family:'Newsreader',serif;font-size:19px;color:var(--navy)}.s span{color:var(--mut);font-size:16px}
+@media(min-width:760px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.dark{background:var(--deep);color:#dbe7ee}.dark h2,.dark h3{color:#fff}.dark .h2 p{color:#a8c1cf}
+.chk{display:grid;gap:10px;margin:0;padding:0;list-style:none;grid-template-columns:minmax(0,1fr)}
+.chk li{padding:12px 14px 12px 40px;position:relative;background:rgba(255,255,255,.06);border-radius:10px}
+.chk li::before{content:"";position:absolute;left:15px;top:17px;width:12px;height:7px;border-left:3px solid var(--cop);border-bottom:3px solid var(--cop);transform:rotate(-45deg)}
+@media(min-width:760px){.chk{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.lst{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.lst{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.ls{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--sand2)}
+.ls .top{height:110px;background:linear-gradient(135deg,var(--navy),#1b6b8f);display:flex;align-items:flex-end;padding:12px;color:#fff;font:italic 600 24px 'Newsreader',serif;position:relative;overflow:hidden}
+.ls .top.alt{background:linear-gradient(135deg,#7a4a2a,var(--cop))}
+.ls .top.alt2{background:linear-gradient(135deg,#2c5260,#5d8a9b)}
+.ls .tag{position:absolute;right:10px;top:10px;background:#fff;color:var(--navy);font:700 12px 'Karla',sans-serif;border-radius:999px;padding:3px 10px;letter-spacing:.04em}
+.ls .bd{padding:14px 16px}.ls h3{font-size:18px;margin:0 0 4px}.ls p{margin:0;color:var(--mut);font-size:15px}
+blockquote{margin:0;background:#fff;border-left:5px solid var(--cop);padding:18px 20px;border-radius:0 12px 12px 0;font:italic 400 19px/1.5 'Newsreader',serif;color:var(--ink)}
+blockquote cite{display:block;margin-top:10px;font:700 14px 'Karla',sans-serif;font-style:normal;color:var(--navy)}
+.qs{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:860px){.qs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.ppl{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.ppl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.pc{background:#fff;border-radius:14px;padding:22px;border:1px solid var(--sand2)}.pc small{color:var(--cop);font-weight:700;letter-spacing:.06em}.pc p{color:var(--mut);margin:.4em 0 0;font-size:16px}
+details{background:#fff;border:1px solid var(--sand2);border-radius:12px;margin-bottom:10px}
+summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--navy);list-style:none}
+summary::after{content:"+";float:right;color:var(--cop);font-size:22px;line-height:1}details[open] summary::after{content:"\2212"}
+details p{margin:0;padding:0 18px 16px;color:var(--mut)}
+.ft{background:var(--navy);color:#cfe0ea;padding:30px 0;font-size:15px}.ft b{color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chips span{background:#fff;border:1px solid var(--sand2);border-radius:999px;padding:6px 14px;font-weight:700;font-size:14px;color:var(--navy)}
+.two>*,.hero .wrap>*,.steps>*,.lst>*,.qs>*,.ppl>*{min-width:0}
+#ow-btn{position:fixed;right:14px;bottom:14px;z-index:99;display:flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 18px;background:var(--wa);color:var(--wf);font:600 15px/1 var(--wfont);box-shadow:0 6px 22px rgba(0,0,0,.28);cursor:pointer}
+#ow-btn span{font-size:18px;line-height:1}
+#ow-box{position:fixed;right:12px;bottom:12px;z-index:100;width:360px;max-width:calc(100vw - 24px);height:520px;max-height:calc(100vh - 24px);background:#fff;color:#1b1b1b;border-radius:16px;box-shadow:0 12px 44px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden;font:15px/1.4 var(--wfont)}
+#ow-box[hidden]{display:none}
+#ow-h{background:var(--wh);color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+#ow-h strong{display:block;font-size:15px}#ow-h small{opacity:.8;font-size:12px}
+#ow-x{background:none;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1}
+#ow-m{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:#f5f5f3}
+.ow-b{max-width:86%;padding:9px 12px;border-radius:14px;white-space:pre-wrap;word-wrap:break-word;overflow-wrap:anywhere}
+.ow-b.bot{background:#fff;border:1px solid #e3e3df;align-self:flex-start}
+.ow-b.me{background:var(--wa);color:var(--wf);align-self:flex-end}
+.ow-sum{border-color:var(--wa)!important}
+#ow-c{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;border-top:1px solid #eee;max-height:132px;overflow:auto}
+#ow-c button{border:1px solid var(--wa);background:#fff;color:#1b1b1b;border-radius:999px;padding:6px 11px;font:13px var(--wfont);cursor:pointer}
+#ow-f{display:flex;gap:6px;padding:8px 10px;border-top:1px solid #eee}
+#ow-f input{flex:1;min-width:0;border:1px solid #ccc;border-radius:10px;padding:9px 10px;font:15px var(--wfont)}
+#ow-f button{border:0;border-radius:10px;background:var(--wh);color:#fff;padding:0 14px;font:600 14px var(--wfont);cursor:pointer}
+
+</style></head><body>
+<header><div class="hd"><a class="logo" href="#top"><img src="img/jon-ames-group-logo.png" alt="Jonathan Ames Real Estate"></a>
+<nav><a href="#buy-sell">Buy or sell</a><a href="#listings">Listings</a><a href="#about">About Jonathan</a><a href="#clients">Clients</a><a href="#contact">Contact</a></nav>
+<a class="tel" href="tel:+16048288110">604-828-8110</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap"><div>
+<div class="kick">Vancouver real estate · Oakwyn Realty</div>
+<h1>Integrity and honesty, <em>from first call to closing.</em></h1>
+<p class="lede">Jonathan Ames has more than a decade in Vancouver real estate, from residential sales to development sites. Buyers and sellers get the same care, a real view of the market and a negotiator who answers quickly.</p>
+<div class="cta"><button class="b" onclick="OLStart()">Request a home evaluation</button><a class="b g" href="#buy-sell">How buying and selling works</a></div></div>
+<div class="side"><h3>Reach the team</h3><dl><dt>Phone</dt><dd><a href="tel:+16048288110">604-828-8110</a></dd><dt>Email</dt><dd><a href="mailto:info@jonathanames.ca">info@jonathanames.ca</a></dd><dt>Office</dt><dd>3195 Oak Street, Vancouver, BC V6H 2L2</dd><dt>Areas</dt><dd>Greater Vancouver</dd></dl></div></div></div>
+
+<section style="padding:34px 0;background:var(--navy);color:#fff"><div class="wrap"><div class="lst" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:22px"><div><h3 style="color:#fff;font-size:22px">Integrity</h3><p style="margin:0;color:#bcd2de;font-size:16px">At the core of Jonathan's business: every client treated with the same care and dedication.</p></div><div><h3 style="color:#fff;font-size:22px">Local knowledge</h3><p style="margin:0;color:#bcd2de;font-size:16px">A deep understanding of the Greater Vancouver market, with a realistic view of it.</p></div><div><h3 style="color:#fff;font-size:22px">A strong network</h3><p style="margin:0;color:#bcd2de;font-size:16px">Contacts, professionalism and a drive to exceed what clients expect.</p></div></div></div></section>
+<section id="buy-sell"><div class="wrap"><div class="h2"><h2>Buying or selling in Greater Vancouver</h2><p>A simple outline of how each side usually goes. Jonathan walks you through it and keeps you informed.</p></div>
+<div class="tabs"><button id="tb" aria-pressed="true" onclick="tab('b')">I am buying</button><button id="ts" aria-pressed="false" onclick="tab('s')">I am selling</button></div>
+<div class="steps" id="pb"><div class="s"><b>Get your finances in order</b><span>Set money aside for a down payment (at minimum 5% of the purchase price), meet a mortgage broker to learn what you can afford, and shop around for the rate.</span></div><div class="s"><b>Picture the home</b><span>Think about schools, recreation and the neighbourhood, and write a needs versus wants list.</span></div><div class="s"><b>Meet your agent</b><span>Viewings, clarity on a complicated process and someone who represents your interests.</span></div><div class="s"><b>The search</b><span>Use the property search and get updates on new listings, with appointments set up with sellers.</span></div><div class="s"><b>Offer and closing</b><span>Negotiate the offer, complete the home inspection, finalise the mortgage and sign, typically in a lawyer's office.</span></div></div>
+<div class="steps" id="ps" hidden><div class="s"><b>Get your finances in order</b><span>Still paying off a mortgage? There are several options depending on its type. Talk to your lender before you proceed.</span></div><div class="s"><b>Choose your agent carefully</b><span>Do not just pick whoever suggests the highest asking price. Shop around for someone who knows the market.</span></div><div class="s"><b>Price and list</b><span>Too low or too high is no option. A fair price brings buyers and exposure; current market stats and estimated value guide it.</span></div><div class="s"><b>Marketing and promotion</b><span>After a listing agreement, the home goes on MLS and is marketed in digital and traditional ways, with help on staging.</span></div><div class="s"><b>Offers and closing</b><span>Accept an offer, handle the buyer's inspection and any repair negotiation, then your lawyer and agent guide the paperwork.</span></div></div>
+<div class="cta" style="margin-top:20px"><a class="b g" href="#contact">Mortgage calculator and guides are on jonathanames.ca</a></div></div></section>
+
+<section class="dark" id="about"><div class="wrap"><div class="h2"><h2>The background behind the advice</h2><p>Jonathan is a Vancouverite with deep roots in the local industry. His development-site analysis shapes how he looks at every purchase or sale.</p></div>
+<ul class="chk"><li>Multi-family real estate development</li><li>Commercial and residential acquisitions and dispositions of strategic assets</li><li>Commercial leasing</li><li>Residential transactions</li><li>Land assembly and rezoning</li><li>Joint venture structuring</li><li>Commercial and development due diligence</li><li>Negotiation skills from an MA in Government (Counter Terrorism and Homeland Security Studies)</li></ul>
+<p style="margin:20px 0 0;color:#a8c1cf">Education: Bachelor's degree from McGill University, and Urban Land Economics studies (DULE) at the University of British Columbia. Outside work: travel, skiing, family and local volunteering.</p></div></section>
+
+<section id="listings"><div class="wrap"><div class="h2"><h2>Listings and recent sales</h2><p>A look at what is on the site. Browse single-family homes, townhomes, condos, houses with acreage or a custom search at jonathanames.ca.</p></div>
+<div class="lst"><div class="ls"><div class="top"><span class="tag">FEATURED</span>Seafair, Richmond</div><div class="bd"><h3>3520 Lamond Avenue</h3><p>5 bedrooms, 5 bathrooms, 3,330 sq ft on a 7,030 sq ft lot. Built 1994.</p></div></div>
+<div class="ls"><div class="top alt"><span class="tag">SOLD</span>Kitsilano, Vancouver</div><div class="bd"><h3>2806 W 6th Avenue</h3><p>Renovated 4-plex in one of Vancouver's most sought-after neighbourhoods. 7 bedrooms, 4 bathrooms.</p></div></div>
+<div class="ls"><div class="top alt2"><span class="tag">FEATURED</span>Squamish</div><div class="bd"><h3>38140 Third Avenue</h3><p>Also featured on the site, a reminder that the search reaches beyond Vancouver and Richmond. Ask the team for details.</p></div></div></div>
+<div class="chips" style="margin-top:18px"><span>Single family</span><span>Townhome</span><span>Condo</span><span>House with acreage</span><span>Custom search</span></div></div></section>
+
+<section style="background:var(--sand2)" id="clients"><div class="wrap"><div class="h2"><h2>What clients say</h2><p>Quotes from the testimonials page on the site.</p></div>
+<div class="qs"><blockquote>"Jonathan was extremely helpful and responsive. I had to sell my mom's house remotely."<cite>Dianne Valenzuela</cite></blockquote><blockquote>"He is extremely honest, straight forward and knowledgable and I would highly recommend him."<cite>Daniel Wolfson</cite></blockquote><blockquote>"Jonathan helped me find and secure my dream home in record time."<cite>Yoni Dayan</cite></blockquote></div></div></section>
+
+<section><div class="wrap"><div class="h2"><h2>Who you will work with</h2></div>
+<div class="ppl"><div class="pc"><small>REALTOR</small><h3 style="margin:.1em 0 0">Jonathan Ames</h3><p>Leads the group. Values of integrity and honesty, a strong network of contacts and a deep understanding of the local market.</p></div><div class="pc"><small>ASSOCIATE &amp; REALTOR</small><h3 style="margin:.1em 0 0">Andrea Hirsch</h3><p>A BC local who has lived in several Vancouver neighbourhoods, a McGill B.Comm graduate who moved from technology sales into real estate and looks for creative solutions for buyers and sellers.</p></div></div></div></section>
+
+<section><div class="wrap"><div class="h2"><h2>Two short checklists to start from</h2><p>Drawn from the buyer's and seller's guides on the site.</p></div>
+<div class="ppl"><div class="pc"><small>BEFORE YOU BUY</small><ul style="margin:.6em 0 0;padding-left:1.1em;color:var(--mut);font-size:16px"><li>Set aside a down payment, at minimum 5% of the price</li><li>Meet a mortgage broker and compare rates</li><li>Write a needs versus wants list</li><li>Think about schools, recreation and the neighbourhood</li><li>Line up a home inspection once an offer is accepted</li></ul></div>
+<div class="pc"><small>BEFORE YOU SELL</small><ul style="margin:.6em 0 0;padding-left:1.1em;color:var(--mut);font-size:16px"><li>Talk to your lender about your current mortgage</li><li>Interview more than one agent</li><li>Ask for the reasoning behind the listing price</li><li>Ask about staging before the listing goes live</li><li>Have your lawyer ready for the closing paperwork</li></ul></div></div></div></section>
+
+<section style="background:#fff;border-top:1px solid var(--sand2)"><div class="wrap"><div class="h2"><h2>Tools on the site</h2><p>Jonathan's website is more than a listing feed. These are the pieces buyers and sellers use most.</p></div>
+<div class="lst" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))"><div class="pc"><small>BUY</small><h3 style="margin:.1em 0 0">Home finder</h3><p>Search single-family homes, townhomes, condos and houses with acreage, or build a custom search.</p></div><div class="pc"><small>BUY</small><h3 style="margin:.1em 0 0">Mortgage calculator</h3><p>A calculator on the site for planning a purchase, alongside the advice to speak with a mortgage broker.</p></div><div class="pc"><small>SELL</small><h3 style="margin:.1em 0 0">Home evaluation</h3><p>Helps set a listing price that attracts offers while getting you a fair price.</p></div><div class="pc"><small>BOTH</small><h3 style="margin:.1em 0 0">Buyer's and seller's guides</h3><p>Plain-language outlines of each stage, from finances to closing.</p></div><div class="pc"><small>READ</small><h3 style="margin:.1em 0 0">Vancouver Modern Living</h3><p>The blog, plus a community newsletter with local market stats and listing updates.</p></div></div></div></section>
+
+<section style="background:var(--sand2)"><div class="wrap"><div class="h2"><h2>More from past clients</h2></div>
+<div class="qs"><blockquote>"Jon is a kind person and a brilliant agent. Super dedicated to his clients."<cite>Lenny Wilson</cite></blockquote><blockquote>"His honest guidance proved invaluable throughout the process of buying and selling in the midst of COVID."<cite>Marc Kalvari</cite></blockquote><blockquote>"Jon has a great knowledge of the various Vancouver neighbourhoods."<cite>Bella Khan</cite></blockquote></div></div></section>
+
+<section style="background:#fff" id="contact"><div class="wrap"><div class="h2"><h2>Common questions</h2></div>
+<details><summary>How do I find out what my home is worth?</summary><p>The site has a home evaluation tool to help set a listing price that attracts offers while getting you a fair price. You can also ask here and the team will follow up.</p></details>
+<details><summary>How much do I need as a down payment?</summary><p>The buyer's guide on the site says at minimum 5% of the purchase price. A mortgage broker will tell you what you can afford.</p></details>
+<details><summary>Can you help if I am not in Vancouver?</summary><p>One client sold a family home remotely with Jonathan's help. Ask the team how they would handle your situation.</p></details>
+<details><summary>What does Jonathan's commission or fee look like?</summary><p>Fees are not published online, so the team will confirm them directly.</p></details>
+<details><summary>Should I list with the agent who suggests the highest price?</summary><p>The seller's guide warns against exactly that. Shop around, and look for an agent who can price the home to sell, answer "when is a good time to sell?" and knows the market in depth.</p></details>
+<details><summary>What kind of home inspection happens when I buy?</summary><p>After an offer is negotiated, you conduct a home inspection and deal with any repairs, the cost of which you can also negotiate with the seller. Then you finalise your mortgage and sign, typically in a lawyer's office.</p></details>
+<details><summary>What type of homes can I search for?</summary><p>Single family, townhome, condo, house with acreage, or a custom search. Listings include Richmond, Kitsilano in Vancouver and Squamish.</p></details>
+<details><summary>Does the group handle both buying and selling at once?</summary><p>Yes. One client wrote that Jonathan quickly sold their property and found them a dream home within a few weeks after that.</p></details>
+<details><summary>Who is Oakwyn Realty?</summary><p>The brokerage behind the group, at 3195 Oak Street, Vancouver. Jonathan Ames is a Realtor with the brokerage.</p></details>
+<details><summary>How quickly does the team respond?</summary><p>Clients describe Jonathan as prompt and responsive in replies, insights and analysis, and one wrote that he stayed in touch for weeks after their move-in date. For a specific response time, call 604-828-8110.</p></details>
+<details><summary>Is there a newsletter?</summary><p>Yes. The community newsletter shares local market stats, listing updates and more. Ask the team how to join.</p></details>
+<details><summary>Do you help with development sites or commercial property?</summary><p>Yes, Jonathan's background includes multi-family development, commercial leasing, land assembly, rezoning and development due diligence.</p></details></div></section>
+</main>
+<footer class="ft"><div class="wrap"><b>Jon Ames Group</b> · Oakwyn Realty · 604-828-8110 · info@jonathanames.ca<br>Demo · prepared by Gevorg Hovhannisyan</div></footer>
+<script>function tab(k){var b=k==='b';document.getElementById('pb').hidden=!b;document.getElementById('ps').hidden=b;document.getElementById('tb').setAttribute('aria-pressed',b);document.getElementById('ts').setAttribute('aria-pressed',!b);}</script>
+<script>window.CFG={
+name:"Jon Ames Group",sub:"Answers from the Jon Ames Group website",btnIcon:"⌂",btnText:"Ask Jon's team",
+hello:"Hi, I am the Jon Ames Group assistant. Ask about buying or selling in Greater Vancouver, home evaluations, Jonathan's background or how to reach the team, or request an evaluation or viewing.",
+fallback:"I do not have that detail from the website, so I will not guess. The team will confirm it: call 604-828-8110 or email info@jonathanames.ca. I can also take a request for them now.",
+chips:["Home evaluation","Buying steps","Selling steps","About Jonathan","Contact","Book a viewing"],
+kb:[
+{kw:["car","cars","pizza","weather","flight","holiday","visa","car loan","crypto"],a:"That is outside what I can help with here. I can answer questions about buying or selling a home with the Jon Ames Group in Greater Vancouver."},
+{kw:["phone","call","number","telephone","ring","email","mail","contact","reach","get in touch"],a:"Phone 604-828-8110 or email info@jonathanames.ca. The brokerage office is Oakwyn Realty, 3195 Oak Street, Vancouver, BC V6H 2L2."},
+{kw:["where","address","office","location","oakwyn","oak street","located","brokerage"],a:"The brokerage is Oakwyn Realty, 3195 Oak Street, Vancouver, BC V6H 2L2. The group serves Greater Vancouver."},
+{kw:["hours","open","opening","when","available","weekend"],a:"Office hours are not published on the website. The team will confirm them: call 604-828-8110 or leave a request here."},
+{kw:["evaluation","valuation","value","worth","appraisal","how much is my home","price my home","home evaluation","what is my house worth"],flow:1,a:"The site has a home evaluation tool to help set a listing price that attracts offers while getting you a fair price. I can take your details for a personal evaluation from the team."},
+{kw:["sell","selling","seller","list my home","list my house","listing my","put on the market","sale"],flow:1,a:"Selling: get your finances in order (talk to your lender if you still have a mortgage), choose your agent carefully, price the home to sell, then marketing and promotion through MLS, digital and traditional channels, with help on staging. Offers, the buyer's inspection and closing are handled with your lawyer."},
+{kw:["buy","buying","buyer","purchase","first home","first time","dream home","looking for a home","home search"],flow:1,a:"Buying: get your finances in order (a down payment of at minimum 5% of the price, and a mortgage broker to learn what you can afford), decide what kind of home suits you, meet your agent, search with viewings and listing updates, then offer, inspection, mortgage and closing."},
+{kw:["down payment","deposit","mortgage","lender","broker","financing","afford","calculator"],a:"The buyer's guide says a down payment is at minimum 5% of the purchase price, and a mortgage broker will tell you what you can afford. The site also has a mortgage calculator. For your own numbers the team can point you to the right people."},
+{kw:["jonathan","jon","ames","realtor","background","experience","education","mcgill"],a:"Jonathan Ames is a Vancouverite with over a decade of experience: multi-family development, acquisitions and dispositions, commercial leasing, residential transactions, land assembly, rezoning, joint ventures and due diligence. He holds a Bachelor's from McGill, studied Urban Land Economics at UBC and has an MA in Government."},
+{kw:["andrea","hirsch","associate","team","staff","who else"],a:"Andrea Hirsch is an Associate and Realtor, a BC local and McGill B.Comm graduate who moved from technology sales into real estate."},
+{kw:["development","developer","multi family","rezoning","land assembly","assembly","joint venture","due diligence","commercial","leasing","investment"],a:"Jonathan's background includes multi-family real estate development, commercial and residential acquisitions and dispositions, commercial leasing, land assembly, rezoning, joint venture structuring and development due diligence."},
+{kw:["listing","listings","properties","homes","houses","condo","townhome","townhouse","single family","acreage","search"],a:"The site lists single-family homes, townhomes, condos, houses with acreage and a custom search. Featured: 3520 Lamond Avenue in Seafair, Richmond (5 bed, 5 bath, 3,330 sq ft). A recent sale was a renovated 4-plex at 2806 W 6th Avenue in Kitsilano."},
+{kw:["lamond","richmond","seafair","richmond listing"],a:"3520 Lamond Avenue, Seafair, Richmond, BC V7E 1C6: 5 bedrooms, 5 bathrooms, 3,330 sq ft, 7,030 sq ft lot, built in 1994."},
+{kw:["kitsilano","6th avenue","4plex","fourplex","kits"],a:"2806 W 6th Avenue, Kitsilano, Vancouver: a renovated 4-plex, 7 bedrooms and 4 bathrooms, listed as sold on the site."},
+{kw:["squamish","third avenue","38140"],a:"38140 Third Avenue, Squamish is featured on the site. The team can give you the details."},
+{kw:["viewing","view","showing","tour","visit","appointment","book"],flow:1,a:"I can take a viewing or appointment request for the team. Press the button below."},
+{kw:["testimonial","reviews","review","clients say","references","reputation","rating"],a:"The site has a testimonials page. One client sold a family home remotely and wrote that Jonathan was extremely helpful and responsive. Others praise his honesty and knowledge of the market."},
+{kw:["commission","fee","fees","cost","charge","price","how much do you charge","rate"],a:"Fees and commission are not published on the website. The team will confirm them directly for your situation."},
+{kw:["remote","abroad","overseas","out of town","not in vancouver","live abroad","estate sale"],a:"Yes. One client sold a family home remotely with Jonathan's help, including an estate sale. Ask the team how they would handle your case."},
+{kw:["newsletter","subscribe","updates","stats","market stats","community"],a:"There is a community newsletter sign-up on the site with local market stats and listing updates."},
+{kw:["blog","vancouver modern living","articles","news"],a:"The site has a blog called Vancouver Modern Living."},
+{kw:["area","areas","cover","neighbourhood","neighborhood","vancouver","greater vancouver","west side","burnaby"],a:"The group serves Greater Vancouver. Listings on the site include Richmond, Vancouver's Kitsilano and Squamish."},
+{kw:["hello","hi","hey","good morning","good afternoon"],a:"Hello! Are you buying, selling or after a home evaluation?"},
+{kw:["thanks","thank","cheers","great","perfect"],a:"You are welcome. Call 604-828-8110 any time, or ask me anything else."}
+],
+flow:{cta:"Request an evaluation or viewing",trigger:["request","valuation request","book viewing","book a viewing","arrange","enquiry","speak to jon","callback","call me back","contact me"],
+intro:"Happy to pass a request to Jonathan's team. A few quick questions.",
+steps:[
+{key:"topic",label:"Request",q:"What would you like?",opts:["Home evaluation","Buying a home","Selling a home","Viewing a listing"]},
+{key:"area",label:"Area or address",q:"Which neighbourhood, city or address?",ph:"e.g. Kitsilano, Vancouver",valid:".{3,}",err:"Please give a short area or address."},
+{key:"type",label:"Property type",q:"What type of property?",opts:["Single family","Townhome","Condo","House with acreage","Not sure yet"]},
+{key:"when",label:"Timeline",q:"What is your timeline?",opts:["As soon as possible","1 to 3 months","3 to 6 months","Just exploring"]},
+{key:"name",label:"Name",q:"Your name?",valid:"[a-z]{2,}",err:"Please type your name."},
+{key:"contact",label:"Phone or email",q:"Best phone number or email?",valid:"(@.+\\..+)|(\\d[\\d\\s+()-]{6,})",err:"Please type a phone number or an email address."}
+],
+done:"Thank you. Your request has been sent to the Jon Ames Group team. They will be in touch."}
+};
+</script>
+<script>(function(root){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>5)w=w.replace(/(ings|ing|ers|er|ed|es|ly)$/,'');if(w.length>3)w=w.replace(/s$/,'');return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;var p=[],i,j;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var c=[i];for(j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[n];}
+function hit(q,k){if(q===k)return 2;if(q[0]!==k[0])return 0;if(k.length>=4&&q.length>=4&&(q.indexOf(k)===0||k.indexOf(q)===0))return 1.6;var d=lev(q,k);if(k.length>=5&&d<=1)return 1.6;if(k.length>=8&&d<=2)return 1.4;return 0;}
+function score(qt,e){var best=[],multi=0,i,j,z;for(z=0;z<qt.length;z++)best[z]=0;for(i=0;i<e.kw.length;i++){var kt=toks(e.kw[i]);if(!kt.length)continue;if(kt.length===1){for(z=0;z<qt.length;z++){var h=hit(qt[z],kt[0]);if(h>best[z])best[z]=h;}}else{var tot=0,ok=true;for(j=0;j<kt.length;j++){var bb=0;for(z=0;z<qt.length;z++){var h2=hit(qt[z],kt[j]);if(h2>bb)bb=h2;}if(!bb){ok=false;break;}tot+=bb;}if(ok&&tot*1.5>multi)multi=tot*1.5;}}var sc=multi;for(z=0;z<qt.length;z++)sc+=best[z];return sc;}
+function answer(q,C){var qt=toks(q);if(!qt.length)return null;var best=null,bs=0;for(var i=0;i<C.kb.length;i++){var s=score(qt,C.kb[i]);if(s>bs){bs=s;best=C.kb[i];}}return bs>=1.4?best:null;}
+root.OLAnswer=answer;
+if(typeof module!=='undefined')module.exports={answer:answer};
+if(typeof document==='undefined')return;
+var C=root.CFG,$=function(s){return document.querySelector(s)};
+var btn=document.createElement('button');btn.id='ow-btn';btn.setAttribute('aria-label','Open chat assistant');btn.innerHTML='<span>'+(C.btnIcon||'?')+'</span><b>'+(C.btnText||'Ask us')+'</b>';
+var box=document.createElement('div');box.id='ow-box';box.hidden=true;box.setAttribute('role','dialog');box.setAttribute('aria-label',C.name+' assistant');
+box.innerHTML='<div id="ow-h"><div><strong></strong><small></small></div><button id="ow-x" aria-label="Close">\u00d7</button></div><div id="ow-m" aria-live="polite"></div><div id="ow-c"></div><form id="ow-f"><input id="ow-i" autocomplete="off" placeholder="Type your question"><button>Send</button></form>';
+document.body.appendChild(btn);document.body.appendChild(box);
+box.querySelector('strong').textContent=C.name+' assistant';box.querySelector('small').textContent=C.sub||'Instant answers from the website';
+var M=$('#ow-m'),CH=$('#ow-c'),I=$('#ow-i'),flow=null,data={},opened=false;
+function say(t,who){var d=document.createElement('div');d.className='ow-b '+(who||'bot');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight;return d;}
+function chips(list){CH.innerHTML='';list.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c.t||c;b.onclick=function(){send(c.v||c.t||c,true)};CH.appendChild(b);});}
+function home(){chips(C.chips);}
+function askStep(){var s=C.flow.steps[flow];say(s.q);chips((s.opts||[]).concat([{t:'Cancel',v:'__cancel'}]));I.placeholder=s.ph||'Type your answer';}
+function startFlow(){flow=0;data={};say(C.flow.intro);askStep();}
+function finish(){var lines=C.flow.steps.map(function(s,i){return s.label+': '+data[s.key]});var d=document.createElement('div');d.className='ow-b bot ow-sum';d.textContent=C.flow.done+'\n\n'+lines.join('\n');M.appendChild(d);M.scrollTop=M.scrollHeight;flow=null;I.placeholder='Type your question';chips(C.chips);}
+function send(t,fromChip){t=String(t).trim();if(!t)return;
+ if(t==='__cancel'){say('Cancel','me');flow=null;say('No problem. Ask me anything else.');I.placeholder='Type your question';home();return;}
+ say(t==='__flow'?C.flow.cta:t,'me');
+ if(flow!==null){var s=C.flow.steps[flow];var q=norm(t);
+  if(!fromChip&&/\b(cancel|stop|never ?mind)\b/.test(q)){flow=null;say('Okay, cancelled.');home();return;}
+  if(s.valid&&!new RegExp(s.valid,'i').test(t)){say(s.err||'Could you rephrase that?');return;}
+  data[s.key]=t;flow++;if(flow>=C.flow.steps.length){finish();}else askStep();return;}
+ if(C.flow.trigger&&score(toks(t),{kw:C.flow.trigger})>=1.5||t==='__flow'){startFlow();return;}
+ var a=answer(t,C);
+ if(a){say(a.a);if(a.flow){chips([{t:C.flow.cta,v:'__flow'}].concat(C.chips.slice(0,3)));}else home();}
+ else{say(C.fallback);chips([{t:C.flow.cta,v:'__flow'}].concat(C.chips.slice(0,3)));}}
+btn.onclick=function(){box.hidden=false;btn.style.display='none';if(!opened){opened=true;say(C.hello);home();}I.focus();};
+$('#ow-x').onclick=function(){box.hidden=true;btn.style.display='';};
+$('#ow-f').onsubmit=function(e){e.preventDefault();var v=I.value;I.value='';send(v);};
+root.OLStart=function(){if(box.hidden)btn.click();if(flow===null)send('__flow');};
+})(typeof window!=='undefined'?window:globalThis);
+</script>
+</body></html>

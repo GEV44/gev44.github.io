@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Easy Pass Driving School · Southbank & Melbourne CBD</title>
+<meta name="description" content="Demo page for Easy Pass Driving School, Southbank VIC. Patient instructors, automatic dual-control cars, pick-up and drop-off across Melbourne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#da0007;--red2:#b30006;--ink:#14161a;--asph:#1d2025;--asph2:#272b32;--line:#3a3f48;--paper:#f6f4ef;--card:#fff;--mute:#5d636d;--yel:#ffc928;--ok:#1f9d55;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Barlow,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.02}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 16px}
+/* top strip + header */
+.strip{background:var(--red);color:#fff;font-size:13px;font-weight:600}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;padding-top:7px;padding-bottom:7px}
+.strip a{text-decoration:none}
+header{background:#fff;border-bottom:4px solid var(--ink);position:sticky;top:0;z-index:40}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:9px;padding-bottom:9px}
+.brand img{height:38px;width:auto}
+nav{display:none;gap:22px;font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;font-size:17px;letter-spacing:.04em}
+nav a{text-decoration:none}
+nav a:hover{color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--red);color:#fff;font-family:'Barlow Condensed';font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:18px;padding:11px 20px;border-radius:8px;text-decoration:none;border:0;cursor:pointer;box-shadow:0 3px 0 var(--red2)}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--red2)}
+.btn.ghost{background:transparent;border:2px solid #fff;box-shadow:none}
+.btn.dark{background:var(--ink);box-shadow:0 3px 0 #000}
+@media(min-width:860px){nav{display:flex}}
+/* hero: asphalt with lane markings */
+.hero{background:var(--asph);color:#fff;position:relative;overflow:hidden;padding:38px 0 60px}
+.hero:before{content:"";position:absolute;left:0;right:0;bottom:26px;height:6px;background:repeating-linear-gradient(90deg,var(--yel) 0 46px,transparent 46px 92px);opacity:.9}
+.hero:after{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(218,0,7,.55),transparent 68%)}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:26px}
+.kick{display:inline-block;background:var(--yel);color:#000;font-family:'Barlow Condensed';font-weight:800;text-transform:uppercase;font-size:14px;letter-spacing:.08em;padding:3px 10px;border-radius:4px;margin-bottom:12px}
+.hero h1{font-size:clamp(40px,11vw,76px);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--red);background:#fff;padding:0 8px;display:inline-block;transform:skew(-6deg)}
+.hero p.lead{margin:16px 0 20px;color:#d8dbe0;font-size:18px;max-width:560px}
+.ticks{display:flex;flex-wrap:wrap;gap:8px 16px;margin-bottom:22px;font-weight:600;font-size:15px}
+.ticks span:before{content:"\2714\00a0";color:var(--yel)}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.offer{background:#fff;color:var(--ink);border-radius:var(--r);padding:18px;border-left:8px solid var(--red);align-self:start}
+.offer b{font-family:'Barlow Condensed';font-size:26px;text-transform:uppercase;display:block;line-height:1.05}
+.offer small{color:var(--mute);display:block;margin-top:8px}
+.offer .ph{display:block;margin-top:10px;font-family:'Barlow Condensed';font-weight:800;font-size:26px;text-decoration:none;color:var(--red)}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1.5fr .8fr;align-items:center}.hero{padding:62px 0 82px}}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));background:var(--ink);color:#fff}
+.stats div{padding:20px 10px;text-align:center;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats b{font-family:'Barlow Condensed';font-size:40px;font-weight:800;color:var(--yel);display:block;line-height:1}
+.stats span{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:#c3c7ce}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}.stats div{border-bottom:0}}
+/* sections */
+section{padding:54px 0}
+.eyebrow{font-family:'Barlow Condensed';font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.12em;font-size:15px}
+h2{font-size:clamp(32px,7vw,52px);font-weight:800;margin:4px 0 14px}
+.sub{color:var(--mute);max-width:640px;margin-bottom:26px}
+/* route path */
+.path{list-style:none;display:grid;gap:0;position:relative;counter-reset:s}
+.path li{position:relative;padding:0 0 22px 62px;min-width:0}
+.path li:before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--yel);font-family:'Barlow Condensed';font-weight:800;font-size:24px;display:grid;place-items:center;z-index:1}
+.path li:after{content:"";position:absolute;left:21px;top:44px;bottom:0;border-left:4px dashed #bdb8ab}
+.path li:last-child:after{display:none}
+.path h3{font-size:26px}
+.path p{color:var(--mute);margin-top:2px}
+@media(min-width:860px){.path{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}.path li{padding:62px 0 0}.path li:after{left:44px;right:-14px;top:20px;bottom:auto;border-left:0;border-top:4px dashed #bdb8ab}.path li:last-child:after{display:block;border:0}}
+/* pricing tickets */
+#prices{background:var(--ink);color:#fff}
+#prices .sub{color:#b9bec7}
+.tickets{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.tk{background:#fff;color:var(--ink);border-radius:var(--r);padding:20px;position:relative;min-width:0}
+.tk:before,.tk:after{content:"";position:absolute;left:-10px;top:58px;width:20px;height:20px;border-radius:50%;background:var(--ink)}
+.tk:after{left:auto;right:-10px}
+.tk h3{font-size:30px;color:var(--red)}
+.tk .row{display:flex;justify-content:space-between;gap:10px;border-top:2px dashed #d8d4c8;padding:9px 0;font-weight:500}
+.tk .row:first-of-type{margin-top:22px}
+.tk .row s{color:#8b8f96;font-weight:400;font-size:14px;margin-right:6px}
+.tk .row strong{font-family:'Barlow Condensed';font-size:22px}
+.tk.hot{background:var(--yel)}
+.tk.hot:before,.tk.hot:after{background:var(--ink)}
+.note{margin-top:16px;color:#b9bec7;font-size:14px}
+/* areas */
+.areas{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 22px}
+.areas span{background:#fff;border:2px solid var(--ink);border-radius:999px;padding:7px 15px;font-weight:600}
+.areas span:before{content:"\1F4CD\00a0"}
+.why{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.why div{background:#fff;border-radius:var(--r);padding:18px;border-bottom:5px solid var(--red);min-width:0}
+.why h3{font-size:24px;margin-bottom:4px}
+.why p{color:var(--mute);font-size:15px}
+/* reviews */
+#reviews{background:#ece8dd}
+.revs{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))}
+.rev{background:#fff;border-radius:var(--r);padding:18px;min-width:0}
+.rev .st{color:#f5a800;letter-spacing:2px}
+.rev p{margin:8px 0;font-size:15px}
+.rev small{color:var(--mute)}
+.gscore{display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+.gscore b{font-family:'Barlow Condensed';font-size:54px;line-height:1}
+/* faq */
+details{background:#fff;border-radius:10px;margin-bottom:10px;border:2px solid transparent}
+details[open]{border-color:var(--ink)}
+summary{cursor:pointer;padding:15px 16px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-family:'Barlow Condensed';font-size:26px;line-height:1;color:var(--red)}
+details[open] summary:after{content:"\2212"}
+details p{padding:0 16px 16px;color:#3b4048}
+/* contact */
+#contact{background:var(--red);color:#fff;overflow:hidden;position:relative}
+#contact:before{content:"";position:absolute;left:-80px;bottom:-80px;width:260px;height:260px;border-radius:50%;background:rgba(0,0,0,.14)}
+#contact .wrap{position:relative;display:grid;gap:24px}
+#contact h2{color:#fff}
+.info{display:grid;gap:12px}
+.info div{background:rgba(0,0,0,.2);border-radius:12px;padding:14px 16px;min-width:0;overflow-wrap:anywhere}
+.info b{display:block;font-family:'Barlow Condensed';text-transform:uppercase;letter-spacing:.08em;color:var(--yel);font-size:15px}
+.info a{text-decoration:none;font-size:18px;font-weight:600}
+@media(min-width:860px){#contact .wrap{grid-template-columns:1fr 1fr}}
+footer{background:#0b0c0e;color:#9aa0a9;font-size:13px;padding:22px 0 90px;text-align:center}
+
+/* lesson content */
+#learn{background:#fff;border-top:4px solid var(--ink);border-bottom:4px solid var(--ink)}
+.split{display:grid;gap:26px}
+.split>*{min-width:0}
+@media(min-width:860px){.split{grid-template-columns:1fr 1fr;align-items:start}}
+.skills{list-style:none;display:grid;gap:10px}
+.skills li{display:flex;gap:12px;align-items:flex-start;background:var(--paper);border-radius:12px;padding:13px 14px}
+.skills li b{flex:none;width:34px;height:34px;border-radius:8px;background:var(--ink);color:var(--yel);display:grid;place-items:center;font-family:'Barlow Condensed';font-size:20px}
+.skills li span{display:block;color:var(--mute);font-size:15px}
+.skills li strong{font-family:'Barlow Condensed';font-size:22px;text-transform:uppercase;line-height:1.1;display:block}
+.lens{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:6px}
+.lens div{background:var(--ink);color:#fff;border-radius:12px;padding:14px 8px;text-align:center}
+.lens b{font-family:'Barlow Condensed';font-size:38px;color:var(--yel);display:block;line-height:1}
+.lens span{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#c3c7ce}
+.who{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));margin-top:18px}
+.who div{border:2px solid var(--ink);border-radius:12px;padding:14px;background:#fff;min-width:0}
+.who h3{font-size:22px;color:var(--red)}
+.who p{font-size:14px;color:var(--mute)}
+
+.ready{background:var(--ink);color:#fff;padding:34px 0}
+.ready .wrap{display:grid;gap:16px}
+.ready h2{font-size:clamp(28px,6vw,40px);margin:0}
+.ready ul{list-style:none;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.ready li{background:var(--asph2);border-radius:12px;padding:14px 16px;border-left:5px solid var(--yel);min-width:0}
+.ready li b{display:block;font-family:'Barlow Condensed';font-size:22px;text-transform:uppercase}
+.ready li span{color:#b9bec7;font-size:14px}
+/* assistant */
+#ab{position:fixed;right:14px;bottom:14px;z-index:90;display:flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border:3px solid var(--yel);border-radius:999px;padding:11px 18px;font-family:'Barlow Condensed';font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:18px;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+#ab i{width:10px;height:10px;border-radius:50%;background:#3ddc84;display:inline-block}
+#ap{position:fixed;right:10px;bottom:10px;z-index:100;width:min(390px,calc(100vw - 20px));height:min(600px,calc(100vh - 20px));background:#fff;border-radius:18px;box-shadow:0 16px 50px rgba(0,0,0,.45);display:none;flex-direction:column;overflow:hidden;border:2px solid var(--ink)}
+#ap.on{display:flex}
+.ah{background:var(--ink);color:#fff;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ah b{font-family:'Barlow Condensed';font-size:21px;text-transform:uppercase;letter-spacing:.03em;display:block;line-height:1.1}
+.ah small{color:#b9bec7;font-size:12px}
+.ah button{background:none;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1}
+#am{flex:1;overflow-y:auto;padding:14px;background:#f1efe8;display:flex;flex-direction:column;gap:9px}
+.m{max-width:86%;padding:10px 13px;border-radius:14px;font-size:15px;line-height:1.45;overflow-wrap:anywhere;white-space:pre-line}
+.m.b{background:#fff;border-bottom-left-radius:4px;align-self:flex-start}
+.m.u{background:var(--red);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+#ac{display:flex;gap:7px;flex-wrap:wrap;padding:8px 12px;background:#f1efe8;border-top:1px solid #ddd8ca;max-height:120px;overflow-y:auto}
+#ac button{background:#fff;border:2px solid var(--ink);border-radius:999px;padding:6px 12px;font:600 14px Barlow,sans-serif;cursor:pointer}
+#ac button:hover{background:var(--yel)}
+#af{display:flex;gap:8px;padding:10px;border-top:1px solid #ddd8ca;background:#fff}
+#ai{flex:1;min-width:0;border:2px solid #cfcabb;border-radius:10px;padding:10px 12px;font:16px Barlow,sans-serif}
+#af button{background:var(--red);color:#fff;border:0;border-radius:10px;padding:0 16px;font:800 17px 'Barlow Condensed';text-transform:uppercase;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="strip"><div class="wrap"><span>Southbank &amp; Melbourne CBD · pick-up and drop-off available</span><a href="tel:0434520543">Call 0434 520 543</a></div></div>
+<header>
+<div class="wrap">
+<a class="brand" href="#top" aria-label="Easy Pass Driving School"><img src="img/easy-pass-driving-melbourne-logo.png" alt="Easy Pass Driving School" width="160" height="41"></a>
+<nav><a href="#how">How it works</a><a href="#prices">Packages</a><a href="#areas">Areas</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="btn" href="#contact" data-open="book">Book a lesson</a>
+</div>
+</header>
+
+<main id="top">
+<div class="hero">
+<div class="wrap">
+<div>
+<span class="kick">Southbank · Melbourne CBD · Docklands</span>
+<h1>Learn to drive in Melbourne <em>without the stress</em></h1>
+<p class="lead">One-on-one lessons in modern automatic cars with dual controls. Calm instructors, flexible times, and test preparation on the real routes around Melbourne.</p>
+<div class="ticks"><span>25+ years experience</span><span>Male and female instructors</span><span>Evenings and weekends</span></div>
+<div class="cta"><a class="btn" href="#contact" data-open="book">Book your lesson</a><a class="btn ghost" href="tel:0434520543">0434 520 543</a></div>
+</div>
+<aside class="offer">
+<b>Buy a package, get a lesson free*</b>
+<small>*Conditions apply. Ask when you call.</small>
+<a class="ph" href="tel:0434520543">0434 520 543</a>
+<a class="ph" href="tel:0432031663" style="margin-top:2px">0432 031 663</a>
+</aside>
+</div>
+</div>
+
+<div class="stats">
+<div><b>25+</b><span>Years experience</span></div>
+<div><b>150K+</b><span>Students taught</span></div>
+<div><b>90%+</b><span>First-time pass</span></div>
+<div><b>5.0</b><span>Google rating</span></div>
+</div>
+
+<section id="how">
+<div class="wrap">
+<span class="eyebrow">From first lesson to licence</span>
+<h2>Five steps to test day</h2>
+<p class="sub">Most learners need around 10 to 20 lessons, depending on confidence and previous practice. Your instructor builds the plan around you.</p>
+<ol class="path">
+<li><h3>Book</h3><p>Call, message on WhatsApp or use the form. Pick a time that suits your week.</p></li>
+<li><h3>Get picked up</h3><p>Pick-up and drop-off can be arranged, so you start the lesson relaxed.</p></li>
+<li><h3>Learn the basics</h3><p>Patient one-on-one coaching in an automatic, dual-control car.</p></li>
+<li><h3>Practise routes</h3><p>Real route practice and mock driving tests for the VicRoads test.</p></li>
+<li><h3>Pass</h3><p>Test-focused training so you walk in prepared and confident.</p></li>
+</ol>
+</div>
+</section>
+
+<section id="prices">
+<div class="wrap">
+<span class="eyebrow" style="color:var(--yel)">Packages and single lessons</span>
+<h2>Pick your lesson pack</h2>
+<p class="sub">Package prices are shown as published on the school's website. Ask the team about the free lesson offer.</p>
+<div class="tickets">
+<div class="tk"><h3>5 lessons</h3>
+<div class="row"><span>5 × 45 min</span><span><s>$300</s><strong>$280</strong></span></div>
+<div class="row"><span>5 × 60 min</span><span><s>$400</s><strong>$385</strong></span></div></div>
+<div class="tk hot"><h3>7 lessons</h3>
+<div class="row"><span>7 × 45 min</span><span><s>$420</s><strong>$390</strong></span></div>
+<div class="row"><span>7 × 60 min</span><span><s>$560</s><strong>$530</strong></span></div></div>
+<div class="tk"><h3>10 lessons</h3>
+<div class="row"><span>10 × 45 min</span><span><s>$600</s><strong>$540</strong></span></div>
+<div class="row"><span>10 × 60 min</span><span><s>$800</s><strong>$740</strong></span></div></div>
+<div class="tk"><h3>Single</h3>
+<div class="row"><span>45 minutes</span><strong>$60</strong></div>
+<div class="row"><span>60 minutes</span><strong>$80</strong></div>
+<div class="row"><span>90 minutes</span><strong>$115</strong></div>
+<div class="row"><span>Driving test (60 min lesson included)</span><strong>$230</strong></div></div>
+</div>
+<p class="note">All lessons are one-on-one in modern automatic cars with dual controls.</p>
+</div>
+</section>
+
+<section id="areas">
+<div class="wrap">
+<span class="eyebrow">Where we teach</span>
+<h2>Your suburb, your roads</h2>
+<p class="sub">Instructors know the local roads, test routes and busy Melbourne traffic. Tell the team where you want to be picked up.</p>
+<div class="areas"><span>Southbank</span><span>Docklands</span><span>Melbourne CBD</span><span>Carlton</span><span>Doncaster</span><span>Templestowe</span></div>
+<div class="why">
+<div><h3>Patient instructors</h3><p>Professional, qualified and calm, which is what learners mention most in their reviews.</p></div>
+<div><h3>Female instructors</h3><p>Experienced female instructors are available if you prefer one.</p></div>
+<div><h3>Flexible timing</h3><p>Evenings and weekends, so lessons fit around study and work.</p></div>
+<div><h3>International licence?</h3><p>Lessons are designed for beginners, international licence holders and refreshers alike.</p></div>
+</div>
+</div>
+</section>
+
+
+<section id="learn">
+<div class="wrap">
+<div class="split">
+<div>
+<span class="eyebrow">Inside a lesson</span>
+<h2>Safe, confident, test-ready</h2>
+<p class="sub">Every lesson is structured to build road awareness and the confidence to drive in all traffic conditions. Your instructor explains the do's and don'ts and corrects habits as they appear.</p>
+<ul class="skills">
+<li><b>1</b><div><strong>Road safety</strong><span>The habits that keep you and others safe, from blind spots to road rules in Victoria.</span></div></li>
+<li><b>2</b><div><strong>Defensive driving</strong><span>Reading the road ahead and leaving yourself room in busy Melbourne traffic.</span></div></li>
+<li><b>3</b><div><strong>Parking skills</strong><span>Practice with the manoeuvres that tend to come up on test day.</span></div></li>
+<li><b>4</b><div><strong>Real driving practice</strong><span>Local roads, test routes and traffic conditions you will actually drive on.</span></div></li>
+</ul>
+</div>
+<div>
+<span class="eyebrow">Choose your lesson length</span>
+<h2>45, 60 or 90 minutes</h2>
+<p class="sub">Shorter blocks suit beginners and busy days. Longer ones let you practise a full route without rushing.</p>
+<div class="lens"><div><b>45</b><span>minutes</span></div><div><b>60</b><span>minutes</span></div><div><b>90</b><span>minutes</span></div></div>
+<div class="who">
+<div><h3>First-time learners</h3><p>Start from the basics with a patient one-on-one instructor.</p></div>
+<div><h3>Test preparation</h3><p>Mock driving tests and real route practice before the VicRoads test.</p></div>
+<div><h3>Refresher</h3><p>For licensed drivers who want more confidence in heavy traffic.</p></div>
+<div><h3>International licence holders</h3><p>Get used to Melbourne roads and local rules.</p></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<div class="ready">
+<div class="wrap">
+<h2>Before your first lesson</h2>
+<ul>
+<li><b>Have your permit handy</b><span>If you hold a learner permit or an overseas licence, tell the team when you book so they plan the right lessons.</span></li>
+<li><b>Tell us your suburb</b><span>Southbank, Docklands, CBD, Carlton, Doncaster or Templestowe, so pick-up is easy.</span></li>
+<li><b>Say what worries you</b><span>Parking, roundabouts, traffic or the test: your instructor starts where you need it.</span></li>
+<li><b>Choose a time that fits</b><span>Weekdays, evenings or weekends. The team will confirm what is available.</span></li>
+</ul>
+</div>
+</div>
+
+<section id="reviews">
+<div class="wrap">
+<span class="eyebrow">What learners say</span>
+<h2>5.0 on Google</h2>
+<div class="gscore"><b>5.0</b><div><div style="color:#f5a800;letter-spacing:3px">★★★★★</div><small>155+ Google reviews</small></div></div>
+<div class="revs">
+<div class="rev"><div class="st">★★★★★</div><p>"Close to where I live, allowed me to choose the schedules, picked me up and dropped me off at my doorstep. Passed my Learners and went to green P on my first attempt."</p><small>Tika</small></div>
+<div class="rev"><div class="st">★★★★★</div><p>"He's extremely patient, professional, and explains everything clearly, which really boosted my confidence on the road."</p><small>Sameep Modi</small></div>
+<div class="rev"><div class="st">★★★★★</div><p>"The car provided was really comfortable and easy to drive, the lessons were effective and I felt confident stepping into my drive test."</p><small>Kushal Saraf</small></div>
+</div>
+</div>
+</section>
+
+<section id="faq">
+<div class="wrap">
+<span class="eyebrow">Quick answers</span>
+<h2>Questions learners ask</h2>
+<details><summary>How many lessons do I need before the test?</summary><p>Most learners need 10 to 20 lessons, depending on confidence, previous practice and skill level. Your instructor makes a personal plan.</p></details>
+<details><summary>Are the lessons in automatic cars?</summary><p>Yes. Lessons are in modern automatic vehicles with safety features and dual controls.</p></details>
+<details><summary>Can I book evenings or weekends?</summary><p>Yes. Flexible times include evenings and weekends.</p></details>
+<details><summary>Do you help with the VicRoads driving test?</summary><p>Yes: test-focused training, mock driving tests and real route practice.</p></details>
+<details><summary>Do you offer refresher lessons?</summary><p>Yes, for licensed drivers who want more confidence or need to get used to busy Melbourne traffic.</p></details>
+<details><summary>How do I book?</summary><p>Call 0434 520 543 or contact the school through the website. The team will help you choose a time and a package.</p></details>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap">
+<div>
+<span class="eyebrow" style="color:var(--yel)">Ready when you are</span>
+<h2>Book your first lesson</h2>
+<p style="max-width:460px;margin-bottom:18px">Call, or use the assistant in the corner to leave your details for the team.</p>
+<a class="btn dark" href="#" data-open="book">Start booking</a>
+</div>
+<div class="info">
+<div><b>Phone</b><a href="tel:0434520543">0434 520 543</a> · <a href="tel:0432031663">0432 031 663</a></div>
+<div><b>Email</b><a href="mailto:easypassdrivingschoolmelbourne@gmail.com">easypassdrivingschoolmelbourne@gmail.com</a></div>
+<div><b>Address</b><a href="#contact">83 Queens Bridge St, Southbank VIC 3006</a></div>
+<div><b>Hours</b><a href="#contact">Listed as open 24 hours; lesson times are agreed with the team</a></div>
+</div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">Easy Pass Driving School · 83 Queens Bridge St, Southbank VIC 3006<br>Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="ab" aria-label="Open the lesson assistant"><i></i>Ask Easy Pass</button>
+<div id="ap" role="dialog" aria-label="Easy Pass assistant">
+<div class="ah"><div><b>Easy Pass assistant</b><small>Answers from this school's site. The team confirms the rest.</small></div><button id="ax" aria-label="Close">×</button></div>
+<div id="am"></div>
+<div id="ac"></div>
+<form id="af" autocomplete="off"><input id="ai" placeholder="Type your question" aria-label="Your question"><button>Send</button></form>
+</div>
+
+<script id="kb">
+var KB=[
+{k:["price","prices","cost","how much","fee","fees","rate","rates","cheap","affordable","pricing","dollar"],a:"Single lessons: 45 min $60, 60 min $80, 90 min $115. Packages: 5 x 45 min $280, 5 x 60 min $385, 7 x 45 min $390, 7 x 60 min $530, 10 x 45 min $540, 10 x 60 min $740. The driving test is $230 with a free 60 min lesson included."},
+{k:["package","packages","pack","bundle","deal","discount","offer","free lesson","promotion"],a:"Packages come in 5, 7 or 10 lessons, in 45 or 60 minute blocks. Right now: buy a package and get a lesson free (conditions apply, the team will explain them when you call 0434 520 543).",c:"Prices"},
+{k:["book","booking","reserve","appointment","schedule lesson","sign up","enrol","enroll","start"],a:"Happy to take your details. I will ask a few quick questions and pass them to the team.",f:"book"},
+{k:["phone","call","number","contact","ring","mobile","whatsapp","email","mail","reach"],a:"Call 0434 520 543 or 0432 031 663. Email: easypassdrivingschoolmelbourne@gmail.com. There is also a WhatsApp link at the top of the school's website."},
+{k:["address","where","location","located","office","find you","directions","map","queens bridge"],a:"The school is at 83 Queens Bridge St, Southbank VIC 3006. Lessons run across Melbourne, with pick-up and drop-off options."},
+{k:["area","areas","suburb","suburbs","servicing","service","cover","docklands","carlton","doncaster","templestowe","southbank","cbd","melbourne"],a:"Easy Pass teaches in Southbank, Docklands, Melbourne CBD, Carlton, Doncaster and Templestowe, and nearby suburbs. Tell the team where you live and they will confirm pick-up."},
+{k:["pick up","pickup","pick-up","drop off","dropoff","drop-off","collect","home"],a:"Yes, pick-up and drop-off options are available for learners. The team confirms the exact pick-up point when you book."},
+{k:["automatic","auto","manual","gear","transmission","stick"],a:"Lessons are in modern automatic vehicles with safety features and dual controls. If you need something else, ask the team."},
+{k:["female","woman","women","lady","male","man","instructor","instructors","teacher","who teaches"],a:"There are both male and female instructors, all professional and qualified. If you prefer a female instructor, say so when you book."},
+{k:["hours","open","opening","time","times","evening","weekend","saturday","sunday","night","late","early","available"],a:"The Google listing shows the school as open 24 hours. Lesson times are flexible, including evenings and weekends. The team will agree a time that suits you."},
+{k:["test","exam","vicroads","drive test","driving test","mock","prepare","preparation","route","routes","pass"],a:"Yes. Test-focused training includes mock driving tests and real route practice for the VicRoads test. The test option is $230 and includes a free 60 min lesson. The school quotes a 90%+ first-time pass rate."},
+{k:["how many lessons","number of lessons","lessons needed","how many"],a:"Most learners need between 10 and 20 lessons, depending on confidence, previous practice and skill level. Your instructor makes a personal plan."},
+{k:["refresher","refreshers","rusty","confidence","nervous","scared","anxious","afraid"],a:"Refresher lessons are for licensed drivers who want more confidence or need to get used to busy Melbourne traffic. Nervous beginners are welcome too: reviewers often mention how calm and patient the instructors are."},
+{k:["international","overseas","foreign","licence","license","converted","visa","student"],a:"Lessons suit beginners, international licence holders and anyone improving their skills. For licence conversion rules, the team can tell you what applies to your case."},
+{k:["learner","learners","l plate","p plate","probationary","permit","green p","red p"],a:"Learners are welcome. Many reviewers passed their test and moved to their green P plates after lessons here. For permit requirements, check with VicRoads or ask the team."},
+{k:["review","reviews","rating","google","stars","testimonial","reputation","good","best"],a:"5.0 on Google from 155+ reviews. Learners mention patient, calm instructors and comfortable, clean cars."},
+{k:["experience","years","students","founded","history","about","who are you","how long open"],a:"The school quotes 25+ years of experience, 150K+ students and a 90%+ first-time pass rate."},
+{k:["parking","park","reverse parking","parallel","manoeuvre","maneuver","three point turn"],a:"Parking and manoeuvres are part of the lessons, together with road safety, defensive driving and practical driving experience. Tell your instructor what you want to focus on."},
+{k:["defensive","safety","safe","blind spot","road rules","rules","traffic","busy"],a:"Lessons focus on road safety, defensive driving, parking and practical experience. Reviewers say their instructors repeat the details, like blind-spot checks, until they become habit."},
+{k:["how long is a lesson","how long is the lesson","length","minutes","45","60","90","hour","longer","duration","long is a lesson"],a:"Lessons come in 45, 60 and 90 minute blocks. Shorter ones suit beginners; longer ones suit route practice. Prices are $60, $80 and $115."},
+{k:["cancel","reschedule","change booking","move lesson","refund","policy","payment","pay","card","cash"],a:"I do not have the cancellation or payment details, so the team will confirm them. Call 0434 520 543."},
+{k:["hello","hi","hey","hola","good morning","good afternoon","g day","gday"],a:"Hi! I can help with prices, packages, areas, test preparation or booking a lesson."},
+{k:["thanks","thank you","cheers","ta","great","ok","okay"],a:"You are welcome. Anything else I can help with, or shall I take your booking details?"}
+];
+var FLOW=[
+ {key:"area",q:"Which area would you like to be picked up in?",chips:["Southbank","Docklands","Melbourne CBD","Carlton","Doncaster","Templestowe","Other"]},
+ {key:"goal",q:"What are you after?",chips:["First lessons","Test preparation","Refresher","International licence"]},
+ {key:"len",q:"Which lesson length?",chips:["45 min","60 min","90 min","Package, not sure yet"]},
+ {key:"who",q:"Do you prefer a male or female instructor?",chips:["No preference","Female","Male"]},
+ {key:"when",q:"When suits you best? (for example weekday evenings, Saturday morning)",free:true},
+ {key:"name",q:"What is your name?",free:true},
+ {key:"phone",q:"And a phone number so the team can confirm?",free:true,phone:true}
+];
+</script>
+<script id="engine">
+function norm(s){return String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|s)$/,""):w}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i]}for(j=1;j<=n;j++){d[0][j]=j}for(i=1;i<=m;i++){for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1))}}return d[m][n]}
+function tm(t,k){if(t===k)return 1;if(t.length>3&&k.length>3&&stem(t)===stem(k))return .9;if(t.length>=5&&k.length>=5&&lev(t,k)<=(k.length>7?2:1))return .7;return 0}
+function find(q){
+ var nq=norm(q),toks=nq.split(" "),best=null,bs=0;
+ for(var i=0;i<KB.length;i++){var s=0,ks=KB[i].k;
+  for(var j=0;j<ks.length;j++){var k=norm(ks[j]);
+   if(k.indexOf(" ")>-1){if((" "+nq+" ").indexOf(" "+k+" ")>-1)s+=2.5}
+   else{var m=0;for(var t=0;t<toks.length;t++){var v=tm(toks[t],k);if(v>m)m=v}s+=m*1.2}}
+  if(s>bs){bs=s;best=KB[i]}}
+ return bs>=1?best:null}
+</script>
+<script id="ui">
+(function(){
+var $=function(i){return document.getElementById(i)},am=$("am"),ac=$("ac"),ap=$("ap"),flow=null,step=0,data={};
+var FALL="I do not have that detail, so the team will confirm it. You can call 0434 520 543, or I can take your booking details.";
+var CH=["Prices","Packages","Areas","Test preparation","Book a lesson"];
+function say(t,u){var d=document.createElement("div");d.className="m "+(u?"u":"b");d.textContent=t;am.appendChild(d);am.scrollTop=am.scrollHeight}
+function chips(a){ac.innerHTML="";a.forEach(function(c){var b=document.createElement("button");b.type="button";b.textContent=c;b.onclick=function(){handle(c)};ac.appendChild(b)})}
+function open(){ap.classList.add("on");$("ab").style.display="none";if(!am.children.length){say("Hi, I am the Easy Pass assistant. Ask me about lessons, prices, areas or the driving test, or book a lesson.");chips(CH)}}
+function close(){ap.classList.remove("on");$("ab").style.display="flex"}
+function ask(){if(step<FLOW.length){var f=FLOW[step];say(f.q);chips(f.chips||[]);$("ai").focus()}else done()}
+function done(){flow=null;say("Thank you, "+data.name+". Your request has been sent to the team:\n- Area: "+data.area+"\n- Goal: "+data.goal+"\n- Lesson: "+data.len+"\n- Instructor: "+data.who+"\n- Time: "+data.when+"\n- Phone: "+data.phone+"\nThey will call to confirm. (Demo only: nothing is actually sent.)");chips(CH)}
+function startFlow(){flow=1;step=0;data={};say("Great, a few quick questions.");ask()}
+function handle(t){
+ t=String(t).trim();if(!t)return;say(t,1);
+ if(flow){
+  var f=FLOW[step];
+  if(/^(cancel|stop|never ?mind|back)$/i.test(t)){flow=null;say("No problem, request cancelled.");chips(CH);return}
+  if(f.phone&&t.replace(/\D/g,"").length<8){say("That number looks too short. Please type it again, with area code.");return}
+  data[f.key]=t;step++;ask();return}
+ var h=find(t);
+ if(!h){say(FALL);chips(["Book a lesson","Prices","Areas"]);return}
+ if(h.f==="book"){say(h.a);startFlow();return}
+ say(h.a);chips(h.c?CH:CH)}
+$("ab").onclick=open;$("ax").onclick=close;
+$("af").onsubmit=function(e){e.preventDefault();var i=$("ai");var v=i.value;i.value="";handle(v)};
+Array.prototype.forEach.call(document.querySelectorAll("[data-open]"),function(a){a.addEventListener("click",function(e){e.preventDefault();open();if(!flow)setTimeout(function(){handle("Book a lesson")},50)})});
+window.__handle=handle;
+})();
+</script>
+</body>
+</html>
