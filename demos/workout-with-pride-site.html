@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Workout with PRIDE · LGBT+ group fitness in London</title>
+<meta name="description" content="Demo class assistant and page for Workout with PRIDE, LGBT+ group fitness in London.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--pu:#6c0fd3;--pk:#ff69b3;--te:#1fbfbf;--gr:#0f7e2b;--ye:#ffeb34;--or:#fc8b25;--re:#e10f1b;--bl:#0f55fa;--ink:#1c1030;--bg:#fbf7ff;--line:#e8def7;--hd:Montserrat,system-ui,sans-serif;--tx:Roboto,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font:16px/1.6 var(--tx);color:var(--ink);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}a{color:inherit}
+.w{max-width:1100px;margin:0 auto;padding:0 18px}
+.plates{height:8px;background:linear-gradient(90deg,var(--re) 0 16.6%,var(--or) 0 33.2%,var(--ye) 0 49.8%,var(--gr) 0 66.4%,var(--bl) 0 83%,#74168a 0)}
+header{position:sticky;top:0;z-index:40;background:#fff;box-shadow:0 2px 14px rgba(108,15,211,.12)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 0}
+.hd img{height:46px;width:auto}
+nav{display:none;gap:22px;font:700 13px var(--hd);letter-spacing:.06em;text-transform:uppercase}nav a{text-decoration:none;color:var(--pu)}nav a:hover{color:var(--pk)}
+.b{display:inline-block;font:800 13px/1 var(--hd);letter-spacing:.07em;text-transform:uppercase;text-decoration:none;background:var(--pu);color:#fff;padding:14px 20px;border-radius:999px;border:2px solid var(--pu);cursor:pointer}
+.b:hover{background:#560ba9}.b.pk{background:var(--pk);border-color:var(--pk);color:#1c1030}.b.o{background:transparent;color:var(--pu)}
+.promo{background:var(--pu);color:#fff;text-align:center;font:500 14px/1.4 var(--tx);padding:9px 14px}.promo b{color:var(--ye)}
+.hero{position:relative;overflow:hidden;padding:54px 0 70px;background:radial-gradient(circle at 85% 10%,#ff69b333 0,transparent 45%),var(--bg)}
+.tri{position:absolute;right:-90px;top:30px;width:300px;height:260px;background:var(--pk);clip-path:polygon(0 0,100% 0,50% 100%);opacity:.9}
+.tri.t2{right:auto;left:-110px;top:auto;bottom:-60px;width:220px;height:190px;background:var(--te);opacity:.55}
+.hero .w{position:relative}
+.tag{display:inline-block;background:#fff;border:2px solid var(--pu);color:var(--pu);font:800 12px var(--hd);letter-spacing:.12em;text-transform:uppercase;padding:7px 14px;border-radius:999px;margin-bottom:18px}
+h1{font:900 clamp(40px,11vw,84px)/.96 var(--hd);color:var(--pu);letter-spacing:-.02em;max-width:760px}
+h1 em{font-style:normal;color:var(--pk);-webkit-text-stroke:0}
+.lead{max-width:560px;font-size:18px;margin:20px 0 26px;color:#3a2a55}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.motto{margin-top:34px;font:800 clamp(18px,4.4vw,26px)/1.25 var(--hd);color:var(--ink);max-width:620px;border-left:6px solid var(--te);padding-left:16px}
+section{padding:64px 0}
+h2{font:900 clamp(30px,7vw,48px)/1.02 var(--hd);color:var(--pu);letter-spacing:-.015em;margin-bottom:12px}
+.k{font:800 12px var(--hd);letter-spacing:.2em;text-transform:uppercase;color:#c2147a;margin-bottom:8px}
+.vals{display:grid;gap:14px;margin-top:26px}.vals>*{min-width:0}
+.v{border-radius:18px;padding:22px;color:#fff}.v h3{font:900 24px var(--hd);margin-bottom:6px}.v p{font-size:15px;opacity:.96}
+.v:nth-child(1){background:var(--pu)}.v:nth-child(2){background:#0f7e7e}.v:nth-child(3){background:#c2147a}.v:nth-child(4){background:var(--bl)}
+.intro{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.intro p{max-width:700px;margin-bottom:14px;color:#3a2a55}
+.cls{display:grid;gap:18px;margin-top:28px}.cls>*{min-width:0}
+.c{background:#fff;border:2px solid var(--line);border-radius:22px;padding:24px;position:relative;overflow:hidden}
+.c:before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--cc)}
+.c h3{font:900 26px/1.1 var(--hd);color:var(--ink);margin:0 0 6px 6px}
+.dur{display:inline-block;margin-left:6px;font:800 12px var(--hd);letter-spacing:.08em;text-transform:uppercase;background:var(--cc);color:#fff;border-radius:99px;padding:5px 11px;margin-bottom:10px}
+.c p{margin:0 0 12px 6px;color:#3a2a55;font-size:15.5px}
+.c ul{margin:0 0 14px 28px;font-size:15px;color:#3a2a55}
+.band{background:var(--pu);color:#fff}
+.band h2{color:#fff}.band .k{color:var(--ye)}
+.how{display:grid;gap:16px;margin-top:24px}.how>*{min-width:0}
+.hw{border:2px solid #ffffff40;border-radius:18px;padding:20px}.hw b{display:block;font:900 20px var(--hd);color:var(--ye);margin-bottom:4px}.hw p{font-size:15px;color:#f1e8ff}
+.team{display:grid;gap:18px;margin-top:26px}.team>*{min-width:0}
+.m{background:#fff;border-radius:22px;border:2px solid var(--line);padding:24px}
+.av{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font:900 24px var(--hd);color:#fff;margin-bottom:12px}
+.m h3{font:900 24px var(--hd);color:var(--ink)}.role{font:700 12px var(--hd);letter-spacing:.1em;text-transform:uppercase;color:#c2147a;margin:2px 0 10px}
+.m p{font-size:15px;color:#3a2a55;margin-bottom:10px}.m .pl{background:var(--bg);border-radius:12px;padding:10px 12px;font-size:14px}.m .pl b{color:var(--pu)}
+.soc{background:linear-gradient(135deg,#ff69b3,#6c0fd3);color:#fff}
+.soc h2{color:#fff}.soc p{max-width:640px;color:#fff6fc;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.chips span{background:#ffffff26;border:1px solid #ffffff59;border-radius:99px;padding:7px 14px;font:700 13px var(--hd)}
+details{background:#fff;border:2px solid var(--line);border-radius:14px;margin-top:10px;overflow:hidden}
+summary{cursor:pointer;padding:16px 46px 16px 18px;font:700 16px var(--hd);list-style:none;position:relative;color:var(--ink)}
+summary::-webkit-details-marker{display:none}summary:after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font:900 24px var(--hd);color:var(--pk)}
+details[open] summary:after{content:"\2212"}details p{padding:0 18px 16px;color:#3a2a55;font-size:15.5px}
+.part{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.part span{background:#fff;border:2px solid var(--line);border-radius:12px;padding:10px 16px;font:800 14px var(--hd);color:var(--pu)}
+.ct{background:#fff;border-top:1px solid var(--line)}
+.cb{display:grid;gap:12px;margin-top:20px}.cb a{display:block;border:2px solid var(--line);border-radius:16px;padding:16px 18px;text-decoration:none;overflow-wrap:anywhere;font-weight:500}
+.cb small{display:block;font:800 11px var(--hd);letter-spacing:.14em;text-transform:uppercase;color:#c2147a;margin-bottom:3px}
+footer{background:var(--ink);color:#d8cdee;padding:30px 0 92px;font-size:14px}footer b{color:#fff;font:900 18px var(--hd)}
+@media(min-width:760px){nav{display:flex}.vals{grid-template-columns:repeat(4,1fr)}.cls{grid-template-columns:1fr 1fr}.how{grid-template-columns:repeat(3,1fr)}.team{grid-template-columns:repeat(3,1fr)}.cb{grid-template-columns:repeat(3,1fr)}section{padding:88px 0}.tri{right:2%;width:380px;height:330px}}
+@media(max-width:420px){.hd img{height:40px}.hd .b{padding:11px 14px;font-size:12px}}
+</style></head><body>
+<div class="promo">New members: use code <b>NEWBIE</b> for 50% off your first class. Personal training is not part of the offer.</div>
+<header><div class="w hd"><a href="#top" aria-label="Workout with PRIDE home"><img src="img/workout-with-pride-logo.png" alt="Workout with PRIDE logo" width="60" height="46"></a><nav><a href="#classes">Classes</a><a href="#team">The team</a><a href="#social">Social</a><a href="#faq">FAQs</a><a href="#contact">Contact</a></nav><a class="b" href="#classes" onclick="openAssistant();return false">Book a class</a></div><div class="plates"></div></header>
+<main id="top">
+<div class="hero"><div class="tri"></div><div class="tri t2"></div><div class="w"><span class="tag">LGBT+ group fitness in London</span><h1>Feeling strong comes in <em>all shapes</em> and sizes!</h1><p class="lead">Fitness can often be intimidating, and doing a class with a group of strangers is more so. At Workout with PRIDE you will find a space where all people feel encouraged and supported while learning how to lift and exercise correctly.</p><div class="cta"><button class="b pk" onclick="openAssistant()">Book a class</button><a class="b o" href="#classes">See the classes</a></div><p class="motto">A 360 approach to wellness: we want you to feel confident in your body.</p></div></div>
+<div class="plates"></div>
+<section class="intro" id="values"><div class="w"><p class="k">Our values</p><h2>Community first, sweat second</h2><p>Workout with PRIDE provides a safe, inclusive environment for queer people and allies who want to feel good in their bodies, celebrating all shapes, sizes and strengths through the different stages of our lives.</p>
+<div class="vals"><div class="v"><h3>Community</h3><p>Together we're stronger. We champion each other, constantly supporting and encouraging.</p></div><div class="v"><h3>Awareness</h3><p>We consistently look to learn and grow by being present and open to differences of opinion.</p></div><div class="v"><h3>Respect</h3><p>We listen, learn and are mindful of how our behaviour can impact others.</p></div><div class="v"><h3>Encourage</h3><p>We lift each other, promoting a safe space in all environments.</p></div></div></div></section>
+<section id="classes"><div class="w"><p class="k">Our classes</p><h2>Hard only as you want them to be</h2><p style="max-width:650px;color:#3a2a55">Our LGBT+ group fitness classes in London offer strength and conditioning, functional training and HIIT. Every class is 55 minutes, caters to all levels, and ends with an optional post-workout social.</p>
+<div class="cls">
+<article class="c" style="--cc:var(--pu)"><h3>Functional Strength</h3><span class="dur">55 minutes</span><p>Strength training that readies your body for daily activities. The class uses all planes of movement, creating resistance from body weight and various equipment.</p><ul><li>Squats and deadlifts</li><li>Pushing and pulling exercises</li><li>Medium weight, high reps</li></ul><button class="b o" onclick="openAssistant()">Book this class</button></article>
+<article class="c" style="--cc:var(--te)"><h3>Strength Circuits</h3><span class="dur">55 minutes</span><p>A circuit class with a Workout with PRIDE twist. Move quickly through 8-10 exercise stations to work different muscle groups with little to no rest, with partner drills and maybe an AMRAP (as many rounds as possible) to keep it interesting.</p><ul><li>Whole body by the end of the circuit</li><li>Work at your own pace with different weight options</li><li>Builds strength, flexibility and mobility</li></ul><button class="b o" onclick="openAssistant()">Book this class</button></article>
+<article class="c" style="--cc:var(--pk)"><h3>#PROUD Cycle</h3><span class="dur">55 minutes</span><p>An all-new spinning experience: hill climbs, sprints, power and performance, set to the sounds of icons from Missy Elliot to Madonna. A great way to start your fitness journey.</p><ul><li>Caters to all levels</li><li>Work at your own pace</li></ul><button class="b o" onclick="openAssistant()">Book this class</button></article>
+<article class="c" style="--cc:var(--or)"><h3>Personal training</h3><span class="dur">1-2-1 or small group</span><p>LGBT personal training in London, for extra motivation. Start with a consultation about your goals, habits, lifestyles and blockers, then follow a simple, fun plan. Programmes are tracked every session and updated every two weeks.</p><ul><li>1-2-1 with a highly experienced trainer</li><li>Small groups of up to 5, matched on goals and strength level</li></ul><button class="b o" onclick="openAssistant()">Ask about PT</button></article>
+</div></div></section>
+<section id="pt" style="background:#fff;border-top:1px solid var(--line)"><div class="w"><p class="k">Personal training</p><h2>Extra motivation, your way</h2><p style="max-width:680px;color:#3a2a55;margin-bottom:22px">If you are looking for extra motivation, Workout with PRIDE offers LGBT personal training in London with something for every budget: small group personal training to 1-2-1.</p>
+<div class="cls"><article class="c" style="--cc:var(--or)"><h3>1-2-1 personal training</h3><p>Our personal trainers are highly experienced in designing truly effective well-being programmes. We focus on unblocking what has been holding you back and give you the tools to be successful.</p><p>Starting with your first consultation, we discuss your goals, habits, lifestyles and blockers. Together we devise a plan that is simple to follow, fun and sets you up to succeed.</p><ul><li>A combination of strength, endurance and mobility training</li><li>Our classes included, plus frequent check-ins</li><li>Tracked every session, updated every two weeks</li></ul></article>
+<article class="c" style="--cc:var(--bl)"><h3>Small group personal training</h3><p>Train in small groups of up to 5 people, where you are matched on goals and strength level, and benefit from the expert attention of our trainers for less than half the price of 1-2-1 sessions.</p><p>We can compromise on price but not on good form. Check our Instagram to see how fun the classes are, then ask the assistant about a session.</p><button class="b o" onclick="openAssistant()">Ask about personal training</button></article></div></div></section>
+<section class="band" id="first"><div class="w"><p class="k">Your first class</p><h2>What to know before you come</h2><div class="how"><div class="hw"><b>Bring</b><p>Workout kit, suitable trainers and water. Not all studios have towels, so bring one.</p></div><div class="hw"><b>Lockers and showers</b><p>Most locations have lockers: some need a padlock or £1, others use a code. There are showers, so bring a towel.</p></div><div class="hw"><b>Where</b><p>We hire studios across London. The full address is on the booking form.</p></div><div class="hw"><b>Level</b><p>All classes cater to all levels. Rest when you need to and join back in when you are ready.</p></div><div class="hw"><b>Access</b><p>All studios have ground-floor or lift-accessed disabled changing rooms and showers, but some studios are reached only by steps. Get in touch to discuss your needs.</p></div><div class="hw"><b>Who</b><p>Absolutely everyone is welcome, as long as you follow our values and are an ally to the community.</p></div></div></div></section>
+<section id="team"><div class="w"><p class="k">Meet the team</p><h2>Sass, support, sweat</h2>
+<div class="team">
+<div class="m"><div class="av" style="background:var(--pu)">M</div><h3>Mark</h3><p class="role">Founder · Class instructor · Personal trainer</p><p>A 40+ fitness fanatic with over 10 years in the fitness industry. Mark started Workout with PRIDE after reading The Velvet Rage and finding it hard to make new friends: get people together, get them talking, and teach the fundamentals of lifting without fear of ridicule.</p><p>In class: sass, support, sweat and tons of encouragement, with a tough, result-driven focus balanced by a warm, motivating style.</p><div class="pl"><b>Playlist:</b> Motown, fierce female rappers from the 90s to today, plus pop classics.</div></div>
+<div class="m"><div class="av" style="background:#c2147a">T</div><h3>Ty</h3><p class="role">Class instructor · Coach</p><p>Into fitness from a young age, from gymnastics to cheerleading. Ty first joined Workout with PRIDE as a member, found the sessions friendly and welcoming, and became a coach. Ty believes fitness drives body positivity, mental wellbeing and community.</p><p>In class: playfulness and plyometrics. Expect a burpee pyramid of some sort, just for fun.</p><div class="pl"><b>Playlist:</b> classic house and garage, pop and today's top ten.</div></div>
+<div class="m"><div class="av" style="background:#0f7e7e">T</div><h3>Tom</h3><p class="role">Coach</p><p>Over 10 years in the fitness industry. Tom began training with Mark while at the YMCA, loved the classes and the sense of community, and was asked to start teaching.</p><p>In class: a good workout, plenty of energy and a few laughs, whatever your fitness level.</p><div class="pl"><b>Playlist:</b> usually upbeat house, garage or hip hop, depending on the mood of the day.</div></div>
+</div></div></section>
+<section class="soc" id="social"><div class="w"><p class="k" style="color:var(--ye)">Social</p><h2>Then we eat</h2><p>After class, you are welcome to join the optional social: we descend on a local restaurant for a bite to eat or even a rewarding drink or two. You have burnt those calories, after all.</p><p>We have arranged discounts at local restaurants to keep the price point low, and you can bring a friend even if they did not come to class. The calendar also has events such as trips abroad, theatre and hikes, which help cement friendships.</p><div class="chips"><span>Optional post-workout social</span><span>Trips abroad</span><span>Theatre</span><span>Hikes</span></div></div></section>
+<section id="faq"><div class="w" style="max-width:780px"><p class="k">FAQs</p><h2>Frequently asked questions</h2>
+<details><summary>Where are you located?</summary><p>We hire studios across London. Check out the full address on the booking form.</p></details>
+<details><summary>I'm not part of the LGBTQIA+ community. Can I still join?</summary><p>Absolutely everyone is welcome at Workout with PRIDE. As long as you follow our values and are an ally to the community, you are welcome.</p></details>
+<details><summary>I'm new to fitness. Will I be able to keep up?</summary><p>All our classes cater to all levels. Everyone works at their own pace. If you need to rest or take a break, please do so, then join back in when you're ready.</p></details>
+<details><summary>Do I have to attend the post-workout social?</summary><p>Our after-class socials are optional. We have arranged discounts at all our local restaurants to keep the price point low. Feel free to bring a friend to the social even if they didn't come to class.</p></details>
+<details><summary>Do you have lockers?</summary><p>Most of the locations have lockers. Some require a padlock or £1, and others operate on a code combination setup. Alternatively, you can bring your belongings to the studio.</p></details>
+<details><summary>What do I need to bring?</summary><p>Workout kit, suitable trainers and water. Please note that not all our studios have towels. Please bring one with you.</p></details>
+<details><summary>Are there showers?</summary><p>Yes, but please bring a towel.</p></details>
+<details><summary>Do you have disabled access?</summary><p>All the studios we hire have ground floor or lift-accessed disabled changing rooms and showers. Some studios are only accessed via steps, though. Don't hesitate to get in touch with us to discuss your requirements.</p></details>
+<p class="k" style="margin-top:38px">Proud to have collaborated with</p><div class="part"><span>FORA</span><span>QX Magazine</span><span>Dean Street</span><span>Impulse</span><span>Positive East</span><span>Talent Point</span></div></div></section>
+<section class="ct" id="contact"><div class="w"><p class="k">Get in touch</p><h2>See you soon and stay PROUD</h2><p style="max-width:600px;color:#3a2a55">Use NEWBIE if you are a new member, SWITCH if you are an existing member trying something new. Personal training is not part of the offer.</p>
+<div class="cb"><a href="mailto:team@workoutwithpride.co.uk"><small>Email</small>team@workoutwithpride.co.uk</a><a href="https://www.instagram.com/workoutwithpride/"><small>Instagram</small>@workoutwithpride</a><a href="https://www.tiktok.com/@workoutwithpridelnd"><small>TikTok</small>@workoutwithpridelnd</a></div><p style="margin-top:20px"><button class="b" onclick="openAssistant()">Book a class</button></p></div></section>
+</main>
+<footer><div class="plates" style="margin-bottom:24px"></div><div class="w"><b>Workout with PRIDE</b><p>LGBT+ group fitness in London · team@workoutwithpride.co.uk</p><p style="margin-top:12px;opacity:.75">Demo · prepared by Gevorg Hovhannisyan</p></div></footer>
+<script>window.ASSIST={
+name:"Workout with PRIDE",sub:"Class assistant · answers instantly",btn:"Ask a question",ph:"Ask about classes, lockers, the social…",send:"Send",
+theme:{ac:"#6c0fd3",ac2:"#ff69b3",on:"#ffffff",bg:"#ffffff",fg:"#1c1030",bd:"#e8def7",bub:"#f4ecff",f:"Roboto,system-ui,sans-serif"},
+greet:"Hi, welcome to Workout with PRIDE! I can tell you about our classes, what to bring, the post-workout social and our team, or take your details for a class so the team can get back to you. No experience needed.",
+chips:["Book a class","Our classes","I'm new to fitness","What do I bring?","The social","Discount code"],
+fallback:"I do not have that detail, so the team will confirm it. You can email team@workoutwithpride.co.uk or message us on Instagram (@workoutwithpride), or tell me which class you want and I will pass your details on.",
+cancel:"No worries, I have stopped that. What else can I help with?",
+flow:{trigger:["book","booking","reserve","sign up","join","enquiry","trial","get started"],
+intro:"Great, let's get you into a class. I will pass your details to the team. This demo sends nothing and nothing is booked until the team confirms.",
+steps:[
+{label:"Class",q:"Which class would you like to try?",opts:["Functional Strength","Strength Circuits","#PROUD Cycle","Personal Training","Not sure yet"]},
+{label:"Experience",q:"How would you describe your fitness level? All classes cater to all levels.",opts:["Brand new","Some experience","Regular exerciser"]},
+{label:"Preferred day",q:"Which day or time suits you best? The team will match it to the timetable.",re:/\S{3,}/,err:"Please give a day or time, for example Thursday evening."},
+{label:"Discount code",q:"Do you have a code? New members use NEWBIE, existing members use SWITCH.",opts:["NEWBIE","SWITCH","No code"]},
+{label:"Name",q:"What name should the team use?",re:/\S{2,}/},
+{label:"Email",q:"And your email address so the team can reply?",re:/.+@.+\..+/,err:"That does not look like an email address. Could you check it?"}
+],
+done:"Thank you! Your class request has been sent to the Workout with PRIDE team, who will confirm the class, the studio address and your code. Stay PROUD.",},
+kb:[
+{id:"founder",k:["founder","velvet rage","story","how did it start","started","origin","why did mark"],a:"Mark founded Workout with PRIDE after reading The Velvet Rage, and at a time when many of his lifelong friends were leaving London and meeting new friends felt hard. His mission was simple: get people together, get them talking, and teach the fitness fundamentals without fear of being ridiculed."},
+{id:"ptgroup",k:["group training","budget","half","cheaper","small group training","up to 5"],a:"Small group personal training is for up to 5 people matched on goals and strength level. It gives you the expert attention of our trainers at less than half the price of 1-2-1 sessions. The team can confirm the current cost."},
+{id:"ptprocess",k:["consultation","goals","programme","program","tracked","every two weeks","check in","plan"],a:"Personal training starts with a consultation about your goals, habits, lifestyles and blockers. Together you devise a simple, fun plan combining strength, endurance and mobility training, tracked every session and updated every two weeks."},
+{id:"ty",k:["ty coach","cheerleading","gymnastics","burpee","plyometric","burpees"],a:"Ty is a class instructor and coach who first joined as a member, then became a coach. Expect playfulness and plyometrics in Ty's class, probably a burpee pyramid just for fun."},
+{id:"tomc",k:["tom coach","ymca","phillipe"],a:"Tom is a coach with over 10 years in the fitness industry, who started training with Mark while at the YMCA. Expect a good workout, plenty of energy and a few laughs."},
+{id:"classes",k:["classes","class types","what classes","timetable","schedule","workouts","what do you do","types of class"],a:"We run four things: Functional Strength, Strength Circuits and #PROUD Cycle (each 55 minutes), plus personal training. All cater to all levels. For exact days and times, check the booking form, or the team will confirm."},
+{id:"functional",k:["functional strength","functional","squats","deadlift","deadlifts"],a:"Functional Strength (55 minutes) is strength training that readies your body for daily activities, using all planes of movement with body weight and various equipment. Expect squats, deadlifts, pushing and pulling at a medium weight for high reps, with the Workout with PRIDE flare."},
+{id:"circuits",k:["strength circuits","circuit","circuits","stations","amrap"],a:"Strength Circuits (55 minutes) moves you through 8-10 exercise stations with little to no rest, working the whole body. We might add partner drills or an AMRAP. You work at your own pace with different weight options, and it builds strength, flexibility and mobility."},
+{id:"cycle",k:["proud cycle","cycle","spin","spinning","bike","cycling"],a:"#PROUD Cycle (55 minutes) is our spinning class: hill climbs, sprints, power and performance to the sounds of icons from Missy Elliott to Madonna. It caters to all levels, so it is a great way to start your fitness journey."},
+{id:"pt",k:["personal training","personal trainer","pt","1-2-1","one to one","small group","trainer"],a:"We offer LGBT+ personal training: 1-2-1, or small group training with up to 5 people matched on goals and strength level. Programmes are tracked every session and updated every two weeks, starting with a consultation about your goals, habits, lifestyles and blockers."},
+{id:"newbie",k:["beginner","new to fitness","newbie","never done","first time","keep up","fit enough","level","experience","intimidating","nervous","scared"],a:"All our classes cater to all levels and everyone works at their own pace. If you need to rest, do so and join back in when you are ready. Our workouts are hard, but only as hard as you want them to be."},
+{id:"allies",k:["straight","ally","allies","not lgbt","not part of the community","everyone welcome","lgbtq","gay","queer","who can join","inclusive"],a:"Absolutely everyone is welcome. As long as you follow our values and are an ally to the community, you are welcome."},
+{id:"social",k:["social","after class","post workout","post-workout","drinks","restaurant","bring a friend","food"],a:"The post-workout social is optional. We descend on a local restaurant for a bite or a drink, and we have arranged discounts at local restaurants. You can bring a friend even if they did not come to class."},
+{id:"bring",k:["bring","what to bring","kit","trainers","water","towel","wear","clothes"],a:"Bring workout kit, suitable trainers and water. Not all studios have towels, so please bring your own."},
+{id:"lockers",k:["locker","lockers","padlock","belongings","valuables","bag"],a:"Most locations have lockers. Some need a padlock or £1, others use a code combination. You can also bring your belongings into the studio."},
+{id:"showers",k:["shower","showers","changing room","changing"],a:"Yes, there are showers, but please bring a towel."},
+{id:"access",k:["disabled","disability","accessible","wheelchair","access","lift","steps","step free","mobility"],a:"All the studios we hire have ground-floor or lift-accessed disabled changing rooms and showers, but some studios are only reached by steps. Please get in touch so the team can discuss your requirements."},
+{id:"where",k:["where","location","address","studio","studios","find you","london","venue","which area"],a:"We hire studios across London. The full address of each class is on the booking form."},
+{id:"code",k:["discount","code","newbie","switch","free trial","offer","50%","first class","promo","voucher"],a:"New members can use the code NEWBIE for 50% off their first class, and the site also offers a free trial of any class you have not tried, with SWITCH for existing members. Personal training is not part of the offer. The team will confirm which applies to you."},
+{id:"team",k:["team","instructor","instructors","coach","coaches","mark","ty","tom","founder","who teaches","trainers"],a:"The team is Mark (founder, class instructor and personal trainer), Ty (class instructor and coach) and Tom (coach). Mark's classes bring sass, support, sweat and tons of encouragement; Ty is playful and plyometric, so expect a burpee pyramid."},
+{id:"music",k:["music","playlist","songs","motown","house","garage"],a:"Playlists depend on the coach: Mark plays Motown, fierce female rappers and pop classics; Ty plays classic house and garage, pop and today's top ten; Tom goes for upbeat house, garage or hip hop."},
+{id:"events",k:["events","trips","hikes","theatre","community","make friends","friends","meet people"],a:"Besides classes, there is a calendar of events such as trips abroad, theatre and hikes, which help cement friendships. That community side is what the team is all about."},
+{id:"values",k:["values","about","mission","who are you","why","pride","motto","body positive","body positivity"],a:"Our values are Community, Awareness, Respect and Encourage. Our motto is: Feeling strong comes in all shapes and sizes!"},
+{id:"contact",k:["contact","email","instagram","tiktok","facebook","message","reach","social media"],a:"Email team@workoutwithpride.co.uk, or find us on Instagram (@workoutwithpride), TikTok (@workoutwithpridelnd) and Facebook."},
+{id:"shop",k:["shop","merch","merchandise","t-shirt","hoodie","buy"],a:"Yes, we sell merch. It is in the Shop section of the website."},
+{id:"duration",k:["how long","long class","duration","minutes","length","long is"],a:"Our classes are 55 minutes long."},
+{id:"unknown",k:["cancel","cancel booking","cancellation","refund","membership","memberships","freeze","parking","age limit","under 18","pregnant","pregnancy","injury","injured","kids"],a:"I do not have that detail on the website, so I will not guess. Please email team@workoutwithpride.co.uk and the team will confirm."}
+]};
+</script><script>(function(){
+var C=window.ASSIST;
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/['’]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>5)w=w.replace(/(ing|ed)$/,'');if(w.length>3&&/(ss|us|is)$/.test(w))return w;if(w.length>4&&/(ches|shes|sses|xes|zes)$/.test(w))return w.slice(0,-2);if(w.length>3)w=w.replace(/s$/,'');return w;}
+var STOP={the:1,a:1,an:1,is:1,are:1,wha:1,whats:1,what:1,hows:1,do:1,you:1,your:1,i:1,we:1,can:1,to:1,of:1,and:1,in:1,at:1,for:1,there:1,it:1,me:1,my:1,what:1,how:1,about:1,on:1,have:1,has:1,does:1,be:1,or:1,with:1,any:1};
+function toks(s){return norm(s).split(' ').map(stem).filter(function(w){return w&&!STOP[w]});}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){c=[i];for(j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c}return p[n]}
+function tm(t,u){if(t===u)return 1;var L=Math.min(t.length,u.length);if(L<4)return 0;if(L>=5&&(t.indexOf(u)===0||u.indexOf(t)===0)&&Math.abs(t.length-u.length)<=3)return .85;if(L<=5&&t.charAt(0)!==u.charAt(0))return 0;var d=lev(t,u);if(L>=8&&d<=2)return .85;if(L>=4&&d<=1)return .85;return 0}
+function score(q,e){var qt=toks(q),s=0,seen={};e.k.forEach(function(kw){var kt=toks(kw),tot=0,ok=kt.length>0;var key=kt.join(' ');if(seen[key])return;seen[key]=1;kt.forEach(function(k){var b=0;qt.forEach(function(t){b=Math.max(b,tm(t,k))});if(!b)ok=false;tot+=b});if(ok)s+=tot*(kt.length>1?1.6:1)});return s}
+function best(q){var b=null,bs=0;C.kb.forEach(function(e){var s=score(q,e);if(s>bs){bs=s;b=e}});return bs>=0.8?b:null}
+function answer(q){var e=best(q),ks=e?score(q,e):0,fs=C.flow?2*score(q,{k:C.flow.trigger}):0;if(fs>0&&fs>ks)return{t:'flow'};return e?{t:'kb',a:e.a,id:e.id}:{t:'fb',a:C.fallback}}
+window.ASSIST_CORE={answer:answer,norm:norm};
+if(typeof document==='undefined')return;
+var st=document.createElement('style');
+st.textContent='#as-b{position:fixed;right:16px;bottom:16px;z-index:9999;border:0;cursor:pointer;background:var(--as-ac);color:var(--as-on);font:600 15px/1 var(--as-f);padding:14px 18px;border-radius:999px;box-shadow:0 6px 22px rgba(0,0,0,.28);display:flex;gap:8px;align-items:center}#as-b:focus-visible,#as-p button:focus-visible,#as-p input:focus-visible{outline:3px solid var(--as-ac2);outline-offset:2px}#as-p{position:fixed;right:16px;bottom:78px;z-index:9999;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 110px));background:var(--as-bg);color:var(--as-fg);border-radius:16px;box-shadow:0 14px 48px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--as-f);border:1px solid var(--as-bd)}#as-p.o{display:flex}#as-h{background:var(--as-ac);color:var(--as-on);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px}#as-h b{display:block;font-size:15px}#as-h small{opacity:.85;font-size:12px}#as-x{background:none;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer;padding:4px 8px}#as-m{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}.as-r{max-width:86%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}.as-bot{background:var(--as-bub);align-self:flex-start;border-bottom-left-radius:4px}.as-me{background:var(--as-ac);color:var(--as-on);align-self:flex-end;border-bottom-right-radius:4px}#as-c{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}#as-c button{background:transparent;border:1px solid var(--as-ac);color:var(--as-ac);border-radius:999px;padding:6px 11px;font:500 13px var(--as-f);cursor:pointer}#as-c button:hover{background:var(--as-ac);color:var(--as-on)}#as-f{display:flex;gap:6px;padding:10px;border-top:1px solid var(--as-bd)}#as-i{flex:1;min-width:0;border:1px solid var(--as-bd);background:var(--as-bg);color:var(--as-fg);border-radius:10px;padding:10px;font:15px var(--as-f)}#as-s{background:var(--as-ac);color:var(--as-on);border:0;border-radius:10px;padding:0 14px;font:600 14px var(--as-f);cursor:pointer}@media(max-width:480px){#as-p{right:8px;left:8px;width:auto;bottom:70px}}';
+document.head.appendChild(st);
+var r=document.documentElement.style,T=C.theme;for(var k in T)r.setProperty('--as-'+k,T[k]);
+var btn=document.createElement('button');btn.id='as-b';btn.setAttribute('aria-label','Open chat assistant');btn.innerHTML='<span aria-hidden="true">&#128172;</span><span>'+C.btn+'</span>';
+var p=document.createElement('div');p.id='as-p';p.setAttribute('role','dialog');p.setAttribute('aria-label',C.name+' assistant');
+p.innerHTML='<div id="as-h"><div><b>'+C.name+'</b><small>'+C.sub+'</small></div><button id="as-x" aria-label="Close">&times;</button></div><div id="as-m" aria-live="polite"></div><div id="as-c"></div><form id="as-f"><input id="as-i" autocomplete="off" placeholder="'+C.ph+'" aria-label="Your message"><button id="as-s">'+C.send+'</button></form>';
+document.body.appendChild(btn);document.body.appendChild(p);
+var M=p.querySelector('#as-m'),CH=p.querySelector('#as-c'),F=p.querySelector('#as-f'),I=p.querySelector('#as-i'),fl=null,opened=false;
+function say(t,me){var d=document.createElement('div');d.className='as-r '+(me?'as-me':'as-bot');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight}
+function chips(a,fn){CH.innerHTML='';a.forEach(function(x){var b=document.createElement('button');b.type='button';b.textContent=x;b.onclick=function(){fn(x)};CH.appendChild(b)})}
+function home(){chips(C.chips,handle)}
+function open(){p.classList.add('o');if(!opened){opened=true;say(C.greet);home()}I.focus()}
+function shut(){p.classList.remove('o');btn.focus()}
+btn.onclick=function(){p.classList.contains('o')?shut():open()};p.querySelector('#as-x').onclick=shut;
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&p.classList.contains('o'))shut()});
+window.openAssistant=open;
+function step(){var s=C.flow.steps[fl.i];say(s.q);if(s.opts)chips(s.opts.concat(['Cancel']),handle);else chips(['Cancel'],handle)}
+function flowIn(v){var f=C.flow,s=f.steps[fl.i];if(/^cancel$/i.test(v)){fl=null;say(f.cancel);home();return}
+if(s.re&&!s.re.test(v)){say(s.err||'Sorry, could you check that and try again?');return}
+fl.d.push([s.label,v]);fl.i++;if(fl.i<f.steps.length){step();return}
+var sum=fl.d.map(function(x){return x[0]+': '+x[1]}).join('\n');say(f.done+'\n\n'+sum);fl=null;home()}
+function handle(v){v=String(v).trim();if(!v)return;say(v,true);I.value='';
+if(fl){flowIn(v);return}
+var a=ASSIST_CORE.answer(v);
+if(a.t==='flow'){fl={i:0,d:[]};say(C.flow.intro);step();return}
+say(a.a);home()}
+F.onsubmit=function(e){e.preventDefault();handle(I.value)};
+})();
+</script>
+</body></html>

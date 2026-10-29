@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Angel Townhouse · Islington boutique hotel</title>
+<meta name="description" content="Demo guest assistant and page for Angel Townhouse, 72 Prebend Street, Islington.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fdfaf4;--fg:#112621;--pri:#25443c;--sec:#f1eee7;--gold:#c8a65d;--line:#e2dccd;--serif:'Cormorant Garamond',Georgia,serif;--sans:Inter,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(253,250,244,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:60px;gap:10px}
+.mark{font:600 24px/1 var(--serif);color:var(--pri);text-decoration:none;letter-spacing:.01em}
+.mark small{display:block;font:500 9px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:#9b7e3b;margin-top:4px}
+nav{display:none;gap:28px;font-size:14px;font-weight:500}nav a{text-decoration:none;color:#112621cc}nav a:hover{color:var(--pri)}
+.btn{display:inline-block;background:var(--pri);color:var(--bg);padding:11px 18px;border-radius:3px;text-decoration:none;font-weight:500;font-size:14px;letter-spacing:.03em;border:1px solid var(--pri);cursor:pointer;font-family:var(--sans)}
+.btn:hover{background:#1b332d}.btn.ghost{background:transparent;color:var(--pri)}.btn.gold{background:var(--gold);border-color:var(--gold);color:#112621}
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;background:#25443c url(https://angeltownhouse.co.uk/img/cover.webp) center/cover;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,38,33,.25) 0%,rgba(17,38,33,.84) 100%)}
+.hero .wrap{position:relative;padding-bottom:56px;padding-top:120px;width:100%}
+.eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px}
+h1{font:600 clamp(44px,11vw,92px)/.98 var(--serif);margin-bottom:18px}
+.lead{max-width:540px;font-size:18px;font-weight:300;margin-bottom:28px;color:#f5f1e6}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.facts{background:var(--pri);color:var(--bg)}
+.facts ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#ffffff1f}
+.facts li{background:var(--pri);padding:20px 12px;text-align:center;font-size:13px;letter-spacing:.04em}
+.facts b{display:block;font:600 26px/1.1 var(--serif);color:var(--gold);margin-bottom:4px}
+section{padding:72px 0}
+h2{font:600 clamp(34px,7vw,52px)/1.05 var(--serif);color:var(--pri);margin-bottom:14px}
+.kick{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#8a6f31;font-weight:600;margin-bottom:10px}
+.about{display:grid;gap:36px}.about>*{min-width:0}.about img{border-radius:6px;box-shadow:0 18px 40px rgba(17,38,33,.2);aspect-ratio:4/3;object-fit:cover;width:100%}
+.about p{margin-bottom:14px;color:#2b3f3a}
+.addr{margin-top:18px;padding:16px 18px;border-left:3px solid var(--gold);background:var(--sec);font-size:15px}
+.suites{background:var(--sec)}
+.suite{display:grid;gap:0;background:var(--bg);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:26px}
+.suite>*{min-width:0}
+.suite .ph{aspect-ratio:4/3;background:#cfc7b3 center/cover}
+.suite .tx{padding:24px 22px}
+.suite h3{font:600 30px/1.1 var(--serif);color:var(--pri);margin-bottom:8px}
+.pill{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6d531c;background:#c8a65d2b;padding:4px 10px;border-radius:99px;margin-bottom:12px;font-weight:600}
+.suite p{color:#33463f;margin-bottom:16px}
+.glance{margin-top:46px;overflow:hidden}
+.glance h3{font:600 28px var(--serif);color:var(--pri);margin:0 0 8px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-weight:600;color:var(--pri);width:36%}
+.comforts{display:grid;gap:0;margin-top:26px}
+.comfort{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--line)}
+.comfort i{font:600 22px/1 var(--serif);font-style:normal;color:#b08f45;min-width:32px}
+.comfort b{display:block;color:var(--pri)}
+.loc{background:var(--pri);color:var(--bg)}
+.loc h2{color:#fff}.loc .kick{color:var(--gold)}
+.cols{display:grid;gap:30px;margin-top:26px}.cols>*{min-width:0}
+.cols h3{font:600 24px var(--serif);color:var(--gold);margin-bottom:10px}
+.cols ul{list-style:none}
+.cols li{padding:9px 0;border-bottom:1px solid #ffffff1f;display:flex;justify-content:space-between;gap:14px;font-size:15px}
+.cols li span:last-child{color:var(--gold);white-space:nowrap}
+.rev{display:grid;gap:18px;margin-top:26px}.rev>*{min-width:0}
+blockquote{background:#fff;border:1px solid var(--line);border-radius:6px;padding:24px;font:500 21px/1.4 var(--serif)}
+blockquote cite{display:block;margin-top:12px;font:500 13px var(--sans);color:#6b6a5e;font-style:normal;letter-spacing:.04em}
+.src{font-size:13px;color:#6b6a5e;margin-top:14px}
+details{border-bottom:1px solid var(--line)}summary{cursor:pointer;padding:18px 28px 18px 0;font-weight:500;list-style:none;position:relative;color:var(--pri)}
+summary::-webkit-details-marker{display:none}summary:after{content:"+";position:absolute;right:4px;font:400 24px/1 var(--serif);color:#b08f45}
+details[open] summary:after{content:"\2212"}details p{padding:0 0 18px;color:#33463f}
+.contact{background:var(--sec)}
+.cbox{display:grid;gap:14px;margin-top:22px}
+.cbox a.card{display:block;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:18px;text-decoration:none;overflow-wrap:anywhere}
+.cbox small{display:block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8a6f31;font-weight:600;margin-bottom:4px}
+footer{background:#112621;color:#cfd6d2;padding:36px 0 90px;font-size:14px}
+footer b{font:600 22px var(--serif);color:#fff}
+@media(min-width:760px){nav{display:flex}.facts ul{grid-template-columns:repeat(4,1fr)}.about{grid-template-columns:1fr 1fr;align-items:center;gap:56px}.suite{grid-template-columns:1fr 1fr}.suite:nth-of-type(even) .ph{order:2}.suite .tx{align-self:center;padding:34px}.comforts{grid-template-columns:1fr 1fr;column-gap:40px}.cols{grid-template-columns:repeat(3,1fr)}.rev{grid-template-columns:repeat(3,1fr)}section{padding:96px 0}}
+.steps{display:grid;gap:16px;margin-top:26px}.steps>*{min-width:0}
+.stp{background:#fff;border:1px solid var(--line);border-radius:6px;padding:22px;position:relative}
+.stp span{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--pri);color:var(--gold);font:600 18px var(--serif);margin-bottom:10px}
+.stp h3{font:600 24px/1.1 var(--serif);color:var(--pri);margin-bottom:6px}.stp p{color:#33463f;font-size:15px}
+.glance h3{font:600 28px var(--serif);color:var(--pri)}
+@media(min-width:760px){.steps{grid-template-columns:repeat(4,1fr)}}
+.band{background:linear-gradient(135deg,#25443c,#112621);color:#fdfaf4;text-align:center;padding:64px 0}.band h2{color:#fff}.band p{max-width:600px;margin:0 auto 24px;color:#e3e8e4}.band .cta{justify-content:center}
+@media(max-width:420px){.hd .btn{padding:9px 11px;font-size:12px}.mark{font-size:21px}}
+</style></head><body>
+<header><div class="wrap hd"><a class="mark" href="#top">Angel Townhouse<small>Islington · London</small></a><nav><a href="#about">About</a><a href="#suites">Suites</a><a href="#comforts">Comforts</a><a href="#location">Location</a><a href="#faq">Good to know</a><a href="#contact">Contact</a></nav><a class="btn" href="https://reserve.hotelratedirect.com/angeltownhouse">Check availability</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap"><p class="eyebrow">Boutique hotel · Islington, London</p><h1>Angel<br>Townhouse</h1><p class="lead">Adults-only suites with spa baths in the heart of London's most loved neighbourhood.</p><div class="cta"><a class="btn gold" href="https://reserve.hotelratedirect.com/angeltownhouse">Check availability</a><button class="btn ghost" style="color:#fff;border-color:#fff" onclick="openAssistant()">Ask the guest assistant</button></div></div></div>
+<div class="facts"><div class="wrap"><ul><li><b>4</b>king-bed suites</li><li><b>21+</b>adults-only stays</li><li><b>500 m</b>to Essex Road station</li><li><b>3 pm / 11 am</b>check-in / check-out</li></ul></div></div>
+<section id="about"><div class="wrap about"><div><p class="kick">Welcome</p><h2>A stylish retreat in the heart of Islington</h2><p>Nestled on a peaceful residential street in the heart of Islington, Angel Townhouse offers a stylish and relaxing retreat just moments from some of North London's most vibrant restaurants, cafés, bars, theatres and cultural attractions.</p><p>Combining boutique character with modern convenience, the property provides a welcoming base for both leisure and business travellers seeking comfort, privacy and easy access to central London.</p><p>Each suite has been thoughtfully designed with spacious layouts, contemporary furnishings and elegant decorative touches. Selected suites feature luxurious spa baths or whirlpool tubs, the perfect way to recharge after a day exploring the city.</p><div class="addr"><b>72 Prebend St, London N1 8PR, United Kingdom</b><br>Our team speaks English, Spanish and Portuguese.</div></div><img src="https://angeltownhouse.co.uk/img/about.webp" alt="Angel Townhouse exterior in Islington, London" loading="lazy"></div></section>
+<section class="suites" id="suites"><div class="wrap"><p class="kick">Stay with us</p><h2>Our suites</h2><p style="max-width:560px;color:#33463f">Four king-bed suites, each with its own private bathroom. Tell the assistant which one catches your eye and it will pass your dates to the team.</p>
+<article class="suite"><div class="ph" style="background-image:url(https://angeltownhouse.co.uk/img/deluxe.webp)" role="img" aria-label="Deluxe Suite at Angel Townhouse"></div><div class="tx"><span class="pill">9 m² · 1 king bed</span><h3>Deluxe Suite</h3><p>A cosy king-bed suite with parquet floors, flat-screen TV and a private bathroom featuring a relaxing spa tub and walk-in shower.</p><a class="btn" href="https://reserve.hotelratedirect.com/angeltownhouse">Book this suite</a></div></article>
+<article class="suite"><div class="ph" style="background-image:url(https://angeltownhouse.co.uk/img/superior.webp)" role="img" aria-label="Superior Suite at Angel Townhouse"></div><div class="tx"><span class="pill">8 m² · 1 king bed</span><h3>Superior Suite</h3><p>Bright king-bed suite with city views, wardrobe and a private bathroom with hot tub and walk-in shower for an unwinding stay.</p><a class="btn" href="https://reserve.hotelratedirect.com/angeltownhouse">Book this suite</a></div></article>
+<article class="suite"><div class="ph" style="background-image:url(https://angeltownhouse.co.uk/img/deluxe-spa.webp)" role="img" aria-label="Deluxe Suite with Spa Bath"></div><div class="tx"><span class="pill">13 m² · 1 king bed</span><h3>Deluxe Suite with Spa Bath</h3><p>Our most spacious suite with city views, flat-screen TV and a standout spa bath, perfect for couples celebrating something special.</p><a class="btn" href="https://reserve.hotelratedirect.com/angeltownhouse">Book this suite</a></div></article>
+<article class="suite"><div class="ph" style="background-image:url(https://angeltownhouse.co.uk/__l5e/assets-v1/943cf985-3d11-4c09-96c2-ce0c3a6d3d4e/One-Bedroom_Suite.webp)" role="img" aria-label="One-Bedroom Suite"></div><div class="tx"><span class="pill">9 m² · 1 king bed</span><h3>One-Bedroom Suite</h3><p>Stylish king-bed suite with parquet floors, flat-screen TV with streaming and a fully equipped private bathroom.</p><a class="btn" href="https://reserve.hotelratedirect.com/angeltownhouse">Book this suite</a></div></article>
+<div class="glance"><h3>Suites at a glance</h3><table><tr><th>Deluxe Suite</th><td>9 m², king bed, spa tub and walk-in shower</td></tr><tr><th>Superior Suite</th><td>8 m², king bed, city views, hot tub and walk-in shower</td></tr><tr><th>Deluxe Suite with Spa Bath</th><td>13 m², king bed, city views, spa bath</td></tr><tr><th>One-Bedroom Suite</th><td>9 m², king bed, private bathroom, streaming TV</td></tr></table></div></div></section>
+<section id="comforts"><div class="wrap"><p class="kick">Comforts</p><h2>Thoughtful facilities for every stay</h2><p style="max-width:620px;color:#33463f">Every suite comes with the essentials below. Selected suites add a spa tub or hot tub, parquet floors, a wardrobe and city views.</p>
+<div class="comforts"><div class="comfort"><i>01</i><div><b>Free Wi-Fi</b>Throughout the property.</div></div><div class="comfort"><i>02</i><div><b>Streaming TV</b>Flat-screen TV with streaming services in the suite.</div></div><div class="comfort"><i>03</i><div><b>Tea and coffee</b>Tea and coffee facilities, plus heating in every suite.</div></div><div class="comfort"><i>04</i><div><b>Private bathroom</b>Bathrobe, free toiletries, towels and a walk-in shower.</div></div><div class="comfort"><i>05</i><div><b>Express check-in and check-out</b>Check-in from 3:00 PM, check-out until 11:00 AM.</div></div><div class="comfort"><i>06</i><div><b>Non-smoking, adults-only</b>Minimum age for check-in is 21. CCTV in common areas.</div></div><div class="comfort"><i>07</i><div><b>Parking nearby</b>Public parking at a nearby location; a reservation may be needed and charges may apply.</div></div><div class="comfort"><i>08</i><div><b>Comfortable linens</b>Exceptionally comfortable beds with comfortable linens.</div></div></div></div></section>
+<section id="plan"><div class="wrap"><p class="kick">Plan your stay</p><h2>From first question to key</h2><div class="steps"><div class="stp"><span>1</span><h3>Choose a suite</h3><p>Pick from the Deluxe, Superior, Deluxe with Spa Bath or One-Bedroom Suite. Selected suites have a spa tub or hot tub, so say if that matters to you.</p></div><div class="stp"><span>2</span><h3>Check availability</h3><p>Use the booking page to see dates, or send your details through the assistant and the team will reply.</p></div><div class="stp"><span>3</span><h3>Pay before arrival</h3><p>Payment before arrival by bank transfer is required. The team contacts you after booking with instructions. Cash is not accepted.</p></div><div class="stp"><span>4</span><h3>Arrive from 3:00 PM</h3><p>Express check-in. Let the team know your expected arrival time in advance. Check-out is until 11:00 AM.</p></div></div>
+<div class="glance"><h3 style="margin-top:44px">House notes</h3><table><tr><th>Check-in</th><td>From 3:00 PM, with express check-in</td></tr><tr><th>Check-out</th><td>Until 11:00 AM, express check-out</td></tr><tr><th>Guests</th><td>Adults-only, minimum age for check-in is 21</td></tr><tr><th>Pets</th><td>Not allowed</td></tr><tr><th>Smoking</th><td>Fully non-smoking property</td></tr><tr><th>Payment</th><td>Bank transfer before arrival, cash not accepted</td></tr><tr><th>Parking</th><td>Public parking nearby; reservation may be needed and charges may apply</td></tr><tr><th>Languages</th><td>English, Spanish and Portuguese</td></tr><tr><th>Security</th><td>CCTV in common areas</td></tr></table></div></div></section>
+<section class="loc" id="location"><div class="wrap"><p class="kick">Where we are</p><h2>A perfect Islington address</h2><p style="max-width:600px;color:#dfe5e1">72 Prebend Street sits about a five-minute walk from the main street in Angel, quiet inside and busy outside.</p>
+<div class="cols"><div><h3>Transport</h3><ul><li><span>Essex Road station</span><span>500 m</span></li><li><span>Angel Underground</span><span>1.4 km</span></li><li><span>Highbury &amp; Islington</span><span>1.6 km</span></li><li><span>London City Airport</span><span>13 km</span></li></ul></div><div><h3>Top attractions</h3><ul><li><span>British Museum</span><span>3.7 km</span></li><li><span>Sky Garden</span><span>3.9 km</span></li><li><span>London Bridge</span><span>4 km</span></li><li><span>Tower of London</span><span>5 km</span></li><li><span>Regent's Park</span><span>5 km</span></li></ul></div><div><h3>Eat &amp; drink</h3><ul><li><span>Ginger and Mint</span><span>50 m</span></li><li><span>New Surma Tandoori</span><span>200 m</span></li><li><span>Saponara</span><span>200 m</span></li><li><span>Upper Street cafés</span><span>nearby</span></li></ul></div></div>
+<p style="margin-top:26px"><a class="btn gold" href="https://www.google.com/maps/search/?api=1&amp;query=Angel+Townhouse+72+Prebend+Street+London+N1+8PR">Open in Google Maps</a></p></div></section>
+<section id="reviews"><div class="wrap"><p class="kick">Guest voices</p><h2>What our guests say</h2><div class="rev"><blockquote>“We love the location. The rooms are clean, the beds are very comfy and the restaurant down below serves amazing food. We keep coming back!”<cite>Michele · Canada</cite></blockquote><blockquote>“Very comfortable bed. Really spacious room. Jacuzzi bath was a great size and a real added bonus that made the stay feel luxury. Really easy check-in with no faff.”<cite>Megan · United Kingdom</cite></blockquote><blockquote>“Loved the location, about 5 min walk from the main street in Angel. Plenty to do on that street but nice and quiet inside the hotel.”<cite>Aubri · United States</cite></blockquote></div><p class="src">Selected reviews from Booking.com, as shown on the hotel's website.</p></div></section>
+<section id="faq" style="background:var(--sec)"><div class="wrap" style="max-width:760px"><p class="kick">Good to know</p><h2>Frequently asked questions</h2>
+<details><summary>What are the check-in and check-out times?</summary><p>Check-in is from 3:00 PM and check-out is until 11:00 AM. Please let us know your expected arrival time in advance.</p></details>
+<details><summary>Is Angel Townhouse adults-only?</summary><p>Yes. Angel Townhouse is an adults-only property and the minimum age for check-in is 21.</p></details>
+<details><summary>Is Wi-Fi free?</summary><p>Yes, free Wi-Fi is available throughout the property.</p></details>
+<details><summary>Is there parking nearby?</summary><p>Public parking is available at a location nearby. Reservation may be needed and charges may apply.</p></details>
+<details><summary>How close is the nearest station?</summary><p>Essex Road station is just a 500 m walk, and Angel Underground station is about 1.4 km away.</p></details>
+<details><summary>Do you allow pets?</summary><p>Pets are not allowed at the property.</p></details>
+<details><summary>How do I pay?</summary><p>Payment before arrival by bank transfer is required. We will contact you after booking with instructions. Cash is not accepted.</p></details></div></section>
+<section class="band"><div class="wrap"><h2>Quiet street, busy neighbourhood</h2><p>Adults-only suites, spa baths and a five-minute walk to the main street in Angel. Essex Road station is 500 m away, and the British Museum is 3.7 km. Ask the assistant anything about the stay, or head straight to the booking page.</p><div class="cta"><a class="btn gold" href="https://reserve.hotelratedirect.com/angeltownhouse">Check availability</a><a class="btn ghost" style="color:#fff;border-color:#fff" href="tel:+447713627624">Call +44 7713 627624</a></div></div></section>
+<section class="contact" id="contact"><div class="wrap"><p class="kick">Get in touch</p><h2>Reserve your stay</h2><div class="cbox"><a class="card" href="tel:+447713627624"><small>Call us</small>+44 7713 627624</a><a class="card" href="mailto:info@angeltownhouse.co.uk"><small>Email</small>info@angeltownhouse.co.uk</a><a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Angel+Townhouse+72+Prebend+Street+London+N1+8PR"><small>Visit</small>72 Prebend St, London N1 8PR, UK</a></div><p style="margin-top:22px"><a class="btn" href="https://reserve.hotelratedirect.com/angeltownhouse">Book your suite</a></p></div></section>
+</main>
+<footer><div class="wrap"><b>Angel Townhouse</b><p>72 Prebend St, London N1 8PR, United Kingdom</p><p style="margin-top:14px;opacity:.75">Demo · prepared by Gevorg Hovhannisyan</p></div></footer>
+<script>window.ASSIST={
+name:"Angel Townhouse",sub:"Guest assistant · replies instantly",btn:"Ask us",ph:"Ask about suites, check-in, location…",send:"Send",
+theme:{ac:"#25443c",ac2:"#c8a65d",on:"#fdfaf4",bg:"#fdfaf4",fg:"#112621",bd:"#e2dccd",bub:"#f1eee7",f:"Inter,system-ui,sans-serif"},
+greet:"Hello, and welcome to Angel Townhouse in Islington. I can answer questions about our suites, check-in, getting here and house rules, or start a booking enquiry for the team.",
+chips:["Book a stay","Check-in and check-out","Our suites","Getting here","Is it adults-only?","How do I pay?"],
+fallback:"I do not have that detail to hand, so the team will confirm it. You can call +44 7713 627624 or email info@angeltownhouse.co.uk, or tell me your dates and I will pass an enquiry to them.",
+cancel:"No problem, I have cancelled that enquiry. What else would you like to know?",
+core:null,
+flow:{trigger:["book","booking","reserve","reservation","availability","available","enquiry","stay with you","check availability","room for","book a stay"],
+intro:"Lovely, let me take a few details for the team. Nothing is booked until they confirm.",
+steps:[
+{label:"Suite",q:"Which suite would you like?",opts:["Deluxe Suite","Superior Suite","Deluxe Suite with Spa Bath","One-Bedroom Suite","Not sure yet"]},
+{label:"Arrival date",q:"What date would you like to arrive?",re:/\S{3,}/,err:"Please give a date, for example 14 March."},
+{label:"Nights",q:"How many nights?",re:/\d/,err:"Please give a number of nights, for example 2."},
+{label:"Guests",q:"How many guests? Our suites are adults-only, with a minimum age of 21.",opts:["1","2"]},
+{label:"Name",q:"What name should the team use?",re:/\S{2,}/},
+{label:"Email or phone",q:"And the best email address or phone number to reach you on?",re:/(@.+\..+)|(\d{6,})/,err:"That does not look like an email or phone number. Could you check it?"}
+],
+done:"Thank you. Your enquiry has been sent to the Angel Townhouse team, who will confirm availability and send payment instructions by bank transfer.",},
+kb:[
+{id:"direct",k:["direct","book direct","booking page","website booking","hotelratedirect"],a:"You can check availability and reserve on the booking page linked from the Check availability button, or send your details here and the team will follow up."},
+{id:"unknown",k:["cancel booking","cancellation","refund","change booking","breakfast included","gym","lift","elevator","air conditioning","aircon","hairdryer","hair dryer","late check out","early check in","laundry","accessible","wheelchair","step free"],a:"I do not have that detail on the website, so I will not guess. The team will confirm it: call +44 7713 627624 or email info@angeltownhouse.co.uk."},
+{id:"who",k:["business","business travel","leisure","couples","who stays","work trip","solo"],a:"The townhouse suits both leisure and business travellers who want comfort, privacy and easy access to central London. It is adults-only, with a minimum age of 21."},
+{id:"views",k:["view","views","city views","parquet","floor","wardrobe","size","how big","square"],a:"Selected suites add city views, parquet floors and a wardrobe. The Superior Suite and the Deluxe Suite with Spa Bath have city views. Sizes: Deluxe 9 m², Superior 8 m², Deluxe with Spa Bath 13 m², One-Bedroom 9 m²."},
+{id:"reviews",k:["reviews","review","rating","guests say","feedback","booking.com"],a:"Guests on Booking.com mention the location, the very comfortable beds, clean rooms, the jacuzzi bath and easy check-in with no faff."},
+{id:"deluxe",k:["deluxe suite","deluxe"],a:"The Deluxe Suite is 9 m² with one king bed: a cosy suite with parquet floors, a flat-screen TV and a private bathroom with a relaxing spa tub and walk-in shower."},
+{id:"superior",k:["superior suite","superior"],a:"The Superior Suite is 8 m² with one king bed: bright, with city views, a wardrobe and a private bathroom with a hot tub and walk-in shower."},
+{id:"onebed",k:["one-bedroom suite","one bedroom","1 bedroom","onebedroom"],a:"The One-Bedroom Suite is 9 m² with one king bed, parquet floors, a flat-screen TV with streaming and a fully equipped private bathroom."},
+{id:"biggest",k:["biggest","largest","most spacious","spacious","best suite","special occasion"],a:"The Deluxe Suite with Spa Bath is our most spacious at 13 m², with city views, a flat-screen TV and a standout spa bath, perfect for couples celebrating something special."},
+{id:"checkin",k:["check in","check-in","checkin","arrival time","arrive","check out","check-out","checkout","departure","what time","late arrival"],a:"Check-in is from 3:00 PM and check-out is until 11:00 AM. Please let the team know your expected arrival time in advance. Express check-in and check-out are available."},
+{id:"adults",k:["adults only","adult","children","kids","child","family","age","minimum age","under 21","baby"],a:"Angel Townhouse is an adults-only property, and the minimum age for check-in is 21."},
+{id:"wifi",k:["wifi","wi-fi","internet","wireless","broadband"],a:"Yes, free Wi-Fi is available throughout the property."},
+{id:"parking",k:["parking","park","car","drive","garage"],a:"Public parking is available at a location nearby. A reservation may be needed and charges may apply, so please check with the team before you travel."},
+{id:"station",k:["station","tube","underground","train","metro","transport","bus","how far"],a:"Essex Road station is a 500 m walk, Angel Underground is about 1.4 km, and Highbury & Islington is 1.6 km. London City Airport is 13 km away."},
+{id:"pets",k:["pet","pets","dog","cat","animal"],a:"Sorry, pets are not allowed at the property."},
+{id:"pay",k:["pay","payment","bank transfer","cash","card","deposit","credit card"],a:"Payment before arrival by bank transfer is required. The team contacts you after booking with instructions. Cash is not accepted."},
+{id:"suites",k:["suite","suites","room","rooms","bed","king","types","accommodation","which room","options"],a:"We have four suites, all with a king bed: Deluxe Suite (9 m²), Superior Suite (8 m²), Deluxe Suite with Spa Bath (13 m², our most spacious) and One-Bedroom Suite (9 m²)."},
+{id:"spa",k:["spa","bath","jacuzzi","whirlpool","hot tub","tub","romantic","anniversary","couples","honeymoon"],a:"Selected suites have a spa tub or hot tub. The Deluxe Suite with Spa Bath is our most spacious and a favourite for couples celebrating something special. Spa baths are not in every suite, so tell the team if it matters to you."},
+{id:"facilities",k:["facilities","amenities","included","tea","coffee","tv","television","streaming","towels","toiletries","bathrobe","shower","heating","wardrobe"],a:"Every suite has free Wi-Fi, a flat-screen TV with streaming, tea and coffee facilities, heating, comfortable linens and a private bathroom with bathrobe, free toiletries, towels and a walk-in shower."},
+{id:"address",k:["address","where","location","find you","postcode","map","directions","situated","islington"],a:"We are at 72 Prebend Street, London N1 8PR, on a peaceful residential street in Islington, a short walk from Upper Street."},
+{id:"food",k:["restaurant","eat","food","dinner","breakfast","cafe","bar","pub","drink","curry"],a:"Nearby you will find Ginger and Mint (50 m), New Surma Tandoori (200 m), Saponara (200 m) and dozens of independent cafés on Upper Street. I do not have breakfast details, so the team will confirm those."},
+{id:"sights",k:["attractions","sightseeing","museum","tourist","things to do","british museum","tower","sky garden","airport"],a:"From us it is 3.7 km to the British Museum, 3.9 km to Sky Garden, 4 km to London Bridge, 5 km to the Tower of London and Regent's Park, and 13 km to London City Airport."},
+{id:"smoking",k:["smoking","smoke","non-smoking","vape","cigarette"],a:"The townhouse is fully non-smoking."},
+{id:"lang",k:["language","languages","spanish","portuguese","english","speak"],a:"Our team speaks English, Spanish and Portuguese."},
+{id:"contact",k:["contact","phone","call","telephone","email","mail","number","speak to someone","human"],a:"You can call +44 7713 627624 or email info@angeltownhouse.co.uk. The address is 72 Prebend Street, London N1 8PR."},
+{id:"security",k:["safe","security","cctv","secure"],a:"There is CCTV in the common areas."},
+{id:"luggage",k:["luggage","bags","storage","early check in","early arrival"],a:"I do not have a luggage storage or early check-in policy, so the team will confirm. Please ask them when you book."}
+]};
+</script><script>(function(){
+var C=window.ASSIST;
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/['’]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>5)w=w.replace(/(ing|ed)$/,'');if(w.length>3&&/(ss|us|is)$/.test(w))return w;if(w.length>4&&/(ches|shes|sses|xes|zes)$/.test(w))return w.slice(0,-2);if(w.length>3)w=w.replace(/s$/,'');return w;}
+var STOP={the:1,a:1,an:1,is:1,are:1,wha:1,whats:1,what:1,hows:1,do:1,you:1,your:1,i:1,we:1,can:1,to:1,of:1,and:1,in:1,at:1,for:1,there:1,it:1,me:1,my:1,what:1,how:1,about:1,on:1,have:1,has:1,does:1,be:1,or:1,with:1,any:1};
+function toks(s){return norm(s).split(' ').map(stem).filter(function(w){return w&&!STOP[w]});}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){c=[i];for(j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c}return p[n]}
+function tm(t,u){if(t===u)return 1;var L=Math.min(t.length,u.length);if(L<4)return 0;if(L>=5&&(t.indexOf(u)===0||u.indexOf(t)===0)&&Math.abs(t.length-u.length)<=3)return .85;if(L<=5&&t.charAt(0)!==u.charAt(0))return 0;var d=lev(t,u);if(L>=8&&d<=2)return .85;if(L>=4&&d<=1)return .85;return 0}
+function score(q,e){var qt=toks(q),s=0,seen={};e.k.forEach(function(kw){var kt=toks(kw),tot=0,ok=kt.length>0;var key=kt.join(' ');if(seen[key])return;seen[key]=1;kt.forEach(function(k){var b=0;qt.forEach(function(t){b=Math.max(b,tm(t,k))});if(!b)ok=false;tot+=b});if(ok)s+=tot*(kt.length>1?1.6:1)});return s}
+function best(q){var b=null,bs=0;C.kb.forEach(function(e){var s=score(q,e);if(s>bs){bs=s;b=e}});return bs>=0.8?b:null}
+function answer(q){var e=best(q),ks=e?score(q,e):0,fs=C.flow?2*score(q,{k:C.flow.trigger}):0;if(fs>0&&fs>ks)return{t:'flow'};return e?{t:'kb',a:e.a,id:e.id}:{t:'fb',a:C.fallback}}
+window.ASSIST_CORE={answer:answer,norm:norm};
+if(typeof document==='undefined')return;
+var st=document.createElement('style');
+st.textContent='#as-b{position:fixed;right:16px;bottom:16px;z-index:9999;border:0;cursor:pointer;background:var(--as-ac);color:var(--as-on);font:600 15px/1 var(--as-f);padding:14px 18px;border-radius:999px;box-shadow:0 6px 22px rgba(0,0,0,.28);display:flex;gap:8px;align-items:center}#as-b:focus-visible,#as-p button:focus-visible,#as-p input:focus-visible{outline:3px solid var(--as-ac2);outline-offset:2px}#as-p{position:fixed;right:16px;bottom:78px;z-index:9999;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 110px));background:var(--as-bg);color:var(--as-fg);border-radius:16px;box-shadow:0 14px 48px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--as-f);border:1px solid var(--as-bd)}#as-p.o{display:flex}#as-h{background:var(--as-ac);color:var(--as-on);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px}#as-h b{display:block;font-size:15px}#as-h small{opacity:.85;font-size:12px}#as-x{background:none;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer;padding:4px 8px}#as-m{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}.as-r{max-width:86%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}.as-bot{background:var(--as-bub);align-self:flex-start;border-bottom-left-radius:4px}.as-me{background:var(--as-ac);color:var(--as-on);align-self:flex-end;border-bottom-right-radius:4px}#as-c{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}#as-c button{background:transparent;border:1px solid var(--as-ac);color:var(--as-ac);border-radius:999px;padding:6px 11px;font:500 13px var(--as-f);cursor:pointer}#as-c button:hover{background:var(--as-ac);color:var(--as-on)}#as-f{display:flex;gap:6px;padding:10px;border-top:1px solid var(--as-bd)}#as-i{flex:1;min-width:0;border:1px solid var(--as-bd);background:var(--as-bg);color:var(--as-fg);border-radius:10px;padding:10px;font:15px var(--as-f)}#as-s{background:var(--as-ac);color:var(--as-on);border:0;border-radius:10px;padding:0 14px;font:600 14px var(--as-f);cursor:pointer}@media(max-width:480px){#as-p{right:8px;left:8px;width:auto;bottom:70px}}';
+document.head.appendChild(st);
+var r=document.documentElement.style,T=C.theme;for(var k in T)r.setProperty('--as-'+k,T[k]);
+var btn=document.createElement('button');btn.id='as-b';btn.setAttribute('aria-label','Open chat assistant');btn.innerHTML='<span aria-hidden="true">&#128172;</span><span>'+C.btn+'</span>';
+var p=document.createElement('div');p.id='as-p';p.setAttribute('role','dialog');p.setAttribute('aria-label',C.name+' assistant');
+p.innerHTML='<div id="as-h"><div><b>'+C.name+'</b><small>'+C.sub+'</small></div><button id="as-x" aria-label="Close">&times;</button></div><div id="as-m" aria-live="polite"></div><div id="as-c"></div><form id="as-f"><input id="as-i" autocomplete="off" placeholder="'+C.ph+'" aria-label="Your message"><button id="as-s">'+C.send+'</button></form>';
+document.body.appendChild(btn);document.body.appendChild(p);
+var M=p.querySelector('#as-m'),CH=p.querySelector('#as-c'),F=p.querySelector('#as-f'),I=p.querySelector('#as-i'),fl=null,opened=false;
+function say(t,me){var d=document.createElement('div');d.className='as-r '+(me?'as-me':'as-bot');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight}
+function chips(a,fn){CH.innerHTML='';a.forEach(function(x){var b=document.createElement('button');b.type='button';b.textContent=x;b.onclick=function(){fn(x)};CH.appendChild(b)})}
+function home(){chips(C.chips,handle)}
+function open(){p.classList.add('o');if(!opened){opened=true;say(C.greet);home()}I.focus()}
+function shut(){p.classList.remove('o');btn.focus()}
+btn.onclick=function(){p.classList.contains('o')?shut():open()};p.querySelector('#as-x').onclick=shut;
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&p.classList.contains('o'))shut()});
+window.openAssistant=open;
+function step(){var s=C.flow.steps[fl.i];say(s.q);if(s.opts)chips(s.opts.concat(['Cancel']),handle);else chips(['Cancel'],handle)}
+function flowIn(v){var f=C.flow,s=f.steps[fl.i];if(/^cancel$/i.test(v)){fl=null;say(f.cancel);home();return}
+if(s.re&&!s.re.test(v)){say(s.err||'Sorry, could you check that and try again?');return}
+fl.d.push([s.label,v]);fl.i++;if(fl.i<f.steps.length){step();return}
+var sum=fl.d.map(function(x){return x[0]+': '+x[1]}).join('\n');say(f.done+'\n\n'+sum);fl=null;home()}
+function handle(v){v=String(v).trim();if(!v)return;say(v,true);I.value='';
+if(fl){flowIn(v);return}
+var a=ASSIST_CORE.answer(v);
+if(a.t==='flow'){fl={i:0,d:[]};say(C.flow.intro);step();return}
+say(a.a);home()}
+F.onsubmit=function(e){e.preventDefault();handle(I.value)};
+})();
+</script>
+</body></html>

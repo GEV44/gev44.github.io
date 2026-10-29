@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Lyons Real Estate Group · Phoenix</title>
+<meta name="description" content="Demo page for The Lyons Real Estate Group, Phoenix, Arizona: buying, selling and investing across Maricopa County, with a booking assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#121315;--panel:#1b1d20;--line:#2e3135;--org:#f7902b;--txt:#eceae6;--mut:#a5a39d;--wa:#f7902b;--wb:#1a1100;--wf:'Jost',system-ui,sans-serif;--wr:10px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.65 var(--wf);color:var(--txt);background:var(--bg);overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;margin:0;line-height:1.05}
+a{color:inherit}.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+header.nav{position:sticky;top:0;z-index:40;background:rgba(18,19,21,.94);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:8px;padding-bottom:8px}
+header.nav img{height:56px;width:auto;display:block}
+header.nav nav{display:none;gap:22px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+header.nav nav a{text-decoration:none}
+.btn{display:inline-block;background:var(--org);color:#1a1100;font-weight:600;text-decoration:none;padding:13px 22px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;border:0;cursor:pointer}
+.btn.o{background:transparent;color:var(--txt);border:1px solid var(--mut)}
+.hero{padding:64px 0 70px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;right:-30px;top:0;bottom:0;width:150px;background:repeating-linear-gradient(90deg,rgba(247,144,43,.18) 0 8px,transparent 8px 30px);transform:skewX(-8deg)}
+.hero .in{position:relative}
+.kick{color:var(--org);letter-spacing:.2em;text-transform:uppercase;font-size:13px;font-weight:500}
+.hero h1{font-size:clamp(44px,11vw,88px);margin:14px 0 18px;max-width:800px}
+.hero h1 em{color:var(--org)}
+.hero p{max-width:540px;color:#cfccc6;font-size:18px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+section{padding:58px 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(32px,7vw,48px);margin-bottom:12px}
+.sub{max-width:600px;color:var(--mut);margin:0 0 28px}
+.three{display:grid;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);padding:22px;min-width:0}
+.card .n{font:600 14px/1 'Jost';color:var(--org);letter-spacing:.18em}
+.card h3{font-size:30px;margin:10px 0 8px}
+.card p{margin:0;color:#c3c0ba;font-size:16px}
+.who{display:grid;gap:22px}
+.who .big{background:var(--panel);border-left:4px solid var(--org);padding:22px;min-width:0}
+.who .big h3{font-size:36px}
+.who .big small{color:var(--org);letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.tags span{border:1px solid var(--line);padding:5px 12px;font-size:14px;color:var(--mut)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:0}
+.steps li{counter-increment:s;padding:16px 0 16px 58px;border-top:1px solid var(--line);position:relative;min-width:0}
+.steps li:before{content:"0" counter(s);position:absolute;left:0;top:14px;font:700 32px/1 'Cormorant Garamond';color:var(--org)}
+.steps b{display:block;font-weight:600}
+.faq details{border-top:1px solid var(--line);padding:0}
+.faq summary{padding:16px 0;cursor:pointer;list-style:none;font-weight:500}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";float:right;color:var(--org);font-size:22px}
+.faq details[open] summary:after{content:"–"}
+.faq p{margin:0 0 16px;color:var(--mut)}
+.office{display:grid;gap:14px}
+.office .card a{color:var(--org)}
+footer{padding:20px 0;color:var(--mut);font-size:14px}
+#aOpen{position:fixed;right:16px;bottom:16px;z-index:60;border:0;cursor:pointer;background:var(--wa);color:var(--wb);font:600 15px/1 var(--wf);padding:14px 18px;border-radius:var(--wr);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#aPanel{position:fixed;right:16px;bottom:16px;z-index:61;width:min(360px,calc(100vw - 32px));height:min(540px,calc(100vh - 32px));background:#fff;color:#1c1c1c;border-radius:var(--wr);box-shadow:0 10px 40px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.4 var(--wf)}
+#aPanel.on{display:flex}
+#aPanel header{background:var(--wa);color:var(--wb);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}
+#aClose{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}
+#aLog{flex:1;overflow-y:auto;padding:12px;background:#f5f5f3;display:flex;flex-direction:column;gap:8px}
+#aLog .m{max-width:86%;padding:9px 12px;border-radius:12px;white-space:pre-line;word-wrap:break-word}
+#aLog .bot{background:#fff;border:1px solid #e3e3df;align-self:flex-start}
+#aLog .me{background:var(--wa);color:var(--wb);align-self:flex-end}
+#aChips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;border-top:1px solid #e6e6e2;background:#fff;max-height:104px;overflow-y:auto}
+#aChips button{border:1px solid var(--wa);background:#fff;color:var(--wa);border-radius:99px;padding:6px 11px;font:inherit;font-size:13px;cursor:pointer}
+#aForm{display:flex;border-top:1px solid #e6e6e2}
+#aIn{flex:1;min-width:0;border:0;padding:13px;font:inherit;outline:none}
+#aForm button{border:0;background:var(--wa);color:var(--wb);padding:0 16px;font:inherit;font-weight:700;cursor:pointer}
+
+@media(min-width:760px){header.nav nav{display:flex}.three{grid-template-columns:repeat(3,1fr)}.who{grid-template-columns:1.2fr 1fr;align-items:start}.office{grid-template-columns:1fr 1fr}.steps{grid-template-columns:repeat(3,1fr);gap:20px}.steps li{border-top:0;border-left:1px solid var(--line);padding:6px 0 6px 20px}.steps li:before{position:static;display:block;margin-bottom:6px}}
+</style></head><body>
+<header class="nav"><div class="wrap"><a href="#"><img src="img/lyons-real-estate-group-logo.png" alt="Lyons Real Estate Group"></a>
+<nav><a href="#services">What we do</a><a href="#juan">Juan Cruz</a><a href="#process">Process</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="btn" href="#contact">Free consult</a></div></header>
+
+<div class="hero"><div class="wrap in">
+<span class="kick">Phoenix, Arizona · Maricopa County</span>
+<h1>Buy, sell and invest in the Valley with a team that <em>answers</em>.</h1>
+<p>The Lyons Real Estate Group helps buyers, sellers and investors across Metro Phoenix, from the first call to closing day. Clear communication, no pressure, and a reply within 24 hours.</p>
+<div class="row"><a class="btn" href="#contact">Book a free consultation</a><a class="btn o" href="tel:6028165577">602-816-5577</a></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+<h2>What we do</h2>
+<p class="sub">One office for the whole property journey: finding a home, selling one, or building an investment portfolio.</p>
+<div class="three">
+<div class="card"><span class="n">01</span><h3>Buying</h3><p>Find your ideal home or investment property through comprehensive listings, with a buyer questionnaire so the team understands your goals, timeline and financial picture.</p></div>
+<div class="card"><span class="n">02</span><h3>Selling</h3><p>A strategic marketing approach to get the best price, with an extensive network of buyers and sellers behind it.</p></div>
+<div class="card"><span class="n">03</span><h3>Investing</h3><p>Guidance toward profitable investment opportunities, from first-time investors to seasoned ones building long-term wealth.</p></div>
+</div></div></section>
+
+<section id="juan"><div class="wrap who">
+<div class="big"><small>CEO, The Lyons Real Estate Group</small><h3>Juan Cruz</h3>
+<p>Juan built his career on one principle: put the client's outcome above everything else. He leads a team that has helped hundreds of Valley families buy, sell and invest, and he combines market analytics with plain, honest communication.</p>
+<div class="tags"><span>Licensed AZ Realtor</span><span>Investment specialist</span><span>Buyer representation</span></div></div>
+<div><h2>The promise</h2><p class="sub" style="margin:0">When Juan says he will call you back within 24 hours, he means it. Consultations are free and carry no obligation, and the team serves all of Maricopa County.</p></div>
+</div></section>
+
+<section id="process"><div class="wrap">
+<h2>How it starts</h2><p class="sub">Three steps from the team's own consultation flow.</p>
+<ol class="steps"><li><b>Tell us your goals</b>Share your goals, timeline and financial picture through the buyer questionnaire.</li><li><b>We review it</b>The team reads your answers and reaches out within 24 hours.</li><li><b>Your consultation</b>You discuss your options and shape a personalised strategy.</li></ol>
+</div></section>
+
+<section class="faq" id="faq"><div class="wrap">
+<h2>Questions</h2>
+<details><summary>Do you help investors as well as home buyers?</summary><p>Yes. The team works with buyers, sellers and investors, and Juan Cruz specialises in residential and investment real estate.</p></details>
+<details><summary>Which areas do you cover?</summary><p>All of Maricopa County, with the office in downtown Phoenix.</p></details>
+<details><summary>How fast will someone reply?</summary><p>The team aims to respond within 24 hours.</p></details>
+<details><summary>Is the first consultation free?</summary><p>Yes, the free consultation carries no obligation.</p></details>
+<details><summary>Can I see current listings?</summary><p>The website has a listings page, and the team can talk through what fits your goals.</p></details>
+<details><summary>Do you hire agents?</summary><p>The group has a Join Our Team page for licensed agents. Ask the team for details.</p></details>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<h2>Talk to the team</h2>
+<div class="office">
+<div class="card"><h3>Phoenix office</h3><p>2700 N 3rd Street, Suite 3040<br>Phoenix, AZ 85004<br><a href="tel:6028165577">602-816-5577</a><br><a href="mailto:info@thelyonsgroupaz.com">info@thelyonsgroupaz.com</a></p></div>
+<div class="card"><h3>Also listed</h3><p>2600 N Central Ave, Suite 610<br>Phoenix, AZ<br>The team will confirm which office to visit for your appointment.</p></div>
+</div></div></section>
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="aOpen" type="button">Ask the team</button>
+<div id="aPanel" role="dialog" aria-label="Assistant"><header><span>Lyons assistant</span><button id="aClose" type="button" aria-label="Close">×</button></header><div id="aLog"></div><div id="aChips"></div><form id="aForm"><input id="aIn" autocomplete="off" placeholder="Type your question"><button>Send</button></form></div>
+<script>
+const CFG={
+hello:"Hi, I'm the assistant for The Lyons Real Estate Group in Phoenix. Ask about buying, selling or investing, or request a viewing or valuation.",
+fallback:"I don't have that detail yet. The team will confirm it: call 602-816-5577 or email info@thelyonsgroupaz.com.",
+chips:["Buying a home","Selling my home","Investing","Who is Juan Cruz?","Areas you cover","Contact","Request a viewing"],
+flow:{trigger:["viewing","view a","tour a","showing","valuation","appraisal","book","schedule","appointment","get started"],
+intro:"Glad to pass your request to the team. Say 'cancel' any time.",
+steps:[
+{key:"type",label:"Request",ask:"What would you like?",opts:["Viewing a property","Home valuation","Buying consultation","Selling consultation","Investing consultation"]},
+{key:"area",label:"Area / property",ask:"Which area or property are you interested in?"},
+{key:"time",label:"Timeline",ask:"What is your timeline?",opts:["As soon as possible","1-3 months","3-6 months","Just exploring"]},
+{key:"name",label:"Name",ask:"Your name?"},
+{key:"phone",label:"Phone or email",ask:"Best phone number or email? The team replies within 24 hours."}],
+done:"Thank you, your request has been sent to the team and they will reply within 24 hours. (Demo: nothing is actually sent.)"},
+kb:[
+{k:["buy","buying","buyer","purchase","first time","first-time","find a home","looking for a home"],a:"For buyers, the team helps you find your ideal home or investment property. You start with a buyer questionnaire about your goals, timeline and financial picture, then book a buyer consultation to build a personalised strategy."},
+{k:["sell","selling","seller","list","listing my","market my","sale","price my"],a:"For sellers, the team uses a strategic marketing approach to get the best price for your property, backed by an extensive network of buyers and sellers. Request a consultation and the team will talk through your goals."},
+{k:["invest","investing","investment","investor","rental","portfolio","flip","income"],a:"The team guides investors toward profitable opportunities, from first-time investors to seasoned ones building long-term wealth. Juan Cruz is an investment specialist."},
+{k:["juan","cruz","ceo","realtor","who"],a:"Juan Cruz is CEO of The Lyons Real Estate Group, a licensed Arizona Realtor, investment specialist and buyer representative. His team has helped hundreds of Valley families buy, sell and invest."},
+{k:["area","areas","cover","serve","serving","where","maricopa","valley","phoenix","scottsdale","mesa","tempe","glendale","chandler"],a:"The team serves all of Maricopa County across Metro Phoenix, with its office in downtown Phoenix."},
+{k:["address","office","located","location","directions","visit","north 3rd","central"],a:"The office is at 2700 N 3rd Street, Suite 3040, Phoenix, AZ 85004. The website also lists 2600 N Central Ave, Suite 610, Phoenix, so the team will confirm where to meet you."},
+{k:["phone","call","number","email","contact","reach","text"],a:"Call 602-816-5577 or email info@thelyonsgroupaz.com."},
+{k:["free","consultation","strategy call","cost","fee","fees","commission","how much","charge","obligation"],a:"The consultation is free with no obligation. For fees or commission on a sale, the team will explain once they know your goals: 602-816-5577."},
+{k:["reply","respond","response","how fast","how long","hours","open","wait","callback"],a:"The team aims to reply within 24 hours. For office opening hours, please call 602-816-5577 and the team will confirm."},
+{k:["questionnaire","form","goals","timeline","process","steps","start","started","how does"],a:"It starts with the buyer questionnaire (goals, timeline, financial picture). The team reviews it, reaches out within 24 hours, then you have a consultation to discuss options and a personalised buying strategy."},
+{k:["listings","listing","available","homes for sale","new listing","inventory"],a:"The website has a listings page with new listings. Tell me what you are looking for and the team will follow up."},
+{k:["join","career","careers","work for","hiring","hire","hiring agents","commission structure","recruit"],a:"The group has a Join Our Team page for licensed agents, with training programmes and commission structures. Ask the team for details."},
+{k:["spanish","espanol","bilingual","language","languages"],a:"Some clients have left reviews in Spanish. Ask the team directly about language support: 602-816-5577."},
+{k:["reviews","testimonials","rating","trust","experience","families","hundreds"],a:"The team says it has helped hundreds of families across the Valley, and the website shows client testimonials."},
+{k:["valuation","appraisal","worth","value"],a:"Request a valuation and the team will arrange it. I can take your details now: say 'valuation'."}
+]};
+/* assistant core */
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|ly|s|e)$/,''):w.replace(/s$/,'')}
+function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;var d=[],i,j;for(i=0;i<=a.length;i++){d[i]=[i]}for(j=1;j<=b.length;j++)d[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[a.length][b.length]}
+function score(q,e){var qn=' '+norm(q)+' ',ws=norm(q).split(' ').filter(Boolean).map(stem),s=0,used={};
+ e.k.forEach(function(k){var kn=norm(k);if(kn.indexOf(' ')>0){if(qn.indexOf(' '+kn+' ')>-1||qn.indexOf(kn)>-1)s+=4;return}
+  var ks=stem(kn);for(var i=0;i<ws.length;i++){if(used[i])continue;var w=ws[i],m=0;if(w==ks)m=2;else if(w.length>=5&&ks.length>=5&&(lev(w,ks)<=(w.length>=8?2:1)))m=1.5;else if(w.length>=5&&ks.length>=5&&(w.indexOf(ks)==0||ks.indexOf(w)==0))m=(Math.min(w.length,ks.length)>=6?1.5:1.2);if(m){s+=m;used[i]=1;break}}});return s}
+function isBook(q){var n=norm(q);return CFG.flow.trigger.some(function(t){return n.indexOf(norm(t))>-1})}
+function answer(q){var best=null,bs=0;CFG.kb.forEach(function(e){var s=score(q,e);if(s>bs){bs=s;best=e}});return bs>=1.5?best.a:CFG.fallback}
+if(typeof document!=='undefined'){(function(){
+var $=function(i){return document.getElementById(i)},log=$('aLog'),inp=$('aIn'),chips=$('aChips'),step=-1,data={};
+function say(t,me){var d=document.createElement('div');d.className='m '+(me?'me':'bot');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b)})}
+function ask(){var s=CFG.flow.steps[step];say(s.ask);setChips(s.opts||[])}
+function finish(){var L=CFG.flow.steps.map(function(s){return s.label+': '+data[s.key]}).join('\n');say(CFG.flow.done+'\n\n'+L);step=-1;setChips(CFG.chips)}
+function send(t){t=(t||'').trim();if(!t)return;say(t,1);inp.value='';
+ if(step>=0){var s=CFG.flow.steps[step];if(/^(cancel|cancelar|stop|never ?mind|exit|salir)$/i.test(t)){step=-1;say(CFG.cancelMsg||"No problem, request cancelled.");setChips(CFG.chips);return}data[s.key]=t;step++;if(step>=CFG.flow.steps.length)finish();else ask();return}
+ if(isBook(t)){step=0;data={};say(CFG.flow.intro);ask();return}
+ setTimeout(function(){say(answer(t));setChips(CFG.chips)},250)}
+$('aOpen').onclick=function(){$('aPanel').classList.add('on');if(!log.children.length){say(CFG.hello);setChips(CFG.chips)}inp.focus()};
+$('aClose').onclick=function(){$('aPanel').classList.remove('on')};
+$('aForm').onsubmit=function(e){e.preventDefault();send(inp.value)};
+})()}
+if(typeof module!=='undefined')module.exports={answer:answer,isBook:isBook};
+
+</script></body></html>

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Safeguard Driving School · Houston</title>
+<meta name="description" content="Demo page for Safeguard Driving School, Southwest Houston: teen and adult driver education, road tests across from the Gessner DPS.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1b2a6b;--red:#d9262b;--ink:#161a2e;--paper:#f6f4ee;--line:#d9d6cb;--wa:#d9262b;--wb:#fff;--wf:'Barlow',system-ui,sans-serif;--wr:14px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.55 var(--wf);color:var(--ink);background:var(--paper);overflow-x:hidden}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1;margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.top{background:var(--navy);color:#fff;font-size:14px}
+.top .wrap{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;padding-top:7px;padding-bottom:7px}
+.top a{text-decoration:none;font-weight:600}
+header.nav{background:#fff;border-bottom:4px solid var(--red);position:sticky;top:0;z-index:40}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:8px;padding-bottom:8px}
+header.nav img{height:52px;width:auto;display:block}
+header.nav nav{display:none;gap:18px;font-weight:600;font-size:15px}
+header.nav nav a{text-decoration:none}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font:700 17px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.04em;padding:14px 20px;border-radius:6px;border:0;cursor:pointer}
+.btn.alt{background:transparent;border:2px solid #fff}
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden;padding:46px 0 70px}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:26px;height:6px;background:repeating-linear-gradient(90deg,#fff 0 38px,transparent 38px 76px);opacity:.85}
+.hero:before{content:"";position:absolute;left:0;right:0;bottom:0;height:26px;background:#101a47}
+.hero .tag{display:inline-block;background:var(--red);font:700 14px/1 'Barlow Condensed';letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;margin-bottom:14px}
+.hero h1{font-size:clamp(40px,10vw,76px);font-weight:800}
+.hero h1 em{font-style:normal;color:#ff7a7e}
+.hero p{max-width:560px;font-size:18px;color:#dfe3f5}
+.hero .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:0;background:#fff;margin-top:-34px;position:relative;z-index:2;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.stats div{padding:16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0}
+.stats b{display:block;font:800 34px/1 'Barlow Condensed';color:var(--red)}
+.stats span{font-size:14px;color:#4a4f66}
+section{padding:54px 0}
+h2{font-size:clamp(32px,7vw,48px);color:var(--navy);margin-bottom:10px}
+.lede{max-width:640px;color:#434860;margin:0 0 26px}
+.lanes{display:grid;gap:14px}
+.lane{background:#fff;border:1px solid var(--line);border-left:8px solid var(--red);border-radius:6px;padding:20px;min-width:0}
+.lane:nth-child(2){border-left-color:var(--navy)}
+.lane:nth-child(3){border-left-color:#e8a400}
+.lane h3{font-size:30px;color:var(--navy);margin-bottom:8px}
+.lane ul{margin:8px 0 0;padding-left:20px}
+.lane li{margin:4px 0}
+.dps{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.route{display:grid;gap:0;margin-top:20px}
+.route div{position:relative;padding:0 0 22px 34px;min-width:0}
+.route div:before{content:"";position:absolute;left:9px;top:6px;bottom:0;width:3px;background:repeating-linear-gradient(var(--navy) 0 8px,transparent 8px 14px)}
+.route div:last-child:before{display:none}
+.route div:after{content:"";position:absolute;left:0;top:2px;width:21px;height:21px;border-radius:50%;background:var(--red);border:4px solid #fff;box-shadow:0 0 0 2px var(--red)}
+.route b{font:700 22px/1.1 'Barlow Condensed';text-transform:uppercase;color:var(--navy);display:block}
+.teen{background:var(--navy);color:#fff}
+.teen h2{color:#fff}
+.teen .lede{color:#cfd5f0}
+.reqs{display:grid;gap:10px}
+.req{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:14px 16px;min-width:0}
+.req b{font:700 20px/1 'Barlow Condensed';text-transform:uppercase;display:block;margin-bottom:4px;color:#ffb3b5}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:6px;margin-bottom:8px;padding:0 16px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";float:right;color:var(--red);font-size:22px;line-height:1}
+.faq details[open] summary:after{content:"–"}
+.faq p{margin:0 0 14px;color:#434860}
+.contact{background:#101a47;color:#fff}
+.contact h2{color:#fff}
+.cgrid{display:grid;gap:18px}
+.cbox{background:rgba(255,255,255,.07);border-radius:8px;padding:18px;min-width:0}
+.cbox h3{font-size:24px;color:#ffb3b5;margin-bottom:8px}
+.cbox a{color:#fff}
+table{width:100%;border-collapse:collapse}
+td{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.15)}
+td:last-child{text-align:right}
+footer{background:#0b1236;color:#aab0cf;font-size:14px;padding:18px 0}
+.rt{background:#fff;border-top:1px solid var(--line)}
+.rtt{border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.rtt th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font:700 18px/1 'Barlow Condensed';text-transform:uppercase}
+.rtt td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left;font-size:16px;color:#2d3250}
+.rtt td:first-child{width:28%;white-space:normal;font-size:17px}
+.signs{display:flex;gap:14px;margin-top:22px}.signs svg{width:64px;height:64px}
+#aOpen{position:fixed;right:16px;bottom:16px;z-index:60;border:0;cursor:pointer;background:var(--wa);color:var(--wb);font:600 15px/1 var(--wf);padding:14px 18px;border-radius:var(--wr);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#aPanel{position:fixed;right:16px;bottom:16px;z-index:61;width:min(360px,calc(100vw - 32px));height:min(540px,calc(100vh - 32px));background:#fff;color:#1c1c1c;border-radius:var(--wr);box-shadow:0 10px 40px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.4 var(--wf)}
+#aPanel.on{display:flex}
+#aPanel header{background:var(--wa);color:var(--wb);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}
+#aClose{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}
+#aLog{flex:1;overflow-y:auto;padding:12px;background:#f5f5f3;display:flex;flex-direction:column;gap:8px}
+#aLog .m{max-width:86%;padding:9px 12px;border-radius:12px;white-space:pre-line;word-wrap:break-word}
+#aLog .bot{background:#fff;border:1px solid #e3e3df;align-self:flex-start}
+#aLog .me{background:var(--wa);color:var(--wb);align-self:flex-end}
+#aChips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;border-top:1px solid #e6e6e2;background:#fff;max-height:104px;overflow-y:auto}
+#aChips button{border:1px solid var(--wa);background:#fff;color:var(--wa);border-radius:99px;padding:6px 11px;font:inherit;font-size:13px;cursor:pointer}
+#aForm{display:flex;border-top:1px solid #e6e6e2}
+#aIn{flex:1;min-width:0;border:0;padding:13px;font:inherit;outline:none}
+#aForm button{border:0;background:var(--wa);color:var(--wb);padding:0 16px;font:inherit;font-weight:700;cursor:pointer}
+
+@media(min-width:760px){header.nav nav{display:flex}.lanes{grid-template-columns:repeat(3,1fr)}.stats{grid-template-columns:repeat(4,1fr)}.reqs{grid-template-columns:repeat(2,1fr)}.cgrid{grid-template-columns:1fr 1fr}.route{grid-template-columns:repeat(4,1fr)}.route div{padding:34px 12px 0 0}.route div:before{left:21px;right:0;top:9px;bottom:auto;width:auto;height:3px;background:repeating-linear-gradient(90deg,var(--navy) 0 8px,transparent 8px 14px)}.route div:after{left:0;top:0}}
+</style></head><body>
+<div class="top"><div class="wrap"><span>8621 W Airport Blvd, Suite C, Houston, TX 77071</span><a href="tel:7137777783">Call or text 713.777.7783</a></div></div>
+<header class="nav"><div class="wrap"><a href="#"><img src="img/safeguard-driving-school-logo.jpg" alt="Safeguard Driving School"></a>
+<nav><a href="#classes">Classes</a><a href="#roadtest">Road test</a><a href="#teens">Teens</a><a href="#faq">FAQ</a><a href="#visit">Visit</a></nav>
+<a class="btn" href="#visit">Register</a></div></header>
+
+<div class="hero"><div class="wrap">
+<span class="tag">Southwest Houston · since 2010</span>
+<h1>Making Houston roads <em>safer</em> through education</h1>
+<p>TDLR-approved driver education for teens and adults, with road tests done across the street from the Gessner DPS office. Classes in English and Spanish.</p>
+<div class="ctas"><a class="btn" href="#classes">See classes</a><a class="btn alt" href="tel:7137777783">Call 713.777.7783</a></div>
+</div></div>
+
+<div class="wrap"><div class="stats">
+<div><b>15+</b><span>years teaching Houston drivers</span></div>
+<div><b>29,000+</b><span>drivers trained and tested</span></div>
+<div><b>TDLR</b><span>approved provider</span></div>
+<div><b>TPST</b><span>Texas DPS authorised skills testing</span></div>
+</div></div>
+
+<section id="classes"><div class="wrap">
+<h2>Pick your lane</h2>
+<p class="lede">Teen programmes, adult courses and road tests, all from one office on West Airport Blvd. Flexible online scheduling is available; the team confirms class dates and fees when you register.</p>
+<div class="lanes">
+<div class="lane"><h3>Teen services</h3><p>For drivers aged 15 to 17 working toward a Texas licence.</p><ul><li>46 hours of driver education: 32 classroom, 14 in-car</li><li>Must be 15 by the first driving lesson</li><li>Payment arrangements available</li></ul></div>
+<div class="lane"><h3>Adult services</h3><p>For drivers 18 and over, beginners or those who want fine-tuning.</p><ul><li>6-hour adult driver education course</li><li>Written DPS test and application help included</li><li>Behind-the-wheel lessons with a permit</li></ul></div>
+<div class="lane" id="roadtest"><h3>Road test</h3><p>Skip the long DPS lines and test with Safeguard.</p><ul><li>Same-day testing, usually under 30 minutes</li><li>Then walk across the street to the DPS</li><li>Open to all ages, call to schedule</li></ul></div>
+</div></div></section>
+
+<section class="dps"><div class="wrap">
+<h2>Right across from the DPS</h2>
+<p class="lede">The school sits at Gessner and West Airport Blvd, directly opposite the DPS office. For a road test, that makes the day simple.</p>
+<div class="route">
+<div><b>Book your slot</b>Call or text 713.777.7783 to schedule.</div>
+<div><b>Meet your paperwork</b>Bring the certificates for your age group; the team will confirm what you need.</div>
+<div><b>Take the test</b>Same-day testing is available and takes under 30 minutes.</div>
+<div><b>Cross the street</b>Walk over to the DPS to get your licence.</div>
+</div></div></section>
+
+<section class="teen" id="teens"><div class="wrap">
+<h2>Teen programme, the Texas way</h2>
+<p class="lede">Texas asks teens aged 15 to 17 for 46 hours of driver education from a licensed school. Safeguard's teen package covers the state requirements.</p>
+<div class="reqs">
+<div class="req"><b>Age</b>Students must be at least 15 by the first driving lesson. Enrolling at 14½ is possible, but you need to be 15 to qualify for the permit.</div>
+<div class="req"><b>Attendance</b>No more than 5 missed classroom dates. Missed sessions must be made up by the last day of class unless special arrangements are made.</div>
+<div class="req"><b>Timeline</b>Courses are usually finished in under 2 months and must be completed within 6 months.</div>
+<div class="req"><b>Practice</b>30 hours of behind-the-wheel practice with a parent or qualified adult is also required before the licence.</div>
+</div>
+<p style="margin-top:18px;color:#cfd5f0">Possible insurance saving of up to 15% (10% for the course, 5% for alcohol training). Confirm the details with your insurer.</p>
+</div></section>
+
+<section class="rt"><div class="wrap">
+<h2>Road test: who needs what</h2>
+<p class="lede">The requirements below come from the school's road-test page. Bring your certificates and the team will check them with you.</p>
+<table class="rtt"><thead><tr><th>Age group</th><th>You will need</th></tr></thead><tbody>
+<tr><td><b>16 and 17</b></td><td>At least 16 years old; a learner permit held for 6 months; a 24-hour driver education course (in person or online); 7 hours driving and 7 hours observation; the parent or guardian supervised 30-hour driving log; a valid DE-964 certificate; the 2-hour IMPACT Texas Teen Drivers course.</td></tr>
+<tr><td><b>18 to 24</b></td><td>At least 18 years old; the 6-hour Adult Driver Education Course with an ADE-1317 certificate; the 1-hour IMPACT Texas Adult Drivers course; a valid Texas learner licence with a "B" restriction.</td></tr>
+<tr><td><b>25 and over</b></td><td>Written exam at the DPS office or the 6-hour Adult Driver Education Course (ADE-1317 certificate if you took it); the 1-hour IMPACT Texas Adult Drivers course; a valid Texas learner licence with a "B" restriction.</td></tr>
+</tbody></table>
+<div class="signs"><svg viewBox="0 0 80 80" aria-hidden="true"><polygon points="40,4 76,40 40,76 4,40" fill="#f5c400" stroke="#161a2e" stroke-width="3"/><path d="M26 46c4-10 8-14 14-14s10 4 14 14" fill="none" stroke="#161a2e" stroke-width="5" stroke-linecap="round"/></svg><svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="35" fill="#fff" stroke="#d9262b" stroke-width="7"/><text x="40" y="49" text-anchor="middle" font-family="Barlow Condensed" font-weight="800" font-size="26" fill="#161a2e">30</text></svg><svg viewBox="0 0 80 80" aria-hidden="true"><rect x="6" y="6" width="68" height="68" rx="8" fill="#1b2a6b" stroke="#fff" stroke-width="3"/><path d="M40 60V24M28 36l12-12 12 12" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+</div></section>
+<section class="faq" id="faq"><div class="wrap">
+<h2>Questions drivers ask</h2><p class="lede">Taken from the school's own site. For anything else, the team will confirm.</p>
+<details><summary>Do you teach in Spanish?</summary><p>Yes. Classes are offered in English and Spanish.</p></details>
+<details><summary>What does the adult course include?</summary><p>The required 6-hour state-approved driver education course, the written DPS driving test, application assistance and forms, and lunch.</p></details>
+<details><summary>Can I take behind-the-wheel lessons as an adult?</summary><p>Yes, once you hold your instructional permit. Lessons are scheduled at a time that fits your week, and the number of lessons depends on the programme you need.</p></details>
+<details><summary>Can I book a road test only?</summary><p>Yes. Road tests are available for all ages. Call or text 713.777.7783 to schedule.</p></details>
+<details><summary>What certificates do I need for a road test?</summary><p>It depends on your age: teens bring a DE-964 certificate and complete the 2-hour IMPACT Texas Teen Drivers course; adults 18 to 24 bring an ADE-1317 certificate and complete the 1-hour IMPACT Texas Adult Drivers course. The team will confirm your exact list.</p></details>
+<details><summary>Can I pay in instalments?</summary><p>Payment arrangements are available for teen driver education classes. Ask the team how it works.</p></details>
+</div></section>
+
+<section class="contact" id="visit"><div class="wrap">
+<h2>Come in, call, or text</h2>
+<div class="cgrid">
+<div class="cbox"><h3>Safeguard Driving School</h3><p>8621 W Airport Blvd, Suite C<br>Houston, TX 77071</p><p>Phone and text: <a href="tel:7137777783">713.777.7783</a><br>Email: <a href="mailto:info@safeguarddriving.com">info@safeguarddriving.com</a></p></div>
+<div class="cbox"><h3>Office hours</h3><table><tr><td>Monday to Friday</td><td>10 AM – 6 PM</td></tr><tr><td>Saturday</td><td>9 AM – 3 PM</td></tr></table><p style="font-size:15px;color:#cfd5f0">Road-test times: call to confirm.</p></div>
+</div></div></section>
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="aOpen" type="button">Ask Safeguard</button>
+<div id="aPanel" role="dialog" aria-label="Assistant"><header><span>Safeguard assistant</span><button id="aClose" type="button" aria-label="Close">×</button></header><div id="aLog"></div><div id="aChips"></div><form id="aForm"><input id="aIn" autocomplete="off" placeholder="Type your question"><button>Send</button></form></div>
+<script>
+const CFG={
+hello:"Hi, I'm the Safeguard Driving School assistant. Ask about teen or adult classes, road tests, hours or how to find us.",
+fallback:"I don't have that detail yet. The team will confirm it: call or text 713.777.7783 or email info@safeguarddriving.com.",
+chips:["Teen classes","Adult course","Road test","Hours","Where are you?","Spanish classes","Book a class"],
+flow:{trigger:["book","enrol","enroll","register","sign up","signup","reserve","schedule a","appointment"],
+intro:"Happy to take your details for the team. Say 'cancel' at any time.",
+steps:[
+{key:"svc",label:"Service",ask:"What are you looking for?",opts:["Teen classes","Adult course","Behind-the-wheel lessons","Road test"]},
+{key:"who",label:"For",ask:"Who is it for?",opts:["Myself","My teen (15-17)","Someone else"]},
+{key:"lang",label:"Language",ask:"English or Spanish?",opts:["English","Spanish"]},
+{key:"when",label:"Preferred days",ask:"Which days or times suit you best? (We are open Mon-Fri 10 AM to 6 PM and Sat 9 AM to 3 PM.)"},
+{key:"name",label:"Name",ask:"Your name?"},
+{key:"phone",label:"Phone",ask:"Best phone number to reach you?"}],
+done:"Thank you, this has been sent to the team and they will contact you to confirm dates and fees. (Demo: nothing is actually sent.)"},
+kb:[
+{k:["teen","teens","teenager","15","16","17","minor","kid","son","daughter","child"],a:"Teen services are for drivers aged 15 to 17. Texas requires 46 hours of driver education from a licensed school: 32 hours of classroom and 14 hours in-car. Students must be at least 15 by the first driving lesson, and courses are usually finished in under 2 months (6 months maximum)."},
+{k:["adult","adults","over 18","18","grown","older"],a:"Adults (18 and over) take the 6-hour state-approved adult driver education course. It includes the written DPS driving test, application assistance and forms, and lunch. Behind-the-wheel lessons need your instructional permit first."},
+{k:["road test","roadtest","driving test","skills test","tpst","test","exam","dps","gessner"],a:"We are authorised by the Texas DPS for Third Party Skills Testing. Take your road test with us, then walk across the street to the DPS for your licence. Same-day testing is available and takes under 30 minutes. Call 713.777.7783 to schedule."},
+{k:["hours","open","opening","close","closing","when are you","schedule","saturday","sunday","weekend"],a:"Office hours: Monday to Friday 10 AM to 6 PM, Saturday 9 AM to 3 PM. For road-test times, please call 713.777.7783 and the team will confirm."},
+{k:["where","address","location","located","find you","directions","map","airport","houston","parking"],a:"8621 W Airport Blvd, Suite C, Houston, TX 77071, in Southwest Houston, directly across from the DPS office at Gessner and West Airport Blvd."},
+{k:["phone","call","text","number","contact","email","reach"],a:"Call or text 713.777.7783, or email info@safeguarddriving.com."},
+{k:["spanish","espanol","english","language","languages","bilingual"],a:"Classes are offered in both English and Spanish."},
+{k:["behind the wheel","behind-the-wheel","in car","in-car","lesson","lessons","practice","drive","driving","instructor","instructors"],a:"Behind-the-wheel lessons are taught by certified instructors using defensive driving techniques. Adults need an instructional permit before in-car training, and lessons are scheduled to suit you. The team will confirm the number of lessons for your programme."},
+{k:["price","cost","fee","fees","how much","pay","payment","deposit","instalment","installment","afford","cheap"],a:"Fees are shown when you register online. Payment arrangements are available for teen driver education classes. The team will confirm exact amounts: 713.777.7783."},
+{k:["insurance","discount","save","saving"],a:"Completing the course can mean a possible reduction in insurance costs (up to 15% in total: 10% for the course and 5% for alcohol training). Please confirm with your insurer."},
+{k:["permit","learner","licence","license","documents","paperwork","certificate","de-964","de964","ade"],a:"For a Texas permit, a teen needs the DE-964 certificate and must be at least 15. Adults 18 to 24 need the ADE-1317 certificate from the 6-hour course. The team will confirm exactly what to bring."},
+{k:["online","portal","login","student portal","register online"],a:"You can register and schedule online, and there is a student portal for logging in. Use the Register button on this page or call the team."},
+{k:["experience","years","long have you","around","since","approved","tdlr","certified","trusted","students"],a:"Safeguard has taught Southwest Houston drivers since 2010: 15+ years and more than 29,000 drivers trained and tested. It is a TDLR-approved provider and a Texas DPS authorised skills-testing centre."},
+{k:["absent","miss","missed","makeup","make up","attendance"],a:"Teen students may not miss more than 5 scheduled classroom dates. Missed sessions must be made up by the last day of class unless special arrangements are made."}
+]};
+/* assistant core */
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|ly|s|e)$/,''):w.replace(/s$/,'')}
+function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;var d=[],i,j;for(i=0;i<=a.length;i++){d[i]=[i]}for(j=1;j<=b.length;j++)d[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[a.length][b.length]}
+function score(q,e){var qn=' '+norm(q)+' ',ws=norm(q).split(' ').filter(Boolean).map(stem),s=0,used={};
+ e.k.forEach(function(k){var kn=norm(k);if(kn.indexOf(' ')>0){if(qn.indexOf(' '+kn+' ')>-1||qn.indexOf(kn)>-1)s+=4;return}
+  var ks=stem(kn);for(var i=0;i<ws.length;i++){if(used[i])continue;var w=ws[i],m=0;if(w==ks)m=2;else if(w.length>=5&&ks.length>=5&&(lev(w,ks)<=(w.length>=8?2:1)))m=1.5;else if(w.length>=5&&ks.length>=5&&(w.indexOf(ks)==0||ks.indexOf(w)==0))m=(Math.min(w.length,ks.length)>=6?1.5:1.2);if(m){s+=m;used[i]=1;break}}});return s}
+function isBook(q){var n=norm(q);return CFG.flow.trigger.some(function(t){return n.indexOf(norm(t))>-1})}
+function answer(q){var best=null,bs=0;CFG.kb.forEach(function(e){var s=score(q,e);if(s>bs){bs=s;best=e}});return bs>=1.5?best.a:CFG.fallback}
+if(typeof document!=='undefined'){(function(){
+var $=function(i){return document.getElementById(i)},log=$('aLog'),inp=$('aIn'),chips=$('aChips'),step=-1,data={};
+function say(t,me){var d=document.createElement('div');d.className='m '+(me?'me':'bot');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b)})}
+function ask(){var s=CFG.flow.steps[step];say(s.ask);setChips(s.opts||[])}
+function finish(){var L=CFG.flow.steps.map(function(s){return s.label+': '+data[s.key]}).join('\n');say(CFG.flow.done+'\n\n'+L);step=-1;setChips(CFG.chips)}
+function send(t){t=(t||'').trim();if(!t)return;say(t,1);inp.value='';
+ if(step>=0){var s=CFG.flow.steps[step];if(/^(cancel|cancelar|stop|never ?mind|exit|salir)$/i.test(t)){step=-1;say(CFG.cancelMsg||"No problem, request cancelled.");setChips(CFG.chips);return}data[s.key]=t;step++;if(step>=CFG.flow.steps.length)finish();else ask();return}
+ if(isBook(t)){step=0;data={};say(CFG.flow.intro);ask();return}
+ setTimeout(function(){say(answer(t));setChips(CFG.chips)},250)}
+$('aOpen').onclick=function(){$('aPanel').classList.add('on');if(!log.children.length){say(CFG.hello);setChips(CFG.chips)}inp.focus()};
+$('aClose').onclick=function(){$('aPanel').classList.remove('on')};
+$('aForm').onsubmit=function(e){e.preventDefault();send(inp.value)};
+})()}
+if(typeof module!=='undefined')module.exports={answer:answer,isBook:isBook};
+
+</script></body></html>

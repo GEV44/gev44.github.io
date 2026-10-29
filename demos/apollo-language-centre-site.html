@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en-IE"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Apollo Language Centre · Dublin</title>
+<meta name="description" content="Demo page for Apollo Language Centre, Lad Lane, Dublin 2: English courses for adults, IELTS focus, accommodation and an assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14262b;--teal:#0f4a4c;--teal2:#0a3436;--sun:#f2a93b;--cream:#fbf6ec;--line:#e5dcc8;--wa:#0f4a4c;--wb:#fff;--wf:'Inter',system-ui,sans-serif;--wr:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16.5px/1.6 var(--wf);color:var(--ink);background:var(--cream);overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:700;line-height:1.1;margin:0}
+a{color:inherit}.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header{background:var(--teal2);position:sticky;top:0;z-index:40}
+header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:10px;gap:10px}
+header img{height:38px;width:auto;display:block}
+header nav{display:none;gap:20px;color:#d7e6e4;font-size:15px}header nav a{text-decoration:none}
+.pill{display:inline-block;background:var(--sun);color:#2b1d00;font-weight:600;text-decoration:none;padding:11px 18px;border-radius:99px;border:0;font-size:15px;cursor:pointer}
+.hero{background:var(--teal);color:#fff;padding:56px 0 64px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;background:var(--sun);opacity:.18}
+.hero:after{content:"";position:absolute;right:30px;bottom:-110px;width:220px;height:220px;border-radius:50%;border:30px solid rgba(255,255,255,.08)}
+.hero .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--sun);font-weight:600}
+.hero h1{font-size:clamp(36px,8vw,64px);margin:12px 0 16px;max-width:760px}
+.hero p{max-width:560px;color:#cfe3e1;font-size:18px;position:relative;z-index:1}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;position:relative;z-index:1}
+.ghost{display:inline-block;color:#fff;border:1.5px solid rgba(255,255,255,.5);padding:11px 18px;border-radius:99px;text-decoration:none;font-weight:500;font-size:15px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:-30px;position:relative;z-index:2;border-radius:12px;overflow:hidden}
+.facts div{background:#fff;padding:14px 16px;min-width:0}
+.facts b{display:block;font-family:'Fraunces',serif;font-size:24px;color:var(--teal)}
+.facts span{font-size:13.5px;color:#55666a}
+section{padding:56px 0}
+h2{font-size:clamp(28px,6vw,40px);color:var(--teal);margin-bottom:12px}
+.sub{max-width:620px;color:#4b5d61;margin:0 0 28px}
+.courses{border-top:2px solid var(--ink)}
+.course{display:grid;gap:6px;padding:18px 0;border-bottom:1px solid var(--line);min-width:0}
+.course h3{font-size:24px}
+.course .meta{font-size:14px;color:#55666a}
+.course .tagx{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:99px;padding:2px 10px;font-size:12.5px;margin-right:6px}
+.week{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:22px}
+.week h3{font-size:20px;margin-bottom:10px}
+.days{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.days div{background:var(--teal);color:#fff;border-radius:8px;padding:12px 2px;text-align:center;font-size:13px;min-width:0}
+.days div.x{background:#bfe0dd;color:var(--ink)}
+.days small{display:block;opacity:.8;font-size:11px}
+.stay{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.two{display:grid;gap:18px}
+.card{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--cream);min-width:0}
+.card h3{font-size:24px;margin-bottom:6px}
+.card ul{padding-left:18px;margin:8px 0 0}
+.steps{counter-reset:s;display:grid;gap:12px;padding:0;list-style:none;margin:0}
+.steps li{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 14px 14px 56px;position:relative;min-width:0}
+.steps li:before{content:counter(s);position:absolute;left:14px;top:12px;width:30px;height:30px;border-radius:50%;background:var(--sun);color:#2b1d00;display:grid;place-items:center;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.badges span{background:var(--teal);color:#fff;border-radius:8px;padding:7px 12px;font-size:14px}
+.faq details{border-bottom:1px solid var(--line);padding:2px 0}
+.faq summary{padding:14px 0;cursor:pointer;font-weight:600;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";float:right;color:var(--teal);font-size:22px}
+.faq details[open] summary:after{content:"–"}
+.faq p{margin:0 0 14px;color:#4b5d61}
+.visit{background:var(--teal2);color:#fff}
+.visit h2{color:#fff}
+.visit a{color:var(--sun)}
+.visit .two>div{min-width:0}
+footer{background:#06211f;color:#9fb8b5;font-size:14px;padding:18px 0}
+#aOpen{position:fixed;right:16px;bottom:16px;z-index:60;border:0;cursor:pointer;background:var(--wa);color:var(--wb);font:600 15px/1 var(--wf);padding:14px 18px;border-radius:var(--wr);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#aPanel{position:fixed;right:16px;bottom:16px;z-index:61;width:min(360px,calc(100vw - 32px));height:min(540px,calc(100vh - 32px));background:#fff;color:#1c1c1c;border-radius:var(--wr);box-shadow:0 10px 40px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.4 var(--wf)}
+#aPanel.on{display:flex}
+#aPanel header{background:var(--wa);color:var(--wb);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}
+#aClose{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}
+#aLog{flex:1;overflow-y:auto;padding:12px;background:#f5f5f3;display:flex;flex-direction:column;gap:8px}
+#aLog .m{max-width:86%;padding:9px 12px;border-radius:12px;white-space:pre-line;word-wrap:break-word}
+#aLog .bot{background:#fff;border:1px solid #e3e3df;align-self:flex-start}
+#aLog .me{background:var(--wa);color:var(--wb);align-self:flex-end}
+#aChips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;border-top:1px solid #e6e6e2;background:#fff;max-height:104px;overflow-y:auto}
+#aChips button{border:1px solid var(--wa);background:#fff;color:var(--wa);border-radius:99px;padding:6px 11px;font:inherit;font-size:13px;cursor:pointer}
+#aForm{display:flex;border-top:1px solid #e6e6e2}
+#aIn{flex:1;min-width:0;border:0;padding:13px;font:inherit;outline:none}
+#aForm button{border:0;background:var(--wa);color:var(--wb);padding:0 16px;font:inherit;font-weight:700;cursor:pointer}
+
+@media(min-width:760px){header nav{display:flex}.facts{grid-template-columns:repeat(4,1fr)}.course{grid-template-columns:1.1fr 1.6fr;gap:24px;align-items:start}.two{grid-template-columns:1fr 1fr}.steps{grid-template-columns:repeat(2,1fr)}}
+</style></head><body>
+<header><div class="wrap"><a href="#"><img src="img/apollo-language-centre-logo.png" alt="Apollo Language Centre"></a>
+<nav><a href="#courses">Courses</a><a href="#stay">Accommodation</a><a href="#book">How to book</a><a href="#faq">FAQ</a><a href="#visit">Contact</a></nav>
+<a class="pill" href="#book">Book now</a></div></header>
+
+<div class="hero"><div class="wrap">
+<span class="eyebrow">Adult school · Lad Lane, Dublin 2</span>
+<h1>Learn English in the middle of Dublin, then use it that afternoon.</h1>
+<p>An independently owned, award-winning language school ten minutes' walk from Grafton Street and St Stephen's Green. Classes start every Monday, from beginner to advanced.</p>
+<div class="row"><a class="pill" href="#courses">See the courses</a><a class="ghost" href="#visit">Contact the school</a></div>
+</div></div>
+
+<div class="wrap"><div class="facts">
+<div><b>15</b><span>classrooms with TV, iPad and audio-visual kit</span></div>
+<div><b>Mondays</b><span>start date, all levels</span></div>
+<div><b>16 max</b><span>students per IELTS Focus class</span></div>
+<div><b>Eaquals</b><span>accredited; IALC member since 2023</span></div>
+</div></div>
+
+<section id="courses"><div class="wrap">
+<h2>Adult school courses</h2>
+<p class="sub">Every course runs on the school's Lad Lane campus. Fees are listed on the school's price page; the team confirms your total when you enquire.</p>
+<div class="courses">
+<div class="course"><div><h3>Real World English</h3><div class="meta">20 hours a week · 09.00 to 13.15, Monday to Friday</div></div><div>Everyday English for work, social life and study, built to raise confidence in real conversations. Starts every Monday, all levels.</div></div>
+<div class="course"><div><h3>Real World English Plus</h3><div class="meta">25 hours a week</div></div><div>The 20-hour course plus 5 extra hours of speaking and communication practice: Tuesday and Thursday, 14.00 to 16.30.</div></div>
+<div class="course"><div><h3>Exam Focus: IELTS</h3><div class="meta">20 hours a week · max 16 students</div></div><div>Techniques and practice across listening, reading, writing and speaking. A minimum English level applies, so the team places you first.</div></div>
+<div class="course"><div><h3>Gap Year &amp; Professional English</h3><div class="meta">24 or 32 weeks · 20 hours a week</div></div><div>Longer programmes for people who want English for study or career. Related options on the school's site include a Long-Term Study programme, an Internship Programme and a teachers' course (CLIL and methodology).</div></div>
+</div>
+<div class="week"><h3>A typical week, Real World English Plus</h3>
+<div class="days"><div>Mon<small>09.00-13.15</small></div><div class="x">Tue<small>+ 14.00-16.30</small></div><div>Wed<small>09.00-13.15</small></div><div class="x">Thu<small>+ 14.00-16.30</small></div><div>Fri<small>09.00-13.15</small></div></div></div>
+</div></section>
+
+<section class="stay" id="stay"><div class="wrap">
+<h2>Where you will live</h2>
+<p class="sub">Two options for adult students, both bookable with the course.</p>
+<div class="two">
+<div class="card"><h3>Host family</h3><p>For students aged 16 and over, available all year. Single rooms, half board; twin or double rooms for friends or couples travelling together.</p><ul><li>Arrival and departure: Saturday to Saturday or Sunday to Sunday</li><li>Suburban Dublin, around 60 minutes by public transport</li><li>Host families are police vetted and inspected by Apollo management</li></ul></div>
+<div class="card"><h3>City centre residence</h3><p>Single en-suite rooms at Canvas Point Campus, Point Village, Dublin 1, for students aged 18 and over. It is an independent residence that Apollo partners with.</p><ul><li>Arrival and departure: Sunday to Sunday</li><li>Gym, fitness studio, rooftop gardens and study pods</li></ul></div>
+</div></div></section>
+
+<section><div class="wrap">
+<h2>Beyond the classroom</h2>
+<p class="sub">The school runs a social programme of outings to Irish attractions, bookable in the Apollo Student App, and a Jobs Club with free workshops every two weeks on getting a PPS number, writing a CV and interview skills.</p>
+<div class="badges"><span>Eleven Study Travel Star Awards</span><span>Eaquals accredited</span><span>ILEP listed courses</span><span>IALC member</span></div>
+</div></section>
+
+<section id="book" class="stay"><div class="wrap">
+<h2>How booking works</h2><p class="sub">The school's online booking has four steps. This page's assistant collects the same basics so the team can reply with a plan.</p>
+<ol class="steps"><li><b>Pick a course</b><br>Real World English, Plus, IELTS Focus or a longer programme.</li><li><b>Choose dates</b><br>Courses start every Monday.</li><li><b>Add accommodation</b><br>Host family or the city centre residence.</li><li><b>Confirm</b><br>The team replies to confirm the details.</li></ol>
+</div></section>
+
+<section class="faq" id="faq"><div class="wrap">
+<h2>Common questions</h2>
+<details><summary>Do I need to be a certain level?</summary><p>No. Real World English starts every Monday and is open to all levels from beginner to advanced. IELTS Focus needs a minimum level, and the school has a placement test.</p></details>
+<details><summary>How old do students have to be?</summary><p>The adult school takes students aged 16 and over all year. From 30 May to 29 August, 15-year-olds can join the Young Adult programme.</p></details>
+<details><summary>What are the class hours?</summary><p>20-hour courses run 09.00 to 13.15, Monday to Friday.</p></details>
+<details><summary>Does Apollo help with visas?</summary><p>The school's courses are on the ILEP list, which is the list of visa-eligible courses for non-EEA students. Check your own case with the team.</p></details>
+<details><summary>Is there help finding a job?</summary><p>Yes, the Jobs Club runs free workshops every two weeks: PPS number, CV, job search and interview skills.</p></details>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap">
+<h2>Find the school</h2>
+<div class="two"><div><p>Apollo Language Centre<br>5 Lad Lane, Dublin 2<br>A quiet street off Baggot Street, right next door to LinkedIn.</p></div>
+<div><p>Phone: <a href="tel:+35319060192">+353 (0)1 906 0192</a><br>Email: <a href="mailto:experience@apollolanguagecentre.com">experience@apollolanguagecentre.com</a></p></div></div>
+</div></section>
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="aOpen" type="button">Ask Apollo</button>
+<div id="aPanel" role="dialog" aria-label="Assistant"><header><span>Apollo assistant</span><button id="aClose" type="button" aria-label="Close">×</button></header><div id="aLog"></div><div id="aChips"></div><form id="aForm"><input id="aIn" autocomplete="off" placeholder="Type your question"><button>Send</button></form></div>
+<script>
+const CFG={
+hello:"Hello, I'm the Apollo Language Centre assistant. Ask about courses, start dates, accommodation or how to book.",
+fallback:"I don't have that detail yet. The team will confirm it: experience@apollolanguagecentre.com or +353 (0)1 906 0192.",
+chips:["Courses","IELTS","Accommodation","Start dates","Class hours","Where is the school?","Book a course"],
+flow:{trigger:["book","enrol","enroll","register","sign up","signup","apply","reserve","enquire","enquiry","inquiry"],
+intro:"Great, I will take a few details for the team. Say 'cancel' any time.",
+steps:[
+{key:"course",label:"Course",ask:"Which course are you interested in?",opts:["Real World English","Real World English Plus","IELTS Focus","Gap Year / long-term","Not sure yet"]},
+{key:"level",label:"English level",ask:"What is your English level?",opts:["Beginner","Intermediate","Advanced","Not sure"]},
+{key:"start",label:"Start Monday",ask:"Which Monday would you like to start, and for how many weeks?"},
+{key:"stay",label:"Accommodation",ask:"Do you need accommodation?",opts:["Host family","City centre residence","No, I have my own"]},
+{key:"name",label:"Name",ask:"Your name?"},
+{key:"email",label:"Email",ask:"Your email address?"}],
+done:"Thank you, your enquiry has been sent to the team and they will reply to confirm availability and fees. (Demo: nothing is actually sent.)"},
+kb:[
+{k:["course","courses","class","classes","programme","programmes","program","programs","study","learn","english","teach"],a:"Adult school courses: Real World English (20 hours a week), Real World English Plus (25 hours), Exam Focus IELTS, Gap Year and Professional English (24 or 32 weeks), plus Long-Term Study, an Internship Programme and a teachers' course (CLIL and methodology). The team will confirm what fits you."},
+{k:["ielts","exam","exams","focus","cambridge","test prep"],a:"IELTS Focus is 20 hours a week, 09.00 to 13.15 Monday to Friday, with a maximum of 16 students. You practise listening, reading, writing and speaking and learn exam techniques. A minimum English level applies, so the team will place you first."},
+{k:["classes start","courses start","when does","start date","start","starts","date","dates","begin","monday","when can"],a:"Courses start every Monday, for all levels from beginner to advanced."},
+{k:["hours","timetable","time","times","morning","afternoon","schedule","long","per week"],a:"Real World English runs 09.00 to 13.15, Monday to Friday (20 hours a week). Real World English Plus adds 14.00 to 16.30 on Tuesday and Thursday (25 hours a week)."},
+{k:["plus","speaking","extra","conversation"],a:"Real World English Plus is the 20-hour course plus 5 extra hours a week of speaking and communication practice, on Tuesday and Thursday 14.00 to 16.30."},
+{k:["level","beginner","advanced","intermediate","placement","a1","b2","c1"],a:"Real World English is open to all levels from beginner to advanced. The school has a placement test, and the team will confirm your level."},
+{k:["accommodation","stay","live","housing","residence","host","family","homestay","room","sleep"],a:"Two options: host family (16+, single room half board, suburban Dublin about 60 minutes from school) or the city centre residence at Canvas Point Campus (18+, single en-suite room). The residence is independent, and Apollo partners with it."},
+{k:["where","address","location","located","find","directions","lad lane","grafton","map","dublin","walk"],a:"The school is at 5 Lad Lane, Dublin 2, a quiet street off Baggot Street, about a 10-minute walk from Grafton Street and St Stephen's Green."},
+{k:["phone","call","email","contact","reach","number","write"],a:"Phone +353 (0)1 906 0192, or email experience@apollolanguagecentre.com."},
+{k:["price","prices","cost","fee","fees","how much","pay","payment","cheap","expensive"],a:"Fees are on the school's price pages for the Adult School and depend on the course and weeks. The team will confirm your exact total: experience@apollolanguagecentre.com."},
+{k:["age","old","young","teen","teenager","16","15","junior","kids","child"],a:"The adult school takes students aged 16 and over all year. From 30 May to 29 August, 15-year-olds can join as part of the Young Adult programme."},
+{k:["visa","ilep","irl","non-eea","permit","stamp"],a:"The school's courses are on ILEP, the official list of visa-eligible courses for non-EEA students. Please check your own case with the team."},
+{k:["job","jobs","work","cv","pps","internship","career"],a:"The Jobs Club runs free workshops every two weeks: applying for a PPS number, CV preparation, job search and interview skills. There is also an Internship Programme."},
+{k:["social","activities","trips","outings","events","app","fun"],a:"Apollo Social runs outings to attractions in Ireland, and you can view and book the weekly programme in the Apollo Student App."},
+{k:["teacher","teachers","clil","methodology","training"],a:"There is a teachers' course covering CLIL and methodology. The team will send the dates and details."},
+{k:["facilities","classroom","classrooms","wifi","cafeteria","building","ipad"],a:"The building has 3 floors and 15 classrooms with TV, iPad and audio-visual equipment, a cafeteria and outdoor area with self-service tea and coffee, and quiet study and lounge areas with wifi."},
+{k:["award","awards","accredited","eaquals","ialc","quality","recommend"],a:"Apollo has won eleven Study Travel Star Awards, is Eaquals accredited and an IALC member since 2023."}
+]};
+/* assistant core */
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|ly|s|e)$/,''):w.replace(/s$/,'')}
+function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;var d=[],i,j;for(i=0;i<=a.length;i++){d[i]=[i]}for(j=1;j<=b.length;j++)d[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[a.length][b.length]}
+function score(q,e){var qn=' '+norm(q)+' ',ws=norm(q).split(' ').filter(Boolean).map(stem),s=0,used={};
+ e.k.forEach(function(k){var kn=norm(k);if(kn.indexOf(' ')>0){if(qn.indexOf(' '+kn+' ')>-1||qn.indexOf(kn)>-1)s+=4;return}
+  var ks=stem(kn);for(var i=0;i<ws.length;i++){if(used[i])continue;var w=ws[i],m=0;if(w==ks)m=2;else if(w.length>=5&&ks.length>=5&&(lev(w,ks)<=(w.length>=8?2:1)))m=1.5;else if(w.length>=5&&ks.length>=5&&(w.indexOf(ks)==0||ks.indexOf(w)==0))m=(Math.min(w.length,ks.length)>=6?1.5:1.2);if(m){s+=m;used[i]=1;break}}});return s}
+function isBook(q){var n=norm(q);return CFG.flow.trigger.some(function(t){return n.indexOf(norm(t))>-1})}
+function answer(q){var best=null,bs=0;CFG.kb.forEach(function(e){var s=score(q,e);if(s>bs){bs=s;best=e}});return bs>=1.5?best.a:CFG.fallback}
+if(typeof document!=='undefined'){(function(){
+var $=function(i){return document.getElementById(i)},log=$('aLog'),inp=$('aIn'),chips=$('aChips'),step=-1,data={};
+function say(t,me){var d=document.createElement('div');d.className='m '+(me?'me':'bot');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b)})}
+function ask(){var s=CFG.flow.steps[step];say(s.ask);setChips(s.opts||[])}
+function finish(){var L=CFG.flow.steps.map(function(s){return s.label+': '+data[s.key]}).join('\n');say(CFG.flow.done+'\n\n'+L);step=-1;setChips(CFG.chips)}
+function send(t){t=(t||'').trim();if(!t)return;say(t,1);inp.value='';
+ if(step>=0){var s=CFG.flow.steps[step];if(/^(cancel|cancelar|stop|never ?mind|exit|salir)$/i.test(t)){step=-1;say(CFG.cancelMsg||"No problem, request cancelled.");setChips(CFG.chips);return}data[s.key]=t;step++;if(step>=CFG.flow.steps.length)finish();else ask();return}
+ if(isBook(t)){step=0;data={};say(CFG.flow.intro);ask();return}
+ setTimeout(function(){say(answer(t));setChips(CFG.chips)},250)}
+$('aOpen').onclick=function(){$('aPanel').classList.add('on');if(!log.children.length){say(CFG.hello);setChips(CFG.chips)}inp.focus()};
+$('aClose').onclick=function(){$('aPanel').classList.remove('on')};
+$('aForm').onsubmit=function(e){e.preventDefault();send(inp.value)};
+})()}
+if(typeof module!=='undefined')module.exports={answer:answer,isBook:isBook};
+
+</script></body></html>

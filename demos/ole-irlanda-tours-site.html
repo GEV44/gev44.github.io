@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Olé Irlanda Tours · Tours guiados desde Dublín</title>
+<meta name="description" content="Demo para Olé Irlanda Tours: excursiones de un día en español desde Dublín, con asistente de reservas.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#d90f1c;--gold:#ffc800;--green:#009a44;--orange:#ef7622;--ink:#231f20;--cream:#fff9ec;--line:#eadfc4;--wa:#009a44;--wb:#fff;--wf:'Nunito Sans',system-ui,sans-serif;--wr:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.6 var(--wf);color:var(--ink);background:var(--cream);overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;margin:0;line-height:1.12}
+a{color:inherit}.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.flag{height:8px;background:linear-gradient(90deg,var(--red) 0 25%,var(--gold) 25% 50%,var(--green) 50% 75%,var(--orange) 75%)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:10px;padding-bottom:10px}
+.bar img{height:58px;width:auto;display:block}
+.bar nav{display:none;gap:20px;font-weight:600;font-size:15px}.bar nav a{text-decoration:none}
+.btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;text-decoration:none;padding:12px 20px;border-radius:99px;font-size:16px}
+.btn.g{background:var(--green)}
+.hero{position:relative;overflow:hidden;padding:44px 0 60px;background:#fff;border-bottom:2px dashed var(--line)}
+.hero:before{content:"";position:absolute;right:-120px;top:-100px;width:340px;height:340px;border-radius:50%;background:var(--gold);opacity:.35}
+.hero:after{content:"";position:absolute;left:-110px;bottom:-130px;width:280px;height:280px;border-radius:50%;background:var(--green);opacity:.15}
+.hero .in{position:relative;z-index:1}
+.hero small{font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);font-size:13px}
+.hero h1{font-size:clamp(34px,8vw,62px);margin:12px 0 14px;font-weight:800;max-width:780px}
+.hero h1 i{color:var(--green)}
+.hero p{max-width:600px;font-size:18px}
+.hero .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+section{padding:54px 0}
+h2{font-size:clamp(28px,6vw,40px);margin-bottom:10px}
+.sub{max-width:620px;margin:0 0 26px;color:#5a5249}
+.tickets{display:grid;gap:18px}
+.ticket{background:#fff;border:2px solid var(--ink);border-radius:14px;position:relative;overflow:hidden;min-width:0}
+.ticket .top{padding:18px 18px 12px}
+.ticket h3{font-size:25px;margin-bottom:8px}
+.ticket .stub{display:grid;grid-template-columns:1fr 1fr;border-top:2px dashed var(--ink);background:var(--cream)}
+.ticket .stub div{padding:10px 18px;font-size:14px;min-width:0}
+.ticket .stub div+div{border-left:2px dashed var(--ink)}
+.ticket .stub b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.ticket:nth-child(2) .stub b{color:var(--green)}.ticket:nth-child(3) .stub b{color:var(--orange)}
+.ticket ul{margin:8px 0 0;padding-left:18px;font-size:15.5px}
+.band{background:var(--ink);color:#fff}
+.band h2{color:var(--gold)}
+.who{display:grid;gap:18px;align-items:center}
+.who p{margin:0 0 10px;color:#e9e2d5}
+.team{display:grid;gap:10px}
+.team div{background:rgba(255,255,255,.08);border-radius:10px;padding:12px 14px;font-size:15px;min-width:0}
+.cat{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cat div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
+.cat b{display:block;font-family:'Playfair Display',serif;font-size:19px}
+.cat span{font-size:14px;color:#5a5249}
+.more{display:grid;gap:14px}
+.more div{border-left:5px solid var(--gold);background:#fff;padding:14px 16px;border-radius:0 10px 10px 0;min-width:0}
+.more b{font-family:'Playfair Display',serif;font-size:20px;display:block}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;padding:0 16px}
+.faq summary{padding:14px 0;cursor:pointer;font-weight:700;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";float:right;color:var(--red);font-size:22px}
+.faq details[open] summary:after{content:"–"}
+.faq p{margin:0 0 14px;color:#5a5249}
+.contact{background:var(--green);color:#fff}
+.contact h2{color:#fff}.contact a{color:#fff;font-weight:700}
+footer{background:#14110f;color:#b9b0a2;font-size:14px;padding:18px 0}
+#aOpen{position:fixed;right:16px;bottom:16px;z-index:60;border:0;cursor:pointer;background:var(--wa);color:var(--wb);font:600 15px/1 var(--wf);padding:14px 18px;border-radius:var(--wr);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#aPanel{position:fixed;right:16px;bottom:16px;z-index:61;width:min(360px,calc(100vw - 32px));height:min(540px,calc(100vh - 32px));background:#fff;color:#1c1c1c;border-radius:var(--wr);box-shadow:0 10px 40px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.4 var(--wf)}
+#aPanel.on{display:flex}
+#aPanel header{background:var(--wa);color:var(--wb);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}
+#aClose{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}
+#aLog{flex:1;overflow-y:auto;padding:12px;background:#f5f5f3;display:flex;flex-direction:column;gap:8px}
+#aLog .m{max-width:86%;padding:9px 12px;border-radius:12px;white-space:pre-line;word-wrap:break-word}
+#aLog .bot{background:#fff;border:1px solid #e3e3df;align-self:flex-start}
+#aLog .me{background:var(--wa);color:var(--wb);align-self:flex-end}
+#aChips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;border-top:1px solid #e6e6e2;background:#fff;max-height:104px;overflow-y:auto}
+#aChips button{border:1px solid var(--wa);background:#fff;color:var(--wa);border-radius:99px;padding:6px 11px;font:inherit;font-size:13px;cursor:pointer}
+#aForm{display:flex;border-top:1px solid #e6e6e2}
+#aIn{flex:1;min-width:0;border:0;padding:13px;font:inherit;outline:none}
+#aForm button{border:0;background:var(--wa);color:var(--wb);padding:0 16px;font:inherit;font-weight:700;cursor:pointer}
+
+@media(min-width:760px){.bar nav{display:flex}.tickets{grid-template-columns:repeat(3,1fr)}.who{grid-template-columns:1.2fr 1fr}.cat{grid-template-columns:repeat(4,1fr)}.more{grid-template-columns:repeat(3,1fr)}}
+</style></head><body>
+<div class="flag"></div>
+<div class="bar"><div class="wrap"><a href="#"><img src="img/ole-irlanda-tours-logo.png" alt="Olé Irlanda Tours"></a>
+<nav><a href="#tours">Tours</a><a href="#quienes">Quiénes somos</a><a href="#grupos">Grupos</a><a href="#faq">Preguntas</a><a href="#contacto">Contacto</a></nav>
+<a class="btn" href="#contacto">Reservar</a></div></div>
+
+<div class="hero"><div class="wrap in">
+<small>Excursiones de un día desde Dublín · en español</small>
+<h1>Irlanda contada <i>en español</i>, con guías que la conocen de verdad.</h1>
+<p>Tres excursiones de 12 horas con salida a las 08:00 desde el centro de Dublín: Belfast y la Calzada del Gigante, los Acantilados de Moher con crucero, y el sur con Cork, Cahir y la Roca de Cashel.</p>
+<div class="row"><a class="btn" href="#tours">Ver los tours</a><a class="btn g" href="https://wa.me/353871716758">WhatsApp</a></div>
+</div></div>
+
+<section id="tours"><div class="wrap">
+<h2>Elige tu billete</h2>
+<p class="sub">Todas las excursiones duran unas 12 horas y salen a las 08:00 de un punto del centro de Dublín. Con tiempo libre durante el recorrido.</p>
+<div class="tickets">
+<div class="ticket"><div class="top"><h3>Belfast, Calzada del Gigante y Castillo de Dunluce</h3><p>El norte de la isla en un día: un castillo sobre el acantilado, las columnas de basalto y el Belfast de los murales.</p><ul><li>Castillo de Dunluce y sus historias</li><li>Calzada del Gigante, Patrimonio de la Humanidad</li><li>Belfast: barrio de Falls y su centro, unas dos horas</li></ul></div><div class="stub"><div><b>Salida</b>08:00 · Custom House</div><div><b>Duración</b>12 horas</div></div></div>
+<div class="ticket"><div class="top"><h3>Acantilados de Moher, Galway y paseo en barco</h3><p>La costa oeste con tiempo libre en Galway y un crucero de una hora desde Doolin para ver los acantilados desde el mar.</p><ul><li>Galway: Barrio Latino, Eyre Square, Arco Español</li><li>Doolin y su música tradicional</li><li>Acantilados de hasta 300 metros sobre el Atlántico</li></ul></div><div class="stub"><div><b>Salida</b>08:00 · Burgh Quay</div><div><b>Duración</b>12 horas</div></div></div>
+<div class="ticket"><div class="top"><h3>Cork, Castillo de Cahir y Roca de Cashel</h3><p>El sur de Irlanda con entradas a Cahir y Cashel incluidas y un buen rato para pasear por Cork.</p><ul><li>Castillo de Cahir, en una isla del río Suir</li><li>Cork y el English Market, unas dos horas</li><li>Rock of Cashel, regreso a Dublín sobre las 19:30 o 20:00</li></ul></div><div class="stub"><div><b>Salida</b>08:00 · George's Quay</div><div><b>Duración</b>12 horas</div></div></div>
+</div></div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<h2>Tipos de entrada</h2>
+<div class="cat"><div><b>Adulto</b><span>de 17 a 64 años</span></div><div><b>Jubilados y mayores</b><span>65 años o más, con identificación válida</span></div><div><b>Estudiante</b><span>con identificación válida</span></div><div><b>Niños</b><span>de 0 a 16 años</span></div></div>
+</div></section>
+
+<section class="band" id="quienes"><div class="wrap who">
+<div><h2>Quiénes somos</h2>
+<p>Olé Irlanda Tours nació de Domi, un granadino de Motril que lleva casi media vida en Irlanda. Se licenció en Historia y Sociología Irlandesa, hizo el curso de guía turístico y diseñó los tours para que se salgan de lo habitual: sitios a los que casi nadie lleva y historias que otras empresas no cuentan.</p>
+<p>Todos los guías tienen titulación profesional. En las reseñas de TripAdvisor los viajeros mencionan lo amena que resulta la guía Agustina.</p></div>
+<div class="team"><div><b>Domingo Pérez-Juárez</b><br>Director</div><div>Un guía experto en localizaciones de Juego de Tronos, Narnia y Braveheart</div><div>Delegada en España y coordinadora de viajes de estudios y grupos</div><div>Fotógrafo profesional del equipo</div></div>
+</div></section>
+
+<section id="grupos"><div class="wrap">
+<h2>Más allá del día suelto</h2>
+<div class="more"><div><b>Free walking tour en Dublín</b>Un recorrido a pie gratuito por la ciudad, único en su estilo.</div><div><b>Grupos privados</b>El equipo diseña el viaje contigo.</div><div><b>Viajes escolares y cruceros</b>Excursiones de estudios y para pasajeros de crucero.</div></div>
+</div></section>
+
+<section class="faq" id="faq"><div class="wrap">
+<h2>Preguntas frecuentes</h2>
+<details><summary>¿Los tours son en español?</summary><p>Sí, son tours en español guiados por el equipo de Olé Irlanda.</p></details>
+<details><summary>¿Dónde empiezan?</summary><p>A las 08:00. Belfast sale de Custom House, Moher y Galway de Burgh Quay, y Cork de George's Quay, todos en Dublín.</p></details>
+<details><summary>¿Las entradas están incluidas?</summary><p>En el tour del sur están incluidas las entradas al Castillo de Cahir y a la Rock of Cashel. En los demás, el equipo te confirma qué incluye cada uno.</p></details>
+<details><summary>¿Hay descuentos para estudiantes o mayores?</summary><p>Hay categorías de entrada para estudiantes y para jubilados y mayores de 65, siempre con identificación válida.</p></details>
+<details><summary>¿Podéis organizar un viaje para mi grupo?</summary><p>Sí, hacen grupos privados, viajes escolares y excursiones para cruceros. Escribe al equipo.</p></details>
+</div></section>
+
+<section class="contact" id="contacto"><div class="wrap">
+<h2>Habla con el equipo</h2>
+<p>Correo: <a href="mailto:tours@oleirlandatours.com">tours@oleirlandatours.com</a><br>WhatsApp y teléfono: <a href="tel:+353871716758">+353 87 171 6758</a></p>
+</div></section>
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="aOpen" type="button">Pregunta a Olé</button>
+<div id="aPanel" role="dialog" aria-label="Asistente"><header><span>Asistente de Olé Irlanda</span><button id="aClose" type="button" aria-label="Cerrar">×</button></header><div id="aLog"></div><div id="aChips"></div><form id="aForm"><input id="aIn" autocomplete="off" placeholder="Escribe tu pregunta"><button>Enviar</button></form></div>
+<script>
+const CFG={
+cancelMsg:"Sin problema, solicitud cancelada.",
+hello:"¡Hola! Soy el asistente de Olé Irlanda Tours. Pregúntame por los tours, salidas, entradas o cómo reservar.",
+fallback:"Ese dato todavía no lo tengo. El equipo te lo confirma: tours@oleirlandatours.com o WhatsApp +353 87 171 6758.",
+chips:["Tours","Acantilados de Moher","Belfast","Cork","Salidas","Entradas","Grupos","Reservar"],
+flow:{trigger:["reservar","reserva","reservo","apuntar","plaza","plazas","book"],
+intro:"Con gusto paso tu solicitud al equipo. Escribe 'cancelar' cuando quieras.",
+steps:[
+{key:"tour",label:"Tour",ask:"¿Qué tour te interesa?",opts:["Belfast y Calzada del Gigante","Acantilados de Moher y Galway","Cork, Cahir y Cashel","Free walking tour","Grupo privado"]},
+{key:"fecha",label:"Fecha",ask:"¿Qué día te gustaría ir?"},
+{key:"grupo",label:"Personas",ask:"¿Cuántas personas sois y de qué tipo de entrada? (adultos 17-64, mayores 65+, estudiantes, niños 0-16)"},
+{key:"nombre",label:"Nombre",ask:"¿A nombre de quién?"},
+{key:"contacto",label:"Contacto",ask:"¿Tu correo o WhatsApp para que el equipo te responda?"}],
+done:"Gracias, tu solicitud se ha enviado al equipo y te confirmarán disponibilidad. (Demo: en realidad no se envía nada.)"},
+kb:[
+{k:["tour","tours","excursion","excursiones","viaje","viajes","ofrecen","ofreceis","hacen","actividades"],a:"Hay tres excursiones de un día desde Dublín, de unas 12 horas: Belfast, Calzada del Gigante y Castillo de Dunluce; Acantilados de Moher, Galway y paseo en barco; y Cork, Castillo de Cahir y Rock of Cashel. También hay un free walking tour en Dublín."},
+{k:["moher","acantilados","galway","doolin","barco","crucero","cliffs","oeste"],a:"Acantilados de Moher, Galway y paseo en barco: salida a las 08:00 desde Burgh Quay, unas 12 horas. Tiempo libre en Galway (Barrio Latino, Eyre Square, Arco Español), Doolin y un crucero de 1 hora para ver los acantilados, de hasta 300 metros, desde el mar."},
+{k:["belfast","calzada","gigante","dunluce","norte","irlanda del norte","murales","giant"],a:"Belfast, Calzada del Gigante y Castillo de Dunluce: salida a las 08:00 desde Custom House, unas 12 horas. Visita al Castillo de Dunluce, la Calzada del Gigante con tiempo para comer, y unas dos horas en Belfast con el barrio de Falls y el centro."},
+{k:["cork","cahir","cashel","sur","rock of cashel","castillo de cahir"],a:"Cork, Castillo de Cahir y Rock of Cashel: salida a las 08:00 desde George's Quay, unas 12 horas. Incluye las entradas a Cahir y a Cashel, unas 2 horas en Cork y regreso a Dublín sobre las 19:30 o 20:00."},
+{k:["salida","salidas","sale","salen","hora","horario","horarios","punto de encuentro","donde empieza","empiezan","quedamos","recogida","burgh","custom house","george"],a:"Todos los tours salen a las 08:00 desde Dublín: Belfast desde Custom House, Moher y Galway desde Burgh Quay, y Cork desde George's Quay."},
+{k:["duracion","dura","cuanto dura","horas","tiempo","vuelta","regreso","volvemos","llegamos"],a:"Cada excursión dura unas 12 horas. El tour del sur vuelve a Dublín sobre las 19:30 o 20:00; el equipo te confirma la hora de regreso de los demás."},
+{k:["entrada","entradas","billete","billetes","tipos","edad","edades","estudiante","estudiantes","jubilado","jubilados","mayores","ninos","nino","menores","descuento","descuentos"],a:"Hay entradas para adultos (17-64), jubilados y mayores (65+, con identificación válida), estudiantes (con identificación válida) y niños (0-16). El equipo confirma las condiciones al reservar."},
+{k:["precio","precios","cuesta","cuanto","coste","tarifa","pagar","pago"],a:"Los precios se ven al reservar online y dependen del tipo de entrada. El equipo te confirma el total: tours@oleirlandatours.com."},
+{k:["incluye","incluido","incluidas","comida","almuerzo","comer","autocar","autobus","entradas incluidas"],a:"Viajas en autocar con guía en español. En el tour del sur las entradas a Cahir y a Cashel están incluidas, y los tours dejan tiempo libre para comer. El equipo te confirma el resto."},
+{k:["grupo","grupos","privado","privados","colegio","escuela","escolar","estudios","crucero","cruceros","empresa"],a:"Sí, el equipo organiza grupos privados, viajes escolares y de estudios, y excursiones para pasajeros de crucero. Cuéntales fechas y número de personas."},
+{k:["free","gratis","gratuito","walking","pie","dublin","paseo"],a:"Hay un free walking tour, un recorrido a pie gratuito por Dublín. Pregunta al equipo por los días y el punto de salida."},
+{k:["guia","guias","espanol","castellano","idioma","habla","hablan","idiomas"],a:"Los tours son en español y todos los guías tienen titulación profesional. Los viajeros destacan en TripAdvisor lo amena que es la guía Agustina."},
+{k:["quienes","quien","domi","domingo","director","historia","fundador","empresa","equipo"],a:"Olé Irlanda Tours la dirige Domingo Pérez-Juárez, Domi, de Motril, que vive en Irlanda desde hace casi media vida y es licenciado en Historia y Sociología Irlandesa."},
+{k:["contacto","contactar","telefono","whatsapp","correo","email","mail","escribir","llamar","numero"],a:"Escribe a tours@oleirlandatours.com o por WhatsApp al +353 87 171 6758."},
+{k:["cancelar","cancelacion","cambio","cambiar","condiciones","terminos","devolucion","reembolso"],a:"Las condiciones de cancelación están en los Términos y Condiciones de la web. El equipo te las confirma para tu reserva."},
+{k:["tripadvisor","opiniones","reseñas","resenas","valoracion","valoraciones","calificacion"],a:"Olé Irlanda presume de ser de las compañías mejor calificadas de Irlanda, con reseñas de viajeros en TripAdvisor."},
+{k:["reservar online","calendario","disponibilidad","fechas","dias","cuando hay"],a:"Las fechas disponibles se consultan en el calendario de reservas de la web. Si me dices el tour, el equipo te confirma plazas."}
+]};
+/* assistant core */
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|ly|s|e)$/,''):w.replace(/s$/,'')}
+function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;var d=[],i,j;for(i=0;i<=a.length;i++){d[i]=[i]}for(j=1;j<=b.length;j++)d[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[a.length][b.length]}
+function score(q,e){var qn=' '+norm(q)+' ',ws=norm(q).split(' ').filter(Boolean).map(stem),s=0,used={};
+ e.k.forEach(function(k){var kn=norm(k);if(kn.indexOf(' ')>0){if(qn.indexOf(' '+kn+' ')>-1||qn.indexOf(kn)>-1)s+=4;return}
+  var ks=stem(kn);for(var i=0;i<ws.length;i++){if(used[i])continue;var w=ws[i],m=0;if(w==ks)m=2;else if(w.length>=5&&ks.length>=5&&(lev(w,ks)<=(w.length>=8?2:1)))m=1.5;else if(w.length>=5&&ks.length>=5&&(w.indexOf(ks)==0||ks.indexOf(w)==0))m=(Math.min(w.length,ks.length)>=6?1.5:1.2);if(m){s+=m;used[i]=1;break}}});return s}
+function isBook(q){var n=norm(q);return CFG.flow.trigger.some(function(t){return n.indexOf(norm(t))>-1})}
+function answer(q){var best=null,bs=0;CFG.kb.forEach(function(e){var s=score(q,e);if(s>bs){bs=s;best=e}});return bs>=1.5?best.a:CFG.fallback}
+if(typeof document!=='undefined'){(function(){
+var $=function(i){return document.getElementById(i)},log=$('aLog'),inp=$('aIn'),chips=$('aChips'),step=-1,data={};
+function say(t,me){var d=document.createElement('div');d.className='m '+(me?'me':'bot');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c)};chips.appendChild(b)})}
+function ask(){var s=CFG.flow.steps[step];say(s.ask);setChips(s.opts||[])}
+function finish(){var L=CFG.flow.steps.map(function(s){return s.label+': '+data[s.key]}).join('\n');say(CFG.flow.done+'\n\n'+L);step=-1;setChips(CFG.chips)}
+function send(t){t=(t||'').trim();if(!t)return;say(t,1);inp.value='';
+ if(step>=0){var s=CFG.flow.steps[step];if(/^(cancel|cancelar|stop|never ?mind|exit|salir)$/i.test(t)){step=-1;say(CFG.cancelMsg||"No problem, request cancelled.");setChips(CFG.chips);return}data[s.key]=t;step++;if(step>=CFG.flow.steps.length)finish();else ask();return}
+ if(isBook(t)){step=0;data={};say(CFG.flow.intro);ask();return}
+ setTimeout(function(){say(answer(t));setChips(CFG.chips)},250)}
+$('aOpen').onclick=function(){$('aPanel').classList.add('on');if(!log.children.length){say(CFG.hello);setChips(CFG.chips)}inp.focus()};
+$('aClose').onclick=function(){$('aPanel').classList.remove('on')};
+$('aForm').onsubmit=function(e){e.preventDefault();send(inp.value)};
+})()}
+if(typeof module!=='undefined')module.exports={answer:answer,isBook:isBook};
+
+</script></body></html>
