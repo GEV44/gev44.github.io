@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en-IE"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dave Curry Motors, Rathgar, Dublin 6 · Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<meta name="description" content="Demo page for Dave Curry Motors, Harrison's Row, Rathgar: servicing, pre-NCT checks, diagnostics and a booking assistant.">
+<style>
+:root{--gr:#14342a;--gr2:#0d241c;--gr3:#1f4a3b;--cr:#f5efe0;--cr2:#ebe3cf;--br:#b8862b;--rd:#b3392b;--ink:#1c1c1a;--mu:#5b5a52;--ln:#d8cfb8;
+--w1:#14342a;--w1t:#f5efe0;--w2:#b3392b;--w2t:#fff;--wbg:#f5efe0;--wf:Karla,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.6 Karla,system-ui,sans-serif;background:var(--cr);color:var(--ink);overflow-x:hidden}
+h1,h2,h3,.sl{font-family:Bitter,Georgia,serif;font-weight:800;line-height:1.12;color:var(--gr)}
+a{color:inherit}
+img,svg{max-width:100%}
+.w{max-width:1060px;margin:0 auto;padding:0 18px}
+.top{background:var(--gr2);color:var(--cr2);font-size:14px}
+.top .w{display:flex;flex-wrap:wrap;gap:4px 22px;padding-top:8px;padding-bottom:8px;justify-content:space-between}
+.top a{text-decoration:none;border-bottom:1px dotted rgba(245,239,224,.5)}
+header.hd{background:var(--cr);border-bottom:3px double var(--br);position:sticky;top:0;z-index:40}
+header.hd .w{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
+.wm{display:flex;flex-direction:column;line-height:1;text-decoration:none}
+.wm b{font:800 25px Bitter,Georgia,serif;color:var(--gr);letter-spacing:-.01em}
+.wm small{font:700 11px Karla,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--br);margin-top:5px}
+nav.nv{display:flex;gap:16px;flex-wrap:wrap;font-weight:700;font-size:15px}
+nav.nv a{text-decoration:none;color:var(--gr);padding:4px 0;border-bottom:2px solid transparent}
+nav.nv a:hover{border-color:var(--rd)}
+.hero{position:relative;overflow:hidden;padding:46px 0 54px}
+.hero .w{display:grid;grid-template-columns:1.25fr .9fr;gap:34px;align-items:center}
+.hero>.w>*{min-width:0}
+.kick{font:700 13px Karla,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--rd);margin-bottom:12px}
+.hero h1{font-size:clamp(32px,6.2vw,56px);margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--rd)}
+.hero p.lead{font-size:19px;color:#33332e;max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{display:inline-block;font:700 16px Karla,sans-serif;padding:13px 22px;border-radius:4px;text-decoration:none;border:2px solid var(--gr);cursor:pointer;background:none;color:var(--gr)}
+.btn.p{background:var(--gr);color:var(--cr)}
+.btn.r{background:var(--rd);border-color:var(--rd);color:#fff}
+.btn:hover{filter:brightness(1.12)}
+.sheet{position:relative;background:#fffdf6;border:1.5px solid var(--ln);box-shadow:6px 6px 0 var(--cr2);padding:22px 22px 20px;transform:rotate(1.2deg)}
+.sheet::before{content:"";position:absolute;inset:7px;border:1px dashed var(--ln);pointer-events:none}
+.sheet h3{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);margin-bottom:10px}
+.sheet dl{display:grid;grid-template-columns:auto 1fr;gap:7px 14px;font-size:16px}
+.sheet dt{color:var(--mu)}
+.sheet dd{font-weight:700;color:var(--gr);overflow-wrap:anywhere}
+.stamp{position:absolute;right:-8px;top:-22px;width:92px;height:92px;border-radius:50%;border:3px solid var(--rd);color:var(--rd);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-12deg);background:var(--cr);font:800 12px Bitter,serif;letter-spacing:.12em;text-transform:uppercase;text-align:center;line-height:1.15}
+.stamp b{font-size:26px;letter-spacing:0}
+.sec{padding:58px 0;position:relative;overflow:hidden}
+.sec h2{font-size:clamp(26px,4.6vw,38px);margin-bottom:14px}
+.sec .intro{max-width:40em;color:#3a3a34;font-size:18px}
+.dark{background:var(--gr);color:var(--cr)}
+.dark h2,.dark h3{color:var(--cr)}
+.dark .intro{color:#d9d3c0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:26px}
+.two>*{min-width:0}
+.card{background:#fffdf6;border:1.5px solid var(--ln);padding:22px}
+.dark .card{background:var(--gr3);border-color:#2f6a56;color:var(--cr)}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p+p{margin-top:8px}
+ul.ck{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 28px;margin-top:24px;background:#fffdf6;border:1.5px solid var(--ln);padding:10px 22px}
+ul.ck li{display:flex;gap:11px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed var(--ln);min-width:0}
+ul.ck li span:last-child{overflow-wrap:anywhere}
+.tk{flex:none;width:26px;height:26px;border-radius:50%;background:var(--gr);color:var(--cr);display:flex;align-items:center;justify-content:center}
+.note{margin-top:12px;font-size:15px;color:var(--mu)}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px;list-style:none}
+.steps li{position:relative;background:var(--gr3);border:1px solid #2f6a56;padding:46px 18px 18px;min-width:0}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:-16px;width:38px;height:38px;border-radius:50%;background:var(--br);color:var(--gr2);font:800 20px Bitter,serif;display:flex;align-items:center;justify-content:center}
+.steps b{display:block;font:700 18px Bitter,serif;margin-bottom:4px}
+.diag{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+.diag>*{min-width:0}
+.gauge{background:var(--gr2);border-radius:14px;padding:18px;border:2px solid var(--br)}
+.gauge svg{display:block;width:100%;height:auto}
+.hours{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:22px}
+.hours>*{min-width:0}
+.big{font:800 clamp(30px,6vw,46px) Bitter,serif;color:var(--rd)}
+.contact a.tel{display:block;font:800 26px Bitter,serif;text-decoration:none;color:var(--gr);margin:2px 0}
+details{border-bottom:1.5px solid var(--ln);padding:14px 0}
+details summary{cursor:pointer;font:700 18px Bitter,serif;color:var(--gr);list-style:none;display:flex;justify-content:space-between;gap:12px}
+details summary::after{content:"+";color:var(--rd);font-size:24px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:8px;color:#3a3a34}
+.ribbon{position:absolute;left:0;right:0;bottom:0;height:10px;background:repeating-linear-gradient(90deg,var(--gr) 0 22px,var(--cr) 22px 44px)}
+footer{background:var(--gr2);color:#cfc9b6;padding:30px 0 90px;font-size:15px}
+footer .w{display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between}
+footer b{color:var(--cr);font-family:Bitter,serif}
+@media(max-width:820px){.hero .w,.two,.diag,.hours{grid-template-columns:1fr}.steps{grid-template-columns:1fr;gap:30px}ul.ck{grid-template-columns:1fr}.sheet{transform:none;margin-top:18px}.stamp{right:6px}.sec{padding:44px 0}}
+@media(max-width:480px){body{font-size:16px}.btn{width:100%;text-align:center}.wm b{font-size:22px}nav.nv{gap:12px;font-size:14px}.top .w{font-size:13px}}
+.grp{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+.gc{background:#fffdf6;border:1.5px solid var(--ln);border-top:5px solid var(--br);padding:20px 18px;min-width:0}
+.gc svg{display:block;margin-bottom:10px}
+.gc h3{font-size:19px;margin-bottom:6px}
+.gc p{font-size:15.5px;color:#3a3a34}
+.gc:nth-child(even){border-top-color:var(--rd)}
+@media(max-width:900px){.grp{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grp{grid-template-columns:1fr}}
+.hero::before{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;border:34px solid rgba(184,134,43,.14);pointer-events:none}
+.hero::after{content:"";position:absolute;left:-60px;bottom:-110px;width:240px;height:240px;border-radius:50%;border:26px solid rgba(20,52,42,.07);pointer-events:none}
+.sec.dark::before{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;border:26px solid rgba(245,239,224,.06);pointer-events:none}
+:focus-visible{outline:3px solid var(--br);outline-offset:2px}
+@media(prefers-reduced-motion:no-preference){.btn{transition:filter .15s,transform .15s}.btn:hover{transform:translateY(-1px)}}
+@media print{.top,.hd,.cta,.bar2,#wb,#wp{display:none!important}body{background:#fff}.sec{padding:20px 0}}
+.sheet dd a{color:inherit}
+details[open] summary{color:var(--rd)}
+#wb{position:fixed;right:16px;bottom:16px;z-index:50;width:58px;height:58px;border-radius:50%;border:0;background:var(--w2);color:var(--w2t);font-size:25px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+#wp{position:fixed;right:12px;bottom:84px;z-index:50;width:min(370px,calc(100vw - 24px));height:min(540px,calc(100vh - 110px));background:#fff;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.4);display:none;flex-direction:column;overflow:hidden;color:#222;font-family:var(--wf,system-ui,sans-serif)}
+#wp.on{display:flex}
+#wh{background:var(--w1);color:var(--w1t);padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+#wh b{font-size:16px}#wh small{display:block;opacity:.8;font-size:12px}
+#wx{background:none;border:0;color:inherit;font-size:26px;cursor:pointer;line-height:1}
+#wm{flex:1;overflow-y:auto;padding:12px;background:var(--wbg);display:flex;flex-direction:column;gap:8px}
+.m{max-width:86%;padding:9px 12px;border-radius:12px;font-size:14.5px;line-height:1.4;white-space:pre-line}
+.m.b{background:#fff;border:1px solid #ddd;align-self:flex-start}
+.m.u{background:var(--w1);color:var(--w1t);align-self:flex-end}
+#wc{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;background:#fff;border-top:1px solid #e3e3e3;max-height:96px;overflow-y:auto}
+#wc button{background:#fff;border:1.5px solid var(--w1);color:var(--w1);border-radius:999px;padding:5px 11px;font:600 13px var(--wf,system-ui,sans-serif);cursor:pointer}
+#wf{display:flex;gap:6px;padding:8px;border-top:1px solid #e3e3e3}
+#wi{flex:1;min-width:0;border:1px solid #ccc;border-radius:8px;padding:9px;font-size:15px}
+#wf button{background:var(--w2);color:var(--w2t);border:0;border-radius:8px;padding:0 14px;font-weight:700;cursor:pointer}
+
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoRepair","name":"Dave Curry Motors","foundingDate":"1979","telephone":["+35314906343","+35314908423"],"email":"office@davecurrymotors.ie","address":{"@type":"PostalAddress","streetAddress":"Harrison's Row, Rathgar","addressLocality":"Dublin 6","addressCountry":"IE"},"openingHours":"08:30-17:30","description":"Local garage offering servicing, pre-NCT checks and engine and gearbox diagnostics for all makes."}</script></head><body>
+<div class="top"><div class="w"><span>Harrison's Row, Rathgar, Dublin 6</span><span>Open 8.30am to 5.30pm &nbsp;·&nbsp; <a href="tel:014906343">01 490 6343</a> &nbsp;·&nbsp; <a href="tel:014908423">01 490 8423</a></span></div></div>
+<header class="hd"><div class="w"><a class="wm" href="#top"><b>Dave Curry Motors</b><small>Rathgar · Dublin 6 · Est. 1979</small></a>
+<nav class="nv"><a href="#service">Service</a><a href="#nct">Pre-NCT</a><a href="#diag">Diagnostics</a><a href="#book">Booking</a><a href="#faq">Questions</a></nav></div></header>
+
+<section class="hero" id="top"><div class="w">
+<div><div class="kick">Local garage · family run</div>
+<h1>Servicing and pre-NCT checks on Harrison's Row, <em>since 1979</em>.</h1>
+<p class="lead">Dave Curry Motors has kept Dublin 6 cars on the road for over 40 years. Andrew, Dave's son, is the owner and still works on the cars himself. The focus is simple: maintenance and repair of your car.</p>
+<div class="cta"><button class="btn r" type="button" onclick="openW('book')">Request a booking</button><a class="btn" href="tel:014906343">Call 01 490 6343</a></div></div>
+<aside class="sheet" aria-label="Garage details"><div class="stamp"><span>Since</span><b>1979</b></div>
+<h3>Garage details</h3><dl><dt>Address</dt><dd>Harrison's Row, Rathgar, Dublin 6</dd><dt>Phone</dt><dd>01 490 6343 / 01 490 8423</dd><dt>Hours</dt><dd>8.30am to 5.30pm</dd><dt>Book with</dt><dd>Debbie, office@davecurrymotors.ie</dd><dt>Specialities</dt><dd>Servicing, pre-NCT checks</dd></dl></aside>
+</div></section>
+
+<section class="sec dark" id="nct"><div class="w">
+<h2>Pre-NCT checks, done before the test date</h2>
+<p class="intro">Servicing and pre-NCT checks are the two things the garage says it specialises in. A check before the test is the cheapest way to find the small faults that fail a car: lights, tyres, brakes, steering and the rest of the safety list.</p>
+<ol class="steps"><li><b>Ring or e-mail</b>Tell the office the make of the car and that it is for a pre-NCT check.</li><li><b>Bring it in</b>Andrew and his staff go through the car against the safety checks.</li><li><b>Know before you test</b>You hear what is fine and what needs attention first.</li></ol>
+<p class="note" style="color:#d9d3c0">Timings and what is included in a pre-NCT check are confirmed by the team when you book.</p>
+</div></section>
+
+<section class="sec" id="service"><div class="w">
+<h2>The service sheet</h2>
+<p class="intro">A full service at Dave Curry Motors covers the points below. Nothing is skipped because the car "seems fine".</p>
+<ul class="ck"><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Engine oil and oil filter</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Brakes</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Brake lines</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Steering and suspension</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Chassis and body</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Tyres</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Body condition</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Air cleaner element</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Fluid levels</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Battery</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Power steering system and hoses</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Drive belts, per the manufacturer's instruction</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Power brake unit</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Door locks and hinges</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Clutch and brake pedals</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Parking brake</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Electrical system</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Fuel system</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Cooling system</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Automatic transaxle oil level</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Exhaust system</span></li><li><span class="tk" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 10.5l4.5 4.5L17 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Safety checks</span></li></ul>
+<p class="note">This is the garage's own list of what a car service includes. Which items apply to your car is confirmed by the team.</p>
+</div></section>
+
+<section class="sec" id="groups" style="background:var(--cr2)"><div class="w">
+<h2>The checklist in plain words</h2>
+<p class="intro">The sheet is long, so here it is in four groups. These are the garage's own checklist items, sorted by what they keep an eye on.</p>
+<div class="grp">
+<article class="gc"><svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true"><circle cx="24" cy="24" r="19" fill="none" stroke="#14342a" stroke-width="3"/><circle cx="24" cy="24" r="6" fill="#b3392b"/><path d="M24 5v8M24 35v8M5 24h8M35 24h8" stroke="#14342a" stroke-width="3" stroke-linecap="round"/></svg><h3>Stopping and steering</h3><p>Brakes, brake lines, the power brake unit, clutch and brake pedals, the parking brake, steering and suspension.</p></article>
+<article class="gc"><svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true"><rect x="6" y="14" width="36" height="22" rx="4" fill="none" stroke="#14342a" stroke-width="3"/><path d="M12 14V9h8v5M28 14V9h8v5" stroke="#14342a" stroke-width="3" fill="none"/><path d="M19 27h10M24 22v10" stroke="#b3392b" stroke-width="3" stroke-linecap="round"/></svg><h3>Engine, fluids and cooling</h3><p>Engine oil and filter, air cleaner element, fluid levels, cooling system, fuel system, drive belts and the automatic transaxle oil level.</p></article>
+<article class="gc"><svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true"><path d="M27 4L11 27h11l-3 17 18-25H26z" fill="#b8862b" stroke="#14342a" stroke-width="2.5" stroke-linejoin="round"/></svg><h3>Electrical</h3><p>The battery and the wider electrical system, which is where warning lights and starting trouble tend to begin.</p></article>
+<article class="gc"><svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true"><path d="M8 32l4-12c1-3 3-5 7-5h10c4 0 6 2 8 5l3 8c1 2 0 4-2 4H10c-2 0-3-2-2-4z" fill="none" stroke="#14342a" stroke-width="3" stroke-linejoin="round"/><circle cx="16" cy="36" r="4" fill="#b3392b"/><circle cx="34" cy="36" r="4" fill="#b3392b"/></svg><h3>Tyres, body and safety</h3><p>Tyres, body condition, chassis and body, door locks and hinges, the exhaust system and the general safety checks.</p></article>
+</div></div></section>
+
+<section class="sec dark" id="diag"><div class="w diag">
+<div><h2>Diagnostic equipment for all makes</h2>
+<p class="intro">"We are proud to be able to offer full engine and gearbox diagnostic equipment for all makes of cars." When a warning light comes on or the car runs rough, the engine and gearbox can be read properly instead of guessed at.</p>
+<div class="cta"><button class="btn r" type="button" onclick="openW('book')">Ask about a fault</button></div></div>
+<div class="gauge" aria-hidden="true"><svg viewBox="0 0 320 200"><defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#b8862b"/><stop offset="1" stop-color="#d9a73e"/></linearGradient></defs>
+<circle cx="110" cy="100" r="78" fill="#0d241c" stroke="url(#g1)" stroke-width="5"/><g stroke="#f5efe0" stroke-width="2.5" stroke-linecap="round"><path d="M110 34v12M44 100h12M164 100h12M63 53l9 9M157 53l-9 9"/></g><path d="M110 100L146 66" stroke="#b3392b" stroke-width="5" stroke-linecap="round"/><circle cx="110" cy="100" r="8" fill="#f5efe0"/>
+<text x="110" y="148" text-anchor="middle" fill="#f5efe0" font-family="Bitter,serif" font-size="13" font-weight="700">ENGINE</text>
+<circle cx="250" cy="100" r="52" fill="#0d241c" stroke="url(#g1)" stroke-width="5"/><g stroke="#f5efe0" stroke-width="2" stroke-linecap="round"><path d="M250 56v8M206 100h8M286 100h8"/></g><path d="M250 100L226 118" stroke="#b3392b" stroke-width="4" stroke-linecap="round"/><circle cx="250" cy="100" r="6" fill="#f5efe0"/>
+<text x="250" y="140" text-anchor="middle" fill="#f5efe0" font-family="Bitter,serif" font-size="12" font-weight="700">GEARBOX</text></svg></div>
+</div></section>
+
+<section class="sec" id="book"><div class="w">
+<h2>Book your car in</h2>
+<p class="intro">"Please book your car in today with Debbie at office@davecurrymotors.ie or phone 01 490 6343 or 01 490 8423." The assistant on this page can collect your details first, so the e-mail to Debbie is quick.</p>
+<div class="two"><div class="card contact"><h3>Contact</h3><a class="tel" href="tel:014906343">01 490 6343</a><a class="tel" href="tel:014908423">01 490 8423</a><p><a href="mailto:office@davecurrymotors.ie">office@davecurrymotors.ie</a></p><p>Harrison's Row, Rathgar, Dublin 6</p></div>
+<div class="card"><h3>Opening hours</h3><p class="big">8.30am &ndash; 5.30pm</p><p>These are the hours shown on the website. The team confirms which days they apply to when you call.</p></div></div>
+<div class="cta" style="margin-top:22px"><button class="btn p" type="button" onclick="openW('book')">Start a booking request</button></div>
+</div><div class="ribbon"></div></section>
+
+<section class="sec" id="faq" style="background:var(--cr2)"><div class="w">
+<h2>Questions drivers ask</h2>
+<details><summary>Who runs the garage?</summary><p>Dave Curry Motors was established in 1979. Andrew, son of Dave, is the current owner and a fully hands-on technician, supported by a highly trained team.</p></details>
+<details><summary>Do you work on all makes?</summary><p>The garage offers full engine and gearbox diagnostic equipment for all makes of cars.</p></details>
+<details><summary>Can I get a pre-NCT check?</summary><p>Yes, servicing and pre-NCT checks are the garage's specialities. Contact the office to arrange a time.</p></details>
+<details><summary>What does a service include?</summary><p>The service sheet above lists the points: oil and filter, brakes, steering and suspension, tyres, battery, fluids, electrical, fuel and cooling systems, exhaust and safety checks.</p></details>
+<details><summary>How do I book?</summary><p>Book with Debbie by e-mail at office@davecurrymotors.ie, or phone 01 490 6343 or 01 490 8423. Mention the make of the car and whether it is for a service, a pre-NCT check or a fault, so the office can plan the time.</p></details>
+<details><summary>What hours are you open?</summary><p>The website shows 8.30am to 5.30pm. Ask when you call which days that covers.</p></details>
+<details><summary>Where are you?</summary><p>Harrison's Row, Rathgar, Dublin 6.</p></details>
+<details><summary>How much will it cost?</summary><p>The garage describes its rates as very competitive. For a quote on your car, call or e-mail the office; the team gives the figure.</p></details>
+</div></section>
+
+<footer><div class="w"><div><b>Dave Curry Motors</b><br>Harrison's Row, Rathgar, Dublin 6</div><div>Demo · prepared by Gevorg Hovhannisyan</div></div></footer>
+<button id="wb" aria-label="Open chat" onclick="openW()">💬</button>
+<div id="wp" role="dialog" aria-label="Dave Curry Motors assistant">
+<div id="wh"><div><b>Dave Curry Motors assistant</b><small>Rathgar, Dublin 6 · replies are instant</small></div><button id="wx" aria-label="Close" onclick="closeW()">×</button></div>
+<div id="wm"></div><div id="wc"></div>
+<form id="wf"><input id="wi" placeholder="Type your question" autocomplete="off"><button type="submit">Send</button></form>
+</div>
+<script>
+var NAME="Dave Curry Motors",SUB="Rathgar, Dublin 6 · replies are instant";
+var GREET="Hello! I'm the Dave Curry Motors assistant. Ask me about servicing, pre-NCT checks, opening hours or how to book, or I can take your booking request.";
+var HOME=["Book my car in","Opening hours","Pre-NCT check","What a service covers","Where are you?"];
+var KB=[
+{k:"hours open opening time close closed days saturday sunday weekend monday friday morning evening late early",a:"The website shows opening hours of 8.30am to 5.30pm. The team will confirm which days those apply to when you call 01 490 6343 or 01 490 8423.",c:["Book my car in","Phone numbers","Where are you?"]},
+{k:"email mail e-mail debbie office write message",a:"Bookings go through Debbie at office@davecurrymotors.ie, or by phone on 01 490 6343 / 01 490 8423.",c:["Book my car in","Phone numbers"]},
+{k:"where address located location find directions rathgar dublin harrison row street map parking",a:"Harrison's Row, Rathgar, Dublin 6. For parking or directions, ask the team when you ring and they will confirm.",c:["Opening hours","Phone numbers","Book my car in"]},
+{k:"phone telephone call number ring contact mobile landline",a:"Two numbers are listed: 01 490 6343 and 01 490 8423.",c:["E-mail","Opening hours","Book my car in"]},
+{k:"nct pre-nct prenct test national roadworthiness inspection fail failed",a:"Pre-NCT checks are one of the two things the garage specialises in (the other is servicing). Tell the office the make and that it is for a pre-NCT check, and they will arrange a time. What exactly is included is confirmed by the team.",c:["Book my car in","What a service covers","Opening hours"]},
+{k:"service servicing serviced full annual maintenance covers include included checklist check",a:"The garage's service list covers: engine oil and filter, brakes and brake lines, steering and suspension, chassis and body, tyres, air cleaner, fluid levels, battery, power steering, drive belts, power brake unit, door locks and hinges, clutch and brake pedals, parking brake, electrical, fuel and cooling systems, automatic transaxle oil level, exhaust and safety checks.",c:["Book my car in","Pre-NCT check","Brakes","Diagnostics"]},
+{k:"brake brakes braking pads discs pedal handbrake",a:"Brakes, brake lines, the power brake unit, the brake and clutch pedals and the parking brake are all on the garage's service checklist. For a specific brake problem, the team will advise after looking at the car.",c:["Book my car in","What a service covers"]},
+{k:"tyre tyres tire tires wheel wheels puncture tread",a:"Tyres are checked as part of the service. For tyre replacement or a particular fault, ask the team and they will confirm what they can do.",c:["Book my car in","What a service covers"]},
+{k:"oil filter engine oil",a:"Engine oil and the oil filter are the first item on the service checklist.",c:["What a service covers","Book my car in"]},
+{k:"battery electrical electric electrics wiring",a:"The battery and the electrical system are both on the service checklist. For a warning light or an electrical fault, the garage has diagnostic equipment; book the car in and the team will look at it.",c:["Diagnostics","Book my car in"]},
+{k:"diagnostic diagnostics diagnose fault code engine gearbox gear transmission computer scan scanner light lights warning dash dashboard rough noise noisy",a:"The garage offers full engine and gearbox diagnostic equipment for all makes of cars. Book the car in and describe the symptom; the team will check it. I can't diagnose faults myself.",c:["Book my car in","Which makes?"]},
+{k:"make makes brand model toyota ford vw volkswagen bmw audi mercedes honda nissan any all cars",a:"The diagnostic equipment is for all makes of cars. For a particular model or an older or newer car, mention it when you book and the team will confirm.",c:["Book my car in","Diagnostics"]},
+{k:"history established since 1979 owner andrew dave family who staff team technician experience long years decades garage business curry",a:"Dave Curry Motors was established in 1979. Andrew, Dave's son, is the current owner and a fully hands-on technician, with a highly trained team. Their line: 'Our entire focus is the maintenance and repair of your car.'",c:["Book my car in","Pre-NCT check"]},
+{k:"price prices cost quote quotation estimate charge charges rate rates cheap expensive much pay payment card cash",a:"The garage describes its rates as very competitive. Prices depend on the car and the job, so the team gives the figure when you call or e-mail. I don't have a price list.",c:["Book my car in","Phone numbers"]},
+{k:"courtesy loan replacement collect collection wait waiting leave drop dropoff timing long hours how",a:"I don't have details on courtesy cars, waiting or how long a job takes. The team will confirm those when you book on 01 490 6343 or 01 490 8423.",c:["Book my car in","Phone numbers"]},
+];
+var STEPS=[
+{key:"what",q:"What is the booking for?",chips:["Service","Pre-NCT check","Fault / warning light","Other"]},
+{key:"car",q:"What is the car (make, model and year)?",chips:[]},
+{key:"when",q:"When would you like to bring it in? (a day or date is fine)",chips:["This week","Next week","Flexible"]},
+{key:"name",q:"Your name?",chips:[]},
+{key:"contact",q:"A phone number or e-mail so the team can confirm?",chips:[]}];
+function SUMMARY(d){return "Thanks "+d.name+"! Your request is noted: "+d.what+" for "+d.car+", "+d.when+". Contact: "+d.contact+".\nThis is a demo, so nothing has been sent. On the live site this goes to Debbie at the office, and the team confirms the time."}
+var FALLBACK="I don't have that detail. The team can answer it on 01 490 6343 or 01 490 8423, or by e-mail at office@davecurrymotors.ie. Want me to take a booking request?";
+
+/*ENGINE*/
+var STOP="the a an of to is are do does you your i me my we can for in on at and or it be have has with about how what when where which".split(" ");
+function norm(s){return s.toLowerCase().replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ers|er|es|ed|s)$/,""):w}
+function lev(a,b){if(a==b)return 0;if(Math.abs(a.length-b.length)>1)return 2;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function lev2(a,b){var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function hit(w,kw){var s=stem(w);if(kw==w||stem(kw)==s)return 1;if(w.length>=5&&kw.length>=5){if(lev(w,kw)<=1||lev(s,stem(kw))<=1)return .9;if(w.length>=7&&kw.length>=7&&lev2(w,kw)<=2)return .8}if(w.length>=4&&(kw.indexOf(w)==0||w.indexOf(kw)==0)&&kw.length>=4)return .6;return 0}
+function answer(q){var ws=norm(q).split(" ").filter(function(w){return w&&STOP.indexOf(w)<0});var best=null,bs=0;KB.forEach(function(e){var kws=e.k.split(" "),sc=0;ws.forEach(function(w){var m=0;kws.forEach(function(kw){m=Math.max(m,hit(w,kw))});sc+=m});if(sc>bs){bs=sc;best=e}});return bs>=.9?best:null}
+var BOOKWORDS=/\b(book|booking|booked|enquire|enquiry|inquiry|appointment|appointments|reserve|reservation|enrol|enroll|enrollment|enrolment|sign up|signup|schedule|register|registration|trial|visit|consultation)\b/;
+/*END*/
+var $=function(i){return document.getElementById(i)},M=$('wm'),C=$('wc'),I=$('wi'),flow=null,data={},si=0;
+function say(t,who){var d=document.createElement('div');d.className='m '+(who||'b');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight}
+function chips(a){C.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){handle(t)};C.appendChild(b)})}
+function openW(mode,pre){$('wp').classList.add('on');if(!M.children.length){say(GREET);chips(HOME)}if(mode=='book'){startBook(pre)}}
+function closeW(){$('wp').classList.remove('on')}
+function startBook(pre){flow=1;data={};si=0;if(pre&&STEPS[0]){data[STEPS[0].key]=pre}ask()}
+function ask(){while(si<STEPS.length&&data[STEPS[si].key])si++;if(si>=STEPS.length){finish();return}say(STEPS[si].q);chips(STEPS[si].chips)}
+function finish(){flow=null;say(SUMMARY(data));chips(HOME)}
+function handle(t){say(t,'u');if(flow){if(/^(cancel|stop|exit)$/i.test(t.trim())){flow=null;say("No problem, request cancelled.");chips(HOME);return}data[STEPS[si].key]=t;si++;ask();return}
+if(BOOKWORDS.test(norm(t))||/^book/i.test(t)){startBook();return}
+var r=answer(t);if(r){say(r.a);chips(r.c)}else{say(FALLBACK);chips(HOME)}}
+$('wf').addEventListener('submit',function(e){e.preventDefault();var v=I.value.trim();if(!v)return;I.value='';handle(v)});
+
+</script></body></html>
