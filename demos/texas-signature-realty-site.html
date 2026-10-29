@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Texas Signature Realty | 100% commission brokerage in Houston (demo)</title>
+<meta name="description" content="Demo page for Texas Signature Realty in Houston, with an assistant for agents and for buyers and tenants.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#14183f;--red:#d82a2a;--sand:#f5f1ea;--ink:#16182c;--mut:#5b5e75;--bw-a:#14183f;--bw-ai:#fff;--bw-font:'Barlow',system-ui,sans-serif;--bw-r:12px;--bw-pr:14px;--bw-bg2:#f1eef6}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',system-ui,sans-serif;background:#fff;color:var(--ink);line-height:1.55;font-size:17px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Libre Caslon Text',Georgia,serif;line-height:1.15;font-weight:700;color:var(--navy)}
+.w{max-width:1040px;margin:0 auto;padding:0 18px}
+.bar{background:var(--navy);color:#fff;font-size:14px}
+.bar .w{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.bar a{text-decoration:none;font-weight:600}
+header.h{background:#fff;border-bottom:1px solid #e5e2ee;position:sticky;top:0;z-index:20}
+header.h .w{display:flex;align-items:center;justify-content:space-between;gap:12px;height:72px}
+header.h img{height:56px;width:auto}
+header.h nav{display:none;gap:20px;font-weight:600;font-size:15px}
+header.h nav a{text-decoration:none}header.h nav a:hover{color:var(--red)}
+.b{display:inline-block;background:var(--red);color:#fff;border:0;padding:12px 22px;font:700 15px 'Barlow',sans-serif;border-radius:6px;text-decoration:none;cursor:pointer}
+.b.n{background:var(--navy)}.b.l{background:#fff;color:var(--navy)}
+.hero{background:linear-gradient(160deg,var(--navy) 0%,#232a66 100%);color:#fff;padding:48px 0 0;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-110px;top:-100px;width:300px;height:300px;border-radius:50%;background:rgba(216,42,42,.28)}
+.hero .w{position:relative;z-index:1}
+.eyebrow{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:#ff8d8d}
+.hero h1{color:#fff;font-size:clamp(34px,7.4vw,58px);margin:12px 0 14px}
+.hero p{font-size:19px;max-width:32em;color:#dfe1f5}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 36px}
+.ledger{display:grid;grid-template-columns:repeat(2,1fr);background:#fff;border-radius:14px 14px 0 0;overflow:hidden;color:var(--navy)}
+.ledger div{padding:18px 16px;border-bottom:1px solid #e7e4f0;border-right:1px solid #e7e4f0;min-width:0}
+.ledger div:nth-child(2n){border-right:0}
+.ledger b{display:block;font-family:'Libre Caslon Text',serif;font-size:34px;line-height:1.1;color:var(--red)}
+.ledger span{font-size:14px;color:var(--mut)}
+section{padding:58px 0;overflow:hidden}
+section h2{font-size:clamp(28px,5.6vw,40px);margin-bottom:10px}
+.sub{color:var(--mut);max-width:38em;margin-bottom:24px}
+.tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.tabs button{border:2px solid var(--navy);background:#fff;color:var(--navy);padding:10px 18px;font:700 15px 'Barlow',sans-serif;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--navy);color:#fff}
+.pane{display:none}.pane.on{display:block}
+.grid2{display:grid;gap:16px}
+.card{border:1px solid #e1deec;border-radius:12px;padding:20px;background:#fff;min-width:0}
+.card h3{font-size:21px;margin-bottom:6px}
+.card p{color:var(--mut);font-size:16px}
+.fee{display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:baseline;padding:14px 0;border-bottom:1px dashed #c9c5dd}
+.fee span{font-weight:600}
+.fee b{font-family:'Libre Caslon Text',serif;color:var(--red);font-size:20px;text-align:right}
+.fee small{grid-column:1/-1;color:var(--mut);font-size:14px}
+.sand{background:var(--sand)}
+.cities{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.cities span{background:#fff;border:1px solid #d9d3c6;padding:7px 14px;border-radius:999px;font-weight:600;font-size:15px}
+.cities span:first-child{background:var(--navy);color:#fff;border-color:var(--navy)}
+.steps{counter-reset:s;display:grid;gap:14px;list-style:none}
+.steps li{counter-increment:s;position:relative;padding:16px 16px 16px 66px;background:#fff;border-radius:12px;border:1px solid #e1deec;min-width:0}
+.steps li::before{content:counter(s);position:absolute;left:16px;top:14px;width:36px;height:36px;border-radius:50%;background:var(--red);color:#fff;font:700 18px 'Libre Caslon Text',serif;display:grid;place-items:center}
+.steps b{color:var(--navy)}
+.split2{display:grid;gap:26px}.split2>div{min-width:0}.plain{list-style:none}.plain li{padding:9px 0;border-bottom:1px dashed #c9c5dd;font-size:16px}
+.quote{background:var(--navy);color:#fff;border-radius:14px;padding:26px;position:relative;overflow:hidden}
+.quote::before{content:"\201C";position:absolute;right:16px;top:-10px;font:700 120px 'Libre Caslon Text',serif;color:rgba(255,255,255,.1)}
+.quote p{font-family:'Libre Caslon Text',serif;font-size:22px;line-height:1.35}
+.quote small{display:block;margin-top:10px;color:#c9cdee}
+.faq details{border-bottom:1px solid #d7d3e6;padding:14px 0}
+.faq summary{font-weight:700;color:var(--navy);cursor:pointer;font-size:18px}
+.faq p{margin-top:8px;color:var(--mut)}
+.contact{background:var(--navy);color:#fff}
+.contact h2{color:#fff}
+.crow{display:grid;gap:16px;margin-top:18px}
+.crow div{background:rgba(255,255,255,.08);border-radius:12px;padding:16px;min-width:0;overflow-wrap:anywhere}
+.crow small{display:block;color:#aeb3e4;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+.crow a{font-weight:700;font-size:18px}
+footer{background:#0d1030;color:#9fa3cc;padding:28px 0 90px;font-size:14px}
+footer .w{display:grid;gap:10px}
+@media(min-width:760px){
+ header.h nav{display:flex}
+ .ledger{grid-template-columns:repeat(4,1fr)}
+ .ledger div{border-bottom:0}.ledger div:nth-child(2n){border-right:1px solid #e7e4f0}.ledger div:last-child{border-right:0}
+ .grid2{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:repeat(3,1fr)}
+ .crow{grid-template-columns:repeat(3,1fr)}
+ .split2{grid-template-columns:1.3fr 1fr;align-items:start}
+ .hero::after{right:8%}
+}
+
+.bw{font-family:var(--bw-font,system-ui,sans-serif);position:fixed;right:14px;bottom:14px;z-index:99;max-width:calc(100vw - 28px)}
+.bw *{box-sizing:border-box}
+.bw-fab{display:flex;align-items:center;gap:9px;border:0;cursor:pointer;background:var(--bw-a,#222);color:var(--bw-ai,#fff);padding:12px 18px;border-radius:var(--bw-r,40px);font:600 15px var(--bw-font,system-ui);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.bw-fab-i{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--bw-ai,#fff);color:var(--bw-a,#222);font-weight:800;font-size:14px}
+.bw-p{position:fixed;right:14px;bottom:14px;width:min(380px,calc(100vw - 28px));height:min(560px,calc(100vh - 28px));background:var(--bw-bg,#fff);color:var(--bw-ink,#111);border-radius:var(--bw-pr,16px);box-shadow:0 18px 50px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(0,0,0,.12)}
+.bw-p[hidden]{display:none}
+.bw-h{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 16px;background:var(--bw-a,#222);color:var(--bw-ai,#fff)}
+.bw-h b{display:block;font-size:15px}.bw-h small{opacity:.8;font-size:12px}
+.bw-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer}
+.bw-m{flex:1;min-height:0;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;background:var(--bw-bg2,#f6f6f6)}
+.bw-b{max-width:88%;padding:9px 12px;border-radius:14px;font-size:14px;line-height:1.45;white-space:pre-line;overflow-wrap:anywhere}
+.bw-b.bot{background:var(--bw-bot,#fff);align-self:flex-start;border:1px solid rgba(0,0,0,.08)}
+.bw-b.me{background:var(--bw-a,#222);color:var(--bw-ai,#fff);align-self:flex-end}
+.bw-c{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;max-height:112px;overflow-y:auto;border-top:1px solid rgba(0,0,0,.08)}
+.bw-c button{border:1px solid var(--bw-a,#222);background:transparent;color:var(--bw-a,#222);border-radius:999px;padding:6px 11px;font:13px var(--bw-font,system-ui);cursor:pointer}
+.bw-c button:hover{background:var(--bw-a,#222);color:var(--bw-ai,#fff)}
+.bw-f{display:flex;gap:6px;padding:10px 12px;border-top:1px solid rgba(0,0,0,.08)}
+.bw-f input{flex:1;min-width:0;border:1px solid #bbb;border-radius:10px;padding:10px;font:15px var(--bw-font,system-ui)}
+.bw-f button{border:0;background:var(--bw-a,#222);color:var(--bw-ai,#fff);border-radius:10px;padding:0 14px;cursor:pointer;font-size:16px}
+</style></head><body>
+<div class="bar"><div class="w"><span>2323 S. Voss Rd, Ste 315-C, Houston, TX 77057</span><a href="tel:+18328762093">(832) 876-2093</a></div></div>
+<header class="h"><div class="w">
+ <a href="#top" aria-label="Texas Signature Realty"><img src="img/texas-signature-realty-logo.jpeg" alt="Texas Signature Realty" width="89" height="56"></a>
+ <nav><a href="#agents">For agents</a><a href="#fees">Fees</a><a href="#clients">Buy or lease</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+ <a class="b" href="#" data-bot="How to join">Join us</a>
+</div></header>
+<div class="hero" id="top"><div class="w">
+ <div class="eyebrow">Houston brokerage &middot; serving all of Texas</div>
+ <h1>Keep 100% of your commission. Pay no monthly fees.</h1>
+ <p>Texas Signature Realty puts agents first with real support and real transparency, and gives buyers, sellers and tenants the same straight answers.</p>
+ <div class="cta"><a class="b" href="#" data-bot="How to join">Join as an agent</a><a class="b l" href="#" data-bot="Buy or lease">I want to buy or lease</a></div>
+ <div class="ledger">
+  <div><b>1000+</b><span>agents sponsored</span></div><div><b>100%</b><span>commission, no cut</span></div><div><b>$0</b><span>monthly fees</span></div><div><b>4.5</b><span>Google review rating</span></div>
+ </div>
+</div></div>
+
+<section id="agents"><div class="w">
+ <h2>Two reasons people reach out. One front door.</h2>
+ <p class="sub">Pick the side that fits you. The assistant at the bottom right can answer either one and pass your details to the team.</p>
+ <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-t="a">I am an agent</button><button role="tab" aria-selected="false" data-t="c">I am buying or leasing</button></div>
+ <div class="pane on" id="pa"><div class="grid2">
+  <div class="card"><h3>What agents get</h3><p>Full commission on every deal, a free premium Dotloop account to close quickly, and a CRM with IDX and lead generation included. E&amp;O is included, too.</p></div>
+  <div class="card"><h3>Where you can work</h3><p>The office is in Houston. Texas Signature Realty also sponsors agents in Dallas-Fort Worth, Austin and San Antonio.</p></div>
+  <div class="card"><h3>Talk it through first</h3><p>Call to schedule a confidential meeting about your career in real estate. No pressure and no fine print.</p></div>
+  <div class="card"><h3>Already with us?</h3><p>The site has an annual dues page, the 2026 W-9 and the CDA form in Word and PDF.</p></div>
+ </div></div>
+ <div class="pane" id="pc"><div class="grid2">
+  <div class="card"><h3>Residential</h3><p>Access to thousands of homes throughout Texas, with agents who explain each step and never pressure you into buying.</p></div>
+  <div class="card"><h3>Commercial</h3><p>Retail space and small storefronts, plus investment sales that aim for stronger returns.</p></div>
+  <div class="card"><h3>Leasing and tenant advisory</h3><p>Help to find the right tenant or the right space, residential or commercial.</p></div>
+  <div class="card"><h3>Browse first</h3><p>Current properties are on the View All Listings page. Tell the assistant what you want and an agent follows up.</p></div>
+ </div></div>
+</div></section>
+
+<section id="fees" class="sand"><div class="w">
+ <h2>The price list fits on one screen</h2>
+ <p class="sub">As published on the Texas Signature Realty site. Know exactly what you pay: no junk fees, no fine print.</p>
+ <div class="fee"><span>Monthly fees</span><b>None, ever</b></div>
+ <div class="fee"><span>Per transaction</span><b>99 dollars flat</b><small>Residential and commercial. That is it.</small></div>
+ <div class="fee"><span>Annual fee</span><b>99 dollars</b><small>Once per year. No surprise renewals.</small></div>
+ <div class="fee"><span>Lease deals</span><b>40 dollars</b><small>Residential and commercial leases.</small></div>
+ <div class="fee"><span>E&amp;O</span><b>Included</b><small>No E&amp;O fees.</small></div>
+ <div class="fee"><span>CRM and IDX</span><b>Included</b><small>Client relationship tools, lead generation and more.</small></div>
+ <div class="cta"><a class="b n" href="#" data-bot="Fees">Ask about fees</a></div>
+</div></section>
+
+<section id="clients"><div class="w">
+ <h2>How joining works</h2>
+ <p class="sub">Three steps, from the first call to your first closing.</p>
+ <ol class="steps">
+  <li><b>Call or leave a request.</b> Schedule a confidential meeting about your career.</li>
+  <li><b>Review the numbers.</b> Flat fees, full commission, and the tools that come with the brokerage.</li>
+  <li><b>Start closing.</b> Use Dotloop, the CRM and your own clients, with a broker who supports you.</li>
+ </ol>
+ <div class="cities"><span>Houston (office)</span><span>Dallas-Fort Worth</span><span>Austin</span><span>San Antonio</span></div>
+</div></section>
+
+<section id="why"><div class="w">
+ <h2>What clients can expect</h2>
+ <p class="sub">Whether you buy, sell, rent or lease, the site promises the same thing: relationships built on trust and respect from the first conversation.</p>
+ <div class="grid2">
+  <div class="card"><h3>Find the right property</h3><p>The team takes the time to find a place that meets your needs and desires, not just any place to call yours.</p></div>
+  <div class="card"><h3>The right team for you</h3><p>Experienced, well-trained, motivated and professional agents who answer promptly.</p></div>
+  <div class="card"><h3>A seamless process</h3><p>Real estate is about the details: finding precisely what you want and making sure every step goes as planned, with an agent who works hard for you.</p></div>
+  <div class="card"><h3>No pressure</h3><p>You will never feel pushed into buying anything. Agents want you to find the home that fits your life and your budget.</p></div>
+  <div class="card"><h3>Transparent and honest</h3><p>Agents explain what is happening in every transaction, buying or selling, renting or leasing, and keep information accurate and up to date.</p></div>
+  <div class="card"><h3>Negotiation on your side</h3><p>A broker who understands your needs, negotiates for you and works to get you the best deal possible.</p></div>
+ </div>
+</div></section>
+<section class="sand"><div class="w">
+ <h2>Services at a glance</h2>
+ <p class="sub">A full-service brokerage focused on commercial and residential property across Texas.</p>
+ <div class="grid2">
+  <div class="card"><h3>Properties</h3><p>Perfect homes and investment properties, matched to your needs and budget.</p></div>
+  <div class="card"><h3>Investment sales</h3><p>Expert know-how to optimize investment sales and deliver greater returns.</p></div>
+  <div class="card"><h3>Leasing and tenant advisory</h3><p>Secure the ideal tenant through leasing expertise and improve your bottom line.</p></div>
+  <div class="card"><h3>Commercial space</h3><p>From ample retail space to a small storefront, with access to many of the best commercial properties in Texas.</p></div>
+ </div>
+ <div class="cta"><a class="b n" href="#" data-bot="Buy or lease">Tell us what you need</a></div>
+</div></section>
+<section><div class="w">
+ <div class="quote"><p>I've doubled my income since switching to Texas Signature.</p><small>M. Rivera, agent since 2022 (quoted from the site)</small></div>
+</div></section>
+
+<section class="sand"><div class="w">
+ <h2>What agents and clients say</h2>
+ <p class="sub">Excerpts from the Google reviews shown on the Texas Signature Realty site, rated 4.5 overall.</p>
+ <div class="grid2">
+  <div class="card"><h3>An agent, two years in</h3><p>&ldquo;Having been with this firm for over two years, I can attest that the broker is both highly knowledgeable and consistently supportive of agents. I would highly recommend this brokerage to other agents!&rdquo;</p></div>
+  <div class="card"><h3>A first investment property</h3><p>&ldquo;She guided us through the purchase of our first investment property with confidence, knowledge, and great attention to detail. She made the process clear and stress-free and always had our best interest in mind.&rdquo;</p></div>
+  <div class="card"><h3>A first-time buyer</h3><p>&ldquo;From start to finish, she was patient, knowledgeable, and incredibly supportive, always taking the time to explain each step and answer all my questions.&rdquo;</p></div>
+  <div class="card"><h3>A smooth purchase</h3><p>&ldquo;She made the entire home-buying process smooth, stress-free, and even enjoyable. She took the time to explain every step and made sure I felt confident in my decisions.&rdquo;</p></div>
+ </div>
+</div></section>
+<section id="about"><div class="w split2">
+ <div>
+  <h2>About the brokerage</h2>
+  <p class="sub">Texas Signature Realty LLC is a real estate brokerage based in Houston, built so agents can thrive and clients get personal service.</p>
+  <p style="margin-bottom:12px">The brokerage sponsors agents across the major Texas cities, from Houston to Dallas-Fort Worth, San Antonio and Austin. For agents that means a platform where diverse expertise meets one shared commitment: exceptional service.</p>
+  <p style="margin-bottom:12px">Agents guide first-time homebuyers through finding their first property and give seasoned investors strategic insight into investment opportunities.</p>
+  <p>The site links the Texas Real Estate Commission consumer protection notice and the information about brokerage services, so clients can read how the brokerage works before they sign anything.</p>
+ </div>
+ <div class="card">
+  <h3>Forms for agents</h3>
+  <p style="margin-bottom:10px">Available on the site:</p>
+  <ul class="plain"><li>Texas Signature Realty 2026 W-9</li><li>Commission Disbursement Authorization (CDA), Word</li><li>Commission Disbursement Authorization (CDA), PDF</li></ul>
+  <h3 style="margin-top:18px">Annual dues</h3>
+  <p>Paid once a year on the Pay Your Annual Dues page. No surprise renewals.</p>
+  <div class="cta" style="margin:16px 0 0"><a class="b n" href="#" data-bot="Annual dues">Ask about dues</a></div>
+ </div>
+</div></section>
+<section id="faq" class="faq"><div class="w">
+ <h2>Quick answers</h2>
+ <details open><summary>Is there really a 100% commission?</summary><p>Yes. The site states that you keep what you earn and the brokerage does not take a cut. The flat fees above apply.</p></details>
+ <details><summary>Which cities do you cover?</summary><p>Houston is the base. The brokerage also sponsors agents and serves clients in Dallas-Fort Worth, Austin and San Antonio.</p></details>
+ <details><summary>What is included for agents?</summary><p>A free premium Dotloop account, CRM and IDX, lead generation tools, and E&amp;O coverage with no extra fee.</p></details>
+ <details><summary>Where can I find forms?</summary><p>The 2026 W-9 and the Commission Disbursement Authorization (Word and PDF) are on the site.</p></details>
+ <details><summary>I am a buyer. Will an agent pressure me?</summary><p>The site says agents never pressure you. They want you to find the home that fits, and they explain each step of the process.</p></details>
+ <details><summary>Do you handle commercial leases?</summary><p>Yes. Commercial and residential leases are both listed, along with leasing and tenant advisory.</p></details>
+ <details><summary>Do I pay anything to leave my current brokerage and join?</summary><p>The site lists the fees above and nothing else: no monthly fees, a flat fee per transaction, an annual fee once a year, and a lease fee per lease deal. For anything about your own situation, the team answers on a confidential call.</p></details>
+ <details><summary>Does the brokerage help new agents get leads?</summary><p>The CRM and IDX included with the brokerage cover client relationships and lead generation. The team can explain how agents use them when you call.</p></details>
+ <details><summary>Can I work with an agent if I am relocating to Texas?</summary><p>Yes. Agents serve Greater Houston, Dallas-Fort Worth, Austin and San Antonio. Tell the assistant your target city and an agent will follow up.</p></details>
+ <details><summary>What are your office hours?</summary><p>They are not listed on the website. The team will confirm, or call (832) 876-2093.</p></details>
+</div></section>
+
+<section id="contact" class="contact"><div class="w">
+ <h2>Talk to the team</h2>
+ <p style="color:#d9dcf7;max-width:34em">Call, email, or let the assistant take your request. Real estate agents and clients are both welcome.</p>
+ <div class="crow">
+  <div><small>Phone</small><a href="tel:+18328762093">(832) 876-2093</a></div>
+  <div><small>Email</small><a href="mailto:TexasSignatureRealty@gmail.com">TexasSignatureRealty@gmail.com</a></div>
+  <div><small>Office</small><span>2323 S. Voss Rd, Ste 315-C<br>Houston, TX 77057</span></div>
+ </div>
+ <div class="cta"><a class="b" href="#" data-bot="Book a call">Request a call</a></div>
+</div></section>
+<footer><div class="w">
+ <div>Details on this page come from the Texas Signature Realty website. Anything not listed there, the team confirms.</div>
+ <div>Demo &middot; prepared by Gevorg Hovhannisyan</div>
+</div></footer>
+<script>function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[],c;if(Math.abs(m-n)>2)return 9;for(i=0;i<=m;i++){d[i]=[i]}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++){c=a[i-1]===b[j-1]?0:1;d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c)}return d[m][n]}
+function tokHit(t,k){if(t===k)return 1;if(k.length>=3&&t.indexOf(k)===0)return 1;if(k.length>=5&&t.length>=4&&lev(t,k)<=1)return 1;if(k.length>=8&&t.length>=7&&lev(t.slice(0,k.length),k)<=1)return 1;return 0}
+function route(q,KB){var n=norm(q),toks=n.split(' '),best=null,bs=0,i,j,e,s,k;for(i=0;i<KB.length;i++){e=KB[i];s=0;for(j=0;j<e.k.length;j++){k=norm(e.k[j]);if(k.indexOf(' ')>-1){if((' '+n+' ').indexOf(' '+k)>-1)s+=2}else if(toks.some(function(t){return tokHit(t,k)}))s+=1}s*=(e.w||1);if(s>bs){bs=s;best=e}}return bs>0?best:null}
+
+window.BOT={"name": "TSR Assistant", "sub": "Demo assistant for Texas Signature Realty", "fab": "Ask us", "ph": "Ask about fees, joining, buying...", "cancel": "Cancel", "cancelled": "No problem, cancelled. What else can I help with?", "hello": "Hi, I'm the Texas Signature Realty assistant. Ask about agent fees and joining, or tell me what property you want to buy or lease.", "fallback": "I don't have that on the website, so the team will confirm it. You can call (832) 876-2093 or email TexasSignatureRealty@gmail.com, or leave a request here.", "chips": ["Fees", "How to join", "Buy or lease", "Dotloop", "Cities served", "Office address", "Book a call"], "after": ["Fees", "Buy or lease", "Office address"], "kb": [{"id": "comm", "k": ["commission", "commissions", "split", "keep", "100", "earn", "earnings", "income", "payout", "cut", "percent"], "a": "Texas Signature Realty is a 100% commission brokerage: agents keep what they earn and the brokerage takes no cut. The only costs are the flat fees listed on the site (ask me for 'fees').", "next": ["Fees", "How to join", "Dotloop"]}, {"id": "fees", "k": ["fee", "fees", "cost", "costs", "price", "pricing", "monthly", "annual", "dues", "transaction fee", "flat", "hidden", "charge", "charges", "pay", "how much", "e&o", "eo", "insurance", "errors"], "a": "Fees listed on the site: no monthly fees, ever. A flat 99 dollars per transaction (residential and commercial). 99 dollars once a year as the annual fee. 40 dollars per lease deal (residential and commercial). E&O is included with no E&O fees, and CRM/IDX is included.", "next": ["Dotloop", "How to join", "Annual dues"]}, {"id": "dotloop", "k": ["dotloop", "transaction platform", "software", "tools", "platform", "crm", "idx", "leads", "lead generation", "technology", "tech"], "a": "Agents get a free premium Dotloop account for closing deals fast, plus the CRM and IDX included in the brokerage: client relationship tools and lead generation.", "next": ["Fees", "How to join"]}, {"id": "join", "k": ["join", "joining", "sponsor", "sponsored", "switch", "transfer", "move brokerage", "apply", "application", "how to join", "recruit", "become", "agent", "agents", "career", "new agent", "license", "licence", "sign up"], "a": "To join, call the office to schedule a confidential meeting about your real estate career, or use the Join Texas Signature Realty page. Over 1000 agents have been sponsored. I can take your details and pass them to the team.", "go": "agent"}, {"id": "cities", "k": ["dallas", "fort worth", "dfw", "austin", "san antonio", "houston", "cities", "areas", "area", "serve", "coverage", "statewide"], "a": "The office is in Houston, and the brokerage sponsors agents and serves clients in Greater Houston, Dallas-Fort Worth, Austin and San Antonio, across Texas.", "next": ["Address", "Buy or lease", "How to join"]}, {"id": "address", "k": ["address", "office", "located", "location", "visit", "street", "voss", "directions", "map", "drop by", "come in"], "a": "Office: 2323 S. Voss Rd, Ste 315-C, Houston, TX 77057. Phone (832) 876-2093, email TexasSignatureRealty@gmail.com. Office hours are not listed on the site, so the team will confirm them.", "next": ["Contact", "Book a call"]}, {"id": "contact", "k": ["phone", "call", "email", "contact", "reach", "number", "talk", "speak", "human", "person", "broker", "owner"], "a": "Call (832) 876-2093 or email TexasSignatureRealty@gmail.com. The Contact page also has a form. I can leave a request for the team right here too.", "next": ["Book a call", "Buy or lease", "How to join"]}, {"id": "services", "k": ["service", "services", "commercial", "residential", "investment", "investments", "leasing", "tenant", "advisory", "retail", "storefront", "specialize", "offer", "do you do"], "a": "Services: residential real estate (homes across Texas), commercial real estate (retail space, small storefronts), investment sales, and leasing and tenant advisory.", "next": ["Buy or lease", "Listings", "Fees"]}, {"id": "buy", "k": ["buy", "buying", "purchase", "home", "house", "homes", "property", "properties", "rent", "rental", "renting", "lease", "leasing a", "tenant", "apartment", "looking for", "first time", "sell", "selling", "list my", "investor", "invest", "viewing", "showing", "tour"], "w": 1.5, "a": "Happy to help with that. Texas Signature Realty handles homes and commercial space, buying, selling and leasing. Let me take a few details for an agent.", "go": "client"}, {"id": "listings", "k": ["listing", "listings", "available", "search", "browse", "mls", "har", "for sale", "for rent", "inventory"], "a": "Current listings are on the 'View All Listings' page of the site. If you tell me what you are looking for, an agent can follow up.", "go": "client"}, {"id": "forms", "k": ["form", "forms", "w9", "w 9", "cda", "commission disbursement", "download", "paperwork", "document", "documents", "word", "pdf"], "a": "The site offers agent forms to download: the 2026 W-9 and the Commission Disbursement Authorization (CDA) in Word and PDF.", "next": ["Annual dues", "Fees"]}, {"id": "dues", "k": ["annual dues", "pay dues", "pay your dues", "renew", "renewal", "renewals", "pay annual"], "w": 2, "a": "Existing agents pay the annual fee through the 'Pay Your Annual Dues' page. It is a single payment once a year, with no surprise renewals.", "next": ["Fees", "Forms"]}, {"id": "roster", "k": ["roster", "team", "agent roster", "who are your agents", "find an agent", "directory", "realtor", "realtors"], "a": "The Agent Roster page lists the agents. Tell me what you need and I'll pass it to the team to match you with one.", "go": "client"}, {"id": "hours", "k": ["hours", "open", "opening", "closed", "weekend", "saturday", "sunday", "monday", "when open", "available now", "schedule"], "a": "Office hours are not published on the website, so the team will confirm them. You can call (832) 876-2093 or leave a request here.", "next": ["Book a call", "Contact"]}, {"id": "reviews", "k": ["review", "reviews", "rating", "rated", "stars", "google", "testimonial", "testimonials", "trust", "reputation", "legit", "reliable", "good"], "a": "The site shows a 4.5 rating from Google reviews, with agents and clients praising the support and the clear, stress-free process.", "next": ["How to join", "Buy or lease"]}, {"id": "about", "k": ["about", "who", "story", "company", "brokerage", "llc", "trec", "license number", "broker license", "regulated", "consumer protection"], "a": "Texas Signature Realty is a full-service real estate brokerage in Houston, serving residential and commercial clients and sponsoring 1000+ agents. The site links the Texas Real Estate Commission consumer protection notice and the information about brokerage services.", "next": ["Fees", "Services", "Contact"]}, {"id": "book", "k": ["book", "call back", "callback", "schedule a call", "book a call", "consultation", "consult", "meeting", "meet", "appointment", "confidential"], "w": 2, "a": "Let's set up a call.", "go": "call"}, {"id": "hi", "k": ["hi", "hello", "hey", "hola", "thanks", "thank", "good morning"], "a": "Hello! Ask me about fees, joining as an agent, or buying and leasing in Texas.", "next": ["Fees", "How to join", "Buy or lease"]}], "flows": {"agent": {"steps": [{"k": "name", "label": "Name", "q": "Your name?"}, {"k": "lic", "label": "License", "q": "Are you already a licensed Texas agent?", "chips": ["Yes, licensed", "Not yet", "Studying"]}, {"k": "from", "label": "Current brokerage", "q": "Which brokerage are you with now, if any?", "chips": ["None"]}, {"k": "city", "label": "Market", "q": "Which market do you work in?", "chips": ["Houston", "Dallas-Fort Worth", "Austin", "San Antonio", "Other"]}, {"k": "contact", "label": "Contact", "q": "Phone or email, and the best time for a confidential call?"}], "done": "Done. Your request has been sent to the team:\n{sum}\nThey will reach out for a confidential conversation."}, "client": {"steps": [{"k": "goal", "label": "Goal", "q": "What do you need?", "chips": ["Buy a home", "Sell a home", "Lease a home", "Lease commercial", "Invest"]}, {"k": "type", "label": "Property type", "q": "Residential or commercial?", "chips": ["Residential", "Commercial"]}, {"k": "area", "label": "Area", "q": "Which city or neighborhood?", "chips": ["Houston", "Dallas-Fort Worth", "Austin", "San Antonio"]}, {"k": "name", "label": "Name", "q": "Your name?"}, {"k": "contact", "label": "Contact", "q": "Best phone or email?"}], "done": "Done. Your request has been sent to the team:\n{sum}\nAn agent will follow up."}, "call": {"steps": [{"k": "topic", "label": "Topic", "q": "What is the call about?", "chips": ["Joining as an agent", "Buying or leasing", "Something else"]}, {"k": "time", "label": "Best time", "q": "What day and time suit you?", "ph": "e.g. Tuesday afternoon"}, {"k": "name", "label": "Name", "q": "Your name?"}, {"k": "contact", "label": "Contact", "q": "Phone or email?"}], "done": "Done. Your call request has been sent to the team:\n{sum}\nThey will confirm the time."}}};/*END*/
+(function(){
+var D=window.BOT;if(!D)return;
+var st={flow:null,i:0,data:{}};
+var root=document.createElement('div');root.className='bw';
+root.innerHTML='<button class="bw-fab" type="button" aria-label="'+D.fab+'"><span class="bw-fab-i">?</span><span class="bw-fab-t"></span></button><section class="bw-p" hidden aria-live="polite"><header class="bw-h"><div><b class="bw-n"></b><small class="bw-s"></small></div><button type="button" class="bw-x" aria-label="Close">&times;</button></header><div class="bw-m"></div><div class="bw-c"></div><form class="bw-f"><input type="text" maxlength="200" autocomplete="off"><button type="submit">&#10148;</button></form></section>';
+document.body.appendChild(root);
+var q=function(s){return root.querySelector(s)};
+q('.bw-fab-t').textContent=D.fab;q('.bw-n').textContent=D.name;q('.bw-s').textContent=D.sub;q('.bw-f input').placeholder=D.ph;
+var fab=q('.bw-fab'),pan=q('.bw-p'),msgs=q('.bw-m'),chips=q('.bw-c'),form=q('.bw-f'),inp=q('.bw-f input'),started=false;
+function say(t,who){var d=document.createElement('div');d.className='bw-b '+(who||'bot');d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight}
+function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){user(c)};chips.appendChild(b)})}
+function home(){setChips(D.chips)}
+function ask(){var f=D.flows[st.flow],s=f.steps[st.i];say(s.q);setChips((s.chips||[]).concat([D.cancel]));inp.placeholder=s.ph||D.ph}
+function startFlow(n){st.flow=n;st.i=0;st.data={};ask()}
+function finish(){var f=D.flows[st.flow],lines=[];f.steps.forEach(function(s){lines.push(s.label+': '+(st.data[s.k]||'-'))});say(f.done.replace('{sum}',lines.join('\n')));st.flow=null;inp.placeholder=D.ph;setChips(D.after||D.chips)}
+function user(t){t=String(t).trim();if(!t)return;say(t,'me');
+ if(st.flow){var n=norm(t);if(n===norm(D.cancel)||/^(cancel|stop|exit)$/.test(n)){st.flow=null;say(D.cancelled);inp.placeholder=D.ph;home();return}
+  var s=D.flows[st.flow].steps[st.i];st.data[s.k]=t;st.i++;if(st.i>=D.flows[st.flow].steps.length)finish();else ask();return}
+ var e=route(t,D.kb);
+ if(e&&e.go){say(e.a);startFlow(e.go);return}
+ if(e){say(e.a);setChips(e.next||D.chips);return}
+ say(D.fallback);home()}
+function open(){pan.hidden=false;fab.style.display='none';if(!started){started=true;say(D.hello);home()}setTimeout(function(){inp.focus()},50)}
+fab.onclick=open;q('.bw-x').onclick=function(){pan.hidden=true;fab.style.display=''};
+form.onsubmit=function(ev){ev.preventDefault();var v=inp.value;inp.value='';user(v)};
+window.openBot=open;
+document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-bot]');if(a){ev.preventDefault();open();var v=a.getAttribute('data-bot');if(v)user(v)}});
+})();
+
+(function(){var t=document.querySelectorAll('.tabs button');t.forEach(function(b){b.onclick=function(){t.forEach(function(x){x.setAttribute('aria-selected',x===b)});document.getElementById('pa').className='pane'+(b.dataset.t==='a'?' on':'');document.getElementById('pc').className='pane'+(b.dataset.t==='c'?' on':'')}})})();
+</script>
+</body></html>

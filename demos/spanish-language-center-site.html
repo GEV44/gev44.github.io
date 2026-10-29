@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Spanish Language Center Miami: small-group and private Spanish courses, CEFR levels A1 to C1, authorized SIELE centre, downtown Miami and online. Demo page prepared for the school.">
+<title>Spanish Language Center Miami · Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#14336b;--navy2:#0d2250;--orange:#e8622c;--orange2:#c94d1b;--cream:#fff7ef;--sand:#f6e7d6;--ink:#1c2a44;--mute:#5b6882;--line:#ecd9c4;--white:#fff;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.55;font-size:16px;overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);line-height:1.12;font-weight:700}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+section{padding:54px 0;position:relative;overflow:hidden}
+.eyebrow{display:inline-block;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange2);margin-bottom:10px}
+h2{font-size:clamp(26px,5.6vw,38px);margin-bottom:12px}
+.lead{color:var(--mute);max-width:620px;margin-bottom:26px}
+.btn{display:inline-block;border:0;cursor:pointer;font:700 15px 'Nunito Sans',sans-serif;padding:13px 22px;border-radius:999px;text-decoration:none;background:var(--orange);color:#fff;box-shadow:0 6px 16px rgba(232,98,44,.28)}
+.btn:hover{background:var(--orange2)}
+.btn.ghost{background:transparent;color:var(--navy);box-shadow:none;border:2px solid var(--navy)}
+/* header */
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0}
+.brand{background:#fff;border-radius:10px}
+.brand img{height:46px;width:auto}
+nav{display:none;gap:22px;font-weight:600;font-size:15px}
+nav a{text-decoration:none;color:var(--navy)}
+nav a:hover{color:var(--orange2)}
+.call{font-weight:700;font-size:14px;text-decoration:none;color:var(--navy);white-space:nowrap}
+@media(min-width:820px){nav{display:flex}}
+/* hero */
+.hero{background:linear-gradient(180deg,var(--cream),var(--sand));padding:46px 0 56px}
+.hero::before{content:"";position:absolute;right:-120px;top:-110px;width:360px;height:360px;border-radius:50%;background:var(--orange);opacity:.14}
+.hero::after{content:"";position:absolute;left:-90px;bottom:-120px;width:260px;height:260px;border-radius:50%;background:var(--navy);opacity:.07}
+.hgrid{display:grid;gap:30px;position:relative;z-index:1}
+.hgrid>*{min-width:0}
+.hero h1{font-size:clamp(34px,8vw,58px);margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p{color:var(--mute);font-size:17px;max-width:520px;margin-bottom:22px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.since{display:flex;gap:18px;margin-top:26px;flex-wrap:wrap}
+.since div{font-size:13px;color:var(--mute)}
+.since b{display:block;font:700 24px 'Fraunces',serif;color:var(--navy)}
+.next{background:#fff;border-radius:var(--r);padding:22px;box-shadow:0 14px 36px rgba(20,51,107,.13);border-top:6px solid var(--orange)}
+.next h3{font-size:21px;margin-bottom:4px}
+.next small{color:var(--mute);display:block;margin-bottom:14px}
+.dates{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dates div{background:var(--cream);border-radius:12px;padding:12px;font-size:13px;color:var(--mute)}
+.dates b{display:block;font:700 19px 'Fraunces',serif;color:var(--navy)}
+.next p{font-size:13px;margin:14px 0 0;color:var(--mute)}
+@media(min-width:820px){.hgrid{grid-template-columns:1.25fr .85fr;align-items:center}}
+/* timetable */
+.tt{display:grid;gap:12px}
+.row{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;gap:4px 14px;grid-template-columns:1fr auto;align-items:center}
+.row>*{min-width:0}
+.row h3{font-size:19px}
+.row .meta{grid-column:1;color:var(--mute);font-size:14px}
+.row .price{grid-row:1/3;grid-column:2;text-align:right;font:700 22px 'Fraunces',serif;color:var(--orange2)}
+.row .price small{display:block;font:600 12px 'Nunito Sans';color:var(--mute)}
+.row.hot{border-color:var(--orange);background:#fffaf5}
+.tag{display:inline-block;background:var(--navy);color:#fff;font-size:11px;font-weight:700;padding:2px 9px;border-radius:99px;margin-left:6px;vertical-align:middle}
+.note{margin-top:16px;font-size:14px;color:var(--mute)}
+/* how */
+.how{background:var(--navy);color:#fff}
+.how h2{color:#fff}.how .eyebrow{color:#ffb089}
+.how .lead{color:#c7d3ee}
+.pill-grid{display:grid;gap:14px}
+.pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:var(--r);padding:20px}
+.pill b{font:700 34px 'Fraunces',serif;color:#ffb089;display:block}
+.pill span{color:#dbe4fa;font-size:15px}
+@media(min-width:700px){.pill-grid{grid-template-columns:repeat(4,1fr)}}
+/* team */
+.team{display:grid;gap:14px}
+.person{background:#fff;border-radius:var(--r);padding:18px;border:1px solid var(--line);display:grid;grid-template-columns:52px 1fr;gap:14px}
+.person>*{min-width:0}
+.av{width:52px;height:52px;border-radius:50%;background:var(--orange);color:#fff;font:700 22px 'Fraunces',serif;display:flex;align-items:center;justify-content:center}
+.person:nth-child(even) .av{background:var(--navy)}
+.person h3{font-size:18px}
+.person em{font-style:normal;font-size:12px;font-weight:700;color:var(--orange2);display:block;margin-bottom:4px}
+.person p{font-size:14px;color:var(--mute)}
+@media(min-width:760px){.team{grid-template-columns:1fr 1fr}}
+/* more */
+.trio{display:grid;gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.card h3{font-size:21px;margin-bottom:8px}
+.card p{color:var(--mute);font-size:15px;margin-bottom:8px}
+.card b.pr{color:var(--orange2)}
+@media(min-width:760px){.trio{grid-template-columns:repeat(3,1fr)}}
+/* faq */
+.faq{display:grid;gap:10px;max-width:760px}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+summary{cursor:pointer;font-weight:700;color:var(--navy)}
+details p{color:var(--mute);margin-top:8px;font-size:15px}
+/* visit */
+.visit{background:var(--sand)}
+.vgrid{display:grid;gap:20px}
+.vgrid>*{min-width:0}
+.hours{width:100%;border-collapse:collapse;font-size:15px}
+.hours td{padding:8px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-weight:700;color:var(--navy)}
+.vcard{background:#fff;border-radius:var(--r);padding:22px}
+.vcard p{margin-bottom:10px}
+@media(min-width:760px){.vgrid{grid-template-columns:1fr 1fr}}
+footer{background:var(--navy2);color:#b9c6e6;font-size:14px;padding:26px 0;text-align:center}
+/* widget */
+#fab{position:fixed;right:16px;bottom:16px;z-index:50;background:var(--orange);color:#fff;border:0;border-radius:999px;padding:14px 20px;font:700 15px 'Nunito Sans';box-shadow:0 10px 26px rgba(20,51,107,.35);cursor:pointer}
+#panel{position:fixed;right:12px;bottom:12px;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:#fff;border-radius:20px;box-shadow:0 20px 60px rgba(13,34,80,.35);z-index:60;display:none;flex-direction:column;overflow:hidden}
+#panel.open{display:flex}
+.ph{background:var(--navy);color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
+.ph b{font:700 16px 'Fraunces',serif}
+.ph small{display:block;color:#b9c6e6;font-size:12px}
+.ph button{background:none;border:0;color:#fff;font-size:24px;cursor:pointer;line-height:1}
+#msgs{flex:1;overflow-y:auto;padding:14px;background:var(--cream);display:flex;flex-direction:column;gap:9px}
+.m{max-width:86%;padding:10px 13px;border-radius:15px;font-size:14.5px;white-space:pre-line;word-wrap:break-word}
+.m.b{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--orange);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+#chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 0;background:#fff}
+#chips button{border:1px solid var(--navy);color:var(--navy);background:#fff;border-radius:99px;padding:6px 12px;font:600 13px 'Nunito Sans';cursor:pointer}
+#chips button:hover{background:var(--navy);color:#fff}
+#f{display:flex;gap:8px;padding:10px 12px 12px;background:#fff}
+#f input{flex:1;min-width:0;border:1px solid var(--line);border-radius:99px;padding:10px 14px;font:15px 'Nunito Sans'}
+#f button{border:0;background:var(--navy);color:#fff;border-radius:99px;padding:0 16px;font:700 14px 'Nunito Sans';cursor:pointer}
+.demo{display:block;text-align:center;font-size:12px;color:#8a94ab;padding:0 8px 8px;background:#fff}
+
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+button,summary{-webkit-tap-highlight-color:transparent}
+.tt .row:hover{box-shadow:0 8px 22px rgba(20,51,107,.1)}
+@media(max-width:420px){.hero h1{font-size:34px}.row .price{font-size:19px}.brand img{height:40px}.call{font-size:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{#fab,#panel,header{display:none}section{padding:20px 0}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+<a class="brand" href="#top"><img src="img/spanish-language-center-logo.png" alt="Spanish Language Center Miami" width="140" height="46"></a>
+<nav><a href="#courses">Courses</a><a href="#calendar">Dates</a><a href="#team">Team</a><a href="#more">Kids · Online · Business</a><a href="#faq">FAQ</a><a href="#visit">Visit</a></nav>
+<a class="call" href="tel:+17865981688">+1 (786) 598-1688</a>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap hgrid">
+<div>
+<span class="eyebrow">Downtown Miami · since 1991</span>
+<h1>Spanish for <em>everyone</em>, in small classes of about four.</h1>
+<p>Private and small-group Spanish with native teachers, on the 8th floor at 111 NE 1st St. Morning, afternoon, evening or Saturday, plus private lessons and live online classes.</p>
+<div class="cta"><a class="btn" href="#courses">See courses and dates</a><button class="btn ghost" onclick="openChat('book')">Ask about a trial</button></div>
+<div class="since"><div><b>A1–C1</b>levels, CEFR based</div><div><b>~4</b>students per class</div><div><b>SIELE</b>authorized centre no. 37502</div></div>
+</div>
+<aside class="next">
+<h3>Next group starts</h3>
+<small>Complete beginners and non-beginners, Mondays</small>
+<div class="dates"><div>November<b>Nov 2</b>Fall 2026</div><div>December<b>Dec 7</b>Fall 2026</div><div>Saturday course<b>Nov 7</b></div><div>Saturday course<b>Dec 5</b></div></div>
+<p>Thanksgiving break: Nov 25–28. Winter break: Dec 23 to Jan 4. Register at least a week ahead.</p>
+</aside>
+</div></section>
+
+<section id="courses"><div class="wrap">
+<span class="eyebrow">In-person courses</span>
+<h2>Pick the slot that fits your week</h2>
+<p class="lead">Every course follows the CEFR levels and keeps classes small. Prices below are the ones published on the school's own site; the team confirms the current ones when you enrol.</p>
+<div class="tt">
+<div class="row hot"><div><h3>Super Intensive Morning<span class="tag">fastest</span></h3></div><div class="price">1,960 USD<small>4 weeks · 64 lessons</small></div><div class="meta">Mon to Thu, 10:00 to 13:15 · textbook included · min. 2 students to start · register a month ahead</div></div>
+<div class="row"><div><h3>General Morning</h3></div><div class="price">480 USD<small>6 weeks · 24 lessons</small></div><div class="meta">Mon + Wed or Tue + Thu, 10:00 to 11:45 · levels A1 to C1</div></div>
+<div class="row"><div><h3>General Afternoon</h3></div><div class="price">480 USD<small>6 weeks · 24 lessons</small></div><div class="meta">Mon + Wed or Tue + Thu, 3:30 to 5:00 PM · levels A1 to C1</div></div>
+<div class="row"><div><h3>General Evening</h3></div><div class="price">480 USD<small>6 weeks</small></div><div class="meta">Monday to Thursday evenings, for working adults · levels A1 to B2 · the team confirms exact times</div></div>
+<div class="row"><div><h3>Saturday Course</h3></div><div class="price">480 USD<small>6 weeks · 24 lessons</small></div><div class="meta">Saturdays 10:00 AM to 1:15 PM · levels A1 to B2</div></div>
+<div class="row"><div><h3>Private lessons</h3></div><div class="price">550 USD<small>10 lessons</small></div><div class="meta">One-on-one or small group · conversation and grammar · 10 lessons minimum · flexible times</div></div>
+</div>
+<p class="note">Materials (flashcards, learning apps, notebooks, handouts) are included. The textbook "Español para Extranjeros" is sold separately except in the Super Intensive. Early-bird discount of 15% on the Super Intensive when you pay in advance.</p>
+</div></section>
+
+<section class="how"><div class="wrap">
+<span class="eyebrow">How classes work</span>
+<h2>Small room, real conversation</h2>
+<p class="lead">Teachers come from Mexico, Spain, Argentina, Chile, Venezuela, Colombia and more, so you hear more than one accent.</p>
+<div class="pill-grid">
+<div class="pill"><b>~4</b><span>students per class on average</span></div>
+<div class="pill"><b>6</b><span>CEFR levels, A1 up to C1</span></div>
+<div class="pill"><b>100+</b><span>active students, on site and online</span></div>
+<div class="pill"><b>1991</b><span>first language school founded in Budapest</span></div>
+</div>
+<div class="pill-grid" style="margin-top:18px;grid-template-columns:1fr"><div class="pill"><span style="display:block;font-size:16px;line-height:1.65">The school teaches only Spanish, so the programme can go deep on the language's dialects, expressions and cultural nuances, from Spain and Mexico to Argentina, Colombia, Cuba and Puerto Rico. Lessons cover speaking, listening, reading and writing, and each module ends with a short test so you can see your progress. The goal is not only grammar: it is to help you use Spanish correctly and with confidence, at work, at home and when you travel.</span></div></div>
+</div></section>
+
+<section id="team"><div class="wrap">
+<span class="eyebrow">Meet the team</span>
+<h2>The people you will actually learn with</h2>
+<div class="team">
+<div class="person"><div class="av">M</div><div><h3>Micaela</h3><em>Teacher and admissions</em><p>Native Spanish teacher from Argentina, 13+ years teaching adults and children. DELE exam preparation (A1 to C2).</p></div></div>
+<div class="person"><div class="av">G</div><div><h3>Gabriela Liñán</h3><em>Academic Director and Head Teacher</em><p>Leads the academic side of the Spanish programme, 9+ years of teaching.</p></div></div>
+<div class="person"><div class="av">G</div><div><h3>Grace</h3><em>Spanish teacher</em><p>From Mexico. Games, stories and interactive work; prepares advanced high-school students for the AP Spanish exam.</p></div></div>
+<div class="person"><div class="av">T</div><div><h3>Tamara</h3><em>Spanish and French teacher</em><p>25+ years teaching. Conversation, functional and advanced Spanish for professionals.</p></div></div>
+<div class="person"><div class="av">M</div><div><h3>Monica</h3><em>Spanish teacher</em><p>Conversational fluency and practical communication for busy professionals.</p></div></div>
+<div class="person"><div class="av">M</div><div><h3>Mercedez</h3><em>Spanish teacher</em><p>From Colombia, taught in New York and Miami; loves in-person group courses from beginner to advanced.</p></div></div>
+</div>
+<p class="note">Milagros, the office manager, handles scheduling and keeps students, teachers and management in touch.</p>
+</div></section>
+
+<section id="more" style="background:#fff"><div class="wrap">
+<span class="eyebrow">Beyond the classroom</span>
+<h2>Kids, online and business</h2>
+<div class="trio">
+<div class="card"><h3>Kids and teens</h3><p>Private Spanish for ages 3 to 13, mornings Monday to Friday, with early care and after care available on request.</p><p>Summer weekly fee published on the site: <b class="pr">300 USD</b>. The team confirms current dates.</p></div>
+<div class="card"><h3>Online Spanish</h3><p>Conversational group classes for levels B1 to C1, three live groups a week: Monday, Tuesday and Thursday, or Wednesday.</p><p><b class="pr">195 USD</b> for 10 lessons.</p></div>
+<div class="card"><h3>Companies and translation</h3><p>Corporate language training, certified Spanish and English translation for immigration, legal, medical and school use, and consecutive interpreting.</p><p>Quote by e-mail.</p></div>
+</div>
+</div></section>
+
+<section id="guide" style="background:#fff"><div class="wrap">
+<span class="eyebrow">Not sure which one?</span>
+<h2>Match the course to your life</h2>
+<p class="lead">A quick guide built from the school's own course descriptions. The team makes the final call on level and schedule with you.</p>
+<div class="trio">
+<div class="card"><h3>I want results fast</h3><p>The Super Intensive Morning packs 64 lessons into four weeks, Monday to Thursday. It suits motivated learners who can free up the mornings, and the textbook is already included.</p></div>
+<div class="card"><h3>I work during the day</h3><p>General Evening runs Monday to Thursday for working adults. Weekend people can take the Saturday course: one long morning, 10:00 AM to 1:15 PM.</p></div>
+<div class="card"><h3>I want it my way</h3><p>Private lessons are built around your goals, with flexible times, one-on-one or in a small group. Ten lessons is the minimum, and a bundle of twenty may earn a discount.</p></div>
+</div>
+</div></section>
+
+<section id="calendar"><div class="wrap">
+<span class="eyebrow">Fall 2026 calendar</span>
+<h2>Start dates for beginners and non-beginners</h2>
+<p class="lead">New Monday groups open every month. Dates are taken from the school's website; the team confirms seats when you register.</p>
+<div class="dates" style="grid-template-columns:repeat(auto-fill,minmax(120px,1fr))">
+<div>August<b>Aug 3</b></div><div>September<b>Sep 7</b></div><div>October<b>Oct 5</b></div><div>November<b>Nov 2</b></div><div>December<b>Dec 7</b></div><div>Saturday<b>Nov 7</b></div><div>Saturday<b>Dec 5</b></div><div>Saturday<b>Jan 2</b></div>
+</div>
+<p class="note">Thanksgiving break: November 25 to 28. Winter break: December 23, 2026 to January 4, 2027. The spring 2026 calendar ran monthly from January 5 through July 6.</p>
+</div></section>
+
+<section style="background:#fff"><div class="wrap">
+<span class="eyebrow">Paying</span>
+<h2>Simple, cashless payment</h2>
+<div class="trio">
+<div class="card"><h3>Online invoice</h3><p>Once you book a course, a separate e-mail brings the invoice so you can pay online.</p></div>
+<div class="card"><h3>At the school</h3><p>Prefer in person? Pay by card at the school's terminal during office hours. The school does not take cash.</p></div>
+<div class="card"><h3>Transfer, PayPal, check</h3><p>Bank transfer usually takes two to three business days, PayPal uses a secure link from registration, and checks are payable to Spanish Language Services LLC.</p></div>
+</div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+<span class="eyebrow">Questions</span>
+<h2>Before you enrol</h2>
+<div class="faq">
+<details><summary>I have never studied Spanish. Where do I start?</summary><p>Complete-beginner groups start on the Monday dates in the fall calendar (Nov 2 and Dec 7 next). Register at least one week ahead.</p></details>
+<details><summary>How do I pay?</summary><p>After you book, an invoice is e-mailed so you can pay online. You can also pay by card at the school terminal during office hours, by bank transfer or PayPal. The school is cashless.</p></details>
+<details><summary>Does the school prepare for exams?</summary><p>It is an authorized SIELE centre, and Micaela specialises in DELE preparation. Grace prepares students for the AP Spanish exam.</p></details>
+<details><summary>Can I study in the evening?</summary><p>Yes. The General Evening course runs Monday to Thursday, and office hours extend to 7:30 PM by appointment.</p></details>
+<details><summary>Do you teach English too?</summary><p>English lessons are listed among the school's courses. Ask the team for the current format.</p></details>
+<details><summary>How big are the classes?</summary><p>About four students on average. The Super Intensive needs a minimum of two students to run, which keeps every group small and personal.</p></details>
+<details><summary>What do I get with a course?</summary><p>Flashcards, learning apps, notebooks and handouts, plus a test per module and a certificate. The textbook "Español para Extranjeros" by Antonio Hernández Galán is extra, except in the Super Intensive.</p></details>
+<details><summary>Is there a course for children?</summary><p>Yes: private Spanish for ages 3 to 13, with early care and after care on request. Ask the team for the current weeks and weekly fee.</p></details>
+<details><summary>What if I need a translation or interpreter?</summary><p>The school offers certified Spanish and English translation for immigration, legal, medical, educational and corporate use, and consecutive interpreting for meetings and events. Request a quote by e-mail.</p></details>
+<details><summary>Can my company train its staff?</summary><p>Yes. Corporate programmes range from conversational Spanish for serving Spanish-speaking customers to advanced business Spanish for negotiations and presentations.</p></details>
+<details><summary>How far ahead should I register?</summary><p>At least one week ahead for the general and Saturday courses, and about one month ahead for the Super Intensive and online courses, which are in high demand.</p></details>
+<details><summary>Are there school breaks?</summary><p>Yes. This fall there is a Thanksgiving break from November 25 to 28 and a winter break from December 23, 2026 to January 4, 2027.</p></details>
+<details><summary>Can I try before I commit?</summary><p>The school offers a free consultation. Use the assistant to leave your details and the team will get back to you within two business days.</p></details>
+</div>
+</div></section>
+
+<section id="visit" class="visit"><div class="wrap vgrid">
+<div class="vcard">
+<h2 style="font-size:28px">Office hours</h2>
+<table class="hours"><tr><td>Monday to Thursday</td><td>10:00 to 3:00 PM</td></tr><tr><td>Extended hours</td><td>until 7:30 PM, by appointment</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table>
+</div>
+<div class="vcard">
+<h2 style="font-size:28px">Find us</h2>
+<p>111 NE 1st St, Suite 810 (8th floor)<br>Miami, FL 33132</p>
+<p><a href="tel:+17865981688"><b>+1 (786) 598-1688</b></a><br><a href="mailto:info@spanish-languagecenter.com">info@spanish-languagecenter.com</a></p>
+<button class="btn" onclick="openChat('book')">Book a free consultation</button>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="fab" onclick="openChat()">Ask SLC</button>
+<div id="panel" role="dialog" aria-label="Spanish Language Center assistant">
+<div class="ph"><div><b>SLC assistant</b><small>Answers from this school's own information</small></div><button onclick="closeChat()" aria-label="Close">×</button></div>
+<div id="msgs"></div>
+<div id="chips"></div>
+<form id="f"><input id="q" autocomplete="off" placeholder="Ask about courses, dates, prices..."><button>Send</button></form>
+<span class="demo">Demo · nothing is sent anywhere</span>
+</div>
+
+<script id="logic">
+var KB=[
+{id:'hi',k:['hello','hi','hey','hola','good morning','good afternoon','good evening'],a:"Hello! I can help with courses, start dates, prices, the team and booking a free consultation. What would you like to know?"},
+{id:'price',k:['price','cost','how much','fee','tuition','pay how much','expensive','cheap','afford'],a:"Published prices:\n• General Morning, Afternoon, Evening and Saturday: 480 USD for 6 weeks\n• Super Intensive Morning: 1,960 USD for 4 weeks / 64 lessons (textbook included)\n• Private lessons: 550 USD for 10 lessons\n• Online conversational: 195 USD for 10 lessons\nThe team confirms the current price when you enrol."},
+{id:'intensive',k:['intensive','super intensive','fast','fastest','quick','crash course','4 weeks','64 lessons','four weeks','intense'],a:"Super Intensive Morning: Monday to Thursday, 10:00 to 13:15, 4 weeks and 64 lessons, 1,960 USD with the textbook included. Minimum 2 students to start, and the school recommends registering a month ahead. There is a 15% early-bird discount when you pay in advance."},
+{id:'morning',k:['morning','general morning','am class','10 am','mornings'],a:"General Morning: Mon + Wed or Tue + Thu, 10:00 to 11:45, 6 weeks / 24 lessons, 480 USD, levels A1 to C1. Max about 4 students per class."},
+{id:'afternoon',k:['afternoon','general afternoon','after lunch','3:30','pm class'],a:"General Afternoon: Mon + Wed or Tue + Thu, 3:30 to 5:00 PM, 6 weeks / 24 lessons, 480 USD, levels A1 to C1. Includes materials, a test per module and a certificate."},
+{id:'evening',k:['evening','night','after work','working','after 5','late','evenings','work schedule','busy schedule'],a:"General Evening runs Monday to Thursday evenings, for working adults, levels A1 to B2, 480 USD for 6 weeks. The team will confirm exact class times when you enrol."},
+{id:'saturday',k:['saturday','weekend','sat','weekends','saturdays'],a:"Saturday Course: every Saturday 10:00 AM to 1:15 PM, 6 weeks / 24 lessons, 480 USD, levels A1 to B2. Next starts: Nov 7 and Dec 5, 2026."},
+{id:'private',k:['private','one on one','one-on-one','1 on 1','individual','tutor','tutoring','personal lesson','own pace','small group'],a:"Private lessons: one-on-one or small group, conversation and grammar, 550 USD for 10 lessons (10 is the minimum). Possible extra discounts for returning students and for a bundle of 20 lessons."},
+{id:'kids',k:['kid','child','children','teen','teenager','son','daughter','young','my kid','summer','ages'],a:"Kids and teens (ages 3 to 13): private Spanish, 9:00 to 13:00 Monday to Friday, with early care (from 8:00) and after care (1:00 to 3:00 PM) on request. Bookings daily or weekly. The team will confirm current dates and the weekly fee."},
+{id:'online',k:['online','zoom','remote','virtual','from home','distance','live online','internet'],a:"Online Spanish: conversational groups for B1 to C1, live: Monday 7 A.M., Tuesday and Thursday 8 to 9 A.M., Wednesday 4 P.M. 195 USD for 10 lessons. Register about a month ahead."},
+{id:'corp',k:['corporate','company','business','staff','employees','translation','translate','interpreting','interpreter','certified','immigration','document'],a:"Corporate services: Spanish training for your team (from conversational to business Spanish), certified translation Spanish and English (immigration, legal, medical, school) and consecutive interpreting. Ask for a quote at info@spanish-languagecenter.com."},
+{id:'english',k:['english','english lessons','learn english','esl'],a:"English lessons are listed among the school's courses. The team will tell you the current format and times."},
+{id:'levels',k:['level','beginner','complete beginner','a1','a2','b1','b2','c1','advanced','intermediate','cefr','placement','never studied','zero'],a:"Courses follow the CEFR scale, A1 to C1 (Saturday and Evening go up to B2, online is B1 to C1). Complete beginners and non-beginners both have start dates on the fall calendar. The team can help you pick the right level."},
+{id:'dates',k:['start','starting','when','when does','next group','group start','next course','next class','begin','date','dates','calendar','enroll when','schedule','start date'],a:"Next Monday group starts: Nov 2 and Dec 7, 2026 (then January 2027). Saturday course: Nov 7, Dec 5 and Jan 2. Breaks: Thanksgiving Nov 25 to 28, winter Dec 23 to Jan 4. Register at least a week ahead."},
+{id:'hours',k:['hours','open','office','opening','closed','close','sunday','what time','office hours'],a:"Office hours: Monday to Thursday 10:00 to 3:00 PM, extended until 7:30 PM by appointment. Sunday closed. Friday and Saturday office hours are not listed, please ask the team."},
+{id:'loc',k:['where','address','location','find you','directions','located','downtown','floor','suite','map','miami','parking'],a:"111 NE 1st St, Suite 810 (8th floor), Miami, FL 33132, downtown. I do not have parking information; the team can tell you."},
+{id:'contact',k:['phone','call','email','e-mail','contact','whatsapp','number','reach','speak to'],a:"Phone +1 (786) 598-1688, e-mail info@spanish-languagecenter.com. Office hours Monday to Thursday 10:00 to 3:00 PM."},
+{id:'payment',k:['payment','pay','card','credit','paypal','transfer','bank','cash','check','invoice','paying'],a:"After you book, you receive an invoice by e-mail and pay online. You can also pay by card at the school terminal in office hours, by bank transfer (2 to 3 business days), PayPal or check. The school is cashless."},
+{id:'materials',k:['material','book','textbook','notebook','handout','app','included','include','flashcard'],a:"Included: flashcards, learning apps, notebooks and handouts, plus a test per module and a certificate. The textbook \"Español para Extranjeros\" costs extra, except in the Super Intensive where it is included."},
+{id:'team',k:['teacher','team','instructor','who teaches','native','staff','tutor','micaela','grace','gabriela','tamara','monica','mercedez','milagros'],a:"A small team of 10+ native teachers from Mexico, Spain, Argentina, Chile, Venezuela, Colombia and more. Micaela (admissions, DELE prep), Gabriela (academic director), Grace (AP Spanish), Tamara (25+ years, Spanish and French), Monica, Mercedez. Milagros runs the office."},
+{id:'exam',k:['exam','siele','dele','ap spanish','certificate','certification','test prep','diploma'],a:"SLC is an authorized SIELE centre (no. 37502). Micaela prepares students for DELE (A1 to C2) and Grace for the AP Spanish exam. Every course includes a test per module and a certificate."},
+{id:'size',k:['class size','how many students','group size','students per class','small class','crowded'],a:"Classes average 4 students. Super Intensive needs at least 2 students to start."},
+{id:'disc',k:['discount','promo','early bird','offer','deal','sale','coupon','cheaper'],a:"The Super Intensive has a 15% early-bird discount when you pay in advance, and private lessons may get extra discounts for returning students or a bundle of 20. The team will confirm what applies to you."},
+{id:'reg',k:['register','registration','enrol','enroll','sign up','apply','application','join'],a:"Fill in the application form on the school's site or tell me and I will start a request. Register at least one week ahead (one month for Super Intensive and online)."},
+{id:'about',k:['about','history','who are you','founded','since','1991','budapest','school','story'],a:"The school began in 1991 with a first language centre in Budapest, and the Miami team is over 10 teachers serving 100+ active students on site and online. It focuses only on Spanish."},
+{id:'thanks',k:['thanks','thank','thx','great','perfect','ok thanks'],a:"You're welcome! Anything else about courses or dates?"},
+{id:'human',k:['human','person','real person','agent','talk to someone','staff member'],a:"Of course. Call +1 (786) 598-1688 or write to info@spanish-languagecenter.com and the team will reply."}
+];
+function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9: \-]/g,' ').replace(/\s+/g,' ').trim()}
+function stem(t){if(t.length>4){if(/ies$/.test(t))return t.slice(0,-3)+'y';if(/ing$/.test(t))return t.slice(0,-3);if(/ed$/.test(t))return t.slice(0,-2);if(/es$/.test(t))return t.slice(0,-2);if(/s$/.test(t))return t.slice(0,-1)}return t}
+function lev(a,b){var m=[],i,j;for(i=0;i<=a.length;i++){m[i]=[i]}for(j=1;j<=b.length;j++)m[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return m[a.length][b.length]}
+function tokHit(kt,qts){for(var i=0;i<qts.length;i++){var q=qts[i];if(q==kt)return 1;if(kt.length>=5&&q.length>=5&&lev(kt,q)<=1)return .9;if(kt.length>=7&&q.length>=7&&lev(kt,q)<=2)return .8}return 0}
+function answer(q){var n=norm(q);if(!n)return null;var qts=n.split(' ').map(stem),best=null,bs=0;
+ KB.forEach(function(e){var s=0;e.k.forEach(function(p){var pts=norm(p).split(' ').map(stem),tot=0,ok=1;pts.forEach(function(t){var h=tokHit(t,qts);if(!h)ok=0;tot+=h});if(ok)s=Math.max(s,tot*2+(pts.length>1?1.5:0)+(n.indexOf(norm(p))>=0?0.5:0))});
+ if(s>bs){bs=s;best=e}});
+ return bs>=1.8?best:null}
+var CHIPS=['Prices','Next start dates','Evening classes','Kids','Online','Book a consultation'];
+var FLOW=[{k:'course',q:'Which course are you interested in?',o:['Super Intensive','Morning','Afternoon','Evening','Saturday','Private','Kids and teens','Online']},
+{k:'level',q:'What is your Spanish level today?',o:['Complete beginner','Some Spanish (A2-B1)','Advanced (B2+)','Not sure']},
+{k:'start',q:'When would you like to start?',o:['Nov 2','Dec 7','January','Just exploring']},
+{k:'name',q:'Your first name?',free:1},{k:'contact',q:'Best e-mail or phone for the team to reach you?',free:1}];
+</script>
+<script>
+(function(){
+var msgs=document.getElementById('msgs'),chips=document.getElementById('chips'),panel=document.getElementById('panel'),inp=document.getElementById('q'),fab=document.getElementById('fab');
+var flow=null,data={},started=false;
+function add(t,c){var d=document.createElement('div');d.className='m '+c;d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight}
+function setChips(a){chips.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){handle(t)};chips.appendChild(b)})}
+function ask(){var s=FLOW[flow];add(s.q,'b');setChips(s.o||['Cancel'])}
+function startFlow(){flow=0;data={};add('Great, I will take a few details for a free consultation request. You can type "cancel" any time.','b');ask()}
+function handle(t){add(t,'u');
+ if(flow!==null){if(/^cancel|^stop|^no$/i.test(t)){flow=null;add('No problem, cancelled. Ask me anything else.','b');setChips(CHIPS);return}
+  data[FLOW[flow].k]=t;flow++;
+  if(flow<FLOW.length){ask();return}
+  flow=null;add('Thanks '+data.name+'! Request ready: '+data.course+', level "'+data.level+'", start "'+data.start+'". Contact: '+data.contact+'.\nIt is now with the SLC team, who will confirm availability and the current price. They reply within two business days, and the office is open Monday to Thursday 10:00 to 3:00 PM.\n(Demo: nothing was actually sent.)','b');setChips(CHIPS);return}
+ if(/book|consult|trial|enrol|enroll|sign up|register|apply|free/i.test(t)&&!/price|cost/i.test(t)){startFlow();return}
+ var e=answer(t);
+ if(e){add(e.a,'b');setChips(CHIPS)}else{add("I do not have that detail, and I will not guess. The team can confirm it: +1 (786) 598-1688 or info@spanish-languagecenter.com. Want me to start a consultation request?",'b');setChips(['Book a consultation','Prices','Next start dates'])}}
+window.openChat=function(m){panel.classList.add('open');fab.style.display='none';if(!started){started=true;add("Hi! I am the Spanish Language Center assistant. Ask me about courses, dates, prices or booking a free consultation.",'b');setChips(CHIPS)}if(m==='book'&&flow===null)handle('Book a consultation');inp.focus()};
+window.closeChat=function(){panel.classList.remove('open');fab.style.display=''};
+document.getElementById('f').addEventListener('submit',function(ev){ev.preventDefault();var v=inp.value.trim();if(!v)return;inp.value='';handle(v)});
+})();
+</script>
+</body>
+</html>

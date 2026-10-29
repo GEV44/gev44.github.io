@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OPUS Vancouver | Boutique hotel in Yaletown (demo)</title>
+<meta name="description" content="Demo page for OPUS Vancouver, a boutique lifestyle hotel at 322 Davie St in Yaletown, with an assistant that answers guest questions.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#ee006d;--ink:#0b0b0d;--gold:#dea014;--blue:#0a406b;--paper:#fbf8f4;--bw-a:#ee006d;--bw-ai:#fff;--bw-font:'Figtree',system-ui,sans-serif;--bw-r:4px;--bw-pr:4px;--bw-bg2:#f4efe8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;line-height:1.08}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:20;background:#fff;border-bottom:3px solid var(--ink)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:62px}
+header.top img{height:40px;width:auto}
+nav.m{display:none;gap:22px;font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+nav.m a{text-decoration:none}nav.m a:hover{color:var(--pink)}
+.btn{display:inline-block;background:var(--pink);color:#fff;border:0;padding:11px 20px;font:700 14px 'Figtree',sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.btn.k{background:var(--ink)}.btn.o{background:transparent;border:2px solid currentColor;color:inherit}
+.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden;padding:54px 0 64px}
+.hero::before{content:"";position:absolute;right:-90px;top:-80px;width:330px;height:330px;border-radius:50%;border:46px solid var(--pink)}
+.hero::after{content:"";position:absolute;left:-60px;bottom:-70px;width:170px;height:170px;border-radius:50%;background:var(--gold)}
+.hero .wrap{position:relative;z-index:2}
+.kick{font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--gold)}
+.hero h1{font-size:clamp(38px,9vw,76px);margin:14px 0 18px;max-width:11em}
+.hero h1 em{color:var(--pink);font-style:italic}
+.hero p.l{max-width:34em;font-size:18px;color:#e9e4dc}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:38px;border-top:1px solid #444}
+.stats div{padding:16px 8px 0 0;min-width:0}
+.stats b{display:block;font-family:'DM Serif Display',serif;font-size:36px;color:var(--gold);font-weight:400}
+.stats span{font-size:13px;color:#cfc8bd}
+.strip{background:var(--pink);color:#fff;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;overflow:hidden}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:6px 22px;padding-top:11px;padding-bottom:11px}
+section{padding:60px 0;overflow:hidden}
+section h2{font-size:clamp(30px,6vw,48px);margin-bottom:12px}
+.lead{max-width:40em;color:#44403a;margin-bottom:26px}
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 18px 18px;margin:0 -18px}
+.rcard{flex:0 0 78%;max-width:300px;scroll-snap-align:start;background:#fff;border:2px solid var(--ink);display:flex;flex-direction:column;min-width:0}
+.rcard .band{height:92px;position:relative;overflow:hidden}
+.rcard .band::after{content:"";position:absolute;right:-18px;bottom:-30px;width:90px;height:90px;border-radius:50%;background:rgba(255,255,255,.28)}
+.rcard .in{padding:14px 15px 18px}
+.rcard h3{font-size:24px;margin-bottom:6px}
+.rcard p{font-size:14.5px;color:#46423b}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:10px;color:var(--pink)}
+.c1{background:var(--pink)}.c2{background:var(--blue)}.c3{background:var(--gold)}.c4{background:#1c1c1f}.c5{background:#7b2d5e}.c6{background:#2f7d6d}.c7{background:#c4572b}.c8{background:#4a4f8a}
+.suites{background:var(--ink);color:#fff}
+.suites .lead{color:#cfc8bd}
+.sgrid{display:grid;gap:16px}
+.sitem{border:1px solid #555;padding:20px;min-width:0}
+.sitem h3{font-size:26px;color:var(--gold);margin-bottom:6px}
+.sitem p{color:#ddd6ca;font-size:15px}
+.dine{background:#fff}
+.dgrid{display:grid;gap:18px}
+.dbox{padding:24px;border:2px solid var(--ink);min-width:0}
+.dbox.p{background:var(--pink);color:#fff;border-color:var(--pink)}
+.dbox.g{background:var(--gold)}
+.dbox h3{font-size:30px;margin-bottom:8px}
+.times{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin-top:12px;font-size:15px;border-top:2px solid currentColor;padding-top:10px}
+.times span:nth-child(even){font-weight:700;text-align:right}
+.split{display:grid;gap:30px}
+.split>div{min-width:0}
+.facts{list-style:none;display:grid;gap:0}
+.facts li{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid #d8d0c4;font-size:15.5px}
+.facts li b{font-weight:700;text-align:right;min-width:0}
+details{border-bottom:2px solid var(--ink);padding:14px 0}
+summary{font-family:'DM Serif Display',serif;font-size:22px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--pink);font-family:'Figtree';font-weight:800}
+details[open] summary::after{content:"-"}
+details p{margin-top:8px;color:#44403a;max-width:46em}
+.grp{background:var(--blue);color:#fff;position:relative;overflow:hidden}
+.grp::before{content:"";position:absolute;left:-80px;top:-80px;width:220px;height:220px;border-radius:50%;border:34px solid rgba(255,255,255,.12)}
+.grp .wrap{position:relative}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 22px}
+.nums div{border-top:3px solid var(--gold);padding-top:8px;min-width:0}
+.nums b{display:block;font-family:'DM Serif Display';font-size:34px;font-weight:400}
+.nums span{font-size:13px;color:#dbe6f0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chips span{border:1px solid rgba(255,255,255,.5);padding:6px 12px;font-size:14px;border-radius:99px}
+.contact{background:var(--paper)}
+.cbox{background:#fff;border:2px solid var(--ink);padding:24px}
+.cbox a:not(.btn){color:var(--pink);font-weight:700}
+footer{background:var(--ink);color:#bdb6aa;padding:34px 0 90px;font-size:14px}
+footer .wrap{display:grid;gap:14px}
+footer img{height:38px;width:auto;margin-bottom:6px}
+footer .demo{color:#8f897f;border-top:1px solid #333;padding-top:14px}
+@media(min-width:720px){
+ nav.m{display:flex}
+ .rcard{flex-basis:290px}
+ .sgrid{grid-template-columns:1fr 1fr}
+ .dgrid{grid-template-columns:1.2fr 1fr 1fr}
+ .split{grid-template-columns:1fr 1fr;align-items:start}
+ .hero::before{right:6%;top:-60px;width:420px;height:420px;border-width:58px}
+ .stats b{font-size:46px}
+}
+
+.bw{font-family:var(--bw-font,system-ui,sans-serif);position:fixed;right:14px;bottom:14px;z-index:99;max-width:calc(100vw - 28px)}
+.bw *{box-sizing:border-box}
+.bw-fab{display:flex;align-items:center;gap:9px;border:0;cursor:pointer;background:var(--bw-a,#222);color:var(--bw-ai,#fff);padding:12px 18px;border-radius:var(--bw-r,40px);font:600 15px var(--bw-font,system-ui);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.bw-fab-i{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--bw-ai,#fff);color:var(--bw-a,#222);font-weight:800;font-size:14px}
+.bw-p{position:fixed;right:14px;bottom:14px;width:min(380px,calc(100vw - 28px));height:min(560px,calc(100vh - 28px));background:var(--bw-bg,#fff);color:var(--bw-ink,#111);border-radius:var(--bw-pr,16px);box-shadow:0 18px 50px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(0,0,0,.12)}
+.bw-p[hidden]{display:none}
+.bw-h{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 16px;background:var(--bw-a,#222);color:var(--bw-ai,#fff)}
+.bw-h b{display:block;font-size:15px}.bw-h small{opacity:.8;font-size:12px}
+.bw-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer}
+.bw-m{flex:1;min-height:0;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;background:var(--bw-bg2,#f6f6f6)}
+.bw-b{max-width:88%;padding:9px 12px;border-radius:14px;font-size:14px;line-height:1.45;white-space:pre-line;overflow-wrap:anywhere}
+.bw-b.bot{background:var(--bw-bot,#fff);align-self:flex-start;border:1px solid rgba(0,0,0,.08)}
+.bw-b.me{background:var(--bw-a,#222);color:var(--bw-ai,#fff);align-self:flex-end}
+.bw-c{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;max-height:112px;overflow-y:auto;border-top:1px solid rgba(0,0,0,.08)}
+.bw-c button{border:1px solid var(--bw-a,#222);background:transparent;color:var(--bw-a,#222);border-radius:999px;padding:6px 11px;font:13px var(--bw-font,system-ui);cursor:pointer}
+.bw-c button:hover{background:var(--bw-a,#222);color:var(--bw-ai,#fff)}
+.bw-f{display:flex;gap:6px;padding:10px 12px;border-top:1px solid rgba(0,0,0,.08)}
+.bw-f input{flex:1;min-width:0;border:1px solid #bbb;border-radius:10px;padding:10px;font:15px var(--bw-font,system-ui)}
+.bw-f button{border:0;background:var(--bw-a,#222);color:var(--bw-ai,#fff);border-radius:10px;padding:0 14px;cursor:pointer;font-size:16px}
+</style></head><body>
+<header class="top"><div class="wrap">
+ <a href="#top" aria-label="OPUS Vancouver"><img src="img/opus-vancouver-logo.png" alt="OPUS Vancouver" width="112" height="40"></a>
+ <nav class="m"><a href="#rooms">Rooms</a><a href="#suites">Suites</a><a href="#dine">Eat + Drink</a><a href="#groups">Groups</a><a href="#stay">Good to know</a><a href="#contact">Contact</a></nav>
+ <a class="btn" href="#contact" data-bot="Book a stay">Request a stay</a>
+</div></header>
+<div id="top" class="hero"><div class="wrap">
+ <div class="kick">322 Davie St &middot; Yaletown &middot; Vancouver</div>
+ <h1>96 rooms, each with a <em>personality</em> of its own.</h1>
+ <p class="l">OPUS Vancouver is a boutique lifestyle hotel in the middle of Yaletown: vivid colour palettes, pop-deco art, spa bathrooms, Italian dining downstairs, and dogs treated better than people.</p>
+ <div class="cta"><a class="btn" href="#rooms">See the rooms</a><a class="btn o" href="#" data-bot="Book a stay">Ask or request a stay</a></div>
+ <div class="stats"><div><b>96</b><span>rooms and suites</span></div><div><b>5</b><span>lifestyle decor themes</span></div><div><b>5</b><span>event spaces</span></div></div>
+</div></div>
+<div class="strip"><div class="wrap"><span>Digital check-in</span><span>Wi-Fi</span><span>Turndown service</span><span>Dog friendly</span><span>Fitness center</span><span>Green space</span></div></div>
+
+<section id="rooms"><div class="wrap">
+ <h2>Pick the room that fits your mood</h2>
+ <p class="lead">Five decor themes with bright colour, pop-art walls and spa bathrooms with heated floors. Every room has its own personality, and the Muses will help match yours.</p>
+</div>
+<div class="wrap"><div class="rail">
+ <article class="rcard"><div class="band c1"></div><div class="in"><h3>Secret Garden</h3><p>A hidden gem with direct courtyard access, an outdoor patio, a gas fireplace and a four-piece spa bathroom.</p><span class="tag">Courtyard level</span></div></article>
+ <article class="rcard"><div class="band c2"></div><div class="in"><h3>Balcony Studio</h3><p>King bed, a full sitting area, a step-out balcony, a four-piece spa bathroom and a mini kitchenette.</p><span class="tag">Balcony + kitchenette</span></div></article>
+ <article class="rcard"><div class="band c3"></div><div class="in"><h3>Deluxe King</h3><p>Spacious and sleek, with heated tile floors, a deep soaker tub and a separate walk-in shower.</p><span class="tag">Soaker tub</span></div></article>
+ <article class="rcard"><div class="band c4"></div><div class="in"><h3>Deluxe Courtyard</h3><p>Overlooks the inner garden, with a sitting area, a gas fireplace and a four-piece bathroom.</p><span class="tag">Garden view</span></div></article>
+ <article class="rcard"><div class="band c5"></div><div class="in"><h3>Superior Double</h3><p>Tastefully designed, with a three-piece spa bathroom, heated floors and a spacious walk-in shower.</p><span class="tag">Two beds</span></div></article>
+ <article class="rcard"><div class="band c6"></div><div class="in"><h3>Superior King</h3><p>Three distinctive room configurations, each with a spa bathroom and walk-in shower.</p><span class="tag">King bed</span></div></article>
+ <article class="rcard"><div class="band c7"></div><div class="in"><h3>Standard King</h3><p>Smartly appointed in two colour palettes, with a spa bathroom and spacious walk-in shower.</p><span class="tag">King bed</span></div></article>
+ <article class="rcard"><div class="band c8"></div><div class="in"><h3>Standard Queen</h3><p>Smartly appointed and stylishly furnished, a good fit for a solo stay or a quick city break.</p><span class="tag">Queen bed</span></div></article>
+</div></div>
+<div class="wrap" style="margin-top:6px">
+ <ul class="facts">
+  <li><span>In every room</span><b>Nespresso, 55&quot; Smart TV with Chromecast</b></li>
+  <li><span>Comfort</span><b>Frette bathrobes, Herman Miller chairs</b></li>
+  <li><span>Bath + sound</span><b>TALLU &amp; Co amenities, JBL speakers</b></li>
+  <li><span>Deluxe + Balcony Studio</span><b>Dyson Supersonic hair dryers</b></li>
+ </ul>
+</div></section>
+
+<section id="suites" class="suites"><div class="wrap">
+ <h2>Suites with a view, a fireplace, or a spare bedroom</h2>
+ <p class="lead">More space for longer stays, families and the occasions that deserve a chrome four-poster bed.</p>
+ <div class="sgrid">
+  <div class="sitem"><h3>OPUS Signature Suite</h3><p>The top-floor suite: a two-sided glass fireplace, a wraparound balcony with sweeping city views, and a chrome four-poster bed.</p></div>
+  <div class="sitem"><h3>Executive Suite</h3><p>Pop-deco flair, a full living room with a sectional sofa bed, a four-piece spa bathroom and a mini kitchenette.</p></div>
+  <div class="sitem"><h3>Signature Two Bedroom</h3><p>The most luxurious suite with an extra bedroom for the kids, the shopping, or an assistant.</p></div>
+  <div class="sitem"><h3>Executive Two Bedroom</h3><p>A private foyer separates both bedrooms. Add an adjoining Standard King and it becomes a three-bedroom suite.</p></div>
+ </div>
+</div></section>
+
+<section id="dine" class="dine"><div class="wrap">
+ <h2>Eat + Drink, steps from the elevator</h2>
+ <p class="lead">Both venues sit just off the lobby, and locals eat here as often as guests do.</p>
+ <div class="dgrid">
+  <div class="dbox p"><h3>CAPO</h3><p>A neighbourhood Italian gem: crave-worthy pizzas, fresh pastas and sips worth lingering over, laid-back yet refined. Lunch, dinner and weekend brunch.</p><div class="times"><span>Open</span><span>7 days, 7:00 am till late</span><span>Happy Hour</span><span>Daily 2:00 to 5:00 pm</span></div></div>
+  <div class="dbox"><h3>The Spritz</h3><p>A cozy, sophisticated cocktail bar with the classics and original drinks, made in homage to Italy's aperitivo culture.</p><div class="times"><span>Open</span><span>7 days</span><span>Happy Hour</span><span>Daily 2:00 to 5:00 pm</span></div></div>
+  <div class="dbox g"><h3>Room Service</h3><p>From CAPO to your room, plus the BYOB (Build Your Own Bar) program for your in-room bar.</p><div class="times"><span>Sun to Thu</span><span>7:00 am to 9:30 pm</span><span>Fri and Sat</span><span>7:00 am to 10:30 pm</span></div></div>
+ </div>
+ <div class="cta"><a class="btn k" href="#" data-bot="Reserve a table">Request a table at CAPO</a></div>
+</div></section>
+
+<section id="groups" class="grp"><div class="wrap">
+ <h2>Gather together in style</h2>
+ <p class="lead" style="color:#dbe6f0">Meetings, receptions, weddings, elopements, stags and stagettes for groups of 10 to 40, with AV technology and full food and beverage service.</p>
+ <div class="nums"><div><b>96</b><span>guest rooms</span></div><div><b>5</b><span>event spaces</span></div><div><b>2,260</b><span>sq ft of space</span></div></div>
+ <div class="chips"><span>Group rates for 10+ rooms</span><span>Weddings with a personal concierge</span><span>Stag + stagette weekends</span><span>Production and cast stays</span><span>Banquet menus</span></div>
+ <a class="btn" href="#" data-bot="Groups and events">Start a group enquiry</a>
+</div></section>
+
+<section id="hood" class="dine" style="background:var(--paper)"><div class="wrap split">
+ <div>
+  <h2>Yaletown, right outside the door</h2>
+  <p class="lead">A chic enclave where tech start-ups meet yoga studios, waterfront parks meet restaurant patios, and nightlife meets morning coffee, under soaring glass towers anchored by heritage brick buildings.</p>
+  <p style="margin-bottom:12px">OPUS sits close to the city's top restaurants, spas and boutiques, and has been recognised by Cond&eacute; Nast Traveler, Forbes Travel Guide and Travelers' Choice.</p>
+  <a class="btn k" href="#" data-bot="Getting there">How to get here</a>
+ </div>
+ <div>
+  <ul class="facts">
+   <li><span>By train</span><b>Yaletown-Roundhouse Canada Line, steps away</b></li>
+   <li><span>To the airport</span><b>Direct Canada Line service</b></li>
+   <li><span>By bike</span><b>Hotel Bike Fleet for guests</b></li>
+   <li><span>By water</span><b>False Creek Water Taxis, short walk</b></li>
+   <li><span>By car</span><b>24/7 secured valet under the hotel</b></li>
+   <li><span>Your hosts</span><b>The Muses plan your stay around your style</b></li>
+  </ul>
+ </div>
+</div></section>
+<section id="stay"><div class="wrap split">
+ <div>
+  <h2>Good to know before you arrive</h2>
+  <p class="lead">The practical answers, straight from the reservation policy and the map page.</p>
+  <ul class="facts">
+   <li><span>Check-in</span><b>3 pm or later</b></li>
+   <li><span>Check-out</span><b>12 noon</b></li>
+   <li><span>Cancellation</span><b>by 3 pm PST, 1 day before</b></li>
+   <li><span>Destination fee</span><b>10 dollars per night + tax</b></li>
+   <li><span>Valet parking</span><b>59 dollars per day</b></li>
+   <li><span>Minimum age</span><b>19 without a guardian</b></li>
+  </ul>
+ </div>
+ <div>
+  <details open><summary>Do you accept dogs?</summary><p>Yes, dogs are always welcome. Under 25 lbs, house trained, leashed in public areas and never alone in the room. One dog per room, with a one-time 50 dollar cleaning fee at check-out.</p></details>
+  <details><summary>How do I get here without a car?</summary><p>The Yaletown-Roundhouse Canada Line station is steps away, with direct service to Vancouver International Airport. The hotel Bike Fleet is at guests' disposal and the False Creek Water Taxis are a short walk.</p></details>
+  <details><summary>Is there parking?</summary><p>Secured 24/7 valet in the private garage under the hotel. Garage height is 6 ft 6 in. Some special offers include complimentary valet.</p></details>
+  <details><summary>What if I cancel late?</summary><p>Late cancellations and no-shows are charged one night plus taxes. Prepay and Save bookings are non-refundable, and very busy dates may need full prepayment.</p></details>
+  <details><summary>Is smoking allowed?</summary><p>No. OPUS is 100% non-smoking, and in-room parties are not permitted.</p></details>
+ </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap"><div class="cbox">
+ <h2>Plan your stay</h2>
+ <p class="lead">322 Davie St, Vancouver, BC V6B 5Z6, Canada<br>Phone <a href="tel:+18666426787">+1 866-642-6787</a> &middot; <a href="mailto:info@opushotel.com">info@opushotel.com</a></p>
+ <p style="margin-bottom:16px">Awarded Tripadvisor Travelers' Choice Best of the Best 2024 to 2026 and Conde Nast Traveler Readers' Choice, Top Hotel in Western Canada 2026.</p>
+ <a class="btn" href="#" data-bot="Book a stay">Request a stay in the assistant</a>
+</div></div></section>
+<footer><div class="wrap">
+ <img src="img/opus-vancouver-logo-white.png" alt="OPUS Vancouver" width="112" height="40">
+ <div>All details on this page come from the OPUS Vancouver website. Anything not listed here, the team confirms.</div>
+ <div class="demo">Demo &middot; prepared by Gevorg Hovhannisyan</div>
+</div></footer>
+<script>function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[],c;if(Math.abs(m-n)>2)return 9;for(i=0;i<=m;i++){d[i]=[i]}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++){c=a[i-1]===b[j-1]?0:1;d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c)}return d[m][n]}
+function tokHit(t,k){if(t===k)return 1;if(k.length>=3&&t.indexOf(k)===0)return 1;if(k.length>=5&&t.length>=4&&lev(t,k)<=1)return 1;if(k.length>=8&&t.length>=7&&lev(t.slice(0,k.length),k)<=1)return 1;return 0}
+function route(q,KB){var n=norm(q),toks=n.split(' '),best=null,bs=0,i,j,e,s,k;for(i=0;i<KB.length;i++){e=KB[i];s=0;for(j=0;j<e.k.length;j++){k=norm(e.k[j]);if(k.indexOf(' ')>-1){if((' '+n+' ').indexOf(' '+k)>-1)s+=2}else if(toks.some(function(t){return tokHit(t,k)}))s+=1}s*=(e.w||1);if(s>bs){bs=s;best=e}}return bs>0?best:null}
+
+window.BOT={"name": "OPUS Assistant", "sub": "Demo assistant for OPUS Vancouver", "fab": "Ask OPUS", "ph": "Ask about rooms, dining, parking...", "cancel": "Cancel", "cancelled": "No problem, request cancelled. What else can I help with?", "hello": "Hi, I'm the OPUS Vancouver assistant. Ask me about rooms, CAPO, parking, dogs or groups, or start a stay request.", "fallback": "I don't have that detail from the hotel's site, so the team will confirm it. You can call +1 866-642-6787 or email info@opushotel.com, or leave a request here.", "chips": ["Rooms", "Suites", "CAPO", "Parking", "Dogs", "Check-in time", "Book a stay"], "after": ["Rooms", "CAPO", "Parking"], "kb": [{"id": "rooms", "k": ["room", "rooms", "bed", "king", "queen", "double", "studio", "courtyard", "garden", "balcony", "types", "categories", "accommodation", "kitchenette", "fireplace", "sleep"], "a": "OPUS Vancouver has 96 rooms and suites in five lifestyle decor themes. Rooms: Secret Garden (courtyard access, patio, gas fireplace), Balcony Studio (king bed, sitting area, balcony, kitchenette), Deluxe King, Deluxe Courtyard (garden view, gas fireplace), Superior Double, Superior King, Standard King and Standard Queen. Every room has a spa bathroom.", "next": ["Suites", "Book a stay", "Amenities"]}, {"id": "suites", "k": ["suite", "suites", "signature", "executive", "two bedroom", "three bedroom", "family", "large", "penthouse", "top floor", "living room"], "a": "Suites: the OPUS Signature Suite (top floor, two-sided glass fireplace, wraparound balcony, chrome four-poster bed), the Executive Suite (living room with sectional sofa bed, kitchenette), the Signature Two Bedroom and the Executive Two Bedroom. Adding an adjoining Standard King room turns the Executive Two Bedroom into a three-bedroom suite.", "next": ["Book a stay", "Rooms"]}, {"id": "amen", "k": ["amenity", "amenities", "nespresso", "coffee", "tv", "chromecast", "robe", "frette", "bathroom", "spa", "heated", "hair dryer", "dyson", "speaker", "wifi", "wi fi", "internet", "gym", "fitness", "turndown", "includes", "features", "in room", "bathrobe"], "a": "In the rooms: spa bathrooms with heated floors and deep soaking tubs, Nespresso coffee, Philips 55 inch Smart TVs with Chromecast, Frette bathrobes, Herman Miller chairs, TALLU & Co amenities, JBL Bluetooth speakers, and Dyson hair dryers in Deluxe rooms and Balcony Studios. The hotel also lists Wi-Fi, a fitness center, turndown service and a green space.", "next": ["Rooms", "Dogs", "Book a stay"]}, {"id": "checkin", "k": ["check in", "checkin", "check out", "checkout", "arrival", "arrive", "early", "late", "what time", "time", "noon", "3 pm", "id", "photo id"], "a": "Check-in is at 3 pm or later, with a government photo ID that matches the credit card. Check-out is at 12 noon. Early check-in and late check-out may be possible but cannot be guaranteed, and charges may apply. Ask the front desk on the morning of departure for a late check-out. Digital check-in is available, so your phone can be your room key.", "next": ["Cancellation", "Book a stay"]}, {"id": "digital", "k": ["digital", "phone key", "smartphone", "mobile key", "contactless", "app"], "a": "Digital check-in lets you get into your room with your smartphone. The team will send the steps with your confirmation.", "next": ["Check-in time"]}, {"id": "cancel", "k": ["cancel", "cancellation", "refund", "change booking", "modify", "no show", "prepay", "non refundable", "guarantee", "deposit", "credit card", "payment", "pay"], "a": "Reservations normally follow a 24 hour cancellation policy: changes or cancellations by 3:00 pm Pacific time, one day before arrival. Late cancellations and no-shows pay one night plus taxes. Prepay and Save offers are prepaid, non-refundable and cannot be changed, and some very busy dates need full prepayment. The reservation team confirms the rules for your dates.", "next": ["Check-in time", "Book a stay"]}, {"id": "dog", "k": ["dog", "dogs", "pet", "pets", "puppy", "animal", "cat"], "a": "Dogs are welcome. They must be under 25 lbs, house trained, leashed in public areas and never left alone in the room. One dog per room, and a one-time cleaning fee of 50 dollars applies at check-out. Please ask the team about any other kind of pet.", "next": ["Amenities", "Book a stay"]}, {"id": "park", "k": ["park", "parking", "valet", "car", "garage", "drive", "height", "vehicle", "truck", "suv", "van"], "a": "Secured valet parking is available 24/7 in the private garage under the hotel at 59 dollars a day including tax. The garage height is 6 ft 6 in, so over-height vehicles cannot be accommodated. Some special offers include complimentary valet. Street parking in Yaletown is hard to find.", "next": ["Getting there", "Book a stay"]}, {"id": "transit", "k": ["airport", "skytrain", "canada line", "transit", "train", "metro", "bus", "taxi", "water taxi", "bike", "bicycle", "getting there", "directions", "how to get", "transport", "near", "close to", "walk", "where", "located", "location", "address", "map", "yaletown", "neighbourhood", "neighborhood"], "a": "OPUS is at 322 Davie St, Vancouver BC V6B 5Z6, in Yaletown. The Yaletown-Roundhouse Canada Line station is a few steps away with direct service to Vancouver International Airport. There is a Bike Fleet for guests, and the False Creek Water Taxis are a short walk.", "next": ["Parking", "Book a stay"]}, {"id": "capo", "k": ["capo", "restaurant", "eat", "dinner", "lunch", "brunch", "pizza", "pasta", "italian", "food", "menu", "dine", "dining", "breakfast", "hungry"], "a": "CAPO is the hotel's neighbourhood Italian restaurant, just off the lobby: pizzas, fresh pastas and modern twists on classics. Open 7 days a week from 7:00 am until late, with weekend brunch, and Happy Hour daily 2:00 to 5:00 pm. Tables can be reserved.", "next": ["The Spritz", "Room service", "Reserve a table"]}, {"id": "spritz", "k": ["spritz", "bar", "cocktail", "cocktails", "drinks", "aperitivo", "happy hour", "drink", "wine", "spirits"], "a": "The Spritz is a cozy cocktail bar off the lobby, inspired by Italy's aperitivo culture, with classics and original cocktails. Open 7 days a week with Happy Hour daily from 2:00 to 5:00 pm.", "next": ["CAPO", "Room service"]}, {"id": "roomservice", "k": ["room service", "in room dining", "byob", "build your own bar", "minibar", "mini bar", "order food", "late night", "food in my room", "in my room", "room late", "deliver"], "w": 2, "a": "Room service comes from CAPO. Sunday to Thursday 7:00 am to 9:30 pm, Friday and Saturday 7:00 am to 10:30 pm. The BYOB (Build Your Own Bar) program lets you stock your in-room bar; ask Guest Services before or during your stay.", "next": ["CAPO", "The Spritz"]}, {"id": "groups", "k": ["group", "groups", "event", "events", "wedding", "weddings", "meeting", "meetings", "conference", "reunion", "stag", "stagette", "party", "elope", "elopement", "banquet", "function", "reception", "corporate", "venue", "block", "rooms block"], "a": "OPUS hosts groups of 10 to 40: meetings, receptions, weddings, elopements, stags and stagettes. There are 5 event spaces totalling 2,260 sq ft, with AV and full food and beverage service, plus group rates for room blocks of ten or more. A personal concierge plans weddings and party weekends. Let me take a few details.", "go": "group"}, {"id": "fee", "k": ["fee", "fees", "destination", "resort fee", "extra charge", "charges", "tax", "taxes", "how much", "price", "prices", "rate", "rates", "cost", "cheap", "expensive", "offer", "offers", "deal", "deals", "promo", "discount", "code", "special"], "a": "Rates depend on dates and offers, so the reservation team quotes them. One fixed item: a destination fee of 10 dollars a night plus taxes. Current offers are on the Offers page, and the booking box takes offer, group, corporate and IATA codes.", "next": ["Book a stay", "Cancellation"]}, {"id": "age", "k": ["age", "19", "how old", "old", "years", "minimum age", "under 19", "teen", "teenager", "kids", "children", "child", "minor", "young", "family friendly"], "a": "Guests must be 19 or older to check in without a parent or legal guardian, with government photo ID. Families are welcome with an adult; the Two Bedroom Suites are the roomiest option.", "next": ["Suites", "Book a stay"]}, {"id": "smoke", "k": ["smoke", "smoking", "vape", "cigarette", "non smoking", "party in room", "noise", "quiet", "visitors"], "a": "OPUS is 100% non-smoking; a 250 dollar per night fine applies if smoking happens in a room. In-room parties are not allowed and unregistered guests may not be on guest floors.", "next": ["Check-in time"]}, {"id": "awards", "k": ["award", "awards", "rated", "rating", "best", "tripadvisor", "conde nast", "forbes", "review", "reviews", "reputation", "top hotel"], "a": "OPUS Vancouver is listed with Tripadvisor Travelers' Choice Best of the Best (2024 to 2026), the Conde Nast Traveler Readers' Choice Award (Top Hotel in Western Canada, 2026) and recognition from Forbes Travel Guide.", "next": ["Rooms", "Book a stay"]}, {"id": "contact", "k": ["phone", "call", "email", "contact", "reach", "number", "front desk", "speak", "human", "person", "staff", "team", "talk"], "a": "Reservations and the front desk: +1 866-642-6787, info@opushotel.com. Address: 322 Davie St, Vancouver BC V6B 5Z6. I can also pass a request to the team right here.", "next": ["Book a stay", "Reserve a table"]}, {"id": "about", "k": ["about", "opus", "boutique", "hotel", "who", "story", "muses", "muse", "design", "pop art", "style", "decor"], "a": "OPUS Vancouver is a boutique lifestyle hotel in the heart of Yaletown, with 96 rooms and suites, pop-deco art, and on-site dining at CAPO and The Spritz. The Muses are staff who match you with the right room and suggest favourite local spots.", "next": ["Rooms", "CAPO", "Book a stay"]}, {"id": "book", "k": ["book", "booking", "reserve a room", "reservation", "availability", "available", "stay", "night", "nights", "check availability", "vacancy"], "a": "Happy to take your stay request.", "go": "stay"}, {"id": "table", "k": ["table", "reserve a table", "table for", "dinner reservation"], "w": 2, "a": "Let's set up a table request at CAPO.", "go": "table"}, {"id": "hi", "k": ["hi", "hello", "hey", "hola", "thanks", "thank", "good morning"], "a": "Hello! Ask me about rooms, dining, parking, dogs, groups, or request a stay.", "next": ["Rooms", "CAPO", "Book a stay"]}], "flows": {"stay": {"steps": [{"k": "dates", "label": "Dates", "q": "Which arrival and departure dates?", "ph": "e.g. Mar 12 to Mar 15"}, {"k": "guests", "label": "Guests", "q": "How many guests?", "chips": ["1", "2", "3", "4", "5+"]}, {"k": "room", "label": "Room", "q": "Which room type are you after?", "chips": ["Standard", "Deluxe King", "Balcony Studio", "Secret Garden", "A suite", "Not sure"]}, {"k": "extra", "label": "Extras", "q": "Any extras? (dog, valet parking, offer code, special occasion)", "chips": ["Dog", "Valet parking", "Offer code", "None"]}, {"k": "name", "label": "Name", "q": "Your name?"}, {"k": "contact", "label": "Contact", "q": "Best email or phone for the team to reach you?"}], "done": "Done. Your stay request has been sent to the OPUS team:\n{sum}\nThey will confirm availability and rates by email or phone."}, "table": {"steps": [{"k": "when", "label": "Date and time", "q": "Which date and time at CAPO?", "ph": "e.g. Friday 7:30 pm"}, {"k": "party", "label": "Party size", "q": "For how many people?", "chips": ["2", "3", "4", "5", "6+"]}, {"k": "name", "label": "Name", "q": "Name for the booking?"}, {"k": "contact", "label": "Contact", "q": "Phone or email for confirmation?"}], "done": "Done. Your table request has been sent to the team:\n{sum}\nThey will confirm by phone or email."}, "group": {"steps": [{"k": "type", "label": "Occasion", "q": "What kind of gathering?", "chips": ["Wedding", "Meeting", "Stag or stagette", "Reunion", "Other"]}, {"k": "size", "label": "Guests", "q": "About how many guests (the hotel hosts 10 to 40)?"}, {"k": "when", "label": "Date", "q": "Preferred date or month?"}, {"k": "contact", "label": "Contact", "q": "Your name and email or phone?"}], "done": "Done. Your group enquiry has been sent to the events team:\n{sum}\nThey will come back with options."}}};/*END*/
+(function(){
+var D=window.BOT;if(!D)return;
+var st={flow:null,i:0,data:{}};
+var root=document.createElement('div');root.className='bw';
+root.innerHTML='<button class="bw-fab" type="button" aria-label="'+D.fab+'"><span class="bw-fab-i">?</span><span class="bw-fab-t"></span></button><section class="bw-p" hidden aria-live="polite"><header class="bw-h"><div><b class="bw-n"></b><small class="bw-s"></small></div><button type="button" class="bw-x" aria-label="Close">&times;</button></header><div class="bw-m"></div><div class="bw-c"></div><form class="bw-f"><input type="text" maxlength="200" autocomplete="off"><button type="submit">&#10148;</button></form></section>';
+document.body.appendChild(root);
+var q=function(s){return root.querySelector(s)};
+q('.bw-fab-t').textContent=D.fab;q('.bw-n').textContent=D.name;q('.bw-s').textContent=D.sub;q('.bw-f input').placeholder=D.ph;
+var fab=q('.bw-fab'),pan=q('.bw-p'),msgs=q('.bw-m'),chips=q('.bw-c'),form=q('.bw-f'),inp=q('.bw-f input'),started=false;
+function say(t,who){var d=document.createElement('div');d.className='bw-b '+(who||'bot');d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight}
+function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){user(c)};chips.appendChild(b)})}
+function home(){setChips(D.chips)}
+function ask(){var f=D.flows[st.flow],s=f.steps[st.i];say(s.q);setChips((s.chips||[]).concat([D.cancel]));inp.placeholder=s.ph||D.ph}
+function startFlow(n){st.flow=n;st.i=0;st.data={};ask()}
+function finish(){var f=D.flows[st.flow],lines=[];f.steps.forEach(function(s){lines.push(s.label+': '+(st.data[s.k]||'-'))});say(f.done.replace('{sum}',lines.join('\n')));st.flow=null;inp.placeholder=D.ph;setChips(D.after||D.chips)}
+function user(t){t=String(t).trim();if(!t)return;say(t,'me');
+ if(st.flow){var n=norm(t);if(n===norm(D.cancel)||/^(cancel|stop|exit)$/.test(n)){st.flow=null;say(D.cancelled);inp.placeholder=D.ph;home();return}
+  var s=D.flows[st.flow].steps[st.i];st.data[s.k]=t;st.i++;if(st.i>=D.flows[st.flow].steps.length)finish();else ask();return}
+ var e=route(t,D.kb);
+ if(e&&e.go){say(e.a);startFlow(e.go);return}
+ if(e){say(e.a);setChips(e.next||D.chips);return}
+ say(D.fallback);home()}
+function open(){pan.hidden=false;fab.style.display='none';if(!started){started=true;say(D.hello);home()}setTimeout(function(){inp.focus()},50)}
+fab.onclick=open;q('.bw-x').onclick=function(){pan.hidden=true;fab.style.display=''};
+form.onsubmit=function(ev){ev.preventDefault();var v=inp.value;inp.value='';user(v)};
+window.openBot=open;
+document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-bot]');if(a){ev.preventDefault();open();var v=a.getAttribute('data-bot');if(v)user(v)}});
+})();
+</script>
+</body></html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Excellent Driving School Melbourne: driving lessons across the south-eastern and eastern suburbs, instructors with 30+ years of experience, dual-control cars, lessons that include your VicRoads test area. Demo page prepared for the school.">
+<title>Excellent Driving School Melbourne · Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--g:#1fa83a;--g2:#148a2b;--gd:#0f3d1c;--ink:#1d2420;--char:#222a26;--mute:#5e6b63;--bg:#f4f7f3;--y:#f2c200;--r:#d9382b;--line:#dbe4db;--w:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',system-ui,sans-serif;color:var(--ink);background:var(--bg);font-size:16px;line-height:1.55;overflow-x:hidden}
+h1,h2,h3{font-family:'Barlow Condensed','Arial Narrow',sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.02;font-weight:800}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+section{padding:52px 0;position:relative;overflow:hidden}
+h2{font-size:clamp(30px,7vw,46px);margin-bottom:12px;color:var(--char)}
+.kick{font:700 14px 'Barlow Condensed';letter-spacing:.2em;text-transform:uppercase;color:var(--g2);margin-bottom:8px;display:block}
+.btn{display:inline-block;border:0;cursor:pointer;text-decoration:none;font:700 18px 'Barlow Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:14px 24px;background:var(--y);color:var(--char);border-radius:6px}
+.btn:hover{background:#ffd633}
+.btn.g{background:var(--g);color:#fff}.btn.g:hover{background:var(--g2)}
+.btn.o{background:transparent;border:2px solid #fff;color:#fff}
+/* top strip + header */
+.strip{background:var(--gd);color:#cfe8d4;font-size:13.5px;padding:7px 0;text-align:center}
+.strip b{color:#fff}
+header{background:#fff;border-bottom:4px solid var(--g);position:sticky;top:0;z-index:30}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 0}
+.logo{height:56px;width:auto}
+.hnav{display:none;gap:22px;font:700 17px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.06em}
+.hnav a{text-decoration:none}.hnav a:hover{color:var(--g2)}
+.tel{background:var(--g);color:#fff;text-decoration:none;font:800 18px 'Barlow Condensed';letter-spacing:.04em;padding:9px 14px;border-radius:6px;white-space:nowrap}
+@media(min-width:860px){.hnav{display:flex}}
+/* hero */
+.hero{background:var(--char);color:#fff;padding:52px 0 64px}
+.hero::before{content:"";position:absolute;right:-160px;bottom:-200px;width:520px;height:520px;border-radius:50%;border:60px solid rgba(31,168,58,.25)}
+.hero::after{content:"";position:absolute;right:-60px;bottom:-110px;width:320px;height:320px;border-radius:50%;border:28px solid rgba(242,194,0,.22)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(40px,10.5vw,84px);max-width:760px}
+.hero h1 span{color:var(--y)}
+.hero p{max-width:560px;color:#cdd8d0;font-size:18px;margin:16px 0 24px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.badge{border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:9px 14px;font-size:14px;color:#e5efe7}
+.badge b{display:block;font:800 22px 'Barlow Condensed';color:var(--y)}
+.hbtn{display:flex;flex-wrap:wrap;gap:10px}
+/* steps */
+.steps{display:grid;gap:0;counter-reset:s;max-width:760px}
+.step{position:relative;padding:0 0 26px 62px;min-width:0}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;background:var(--g);color:#fff;font:800 24px 'Barlow Condensed';display:flex;align-items:center;justify-content:center}
+.step::after{content:"";position:absolute;left:21px;top:48px;bottom:4px;width:2px;background:var(--line)}
+.step:last-child::after{display:none}
+.step h3{font-size:24px;color:var(--char);margin-bottom:4px}
+.step p{color:var(--mute)}
+/* prices */
+.packs{display:grid;gap:14px}
+.packs>*{min-width:0}
+.pk{background:#fff;border:2px solid var(--line);border-radius:10px;overflow:hidden}
+.pk h3{background:var(--char);color:#fff;font-size:26px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.pk h3 small{font:600 14px 'Barlow';text-transform:none;color:#b7c4ba}
+.pk ul{list-style:none}
+.pk li{display:flex;justify-content:space-between;gap:10px;padding:13px 18px;border-top:1px solid var(--line);font-weight:500}
+.pk li b{font:800 24px 'Barlow Condensed';color:var(--g2);white-space:nowrap}
+.pk li small{color:var(--mute);display:block;font-weight:400;font-size:13px}
+.pk.feat{border-color:var(--y)}
+.pk.feat h3{background:var(--g)}
+@media(min-width:800px){.packs{grid-template-columns:1fr 1fr 1fr}}
+.fine{margin-top:14px;color:var(--mute);font-size:14px}
+/* promise */
+.promise{background:var(--g);color:#fff}
+.promise h2{color:#fff}
+.pg{display:grid;gap:18px}
+.pg>*{min-width:0}
+.pbox{background:rgba(0,0,0,.15);border-radius:10px;padding:22px}
+.pbox h3{font-size:26px;margin-bottom:6px;color:var(--y)}
+.pbox p{color:#effaf1}
+@media(min-width:800px){.pg{grid-template-columns:1fr 1fr}}
+/* about */
+.ab{display:grid;gap:22px}
+.ab>*{min-width:0}
+.quote{background:#fff;border-left:6px solid var(--y);padding:22px;border-radius:0 10px 10px 0}
+.quote b{font:800 28px 'Barlow Condensed';text-transform:uppercase;display:block;color:var(--char)}
+.quote span{color:var(--g2);font-weight:600}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.facts div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px}
+.facts b{display:block;font:800 30px 'Barlow Condensed';color:var(--g2)}
+.facts span{font-size:14px;color:var(--mute)}
+@media(min-width:800px){.ab{grid-template-columns:1.1fr 1fr}}
+/* areas */
+.areas{background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chips span{background:var(--bg);border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-weight:600;font-size:15px}
+/* faq */
+.faq{display:grid;gap:10px;max-width:780px}
+details{background:#fff;border:1px solid var(--line);border-left:5px solid var(--g);border-radius:8px;padding:14px 18px}
+summary{cursor:pointer;font:800 20px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.03em;color:var(--char)}
+details p{margin-top:8px;color:var(--mute)}
+/* contact */
+.contact{background:var(--char);color:#fff}
+.contact h2{color:#fff}
+.cg{display:grid;gap:18px}
+.cg>*{min-width:0}
+.cbox{background:rgba(255,255,255,.07);border-radius:10px;padding:22px}
+.cbox p{margin-bottom:8px;color:#d4ded7}
+.cbox a{color:var(--y);font-weight:600;word-break:break-word}
+.big{font:800 34px 'Barlow Condensed';color:#fff;text-decoration:none;display:block}
+.hrs{width:100%;border-collapse:collapse}
+.hrs td{padding:7px 0;border-bottom:1px solid rgba(255,255,255,.14)}.hrs td:last-child{text-align:right;font-weight:600}
+@media(min-width:800px){.cg{grid-template-columns:1fr 1fr}}
+footer{background:#111815;color:#8fa096;text-align:center;font-size:14px;padding:22px 0}
+/* widget */
+#fab{position:fixed;right:14px;bottom:14px;z-index:50;background:var(--y);color:var(--char);border:0;border-radius:8px;padding:14px 20px;font:800 18px 'Barlow Condensed';letter-spacing:.05em;text-transform:uppercase;box-shadow:0 8px 22px rgba(0,0,0,.35);cursor:pointer}
+#panel{position:fixed;right:10px;bottom:10px;width:min(380px,calc(100vw - 20px));height:min(570px,calc(100vh - 20px));background:#fff;border-radius:12px;box-shadow:0 18px 55px rgba(0,0,0,.4);z-index:60;display:none;flex-direction:column;overflow:hidden}
+#panel.open{display:flex}
+.ph{background:var(--g);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+.ph b{font:800 22px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.04em}
+.ph small{display:block;font-size:12px;color:#d9f3de}
+.ph button{background:none;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1}
+#msgs{flex:1;overflow-y:auto;padding:14px;background:var(--bg);display:flex;flex-direction:column;gap:8px}
+.m{max-width:88%;padding:10px 13px;border-radius:10px;font-size:14.5px;white-space:pre-line;word-wrap:break-word}
+.m.b{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.m.u{background:var(--char);color:#fff;align-self:flex-end}
+#chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 0;background:#fff}
+#chips button{border:2px solid var(--g);background:#fff;color:var(--g2);border-radius:6px;padding:5px 11px;font:700 14px 'Barlow';cursor:pointer}
+#chips button:hover{background:var(--g);color:#fff}
+#f{display:flex;gap:8px;padding:10px 12px 8px;background:#fff}
+#f input{flex:1;min-width:0;border:2px solid var(--line);border-radius:6px;padding:10px 12px;font:15px 'Barlow'}
+#f button{border:0;background:var(--char);color:#fff;border-radius:6px;padding:0 16px;font:800 16px 'Barlow Condensed';text-transform:uppercase;cursor:pointer}
+.demo{display:block;text-align:center;font-size:12px;color:#8a958e;padding:0 8px 8px;background:#fff}
+
+:focus-visible{outline:3px solid var(--y);outline-offset:2px}
+button,summary{-webkit-tap-highlight-color:transparent}
+.pk li label{font-weight:600}
+@media(max-width:420px){.hero h1{font-size:40px}.pk h3{font-size:22px}.tel{font-size:16px;padding:8px 10px}.logo{height:48px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{#fab,#panel,.strip,header{display:none}section{padding:20px 0}}
+</style>
+</head>
+<body>
+<div class="strip">Melbourne · south-eastern and eastern suburbs · <b>Mon to Sat, 7:00 AM to 8:00 PM</b></div>
+<header><div class="wrap bar">
+<a href="#top"><img class="logo" src="img/excellent-driving-logo.jpeg" alt="Excellent Driving School" width="70" height="56"></a>
+<nav class="hnav"><a href="#how">How it works</a><a href="#prices">Lessons</a><a href="#about">About</a><a href="#areas">Suburbs</a><a href="#faq">FAQ</a></nav>
+<a class="tel" href="tel:+61488580475">0488 580 475</a>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+<span class="kick" style="color:var(--y)">Driving lessons Melbourne</span>
+<h1>Pass your test the <span>first time.</span></h1>
+<p>Patient instructors with over 30 years of experience, modern dual-control cars, and lessons that come to you. Your lessons cover the area where VicRoads will test you.</p>
+<div class="hbtn"><button class="btn" onclick="openChat('book')">Book a lesson</button><a class="btn o" href="tel:+61488580475">Call Con</a></div>
+<div class="badges"><div class="badge"><b>30+ years</b>teaching drivers</div><div class="badge"><b>Dual control</b>modern cars</div><div class="badge"><b>We come to you</b>your suburb</div></div>
+</div></section>
+
+<section id="how"><div class="wrap">
+<span class="kick">How it works</span>
+<h2>From first lesson to licence</h2>
+<div class="steps">
+<div class="step"><h3>Tell us about you</h3><p>School student, first-time driver or switching from an overseas licence? Call, or send your name and number, and say what you need.</p></div>
+<div class="step"><h3>We pick you up where it suits</h3><p>Lessons come to a place that is convenient for you. Your instructor chooses locations and exercises for your skill level.</p></div>
+<div class="step"><h3>Learn the road rules and the car</h3><p>Car handling, VicRoads road rules and safe habits, taught at the speed you can pick things up.</p></div>
+<div class="step"><h3>Practise where you will be tested</h3><p>Lessons include the area where you will sit your VicRoads test, so test day is no surprise.</p></div>
+</div>
+</div></section>
+
+<section id="prices" style="background:#fff"><div class="wrap">
+<span class="kick">Lessons and packages</span>
+<h2>Pick a lesson length</h2>
+<p style="color:var(--mute);max-width:640px;margin-bottom:22px">Prices below are the ones published on the school's own website, in Australian dollars. Con confirms the current price when you book.</p>
+<div class="packs">
+<div class="pk feat"><h3>60 minutes <small>most popular</small></h3><ul><li><span>1 lesson</span><b>$70</b></li><li><span>3 lessons<small>package</small></span><b>$201</b></li><li><span>5 lessons<small>package</small></span><b>$320</b></li><li><span>10 lessons<small>package</small></span><b>$610</b></li></ul></div>
+<div class="pk"><h3>45 minutes <small>shorter</small></h3><ul><li><span>1 lesson</span><b>$58</b></li><li><span>5 lessons<small>package</small></span><b>$270</b></li><li><span>10 lessons<small>package</small></span><b>$510</b></li></ul></div>
+<div class="pk"><h3>Licence test <small>test day</small></h3><ul><li><span>Licence test + 1 hour lesson</span><b>$210</b></li></ul></div>
+</div>
+<div class="pk" style="margin-top:18px"><h3>Cost per lesson <small>works out from published prices</small></h3>
+<table style="width:100%;border-collapse:collapse;font-size:15px"><tr style="background:var(--bg)"><th style="text-align:left;padding:10px 18px">Option</th><th style="text-align:right;padding:10px 8px">Total</th><th style="text-align:right;padding:10px 18px">Each</th></tr>
+<tr><td style="padding:10px 18px;border-top:1px solid var(--line)">60 min, 1 lesson</td><td style="text-align:right;padding:10px 8px;border-top:1px solid var(--line)">$70</td><td style="text-align:right;padding:10px 18px;border-top:1px solid var(--line)">$70.00</td></tr>
+<tr><td style="padding:10px 18px;border-top:1px solid var(--line)">60 min, 3 lessons</td><td style="text-align:right;padding:10px 8px;border-top:1px solid var(--line)">$201</td><td style="text-align:right;padding:10px 18px;border-top:1px solid var(--line)">$67.00</td></tr>
+<tr><td style="padding:10px 18px;border-top:1px solid var(--line)">60 min, 5 lessons</td><td style="text-align:right;padding:10px 8px;border-top:1px solid var(--line)">$320</td><td style="text-align:right;padding:10px 18px;border-top:1px solid var(--line)">$64.00</td></tr>
+<tr><td style="padding:10px 18px;border-top:1px solid var(--line)">60 min, 10 lessons</td><td style="text-align:right;padding:10px 8px;border-top:1px solid var(--line)">$610</td><td style="text-align:right;padding:10px 18px;border-top:1px solid var(--line)">$61.00</td></tr>
+<tr><td style="padding:10px 18px;border-top:1px solid var(--line)">45 min, 1 lesson</td><td style="text-align:right;padding:10px 8px;border-top:1px solid var(--line)">$58</td><td style="text-align:right;padding:10px 18px;border-top:1px solid var(--line)">$58.00</td></tr>
+<tr><td style="padding:10px 18px;border-top:1px solid var(--line)">45 min, 5 lessons</td><td style="text-align:right;padding:10px 8px;border-top:1px solid var(--line)">$270</td><td style="text-align:right;padding:10px 18px;border-top:1px solid var(--line)">$54.00</td></tr>
+<tr><td style="padding:10px 18px;border-top:1px solid var(--line)">45 min, 10 lessons</td><td style="text-align:right;padding:10px 8px;border-top:1px solid var(--line)">$510</td><td style="text-align:right;padding:10px 18px;border-top:1px solid var(--line)">$51.00</td></tr></table></div>
+<p class="fine">Package pricing works out cheaper than single lessons: ten 60-minute lessons come to $61 each.</p>
+</div></section>
+
+<section class="promise"><div class="wrap">
+<span class="kick" style="color:var(--y)">The promise</span>
+<h2>First-time pass guarantee</h2>
+<div class="pg">
+<div class="pbox"><h3>What the school says</h3><p>The instructors are confident enough in their teaching to guarantee you pass your driving test the first time. The guarantee carries conditions, so ask Con for the details when you book.</p></div>
+<div class="pbox"><h3>If you need a re-sit</h3><p>If you have to redo your test, you are responsible for the VicRoads booking fee. Your instructor can explain how it works.</p></div>
+</div>
+</div></section>
+
+<section id="about"><div class="wrap ab">
+<div>
+<span class="kick">About us</span>
+<h2>Australian owned and run</h2>
+<p style="color:var(--mute);margin-bottom:12px">Excellent Driving School was established by Con Alexandropoulos, who is also the principal instructor with decades of experience. The business has grown steadily into one of Melbourne's leading driving schools.</p>
+<p style="color:var(--mute);margin-bottom:12px">The team is patient and well qualified. They teach every student to their own level, covering all road rules and the car-control skills that become good habits for life. The fleet is modern, with dual controls for braking and handling, so students feel safe and in control from the first hour.</p>
+<p style="color:var(--mute)">Learning to drive can be unnerving at first. With an instructor next to you, that settles quickly.</p>
+</div>
+<div>
+<div class="quote"><b>Con Alexandropoulos</b><span>Founder and principal instructor</span></div>
+<div class="facts" style="margin-top:12px"><div><b>30+</b><span>years as driving instructors</span></div><div><b>6 days</b><span>a week, Monday to Saturday</span></div><div><b>Dual</b><span>controls in the cars</span></div><div><b>1st time</b><span>pass guarantee (conditions apply)</span></div></div>
+</div>
+</div></section>
+
+<section id="areas" class="areas"><div class="wrap">
+<span class="kick">Where we teach</span>
+<h2>Across Melbourne's south-east and east</h2>
+<p style="color:var(--mute);max-width:660px">Lessons cover most eastern and south-eastern suburbs, spreading out from Carnegie through inner suburbs such as Toorak, and out to the far eastern suburbs. The school's pages also say lessons cover metropolitan Melbourne.</p>
+<div class="chips"><span>Carnegie</span><span>Toorak</span><span>South-east</span><span>Eastern suburbs</span><span>Far east</span><span>Your test area</span></div>
+<p class="fine">Not sure your suburb is covered? Ask the assistant or call, Con will confirm.</p>
+</div></section>
+
+<section id="who"><div class="wrap">
+<span class="kick">Who it is for</span>
+<h2>Every kind of learner</h2>
+<div class="packs">
+<div class="pk"><h3>Still at school</h3><ul><li style="display:block;color:var(--mute)">Lessons personalised to your pace, with patient instruction from the first hour.</li></ul></div>
+<div class="pk"><h3>First licence</h3><ul><li style="display:block;color:var(--mute)">Car handling and road rules from scratch, including your VicRoads test area.</li></ul></div>
+<div class="pk"><h3>Overseas licence</h3><ul><li style="display:block;color:var(--mute)">Moving to a Victorian licence? Lessons are tailored to your background and driving experience.</li></ul></div>
+</div>
+</div></section>
+
+<section id="learn"><div class="wrap">
+<span class="kick">What you will learn</span>
+<h2>Lessons built around you</h2>
+<div class="packs">
+<div class="pk"><h3>Driving lessons</h3><ul><li style="display:block;color:var(--mute)">Lessons cover most eastern and south-eastern suburbs. To make things easier, the instructor comes to where it is convenient for you.</li></ul></div>
+<div class="pk"><h3>Personalised</h3><ul><li style="display:block;color:var(--mute)">Every personality and background is welcome. Instructors choose the locations and exercises that suit your skill level so you gain maximum understanding and hands-on experience.</li></ul></div>
+<div class="pk"><h3>Getting your licence</h3><ul><li style="display:block;color:var(--mute)">Taking control of a car can feel unnerving for the first few hours. With a dual-control car and a patient instructor beside you, that fades fast.</li></ul></div>
+</div>
+</div></section>
+
+<section id="calc" style="background:#fff"><div class="wrap">
+<span class="kick">Quick calculator</span>
+<h2>What will my lessons cost?</h2>
+<p style="color:var(--mute);max-width:620px;margin-bottom:16px">Choose a lesson length and package to see the published total and the price per lesson.</p>
+<div class="pk" style="max-width:520px"><h3>Your lessons <small id="cal-t">$70 total</small></h3>
+<ul>
+<li><label for="cl">Length</label><select id="cl" style="font:600 16px Barlow;padding:6px;min-width:0;max-width:60%"><option value="60">60 minutes</option><option value="45">45 minutes</option></select></li>
+<li><label for="cp">Package</label><select id="cp" style="font:600 16px Barlow;padding:6px;min-width:0;max-width:60%"></select></li>
+<li><span>Per lesson</span><b id="cal-e">$70.00</b></li>
+</ul></div>
+<p class="fine">Published prices only. Con confirms the current price when you book.</p>
+</div></section>
+
+<section id="faq" style="background:#fff"><div class="wrap">
+<span class="kick">Questions</span>
+<h2>Good to know</h2>
+<div class="faq">
+<details><summary>Do you pick me up?</summary><p>Lessons come to a place that is convenient for you. Tell Con your suburb when you book.</p></details>
+<details><summary>What cars do you use?</summary><p>Modern cars with dual controls for braking and handling. Ask whether an automatic or manual car is available for your lessons.</p></details>
+<details><summary>How long is a lesson?</summary><p>There are 60-minute and 45-minute lessons, sold singly or in packages of 3, 5 and 10.</p></details>
+<details><summary>Can you help with my licence test?</summary><p>Yes. The licence-test option includes a one-hour lesson with the test, and every lesson plan covers the area where you will be tested by VicRoads.</p></details>
+<details><summary>I have an overseas licence. Can you help?</summary><p>Yes, the school helps drivers transitioning from an overseas licence as well as first-time learners.</p></details>
+<details><summary>What are your hours?</summary><p>Monday to Saturday, 7:00 AM to 8:00 PM. Sunday is not listed.</p></details>
+<details><summary>What if I fail my test?</summary><p>Under the guarantee conditions, a re-sit means you pay the VicRoads booking fee. Ask your instructor for the details.</p></details>
+<details><summary>I am from overseas. Is that a problem?</summary><p>The school says it caters for every personality and background, from school students to people arriving from overseas. Ask Con if you need something specific.</p></details>
+<details><summary>How many lessons will I need?</summary><p>It depends on you. Instructors teach each student as fast as they can pick up the skill. Con can advise when you book.</p></details>
+<details><summary>Can I get a callback instead of phoning?</summary><p>Yes. Use the assistant or the contact form on the school's site, leave your name and number, and Con will ring you back.</p></details>
+<details><summary>Do I need to book far ahead?</summary><p>The site does not give a booking lead time. Lessons run Monday to Saturday between 7:00 AM and 8:00 PM, so call Con or leave your details and he will find a slot.</p></details>
+<details><summary>Where will the test be held?</summary><p>Your lessons include the area where VicRoads will test you, so the roads feel familiar. Con can tell you more about your test location.</p></details>
+</div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap cg">
+<div class="cbox"><h2>Book a lesson</h2><a class="big" href="tel:+61488580475">0488 580 475</a><p style="margin-top:10px"><a href="mailto:con@excellentdrivingschool.com.au">con@excellentdrivingschool.com.au</a></p><p>Or leave your name and number in the assistant and Con will call you back.</p><button class="btn" onclick="openChat('book')">Start a booking</button></div>
+<div class="cbox"><h2>Hours</h2><table class="hrs"><tr><td>Monday to Saturday</td><td>7:00 AM to 8:00 PM</td></tr><tr><td>Sunday</td><td>Not listed</td></tr><tr><td>Area</td><td>Melbourne south-east and east</td></tr></table></div>
+</div></section>
+</main>
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<button id="fab" onclick="openChat()">Ask a question</button>
+<div id="panel" role="dialog" aria-label="Excellent Driving School assistant">
+<div class="ph"><div><b>Lesson assistant</b><small>Answers from the school's own information</small></div><button onclick="closeChat()" aria-label="Close">×</button></div>
+<div id="msgs"></div><div id="chips"></div>
+<form id="f"><input id="q" autocomplete="off" placeholder="Ask about lessons, prices, suburbs..."><button>Send</button></form>
+<span class="demo">Demo · nothing is sent anywhere</span>
+</div>
+
+<script>
+(function(){var P={60:[[1,70],[3,201],[5,320],[10,610]],45:[[1,58],[5,270],[10,510]]};var l=document.getElementById('cl'),c=document.getElementById('cp'),t=document.getElementById('cal-t'),e=document.getElementById('cal-e');
+function fill(){c.innerHTML='';P[l.value].forEach(function(x,i){var o=document.createElement('option');o.value=i;o.textContent=x[0]===1?'1 lesson':x[0]+' lessons';c.appendChild(o)});show()}
+function show(){var x=P[l.value][c.value||0];t.textContent='$'+x[1]+' total';e.textContent='$'+(x[1]/x[0]).toFixed(2)}
+l.onchange=fill;c.onchange=show;fill()})();
+</script>
+<script id="logic">
+var KB=[
+{id:'hi',k:['hello','hi','hey','g day','gday','good morning','good afternoon'],a:"G'day! I can help with lesson prices, packages, suburbs, the first-time pass guarantee and booking a lesson. What would you like to know?"},
+{id:'price',k:['price','cost','how much','fee','rate','rates','cheap','cheaper','afford','expensive','per lesson','charge','pricing'],a:"Published prices (AUD):\n60 minutes: $70 single, 3 for $201, 5 for $320, 10 for $610.\n45 minutes: $58 single, 5 for $270, 10 for $510.\nLicence test + 1 hour lesson: $210.\nCon confirms the current price when you book."},
+{id:'p60',k:['60 minute','60 min','one hour','1 hour','hour lesson','sixty'],a:"60-minute lessons: $70 for one, $201 for 3, $320 for 5 or $610 for 10. Packages make each lesson cheaper."},
+{id:'p45',k:['45 minute','45 min','forty five','shorter lesson','short lesson','45'],a:"45-minute lessons: $58 for one, $270 for a pack of 5, $510 for a pack of 10."},
+{id:'pack',k:['package','packages','pack','bundle','block of lessons','10 lessons','five lessons','3 lessons','multiple lessons'],a:"Packages: 60 min x3 $201, x5 $320, x10 $610. 45 min x5 $270, x10 $510. For example ten 60-minute lessons works out to $61 each instead of $70."},
+{id:'test',k:['licence test','license test','driving test','test day','test','vicroads','exam','book my test','practical test'],a:"The licence-test option (test plus a one-hour lesson) is $210. All lessons include the area where you will be tested by VicRoads, so you know the roads before test day."},
+{id:'guar',k:['guarantee','guaranteed','first time pass','pass first time','first time','promise','sure to pass','pass guaranteed','conditions'],a:"The school guarantees you will pass your test the first time (conditions apply). If you need to redo your test, you are responsible for the VicRoads booking fee. Ask your instructor for the full conditions."},
+{id:'fail',k:['fail','failed','redo','re-sit','resit','retake','second attempt','not pass'],a:"If you have to redo your test under the guarantee, you pay the VicRoads booking fee. Your instructor can explain the conditions."},
+{id:'pick',k:['pick up','pickup','come to me','come to you','home','my house','where do lessons','meet','convenient','travel','collect'],a:"Lessons come to you: the instructor meets you where it is convenient. Tell Con your suburb when you book."},
+{id:'area',k:['suburb','suburbs','area','areas','cover','covered','location','locations','melbourne','carnegie','toorak','south east','southeast','eastern','far east','where do you teach','do you go to'],a:"Lessons cover most eastern and south-eastern suburbs, from Carnegie and inner suburbs like Toorak out to the far east, and the school says it serves metropolitan Melbourne. Tell me your suburb and Con will confirm."},
+{id:'hours',k:['hours','open','opening','when are you open','what time','sunday','saturday','weekend','evening','late','early','available'],a:"Monday to Saturday, 7:00 AM to 8:00 PM. Sunday is not listed. Con will confirm available time slots when you book."},
+{id:'phone',k:['phone','call','number','mobile','ring','speak','talk','contact','reach'],a:"Call Con on 0488 580 475 (Mon to Sat, 7 AM to 8 PM) or e-mail con@excellentdrivingschool.com.au."},
+{id:'email',k:['email','e-mail','mail','write'],a:"E-mail con@excellentdrivingschool.com.au or call 0488 580 475."},
+{id:'con',k:['con','instructor','instructors','teacher','who teaches','owner','alexandropoulos','founder','experience','experienced','team','how long'],a:"Excellent Driving School was established by Con Alexandropoulos, the principal instructor, with over 30 years of experience. The school is Australian owned and run, with a team of patient, highly experienced instructors."},
+{id:'car',k:['car','cars','vehicle','dual control','dual controls','safe','safety','brake','fleet','modern'],a:"The cars are modern and have dual controls for braking and handling, so you are safe and in control. I do not have details about automatic or manual options, so Con will confirm."},
+{id:'auto',k:['automatic car','cars automatic','manual car','automatic','manual','auto','stick','gears','transmission'],a:"I do not have the automatic or manual availability. Con will confirm which car you can use, call 0488 580 475."},
+{id:'overseas',k:['overseas','foreign','international','another country','convert','transition','abroad','visa','migrant','moving from'],a:"Yes, the school teaches drivers moving to a Victorian licence from an overseas licence, as well as first-time drivers. Lessons are tailored to your background and experience."},
+{id:'first',k:['beginner','never driven','first licence','first license','learner','learn to drive','new driver','nervous','scared','anxious','never','first lesson'],a:"First-timers are welcome. The instructors are patient and teach car handling and road rules from the start, at the pace you can pick things up. Many students are nervous at first and settle quickly."},
+{id:'school',k:['school student','student','teen','teenager','young','my son','my daughter','kid','high school','still at school'],a:"The school teaches students still at school as well as adults. Lessons are personalised to each person's pace and background. For age or permit questions, Con will confirm."},
+{id:'book',k:['book','booking','reserve','appointment','schedule','sign up','book a lesson','arrange'],a:"I can take your details for a lesson request. Con will then call you to fix the time."},
+{id:'pay',k:['pay','payment','cash','card','bank','transfer','invoice','eftpos','pay how'],a:"The website does not list payment methods, so I will not guess. Con can confirm when you book."},
+{id:'cancel',k:['cancel','cancellation','reschedule','change booking','postpone'],a:"The website does not describe a cancellation policy. Please ask Con when you book."},
+{id:'about',k:['about','who are you','history','story','established','owned','australian'],a:"Excellent Driving School is Australian owned and run, established by Con Alexandropoulos. It has grown into one of Melbourne's leading driving schools and serves the south-eastern suburbs and beyond."},
+{id:'thanks',k:['thanks','thank','cheers','thx','ta','great'],a:"No worries! Anything else about lessons or prices?"},
+{id:'human',k:['human','real person','someone','agent','staff'],a:"Sure. Call Con on 0488 580 475 or e-mail con@excellentdrivingschool.com.au."}
+];
+function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9$ \-]/g,' ').replace(/\s+/g,' ').trim()}
+function stem(t){if(t.length>4){if(/ies$/.test(t))return t.slice(0,-3)+'y';if(/ing$/.test(t))return t.slice(0,-3);if(/ed$/.test(t))return t.slice(0,-2);if(/es$/.test(t))return t.slice(0,-2);if(/s$/.test(t))return t.slice(0,-1)}return t}
+function lev(a,b){var m=[],i,j;for(i=0;i<=a.length;i++){m[i]=[i]}for(j=1;j<=b.length;j++)m[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return m[a.length][b.length]}
+function tokHit(kt,qts){for(var i=0;i<qts.length;i++){var q=qts[i];if(q==kt)return 1;if(kt.length>=5&&q.length>=5&&lev(kt,q)<=1)return .9;if(kt.length>=7&&q.length>=7&&lev(kt,q)<=2)return .8}return 0}
+function answer(q){var n=norm(q);if(!n)return null;var qts=n.split(' ').map(stem),best=null,bs=0;
+ KB.forEach(function(e){var s=0;e.k.forEach(function(p){var pts=norm(p).split(' ').map(stem),tot=0,ok=1;pts.forEach(function(t){var h=tokHit(t,qts);if(!h)ok=0;tot+=h});if(ok)s=Math.max(s,tot*2+(pts.length>1?1.5:0)+(n.indexOf(norm(p))>=0?0.5:0))});
+ if(s>bs){bs=s;best=e}});
+ return bs>=1.8?best:null}
+var CHIPS=['Prices','Packages','Suburbs','Pass guarantee','Hours','Book a lesson'];
+var FLOW=[{k:'type',q:'What do you need?',o:['First licence','Overseas licence switch','Still at school','Licence test prep','Brush-up lessons']},
+{k:'len',q:'Which lesson length?',o:['60 minutes','45 minutes','Test + 1 hour lesson','Not sure yet']},
+{k:'suburb',q:'Which suburb should the instructor meet you in?',free:1},
+{k:'when',q:'Which days and times suit you? (Mon to Sat, 7 AM to 8 PM)',o:['Weekday mornings','Weekday evenings','Saturday','Flexible']},
+{k:'name',q:'Your name?',free:1},{k:'phone',q:'Best phone number for Con to call you back?',free:1}];
+</script>
+<script>
+(function(){
+var msgs=document.getElementById('msgs'),chips=document.getElementById('chips'),panel=document.getElementById('panel'),inp=document.getElementById('q'),fab=document.getElementById('fab');
+var flow=null,data={},started=false;
+function add(t,c){var d=document.createElement('div');d.className='m '+c;d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight}
+function setChips(a){chips.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){handle(t)};chips.appendChild(b)})}
+function ask(){var s=FLOW[flow];add(s.q,'b');setChips(s.o||['Cancel'])}
+function startFlow(){flow=0;data={};add('Happy to take a lesson request. A few quick questions, and type "cancel" any time.','b');ask()}
+function handle(t){add(t,'u');
+ if(flow!==null){if(/^cancel|^stop$/i.test(t)){flow=null;add('No problem, cancelled. Ask me anything else.','b');setChips(CHIPS);return}
+  data[FLOW[flow].k]=t;flow++;
+  if(flow<FLOW.length){ask();return}
+  flow=null;add('Thanks '+data.name+'! Request: '+data.type+', '+data.len+', meeting in '+data.suburb+', '+data.when+'. Phone: '+data.phone+'.\nIt is now with Con, who will call to confirm the time, the price and whether he covers your suburb. Hours: Mon to Sat, 7 AM to 8 PM.\n(Demo: nothing was actually sent.)','b');setChips(CHIPS);return}
+ if(/\b(book|booking|reserve|sign up|appointment)\b/i.test(t)&&!/price|cost|how much/i.test(t)){startFlow();return}
+ var e=answer(t);
+ if(e){add(e.a,'b');setChips(CHIPS)}else{add("I do not have that detail, and I will not guess. Con can confirm: 0488 580 475 or con@excellentdrivingschool.com.au. Want me to start a lesson request?",'b');setChips(['Book a lesson','Prices','Suburbs'])}}
+window.openChat=function(m){panel.classList.add('open');fab.style.display='none';if(!started){started=true;add("G'day! I am the Excellent Driving School assistant. Ask about lessons, prices, suburbs or the first-time pass guarantee, or book a lesson.",'b');setChips(CHIPS)}if(m==='book'&&flow===null)handle('Book a lesson');inp.focus()};
+window.closeChat=function(){panel.classList.remove('open');fab.style.display=''};
+document.getElementById('f').addEventListener('submit',function(ev){ev.preventDefault();var v=inp.value.trim();if(!v)return;inp.value='';handle(v)});
+})();
+</script>
+</body>
+</html>
