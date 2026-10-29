@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Smart Car Fixing, Mankhool, Dubai · Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="description" content="Demo page for Smart Car Fixing: mobile car repair and battery replacement in Dubai, areas and arrival times, services and a request assistant.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoRepair","name":"Smart Car Fixing","telephone":"+971562636378","email":"info@smartcarfixing.com","address":{"@type":"PostalAddress","streetAddress":"19 26A St, Mankhool","addressLocality":"Dubai","addressCountry":"AE"},"openingHours":"Mo-Su 00:00-23:59","areaServed":"Dubai"}</script>
+<style>
+:root{--y:#fbbf1f;--y2:#e3a600;--k:#141414;--k2:#222;--k3:#2e2e2e;--bg:#fffcf0;--bg2:#f6f0da;--mu:#5d5a4c;--ln:#e6dcb8;--wa:#1faa59;
+--w1:#141414;--w1t:#fbbf1f;--w2:#fbbf1f;--w2t:#141414;--wbg:#fffcf0;--wf:Inter,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16.5px/1.6 Inter,system-ui,sans-serif;background:var(--bg);color:var(--k);overflow-x:hidden;padding-bottom:62px}
+h1,h2,h3,.cd{font-family:'Saira Condensed',Impact,sans-serif;font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:.01em}
+a{color:inherit}
+svg{max-width:100%}
+.w{max-width:1100px;margin:0 auto;padding:0 18px}
+.haz{height:12px;background:repeating-linear-gradient(135deg,var(--k) 0 14px,var(--y) 14px 28px)}
+header.hd{background:var(--k);position:sticky;top:0;z-index:40}
+header.hd .w{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:9px;padding-bottom:9px}
+.lg{display:flex;align-items:center;background:#fff;border-radius:8px;padding:4px 12px;text-decoration:none}
+.lg img{display:block;height:42px;width:auto;max-width:150px}
+.hd nav{display:flex;gap:18px;font:700 15px 'Saira Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#fff}
+.hd nav a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.hd nav a:hover{border-color:var(--y)}
+.hd .tel{background:var(--y);color:var(--k);font:800 17px 'Saira Condensed',sans-serif;letter-spacing:.04em;padding:10px 16px;border-radius:6px;text-decoration:none;white-space:nowrap}
+.hero{background:var(--k);color:#fff;position:relative;overflow:hidden;padding:44px 0 56px}
+.hero::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:48px solid rgba(251,191,31,.12)}
+.hero::after{content:"";position:absolute;left:-80px;bottom:-140px;width:300px;height:300px;border-radius:50%;border:36px solid rgba(251,191,31,.07)}
+.hero .w{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+.hero .w>*{min-width:0}
+.live{display:inline-flex;gap:8px;align-items:center;background:rgba(251,191,31,.15);color:var(--y);font:700 14px Inter,sans-serif;padding:6px 12px;border-radius:99px;margin-bottom:16px}
+.live i{width:9px;height:9px;border-radius:50%;background:var(--y);box-shadow:0 0 0 0 rgba(251,191,31,.7);animation:pl 1.8s infinite}
+@keyframes pl{70%{box-shadow:0 0 0 10px rgba(251,191,31,0)}100%{box-shadow:0 0 0 0 rgba(251,191,31,0)}}
+.hero h1{font-size:clamp(40px,9vw,74px);margin-bottom:16px}
+.hero h1 span{color:var(--y)}
+.hero p{font-size:18px;color:#d7d4c6;max-width:32em}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:800 19px 'Saira Condensed',sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:13px 22px;border-radius:6px;text-decoration:none;border:2px solid var(--y);color:var(--y);background:none;cursor:pointer}
+.btn.y{background:var(--y);color:var(--k)}
+.btn.g{background:var(--wa);border-color:var(--wa);color:#fff}
+.btn.k{background:var(--k);border-color:var(--k);color:var(--y)}
+.btn:hover{filter:brightness(1.1)}
+.eta{background:#fff;color:var(--k);border-radius:12px;padding:22px;border-top:8px solid var(--y);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.eta h2{font-size:26px;margin-bottom:4px}
+.eta p{color:var(--mu);font-size:15px;margin-bottom:12px}
+.eta select{width:100%;font:600 17px Inter,sans-serif;padding:12px;border:2px solid var(--k);border-radius:8px;background:#fff;color:var(--k)}
+.eta .out{margin-top:14px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.eta .out b{font:800 52px 'Saira Condensed',sans-serif;line-height:1}
+.eta .out span{font-size:15px;color:var(--mu)}
+.eta .bar{height:10px;border-radius:6px;background:var(--bg2);margin-top:10px;overflow:hidden}
+.eta .bar i{display:block;height:100%;background:var(--y);width:30%;border-radius:6px;transition:width .4s}
+.eta small{display:block;margin-top:10px;font-size:13px;color:var(--mu)}
+.strip{background:var(--y);color:var(--k)}
+.strip .w{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding-top:18px;padding-bottom:18px;text-align:center}
+.strip .w>*{min-width:0}
+.strip b{display:block;font:800 36px 'Saira Condensed',sans-serif}
+.strip span{font-size:14px;font-weight:600}
+.sec{padding:56px 0;position:relative;overflow:hidden}
+.sec h2{font-size:clamp(30px,5.5vw,46px);margin-bottom:12px}
+.sec h2 u{text-decoration:none;box-shadow:inset 0 -.28em 0 var(--y)}
+.sec .intro{max-width:42em;color:#3d3b30;font-size:18px}
+.sv{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.sv>*{min-width:0}
+.sc{background:#fff;border:2px solid var(--k);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:6px;position:relative}
+.sc::after{content:"";position:absolute;left:-2px;top:14px;bottom:14px;width:6px;background:var(--y)}
+.sc svg{width:34px;height:34px}
+.sc h3{font-size:23px}
+.sc p{font-size:15px;color:#46443a}
+.sc.big{background:var(--k);color:#fff;grid-column:span 2}
+.sc.big p{color:#d7d4c6}
+.sc.big h3{color:var(--y)}
+.dark{background:var(--k);color:#fff}
+.dark .intro{color:#d7d4c6}
+.steps{list-style:none;counter-reset:n;margin-top:28px;position:relative;max-width:760px}
+.steps::before{content:"";position:absolute;left:22px;top:10px;bottom:10px;width:4px;background:var(--y)}
+.steps li{counter-increment:n;position:relative;padding:0 0 22px 66px;min-width:0}
+.steps li::before{content:counter(n);position:absolute;left:0;top:0;width:48px;height:48px;border-radius:50%;background:var(--y);color:var(--k);font:800 26px 'Saira Condensed',sans-serif;display:flex;align-items:center;justify-content:center}
+.steps b{display:block;font:800 24px 'Saira Condensed',sans-serif;text-transform:uppercase;color:var(--y)}
+.steps span{color:#d7d4c6}
+.areas{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px}
+.areas>*{min-width:0}
+.ar{background:#fff;border:2px solid var(--k);border-radius:8px;padding:12px 14px;text-align:left;cursor:pointer;font:inherit;color:var(--k)}
+.ar b{display:block;font:800 20px 'Saira Condensed',sans-serif;text-transform:uppercase}
+.ar span{font-size:14px;color:var(--mu)}
+.ar:hover,.ar.on{background:var(--y)}
+.ar.on span{color:var(--k)}
+.hrs{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:24px}
+.hrs>*{min-width:0}
+.hrs div{background:var(--k3);border-radius:8px;padding:12px 4px;text-align:center;font-weight:600;font-size:14px}
+.hrs b{display:block;color:var(--y);font:800 22px 'Saira Condensed',sans-serif}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:26px}
+.two>*{min-width:0}
+.box{background:#fff;border:2px solid var(--k);border-radius:10px;padding:22px}
+.box h3{font-size:26px;margin-bottom:8px}
+.box ul{padding-left:20px;color:#3d3b30}
+.box li{margin:4px 0}
+.cont a.big{display:block;font:800 34px 'Saira Condensed',sans-serif;text-decoration:none;letter-spacing:.02em;overflow-wrap:anywhere}
+details{border-bottom:2px solid var(--ln);padding:14px 0}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px;font:800 24px 'Saira Condensed',sans-serif;text-transform:uppercase}
+summary::after{content:"+";color:var(--y2);font-size:30px;line-height:.9}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:8px;color:#3d3b30;max-width:46em}
+footer{background:var(--k);color:#bdb9a8;padding:28px 0 36px;font-size:15px}
+footer .w{display:flex;flex-wrap:wrap;gap:8px 30px;justify-content:space-between}
+footer b{color:var(--y)}
+.bar2{display:none;position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--k);padding:8px;gap:8px}
+.bar2 a{flex:1;text-align:center;font:800 19px 'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;padding:12px 6px;border-radius:6px;text-decoration:none}
+.bar2 .c{background:var(--y);color:var(--k)}
+.bar2 .m{background:var(--wa);color:#fff}
+:focus-visible{outline:3px solid var(--y2);outline-offset:2px}
+@media(max-width:900px){.hero .w,.two{grid-template-columns:1fr}.sv{grid-template-columns:1fr 1fr}.sc.big{grid-column:span 2}.areas{grid-template-columns:1fr 1fr}.hd nav{display:none}.bar2{display:flex}body #wb{bottom:78px}body #wp{bottom:146px}}
+@media(max-width:560px){body{font-size:16px}.sv{grid-template-columns:1fr}.sc.big{grid-column:auto}.strip .w{grid-template-columns:1fr 1fr}.hrs{grid-template-columns:repeat(4,1fr)}.btn{width:100%;justify-content:center}.hd .tel{font-size:15px;padding:9px 11px}.lg img{height:36px;max-width:110px}.eta .out b{font-size:44px}}
+.rv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.rv blockquote{background:var(--k);color:#fff;border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0;border-bottom:6px solid var(--y)}
+.rv p{font-size:17px;line-height:1.5;color:#efecdf}
+.rv cite{font:700 15px Inter,sans-serif;color:var(--y);font-style:normal}
+@media(max-width:820px){.rv{grid-template-columns:1fr}}
+#wb{position:fixed;right:16px;bottom:16px;z-index:50;width:58px;height:58px;border-radius:50%;border:0;background:var(--w2);color:var(--w2t);font-size:25px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+#wp{position:fixed;right:12px;bottom:84px;z-index:50;width:min(370px,calc(100vw - 24px));height:min(540px,calc(100vh - 110px));background:#fff;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.4);display:none;flex-direction:column;overflow:hidden;color:#222;font-family:var(--wf,system-ui,sans-serif)}
+#wp.on{display:flex}
+#wh{background:var(--w1);color:var(--w1t);padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+#wh b{font-size:16px}#wh small{display:block;opacity:.8;font-size:12px}
+#wx{background:none;border:0;color:inherit;font-size:26px;cursor:pointer;line-height:1}
+#wm{flex:1;overflow-y:auto;padding:12px;background:var(--wbg);display:flex;flex-direction:column;gap:8px}
+.m{max-width:86%;padding:9px 12px;border-radius:12px;font-size:14.5px;line-height:1.4;white-space:pre-line}
+.m.b{background:#fff;border:1px solid #ddd;align-self:flex-start}
+.m.u{background:var(--w1);color:var(--w1t);align-self:flex-end}
+#wc{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;background:#fff;border-top:1px solid #e3e3e3;max-height:96px;overflow-y:auto}
+#wc button{background:#fff;border:1.5px solid var(--w1);color:var(--w1);border-radius:999px;padding:5px 11px;font:600 13px var(--wf,system-ui,sans-serif);cursor:pointer}
+#wf{display:flex;gap:6px;padding:8px;border-top:1px solid #e3e3e3}
+#wi{flex:1;min-width:0;border:1px solid #ccc;border-radius:8px;padding:9px;font-size:15px}
+#wf button{background:var(--w2);color:var(--w2t);border:0;border-radius:8px;padding:0 14px;font-weight:700;cursor:pointer}
+
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-bat" viewBox="0 0 32 32"><rect x="3" y="9" width="26" height="17" rx="3" fill="none" stroke="#141414" stroke-width="2.5"/><path d="M8 9V5h5v4M19 9V5h5v4" stroke="#141414" stroke-width="2.5" fill="none"/><path d="M9 17.5h6M12 14.5v6M20 17.5h4" stroke="#e3a600" stroke-width="2.5" stroke-linecap="round"/></symbol>
+<symbol id="i-ac" viewBox="0 0 32 32"><path d="M16 3v26M5 9.5l22 13M27 9.5L5 22.5" stroke="#141414" stroke-width="2.5" stroke-linecap="round"/><circle cx="16" cy="16" r="3.5" fill="#fbbf1f" stroke="#141414" stroke-width="2"/></symbol>
+<symbol id="i-brk" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="none" stroke="#141414" stroke-width="2.5"/><circle cx="16" cy="16" r="4" fill="#fbbf1f" stroke="#141414" stroke-width="2"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4" stroke="#141414" stroke-width="2.5" stroke-linecap="round"/></symbol>
+<symbol id="i-oil" viewBox="0 0 32 32"><path d="M16 4C12 11 8 15 8 20a8 8 0 0016 0c0-5-4-9-8-16z" fill="#fbbf1f" stroke="#141414" stroke-width="2.5" stroke-linejoin="round"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 32 32"><path d="M18 3L7 18h8l-2 11 12-16h-8z" fill="#fbbf1f" stroke="#141414" stroke-width="2.3" stroke-linejoin="round"/></symbol>
+<symbol id="i-rad" viewBox="0 0 32 32"><rect x="4" y="7" width="24" height="18" rx="2" fill="none" stroke="#141414" stroke-width="2.5"/><path d="M10 7v18M16 7v18M22 7v18" stroke="#141414" stroke-width="2"/><path d="M14 2h4M14 30h4" stroke="#e3a600" stroke-width="3" stroke-linecap="round"/></symbol>
+<symbol id="i-wr" viewBox="0 0 32 32"><path d="M21 4a7 7 0 00-6 9L4 24l4 4 11-11a7 7 0 009-6l-5 3-3-3 3-5z" fill="#fbbf1f" stroke="#141414" stroke-width="2.3" stroke-linejoin="round"/></symbol>
+<symbol id="i-lt" viewBox="0 0 32 32"><path d="M6 10c0 8 4 12 10 12h6V8h-6C10 8 6 8 6 10z" fill="#fbbf1f" stroke="#141414" stroke-width="2.3" stroke-linejoin="round"/><path d="M26 11h4M26 16h4M26 21h4" stroke="#141414" stroke-width="2.3" stroke-linecap="round"/></symbol>
+</defs></svg>
+<div class="haz"></div>
+<header class="hd"><div class="w"><a class="lg" href="#top" aria-label="Smart Car Fixing"><img src="img/smart-car-fixing-logo.png" alt="Smart Car Fixing" width="102" height="42"></a>
+<nav><a href="#services">Services</a><a href="#areas">Areas</a><a href="#how">How it works</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="tel" href="tel:+971562636378">Call +971 56 263 6378</a></div></header>
+
+<section class="hero" id="top"><div class="w">
+<div><div class="live"><i></i>Mobile mechanic · Mankhool, Dubai</div>
+<h1>Car trouble? The mechanic <span>comes to you</span>.</h1>
+<p>Smart Car Fixing sends a technician to your home, office, roadside or parking basement across Dubai. You get a check, a plain-words explanation and a clear estimate before any work starts.</p>
+<div class="cta"><a class="btn y" href="tel:+971562636378">Call now</a><a class="btn g" href="https://wa.me/971562636378">WhatsApp</a><button class="btn" type="button" onclick="openW('book')">Request a visit</button></div></div>
+<div class="eta" id="etabox"><h2>How soon can we reach you?</h2><p>Pick your area. Arrival times are the ones listed on the Smart Car Fixing site.</p>
+<label for="aresel" style="position:absolute;left:-9999px">Area</label><select id="aresel"></select>
+<div class="out"><b id="etan">15</b><span id="etau">minutes, typical</span></div><div class="bar"><i id="etab"></i></div>
+<small>The team confirms the exact arrival time when you call or message.</small></div>
+</div></section>
+<div class="haz"></div>
+<div class="strip"><div class="w"><div><b>15+</b><span>years in car repair</span></div><div><b>10K+</b><span>clients served in Dubai</span></div><div><b>24 h</b><span>every day of the week</span></div><div><b>15</b><span>services listed</span></div></div></div>
+
+<section class="sec" id="services"><div class="w">
+<h2>What we <u>fix</u> on site</h2>
+<p class="intro">Batteries are the specialty, and the list goes well beyond them. Every service on the site follows the same rule: the mechanic explains the problem and shares an estimate before starting.</p>
+<div class="sv">
+<article class="sc big"><svg><use href="#i-bat"/></svg><h3>Car battery replacement</h3><p>Slow to start or completely dead? The technician tests the battery and the charging system and can replace the battery on site. The site lists Amaron, AC Delco and Bosch batteries, a free battery health check at your location and warranty coverage.</p></article>
+<article class="sc"><svg><use href="#i-ac"/></svg><h3>Car AC service</h3><p>Cooling checks, AC gas refill, compressor issues, filter checks and airflow problems.</p></article>
+<article class="sc"><svg><use href="#i-wr"/></svg><h3>Mechanic service</h3><p>Everyday checks and repairs, explained clearly, with an estimate first.</p></article>
+<article class="sc"><svg><use href="#i-oil"/></svg><h3>Engine oil change</h3><p>Oil level, oil quality and oil filter checked, with advice on the right service.</p></article>
+<article class="sc"><svg><use href="#i-brk"/></svg><h3>Brake pad change</h3><p>Pads, discs, brake fluid and braking performance checked.</p></article>
+<article class="sc"><svg><use href="#i-rad"/></svg><h3>Radiator repair</h3><p>Coolant checks, leak inspections and cooling system repair for overheating.</p></article>
+<article class="sc"><svg><use href="#i-bolt"/></svg><h3>Electrical repair</h3><p>Warning lights, fuse issues, power faults and wiring checked.</p></article>
+<article class="sc"><svg><use href="#i-wr"/></svg><h3>Inspection service</h3><p>A vehicle check before a long drive or after a strange noise, with diagnostics when needed.</p></article>
+<article class="sc"><svg><use href="#i-lt"/></svg><h3>Headlight change</h3><p>Headlights, bulbs, wiring and visibility checked for safer night driving.</p></article>
+<article class="sc"><svg><use href="#i-oil"/></svg><h3>Transmission oil</h3><p>Gear oil condition checked to protect the gearbox from avoidable wear.</p></article>
+<article class="sc"><svg><use href="#i-wr"/></svg><h3>Engine belt change</h3><p>Worn, cracked or noisy belts inspected and changed when needed.</p></article>
+<article class="sc"><svg><use href="#i-bolt"/></svg><h3>Alternator, starter, ignition coil</h3><p>Charging, starting and ignition faults, listed as separate services on the site.</p></article>
+<article class="sc"><svg><use href="#i-brk"/></svg><h3>Dent and paint</h3><p>Dents, scratches and paint damage repaired for a clean finish.</p></article>
+</div></div></section>
+
+<section class="sec dark" id="how"><div class="w">
+<h2>Five steps, <u style="box-shadow:inset 0 -.28em 0 #e3a600">no surprises</u></h2>
+<p class="intro">This is the process the site describes, from the first message to the finished job.</p>
+<ol class="steps">
+<li><b>Call or WhatsApp</b><span>Tell the team what is wrong with the car.</span></li>
+<li><b>Share the car details</b><span>Make, model, year, the issue and where the car is right now.</span></li>
+<li><b>Vehicle check</b><span>The mechanic checks the car and explains the issue in simple words.</span></li>
+<li><b>Clear estimate</b><span>You see the price before the work starts, with no hidden fees.</span></li>
+<li><b>Repair, then a quality check</b><span>Work begins after your approval and ends with a basic quality check.</span></li>
+</ol>
+<div class="cta"><button class="btn y" type="button" onclick="openW('book')">Start a request</button></div>
+</div></section>
+
+<section class="sec" id="areas"><div class="w">
+<h2>Areas and <u>arrival times</u></h2>
+<p class="intro">The base is Al Mankhool. The site lists arrival times for these areas, and also mentions Silicon Oasis, Al Karama, Sharjah and Ajman. Tap an area to see it above.</p>
+<div class="areas" id="arealist"></div>
+<h2 style="margin-top:44px;font-size:30px">Open every day</h2>
+<div class="hrs"><div>Mon<b>24h</b></div><div>Tue<b>24h</b></div><div>Wed<b>24h</b></div><div>Thu<b>24h</b></div><div>Fri<b>24h</b></div><div>Sat<b>24h</b></div><div>Sun<b>24h</b></div></div>
+</div></section>
+
+<section class="sec" id="reviews" style="background:var(--bg2)"><div class="w">
+<h2>What drivers <u>wrote</u></h2>
+<p class="intro">Three of the Google reviews shown on the Smart Car Fixing site, word for word.</p>
+<div class="rv">
+<blockquote><svg viewBox="0 0 40 30" width="38" height="28" aria-hidden="true"><path d="M0 30V14C0 5 5 1 13 0l1 4c-4 1-6 3-6 7h6v19zM22 30V14c0-9 5-13 13-14l1 4c-4 1-6 3-6 7h6v19z" fill="#fbbf1f"/></svg><p>Service is good .. came to my house basement and fixed it immediately.</p><cite>Kashyap</cite></blockquote>
+<blockquote><svg viewBox="0 0 40 30" width="38" height="28" aria-hidden="true"><path d="M0 30V14C0 5 5 1 13 0l1 4c-4 1-6 3-6 7h6v19zM22 30V14c0-9 5-13 13-14l1 4c-4 1-6 3-6 7h6v19z" fill="#fbbf1f"/></svg><p>Smart car fixing very good service my car battery fixing only 15 minutes.</p><cite>Ashrafali Chohan</cite></blockquote>
+<blockquote><svg viewBox="0 0 40 30" width="38" height="28" aria-hidden="true"><path d="M0 30V14C0 5 5 1 13 0l1 4c-4 1-6 3-6 7h6v19zM22 30V14c0-9 5-13 13-14l1 4c-4 1-6 3-6 7h6v19z" fill="#fbbf1f"/></svg><p>Very professional, very quick service and good pricing.</p><cite>Restart Fitness Al Rolla</cite></blockquote>
+</div></div></section>
+
+<section class="sec" id="contact"><div class="w">
+<h2>Talk to the <u>team</u></h2>
+<div class="two"><div class="box cont"><h3>Contact</h3><a class="big" href="tel:+971562636378">+971 56 263 6378</a><p><a href="mailto:info@smartcarfixing.com">info@smartcarfixing.com</a></p><p>19 26A St, Mankhool, Dubai, United Arab Emirates</p><div class="cta"><a class="btn k" href="https://wa.me/971562636378">WhatsApp</a></div></div>
+<div class="box"><h3>Have these ready</h3><ul><li>Car make, model and year</li><li>What the car is doing</li><li>Where the car is parked</li><li>A phone number for the mechanic</li></ul><div class="cta"><button class="btn k" type="button" onclick="openW('book')">Let the assistant collect it</button></div></div></div>
+</div></section>
+
+<section class="sec" id="faq"><div class="w">
+<h2>Quick <u>answers</u></h2>
+<details><summary>Do you offer 24-hour car repair?</summary><p>Yes. The site says you can call or WhatsApp any time, day or night, and a mechanic inspects the car and gives a clear estimate before work begins.</p></details>
+<details><summary>What does it cost?</summary><p>It depends on the car model, the service, the parts and the location. The mechanic checks the vehicle first and shares an estimate before starting. The assistant has no price list.</p></details>
+<details><summary>How often should a car be serviced?</summary><p>The site says most cars need maintenance every 5,000 to 10,000 km or as the owner's manual advises, and Dubai heat and traffic may call for earlier checks.</p></details>
+<details><summary>What are signs my car needs attention?</summary><p>Warning lights, weak AC, slow starting, strange noises, brake noise, vibration, overheating, fluid leaks, poor fuel economy or a rough drive.</p></details>
+<details><summary>Can you come to my building's parking?</summary><p>The site mentions home, office, roadside, basement parking and other nearby locations.</p></details>
+</div></section>
+
+<footer><div class="w"><div><b>Smart Car Fixing</b><br>19 26A St, Mankhool, Dubai</div><div>Demo · prepared by Gevorg Hovhannisyan</div></div></footer>
+<div class="bar2"><a class="c" href="tel:+971562636378">Call</a><a class="m" href="https://wa.me/971562636378">WhatsApp</a></div>
+<button id="wb" aria-label="Open chat" onclick="openW()">💬</button>
+<div id="wp" role="dialog" aria-label="Smart Car Fixing assistant">
+<div id="wh"><div><b>Smart Car Fixing assistant</b><small>Mobile mechanic, Dubai · replies are instant</small></div><button id="wx" aria-label="Close" onclick="closeW()">×</button></div>
+<div id="wm"></div><div id="wc"></div>
+<form id="wf"><input id="wi" placeholder="Type your question" autocomplete="off"><button type="submit">Send</button></form>
+</div>
+<script>
+var AREAS=[["Al Mankhool",15,15],["Bur Dubai",10,15],["Karama",10,15],["Satwa",10,15],["Oud Metha",10,15],["Deira",15,20],["Al Jaddaf",15,20],["Downtown Dubai",20,25],["Business Bay",20,25],["Jumeirah",20,30],["Al Barsha",25,35],["Dubai Marina",30,35]];
+(function(){var s=document.getElementById('aresel'),l=document.getElementById('arealist'),n=document.getElementById('etan'),b=document.getElementById('etab');
+function show(i){var a=AREAS[i];n.textContent=a[1]==a[2]?a[1]:a[1]+"-"+a[2];b.style.width=Math.round(a[2]/35*100)+"%";s.value=i;[].forEach.call(l.children,function(c,j){c.className='ar'+(j==i?' on':'')})}
+AREAS.forEach(function(a,i){var o=document.createElement('option');o.value=i;o.textContent=a[0];s.appendChild(o);var c=document.createElement('button');c.type='button';c.className='ar';c.innerHTML='<b>'+a[0]+'</b><span>'+(a[1]==a[2]?a[1]:a[1]+"-"+a[2])+' min</span>';c.onclick=function(){show(i);document.getElementById('etabox').scrollIntoView({behavior:'smooth',block:'center'})};l.appendChild(c)});
+s.onchange=function(){show(+s.value)};show(0)})();
+var NAME="Smart Car Fixing",SUB="Mobile mechanic, Dubai · replies are instant";
+var GREET="Hi! I'm the Smart Car Fixing assistant. Ask about services, areas, arrival times or battery replacement, or I can take your repair request for the team.";
+var HOME=["Book a mechanic","Car battery","Areas and arrival time","Opening hours","What do you fix?","Contact"];
+var KB=[
+{k:"hours open opening time close closed day night midnight emergency anytime always sunday friday weekend holiday",a:"Smart Car Fixing is listed as open 24 hours, every day of the week. You can call +971 56 263 6378 or WhatsApp at any time.",c:["Book a mechanic","Areas and arrival time","Contact"]},
+{k:"phone call number whatsapp whatsup watsapp contact telephone mobile reach",a:"Call or WhatsApp +971 56 263 6378. E-mail: info@smartcarfixing.com.",c:["Book a mechanic","Where are you?","Opening hours"]},
+{k:"email mail e-mail write",a:"The e-mail address is info@smartcarfixing.com. For urgent problems, a call or WhatsApp on +971 56 263 6378 is quicker.",c:["Contact","Book a mechanic"]},
+{k:"where based address located location base office garage mankhool find workshop shop",a:"The team is based at 19 26A St, Mankhool, Dubai, and the mechanic comes to your location. Home, office, roadside and basement parking are all mentioned on the site.",c:["Areas and arrival time","Book a mechanic"]},
+{k:"area areas arrive arrival eta fast quick quickly minutes wait reach long time coverage cover covers deira marina downtown jumeirah barsha satwa karama sharjah ajman jaddaf bay oud metha silicon oasis",a:"The site lists these arrival times: Al Mankhool 15 min, Bur Dubai 10-15, Karama 10-15, Satwa 10-15, Oud Metha 10-15, Deira 15-20, Al Jaddaf 15-20, Downtown Dubai 20-25, Business Bay 20-25, Jumeirah 20-30, Al Barsha 25-35, Dubai Marina 30-35. It also mentions Silicon Oasis, Sharjah and Ajman. The team confirms the real time when you call.",c:["Book a mechanic","Opening hours"]},
+{k:"battery batteries bettery dead start starting starts slow flat jump amaron bosch delco acdelco replace replacement",a:"Battery replacement is a main service. The mechanic tests the battery and charging system and can replace the battery on site. The site lists Amaron, AC Delco and Bosch batteries, a free battery health check at your location and warranty cover. Several customers on the site mention a change in about 15 minutes.",c:["Book a mechanic","How much does it cost?","Opening hours"]},
+{k:"ac air conditioning cooling cold gas refill compressor airflow hot heat",a:"Car AC service covers cooling checks, AC gas refill, compressor issues, AC filter checks and airflow problems.",c:["Book a mechanic","What do you fix?"]},
+{k:"brake brakes braking pads pad discs disc squeal noise",a:"Brake pad change: the mechanic checks pads, discs, brake fluid and braking performance and suggests the right solution. The team confirms the details for your car.",c:["Book a mechanic","How much does it cost?"]},
+{k:"oil engine change filter transmission gear gearbox",a:"Engine oil change covers oil level, oil quality and the oil filter. There is also a separate transmission oil change that checks gear oil condition to protect the gearbox.",c:["Book a mechanic","What do you fix?"]},
+{k:"electrical electric electrics wiring fuse light lights warning headlight headlights bulb alternator starter ignition coil",a:"Electrical repair covers warning lights, power faults, fuse and wiring problems. Separate services are listed for alternator, self starter, ignition coil and headlight changes.",c:["Book a mechanic","What do you fix?"]},
+{k:"radiator overheating overheat coolant leak leaking temperature",a:"Radiator repair includes coolant checks, leak inspection, radiator issues and cooling system repair. If the car is overheating, stop safely and call the team.",c:["Book a mechanic","Opening hours"]},
+{k:"dent paint scratch scratches body bumper",a:"Dent and paint service repairs dents, scratches and paint damage for a clean finish.",c:["Book a mechanic","What do you fix?"]},
+{k:"belt belts inspection inspect check mechanic maintenance service servicing services fix repair repairs offer list",a:"Services on the site: car mechanic service, engine oil change, AC service, battery replacement, brake pad change, radiator repair, electrical repair, inspection service, transmission oil change, headlight change, dent and paint, engine belt change, alternator repair, ignition coil service and self starter change.",c:["Car battery","Book a mechanic","Areas and arrival time"]},
+{k:"price prices cost quote estimate charge charges fee fees hidden cheap expensive much pay payment cash card",a:"The price depends on the car model, the service, parts and location. The mechanic checks the car first and shares a clear estimate before any work starts, with no hidden fees per the site. I don't have a price list; the team gives the figure.",c:["Book a mechanic","Contact"]},
+{k:"warranty guarantee guaranteed warrantied cover",a:"The site mentions a service guarantee on eligible work and warranty coverage on batteries. The team will confirm what applies to your job.",c:["Car battery","Book a mechanic"]},
+{k:"home office roadside parking basement mobile doorstep come visit house building",a:"Yes, the mechanic comes to your home, office, roadside, parking area or basement parking, checks the car and explains what needs doing.",c:["Book a mechanic","Areas and arrival time"]},
+{k:"experience business been years clients trust licensed licence insured insurance certified technicians experienced who about",a:"The site says 15+ years of experience in car repair and maintenance, 10K+ clients served across Dubai, certified technicians, and a licensed and insured business.",c:["Book a mechanic","What do you fix?"]},
+{k:"process how work steps procedure works happen",a:"Call or WhatsApp, share the car details, the mechanic does a vehicle check, you get a clear estimate, then the repair starts after your approval and finishes with a quality check.",c:["Book a mechanic","How much does it cost?"]},
+{k:"interval often should km kilometres regular maintenance schedule signs symptoms",a:"The site says most cars need maintenance every 5,000 to 10,000 km or as the owner's manual advises, and Dubai heat and traffic may need earlier checks. Common signs: warning lights, weak AC, slow starting, noises, brake noise, vibration, overheating, fluid leaks.",c:["Book a mechanic","What do you fix?"]},
+];
+var STEPS=[
+{key:"svc",q:"What does the car need?",chips:["Battery","AC","Brakes","Oil change","Electrical","Not sure"]},
+{key:"car",q:"Car make, model and year?",chips:[]},
+{key:"area",q:"Which area is the car in?",chips:["Al Mankhool","Bur Dubai","Deira","Downtown","Business Bay","Dubai Marina","Other"]},
+{key:"when",q:"When do you need the mechanic?",chips:["As soon as possible","Today","Another day"]},
+{key:"name",q:"Your name?",chips:[]},
+{key:"contact",q:"Phone or WhatsApp number for the mechanic?",chips:[]}];
+function SUMMARY(d){return "Thanks "+d.name+"! Request noted: "+d.svc+" for "+d.car+" in "+d.area+", "+d.when+". Contact: "+d.contact+".\nThis is a demo, so nothing has been sent. On the live site this goes to the team, who confirm the arrival time and share an estimate before work."}
+var FALLBACK="I don't have that detail. The team can answer on +971 56 263 6378 (call or WhatsApp). Want me to take a repair request?";
+
+/*ENGINE*/
+var STOP="the a an of to is are do does you your i me my we can for in on at and or it be have has with about how what when where which".split(" ");
+function norm(s){return s.toLowerCase().replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ers|er|es|ed|s)$/,""):w}
+function lev(a,b){if(a==b)return 0;if(Math.abs(a.length-b.length)>1)return 2;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function lev2(a,b){var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function hit(w,kw){var s=stem(w);if(kw==w||stem(kw)==s)return 1;if(w.length>=5&&kw.length>=5){if(lev(w,kw)<=1||lev(s,stem(kw))<=1)return .9;if(w.length>=7&&kw.length>=7&&lev2(w,kw)<=2)return .8}if(w.length>=4&&(kw.indexOf(w)==0||w.indexOf(kw)==0)&&kw.length>=4)return .6;return 0}
+function answer(q){var ws=norm(q).split(" ").filter(function(w){return w&&STOP.indexOf(w)<0});var best=null,bs=0;KB.forEach(function(e){var kws=e.k.split(" "),sc=0;ws.forEach(function(w){var m=0;kws.forEach(function(kw){m=Math.max(m,hit(w,kw))});sc+=m});if(sc>bs){bs=sc;best=e}});return bs>=.9?best:null}
+var BOOKWORDS=/\b(book|booking|booked|appointment|appointments|reserve|reservation|enrol|enroll|enrollment|enrolment|sign up|signup|schedule|register|registration|trial|visit|consultation)\b/;
+/*END*/
+var $=function(i){return document.getElementById(i)},M=$('wm'),C=$('wc'),I=$('wi'),flow=null,data={},si=0;
+function say(t,who){var d=document.createElement('div');d.className='m '+(who||'b');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight}
+function chips(a){C.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){handle(t)};C.appendChild(b)})}
+function openW(mode,pre){$('wp').classList.add('on');if(!M.children.length){say(GREET);chips(HOME)}if(mode=='book'){startBook(pre)}}
+function closeW(){$('wp').classList.remove('on')}
+function startBook(pre){flow=1;data={};si=0;if(pre&&STEPS[0]){data[STEPS[0].key]=pre}ask()}
+function ask(){while(si<STEPS.length&&data[STEPS[si].key])si++;if(si>=STEPS.length){finish();return}say(STEPS[si].q);chips(STEPS[si].chips)}
+function finish(){flow=null;say(SUMMARY(data));chips(HOME)}
+function handle(t){say(t,'u');if(flow){if(/^(cancel|stop|exit)$/i.test(t.trim())){flow=null;say("No problem, request cancelled.");chips(HOME);return}data[STEPS[si].key]=t;si++;ask();return}
+if(BOOKWORDS.test(norm(t))||/^book/i.test(t)){startBook();return}
+var r=answer(t);if(r){say(r.a);chips(r.c)}else{say(FALLBACK);chips(HOME)}}
+$('wf').addEventListener('submit',function(e){e.preventDefault();var v=I.value.trim();if(!v)return;I.value='';handle(v)});
+
+</script></body></html>

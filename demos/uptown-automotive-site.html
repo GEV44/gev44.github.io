@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Uptown Automotive | Auto body and collision repair in Houston, TX</title>
+<meta name="description" content="Demo page for Uptown Automotive, auto body, collision and mechanical repair in Houston, Texas.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a1424;--bg2:#101f38;--card:#142544;--bl:#1e88e5;--bl2:#5db4ff;--st:#c7d2e0;--yl:#ffc531;--tx:#e8eef7;--mut:#93a4bb;--line:#223659}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 'Barlow',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-weight:700;letter-spacing:.02em;margin:0;line-height:1}
+a{color:inherit}.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+header{background:var(--bg2);border-bottom:2px solid var(--bl);position:sticky;top:0;z-index:30}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 0}
+.chip{background:#fff;border-radius:8px;padding:2px 8px;display:flex;align-items:center}
+.chip img{height:44px;width:auto;display:block}
+.hd nav{display:none;gap:18px;font:600 15px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.08em}
+.hd nav a{text-decoration:none;color:var(--st)}.hd nav a:hover{color:var(--bl2)}
+@media(min-width:900px){.hd nav{display:flex}}
+.cta{background:var(--yl);color:#111;text-decoration:none;font:700 16px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.06em;padding:11px 16px;border-radius:4px;border:0;cursor:pointer;white-space:nowrap}
+.hero{position:relative;overflow:hidden;padding:46px 0 56px;background:linear-gradient(160deg,#0f2a52 0,#0a1424 62%)}
+.hero::before{content:"";position:absolute;right:-180px;top:-60px;width:520px;height:520px;border-radius:50%;border:34px solid transparent;border-top-color:var(--bl);border-right-color:var(--bl2);opacity:.35;transform:rotate(18deg)}
+.hero::after{content:"";position:absolute;right:-60px;top:60px;width:300px;height:300px;border-radius:50%;border:10px solid transparent;border-top-color:var(--st);opacity:.25;transform:rotate(30deg)}
+.hero .wrap{position:relative;z-index:2}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tags span{border:1px solid var(--bl2);color:var(--bl2);font:600 13px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.1em;padding:5px 10px;border-radius:3px}
+h1{font-size:clamp(46px,10vw,96px);max-width:820px}
+h1 b{color:var(--bl2)}
+.lead{max-width:560px;font-size:18px;color:var(--st);margin:16px 0 22px}
+.rate{display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}
+.rate big{font:700 54px 'Barlow Condensed';color:var(--yl);line-height:1}
+.rate span{color:var(--mut);font-size:14px}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.ghost{background:transparent;border:2px solid var(--st);color:var(--tx)}
+.strip{background:var(--bl);color:#fff}
+.strip .wrap{display:grid;gap:4px;padding-top:12px;padding-bottom:12px;font:600 17px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.08em;text-align:center}
+@media(min-width:760px){.strip .wrap{grid-template-columns:repeat(4,1fr)}}
+section{padding:56px 0}
+.k{font:700 14px 'Barlow Condensed';letter-spacing:.2em;text-transform:uppercase;color:var(--yl)}
+h2{font-size:clamp(34px,6vw,58px);margin:8px 0 14px}
+.sub{max-width:620px;color:var(--st);margin:0 0 24px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.tabs button{background:var(--card);color:var(--st);border:1px solid var(--line);padding:10px 16px;border-radius:4px;font:700 16px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.06em;cursor:pointer}
+.tabs button.on{background:var(--bl);color:#fff;border-color:var(--bl)}
+.pane{display:none;gap:10px}
+.pane.on{display:grid}
+@media(min-width:700px){.pane.on{grid-template-columns:repeat(2,1fr)}}
+.sv{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--bl);padding:16px 18px;border-radius:4px;min-width:0;cursor:pointer}
+.sv:hover{border-left-color:var(--yl)}
+.sv b{display:block;font:700 24px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.03em;margin-bottom:4px}
+.sv span{font-size:15px;color:var(--st)}
+.flow3{display:grid;gap:12px;counter-reset:f}
+@media(min-width:800px){.flow3{grid-template-columns:repeat(4,1fr)}}
+.f3{background:var(--card);padding:20px;border-radius:6px;border-top:4px solid var(--yl);min-width:0}
+.f3::before{counter-increment:f;content:"0" counter(f);font:700 44px 'Barlow Condensed';color:var(--bl2)}
+.f3 h3{font-size:26px;margin:2px 0 6px}.f3 p{margin:0;color:var(--st);font-size:15px}
+.alt{background:var(--bg2)}
+.certs{display:grid;gap:10px}
+@media(min-width:760px){.certs{grid-template-columns:repeat(5,1fr)}}
+.ce{border:1px solid var(--line);border-radius:6px;padding:16px;background:var(--card);min-width:0}
+.ce b{display:block;font:700 22px 'Barlow Condensed';text-transform:uppercase;color:var(--bl2);margin-bottom:6px}
+.ce span{font-size:14.5px;color:var(--st)}
+.hrs{width:100%;border-collapse:collapse;font-size:16px}
+.hrs td{padding:9px 0;border-bottom:1px solid var(--line)}
+.hrs td:last-child{text-align:right;font-weight:700}
+.hrs tr.today td{color:var(--yl)}
+.two{display:grid;gap:24px}
+@media(min-width:860px){.two{grid-template-columns:1fr 1fr}}
+.panel{background:var(--card);border:1px solid var(--line);padding:22px;border-radius:6px;min-width:0}
+.panel h3{font-size:30px;margin-bottom:10px}
+.panel p{margin:6px 0;overflow-wrap:anywhere}
+.areas{display:flex;flex-wrap:wrap;gap:8px}
+.areas span{background:var(--card);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:14px}
+.rv{display:grid;gap:12px}
+@media(min-width:800px){.rv{grid-template-columns:repeat(2,1fr)}}
+.rq{background:var(--card);border-radius:6px;padding:18px;font-size:15px;color:var(--st);min-width:0}
+.rq b{display:block;margin-top:8px;color:var(--yl);font:700 17px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.06em}
+details{background:var(--card);border:1px solid var(--line);border-radius:4px;margin-bottom:8px;padding:0 16px}
+summary{cursor:pointer;padding:14px 0;font:700 19px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.03em}
+details p{margin:0 0 14px;color:var(--st);font-size:15px}
+.tips{display:grid;gap:10px}
+@media(min-width:760px){.tips{grid-template-columns:repeat(2,1fr)}}
+.tp{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px;min-width:0;position:relative;padding-left:58px}
+.tp::before{content:"¹3";position:absolute;left:16px;top:16px;width:28px;height:28px;border-radius:50%;background:var(--bl);color:#fff;text-align:center;line-height:28px;font-weight:700}
+.tp b{display:block;font:700 21px 'Barlow Condensed';text-transform:uppercase;margin-bottom:4px;color:var(--bl2)}
+.tp span{font-size:15px;color:var(--st)}
+footer{background:#060d19;color:var(--mut);padding:24px 0;font-size:13px}
+footer .wrap{display:grid;gap:5px}
+
+#gw-btn{position:fixed;right:16px;bottom:16px;z-index:60;background:#1e88e5;color:#fff;border:0;cursor:pointer;font:600 15px/1 'Barlow',sans-serif;padding:14px 20px;border-radius:8px;box-shadow:0 6px 22px rgba(0,0,0,.28)}
+#gw-panel{position:fixed;right:16px;bottom:78px;z-index:61;width:min(360px,calc(100vw - 24px));height:min(480px,calc(100vh - 110px));background:#142544;color:#e8eef7;border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden;font:14px/1.45 'Barlow',sans-serif}
+#gw-panel.open{display:flex}
+.gw-h{background:#1e88e5;color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-size:15px}
+.gw-h button{background:none;border:0;color:#fff;font-size:24px;line-height:1;cursor:pointer}
+#gw-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.gw-m{max-width:86%;padding:9px 12px;border-radius:6px;white-space:pre-line;word-wrap:break-word}
+.gw-bot{background:#1d3158;align-self:flex-start}
+.gw-me{background:#1e88e5;color:#fff;align-self:flex-end}
+.gw-chips{display:flex;flex-wrap:wrap;gap:6px}
+.gw-chips button{background:transparent;border:1.5px solid #1e88e5;color:#1e88e5;border-radius:999px;padding:6px 11px;font:600 13px 'Barlow',sans-serif;cursor:pointer}
+#gw-form{display:flex;gap:6px;padding:10px;border-top:1px solid rgba(0,0,0,.1)}
+#gw-in{flex:1;min-width:0;border:1px solid #bbb;border-radius:8px;padding:9px;font:14px 'Barlow',sans-serif}
+#gw-form button{background:#1e88e5;color:#fff;border:0;border-radius:8px;padding:0 14px;font:600 14px 'Barlow',sans-serif;cursor:pointer}
+
+#gw-form{border-top:1px solid #223659}#gw-in{background:#0a1424;color:#e8eef7;border-color:#223659}.gw-chips button{color:#5db4ff;border-color:#5db4ff}
+</style><style>main *{min-width:0}img{max-width:100%}</style></head><body>
+<header><div class="wrap hd"><a class="chip" href="#top"><img src="img/uptown-automotive-logo.png" alt="Uptown Automotive: service, repair, collision" width="73" height="44"></a>
+<nav><a href="#services">Services</a><a href="#how">How it works</a><a href="#why">Why Uptown</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a></nav>
+<a class="cta" href="#" data-ask="Book now">Book now</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<div class="tags"><span>ASE certified</span><span>I-CAR Gold Class</span><span>RepairPal certified</span><span>BBB accredited</span></div>
+<h1>Houston <b>collision</b> repair specialists.</h1>
+<p class="lead">Insurance claims welcome, clear estimates before any work starts, and a shop that has repaired and restored over 5,500 vehicles since 2010.</p>
+<div class="row"><a class="cta" href="#" data-ask="Easy photo estimate">Easy photo estimate</a><a class="cta ghost" href="tel:7136683639">(713) 668-3639</a></div>
+<div class="rate"><big>4.8</big><span>EXCELLENT<br>829 reviews</span></div>
+</div></div>
+<div class="strip"><div class="wrap"><span>Collision and body</span><span>Mechanical repair</span><span>ADAS and wheels</span><span>Ceramic coating and PPF</span></div></div>
+
+<section id="services"><div class="wrap">
+<div class="k">Services</div><h2>Body, mechanical, calibration, protection.</h2>
+<p class="sub">Tap a service to ask the assistant about it, or start a booking with your car and the work you need.</p>
+<div class="tabs" id="tabs"><button class="on" data-t="0">Body and collision</button><button data-t="1">Mechanical</button><button data-t="2">ADAS and wheels</button><button data-t="3">Protection</button></div>
+<div class="pane on" data-p="0">
+<div class="sv" data-ask="collision repair"><b>Collision repair</b><span>From frame straightening to full-panel replacements using factory-approved parts and techniques.</span></div>
+<div class="sv" data-ask="body work"><b>Body work</b><span>Collision repairs, paint jobs, bumper replacements and scratch removal in one full-service body shop.</span></div>
+<div class="sv" data-ask="paint services"><b>Paint services</b><span>Faded, damaged or just a fresh new color, with the skill and tools to make it happen.</span></div>
+<div class="sv" data-ask="bumper repair"><b>Bumper repair</b><span>A minor scrape, a crack or collision damage, repaired with care.</span></div>
+</div>
+<div class="pane" data-p="1">
+<div class="sv" data-ask="scheduled maintenance"><b>Scheduled maintenance</b><span>Oil changes, fluid checks and tune-ups to stay on top of regular upkeep.</span></div>
+<div class="sv" data-ask="brake repair"><b>Brake repairs</b><span>Squealing, grinding or pulsing brakes inspected and repaired.</span></div>
+<div class="sv" data-ask="suspension"><b>Suspension repairs</b><span>Expert diagnostics and replacements to restore handling and comfort.</span></div>
+<div class="sv" data-ask="air conditioning"><b>Air conditioning</b><span>Inspections, recharges and repairs for Houston heat.</span></div>
+<div class="sv" data-ask="engine diagnostics"><b>Engine diagnostics</b><span>Modern scan tools and in-house experience to resolve performance issues.</span></div>
+<div class="sv" data-ask="electrical diagnostics"><b>Electrical diagnostics</b><span>Dashboard lights acting up or a car that will not start, traced to the root.</span></div>
+<div class="sv" data-ask="state inspection"><b>State inspections</b><span>Official Texas state inspections for emissions and safety.</span></div>
+</div>
+<div class="pane" data-p="2">
+<div class="sv" data-ask="adas calibration"><b>ADAS calibration</b><span>Radar, cameras and sensors calibrated after windshield replacement or collision damage.</span></div>
+<div class="sv" data-ask="wheel alignment"><b>Wheel alignments</b><span>Drifting, uneven tire wear or loose steering corrected, extending tire life.</span></div>
+<div class="sv" data-ask="tire rotation"><b>Tire rotation</b><span>Even tread wear and longer tire life with routine rotations.</span></div>
+<div class="sv" data-ask="tpms"><b>TPMS sensor service</b><span>Inspect, repair and replace faulty tire pressure sensors.</span></div>
+</div>
+<div class="pane" data-p="3">
+<div class="sv" data-ask="ceramic coating"><b>Ceramic coating</b><span>Shields paint from UV rays, bird droppings and grime, adding depth and shine.</span></div>
+<div class="sv" data-ask="paint protection film"><b>Paint protection film</b><span>Invisible film on bumpers, hoods and fenders against scratches, chips and debris.</span></div>
+</div>
+</div></section>
+
+<section id="how" class="alt"><div class="wrap">
+<div class="k">How it works</div><h2>From photo to pick-up.</h2>
+<div class="flow3">
+<div class="f3"><h3>Send photos</h3><p>Start with the easy photo estimate, or call the shop. Clear estimates come before any work starts.</p></div>
+<div class="f3"><h3>Claim sorted</h3><p>The shop works with all major insurance providers to streamline the collision repair process.</p></div>
+<div class="f3"><h3>Drop off</h3><p>Towing assistance and loaner vehicles are available. Key drop and after-hours pickup can be arranged.</p></div>
+<div class="f3"><h3>Pick up</h3><p>Same-day service is possible if the schedule allows. Pay by card, cash or Zelle, or by invoice.</p></div>
+</div></div></section>
+
+<section id="why"><div class="wrap">
+<div class="k">Why Uptown</div><h2>Certified, transparent, customer first.</h2>
+<div class="certs">
+<div class="ce"><b>Certified</b><span>ASE certified, I-CAR Gold Class and backed by the BBB.</span></div>
+<div class="ce"><b>Quality first</b><span>Professional-grade equipment, top-tier parts and manufacturer-approved procedures.</span></div>
+<div class="ce"><b>Honest</b><span>You will know what is wrong, why it happened and what it takes to fix it.</span></div>
+<div class="ce"><b>Hassle-free</b><span>From towing assistance to loaner vehicles, the aim is to remove the hassle.</span></div>
+<div class="ce"><b>Experience</b><span>Over 5,500 vehicles serviced across Houston since 2010.</span></div>
+</div></div></section>
+
+<section class="alt" id="reviews"><div class="wrap">
+<div class="k">5-star reviews</div><h2>What Houston customers say.</h2>
+<div class="rv">
+<div class="rq">&ldquo;They fixed my AC same day and were reasonably priced. Just in time for this heat, too! Very responsive and kind staff.&rdquo;<b>Sara Frankovik</b></div>
+<div class="rq">&ldquo;Uptown Auto diagnosed my car problem in just a few minutes and treated me with courtesy regarding the repairs. I never feel that I am being overcharged.&rdquo;<b>Gayle Ryan</b></div>
+<div class="rq">&ldquo;The employees are always so friendly and knowledgeable, and make the experience smooth. I would definitely recommend them to friends and family.&rdquo;<b>Alyssa Wilson</b></div>
+<div class="rq">&ldquo;Uptown's attempt to help me even if it cost them a job impressed me. The paint job itself looked great and the blending was flawless. Uptown will be my first stop.&rdquo;<b>James Thomas</b></div>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="k">Before you try it yourself</div><h2>Common DIY mistakes.</h2>
+<p class="sub">Trying to fix something on your own might save money short term but often leads to bigger problems. These are the ones the shop sees most.</p>
+<details><summary>DIY collision repair with off-the-shelf materials</summary><p>Cheap fillers, spray paint and bondo kits rarely hold up and often make things worse. A small dent can turn into a much costlier job when done incorrectly.</p></details>
+<details><summary>Online diagnoses instead of proper testing</summary><p>Forums can help, but generic advice often leads to unnecessary part replacements or ignored warning signs. A check engine light can mean a dozen different things.</p></details>
+<details><summary>Poor brake repairs</summary><p>Mismatched pads, improperly installed calipers and warped rotors from backyard jobs. Braking is one of the most critical safety systems in your car.</p></details>
+<details><summary>Ignoring suspension and alignment</summary><p>Delaying these repairs can cause uneven tire wear, poor fuel economy and a less responsive drive.</p></details>
+<details><summary>Temporary fixes on electrical problems</summary><p>Electrical tape over frayed wires and jerry-rigged connections cause shorts, dashboard errors and power drain.</p></details>
+</div></section>
+
+<section><div class="wrap">
+<div class="k">Choosing a shop</div><h2>What to look for in Houston.</h2>
+<p class="sub">Finding a dependable team to care for your car is just as important as the work itself. Four things the shop suggests checking.</p>
+<div class="tips">
+<div class="tp"><b>Verified reviews</b><span>Check real customer reviews and ratings. Look for consistent praise about workmanship, communication and turnaround times.</span></div>
+<div class="tp"><b>Certifications that matter</b><span>Choose a facility with ASE and I-CAR certifications, which show a commitment to training, safety standards and repair excellence.</span></div>
+<div class="tp"><b>Experience and reputation</b><span>A proven track record matters. Uptown has serviced over 5,500 vehicles since 2010.</span></div>
+<div class="tp"><b>Full-service capability</b><span>From diagnostics and maintenance to collision repair and ADAS calibration, a one-stop shop handles it all the right way.</span></div>
+</div>
+<p style="margin:20px 0 0"><a class="cta" href="#" data-ask="Book now" style="display:inline-block">Request your free quote</a></p>
+</div></section>
+
+<section id="visit" class="alt"><div class="wrap two">
+<div class="panel"><h3>Hours</h3>
+<table class="hrs"><tr data-d="1"><td>Monday</td><td>8:00 AM - 6:00 PM</td></tr><tr data-d="2"><td>Tuesday</td><td>8:00 AM - 6:00 PM</td></tr><tr data-d="3"><td>Wednesday</td><td>8:00 AM - 6:00 PM</td></tr><tr data-d="4"><td>Thursday</td><td>8:00 AM - 6:00 PM</td></tr><tr data-d="5"><td>Friday</td><td>8:00 AM - 6:00 PM</td></tr><tr data-d="6"><td>Saturday</td><td>8:00 AM - 2:00 PM</td></tr><tr data-d="0"><td>Sunday</td><td>Closed</td></tr></table></div>
+<div class="panel"><h3>Find the shop</h3><p>6511 Mapleridge St, Houston, TX 77081</p><p><a href="tel:7136683639"><b>(713) 668-3639</b></a></p><p><a href="mailto:info@myuptownautomotive.com">info@myuptownautomotive.com</a></p>
+<p style="margin-top:14px;color:var(--mut);font-size:14px">Serving Houston and surrounding areas:</p>
+<div class="areas"><span>Houston</span><span>Cypress</span><span>Spring Branch</span><span>Bellaire</span><span>Willowbrook</span><span>Hunters Creek Village</span><span>Jersey Village</span></div>
+<p style="margin-top:16px"><a class="cta" href="#" data-ask="Book now" style="display:inline-block">Book now</a></p></div>
+</div></section>
+
+<section><div class="wrap" style="max-width:820px">
+<div class="k">FAQ</div><h2>Popular questions.</h2>
+<details><summary>Do you offer mobile services?</summary><p>The primary work is done at the Houston shop, with towing and pickup options to make the process easier.</p></details>
+<details><summary>How do I pay?</summary><p>Credit cards, debit, cash and Zelle are accepted. An invoice can be sent if you prefer to pay online.</p></details>
+<details><summary>Do I need to be there during service?</summary><p>Not always. A key drop or after-hours pickup can be arranged.</p></details>
+<details><summary>How much will it cost?</summary><p>It depends on the service, and paint protection film, for example, varies by area covered. Clear estimates are provided before any job starts.</p></details>
+<details><summary>How often should I rotate my tires?</summary><p>About every 5,000 miles is a good rule of thumb, which reduces uneven wear and improves handling and safety.</p></details>
+<details><summary>Do you handle insurance claims?</summary><p>Yes, the shop works with all major insurance providers to streamline the collision repair process.</p></details>
+<details><summary>Do you use your own tools and supplies?</summary><p>Yes, the shop uses its own professional equipment, supplies and diagnostic systems, so your vehicle gets the full Uptown Automotive experience every time.</p></details>
+<details><summary>Do you only fix collision damage?</summary><p>No. Besides collision and paint work, the shop handles mechanical repair, scheduled maintenance, Texas state inspections, ADAS calibration, wheel services, ceramic coating and paint protection film.</p></details>
+<details><summary>Can I get same-day service?</summary><p>If the schedule allows, yes. Call the shop and the team will do their best to accommodate you.</p></details>
+</div></section>
+</main>
+<footer><div class="wrap"><span>Uptown Automotive &middot; 6511 Mapleridge St, Houston, TX 77081 &middot; (713) 668-3639</span><span>Demo &middot; prepared by Gevorg Hovhannisyan</span></div></footer>
+<div id="gw-panel" role="dialog" aria-label="Assistant"><div class="gw-h"><b id="gw-t"></b><button id="gw-x" type="button" aria-label="Close">×</button></div><div id="gw-log" aria-live="polite"></div><form id="gw-form" autocomplete="off"><input id="gw-in" type="text" placeholder="Type your question..." aria-label="Message"><button type="submit">Send</button></form></div><button id="gw-btn" type="button" aria-label="Open assistant"><span id="gw-bl"></span></button>
+<script>(function(){var d=new Date().getDay();var r=document.querySelector('.hrs tr[data-d="'+d+'"]');if(r)r.className='today';var b=document.querySelectorAll('#tabs button'),p=document.querySelectorAll('.pane');b.forEach(function(x){x.onclick=function(){b.forEach(function(y){y.className=''});p.forEach(function(y){y.className='pane'});x.className='on';document.querySelector('.pane[data-p="'+x.getAttribute('data-t')+'"]').className='pane on';};});})();</script>
+<script>function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4)w=w.replace(/(ing|ed|es|s|ly)$/,'');return w;}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function tm(t,k){if(t===k)return 1;if(t.length>=4&&k.length>=4&&(t.indexOf(k)===0||k.indexOf(t)===0))return .8;var m=Math.max(t.length,k.length);if(m>=5&&Math.abs(t.length-k.length)<=2){var d=lev(t,k);if(d<=(m>=9?2:1))return .7;}return 0;}
+function findAnswer(CFG,q){var n=norm(q),toks=n.split(' ').map(stem).filter(Boolean),best=null,bs=0;
+CFG.kb.forEach(function(e){var s=0;e.k.forEach(function(k){var kn=norm(k);if(kn.indexOf(' ')>0){if((' '+n+' ').indexOf(' '+kn+' ')>=0)s+=2.5;else{var kt=kn.split(' ').map(stem),c=0;kt.forEach(function(x){if(toks.some(function(t){return tm(t,x)>0}))c++;});if(c===kt.length)s+=1.6;}}else{var ks=stem(kn),b=0;toks.forEach(function(t){b=Math.max(b,tm(t,ks));});s+=b;}});
+if(s>bs){bs=s;best=e;}});return bs>=0.7?best:null;}
+var CFG={"title": "Uptown Automotive", "btn": "Book / ask", "greet": "Hi! Ask me about collision, body or mechanical repair, hours, insurance claims or payment, or tell me your car and I will take a booking request for the shop.", "chips": ["Book now", "Easy photo estimate", "Insurance claims", "Hours", "Services"], "fallback": "I do not have that detail. The shop will confirm it: call (713) 668-3639 or email info@myuptownautomotive.com.", "kb": [{"id": "flow", "k": ["book now", "book", "booking", "appointment", "schedule", "make an appointment", "drop off", "drop my car", "get an estimate", "photo estimate", "easy photo estimate", "free quote", "request a quote", "quote", "estimate"], "flow": true}, {"id": "services", "k": ["services", "what do you do", "what services", "offer", "do you fix"], "a": "Body and collision (collision repair, body work, paint, bumpers), mechanical (maintenance, brakes, suspension, A/C, engine and electrical diagnostics, state inspections), ADAS and wheels (calibration, alignment, tire rotation, TPMS) and protection (ceramic coating, paint protection film).", "more": ["Book now"]}, {"id": "collision", "k": ["collision", "collision repair", "accident", "crash", "frame", "frame straightening", "panel", "dent", "dents", "wreck"], "a": "Collision repair covers everything from frame straightening to full-panel replacements, using factory-approved parts and techniques, to restore your vehicle to pre-accident condition.", "more": ["Book now", "Insurance claims"]}, {"id": "body", "k": ["body work", "body shop", "scratch", "scratches", "scratch removal", "body"], "a": "As a full-service body shop, the team handles collision repairs, paint jobs, bumper replacements and scratch removal.", "more": ["Book now"]}, {"id": "paint", "k": ["paint", "painting", "repaint", "faded", "peeling", "color", "paint job"], "a": "Paint services cover faded or accident-damaged paint and fresh new colors, with the skill and tools to blend the result.", "more": ["Book now"]}, {"id": "bumper", "k": ["bumper", "bumpers", "bumper repair", "cracked bumper"], "a": "Bumper repair and replacement for a minor scrape, a crack or collision damage.", "more": ["Book now"]}, {"id": "maintenance", "k": ["maintenance", "oil change", "oil", "fluid", "tune up", "tune-up", "service", "scheduled maintenance"], "a": "Scheduled maintenance includes oil changes, fluid checks and tune-ups to stay on top of regular upkeep.", "more": ["Book now"]}, {"id": "brakes", "k": ["brake", "brakes", "brake repair", "squealing", "grinding", "pulsing", "pads", "rotors"], "a": "Squealing, grinding or pulsing brakes are inspected and repaired. The shop will confirm what your car needs after inspection.", "more": ["Book now"]}, {"id": "suspension", "k": ["suspension", "shocks", "struts", "handling", "bumpy"], "a": "Expert suspension diagnostics and replacements to restore handling and comfort.", "more": ["Book now"]}, {"id": "ac", "k": ["ac", "a/c", "air conditioning", "air conditioner", "air con", "heat", "recharge", "cooling"], "a": "A/C inspections, recharges and repairs for Houston heat, and same-day work is possible if the schedule allows.", "more": ["Book now"]}, {"id": "engine", "k": ["engine", "check engine", "check engine light", "diagnostic", "diagnostics", "scan", "wont start", "electrical", "dashboard lights", "battery"], "a": "Engine and electrical diagnostics use modern scan tools and in-house experience to find the root of the issue, including check engine lights and cars that will not start.", "more": ["Book now"]}, {"id": "inspection", "k": ["inspection", "state inspection", "texas inspection", "emissions", "safety inspection"], "a": "Official Texas state inspections are offered to confirm your vehicle meets emissions and safety standards.", "more": ["Book now"]}, {"id": "adas", "k": ["adas", "calibration", "calibrate", "radar", "camera", "sensors", "windshield", "driver assistance"], "a": "ADAS calibration covers radar, cameras and sensors after a windshield replacement or collision damage, so safety systems work as intended.", "more": ["Book now"]}, {"id": "wheels", "k": ["alignment", "wheel alignment", "tire", "tires", "tire rotation", "rotation", "tpms", "tire pressure", "steering", "tread"], "a": "Wheel alignments, tire rotation (about every 5,000 miles is a good rule of thumb) and TPMS sensor inspection, repair and replacement.", "more": ["Book now"]}, {"id": "coating", "k": ["ceramic", "ceramic coating", "ppf", "paint protection", "paint protection film", "film", "protect paint", "shine"], "a": "Ceramic coating shields paint from UV rays, bird droppings and grime. Paint protection film guards bumpers, hoods and fenders against scratches and chips. Film pricing varies by area covered, so the shop gives a clear estimate.", "more": ["Book now"]}, {"id": "insurance", "k": ["insurance", "insurance claim", "claims", "claim", "geico", "state farm", "allstate", "progressive", "deductible", "insurer"], "a": "Yes, the shop works with all major insurance providers to streamline collision repair, and describes itself as insurance and warranty friendly.", "more": ["Book now"]}, {"id": "cost", "k": ["cost", "price", "prices", "how much", "fee", "fees", "charge", "cheap", "expensive", "rate"], "a": "It depends on the service. The shop provides clear estimates before starting any job. Send photos through the easy photo estimate or call (713) 668-3639.", "more": ["Easy photo estimate"]}, {"id": "payment", "k": ["pay", "payment", "zelle", "cash", "credit card", "debit", "invoice", "financing"], "a": "Credit cards, debit, cash and Zelle are accepted, and an invoice can be sent if you prefer to pay online.", "more": ["Book now"]}, {"id": "towing", "k": ["tow", "towing", "pickup", "pick up", "loaner", "loaner vehicle", "rental", "mobile", "key drop", "after hours"], "a": "Towing assistance and loaner vehicles are available, and key drop or after-hours pickup can be arranged. The primary work happens at the Houston shop.", "more": ["Book now"]}, {"id": "certs", "k": ["ase", "i-car", "icar", "gold class", "certified", "certification", "bbb", "repairpal", "accredited", "certifications"], "a": "The shop is ASE certified, I-CAR Gold Class recognized, RepairPal certified and BBB accredited.", "more": ["Book now"]}, {"id": "hours", "k": ["hours", "opening hours", "open", "opening times", "when are you open", "closed", "sunday", "saturday", "weekend"], "a": "Monday to Friday 8:00 AM - 6:00 PM, Saturday 8:00 AM - 2:00 PM, closed on Sunday.", "more": ["Book now"]}, {"id": "location", "k": ["where", "location", "address", "directions", "find you", "mapleridge", "houston", "near", "area", "cypress", "bellaire", "jersey village"], "a": "6511 Mapleridge St, Houston, TX 77081. The shop serves Houston and nearby areas such as Cypress, Spring Branch, Bellaire, Willowbrook, Hunters Creek Village and Jersey Village.", "more": ["Hours"]}, {"id": "contact", "k": ["contact", "phone", "call", "email", "number", "reach", "talk"], "a": "Call (713) 668-3639 or email info@myuptownautomotive.com.", "more": ["Hours"]}, {"id": "about", "k": ["about", "since", "experience", "how long", "history", "years", "5500", "how many"], "a": "Uptown Automotive has served Houston and surrounding cities since 2010 and has repaired and restored over 5,500 vehicles.", "more": ["Book now"]}, {"id": "sameday", "k": ["same day", "same-day", "today", "urgent", "quick", "fast", "turnaround", "how long will it take"], "a": "Same-day service is possible if the schedule allows. Call (713) 668-3639 and the team will do their best. Turnaround for body work depends on the damage, and the team will confirm it in your estimate.", "more": ["Book now"]}], "flow": {"intro": "Happy to set that up for the shop. A few quick questions.", "cancel": "No problem, cancelled.", "done": "Thanks, your request has been sent to the team. The shop will confirm by phone or email. (Demo: nothing is actually transmitted.)", "steps": [{"key": "car", "label": "Vehicle", "q": "What is the vehicle? (Year, make and model)"}, {"key": "svc", "label": "Service", "q": "What do you need?", "opts": ["Collision or body repair", "Paint or bumper", "Mechanical or diagnostics", "Maintenance or inspection", "ADAS or alignment", "Ceramic coating or PPF"]}, {"key": "ins", "label": "Insurance claim", "q": "Is this an insurance claim?", "opts": ["Yes", "No", "Not sure"]}, {"key": "day", "label": "Preferred day", "q": "Which day suits you for drop-off? (Closed Sunday)", "opts": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]}, {"key": "name", "label": "Name", "q": "Your name?"}, {"key": "phone", "label": "Phone", "q": "Best phone number?"}]}};document.getElementById("gw-t").textContent=CFG.title;document.getElementById("gw-bl").textContent=CFG.btn;(function(){var $=function(i){return document.getElementById(i)};var log=$('gw-log'),inp=$('gw-in'),flow=null,data={};
+function add(w,t){var d=document.createElement('div');d.className='gw-m gw-'+w;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+function chips(a){var c=document.createElement('div');c.className='gw-chips';a.forEach(function(x){var b=document.createElement('button');b.type='button';b.textContent=x;b.onclick=function(){c.remove();say(x);};c.appendChild(b);});log.appendChild(c);log.scrollTop=log.scrollHeight;}
+function ask(){var s=CFG.flow.steps[flow];add('bot',s.q);if(s.opts)chips(s.opts);}
+function startFlow(){flow=0;data={};add('bot',CFG.flow.intro);ask();}
+function stepFlow(t){if(/^(cancel|stop|exit)$/i.test(t.trim())){flow=null;add('bot',CFG.flow.cancel);chips(CFG.chips);return;}
+var s=CFG.flow.steps[flow];data[s.key]=t;flow++;if(flow>=CFG.flow.steps.length){var sum=CFG.flow.steps.map(function(x){return x.label+': '+data[x.key]}).join('\n');add('bot',CFG.flow.done+'\n\n'+sum);flow=null;chips(CFG.chips);}else ask();}
+function say(t){t=String(t).trim();if(!t)return;add('me',t);if(flow!==null){stepFlow(t);return;}
+var e=findAnswer(CFG,t);if(!e){add('bot',CFG.fallback);chips(CFG.chips);return;}if(e.flow){startFlow();return;}add('bot',e.a);if(e.more)chips(e.more);}
+$('gw-btn').onclick=function(){$('gw-panel').classList.toggle('open');if(!log.children.length){add('bot',CFG.greet);chips(CFG.chips);}};
+$('gw-x').onclick=function(){$('gw-panel').classList.remove('open')};
+$('gw-form').onsubmit=function(ev){ev.preventDefault();var v=inp.value;inp.value='';say(v);};
+document.querySelectorAll('[data-ask]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();$('gw-panel').classList.add('open');if(!log.children.length){add('bot',CFG.greet);}say(a.getAttribute('data-ask'));});});
+})();
+</script>
+</body></html>

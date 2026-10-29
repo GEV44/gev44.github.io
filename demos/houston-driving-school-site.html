@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Houston Driving School | Teen and adult driver education, DPS road tests</title>
+<meta name="description" content="Demo page for Houston Driving School: TDLR approved teen and adult courses, DPS authorized road tests, two Houston centers.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--y:#f0b115;--yd:#c78f00;--k:#272727;--ink:#1d1d1d;--bg:#f6f4ee;--line:#dcd8cb;--w1:#272727;--w1t:#fff;--w2:#f0b115;--w2t:#272727;--wbg:#f6f4ee;--wf:'Barlow',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.55 'Barlow',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,.cond{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.02}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+/* top bar */
+.top{background:#fff;border-bottom:5px solid var(--y);position:sticky;top:0;z-index:20}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:68px}
+.top img{height:46px;width:auto}
+.top nav{display:none;gap:20px;font-weight:600;font-size:15px}
+.top nav a{text-decoration:none;padding:6px 0;border-bottom:3px solid transparent}
+.top nav a:hover{border-color:var(--y)}
+.call{background:var(--k);color:#fff;text-decoration:none;font:700 17px 'Barlow Condensed';letter-spacing:.04em;padding:9px 14px;border-radius:4px;white-space:nowrap}
+@media(min-width:820px){.top nav{display:flex}}
+/* hero: road */
+.hero{background:var(--k);color:#fff;position:relative;overflow:hidden;padding:44px 0 0}
+.hero:before{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:repeating-linear-gradient(135deg,var(--y) 0 18px,var(--k) 18px 36px)}
+.hero .wrap{display:grid;gap:26px;padding-bottom:50px}
+.hero h1{font-size:clamp(40px,10vw,76px);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--y)}
+.hero p{max-width:560px;color:#e8e6df}
+.tag{display:inline-block;background:var(--y);color:var(--k);font:700 15px 'Barlow Condensed';letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:14px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{border:0;border-radius:4px;padding:13px 20px;font:700 18px 'Barlow Condensed';letter-spacing:.05em;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.y{background:var(--y);color:var(--k)}
+.btn.o{background:transparent;color:#fff;border:2px solid #fff}
+.sign{background:var(--y);color:var(--k);border:5px solid var(--k);outline:3px solid var(--y);border-radius:12px;padding:16px 18px;max-width:340px;transform:rotate(1.5deg);box-shadow:0 8px 0 rgba(0,0,0,.3)}
+.sign b{display:block;font:800 26px 'Barlow Condensed';text-transform:uppercase;line-height:1}
+.sign span{font-size:15px;display:block;margin-top:6px}
+@media(min-width:820px){.hero .wrap{grid-template-columns:1.4fr 1fr;align-items:center}.sign{justify-self:end}}
+/* route */
+.route{background:#fff;border-bottom:1px solid var(--line)}
+.route ol{list-style:none;display:grid;gap:0;grid-template-columns:1fr 1fr}
+.route li{padding:16px 10px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font:700 20px 'Barlow Condensed';text-transform:uppercase}
+.route li small{display:block;font:500 14px 'Barlow';text-transform:none;color:#666;margin-top:2px}
+.route li i{font-style:normal;color:var(--yd);margin-right:6px}
+@media(min-width:760px){.route ol{grid-template-columns:repeat(4,1fr)}.route li{border-bottom:0}}
+section{padding:54px 0}
+h2{font-size:clamp(32px,7vw,48px);font-weight:800;margin-bottom:8px}
+h2:after{content:"";display:block;width:70px;height:6px;background:var(--y);margin-top:10px}
+.lead{max-width:620px;color:#444;margin:14px 0 26px}
+/* program tables as cards on mobile */
+.tabs{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap}
+.tabs button{border:2px solid var(--k);background:#fff;font:700 18px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.05em;padding:8px 18px;cursor:pointer;border-radius:4px}
+.tabs button.on{background:var(--k);color:var(--y)}
+.panel{display:none}.panel.on{display:grid;gap:14px}
+@media(min-width:760px){.panel.on{grid-template-columns:repeat(3,1fr)}}
+.card{background:#fff;border:1px solid var(--line);border-top:6px solid var(--k);padding:18px;display:flex;flex-direction:column;min-width:0}
+.card.hot{border-top-color:var(--y);box-shadow:0 6px 0 var(--y)}
+.card h3{font-size:25px;font-weight:700}
+.card .pr{font:800 44px 'Barlow Condensed';line-height:1;margin:8px 0}
+.card .pr sup{font-size:22px;vertical-align:top;position:relative;top:4px}
+.card ul{list-style:none;margin:8px 0 14px;font-size:15.5px}
+.card li{padding:5px 0 5px 22px;position:relative;border-bottom:1px dotted var(--line)}
+.card li:before{content:"";position:absolute;left:2px;top:12px;width:10px;height:10px;background:var(--y);border:2px solid var(--k);border-radius:50%}
+.card .btn{margin-top:auto;text-align:center;font-size:16px;padding:10px}
+.card .btn.y{background:var(--k);color:var(--y)}
+.extras{display:grid;gap:10px;margin-top:18px}
+@media(min-width:620px){.extras{grid-template-columns:repeat(4,1fr)}}
+.extras div{background:var(--k);color:#fff;padding:14px;border-radius:4px}
+.extras b{display:block;font:700 28px 'Barlow Condensed';color:var(--y)}
+.extras span{font-size:14.5px;color:#ddd}
+/* road test band */
+.band{background:var(--y);color:var(--k);position:relative;overflow:hidden}
+.band .wrap{display:grid;gap:22px}
+@media(min-width:820px){.band .wrap{grid-template-columns:1fr 1fr;align-items:center}}
+.band h2:after{background:var(--k)}
+.band p{margin-top:10px}
+.checks{background:var(--k);color:#fff;padding:20px;border-radius:6px}
+.checks h3{color:var(--y);font-size:26px;margin-bottom:8px}
+.checks li{list-style:none;padding:7px 0 7px 26px;position:relative;border-bottom:1px solid #444;font-size:16px}
+.checks li:before{content:"✓";position:absolute;left:0;color:var(--y);font-weight:700}
+/* centers */
+.centers{display:grid;gap:16px}
+@media(min-width:760px){.centers{grid-template-columns:1fr 1fr}}
+.center{background:#fff;border:1px solid var(--line);padding:20px;border-left:8px solid var(--y);min-width:0}
+.center h3{font-size:30px}
+.center p{margin-top:6px}
+.center a{font-weight:700}
+.hours{margin-top:18px;background:#fff;border:1px solid var(--line);padding:18px}
+.hours table{width:100%;border-collapse:collapse}
+.hours td{padding:8px 4px;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-weight:600}
+/* faq */
+details{background:#fff;border:1px solid var(--line);margin-bottom:8px;border-radius:4px}
+summary{cursor:pointer;padding:15px 16px;font:700 21px 'Barlow Condensed';text-transform:uppercase;letter-spacing:.02em;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--yd);font-size:26px;line-height:1}
+details[open] summary:after{content:"–"}
+details p{padding:0 16px 16px;color:#444}
+.end{background:var(--k);color:#fff;text-align:center;padding:50px 0}
+.end h2{color:var(--y)}.end h2:after{margin:10px auto 0}
+.end p{margin:12px 0}
+footer{background:#111;color:#aaa;text-align:center;padding:16px;font-size:14px}
+.why{display:grid;gap:14px}
+@media(min-width:620px){.why{grid-template-columns:1fr 1fr}}@media(min-width:900px){.why{grid-template-columns:repeat(3,1fr)}}
+.why div{border:2px solid var(--k);padding:18px;position:relative;min-width:0;background:var(--bg)}
+.why span{position:absolute;right:12px;top:6px;font:800 44px 'Barlow Condensed';color:var(--y);opacity:.9}
+.why h3{font-size:25px;margin-bottom:6px;padding-right:50px}
+.why p{font-size:15.5px;color:#444}
+.stripe{height:14px;background:repeating-linear-gradient(135deg,var(--y) 0 18px,var(--k) 18px 36px)}
+.guide{display:grid;gap:14px}
+@media(min-width:760px){.guide{grid-template-columns:1fr 1fr}}
+.g{background:#fff;border:1px solid var(--line);border-left:8px solid var(--k);padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.g b{font:700 25px/1.1 'Barlow Condensed';text-transform:uppercase}
+.g p{font-size:16px;color:#444}
+.g .btn{align-self:flex-start;font-size:15px;padding:8px 14px;background:var(--k);color:var(--y)}
+.docs{margin-top:18px;background:#fff7dc;border:2px dashed var(--yd);padding:18px}
+.docs h3{font-size:26px;margin-bottom:6px}
+.docs li{margin:6px 0 6px 20px}
+#wb{position:fixed;right:16px;bottom:16px;z-index:50;width:58px;height:58px;border-radius:50%;border:0;background:var(--w2);color:var(--w2t);font-size:25px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+#wp{position:fixed;right:12px;bottom:84px;z-index:50;width:min(370px,calc(100vw - 24px));height:min(540px,calc(100vh - 110px));background:#fff;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.4);display:none;flex-direction:column;overflow:hidden;color:#222;font-family:var(--wf,system-ui,sans-serif)}
+#wp.on{display:flex}
+#wh{background:var(--w1);color:var(--w1t);padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+#wh b{font-size:16px}#wh small{display:block;opacity:.8;font-size:12px}
+#wx{background:none;border:0;color:inherit;font-size:26px;cursor:pointer;line-height:1}
+#wm{flex:1;overflow-y:auto;padding:12px;background:var(--wbg);display:flex;flex-direction:column;gap:8px}
+.m{max-width:86%;padding:9px 12px;border-radius:12px;font-size:14.5px;line-height:1.4;white-space:pre-line}
+.m.b{background:#fff;border:1px solid #ddd;align-self:flex-start}
+.m.u{background:var(--w1);color:var(--w1t);align-self:flex-end}
+#wc{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;background:#fff;border-top:1px solid #e3e3e3;max-height:96px;overflow-y:auto}
+#wc button{background:#fff;border:1.5px solid var(--w1);color:var(--w1);border-radius:999px;padding:5px 11px;font:600 13px var(--wf,system-ui,sans-serif);cursor:pointer}
+#wf{display:flex;gap:6px;padding:8px;border-top:1px solid #e3e3e3}
+#wi{flex:1;min-width:0;border:1px solid #ccc;border-radius:8px;padding:9px;font-size:15px}
+#wf button{background:var(--w2);color:var(--w2t);border:0;border-radius:8px;padding:0 14px;font-weight:700;cursor:pointer}
+
+</style></head><body>
+<header class="top"><div class="wrap">
+<a href="#top" aria-label="Houston Driving School"><img src="img/houston-driving-school-logo.png" alt="Houston Driving School" width="170" height="46"></a>
+<nav><a href="#courses">Courses</a><a href="#roadtest">Road test</a><a href="#centers">Centers</a><a href="#faq">FAQ</a></nav>
+<a class="call" href="tel:+17137823100">(713) 782-3100</a>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+<div>
+<span class="tag">TDLR approved · Se habla espanol</span>
+<h1>Good driving doesn't happen <em>by accident.</em></h1>
+<p>Teen and adult driver education in Houston: learn online or in class, drive with a certified instructor, then take your DPS road test with the school and skip the line.</p>
+<div class="btns"><button class="btn y" onclick="openW('book')">Request enrollment</button><a class="btn o" href="#courses">See courses</a></div>
+</div>
+<div class="sign"><b>DPS road test</b><span>Authorized third-party testing at the Hillcroft center. Bring your own car or use an HDS training vehicle.</span></div>
+</div></div>
+
+<div class="route"><div class="wrap"><ol>
+<li><i>1</i>Course<small>Online or in class</small></li>
+<li><i>2</i>Permit<small>After the first 6 hours</small></li>
+<li><i>3</i>Driving<small>Certified instructor</small></li>
+<li><i>4</i>Road test<small>Skip the DPS lines</small></li>
+</ol></div></div>
+
+<section id="courses"><div class="wrap">
+<h2>Pick your course</h2>
+<p class="lead">All programs listed on the school's site are TDLR approved. Prices below are the ones published today; the team confirms current offers.</p>
+<div class="tabs" role="tablist"><button class="on" data-t="teen" onclick="tabS('teen')">Teens 14-17</button><button data-t="adult" onclick="tabS('adult')">Adults 18+</button><button data-t="parent" onclick="tabS('parent')">Parent taught</button></div>
+
+<div class="panel on" id="p-teen">
+<div class="card"><h3>Teen online course</h3><div class="pr"><sup>$</sup>79</div><ul><li>32-hour online course</li><li>Learn from home at your own pace</li><li>Driving hours with any certified instructor</li></ul><button class="btn y" onclick="openW('book','Teen (14 to 17)')">Enroll</button></div>
+<div class="card hot"><h3>Online + lessons</h3><div class="pr"><sup>$</sup>479</div><ul><li>32-hour online classroom</li><li>7 hours driving, 7 hours observation</li><li>Instructor led, 2 Houston centers</li><li>Call to schedule lessons</li></ul><button class="btn y" onclick="openW('book','Teen (14 to 17)')">Enroll</button></div>
+<div class="card"><h3>Behind-the-wheel only</h3><div class="pr"><sup>$</sup>400</div><ul><li>Already finished the 32-hour course?</li><li>7 hours driving, 7 hours observation</li><li>Certified instructors, flexible scheduling</li></ul><button class="btn y" onclick="openW('book','Teen (14 to 17)')">Enroll</button></div>
+</div>
+
+<div class="panel" id="p-adult">
+<div class="card"><h3>6-hour online</h3><div class="pr"><sup>$</sup>59</div><ul><li>Learn from home</li><li>Printable certificate</li><li>Spanish translation available</li></ul><button class="btn y" onclick="openW('book','Adult (18+)')">Enroll</button></div>
+<div class="card"><h3>Permit class</h3><div class="pr"><sup>$</sup>120</div><ul><li>6-hour classroom</li><li>Saturdays 9am to 3pm</li><li>Required ages 18-25, recommended 26+</li></ul><button class="btn y" onclick="openW('book','Adult (18+)')">Enroll</button></div>
+<div class="card hot"><h3>Complete package</h3><div class="pr"><sup>$</sup>515</div><ul><li>Permit class (6 hours)</li><li>Driving lessons</li><li>Road test</li></ul><button class="btn y" onclick="openW('book','Adult (18+)')">Enroll</button></div>
+</div>
+
+<div class="panel" id="p-parent">
+<div class="card hot"><h3>Parent taught, complete</h3><div class="pr"><sup>$</sup>69</div><ul><li>32-hour online course</li><li>7 driving + 7 observation hours with a parent</li><li>Driver permit after 6 hours online</li><li>Printable parent guides, online driver log</li></ul><button class="btn y" onclick="openW('book','Teen (14 to 17)')">Enroll</button></div>
+<div class="card"><h3>Parent taught, driving only</h3><div class="pr"><sup>$</sup>49</div><ul><li>Already completed the classroom</li><li>Finish the driving hours at home</li><li>Printable certificate</li></ul><button class="btn y" onclick="openW('book','Teen (14 to 17)')">Enroll</button></div>
+<div class="card"><h3>Good to know</h3><ul><li>Recommended for parents who can be approved by TDLR</li><li>Teen documents: birth certificate or ID or passport, Social Security card, school VOE</li><li>Lessons start after the first 6 hours and the DPS permit</li></ul></div>
+</div>
+
+<div class="extras">
+<div><b>$115</b><span>Adult 2-hour driving lesson</span></div>
+<div><b>$57 / hr</b><span>Extra teen driving hour, gas and instructor included</span></div>
+<div><b>$35</b><span>Replacement certificate, pick up at the office</span></div>
+<div><b>$40</b><span>Late cancellation or no-show fee</span></div>
+</div>
+</div></section>
+
+<section id="guide"><div class="wrap">
+<h2>Not sure which one?</h2>
+<p class="lead">Match your situation to a program. Everything here comes from the school's course pages; call the school to confirm.</p>
+<div class="guide">
+<div class="g"><b>I am 14 to 17 and want a classroom feel</b><p>Choose the online course with instructor-led lessons: 32 hours online, then 7 hours driving and 7 observation at a Houston center.</p><button class="btn y" onclick="openW('book','Teen (14 to 17)')">Ask about this</button></div>
+<div class="g"><b>My parent can teach me</b><p>The parent taught course gives you the 32-hour online class, printable instructor guides and an online driver log. The school suggests it when the parent can be approved by TDLR.</p><button class="btn y" onclick="openW('book','Teen (14 to 17)')">Ask about this</button></div>
+<div class="g"><b>I am 18 or older with no permit</b><p>Take the 6-hour course online or in person on a Saturday, then add 2-hour lessons. Ages 18 to 25 must take the class by law.</p><button class="btn y" onclick="openW('book','Adult (18+)')">Ask about this</button></div>
+<div class="g"><b>I only need the road test</b><p>Book the DPS authorized test at the Hillcroft center. Add preparation if you want an instructor to refresh your memory first.</p><button class="btn y" onclick="openW('book','Adult (18+)')">Ask about this</button></div>
+</div>
+<div class="docs"><h3>Teen paperwork checklist</h3>
+<ul><li>Original birth certificate, state ID, current US passport or naturalization certificate</li><li>Original Social Security card</li><li>Verification of Enrollment (VOE) from the student's high school</li></ul></div>
+</div></section>
+
+<section class="band" id="roadtest"><div class="wrap">
+<div>
+<h2>Take your road test with us</h2>
+<p>Skip the lines at the DPS. The school is an authorized third-party tester, and a certified instructor can refresh your memory first. The school reports an almost 100 percent passing rate.</p>
+<div class="btns"><button class="btn y" style="background:var(--k);color:var(--y)" onclick="openW('book','Adult (18+)')">Book a road test</button></div>
+</div>
+<div class="checks"><h3>From $85</h3><ul>
+<li>Done at the Hillcroft center, 3201 Hillcroft</li>
+<li>Drive your own vehicle or an HDS training vehicle</li>
+<li>Optional pre-test preparation with an instructor</li>
+<li>Preparation-only sessions available</li>
+</ul></div>
+</div></section>
+
+<section id="why" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+<h2>Why families start here</h2>
+<p class="lead">In the school's own words, this is what the programs are built around.</p>
+<div class="why">
+<div><span>01</span><h3>Safety standards</h3><p>Instructors are highly trained and certified. The school says it takes this seriously.</p></div>
+<div><span>02</span><h3>Class formats</h3><p>In-classroom driver education and online learning, so you choose how you study.</p></div>
+<div><span>03</span><h3>Flexibility</h3><p>Online courses and weekly scheduled classrooms make it easy to find a solution that fits your week.</p></div>
+<div><span>04</span><h3>Fast certificates</h3><p>Certificates are delivered almost instantly, because time matters when you want your license.</p></div>
+<div><span>05</span><h3>Training cars</h3><p>Drive one of the school's training vehicles with a certified instructor, including at the DPS road test.</p></div>
+<div><span>06</span><h3>Defensive driving</h3><p>An online defensive driving course is also listed under Online Courses on the school's site.</p></div>
+</div>
+</div></section>
+
+<section id="centers"><div class="wrap">
+<h2>Two Houston centers</h2>
+<p class="lead">Schedule lessons in person or by phone.</p>
+<div class="centers">
+<div class="center"><h3>Hillcroft</h3><p>3201 Hillcroft St. Ste. 3201-F<br>Houston, TX 77057</p><p><a href="tel:+17137823100">(713) 782-3100</a> or <a href="tel:+17134614900">(713) 461-4900</a></p><p>DPS road tests are done here.</p></div>
+<div class="center"><h3>Chimney Rock</h3><p>11303 Chimney Rock, Suite 100<br>Houston, TX 77035</p><p><a href="tel:+17139045147">(713) 904-5147</a></p><p>Driving lessons by appointment.</p></div>
+</div>
+<div class="hours"><h3 style="font-size:26px;margin-bottom:6px">Office hours</h3><table>
+<tr><td>Monday to Friday</td><td>10:00 am to 6:00 pm</td></tr>
+<tr><td>Saturday</td><td>8:00 am to 12:00 pm</td></tr>
+<tr><td>Adult permit class</td><td>Saturday 9 am to 3 pm</td></tr>
+</table><p style="margin-top:10px;font-size:15px">Email: <a href="mailto:info@houstondrivingschool.net">info@houstondrivingschool.net</a></p></div>
+</div></section>
+
+<section id="faq" style="padding-top:10px"><div class="wrap">
+<h2>Quick answers</h2>
+<p class="lead">The assistant in the corner answers these too.</p>
+<details><summary>Do I need a permit before driving lessons?</summary><p>Yes. Lessons are scheduled after the first 6 hours of the course and getting the permit from the DPS. Lessons need a valid instructional permit or a valid driver license.</p></details>
+<details><summary>What do teens need to bring?</summary><p>An original birth certificate, state ID, current US passport or naturalization certificate; the original Social Security card; and a Verification of Enrollment (VOE) from the high school.</p></details>
+<details><summary>Can I use my own car for the road test?</summary><p>Yes. You can drive your own vehicle, or choose an HDS training vehicle.</p></details>
+<details><summary>Is the adult permit class required?</summary><p>It is required by law for ages 18 to 25 and recommended for ages 26 and over. The online 6-hour course is also offered.</p></details>
+<details><summary>How fast do I get my certificate?</summary><p>The school delivers certificates almost instantly after you finish the online course. A lost or stolen certificate can be replaced at the local office.</p></details>
+<details><summary>Where are the lessons held?</summary><p>At the two Houston centers, Hillcroft and Chimney Rock. Call to schedule and check availability.</p></details>
+<details><summary>What if I need more driving practice?</summary><p>Teens can add extra behind-the-wheel hours at $57 per hour, with gas and the instructor included. Adults can book 2-hour lessons. Call to schedule and check availability.</p></details>
+<details><summary>Do you offer Spanish?</summary><p>The school says Se habla espanol and offers Spanish translation on the online adult course.</p></details>
+</div></section>
+
+<div class="stripe"></div>
+<div class="end"><div class="wrap">
+<h2>Ready to get your license?</h2>
+<p>3201 Hillcroft St. Ste. 3201-F, Houston, TX 77057 · <a href="tel:+17137823100">(713) 782-3100</a></p>
+<div class="btns" style="justify-content:center"><button class="btn y" onclick="openW('book')">Request enrollment</button></div>
+</div></div>
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+
+<button id="wb" aria-label="Open chat" onclick="openW()">💬</button>
+<div id="wp" role="dialog" aria-label="Houston Driving School assistant">
+<div id="wh"><div><b>Houston Driving School assistant</b><small>Courses, road tests, locations</small></div><button id="wx" aria-label="Close" onclick="closeW()">×</button></div>
+<div id="wm"></div><div id="wc"></div>
+<form id="wf"><input id="wi" placeholder="Type your question" autocomplete="off"><button type="submit">Send</button></form>
+</div>
+<script>
+function tabS(x){['teen','adult','parent'].forEach(function(k){document.getElementById('p-'+k).classList.toggle('on',k==x);document.querySelector('.tabs [data-t='+k+']').classList.toggle('on',k==x)})}
+var NAME="Houston Driving School",SUB="Courses, road tests, locations";
+var GREET="Hi! I'm the assistant for Houston Driving School. Ask about teen or adult courses, DPS road tests, lessons or locations, or send an enrollment request.";
+var FALLBACK="I do not have that detail. The team will confirm it: (713) 782-3100 or info@houstondrivingschool.net.";
+var HOME=["Teen courses","Adult courses","Road test","Locations","Hours","Book"];
+var KB=[
+{k:"price prices cost much fee fees rate rates cheap cheapest charge pricing",a:"Published prices:\nTeen online course $79, parent taught online $69\nTeen online + lessons with an instructor $479\nTeen behind-the-wheel only $400 (parent taught $49)\nAdult 6-hour online course $59, in-person permit class $120\nAdult complete package $515\nAdult 2-hour lesson $115\nDPS road test from $85\nExtra teen driving hour $57 (gas and instructor included).",c:["Teen courses","Adult courses","Road test","Book"]},
+{k:"teen teens teenager teenagers kid kids child daughter son under 18 14 15 16 17 high school",a:"Teen programs (ages 14 to 17, TDLR approved):\n- Online course (32 hours): $79\n- Online course plus 14 hours in the car with a certified instructor (7 driving, 7 observation): $479\n- Behind-the-wheel only with an instructor: $400\n- Parent taught online course: $69, parent taught driving only: $49\nLessons can be scheduled after the first 6 hours of the course and the DPS permit.",c:["Documents","Parent taught","Locations","Book"]},
+{k:"parent taught parents mom dad myself pdf guide log logging",a:"The parent taught option is 32 hours online plus 7 hours of driving and 7 of observation with a parent instructor, with printable instructor guides and an online driver log. It is $69 complete, or $49 for the driving portion only. The school recommends it for parents who can be approved by TDLR.",c:["Teen courses","Documents","Book"]},
+{k:"adult adults grown older 18 over permit class classroom saturday",a:"Adult programs (TDLR approved):\n- 6-hour online course $59 with a printable certificate\n- 6-hour in-person permit class $120, Saturdays 9am to 3pm (required for ages 18 to 25, recommended for 26+)\n- 2-hour driving lessons $115\n- Complete package $515: permit class, driving lessons and road test.",c:["Prices","Road test","Book"]},
+{k:"road test dps exam authorized third party skip line lines wait own vehicle car training vehicle",a:"The school is a DPS authorized third-party road test provider. The test is from $85 (up to $125 depending on options) and is done at the Hillcroft location. You can drive your own vehicle or an HDS training vehicle, and you can add pre-test preparation with an instructor. It lets you skip the DPS lines.",c:["Hours","Locations","Book"]},
+{k:"preparation prep practice refresh pass passing rate",a:"There is a preparation-only session where a certified instructor refreshes your memory before the test. The school says its passing rate is almost 100 percent. You can also add it when you book the road test.",c:["Road test","Book"]},
+{k:"lesson lessons driving behind wheel btw hour hours extra additional instructor",a:"Adult lessons are 2 hours for $115. Teen additional driving hours are $57 per hour, including gas and the instructor. Lessons need a valid instructional permit or driver license. Call to schedule and check availability.",c:["Teen courses","Adult courses","Book"]},
+{k:"class classes online internet virtual home remote course 32 6hr certificate instant",a:"Online options: the 32-hour teen course ($79), the 6-hour adult course ($59), and defensive driving. Certificates are delivered almost instantly. Teens can get the driver permit after 6 hours online.",c:["Teen courses","Adult courses","Book"]},
+{k:"permit instructional dps after first 6",a:"Teens can schedule in-car lessons after completing the first 6 hours of the course and getting the permit from the DPS. The adult 6-hour class is required by law for ages 18 to 25.",c:["Teen courses","Documents","Book"]},
+{k:"documents required papers bring birth certificate social security passport voe enrollment verification",a:"For teens the school lists: an original birth certificate, state ID, current US passport or naturalization certificate; the original Social Security card; and a Verification of Enrollment (VOE) from the high school.",c:["Teen courses","Book"]},
+{k:"location locations where address adres adress addres located directions find office centers chimney rock hillcroft",a:"Two Houston driving centers:\nHillcroft: 3201 Hillcroft St. Ste. 3201-F, Houston, TX 77057, (713) 782-3100 or (713) 461-4900. DPS road tests are done here.\nChimney Rock: 11303 Chimney Rock, Suite 100, Houston, TX 77035, (713) 904-5147.",c:["Hours","Road test","Book"]},
+{k:"hour hours open opening close closing time times when saturday sunday monday friday weekend weekday office",a:"Office hours listed on the contact page: Monday to Friday 10:00 am to 6:00 pm, Saturday 8:00 am to 12:00 pm. The adult permit class runs on Saturdays 9am to 3pm. The team confirms Sunday and lesson times.",c:["Locations","Book"]},
+{k:"phone call number contact email mail reach talk text",a:"Hillcroft: (713) 782-3100 or (713) 461-4900\nChimney Rock: (713) 904-5147\nEmail: info@houstondrivingschool.net",c:["Locations","Hours","Book"]},
+{k:"spanish espanol habla translation language languages",a:"The school says Se Habla Espanol and offers Spanish translation for the online adult course. The team will confirm what is available for your class.",c:["Adult courses","Book"]},
+{k:"cancel cancellation late noshow shows fee reschedule",a:"A late cancellation or no-show fee of $40 applies. The team will confirm other cancellation details.",c:["Contact","Book"]},
+{k:"certificate replacement lost stolen replace",a:"A replacement certificate is $35 for a lost or stolen one. You must pick it up from the local office.",c:["Locations","Book"]},
+{k:"defensive ticket dismissal traffic",a:"The site lists a Defensive Driving online course. Details and price are on the Defensive Driving page; the team will confirm what fits your situation.",c:["Contact","Book"]},
+{k:"instructor teacher certified experience safe safety approved tdlr",a:"Instructors are certified and the programs are TDLR approved. Training vehicles are available for lessons and for the road test.",c:["Teen courses","Book"]},
+{k:"pay payment card cash accept",a:"Payment methods are not listed on the site, so the team will confirm them.",c:["Contact","Book"]},
+{k:"thanks thank ok okay great",a:"Happy to help. Want to send an enrollment request to the team?",c:["Book","Prices"]},
+{k:"complete package everything bundle all in one",a:"The adult Complete Package is $515 and includes the 6-hour permit class (Saturday 9am to 3pm), driving lessons and the road test, so you can get your driver license through one program. The team confirms scheduling.",c:["Adult courses","Road test","Book"]},
+{k:"best which choose recommend recommended difference compare comparison fastest asap quick quickly fast",a:"The school recommends the parent taught online program for parents who can be approved by TDLR and for students who want their license as soon as possible. If you prefer an instructor, choose the online course plus instructor-led lessons. Call (713) 782-3100 and the team will help you decide.",c:["Parent taught","Teen courses","Book"]},
+{k:"observation observe seven 7 14 hours how many total",a:"Teen behind-the-wheel training is 14 hours: 7 hours of driving and 7 hours of observation, led by a certified instructor or by a parent in the parent taught version. The online classroom part is 32 hours.",c:["Teen courses","Lessons","Book"]},
+{k:"reviews reputation rating stars google testimonials students",a:"Ratings and reviews are on the school's Google listing. The site itself focuses on the TDLR approved programs, certified instructors and two Houston centers.",c:["Instructor","Locations","Book"]},
+{k:"hello hi hey howdy",a:"Hi! I can help with courses, DPS road tests, locations and enrollment requests.",c:["Teen courses","Adult courses","Road test","Book"]}
+];
+var STEPS=[
+{key:'who',q:"Who is the student?",chips:["Teen (14 to 17)","Adult (18+)"]},
+{key:'svc',q:"What do you need?",chips:["Online course","Course plus lessons","Permit class","Driving lessons","DPS road test"]},
+{key:'loc',q:"Which center is closer?",chips:["Hillcroft (77057)","Chimney Rock (77035)","Not sure"]},
+{key:'when',q:"When would suit you? (Mon to Fri 10 am to 6 pm, Sat 8 am to noon)",chips:["Weekday","Saturday","Not sure yet"]},
+{key:'name',q:"Your name?",chips:[]},
+{key:'phone',q:"Best phone number for the team to reach you?",chips:[]}
+];
+function SUMMARY(d){return "Thanks "+d.name+". Request noted:\n"+d.who+" · "+d.svc+"\nCenter: "+d.loc+" · "+d.when+"\nPhone: "+d.phone+"\n\nThis has been sent to the team, who will confirm availability and next steps. (Demo: nothing is actually sent.)"}
+
+/*ENGINE*/
+var STOP="the a an of to is are do does you your i me my we can for in on at and or it be have has with about how what when where which".split(" ");
+function norm(s){return s.toLowerCase().replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ers|er|es|ed|s)$/,""):w}
+function lev(a,b){if(a==b)return 0;if(Math.abs(a.length-b.length)>1)return 2;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function lev2(a,b){var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function hit(w,kw){var s=stem(w);if(kw==w||stem(kw)==s)return 1;if(w.length>=5&&kw.length>=5){if(lev(w,kw)<=1||lev(s,stem(kw))<=1)return .9;if(w.length>=7&&kw.length>=7&&lev2(w,kw)<=2)return .8}if(w.length>=4&&(kw.indexOf(w)==0||w.indexOf(kw)==0)&&kw.length>=4)return .6;return 0}
+function answer(q){var ws=norm(q).split(" ").filter(function(w){return w&&STOP.indexOf(w)<0});var best=null,bs=0;KB.forEach(function(e){var kws=e.k.split(" "),sc=0;ws.forEach(function(w){var m=0;kws.forEach(function(kw){m=Math.max(m,hit(w,kw))});sc+=m});if(sc>bs){bs=sc;best=e}});return bs>=.9?best:null}
+var BOOKWORDS=/\b(book|booking|booked|appointment|appointments|reserve|reservation|enrol|enroll|enrollment|enrolment|sign up|signup|schedule|register|registration|trial|visit|consultation)\b/;
+/*END*/
+var $=function(i){return document.getElementById(i)},M=$('wm'),C=$('wc'),I=$('wi'),flow=null,data={},si=0;
+function say(t,who){var d=document.createElement('div');d.className='m '+(who||'b');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight}
+function chips(a){C.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){handle(t)};C.appendChild(b)})}
+function openW(mode,pre){$('wp').classList.add('on');if(!M.children.length){say(GREET);chips(HOME)}if(mode=='book'){startBook(pre)}}
+function closeW(){$('wp').classList.remove('on')}
+function startBook(pre){flow=1;data={};si=0;if(pre&&STEPS[0]){data[STEPS[0].key]=pre}ask()}
+function ask(){while(si<STEPS.length&&data[STEPS[si].key])si++;if(si>=STEPS.length){finish();return}say(STEPS[si].q);chips(STEPS[si].chips)}
+function finish(){flow=null;say(SUMMARY(data));chips(HOME)}
+function handle(t){say(t,'u');if(flow){if(/^(cancel|stop|exit)$/i.test(t.trim())){flow=null;say("No problem, request cancelled.");chips(HOME);return}data[STEPS[si].key]=t;si++;ask();return}
+if(BOOKWORDS.test(norm(t))||/^book/i.test(t)){startBook();return}
+var r=answer(t);if(r){say(r.a);chips(r.c)}else{say(FALLBACK);chips(HOME)}}
+$('wf').addEventListener('submit',function(e){e.preventDefault();var v=I.value.trim();if(!v)return;I.value='';handle(v)});
+
+</script>
+</body></html>

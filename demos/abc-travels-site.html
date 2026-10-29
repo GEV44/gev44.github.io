@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ABC Travels | Houston travel agency since 1974</title>
+<meta name="description" content="Demo page for ABC Travels, a privately owned full-service travel agency in Houston, Texas.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--br:#6b3d12;--br2:#4a2a0c;--sand:#f6efe2;--paper:#fffaf0;--sea:#1f6f78;--rust:#c0662b;--ink:#2a1d10;--mut:#7a6a58;--line:#e2d4bb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--sand);color:var(--ink);font:16px/1.65 'Lato',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;margin:0;line-height:1.05}
+a{color:inherit}.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.top{background:var(--br2);color:#f0e2c8;font-size:13px}
+.top .wrap{display:flex;justify-content:space-between;gap:8px;padding-top:7px;padding-bottom:7px;flex-wrap:wrap}
+.top a{text-decoration:none;font-weight:700}
+header{background:var(--paper);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;flex-wrap:wrap}
+.hd img{height:48px;width:auto;max-width:100%;display:block}
+nav{display:flex;gap:16px;font-size:14px;font-weight:700;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--br)}nav a:hover{color:var(--rust)}
+.hero{padding:38px 0 14px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-90px;top:20px;width:300px;height:300px;border-radius:50%;border:2px dashed #d6c3a0;opacity:.8}
+.hero::after{content:"";position:absolute;left:-120px;bottom:-140px;width:320px;height:320px;border-radius:50%;background:#efe1c4;opacity:.7}
+.hero .wrap{position:relative;z-index:2}
+.pass{display:grid;background:var(--paper);border:2px solid var(--br);border-radius:14px;overflow:hidden;box-shadow:0 12px 30px rgba(74,42,12,.15)}
+@media(min-width:820px){.pass{grid-template-columns:1.6fr .8fr}}
+.pm{padding:26px 22px;min-width:0}
+.pm .lbl{font:700 11px 'Lato';letter-spacing:.2em;text-transform:uppercase;color:var(--sea)}
+.pm h1{font-size:clamp(38px,8vw,68px);color:var(--br);margin:10px 0 12px}
+.pm p{margin:0 0 18px;color:#4d3c29;max-width:520px}
+.stub{background:var(--br);color:#f6e8d0;padding:22px;border-top:2px dashed #d9b98a;min-width:0}
+@media(min-width:820px){.stub{border-top:0;border-left:2px dashed #d9b98a}}
+.stub .row{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid rgba(255,255,255,.18);padding:8px 0;font-size:14px}
+.stub .row b{font-family:'Cormorant Garamond';font-size:19px}
+.stub .big{font:600 30px 'Cormorant Garamond';margin:6px 0 2px}
+.btn{display:inline-block;background:var(--rust);color:#fff;border:0;padding:12px 22px;border-radius:999px;font:700 15px 'Lato';text-decoration:none;cursor:pointer;margin:0 8px 8px 0}
+.btn.s{background:var(--sea)}.btn.o{background:transparent;color:var(--br);border:2px solid var(--br)}
+section{padding:46px 0}
+.eb{font:700 12px 'Lato';letter-spacing:.18em;text-transform:uppercase;color:var(--rust)}
+h2{font-size:clamp(32px,5.5vw,50px);color:var(--br);margin:6px 0 12px}
+.lead{max-width:640px;color:#5a4936;margin:0 0 24px}
+.books{display:grid;gap:14px}
+@media(min-width:760px){.books{grid-template-columns:repeat(3,1fr)}}
+.bk{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px;min-width:0;position:relative;overflow:hidden}
+.bk::after{content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;border-radius:50%;background:#f2e5c9}
+.bk h3{font-size:26px;color:var(--br);position:relative;z-index:1}
+.bk p{margin:8px 0 12px;font-size:15px;position:relative;z-index:1}
+.bk a{font-weight:700;color:var(--sea);position:relative;z-index:1;cursor:pointer;text-decoration:underline}
+.band{background:var(--sea);color:#eaf6f6}.band h2{color:#fff}.band .eb{color:#ffd8b8}.band .lead{color:#cfe6e8}
+.legs{display:grid;gap:0;margin-top:12px}
+@media(min-width:760px){.legs{grid-template-columns:repeat(4,1fr)}}
+.leg{padding:18px 16px 18px 18px;border-left:3px dashed rgba(255,255,255,.5);min-width:0}
+.leg b{display:block;font:600 24px 'Cormorant Garamond';color:#fff}
+.leg span{font-size:15px}
+.leg small{display:block;font:700 11px 'Lato';letter-spacing:.16em;color:#ffd8b8;margin-bottom:4px}
+.now{display:grid;gap:14px}
+@media(min-width:760px){.now{grid-template-columns:1fr 1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-left:6px solid var(--rust);border-radius:8px;padding:20px;min-width:0}
+.card h3{font-size:27px;color:var(--br)}.card p{margin:8px 0 12px;font-size:15px}
+.stubs{display:grid;gap:12px}
+@media(min-width:760px){.stubs{grid-template-columns:repeat(3,1fr)}}
+.st{border:2px dashed #cdb88f;border-radius:10px;padding:18px;background:var(--paper);min-width:0}
+.st b{display:block;font:600 24px 'Cormorant Garamond';color:var(--br);margin-bottom:6px}
+.st span{font-size:15px}
+.guard{background:var(--br2);color:#f0e2c8;padding:26px 0}
+.guard .wrap{display:grid;gap:14px;align-items:center}
+@media(min-width:760px){.guard .wrap{grid-template-columns:auto 1fr auto}}
+.guard h3{font-size:30px;color:#fff}
+.guard .c{font:600 28px 'Cormorant Garamond';color:#ffd8b8;white-space:nowrap}
+.faq{max-width:780px}
+.faq details{background:var(--paper);border:1px solid var(--line);border-radius:8px;margin-bottom:8px;padding:0 16px}
+.faq summary{cursor:pointer;padding:14px 0;font-weight:700;color:var(--br)}
+.faq p{margin:0 0 14px;font-size:15px;color:#4d3c29}
+.contact{display:grid;gap:16px}
+@media(min-width:800px){.contact{grid-template-columns:1fr 1fr}}
+.cb{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:22px;min-width:0}
+.cb h3{font-size:30px;color:var(--br);margin-bottom:8px}.cb p{margin:6px 0;overflow-wrap:anywhere}
+.chk{display:grid;gap:10px}
+@media(min-width:700px){.chk{grid-template-columns:repeat(3,1fr)}}
+.ck{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 16px 16px 52px;position:relative;min-width:0;font-size:15px}
+.ck::before{content:"¹3";position:absolute;left:14px;top:14px;width:26px;height:26px;border-radius:50%;background:var(--sea);color:#fff;text-align:center;line-height:26px;font-weight:700}
+.ck b{display:block;font:600 21px 'Cormorant Garamond';color:var(--br)}
+.tp{display:grid;gap:12px;background:var(--paper);border:2px solid var(--br);border-radius:14px;padding:20px}
+@media(min-width:760px){.tp{grid-template-columns:1fr 1fr}}
+.tp label{display:block;font:700 11px 'Lato';letter-spacing:.14em;text-transform:uppercase;color:var(--sea);margin-bottom:4px}
+.tp select,.tp input{width:100%;padding:11px;border:1px solid #cdb88f;border-radius:8px;font:16px 'Lato';background:#fff}
+.tp .out{grid-column:1/-1;border-top:2px dashed #cdb88f;padding-top:14px;font:600 24px 'Cormorant Garamond';color:var(--br)}
+.tp .out small{display:block;font:400 14px 'Lato';color:var(--mut)}
+.pt{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.pt span{background:var(--paper);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:14px;font-weight:700;color:var(--br)}
+footer{background:var(--br2);color:#cdb88f;padding:22px 0;font-size:13px;text-align:center}
+
+#gw-btn{position:fixed;right:16px;bottom:16px;z-index:60;background:#6b3d12;color:#fff7e8;border:0;cursor:pointer;font:600 15px/1 'Lato',sans-serif;padding:14px 20px;border-radius:999px;box-shadow:0 6px 22px rgba(0,0,0,.28)}
+#gw-panel{position:fixed;right:16px;bottom:78px;z-index:61;width:min(360px,calc(100vw - 24px));height:min(480px,calc(100vh - 110px));background:#fffaf0;color:#2a1d10;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden;font:14px/1.45 'Lato',sans-serif}
+#gw-panel.open{display:flex}
+.gw-h{background:#6b3d12;color:#fff7e8;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-size:15px}
+.gw-h button{background:none;border:0;color:#fff7e8;font-size:24px;line-height:1;cursor:pointer}
+#gw-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.gw-m{max-width:86%;padding:9px 12px;border-radius:14px;white-space:pre-line;word-wrap:break-word}
+.gw-bot{background:#f2e5c9;align-self:flex-start}
+.gw-me{background:#6b3d12;color:#fff7e8;align-self:flex-end}
+.gw-chips{display:flex;flex-wrap:wrap;gap:6px}
+.gw-chips button{background:transparent;border:1.5px solid #6b3d12;color:#6b3d12;border-radius:999px;padding:6px 11px;font:600 13px 'Lato',sans-serif;cursor:pointer}
+#gw-form{display:flex;gap:6px;padding:10px;border-top:1px solid rgba(0,0,0,.1)}
+#gw-in{flex:1;min-width:0;border:1px solid #bbb;border-radius:8px;padding:9px;font:14px 'Lato',sans-serif}
+#gw-form button{background:#6b3d12;color:#fff7e8;border:0;border-radius:8px;padding:0 14px;font:600 14px 'Lato',sans-serif;cursor:pointer}
+</style><style>main *{min-width:0}img{max-width:100%}</style></head><body>
+<div class="top"><div class="wrap"><span>Privately owned, full-service travel agency &middot; Houston, TX</span><span>Call <a href="tel:8325630919">(832) 563-0919</a></span></div></div>
+<header><div class="wrap hd"><a href="#top"><img src="img/abc-travels-logo.png" alt="ABC Travels, serving our community since 1974" width="223" height="48"></a>
+<nav><a href="#book">What we book</a><a href="#journey">The journey</a><a href="#now">Right now</a><a href="#about">About</a><a href="#contact">Contact</a></nav></div></header>
+<main id="top">
+<div class="hero"><div class="wrap"><div class="pass">
+<div class="pm"><div class="lbl">Boarding pass &middot; Houston to anywhere</div>
+<h1>Traveling is more than booking a flight.</h1>
+<p>It is the full experience, from the day you start planning to the day you return home. Highly personalized service for business and leisure trips, with a real person on the end of the phone.</p>
+<a class="btn" href="#" data-ask="Plan a trip">Plan my trip</a><a class="btn o" href="#" data-ask="business class fares">Business class fares</a></div>
+<div class="stub"><div class="lbl" style="color:#ffd8b8">Flight details</div><div class="big">Since 1974</div>
+<div class="row"><span>From</span><b>Houston, TX</b></div><div class="row"><span>Service</span><b>Flights, cruises, tours</b></div><div class="row"><span>Abroad</span><b>24-hour help</b></div><div class="row" style="border:0"><span>Call</span><b>(832) 563-0919</b></div></div>
+</div></div></div>
+
+<section id="book"><div class="wrap">
+<div class="eb">What we book</div><h2>Every part of your trip, handled.</h2>
+<p class="lead">Leave it to the professionals who take care of each component, whether you travel for business or for leisure.</p>
+<div class="books">
+<div class="bk"><h3>Flights</h3><p>Special business class fares are available. Call in and speak to one of the agents to book your business class fare.</p><a data-ask="business class fares">Ask about fares</a></div>
+<div class="bk"><h3>Cruises</h3><p>The agency lists an Iceland cruise and a 5-night Western Caribbean cruise, each with its own flyer on the site.</p><a data-ask="cruises">Ask about cruises</a></div>
+<div class="bk"><h3>Tours and activities</h3><p>Book tours and activities at your destination through the agency's Viator partner link.</p><a data-ask="tours and activities">Ask about tours</a></div>
+<div class="bk"><h3>Car rental</h3><p>Reserve a rental car for the trip through the agency's CarTrawler booking page.</p><a data-ask="car rental">Ask about cars</a></div>
+<div class="bk"><h3>Travel insurance</h3><p>Visitor's coverage insurance and Travelex travel insurance links are offered for the trip.</p><a data-ask="travel insurance">Ask about insurance</a></div>
+<div class="bk"><h3>Emergency help</h3><p>A 24-hour emergency service in case you need help when you are abroad.</p><a data-ask="emergency service">How it works</a></div>
+</div></div></section>
+
+<section id="journey" class="band"><div class="wrap">
+<div class="eb">The journey</div><h2>From the first idea to the trip home.</h2>
+<p class="lead">The aim is a seamless and memorable journey, so each stage has someone looking after it.</p>
+<div class="legs">
+<div class="leg"><small>LEG 1</small><b>Plan</b><span>Tell an agent where and when, and whether it is business or leisure.</span></div>
+<div class="leg"><small>LEG 2</small><b>Book</b><span>Flights, cruise, tours, car and cover arranged together.</span></div>
+<div class="leg"><small>LEG 3</small><b>Travel</b><span>Highly personalized service and 24-hour emergency help while abroad.</span></div>
+<div class="leg"><small>LEG 4</small><b>Return</b><span>Back home, and back to the same agency for the next trip.</span></div>
+</div></div></section>
+
+<section id="now"><div class="wrap">
+<div class="eb">Right now</div><h2>On the agency's desk.</h2>
+<div class="now">
+<div class="card"><h3>Special business class fares</h3><p>Call in and speak to one of the agent specials to book your business class fare. Fares are subject to change, so the agent confirms the current options.</p><a class="btn s" href="#" data-ask="business class fares">Ask an agent</a></div>
+<div class="card"><h3>Iceland cruise</h3><p>A flyer for an Iceland cruise is posted on the website. Ask the team for the sailing details that suit your dates.</p><a class="btn s" href="#" data-ask="Iceland cruise">Ask about Iceland</a></div>
+<div class="card"><h3>5 nights, Western Caribbean</h3><p>A Western Caribbean cruise flyer is also available. The team confirms itinerary, cabin types and departure dates.</p><a class="btn s" href="#" data-ask="Caribbean cruise">Ask about the Caribbean</a></div>
+<div class="card"><h3>Visitor's coverage</h3><p>Travel and visitor insurance options are linked from the site, so protection can be arranged with the booking.</p><a class="btn s" href="#" data-ask="travel insurance">Ask about cover</a></div>
+</div></div></section>
+
+<section style="background:var(--paper)"><div class="wrap">
+<div class="eb">Quick trip card</div><h2>Sketch the trip, then hand it over.</h2>
+<p class="lead">Sketch the basics here to see the trip take shape. Then the assistant asks for the rest and passes everything to the team.</p>
+<div class="tp">
+<div><label for="t1">Trip type</label><select id="t1"><option>Flights</option><option>Cruise</option><option>Tour or holiday</option><option>Business trip</option></select></div>
+<div><label for="t2">Where to</label><input id="t2" type="text" placeholder="For example Iceland" autocomplete="off"></div>
+<div><label for="t3">When</label><input id="t3" type="text" placeholder="Month or dates" autocomplete="off"></div>
+<div><label for="t4">Travellers</label><select id="t4"><option>1</option><option>2</option><option>3-4</option><option>5 or more</option></select></div>
+<div class="out" id="tout">Flights to ... <small>Fill in the fields above.</small></div>
+<div style="grid-column:1/-1"><a class="btn" href="#" id="tgo" data-ask="Plan a trip">Hand this to the team</a></div>
+</div></div></section>
+
+<section><div class="wrap"><div class="eb">Have these ready</div><h2>Make the first call quick.</h2>
+<p class="lead">A short list of things that help an agent get to the right options straight away. None of it is required to start a conversation.</p>
+<div class="chk">
+<div class="ck"><b>Where and when</b>Rough destination and dates, even if flexible.</div>
+<div class="ck"><b>Who is travelling</b>Number of travellers and whether it is business or leisure.</div>
+<div class="ck"><b>Names as on passports</b>The agent will ask for them when booking.</div>
+<div class="ck"><b>Preferred cabin</b>Business class fares are available when you call in.</div>
+<div class="ck"><b>Extras</b>Insurance, rental car and tours can be arranged with the trip.</div>
+<div class="ck"><b>Contact details</b>So the agent can come back to you with confirmed options.</div>
+</div></div></section>
+
+<section style="background:#efe1c4"><div class="wrap"><div class="eb">Booking partners on the site</div><h2>Linked from the agency's page.</h2>
+<div class="pt"><span>Viator tours</span><span>CartTrawler car rental</span><span>Travelex insurance</span><span>Visitor's Coverage</span><span>Iceland cruise flyer</span><span>Royal Caribbean flyer</span></div></div></section>
+
+<section id="about" style="background:#efe1c4"><div class="wrap">
+<div class="eb">About ABC Travels</div><h2>Established in 1974 by Vinod Shah.</h2>
+<p class="lead">A privately owned full-service travel agency headquartered in Houston, Texas, which has grown into a premier agency serving clients worldwide and a complete guide to traveling.</p>
+<div class="stubs">
+<div class="st"><b>Mission</b><span>To make clients' travel a memorable, seamless journey by continuously providing the best customer service and handling all travel necessities.</span></div>
+<div class="st"><b>Vision</b><span>To keep giving excellent service to clients, as the agency has for decades.</span></div>
+<div class="st"><b>Objective</b><span>To ease the travel experience for life-long clients.</span></div>
+</div></div></section>
+
+<div class="guard"><div class="wrap"><h3>Abroad and need help?</h3><span>ABC Travels offers a 24-hour emergency service in case you need help when you are travelling.</span><span class="c">(832) 563-0919</span></div></div>
+
+<section><div class="wrap"><div class="eb">Before you ask</div><h2>Good to know.</h2>
+<div class="faq">
+<details><summary>How long has ABC Travels been around?</summary><p>The agency was established in 1974 by Vinod Shah and is privately owned, headquartered in Houston, Texas.</p></details>
+<details><summary>Do you only do leisure trips?</summary><p>No. Planning can be stressful or overwhelming whether you travel for business or leisure, so the agency offers highly personalized services for both.</p></details>
+<details><summary>Can I book a business class fare?</summary><p>Yes. Special business class fares are available when you call in and speak to an agent. Fares are subject to change.</p></details>
+<details><summary>What if something goes wrong abroad?</summary><p>There is a 24-hour emergency service in case you are in need of help when you are abroad.</p></details>
+<details><summary>Do you arrange insurance and car hire?</summary><p>Visitor's coverage and Travelex insurance links, plus CarTrawler car rental and Viator tours, are linked from the website.</p></details>
+<details><summary>Which cruises are listed?</summary><p>An Iceland cruise and a 5-night Western Caribbean cruise are shown, each with a downloadable flyer on the site.</p></details>
+<details><summary>Are prices on the website?</summary><p>The site notes that prices are subject to change, so the team confirms current options when you call or enquire.</p></details>
+<details><summary>Do I need to visit the office to book?</summary><p>You can call (832) 563-0919, email the agency, or use the quick contact form on the website. The team will confirm how best to proceed for your trip.</p></details>
+<details><summary>Can you handle a group or family trip?</summary><p>Tell the agent how many people are travelling and the dates you have in mind. The team will confirm what can be arranged for your group.</p></details>
+<details><summary>Do you help with visas, passports or vaccinations?</summary><p>That is not covered on the website, so the team will confirm what they can advise on when you call.</p></details>
+<details><summary>Is this a big chain?</summary><p>No. ABC Travels is privately owned and headquartered in Houston, Texas, founded by an entrepreneur in 1974 and still known to its clients as a personal, local agency.</p></details>
+<details><summary>Who will I speak to?</summary><p>The site lists Vinod as the contact on the main phone line, (832) 563-0919. Email enquiries go to pragna@abctravels.com.</p></details>
+<details><summary>How are cruise details shared?</summary><p>The Iceland cruise and the 5-night Western Caribbean cruise each have a downloadable flyer on the website, and the team can talk you through the options.</p></details>
+<details><summary>Can I ask about a trip that is not listed here?</summary><p>Yes. The listed cruises and fares are only examples of what is on the website. Tell the agent where you want to go and the team will confirm what can be arranged.</p></details>
+<details><summary>Is there a quick way to ask a question?</summary><p>Use the assistant on this page for instant answers drawn from the agency's own website, or send a message through the quick contact form on the main site.</p></details>
+<details><summary>What are the opening hours?</summary><p>Opening hours are not published on the website. The team will confirm them.</p></details>
+</div></div></section>
+
+<section style="background:var(--br);color:#f6e8d0"><div class="wrap" style="max-width:820px;text-align:center">
+<div class="eb" style="color:#ffd8b8">In the agency's words</div>
+<p style="font:italic 600 clamp(24px,4.4vw,36px)/1.25 'Cormorant Garamond',serif;margin:10px 0 16px">&ldquo;We understand that planning a trip, whether for business or for leisure, can often be stressful or overwhelming. So, leave it to the professionals.&rdquo;</p>
+<p style="margin:0 0 18px;color:#e6d3b0;font-size:15px">Quoted from the ABC Travels website. The team offers highly personalized services and makes sure each component of your trip is taken care of, with a 24-hour emergency service if you need help abroad.</p>
+<a class="btn" href="#" data-ask="Plan a trip" style="margin:0">Start planning</a>
+</div></section>
+
+<section><div class="wrap"><div class="eb">Popular questions</div><h2>Tap one to ask the assistant.</h2>
+<div class="pt"><a class="btn o" href="#" data-ask="business class fares">Business class fares</a><a class="btn o" href="#" data-ask="cruises">Cruises</a><a class="btn o" href="#" data-ask="travel insurance">Insurance</a><a class="btn o" href="#" data-ask="car rental">Car rental</a><a class="btn o" href="#" data-ask="tours and activities">Tours</a><a class="btn o" href="#" data-ask="emergency service">Emergency help</a><a class="btn o" href="#" data-ask="opening hours">Opening hours</a></div>
+<p style="margin:18px 0 0;max-width:680px;color:#5a4936">You can also follow the agency on Facebook (ABC Travels Houston) for news and offers. For anything on this page that is not covered, the team will confirm the detail when you call or email.</p>
+</div></section>
+
+<section id="contact" style="background:#efe1c4"><div class="wrap">
+<div class="eb">Contact</div><h2>Speak to a real agent.</h2>
+<div class="contact">
+<div class="cb"><h3>ABC Travels</h3><p><b>Call</b> <a href="tel:8325630919">(832) 563-0919</a> (ask for Vinod)</p><p><b>Email</b> <a href="mailto:pragna@abctravels.com">pragna@abctravels.com</a></p><p><b>Based in</b> Houston, Texas</p><p style="font-size:13px;color:var(--mut)">The street address and opening hours are not on the site. The team will confirm them.</p></div>
+<div class="cb"><h3>Plan a trip with the assistant</h3><p>Tell it the trip type, destination, dates and group size and it hands the details to the team.</p><a class="btn" href="#" data-ask="Plan a trip">Plan my trip</a></div>
+</div></div></section>
+</main>
+<footer><div class="wrap">ABC Travels &middot; Houston, Texas &middot; Demo &middot; prepared by Gevorg Hovhannisyan</div></footer>
+<div id="gw-panel" role="dialog" aria-label="Assistant"><div class="gw-h"><b id="gw-t"></b><button id="gw-x" type="button" aria-label="Close">×</button></div><div id="gw-log" aria-live="polite"></div><form id="gw-form" autocomplete="off"><input id="gw-in" type="text" placeholder="Type your question..." aria-label="Message"><button type="submit">Send</button></form></div><button id="gw-btn" type="button" aria-label="Open assistant"><span id="gw-bl"></span></button>
+<script>(function(){var g=function(i){return document.getElementById(i)};function u(){var a=g('t1').value,b=g('t2').value.trim()||'...',c=g('t3').value.trim(),d=g('t4').value;g('tout').innerHTML=a+' to '+b.replace(/</g,'')+'<small>'+(c?c.replace(/</g,'')+' · ':'')+d+' traveller(s)</small>';}['t1','t2','t3','t4'].forEach(function(i){g(i).addEventListener('input',u);});})();</script>
+<script>function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4)w=w.replace(/(ing|ed|es|s|ly)$/,'');return w;}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function tm(t,k){if(t===k)return 1;if(t.length>=4&&k.length>=4&&(t.indexOf(k)===0||k.indexOf(t)===0))return .8;var m=Math.max(t.length,k.length);if(m>=5&&Math.abs(t.length-k.length)<=2){var d=lev(t,k);if(d<=(m>=9?2:1))return .7;}return 0;}
+function findAnswer(CFG,q){var n=norm(q),toks=n.split(' ').map(stem).filter(Boolean),best=null,bs=0;
+CFG.kb.forEach(function(e){var s=0;e.k.forEach(function(k){var kn=norm(k);if(kn.indexOf(' ')>0){if((' '+n+' ').indexOf(' '+kn+' ')>=0)s+=2.5;else{var kt=kn.split(' ').map(stem),c=0;kt.forEach(function(x){if(toks.some(function(t){return tm(t,x)>0}))c++;});if(c===kt.length)s+=1.6;}}else{var ks=stem(kn),b=0;toks.forEach(function(t){b=Math.max(b,tm(t,ks));});s+=b;}});
+if(s>bs){bs=s;best=e;}});return bs>=0.7?best:null;}
+var CFG={"title": "ABC Travels", "btn": "Plan a trip", "greet": "Hello! I can tell you about ABC Travels, what the agency books and how to reach an agent, or take your trip details for the team.", "chips": ["Plan a trip", "Business class fares", "Cruises", "Emergency help", "Contact"], "fallback": "Good question, but I do not have that detail. The team will confirm it: call (832) 563-0919 or email pragna@abctravels.com.", "kb": [{"id": "flow", "k": ["plan a trip", "plan my trip", "book a trip", "book a flight", "book a cruise", "trip enquiry", "trip request", "get a quote", "talk to an agent", "speak to an agent", "appointment", "book", "enquiry", "i want to travel", "vacation", "holiday"], "flow": true}, {"id": "business", "k": ["business class", "business class fares", "business fare", "special fares", "fares", "flights", "flight", "airfare", "air ticket", "tickets"], "a": "Special business class fares are available: call in and speak to one of the agents to book. Fares are subject to change, so the agent confirms the current options.", "more": ["Plan a trip", "Contact"]}, {"id": "cruise", "k": ["cruise", "cruises", "caribbean", "western caribbean", "iceland", "royal caribbean", "sailing", "ship"], "a": "The website lists an Iceland cruise and a 5-night Western Caribbean cruise, each with a flyer. The team will confirm itinerary, cabins and departure dates for your dates.", "more": ["Plan a trip"]}, {"id": "tours", "k": ["tour", "tours", "activities", "excursions", "viator", "sightseeing", "things to do"], "a": "Tours and activities can be booked through the agency's Viator partner link. The team can also advise on what suits your trip.", "more": ["Plan a trip"]}, {"id": "car", "k": ["car rental", "rental car", "rent a car", "car hire", "cartrawler", "hire a car"], "a": "Car rental is booked through the agency's CarTrawler page, linked from the website. An agent can help you add it to your trip.", "more": ["Plan a trip"]}, {"id": "insurance", "k": ["insurance", "travel insurance", "visitors coverage", "visitor coverage", "travelex", "cover", "coverage", "protection"], "a": "Travel insurance options are linked from the site: Visitor's Coverage and Travelex. Ask an agent which suits your trip.", "more": ["Plan a trip"]}, {"id": "emergency", "k": ["emergency", "emergency service", "24 hour", "24-hour", "help abroad", "lost", "stranded", "problem abroad", "trouble"], "a": "ABC Travels offers a 24-hour emergency service in case you need help while abroad. Call (832) 563-0919 and the team will confirm the best way to reach them when you are travelling.", "more": ["Contact"]}, {"id": "about", "k": ["about", "history", "founded", "established", "who are you", "vinod", "vinod shah", "owner", "since 1974", "owns", "own", "owned", "privately owned", "how long", "experience", "years"], "a": "ABC Travels is a privately owned, full-service travel agency headquartered in Houston, Texas, established in 1974 by Vinod Shah.", "more": ["Contact"]}, {"id": "mission", "k": ["mission", "vision", "objective", "goal", "values"], "a": "Mission: to make clients' travel a memorable, seamless journey with the best customer service and by handling all travel necessities. Objective: to ease the travel experience for life-long clients.", "more": ["Plan a trip"]}, {"id": "business2", "k": ["business travel", "corporate", "work trip", "business trip", "company travel"], "a": "Yes, the agency plans both business and leisure trips with highly personalized service, and offers special business class fares.", "more": ["Plan a trip"]}, {"id": "price", "k": ["price", "prices", "cost", "how much", "fee", "fees", "rate", "rates", "cheap", "quote", "deal", "deals"], "a": "Prices are not listed on the website and are subject to change, so the team will confirm current options. Call (832) 563-0919 or send your trip details and an agent will come back to you.", "more": ["Plan a trip"]}, {"id": "contact", "k": ["contact", "phone", "telephone", "call", "email", "e-mail", "number", "reach", "talk"], "a": "Call (832) 563-0919 (ask for Vinod) or email pragna@abctravels.com. The agency is based in Houston, Texas.", "more": ["Opening hours"]}, {"id": "address", "k": ["address", "where are you", "location", "office", "directions", "find you", "visit", "houston"], "a": "ABC Travels is headquartered in Houston, Texas. The street address is not shown on the website, so the team will confirm it when you call.", "more": ["Contact"]}, {"id": "hours", "k": ["hours", "opening hours", "open", "opening times", "when are you open", "weekend", "saturday"], "a": "Opening hours are not published on the website. The team will confirm them: (832) 563-0919.", "more": ["Contact"]}, {"id": "personal", "k": ["personal", "personalized", "service", "why choose", "why you", "different"], "a": "The focus is on highly personalized service and a seamless, memorable journey from the day you start planning to the day you return home.", "more": ["Plan a trip"]}, {"id": "visa", "k": ["visa", "visas", "passport", "passports", "vaccination", "vaccinations", "entry requirements", "documents"], "a": "Visa, passport and vaccination advice is not covered on the website, so the team will confirm what they can help with. Call (832) 563-0919.", "more": ["Contact"]}, {"id": "group", "k": ["group", "family", "families", "honeymoon", "wedding", "couple", "kids", "children", "seniors"], "a": "Tell the agent how many people are travelling, the dates and the type of trip, and the team will confirm what can be arranged. I can take those details now.", "more": ["Plan a trip"]}, {"id": "cancel", "k": ["cancel", "cancellation", "refund", "change booking", "change my booking", "reschedule", "payment", "pay", "deposit"], "a": "Cancellation, change and payment terms depend on the booking and are not published on the website, so the team will confirm them for your trip.", "more": ["Contact"]}, {"id": "online", "k": ["online", "website booking", "book online", "form", "quick contact", "message"], "a": "The website has a quick contact form, and you can also call (832) 563-0919 or email pragna@abctravels.com. For a personalized plan, speaking to an agent is the main route.", "more": ["Plan a trip"]}, {"id": "hawaii", "k": ["alaska", "hawaii", "europe", "asia", "india", "destination", "destinations"], "a": "The agency serves clients worldwide. Tell me the destination and dates and I will pass them to an agent, who can confirm the options.", "more": ["Plan a trip"]}], "flow": {"intro": "Happy to pass your trip details to the team. A few quick questions.", "cancel": "No problem, cancelled.", "done": "Thanks, your trip request has been sent to the team. An agent will confirm by phone or email. (Demo: nothing is actually transmitted.)", "steps": [{"key": "type", "label": "Trip type", "q": "What are you planning?", "opts": ["Flights", "Cruise", "Tour or holiday", "Business trip", "Insurance or car only"]}, {"key": "dest", "label": "Destination", "q": "Where would you like to go?"}, {"key": "dates", "label": "Dates", "q": "Roughly when, and for how long?"}, {"key": "group", "label": "Travellers", "q": "How many travellers?", "opts": ["1", "2", "3-4", "5 or more"]}, {"key": "name", "label": "Name", "q": "Your name?"}, {"key": "contact", "label": "Contact", "q": "Best phone number or email?"}]}};document.getElementById("gw-t").textContent=CFG.title;document.getElementById("gw-bl").textContent=CFG.btn;(function(){var $=function(i){return document.getElementById(i)};var log=$('gw-log'),inp=$('gw-in'),flow=null,data={};
+function add(w,t){var d=document.createElement('div');d.className='gw-m gw-'+w;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+function chips(a){var c=document.createElement('div');c.className='gw-chips';a.forEach(function(x){var b=document.createElement('button');b.type='button';b.textContent=x;b.onclick=function(){c.remove();say(x);};c.appendChild(b);});log.appendChild(c);log.scrollTop=log.scrollHeight;}
+function ask(){var s=CFG.flow.steps[flow];add('bot',s.q);if(s.opts)chips(s.opts);}
+function startFlow(){flow=0;data={};add('bot',CFG.flow.intro);ask();}
+function stepFlow(t){if(/^(cancel|stop|exit)$/i.test(t.trim())){flow=null;add('bot',CFG.flow.cancel);chips(CFG.chips);return;}
+var s=CFG.flow.steps[flow];data[s.key]=t;flow++;if(flow>=CFG.flow.steps.length){var sum=CFG.flow.steps.map(function(x){return x.label+': '+data[x.key]}).join('\n');add('bot',CFG.flow.done+'\n\n'+sum);flow=null;chips(CFG.chips);}else ask();}
+function say(t){t=String(t).trim();if(!t)return;add('me',t);if(flow!==null){stepFlow(t);return;}
+var e=findAnswer(CFG,t);if(!e){add('bot',CFG.fallback);chips(CFG.chips);return;}if(e.flow){startFlow();return;}add('bot',e.a);if(e.more)chips(e.more);}
+$('gw-btn').onclick=function(){$('gw-panel').classList.toggle('open');if(!log.children.length){add('bot',CFG.greet);chips(CFG.chips);}};
+$('gw-x').onclick=function(){$('gw-panel').classList.remove('open')};
+$('gw-form').onsubmit=function(ev){ev.preventDefault();var v=inp.value;inp.value='';say(v);};
+document.querySelectorAll('[data-ask]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();$('gw-panel').classList.add('open');if(!log.children.length){add('bot',CFG.greet);}say(a.getAttribute('data-ask'));});});
+})();
+</script>
+</body></html>

@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Everest Language School | English courses in Dublin</title>
+<meta name="description" content="Demo page for Everest Language School, Dublin: General English, IELTS, Cambridge, online classes, accommodation and a free level test.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--n:#12294a;--n2:#1d3d6b;--b:#7cb1e5;--bl:#e8f1fb;--sand:#f6f2ea;--c:#e0674a;--ink:#1a2438;--mut:#5b6679;--line:#dde3ec;--w1:#12294a;--w1t:#fff;--w2:#e0674a;--w2t:#fff;--wbg:#f1f5fa;--wf:'Inter',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16.5px/1.6 'Inter',sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.12;color:var(--n)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header{background:var(--n);position:sticky;top:0;z-index:20}
+header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:10px}
+header img{height:40px;width:auto}
+header nav{display:none;gap:22px;color:#cfe0f5;font-size:14.5px}
+header nav a{text-decoration:none}header nav a:hover{color:#fff}
+.hb{background:var(--c);color:#fff;border:0;border-radius:999px;padding:9px 16px;font:600 14px 'Inter';cursor:pointer;white-space:nowrap}
+@media(min-width:820px){header nav{display:flex}}
+/* hero */
+.hero{background:linear-gradient(180deg,var(--n) 0%,var(--n2) 100%);color:#fff;position:relative;overflow:hidden;padding:46px 0 120px}
+.hero h1{color:#fff;font-size:clamp(36px,8.5vw,64px);max-width:700px}
+.hero h1 i{color:var(--b);font-style:italic;font-weight:500}
+.hero p{max-width:560px;margin-top:16px;color:#d6e4f6;font-size:18px}
+.hero .ridge{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:110px;display:block}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{border:0;border-radius:999px;padding:13px 22px;font:600 16px 'Inter';cursor:pointer;text-decoration:none;display:inline-block}
+.btn.c{background:var(--c);color:#fff}
+.btn.l{background:transparent;color:#fff;border:1.5px solid var(--b)}
+.btn.n{background:var(--n);color:#fff}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:-62px;position:relative;z-index:2;background:#fff;border-radius:14px;box-shadow:0 10px 30px rgba(18,41,74,.15);overflow:hidden}
+.facts div{padding:18px 14px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);min-width:0}
+.facts b{display:block;font:700 28px 'Fraunces';color:var(--n)}
+.facts span{font-size:13.5px;color:var(--mut)}
+@media(min-width:760px){.facts{grid-template-columns:repeat(4,1fr)}.facts div{border-bottom:0}}
+section{padding:60px 0}
+h2{font-size:clamp(28px,6vw,40px);margin-bottom:10px}
+.eyebrow{font:600 12.5px 'Inter';text-transform:uppercase;letter-spacing:.14em;color:var(--c);margin-bottom:8px}
+.lead{color:var(--mut);max-width:620px;margin-bottom:26px}
+/* day timetable */
+.day{background:var(--sand);border-radius:16px;padding:20px 16px;overflow:hidden}
+.axis{display:flex;justify-content:space-between;font-size:12px;color:var(--mut);margin:0 0 6px 0;padding-left:0}
+.row{margin:10px 0}
+.row .lab{display:flex;justify-content:space-between;gap:8px;font-size:14.5px;margin-bottom:4px;flex-wrap:wrap}
+.row .lab b{font-weight:600}
+.track{height:26px;background:#fff;border-radius:6px;position:relative;border:1px solid var(--line)}
+.bar{position:absolute;top:2px;bottom:2px;border-radius:4px;background:var(--n);font-size:11.5px;color:#fff;display:flex;align-items:center;padding-left:8px;white-space:nowrap;overflow:hidden}
+.bar.b{background:var(--b);color:var(--n)}
+.bar.c{background:var(--c)}
+/* prices */
+.pt{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:15px}
+.pt th{background:var(--n);color:#fff;text-align:left;font-weight:600;padding:10px 8px;font-size:13px}
+.pt td{padding:11px 8px;border-top:1px solid var(--line);vertical-align:top}
+.pt td:last-child,.pt th:last-child{text-align:right;white-space:nowrap}
+.pt small{display:block;color:var(--mut);font-size:12.5px}
+.note{font-size:13.5px;color:var(--mut);margin-top:10px}
+/* course tiles */
+.tiles{display:grid;gap:14px}
+@media(min-width:620px){.tiles{grid-template-columns:1fr 1fr}}@media(min-width:900px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{border:1px solid var(--line);border-radius:14px;padding:18px;background:#fff;min-width:0;display:flex;flex-direction:column;gap:6px}
+.tile h3{font-size:21px}
+.tile .m{font-size:13px;color:var(--mut)}
+.tile p{font-size:15px;color:#33405a}
+.tile .pr{margin-top:auto;font-weight:600;color:var(--n)}
+.tile.dark{background:var(--n);border-color:var(--n)}
+.tile.dark h3,.tile.dark .pr{color:#fff}.tile.dark p,.tile.dark .m{color:#c3d6ee}
+/* stay */
+.stay{background:var(--bl)}
+.sg{display:grid;gap:14px}
+@media(min-width:760px){.sg{grid-template-columns:repeat(3,1fr)}}
+.sc{background:#fff;border-radius:14px;padding:20px;border-top:5px solid var(--b);min-width:0}
+.sc.pop{border-top-color:var(--c)}
+.sc h3{font-size:22px}
+.sc .f{font:700 30px 'Fraunces';color:var(--n);margin:6px 0}
+.sc .f small{font:500 13px 'Inter';color:var(--mut)}
+.sc ul{list-style:none;font-size:14.5px;color:#33405a}
+.sc li{padding:4px 0 4px 18px;position:relative}
+.sc li:before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;border-radius:50%;background:var(--b)}
+/* about */
+.about{display:grid;gap:26px}
+@media(min-width:820px){.about{grid-template-columns:1fr 1fr;align-items:start}}
+.q{border-left:4px solid var(--b);padding:6px 0 6px 16px;margin-bottom:16px;font-family:'Fraunces',serif;font-size:18px;color:var(--n);line-height:1.4}
+.q small{display:block;font:500 13px 'Inter';color:var(--mut);margin-top:4px}
+.ul2{list-style:none}
+.ul2 li{padding:9px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.ul2 b{color:var(--n)}
+details{border:1px solid var(--line);border-radius:10px;margin-bottom:8px;background:#fff}
+summary{cursor:pointer;padding:14px 16px;font-weight:600;color:var(--n);list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--c);font-size:22px;line-height:1}
+details[open] summary:after{content:"–"}
+details p{padding:0 16px 16px;color:#33405a;font-size:15.5px}
+.end{background:var(--n);color:#fff;text-align:center;padding:56px 0}
+.end h2{color:#fff}
+.end p{color:#c9dbf1;margin:8px 0}
+.end a{color:var(--b)}
+footer{background:#0b1b33;color:#8ea6c6;text-align:center;padding:16px;font-size:14px}
+.free{display:grid;gap:14px}
+@media(min-width:700px){.free{grid-template-columns:1fr 1fr}}
+.fc{background:#fff;border-radius:14px;padding:20px;border:1px solid var(--line);min-width:0}
+.fc span{font:600 12px 'Inter';text-transform:uppercase;letter-spacing:.14em;color:var(--c)}
+.fc h3{font-size:21px;margin:4px 0 6px}
+.fc p{font-size:15px;color:#33405a}
+.steps{margin-top:20px;background:var(--n);color:#fff;border-radius:14px;padding:22px}
+.steps h3{color:#fff;font-size:22px;margin-bottom:8px}
+.steps ol{margin-left:20px}.steps li{padding:5px 0;color:#d6e4f6}
+#wb{position:fixed;right:16px;bottom:16px;z-index:50;width:58px;height:58px;border-radius:50%;border:0;background:var(--w2);color:var(--w2t);font-size:25px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+#wp{position:fixed;right:12px;bottom:84px;z-index:50;width:min(370px,calc(100vw - 24px));height:min(540px,calc(100vh - 110px));background:#fff;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.4);display:none;flex-direction:column;overflow:hidden;color:#222;font-family:var(--wf,system-ui,sans-serif)}
+#wp.on{display:flex}
+#wh{background:var(--w1);color:var(--w1t);padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+#wh b{font-size:16px}#wh small{display:block;opacity:.8;font-size:12px}
+#wx{background:none;border:0;color:inherit;font-size:26px;cursor:pointer;line-height:1}
+#wm{flex:1;overflow-y:auto;padding:12px;background:var(--wbg);display:flex;flex-direction:column;gap:8px}
+.m{max-width:86%;padding:9px 12px;border-radius:12px;font-size:14.5px;line-height:1.4;white-space:pre-line}
+.m.b{background:#fff;border:1px solid #ddd;align-self:flex-start}
+.m.u{background:var(--w1);color:var(--w1t);align-self:flex-end}
+#wc{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;background:#fff;border-top:1px solid #e3e3e3;max-height:96px;overflow-y:auto}
+#wc button{background:#fff;border:1.5px solid var(--w1);color:var(--w1);border-radius:999px;padding:5px 11px;font:600 13px var(--wf,system-ui,sans-serif);cursor:pointer}
+#wf{display:flex;gap:6px;padding:8px;border-top:1px solid #e3e3e3}
+#wi{flex:1;min-width:0;border:1px solid #ccc;border-radius:8px;padding:9px;font-size:15px}
+#wf button{background:var(--w2);color:var(--w2t);border:0;border-radius:8px;padding:0 14px;font-weight:700;cursor:pointer}
+
+</style></head><body>
+<header><div class="wrap">
+<a href="#top" aria-label="Everest Language School"><img src="img/everest-language-school-logo.svg" alt="Everest Language School" width="93" height="40"></a>
+<nav><a href="#courses">Courses</a><a href="#timetable">Timetable</a><a href="#prices">Prices</a><a href="#stay">Accommodation</a><a href="#about">The school</a></nav>
+<button class="hb" onclick="openW('book')">Course enquiry</button>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+<div class="eyebrow" style="color:var(--b)">Merrion Square, Dublin 2</div>
+<h1>Take your English to <i>new heights.</i></h1>
+<p>Learn English in Dublin with a school owned and run by teachers since 2015. Small classes of 16 or fewer, accredited teachers, and a start every Monday.</p>
+<div class="cta"><button class="btn c" onclick="openW('book')">Send a course enquiry</button><a class="btn l" href="#timetable">Find a time that fits</a></div>
+</div>
+<svg class="ridge" viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true"><path d="M0 110V78L120 52 210 72 330 22 420 64 520 40 640 80 760 30 870 70 990 46 1100 74 1200 56V110Z" fill="#fff"/><path d="M0 110V92L150 70 300 90 460 60 600 94 780 66 940 92 1080 72 1200 90V110Z" fill="#7cb1e5" opacity=".25"/></svg>
+</div>
+<div class="wrap"><div class="facts">
+<div><b>2015</b><span>Opened by teachers</span></div>
+<div><b>16</b><span>Students per class, at most</span></div>
+<div><b>A1 to C1</b><span>Levels taught</span></div>
+<div><b>1 to 25</b><span>Weeks you can book</span></div>
+</div></div>
+
+<section id="courses"><div class="wrap">
+<div class="eyebrow">Courses</div>
+<h2>One school, a course for each goal</h2>
+<p class="lead">Every course on the school's site, with the hours and published prices. The team confirms dates and an exact fee when you enquire.</p>
+<div class="tiles">
+<div class="tile dark"><h3>General English</h3><div class="m">A1 to C1 · 4 to 26 hrs a week</div><p>Confidence first, grammar right behind it. Real situations such as job interviews, travelling and social life.</p><div class="pr">From €35 a week</div></div>
+<div class="tile"><h3>IELTS Preparation</h3><div class="m">B1 to C1 · 4 to 26 hrs a week</div><p>Prepare with teachers who know how the test is marked. Three routes to a 6.5 or higher.</p><div class="pr">€35 to €225 a week</div></div>
+<div class="tile"><h3>Cambridge FCE and CAE</h3><div class="m">B1 to C1 · 6 to 26 hrs a week</div><p>Aim for the highest mark, in classes of 16 or fewer. Intensive or part-time.</p><div class="pr">€55 to €225 a week</div></div>
+<div class="tile"><h3>Online one-to-one</h3><div class="m">A1 to C1 · flexible</div><p>Live classes on Zoom, at a time that suits you.</p><div class="pr">€55 an hour</div></div>
+<div class="tile"><h3>Business English</h3><div class="m">B1 to C1 · one-to-one</div><p>Built around your job, before or after work on any day. Corporate Training is written for your team.</p><div class="pr">€35 to €75 an hour</div></div>
+<div class="tile"><h3>Academic Year</h3><div class="m">25 weeks · 15 to 20 hrs a week</div><p>Study while living in Ireland. IELTS fee and insurance included; there is a Stamp 2 study visa FAQ.</p><div class="pr">€2,790 to €3,980</div></div>
+<div class="tile"><h3>Internships</h3><div class="m">B1 minimum · 4 to 24 weeks</div><p>An English course plus a work placement in your field.</p><div class="pr">€110 to €190 a week</div></div>
+<div class="tile"><h3>Spanish and Irish</h3><div class="m">A1 to A2 · Tuesday evenings</div><p>Ten weeks, 18:30 to 20:30, for beginners.</p><div class="pr">€195 each</div></div>
+<div class="tile"><h3>Groups and funding</h3><div class="m">Mini-Stay Groups, Erasmus+, Bildungsurlaub</div><p>Closed classes for groups of 16 or more, plus Erasmus+ and paid educational leave courses.</p><div class="pr">On request</div></div>
+</div>
+</div></section>
+
+<section id="timetable" style="padding-top:0"><div class="wrap">
+<div class="eyebrow">General English timetable</div>
+<h2>Pick the hours, not the syllabus</h2>
+<p class="lead">All four options use the same materials and teachers. What changes is how many hours you study and at what time of day.</p>
+<div class="day">
+<div class="axis"><span>08:00</span><span>11:00</span><span>14:00</span><span>17:00</span><span>20:00</span></div>
+<div class="row"><div class="lab"><b>Morning · 20 hrs a week</b><span>Mon to Fri 09:00 to 13:10 · from €190</span></div><div class="track"><div class="bar" style="left:7.7%;width:32.1%">09:00 to 13:10</div></div></div>
+<div class="row"><div class="lab"><b>Afternoon · 15 hrs a week</b><span>Mon to Fri 13:50 to 17:00 · from €110</span></div><div class="track"><div class="bar b" style="left:44.9%;width:24.4%">13:50 to 17:00</div></div></div>
+<div class="row"><div class="lab"><b>Intensive · 26 hrs a week</b><span>Mon to Fri 09:00 to 17:00 · from €225</span></div><div class="track"><div class="bar c" style="left:7.7%;width:61.6%">09:00 to 17:00</div></div></div>
+<div class="row"><div class="lab"><b>Evening · 4 hrs a week</b><span>Tue and Thu 18:30 to 20:30 · from €35</span></div><div class="track"><div class="bar b" style="left:80.8%;width:15.4%">18:30</div></div></div>
+</div>
+<div class="cta"><button class="btn n" onclick="openW('book','General English')">Enquire about General English</button></div>
+</div></section>
+
+<section id="prices" style="background:var(--sand)"><div class="wrap">
+<div class="eyebrow">Published 2026 prices</div>
+<h2>Every figure, one table</h2>
+<p class="lead">The weekly rate falls the longer you stay. The registration fee is €35.</p>
+<table class="pt"><tr><th>Course</th><th>Hours</th><th>From</th></tr>
+<tr><td>Morning General English<small>09:00 to 13:10</small></td><td>20</td><td>€190/wk</td></tr>
+<tr><td>Afternoon General English<small>13:50 to 17:00</small></td><td>15</td><td>€110/wk</td></tr>
+<tr><td>Intensive Exam or General<small>B1 to C1</small></td><td>26</td><td>€225/wk</td></tr>
+<tr><td>Afternoon, 3 days<small>13:50 to 17:00</small></td><td>9</td><td>€90/wk</td></tr>
+<tr><td>Afternoon Exam or General<small>13:50 or 18:30</small></td><td>6</td><td>€55/wk</td></tr>
+<tr><td>Evening IELTS<small>Tue and Thu</small></td><td>4</td><td>€35/wk</td></tr>
+<tr><td>Evening General English<small>Tue and Thu</small></td><td>4</td><td>€35/wk</td></tr>
+</table>
+<p class="note">Included in General English: course materials, a grammar, writing and speaking test, an end-of-course certificate, weekly progress tests, weekly social activities, free Wi-Fi, tea and coffee, and workshops.</p>
+</div></section>
+
+<section class="stay" id="stay"><div class="wrap">
+<div class="eyebrow">Accommodation</div>
+<h2>Somewhere to live, sorted before you land</h2>
+<p class="lead">Book it with your course. Accommodation booking fee €50; a special diet is €40 a week.</p>
+<div class="sg">
+<div class="sc pop"><h3>Host family</h3><div class="f">€275 <small>a week, from</small></div><ul><li>Single room, half board</li><li>Breakfast and dinner, diets on request</li><li>Usually 40 to 60 minutes from school by public transport</li></ul></div>
+<div class="sc"><h3>Premium residence</h3><div class="f">€325 <small>a week, from</small></div><ul><li>Private en-suite, free gym, kitchen</li><li>30-minute walk from the school</li><li>Minimum 2 weeks, Saturday arrivals</li></ul></div>
+<div class="sc"><h3>Shared apartment</h3><div class="f">€225 <small>a week, from</small></div><ul><li>Twin room, self-catering</li><li>20 to 30 minutes from the centre</li><li>Minimum 2 weeks, age 19 or older</li></ul></div>
+</div>
+</div></section>
+
+<section id="free" style="background:var(--sand)"><div class="wrap">
+<div class="eyebrow">Beyond the classroom</div>
+<h2>Free resources and life in Dublin</h2>
+<p class="lead">The school publishes free material written by its own teachers, and runs a weekly social programme so the timetable is not the only place you use English.</p>
+<div class="free">
+<div class="fc"><span>Blog</span><h3>Written by teachers</h3><p>Exam tips, grammar you actually use, and honest guides to living in Dublin, including a Cost of Living in Dublin guide for international students in 2026.</p></div>
+<div class="fc"><span>Podcast</span><h3>26 free episodes</h3><p>An English podcast you can listen to before you arrive or between classes.</p></div>
+<div class="fc"><span>Research</span><h3>Bilingual Brains</h3><p>The school looks at what happens in the brain when adults learn a language, and tailors its syllabus to be as effective as possible. The Academic Director's PhD studied adult language learning, and the school works with Trinity College Dublin.</p></div>
+<div class="fc"><span>Social</span><h3>Weekly programme</h3><p>Weekly social activities are included with General English, along with workshops, free Wi-Fi, tea and coffee.</p></div>
+</div>
+<div class="steps"><h3>How enrolment works</h3>
+<ol><li>Take the free level test, or tell the team your level.</li><li>Pick a course and dates, and say if you need accommodation.</li><li>The team sends a full fee calculation and payment options.</li><li>Student Support replies within one working day.</li></ol></div>
+</div></section>
+
+<section id="about"><div class="wrap about">
+<div>
+<div class="eyebrow">The school</div>
+<h2>Small enough to notice every student</h2>
+<div class="q">“Attending this school means being in a big family in which we were paid plenty of attention.”<small>Salvatore Rustico, student</small></div>
+<div class="q">“The best school ever! They helped me to achieve my goals, and made my stay here in Ireland much better.”<small>Eduarda Garcia Chaparro, student</small></div>
+<div class="q">“Well located, excellent teachers, and two teachers per class with different methods.”<small>Mariana Campos Vani, student</small></div>
+</div>
+<div>
+<ul class="ul2">
+<li><b>Teacher-owned.</b> Anne-Marie, Maria and Rob opened Everest in 2015 and it is still run by teachers.</li>
+<li><b>Experienced teachers.</b> All hold degrees and CELTA qualifications, with 8.5 years teaching on average.</li>
+<li><b>Accredited.</b> Member of EEI, approved by the Irish government, on the ILEP, member of ELT Ireland.</li>
+<li><b>Free level test.</b> 15 minutes of grammar and writing; book full time and add a free speaking test.</li>
+<li><b>Support beyond class.</b> Accommodation, visa paperwork, a weekly social programme and a reception team that speaks your language.</li>
+</ul>
+</div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<div class="eyebrow">Quick answers</div><h2>Before you write</h2>
+<details><summary>How fast does the school reply?</summary><p>Student Support replies within one working day, in English, French, Italian, Spanish, German or Portuguese.</p></details>
+<details><summary>How big are the classes?</summary><p>Sixteen students at most. Cambridge classes are 16 or fewer, and one student describes having two teachers per class with different methods.</p></details>
+<details><summary>Is there a certificate?</summary><p>Yes. General English includes an end-of-course level certificate, plus a grammar, writing and speaking test and weekly progress tests.</p></details>
+<details><summary>Can I study as a group or through my company?</summary><p>Mini-Stay Groups are closed classes for groups of 16 or more with dates and timetable set by you, and Corporate Training is a syllabus written for your team after a consultation, around 12 weeks.</p></details>
+<details><summary>When do I arrive and check in?</summary><p>Host families prefer weekend arrivals and departures, with check-in up to 22:00; flight details are shared before arrival. The premium residence has Saturday check-in from 4:00 pm, and the shared apartments offer self check-in from 14:00 with instructions after confirmation.</p></details>
+<details><summary>Is there a dietary option with host families?</summary><p>Yes. Vegan, vegetarian, gluten-free, lactose-free and other dietary requirements are accommodated on request, at €40 a week. Tell the team in advance so they can match you with the right family.</p></details>
+<details><summary>When can I start?</summary><p>Courses start every Monday and can be booked for 1 to 25 weeks.</p></details>
+<details><summary>I do not know my level.</summary><p>Take the free online test: about 15 minutes of grammar and a short piece of writing, which gives your CEFR level.</p></details>
+<details><summary>Does the school help with visas?</summary><p>The site has a Study Visa FAQ about Stamp 2 and lists visa paperwork under support. The Academic Year course is 25 weeks with the IELTS fee and insurance included. For your own situation the team will confirm what applies.</p></details>
+<details><summary>Can I study in the evening only?</summary><p>Yes. Evening General English and Evening IELTS run on Tuesday and Thursday from 18:30 to 20:30, for 4 hours a week. Evening Spanish and Irish run on Tuesdays.</p></details>
+<details><summary>Can the school arrange my accommodation?</summary><p>Yes. Tell the team when you book the course; they will book it, or advise on where to find a place yourself.</p></details>
+</div></section>
+
+<div class="end"><div class="wrap">
+<h2>Ready to start in Dublin?</h2>
+<p>26 Merrion Square N, Dublin 2, D02 DX36 · +353 1 559 4919</p>
+<p>You can also find the school on Facebook, Instagram, YouTube and LinkedIn.</p>
+<p><a href="mailto:info@everestlanguageschool.com">info@everestlanguageschool.com</a></p>
+<div class="cta" style="justify-content:center"><button class="btn c" onclick="openW('book')">Send a course enquiry</button></div>
+</div></div>
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+
+<button id="wb" aria-label="Open chat" onclick="openW()">💬</button>
+<div id="wp" role="dialog" aria-label="Everest Language School assistant">
+<div id="wh"><div><b>Everest Language School assistant</b><small>Courses, prices, accommodation</small></div><button id="wx" aria-label="Close" onclick="closeW()">×</button></div>
+<div id="wm"></div><div id="wc"></div>
+<form id="wf"><input id="wi" placeholder="Type your question" autocomplete="off"><button type="submit">Send</button></form>
+</div>
+<script>
+var NAME="Everest Language School",SUB="Courses, prices, accommodation";
+var GREET="Hi! I'm the assistant for Everest Language School in Dublin. Ask about courses, levels, prices, accommodation or the free level test, or send a course enquiry.";
+var FALLBACK="I do not have that detail. The Student Support team will confirm it within one working day: info@everestlanguageschool.com or +353 1 559 4919.";
+var HOME=["General English","IELTS","Accommodation","Level test","Prices","Enquire"];
+var KB=[
+{k:"price prices cost much fee fees rate rates cheap cheapest pricing weekly tuition registration",a:"Published 2026 prices run from €35 a week for the evening courses up to €225 a week for the intensive course, and the weekly rate falls the longer you stay. The registration fee is €35. Online one-to-one classes are €55 an hour. The prices page has a calculator, and the team sends an exact fee calculation when you book.",c:["General English","Accommodation","Enquire"]},
+{k:"general english morning afternoon intensive evening schedule timetable hours week class classes",a:"General English runs 4 to 26 hours a week, levels A1 to C1, with a start every Monday:\n- Morning, 20 hrs: Mon to Fri 09:00 to 13:10, from €190 a week\n- Afternoon, 15 hrs: 13:50 to 17:00, from €110 a week\n- Intensive, 26 hrs: Mon to Fri 09:00 to 17:00, from €225 a week\n- Evening, 4 hrs: Tue and Thu 18:30 to 20:30, from €35 a week\nClass size is 16 students at most.",c:["Prices","Level test","Enquire"]},
+{k:"ielts exam preparation prepare test writing correction band",a:"IELTS Preparation runs 4 to 26 hours a week (levels B1 to C1), from €35 to €225 a week, for 1 to 25 weeks. IELTS Writing Correction is a same-day correction against the official criteria, from €7 to €15 per submission. The site describes three routes to a 6.5 or higher.",c:["Cambridge","Prices","Enquire"]},
+{k:"cambridge fce cae first advanced certificate exam",a:"Cambridge FCE (First) and CAE (Advanced) classes are for levels B1 to C1, 6 to 26 hours a week, from €55 to €225 a week, in classes of 16 or fewer. Intensive and part-time options are available.",c:["IELTS","Prices","Enquire"]},
+{k:"online zoom remote distance one-to-one private lessons individual",a:"Online courses are live one-to-one classes on Zoom at a time that suits you, for levels A1 to C1, at €55 per hour. The school also offers face-to-face one-to-one classes and Business English from €35 to €75 per hour.",c:["Business English","Prices","Enquire"]},
+{k:"business english work job company corporate team training",a:"Business English is one-to-one and built around your job, any day before or after work, levels B1 to C1, from €35 to €75 an hour. Corporate Training writes a syllabus for your team after a consultation, around 12 weeks, price on request.",c:["Enquire","Contact"]},
+{k:"accommodation host family residence apartment live living stay housing room",a:"Accommodation is booked together with your course:\n- Host family, single room, half board: from €275 a week\n- Premium residence, private en-suite with gym: from €325 a week\n- Shared apartment, twin room, self-catering: from €225 a week\nBooking fee €50, special diet €40 a week. Host families are usually 40 to 60 minutes from school by public transport.",c:["Prices","Enquire","Contact"]},
+{k:"level test free placement cefr check assess speaking",a:"The free online level test takes about 15 minutes: grammar plus a short writing section, and it gives your CEFR level. If you book a full-time course you also get a free speaking test with a teacher.",c:["General English","Enquire"]},
+{k:"visa stamp study academic year stay immigration permit irish",a:"The Academic Year is 25 weeks, 15 to 20 hours a week, with the IELTS fee and insurance included, from €2,790 to €3,980. The site has a Study Visa FAQ about Stamp 2. For your own visa situation the team will confirm what applies.",c:["Enquire","Contact"]},
+{k:"internship internships placement work experience",a:"Internships combine an English course with a work placement in your field, from 4 to 24 weeks, 15 to 20 hours of class plus the placement, from €110 to €190 a week. B1 level minimum.",c:["Enquire","Prices"]},
+{k:"spanish irish gaelic evening beginner language languages",a:"Evening Spanish and Irish classes are ten weeks, Tuesdays 18:30 to 20:30, levels A1 to A2, €195 each.",c:["Enquire","Contact"]},
+{k:"erasmus bildungsurlaub funding grant paid leave",a:"The school lists Erasmus+ English courses and Bildungsurlaub (paid educational leave) for German learners. The team will confirm what applies to your funding.",c:["Enquire","Contact"]},
+{k:"group groups mini stay trip closed junior",a:"Mini-Stay Groups are closed classes for groups of 16 or more, 15 to 20 hours a week, with dates and timetable set by you. Price on request.",c:["Enquire","Contact"]},
+{k:"where address location located directions find school dublin merrion square",a:"Everest Language School is at 26 Merrion Square N, Dublin 2, D02 DX36, in the city centre.",c:["Contact","Enquire"]},
+{k:"phone call number contact email mail reach talk office hours open",a:"Phone: +353 1 559 4919\nEmail: info@everestlanguageschool.com\n26 Merrion Square N, Dublin 2\nStudent Support replies within one working day, in English, French, Italian, Spanish, German or Portuguese. Office opening hours are not published, so the team will confirm.",c:["Enquire","Accommodation"]},
+{k:"teacher teachers qualified qualification celta experience staff owner",a:"Everest is teacher-owned, opened in 2015 by Anne-Marie, Maria and Rob. All teachers hold degrees and CELTA qualifications, with an average of 8.5 years teaching English.",c:["General English","Reviews"]},
+{k:"accredited accreditation school quality approved eei ilep member government",a:"The school is a member of EEI, approved by the Irish government and on the ILEP, and also a member of ELT Ireland and a contributing member of IATEFL.",c:["Teachers","Enquire"]},
+{k:"review reviews rating recommend students opinion testimonial",a:"Students describe the teachers and the family feel of the school; the home page notes that 98 percent would recommend it. The Reviews page has more.",c:["Teachers","Enquire"]},
+{k:"start starts date dates begin when monday intake duration weeks long study",a:"Courses start every Monday and you can book from 1 to 25 weeks.",c:["Prices","Enquire"]},
+{k:"included include extras price materials certificate wifi social activities",a:"Included in General English: course materials, a grammar, writing and speaking test, an end-of-course level certificate, weekly progress tests, weekly social activities, free Wi-Fi, tea and coffee, and workshops.",c:["General English","Prices"]},
+{k:"offers offer discount promotion deal special",a:"The site lists limited 2026 offers on evening and afternoon courses with no registration fee. The best way to find current offers is to ask the team.",c:["Enquire","Contact"]},
+{k:"podcast blog free resources research bilingual brains cost living guide listen",a:"Free resources on the site: a blog written by the teachers (exam tips, grammar, a Cost of Living in Dublin guide for 2026), an English podcast with 26 free episodes, and the Bilingual Brains research, which looks at how adults learn a language and shapes the syllabus.",c:["General English","Enquire"]},
+{k:"social activities programme events trips fun weekend",a:"There is a weekly social programme, and weekly social activities are included in the General English price. The Life in Dublin pages cover what happens outside the timetable.",c:["Included","Enquire"]},
+{k:"thanks thank ok okay great",a:"Happy to help. Want to send a course enquiry to the team?",c:["Enquire","Prices"]},
+{k:"hello hi hey hola",a:"Hi! I can help with courses, prices, accommodation, the free level test and course enquiries.",c:["General English","IELTS","Accommodation","Enquire"]}
+];
+var STEPS=[
+{key:'course',q:"Which course are you interested in?",chips:["General English","IELTS","Cambridge FCE/CAE","Online one-to-one","Business English","Academic Year"]},
+{key:'level',q:"What is your level? (the free level test can tell you)",chips:["A1-A2","B1-B2","C1","Not sure"]},
+{key:'when',q:"When would you like to start, and for how many weeks? (courses start every Monday, 1 to 25 weeks)",chips:["Within a month","In 2-3 months","Later"]},
+{key:'acc',q:"Do you need accommodation?",chips:["Host family","Residence","Shared apartment","No"]},
+{key:'name',q:"Your name?",chips:[]},
+{key:'email',q:"Your email address, so Student Support can reply?",chips:[]}
+];
+function SUMMARY(d){return "Thanks "+d.name+". Enquiry noted:\n"+d.course+" · level "+d.level+"\nStart: "+d.when+" · accommodation: "+d.acc+"\nReply to: "+d.email+"\n\nThis has been sent to the team, who will reply within one working day with dates and a fee calculation. (Demo: nothing is actually sent.)"}
+
+/*ENGINE*/
+var STOP="the a an of to is are do does you your i me my we can for in on at and or it be have has with about how what when where which".split(" ");
+function norm(s){return s.toLowerCase().replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ers|er|es|ed|s)$/,""):w}
+function lev(a,b){if(a==b)return 0;if(Math.abs(a.length-b.length)>1)return 2;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function lev2(a,b){var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function hit(w,kw){var s=stem(w);if(kw==w||stem(kw)==s)return 1;if(w.length>=5&&kw.length>=5){if(lev(w,kw)<=1||lev(s,stem(kw))<=1)return .9;if(w.length>=7&&kw.length>=7&&lev2(w,kw)<=2)return .8}if(w.length>=4&&(kw.indexOf(w)==0||w.indexOf(kw)==0)&&kw.length>=4)return .6;return 0}
+function answer(q){var ws=norm(q).split(" ").filter(function(w){return w&&STOP.indexOf(w)<0});var best=null,bs=0;KB.forEach(function(e){var kws=e.k.split(" "),sc=0;ws.forEach(function(w){var m=0;kws.forEach(function(kw){m=Math.max(m,hit(w,kw))});sc+=m});if(sc>bs){bs=sc;best=e}});return bs>=.9?best:null}
+var BOOKWORDS=/\b(book|booking|booked|enquire|enquiry|inquiry|appointment|appointments|reserve|reservation|enrol|enroll|enrollment|enrolment|sign up|signup|schedule|register|registration|trial|visit|consultation)\b/;
+/*END*/
+var $=function(i){return document.getElementById(i)},M=$('wm'),C=$('wc'),I=$('wi'),flow=null,data={},si=0;
+function say(t,who){var d=document.createElement('div');d.className='m '+(who||'b');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight}
+function chips(a){C.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){handle(t)};C.appendChild(b)})}
+function openW(mode,pre){$('wp').classList.add('on');if(!M.children.length){say(GREET);chips(HOME)}if(mode=='book'){startBook(pre)}}
+function closeW(){$('wp').classList.remove('on')}
+function startBook(pre){flow=1;data={};si=0;if(pre&&STEPS[0]){data[STEPS[0].key]=pre}ask()}
+function ask(){while(si<STEPS.length&&data[STEPS[si].key])si++;if(si>=STEPS.length){finish();return}say(STEPS[si].q);chips(STEPS[si].chips)}
+function finish(){flow=null;say(SUMMARY(data));chips(HOME)}
+function handle(t){say(t,'u');if(flow){if(/^(cancel|stop|exit)$/i.test(t.trim())){flow=null;say("No problem, request cancelled.");chips(HOME);return}data[STEPS[si].key]=t;si++;ask();return}
+if(BOOKWORDS.test(norm(t))||/^book/i.test(t)){startBook();return}
+var r=answer(t);if(r){say(r.a);chips(r.c)}else{say(FALLBACK);chips(HOME)}}
+$('wf').addEventListener('submit',function(e){e.preventDefault();var v=I.value.trim();if(!v)return;I.value='';handle(v)});
+
+</script>
+</body></html>
