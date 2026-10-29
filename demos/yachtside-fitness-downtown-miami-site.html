@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yachtside Fitness Downtown Miami | Waterfront gym on the Miami River</title>
+<meta name="description" content="Demo page for Yachtside Fitness, Downtown Miami: equipment, FitCamp, trainers, day passes and a trial-visit assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#272974;--deep:#15174a;--aqua:#14b3c4;--foam:#e9f6f8;--sand:#f7f2e8;--rope:#c9a76a;--ink:#1a1c3a;--mut:#585b7a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.6 Karla,system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+h1,h2,h3{font-family:Oswald,Impact,sans-serif;font-weight:600;text-transform:uppercase;line-height:1.05;margin:0 0 .5em;letter-spacing:.01em}
+a{color:var(--navy)}
+.w{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e2e4ef;position:sticky;top:0;z-index:50}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:76px}
+header img{height:60px;width:auto;display:block}
+.hm{display:none;gap:22px}.hm a{text-decoration:none;font-weight:700;font-size:15px;color:var(--navy)}
+@media(min-width:860px){.hm{display:flex}}
+.cta{background:var(--navy);color:#fff;border:0;padding:12px 22px;font:600 16px Oswald,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;border-radius:0}
+.cta.a{background:var(--aqua);color:#06202a}.cta.l{background:none;border:2px solid #fff;color:#fff}
+.hero{background:linear-gradient(180deg,var(--deep) 0%,var(--navy) 100%);color:#fff;position:relative;overflow:hidden;padding:64px 0 120px}
+.hero:before{content:"";position:absolute;right:-110px;top:-110px;width:420px;height:420px;border-radius:50%;border:2px solid rgba(20,179,196,.5);box-shadow:0 0 0 30px rgba(20,179,196,.08),0 0 0 70px rgba(20,179,196,.05)}
+.hero .w{position:relative;z-index:2}
+.hero small{letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--aqua)}
+.hero h1{font-size:clamp(44px,10vw,104px);margin:.15em 0 .25em}
+.hero h1 span{color:var(--aqua)}
+.hero p{font-size:19px;max-width:560px;color:#d8dbf4}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:80px;display:block}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:0;border-bottom:1px solid #e2e4ef}
+.stats div{padding:22px 16px;text-align:center;border-right:1px solid #e2e4ef;min-width:0}.stats b{display:block;font:600 38px Oswald,sans-serif;color:var(--navy)}.stats span{font-size:14px;color:var(--mut)}
+section{padding:66px 0}
+h2{font-size:clamp(32px,6vw,54px);color:var(--navy)}
+.tag{font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:12.5px;color:#0d8999}
+.eq{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.eqc{background:var(--foam);padding:26px 24px;border-top:6px solid var(--navy);min-width:0}
+.eqc:nth-child(2){border-top-color:var(--aqua)}.eqc:nth-child(3){border-top-color:var(--rope)}
+.eqc h3{font-size:26px;color:var(--navy)}.eqc ul{margin:0;padding:0;list-style:none}.eqc li{padding:7px 0;border-bottom:1px dashed #b7d4d9;font-size:16px}.eqc li:last-child{border:0}
+.turf{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.turf h2{color:#fff}.turf .tag{color:var(--aqua)}
+.track{margin:30px 0 8px;background:repeating-linear-gradient(90deg,#2f7d4a 0 36px,#2a7243 36px 72px);border:3px solid #fff;border-radius:6px;height:58px;position:relative;display:flex;align-items:center;justify-content:space-between;padding:0 14px;font:600 14px Oswald;letter-spacing:.1em}
+.track i{font-style:normal;background:#fff;color:#1a5a34;padding:2px 10px;border-radius:30px}
+.cols{display:grid;gap:34px;grid-template-columns:minmax(0,1fr)}@media(min-width:860px){.cols{grid-template-columns:1fr 1fr}}
+.fit{background:var(--sand);position:relative;overflow:hidden}
+.fit:after{content:"";position:absolute;right:-80px;bottom:-80px;width:260px;height:260px;border-radius:50%;background:rgba(39,41,116,.07)}
+.fit .w{position:relative;z-index:1}
+.amen{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));margin-top:24px}.amen div{background:#fff;padding:16px;border-left:5px solid var(--aqua);font-weight:700;min-width:0}.amen small{display:block;font-weight:400;color:var(--mut)}
+.tr{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr))}
+.tc{border:2px solid var(--navy);padding:20px;min-width:0}.tc h3{font-size:24px;color:var(--navy)}.tc em{display:block;font-style:normal;color:#0d8999;font-weight:700;margin-bottom:6px}.tc p{margin:0;color:var(--mut);font-size:15.5px}
+.mem{background:var(--foam)}
+.pass{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}.pass div{background:#fff;border:2px dashed var(--navy);padding:14px 22px;font:600 22px Oswald;text-align:center;min-width:0}.pass small{display:block;font:500 12px Karla;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.tide{width:100%;border-collapse:collapse}.tide td{padding:11px 4px;border-bottom:1px solid #dfe2ee;font-size:17px}.tide td:last-child{text-align:right;font-weight:700}
+.loc{background:var(--navy);color:#fff;padding:26px;min-width:0}.loc h3{color:var(--aqua)}.loc a{color:#fff}
+.crew{background:var(--deep);color:#d6d9f2;text-align:center;padding:54px 0}.crew p{font:500 clamp(22px,4vw,32px)/1.3 Oswald;text-transform:uppercase;max-width:860px;margin:0 auto;color:#fff}.crew span{color:var(--aqua)}
+details{border-bottom:1px solid #dfe2ee;padding:14px 0}summary{cursor:pointer;font:600 19px Oswald;text-transform:uppercase;color:var(--navy)}details p{margin:.5em 0 0;color:var(--mut)}
+.plan{background:#fff}.fp{display:grid;gap:8px;margin-top:24px;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:minmax(86px,auto);border:4px solid var(--navy);padding:8px;background:var(--foam)}
+.z{background:#fff;border:2px solid var(--navy);padding:10px 12px;font:600 17px Oswald,sans-serif;text-transform:uppercase;color:var(--navy);min-width:0}.z small{display:block;font:400 13px Karla,sans-serif;text-transform:none;color:var(--mut);margin-top:2px}
+.c1{grid-column:span 3}.c2{grid-column:span 3}.c3{grid-column:span 2}.c4{grid-column:span 4;background:var(--navy);color:#fff;border-color:var(--navy)}.c4 small{color:#c9ccf0}.c5{grid-column:span 6;background:#2f7d4a;border-color:#1f5a35;color:#fff}.c5 small{color:#d7f0df}.c6{grid-column:span 3}.c7{grid-column:span 3}
+@media(max-width:560px){.fp{grid-template-columns:repeat(2,minmax(0,1fr))}.c1,.c2,.c3,.c4,.c5,.c6,.c7{grid-column:span 2}}
+.rv{background:var(--sand)}.rvg{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}.rvg blockquote{margin:0;background:#fff;padding:20px;border-top:5px solid var(--aqua);min-width:0}.rvg cite{display:block;margin-top:10px;font-style:normal;font-weight:700;color:var(--navy);font-size:14px}
+.first{background:#fff}.fs{list-style:none;margin:0;padding:0;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}.fs li{display:flex;gap:14px;align-items:flex-start;background:var(--foam);padding:18px;min-width:0}.fs b{flex:none;width:40px;height:40px;background:var(--navy);color:#fff;text-align:center;line-height:40px;font:600 20px Oswald}
+.spec{background:var(--foam)}.sp{width:100%;border-collapse:collapse;background:#fff}.sp td{padding:12px 14px;border-bottom:1px solid #dfe2ee;vertical-align:top}.sp td:first-child{font:600 17px Oswald;text-transform:uppercase;color:var(--navy);width:42%}.sp td:last-child{color:var(--mut)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--aqua);outline-offset:2px}
+.cmp{background:#fff}.cg2{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}.pk{background:var(--navy);color:#fff;padding:24px;min-width:0}.pk h3{color:#fff;font-size:26px}.pk ul{margin:0;padding-left:20px}.pk li{margin-bottom:6px}.pk.alt{background:var(--aqua);color:#06202a}.pk.alt h3{color:#06202a}
+.nb{background:var(--sand)}.chips{display:flex;flex-wrap:wrap;gap:10px;align-content:center}.chips span{background:#fff;border:2px solid var(--navy);padding:8px 16px;font:600 16px Oswald;text-transform:uppercase;color:var(--navy)}
+footer{background:#0d0e2e;color:#a9acd0;padding:30px 0;font-size:14px}footer .w{display:grid;gap:6px}footer b{color:#fff}
+@media(max-width:600px){section{padding:46px 0}.hero{padding:44px 0 100px}header img{height:50px}}
+</style><script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "ExerciseGym",
+ "name": "Yachtside Fitness: Downtown Miami",
+ "description": "Waterfront gym on the Miami River at 5th Street Marina with a 55-yard turf track, four Olympic platforms and FitCamp HIIT classes.",
+ "telephone": "+1-305-640-5859",
+ "email": "frontdesk@yachtsidefitness.com",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "341 NW South River Drive",
+  "addressLocality": "Miami",
+  "addressRegion": "FL",
+  "postalCode": "33128",
+  "addressCountry": "US"
+ },
+ "openingHoursSpecification": [
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday"
+   ],
+   "opens": "06:00",
+   "closes": "21:00"
+  },
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": "Friday",
+   "opens": "06:00",
+   "closes": "19:00"
+  },
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": [
+    "Saturday",
+    "Sunday"
+   ],
+   "opens": "09:00",
+   "closes": "14:00"
+  }
+ ],
+ "amenityFeature": [
+  {
+   "@type": "LocationFeatureSpecification",
+   "name": "Two private showers",
+   "value": true
+  },
+  {
+   "@type": "LocationFeatureSpecification",
+   "name": "High-speed WiFi",
+   "value": true
+  },
+  {
+   "@type": "LocationFeatureSpecification",
+   "name": "Secure parking with gate card for Open Gym members",
+   "value": true
+  }
+ ]
+}</script>
+<meta property="og:title" content="Yachtside Fitness: Downtown Miami (demo)">
+<meta name="robots" content="noindex">
+</head><body>
+<header><div class="w"><a href="#"><img src="img/yachtside-fitness-downtown-miami-logo.png" alt="Yachtside Fitness"></a>
+<nav class="hm"><a href="#gear">Equipment</a><a href="#fitcamp">FitCamp</a><a href="#trainers">Trainers</a><a href="#join">Day passes</a><a href="#hours">Hours</a></nav>
+<button class="cta" onclick="document.getElementById('as-b').click()">Book a visit</button></div></header>
+
+<div class="hero"><div class="w"><small>5th Street Marina, Downtown Miami</small><h1>Your fitness gym on the <span>Miami River</span></h1>
+<p>A one-of-a-kind waterfront gym with river views, an intimate, unpretentious space where everyone feels welcome to push their limits and achieve their best.</p>
+<div class="row"><button class="cta a" onclick="document.getElementById('as-b').click()">Plan a visit</button><a class="cta l" href="tel:+13056405859">305-640-5859</a></div></div>
+<svg class="wave" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C150 0 300 80 450 40 C600 0 750 80 900 40 C1050 0 1150 60 1200 40 V80 H0Z" fill="#fff"/></svg></div>
+<div class="stats"><div><b>55 yd</b><span>turf track</span></div><div><b>4</b><span>Olympic platforms</span></div><div><b>5-100</b><span>lb dumbbells</span></div><div><b>7 days</b><span>open every day</span></div></div>
+
+<section id="gear"><div class="w"><div class="tag">Equipment</div><h2>State-of-the-art, no crowds</h2><div class="eq">
+<div class="eqc"><h3>Cardio zone</h3><ul><li>Three treadmills</li><li>Assault Runner</li><li>StairMaster</li><li>Elliptical crosstrainer</li></ul></div>
+<div class="eqc"><h3>Strength training</h3><ul><li>Dumbbells from 5 to 100 lbs</li><li>Life Fitness Multi-Jungle cable system</li><li>Hammer Strength plate-loaded machines</li><li>Four Olympic weightlifting platforms</li></ul></div>
+<div class="eqc"><h3>Functional training</h3><ul><li>55-yard artificial turf track</li><li>Sprints and sled pushes</li><li>Agility work</li><li>Open floor in the centre</li></ul></div></div></div></section>
+
+<section class="turf"><div class="w"><div class="tag">The track</div><h2>55 yards, wall to wall</h2><p style="max-width:660px;color:#d8dbf4">An artificial turf track runs the length of the gym for sprints, sled pushes and agility work.</p><div class="track"><i>Start</i><span>sprint &middot; sled &middot; agility</span><i>55 yd</i></div></div></section>
+
+<section id="fitcamp" class="fit"><div class="w cols"><div><div class="tag">Group classes</div><h2>FitCamp in the centre</h2><p>The open floor hosts FitCamp, a high-energy HIIT and circuit training class that blends strength, cardio and community spirit.</p><p>Not sure it is for you? Ask for a trial visit and the team will confirm which class times suit your day.</p><button class="cta" onclick="document.getElementById('as-b').click()">Ask about FitCamp</button></div>
+<div><h3 style="font-size:28px;color:var(--navy)">Refresh and relax</h3><div class="amen" style="margin-top:12px"><div>Two private showers<small>freshen up after a session</small></div><div>Lounge with cable TV<small>or just recharge by the water</small></div><div>High-speed WiFi<small>in the gym and lounge</small></div></div></div></div></section>
+
+
+<section class="plan"><div class="w"><div class="tag">Inside</div><h2>Zones at a glance</h2><p style="max-width:680px;color:var(--mut)">The areas described on the website, from the cardio zone to the lounge by the water. The arrangement here is illustrative, not the real floor plan.</p>
+<div class="fp"><div class="z c1">Cardio zone<small>treadmills, Assault Runner, StairMaster, elliptical</small></div><div class="z c2">Strength<small>dumbbells 5-100 lbs, cables, plate-loaded machines</small></div><div class="z c3">Olympic platforms<small>four lifting platforms</small></div><div class="z c4">Open floor: FitCamp<small>HIIT and circuit training class</small></div><div class="z c5">55-yard turf track<small>sprints, sled pushes, agility</small></div><div class="z c6">Showers<small>two private</small></div><div class="z c7">Lounge<small>cable TV and WiFi</small></div></div></div></section>
+
+<section class="rv"><div class="w"><div class="tag">Members say</div><h2>On the review wall</h2><div class="rvg">
+<blockquote>"Came in for a one day pass and extremely excited to find a gym I can walk to on my purpose."<cite>Soe Ouk, November 2025</cite></blockquote>
+<blockquote>"Been coming here for years, love the place."<cite>Sebastian Mercader, April 2025</cite></blockquote>
+<blockquote>"Uno de los mejores gimnasios!"<cite>Elias Hernandes, April 2025</cite></blockquote>
+<blockquote>"Great place to focus and workout."<cite>Andrew, February 2024</cite></blockquote></div></div></section>
+
+<section class="first"><div class="w"><div class="tag">First visit</div><h2>Three steps aboard</h2><ol class="fs"><li><b>1</b><span><strong>Choose how to start.</strong> A day pass, a book of passes or the Open Gym membership.</span></li><li><b>2</b><span><strong>Pick a time.</strong> Open early on weekdays, with shorter weekend hours from 9:00 am to 2:00 pm.</span></li><li><b>3</b><span><strong>Train your way.</strong> Cardio, strength, the turf track or a FitCamp class, and ask a trainer if you want help.</span></li></ol></div></section>
+
+
+<section class="spec"><div class="w"><div class="tag">The numbers</div><h2>Spec sheet</h2><table class="sp"><tr><td>Treadmills</td><td>3</td></tr><tr><td>Other cardio</td><td>Assault Runner, StairMaster, elliptical crosstrainer</td></tr><tr><td>Dumbbells</td><td>5 to 100 lbs</td></tr><tr><td>Cable system</td><td>Life Fitness Multi-Jungle</td></tr><tr><td>Plate-loaded</td><td>Hammer Strength machines</td></tr><tr><td>Olympic platforms</td><td>4</td></tr><tr><td>Turf track</td><td>55 yards, artificial turf</td></tr><tr><td>Group class</td><td>FitCamp, HIIT and circuit training</td></tr><tr><td>Showers</td><td>2 private</td></tr><tr><td>Extras</td><td>Lounge with cable TV, high-speed WiFi</td></tr><tr><td>Parking</td><td>Secure lot, gate card with Open Gym membership</td></tr></table></div></section>
+
+<section id="trainers"><div class="w"><div class="tag">Our trainers</div><h2>The people on the floor</h2><div class="tr">
+<div class="tc"><h3>Dr. Evan Motlong</h3><em>Physical therapist</em><p>A certified physical therapist.</p></div>
+<div class="tc"><h3>Jon Nicolas</h3><em>Personal trainer and stretch therapist</em><p>Personal training and stretch therapy.</p></div>
+<div class="tc"><h3>Jonathan Barthelemy</h3><em>NRSM certified personal trainer</em><p>Also a certified online coach.</p></div>
+<div class="tc"><h3>Beto</h3><em>BootFit trainer</em><p>Leads BootFit training.</p></div></div></div></section>
+
+
+<section class="cmp"><div class="w"><div class="tag">Pick your pass</div><h2>Open Gym or day pass</h2><div class="cg2">
+<div class="pk"><h3>Open Gym membership</h3><ul><li>The most popular option</li><li>Open access to the gym, come when you want</li><li>Gate card for the secure parking lot</li></ul></div>
+<div class="pk alt"><h3>Day passes</h3><ul><li>Sold in books of 1, 4 or 10</li><li>A good way to try the gym first</li><li>Suits visitors passing through Miami</li></ul></div></div>
+<p style="margin-top:18px;color:var(--mut)">Current pricing is confirmed by the front desk. Use the assistant to leave a visit request and they will get back to you.</p></div></section>
+
+<section class="nb"><div class="w cols"><div><div class="tag">Neighbourhood</div><h2>On the water, close to everything</h2><p>Yachtside sits at the 5th Street Marina on the Miami River, in Downtown Miami. Members come from Brickell, Spring Garden and Little Havana, and captains and crew from yachts docking worldwide train alongside them.</p></div><div class="chips"><span>Miami River</span><span>5th Street Marina</span><span>Downtown Miami</span><span>Brickell</span><span>Spring Garden</span><span>Little Havana</span></div></div></section>
+
+<section id="join" class="mem"><div class="w cols"><div><div class="tag">Membership and day passes</div><h2>Come when you want</h2><p>The Open Gym membership is the most popular option, with open access to the gym. It includes a gate card for the secure parking lot.</p><p>Day passes can be bought in books of 1, 4 or 10, which makes a first visit easy to arrange.</p><div class="pass"><div>1<small>day pass</small></div><div>4<small>day passes</small></div><div>10<small>day passes</small></div></div><button class="cta" onclick="document.getElementById('as-b').click()">Ask about a pass</button></div>
+<div><h3 style="font-size:28px;color:var(--navy)">Questions</h3>
+<details><summary>Can I try it for a day?</summary><p>Yes, day passes are available, in books of 1, 4 or 10.</p></details>
+<details><summary>Can I bring a friend to try the gym?</summary><p>Ask the front desk. Day passes are sold in books of 1, 4 or 10, so a friend can try a single day.</p></details>
+<details><summary>Is there parking?</summary><p>The Open Gym membership includes a gate card for access to the secure parking lot.</p></details>
+<details><summary>Who trains here?</summary><p>Captains and crew from yachts docking worldwide train alongside locals from Brickell, Spring Garden and Little Havana.</p></details>
+<details><summary>Do you have classes?</summary><p>FitCamp, a HIIT and circuit class, runs on the open floor.</p></details>
+<details><summary>Is there a class for groups?</summary><p>FitCamp is a HIIT and circuit class on the open floor. Ask the front desk for class times.</p></details>
+<details><summary>Do you have a physical therapist?</summary><p>Dr. Evan Motlong is a certified physical therapist on the trainer team.</p></details>
+<details><summary>Can I train remotely with a coach?</summary><p>Jonathan Barthelemy is a certified online coach. Ask the front desk how to start.</p></details>
+<details><summary>Can I get Spanish-speaking help?</summary><p>Ask the front desk. Reviews on the site include Spanish-speaking members.</p></details></div></div></section>
+
+<div class="crew"><div class="w"><p>Here the rhythm of the river meets the <span>pulse of wellness</span>.</p></div></div>
+
+<section id="hours"><div class="w cols"><div><div class="tag">Hours of operation</div><h2>Tide table</h2><table class="tide"><tr><td>Monday</td><td>6:00 am - 9:00 pm</td></tr><tr><td>Tuesday</td><td>6:00 am - 9:00 pm</td></tr><tr><td>Wednesday</td><td>6:00 am - 9:00 pm</td></tr><tr><td>Thursday</td><td>6:00 am - 9:00 pm</td></tr><tr><td>Friday</td><td>6:00 am - 7:00 pm</td></tr><tr><td>Saturday</td><td>9:00 am - 2:00 pm</td></tr><tr><td>Sunday</td><td>9:00 am - 2:00 pm</td></tr></table></div>
+<div class="loc"><h3>Find us</h3><p><b>Yachtside Fitness: Downtown Miami</b><br>341 NW South River Drive<br>Miami, FL 33128</p><p>Phone <a href="tel:+13056405859">305-640-5859</a><br>Email <a href="mailto:frontdesk@yachtsidefitness.com">frontdesk@yachtsidefitness.com</a></p><p>At the 5th Street Marina, on the Miami River.</p></div></div></section>
+<footer><div class="w"><div><b>Yachtside Fitness</b> · 341 NW South River Drive, Miami</div><div>Demo · prepared by Gevorg Hovhannisyan</div><div>Built from the public website. Not an official page.</div></div></footer>
+<script>(function(root){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|s)$/,''):w;}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++)d[i]=[i];for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[m][n];}
+function tokScore(t,k){var st=stem(t),sk=stem(k);if(t==k||st==sk)return 2;if(t.length>=4&&k.length>=4&&(k.indexOf(t)==0||t.indexOf(k)==0||sk.indexOf(st)==0&&st.length>=4))return 1.8;var L=Math.max(st.length,sk.length),lim=L>=8?2:L>=5?1:0;if(lim&&t[0]==k[0]&&lev(st,sk)<=lim)return 1.5;return 0;}
+function answer(cfg,text){var nt=norm(text),toks=nt.split(' ').filter(Boolean),best=null,bs=0;
+cfg.kb.forEach(function(e){var s=0,c=0;e.k.forEach(function(kw){var nk=norm(kw),v=0;if(nk.indexOf(' ')>0){if((' '+nt+' ').indexOf(' '+nk+' ')>=0)v=3;else{var ks=nk.split(' '),ok=ks.every(function(x){return toks.some(function(t){return tokScore(t,x)>=1.5;});});if(ok)v=2.2;}}else{toks.forEach(function(t){var q=tokScore(t,nk);if(q>v)v=q;});}
+if(v>0){c++;if(v>s)s=v;}});s+=c>1?0.2*(c-1):0;if(s>bs){bs=s;best=e;}});
+return bs>=1.5?best:null;}
+function isFlow(cfg,text){var nt=norm(text);if((cfg.flow.not||[]).some(function(k){return (' '+nt+' ').indexOf(' '+norm(k)+' ')>=0;}))return false;return (cfg.flow.triggers||[]).some(function(k){var nk=norm(k);return nk.indexOf(' ')>0?(' '+nt+' ').indexOf(' '+nk+' ')>=0:nt.split(' ').some(function(t){return tokScore(t,nk)>=1.5;});});}
+root.AssistCore={norm:norm,answer:answer,isFlow:isFlow};
+if(typeof module!=='undefined')module.exports=root.AssistCore;
+if(typeof document==='undefined')return;
+root.AssistInit=function(cfg){var th=cfg.theme||{};
+var css='#as-b{position:fixed;'+(th.side||'right')+':14px;bottom:14px;z-index:9999;border:0;cursor:pointer;background:'+th.ac+';color:'+th.fg+';height:52px;padding:0 18px;border-radius:'+(th.rad||26)+'px;font:600 15px/1 '+(th.font||'system-ui,sans-serif')+';box-shadow:0 6px 22px rgba(0,0,0,.28);display:flex;align-items:center;gap:8px}'+
+'#as-p{position:fixed;'+(th.side||'right')+':10px;bottom:76px;z-index:9999;width:min(370px,calc(100vw - 20px));height:min(520px,calc(100vh - 100px));background:'+th.bg+';color:'+th.tx+';border-radius:'+Math.min(th.rad||26,18)+'px;box-shadow:0 14px 44px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.4 '+(th.font||'system-ui,sans-serif')+'}#as-p.o{display:flex}'+
+'#as-h{background:'+th.ac+';color:'+th.fg+';padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}#as-h small{display:block;font-weight:400;opacity:.85;font-size:12px}#as-x{background:none;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1}'+
+'#as-l{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}.as-m{max-width:86%;padding:9px 12px;border-radius:14px;word-wrap:break-word}.as-a{background:'+th.bub+';align-self:flex-start}.as-u{background:'+th.ac+';color:'+th.fg+';align-self:flex-end}'+
+'#as-c{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}#as-c button{border:1px solid '+th.ac+';background:transparent;color:'+th.tx+';border-radius:16px;padding:6px 11px;font:13px system-ui,sans-serif;cursor:pointer}'+
+'#as-f{display:flex;gap:6px;padding:10px;border-top:1px solid rgba(128,128,128,.3)}#as-f input{flex:1;min-width:0;padding:10px;border:1px solid rgba(128,128,128,.5);border-radius:10px;font:15px system-ui,sans-serif;background:#fff;color:#111}#as-f button{border:0;background:'+th.ac+';color:'+th.fg+';border-radius:10px;padding:0 14px;font-weight:700;cursor:pointer}';
+var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
+var b=document.createElement('button');b.id='as-b';b.type='button';b.innerHTML='<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4 3h16a2 2 0 012 2v11a2 2 0 01-2 2H9l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg><span></span>';b.lastChild.textContent=cfg.btn||'Ask us';
+var p=document.createElement('div');p.id='as-p';p.innerHTML='<div id="as-h"><div><span></span><small></small></div><button id="as-x" type="button" aria-label="Close">&times;</button></div><div id="as-l" aria-live="polite"></div><div id="as-c"></div><form id="as-f"><input autocomplete="off" aria-label="Message"><button>&rarr;</button></form>';
+document.body.appendChild(b);document.body.appendChild(p);
+var $=function(s){return p.querySelector(s);},L=$('#as-l'),C=$('#as-c'),F=$('#as-f'),I=F.querySelector('input');
+$('#as-h span').textContent=cfg.name;$('#as-h small').textContent=cfg.sub||'';I.placeholder=cfg.ph||'Type a question';
+var step=-1,data={};
+function say(t,u){var d=document.createElement('div');d.className='as-m '+(u?'as-u':'as-a');d.textContent=t;L.appendChild(d);L.scrollTop=L.scrollHeight;}
+function chips(a,fn){C.innerHTML='';a.forEach(function(x){var e=document.createElement('button');e.type='button';e.textContent=x;e.onclick=function(){fn(x);};C.appendChild(e);});}
+function home(){chips(cfg.chips,function(x){ask(x);});}
+function nextStep(){step++;var s=cfg.flow.steps[step];if(!s){var sm=cfg.flow.steps.map(function(z){return z.label+': '+(data[z.key]||'-');}).join('\n');say(cfg.flow.done+'\n\n'+sm);step=-1;data={};home();return;}
+say(s.ask);if(s.opts)chips(s.opts.concat([cfg.flow.cancel||'Cancel']),function(x){flowIn(x);});else chips([cfg.flow.cancel||'Cancel'],function(x){flowIn(x);});}
+function startFlow(){step=-1;data={};say(cfg.flow.intro);nextStep();}
+function flowIn(t){if(norm(t)==norm(cfg.flow.cancel||'Cancel')||/^(cancel|stop|nevermind|no thanks)$/.test(norm(t))){step=-1;data={};say(cfg.flow.cancelled||'No problem, nothing was sent.');home();return;}
+say(t,1);var s=cfg.flow.steps[step];if(s.val&&!s.val.test(t)){say(s.err||'Could you check that again?');return;}data[s.key]=t;nextStep();}
+function ask(t){if(step>=0){flowIn(t);return;}say(t,1);if(isFlow(cfg,t)){startFlow();return;}var e=answer(cfg,t);if(e){say(e.a);if(e.flow){chips([cfg.flow.start||'Start'],function(){startFlow();});return;}}else say(cfg.fallback);home();}
+F.onsubmit=function(ev){ev.preventDefault();var v=I.value.trim();if(!v)return;I.value='';ask(v);};
+var opened=false;function tog(){p.classList.toggle('o');if(!opened){opened=true;say(cfg.greet);home();}}
+b.onclick=tog;$('#as-x').onclick=tog;};
+})(typeof window!=='undefined'?window:globalThis);
+
+var CFG={name:"Yachtside assistant",sub:"Gym info and trial visits",btn:"Plan a visit",ph:"Ask about hours, passes, classes",
+theme:{ac:"#272974",fg:"#fff",bg:"#ffffff",tx:"#1a1c3a",bub:"#e9f6f8",rad:0,font:"Karla,system-ui,sans-serif",side:"right"},
+greet:"Welcome aboard! I can answer questions about Yachtside Fitness hours, equipment, FitCamp and passes, or set up a trial visit request.",
+chips:["Plan a visit","Hours","Day passes","FitCamp","Equipment","Where are you?"],
+fallback:"I do not have that on the site yet. The front desk can help at 305-640-5859 or frontdesk@yachtsidefitness.com, or I can note a trial visit request.",
+flow:{triggers:["trial","try","visit","book","booking","free class","tour","plan a visit","schedule a visit"],start:"Plan a visit",cancel:"Cancel",
+intro:"Great, let's set up your visit. A few quick questions.",
+done:"Thank you! Your visit request is sent to the front desk, who will confirm details with you. Here is what I noted:",
+cancelled:"No problem, nothing was sent.",
+steps:[{key:"what",label:"Interested in",ask:"What would you like to try?",opts:["Day pass","Open Gym membership","FitCamp class","Personal training","Just a tour"]},
+{key:"goal",label:"Goal",ask:"What is your main goal, and how much training experience do you have?"},
+{key:"day",label:"Preferred day and time",ask:"Which day and time suit you? We open 6:00 am to 9:00 pm Monday to Thursday, until 7:00 pm Friday, and 9:00 am to 2:00 pm on weekends."},
+{key:"people",label:"Group size",ask:"Is it just you, or are you coming with someone?",opts:["Just me","Two of us","A group"]},
+{key:"contact",label:"Contact",ask:"What name and phone number or email should the front desk use?",val:/\S{3,}/}]},
+kb:[
+{id:"hello",k:["hello","hi","hey","good morning","hola"],a:"Hello! Ask me about hours, equipment, FitCamp, day passes or how to find us."},
+{id:"hours",k:["hours","open","opening","closed","close","weekend","saturday","sunday","early","late","when are you open","schedule hours"],a:"Monday to Thursday 6:00 am to 9:00 pm, Friday 6:00 am to 7:00 pm, Saturday and Sunday 9:00 am to 2:00 pm."},
+{id:"where",k:["where","address","location","directions","river","marina","5th street","south river","miami","brickell","find you"],a:"341 NW South River Drive, Miami, FL 33128, at the 5th Street Marina on the Miami River."},
+{id:"contact",k:["phone","call","number","email","contact","reach","front desk"],a:"Call 305-640-5859 or email frontdesk@yachtsidefitness.com."},
+{id:"parking",k:["parking","park","gate","gate card","car","garage","lot"],a:"The Open Gym membership includes a gate card for access to the secure parking lot."},
+{id:"pass",k:["day pass","pass","passes","drop in","drop-in","one day","single visit","try it"],a:"Day passes can be bought in books of 1, 4 or 10. The team will confirm the current options at the front desk.",flow:1},
+{id:"membership",k:["membership","member","join","open gym","monthly","gym only","sign up"],a:"The Open Gym membership is the most popular option: open access to the gym, come when you want, with a gate card for the secure parking lot.",flow:1},
+{id:"fitcamp",k:["fitcamp","fit camp","class","classes","hiit","circuit","group class","group fitness","bootfit","boot camp"],a:"FitCamp is a high-energy HIIT and circuit training class on the open floor that blends strength, cardio and community spirit. The team will confirm class times.",flow:1},
+{id:"cardio",k:["cardio","treadmill","treadmills","assault runner","stairmaster","elliptical","running"],a:"The cardio zone has three treadmills, an Assault Runner, a StairMaster and an elliptical crosstrainer."},
+{id:"strength",k:["strength","weights","dumbbell","dumbbells","barbell","olympic","platform","platforms","hammer strength","cable","machines","life fitness","squat","deadlift"],a:"Strength training has dumbbells from 5 to 100 lbs, a Life Fitness Multi-Jungle cable system, Hammer Strength plate-loaded machines and four Olympic weightlifting platforms."},
+{id:"turf",k:["turf","track","sled","sprint","sprints","agility","functional","55 yard"],a:"A 55-yard artificial turf track runs the length of the gym for sprints, sled pushes and agility work."},
+{id:"equipment",k:["equipment","gear","machines","what do you have","facilities"],a:"Equipment: cardio (three treadmills, Assault Runner, StairMaster, elliptical), strength (dumbbells 5 to 100 lbs, cable system, plate-loaded machines, four Olympic platforms) and a 55-yard turf track."},
+{id:"shower",k:["shower","showers","lounge","wifi","tv","amenities","locker","towel"],a:"Two private showers, a lounge with cable TV and high-speed WiFi. For towels or lockers, please ask the front desk."},
+{id:"trainers",k:["trainer","trainers","coach","coaches","personal training","personal trainer","pt","physical therapist","stretch","stretching","online coach","evan","jon","jonathan","beto"],a:"Trainers: Dr. Evan Motlong (certified physical therapist), Jon Nicolas (personal trainer and stretch therapist), Jonathan Barthelemy (NRSM certified personal trainer and online coach) and Beto (BootFit trainer).",flow:1},
+{id:"community",k:["community","crowded","busy","who trains","who goes","goes","members","yacht","captains","crew","locals","vibe","atmosphere","intimate"],a:"It is an intimate, unpretentious space. Captains and crew from yachts docking worldwide train alongside locals from Brickell, Spring Garden and Little Havana."},
+{id:"beginner",k:["beginner","beginners","new to gym","first time","never worked out","intimidated","experience"],a:"Everyone is welcome to push their limits at their own level. Tell the front desk your experience and goals, or ask a trainer, and I can note a visit request for you.",flow:1},
+{id:"price",k:["price","prices","cost","how much","fee","fees","rate","rates","cheap","afford","monthly cost"],a:"Current pricing is confirmed by the front desk. Call 305-640-5859 or leave a visit request here.",flow:1},
+{id:"thanks",k:["thanks","thank you","great","perfect"],a:"You are welcome! Anything else?"}
+]};
+var TESTS=[["what time do you open","hours"],["are you open on sunday","hours"],["I want to try a class","FLOW"],["where is the gym","where"],["do you have parking","parking"],["how do day passes work","pass"],["do you have squat racks and olympic platforms","strength"],["treadmils","cardio"],["tell me about fitcamp","fitcamp"],["do you have personal trainers","trainers"],["is there a shower","shower"],["phone number","contact"],["I am a total beginner","beginner"],["how much is the membership","price"],["whats the turf for","turf"],["who goes to this gym","community"],["email","contact"]];
+
+AssistInit(CFG);</script>
+</body></html>

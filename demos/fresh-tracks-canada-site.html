@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-CA"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fresh Tracks Canada | Personalized Canadian vacations since 1996</title>
+<meta name="description" content="Demo page for Fresh Tracks Canada: train vacations, polar bears, northern lights and a trip-planning assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+:root{--red:#ea373c;--dred:#ac1216;--char:#2e2e2b;--snow:#f6f4f0;--ice:#e4ebee;--mut:#66665f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.6 Archivo,system-ui,sans-serif;color:var(--char);background:var(--snow);overflow-x:hidden}
+h1,h2,h3{font-family:"Archivo Black",Impact,sans-serif;font-weight:400;line-height:1.05;margin:0 0 .5em;letter-spacing:-.01em}
+a{color:var(--dred)}
+.w{max-width:1120px;margin:0 auto;padding:0 20px}
+.nav{background:#fff;border-bottom:1px solid #ddd;position:sticky;top:0;z-index:40}
+.nav .w{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:66px}
+.nav img{height:38px;width:auto;display:block}
+.nav .r{display:flex;align-items:center;gap:14px}.nav .ph{font-weight:700;text-decoration:none;color:var(--char);font-size:15px;display:none}
+@media(min-width:700px){.nav .ph{display:inline}}
+.b{background:var(--red);color:#fff;border:0;border-radius:3px;padding:12px 20px;font:700 15px Archivo,sans-serif;cursor:pointer;text-decoration:none;display:inline-block}
+.b.dk{background:var(--char)}.b.ol{background:none;border:2px solid #fff}
+.hero{background:linear-gradient(180deg,rgba(46,46,43,.55),rgba(46,46,43,.9)),repeating-linear-gradient(115deg,#3b4a53 0 40px,#34424a 40px 80px);color:#fff;padding:90px 0 0;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-60px;top:-60px;width:340px;height:340px;background:var(--red);opacity:.9;transform:rotate(45deg);border-radius:30px}
+.hero:after{content:"";position:absolute;right:120px;top:120px;width:150px;height:150px;background:var(--dred);opacity:.8;transform:rotate(45deg);border-radius:14px}
+.hero .w{position:relative;z-index:2}
+.hero h1{font-size:clamp(40px,9vw,92px);max-width:860px}
+.hero p{font-size:19px;max-width:600px;color:#e8e8e3}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 56px}
+.rail{background:var(--char);position:relative;z-index:2;border-top:4px solid var(--red)}
+.rail .w{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:0}
+.rail .w>div{padding:18px 16px;border-left:1px solid #4a4a45;font-size:14px;color:#cfcfc8}.rail b{display:block;color:#fff;font:400 26px "Archivo Black",sans-serif}
+section{padding:68px 0}
+h2{font-size:clamp(30px,5.5vw,50px)}
+.tag{display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;margin-bottom:12px}
+.brands{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.br{background:#fff;border-top:8px solid var(--red);padding:26px 24px;min-width:0;position:relative}
+.br:nth-child(2){border-top-color:var(--char)}.br:nth-child(3){border-top-color:var(--dred)}
+.br h3{font-size:26px}.br p{color:var(--mut);margin:0 0 14px}.br a{font-weight:700}
+.way{background:var(--ice)}
+.cols{display:grid;gap:34px;grid-template-columns:minmax(0,1fr)}@media(min-width:840px){.cols{grid-template-columns:1fr 1fr}}
+.tl{list-style:none;margin:0;padding:0;counter-reset:s}
+.tl li{counter-increment:s;position:relative;padding:0 0 20px 56px;min-height:48px}
+.tl li:before{content:counter(s);position:absolute;left:0;top:0;width:40px;height:40px;background:var(--red);color:#fff;border-radius:50%;font:400 18px/40px "Archivo Black";text-align:center}
+.tl li:after{content:"";position:absolute;left:19px;top:44px;bottom:2px;width:2px;background:#c3ccd0}.tl li:last-child:after{display:none}
+.tl b{display:block;font-size:18px}.tl span{color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chips span{background:#fff;border:1px solid #c9d2d6;padding:6px 14px;border-radius:30px;font-size:14.5px;font-weight:500}
+.dark{background:var(--char);color:#fff;position:relative;overflow:hidden}
+.dark:before{content:"";position:absolute;left:-120px;bottom:-120px;width:300px;height:300px;border:50px solid rgba(234,55,60,.25);transform:rotate(45deg)}
+.dark .w{position:relative}.dark h2{color:#fff}
+.q{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.q blockquote{margin:0;background:#3a3a36;padding:22px;border-left:5px solid var(--red);min-width:0}.q blockquote p{margin:0 0 10px;font-size:16.5px}.q cite{font-style:normal;color:#ffb0b3;font-weight:700;font-size:14px}
+.insiders{background:#fff}
+.ins{display:grid;gap:14px;margin-top:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}.ins div{padding:18px;background:var(--snow);border-bottom:4px solid var(--red);min-width:0}.ins b{display:block;font-size:17px;margin-bottom:4px}.ins span{font-size:14.5px;color:var(--mut)}
+table.h{width:100%;border-collapse:collapse;font-size:16px}table.h td{padding:10px 6px;border-bottom:1px solid #ddd}table.h td:last-child{text-align:right;font-weight:700}
+.ct{display:grid;gap:30px;grid-template-columns:minmax(0,1fr)}@media(min-width:840px){.ct{grid-template-columns:1fr 1fr}}
+.card{background:#fff;padding:26px;border-top:6px solid var(--red)}.big{font:400 clamp(28px,6vw,40px) "Archivo Black";color:var(--dred);text-decoration:none;display:block;word-break:break-word}
+details{background:#fff;margin-bottom:8px;padding:14px 18px}summary{cursor:pointer;font-weight:700;font-size:17px}details p{margin:.6em 0 0;color:var(--mut)}
+.trips{background:#fff}.tg{display:grid;gap:16px;margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}.tg article{border:1px solid #d8d8d2;padding:20px;min-width:0;border-left:6px solid var(--red)}.tg h3{font-size:21px}.rt{font-weight:700;color:var(--dred);margin-bottom:10px;font-size:15px}.tg ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}.tg li{background:var(--ice);padding:3px 10px;font-size:13.5px;border-radius:20px}
+.pb{background:var(--ice);position:relative;overflow:hidden}.pbg{display:grid;gap:14px;margin:24px 0;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}.pbg>div{background:#fff;padding:18px;border-top:6px solid var(--char);min-width:0}.pbg b{display:block;font-size:18px;margin-bottom:4px}.pbg span{display:block;color:var(--dred);font-weight:700;font-size:15px}.pbg em{color:var(--mut);font-size:14px}
+.one{margin:0;padding:20px 22px;background:var(--char);color:#fff;border-left:6px solid var(--red)}.one cite{display:block;margin-top:8px;color:#ffb0b3;font-style:normal;font-weight:700;font-size:14px}
+.pm{background:var(--snow)}.pm .cols{align-items:start}.pm table.h td:first-child{font-weight:500}
+.nl{background:var(--char);color:#fff}.nl h2{color:#fff}.how3{display:grid;gap:14px;margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}.how3>div{border:1px solid #55554f;padding:16px 18px;min-width:0}.how3 b{display:block;color:#ff8d91;margin-bottom:4px}.how3 span{color:#d0d0c8;font-size:15px}
+footer{background:#1d1d1b;color:#b6b6ae;padding:30px 0;font-size:14px}footer .w{display:grid;gap:6px}footer b{color:#fff}
+@media(max-width:600px){.hero{padding-top:60px}.hero:before{right:-170px}.hero:after{display:none}section{padding:48px 0}}
+</style><script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "TravelAgency",
+ "name": "Fresh Tracks Canada",
+ "description": "Personalized Canadian vacations since 1996: train vacations, polar bears and northern lights, planned by local travel experts in Vancouver.",
+ "telephone": "+1-877-395-5771",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "1150 Station Street, Suite 200",
+  "addressLocality": "Vancouver",
+  "addressRegion": "BC",
+  "postalCode": "V6A 4C7",
+  "addressCountry": "CA"
+ },
+ "openingHoursSpecification": [
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday"
+   ],
+   "opens": "06:30",
+   "closes": "17:30"
+  },
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": "Saturday",
+   "opens": "08:30",
+   "closes": "16:30"
+  },
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": "Sunday",
+   "opens": "09:00",
+   "closes": "17:00"
+  }
+ ],
+ "areaServed": "Canada",
+ "knowsAbout": [
+  "Canadian train vacations",
+  "Polar bear tours",
+  "Northern lights tours",
+  "Rocky Mountaineer",
+  "VIA Rail"
+ ]
+}</script>
+<meta property="og:title" content="Fresh Tracks Canada (demo)">
+<meta name="robots" content="noindex">
+</head><body>
+<div class="nav"><div class="w"><a href="#"><img src="img/fresh-tracks-canada-logo.svg" alt="Fresh Tracks Canada"></a>
+<div class="r"><a class="ph" href="tel:+18773955771">1 877 395 5771</a><button class="b" onclick="document.getElementById('as-b').click()">Plan my trip</button></div></div></div>
+
+<div class="hero"><div class="w"><span class="tag">Vancouver since 1996</span>
+<h1>Iconic Canadian trips, built around you</h1>
+<p>Expertly curated vacations created by local travel experts. Every sample itinerary can be personalized with service levels, accommodation, extra nights, exclusive tours and activity level.</p>
+<div class="cta"><button class="b" onclick="document.getElementById('as-b').click()">Talk to an Insider</button><a class="b ol" href="#brands">Ways to travel</a></div></div>
+<div class="rail"><div class="w"><div><b>1996</b>personalized Canadian vacations since</div><div><b>25,000+</b>personalized trips planned</div><div><b>Vancouver</b>based on the West Coast</div><div><b>7 days</b>phone support, Sunday included</div></div></div></div>
+
+<section id="brands"><div class="w"><span class="tag">Ways to travel</span><h2>Three ways into Canada</h2><div class="brands">
+<div class="br"><h3>Canadian Train Vacations</h3><p>Canada's largest travel operator specializing in train vacations: immersive journeys through the Canadian Rockies and coast to coast, including luxury trains, train and cruise combinations and trips for seniors.</p><a href="#" onclick="document.getElementById('as-b').click();return false">Plan a train trip</a></div>
+<div class="br"><h3>Canada Polar Bears</h3><p>Bucket-list wildlife holidays from the specialists in Canadian wildlife, with nature-based tours and a polar bear safari.</p><a href="#" onclick="document.getElementById('as-b').click();return false">Plan a polar bear trip</a></div>
+<div class="br"><h3>Northern Lights Canada</h3><p>Canada has some of the best places in the world to observe the northern lights, and the Insiders take care of the travel details.</p><a href="#" onclick="document.getElementById('as-b').click();return false">Plan a northern lights trip</a></div></div></div></section>
+
+<section class="way"><div class="w cols"><div><span class="tag">How it works</span><h2>You relax, we book it all</h2><p>Your trip begins with a conversation. Bring your dreams and the team helps plan and book every aspect of every day.</p>
+<ol class="tl"><li><b>Tell us how you like to travel</b><span>Your preferences and needs come first. Trips can be as active or relaxed as you like.</span></li><li><b>Choose a sample itinerary</b><span>Personalize it with service level, accommodation, extra nights and exclusive tours.</span></li><li><b>We make the bookings</b><span>Rail tickets, hotels, excursions and activities, meals and transfers.</span></li><li><b>Get the inside scoop</b><span>Receive local advice before you leave, and a phone call is all it takes while you are in Canada.</span></li></ol></div>
+<div><h3 style="font-size:24px">What the Insiders can personalize</h3><div class="chips"><span>Service level</span><span>Accommodation</span><span>Extra nights</span><span>Exclusive tours</span><span>Activity level</span><span>Train routes</span><span>Transfers</span><span>Meals</span></div>
+<h3 style="font-size:24px;margin-top:30px">Where they know Canada</h3><p>From West Coast mountains to Northern tundra and the Atlantic coast, including the Maritime provinces and the Canadian Rockies. The team lives in Canada and spends free time exploring it.</p></div></div></section>
+
+
+<section class="trips"><div class="w"><span class="tag">By rail</span><h2>Train itineraries to start from</h2><p style="max-width:680px;color:var(--mut)">A selection of the Canadian Train Vacations itineraries. Each can be personalized, and travel is April to October.</p>
+<div class="tg">
+<article><h3>Complete Canadian Rockies by Train</h3><div class="rt">Vancouver &rarr; Kamloops &rarr; Jasper &rarr; Lake Louise &rarr; Banff</div><ul><li>8 days / 7 nights</li><li>Rocky Mountaineer</li><li>2 days on the train</li></ul></article>
+<article><h3>Essential Rockies by Train</h3><div class="rt">Vancouver &rarr; Kamloops &rarr; Lake Louise &rarr; Banff</div><ul><li>6 days / 5 nights</li><li>Rocky Mountaineer</li><li>2 days on the train</li></ul></article>
+<article><h3>Classic Eastern Canada by Train</h3><div class="rt">Halifax &rarr; Quebec City &rarr; Montreal</div><ul><li>8 days / 7 nights</li><li>VIA Rail</li><li>2 days and 1 night on the train</li></ul></article>
+<article><h3>Canadian Rockies Prestige Train Journey</h3><div class="rt">Vancouver &rarr; Jasper &rarr; Banff</div><ul><li>9 days / 8 nights</li><li>VIA Rail</li><li>1 day and 1 night on the train</li></ul></article>
+<article><h3>Vancouver to Toronto Train Journey</h3><div class="rt">Vancouver &rarr; Kamloops &rarr; Banff &rarr; Jasper &rarr; Toronto</div><ul><li>11 days / 10 nights</li><li>VIA Rail and Rocky Mountaineer</li><li>5 days on the train</li></ul></article>
+<article class="long"><h3>Canada Coast to Coast by Train</h3><div class="rt">Halifax &rarr; Quebec City &rarr; Montreal &rarr; Toronto &rarr; Jasper &rarr; Lake Louise &rarr; Banff &rarr; Kamloops &rarr; Vancouver</div><ul><li>20 days / 19 nights</li><li>VIA Rail and Rocky Mountaineer</li><li>7 days on the train</li></ul></article></div></div></section>
+
+<section class="pb"><div class="w"><span class="tag">Wildlife</span><h2>Polar bear season in Churchill</h2><p style="max-width:700px">Watch mothers nurture their cubs, see the polar bear migration at its peak, or foster your passion for photography. The team plans accommodation, local transport and unique excursions, including tundra buggy viewing.</p>
+<div class="pbg"><div><b>Classic Churchill Polar Bears</b><span>6 days, October to November</span><em>Winnipeg, Churchill</em></div><div><b>Tundra Buggy Lodge Polar Bear Viewing</b><span>7 days, October to November</span><em>Winnipeg, Churchill</em></div><div><b>Churchill Belugas and Bears Summer Adventure</b><span>7 days, July to August</span><em>Winnipeg, Churchill</em></div></div>
+<blockquote class="one">"I don't know how to top this trip. It was an adventure of a lifetime. I loved seeing all the polar bears in their natural habitat and the dog sledding." <cite>Lori and Mike, GA, USA</cite></blockquote></div></section>
+
+<section class="dark"><div class="w"><span class="tag">Guest voices</span><h2>25,000 trips in, guests still write back</h2><div class="q">
+<blockquote><p>Our trip was amazing! We would love to visit Canada again someday. The train trip was the best!</p><cite>Darlene and Hank, TN, USA</cite></blockquote>
+<blockquote><p>Our experience with Fresh Tracks was excellent. The incredible views, and the Rocky Mountaineer service was impeccable.</p><cite>Daniel, UT, USA</cite></blockquote>
+<blockquote><p>Fresh Tracks set up the best vacation for us. The hotels were perfect and the activities matched us nicely.</p><cite>Gina and Pete, CA, USA</cite></blockquote></div></div></section>
+
+
+<section class="nl"><div class="w"><span class="tag">Aurora season</span><h2>Northern Lights Canada</h2><p style="max-width:680px">Canada has some of the best places in the world to observe this natural phenomenon. Pick a trip idea, and the Insiders handle flights between points, lodging, transfers and the rest of the travel details.</p>
+<div class="how3"><div><b>Pick a base</b><span>Ask the Insider which region suits your dates.</span></div><div><b>Add a second trip</b><span>Combine aurora viewing with a city stay or a train journey.</span></div><div><b>Travel with support</b><span>One phone call away while you are in Canada.</span></div></div></div></section>
+
+<section class="insiders"><div class="w"><span class="tag">Canadian Insiders</span><h2>Local experts, one call away</h2><p style="max-width:700px">Consider the team your contact in Canada before and during your trip. Existing customers can reach their Customer Experience Specialist directly.</p>
+<div class="ins"><div><b>Before you go</b><span>Insider tips and planning</span></div><div><b>On arrival</b><span>Transfers, hotels and meals covered</span></div><div><b>During your trip</b><span>A phone call away in Canada</span></div><div><b>Peace of mind</b><span>Insurance guidance from your advisor</span></div></div></div></section>
+
+
+<section class="pm"><div class="w cols"><div><span class="tag">Peace of mind</span><h2>Safe and responsible travel, before, during and after</h2><p>Health and safety are a top priority. Partners confirm they follow the guidelines of their local health authority, and also abide by World Health Organization and World Travel and Tourism Council standards.</p><p>Suppliers meet or exceed provincial standards for sanitation, with guest rooms thoroughly cleaned and high-touch points such as door knobs and light switches disinfected.</p></div>
+<div><h3 style="font-size:24px">Who they work with</h3><p>Carefully selected travel and tour suppliers across Canada, chosen for excellence of service and high-quality experiences. The close relationship with partners allows itineraries that are exclusive to Fresh Tracks Canada.</p><h3 style="font-size:24px;margin-top:24px">Direct lines for each brand</h3><table class="h"><tr><td>Fresh Tracks Canada</td><td>1 877 395 5771</td></tr><tr><td>Canada Polar Bears</td><td>1 877 395 5671</td></tr><tr><td>Canadian Train Vacations</td><td>1 877 653 8755</td></tr></table></div></div></section>
+
+<section id="contact"><div class="w ct"><div class="card"><span class="tag">Speak to an Insider</span><a class="big" href="tel:+18773955771">1 877 395 5771</a><p style="margin:.2em 0 14px">Toll-free. Existing customers: <a href="tel:+18444402028">1 844 440 2028</a></p><table class="h"><tr><td>Monday to Friday</td><td>6:30am - 5:30pm</td></tr><tr><td>Saturday</td><td>8:30am - 4:30pm</td></tr><tr><td>Sunday</td><td>9:00am - 5:00pm</td></tr></table><p style="font-size:14px;color:var(--mut)">All hours Pacific time.</p></div>
+<div><h3 style="font-size:26px">Find us</h3><p><b>Fresh Tracks Canada Inc.</b><br>1150 Station Street, Suite 200<br>Vancouver, BC, Canada V6A 4C7</p><p>Licensed by Consumer Protection BC. Business registration license No. 14-150211, City of Vancouver.</p><button class="b dk" onclick="document.getElementById('as-b').click()">Start a trip request</button></div></div></section>
+
+<section style="padding-top:0"><div class="w"><h2 style="font-size:32px">Good to know</h2>
+<details><summary>Can I get insurance through Fresh Tracks Canada?</summary><p>Yes. Insurance is highly recommended as the trips are non-refundable. Packages include all-inclusive and non-medical options. Ask your advisor.</p></details>
+<details><summary>What is an insurance quote based on?</summary><p>The packaged trip price per person, each traveller's birth date and the duration of the vacation.</p></details>
+<details><summary>Can I change a sample itinerary?</summary><p>Yes. Each can be personalized with service levels, choice of accommodation, extra nights, exclusive tours and activity level.</p></details>
+<details><summary>What do you ask of your travel partners?</summary><p>Partners follow their local health authority guidelines and World Health Organization and World Travel and Tourism Council standards.</p></details>
+<details><summary>Can I combine two kinds of trip?</summary><p>Yes. Sample itineraries are starting points, so an Insider can add extra nights, exclusive tours or a second region.</p></details>
+<details><summary>Which season are train trips available?</summary><p>The train itineraries listed run April to October, with some ending in September.</p></details>
+<details><summary>When can I see polar bears?</summary><p>The classic Churchill trips run October to November, and a summer belugas and bears trip runs July to August.</p></details>
+<details><summary>How do I get a price?</summary><p>Prices depend on the itinerary, season, service level and travellers, so an Insider will prepare a personalized quote.</p></details></div></section>
+<footer><div class="w"><div><b>Fresh Tracks Canada</b> · Vancouver, BC</div><div>Demo · prepared by Gevorg Hovhannisyan</div><div>Built from the public website. Not an official page.</div></div></footer>
+<script>(function(root){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|s)$/,''):w;}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++)d[i]=[i];for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[m][n];}
+function tokScore(t,k){var st=stem(t),sk=stem(k);if(t==k||st==sk)return 2;if(t.length>=4&&k.length>=4&&(k.indexOf(t)==0||t.indexOf(k)==0||sk.indexOf(st)==0&&st.length>=4))return 1.8;var L=Math.max(t.length,k.length),lim=L>=8?2:L>=5?1:0;if(lim&&t[0]==k[0]&&lev(st,sk)<=lim)return 1.5;return 0;}
+function answer(cfg,text){var nt=norm(text),toks=nt.split(' ').filter(Boolean),best=null,bs=0;
+cfg.kb.forEach(function(e){var s=0,c=0;e.k.forEach(function(kw){var nk=norm(kw),v=0;if(nk.indexOf(' ')>0){if((' '+nt+' ').indexOf(' '+nk+' ')>=0)v=3;else{var ks=nk.split(' '),ok=ks.every(function(x){return toks.some(function(t){return tokScore(t,x)>=1.5;});});if(ok)v=2.2;}}else{toks.forEach(function(t){var q=tokScore(t,nk);if(q>v)v=q;});}
+if(v>0){c++;if(v>s)s=v;}});s+=c>1?0.2*(c-1):0;if(s>bs){bs=s;best=e;}});
+return bs>=1.5?best:null;}
+function isFlow(cfg,text){var nt=norm(text);if((cfg.flow.not||[]).some(function(k){return (' '+nt+' ').indexOf(' '+norm(k)+' ')>=0;}))return false;return (cfg.flow.triggers||[]).some(function(k){var nk=norm(k);return nk.indexOf(' ')>0?(' '+nt+' ').indexOf(' '+nk+' ')>=0:nt.split(' ').some(function(t){return tokScore(t,nk)>=1.5;});});}
+root.AssistCore={norm:norm,answer:answer,isFlow:isFlow};
+if(typeof module!=='undefined')module.exports=root.AssistCore;
+if(typeof document==='undefined')return;
+root.AssistInit=function(cfg){var th=cfg.theme||{};
+var css='#as-b{position:fixed;'+(th.side||'right')+':14px;bottom:14px;z-index:9999;border:0;cursor:pointer;background:'+th.ac+';color:'+th.fg+';height:52px;padding:0 18px;border-radius:'+(th.rad||26)+'px;font:600 15px/1 '+(th.font||'system-ui,sans-serif')+';box-shadow:0 6px 22px rgba(0,0,0,.28);display:flex;align-items:center;gap:8px}'+
+'#as-p{position:fixed;'+(th.side||'right')+':10px;bottom:76px;z-index:9999;width:min(370px,calc(100vw - 20px));height:min(520px,calc(100vh - 100px));background:'+th.bg+';color:'+th.tx+';border-radius:'+Math.min(th.rad||26,18)+'px;box-shadow:0 14px 44px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.4 '+(th.font||'system-ui,sans-serif')+'}#as-p.o{display:flex}'+
+'#as-h{background:'+th.ac+';color:'+th.fg+';padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}#as-h small{display:block;font-weight:400;opacity:.85;font-size:12px}#as-x{background:none;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1}'+
+'#as-l{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}.as-m{max-width:86%;padding:9px 12px;border-radius:14px;word-wrap:break-word}.as-a{background:'+th.bub+';align-self:flex-start}.as-u{background:'+th.ac+';color:'+th.fg+';align-self:flex-end}'+
+'#as-c{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}#as-c button{border:1px solid '+th.ac+';background:transparent;color:'+th.tx+';border-radius:16px;padding:6px 11px;font:13px system-ui,sans-serif;cursor:pointer}'+
+'#as-f{display:flex;gap:6px;padding:10px;border-top:1px solid rgba(128,128,128,.3)}#as-f input{flex:1;min-width:0;padding:10px;border:1px solid rgba(128,128,128,.5);border-radius:10px;font:15px system-ui,sans-serif;background:#fff;color:#111}#as-f button{border:0;background:'+th.ac+';color:'+th.fg+';border-radius:10px;padding:0 14px;font-weight:700;cursor:pointer}';
+var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
+var b=document.createElement('button');b.id='as-b';b.type='button';b.innerHTML='<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4 3h16a2 2 0 012 2v11a2 2 0 01-2 2H9l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg><span></span>';b.lastChild.textContent=cfg.btn||'Ask us';
+var p=document.createElement('div');p.id='as-p';p.innerHTML='<div id="as-h"><div><span></span><small></small></div><button id="as-x" type="button" aria-label="Close">&times;</button></div><div id="as-l" aria-live="polite"></div><div id="as-c"></div><form id="as-f"><input autocomplete="off" aria-label="Message"><button>&rarr;</button></form>';
+document.body.appendChild(b);document.body.appendChild(p);
+var $=function(s){return p.querySelector(s);},L=$('#as-l'),C=$('#as-c'),F=$('#as-f'),I=F.querySelector('input');
+$('#as-h span').textContent=cfg.name;$('#as-h small').textContent=cfg.sub||'';I.placeholder=cfg.ph||'Type a question';
+var step=-1,data={};
+function say(t,u){var d=document.createElement('div');d.className='as-m '+(u?'as-u':'as-a');d.textContent=t;L.appendChild(d);L.scrollTop=L.scrollHeight;}
+function chips(a,fn){C.innerHTML='';a.forEach(function(x){var e=document.createElement('button');e.type='button';e.textContent=x;e.onclick=function(){fn(x);};C.appendChild(e);});}
+function home(){chips(cfg.chips,function(x){ask(x);});}
+function nextStep(){step++;var s=cfg.flow.steps[step];if(!s){var sm=cfg.flow.steps.map(function(z){return z.label+': '+(data[z.key]||'-');}).join('\n');say(cfg.flow.done+'\n\n'+sm);step=-1;data={};home();return;}
+say(s.ask);if(s.opts)chips(s.opts.concat([cfg.flow.cancel||'Cancel']),function(x){flowIn(x);});else chips([cfg.flow.cancel||'Cancel'],function(x){flowIn(x);});}
+function startFlow(){step=-1;data={};say(cfg.flow.intro);nextStep();}
+function flowIn(t){if(norm(t)==norm(cfg.flow.cancel||'Cancel')||/^(cancel|stop|nevermind|no thanks)$/.test(norm(t))){step=-1;data={};say(cfg.flow.cancelled||'No problem, nothing was sent.');home();return;}
+say(t,1);var s=cfg.flow.steps[step];if(s.val&&!s.val.test(t)){say(s.err||'Could you check that again?');return;}data[s.key]=t;nextStep();}
+function ask(t){if(step>=0){flowIn(t);return;}say(t,1);if(isFlow(cfg,t)){startFlow();return;}var e=answer(cfg,t);if(e){say(e.a);if(e.flow){chips([cfg.flow.start||'Start'],function(){startFlow();});return;}}else say(cfg.fallback);home();}
+F.onsubmit=function(ev){ev.preventDefault();var v=I.value.trim();if(!v)return;I.value='';ask(v);};
+var opened=false;function tog(){p.classList.toggle('o');if(!opened){opened=true;say(cfg.greet);home();}}
+b.onclick=tog;$('#as-x').onclick=tog;};
+})(typeof window!=='undefined'?window:globalThis);
+
+var CFG={name:"Fresh Tracks Insider",sub:"Plan your Canadian vacation",btn:"Plan my trip",ph:"Ask about trains, bears, lights",
+theme:{ac:"#ea373c",fg:"#fff",bg:"#f6f4f0",tx:"#2e2e2b",bub:"#e4ebee",rad:4,font:"Archivo,system-ui,sans-serif",side:"right"},
+greet:"Hello! I can answer questions about Fresh Tracks Canada trips, our Insiders and contact hours, or start a trip request for the team.",
+chips:["Train vacations","Polar bears","Northern lights","Office hours","Insurance","Plan my trip"],
+fallback:"I do not have that on the site yet. An Insider can answer it at 1 877 395 5771, or I can start a trip request for the team.",
+flow:{not:["already booked","my booking","booked"],triggers:["plan my trip","plan a trip","book","booking","quote","itinerary request","enquiry","inquiry","trip request","get started","talk to an insider"],start:"Plan my trip",cancel:"Cancel",
+intro:"Let's start. A few questions so an Insider can prepare.",
+done:"Thank you. Your trip request is sent to the team and an Insider will get back to you to personalize the details. Here is what I noted:",
+cancelled:"No problem, nothing was sent.",
+steps:[{key:"trip",label:"Trip",ask:"What kind of trip interests you most?",opts:["Train vacation","Polar bears","Northern lights","City and nature","Not sure yet"]},
+{key:"month",label:"Travel month",ask:"When would you like to travel, roughly?"},
+{key:"group",label:"Travellers",ask:"How many travellers, and any ages or mobility needs the Insider should know about?"},
+{key:"level",label:"Style",ask:"How active would you like the trip to be?",opts:["Relaxed","Balanced","Active"]},
+{key:"contact",label:"Contact",ask:"What name, and email or phone number, should an Insider use?",val:/\S{3,}/}]},
+kb:[
+{id:"hello",k:["hello","hi","hey","good morning"],a:"Hello! Ask me about train vacations, polar bears, northern lights, office hours or planning a trip."},
+{id:"about",k:["who are you","about you","about fresh tracks","company","history","since","1996","vancouver","based","experience"],a:"Fresh Tracks Canada is based in Vancouver and has created personalized Canadian vacations since 1996, with more than 25,000 personalized itineraries planned."},
+{id:"train",k:["train","trains","rail","rocky mountaineer","rockies","coast to coast","luxury train","railway"],a:"Canadian Train Vacations is Canada's largest travel operator specializing in train vacations: journeys through the Canadian Rockies and coast to coast, luxury trains and train and cruise trips.",flow:1},
+{id:"routes",k:["rockies by train","complete canadian rockies","essential rockies","eastern canada","halifax","quebec","montreal","toronto","banff","jasper","lake louise","kamloops","via rail","coast to coast","how long","days"],a:"Train itineraries on the site include Complete Canadian Rockies by Train (8 days), Essential Rockies (6 days), Classic Eastern Canada by Train (Halifax, Quebec City, Montreal, 8 days), Rockies Prestige (9 days), Vancouver to Toronto (11 days) and Coast to Coast (20 days). They run April to October.",flow:1},
+{id:"churchill",k:["churchill","winnipeg","tundra buggy","buggy","beluga","belugas","best time","when to see","october","november"],a:"Polar bear trips run through Winnipeg and Churchill: Classic Churchill Polar Bears (6 days) and Tundra Buggy Lodge viewing (7 days) in October to November, plus a Belugas and Bears summer adventure (7 days) in July to August.",flow:1},
+{id:"bears",k:["polar bear","polar bears","bears","wildlife","churchill","tundra","safari"],a:"Canada Polar Bears offers nature-based wildlife holidays, including a polar bear safari, from the specialists in Canadian wildlife trips.",flow:1},
+{id:"lights",k:["northern lights","aurora","lights","yellowknife"],a:"Northern Lights Canada plans trips to some of the best places in the world to see this natural phenomenon, with all travel details taken care of.",flow:1},
+{id:"seniors",k:["senior","seniors","older","retired","mobility","accessible","elderly"],a:"There are tours for seniors on the Canadian Train Vacations site. Tell the Insider about any mobility needs and the trip can be adjusted.",flow:1},
+{id:"custom",k:["personalize","personalise","customize","customise","change","tailor","itinerary","itineraries","extra nights","service level","accommodation"],a:"Each sample itinerary can be personalized with service level, choice of accommodation, extra nights, exclusive tours and activity level.",flow:1},
+{id:"included",k:["included","include","includes","covered","transfers","meals","hotels","excursions","what do you book","arrangements"],a:"The team makes the bookings: rail tickets, hotels, excursions and activities, meals and transfers, with details covered from the moment you land until you leave.",flow:1},
+{id:"hours",k:["hours","open","opening","closed","office hours","saturday","sunday","weekend","pacific","time zone"],a:"Pacific time: Monday to Friday 6:30am to 5:30pm, Saturday 8:30am to 4:30pm and Sunday 9:00am to 5:00pm."},
+{id:"phone",k:["phone","call","toll free","number","telephone","speak","insider"],a:"Call toll-free 1 877 395 5771. Existing customers can call their Customer Experience Specialist at 1 844 440 2028."},
+{id:"address",k:["address","where are you","office","located","location","street","station"],a:"Fresh Tracks Canada Inc., 1150 Station Street, Suite 200, Vancouver, BC, Canada V6A 4C7."},
+{id:"insurance",k:["insurance","insure","cover","medical","cancel","cancellation","refund","refundable"],a:"Insurance is highly recommended because the trips are non-refundable. Packages include all-inclusive and non-medical options, and the quote depends on trip price per person, birth dates and trip length. Ask your advisor."},
+{id:"customer",k:["existing customer","already booked","my booking","my itinerary","my trip","customer experience"],a:"Existing customers can reach their Customer Experience Specialist toll-free at 1 844 440 2028."},
+{id:"safety",k:["safe","safety","health","covid","clean","sanitation","standards"],a:"Partners follow local health authority guidance and WHO and World Travel and Tourism Council standards, and meet or exceed provincial sanitation standards."},
+{id:"agent",k:["travel agent","advisor","advisors","professional","partner","portal","suppliers","careers","job"],a:"Travel professionals have a Travel Resources Portal with products, trip information, special offers and marketing tools. The team will point you to the right place."},
+{id:"price",k:["price","prices","cost","how much","budget","cheap","quote","rate","deal"],a:"Prices depend on the itinerary, season, service level and number of travellers, so an Insider prepares a personalized quote. I can start a request for you."},
+{id:"licence",k:["licensed","license","licence","registered","iata","consumer protection","legit"],a:"Fresh Tracks Canada is licensed by Consumer Protection BC, with business registration license No. 14-150211 from the City of Vancouver."},
+{id:"thanks",k:["thanks","thank you","great","perfect"],a:"You are welcome! Anything else about your trip?"}
+]};
+var TESTS=[["Do you do train trips through the Rockies","train"],["can I see polar bears","bears"],["where to see the northern light","lights"],["what are your opening hours","hours"],["I'd like to book a trip","FLOW"],["is travel insurance available","insurance"],["can the itinerary be customised","custom"],["phone number","phone"],["where is your office","address"],["what is included, transfers and hotels","included"],["are trips refundable","insurance"],["senior tours","seniors"],["what routes do you have from Banff to Jasper","routes"],["when is the best time for churchill","churchill"],["polar beers","bears"],["northen lights","lights"],["how much does it cost","price"],["are you licensed","licence"],["since when do you exist","about"],["i already booked, need help with my booking","customer"]];
+
+AssistInit(CFG);</script>
+</body></html>

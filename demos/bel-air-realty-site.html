@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Bel-Air Realty Group: boutique Vancouver real estate brokerage since 1992 with a second location in Victoria. Demo page with a consultation assistant.">
+<title>Bel-Air Realty Group · Vancouver and Victoria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0083a8;--teal2:#006a88;--slate:#616264;--ink:#23282b;--mist:#eef5f7;--sand:#f8f6f1;--line:#d9e3e7;--w1:#0083a8;--w1t:#fff;--w2:#616264;--w2t:#fff;--wbg:#eef5f7;--wf:'Mulish',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font:16px/1.65 'Mulish',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Libre Baskerville',Georgia,serif;margin:0;line-height:1.2;font-weight:700}
+a{color:inherit}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+header .in{max-width:1120px;margin:auto;padding:8px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+header img{height:46px;width:auto;display:block}
+header nav{display:none;gap:22px;font-weight:600;font-size:15px}
+header nav a{text-decoration:none;color:var(--slate)}
+.btn{display:inline-block;background:var(--teal);color:#fff;border:0;border-radius:3px;padding:12px 22px;font:700 15px 'Mulish';text-decoration:none;cursor:pointer}
+.btn.g{background:var(--slate)}
+.btn.o{background:transparent;color:var(--teal);border:2px solid var(--teal)}
+@media(min-width:900px){header nav{display:flex}}
+.hero{background:linear-gradient(135deg,var(--teal2) 0,var(--teal) 70%);color:#fff;position:relative;overflow:hidden}
+.hero .in{max-width:1120px;margin:auto;padding:54px 16px 90px;position:relative;z-index:1}
+.hero .k{font-size:13px;letter-spacing:.16em;text-transform:uppercase;opacity:.85;font-weight:700}
+.hero h1{font-size:clamp(34px,7.5vw,60px);margin:12px 0 16px;max-width:780px}
+.hero h1 i{font-weight:400}
+.hero p{max-width:560px;font-size:18px;opacity:.95}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.hero .btn{background:#fff;color:var(--teal2)}
+.hero .btn.o{background:transparent;color:#fff;border-color:#fff}
+.wave{position:absolute;left:0;right:0;bottom:-1px;height:60px;background:#fff;clip-path:polygon(0 60%,10% 45%,22% 62%,35% 40%,50% 58%,64% 38%,78% 60%,90% 44%,100% 58%,100% 100%,0 100%);z-index:1}
+section{padding:54px 16px}
+.w{max-width:1120px;margin:auto}
+h2{font-size:clamp(26px,4.6vw,38px);color:var(--teal2);margin-bottom:10px}
+.sub{color:var(--slate);max-width:660px;margin:0 0 28px}
+.mist{background:var(--mist)}
+.cities{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:800px){.cities{grid-template-columns:minmax(0,1fr) 90px minmax(0,1fr);align-items:center}}
+.city{background:#fff;border:1px solid var(--line);border-radius:6px;padding:22px}
+.city h3{font-size:24px;color:var(--teal2);margin-bottom:6px}
+.sea{text-align:center;color:var(--slate);font-size:13px;text-transform:uppercase;letter-spacing:.1em}
+.sea:before{content:"\21C4";display:block;font-size:34px;color:var(--teal)}
+.q{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:800px){.q{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.qi{border-left:4px solid var(--teal);background:#fff;padding:16px 18px;border-radius:0 6px 6px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.qi h3{font:700 17px 'Libre Baskerville';color:var(--ink);margin-bottom:4px}
+.qi p{margin:0;font-size:15px;color:var(--slate)}
+.team{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:600px){.team{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:960px){.team{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.p{background:#fff;border:1px solid var(--line);border-radius:6px;padding:18px;text-align:center}
+.av{width:56px;height:56px;border-radius:50%;background:var(--teal);color:#fff;font:700 20px 'Libre Baskerville';display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+.p:nth-child(even) .av{background:var(--slate)}
+.p b{display:block;font-size:17px}
+.p small{display:block;color:var(--slate);font-size:13px}
+.p a{display:block;margin-top:6px;font-weight:700;color:var(--teal2);text-decoration:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:#fff;border:1.5px solid var(--teal);color:var(--teal2);border-radius:999px;padding:6px 16px;font-weight:600;font-size:14px}
+.steps{counter-reset:s;display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:800px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.steps div{background:#fff;border:1px solid var(--line);border-radius:6px;padding:18px}
+.steps div:before{counter-increment:s;content:counter(s);font:700 34px 'Libre Baskerville';color:var(--teal);display:block;line-height:1;margin-bottom:6px}
+.steps b{font-size:17px}
+.steps p{margin:4px 0 0;font-size:15px;color:var(--slate)}
+details{background:#fff;border:1px solid var(--line);border-radius:6px;margin-bottom:8px;padding:0 16px}
+summary{cursor:pointer;padding:14px 0;font-weight:700;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";float:right;color:var(--teal);font-size:22px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{margin:0 0 14px;color:var(--slate)}
+.contact{background:var(--slate);color:#fff}
+.contact h2{color:#fff}
+.cg{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:800px){.cg{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cg div{border:1px solid #8a8b8d;border-radius:6px;padding:16px}
+.cg b{display:block;font:700 17px 'Libre Baskerville';margin-bottom:4px}
+footer{background:#3e4042;color:#c3c5c6;text-align:center;padding:22px 16px;font-size:14px}
+#wb{position:fixed;right:16px;bottom:16px;z-index:50;width:58px;height:58px;border-radius:50%;border:0;background:var(--w2);color:var(--w2t);font-size:25px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+#wp{position:fixed;right:12px;bottom:84px;z-index:50;width:min(370px,calc(100vw - 24px));height:min(540px,calc(100vh - 110px));background:#fff;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.4);display:none;flex-direction:column;overflow:hidden;color:#222;font-family:var(--wf,system-ui,sans-serif)}
+#wp.on{display:flex}
+#wh{background:var(--w1);color:var(--w1t);padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+#wh b{font-size:16px}#wh small{display:block;opacity:.8;font-size:12px}
+#wx{background:none;border:0;color:inherit;font-size:26px;cursor:pointer;line-height:1}
+#wm{flex:1;overflow-y:auto;padding:12px;background:var(--wbg);display:flex;flex-direction:column;gap:8px}
+.m{max-width:86%;padding:9px 12px;border-radius:12px;font-size:14.5px;line-height:1.4;white-space:pre-line}
+.m.b{background:#fff;border:1px solid #ddd;align-self:flex-start}
+.m.u{background:var(--w1);color:var(--w1t);align-self:flex-end}
+#wc{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;background:#fff;border-top:1px solid #e3e3e3;max-height:96px;overflow-y:auto}
+#wc button{background:#fff;border:1.5px solid var(--w1);color:var(--w1);border-radius:999px;padding:5px 11px;font:600 13px var(--wf,system-ui,sans-serif);cursor:pointer}
+#wf{display:flex;gap:6px;padding:8px;border-top:1px solid #e3e3e3}
+#wi{flex:1;min-width:0;border:1px solid #ccc;border-radius:8px;padding:9px;font-size:15px}
+#wf button{background:var(--w2);color:var(--w2t);border:0;border-radius:8px;padding:0 14px;font-weight:700;cursor:pointer}
+
+</style></head><body>
+<header><div class="in"><img src="img/bel-air-realty-logo.png" alt="Bel-Air Realty Group"><nav><a href="#services">Services</a><a href="#team">Team</a><a href="#areas">Areas</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav><a class="btn" href="#" onclick="askW('book');return false">Request a call</a></div></header>
+
+<div class="hero"><div class="in"><div class="k">Boutique brokerage · Established 1992</div>
+<h1>Loyalty and care in <i>Metro Vancouver</i> real estate</h1>
+<p>One of the last remaining boutique brokerages in Vancouver, serving families, investors, local businesses and developers across Metro Vancouver, the Fraser Valley and Vancouver Island.</p>
+<div class="cta"><a class="btn" href="#services">What we do</a><a class="btn o" href="#" onclick="askW('book');return false">Talk to the team</a></div></div><div class="wave"></div></div>
+
+<section id="services"><div class="w"><h2>Buying, selling, investing, building</h2><p class="sub">Agents who support and educate clients through every phase, and who are advocates for their clients' goals.</p>
+<div class="steps"><div><b>Buy</b><p>First home, vacation home or investment: neighbourhood advice, mortgage connections, negotiation and a list of due diligence items.</p></div><div><b>Sell</b><p>Pricing that attracts buyers and protects your bottom line, online and offline marketing, staging, video and photography partners.</p></div><div><b>Invest and build</b><p>Cash-flow and growth guidance for investment property, plus help locating a lot and building a custom home.</p></div></div></div></section>
+
+<section class="mist"><div class="w"><h2>Two cities, one team</h2><p class="sub">A second location in Victoria lets agents help clients buy and sell across the Salish Sea in both directions, with the same trust and quality from start to finish.</p>
+<div class="cities"><div class="city"><h3>Vancouver</h3><p style="margin:0;color:var(--slate)">Main office on East Hastings Street, specialising in marketing Greater Vancouver real estate.</p></div><div class="sea">Salish Sea</div><div class="city"><h3>Victoria</h3><p style="margin:0;color:var(--slate)">Second location for Vancouver Island clients and for moves between the island and the mainland.</p></div></div></div></section>
+
+<section><div class="w"><h2>If you are buying</h2><p class="sub">The questions the team says buyers should ask, and how they help.</p>
+<div class="q"><div class="qi"><h3>Are you looking in the right neighbourhood?</h3><p>Each agent has particular neighbourhood expertise and can offer accurate market information, plus alternatives if an area does not work for you.</p></div><div class="qi"><h3>Is it in your budget?</h3><p>The team works with a reputable, well connected mortgage advisor and helps match you with the best broker for your situation.</p></div><div class="qi"><h3>What is achievable within your budget?</h3><p>They analyse what your budget buys and help you stay focused on what matters most.</p></div><div class="qi"><h3>Is this a good deal?</h3><p>Market knowledge and negotiating skill to consult on the best possible deal.</p></div><div class="qi"><h3>What comes after accepting the deal?</h3><p>Referrals to expert inspectors, a complete due diligence checklist, and a clear list of closing costs.</p></div><div class="qi"><h3>Can you still contact your agent afterwards?</h3><p>Yes. The team says not to hesitate with any questions or concerns once the deal is done.</p></div></div></div></section>
+
+<section class="mist"><div class="w"><h2>If you are selling</h2><p class="sub">Complete transparency, with current information on market conditions.</p>
+<div class="q"><div class="qi"><h3>To renovate or not?</h3><p>It is not always necessary, and sometimes it is a waste of money. The agents help you decide what is worth doing.</p></div><div class="qi"><h3>Marketing</h3><p>Online campaigns with social media and other platforms, plus flyers, signage and networking for a well-rounded plan.</p></div><div class="qi"><h3>Getting ready for open houses</h3><p>Partnerships with staging, videography and photography companies help present your property.</p></div><div class="qi"><h3>The right price</h3><p>Priced to attract buyers while protecting your bottom line.</p></div><div class="qi"><h3>Deal or no deal?</h3><p>Trained negotiators who direct you to the best deals and help you walk away when it is in your interest.</p></div><div class="qi"><h3>After the offer</h3><p>Help with the paperwork until the deal is closed, and afterwards to make sure you are happy.</p></div></div></div></section>
+
+<section id="team"><div class="w"><h2>The team</h2><p class="sub">Realtors who vary in age and cultural background, and use that to relate to the communities they serve.</p>
+<div class="team">
+<div class="p"><div class="av">JS</div><b>Jim Sing</b><small>Managing Broker</small></div>
+<div class="p"><div class="av">TS</div><b>Toni Sing</b><small>Personal Real Estate Corporation</small><a href="tel:6048083783">604-808-3783</a></div>
+<div class="p"><div class="av">WS</div><b>Warren Sing</b><small>Personal Real Estate Corporation</small><a href="tel:6046170225">604-617-0225</a></div>
+<div class="p"><div class="av">FM</div><b>Frank Muoio</b><small>Personal Real Estate Corporation</small><a href="tel:6048376427">604-837-6427</a></div>
+<div class="p"><div class="av">NB</div><b>Nayan Bhai</b><small>Personal Real Estate Corporation</small><a href="tel:7788857534">778-885-7534</a></div>
+<div class="p"><div class="av">AX</div><b>Angela Xu</b><small>Personal Real Estate Corporation</small><a href="tel:6047833386">604-783-3386</a></div>
+<div class="p"><div class="av">GS</div><b>Gerald Soong</b><small>Associate Broker</small><a href="tel:6047615803">604-761-5803</a></div></div></div></section>
+
+<section><div class="w"><h2>Meet the agents</h2><p class="sub">A few lines from each profile on the team page.</p>
+<div class="q">
+<div class="qi"><h3>Jim Sing, Principal and Managing Broker</h3><p>A fourth-generation Canadian with a UBC Commerce degree in Urban Land Economics and Finance. He opened Bel-Air Sunrise Realty in East Vancouver in 1992 and has over 40 years of licensed practice.</p></div>
+<div class="qi"><h3>Toni Sing</h3><p>A seasoned negotiator who tailors a blueprint for each client. BA in Psychology from SFU, business degree from BCIT, and co-host of the In The House real estate podcast.</p></div>
+<div class="qi"><h3>Warren Sing</h3><p>Investor since 2004, REALTOR since 2008 and developer since 2012, he enjoys helping clients move from one property to the next. His office is in Victoria.</p></div>
+<div class="qi"><h3>Frank Muoio</h3><p>A Vancouver native known for honesty, integrity and skilled negotiation, building lifelong relationships with clients.</p></div>
+<div class="qi"><h3>Nayan Bhai</h3><p>Recognised in the top 5% of his marketplace with consistent 5-star Google reviews, and well connected across Lower Mainland markets.</p></div>
+<div class="qi"><h3>Angela Xu</h3><p>Arrived from Beijing in 1994, joined Bel-Air in office administration, and became a realtor in 2000.</p></div>
+<div class="qi"><h3>Gerald Soong, Associate Broker</h3><p>In real estate since 2000, with years at local developers and in brokerage management, now serving clients at a grassroots level.</p></div></div></div></section>
+
+<section class="mist"><div class="w"><h2>Two offices</h2><div class="cities" style="margin-top:14px"><div class="city"><h3>Vancouver</h3><p style="margin:0;color:var(--slate)">2621 East Hastings Street, Vancouver, BC V5K 1Z5<br>604-255-5898 · info@belairrealty.ca</p></div><div class="sea">Salish Sea</div><div class="city"><h3>Victoria</h3><p style="margin:0;color:var(--slate)">Bel-Air Realty Group Victoria<br>550-2950 Douglas Street, Victoria, BC V8T 4N4</p></div></div></div></section>
+
+<section class="mist" id="areas"><div class="w"><h2>Where we work</h2><p class="sub">Search by neighbourhood on the site, with featured listings, recent solds and an MLS search.</p>
+<div class="chips"><span>Vancouver</span><span>Burnaby</span><span>Coquitlam</span><span>New Westminster</span><span>North Vancouver</span><span>Port Coquitlam</span><span>Port Moody</span><span>Fraser Valley</span><span>Victoria and Vancouver Island</span></div>
+<p style="margin:20px 0 0;color:var(--slate)">The team's expertise also extends to commercial, multifamily and bare land sales and acquisitions, including land acquisitions for developers in fast-growing parts of Metro Vancouver and Southern Vancouver Island.</p></div></section>
+
+<section><div class="w"><h2>Beyond the usual sale</h2><p class="sub">Three situations where a boutique team with development roots helps.</p>
+<div class="steps"><div><b>Investment property</b><p>A different process from buying your dream home. Is the cash flow positive from day one? Is the area expecting long-term economic and geographic growth? Long-held investments usually see the most appreciation, and the advisors help you start or expand a portfolio.</p></div><div><b>Custom homes</b><p>It begins with locating and acquiring the right building lot. The team then works side by side with you so the home suits your lifestyle, with a personalised, hassle-free process and a view to resale value.</p></div><div><b>Land and development</b><p>Commercial, multifamily and bare land sales and acquisitions, and a main role in land acquisitions for developers in fast-growing areas of Metro Vancouver and Southern Vancouver Island.</p></div></div></div></section>
+
+<section id="faq"><div class="w"><h2>Quick answers</h2><p class="sub">Ask the assistant for anything else.</p>
+<details><summary>Do you help with investment property?</summary><p>Yes. The advisors help you start or expand a portfolio. They suggest checking whether cash flow is positive immediately and whether the area expects long-term growth.</p></details>
+<details><summary>Can you help me build a custom home?</summary><p>Yes, starting with finding and acquiring the right building lot, then working side by side so the home suits your lifestyle and stays marketable.</p></details>
+<details><summary>How fast does the team reply?</summary><p>The aim is the same business day for messages. For the fastest response, call a team member directly.</p></details>
+<details><summary>Who are your clients?</summary><p>Families, investors, local businesses and developers, from all walks of life.</p></details></div></section>
+
+<section class="contact" id="contact"><div class="w"><h2>Get in touch</h2><div class="cg" style="margin-top:16px"><div><b>Office</b>2621 East Hastings Street<br>Vancouver, BC V5K 1Z5</div><div><b>Phone</b><a href="tel:6042555898">604-255-5898</a></div><div><b>Email</b><a href="mailto:info@belairrealty.ca">info@belairrealty.ca</a></div></div></div></section>
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+<button id="wb" type="button" onclick="openW()" aria-label="Open assistant"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg></button><div id="wp" role="dialog" aria-label="Assistant"><div id="wh"><div><b id="wn"></b><small id="ws"></small></div><button id="wx" type="button" onclick="closeW()" aria-label="Close">&times;</button></div><div id="wm" aria-live="polite"></div><div id="wc"></div><form id="wf" autocomplete="off"><input id="wi" type="text" placeholder="Type your question..." aria-label="Message"><button type="submit">Send</button></form></div>
+<script>(function(){var NAME="Bel-Air Assistant",SUB="Buying, selling, Metro Vancouver";
+var GREET="Hello! I'm the assistant for Bel-Air Realty Group. Ask about buying, selling, investment property, custom homes, our team or areas served, or send a consultation request.";
+var FALLBACK="I do not have that detail. The team will confirm it: 604-255-5898 or info@belairrealty.ca.";
+var HOME=["Buying","Selling","Investing","Our team","Areas served","Request a call"];
+var KB=[
+{k:"about long business who company brokerage boutique established 1992 history mission group bel-air belair",a:"Bel-Air Realty Group Ltd. was established in 1992 and is one of Vancouver's last remaining boutique brokerages. Its main office is in Vancouver with a second location in Victoria. The mission is bespoke, solutions-oriented real estate service for clients who value professional excellence, clear communication and honesty.",c:["Our team","Areas served","Request a call"]},
+{k:"buy buying buyer buyers purchase first home vacation property",a:"For buyers the team helps with the neighbourhood (each agent has particular area expertise), the budget (a well connected mortgage advisor, matched to your situation), what is achievable within your budget, negotiating a good deal, referrals to expert inspectors after an accepted offer, a due diligence checklist, and a clear list of closing costs. You can still contact your agent after the deal.",c:["Mortgage","Investing","Request a call"]},
+{k:"sell selling seller sellers list listing price pricing marketing renovate renovation staging photography video open house",a:"For sellers the team helps price the property to attract buyers while protecting your bottom line, advises whether renovating is worth it (it can be a waste), runs online campaigns with social media plus offline flyers, signage and networking, partners with staging, videography and photography companies, prepares you for open houses, and assists until the deal closes.",c:["Request a call","Our team","Recent sales"]},
+{k:"invest investing investment investor investors rental income cash flow portfolio",a:"For investment property the advisors help you start or expand a portfolio. Pointers from the site: check whether the cash flow is positive immediately, and whether the area expects long-term economic and geographic growth, since long-held investments see the most appreciation.",c:["Buying","Request a call"]},
+{k:"custom build builder dream lot land construct building new home",a:"The team helps you build a custom home: it begins with locating and acquiring the right building lot, then working side by side with you so the home suits your lifestyle and stays marketable if you sell later.",c:["Investing","Request a call"]},
+{k:"developer developers development land acquisition commercial multifamily bare",a:"The team has expanded into commercial, multifamily and bare land sales and acquisitions, and has been a main actor in land acquisitions for developers in fast-growing areas of Metro Vancouver and Southern Vancouver Island.",c:["Areas served","Request a call"]},
+{k:"mortgage financing finance loan bank lender broker budget preapproval",a:"Bel-Air works with a reputable, well connected mortgage advisor and helps match you with the best mortgage broker for your situation. The team also analyses what is achievable within your budget.",c:["Buying","Request a call"]},
+{k:"team agents associates realtors broker brokers who toni warren frank gerald nayan angela jim sing muoio soong bhai",a:"The team: Jim Sing (Managing Broker), Toni Sing, Warren Sing, Frank Muoio, Nayan Bhai and Angela Xu (all Personal Real Estate Corporations), and Gerald Soong (Associate Broker). The agents vary in age and cultural background, which helps them relate to the communities they serve.",c:["Phone numbers","Request a call"]},
+{k:"phone numbers direct cell call toni warren frank gerald nayan angela",a:"Direct lines listed on the site: Toni Sing 604-808-3783, Frank Muoio 604-837-6427, Warren Sing 604-617-0225, Gerald Soong 604-761-5803, Nayan Bhai 778-885-7534, Angela Xu 604-783-3386. The office is 604-255-5898.",c:["Request a call","Our team"]},
+{k:"area areas serve served neighbourhood neighborhood vancouver burnaby coquitlam new westminster north port moody fraser valley victoria island city cities",a:"Neighbourhood search covers Vancouver, Burnaby, Coquitlam, New Westminster, North Vancouver, Port Coquitlam, Port Moody and the Fraser Valley. The firm serves Metro Vancouver, the Fraser Valley and Vancouver Island, and the Victoria office helps clients buy and sell across the Salish Sea in both directions.",c:["Buying","Selling","Request a call"]},
+{k:"office address location located where find east hastings visit victoria second",a:"The main office is at 2621 East Hastings Street, Vancouver, BC V5K 1Z5. The Victoria location is Bel-Air Realty Group Victoria, 550-2950 Douglas Street, Victoria, BC V8T 4N4.",c:["Request a call","Our team"]},
+{k:"phone call number email contact reach respond response same day fax",a:"Office: 604-255-5898, email info@belairrealty.ca. The team aims to respond to messages within the same business day; for the fastest response, call a team member directly.",c:["Phone numbers","Our team"]},
+{k:"hours office open opening weekend evening schedule appointment meet",a:"The site does not list office hours. The fastest route is to call a team member directly, and the team aims to reply to written messages within the same business day.",c:["Phone numbers","Request a call"]},
+{k:"listing listings search mls featured sold recent homes properties condos townhouse houses available",a:"The site has featured listings, recent solds and an MLS search, filtered by city and property type (apartment/condo, townhouse, single family residence). I can pass on a viewing request for a listing you like.",c:["Areas served","Request a call"]},
+{k:"language languages speak spoken cantonese mandarin punjabi russian hindi",a:"The team says its realtors vary in age and cultural background and use that to relate to clients and communities. For a specific language, ask the team; they will tell you which agent fits.",c:["Our team","Request a call"]},
+{k:"review reviews rating testimonial testimonials clients say reputation",a:"The site has a Testimonials page, and agent profiles mention consistent 5-star Google reviews and awards. Clients include families, investors, local businesses and developers.",c:["Our team","Request a call"]},
+{k:"inspection inspector closing costs due diligence after offer accepted deal done subject conditions",a:"After an accepted offer, buyers are referred to expert inspectors, given a list of critical due diligence items, and told about all closing costs and when they are due. Agents stay available after the deal.",c:["Buying","Request a call"]},
+{k:"jim sing who runs brokerage principal managing broker founder owner opened sunrise generation history",a:"Jim Sing is the Principal and Managing Broker. A fourth-generation Canadian with a UBC Bachelor of Commerce in Urban Land Economics and Finance (1980), he started in industrial, commercial and investment real estate, moved into residential in 1982, opened Bel-Air Sunrise Realty in East Vancouver in 1992, and has over 40 years of licensed practice.",c:["Our team","Request a call"]},
+{k:"toni sing negotiator podcast psychology sfu bcit mom family teams blueprint",a:"Toni Sing is a seasoned agent and expert negotiator who tailors a blueprint for each client. She holds a BA in Psychology from SFU, a business degree from BCIT and her real estate licence from UBC, and co-hosts the In The House real estate podcast.",c:["Our team","Request a call"]},
+{k:"warren sing victoria investor developer realtor transition sale purchase move douglas",a:"Warren Sing has been a real estate investor since 2004, a REALTOR since 2008 and a developer since 2012. He especially enjoys helping clients move from the sale of one property to the purchase of another, and his agent office is Bel-Air Realty Group Victoria.",c:["Our team","Request a call"]},
+{k:"frank muoio native vancouver integrity honesty negotiator",a:"Frank Muoio is a Vancouver native and seasoned professional known for honesty, integrity, dedication and skilled negotiation, connecting the right buyers and sellers and building lifelong client relationships.",c:["Our team","Request a call"]},
+{k:"angela xu beijing mandarin chinese 1994 nankai administration mentor 2000 started",a:"Angela Xu came to Vancouver from Beijing in 1994, started in office administration at Bel-Air Realty, and became a realtor in 2000. She holds a commerce BA from Nankai University.",c:["Our team","Request a call"]},
+{k:"gerald soong associate broker rennie bosa millennium advisors grassroots",a:"Gerald Soong is an Associate Broker who got into real estate in 2000, worked with local developers including Millennium Development and Bosa Properties, and from 2004 to 2023 was at Rennie, in sales operations and brokerage management. He now serves clients at a grassroots level.",c:["Our team","Request a call"]},
+{k:"nayan bhai award top five percent google reviews lower mainland",a:"Nayan Bhai is originally from Vancouver, an award-winning agent recognised in the top 5% of his marketplace with consistent 5-star Google reviews, known for honesty, adaptability and timely responses across Lower Mainland markets.",c:["Our team","Request a call"]},
+{k:"hello hi hey howdy",a:"Hello! I can help with buying, selling, investing, custom homes, our team and areas served, or take a consultation request.",c:["Buying","Selling","Request a call"]}
+];
+var STEPS=[
+{key:'goal',q:"What are you looking to do?",chips:["Buy","Sell","Invest","Build a custom home","Just exploring"]},
+{key:'area',q:"Which area?",chips:["Vancouver","Burnaby / New West","Tri-Cities","North Shore","Fraser Valley","Victoria"]},
+{key:'when',q:"What is your timeline?",chips:["Now","1 to 3 months","3 to 6 months","Later"]},
+{key:'name',q:"Your name?",chips:[]},
+{key:'phone',q:"Best phone number or email for the team to reach you?",chips:[]}
+];
+function SUMMARY(d){return "Thanks "+d.name+". Request noted:\n"+d.goal+" · "+d.area+" · timeline: "+d.when+"\nContact: "+d.phone+"\n\nThis has been sent to the team, who aim to reply the same business day. (Demo: nothing is actually sent.)"}
+
+/*ENGINE*/
+var STOP="the a an of to is are do does you your i me my we can for in on at and or it be have has with about how what when where which there here".split(" ");
+function norm(s){return s.toLowerCase().replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ers|er|es|ed|s)$/,""):w}
+function lev(a,b){if(a==b)return 0;if(Math.abs(a.length-b.length)>1)return 2;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function lev2(a,b){var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function hit(w,kw){var s=stem(w);if(kw==w||stem(kw)==s)return 1;if(w.length>=5&&kw.length>=5){if(lev(w,kw)<=1||lev(s,stem(kw))<=1)return .9;if(w.length>=7&&kw.length>=7&&lev2(w,kw)<=2)return .8}if(w.length>=4&&(kw.indexOf(w)==0||w.indexOf(kw)==0)&&kw.length>=4)return .6;return 0}
+function answer(q){var ws=norm(q).split(" ").filter(function(w){return w&&STOP.indexOf(w)<0});if(!ws.length)ws=norm(q).split(" ").filter(function(w){return w});var best=null,bs=0;KB.forEach(function(e){var kws=e.k.split(" "),sc=0;ws.forEach(function(w){var m=0;kws.forEach(function(kw){m=Math.max(m,hit(w,kw))});sc+=m});if(sc>bs){bs=sc;best=e}});return bs>=.9?best:null}
+var BOOKWORDS=/\b(book|booking|booked|enquire|enquiry|inquiry|appointment|appointments|reserve|reservation|enrol|enroll|enrollment|enrolment|sign up|signup|schedule|register|registration|trial|visit|consultation)\b/;
+/*END*/
+var $=function(i){return document.getElementById(i)},M=$('wm'),C=$('wc'),I=$('wi'),flow=null,data={},si=0;
+function say(t,who){var d=document.createElement('div');d.className='m '+(who||'b');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight}
+function chips(a){C.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){handle(t)};C.appendChild(b)})}
+function openW(mode,pre){$('wp').classList.add('on');if(!M.children.length){say(GREET);chips(HOME)}if(mode=='book'){startBook(pre)}}
+function closeW(){$('wp').classList.remove('on')}
+function startBook(pre){flow=1;data={};si=0;if(pre&&STEPS[0]){data[STEPS[0].key]=pre}ask()}
+function ask(){while(si<STEPS.length&&data[STEPS[si].key])si++;if(si>=STEPS.length){finish();return}say(STEPS[si].q);chips(STEPS[si].chips)}
+function finish(){flow=null;say(SUMMARY(data));chips(HOME)}
+function handle(t){say(t,'u');if(flow){if(/^(cancel|stop|exit)$/i.test(t.trim())){flow=null;say("No problem, request cancelled.");chips(HOME);return}data[STEPS[si].key]=t;si++;ask();return}
+if(BOOKWORDS.test(norm(t))||/^book/i.test(t)){startBook();return}
+var r=answer(t);if(r){say(r.a);chips(r.c)}else{say(FALLBACK);chips(HOME)}}
+$('wf').addEventListener('submit',function(e){e.preventDefault();var v=I.value.trim();if(!v)return;I.value='';handle(v)});
+
+$("wn").textContent=NAME;$("ws").textContent=SUB;window.openW=openW;window.closeW=closeW;window.askW=function(t){openW();handle(t)};})();</script>
+</body></html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-IE"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Travel Suite | Luxury cruises and holidays, Milltown Dublin</title>
+<meta name="description" content="Demo page for The Travel Suite, Dublin: luxury cruises, resorts, honeymoons and an appointment assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#223663;--deep:#141f3c;--teal:#0bac8d;--mist:#eef3f6;--gold:#b8975a;--ink:#1b2236;--mut:#5b6580}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.65 Jost,system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.1;margin:0 0 .45em;color:var(--navy)}
+a{color:var(--teal)}
+.w{max-width:1100px;margin:0 auto;padding:0 20px}
+header{position:absolute;left:0;right:0;top:0;z-index:20}
+header .w{display:flex;justify-content:space-between;align-items:center;padding-top:14px;padding-bottom:14px;gap:12px}
+.logo{background:#fff;border-radius:10px;padding:8px 12px;display:flex}.logo img{height:38px;width:auto;display:block}
+.hl{display:flex;gap:10px;align-items:center}
+.hl a.t{color:#fff;text-decoration:none;font-weight:500;font-size:15px;display:none}
+.pill{background:var(--teal);color:#fff;text-decoration:none;border:0;border-radius:30px;padding:11px 20px;font:500 15px Jost,sans-serif;cursor:pointer;letter-spacing:.02em}
+.pill.o{background:none;border:1px solid rgba(255,255,255,.7)}
+@media(min-width:760px){.hl a.t{display:inline}}
+.hero{background:radial-gradient(120% 90% at 85% 10%,#2c4a86 0%,var(--navy) 45%,var(--deep) 100%);color:#fff;padding:130px 0 80px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-160px;bottom:-200px;width:520px;height:520px;border-radius:50%;border:1px solid rgba(184,151,90,.5);box-shadow:0 0 0 40px rgba(184,151,90,.07),0 0 0 90px rgba(184,151,90,.05)}
+.hero .w{position:relative;z-index:1}
+.eyebrow{letter-spacing:.22em;text-transform:uppercase;font-size:12.5px;color:#9fe6d6;font-weight:500}
+.hero h1{color:#fff;font-size:clamp(40px,9vw,84px);margin:.25em 0 .3em;max-width:900px}
+.hero h1 i{color:var(--gold)}
+.hero p{max-width:620px;font-size:19px;color:#d6dcec}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.award{display:inline-flex;gap:10px;align-items:center;margin-top:34px;border:1px solid rgba(255,255,255,.25);border-radius:40px;padding:8px 16px;font-size:14px;color:#e6ecff}
+.award b{color:var(--gold)}
+.band{background:var(--mist);padding:20px 0;border-bottom:1px solid #dfe6ec}
+.facts{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));text-align:center}
+.facts div{font-size:14px;color:var(--mut)}.facts b{display:block;font:600 30px "Cormorant Garamond",serif;color:var(--navy)}
+section{padding:70px 0}
+h2{font-size:clamp(32px,5.5vw,52px)}
+.lab{letter-spacing:.2em;text-transform:uppercase;font-size:12.5px;color:var(--teal);font-weight:600;margin-bottom:8px}
+.split{display:grid;gap:34px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:820px){.split{grid-template-columns:1fr 1fr;align-items:start}}
+.founders{display:grid;gap:14px}
+.fc{border-left:3px solid var(--gold);padding:4px 0 4px 18px}.fc b{font:600 24px "Cormorant Garamond",serif;color:var(--navy);display:block}.fc span{color:var(--mut);font-size:15px}
+.why{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:10px}.why li{padding:11px 14px;background:var(--mist);border-radius:8px;font-size:15.5px}
+.res{background:var(--deep);color:#fff;position:relative;overflow:hidden}
+.res h2{color:#fff}.res .lab{color:#9fe6d6}
+.rg{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr))}
+.rc{border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:22px 20px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));min-width:0}
+.rc small{color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-size:11.5px}.rc h3{color:#fff;font-size:24px;margin:.3em 0 .1em}
+.rc p{margin:0;color:#c9d1e6;font-size:15px}
+.regions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.regions span{border:1px solid rgba(255,255,255,.3);padding:6px 16px;border-radius:30px;font-size:14px;color:#e8eefc}
+.pk{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.pc{border:1px solid #dde4ea;border-radius:6px;overflow:hidden;min-width:0}
+.pc .tp{background:linear-gradient(135deg,var(--navy),#3a5a9b);color:#fff;padding:22px 20px;min-height:90px;display:flex;align-items:flex-end}
+.pc .tp h3{color:#fff;margin:0;font-size:23px}.pc .bt{padding:16px 20px}.pc p{margin:0 0 6px;color:var(--mut);font-size:15px}
+.pc:nth-child(2) .tp{background:linear-gradient(135deg,#0a7e69,var(--teal))}.pc:nth-child(3) .tp{background:linear-gradient(135deg,#6e5a2e,var(--gold))}
+.cruise{background:var(--mist)}
+.pl{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.pl span{background:#fff;border:1px solid #d3dce5;padding:7px 15px;border-radius:4px;font-size:14.5px;color:var(--navy)}
+.show{position:relative;overflow:hidden;background:linear-gradient(120deg,var(--teal),#067e69);color:#fff}
+.show:before{content:"";position:absolute;left:-100px;top:-100px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.1)}
+.show .w{position:relative;display:grid;gap:20px;grid-template-columns:minmax(0,1fr);align-items:center}
+@media(min-width:820px){.show .w{grid-template-columns:1.4fr 1fr}}
+.show h2{color:#fff}.dt{font:600 56px "Cormorant Garamond",serif;line-height:1}.dt small{display:block;font:500 14px Jost;letter-spacing:.15em;text-transform:uppercase}
+.hours{width:100%;border-collapse:collapse;font-size:16px}.hours td{padding:9px 6px;border-bottom:1px solid #dde4ea}.hours td:last-child{text-align:right;font-weight:500}.hours tr.cl td{color:#98a2b8}
+.visit{display:grid;gap:30px;grid-template-columns:minmax(0,1fr)}@media(min-width:820px){.visit{grid-template-columns:1fr 1fr}}
+.ad{background:var(--mist);border-radius:8px;padding:24px}.ad p{margin:.3em 0}
+details{border-bottom:1px solid #dde4ea;padding:14px 0}summary{cursor:pointer;font:600 22px "Cormorant Garamond",serif;color:var(--navy)}details p{margin:.5em 0 0;color:var(--mut)}
+.insp{background:#fff}.bl{display:grid;gap:18px;margin-top:24px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}.bl article{border-top:2px solid var(--gold);padding-top:14px;min-width:0}.bl small{color:var(--teal);letter-spacing:.14em;text-transform:uppercase;font-size:12px;font-weight:600}.bl h3{font-size:23px;margin:.25em 0}.bl p{margin:0;color:var(--mut);font-size:15px}
+.steps{background:var(--deep);color:#fff}.steps h2{color:#fff}.steps .lab{color:#9fe6d6}.st{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}.st li{display:flex;gap:14px;align-items:flex-start;min-width:0}.st b{font:600 40px "Cormorant Garamond",serif;color:var(--gold);line-height:1}.st h3{color:#fff;font-size:22px;margin-bottom:.15em}.st p{margin:0;color:#c9d1e6;font-size:15px}.st li>div{min-width:0}
+.gd{background:var(--mist)}.gdg{display:grid;gap:14px;margin-top:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}.gdg>div{background:#fff;padding:18px 20px;border-radius:6px;border-left:3px solid var(--teal);min-width:0}.gdg h3{font-size:22px}.gdg p{margin:0;color:var(--mut);font-size:15px}
+.styles{background:#fff}.sty{display:grid;gap:16px;margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}.sty>div{border:1px solid #dde4ea;border-top:4px solid var(--navy);padding:18px;border-radius:4px;min-width:0}.sty>div:nth-child(2){border-top-color:var(--teal)}.sty>div:nth-child(3){border-top-color:var(--gold)}.sty h3{font-size:22px}.sty p{margin:0;color:var(--mut);font-size:15px}.note{margin-top:18px;color:var(--mut);font-size:15px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+footer{background:var(--deep);color:#aab4cf;padding:34px 0;font-size:14px}footer .w{display:grid;gap:8px}footer b{color:#fff}
+@media(max-width:600px){.hero{padding:110px 0 60px}section{padding:50px 0}}
+</style><script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "TravelAgency",
+ "name": "The Travel Suite",
+ "description": "Award-winning Irish luxury travel agency: luxury cruises, resorts and honeymoons, founded by Mary McKenna and Lorraine Quinn.",
+ "telephone": "+353-1-905-9008",
+ "email": "sales@thetravelsuite.ie",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "Unit 1, Milltown Centre, Milltown",
+  "addressLocality": "Dublin",
+  "postalCode": "D06 E8W2",
+  "addressCountry": "IE"
+ },
+ "openingHoursSpecification": [
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": [
+    "Monday",
+    "Tuesday",
+    "Friday"
+   ],
+   "opens": "09:00",
+   "closes": "17:30"
+  },
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": "Wednesday",
+   "opens": "10:00",
+   "closes": "17:30"
+  },
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": "Thursday",
+   "opens": "09:00",
+   "closes": "19:30"
+  }
+ ],
+ "founder": [
+  {
+   "@type": "Person",
+   "name": "Mary McKenna"
+  },
+  {
+   "@type": "Person",
+   "name": "Lorraine Quinn"
+  }
+ ],
+ "award": "Best Luxury Agency, ITTN Irish Travel Trade Awards 2025",
+ "knowsAbout": [
+  "Luxury cruises",
+  "River cruising",
+  "Maldives",
+  "Honeymoons",
+  "Business Class fares"
+ ]
+}</script>
+<meta property="og:title" content="The Travel Suite (demo)">
+<meta name="robots" content="noindex">
+</head><body>
+<header><div class="w"><a class="logo" href="#"><img src="img/the-travel-suite-logo.png" alt="The Travel Suite"></a>
+<div class="hl"><a class="t" href="#resorts">Resorts</a><a class="t" href="#cruise">Cruises</a><a class="t" href="#visit">Visit</a><button class="pill" onclick="document.getElementById('as-b').click()">Book appointment</button></div></div></header>
+
+<div class="hero"><div class="w"><div class="eyebrow">Luxury travel, Milltown, Dublin</div>
+<h1>Luxury cruises and holidays, <i>tailored</i> by people who have been there</h1>
+<p>Worldwide luxury cruises and tailor-made holidays across the Indian Ocean, the Caribbean, the USA, Europe and river cruising, plus access to exclusive Business Class fares.</p>
+<div class="cta"><button class="pill" onclick="document.getElementById('as-b').click()">Book an appointment</button><a class="pill o" href="#packages">View our packages</a></div>
+<div class="award"><b>Award winning</b> Best Luxury Agency, ITTN Irish Travel Trade Awards 2025</div></div></div>
+<div class="band"><div class="w facts"><div><b>30+</b>years of industry expertise through Tour America</div><div><b>2</b>founders, Mary McKenna and Lorraine Quinn</div><div><b>Irish-owned</b>licensed by the Irish Aviation Authority</div><div><b>Mon-Fri</b>open weekdays, late on Thursday</div></div></div>
+
+<section id="about"><div class="w split"><div><div class="lab">About us</div><h2>Luxury travel, built on trust</h2><p>The Travel Suite crafts bespoke luxury travel that goes beyond the ordinary: luxury cruises, river voyages and exclusive resort getaways across the USA, the Caribbean, Europe and the Indian Ocean.</p><p>Founded by travel experts Mary McKenna and Lorraine Quinn and backed by over 30 years of experience through the Tour America group, the agency was recently recognised as Best Luxury Agency at the ITTN Awards 2025.</p>
+<div class="founders"><div class="fc"><b>Mary McKenna</b><span>Co-founder</span></div><div class="fc"><b>Lorraine Quinn</b><span>Co-founder and Managing Director</span></div></div></div>
+<div><h3>Why book with us</h3><ul class="why"><li>Curating travel for over 30 years</li><li>A personal concierge service</li><li>Peace of mind when booking with the team</li><li>The most trusted brands, who go above and beyond</li><li>Experiences that are unique and tailor-made</li><li>The team on hand whenever you need them</li></ul></div></div></section>
+
+<section id="resorts" class="res"><div class="w"><div class="lab">Resorts</div><h2>Handpicked luxury resorts</h2><p style="max-width:640px;color:#c9d1e6">Exclusive, handpicked packages designed to indulge and inspire every traveller. A few from the collection:</p>
+<div class="rg"><div class="rc"><small>Maldives</small><h3>Waldorf Astoria Maldives Ithaafushi</h3><p>A Maldives resort from the exclusive collection.</p></div><div class="rc"><small>Maldives</small><h3>Sun Siyam Resorts</h3><p>One of the most searched names on the site.</p></div><div class="rc"><small>Popular search</small><h3>IKOS Odisia</h3><p>One of the resorts guests look for most on the site.</p></div><div class="rc"><small>Algarve</small><h3>Martinhal Quinta do Lago</h3><p>A family resort in the Algarve.</p></div><div class="rc"><small>Palmanova</small><h3>Zafiro Palmanova</h3><p>A resort holiday from the collection.</p></div><div class="rc"><small>New York</small><h3>The Peninsula New York</h3><p>A New York City stay in the resort collection.</p></div><div class="rc"><small>Malta</small><h3>Rosselli, AX Privilege</h3><p>The featured resort at the moment.</p></div></div>
+<div class="regions"><span>Indian Ocean</span><span>The Maldives</span><span>Caribbean</span><span>USA</span><span>Europe</span><span>Business Class fares</span></div></div></section>
+
+<section id="packages"><div class="w"><div class="lab">Packages</div><h2>Suite picks of the week</h2><div class="pk">
+<div class="pc"><div class="tp"><h3>Maldives honeymoon</h3></div><div class="bt"><p>Couples getaways, beach villas and a family offer where the first child stays free.</p></div></div>
+<div class="pc"><div class="tp"><h3>Norway in a Nutshell</h3></div><div class="bt"><p>A fjords rail and cruise holiday. The blog also covers Oslo for families and couples.</p></div></div>
+<div class="pc"><div class="tp"><h3>The Golden Route, Japan</h3></div><div class="bt"><p>Tokyo, Hakone and Kyoto.</p></div></div>
+<div class="pc"><div class="tp"><h3>Vienna, Salzburg and Munich</h3></div><div class="bt"><p>An Easter rail journey through Europe.</p></div></div>
+<div class="pc"><div class="tp"><h3>Explora Journeys</h3></div><div class="bt"><p>Mediterranean and Athens to Istanbul sailings, plus new river cruising.</p></div></div>
+<div class="pc"><div class="tp"><h3>South Africa</h3></div><div class="bt"><p>From Cape Town to the safari plains.</p></div></div></div></div></section>
+
+<section id="cruise" class="cruise"><div class="w split"><div><div class="lab">Cruise</div><h2>Trusted cruise partners</h2><p>Luxury ocean, river and expedition lines, from suite-class experiences to yacht-style sailings. Ask the team which one fits your travel style.</p></div>
+<div class="pl"><span>AmaWaterways</span><span>APT Travelmarvel</span><span>Avalon Waterways</span><span>Azamara</span><span>Celebrity Cruises</span><span>Crystal</span><span>Cunard</span><span>Emerald Cruises</span><span>Explora Journeys</span><span>Four Seasons Yachts</span><span>MSC Yacht Club</span><span>NCL The Haven</span><span>Oceania Cruises</span><span>Ponant</span><span>Princess Cruises</span><span>Quark Expeditions</span><span>Regent Seven Seas</span><span>Riviera Travel</span><span>Royal Caribbean Suite Class</span><span>Scenic</span><span>Seabourn</span><span>SeaDream Yacht Club</span><span>Silversea</span></div></div></section>
+
+<section class="show"><div class="w"><div><div class="lab" style="color:#d5fff4">Event</div><h2>Luxury Travel and Honeymoon Show</h2><p>Ireland's first luxury travel and honeymoon show comes to Dublin, bringing leading luxury resorts and cruise lines together. Ask the team how to attend.</p><button class="pill" style="background:#fff;color:#067e69" onclick="document.getElementById('as-b').click()">Ask about the show</button></div><div class="dt"><small>Dublin</small>14 Nov</div></div></section>
+
+
+<section class="insp"><div class="w"><div class="lab">Inspiration</div><h2>Stories from the team</h2><p style="max-width:640px;color:var(--mut)">First-hand travel writing from the blog, so you can see how the team thinks about a destination before you book.</p>
+<div class="bl">
+<article><small>Norway</small><h3>Discovering Norway: three cities, three nights</h3><p>By Lorraine Quinn, Managing Director, on a short break that packs in far more than expected.</p></article>
+<article><small>Norway</small><h3>5 days in Oslo for families and couples</h3><p>Why Norway suits both a family holiday and a couples escape.</p></article>
+<article><small>Mauritius</small><h3>My first-hand experience of Heritage Le Telfair and Heritage Awali</h3><p>Written on the last day of a stay at two Mauritius resorts.</p></article>
+<article><small>Cruise</small><h3>Explora Journeys river cruising</h3><p>A new era of luxury on Europe's rivers, with something romantic about each stop.</p></article>
+<article><small>South Africa</small><h3>From Cape Town to the safari plains</h3><p>Few destinations offer such diversity in one trip.</p></article>
+<article><small>Awards</small><h3>Best Luxury Agency at the ITTN Awards</h3><p>The Travel Suite wins at the Irish Travel Trade Awards.</p></article></div></div></section>
+
+<section class="steps"><div class="w"><div class="lab">How an appointment works</div><h2>Four steps to a tailored trip</h2><ol class="st">
+<li><b>01</b><div><h3>Tell us your plans</h3><p>Choose a cruise, honeymoon, resort or river journey, or say you are not sure yet.</p></div></li>
+<li><b>02</b><div><h3>Pick a time</h3><p>Open Monday to Friday, with Thursday evenings until 7:30pm, at Milltown or by phone.</p></div></li>
+<li><b>03</b><div><h3>Meet your travel designer</h3><p>A travel designer talks through the Indian Ocean, Caribbean, USA, Europe and river options.</p></div></li>
+<li><b>04</b><div><h3>Receive a tailored plan</h3><p>The team confirms details and keeps in touch whenever you need them.</p></div></li></ol></div></section>
+
+<section class="gd"><div class="w"><div class="lab">Good to know</div><h2>Before you travel</h2><div class="gdg"><div><h3>Gift vouchers</h3><p>The site has gift voucher and travel voucher terms, for a present that is a journey.</p></div><div><h3>Travel insurance</h3><p>Insurance information sits on the site alongside the terms and conditions.</p></div><div><h3>Visa guidance</h3><p>A visa page helps you check what your destination needs.</p></div><div><h3>Newsletter</h3><p>Sign up for luxury cruise and holiday news from the team.</p></div><div><h3>Brochures</h3><p>An Autumn 2026 luxury and honeymoon brochure for honeymoons, celebrations and once-in-a-lifetime journeys.</p></div><div><h3>Community</h3><p>The agency has a page on supporting its community.</p></div></div></div></section>
+
+
+<section class="styles"><div class="w"><div class="lab">Ways to sail</div><h2>Ocean, river, expedition, yacht</h2>
+<div class="sty"><div><h3>Ocean suites</h3><p>Suite-class programs with lines such as Celebrity The Retreat, NCL The Haven, MSC Yacht Club, Royal Caribbean Suite Class and Cunard.</p></div><div><h3>River journeys</h3><p>AmaWaterways, Avalon, Scenic, Emerald Waterways, Celebrity River Cruises and Riverside Luxury Cruises, plus the new Explora Journeys river product.</p></div><div><h3>Expeditions</h3><p>Quark Expeditions and Ponant for travellers who want to go further afield.</p></div><div><h3>Yacht-style sailings</h3><p>Four Seasons Yachts, SeaDream Yacht Club and Silversea for smaller-scale luxury.</p></div></div>
+<p class="note">Each partner has its own page on the website. The team will match the line to how you like to travel.</p></div></section>
+
+<section id="visit"><div class="w visit"><div><div class="lab">Visit us</div><h2>Come to the office</h2><div class="ad"><p><b>The Travel Suite</b><br>Unit 1, Milltown Centre, Milltown, Dublin, D06 E8W2</p><p>Phone <a href="tel:+35319059008">+353 1 905 9008</a><br>Email <a href="mailto:sales@thetravelsuite.ie">sales@thetravelsuite.ie</a></p><p style="color:var(--mut);font-size:14px">Licensed by the Irish Aviation Authority, TA0443.</p></div></div>
+<div><div class="lab">Opening hours</div><table class="hours"><tr><td>Monday</td><td>9am - 5:30pm</td></tr><tr><td>Tuesday</td><td>9am - 5:30pm</td></tr><tr><td>Wednesday</td><td>10am - 5:30pm</td></tr><tr><td>Thursday</td><td>9am - 7:30pm</td></tr><tr><td>Friday</td><td>9am - 5:30pm</td></tr><tr class="cl"><td>Saturday</td><td>Closed</td></tr><tr class="cl"><td>Sunday</td><td>Closed</td></tr></table></div></div></section>
+
+<section style="background:var(--mist)"><div class="w"><div class="lab">FAQ</div><h2>Before you ask</h2>
+<details><summary>Do I need an appointment?</summary><p>You can book an appointment through the site or the assistant. The team will confirm the time.</p></details>
+<details><summary>Can you plan a honeymoon?</summary><p>Yes. Honeymoons are a speciality, with Maldives packages and a Luxury Travel and Honeymoon brochure for Autumn 2026.</p></details>
+<details><summary>Which regions do you cover?</summary><p>The Indian Ocean, the Caribbean, the USA, Europe and river cruising, plus Business Class fares.</p></details>
+<details><summary>Are you licensed?</summary><p>Yes, licensed by the Irish Aviation Authority, TA0443.</p></details>
+<details><summary>Is there anything for people travelling alone?</summary><p>Explora Journeys has solo Mediterranean sailings in the packages. Ask the team about solo options for your dates.</p></details>
+<details><summary>Do you offer Business Class flights?</summary><p>Yes, the agency has access to exclusive Business Class fares alongside its holidays and cruises.</p></details>
+<details><summary>Can I visit the office without an appointment?</summary><p>The office welcomes visitors during opening hours. An appointment helps the team set aside time for you, especially on a Thursday evening.</p></details>
+<details><summary>Where do I find the latest offers?</summary><p>The website lists suite picks of the week, cruise offers and resort packages. Ask the team to match one to your dates.</p></details>
+<details><summary>How do I get a price?</summary><p>Prices depend on dates and the room or suite. The team prepares a tailored proposal after you share your plans.</p></details></div></section>
+<footer><div class="w"><div><b>The Travel Suite</b> · Unit 1, Milltown Centre, Milltown, Dublin</div><div>Demo · prepared by Gevorg Hovhannisyan</div><div>Built from the public website. Not an official page.</div></div></footer>
+<script>(function(root){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|s)$/,''):w;}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++)d[i]=[i];for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[m][n];}
+function tokScore(t,k){var st=stem(t),sk=stem(k);if(t==k||st==sk)return 2;if(t.length>=4&&k.length>=4&&(k.indexOf(t)==0||t.indexOf(k)==0||sk.indexOf(st)==0&&st.length>=4))return 1.8;var L=Math.max(t.length,k.length),lim=L>=8?2:L>=5?1:0;if(lim&&t[0]==k[0]&&lev(st,sk)<=lim)return 1.5;return 0;}
+function answer(cfg,text){var nt=norm(text),toks=nt.split(' ').filter(Boolean),best=null,bs=0;
+cfg.kb.forEach(function(e){var s=0,c=0;e.k.forEach(function(kw){var nk=norm(kw),v=0;if(nk.indexOf(' ')>0){if((' '+nt+' ').indexOf(' '+nk+' ')>=0)v=3;else{var ks=nk.split(' '),ok=ks.every(function(x){return toks.some(function(t){return tokScore(t,x)>=1.5;});});if(ok)v=2.2;}}else{toks.forEach(function(t){var q=tokScore(t,nk);if(q>v)v=q;});}
+if(v>0){c++;if(v>s)s=v;}});s+=c>1?0.2*(c-1):0;if(s>bs){bs=s;best=e;}});
+return bs>=1.5?best:null;}
+function isFlow(cfg,text){var nt=norm(text);if((cfg.flow.not||[]).some(function(k){return (' '+nt+' ').indexOf(' '+norm(k)+' ')>=0;}))return false;return (cfg.flow.triggers||[]).some(function(k){var nk=norm(k);return nk.indexOf(' ')>0?(' '+nt+' ').indexOf(' '+nk+' ')>=0:nt.split(' ').some(function(t){return tokScore(t,nk)>=1.5;});});}
+root.AssistCore={norm:norm,answer:answer,isFlow:isFlow};
+if(typeof module!=='undefined')module.exports=root.AssistCore;
+if(typeof document==='undefined')return;
+root.AssistInit=function(cfg){var th=cfg.theme||{};
+var css='#as-b{position:fixed;'+(th.side||'right')+':14px;bottom:14px;z-index:9999;border:0;cursor:pointer;background:'+th.ac+';color:'+th.fg+';height:52px;padding:0 18px;border-radius:'+(th.rad||26)+'px;font:600 15px/1 '+(th.font||'system-ui,sans-serif')+';box-shadow:0 6px 22px rgba(0,0,0,.28);display:flex;align-items:center;gap:8px}'+
+'#as-p{position:fixed;'+(th.side||'right')+':10px;bottom:76px;z-index:9999;width:min(370px,calc(100vw - 20px));height:min(520px,calc(100vh - 100px));background:'+th.bg+';color:'+th.tx+';border-radius:'+Math.min(th.rad||26,18)+'px;box-shadow:0 14px 44px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.4 '+(th.font||'system-ui,sans-serif')+'}#as-p.o{display:flex}'+
+'#as-h{background:'+th.ac+';color:'+th.fg+';padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}#as-h small{display:block;font-weight:400;opacity:.85;font-size:12px}#as-x{background:none;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1}'+
+'#as-l{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}.as-m{max-width:86%;padding:9px 12px;border-radius:14px;word-wrap:break-word}.as-a{background:'+th.bub+';align-self:flex-start}.as-u{background:'+th.ac+';color:'+th.fg+';align-self:flex-end}'+
+'#as-c{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}#as-c button{border:1px solid '+th.ac+';background:transparent;color:'+th.tx+';border-radius:16px;padding:6px 11px;font:13px system-ui,sans-serif;cursor:pointer}'+
+'#as-f{display:flex;gap:6px;padding:10px;border-top:1px solid rgba(128,128,128,.3)}#as-f input{flex:1;min-width:0;padding:10px;border:1px solid rgba(128,128,128,.5);border-radius:10px;font:15px system-ui,sans-serif;background:#fff;color:#111}#as-f button{border:0;background:'+th.ac+';color:'+th.fg+';border-radius:10px;padding:0 14px;font-weight:700;cursor:pointer}';
+var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
+var b=document.createElement('button');b.id='as-b';b.type='button';b.innerHTML='<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4 3h16a2 2 0 012 2v11a2 2 0 01-2 2H9l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg><span></span>';b.lastChild.textContent=cfg.btn||'Ask us';
+var p=document.createElement('div');p.id='as-p';p.innerHTML='<div id="as-h"><div><span></span><small></small></div><button id="as-x" type="button" aria-label="Close">&times;</button></div><div id="as-l" aria-live="polite"></div><div id="as-c"></div><form id="as-f"><input autocomplete="off" aria-label="Message"><button>&rarr;</button></form>';
+document.body.appendChild(b);document.body.appendChild(p);
+var $=function(s){return p.querySelector(s);},L=$('#as-l'),C=$('#as-c'),F=$('#as-f'),I=F.querySelector('input');
+$('#as-h span').textContent=cfg.name;$('#as-h small').textContent=cfg.sub||'';I.placeholder=cfg.ph||'Type a question';
+var step=-1,data={};
+function say(t,u){var d=document.createElement('div');d.className='as-m '+(u?'as-u':'as-a');d.textContent=t;L.appendChild(d);L.scrollTop=L.scrollHeight;}
+function chips(a,fn){C.innerHTML='';a.forEach(function(x){var e=document.createElement('button');e.type='button';e.textContent=x;e.onclick=function(){fn(x);};C.appendChild(e);});}
+function home(){chips(cfg.chips,function(x){ask(x);});}
+function nextStep(){step++;var s=cfg.flow.steps[step];if(!s){var sm=cfg.flow.steps.map(function(z){return z.label+': '+(data[z.key]||'-');}).join('\n');say(cfg.flow.done+'\n\n'+sm);step=-1;data={};home();return;}
+say(s.ask);if(s.opts)chips(s.opts.concat([cfg.flow.cancel||'Cancel']),function(x){flowIn(x);});else chips([cfg.flow.cancel||'Cancel'],function(x){flowIn(x);});}
+function startFlow(){step=-1;data={};say(cfg.flow.intro);nextStep();}
+function flowIn(t){if(norm(t)==norm(cfg.flow.cancel||'Cancel')||/^(cancel|stop|nevermind|no thanks)$/.test(norm(t))){step=-1;data={};say(cfg.flow.cancelled||'No problem, nothing was sent.');home();return;}
+say(t,1);var s=cfg.flow.steps[step];if(s.val&&!s.val.test(t)){say(s.err||'Could you check that again?');return;}data[s.key]=t;nextStep();}
+function ask(t){if(step>=0){flowIn(t);return;}say(t,1);if(isFlow(cfg,t)){startFlow();return;}var e=answer(cfg,t);if(e){say(e.a);if(e.flow){chips([cfg.flow.start||'Start'],function(){startFlow();});return;}}else say(cfg.fallback);home();}
+F.onsubmit=function(ev){ev.preventDefault();var v=I.value.trim();if(!v)return;I.value='';ask(v);};
+var opened=false;function tog(){p.classList.toggle('o');if(!opened){opened=true;say(cfg.greet);home();}}
+b.onclick=tog;$('#as-x').onclick=tog;};
+})(typeof window!=='undefined'?window:globalThis);
+
+var CFG={name:"The Travel Suite",sub:"Luxury cruise and holiday questions",btn:"Book appointment",ph:"Ask about cruises, resorts, hours",
+theme:{ac:"#223663",fg:"#fff",bg:"#ffffff",tx:"#1b2236",bub:"#eef3f6",rad:8,font:"Jost,system-ui,sans-serif",side:"left"},
+greet:"Welcome to The Travel Suite. I can answer questions about our cruises, resorts, honeymoons and opening hours, or request an appointment for you.",
+chips:["Book appointment","Opening hours","Cruise partners","Honeymoons","Where are you?","Travel show"],
+fallback:"I do not have that detail yet. The team will be glad to help at +353 1 905 9008 or sales@thetravelsuite.ie, or I can request an appointment.",
+flow:{triggers:["appointment","book appointment","book a call","consultation","meeting","visit you","come in","book"],start:"Book appointment",cancel:"Cancel",
+intro:"Of course. A few details so the team can prepare for your visit.",
+done:"Thank you. Your appointment request is sent to the team, who will confirm the time with you. Here is what I noted:",
+cancelled:"No problem, nothing was sent.",
+steps:[{key:"topic",label:"Interested in",ask:"What would you like to plan?",opts:["Luxury cruise","Honeymoon","Resort holiday","River cruise","Not sure yet"]},
+{key:"where",label:"Destination ideas",ask:"Any destination in mind, for example the Maldives, Norway or the Caribbean?"},
+{key:"when",label:"Preferred day and time",ask:"Which day and time suit you? We are open Monday to Friday, Thursday until 7:30pm."},
+{key:"who",label:"Travelling party",ask:"Who is travelling, and how many people?"},
+{key:"contact",label:"Contact",ask:"What name and phone number or email should the team use?",val:/\S{3,}/}]},
+kb:[
+{id:"hello",k:["hello","hi","hey","good morning","good afternoon"],a:"Hello! Ask me about cruises, resorts, honeymoons, opening hours or how to find us."},
+{id:"hours",k:["hours","open","opening","closed","close","when are you open","late","thursday","saturday","sunday","weekend"],a:"Monday, Tuesday and Friday 9am to 5:30pm, Wednesday 10am to 5:30pm, Thursday 9am to 7:30pm. Closed Saturday and Sunday."},
+{id:"where",k:["where are you","address","location","find you","directions","milltown","dublin","office","store","park"],a:"Unit 1, Milltown Centre, Milltown, Dublin, D06 E8W2. Come and visit us at our luxury travel office."},
+{id:"contact",k:["phone","call","email","contact","number","reach"],a:"Phone +353 1 905 9008 or email sales@thetravelsuite.ie."},
+{id:"who",k:["who","founder","founders","mary","lorraine","mckenna","quinn","owner","who are you","about us","about the team","meet the team"],a:"The Travel Suite was founded by Mary McKenna and Lorraine Quinn, backed by over 30 years of expertise through the Tour America group. It is Irish-owned and was named Best Luxury Agency at the ITTN Awards 2025."},
+{id:"cruise",k:["cruise","cruises","ship","sail","sailing","ocean","river cruise","yacht","expedition"],a:"We work with luxury cruise lines such as Cunard, Silversea, Seabourn, Regent Seven Seas, Oceania, Explora Journeys, Ponant, Celebrity, Princess, AmaWaterways, Avalon, Scenic and more, including suite-class experiences.",flow:1},
+{id:"partners",k:["partners","lines","brands","which cruise lines","cunard","silversea","seabourn","regent","explora","ponant","celebrity","amawaterways","scenic"],a:"Partners include AmaWaterways, APT Travelmarvel, Avalon, Azamara, Celebrity, Crystal, Cunard, Emerald, Explora Journeys, Four Seasons Yachts, MSC Yacht Club, NCL The Haven, Oceania, Ponant, Princess, Quark Expeditions, Regent, Riviera Travel, Royal Caribbean Suite Class, Scenic, Seabourn, SeaDream and Silversea.",flow:1},
+{id:"honeymoon",k:["honeymoon","honeymoons","romantic","couples","anniversary","wedding"],a:"Honeymoons and celebrations are a speciality, with Maldives couples packages and a Luxury and Honeymoon brochure for Autumn 2026.",flow:1},
+{id:"maldives",k:["maldives","waldorf","sun siyam","indian ocean","mauritius","beach villa","villa"],a:"The Maldives and the Indian Ocean are a strength: Waldorf Astoria Maldives Ithaafushi, Sun Siyam Resorts and more. The team also visited Mauritius first-hand.",flow:1},
+{id:"resorts",k:["resort","resorts","hotel","ikos","martinhal","zafiro","peninsula","rosselli","malta","algarve"],a:"Handpicked resorts include Zafiro Palmanova, Martinhal Quinta do Lago, Waldorf Astoria Maldives, The Peninsula New York, IKOS Odisia and Rosselli AX Privilege in Malta.",flow:1},
+{id:"europe",k:["europe","norway","fjords","rail","train","vienna","salzburg","munich","oslo"],a:"Europe options include Norway in a Nutshell, a Vienna, Salzburg and Munich rail journey, and Explora river cruising.",flow:1},
+{id:"japan",k:["japan","tokyo","kyoto","hakone","golden route","asia"],a:"The Golden Route in Japan takes in Tokyo, Hakone and Kyoto.",flow:1},
+{id:"usa",k:["usa","america","caribbean","new york","florida"],a:"We cover the USA and the Caribbean, including The Peninsula New York.",flow:1},
+{id:"business",k:["business class","flights","flight","airfare","fares","fare"],a:"Yes, we have access to exclusive Business Class fares. The team will check options for your dates.",flow:1},
+{id:"show",k:["show","event","expo","14th","november","exhibition"],a:"The Luxury Travel and Honeymoon Show is on 14 November in Dublin, bringing leading luxury resorts and cruise lines together. Ask the team how to attend."},
+{id:"brochure",k:["brochure","brochures","download","catalogue"],a:"There is an Autumn 2026 Luxury and Honeymoon brochure on the website for honeymoons, celebrations and once-in-a-lifetime journeys."},
+{id:"license",k:["licensed","license","licence","atol","iaa","protected","safe","aviation"],a:"The Travel Suite is licensed by the Irish Aviation Authority, TA0443."},
+{id:"price",k:["price","prices","cost","how much","budget","cheap","rate","quote","deal","offers"],a:"Prices depend on dates, suite or room type and travellers, so the team prepares a tailored proposal. Request an appointment and they will go through it with you."},
+{id:"extras",k:["gift voucher","voucher","insurance","visa","newsletter","community","blog","inspiration"],a:"The website also has gift vouchers, travel insurance and visa information, a newsletter, a community page and an inspiration blog with first-hand destination stories."},
+{id:"thanks",k:["thanks","thank you","great","perfect"],a:"You are welcome! Anything else I can help with?"}
+]};
+var TESTS=[["when are you open","hours"],["are you open on saturday","hours"],["Where is your office?","where"],["I'd like to book an appointment","FLOW"],["which cruise lines do you work with","partners"],["do you plan honeymoons","honeymoon"],["maldives","maldives"],["can you get business class flights","business"],["who are the founders","who"],["Phone number","contact"],["Do you do river cruises","cruise"],["tell me about the travel show","show"],["are you licenced","license"],["what is the cost of a holiday","price"],["japan trip","japan"],["do you sell gift vouchers","extras"],["travel insurance?","extras"],["norway fjords","europe"]];
+
+AssistInit(CFG);</script>
+</body></html>

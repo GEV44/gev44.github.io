@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Temple Bar Inn, Fleet Street, Dublin: 101 boutique en-suite rooms, bar and restaurant with live sport and a pool table, 24/7 reception. Demo page with a booking enquiry assistant.">
+<title>Temple Bar Inn · Fleet Street, Dublin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bk:#15110e;--bk2:#211a15;--gold:#d29a4c;--gold2:#edbe5f;--parch:#f4ead7;--ink:#1d1812;--mut:#b8ab97;--green:#2f6b4f;--w1:#15110e;--w1t:#edbe5f;--w2:#d29a4c;--w2t:#15110e;--wbg:#f4ead7;--wf:'Lora',Georgia,serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bk);color:#efe6d6;font:16px/1.65 'Lora',Georgia,serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.04em;font-weight:600;margin:0;line-height:1.1}
+a{color:inherit}
+header{background:var(--parch);color:var(--ink);position:sticky;top:0;z-index:30;border-bottom:4px solid var(--gold)}
+header .in{max-width:1100px;margin:auto;padding:4px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+header img{height:62px;width:auto;display:block}
+header nav{display:none;gap:22px;font:600 14px 'Oswald';text-transform:uppercase;letter-spacing:.08em}
+header nav a{text-decoration:none}
+.btn{display:inline-block;background:var(--gold);color:var(--bk);border:0;padding:12px 22px;font:600 14px 'Oswald';text-transform:uppercase;letter-spacing:.1em;text-decoration:none;cursor:pointer;border-radius:2px}
+.btn.o{background:transparent;color:var(--gold2);border:1.5px solid var(--gold)}
+@media(min-width:860px){header nav{display:flex}}
+.hero{position:relative;overflow:hidden;padding:60px 16px 70px;background:radial-gradient(circle at 80% 20%,#3a2a1b 0,var(--bk) 60%)}
+.hero:after{content:"";position:absolute;right:-90px;bottom:-90px;width:300px;height:300px;border:2px dashed rgba(210,154,76,.35);border-radius:50%}
+.hero .w{position:relative;z-index:1}
+.hero h1{font-size:clamp(40px,10vw,84px);color:#fff}
+.hero h1 em{font-style:normal;color:var(--gold2)}
+.hero p{max-width:560px;font-size:18px;color:var(--mut)}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 22px}
+.tags span{border:1px solid #4a3b2c;border-radius:999px;padding:4px 14px;font-size:14px;color:var(--gold2)}
+section{padding:56px 16px}
+.w{max-width:1100px;margin:auto}
+h2{font-size:clamp(30px,6vw,46px);color:var(--gold2);margin-bottom:8px}
+.sub{color:var(--mut);max-width:620px;margin:0 0 26px}
+.light{background:var(--parch);color:var(--ink)}
+.light h2{color:#8a5a1d}.light .sub{color:#5d5242}
+.rooms{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:620px){.rooms{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:960px){.rooms{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.room{background:#fff;border:1px solid #e2d3b5;padding:16px;border-left:5px solid var(--gold)}
+.room h3{font-size:22px;color:#6f4511;margin-bottom:4px}
+.room p{margin:0;font-size:14px;color:#5d5242}
+.room small{display:block;margin-top:8px;color:#8a5a1d;font:600 12px 'Oswald';letter-spacing:.1em;text-transform:uppercase}
+.inc{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.inc span{background:#fff;border:1px solid #e2d3b5;padding:5px 12px;font-size:14px;border-radius:999px}
+.split{display:grid;gap:26px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:860px){.split{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.hrs{width:100%;border-collapse:collapse;font-size:15px}
+.hrs td{padding:11px 4px;border-bottom:1px solid #3a2e23}
+.hrs td:last-child{text-align:right;color:var(--gold2);font-family:'Oswald';letter-spacing:.04em}
+.tiles{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.tile{background:var(--bk2);border:1px solid #3a2e23;padding:18px}
+.tile h3{font-size:20px;color:var(--gold2);margin-bottom:6px}
+.tile p{margin:0;font-size:15px;color:var(--mut)}
+.cap{display:flex;gap:14px;margin:16px 0}
+.cap div{flex:1;border:1px solid #cdbb98;background:#fff;text-align:center;padding:14px 8px}
+.cap b{font:700 42px 'Oswald';color:#8a5a1d;display:block;line-height:1}
+details{background:var(--bk2);border:1px solid #3a2e23;margin-bottom:8px;padding:0 16px}
+summary{cursor:pointer;padding:14px 0;font:600 16px 'Oswald';letter-spacing:.05em;text-transform:uppercase;color:var(--gold2);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";float:right}
+details[open] summary:after{content:"\2212"}
+details p{margin:0 0 14px;color:var(--mut)}
+footer{background:#0b0907;color:#8d8171;text-align:center;padding:22px 16px;font-size:14px}
+.contact{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.contact{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.contact div{border:1px solid #cdbb98;background:#fff;padding:16px}
+.contact b{font:600 18px 'Oswald';text-transform:uppercase;letter-spacing:.06em;color:#8a5a1d;display:block}
+#wb{position:fixed;right:16px;bottom:16px;z-index:50;width:58px;height:58px;border-radius:50%;border:0;background:var(--w2);color:var(--w2t);font-size:25px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+#wp{position:fixed;right:12px;bottom:84px;z-index:50;width:min(370px,calc(100vw - 24px));height:min(540px,calc(100vh - 110px));background:#fff;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.4);display:none;flex-direction:column;overflow:hidden;color:#222;font-family:var(--wf,system-ui,sans-serif)}
+#wp.on{display:flex}
+#wh{background:var(--w1);color:var(--w1t);padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+#wh b{font-size:16px}#wh small{display:block;opacity:.8;font-size:12px}
+#wx{background:none;border:0;color:inherit;font-size:26px;cursor:pointer;line-height:1}
+#wm{flex:1;overflow-y:auto;padding:12px;background:var(--wbg);display:flex;flex-direction:column;gap:8px}
+.m{max-width:86%;padding:9px 12px;border-radius:12px;font-size:14.5px;line-height:1.4;white-space:pre-line}
+.m.b{background:#fff;border:1px solid #ddd;align-self:flex-start}
+.m.u{background:var(--w1);color:var(--w1t);align-self:flex-end}
+#wc{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;background:#fff;border-top:1px solid #e3e3e3;max-height:96px;overflow-y:auto}
+#wc button{background:#fff;border:1.5px solid var(--w1);color:var(--w1);border-radius:999px;padding:5px 11px;font:600 13px var(--wf,system-ui,sans-serif);cursor:pointer}
+#wf{display:flex;gap:6px;padding:8px;border-top:1px solid #e3e3e3}
+#wi{flex:1;min-width:0;border:1px solid #ccc;border-radius:8px;padding:9px;font-size:15px}
+#wf button{background:var(--w2);color:var(--w2t);border:0;border-radius:8px;padding:0 14px;font-weight:700;cursor:pointer}
+
+</style></head><body>
+<header><div class="in"><img src="img/temple-bar-inn-logo.png" alt="Temple Bar Inn, Dublin Ireland"><nav><a href="#rooms">Rooms</a><a href="#bar">Bar &amp; breakfast</a><a href="#events">Events</a><a href="#way">Getting here</a><a href="#faq">FAQ</a></nav><a class="btn" href="#" onclick="askW('book');return false">Enquire</a></div></header>
+
+<div class="hero"><div class="w"><h1>Sleep in the middle of <em>Temple Bar</em></h1>
+<p>101 boutique en-suite rooms on Fleet Street, with a bar that shows the match, a pool table, a hearty Irish breakfast and a reception that never closes.</p>
+<div class="tags"><span>Reception 24/7</span><span>Free fast Wi-Fi</span><span>Luggage room</span><span>Complimentary breakfast on direct bookings</span></div>
+<a class="btn" href="#rooms">Browse rooms</a> <a class="btn o" href="#" onclick="askW('book');return false">Ask about dates</a></div></div>
+
+<section class="light" id="rooms"><div class="w"><h2>Eight room types</h2><p class="sub">Chic, bespoke design, cosy beds and steps from Dublin's best-known sights. A child under 7 stays free in an existing bed; there are no extra beds, but a baby crib is available.</p>
+<div class="rooms">
+<div class="room"><h3>Single</h3><p>Comfortable and well appointed, for solo travellers.</p><small>1 adult · 10 m&sup2;</small></div>
+<div class="room"><h3>Double</h3><p>A well-equipped space, perfect for two guests.</p><small>2 guests</small></div>
+<div class="room"><h3>Deluxe Double</h3><p>An elegant, spacious retreat with premium amenities.</p><small>2 guests</small></div>
+<div class="room"><h3>Cosy Double</h3><p>Chic, contemporary d&eacute;cor. Reached by a short set of stairs.</p><small>2 adults + 1 child · 12 m&sup2;</small></div>
+<div class="room"><h3>Accessible Double</h3><p>Wheelchair accessible with an accessible bathroom, near the lifts.</p><small>2 guests</small></div>
+<div class="room"><h3>Twin</h3><p>Two single beds in a comfortable, well-equipped room.</p><small>2 adults + 1 child · 15 m&sup2;</small></div>
+<div class="room"><h3>Triple</h3><p>Spacious and comfortable for three guests.</p><small>3 guests</small></div>
+<div class="room"><h3>Quadruple</h3><p>Four single beds convertible to doubles and two ensuite bathrooms.</p><small>4 guests</small></div></div>
+<div class="inc"><span>Fast free Wi-Fi</span><span>Smart HD TV with streaming</span><span>Bedside USB port</span><span>Dyson fan</span><span>Hairdryer</span><span>Desk and chair</span><span>Tea and coffee station</span><span>Rituals toiletries</span><span>Beverage cooler</span><span>Laptop safe</span><span>Daily housekeeping</span><span>On request: baby crib, iron, adaptors</span></div></div></section>
+
+<section id="bar"><div class="w"><div class="split"><div><h2>Bar, breakfast and a pool table</h2><p class="sub" style="margin-bottom:12px">The spacious restaurant is open daily for breakfast and dinner, and the bar has beer on tap, cocktails, spirits and wine, board games, a pool table and big screens for every major sport.</p>
+<p style="color:var(--mut);margin:0">Breakfast is a rich hot menu with pastries, fruit, cereal, hot drinks and juices, with dietary needs catered for. Next door, Hellfire Restaurant grills locally sourced steaks and fresh seafood over charcoal.</p></div>
+<div><table class="hrs"><tr><td>Breakfast, Mon to Fri</td><td>7:00 to 10:00 am</td></tr><tr><td>Breakfast, Sat and Sun</td><td>7:00 to 10:30 am</td></tr><tr><td>Bar food, Mon to Fri</td><td>5:00 to 9:30 pm</td></tr><tr><td>Bar food, Saturday</td><td>1:00 to 10:00 pm</td></tr><tr><td>Bar food, Sunday</td><td>1:00 to 8:30 pm</td></tr><tr><td>Bar, every day</td><td>1:00 to 11:00 pm</td></tr></table></div></div></div></section>
+
+<section class="light"><div class="w"><h2>Everything a city stay needs</h2><p class="sub">Built to make a short Dublin trip easy.</p>
+<div class="tiles"><div class="tile" style="background:#fff;border-color:#e2d3b5"><h3 style="color:#6f4511">Reception 24/7</h3><p style="color:#5d5242">Reception and security are always staffed. Arriving after midnight? Let the team know.</p></div><div class="tile" style="background:#fff;border-color:#e2d3b5"><h3 style="color:#6f4511">Luggage room</h3><p style="color:#5d5242">Free storage at reception before check-in or after check-out.</p></div><div class="tile" style="background:#fff;border-color:#e2d3b5"><h3 style="color:#6f4511">Tour desk</h3><p style="color:#5d5242">A 24 hour desk that advises on and books tours around Dublin and all over Ireland.</p></div><div class="tile" style="background:#fff;border-color:#e2d3b5"><h3 style="color:#6f4511">Workspace</h3><p style="color:#5d5242">Fast Wi-Fi, free computers and a printer for remote workers.</p></div><div class="tile" style="background:#fff;border-color:#e2d3b5"><h3 style="color:#6f4511">Terrace and coffee</h3><p style="color:#5d5242">A quiet outdoor terrace (the smoking area) and a coffee station from espresso to latte.</p></div><div class="tile" style="background:#fff;border-color:#e2d3b5"><h3 style="color:#6f4511">Accessibility</h3><p style="color:#5d5242">Accessible rooms on each floor close to two lifts, and a fully accessible restaurant.</p></div></div></div></section>
+
+<section id="events"><div class="w"><div class="split"><div><h2>Venue hire</h2><p class="sub">The bar and restaurant space suits private gatherings, celebrations and corporate events, with a lively atmosphere, refined interiors and a fully serviced bar.</p>
+<div class="cap" style="color:var(--ink)"><div><b>50</b>seated</div><div><b>70</b>standing</div></div><a class="btn" href="#" onclick="askW('Tell me about venue hire');return false">Ask about events</a></div>
+<div><div class="tile"><h3>Facilities</h3><p>Full service bar, large screens, sound system, dynamic lighting system, on-site catering options, customisable seating layouts, outdoor terrace, wheelchair access, pool table and board games.</p></div><p style="color:var(--mut);margin-top:12px">For details, email events@templebarinn.com or request the private events brochure.</p></div></div></div></section>
+
+<section class="light" id="way"><div class="w"><h2>Getting here</h2><p class="sub">40-47 Fleet Street, Temple Bar, Dublin 2. The airport is about 25 to 40 minutes away depending on traffic and transport.</p>
+<div class="tiles"><div class="tile" style="background:#fff;border-color:#e2d3b5"><h3 style="color:#6f4511">Aircoach 700</h3><p style="color:#5d5242">Up to every 15 minutes, 24/7, both terminals, 25 to 35 minutes. Get off at O'Connell Bridge and walk south to Fleet Street.</p></div><div class="tile" style="background:#fff;border-color:#e2d3b5"><h3 style="color:#6f4511">Dublin Express</h3><p style="color:#5d5242">Every 30 minutes, 24/7, both terminals. Get off at Eden Quay and walk across O'Connell Bridge.</p></div><div class="tile" style="background:#fff;border-color:#e2d3b5"><h3 style="color:#6f4511">Taxi or transfer</h3><p style="color:#5d5242">Taxis wait outside the airport, or pre-book a private transfer with partner Welcome Pickups to skip the queue. Airlink and the number 16 bus stop close by.</p></div></div>
+<p style="color:#5d5242;margin:18px 0 0">Driving? The Fleet Street car park is 30 metres from the door, with a guest offer: ask for a discount card at reception.</p></div></section>
+
+<section><div class="w"><h2>Out the door and into Temple Bar</h2><p class="sub">The inn's own local guide points guests to these within a short walk.</p>
+<div class="tiles"><div class="tile"><h3>Temple Bar Food Market</h3><p>Every weekend in Meeting House Square: artisan cheeses, fresh bread, organic vegetables and gourmet street food.</p></div><div class="tile"><h3>Irish Film Institute</h3><p>Irish and international films, independent productions, classics, festivals, workshops and filmmaker Q&amp;As.</p></div><div class="tile"><h3>National Photographic Archive</h3><p>Rotating exhibitions of Irish photographic history in Meeting House Square, with free entry.</p></div><div class="tile"><h3>Live music</h3><p>The Temple Bar Pub is known for traditional Irish music and a long whiskey list, with performances daily.</p></div><div class="tile"><h3>The River Liffey</h3><p>A riverside stroll with views of the skyline, and the Ha'penny Bridge, one of Dublin's best-known landmarks.</p></div><div class="tile"><h3>Ask the tour desk</h3><p>The 24 hour tour desk books tours around Dublin and all over Ireland at the best deals on offer.</p></div></div></div></section>
+
+<section class="light"><div class="w"><h2>Book direct</h2><p class="sub">What the inn promises guests who book on its own site.</p>
+<div class="split"><div class="room"><h3>Breakfast on us</h3><p>A complimentary buffet breakfast with every direct booking, served daily from 7:00 am.</p></div><div class="room"><h3>Best rate guarantee</h3><p>The site promises its best rate when you book direct. Flexible rates are paid on arrival, and non-refundable rates are charged on the day of booking.</p></div></div></div></section>
+
+<section><div class="w"><h2>Policies at a glance</h2><p class="sub">So nothing surprises you at the desk.</p>
+<table class="hrs"><tr><td>Reception and security</td><td>24/7</td></tr><tr><td>ID</td><td>Required for all guests</td></tr><tr><td>Minimum age</td><td>18, unless with an adult family member or guardian</td></tr><tr><td>Children under 7</td><td>Free in an existing bed</td></tr><tr><td>Extra beds</td><td>Not available; baby crib on request</td></tr><tr><td>Smoking</td><td>Outdoor terrace only</td></tr><tr><td>Wi-Fi</td><td>Free and fast throughout</td></tr><tr><td>Luggage room</td><td>Free at reception</td></tr><tr><td>Non-refundable rates</td><td>Charged on booking day, no changes</td></tr><tr><td>Flexible rates</td><td>Paid on arrival, cancel 48 hours before</td></tr><tr><td>No-show</td><td>First night's rate</td></tr></table></div></section>
+
+<section class="light"><div class="w"><h2>Why guests pick a Fleet Street base</h2><p class="sub">Temple Bar is the cultural heartbeat of Dublin, and the inn is the quiet, comfortable half of that deal.</p>
+<div class="split"><div class="room"><h3>Central</h3><p>Steps from Dublin's most popular destinations and attractions, with the Aircoach and Dublin Express both stopping within a short walk.</p></div><div class="room"><h3>Comfortable</h3><p>Plush beds, a Dyson fan, a laptop safe and Rituals toiletries in every room, with daily housekeeping.</p></div><div class="room"><h3>Sociable</h3><p>A spacious bar with live sport, a pool table and board games, plus a charcoal grill restaurant next door.</p></div><div class="room"><h3>Looked after</h3><p>Reception and security around the clock, a luggage room and a tour desk that books trips across Ireland.</p></div></div></div></section>
+
+<section id="faq"><div class="w"><h2>Quick answers</h2><p class="sub">The assistant at the bottom right can answer more.</p>
+<details><summary>Do I need ID?</summary><p>Yes, a passport, national ID or driving licence for every guest. The minimum age is 18 unless staying with an adult family member or guardian.</p></details>
+<details><summary>What is the cancellation policy?</summary><p>Non-refundable bookings are charged on booking day with no changes. Flexible bookings are paid on arrival, with cancellation at least 48 hours before arrival. A no-show is charged the first night.</p></details>
+<details><summary>Can I smoke?</summary><p>Not inside, by law. Use the outdoor smoking area on the terrace.</p></details>
+<details><summary>Are group bookings possible?</summary><p>Yes. Write to reservations@templebarinn.com and the team will organise it.</p></details>
+<details><summary>Is breakfast included?</summary><p>The site says every direct booking includes a complimentary buffet breakfast. For other rates the team will confirm.</p></details>
+<details><summary>Where can I leave my luggage?</summary><p>There is a complimentary luggage room in reception. Leave bags before check-in or after check-out.</p></details>
+<details><summary>How far is the airport?</summary><p>About 25 to 40 minutes depending on traffic and transport. Aircoach 700 and Dublin Express both run 24/7 from both terminals.</p></details>
+<details><summary>Is there parking?</summary><p>The Fleet Street car park is 30 metres from the door. Guests get a special offer, so ask for a discount card at reception.</p></details>
+<details><summary>Is there accessible accommodation?</summary><p>Yes: wheelchair accessible rooms on each floor close to the two lifts, an entrance on the ground floor and a fully accessible restaurant. Tell the team before you arrive.</p></details>
+<details><summary>Can I book a tour through the inn?</summary><p>Yes, the 24 hour tour desk advises on and books tours in Dublin and across Ireland.</p></details>
+<details><summary>Can I hire the bar for an event?</summary><p>Yes: up to 50 seated or 70 standing. Email events@templebarinn.com.</p></details>
+<details><summary>Is there Wi-Fi throughout?</summary><p>Yes, fast free Wi-Fi throughout the building at all times.</p></details></div></section>
+
+<section class="light"><div class="w"><h2>Find reception</h2><div class="contact" style="margin-top:16px"><div><b>Address</b>40-47 Fleet Street<br>Temple Bar, Dublin 2, D02 NX25</div><div><b>Phone</b><a href="tel:+35314845010">+353 1 484 5010</a><br>Reception open 24/7</div><div><b>Email</b><a href="mailto:reservations@templebarinn.com" style="word-break:break-all">reservations@templebarinn.com</a><br><a href="mailto:events@templebarinn.com" style="word-break:break-all">events@templebarinn.com</a></div></div></div></section>
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+<button id="wb" type="button" onclick="openW()" aria-label="Open assistant"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg></button><div id="wp" role="dialog" aria-label="Assistant"><div id="wh"><div><b id="wn"></b><small id="ws"></small></div><button id="wx" type="button" onclick="closeW()" aria-label="Close">&times;</button></div><div id="wm" aria-live="polite"></div><div id="wc"></div><form id="wf" autocomplete="off"><input id="wi" type="text" placeholder="Type your question..." aria-label="Message"><button type="submit">Send</button></form></div>
+<script>(function(){var NAME="Temple Bar Inn Assistant",SUB="Rooms, breakfast, bar, getting here";
+var GREET="Hello! I'm the assistant for Temple Bar Inn on Fleet Street. Ask about rooms, breakfast, the bar, parking, getting from the airport or event hire, or send a booking enquiry to reception.";
+var FALLBACK="I do not have that detail. Reception will confirm it: +353 1 484 5010 or reservations@templebarinn.com.";
+var HOME=["Rooms","Breakfast","Bar and food","Getting here","Parking","Enquire"];
+var KB=[
+{k:"room rooms type types single double deluxe cosy twin triple quadruple bed beds sleep size accommodation",a:"The inn has 101 boutique en-suite rooms: Single (1 adult, 10 m2), Double, Deluxe Double, Cosy Double (12 m2), Accessible Double, Twin (two single beds, 15 m2), Triple and Quadruple (four single beds that convert to doubles, with two ensuite bathrooms). A child under 7 can stay free in an existing bed; there is no capacity for extra beds, but a baby crib is available.",c:["Room extras","Breakfast","Enquire"]},
+{k:"extras amenities facilities wifi tv toiletries safe fan hairdryer coffee tea desk usb iron cooler",a:"Every room has fast free Wi-Fi, smart HD TV with streaming, bedside USB port, Dyson fan, hairdryer, desk and chair, tea and coffee station, Rituals toiletries, beverage cooler, laptop safe and daily housekeeping. On request: baby crib, iron and ironing board, universal adaptors. The inn also has a coffee station, outdoor terrace and a workspace area with free computers and a printer.",c:["Rooms","Enquire"]},
+{k:"breakfast morning buffet irish eat early food hours served",a:"Breakfast is served daily 7:00 to 10:00 am Monday to Friday and 7:00 to 10:30 am Saturday and Sunday. The site says every direct booking includes a complimentary buffet breakfast; for any other rate the team will confirm what is included. The menu has hot breakfast favourites plus pastries, fruit, cereal, hot drinks and juices, with dietary needs catered for.",c:["Bar and food","Rooms","Enquire"]},
+{k:"bar pub drink drinks beer cocktails pool table sports tv screens game match football food burgers tacos dinner restaurant hellfire steak seafood",a:"The hotel bar is open daily 1:00 to 11:00 pm, with beer on tap, cocktails, spirits and wine, a pool table, board games and big screens for live sport. Bar food (burgers, tacos, fish and chips, salads) runs 5:00 to 9:30 pm Monday to Friday, 1:00 to 10:00 pm Saturday and 1:00 to 8:30 pm Sunday. Hellfire, right next door, does flame-grilled steaks and seafood.",c:["Breakfast","Events","Enquire"]},
+{k:"parking park car garage vehicle fleet street carpark",a:"The Fleet Street car park (Q-Park) is 30 metres from the front door. Guests get a special offer of 21 euro per 24 hours; ask for a discount card at reception.",c:["Getting here","Enquire"]},
+{k:"airport transfer taxi bus aircoach airlink dublin express shuttle far travel get getting directions arrive",a:"The airport is about 25 to 40 minutes away. A taxi costs roughly 25 to 50 euro depending on size and traffic. Aircoach 700 (up to every 15 minutes, 24/7, about 25 to 35 minutes) stops at O'Connell Bridge; Dublin Express (every 30 minutes) stops at Eden Quay; Airlink and the number 16 bus also stop nearby. You can also book a private transfer with the partner Welcome Pickups.",c:["Parking","Luggage","Enquire"]},
+{k:"reception 24 24/7 hours open night late midnight security checkin check-in checkout check-out arrival",a:"Reception and security are available 24/7. If you are arriving after midnight, please let the team know. Check-in and check-out times are shown on the booking page; the team will confirm.",c:["Luggage","Enquire"]},
+{k:"luggage bags storage baggage suitcase store leave",a:"There is a complimentary luggage room at reception. You can leave your bags before or after check-in and check-out.",c:["Reception","Enquire"]},
+{k:"cancel cancellation cancelling refund noshow no-show flexible non-refundable change modify policy",a:"Non-refundable reservations are charged on the day of booking, with no cancellations or modifications. Flexible reservations are paid in full on arrival, and cancellations must be requested at least 48 hours before arrival. The no-show fee is the first night's rate.",c:["Rooms","Enquire"]},
+{k:"event events venue hire private party celebration corporate function capacity guests terrace sound",a:"The bar and restaurant space can be hired for private gatherings, celebrations and corporate events: up to 50 guests seated or 70 standing, with a full service bar, large screens, sound system, dynamic lighting, on-site catering options, customisable seating, an outdoor terrace, wheelchair access, pool table and board games. Email events@templebarinn.com or see the private events brochure.",c:["Bar and food","Enquire"]},
+{k:"accessible accessibility wheelchair disabled disability lift elevator elevators mobility stairs",a:"There are wheelchair accessible rooms on each floor, close to the two elevators, with accessible bathrooms. The entrance is on the ground floor, reception is reached by elevator and the restaurant area is fully accessible. Tell the team before your stay if you need an accessible room. Note the Cosy Double needs a short set of stairs.",c:["Rooms","Enquire"]},
+{k:"children child kids kid baby crib family under age minimum young",a:"A child under 7 can stay free in an existing bed in the room booked; there are no extra beds, but a baby crib is available. Unless staying with an adult family member or guardian, the minimum age to stay is 18. The Triple and Quadruple rooms suit families and small groups.",c:["Rooms","Enquire"]},
+{k:"smoking smoke cigarette vape terrace outside",a:"Smoking is prohibited on the premises by law. Guests who smoke can use the outdoor smoking area on the terrace.",c:["Room extras","Enquire"]},
+{k:"id identification passport required document licence",a:"A valid form of ID (passport, national ID or driving licence) is required for all guests booked.",c:["Reception","Enquire"]},
+{k:"tour tours excursion trip activities sightseeing guinness cliffs dublin ireland desk",a:"A 24 hour tour desk can advise on and book tours in Dublin and all over Ireland, with the best deals on offer.",c:["Getting here","Enquire"]},
+{k:"group groups bookings wedding stag hen party large",a:"Group bookings are welcome: contact reservations@templebarinn.com and the team will organise it with you.",c:["Events","Enquire"]},
+{k:"voucher vouchers gift present",a:"The site has a Vouchers page, where gift vouchers can be bought. Reception can confirm details.",c:["Rooms","Enquire"]},
+{k:"work workspace laptop computer printer remote desk business",a:"There is a workspace area with fast free Wi-Fi and complimentary computers with a printer. Rooms also have a desk and chair and a laptop safe.",c:["Room extras","Enquire"]},
+{k:"where location located address temple bar fleet street find map central city centre center walk attractions near nearby",a:"Temple Bar Inn is at 40-47 Fleet Street, Temple Bar, Dublin 2, D02 NX25, in the heart of Dublin's historic city centre, steps from the Temple Bar quarter and the city's main sights.",c:["Getting here","Parking","Enquire"]},
+{k:"phone call number email contact reach instagram",a:"Call +353 1 484 5010 or write to reservations@templebarinn.com. For events: events@templebarinn.com. Instagram: templebarinn.",c:["Reception","Enquire"]},
+{k:"price room prices rate rates cost costs cheap much night best direct deal offer",a:"Rates depend on the date and room and are shown on the booking page. The site promotes a best rate guarantee and a complimentary buffet breakfast with every direct booking.",c:["Rooms","Breakfast","Enquire"]},
+{k:"things todo do see attractions market film museum liffey bridge halfpenny music pub whiskey sights nearby around neighbourhood neighborhood",a:"The inn's own guide to Temple Bar lists the weekend Temple Bar Food Market in Meeting House Square, the Irish Film Institute, the free National Photographic Archive, live traditional music at the Temple Bar Pub, and a stroll along the River Liffey to the Ha'penny Bridge. Reception and the 24 hour tour desk can suggest more.",c:["Tours","Getting here","Enquire"]},
+{k:"direct benefits book booking best guarantee website online offer complimentary",a:"The site lists book direct benefits: a complimentary buffet breakfast and a best rate guarantee. Book online through the inn's booking page, or send an enquiry to reception here.",c:["Breakfast","Rooms","Enquire"]},
+{k:"housekeeping cleaning clean towels daily service",a:"Rooms have daily housekeeping, and each room has a tea and coffee station, Rituals toiletries and a laptop safe.",c:["Room extras","Enquire"]},
+{k:"hello hi hey hiya dia",a:"Hello! I can help with rooms, breakfast, the bar, parking, airport transfers and events, or take an enquiry for reception.",c:["Rooms","Breakfast","Getting here","Enquire"]}
+];
+var STEPS=[
+{key:'dates',q:"Which dates are you thinking of? (arrival and departure)",chips:[]},
+{key:'gst',q:"How many guests?",chips:["1","2","3","4","Group (5+)"]},
+{key:'rm',q:"Which room?",chips:["Single","Double","Twin","Triple","Quadruple","Accessible"]},
+{key:'name',q:"Your name?",chips:[]},
+{key:'mail',q:"Email for reception to reply to?",chips:[]}
+];
+function SUMMARY(d){return "Thanks "+d.name+". Enquiry noted:\nDates: "+d.dates+" · "+d.gst+" guest(s)\nRoom: "+d.rm+"\nEmail: "+d.mail+"\n\nThis has been sent to reception, who will confirm availability and rates. (Demo: nothing is actually sent.)"}
+
+/*ENGINE*/
+var STOP="the a an of to is are do does you your i me my we can for in on at and or it be have has with about how what when where which there here".split(" ");
+function norm(s){return s.toLowerCase().replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ers|er|es|ed|s)$/,""):w}
+function lev(a,b){if(a==b)return 0;if(Math.abs(a.length-b.length)>1)return 2;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function lev2(a,b){var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function hit(w,kw){var s=stem(w);if(kw==w||stem(kw)==s)return 1;if(w.length>=5&&kw.length>=5){if(lev(w,kw)<=1||lev(s,stem(kw))<=1)return .9;if(w.length>=7&&kw.length>=7&&lev2(w,kw)<=2)return .8}if(w.length>=4&&(kw.indexOf(w)==0||w.indexOf(kw)==0)&&kw.length>=4)return .6;return 0}
+function answer(q){var ws=norm(q).split(" ").filter(function(w){return w&&STOP.indexOf(w)<0});if(!ws.length)ws=norm(q).split(" ").filter(function(w){return w});var best=null,bs=0;KB.forEach(function(e){var kws=e.k.split(" "),sc=0;ws.forEach(function(w){var m=0;kws.forEach(function(kw){m=Math.max(m,hit(w,kw))});sc+=m});if(sc>bs){bs=sc;best=e}});return bs>=.9?best:null}
+var BOOKWORDS=/\b(book|booking|booked|enquire|enquiry|inquiry|appointment|appointments|reserve|reservation|enrol|enroll|enrollment|enrolment|sign up|signup|schedule|register|registration|trial|visit|consultation)\b/;
+/*END*/
+var $=function(i){return document.getElementById(i)},M=$('wm'),C=$('wc'),I=$('wi'),flow=null,data={},si=0;
+function say(t,who){var d=document.createElement('div');d.className='m '+(who||'b');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight}
+function chips(a){C.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){handle(t)};C.appendChild(b)})}
+function openW(mode,pre){$('wp').classList.add('on');if(!M.children.length){say(GREET);chips(HOME)}if(mode=='book'){startBook(pre)}}
+function closeW(){$('wp').classList.remove('on')}
+function startBook(pre){flow=1;data={};si=0;if(pre&&STEPS[0]){data[STEPS[0].key]=pre}ask()}
+function ask(){while(si<STEPS.length&&data[STEPS[si].key])si++;if(si>=STEPS.length){finish();return}say(STEPS[si].q);chips(STEPS[si].chips)}
+function finish(){flow=null;say(SUMMARY(data));chips(HOME)}
+function handle(t){say(t,'u');if(flow){if(/^(cancel|stop|exit)$/i.test(t.trim())){flow=null;say("No problem, request cancelled.");chips(HOME);return}data[STEPS[si].key]=t;si++;ask();return}
+if(BOOKWORDS.test(norm(t))||/^book/i.test(t)){startBook();return}
+var r=answer(t);if(r){say(r.a);chips(r.c)}else{say(FALLBACK);chips(HOME)}}
+$('wf').addEventListener('submit',function(e){e.preventDefault();var v=I.value.trim();if(!v)return;I.value='';handle(v)});
+
+$("wn").textContent=NAME;$("ws").textContent=SUB;window.openW=openW;window.closeW=closeW;window.askW=function(t){openW();handle(t)};})();</script>
+</body></html>

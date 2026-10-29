@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Sara's Inn on the Boulevard, Houston Heights: a historic 15-room boutique inn with free parking and Wi-Fi, 4 miles from downtown. Demo page with a stay-request assistant.">
+<title>Sara's Inn on the Boulevard · Houston Heights</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#b1e0b6;--forest:#26402f;--forest2:#3b5b46;--cream:#faf6ec;--rose:#a8485a;--gold:#b98f43;--ink:#2a2a24;--mut:#645f52;--w1:#26402f;--w1t:#fff;--w2:#a8485a;--w2t:#fff;--wbg:#faf6ec;--wf:'Lato',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.7 'Lato',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;margin:0;line-height:1.1}
+a{color:inherit}
+.strip{background:var(--forest);color:#e8f2e6;text-align:center;font-size:14px;padding:8px 12px}
+.strip a{text-decoration:none;font-weight:700}
+header{background:#fff;border-bottom:1px solid #e5ddc8;position:sticky;top:0;z-index:30}
+header .in{max-width:1040px;margin:auto;padding:8px 16px;display:flex;align-items:center;gap:14px;justify-content:space-between}
+header img{height:64px;width:auto;display:block}
+header nav{display:none;gap:22px;font-size:15px}
+header nav a{text-decoration:none;color:var(--forest);font-weight:700}
+.btn{display:inline-block;background:var(--rose);color:#fff;border:0;padding:12px 24px;font:700 14px 'Lato';letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.btn.line{background:transparent;border:1.5px solid var(--forest);color:var(--forest)}
+@media(min-width:820px){header nav{display:flex}}
+.hero{background:linear-gradient(180deg,#e9f5e7 0,var(--cream) 100%);text-align:center;padding:50px 16px 30px;position:relative;overflow:hidden}
+.hero .arch{max-width:560px;margin:auto;border:2px solid var(--forest2);border-radius:280px 280px 0 0;padding:70px 24px 40px;background:#fff;position:relative}
+.hero .arch:before{content:"";position:absolute;inset:8px;border:1px solid var(--sage);border-radius:272px 272px 0 0;pointer-events:none}
+.eyebrow{letter-spacing:3px;text-transform:uppercase;font-size:12px;color:var(--rose);font-weight:700}
+.hero h1{font-size:clamp(38px,9vw,64px);color:var(--forest);margin:10px 0 12px}
+.hero h1 i{color:var(--rose)}
+.hero p{max-width:440px;margin:0 auto 20px;color:var(--mut)}
+.orn{color:var(--gold);letter-spacing:10px;font-size:14px;margin:8px 0}
+.nums{max-width:900px;margin:26px auto 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.nums div{padding:12px;border:1px solid #dfd6bb;background:#fff}
+.nums b{font:600 34px 'Cormorant Garamond';color:var(--forest);display:block;line-height:1}
+.nums span{font-size:13px;color:var(--mut)}
+@media(min-width:760px){.nums{grid-template-columns:repeat(4,minmax(0,1fr))}}
+section{padding:56px 16px}
+.w{max-width:1040px;margin:auto}
+.c{text-align:center}
+h2{font-size:clamp(32px,6vw,46px);color:var(--forest);margin-bottom:8px}
+.sub{color:var(--mut);max-width:620px;margin:0 auto 28px}
+.alt{background:#fff;border-top:1px solid #e5ddc8;border-bottom:1px solid #e5ddc8}
+.two{display:grid;gap:26px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:820px){.two{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}}
+.rooms{list-style:none;margin:0;padding:0}
+.rooms li{padding:14px 0;border-bottom:1px dotted #c9bd9a;display:flex;gap:14px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}
+.rooms b{font:600 24px 'Cormorant Garamond';color:var(--forest)}
+.rooms span{color:var(--mut);font-size:14px;text-align:right;max-width:100%}
+.amen{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.amen span{background:#e9f5e7;border:1px solid var(--sage);color:var(--forest);padding:5px 12px;border-radius:999px;font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:15px;background:#fff}
+td{padding:10px 12px;border-bottom:1px solid #e9e1cd}
+td:last-child{text-align:right;font-weight:700;color:var(--forest)}
+.rules{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.rules{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.rule{background:#fff;border:1px solid #dfd6bb;padding:20px;border-top:4px solid var(--rose)}
+.rule:nth-child(even){border-top-color:var(--forest2)}
+.rule h3{font-size:24px;color:var(--forest);margin-bottom:6px}
+.rule p{margin:0;font-size:15px;color:var(--mut)}
+.band{background:var(--forest);color:#fff}
+.band h2{color:#fff}.band .sub{color:#c9dccb}
+.timeline{border-left:2px solid var(--sage);margin:0 0 0 8px;padding:0 0 0 22px;display:grid;gap:18px}
+.timeline div{position:relative}
+.timeline div:before{content:"";position:absolute;left:-30px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--gold)}
+.timeline b{font:600 22px 'Cormorant Garamond';color:#fff}
+.timeline p{margin:2px 0 0;color:#c9dccb;font-size:15px}
+details{background:#fff;border:1px solid #dfd6bb;margin-bottom:8px;padding:0 18px}
+summary{cursor:pointer;padding:14px 0;font-weight:700;color:var(--forest);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";float:right;color:var(--rose);font-size:22px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{margin:0 0 14px;color:var(--mut)}
+.visit{display:grid;gap:14px;grid-template-columns:minmax(0,1fr);text-align:center}
+@media(min-width:760px){.visit{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.visit div{border:1px solid #dfd6bb;background:#fff;padding:18px}
+.visit b{font:600 22px 'Cormorant Garamond';color:var(--forest);display:block}
+footer{background:#1b2f23;color:#a9c0ad;text-align:center;padding:22px 16px;font-size:14px}
+#wb{position:fixed;right:16px;bottom:16px;z-index:50;width:58px;height:58px;border-radius:50%;border:0;background:var(--w2);color:var(--w2t);font-size:25px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+#wp{position:fixed;right:12px;bottom:84px;z-index:50;width:min(370px,calc(100vw - 24px));height:min(540px,calc(100vh - 110px));background:#fff;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.4);display:none;flex-direction:column;overflow:hidden;color:#222;font-family:var(--wf,system-ui,sans-serif)}
+#wp.on{display:flex}
+#wh{background:var(--w1);color:var(--w1t);padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+#wh b{font-size:16px}#wh small{display:block;opacity:.8;font-size:12px}
+#wx{background:none;border:0;color:inherit;font-size:26px;cursor:pointer;line-height:1}
+#wm{flex:1;overflow-y:auto;padding:12px;background:var(--wbg);display:flex;flex-direction:column;gap:8px}
+.m{max-width:86%;padding:9px 12px;border-radius:12px;font-size:14.5px;line-height:1.4;white-space:pre-line}
+.m.b{background:#fff;border:1px solid #ddd;align-self:flex-start}
+.m.u{background:var(--w1);color:var(--w1t);align-self:flex-end}
+#wc{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;background:#fff;border-top:1px solid #e3e3e3;max-height:96px;overflow-y:auto}
+#wc button{background:#fff;border:1.5px solid var(--w1);color:var(--w1);border-radius:999px;padding:5px 11px;font:600 13px var(--wf,system-ui,sans-serif);cursor:pointer}
+#wf{display:flex;gap:6px;padding:8px;border-top:1px solid #e3e3e3}
+#wi{flex:1;min-width:0;border:1px solid #ccc;border-radius:8px;padding:9px;font-size:15px}
+#wf button{background:var(--w2);color:var(--w2t);border:0;border-radius:8px;padding:0 14px;font-weight:700;cursor:pointer}
+
+#wb{border-radius:50%}
+</style></head><body>
+<div class="strip">941 Heights Boulevard, Houston · <a href="tel:+17138681130">713.868.1130</a></div>
+<header><div class="in"><img src="img/saras-inn-heights-logo.png" alt="Sara's Inn on the Boulevard"><nav><a href="#rooms">Rooms</a><a href="#know">Good to know</a><a href="#heights">The Heights</a><a href="#events">Events</a><a href="#faq">FAQ</a></nav><a class="btn" href="#" onclick="askW('book');return false">Book a stay</a></div></header>
+
+<div class="hero"><div class="arch"><div class="eyebrow">Historic boutique inn · Houston Heights</div>
+<h1>A quiet <i>porch</i> and a real bed, four miles from downtown</h1>
+<div class="orn">&#10086; &#10086; &#10086;</div>
+<p>For over 35 years Sara's Inn has hosted couples, business travelers and families in a restored historic home on Heights Boulevard, with free parking, Wi-Fi and coffee any hour.</p>
+<a class="btn" href="#rooms">See the rooms</a> <a class="btn line" href="#" onclick="askW('book');return false">Ask about dates</a></div>
+<div class="nums"><div><b>15</b><span>rooms and suites</span></div><div><b>35+</b><span>years of guests</span></div><div><b>50+</b><span>restaurants within 1 mile</span></div><div><b>Free</b><span>parking and Wi-Fi</span></div></div></div>
+
+<section id="rooms"><div class="w"><div class="c"><h2>The rooms</h2><p class="sub">The inn has 15 rooms and suites across the historic main house and the Carriage House. Rates and photos for each room are on the booking page, quoted per night before tax and including parking and Wi-Fi.</p></div>
+<div class="two"><div><ul class="rooms">
+<li><b>Grand Luxe</b><span>Main house, first floor</span></li>
+<li><b>Luxury Suite</b><span>Carriage House, first floor</span></li>
+<li><b>Man Cave</b><span>Carriage House, first floor</span></li>
+<li><b>Executive</b><span>Private ensuite bath</span></li>
+<li><b>Paris</b><span>Private bath across the hall</span></li>
+<div><h3 style="font-size:30px;color:var(--forest);margin-bottom:8px">In every room</h3><div class="amen"><span>Wi-Fi</span><span>Mini fridge</span><span>Parking</span><span>Flat screen TV with cable</span><span>Luxury robes and linens</span><span>Hair dryer</span><span>Daily housekeeping</span></div>
+<p style="color:var(--mut);margin:14px 0 0">All rooms have an ensuite bath except Paris. A touch-screen machine in the dining room makes coffee, decaf, lattes, cappuccinos and hot chocolate 24/7, with a variety of teas. There is a guest computer on site.</p></div></div></div></section>
+
+<section class="alt" id="know"><div class="w"><div class="c"><h2>Good to know</h2><p class="sub">Small inns work differently from big hotels. These are the policies guests ask about most.</p></div>
+<div class="rules">
+<div class="rule"><h3>Check-in</h3><p>From 3:00 pm Monday to Friday, from 2:00 pm Saturday and Sunday. Early and late arrivals can be arranged. If no innkeeper is present, you receive check-in instructions by email or text.</p></div>
+<div class="rule"><h3>Cancellation</h3><p>2 days' notice. Stays of 3 or more rooms or 4 or more nights need 7 days, holiday bookings 14 days; otherwise the full amount applies.</p></div>
+<div class="rule"><h3>Guests</h3><p>No children under 7, for quiet enjoyment and because much of the furniture is antique. No pets; service animals are welcome as the law requires.</p></div>
+<div class="rule"><h3>Breakfast</h3><p>Not served since March 2020, and no lunch or dinner either. A dozen restaurants are within walking distance.</p></div>
+<div class="rule"><h3>Accessibility</h3><p>The inn is not ADA compliant: the first floor dates from before 1900, with steps to the entrance and two steps down to the dining room.</p></div>
+<div class="rule"><h3>Front desk</h3><p>Not staffed 24/7. The innkeepers are happy to help, so it suits guests who do not expect round-the-clock concierge service.</p></div></div>
+<p style="text-align:center;color:var(--mut);margin:20px 0 0;font-size:14px">A 17% hotel occupancy tax is added to room rates. Minimum stays of 2 to 4 nights can apply on major holiday weekends and during big conferences.</p></div></section>
+
+<section class="band" id="heights"><div class="w"><div class="two"><div><h2>In the Heights</h2><p class="sub" style="margin-left:0;color:#c9dccb">One of Houston's most walkable neighborhoods: a small town inside a big city, platted in the 1880s as one of the first planned suburbs in Texas, with over 100 structures on the National Register.</p>
+<table style="background:transparent;color:#fff"><tr><td>Downtown</td><td style="color:#ffd9a0">3.5 miles</td></tr><tr><td>Memorial Park</td><td style="color:#ffd9a0">4 miles</td></tr><tr><td>Convention center, Toyota Center, Minute Maid Park</td><td style="color:#ffd9a0">4.5 miles</td></tr><tr><td>Rice University, Hermann Park, Museum District</td><td style="color:#ffd9a0">5 miles</td></tr><tr><td>Medical Center</td><td style="color:#ffd9a0">6 miles</td></tr><tr><td>NRG Stadium and the Galleria</td><td style="color:#ffd9a0">8 miles</td></tr><tr><td>Both airports</td><td style="color:#ffd9a0">18 to 22 miles</td></tr></table></div>
+<div><h3 style="font-size:30px;margin-bottom:14px">Within walking distance</h3><div class="timeline"><div><b>19th Street</b><p>Shopping district and the Heights Theatre.</p></div><div><b>Heights Boulevard trail</b><p>A running and bike trail right outside the inn.</p></div><div><b>Dining</b><p>More than 50 restaurants within a mile, dessert spots and bars, a dozen on foot.</p></div><div><b>Heights Opera</b><p>Performances in season.</p></div></div>
+<p style="color:#c9dccb;font-size:14px;margin-top:18px">No shuttle service: Uber, Yellow Cab and the Metro bus line all serve Houston.</p></div></div></div></section>
+
+<section id="events"><div class="w"><div class="c"><h2>Weddings, showers and gatherings</h2><p class="sub">The 5,500 sq. ft. inn has a wrap-around porch, rooftop balcony, gazebo and a parlor room made for photographs. The event facilities hold up to 75 people.</p></div>
+<div class="rules"><div class="rule"><h3>Weddings</h3><p>Ceremonies and receptions, with overnight rooms for your guests. Venue details and tours are on the thebelamour.com site.</p></div><div class="rule"><h3>Showers</h3><p>Bridal and baby showers in the main house and grounds.</p></div><div class="rule"><h3>Private events</h3><p>Company retreats, holiday parties, church and couples retreats, reunions, birthdays and anniversaries. Write to Events@saras.com.</p></div></div></div></section>
+
+<section class="alt"><div class="w"><div class="two"><div><h2>A house with a story</h2><p style="color:var(--mut)">The house was restored and converted to a bed and breakfast in the 1980s. It was featured on the Heights Historical Home Tour in May 1986 and opened the next month as Sara's Inn, named after the owner's youngest daughter. A second story with a turret and widow's walk was added in 1980.</p><p style="color:var(--mut)">Today the inn welcomes guests from all over: over 35 countries so far, from Argentina to South Korea.</p></div>
+<div><h3 style="font-size:30px;color:var(--forest);margin-bottom:8px">Who stays here</h3><div class="amen"><span>Romantic weekends</span><span>Business travelers</span><span>Family and friends</span><span>Wedding guests</span><span>International visitors</span></div><p style="color:var(--mut);margin-top:14px">The inn says many guests come back again and again, and that business travelers love it for being a calmer alternative to big-brand hotels.</p></div></div></div></section>
+
+<section class="band"><div class="w"><div class="c"><h2>Beyond the porch</h2><p class="sub">Places the inn's Things To Do page points guests to, all a short drive away.</p></div>
+<div class="rules"><div class="rule" style="background:#2f4c3a;border-color:#47664f"><h3 style="color:#fff">Museums and gardens</h3><p style="color:#c9dccb">Art Car Museum, Bayou Bend Collection and Gardens, Houston Museum of Natural Science.</p></div><div class="rule" style="background:#2f4c3a;border-color:#47664f"><h3 style="color:#fff">Parks and bayou</h3><p style="color:#c9dccb">Memorial Park, Houston Arboretum, Buffalo Bayou Park Cistern, bayou boat tours and bat watching.</p></div><div class="rule" style="background:#2f4c3a;border-color:#47664f"><h3 style="color:#fff">Evenings out</h3><p style="color:#c9dccb">Miller Outdoor Theatre, the Heights Theatre and Heights Opera in season, plus the neighborhood's bars and dessert spots.</p></div></div></div></section>
+
+<section><div class="w"><div class="c"><h2>House rules, in plain words</h2><p class="sub">The inn is a historic building with antique furniture, so a few rules protect both the house and your neighbors in the next room.</p></div>
+<div class="two"><div><ul class="rooms"><li><b>Visitors</b><span>Only with prior innkeeper approval</span></li><li><b>Candles and incense</b><span>Not allowed; fireworks too</span></li><li><b>Confetti and glitter</b><span>Not allowed, rose petals included</span></li><li><b>Noise</b><span>Guests who disturb others may be asked to leave</span></li></ul></div>
+<div><p style="margin-top:0;color:var(--mut)">The innkeepers cater to the comfort, privacy and security of registered guests. Negligent damage is assessed at actual documented cost, so please report spills or damage to the innkeepers promptly.</p><p style="color:var(--mut)">Housekeeping is daily, except Thanksgiving and Christmas Day, when extra towels are left the day before. A tip for the housekeeping staff is always appreciated.</p></div></div></div></section>
+
+<section class="alt"><div class="w"><div class="c"><h2>How a stay works</h2><p class="sub">From the first click to the front porch.</p></div>
+<div class="rules"><div class="rule"><h3>1. Check availability</h3><p>Choose your arrival date, number of guests and nights on the booking form. Each room's photos, details and rate are shown there.</p></div><div class="rule"><h3>2. Arrive</h3><p>Check-in is from 3:00 pm on weekdays and 2:00 pm on weekends; ask the innkeepers if you need an earlier or later arrival. Park for free in one of 10 spaces on site.</p></div><div class="rule"><h3>3. Settle in</h3><p>Coffee, lattes and teas are in the dining room any hour. Restaurants, the Heights Boulevard trail and 19th Street are a walk away.</p></div></div>
+<p style="text-align:center;color:var(--mut);margin:22px 0 0">Questions the page does not answer? Ask the assistant, or phone the innkeepers on 713.868.1130.</p></div></section>
+
+<section id="faq"><div class="w"><div class="c"><h2>Questions</h2><p class="sub">The assistant in the corner knows these and more.</p></div>
+<details><summary>Is there parking?</summary><p>Yes, free: 10 spaces on site and more along Heights Boulevard.</p></details>
+<details><summary>Is Wi-Fi included?</summary><p>Yes, free Wi-Fi in every room, cable TV, and a guest computer on site.</p></details>
+<details><summary>Do you have a pool or restaurant?</summary><p>No pool, and no on-site restaurant. The neighborhood has dozens of places to eat.</p></details>
+<details><summary>Is the inn good for business travelers?</summary><p>The innkeepers host numerous business travelers every week. Just note there is no 24/7 front desk.</p></details>
+<details><summary>How are rooms cleaned?</summary><p>Daily, by a long-serving housekeeping staff. Hang the doorknob sign to skip a visit and receive fresh towels in a basket.</p></details>
+<details><summary>Do I need a rental car?</summary><p>It depends on your plans. Some guests rent cars, some use a cab when needed, and others visiting family in the Heights get picked up and dropped off. The airports are about 18 to 22 miles away and there is no shuttle.</p></details>
+<details><summary>Can the inn host an event?</summary><p>Yes, for up to 75 people: weddings, showers, retreats, reunions and parties. Write to Events@saras.com.</p></details>
+<details><summary>Why choose an inn over a big hotel?</summary><p>The inn describes itself as more comfortable and friendlier than a big hotel, with free parking and free internet, and a historic setting you will not find downtown.</p></details>
+<details><summary>Can I check in early or late?</summary><p>Early and late check-ins can usually be arranged. Please inquire with the innkeepers before you arrive.</p></details>
+<details><summary>Are candles or confetti allowed?</summary><p>No. Because of the historic building, candles, incense and fireworks are not allowed, and neither are confetti, glitter or rose petals.</p></details></div></section>
+
+<section class="alt" id="visit"><div class="w"><div class="c"><h2>Find us</h2></div><div class="visit"><div><b>Address</b>941 Heights Boulevard<br>Houston, Texas 77008</div><div><b>Call</b><a href="tel:+17138681130">713.868.1130</a></div><div><b>Email</b><a href="mailto:innkeeper@saras.com">innkeeper@saras.com</a></div></div></div></section>
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+<button id="wb" type="button" onclick="openW()" aria-label="Open assistant"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg></button><div id="wp" role="dialog" aria-label="Assistant"><div id="wh"><div><b id="wn"></b><small id="ws"></small></div><button id="wx" type="button" onclick="closeW()" aria-label="Close">&times;</button></div><div id="wm" aria-live="polite"></div><div id="wc"></div><form id="wf" autocomplete="off"><input id="wi" type="text" placeholder="Type your question..." aria-label="Message"><button type="submit">Send</button></form></div>
+<script>(function(){var NAME="Sara's Inn Assistant",SUB="Rooms, policies, the Heights";
+var GREET="Hello! I'm the assistant for Sara's Inn on the Boulevard in the Houston Heights. Ask about rooms, check-in, parking, policies, events or the neighborhood, or send a stay request to the innkeepers.";
+var FALLBACK="I do not have that detail. The innkeepers will confirm it: 713.868.1130 or innkeeper@saras.com.";
+var HOME=["Rooms","Check-in","Parking","Policies","The Heights","Book a stay"];
+var KB=[
+{k:"room rooms suite suites bed bedroom accommodation accommodations amenities amenity luxury grand luxe executive paris floral",a:"The inn has 15 rooms and suites in the historic main house and the Carriage House. The site names rooms such as Grand Luxe, Executive, Paris, the Luxury Suite and the Man Cave. Every room has complimentary Wi-Fi, parking, mini fridge, flat screen TV with cable, luxury robes and linens, and a hair dryer. All have an ensuite bath except the Paris room, whose private bath is across the hall.",c:["Rates","Check-in","Accessibility","Book a stay"]},
+{k:"room rate rates price prices cost costs much night nightly cheap expensive pricing charge tax taxes",a:"Rates, photos and details for each room are shown when you click Book Now on the inn's site. Rates are quoted per night before tax and can change through the year; they include parking and Wi-Fi. A 17% hotel occupancy tax is added to all room rates.",c:["Rooms","Minimum stay","Book a stay"]},
+{k:"check checkin check-in arrive arrival early late checkout check-out time",a:"Check-in is from 3:00 pm Monday to Friday and from 2:00 pm on Saturday and Sunday. Early and late check-ins can be arranged, so please inquire. If no innkeeper is present at your arrival, you will receive an email or text with check-in instructions.",c:["Parking","Policies","Book a stay"]},
+{k:"parking park car cars garage vehicle valet free",a:"Parking is free: there are 10 spaces on site, plus more along Heights Boulevard. Parking and Wi-Fi are included in the room rate.",c:["Rooms","Airport","Book a stay"]},
+{k:"cancel cancellation cancelling refund notice change policy",a:"The cancellation policy needs 2 days' notice; a cancellation less than 2 days before arrival is charged the full amount. Reservations for 3 or more rooms or 4 or more nights need 7 days' notice, and holiday bookings need 14 days' notice. Without the minimum notice, the full amount is charged.",c:["Policies","Minimum stay","Book a stay"]},
+{k:"children child kid kids baby babies family young age year years old under seven 7",a:"No children under 7 are allowed in the inn, for the quiet enjoyment of guests and because much of the furniture is antique. Guests are family and business travelers and couples looking for a quiet escape.",c:["Policies","Pets","Book a stay"]},
+{k:"pet pets dog dogs cat cats animal animals service",a:"Pets are not allowed in the inn; a $100 fine plus actual cleaning cost applies if violated. Service animals are accepted as required under the Americans with Disabilities Act.",c:["Policies","Children","Book a stay"]},
+{k:"breakfast food eat meal meals dining restaurant restaurants dinner lunch coffee tea",a:"The inn no longer serves breakfast (since March 2020) and does not serve lunch or dinner. There are more than 50 restaurants within 1 mile, about a dozen within walking distance, and the Heights is known as a foodie's paradise. A machine in the main dining room makes coffee, decaf, lattes, cappuccinos and hot chocolate 24/7, with a variety of teas.",c:["The Heights","Rooms","Book a stay"]},
+{k:"accessible accessibility wheelchair handicap disabled disability ada stairs steps mobility floor",a:"The inn is not ADA compliant or wheelchair accessible because of the building's age (the first floor was built before 1900). There are several steps to get in and two steps down into the dining room. First floor rooms are the Grand Luxe in the main house and the Luxury Suite and Man Cave in the Carriage House. Please contact the innkeepers before booking with special concerns.",c:["Rooms","Policies","Book a stay"]},
+{k:"airport airports shuttle taxi uber transport transportation bus metro miles far distance downtown",a:"The inn is about 18 to 22 miles from both airports and has no shuttle service; Uber, Yellow Cab and the Metro bus line are available. Downtown is 3.5 miles away, Memorial Park 4 miles, the convention center, Toyota Center and Minute Maid Park 4.5 miles, Rice University, Hermann Park and the Museum District 5 miles, the Medical Center 6 miles, and NRG stadium and the Galleria 8 miles.",c:["Parking","The Heights","Book a stay"]},
+{k:"wedding weddings bridal baby shower showers event events party parties retreat reunion venue private hold hosting",a:"The inn hosts weddings, bridal and baby showers, company retreats, holiday parties, church and couples retreats, family reunions, ladies nights, birthdays and anniversaries, for up to 75 people. The 5,500 sq. ft. inn has a wrap-around porch, rooftop balcony, gazebo and parlor room. For private events write to Events@saras.com; wedding venue details and tours are on the thebelamour.com site.",c:["Rooms","Book a stay"]},
+{k:"heights nearby near around neighborhood area walk walkable attractions things see do shopping trail running jog",a:"The Houston Heights is one of Houston's most walkable neighborhoods: 19th Street shopping, the Heights Theatre, the Heights Opera in season, the Heights Boulevard running and bike trail, and over 100 structures on the National Register of Historic Places. The inn's Things To Do page also lists the Art Car Museum, Bayou Bend, Memorial Park, the Houston Arboretum and Buffalo Bayou boat tours.",c:["Food","Airport","Book a stay"]},
+{k:"business traveler travel work conference workspace wifi wi-fi internet computer",a:"The inn hosts many business travelers every week. Wi-Fi is complimentary in every room and there is a guest computer on site. Note there is no front desk staff 24/7, though the innkeepers are glad to help.",c:["Check-in","Rooms","Book a stay"]},
+{k:"frontdesk front desk concierge staff innkeeper innkeepers reception hour hours open",a:"The innkeepers are happy to assist, but there is no front desk staff 24/7, so it is not the best fit for guests who expect round-the-clock concierge service. Call 713.868.1130 or write innkeeper@saras.com.",c:["Check-in","Book a stay"]},
+{k:"minimum stay stays holiday holidays weekend valentine easter thanksgiving christmas nights",a:"There may be a 2 to 4 night minimum stay on major holiday weekends: Valentine's Day, Good Friday through Easter Sunday, July 4th, Labor Day weekend, Thanksgiving Eve through the Saturday after Thanksgiving, Christmas and New Year's, and major conferences.",c:["Rates","Cancellation","Book a stay"]},
+{k:"housekeeping room rooms clean cleaning housekeeper towels tip",a:"Housekeeping cleans every room daily, except on Thanksgiving and Christmas Day when extra towels are provided the day before. If you prefer not to have anyone in, hang the sign on the doorknob and fresh towels are left in a basket. The staff appreciates a tip.",c:["Rooms","Book a stay"]},
+{k:"smoking smoke candle candles incense fireworks confetti glitter petals visitor visitors guest noise damage rules",a:"House rules: no fireworks, incense or candle burning (a minimum $200 charge applies); no confetti, glitter or rose petals; visitors only with prior innkeeper approval; excessive noise can lead to guests being asked to leave. Please report any spills or damages promptly.",c:["Policies","Children","Book a stay"]},
+{k:"pool swimming gym fitness spa",a:"There is no swimming pool. For exercise, the Heights has a running and bike trail along Heights Boulevard, right by the inn.",c:["The Heights","Rooms","Book a stay"]},
+{k:"history historic old victorian house built owner story who sara original",a:"The house is a historic home with a turret and widow's walk; it was restored and converted to a bed and breakfast in the 1980s and opened as Sara's Inn in 1986, named after the original owner's youngest daughter. The inn has been welcoming guests for over 35 years.",c:["Rooms","The Heights","Book a stay"]},
+{k:"international foreign country countries guests abroad",a:"The inn has welcomed international guests from over 35 countries, from Argentina and Australia to Russia and South Korea.",c:["Rooms","Book a stay"]},
+{k:"where location located address directions find boulevard houston",a:"Sara's Inn on the Boulevard is at 941 Heights Boulevard, Houston, Texas 77008, in the Heights, only about 4 miles from downtown. Phone 713.868.1130.",c:["Airport","Parking","Book a stay"]},
+{k:"phone call number email contact reach",a:"Call 713.868.1130 or write to innkeeper@saras.com. For events: Events@saras.com.",c:["Check-in","Book a stay"]},
+{k:"hello hi hey howdy",a:"Hello! I can help with rooms, check-in, parking, policies, events and the Heights, or take a stay request for the innkeepers.",c:["Rooms","Check-in","Book a stay"]}
+];
+var STEPS=[
+{key:'arr',q:"What is your arrival date?",chips:[]},
+{key:'nts',q:"How many nights?",chips:["1","2","3","4+"]},
+{key:'gst',q:"How many guests? (no children under 7)",chips:["1","2","3","4"]},
+{key:'rm',q:"Any room preference?",chips:["First floor room","Ensuite bath","Carriage House","No preference"]},
+{key:'name',q:"Your name?",chips:[]},
+{key:'mail',q:"Email or phone for the innkeepers to reach you?",chips:[]}
+];
+function SUMMARY(d){return "Thank you "+d.name+". Stay request noted:\nArrival: "+d.arr+" · "+d.nts+" night(s) · "+d.gst+" guest(s)\nRoom: "+d.rm+"\nContact: "+d.mail+"\n\nThis has been sent to the innkeepers, who will confirm availability and rates. (Demo: nothing is actually sent.)"}
+
+/*ENGINE*/
+var STOP="the a an of to is are do does you your i me my we can for in on at and or it be have has with about how what when where which there here".split(" ");
+function norm(s){return s.toLowerCase().replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ers|er|es|ed|s)$/,""):w}
+function lev(a,b){if(a==b)return 0;if(Math.abs(a.length-b.length)>1)return 2;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function lev2(a,b){var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function hit(w,kw){var s=stem(w);if(kw==w||stem(kw)==s)return 1;if(w.length>=5&&kw.length>=5){if(lev(w,kw)<=1||lev(s,stem(kw))<=1)return .9;if(w.length>=7&&kw.length>=7&&lev2(w,kw)<=2)return .8}if(w.length>=4&&(kw.indexOf(w)==0||w.indexOf(kw)==0)&&kw.length>=4)return .6;return 0}
+function answer(q){var ws=norm(q).split(" ").filter(function(w){return w&&STOP.indexOf(w)<0});if(!ws.length)ws=norm(q).split(" ").filter(function(w){return w});var best=null,bs=0;KB.forEach(function(e){var kws=e.k.split(" "),sc=0;ws.forEach(function(w){var m=0;kws.forEach(function(kw){m=Math.max(m,hit(w,kw))});sc+=m});if(sc>bs){bs=sc;best=e}});return bs>=.9?best:null}
+var BOOKWORDS=/\b(book|booking|booked|enquire|enquiry|inquiry|appointment|appointments|reserve|reservation|enrol|enroll|enrollment|enrolment|sign up|signup|schedule|register|registration|trial|visit|consultation)\b/;
+/*END*/
+var $=function(i){return document.getElementById(i)},M=$('wm'),C=$('wc'),I=$('wi'),flow=null,data={},si=0;
+function say(t,who){var d=document.createElement('div');d.className='m '+(who||'b');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight}
+function chips(a){C.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){handle(t)};C.appendChild(b)})}
+function openW(mode,pre){$('wp').classList.add('on');if(!M.children.length){say(GREET);chips(HOME)}if(mode=='book'){startBook(pre)}}
+function closeW(){$('wp').classList.remove('on')}
+function startBook(pre){flow=1;data={};si=0;if(pre&&STEPS[0]){data[STEPS[0].key]=pre}ask()}
+function ask(){while(si<STEPS.length&&data[STEPS[si].key])si++;if(si>=STEPS.length){finish();return}say(STEPS[si].q);chips(STEPS[si].chips)}
+function finish(){flow=null;say(SUMMARY(data));chips(HOME)}
+function handle(t){say(t,'u');if(flow){if(/^(cancel|stop|exit)$/i.test(t.trim())){flow=null;say("No problem, request cancelled.");chips(HOME);return}data[STEPS[si].key]=t;si++;ask();return}
+if(BOOKWORDS.test(norm(t))||/^book/i.test(t)){startBook();return}
+var r=answer(t);if(r){say(r.a);chips(r.c)}else{say(FALLBACK);chips(HOME)}}
+$('wf').addEventListener('submit',function(e){e.preventDefault();var v=I.value.trim();if(!v)return;I.value='';handle(v)});
+
+$("wn").textContent=NAME;$("ws").textContent=SUB;window.openW=openW;window.closeW=closeW;window.askW=function(t){openW();handle(t)};})();</script>
+</body></html>

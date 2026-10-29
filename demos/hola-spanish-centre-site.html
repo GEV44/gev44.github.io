@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Hola Spanish Centre, Vancouver: small-group Spanish classes taught by native speakers, nine levels, online and in-person. Demo page with a registration assistant.">
+<title>Hola Spanish Centre · Vancouver</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--or:#f26b1d;--or2:#ffe3d0;--cream:#fff8ef;--ink:#2b1d17;--teal:#10595c;--teal2:#d9ece9;--mut:#6a5a50;--w1:#10595c;--w1t:#fff;--w2:#f26b1d;--w2t:#fff;--wbg:#fff8ef;--wf:'DM Sans',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 'DM Sans',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:700;line-height:1.12;margin:0}
+a{color:inherit}
+header{padding:14px 16px;display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:auto;gap:12px}
+header img{height:58px;width:auto;display:block}
+header nav{display:none;gap:22px;font-weight:500;font-size:15px}
+header nav a{text-decoration:none}
+.pill{display:inline-block;background:var(--or);color:#fff;border:0;border-radius:999px;padding:12px 22px;font:700 15px 'DM Sans';text-decoration:none;cursor:pointer}
+.pill.ghost{background:transparent;color:var(--teal);border:2px solid var(--teal)}
+@media(min-width:800px){header nav{display:flex}}
+.hero{max-width:1100px;margin:auto;padding:26px 16px 50px;display:grid;gap:30px;grid-template-columns:minmax(0,1fr);position:relative;overflow:hidden}
+.hero h1{font-size:clamp(38px,8.5vw,68px)}
+.hero h1 em{color:var(--or);font-style:italic}
+.hero p{font-size:18px;color:var(--mut);max-width:520px}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.sun{position:absolute;width:340px;height:340px;border-radius:50%;background:var(--or2);right:-120px;top:-110px;z-index:-1}
+.facts{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.facts div{background:#fff;border-radius:18px;padding:16px;border:1px solid #f1dfcc}
+.facts b{display:block;font:700 32px 'Fraunces';color:var(--or)}
+.facts span{font-size:14px;color:var(--mut)}
+@media(min-width:860px){.hero{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);align-items:center}}
+section{padding:56px 16px}
+.w{max-width:1100px;margin:auto}
+h2{font-size:clamp(30px,5.5vw,44px);margin-bottom:10px}
+.lead{color:var(--mut);max-width:620px;margin:0 0 26px}
+.band{background:var(--teal);color:#fff}
+.band .lead{color:#c3dedb}
+.ladder{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.ladder{grid-template-columns:repeat(3,minmax(0,1fr));align-items:end}}
+.step{background:#fff;color:var(--ink);border-radius:18px;padding:18px;border-bottom:6px solid var(--or)}
+.step h3{font-size:26px;color:var(--teal)}
+.step small{color:var(--or);font-weight:700;letter-spacing:.8px;text-transform:uppercase;font-size:12px}
+.step ul{margin:8px 0 0;padding-left:18px;font-size:15px}
+@media(min-width:760px){.step:nth-child(2){padding-top:34px}.step:nth-child(3){padding-top:50px}}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tabs button{background:#fff;border:2px solid var(--teal);color:var(--teal);border-radius:999px;padding:8px 16px;font:700 14px 'DM Sans';cursor:pointer}
+.tabs button.on{background:var(--teal);color:#fff}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;font-size:15px}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #f1dfcc}
+th{background:var(--teal2);color:var(--teal);font-weight:700}
+td.n{font-weight:700;color:var(--or)}
+.note{font-size:14px;color:var(--mut);margin:12px 0 0}
+.grid{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tile{background:#fff;border:1px solid #f1dfcc;border-radius:18px;padding:20px}
+.tile h3{font-size:22px;margin-bottom:6px;color:var(--teal)}
+.tile p{margin:0;font-size:15px;color:var(--mut)}
+.band .tile{background:#17696c;border-color:#2c7f82;color:#fff}.band .tile h3{color:#ffd7bd}.band .tile p{color:#d5ebe8}
+.cal{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.cal li{background:#fff;border-radius:14px;padding:12px 16px;border:1px solid #f1dfcc;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:15px}
+.cal b{color:var(--teal)}.cal span{color:var(--mut)}
+details{background:#fff;border:1px solid #f1dfcc;border-radius:14px;margin-bottom:8px;padding:0 16px}
+summary{cursor:pointer;padding:14px 0;font-weight:700;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";float:right;color:var(--or);font-size:22px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{margin:0 0 14px;color:var(--mut)}
+.visit{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.visit{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.visit div{border:1.5px dashed var(--or);border-radius:18px;padding:18px}
+.visit b{font:700 20px 'Fraunces';display:block;margin-bottom:4px}
+footer{padding:26px 16px;text-align:center;color:var(--mut);font-size:14px}
+#wb{position:fixed;right:16px;bottom:16px;z-index:50;width:58px;height:58px;border-radius:50%;border:0;background:var(--w2);color:var(--w2t);font-size:25px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+#wp{position:fixed;right:12px;bottom:84px;z-index:50;width:min(370px,calc(100vw - 24px));height:min(540px,calc(100vh - 110px));background:#fff;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.4);display:none;flex-direction:column;overflow:hidden;color:#222;font-family:var(--wf,system-ui,sans-serif)}
+#wp.on{display:flex}
+#wh{background:var(--w1);color:var(--w1t);padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+#wh b{font-size:16px}#wh small{display:block;opacity:.8;font-size:12px}
+#wx{background:none;border:0;color:inherit;font-size:26px;cursor:pointer;line-height:1}
+#wm{flex:1;overflow-y:auto;padding:12px;background:var(--wbg);display:flex;flex-direction:column;gap:8px}
+.m{max-width:86%;padding:9px 12px;border-radius:12px;font-size:14.5px;line-height:1.4;white-space:pre-line}
+.m.b{background:#fff;border:1px solid #ddd;align-self:flex-start}
+.m.u{background:var(--w1);color:var(--w1t);align-self:flex-end}
+#wc{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;background:#fff;border-top:1px solid #e3e3e3;max-height:96px;overflow-y:auto}
+#wc button{background:#fff;border:1.5px solid var(--w1);color:var(--w1);border-radius:999px;padding:5px 11px;font:600 13px var(--wf,system-ui,sans-serif);cursor:pointer}
+#wf{display:flex;gap:6px;padding:8px;border-top:1px solid #e3e3e3}
+#wi{flex:1;min-width:0;border:1px solid #ccc;border-radius:8px;padding:9px;font-size:15px}
+#wf button{background:var(--w2);color:var(--w2t);border:0;border-radius:8px;padding:0 14px;font-weight:700;cursor:pointer}
+
+#wb{border-radius:18px 18px 4px 18px}
+</style></head><body>
+<header><img src="img/hola-spanish-centre-logo.png" alt="HOLA Spanish Centre"><nav><a href="#levels">Levels</a><a href="#fees">Fees</a><a href="#ways">Ways to learn</a><a href="#faq">FAQ</a><a href="#visit">Visit</a></nav><a class="pill" href="#" onclick="askW('register');return false">Register</a></header>
+<div class="hero"><div class="sun"></div>
+<div><h1>Speak Spanish with real <em>native</em> teachers in small groups</h1>
+<p>Nine levels from Beginner 1 to Advanced 3, all focused on conversation, taught by university educated native speakers from Latin America and Spain. In Vancouver, North Vancouver or live online.</p>
+<div class="cta"><a class="pill" href="#levels">See the levels</a><a class="pill ghost" href="#" onclick="askW('What level should I start with?');return false">Find my level</a></div></div>
+<div class="facts"><div><b>9</b><span>levels, Beginner 1 to Advanced 3</span></div><div><b>8 to 10</b><span>students in a typical class</span></div><div><b>6 weeks</b><span>per level (4 for intensive)</span></div><div><b>Free</b><span>online placement test</span></div></div></div>
+
+<section id="levels" class="band"><div class="w"><h2>Nine levels, one staircase</h2><p class="lead">Take the free placement test or start at Beginner 1. After Advanced 3 the school recommends ongoing conversation classes to keep it fresh.</p>
+<div class="ladder">
+<div class="step"><small>Levels 1 to 3</small><h3>Beginner</h3><ul><li>Beginner 1: first steps, present tense, simple questions and answers</li><li>Beginner 2: everyday situations, immediate future tense</li><li>Beginner 3: prepositions, connectors, irregular verbs, progressive present</li><li>Beginner 4 / Conversation: casual practice in real-life contexts</li></ul></div>
+<div class="step"><small>Levels 1 to 3</small><h3>Intermediate</h3><ul><li>For students with basic vocabulary from travel or earlier study</li><li>Conversation practice that mirrors real, casual situations</li><li>Taught by an instructor who sets up situations that feel like real, casual conversations</li></ul></div>
+<div class="step"><small>Levels 1 to 3</small><h3>Advanced</h3><ul><li>Nine levels in total: Advanced 1, 2 and 3 finish the program</li><li>Courses are enriched with discussion and examples from Latin America and Spain</li><li>Then ongoing conversation classes</li></ul></div></div></div></section>
+
+<section id="fees"><div class="w"><h2>Course fees</h2><p class="lead">Pick a format. Fees include the Hola workbook, class materials, access to the online student module and audio and video practice.</p>
+<div class="tabs" id="tabs"></div><div id="ft"></div>
+<p class="note">Packages are for 2 or more courses bought together by the same student, and the package period starts with the first class. See the refund policy before registering.</p></div></section>
+
+<section id="ways" class="band"><div class="w"><h2>Ways to learn</h2><p class="lead">Group classes are the core, and there are other routes if your schedule or goals are different.</p>
+<div class="grid"><div class="tile"><h3>Group classes</h3><p>Once a week, twice a week, semi-intensive or super-intensive (4 days a week for 4 weeks).</p></div><div class="tile"><h3>Online live classes</h3><p>A virtual classroom where you can ask questions, with the PDF workbook, Moodle and podcasts included.</p></div><div class="tile"><h3>On-demand video</h3><p>Video lessons with quizzes at your own pace, watch as many times as you need.</p></div><div class="tile"><h3>Private lessons</h3><p>Fill in the form on the site and the team emails details and availability.</p></div><div class="tile"><h3>Spanish for kids</h3><p>Pronunciation, conversation and vocabulary with different themes every week.</p></div><div class="tile"><h3>Corporate classes</h3><p>One-day workshops to full-year programs, 1 to 1.5 hours once or twice a week, at your office or at 223 West Broadway.</p></div></div></div></section>
+
+<section><div class="w"><h2>Upcoming on the calendar</h2><p class="lead">A snapshot from the school's calendar when this page was prepared. The live calendar has current dates and spaces.</p>
+<ul class="cal"><li><b>Intermediate 3, once a week</b><span>Thursdays, Oct 29 to Dec 3 · Online</span></li><li><b>Intermediate 3 + Conversation, twice a week</b><span>Mon and Thu, Oct 29 to Dec 7 · Online</span></li><li><b>Advanced 1, once a week</b><span>Thursdays, Oct 29 to Dec 3 · Online</span></li><li><b>Advanced 3 + Conversation, twice a week</b><span>Tue and Mon, Nov 2 to Dec 8 · Vancouver</span></li><li><b>Intermediate Conversation, once a week</b><span>Mondays, Nov 2 to Dec 7 · Online</span></li></ul></div></section>
+
+<section class="band"><div class="w"><h2>Your teachers</h2><p class="lead">All classes are taught by university educated, experienced native speakers in a fun and unique Latin environment. Instructors come from Colombia, Peru, Chile, Ecuador, Uruguay, Argentina, Mexico and Spain, so you hear different accents and teaching styles.</p>
+<div class="grid two"><div class="tile"><h3>What students say</h3><p>The school's testimonials mention small classes, engaging material, native teachers and real confidence speaking after the first levels. Read them on the school's site.</p></div><div class="tile"><h3>Optional homework</h3><p>You are the one taking the initiative, so the school gives you the tools and leaves homework up to you.</p></div></div></div></section>
+
+<section><div class="w"><h2>Which test should you take?</h2><p class="lead">The free online placement test has three sections. If you know nothing at all, skip it and enrol in Beginner 1 (or Beginner A, Beginner Semi-Intensive I or Beginner Super-Intensive). Take your best guess: if the result says you are not ready for that level, the school points you to the right one and you can retake it there.</p>
+<div class="grid"><div class="tile"><h3>Beginner test</h3><p>You have had little exposure to the language, you visited Spanish speaking countries only for short periods, or you know a few isolated words but cannot yet form basic sentences.</p></div>
+<div class="tile"><h3>Intermediate test</h3><p>You understand basic vocabulary (greetings, weather, colours, numbers, food, sports, occupations, common places) and speak slowly, mostly in the present tense. You may have lived in a Spanish speaking country for more than a month.</p></div>
+<div class="tile"><h3>Advanced test</h3><p>You have an extensive vocabulary, narrate the past comfortably in both the preterite and imperfect, and are starting to use expressions like "espero que" or "si tuviera". Often six months or more in a Spanish speaking country.</p></div></div></div></section>
+
+<section class="band"><div class="w"><h2>Habits that make it stick</h2><p class="lead">Advice from the school's FAQ, because fluency is a long road and the staff say so plainly.</p>
+<div class="grid"><div class="tile"><h3>Be consistent</h3><p>Ten minutes every day beats one hour every week, so your brain can absorb and retain what you practise.</p></div><div class="tile"><h3>Practise out loud</h3><p>Use what you learn with Spanish speaking friends or relatives. If you do not know any, the school can help you connect with native speakers.</p></div><div class="tile"><h3>Keep momentum</h3><p>Take the next level right away instead of leaving a long break. Three or more courses back to back show a tremendous improvement.</p></div></div></div></section>
+
+<section><div class="w"><h2>Enrolment and refund policies</h2><p class="lead">The short version of the school's policies page. Please read the full policy before you register.</p>
+<ul class="cal"><li><b>Payment</b><span>Full payment before the class starts</span></li><li><b>If a class is cancelled</b><span>The school may discontinue or rearrange a class with low enrolment; you can transfer or ask for a full refund</span></li><li><b>Withdrawing</b><span>Submit the refund request form at least one week before the start date</span></li><li><b>New students</b><span>24 hours after the first class to request a refund</span></li><li><b>Deferring</b><span>To a later course of the same level, free with a week's notice, subject to space</span></li></ul></div></section>
+
+<section class="band"><div class="w"><h2>Register in four steps</h2><p class="lead">How enrolment works, in the school's own order.</p>
+<div class="grid"><div class="tile"><h3>1. Find your level</h3><p>Take the free online placement test, or start at Beginner 1 if you are new to Spanish.</p></div><div class="tile"><h3>2. Pick a class</h3><p>Open the calendar and filter by Vancouver, North Vancouver, South Surrey or online. If a class is full, add your name to the waitlist.</p></div><div class="tile"><h3>3. Register</h3><p>Online with Visa or MasterCard, or in person by appointment: call 604-568-2530 to book one.</p></div><div class="tile"><h3>4. Pay before the start</h3><p>Full payment is due prior to the class start. Your fee includes the workbook, materials and the online student module.</p></div></div>
+<p class="lead" style="margin:22px 0 0">Questions before you decide? Phone the office or write to info@holaspanishcentre.com, or ask the assistant on this page: it answers from the school's published information and says so when the team needs to confirm something.</p></div></section>
+
+<section id="faq"><div class="w"><h2>Quick answers</h2><p class="lead">Ask the assistant at the bottom right for anything else.</p>
+<details><summary>Which level should I start with?</summary><p>Take the free online placement test. It recommends a level, or choose Beginner 1 if you are starting from scratch.</p></details>
+<details><summary>How big are the classes?</summary><p>Very small: usually 8 to 10 students, so it is worth registering early.</p></details>
+<details><summary>Is there a book?</summary><p>A digital workbook is included. Printed copies are optional and cost extra on Amazon.</p></details>
+<details><summary>How long until I can hold a conversation?</summary><p>Committed students hold conversations after about 6 months, and one or two courses already give useful knowledge. Don't leave long breaks between levels.</p></details>
+<details><summary>Can I get a refund?</summary><p>Submit the refund request form at least one week before the start date. New students have 24 hours after their first class. The cancellation fees are on the refund policy page.</p></details>
+<details><summary>How long are the group classes?</summary><p>Each level is 6 weeks long for both the once a week and the twice a week classes. Semi-intensive and super-intensive levels run 4 weeks.</p></details>
+<details><summary>Should I choose once a week, twice a week or intensive?</summary><p>It depends on how much you want to learn and how fast. Twice a week gives more practice and exposure, once a week suits a busy schedule at a slower pace, and the intensive formats suit travel plans or a rapid start.</p></details>
+<details><summary>What does the class cover?</summary><p>All classes focus on conversation, with discussion and examples from Latin America and Spain. The course content page lists each level in detail.</p></details>
+<details><summary>Do you teach online?</summary><p>Yes: live online classes and on-demand video lessons with quizzes, plus the same workbook and podcasts.</p></details>
+<details><summary>How do I register?</summary><p>Online with Visa or MasterCard, or in person by appointment on 604-568-2530.</p></details></div></section>
+
+<section id="visit" class="band"><div class="w"><h2>Come by or call</h2><div class="visit" style="margin-top:14px"><div><b>Vancouver</b>223 West Broadway<br>(Broadway and Columbia)</div><div><b>Office hours</b>Mon to Thu 10 am to 6 pm<br>Fri and Sat 10 am to 2 pm</div><div><b>Contact</b><a href="tel:6045682530">604-568-2530</a><br><a href="mailto:info@holaspanishcentre.com" style="word-break:break-all">info@holaspanishcentre.com</a></div></div></div></section>
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+<button id="wb" type="button" onclick="openW()" aria-label="Open assistant"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg></button><div id="wp" role="dialog" aria-label="Assistant"><div id="wh"><div><b id="wn"></b><small id="ws"></small></div><button id="wx" type="button" onclick="closeW()" aria-label="Close">&times;</button></div><div id="wm" aria-live="polite"></div><div id="wc"></div><form id="wf" autocomplete="off"><input id="wi" type="text" placeholder="Type your question..." aria-label="Message"><button type="submit">Send</button></form></div>
+<script>
+var FEES={"Once a week":[["1 course","$215","",""],["2 courses","$350","$175 each","1 year"],["3 courses","$495","$150 each","1 year"],["4 courses","$620","$155 each","2 years"]],
+"Twice a week":[["1 course","$325","",""],["2 courses","$550","$275 each","1 year"],["3 courses","$795","$265 each","1 year"],["4 courses","$1,020","$255 each","2 years"]],
+"Semi-intensive":[["1 course","$415","",""],["2 courses","$710","$355 each","1 year"],["3 courses","$1,035","$345 each","1 year"],["4 courses","$1,300","$325 each","2 years"]],
+"Super-intensive":[["1 course","$695","",""],["2 courses","$1,290","$645 each","1 year"],["3 courses","$1,785","$595 each","1 year"]]};
+(function(){var T=document.getElementById('tabs'),F=document.getElementById('ft');function show(k){Array.prototype.forEach.call(T.children,function(b){b.className=b.textContent==k?'on':''});var h='<table><tr><th>Courses</th><th>Total</th><th>Per course</th><th>Valid for</th></tr>';FEES[k].forEach(function(r){h+='<tr><td>'+r[0]+'</td><td class="n">'+r[1]+'</td><td>'+(r[2]||'&ndash;')+'</td><td>'+(r[3]||'&ndash;')+'</td></tr>'});F.innerHTML=h+'</table>'}Object.keys(FEES).forEach(function(k){var b=document.createElement('button');b.type='button';b.textContent=k;b.onclick=function(){show(k)};T.appendChild(b)});show('Once a week')})();
+</script>
+<script>(function(){var NAME="Hola Assistant",SUB="Courses, levels, fees, registration";
+var GREET="Hola! I'm the assistant for Hola Spanish Centre. Ask about levels, class formats, fees, locations or online classes, or send a registration enquiry.";
+var FALLBACK="I do not have that detail. The team will confirm it: 604-568-2530 or info@holaspanishcentre.com.";
+var HOME=["Levels","Fees","Placement test","Locations","Online classes","Register"];
+var KB=[
+{k:"fee fees price prices cost costs much cheap pricing charge pay how tuition",a:"Course fees listed on the site (one course, 6 weeks unless noted):\nOnce a week: $215\nTwice a week: $325\nSemi-intensive (4 weeks): $415\nSuper-intensive (4 weeks): $695\nFees include the Hola workbook, class materials and online audio and video practice. Course packages (2 or more courses bought together) give a discount.",c:["Packages","Levels","Register"]},
+{k:"package packages discount discounts bundle multiple save saving promo several courses together",a:"Packages must be bought together for the same student. Once a week: 2 courses $350, 3 courses $495, 4 courses $620. Twice a week: 2 courses $550, 3 courses $795, 4 courses $1,020. Semi-intensive: 2 courses $710, 3 courses $1,035, 4 courses $1,300. Super-intensive: 2 courses $1,290, 3 courses $1,785. The package period is 1 year (2 years for 4 courses in the once, twice and semi-intensive plans).",c:["Fees","Register"]},
+{k:"level levels beginner beginners intermediate advanced course courses content grade curriculum nine 9 program programs",a:"There are 9 levels: Beginner 1, 2, 3, Intermediate 1, 2, 3 and Advanced 1, 2, 3, plus conversation classes to keep your Spanish fresh afterwards. All classes focus on conversation. Each level is 6 weeks for once or twice a week classes and 4 weeks for the intensive formats.",c:["Placement test","Fees","Register"]},
+{k:"placement test level should take assess assessment which start know evaluate quiz",a:"There is a free online placement test. Once you submit it, the school recommends the most suitable level. Beginner is for people with little exposure to Spanish, intermediate for those who understand basic vocabulary and can handle simple conversations.",c:["Levels","Register"]},
+{k:"beginner beginners begginer begginers beginer total zero never new start starting first scratch absolute",a:"For a first time, start with Beginner 1 (also offered as Beginner A, semi-intensive or super-intensive). It builds a foundation in grammar, vocabulary, pronunciation and everyday usage, so you can ask and answer simple questions and hold simple conversations in the present tense.",c:["Placement test","Fees","Register"]},
+{k:"location locations school where address vancouver north broadway columbia surrey map find centre center",a:"The main centre is at 223 West Broadway (Broadway and Columbia), Vancouver. Classes are also listed in North Vancouver, South Surrey and online. Check the calendar to filter by location.",c:["Online classes","Hours","Register"]},
+{k:"online live zoom virtual remote home internet moodle video demand podcast",a:"Online classes are live, taught in a virtual classroom where you can ask questions and take part as in a real classroom. They include the PDF workbook, Moodle access and podcasts. There are also on-demand video lessons with quizzes, which you can watch at your own pace.",c:["Fees","Register"]},
+{k:"hours open opening office time times monday tuesday wednesday thursday friday saturday sunday closed",a:"The office is open Monday to Thursday 10 am to 6 pm, and Friday and Saturday 10 am to 2 pm. Phone 604-568-2530. In-person registration is by appointment.",c:["Locations","Register"]},
+{k:"phone call number email contact reach",a:"Call 604-568-2530 (Mon to Thu 10 am to 6 pm, Fri and Sat 10 am to 2 pm) or write to info@holaspanishcentre.com.",c:["Hours","Register"]},
+{k:"teacher teachers instructor instructors native speaker speakers accent accents educated",a:"All classes are taught by university educated, experienced native speakers. Instructors come from Colombia, Peru, Chile, Ecuador, Uruguay, Argentina, Mexico and Spain, so you hear different accents and teaching approaches.",c:["Levels","Register"]},
+{k:"class size small students many people big",a:"Classes are very small: the site says the average is between 8 and 10 students, which is why early registration is recommended.",c:["Register","Fees"]},
+{k:"homework home work assignment optional",a:"Homework is optional. The school gives you the tools, and it is up to you to use them.",c:["Levels","Register"]},
+{k:"book books workbook materials textbook digital printed amazon",a:"A digital Hola Spanish Centre workbook is included in the course fee, along with online audio and video practice and access to the student module. Printed copies are optional and can be bought on Amazon for an extra fee.",c:["Fees","Register"]},
+{k:"long course weeks duration length session many week",a:"Each level is 6 weeks for once a week and twice a week classes, and 4 weeks for semi-intensive and super-intensive classes. The corporate programs say each level is about 10 hours.",c:["Levels","Fees"]},
+{k:"once twice week intensive semi super format frequency schedule faster fast which choose recommend",a:"Once a week suits busy schedules and a slower pace. Twice a week gives more practice and exposure and is the school's recommendation for a thorough course. Semi-intensive and super-intensive (4 days a week, 4 weeks) are for rapid progress or if you are travelling to a Spanish speaking country soon.",c:["Fees","Placement test","Register"]},
+{k:"fluent fluency long take learn months years speak",a:"The school is honest that learning a language is long term. Committed students can hold conversations after about 6 months, and one or two courses already give useful knowledge. Consistent practice and not leaving long breaks between levels help most.",c:["Levels","Register"]},
+{k:"kids kid children child young teens junior teach",a:"There is a Spanish for Kids program where children develop pronunciation, conversation and vocabulary with different themes every week. Ask the team about current ages and dates.",c:["Register","Hours"]},
+{k:"private lesson lessons tutor one-on-one individual personal",a:"Private lessons are available. Fill in the private lessons form on the site and the team will email you details and availability.",c:["Register","Hours"]},
+{k:"corporate company business work workplace team employees",a:"Corporate Spanish classes range from one-day workshops to full-year packages, usually once or twice a week for 1 to 1.5 hours, at your workplace or at the main centre at 223 West Broadway. Programs are tailored to the company.",c:["Locations","Register"]},
+{k:"refund cancel cancellation defer deferral transfer withdraw policy",a:"To withdraw, submit the refund request form at least one week before the class starts; a cancellation fee of $25 is deducted. New students have 24 hours after the first class to request a refund, with a $35 fee. After that no refunds are issued. Deferring to a later course of the same level is free with a week's notice.",c:["Register","Hours"]},
+{k:"waitlist waiting list full sold space spot spots",a:"Because classes are small, they can fill. You can add your name to the course waitlist on the site, and early registration is recommended.",c:["Register","Fees"]},
+{k:"payment pay visa mastercard card credit register registration enroll enrol sign",a:"You can register online with Visa or MasterCard, or in person by appointment (call 604-568-2530). Please read the refund policies before registering.",c:["Fees","Register"]},
+{k:"intermediate advanced test comfortable past preterite imperfect tense speak vocabulary lived country",a:"The placement test has Beginner, Intermediate and Advanced sections. Take Intermediate if you understand basic vocabulary and speak slowly mostly in the present tense. Take Advanced if you have an extensive vocabulary and narrate the past comfortably in the preterite and imperfect. If you miss the level, the school points you to the right one and you can retake it.",c:["Levels","Register"]},
+{k:"payment class cancelled canceled policy full prior start discontinue rearrange cancelled insufficient enrolment enrollment",a:"Full payment is due before the class starts. The school may discontinue or rearrange a class if enrolment is insufficient, and in that case you can transfer to another class or ask for a full refund of fees paid.",c:["Refund","Register"]},
+{k:"habits tips practice consistent consistency momentum advice improve better",a:"The school's advice: practise 10 minutes every day rather than one hour a week, use Spanish with native speakers (the school can help you connect), and keep momentum by taking the next level right away. Three or more courses back to back show a big improvement.",c:["Levels","Register"]},
+{k:"hello hi hey hola buenas",a:"Hola! I can help with levels, fees, formats, locations and registration enquiries.",c:["Levels","Fees","Locations","Register"]}
+];
+var STEPS=[
+{key:'lvl',q:"What level are you aiming for?",chips:["Beginner","Intermediate","Advanced","Not sure (placement test)"]},
+{key:'fmt',q:"Which format suits you?",chips:["Once a week","Twice a week","Intensive","Private lessons"]},
+{key:'loc',q:"Where would you like to learn?",chips:["Vancouver","North Vancouver","Online"]},
+{key:'name',q:"Your name?",chips:[]},
+{key:'mail',q:"Email or phone for the team to reach you?",chips:[]}
+];
+function SUMMARY(d){return "Gracias "+d.name+". Enquiry noted:\n"+d.lvl+" · "+d.fmt+"\nWhere: "+d.loc+"\nContact: "+d.mail+"\n\nThis has been sent to the team, who will confirm upcoming dates and spaces. (Demo: nothing is actually sent.)"}
+
+/*ENGINE*/
+var STOP="the a an of to is are do does you your i me my we can for in on at and or it be have has with about how what when where which".split(" ");
+function norm(s){return s.toLowerCase().replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ers|er|es|ed|s)$/,""):w}
+function lev(a,b){if(a==b)return 0;if(Math.abs(a.length-b.length)>1)return 2;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function lev2(a,b){var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function hit(w,kw){var s=stem(w);if(kw==w||stem(kw)==s)return 1;if(w.length>=5&&kw.length>=5){if(lev(w,kw)<=1||lev(s,stem(kw))<=1)return .9;if(w.length>=7&&kw.length>=7&&lev2(w,kw)<=2)return .8}if(w.length>=4&&(kw.indexOf(w)==0||w.indexOf(kw)==0)&&kw.length>=4)return .6;return 0}
+function answer(q){var ws=norm(q).split(" ").filter(function(w){return w&&STOP.indexOf(w)<0});if(!ws.length)ws=norm(q).split(" ").filter(function(w){return w});var best=null,bs=0;KB.forEach(function(e){var kws=e.k.split(" "),sc=0;ws.forEach(function(w){var m=0;kws.forEach(function(kw){m=Math.max(m,hit(w,kw))});sc+=m});if(sc>bs){bs=sc;best=e}});return bs>=.9?best:null}
+var BOOKWORDS=/\b(book|booking|booked|enquire|enquiry|inquiry|appointment|appointments|reserve|reservation|enrol|enroll|enrollment|enrolment|sign up|signup|schedule|register|registration|trial|visit|consultation)\b/;
+/*END*/
+var $=function(i){return document.getElementById(i)},M=$('wm'),C=$('wc'),I=$('wi'),flow=null,data={},si=0;
+function say(t,who){var d=document.createElement('div');d.className='m '+(who||'b');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight}
+function chips(a){C.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){handle(t)};C.appendChild(b)})}
+function openW(mode,pre){$('wp').classList.add('on');if(!M.children.length){say(GREET);chips(HOME)}if(mode=='book'){startBook(pre)}}
+function closeW(){$('wp').classList.remove('on')}
+function startBook(pre){flow=1;data={};si=0;if(pre&&STEPS[0]){data[STEPS[0].key]=pre}ask()}
+function ask(){while(si<STEPS.length&&data[STEPS[si].key])si++;if(si>=STEPS.length){finish();return}say(STEPS[si].q);chips(STEPS[si].chips)}
+function finish(){flow=null;say(SUMMARY(data));chips(HOME)}
+function handle(t){say(t,'u');if(flow){if(/^(cancel|stop|exit)$/i.test(t.trim())){flow=null;say("No problem, request cancelled.");chips(HOME);return}data[STEPS[si].key]=t;si++;ask();return}
+if(BOOKWORDS.test(norm(t))||/^book/i.test(t)){startBook();return}
+var r=answer(t);if(r){say(r.a);chips(r.c)}else{say(FALLBACK);chips(HOME)}}
+$('wf').addEventListener('submit',function(e){e.preventDefault();var v=I.value.trim();if(!v)return;I.value='';handle(v)});
+
+$("wn").textContent=NAME;$("ws").textContent=SUB;window.openW=openW;window.closeW=closeW;window.askW=function(t){openW();handle(t)};})();</script>
+</body></html>

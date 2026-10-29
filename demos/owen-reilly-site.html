@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Owen Reilly, Dublin estate agents since 2008: sales, lettings, landlord management, buyer's agent and block management from Docklands and Ballsbridge. Demo page with a valuation and viewing assistant.">
+<title>Owen Reilly · Dublin Estate Agents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1f1e23;--stone:#f4f1ea;--paper:#fff;--brick:#c4472d;--mut:#6d6a63;--line:#dcd7cb;--w1:#1f1e23;--w1t:#fff;--w2:#c4472d;--w2t:#fff;--wbg:#f4f1ea;--wf:'Archivo',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--stone);color:var(--ink);font:16px/1.6 'Archivo',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{margin:0;line-height:1.05}
+h1,h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
+a{color:inherit}
+header{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+header .in{max-width:1160px;margin:auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+header img{height:34px;width:auto;display:block}
+header nav{display:none;gap:24px;font-size:15px;font-weight:500}
+header nav a{text-decoration:none}
+.btn{display:inline-block;background:var(--ink);color:#fff;border:0;padding:12px 22px;font:700 14px 'Archivo';letter-spacing:.04em;text-decoration:none;cursor:pointer}
+.btn.b{background:var(--brick)}
+.btn.o{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+@media(min-width:900px){header nav{display:flex}}
+.hero{max-width:1160px;margin:auto;padding:54px 16px 40px}
+.hero h1{font-size:clamp(46px,11vw,112px);letter-spacing:-.02em}
+.hero h1 i{color:var(--brick)}
+.hero p{max-width:560px;font-size:19px;color:var(--mut);margin:18px 0 24px}
+.since{display:flex;gap:10px;flex-wrap:wrap;font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);margin-bottom:20px}
+.since span{border-top:2px solid var(--ink);padding-top:6px}
+.strip{background:var(--ink);color:#fff}
+.strip .in{max-width:1160px;margin:auto;padding:18px 16px;display:grid;gap:14px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.strip b{display:block;font:400 34px 'Instrument Serif';line-height:1}
+.strip span{font-size:13px;color:#b8b4aa}
+@media(min-width:800px){.strip .in{grid-template-columns:repeat(4,minmax(0,1fr))}}
+section{padding:56px 16px}
+.w{max-width:1160px;margin:auto}
+h2{font-size:clamp(34px,6vw,56px);margin-bottom:10px}
+.sub{color:var(--mut);max-width:620px;margin:0 0 26px}
+.tabs{display:flex;gap:0;flex-wrap:wrap;border-bottom:2px solid var(--ink);margin-bottom:0}
+.tabs button{background:transparent;border:0;padding:12px 18px;font:700 15px 'Archivo';cursor:pointer;color:var(--mut)}
+.tabs button.on{background:var(--ink);color:#fff}
+.panel{background:var(--paper);border:1px solid var(--line);border-top:0;padding:26px;display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:860px){.panel{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.panel h3{font:400 34px 'Instrument Serif'}
+.panel ul{margin:0;padding:0;list-style:none}
+.panel li{padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.grid{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.grid.t3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid.t2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cell{background:var(--paper);border:1px solid var(--line);padding:22px}
+.cell h3{font:700 19px 'Archivo';margin-bottom:6px}
+.cell p{margin:0;color:var(--mut);font-size:15px}
+.cell .n{font:400 44px 'Instrument Serif';color:var(--brick);display:block;line-height:1}
+.dark{background:var(--ink);color:#fff}
+.dark .sub{color:#b8b4aa}
+.awards{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.awards li{display:grid;gap:4px;padding:14px 0;border-bottom:1px solid #3a383f}
+.awards b{font:400 30px 'Instrument Serif';color:#ffb4a0}
+@media(min-width:760px){.awards li{grid-template-columns:110px minmax(0,1fr);gap:20px;align-items:baseline}}
+.areas{display:flex;flex-wrap:wrap;gap:8px}
+.areas span{border:1px solid var(--ink);padding:5px 14px;border-radius:999px;font-size:14px;font-weight:500}
+details{background:var(--paper);border:1px solid var(--line);margin-bottom:8px;padding:0 18px}
+summary{cursor:pointer;padding:15px 0;font-weight:700;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";float:right;color:var(--brick);font-size:22px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{margin:0 0 15px;color:var(--mut)}
+.offices{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.offices{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.offices div{border:1.5px solid var(--ink);padding:22px;background:var(--paper)}
+.offices b{font:400 32px 'Instrument Serif';display:block;margin-bottom:4px}
+footer{background:#111015;color:#9b978e;text-align:center;padding:22px 16px;font-size:14px}
+#wb{position:fixed;right:16px;bottom:16px;z-index:50;width:58px;height:58px;border-radius:50%;border:0;background:var(--w2);color:var(--w2t);font-size:25px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+#wp{position:fixed;right:12px;bottom:84px;z-index:50;width:min(370px,calc(100vw - 24px));height:min(540px,calc(100vh - 110px));background:#fff;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.4);display:none;flex-direction:column;overflow:hidden;color:#222;font-family:var(--wf,system-ui,sans-serif)}
+#wp.on{display:flex}
+#wh{background:var(--w1);color:var(--w1t);padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+#wh b{font-size:16px}#wh small{display:block;opacity:.8;font-size:12px}
+#wx{background:none;border:0;color:inherit;font-size:26px;cursor:pointer;line-height:1}
+#wm{flex:1;overflow-y:auto;padding:12px;background:var(--wbg);display:flex;flex-direction:column;gap:8px}
+.m{max-width:86%;padding:9px 12px;border-radius:12px;font-size:14.5px;line-height:1.4;white-space:pre-line}
+.m.b{background:#fff;border:1px solid #ddd;align-self:flex-start}
+.m.u{background:var(--w1);color:var(--w1t);align-self:flex-end}
+#wc{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;background:#fff;border-top:1px solid #e3e3e3;max-height:96px;overflow-y:auto}
+#wc button{background:#fff;border:1.5px solid var(--w1);color:var(--w1);border-radius:999px;padding:5px 11px;font:600 13px var(--wf,system-ui,sans-serif);cursor:pointer}
+#wf{display:flex;gap:6px;padding:8px;border-top:1px solid #e3e3e3}
+#wi{flex:1;min-width:0;border:1px solid #ccc;border-radius:8px;padding:9px;font-size:15px}
+#wf button{background:var(--w2);color:var(--w2t);border:0;border-radius:8px;padding:0 14px;font-weight:700;cursor:pointer}
+
+#wb{border-radius:0}#wp{border-radius:0}
+</style></head><body>
+<header><div class="in"><img src="img/owen-reilly-logo.jpg" alt="Owen Reilly"><nav><a href="#ways">Services</a><a href="#awards">Awards</a><a href="#areas">Areas</a><a href="#faq">FAQ</a><a href="#offices">Offices</a></nav><a class="btn b" href="#" onclick="askW('book');return false">Valuation</a></div></header>
+
+<div class="hero"><div class="since"><span>Dublin since 2008</span><span>Docklands &middot; Ballsbridge</span><span>Residential Estate Agent of the Year 2025</span></div>
+<h1>We know <i>Dublin</i> property</h1>
+<p>Residential sales, lettings, new homes, buyer's agent services, tenancy management and apartment block management, run by a small, hands-on team that works well beyond nine to five.</p>
+<a class="btn b" href="#" onclick="askW('book');return false">Arrange a valuation</a> <a class="btn o" href="#ways">What we do</a></div>
+<div class="strip"><div class="in"><div><b>2008</b><span>established in Dublin</span></div><div><b>3</b><span>years of industry awards</span></div><div><b>2</b><span>branches: Docklands and Ballsbridge</span></div><div><b>VR</b><span>tours on every listing</span></div></div></div>
+
+<section id="ways"><div class="w"><h2>Which describes you?</h2><p class="sub">Pick the side of the market you are on.</p>
+<div class="tabs" id="tabs"></div><div class="panel" id="panel"></div></div></section>
+
+<section style="padding-top:0"><div class="w"><div class="grid t3">
+<div class="cell"><span class="n">01</span><h3>Data-led advice</h3><p>Valuations come from open market data for your neighbourhood, and the team publishes ongoing market reports for its core markets.</p></div>
+<div class="cell"><span class="n">02</span><h3>Technology that shortens distance</h3><p>Virtual reality walkthrough tours on all listings, secure online references and digital lease signing for people moving to Dublin.</p></div>
+<div class="cell"><span class="n">03</span><h3>Straight and transparent</h3><p>Trustworthy, knowledgeable and enthusiastic is how the firm describes itself, with feedback requested after every sale.</p></div></div></div></section>
+
+<section class="dark" id="awards"><div class="w"><h2>Recognised by the industry</h2><p class="sub">Awards listed on the site for 2023, 2024 and 2025.</p>
+<ul class="awards"><li><b>2025</b><span>Residential Estate Agent of the Year, KPMG Property Industry Excellence Awards</span></li><li><b>2024</b><span>Estate Agent of the Year and Property Website of the Year</span></li><li><b>2023</b><span>Best Estate Agent in Dublin, Estate Agent of the Year and Marketing Team of the Year</span></li></ul></div></section>
+
+<section id="areas"><div class="w"><h2>Neighbourhood guides</h2><p class="sub">The site has a guide for each area, for people deciding where to live or buy. A selection:</p>
+<div class="areas"><span>Ballsbridge</span><span>Blackrock</span><span>Booterstown</span><span>Clontarf</span><span>Dalkey and Killiney</span><span>Docklands</span><span>Donnybrook</span><span>Dundrum</span><span>Glasnevin</span><span>Grand Canal Dock</span><span>Castleknock</span><span>Ranelagh</span><span>Portobello</span><span>Drumcondra</span><span>Foxrock</span><span>Clonskeagh</span></div></div></section>
+
+<section class="dark"><div class="w"><h2>Buyer's agent, in four steps</h2><p class="sub" style="color:#b8b4aa">For people relocating, investing or returning to Ireland.</p>
+<div class="grid t2"><div class="cell" style="background:#2a282e;border-color:#3a383f;color:#fff"><span class="n">1</span><h3>Consultation</h3><p style="color:#b8b4aa">Define goals, preferred locations and price range, and agree how the team adds value.</p></div><div class="cell" style="background:#2a282e;border-color:#3a383f;color:#fff"><span class="n">2</span><h3>The search</h3><p style="color:#b8b4aa">Market insight and a network of contacts, including properties that are not publicly listed, previewed and shortlisted for you.</p></div><div class="cell" style="background:#2a282e;border-color:#3a383f;color:#fff"><span class="n">3</span><h3>Negotiation</h3><p style="color:#b8b4aa">The team negotiates on your behalf for the best price and terms, using relationships with Dublin's leading estate agents.</p></div><div class="cell" style="background:#2a282e;border-color:#3a383f;color:#fff"><span class="n">4</span><h3>Closing</h3><p style="color:#b8b4aa">Coordination with solicitors, lenders, surveyors and valuers through to completion.</p></div></div></div></section>
+
+<section><div class="w"><h2>Built-in platforms</h2><p class="sub">The firm built its own tools and says the cost has paid off in service.</p>
+<div class="grid t3"><div class="cell"><h3>Bidding platform</h3><p>Transparent bids from any device: bidders see when and how much, and prove funding securely. The vendor observes and is notified of every bid.</p></div><div class="cell"><h3>MyOwenReilly</h3><p>Secure uploads of AML documents, BER certs and tenant references, and legally binding digital signing of leases.</p></div><div class="cell"><h3>VR tours</h3><p>Walkthroughs with a digital dollhouse and floor plan, viewable 24/7 from anywhere, so a tenant can go from the airport straight to the new home.</p></div></div></div></section>
+
+<section style="padding-top:0"><div class="w"><h2>Renting in Dublin: tips from the team</h2><p class="sub">From the firm's tenants guide.</p>
+<div class="grid t3"><div class="cell"><h3>Set a realistic budget</h3><p>Renting in Dublin does not come cheap, so count monthly bills as an unavoidable cost.</p></div><div class="cell"><h3>Be organised</h3><p>Have employer, former landlord and character references ready, because without them the move-in is delayed.</p></div><div class="cell"><h3>Know what you pay for</h3><p>Concierge, parking, a gym, a water view: ask yourself whether the extras are good value for you.</p></div><div class="cell"><h3>Remember the deposit</h3><p>Normally one month's rent, paid up front and fully refunded when you return the home in agreeable condition.</p></div><div class="cell"><h3>Find a community</h3><p>Developments with resident events help friendships form, and happy residents tend to stay longer.</p></div><div class="cell"><h3>Treat it like home</h3><p>Landlords want good tenants who take pride in the space, so check with them before changes.</p></div></div></div></section>
+
+<section class="dark"><div class="w"><h2>Landlord management, line by line</h2><p class="sub" style="color:#b8b4aa">Managing apartments and houses across Dublin for small landlords, high net worth individuals and investment funds since 2008, with a tenant retention strategy aimed at your investment return.</p>
+<div class="grid t3"><div class="cell" style="background:#2a282e;border-color:#3a383f;color:#fff"><h3>Every month</h3><p style="color:#b8b4aa">Collection of rent and tenant communication, with maintenance and repair issues dealt with quickly.</p></div><div class="cell" style="background:#2a282e;border-color:#3a383f;color:#fff"><h3>Every six months</h3><p style="color:#b8b4aa">An inspection of the property with a photo report for the landlord.</p></div><div class="cell" style="background:#2a282e;border-color:#3a383f;color:#fff"><h3>At renewal</h3><p style="color:#b8b4aa">Rent review, agreeing the tenancy renewal and the RTB renewal.</p></div><div class="cell" style="background:#2a282e;border-color:#3a383f;color:#fff"><h3>Before move-in</h3><p style="color:#b8b4aa">A pre-move-in inspection and any works needed.</p></div><div class="cell" style="background:#2a282e;border-color:#3a383f;color:#fff"><h3>At the end</h3><p style="color:#b8b4aa">Managing the end-of-tenancy process and dealing with the deposit return.</p></div><div class="cell" style="background:#2a282e;border-color:#3a383f;color:#fff"><h3>What tenants want</h3><p style="color:#b8b4aa">Good interior design, fast Wi-Fi, a hassle-free application, good storage, pet-friendly terms and flexibility.</p></div></div></div></section>
+
+<section><div class="w"><h2>Why sellers choose the firm</h2><p class="sub">From the firm's Why Sell With Us page.</p>
+<div class="grid t3"><div class="cell"><h3>Market knowledge</h3><p>Accurate open market valuations from data-led advice, and a record of achieving the asking price and higher.</p></div><div class="cell"><h3>Exceptional service</h3><p>Old-fashioned service plus technology: your property positioned with qualified buyers, and an experienced team member at every viewing.</p></div><div class="cell"><h3>Results driven</h3><p>Choose an agent on expertise and results, not on fee and valuation. The agents ask for feedback after every sale.</p></div></div></div></section>
+
+<section style="padding-top:0"><div class="w"><h2>A small team that gives back</h2><p class="sub">Operating since 2008 under a hands-on managing director, with mentoring for juniors, hybrid working and regular charity days: 5km runs and walks, and long-term support for Barretstown, Dogs Trust and the DSPCA. Current vacancies are on the Careers page.</p></div></section>
+
+<section id="faq" style="padding-top:0"><div class="w"><h2>Questions we hear</h2><p class="sub">Answers from the firm's FAQ page. The assistant can take it further.</p>
+<details><summary>What is the difference between lettings and full management?</summary><p>Lettings markets the property and secures tenants. Full property management adds rent collection, maintenance and tenant care. The firm offers both.</p></details>
+<details><summary>Can you help first-time landlords?</summary><p>Yes, with pricing, legal requirements and tenant management, from marketing to lease agreements.</p></details>
+<details><summary>Do you manage apartment blocks?</summary><p>Yes: block management for Owners' Management Companies, covering finances, maintenance oversight, compliance and day-to-day operations.</p></details>
+<details><summary>Do you handle luxury properties?</summary><p>Yes, with a service tailored to attract premium tenants and buyers and to maximise results.</p></details>
+<details><summary>Do you offer new homes marketing?</summary><p>Yes, from small infill developments to 300+ unit apartment schemes: data-led advice, design advice, show house design and marketing strategy.</p></details></div></section>
+
+<section id="offices" style="padding-top:0"><div class="w"><h2>Two offices</h2><p class="sub">Monday to Friday, 9:00 am to 5:30 pm.</p>
+<div class="offices"><div><b>Docklands</b>3 Forbes Street, Grand Canal Dock<br>Dublin 2, D02 C1P0<br><a href="tel:+35316777100">+353 1 677 7100</a></div><div><b>Dublin 4 / Southside</b>8 Merrion Road, Ballsbridge<br>Dublin 4, D04 YOP4<br><a href="tel:+35316777101">+353 1 677 7101</a></div></div><p style="margin:16px 0 0"><a href="mailto:hello@owenreilly.ie">hello@owenreilly.ie</a></p></div></section>
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+<button id="wb" type="button" onclick="openW()" aria-label="Open assistant"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg></button><div id="wp" role="dialog" aria-label="Assistant"><div id="wh"><div><b id="wn"></b><small id="ws"></small></div><button id="wx" type="button" onclick="closeW()" aria-label="Close">&times;</button></div><div id="wm" aria-live="polite"></div><div id="wc"></div><form id="wf" autocomplete="off"><input id="wi" type="text" placeholder="Type your question..." aria-label="Message"><button type="submit">Send</button></form></div>
+<script>
+(function(){var D={"Selling":{h:"Sell your property",p:"The aim is the highest price in the fastest timeline. Valuations are data-led, positioned with qualified buyers, and every viewing is accompanied by an experienced agent who arrives early with the right keys.",l:["Open market valuation based on neighbourhood data","Virtual reality tour on your listing","Team keeps all parties in touch after a sale agreed","Feedback requested after every sale"],q:"I want to sell my property"},
+"Letting":{h:"Let your property",p:"Pricing, marketing, tenant sourcing and vetting, and lease agreements, with full management if you want a hands-off experience.",l:["Rent collection and tenant communication","Inspections every six months with a photo report","Maintenance, repairs and rent reviews","Renewals, RTB renewal, end of tenancy and deposit return"],q:"What does landlord management include?"},
+"Buying":{h:"Buyer's agent service",p:"For people relocating, investing or returning home. A bespoke search handled from consultation to completion.",l:["Consultation on goals, locations and budget","The search, including off-market opportunities","Viewings and negotiation on your behalf","Completion support"],q:"Tell me about the buyer's agent service"},
+"Renting":{h:"Rent a home",p:"A tenants guide, neighbourhood guides and a digital process that works even if you are still overseas.",l:["Register as a tenant and apply online","Virtual reality tours of listings","Secure references and digital lease signing","Top 10 tips for renting in Dublin"],q:"I am looking for a place to rent"},
+"Buildings":{h:"Block management",p:"Support for Owners' Management Companies in residential developments, especially premium ones across Dublin.",l:["Financial management","Maintenance oversight","Compliance","Day-to-day operations"],q:"Tell me about block management"}};
+var T=document.getElementById('tabs'),P=document.getElementById('panel');
+function show(k){Array.prototype.forEach.call(T.children,function(b){b.className=b.textContent==k?'on':''});var d=D[k],h='<div><h3>'+d.h+'</h3><p style="color:var(--mut)">'+d.p+'</p><a class="btn b" href="#" data-q="'+d.q.replace(/"/g,'&quot;')+'">Ask the assistant</a></div><ul>';d.l.forEach(function(x){h+='<li>'+x+'</li>'});P.innerHTML=h+'</ul>';P.querySelector('a').onclick=function(e){e.preventDefault();askW(this.getAttribute('data-q'))}}
+Object.keys(D).forEach(function(k){var b=document.createElement('button');b.type='button';b.textContent=k;b.onclick=function(){show(k)};T.appendChild(b)});show('Selling')})();
+</script>
+<script>(function(){var NAME="Owen Reilly Assistant",SUB="Sales, lettings, valuations";
+var GREET="Hello! I'm the assistant for Owen Reilly, Dublin estate agents. Ask about selling, renting, buying, landlord management or our offices, or request a valuation or viewing.";
+var FALLBACK="I do not have that detail. The team will confirm it: +353 1 677 7100 or hello@owenreilly.ie.";
+var HOME=["Sell my property","Rent my property","Buyer's agent","Landlord management","Offices","Request a valuation"];
+var KB=[
+{k:"about long business who company agency estate agents established since 2008 history dublin owen reilly",a:"Owen Reilly is a Dublin estate agency established in 2008, working across residential sales, lettings, new homes, buyer's agent services, tenancy management and apartment block management. The managing director, Owen, is hands-on in all aspects of the business.",c:["Services","Awards","Offices"]},
+{k:"service services offer offers do specialise lettings sales luxury prime prs block management new homes",a:"Services: residential and luxury sales, lettings and tenancy management, PRS rentals, new homes, a buyer's agent service, serviced apartments and apartment block management for owners' management companies.",c:["Sell my property","Rent my property","Buyer's agent","Landlord management"]},
+{k:"sell selling sale vendor vendors valuation property house apartment home market list",a:"Owen Reilly aims for the highest price in the fastest timeline. Valuations are data-led and based on the open market, every viewing is accompanied by an experienced team member, the team keeps all parties in touch after a sale is agreed, and feedback is requested after every sale. You can arrange a valuation on the site.",c:["Request a valuation","Awards","Offices"]},
+{k:"valuation value worth appraisal arrange free estimate",a:"Use Arrange a Valuation on the site, or I can send a valuation request to the team. Valuations are based on data-led open market advice for your neighbourhood.",c:["Request a valuation","Sell my property"]},
+{k:"rent renting let letting lease landlord landlords tenant tenants rental rentals tenancy my property out",a:"For landlords the team handles pricing, marketing, tenant sourcing and vetting, and lease agreements, with first-time landlords guided through pricing, legal requirements and tenancy management. They offer both lettings only and full management.",c:["Landlord management","Request a valuation"]},
+{k:"management manage landlord tenancy rent collection inspection maintenance repair deposit rtb renewal portfolio",a:"The landlord management service includes rent collection, inspections every six months with a photo report, maintenance and repairs, rent reviews, tenancy renewals including RTB renewal, end-of-tenancy and deposit return, and pre-move-in inspection and works. The team manages apartments and houses across Dublin for small landlords, high net worth individuals and investment funds.",c:["Rent my property","Request a valuation"]},
+{k:"buyer buyers buyer's agent search find buy buying purchase relocating investing relocation overseas abroad off-market",a:"The buyer's agent service starts with a consultation on goals, locations and budget, then the search (including off-market opportunities through the team's network), viewings, negotiation and completion. It suits people relocating, investing or returning to Ireland.",c:["Request a valuation","Offices"]},
+{k:"tenant tenants renting find apartment flat looking move application register passport references guide tips",a:"For tenants there are a registration form, a tenant application, a tenants guide with tips for renting in Dublin, neighbourhood guides and virtual reality tours. References can be provided securely online and leases signed digitally.",c:["Viewings","Offices"]},
+{k:"viewing viewings view see visit open on view arrange book appointment",a:"Properties 'on view this week' are listed on the site, and viewings of listed properties can be arranged with the team. I can pass on a viewing request.",c:["Offices","Request a valuation"]},
+{k:"office offices branch branches address where location located docklands ballsbridge portobello grand canal dock merrion road forbes street",a:"Two branches: Docklands, 3 Forbes Street, Grand Canal Dock, Dublin 2, D02 C1P0 (+353 1 677 7100), and Dublin 4 / Southside, 8 Merrion Road, Ballsbridge, Dublin 4, D04 YOP4 (+353 1 677 7101). The about page also mentions a Portobello office.",c:["Hours","Request a valuation"]},
+{k:"hours open opening time monday friday office weekend",a:"Both branches are open Monday to Friday, 9:00 am to 5:30 pm. The team says it works well beyond nine to five.",c:["Offices","Request a valuation"]},
+{k:"phone call number email contact reach talk",a:"Docklands: +353 1 677 7100. Dublin 4 / Southside: +353 1 677 7101. Email hello@owenreilly.ie.",c:["Offices","Request a valuation"]},
+{k:"award awards won prize best kpmg agent year recognition",a:"Awards: in 2023 Best Estate Agent in Dublin, Estate Agent of the Year and Marketing Team of the Year; in 2024 Estate Agent of the Year and Property Website of the Year; in 2025 Residential Estate Agent of the Year at the KPMG Property Industry Excellence Awards.",c:["About","Services"]},
+{k:"new homes development developments developer developers show house showhouse launch",a:"Owen Reilly plays a leading role marketing new homes in Dublin, from small infill schemes to 300+ unit apartment developments. Services include data-led advice, design advice, show house design, virtual reality and advertising and marketing strategy.",c:["Services","Offices"]},
+{k:"block apartment omc owners management company building development property",a:"The block management service supports Owners' Management Companies with financial management, maintenance oversight, compliance and day-to-day operations of residential developments, particularly premium developments across Dublin.",c:["Services","Offices"]},
+{k:"technology virtual reality vr tour tours online digital remote overseas",a:"All listings have virtual reality walkthrough tours, viewable on desktop or mobile without a headset. People moving to Dublin can view virtually, give references securely on the platform and sign the lease digitally.",c:["Tenants","Request a valuation"]},
+{k:"neighbourhood neighborhood neighbourhoods area areas guide guides ballsbridge blackrock clontarf dundrum docklands where live",a:"The site has neighbourhood guides for dozens of Dublin areas, including Ballsbridge, Blackrock, Booterstown, Clontarf, Docklands, Donnybrook, Dundrum, Grand Canal Dock, Glasnevin and many more.",c:["Tenants","Sell my property","Offices"]},
+{k:"market report reports intelligence data insight insights research blog publication",a:"Owen Reilly publishes market intelligence reports for buyers, sellers, landlords and tenants, and a market insights blog.",c:["Sell my property","Rent my property"]},
+{k:"career careers job jobs vacancy vacancies join hiring employment",a:"The site has a Careers page and a Why Work With Us page: mentoring, a buddy system, training, hybrid working and monthly social events. See the careers page for current vacancies.",c:["About","Offices"]},
+{k:"bid bidding bids platform auction offer offers transparency proof funding private room",a:"Owen Reilly built its own bidding platform for transparency: bidders see when bids are made and the amount, provide proof of funding securely, and bid from any device in a private room. The vendor can observe and is notified of each bid. The firm's data says the best time to secure the price is within the first four weeks of listing.",c:["Sell my property","Technology","Request a valuation"]},
+{k:"myowenreilly lease leases online portal documents upload aml ber passport id reference sign signature digital legally",a:"The MyOwenReilly platform lets vendors, landlords and tenants upload documents securely (AML documents, BER cert, proof of ID and address, work and landlord references) and sign instruction letters and leases digitally in a legally binding way that complies with PSRA regulations.",c:["Tenants","Technology","Request a valuation"]},
+{k:"tips budget deposit references advice renting guide organised concierge parking security",a:"The tenants guide's tips include setting a realistic budget, using technology to save time, being organised with employer and former landlord references, considering what extras (concierge, parking, gym) you pay for, and remembering the security deposit, normally one month's rent, refundable at the end of the lease.",c:["Tenants","Viewings"]},
+{k:"confidential off market pre discretion private prime luxury exclusive pre-market off-market privacy",a:"The buyer's agent team gives access to off-market and pre-market properties across Dublin's prime locations, acts with complete confidentiality and keeps you informed with a clear breakdown of all costs. The firm also lists luxury sales as a speciality.",c:["Buyer's agent","Request a valuation"]},
+{k:"hello hi hey dia",a:"Hello! I can help with selling, renting, buying, landlord management, our offices and valuations.",c:["Sell my property","Rent my property","Request a valuation"]}
+];
+var STEPS=[
+{key:'goal',q:"What do you need?",chips:["Valuation to sell","Let my property","Buy (buyer's agent)","Rent a home","Block management"]},
+{key:'area',q:"Which area of Dublin?",chips:["Dublin 2 / Docklands","Dublin 4 / Ballsbridge","Southside","Northside","Not sure"]},
+{key:'type',q:"Property type?",chips:["Apartment","House","Development","Not sure"]},
+{key:'name',q:"Your name?",chips:[]},
+{key:'mail',q:"Email or phone for the team to reach you?",chips:[]}
+];
+function SUMMARY(d){return "Thanks "+d.name+". Request noted:\n"+d.goal+" · "+d.area+" · "+d.type+"\nContact: "+d.mail+"\n\nThis has been sent to the team at the nearest branch, who will get back to you. (Demo: nothing is actually sent.)"}
+
+/*ENGINE*/
+var STOP="the a an of to is are do does you your i me my we can for in on at and or it be have has with about how what when where which there here".split(" ");
+function norm(s){return s.toLowerCase().replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ers|er|es|ed|s)$/,""):w}
+function lev(a,b){if(a==b)return 0;if(Math.abs(a.length-b.length)>1)return 2;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function lev2(a,b){var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function hit(w,kw){var s=stem(w);if(kw==w||stem(kw)==s)return 1;if(w.length>=5&&kw.length>=5){if(lev(w,kw)<=1||lev(s,stem(kw))<=1)return .9;if(w.length>=7&&kw.length>=7&&lev2(w,kw)<=2)return .8}if(w.length>=4&&(kw.indexOf(w)==0||w.indexOf(kw)==0)&&kw.length>=4)return .6;return 0}
+function answer(q){var ws=norm(q).split(" ").filter(function(w){return w&&STOP.indexOf(w)<0});if(!ws.length)ws=norm(q).split(" ").filter(function(w){return w});var best=null,bs=0;KB.forEach(function(e){var kws=e.k.split(" "),sc=0;ws.forEach(function(w){var m=0;kws.forEach(function(kw){m=Math.max(m,hit(w,kw))});sc+=m});if(sc>bs){bs=sc;best=e}});return bs>=.9?best:null}
+var BOOKWORDS=/\b(book|booking|booked|enquire|enquiry|inquiry|appointment|appointments|reserve|reservation|enrol|enroll|enrollment|enrolment|sign up|signup|schedule|register|registration|trial|visit|consultation)\b/;
+/*END*/
+var $=function(i){return document.getElementById(i)},M=$('wm'),C=$('wc'),I=$('wi'),flow=null,data={},si=0;
+function say(t,who){var d=document.createElement('div');d.className='m '+(who||'b');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight}
+function chips(a){C.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){handle(t)};C.appendChild(b)})}
+function openW(mode,pre){$('wp').classList.add('on');if(!M.children.length){say(GREET);chips(HOME)}if(mode=='book'){startBook(pre)}}
+function closeW(){$('wp').classList.remove('on')}
+function startBook(pre){flow=1;data={};si=0;if(pre&&STEPS[0]){data[STEPS[0].key]=pre}ask()}
+function ask(){while(si<STEPS.length&&data[STEPS[si].key])si++;if(si>=STEPS.length){finish();return}say(STEPS[si].q);chips(STEPS[si].chips)}
+function finish(){flow=null;say(SUMMARY(data));chips(HOME)}
+function handle(t){say(t,'u');if(flow){if(/^(cancel|stop|exit)$/i.test(t.trim())){flow=null;say("No problem, request cancelled.");chips(HOME);return}data[STEPS[si].key]=t;si++;ask();return}
+if(BOOKWORDS.test(norm(t))||/^book/i.test(t)){startBook();return}
+var r=answer(t);if(r){say(r.a);chips(r.c)}else{say(FALLBACK);chips(HOME)}}
+$('wf').addEventListener('submit',function(e){e.preventDefault();var v=I.value.trim();if(!v)return;I.value='';handle(v)});
+
+$("wn").textContent=NAME;$("ws").textContent=SUB;window.openW=openW;window.closeW=closeW;window.askW=function(t){openW();handle(t)};})();</script>
+</body></html>
