@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Elite Medical &amp; Dental Clinic | Smithfield, Dublin 7</title>
+<meta name="description" content="Demo page for Elite Medical & Dental Clinic, Smithfield, Dublin: multilingual medical and dental care.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1b2a6b;--navy-d:#121c4a;--gold:#c9971c;--gold-l:#f7efd9;--ice:#f2f5fb;--ink:#1e2433;--mute:#5d6578;--line:#dde2ee;--aw:#1b2a6b;--awt:#fff;--awf:'Plus Jakarta Sans',sans-serif;--awb:#f2f5fb;--awr:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;font-size:16.5px;line-height:1.6;color:var(--ink);background:#fff;overflow-x:hidden}
+img{max-width:100%;display:block}a{color:inherit}
+h1,h2,h3{font-family:'Newsreader',serif;font-weight:600;color:var(--navy-d);line-height:1.1}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand .logo{background:#fff;border-radius:10px;padding:2px;line-height:0}
+.brand img{width:50px;height:48px;object-fit:contain}
+.brand b{font-family:'Newsreader',serif;font-size:18px;line-height:1.05;color:var(--navy-d);display:none}
+nav{display:none;gap:20px;font-size:14.5px;font-weight:600}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--navy)}
+.btn{display:inline-block;background:var(--navy);color:#fff;padding:12px 20px;border-radius:10px;font:700 14.5px 'Plus Jakarta Sans',sans-serif;text-decoration:none;border:0;cursor:pointer}
+.btn.gold{background:var(--gold);color:#201600}
+.btn.out{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+@media(min-width:760px){.brand b{display:block}}
+@media(min-width:900px){nav{display:flex}}
+.hero{background:linear-gradient(160deg,var(--navy-d),var(--navy) 70%);color:#fff;position:relative;overflow:hidden;padding:54px 0 60px}
+.hero::after{content:"";position:absolute;right:-90px;bottom:-110px;width:340px;height:340px;border-radius:50%;border:44px solid rgba(201,151,28,.22)}
+.hero .wrap{position:relative;z-index:1}
+.tag{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.hero h1{color:#fff;font-size:clamp(36px,8vw,64px);max-width:720px}
+.hero h1 em{color:#f0cf7a}
+.hero p{max-width:560px;margin-top:16px;font-size:18px;color:#d5dcf2}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.langs button{font:600 14px 'Plus Jakarta Sans',sans-serif;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);color:#fff;border-radius:999px;padding:7px 14px;cursor:pointer}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.strip{background:var(--gold-l);border-bottom:1px solid #ecdcae}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:6px 24px;padding-top:12px;padding-bottom:12px;font-size:14.5px;font-weight:600;color:#5b4410}
+section{padding:60px 0}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+h2{font-size:clamp(30px,6vw,42px);margin:8px 0 10px}
+.lead{max-width:620px;color:var(--mute)}
+.spec{display:grid;gap:14px;margin-top:26px}
+.sp{border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:8px;background:#fff;min-width:0}
+.sp h3{font-size:25px}
+.sp .dr{font-size:14px;font-weight:600;color:var(--navy)}
+.sp p{color:var(--mute);font-size:15.5px}
+.lg{display:flex;flex-wrap:wrap;gap:6px}
+.lg span{font-size:12.5px;font-weight:600;background:var(--ice);color:var(--navy);padding:3px 10px;border-radius:999px}
+.sp a{justify-self:start;font-size:14px;font-weight:700;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--gold)}
+.sp.feat{background:var(--navy);color:#e8ecfa;border-color:var(--navy)}
+.sp.feat h3{color:#fff}.sp.feat p,.sp.feat .dr{color:#cdd5ee}.sp.feat .lg span{background:rgba(255,255,255,.12);color:#fff}.sp.feat a{color:#fff}
+@media(min-width:700px){.spec{grid-template-columns:1fr 1fr}.sp.feat{grid-column:1/-1}}
+@media(min-width:980px){.spec{grid-template-columns:repeat(3,1fr)}.sp.feat{grid-column:span 2}}
+.ice{background:var(--ice)}
+.dent{display:grid;gap:22px;margin-top:24px}
+.dent ul{list-style:none;display:grid;gap:7px}
+.dent li{padding-left:22px;position:relative}
+.dent li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+.dent h3{font-size:22px;margin-bottom:8px}
+.box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;min-width:0}
+@media(min-width:820px){.dent{grid-template-columns:1fr 1fr}}
+table{width:100%;border-collapse:collapse;font-size:15.5px}
+td{padding:9px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+td:last-child{text-align:right;font-weight:700;color:var(--navy);white-space:normal}
+.note{font-size:13.5px;color:var(--mute);margin-top:10px}
+.docs{display:grid;gap:12px;margin-top:24px}
+.doc{display:flex;gap:14px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff;min-width:0}
+.doc .in{flex:none;width:46px;height:46px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font:600 18px 'Newsreader',serif}
+.doc b{display:block;color:var(--navy-d)}.doc span{font-size:14px;color:var(--mute)}
+@media(min-width:720px){.docs{grid-template-columns:1fr 1fr}}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;padding:0 18px}
+.faq summary{cursor:pointer;padding:15px 0;font-weight:700;color:var(--navy-d);list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";color:var(--gold);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{padding:0 0 15px;color:var(--mute)}
+.contact{background:var(--navy-d);color:#d9dff3;overflow:hidden;position:relative}
+.contact h2{color:#fff}
+.contact::before{content:"";position:absolute;left:-100px;top:-100px;width:280px;height:280px;border-radius:50%;background:rgba(201,151,28,.12)}
+.cg{display:grid;gap:26px;position:relative}
+.cg a{color:#f0cf7a}
+.hrs{width:100%;max-width:340px}
+.hrs td{border-color:rgba(255,255,255,.18);color:#d9dff3}.hrs td:last-child{color:#fff}
+@media(min-width:800px){.cg{grid-template-columns:1fr 1fr;gap:56px}}
+footer{padding:24px 0 92px;font-size:13.5px;color:var(--mute);text-align:center;border-top:1px solid var(--line)}
+footer p+p{margin-top:6px}
+.aw-ic{font-size:17px}
+#aw-btn{position:fixed;right:16px;bottom:16px;z-index:60;border:0;cursor:pointer;display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;background:var(--aw);color:var(--awt);font:600 15px/1 var(--awf,inherit);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#aw-panel{position:fixed;right:12px;bottom:78px;z-index:60;width:min(380px,calc(100vw - 24px));height:min(540px,calc(100vh - 100px));background:var(--awbg,#fff);color:var(--awc,#222);border-radius:var(--awr,16px);box-shadow:0 16px 48px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--awf,inherit)}
+#aw-panel.open{display:flex}
+.aw-h{background:var(--aw);color:var(--awt);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}
+.aw-h small{display:block;font-weight:400;opacity:.85;font-size:12px}
+.aw-h button{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}
+#aw-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.aw-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.aw-m.bot{background:var(--awb,#eef2f5);align-self:flex-start}
+.aw-m.me{background:var(--aw);color:var(--awt);align-self:flex-end}
+.aw-m ul{margin:6px 0 4px;padding-left:18px}.aw-m a{color:inherit;text-decoration:underline}
+#aw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+#aw-chips button{border:1px solid var(--aw);background:transparent;color:var(--awc,#222);padding:6px 11px;border-radius:999px;font:13px var(--awf,inherit);cursor:pointer}
+#aw-form{display:flex;border-top:1px solid rgba(0,0,0,.1)}
+#aw-in{flex:1;min-width:0;border:0;padding:13px;font:16px var(--awf,inherit);background:transparent;color:inherit;outline:none}
+#aw-form button{border:0;background:var(--aw);color:var(--awt);padding:0 16px;font-weight:700;cursor:pointer}
+
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+<a class="brand" href="#top"><span class="logo"><img src="img/elite-medical-dental-logo.png" alt="Elite Medical and Dentistry logo"></span><b>Elite Medical<br>&amp; Dental Clinic</b></a>
+<nav><a href="#services">Services</a><a href="#dental">Dentistry</a><a href="#team">Team</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="btn gold" href="#" data-ask="I want to book an appointment">Book an appointment</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<span class="tag">Smithfield, Dublin 7</span>
+<h1>Medical and dental care <em>in your language.</em></h1>
+<p>One clinic for the GP, the paediatrician, the dentist and more, with doctors who speak English, Polish, Russian, Ukrainian, Romanian and Arabic.</p>
+<div class="langs" role="group" aria-label="Ask in your language"><button type="button" data-ask="Which doctors speak English?">English</button><button type="button" data-ask="Which doctors speak Polish?">Polski</button><button type="button" data-ask="Which doctors speak Russian?">Русский</button><button type="button" data-ask="Which doctors speak Ukrainian?">Українська</button><button type="button" data-ask="Which doctors speak Romanian?">Română</button><button type="button" data-ask="Which doctors speak Arabic?">العربية</button></div>
+<div class="cta"><a class="btn gold" href="#" data-ask="I want to book an appointment">Request an appointment</a><a class="btn out" style="color:#fff;border-color:rgba(255,255,255,.5)" href="#services">See specialties</a></div>
+</div></div>
+<div class="strip"><div class="wrap"><span>Mon to Fri 10:00 to 19:00</span><span>Sat 11:00 to 16:00</span><span>Unit 3 Block E, Thundercut Alley, Smithfield</span></div></div>
+
+<section id="services"><div class="wrap">
+<div class="eyebrow">Specialties</div>
+<h2>Who you can see</h2>
+<p class="lead">Seven areas under one roof. Each doctor&rsquo;s languages are listed so you can choose the one you are most comfortable with.</p>
+<div class="spec">
+<div class="sp feat"><h3>Dentistry</h3><div class="dr">Dr. Omar Aliwi, clinical director, and Dr. Kajetan Baranowski, dentist</div><p>From check-ups and hygiene to implants, root canals under a microscope, orthodontics and oral surgery, with digital X-ray, Piezo surgery and a dental laser. Needle-free anaesthesia is used for anxious patients.</p><div class="lg"><span>English</span><span>Polish</span><span>Russian</span><span>Ukrainian</span><span>Romanian</span></div><a href="#" data-ask="Tell me about dentistry">Ask about dentistry</a></div>
+<div class="sp"><h3>General medicine (GP)</h3><div class="dr">Dr. Alberto Embalo</div><p>Primary care, ECG, vaccinations, medical reports and certificates.</p><div class="lg"><span>English</span><span>Polish</span></div><a href="#" data-ask="Tell me about the GP">Ask about the GP</a></div>
+<div class="sp"><h3>Paediatrics</h3><div class="dr">Dr. Renata Baranowska, PhD, and Dr. Livia Squassabia</div><p>Check-ups and vaccinations for newborns, children and adolescents, 0 to 18 years.</p><div class="lg"><span>English</span><span>Polish</span></div><a href="#" data-ask="Tell me about paediatrics">Ask about paediatrics</a></div>
+<div class="sp"><h3>Gastroenterology &amp; proctology</h3><div class="dr">Dr. Adnan Aloul</div><p>Diagnosis and treatment of digestive and proctological conditions by an experienced surgeon.</p><div class="lg"><span>Arabic</span><span>English</span><span>Romanian</span></div><a href="#" data-ask="Tell me about gastroenterology">Ask about gastroenterology</a></div>
+<div class="sp"><h3>Endocrinology &amp; internal medicine</h3><div class="dr">Dr. Krzysztof Wanic, MD, PhD</div><p>Adult prophylaxis and diagnosis of internal conditions including diabetes and thyroid.</p><div class="lg"><span>English</span><span>Polish</span></div><a href="#" data-ask="Tell me about endocrinology">Ask about endocrinology</a></div>
+<div class="sp"><h3>Allergology</h3><div class="dr">Dr. Renata Baranowska, PhD</div><p>Allergy diagnostics for children and adults, including skin tests, desensitisation and asthma management.</p><div class="lg"><span>English</span><span>Polish</span></div><a href="#" data-ask="Tell me about allergology">Ask about allergology</a></div>
+</div></div></section>
+
+<section class="ice" id="dental"><div class="wrap">
+<div class="eyebrow">Dentistry</div>
+<h2>What the dental team offers</h2>
+<p class="lead">The clinic publishes a price list and notes that the exact cost is confirmed at consultation. Tax relief is available on selected dental procedures.</p>
+<div class="dent">
+<div class="box"><h3>Treatments</h3><ul><li>Fillings, crowns, bridges, veneers and dentures</li><li>Implants, including immediate placement and All-on-X</li><li>Root canal treatment under a microscope</li><li>Orthodontics: aligners, metal, ceramic and self-ligating braces</li><li>Gum treatments and periodontal laser</li><li>Bone and gum grafting, Piezo surgery</li></ul></div>
+<div class="box"><h3>A few published prices</h3>
+<table>
+<tr><td>Dental consultation</td><td>&euro;100</td></tr>
+<tr><td>Examination with PRSI</td><td>Free</td></tr>
+<tr><td>OPG X-ray</td><td>&euro;70</td></tr>
+<tr><td>Scale and polish with hygienist</td><td>&euro;100 to &euro;120</td></tr>
+<tr><td>Composite (white) filling</td><td>&euro;150 to &euro;190</td></tr>
+<tr><td>Routine extraction</td><td>&euro;150 to &euro;200</td></tr>
+<tr><td>Single dental implant, opening promotion (crown not included)</td><td>&euro;750</td></tr>
+</table>
+<p class="note">If your next treatment session is within 14 days of the consultation, the consultation fee is credited towards it. Limited-time implant offer; the clinic confirms the final cost at consultation.</p></div>
+</div></div></section>
+
+<section id="team"><div class="wrap">
+<div class="eyebrow">Team</div>
+<h2>Doctors you can speak to in your own language</h2>
+<div class="docs">
+<div class="doc"><div class="in">OA</div><div><b>Dr. Omar Aliwi</b><span>Clinical Director, dentistry and implants. English, Arabic, Romanian</span></div></div>
+<div class="doc"><div class="in">KB</div><div><b>Dr. Kajetan Baranowski, PhD</b><span>Dentist</span></div></div>
+<div class="doc"><div class="in">AE</div><div><b>Dr. Alberto Embalo</b><span>General practitioner. English, Polish</span></div></div>
+<div class="doc"><div class="in">RB</div><div><b>Dr. Renata Baranowska, PhD</b><span>Paediatrician and allergologist. English, Polish</span></div></div>
+<div class="doc"><div class="in">LS</div><div><b>Dr. Livia Squassabia</b><span>Italian-trained consultant paediatrician</span></div></div>
+<div class="doc"><div class="in">AA</div><div><b>Dr. Adnan Aloul</b><span>Gastroenterology and proctology. Arabic, English, Romanian</span></div></div>
+<div class="doc"><div class="in">KW</div><div><b>Dr. Krzysztof Wanic, MD, PhD</b><span>Endocrinology and internal medicine. English, Polish</span></div></div>
+</div></div></section>
+
+<section class="ice faq" id="faq"><div class="wrap">
+<div class="eyebrow">FAQ</div>
+<h2>Before you come in</h2>
+<details><summary>Does sending an enquiry confirm my appointment?</summary><p>No. Sending an enquiry does not confirm an appointment; the team replies to arrange one, and the site says within 24 hours.</p></details>
+<details><summary>Are medical certificates available?</summary><p>The GP page lists standard certificates such as MC1, MC2, driver licensing reports and fitness-to-work documents. School and sports certificates for children are issued on the same day on the paediatrics page.</p></details>
+<details><summary>Is there a first-visit process for children?</summary><p>The first visit includes a health assessment and developmental check and a discussion of any current concerns, in a child-friendly environment.</p></details>
+<details><summary>How are allergies tested?</summary><p>Skin prick tests, patch tests and specific IgE blood panels are listed, with results typically available the same day; allergen immunotherapy is offered for proven allergies.</p></details>
+<details><summary>What can I expect at a first dental visit?</summary><p>A comprehensive examination, digital X-rays and a personalised treatment plan, according to the dentistry page. Most procedures are completed in-clinic the same day, and every step is explained in your language.</p></details>
+<details><summary>Which doctor should I choose for my family?</summary><p>That is for the team to advise. Children from birth to 18 go to paediatrics, adults to the GP or a specialist, and the language list above shows who speaks what.</p></details>
+<details><summary>Can the assistant give medical advice?</summary><p>No. It answers practical questions only. Anything about symptoms, medicines or diagnosis is for the doctors.</p></details>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap cg">
+<div><div class="eyebrow">Contact</div><h2>Request an appointment</h2>
+<p>Phone: <a href="tel:+353851024218">+353 85 102 4218</a> or <a href="tel:+35318788471">+353 1 878 8471</a><br>E-mail: <a href="mailto:info@elitemedical.ie">info@elitemedical.ie</a></p>
+<p style="margin-top:12px">Unit 3 Block E, Thundercut Alley,<br>Smithfield, Dublin D07VH01</p>
+<p style="margin-top:16px"><a class="btn gold" style="color:#201600" href="#" data-ask="I want to book an appointment">Start a request with the assistant</a></p></div>
+<div><h3 style="color:#fff;font-size:24px;margin-bottom:8px">Opening hours</h3>
+<table class="hrs"><tr><td>Monday to Friday</td><td>10:00 to 19:00</td></tr><tr><td>Saturday</td><td>11:00 to 16:00</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><p>Elite Medical &amp; Dental Clinic &middot; Smithfield, Dublin 7</p><p>Demo &middot; prepared by Gevorg Hovhannisyan</p></div></footer>
+
+<button id="aw-btn" aria-expanded="false" aria-controls="aw-panel"><span class="aw-ic">&#9877;</span> Ask the clinic</button>
+<div id="aw-panel" role="dialog" aria-label="Elite Medical and Dental Clinic assistant">
+<div class="aw-h"><div>Clinic assistant<small>Practical questions and appointment requests</small></div><button id="aw-x" aria-label="Close">&times;</button></div>
+<div id="aw-log" aria-live="polite"></div><div id="aw-chips"></div>
+<form id="aw-form"><input id="aw-in" autocomplete="off" placeholder="Ask about doctors, hours, languages..."><button>Send</button></form>
+</div>
+
+<script>
+var CFG={
+name:"Elite Medical & Dental Clinic",
+hello:"Hello! I can help with practical questions about Elite Medical &amp; Dental Clinic: doctors and languages, hours, location and published dental prices, or start an appointment request for the team. I cannot give medical advice. How can I help?",
+chips:["Book an appointment","Opening hours","Which languages?","Dental prices","Where are you?","Specialties"],
+fallback:"I do not have that detail from the clinic's site, so the team will need to confirm it. You can call +353 85 102 4218 or e-mail info@elitemedical.ie, or I can start an appointment request.",
+kb:[
+{p:1,k:["symptom","symptoms","pain","hurt","hurts","ache","fever","rash","swelling","bleeding","diagnose","diagnosis","what is wrong","what do i have","should i take","medicine","medication","tablet","pills","dose","dosage","antibiotic","antibiotics","is it serious","urgent","emergency","infection","vomiting","cough"],a:"I cannot give medical advice or diagnose, so please speak to the doctors. Call +353 85 102 4218 (Mon to Fri 10:00 to 19:00, Sat 11:00 to 16:00) or I can start an appointment request. If it is an emergency, contact emergency services instead of waiting for the clinic.",c:["Book an appointment","Opening hours"]},
+{k:["hours","opening","open","opened","close","closed","closing","when","sunday","saturday","weekend","late","evening","working hours"],a:"Opening hours: Monday to Friday 10:00 to 19:00, Saturday 11:00 to 16:00, Sunday closed.",c:["Book an appointment","Where are you?"]},
+{k:["address","where","location","located","find you","directions","map","smithfield","thundercut","dublin 7","d07","how to get","parking"],a:"The clinic is at Unit 3 Block E, Thundercut Alley, Smithfield, Dublin D07VH01. The site has a Google Maps link on the Contact page. For parking and transport details, the team will confirm.",c:["Opening hours","Contact"]},
+{k:["phone","telephone","call","number","email","e-mail","contact","reach","whatsapp","mobile"],a:"Phone: +353 85 102 4218 or +353 1 878 8471. E-mail: info@elitemedical.ie. Enquiries sent through the site are answered within 24 hours, and an enquiry alone does not confirm an appointment.",c:["Book an appointment"]},
+{k:["language","languages","speak","speaks","english","polish","polski","russian","ukrainian","romanian","arabic","translator","interpreter","native language"],a:"The clinic works in English, Polish, Russian, Ukrainian, Romanian and Arabic. Dentistry: English, Polish, Russian, Ukrainian, Romanian. GP (Dr. Embalo): English, Polish. Paediatrics and allergology (Dr. Baranowska): English, Polish. Gastroenterology and proctology (Dr. Aloul): Arabic, English, Romanian. Endocrinology (Dr. Wanic): English, Polish.",c:["Book an appointment","Specialties"]},
+{k:["specialty","specialties","specialities","services","departments","what do you treat","doctors","doctor","who can i see"],a:"Specialties: dentistry, general medicine (GP), paediatrics, gastroenterology, proctology, endocrinology and internal medicine, and allergology.",c:["Dental prices","Which languages?","Book an appointment"]},
+{k:["dentist","dentistry","dental","teeth","tooth","dental clinic","cleaning","hygiene","hygienist","scale and polish","filling","fillings","extraction","wisdom"],a:"The dental team (Dr. Omar Aliwi and Dr. Kajetan Baranowski) covers hygiene, fillings, extractions, crowns, veneers, dentures, implants, root canals, orthodontics and gum treatment, using digital X-ray, Piezo surgery and a dental laser. Needle-free anaesthesia is available for anxious patients. For what you personally need, a dentist will advise at consultation.",c:["Dental prices","Book an appointment"]},
+{k:["implant","implants","all on 4","all on 6","all-on-x","missing teeth","dentures","denture"],a:"Implants are offered, including immediate extraction and placement, teeth placed the same day, and All-on-4 or All-on-6. The site lists a single implant at 750 euro as an opening promotion (crown not included, limited time). The final cost is confirmed at consultation.",c:["Dental prices","Book an appointment"]},
+{k:["price","prices","cost","costs","how much","fee","fees","pricing","price list","consultation fee","cheap","expensive","payment","pay","tax relief"],a:"Published dental prices include: consultation 100 euro (credited towards your next treatment session if it is within 14 days), examination with PRSI free, OPG X-ray 70, scale and polish 100 to 120, composite filling 150 to 190, routine extraction 150 to 200. Tax relief is available on selected dental procedures, and the exact cost is confirmed at consultation.",c:["Book an appointment"]},
+{k:["prsi","free exam","free examination","medical card","insurance","health insurance","vhi","laya"],a:"The price list shows an examination with PRSI as free. I do not have details on health insurance or medical cards, so the team will confirm.",c:["Contact"]},
+{k:["braces","aligners","invisalign","orthodontics","orthodontist","straighten","crooked","retainer","retainers"],a:"Orthodontics includes aligners, metallic fixed braces and self-ligating braces, for adults and teens, with removal and retainers also listed. The fee depends on the case and treatment duration; the dentist confirms it at consultation.",c:["Dental prices","Book an appointment"]},
+{k:["root canal","root canals","endodontics","microscope","nerve"],a:"Root canal treatment is performed under a microscope, and the site says 95 percent are completed in one session. A dentist will assess your tooth first.",c:["Dental prices","Book an appointment"]},
+{k:["gum","gums","periodontal","periodontitis","gingivitis","laser"],a:"Gum care includes scaling and root planing, periodontal maintenance, surgical options and periodontal laser treatment. The dentist will advise what suits you.",c:["Book an appointment"]},
+{k:["gp","general practitioner","family doctor","general medicine","primary care","embalo","check up","check-up","checkup","blood test","blood tests","ecg"],a:"General medicine (GP) is led by Dr. Alberto Embalo, English and Polish. It covers primary care, ECG, vaccinations, medical reports and certificates, with referral to on-site specialists where appropriate.",c:["Book an appointment","Certificates"]},
+{k:["certificate","certificates","medical certificate","mc1","mc2","driver","driving licence","fitness to work","sick note","school certificate","sports certificate"],a:"The site lists standard medical certificates (MC1, MC2, driver licensing reports, fitness-to-work documents) at the GP, and same-day school and sports certificates for children at paediatrics. The team will confirm what you need.",c:["Book an appointment"]},
+{k:["vaccine","vaccines","vaccination","vaccinations","immunisation","immunization","jab","jabs","injection"],a:"Vaccinations are offered by the GP, and the paediatric team provides preventive vaccinations on the standard schedule for children. The team will confirm availability when you book.",c:["Book an appointment"]},
+{k:["child","children","kids","kid","baby","newborn","infant","paediatric","paediatrics","pediatric","pediatrics","pediatrician","paediatrician","teenager","adolescent","squassabia"],a:"Paediatrics covers newborns, infants, children and adolescents from 0 to 18 years: check-ups, vaccinations, developmental monitoring and allergy care. Dr. Renata Baranowska speaks English and Polish; Dr. Livia Squassabia is an Italian-trained consultant paediatrician.",c:["Book an appointment","Which languages?"]},
+{k:["allergy","allergies","allergic","allergology","allergologist","hay fever","asthma","eczema","skin prick","patch test","desensitisation","immunotherapy"],a:"Allergology (Dr. Renata Baranowska) covers children and adults: skin prick tests, patch tests, specific IgE blood panels, desensitisation (immunotherapy) for proven allergies, and asthma management. Results from skin tests are typically available the same day.",c:["Book an appointment"]},
+{k:["stomach","gastro","gastroenterology","gastroenterologist","digestive","digestion","proctology","proctologist","aloul","bowel","colon","ibs","reflux"],a:"Gastroenterology and proctology are with Dr. Adnan Aloul, who is a surgeon and speaks Arabic, English and Romanian. Listed diagnostics include abdominal ultrasound and several tests. He will explain what applies to you at the consultation.",c:["Book an appointment"]},
+{k:["diabetes","thyroid","endocrinology","endocrinologist","hormone","hormones","internal medicine","wanic","osteoporosis","metabolic"],a:"Endocrinology and internal medicine is with Dr. Krzysztof Wanic (English, Polish): adult care covering conditions such as diabetes and thyroid. The consultation includes history, examination and a blood panel.",c:["Book an appointment"]},
+{k:["omar","aliwi","director","kajetan","baranowski","baranowska","dr","team","staff","who works"],a:"The team: Dr. Omar Aliwi (clinical director, dentistry and implants), Dr. Kajetan Baranowski (dentist), Dr. Alberto Embalo (GP), Dr. Renata Baranowska (paediatrics and allergology), Dr. Livia Squassabia (paediatrics), Dr. Adnan Aloul (gastroenterology and proctology), Dr. Krzysztof Wanic (endocrinology).",c:["Which languages?","Book an appointment"]},
+{k:["same day","same-day","next day","urgent appointment","walk in","walk-in","soon","waiting list","wait"],a:"The site mentions same-day and next-day GP appointments. For availability on a given day, the team will confirm when they reply.",c:["Book an appointment"]},
+{k:["confirm","confirmation","reply","answer back","how long","response time"],a:"Sending an enquiry does not confirm an appointment. The team replies to arrange one, and the site says they get back to you within 24 hours.",c:["Contact"]},
+{k:["hello","hi","hey","good morning","good afternoon","dzien dobry","privet"],a:"Hello! Ask about doctors, languages, hours, location or dental prices, or say \"book an appointment\" and I will take the details for the team.",c:["Book an appointment","Which languages?"]}
+],
+flow:{
+trigger:["book an appointment","book appointment","book a visit","book a consultation","make an appointment","make appointment","request an appointment","appointment","schedule","consultation request","see a doctor","see a dentist","see the doctor","i need a doctor","i need a dentist","reserve"],
+intro:"Happy to start an appointment request for the clinic team.",
+steps:[
+{key:"service",label:"Service",q:"Which service is it for?",chips:["Dentistry","GP","Paediatrics","Gastroenterology or proctology","Endocrinology","Allergology","Not sure"]},
+{key:"patient",label:"Patient",q:"Is the patient an adult or a child, and are you a new patient?",chips:["Adult, new patient","Adult, existing patient","Child, new patient","Child, existing patient"]},
+{key:"lang",label:"Language",q:"Which language would you like the doctor to speak?",chips:["English","Polish","Russian","Ukrainian","Romanian","Arabic"]},
+{key:"when",label:"Preferred time",q:"When would suit you? (clinic hours are Mon to Fri 10:00 to 19:00 and Sat 11:00 to 16:00)"},
+{key:"contact",label:"Contact",q:"Your name and the best phone number or e-mail?"}
+],
+done:"Thank you. Your request is ready for the clinic team. An enquiry does not confirm an appointment; they will reply to arrange one. Here is what I have:"
+}
+};
+/* assistant engine: needs CFG={name,hello,chips:[],kb:[{k:[],a:'',c:[]}],fallback,flow:{trigger:[],intro,steps:[{key,label,q,chips?}],done}} */
+(function(){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){return w.length>4?w.replace(/(ings|ing|ies|es|ed|s)$/,''):w}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;var p=[],i,j;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var c=[i];for(j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c}return p[n]}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem)}
+function match(q){
+  var nq=norm(q),qt=toks(q),rq=nq.split(' '),best=null,bs=0;
+  CFG.kb.forEach(function(e){
+    var s=0;
+    e.k.forEach(function(k){
+      var nk=norm(k),kt=toks(k);
+      if(!nk)return;
+      if((' '+nq+' ').indexOf(' '+nk+' ')>=0){s+=3+kt.length;return}
+      if(kt.length===1){
+        var w=kt[0];
+        for(var i=0;i<qt.length;i++){var t=qt[i];
+          if(t===w){s+=3;break}
+          if(w.length>=5&&t.length>=5&&(t.indexOf(w)===0||w.indexOf(t)===0)){s+=2.5;break}
+          var d=lev(t,w);if(w.length>=5&&d<=(w.length>=8?2:1)){s+=3.2;break}
+          if(nk.length>=5&&rq.some(function(r){return lev(r,nk)<=(nk.length>=8?2:1)})){s+=3.2;break}
+        }
+      }else{
+        var hit=0;kt.forEach(function(w){if(qt.some(function(t){return t===w||(w.length>=5&&lev(t,w)<=1)}))hit++});
+        if(hit===kt.length)s+=2+kt.length;else if(hit>0&&kt.length>2&&hit>=kt.length-1)s+=1.5;
+      }
+    });
+    if(e.p)s*=1.8;if(s>bs){bs=s;best=e}
+  });
+  return bs>=2.5?best:null;
+}
+var F=CFG.flow,st=null;
+function flowStart(){st={i:0,d:{}};return F.intro+'<br><b>'+F.steps[0].q+'</b>'}
+function isTrigger(q){var nq=norm(q);return F.trigger.some(function(t){var nt=norm(t);return (' '+nq+' ').indexOf(' '+nt+' ')>=0})||F.trigger.some(function(t){var w=norm(t);return w.indexOf(' ')<0&&w.length>=6&&toks(q).some(function(x){return lev(x,stem(w))<=1})})}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function flowNext(q){
+  var s=F.steps[st.i];
+  if(/^\s*(cancel|stop|exit|never ?mind)\s*$/i.test(q)){st=null;return {t:'No problem, nothing was sent. Ask me anything else.',chips:CFG.chips}}
+  st.d[s.key]=q.trim();st.i++;
+  if(st.i<F.steps.length){var n=F.steps[st.i];return {t:'<b>'+n.q+'</b>',chips:n.chips||null}}
+  var d=st.d,rows=F.steps.map(function(x){return '<li><b>'+x.label+':</b> '+esc(d[x.key])+'</li>'}).join('');
+  st=null;return {t:F.done+'<ul>'+rows+'</ul><small>This is a demo, so nothing was actually sent.</small>',chips:CFG.chips};
+}
+function reply(q){
+  if(st)return flowNext(q);
+  if(isTrigger(q)){var t=flowStart();return {t:t,chips:F.steps[0].chips||null}}
+  var e=match(q);
+  if(e)return {t:e.a,chips:e.c||null};
+  return {t:CFG.fallback,chips:CFG.chips};
+}
+if(typeof document==='undefined'||!document.getElementById('aw-btn')){ if(typeof module!=='undefined')module.exports={match:match,reply:reply,reset:function(){st=null},CFG:CFG}; return }
+var btn=document.getElementById('aw-btn'),pan=document.getElementById('aw-panel'),log=document.getElementById('aw-log'),chips=document.getElementById('aw-chips'),inp=document.getElementById('aw-in'),form=document.getElementById('aw-form');
+function add(h,who){var d=document.createElement('div');d.className='aw-m '+who;d.innerHTML=h;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function setChips(c){chips.innerHTML='';(c||[]).forEach(function(x){var b=document.createElement('button');b.type='button';b.textContent=x;b.onclick=function(){send(x)};chips.appendChild(b)})}
+function send(q){if(!q.trim())return;add(esc(q),'me');var r=reply(q);setTimeout(function(){add(r.t,'bot');setChips(r.chips)},250)}
+var opened=false;
+btn.onclick=function(){var o=pan.classList.toggle('open');btn.setAttribute('aria-expanded',o);if(o&&!opened){opened=true;add(CFG.hello,'bot');setChips(CFG.chips)}if(o)inp.focus()};
+document.getElementById('aw-x').onclick=function(){pan.classList.remove('open');btn.setAttribute('aria-expanded',false)};
+document.querySelectorAll('[data-ask]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();if(!pan.classList.contains('open'))btn.click();send(a.getAttribute('data-ask'))})});
+form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';send(v)};
+})();
+
+</script>
+</body>
+</html>

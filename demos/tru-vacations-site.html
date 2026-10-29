@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TRU Vacations | Travel, Relax, Unwind</title>
+<meta name="description" content="Demo page for TRU Vacations, Houston: cruises, romance, luxury and family travel planned by an ASTA Verified Travel Advisor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--sky:#7fbfdc;--sky-d:#3f8fb3;--ink:#3b3f42;--deep:#1f4a5c;--sand:#fbf8f2;--shell:#f1ebe0;--line:#e4dccb;--aw:#1f4a5c;--awt:#fff;--awf:'Jost',sans-serif;--awb:#eaf4f9;--awr:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;font-weight:400;color:var(--ink);background:var(--sand);line-height:1.6;font-size:17px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.1;color:var(--deep)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:40;background:rgba(251,248,242,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.chip{background:#fff;border-radius:10px;padding:3px;border:1px solid var(--line);line-height:0}
+.chip img{width:54px;height:56px;object-fit:contain}
+.brand span{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.14em;color:var(--deep);font-weight:600;display:none}
+nav{display:none;gap:22px;font-size:15px;letter-spacing:.04em}
+nav a{text-decoration:none;color:var(--ink)}nav a:hover{color:var(--sky-d)}
+.btn{display:inline-block;background:var(--deep);color:#fff;border:0;padding:12px 22px;border-radius:999px;text-decoration:none;font:500 15px 'Jost',sans-serif;letter-spacing:.06em;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--deep);border:1.5px solid var(--sky)}
+.btn.sky{background:var(--sky);color:#12313d}
+@media(min-width:720px){.brand span{display:inline}nav{display:flex}}
+.hero{position:relative;overflow:hidden;padding:56px 0 64px}
+.hero::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,#d7ecf5 0,#eaf4f9 55%,transparent 70%)}
+.hero .wrap{position:relative;display:grid;gap:28px}
+.eyebrow{font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--sky-d);font-weight:500}
+.hero h1{font-size:clamp(40px,9vw,76px);margin:10px 0 16px;font-weight:500}
+.hero h1 em{color:var(--sky-d)}
+.hero p.lead{font-size:19px;max-width:560px;color:#4b5155}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.badges span{font-size:13px;letter-spacing:.05em;background:#fff;border:1px solid var(--line);padding:6px 12px;border-radius:999px}
+.card-adv{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 14px 40px rgba(31,74,92,.08)}
+.card-adv h3{font-size:28px;margin-bottom:4px}
+.card-adv .role{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--sky-d);margin-bottom:12px}
+.card-adv p{font-size:16px;color:#555}
+.card-adv .photo{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.card-adv .photo div.mono{width:58px;height:58px;border-radius:50%;background:var(--sky);color:#12313d;display:grid;place-items:center;font:600 24px 'Cormorant Garamond',serif;flex:none}
+@media(min-width:880px){.hero .wrap{grid-template-columns:1.35fr 1fr;align-items:center;gap:48px}}
+section{padding:60px 0}
+.sec-h{margin-bottom:28px;max-width:640px}
+.sec-h h2{font-size:clamp(32px,6vw,46px);margin-top:8px}
+.sec-h p{margin-top:10px;color:#5a6064}
+.brands{background:var(--shell)}
+.bgrid{display:grid;gap:16px}
+.bc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:8px;position:relative;min-width:0}
+.bc .tag{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--sky-d)}
+.bc h3{font-size:30px}
+.bc ul{list-style:none;font-size:15px;color:#555;display:grid;gap:4px;margin-top:4px}
+.bc li::before{content:"\00B7  ";color:var(--sky-d);font-weight:700}
+.bc .ask{margin-top:auto;padding-top:10px;font-size:14px;color:var(--deep);font-weight:500;text-decoration:none;border-bottom:1px solid var(--sky);align-self:flex-start}
+.bc.soon{background:repeating-linear-gradient(135deg,#fff 0 12px,#f6f3ec 12px 24px)}
+@media(min-width:700px){.bgrid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:980px){.bgrid{grid-template-columns:repeat(3,1fr)}}
+.lines{display:grid;gap:22px}
+.lines h3{font-size:26px;margin-bottom:8px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills span{font-size:14px;border:1px solid var(--sky);border-radius:999px;padding:4px 12px;background:#fff}
+@media(min-width:800px){.lines{grid-template-columns:1fr 1fr}}
+.why{display:grid;gap:14px}
+.why li{list-style:none;background:#fff;border-left:4px solid var(--sky);padding:14px 18px;border-radius:0 12px 12px 0}
+.steps{display:grid;gap:16px;counter-reset:s}
+.steps div{position:relative;padding:18px 18px 18px 64px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.steps div::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:14px;width:34px;height:34px;border-radius:50%;background:var(--deep);color:#fff;display:grid;place-items:center;font:600 18px 'Cormorant Garamond',serif}
+.steps b{display:block;color:var(--deep)}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:10px;padding:0 18px}
+.faq summary{cursor:pointer;padding:15px 0;font-weight:500;color:var(--deep);list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";color:var(--sky-d);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{padding:0 0 16px;color:#555;font-size:16px}
+.contact{background:var(--deep);color:#e8f2f6;overflow:hidden;position:relative}
+.contact h2{color:#fff}
+.contact::after{content:"";position:absolute;left:-90px;bottom:-110px;width:300px;height:300px;border-radius:50%;border:2px solid rgba(127,191,220,.35)}
+.cgrid{display:grid;gap:26px;position:relative}
+.hours{width:100%;border-collapse:collapse;font-size:16px}
+.hours td{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+.hours td:last-child{text-align:right}
+.cgrid a{color:var(--sky)}
+.small{font-size:14px;opacity:.85}
+@media(min-width:800px){.cgrid{grid-template-columns:1fr 1fr;gap:56px}}
+footer{padding:26px 0 90px;font-size:14px;color:#6c7276;text-align:center;border-top:1px solid var(--line)}
+footer p+p{margin-top:6px}
+.aw-ic{font-size:18px}
+#aw-btn{position:fixed;right:16px;bottom:16px;z-index:60;border:0;cursor:pointer;display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;background:var(--aw);color:var(--awt);font:600 15px/1 var(--awf,inherit);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#aw-panel{position:fixed;right:12px;bottom:78px;z-index:60;width:min(380px,calc(100vw - 24px));height:min(540px,calc(100vh - 100px));background:var(--awbg,#fff);color:var(--awc,#222);border-radius:var(--awr,16px);box-shadow:0 16px 48px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--awf,inherit)}
+#aw-panel.open{display:flex}
+.aw-h{background:var(--aw);color:var(--awt);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}
+.aw-h small{display:block;font-weight:400;opacity:.85;font-size:12px}
+.aw-h button{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}
+#aw-log{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.aw-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.aw-m.bot{background:var(--awb,#eef2f5);align-self:flex-start}
+.aw-m.me{background:var(--aw);color:var(--awt);align-self:flex-end}
+.aw-m ul{margin:6px 0 4px;padding-left:18px}.aw-m a{color:inherit;text-decoration:underline}
+#aw-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+#aw-chips button{border:1px solid var(--aw);background:transparent;color:var(--awc,#222);padding:6px 11px;border-radius:999px;font:13px var(--awf,inherit);cursor:pointer}
+#aw-form{display:flex;border-top:1px solid rgba(0,0,0,.1)}
+#aw-in{flex:1;min-width:0;border:0;padding:13px;font:16px var(--awf,inherit);background:transparent;color:inherit;outline:none}
+#aw-form button{border:0;background:var(--aw);color:var(--awt);padding:0 16px;font-weight:700;cursor:pointer}
+
+</style>
+</head>
+<body>
+<header>
+<div class="wrap hd">
+<a class="brand" href="#top"><span class="chip"><img src="img/tru-vacations-logo.png" alt="TRU Vacations logo"></span><span>TRU VACATIONS</span></a>
+<nav><a href="#brands">Brands</a><a href="#partners">Partners</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="btn" href="#" data-ask="I want to request a trip">Request a trip</a>
+</div>
+</header>
+
+<main id="top">
+<div class="hero">
+<div class="wrap">
+<div>
+<div class="eyebrow">Travel &middot; Relax &middot; Unwind</div>
+<h1>Not just a trip. <em>A TRU Vacation.</em></h1>
+<p class="lead">Cruises, honeymoons and destination weddings, luxury escapes and family trips, planned by Kristy Trieu, an ASTA Verified Travel Advisor based in Houston. You skip the scrolling and second-guessing; she handles the details.</p>
+<div class="cta"><a class="btn" href="#" data-ask="I want to request a trip">Request a trip</a><a class="btn ghost" href="#brands">See the five brands</a></div>
+<div class="badges"><span>ASTA Verified Travel Advisor</span><span>BBB Accredited Business</span><span>ASTA &middot; CLIA &middot; DWHSA member</span></div>
+</div>
+<aside class="card-adv">
+<div class="photo"><div class="mono">K</div><div><h3>Kristy Trieu, VTA</h3><div class="role">Founder &amp; Travel Advisor</div></div></div>
+<p>Kristy went to travel school over two decades ago, then spent years planning trips for friends and family before turning it into TRU Vacations in 2025. She plans every vacation as if it were her own.</p>
+<p style="margin-top:10px">Call or text: <b>346-330-3345</b></p>
+</aside>
+</div>
+</div>
+
+<section class="brands" id="brands">
+<div class="wrap">
+<div class="sec-h"><div class="eyebrow">Our brands</div><h2>One advisor, five ways to travel</h2><p>Each brand is a specialty under TRU Vacations. Not sure which fits? Ask the assistant or request a trip and Kristy will point you the right way.</p></div>
+<div class="bgrid">
+<div class="bc"><div class="tag">TRU Cruises</div><h3>River, ocean and expedition</h3><p>Voyages for friends, families, couples or big groups, with exclusive promotions and amenities often available through her partnerships.</p><ul><li>Ocean cruises worldwide</li><li>River cruises in Europe, Asia and beyond</li><li>Group sailings</li></ul><a class="ask" href="#" data-ask="Tell me about cruises">Ask about cruises</a></div>
+<div class="bc"><div class="tag">TRU Romance</div><h3>Honeymoons and destination weddings</h3><p>Trips tailored to your love story, for busy couples who do not have time to scroll, guess or stress.</p><ul><li>Destination weddings</li><li>Honeymoons</li><li>Couples getaways, elopements, proposals</li></ul><a class="ask" href="#" data-ask="Tell me about honeymoons and destination weddings">Ask about romance travel</a></div>
+<div class="bc"><div class="tag">TRU Luxury</div><h3>Bespoke luxury planning</h3><p>Five-star stays, guided journeys and fully customised itineraries.</p><ul><li>Guided travel with the most respected names</li><li>African safaris</li><li>Private jets, villas, yacht charters</li></ul><a class="ask" href="#" data-ask="Tell me about luxury travel">Ask about luxury</a></div>
+<div class="bc"><div class="tag">TRU Family</div><h3>Family and multi-generational trips</h3><p>Milestone celebrations and getaways that balance time together with room for everyone to do their own thing.</p><ul><li>Multi-generational vacations</li><li>Milestone celebrations</li><li>Itineraries built around your family&rsquo;s rhythm</li></ul><a class="ask" href="#" data-ask="Tell me about family trips">Ask about family travel</a></div>
+<div class="bc soon"><div class="tag">TRU Magic &middot; coming soon</div><h3>Disney and Universal</h3><p>Resorts, park tickets, dining reservations and personalised itineraries for theme park vacations, including Epic Universe.</p><ul><li>Currently marked &ldquo;coming soon&rdquo; on the site</li></ul><a class="ask" href="#" data-ask="Tell me about Disney and Universal trips">Ask about TRU Magic</a></div>
+<div class="bc" style="background:var(--deep);color:#e8f2f6;border-color:var(--deep)"><div class="tag" style="color:var(--sky)">Not sure yet?</div><h3 style="color:#fff">Start with an idea</h3><p>European escape, island retreat or a cultural trip somewhere new: tell Kristy where you are in the planning and she will take it from there.</p><a class="ask" style="color:#fff;border-color:var(--sky)" href="#" data-ask="I want to request a trip">Request a trip</a></div>
+</div>
+</div>
+</section>
+
+<section id="partners">
+<div class="wrap">
+<div class="sec-h"><div class="eyebrow">Partners</div><h2>Lines and suppliers she works with</h2><p>These are the names listed on the brand pages. Kristy keeps her preferred partners to those she trusts to deliver.</p></div>
+<div class="lines">
+<div><h3>Ocean cruises</h3><div class="pills"><span>Royal Caribbean</span><span>Celebrity</span><span>Norwegian</span><span>Princess</span><span>Carnival</span><span>Disney</span></div></div>
+<div><h3>River cruises</h3><div class="pills"><span>AmaWaterways</span><span>Avalon Waterways</span><span>Uniworld</span><span>Viking</span><span>Tauck</span></div></div>
+<div><h3>Guided travel</h3><div class="pills"><span>Tauck</span><span>Abercrombie &amp; Kent</span><span>Luxury Gold</span></div></div>
+<div><h3>African safaris</h3><div class="pills"><span>Micato Safaris</span><span>Tauck</span><span>African Travel</span><span>Abercrombie &amp; Kent</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="brands">
+<div class="wrap">
+<div class="sec-h"><div class="eyebrow">Why a travel advisor</div><h2>More than a booking</h2></div>
+<ul class="why">
+<li>An ASTA Verified Travel Advisor who listens to your travel style.</li>
+<li>Curated options built around your goals, not a one-size-fits-all package.</li>
+<li>Guidance before and during your trip, so you never feel lost or alone.</li>
+<li>Time back in your day: no more hours of scrolling and second-guessing.</li>
+<li>Every client gets an in-destination support number and access to the Tern for Travelers app for itineraries and documents.</li>
+</ul>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="sec-h"><div class="eyebrow">How it starts</div><h2>Let&rsquo;s begin your TRU Vacation</h2></div>
+<div class="steps">
+<div><b>Tell Kristy what you are dreaming of</b>Use the request form on the site, or call or text. A destination is optional.</div>
+<div><b>She curates the options</b>Cruise, resort, tour or a custom itinerary, chosen for how you like to travel.</div>
+<div><b>She handles the details and stays with you</b>Support before, during and after the trip, including a number to call while you are away.</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="sec-h"><div class="eyebrow">From the blog</div><h2>Inspiration from Kristy&rsquo;s desk</h2><p>A few recent posts from the TRU Vacations travel blog, where she shares destination ideas and planning tips.</p></div>
+<div class="bgrid">
+<div class="bc"><div class="tag">TRU Cruises &middot; June 2026</div><h3 style="font-size:24px">I Never Thought Guided Tours Were for Me. Then I Became a Travel Advisor.</h3><p>Why she changed her mind about guided tours, and what has changed about them.</p></div>
+<div class="bc"><div class="tag">TRU Cruises &middot; June 2026</div><h3 style="font-size:24px">Cruise or Land Tour? Why a Mediterranean Cruise Is the Perfect Introduction to Europe</h3><p>One of the questions she hears most often from first-time Europe travellers.</p></div>
+<div class="bc"><div class="tag">TRU Cruises &middot; June 2026</div><h3 style="font-size:24px">Why Virgin Voyages Is the Adults-Only Cruise You Didn&rsquo;t Know You Needed</h3><p>A look at the adults-only option, written from an advisor&rsquo;s point of view.</p></div>
+</div>
+<p style="margin-top:18px;font-size:15px;color:#6c7276">Read the full posts on the TRU Vacations blog.</p>
+</div>
+</section>
+
+<section class="faq" id="faq">
+<div class="wrap">
+<div class="sec-h"><div class="eyebrow">FAQ</div><h2>Questions Kristy hears most</h2></div>
+<details><summary>Do you charge a fee?</summary><p>Sometimes, not always. If you already know exactly what you want to book, a planning fee is typically not charged and she is generally compensated by the supplier. Trips needing more research or custom itineraries carry a non-refundable professional planning fee based on complexity. Destination weddings have a flat planning fee. Kristy confirms the exact amount for your trip.</p></details>
+<details><summary>Why use a travel advisor instead of booking directly with a cruise line?</summary><p>Access to special group pricing and exclusive amenities, plus personalised recommendations and someone in your corner if anything goes wrong.</p></details>
+<details><summary>How far in advance should I book?</summary><p>It depends. Cruises and guided tours often open up to two years ahead, which is usually when pricing and cabin selection are best. Airfare generally opens about 11 months out. Short-notice trips are possible too.</p></details>
+<details><summary>Do you book airfare?</summary><p>Yes, as part of a vacation package she puts together. Standalone flights are not booked.</p></details>
+<details><summary>Do you recommend travel insurance?</summary><p>Yes, strongly. She will walk you through your options.</p></details>
+<details><summary>What if something goes wrong while I am travelling?</summary><p>Every client receives a contact number for in-destination support, often through one of the preferred suppliers used for the booking.</p></details>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="wrap cgrid">
+<div>
+<div class="eyebrow" style="color:var(--sky)">Let&rsquo;s talk</div>
+<h2 style="margin:8px 0 14px">Request a trip</h2>
+<p>Call or text <b>346-330-3345</b><br>E-mail <a href="mailto:kristy@tru-vacations.com">kristy@tru-vacations.com</a></p>
+<p class="small" style="margin-top:12px">TRU Vacations LLC, Houston, Texas. Mailing address only (no public access).</p>
+<p class="small" style="margin-top:12px"><a href="#" data-ask="I want to request a trip">Start your request with the assistant</a></p>
+</div>
+<div>
+<h3 style="color:#fff;font-size:26px;margin-bottom:8px">Business hours (CST)</h3>
+<table class="hours"><tr><td>Monday to Friday</td><td>9am to 10pm</td></tr><tr><td>Saturday</td><td>9am to 6pm</td></tr><tr><td>Sunday</td><td>1pm to 6pm</td></tr></table>
+<p class="small" style="margin-top:12px">Seller of travel licences: Florida ST17873, California 2063964-50, Washington 602232785.</p>
+</div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap"><p>TRU Vacations LLC &middot; Travel &middot; Relax &middot; Unwind</p><p>Demo &middot; prepared by Gevorg Hovhannisyan</p></div></footer>
+
+<button id="aw-btn" aria-expanded="false" aria-controls="aw-panel"><span class="aw-ic">&#9992;</span> Plan with TRU</button>
+<div id="aw-panel" role="dialog" aria-label="TRU Vacations assistant">
+<div class="aw-h"><div>TRU Vacations assistant<small>Quick answers and trip requests</small></div><button id="aw-x" aria-label="Close">&times;</button></div>
+<div id="aw-log" aria-live="polite"></div><div id="aw-chips"></div>
+<form id="aw-form"><input id="aw-in" autocomplete="off" placeholder="Ask about trips, hours, fees..."><button>Send</button></form>
+</div>
+
+<script>
+var CFG={
+name:"TRU Vacations",
+hello:"Hi! I am the TRU Vacations assistant. I can answer questions about Kristy&rsquo;s five travel brands, hours and how planning works, or start a trip request for her. What would you like to know?",
+chips:["Request a trip","Cruises","Honeymoons and weddings","Luxury travel","Family trips","Hours and contact","Fees"],
+fallback:"I do not have that detail from the TRU Vacations site, so Kristy will need to confirm it. You can call or text 346-330-3345, e-mail kristy@tru-vacations.com, or I can start a trip request for her.",
+kb:[
+{k:["cruise","cruises","cruising","sail","sailing","ship","voyage","ocean cruise","river cruise","viking","royal caribbean","norwegian","carnival","princess","celebrity"],a:"TRU Cruises covers river, ocean and expedition cruises. Kristy partners with the major lines (Royal Caribbean, Celebrity, Norwegian, Princess, Carnival, Disney and more) and river lines such as AmaWaterways, Avalon, Uniworld, Viking and Tauck. Through those partnerships she can often offer exclusive promotions and amenities.",c:["Request a trip","Fees"]},
+{k:["honeymoon","honeymoons","romance","romantic","couples","couple getaway","elope","elopement","proposal","anniversary"],a:"TRU Romance plans honeymoons, destination weddings and couples getaways (eloping, proposing, reconnecting or travelling with other couples). It is built for busy couples who do not have time to scroll, guess or stress. There is also a free guide with 5 tips for a stress-free destination wedding on the Romance page.",c:["Destination wedding","Request a trip"]},
+{k:["destination wedding","wedding","weddings","marry","married","bride","groom"],a:"Yes, destination weddings are part of TRU Romance: Kristy helps busy couples find the right location and handles coordination. She has a flat planning fee for destination weddings; she will confirm the details with you.",c:["Fees","Request a trip"]},
+{k:["luxury","luxurious","five star","5 star","bespoke","private jet","yacht","villa","chauffeur","wellness retreat","boutique hotel"],a:"TRU Luxury is bespoke planning: five-star stays, private jet charters, chauffeured transport, exclusive villas, yacht charters, wellness retreats and fully customised itineraries.",c:["Safari","Guided tours","Request a trip"]},
+{k:["safari","safaris","africa","african","big five","lodge","micato"],a:"Luxury African safaris are part of TRU Luxury, with partners including Micato Safaris, Tauck, African Travel and Abercrombie & Kent: encounters with the Big Five and award-winning lodges and tented camps.",c:["Request a trip"]},
+{k:["guided tour","guided tours","guided travel","tauck","abercrombie","luxury gold","escorted","group tour"],a:"Guided travel is offered through names like Tauck, Abercrombie & Kent and Luxury Gold, mixing cultural immersion, exclusive access and five-star service. Kristy has written about how much guided tours have changed.",c:["Request a trip"]},
+{k:["family","families","kids","children","grandparents","multigenerational","multi generational","grandkids","reunion","milestone"],a:"TRU Family designs family and multi-generational trips: milestone celebrations, long-awaited gatherings or relaxed getaways, balancing time together with room for each person to do their own thing.",c:["Request a trip"]},
+{k:["disney","universal","theme park","theme parks","epic universe","magic","harry potter","orlando","wizarding"],a:"TRU Magic is the Disney and Universal brand: resort and park tickets, dining reservations and personalised itineraries, including Epic Universe. On the site it is marked as coming soon, so Kristy can confirm what is available right now.",c:["Request a trip"]},
+{k:["fee","fees","cost","charge","planning fee","how much","pay","paid","commission"],a:"It depends. If you already know exactly what you want to book (a specific cruise, resort or package), Kristy typically does not charge a planning fee and is generally paid by the supplier. For trips that need more research or custom itineraries there is a non-refundable professional planning fee based on complexity, and destination weddings have a flat planning fee. Her FAQ lists the amounts; she will confirm the exact figure for your trip.",c:["Request a trip"]},
+{k:["price match","match price","cheaper","better price","book direct","book directly","directly"],a:"Kristy says maybe: sometimes she can do better and sometimes not, but price is not the full picture. If price is your only deciding factor she may not be the right fit; if you value guidance and someone looking out for you, that is what she offers. With cruises she can access special group pricing and exclusive amenities.",c:["Fees"]},
+{k:["hours","open","opening","when are you available","business hours","available","weekend","sunday","saturday","time","closed"],a:"Business hours (CST): Monday to Friday 9am to 10pm, Saturday 9am to 6pm, Sunday 1pm to 6pm.",c:["Contact","Request a trip"]},
+{k:["phone","call","text","contact","email","e-mail","number","reach","speak","talk"],a:"Call or text Kristy at 346-330-3345, or e-mail kristy@tru-vacations.com. You can also fill in the request form on the site, or I can start a trip request here.",c:["Request a trip","Hours and contact"]},
+{k:["address","location","located","where are you","office","houston","visit","walk in"],a:"TRU Vacations LLC is based in Houston, Texas. The address on the site is a mailing address only, with no public access, so trips are planned by phone, text, e-mail and form.",c:["Contact"]},
+{k:["kristy","trieu","who","owner","founder","advisor","agent","about","experience","asta","verified","vta"],a:"Kristy Trieu, VTA, is the founder. She attended travel school over two decades ago, planned trips for friends and family for years, and launched TRU Vacations in 2025. She holds the ASTA Verified Travel Advisor credential. TRU Vacations is also BBB Accredited and a member of ASTA, CLIA and the Destination Weddings & Honeymoon Specialists Association.",c:["Request a trip"]},
+{k:["airfare","flight","flights","airline","plane","air ticket"],a:"Airfare can be included as part of any vacation package Kristy puts together, but standalone flights are not booked. For flights only she recommends booking directly with the airline or a flight-only service.",c:["Request a trip"]},
+{k:["insurance","insure","protect","cancel trip","trip protection"],a:"Kristy strongly recommends travel insurance and is happy to walk you through the options.",c:["Request a trip"]},
+{k:["emergency","problem","wrong","support","help abroad","while travelling","while traveling","during trip","stranded","lost","stuck","abroad","overseas","sick"],a:"Every client receives a contact number for in-destination support, often to one of the preferred suppliers used for the booking, so you have immediate access day or night, in any time zone.",c:["Contact"]},
+{k:["advance","early","how soon","how far","when should i book","last minute","short notice","timeline"],a:"Cruises and guided tours often open up to two years ahead, which is usually when you find the best pricing and cabin selection. Airfare generally opens about 11 months out. Kristy has also planned trips on short notice, so reach out whatever your timeline.",c:["Request a trip"]},
+{k:["app","tern","itinerary app","documents","travel documents"],a:"All TRU Vacations clients get access to Kristy's travel app, Tern for Travelers, with itineraries, travel documents, reservation details and key trip information on your phone.",c:["Request a trip"]},
+{k:["promotion","promotions","special","specials","giveaway","sweepstakes","newsletter","emails","deal","deals"],a:"The Specials & Promotions page has current promotions and a sign-up for promotional e-mails with travel inspiration and specials. Kristy can tell you what is live right now.",c:["Contact"]},
+{k:["license","licence","licensed","seller of travel","legit","bbb","accredited","trust","insured"],a:"TRU Vacations is a BBB Accredited Business and a member of ASTA, CLIA and DWHSA. Seller of travel licences listed on the site: Florida ST17873, California 2063964-50, Washington 602232785.",c:["Kristy"]},
+{k:["blog","tips","inspiration","inspo","ideas","destination ideas"],a:"Kristy blogs about destinations and tips, for example Mediterranean cruises as an introduction to Europe, Virgin Voyages, and guided tours. Each brand page also has an inspiration section.",c:["Request a trip"]},
+{k:["free guide","guide","download","wedding tips","stress free","checklist"],a:"The TRU Romance page offers a free downloadable guide: Top 5 Insider Tips for a Stress-Free Destination Wedding.",c:["Destination wedding"]},
+{k:["virgin voyages","adults only","adults-only","retreat","celebrity retreat","upgrade"],a:"Kristy has blogged about Virgin Voyages as an adults-only cruise and about five reasons to upgrade to The Retreat on a Celebrity cruise. Ask her which suits your trip.",c:["Cruises","Request a trip"]},
+{k:["eclipse","solar eclipse","adventures by disney","spring break","boutique"],a:"Other blog topics include eclipse travel and cruises in 2026, Adventures by Disney as a family vacation, international spring break ideas for families, and boutique hotels in luxury travel.",c:["Blog and tips"]},
+{k:["group","groups","large group","friends trip","friends","team"],a:"Cruises can be planned for friends, family, couples or large groups, and Kristy has access to special group pricing and exclusive amenities. Share the group size in a trip request and she will advise.",c:["Request a trip"]},
+{k:["hello","hi","hey","good morning","good evening"],a:"Hello! Ask me about cruises, honeymoons, luxury, family trips, hours or fees, or say \"request a trip\" and I will collect the details for Kristy.",c:["Request a trip","Cruises"]}
+],
+flow:{
+trigger:["request a trip","request trip","plan a trip","plan my trip","plan a vacation","book a trip","book a cruise","book a vacation","book a honeymoon","start planning","get a quote","consultation","inquiry","enquiry"],
+intro:"Happy to start a trip request for Kristy. A few quick questions.",
+steps:[
+{key:"type",label:"Trip type",q:"What kind of trip is this?",chips:["Cruise","Honeymoon or wedding","Luxury","Family or multi-generational","Not sure yet"]},
+{key:"where",label:"Destination or idea",q:"Where are you dreaming of going, or what is the idea? (A rough idea is fine)"},
+{key:"when",label:"Rough dates",q:"Roughly when would you like to travel?"},
+{key:"who",label:"Travellers",q:"Who is travelling? (adults, children, and any special occasion)"},
+{key:"contact",label:"Contact",q:"Your name and the best way to reach you (phone, text or e-mail)?"}
+],
+done:"Thank you. Your request is ready to go to Kristy, who will follow up personally. Here is what I have:"
+}
+};
+/* assistant engine: needs CFG={name,hello,chips:[],kb:[{k:[],a:'',c:[]}],fallback,flow:{trigger:[],intro,steps:[{key,label,q,chips?}],done}} */
+(function(){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+function stem(w){return w.length>4?w.replace(/(ings|ing|ies|es|ed|s)$/,''):w}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;var p=[],i,j;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var c=[i];for(j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c}return p[n]}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem)}
+function match(q){
+  var nq=norm(q),qt=toks(q),rq=nq.split(' '),best=null,bs=0;
+  CFG.kb.forEach(function(e){
+    var s=0;
+    e.k.forEach(function(k){
+      var nk=norm(k),kt=toks(k);
+      if(!nk)return;
+      if((' '+nq+' ').indexOf(' '+nk+' ')>=0){s+=3+kt.length;return}
+      if(kt.length===1){
+        var w=kt[0];
+        for(var i=0;i<qt.length;i++){var t=qt[i];
+          if(t===w){s+=3;break}
+          if(w.length>=5&&t.length>=5&&(t.indexOf(w)===0||w.indexOf(t)===0)){s+=2.5;break}
+          var d=lev(t,w);if(w.length>=5&&d<=(w.length>=8?2:1)){s+=3.2;break}
+          if(nk.length>=5&&rq.some(function(r){return lev(r,nk)<=(nk.length>=8?2:1)})){s+=3.2;break}
+        }
+      }else{
+        var hit=0;kt.forEach(function(w){if(qt.some(function(t){return t===w||(w.length>=5&&lev(t,w)<=1)}))hit++});
+        if(hit===kt.length)s+=2+kt.length;else if(hit>0&&kt.length>2&&hit>=kt.length-1)s+=1.5;
+      }
+    });
+    if(e.p)s*=1.8;if(s>bs){bs=s;best=e}
+  });
+  return bs>=2.5?best:null;
+}
+var F=CFG.flow,st=null;
+function flowStart(){st={i:0,d:{}};return F.intro+'<br><b>'+F.steps[0].q+'</b>'}
+function isTrigger(q){var nq=norm(q);return F.trigger.some(function(t){var nt=norm(t);return (' '+nq+' ').indexOf(' '+nt+' ')>=0})||F.trigger.some(function(t){var w=norm(t);return w.indexOf(' ')<0&&w.length>=6&&toks(q).some(function(x){return lev(x,stem(w))<=1})})}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function flowNext(q){
+  var s=F.steps[st.i];
+  if(/^\s*(cancel|stop|exit|never ?mind)\s*$/i.test(q)){st=null;return {t:'No problem, nothing was sent. Ask me anything else.',chips:CFG.chips}}
+  st.d[s.key]=q.trim();st.i++;
+  if(st.i<F.steps.length){var n=F.steps[st.i];return {t:'<b>'+n.q+'</b>',chips:n.chips||null}}
+  var d=st.d,rows=F.steps.map(function(x){return '<li><b>'+x.label+':</b> '+esc(d[x.key])+'</li>'}).join('');
+  st=null;return {t:F.done+'<ul>'+rows+'</ul><small>This is a demo, so nothing was actually sent.</small>',chips:CFG.chips};
+}
+function reply(q){
+  if(st)return flowNext(q);
+  if(isTrigger(q)){var t=flowStart();return {t:t,chips:F.steps[0].chips||null}}
+  var e=match(q);
+  if(e)return {t:e.a,chips:e.c||null};
+  return {t:CFG.fallback,chips:CFG.chips};
+}
+if(typeof document==='undefined'||!document.getElementById('aw-btn')){ if(typeof module!=='undefined')module.exports={match:match,reply:reply,reset:function(){st=null},CFG:CFG}; return }
+var btn=document.getElementById('aw-btn'),pan=document.getElementById('aw-panel'),log=document.getElementById('aw-log'),chips=document.getElementById('aw-chips'),inp=document.getElementById('aw-in'),form=document.getElementById('aw-form');
+function add(h,who){var d=document.createElement('div');d.className='aw-m '+who;d.innerHTML=h;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function setChips(c){chips.innerHTML='';(c||[]).forEach(function(x){var b=document.createElement('button');b.type='button';b.textContent=x;b.onclick=function(){send(x)};chips.appendChild(b)})}
+function send(q){if(!q.trim())return;add(esc(q),'me');var r=reply(q);setTimeout(function(){add(r.t,'bot');setChips(r.chips)},250)}
+var opened=false;
+btn.onclick=function(){var o=pan.classList.toggle('open');btn.setAttribute('aria-expanded',o);if(o&&!opened){opened=true;add(CFG.hello,'bot');setChips(CFG.chips)}if(o)inp.focus()};
+document.getElementById('aw-x').onclick=function(){pan.classList.remove('open');btn.setAttribute('aria-expanded',false)};
+document.querySelectorAll('[data-ask]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();if(!pan.classList.contains('open'))btn.click();send(a.getAttribute('data-ask'))})});
+form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';send(v)};
+})();
+
+</script>
+</body>
+</html>
