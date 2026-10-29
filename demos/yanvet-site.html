@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yanvet · Երևան</title>
+<meta name="description" content="Yanvet.am՝ շների և կատուների կեր ու խնամքի միջոցներ, առաքում Երևանում։">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;600;800&family=Noto+Sans:wght@400;600;800&family=Noto+Serif+Armenian:wght@600;800&family=Noto+Serif:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fbf5e8;--paper:#fffdf7;--teal:#0b6e6e;--teal2:#008080;--deep:#07484a;--sun:#f9be4f;--rose:#e3356b;--ink:#1c2b2b;--mute:#587070;
+--gb-a:#0b6e6e;--gb-at:#fff;--gb-bg:#fffdf7;--gb-bg2:#f4ecd9;--gb-bot:#fff;--gb-ink:#1c2b2b;--gb-r:22px;--gb-f:'Noto Sans Armenian','Noto Sans',system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 'Noto Sans Armenian','Noto Sans',system-ui,sans-serif;-webkit-text-size-adjust:100%}
+body[data-l=hy] .ru,body[data-l=ru] .hy{display:none!important}
+h1,h2,h3{font-family:'Noto Serif Armenian','Noto Serif',Georgia,serif;line-height:1.2;margin:0 0 .5em;color:var(--deep)}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:40;background:rgba(251,245,232,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(11,110,110,.15)}
+.bar{display:flex;align-items:center;gap:12px;min-height:64px;flex-wrap:wrap;padding:6px 0}
+.logo{height:46px;width:auto}
+nav{display:flex;gap:4px;margin-left:auto;align-items:center;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:600;font-size:14px;padding:8px 10px;border-radius:99px}
+nav a:hover{background:rgba(11,110,110,.1)}
+.lg{display:flex;border:1.5px solid var(--teal);border-radius:99px;overflow:hidden}
+.lg button{border:0;background:transparent;padding:6px 12px;font:700 13px var(--gb-f);cursor:pointer;color:var(--teal)}
+.lg button.on{background:var(--teal);color:#fff}
+.hero{position:relative;overflow:hidden;padding:36px 0 56px}
+.hero::before{content:"";position:absolute;right:-120px;top:-80px;width:420px;height:420px;border-radius:50%;background:var(--sun);opacity:.55}
+.hero::after{content:"";position:absolute;left:-90px;bottom:-110px;width:300px;height:300px;border-radius:50%;background:var(--teal2);opacity:.16}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:28px;grid-template-columns:minmax(0,1fr)}
+.kick{display:inline-block;background:var(--teal);color:#fff;font-weight:700;font-size:13px;padding:5px 12px;border-radius:99px;margin-bottom:14px}
+.hero h1{font-size:clamp(28px,7vw,50px);font-weight:800}
+.hero p{font-size:18px;max-width:34em;color:#2f4747}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-block;text-decoration:none;font-weight:800;padding:13px 22px;border-radius:99px;border:2px solid var(--teal);background:var(--teal);color:#fff;cursor:pointer;font-family:inherit;font-size:15px}
+.btn.alt{background:transparent;color:var(--teal)}
+.card-hero{background:var(--paper);border-radius:28px;padding:22px;box-shadow:0 14px 40px rgba(7,72,74,.16);transform:rotate(1.2deg)}
+.card-hero h3{font-size:19px}
+.card-hero ul{list-style:none;margin:0;padding:0}
+.card-hero li{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed rgba(11,110,110,.25)}
+.card-hero li:last-child{border:0}
+.card-hero b{color:var(--teal)}
+section{padding:48px 0}
+section h2{font-size:clamp(24px,5vw,34px)}
+.lead{color:var(--mute);max-width:40em;margin-bottom:24px}
+.tiles{display:grid;gap:14px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.tile{background:var(--paper);border-radius:22px;padding:18px 16px;border:2px solid transparent;min-width:0}
+.tile:nth-child(3n+1){border-color:rgba(249,190,79,.7)}
+.tile:nth-child(3n+2){border-color:rgba(0,128,128,.4)}
+.tile:nth-child(3n){border-color:rgba(227,53,107,.3)}
+.tile .em{font-size:30px;display:block;margin-bottom:6px}
+.tile h3{font-size:17px;margin-bottom:4px}
+.tile p{margin:0;font-size:14px;color:var(--mute)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.pill{background:#fff;border:1.5px solid rgba(11,110,110,.3);border-radius:99px;padding:6px 14px;font-size:14px;font-weight:600}
+.pill.sun{background:var(--sun);border-color:var(--sun)}
+.dark{background:var(--deep);color:#e9f4f1}
+.dark h2,.dark h3{color:#fff}
+.dark .lead{color:#b8d4d0}
+.steps{display:grid;gap:14px;grid-template-columns:minmax(0,1fr);counter-reset:s}
+.step{background:rgba(255,255,255,.08);border-radius:22px;padding:20px 18px 18px 64px;position:relative;min-width:0}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;width:36px;height:36px;border-radius:50%;background:var(--sun);color:var(--deep);font:800 18px/36px 'Noto Sans',sans-serif;text-align:center}
+.step h3{font-size:18px;margin-bottom:4px}
+.step p{margin:0;color:#cfe3df;font-size:15px}
+.faq details{background:var(--paper);border-radius:18px;padding:0 18px;margin-bottom:10px;border:1.5px solid rgba(11,110,110,.2)}
+.faq summary{cursor:pointer;font-weight:700;padding:15px 0;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faq summary::after{content:"+";color:var(--teal);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:0 0 16px;color:#34504f}
+.contact{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+.cbox{background:var(--paper);border-radius:24px;padding:24px;min-width:0}
+.cbox a{font-weight:700;color:var(--teal)}
+.cbox p{margin:.3em 0}
+.note{background:var(--sun);border-radius:24px;padding:24px;min-width:0}
+footer{padding:26px 0 90px;text-align:center;color:var(--mute);font-size:13px}
+@media(min-width:760px){
+ .hero .wrap{grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);align-items:center}
+ .tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .steps{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .contact{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.gb-fab{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--gb-a);color:var(--gb-at);font:700 15px/1 var(--gb-f);padding:14px 18px;border-radius:var(--gb-r);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.gb-fab-i{font-size:20px}
+.gb-panel{position:fixed;right:12px;bottom:12px;z-index:70;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));display:flex;flex-direction:column;background:var(--gb-bg);color:var(--gb-ink);border-radius:var(--gb-r);box-shadow:0 18px 50px rgba(0,0,0,.35);overflow:hidden;font:15px/1.45 var(--gb-f)}
+.gb-panel[hidden]{display:none}
+.gb-head{display:flex;align-items:center;gap:10px;background:var(--gb-a);color:var(--gb-at);padding:12px 14px}
+.gb-tw{flex:1;min-width:0}
+.gb-title{font-weight:800;font-size:16px}
+.gb-sub{font-size:12px;opacity:.85}
+.gb-x{border:0;background:rgba(255,255,255,.2);color:inherit;width:32px;height:32px;border-radius:50%;font-size:22px;line-height:1;cursor:pointer}
+.gb-msgs{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--gb-bg2)}
+.gb-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.gb-bot{align-self:flex-start;background:var(--gb-bot);color:var(--gb-ink);border-bottom-left-radius:4px}
+.gb-user{align-self:flex-end;background:var(--gb-a);color:var(--gb-at);border-bottom-right-radius:4px}
+.gb-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;background:var(--gb-bg);max-height:132px;overflow-y:auto;border-top:1px solid rgba(0,0,0,.08)}
+.gb-chip{border:1.5px solid var(--gb-a);background:transparent;color:var(--gb-ink);border-radius:999px;padding:7px 12px;font:600 13px/1.2 var(--gb-f);cursor:pointer}
+.gb-chip:hover{background:var(--gb-a);color:var(--gb-at)}
+.gb-form{display:flex;gap:6px;padding:8px 10px 10px;background:var(--gb-bg)}
+.gb-in{flex:1;min-width:0;border:1.5px solid rgba(0,0,0,.2);border-radius:999px;padding:10px 14px;font:16px var(--gb-f);background:#fff;color:#111}
+.gb-send{border:0;background:var(--gb-a);color:var(--gb-at);border-radius:999px;padding:0 16px;font:700 14px var(--gb-f);cursor:pointer}
+
+</style>
+</head>
+<body data-l="hy">
+<header><div class="wrap bar">
+ <a href="#top"><img class="logo" src="img/yanvet-logo.png" alt="Yanvet veterinary clinic" width="123" height="46"></a>
+ <nav>
+  <a href="#shop"><span class="hy">Խանութ</span><span class="ru">Магазин</span></a><a href="#order"><span class="hy">Պատվեր</span><span class="ru">Заказ</span></a><a href="#faq"><span class="hy">Հարցեր</span><span class="ru">Вопросы</span></a><a href="#contact"><span class="hy">Կապ</span><span class="ru">Контакты</span></a>
+  <div class="lg"><button id="bhy" class="on" type="button">ՀԱՅ</button><button id="bru" type="button">РУС</button></div>
+ </nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+ <div>
+  <span class="kick"><span class="hy">Երևան · Ազատության 9Ա</span><span class="ru">Ереван · Азатутян 9А</span></span>
+  <h1><span class="hy">Շների և կատուների համար՝ կեր և խնամքի միջոցներ մեկ կայքում</span><span class="ru">Корм и средства по уходу для собак и кошек на одном сайте</span></h1>
+  <p><span class="hy">Ձեր ընտանի կենդանուն գոհացնելու լավագույն տարբերակը՝ համեղ սնունդ, հիգիենա և աքսեսուարներ, առաքումով Երևանում։</span><span class="ru">Лучший способ порадовать питомца: вкусный корм, гигиена и аксессуары с доставкой по Еревану.</span></p>
+  <div class="btns">
+   <a class="btn" href="https://yanvet.am/shop" target="_blank" rel="noopener"><span class="hy">Բացել խանութը</span><span class="ru">Открыть магазин</span></a>
+   <button class="btn alt" type="button" id="ask"><span class="hy">Հարցնել օգնականին</span><span class="ru">Спросить помощника</span></button>
+  </div>
+ </div>
+ <div class="card-hero">
+  <h3><span class="hy">Մի հայացքով</span><span class="ru">Коротко</span></h3>
+  <ul>
+   <li><b>600</b><span><span class="hy">դրամ՝ առաքում ողջ Երևանում</span><span class="ru">драмов: доставка по всему Еревану</span></span></li>
+   <li><b>5000+</b><span><span class="hy">դրամի պատվերի դեպքում առաքումն անվճար է</span><span class="ru">драмов в заказе: доставка бесплатная</span></span></li>
+   <li><b>Idram</b><span><span class="hy">Telcell Wallet կամ կանխիկ</span><span class="ru">Telcell Wallet или наличные</span></span></li>
+   <li><b>15′</b><span><span class="hy">րոպեի ընթացքում պատվերը կարելի է չեղարկել</span><span class="ru">минут, чтобы отменить заказ</span></span></li>
+  </ul>
+ </div>
+</div></div>
+
+<section id="shop"><div class="wrap">
+ <h2><span class="hy">Ինչ կա խանութում</span><span class="ru">Что в магазине</span></h2>
+ <p class="lead"><span class="hy">Բաժինները՝ ինչպես Yanvet.am-ում։ Յուրաքանչյուր ապրանք կարելի է ընտրել ըստ կենդանատեսակի, կերի տեսակի, տարիքի և քաշի։</span><span class="ru">Разделы как на Yanvet.am. Каждый товар можно выбрать по виду животного, типу корма, возрасту и весу.</span></p>
+ <div class="tiles">
+  <div class="tile"><span class="em">🥣</span><h3><span class="hy">Թաց կեր</span><span class="ru">Влажный корм</span></h3><p><span class="hy">Շների և կատուների համար</span><span class="ru">Для собак и кошек</span></p></div>
+  <div class="tile"><span class="em">🦴</span><h3><span class="hy">Չոր կեր</span><span class="ru">Сухой корм</span></h3><p><span class="hy">Տարբեր քաշերի և տարիքների</span><span class="ru">Для разного веса и возраста</span></p></div>
+  <div class="tile"><span class="em">🍪</span><h3><span class="hy">Հյուրասիրություն</span><span class="ru">Лакомства</span></h3><p><span class="hy">Փոքրիկ ուրախություններ</span><span class="ru">Маленькие радости</span></p></div>
+  <div class="tile"><span class="em">🧴</span><h3><span class="hy">Հիգիենայի միջոցներ</span><span class="ru">Гигиена</span></h3><p><span class="hy">Խնամք ամեն օրվա համար</span><span class="ru">Уход на каждый день</span></p></div>
+  <div class="tile"><span class="em">🎾</span><h3><span class="hy">Աքսեսուարներ</span><span class="ru">Аксессуары</span></h3><p><span class="hy">Շների և կատուների համար</span><span class="ru">Для собак и кошек</span></p></div>
+  <div class="tile"><span class="em">💊</span><h3><span class="hy">Դեղորայք</span><span class="ru">Лекарства</span></h3><p><span class="hy">Ընտրելուց առաջ՝ անասնաբույժին</span><span class="ru">Перед выбором к ветеринару</span></p></div>
+ </div>
+ <div class="pills">
+  <span class="pill sun"><span class="hy">Տարիք</span><span class="ru">Возраст</span>: 0-2 <span class="hy">ամսական</span><span class="ru">мес.</span></span><span class="pill sun">2-12 <span class="hy">ամսական</span><span class="ru">мес.</span></span><span class="pill sun">1+ <span class="hy">տարեկան</span><span class="ru">год</span></span>
+  <span class="pill"><span class="hy">Քաշ</span><span class="ru">Вес</span>: 1-2 <span class="hy">կգ</span><span class="ru">кг</span></span><span class="pill">2-10 <span class="hy">կգ</span><span class="ru">кг</span></span><span class="pill">10-32 <span class="hy">կգ</span><span class="ru">кг</span></span><span class="pill">32-80 <span class="hy">կգ</span><span class="ru">кг</span></span>
+ </div>
+ <h3 style="margin-top:30px"><span class="hy">Բրենդներ</span><span class="ru">Бренды</span></h3>
+ <div class="pills" style="margin-top:8px">
+  <span class="pill">Delix BIO</span><span class="pill">Purina</span><span class="pill">Monge</span><span class="pill">ProBalance</span><span class="pill">ProХвост</span><span class="pill">Orijen</span><span class="pill">ACANA</span><span class="pill">BWILD</span><span class="pill">Gemon</span><span class="pill">Simba</span><span class="pill">Versele Laga</span><span class="pill">Club4Paws</span><span class="pill">Гав</span>
+ </div>
+</div></section>
+
+<section id="order" class="dark"><div class="wrap">
+ <h2><span class="hy">Ինչպես է աշխատում պատվերը</span><span class="ru">Как работает заказ</span></h2>
+ <p class="lead"><span class="hy">Երեք քայլ՝ ըստ կայքի պայմանների։</span><span class="ru">Три шага по условиям сайта.</span></p>
+ <div class="steps">
+  <div class="step"><h3><span class="hy">Ընտրեք ապրանքը</span><span class="ru">Выберите товар</span></h3><p><span class="hy">Շուն կամ կատու, կեր կամ խնամք, ավելացրեք զամբյուղում։ Արժույթը՝ USD, RUB կամ AMD։</span><span class="ru">Собака или кошка, корм или уход, добавьте в корзину. Валюта: USD, RUB или AMD.</span></p></div>
+  <div class="step"><h3><span class="hy">Վճարեք</span><span class="ru">Оплатите</span></h3><p><span class="hy">Կանխիկ կամ օնլայն՝ Idram և Telcell Wallet դրամապանակներով։</span><span class="ru">Наличными или онлайн через Idram и Telcell Wallet.</span></p></div>
+  <div class="step"><h3><span class="hy">Ստացեք Երևանում</span><span class="ru">Получите в Ереване</span></h3><p><span class="hy">Առաքում Ձեր հասցեով, Ձեր ընտրած օրը և ժամային գոտում։ Միայն Երևանում։</span><span class="ru">Доставка по вашему адресу, в выбранный день и время. Только по Еревану.</span></p></div>
+ </div>
+</div></section>
+
+<section id="faq" class="faq"><div class="wrap">
+ <h2><span class="hy">Հաճախ տրվող հարցեր</span><span class="ru">Частые вопросы</span></h2>
+ <details><summary><span class="hy">Կարո՞ղ եմ վերադարձնել կերը</span><span class="ru">Можно ли вернуть корм</span></summary><p><span class="hy">Սննդամթերքը սննդի անվտանգության կանոնների պատճառով հետ չի վերադարձվում։ Մնացած դեպքերում գործում է ՀՀ սպառողների իրավունքների պաշտպանության մասին օրենքը։</span><span class="ru">Продукты питания по правилам пищевой безопасности возврату не подлежат. В остальных случаях действует закон РА о защите прав потребителей.</span></p></details>
+ <details><summary><span class="hy">Ի՞նչ անել, եթե ապրանքը անորակ է կամ ժամկետանց</span><span class="ru">Что делать, если товар некачественный или просрочен</span></summary><p><span class="hy">Պատվիրատուն իրավունք ունի հրաժարվել պատվերից, եթե իրեն մատակարարվել է անորակ կամ ժամկետանց ապրանք, և չվճարել դրա համար կամ պահանջել օնլայն վճարված գումարի վերադարձ։</span><span class="ru">Заказчик вправе отказаться от заказа, если ему поставлен некачественный или просроченный товар, и не платить за него или потребовать возврат онлайн-платежа.</span></p></details>
+ <details><summary><span class="hy">Կարո՞ղ եմ չեղարկել պատվերը</span><span class="ru">Можно ли отменить заказ</span></summary><p><span class="hy">Այո՝ ամրագրելուց հետո 15 րոպեի ընթացքում, կայքի միջոցով կամ գրասենյակ զանգահարելով։</span><span class="ru">Да, в течение 15 минут после оформления, через сайт или позвонив в офис.</span></p></details>
+ <details><summary><span class="hy">Առաքում մարզե՞ր</span><span class="ru">Доставка в регионы</span></summary><p><span class="hy">Առաքումը կատարվում է միայն Երևանում։</span><span class="ru">Доставка осуществляется только по Еревану.</span></p></details>
+ <details><summary><span class="hy">Իսկ բուժական հարցերը</span><span class="ru">А медицинские вопросы</span></summary><p><span class="hy">Դեղորայքի, պատվաստումների և ախտանիշների մասին խորհրդատվությունը անասնաբույժի գործն է։ Կլինիկայի ծառայությունների և ընդունելության ժամերի մասին կայքում տվյալներ չկան, դրանք կճշտի թիմը։</span><span class="ru">Консультации о лекарствах, прививках и симптомах дело ветеринара. Об услугах клиники и часах приёма на сайте данных нет, их уточнит команда.</span></p></details>
+</div></section>
+
+<section id="contact"><div class="wrap">
+ <h2><span class="hy">Կապ</span><span class="ru">Контакты</span></h2>
+ <div class="contact">
+  <div class="cbox">
+   <p><b><span class="hy">Հասցե</span><span class="ru">Адрес</span></b><br><span class="hy">Երևան, Ազատության 9Ա</span><span class="ru">Ереван, Азатутян 9А</span></p>
+   <p><b><span class="hy">Հեռախոս</span><span class="ru">Телефон</span></b><br><a href="tel:+37493720088">+374 93 720088</a><br><a href="tel:+37441720080">+374 41 720080</a></p>
+   <p><b>E-mail</b><br><a href="mailto:yanvetclinic@gmail.com">yanvetclinic@gmail.com</a></p>
+  </div>
+  <div class="note">
+   <h3><span class="hy">Հարց ունե՞ք</span><span class="ru">Есть вопрос?</span></h3>
+   <p><span class="hy">Օգնականը պատասխանում է կայքի տվյալներով։ Ինչ չգիտի՝ թիմին է փոխանցում։</span><span class="ru">Помощник отвечает по данным сайта. Чего не знает, передаёт команде.</span></p>
+   <button class="btn" type="button" id="ask2"><span class="hy">Բացել օգնականին</span><span class="ru">Открыть помощника</span></button>
+  </div>
+ </div>
+</div></section>
+</main>
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+
+<script>
+(function(root){
+'use strict';
+function norm(s){return (s||'').toLowerCase().replace(/ё/g,'е').replace(/[^\p{L}\p{N}\s]/gu,' ').replace(/\s+/g,' ').trim();}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;if(Math.abs(m-n)>2)return 9;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var prev=p[0];p[0]=i;for(j=1;j<=n;j++){c=p[j];p[j]=Math.min(p[j]+1,p[j-1]+1,prev+(a[i-1]===b[j-1]?0:1));prev=c;}}return p[n];}
+function detect(s,def){if(/[԰-֏]/.test(s))return 'hy';if(/[Ѐ-ӿ]/.test(s))return 'ru';return def;}
+function score(text,keys){
+  var toks=text.split(' '),padded=' '+text+' ',sc=0;
+  keys.forEach(function(k){
+    if(k.indexOf(' ')>0){if(padded.indexOf(k)>=0)sc+=k.length*1.2;return;}
+    var best=0;
+    toks.forEach(function(t){
+      if(t.indexOf(k)===0){best=Math.max(best,k.length+(t.length===k.length?1:0));}
+      else if(k.length>=5&&t.length>=k.length-1){var d=lev(t.slice(0,k.length),k);if(d<=(k.length>=8?2:1))best=Math.max(best,k.length*0.7);}
+    });
+    sc+=best;
+  });
+  return sc;
+}
+function find(cfg,text){
+  var n=norm(text),best=null,bs=0;
+  cfg.kb.forEach(function(e){var s=score(n,e.k);if(s>bs){bs=s;best=e;}});
+  return bs>=4?best:null;
+}
+function pick(step,text){
+  var n=norm(text),best=-1,bs=0;
+  if(!n)return -1;
+  step.opts.forEach(function(o,i){
+    var keys=(o.k||[]).slice();
+    ['hy','ru'].forEach(function(l){if(o[l]){var nn=norm(o[l]);keys.push(nn);if(nn.length>5)keys.push(nn.slice(0,5));}});
+    var s=score(n,keys);
+    ['hy','ru'].forEach(function(l){if(o[l]&&norm(o[l])===n)s+=20;});
+    if(s>bs){bs=s;best=i;}
+  });
+  return bs>=3?best:-1;
+}
+function isCancel(cfg,text){return score(norm(text),cfg.cancel)>=4;}
+var api={norm:norm,lev:lev,detect:detect,score:score,find:find,pick:pick,isCancel:isCancel};
+root.GEVBOT=api;
+if(typeof module!=='undefined')module.exports=api;
+if(typeof document==='undefined')return;
+
+root.GEVBOT.mount=function(cfg){
+  var lang=cfg.lang||'hy',flow=null,msgs,chips,input,panel,fab,started=false;
+  function L(o){return (o&&(o[lang]||o.hy))||'';}
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+  function scroll(){msgs.scrollTop=msgs.scrollHeight;}
+  function say(text,who){var m=el('div','gb-m gb-'+(who||'bot'));String(text).split('\n').forEach(function(line,i){if(i)m.appendChild(document.createElement('br'));m.appendChild(document.createTextNode(line));});msgs.appendChild(m);scroll();return m;}
+  function setChips(list){chips.textContent='';list.forEach(function(c){var b=el('button','gb-chip',c.t);b.type='button';b.onclick=function(){handle(c.t,c.v);};chips.appendChild(b);});}
+  function mainChips(){setChips(cfg.chips.map(function(c){return {t:L(c.t),v:c};}));}
+  function ui(k){return L(cfg.ui[k]);}
+  function ask(){
+    var s=cfg.flow.steps[flow.i];say(L(s.q));
+    if(s.opts)setChips(s.opts.map(function(o,i){return {t:L(o),v:{opt:i}};}));
+    else chips.textContent='';
+    input.placeholder=s.type==='phone'?ui('phPhone'):(s.type==='name'?ui('phName'):ui('ph'));
+  }
+  function startFlow(){flow={i:0,d:[]};ask();}
+  function finish(){
+    var lines=[L(cfg.flow.doneTitle)];
+    cfg.flow.steps.forEach(function(s,i){lines.push('• '+L(s.label)+': '+flow.d[i]);});
+    lines.push('');lines.push(L(cfg.flow.done));
+    say(lines.join('\n'));flow=null;input.placeholder=ui('ph');mainChips();
+  }
+  function handle(text,chip){
+    text=String(text||'').trim();if(!text)return;
+    var ol=lang;lang=detect(text,lang)||lang;
+    say(text,'user');
+    if(flow){
+      if(isCancel(cfg,text)){flow=null;say(ui('cancelled'));mainChips();input.placeholder=ui('ph');return;}
+      var s=cfg.flow.steps[flow.i];
+      if(s.opts){
+        var idx=chip&&chip.opt!=null?chip.opt:pick(s,text);
+        if(idx<0){var e=find(cfg,text);if(e){say(L(e.a));}else{say(ui('pickOne'));}ask();return;}
+        flow.d.push(L(s.opts[idx]));
+      }else if(s.type==='phone'){
+        if(text.replace(/\D/g,'').length<6){say(ui('badPhone'));return;}
+        flow.d.push(text);
+      }else{flow.d.push(text);}
+      flow.i++;
+      if(flow.i>=cfg.flow.steps.length){finish();}else{ask();}
+      return;
+    }
+    if(chip&&chip.flow){startFlow();return;}
+    var e2=find(cfg,text);
+    if(e2){
+      if(e2.flow){say(L(e2.a));startFlow();return;}
+      say(L(e2.a));
+      if(e2.follow)setChips(e2.follow.map(function(c){return {t:L(c.t),v:c};}));else mainChips();
+      return;
+    }
+    say(ui('fallback'));mainChips();
+  }
+  function build(){
+    fab=el('button','gb-fab');fab.type='button';fab.setAttribute('aria-label',ui('title'));
+    fab.appendChild(el('span','gb-fab-i','💬'));fab.appendChild(el('span','gb-fab-t',ui('fab')));
+    panel=el('div','gb-panel');panel.hidden=true;
+    var head=el('div','gb-head');var ttl=el('div','gb-title',ui('title'));var sub=el('div','gb-sub',ui('sub'));
+    var tw=el('div','gb-tw');tw.appendChild(ttl);tw.appendChild(sub);head.appendChild(tw);
+    var x=el('button','gb-x','×');x.type='button';x.setAttribute('aria-label','close');head.appendChild(x);
+    msgs=el('div','gb-msgs');chips=el('div','gb-chips');
+    var form=el('form','gb-form');input=el('input','gb-in');input.type='text';input.placeholder=ui('ph');input.setAttribute('autocomplete','off');
+    var send=el('button','gb-send',ui('send'));send.type='submit';form.appendChild(input);form.appendChild(send);
+    panel.appendChild(head);panel.appendChild(msgs);panel.appendChild(chips);panel.appendChild(form);
+    document.body.appendChild(fab);document.body.appendChild(panel);
+    function open(){panel.hidden=false;fab.style.display='none';if(!started){started=true;say(L(cfg.greet));mainChips();}setTimeout(function(){input.focus();},50);}
+    function close(){panel.hidden=true;fab.style.display='';}
+    fab.onclick=open;x.onclick=close;
+    form.onsubmit=function(ev){ev.preventDefault();var v=input.value;input.value='';handle(v);};
+    root.GEVBOT.open=open;
+  }
+  build();
+  root.GEVBOT.setLang=function(l){lang=l;};
+};
+})(typeof window!=='undefined'?window:globalThis);
+
+</script>
+<script>
+var CFG={
+lang:'hy',
+cancel:['չեղարկ','հրաժարվ','отмен','cancel','стоп','отказ'],
+ui:{
+ title:{hy:'Yanvet օգնական',ru:'Помощник Yanvet'},
+ sub:{hy:'Պատասխանում է կայքի տվյալներով',ru:'Отвечает по данным сайта'},
+ fab:{hy:'Հարցնել',ru:'Спросить'},
+ ph:{hy:'Գրեք հարցը…',ru:'Напишите вопрос…'},
+ phName:{hy:'Ձեր անունը',ru:'Ваше имя'},
+ phPhone:{hy:'+374 …',ru:'+374 …'},
+ send:{hy:'Ուղարկել',ru:'Отправить'},
+ cancelled:{hy:'Լավ, հարցումը չեղարկվեց։ Ինչով ևս կարող եմ օգնել։',ru:'Хорошо, заявка отменена. Чем ещё помочь?'},
+ pickOne:{hy:'Ընտրեք տարբերակներից մեկը կամ գրեք «չեղարկել»։',ru:'Выберите один из вариантов или напишите «отмена».'},
+ badPhone:{hy:'Խնդրում եմ գրեք հեռախոսահամարը (օրինակ՝ +374 93 …)։',ru:'Пожалуйста, укажите номер телефона (например, +374 93 …).'},
+ fallback:{hy:'Այս մասին կայքում տվյալ չեմ գտնում, կճշտի թիմը։ Զանգահարեք՝ +374 93 720088, կամ սեղմեք «Թողնել հարցում»։',ru:'Этого на сайте не нахожу, уточнит команда. Позвоните: +374 93 720088 или нажмите «Оставить заявку».'}
+},
+greet:{hy:'Բարև Ձեզ։ Ես Yanvet.am-ի օգնականն եմ։ Կարող եմ պատասխանել առաքման, վճարման, ապրանքների մասին կամ ընդունել Ձեր հարցումը թիմի համար։ Բուժական հարցերի մասին խորհուրդ չեմ տալիս՝ դա անասնաբույժի գործն է։',ru:'Здравствуйте! Я помощник Yanvet.am. Отвечу про доставку, оплату, товары или приму вашу заявку для команды. Медицинских советов не даю: это дело ветеринара.'},
+chips:[
+ {t:{hy:'Առաքում',ru:'Доставка'}},
+ {t:{hy:'Վճարում',ru:'Оплата'}},
+ {t:{hy:'Կեր',ru:'Корм'}},
+ {t:{hy:'Խնամք և աքսեսուարներ',ru:'Уход и аксессуары'}},
+ {t:{hy:'Վերադարձ',ru:'Возврат'}},
+ {t:{hy:'Հասցե և հեռախոս',ru:'Адрес и телефон'}},
+ {t:{hy:'Թողնել հարցում',ru:'Оставить заявку'},flow:true}
+],
+kb:[
+ {k:['առաքում','առաքել','առաքիչ','անվճար','մարզ','доставк','доставл','привез','курьер','бесплатн','област','регион','delivery'],
+  a:{hy:'Առաքումը կատարվում է միայն Երևանում՝ Ձեր նշած հասցեով, Ձեր ընտրած օրվա և ժամային միջակայքի համաձայն։ Առաքման ծառայությունը 600 դրամ է ողջ Երևանում, իսկ եթե մեկ պատվերի գումարը գերազանցում է 5000 դրամը՝ առաքումն անվճար է։',
+     ru:'Доставка только по Еревану, по указанному вами адресу, в выбранный день и временной интервал. Стоимость доставки по всему Еревану 600 драмов, а если сумма одного заказа превышает 5000 драмов, доставка бесплатная.'}},
+ {k:['վճար','idram','telcell','оплат','налич','կանխիկ','օնլայն','онлайн','идрам','телцелл','платить','расчет'],
+  a:{hy:'Գնումը կարելի է վճարել կանխիկ կամ օնլայն՝ Idram և Telcell Wallet դրամապանակներով։',
+     ru:'Оплатить можно наличными или онлайн через кошельки Idram и Telcell Wallet.'}},
+ {k:['քարտ','карт','visa','mastercard','арка','arca','թերմինալ'],
+  a:{hy:'Կայքում նշված են կանխիկ և Idram/Telcell Wallet օնլայն վճարումները։ Քարտով վճարման մասին կճշտի թիմը՝ +374 93 720088։',
+     ru:'На сайте указаны наличные и онлайн-оплата через Idram/Telcell Wallet. Про оплату картой уточнит команда: +374 93 720088.'}},
+ {k:['վերադարձ','հետվերադարձ','վերադարձնել','փոխանակ','вернуть','возврат','обмен','обменя'],
+  a:{hy:'Սննդամթերքը սննդի անվտանգության կանոնների պատճառով հետ չի վերադարձվում։ Մնացած դեպքերում գործում է ՀՀ սպառողների իրավունքների պաշտպանության մասին օրենքը, իսկ անորակ կամ ժամկետանց ապրանքի դեպքում կարելի է հրաժարվել պատվերից։',
+     ru:'Продукты питания по правилам пищевой безопасности возврату не подлежат. В остальных случаях действует закон РА о защите прав потребителей, а при некачественном или просроченном товаре можно отказаться от заказа.'}},
+ {k:['չեղարկ','հրաժարվ','отменить','отмена','отменит','отказаться'],
+  a:{hy:'Պատվերը կարելի է չեղարկել ամրագրելուց հետո 15 րոպեի ընթացքում՝ կայքի միջոցով կամ գրասենյակ զանգահարելով։',
+     ru:'Заказ можно отменить в течение 15 минут после оформления: через сайт или позвонив в офис.'}},
+ {k:['կեր','սնունդ','սնուն','թաց','չոր','հյուրասիր','корм','еда','питани','сухой','влажн','лакомств','food'],
+  a:{hy:'Խանութում կա շների և կատուների համար թաց և չոր կեր, ինչպես նաև հյուրասիրություն։ Ապրանքները կարելի է ֆիլտրել ըստ կենդանատեսակի, տարիքի (0-2 ամսական, 2-12 ամսական, 1+ տարեկան) և քաշի։',
+     ru:'В магазине есть влажный и сухой корм для собак и кошек, а также лакомства. Товары можно фильтровать по виду животного, возрасту (0-2 мес., 2-12 мес., 1+ год) и весу.'}},
+ {k:['բրենդ','ապրանքանիշ','purina','monge','orijen','acana','probalance','simba','gemon','bwild','бренд','марк','пурина','монж','орижен','акана','delix','դելիքս','пробаланс'],
+  a:{hy:'Կայքում ներկայացված են՝ Delix BIO, Purina, Monge, ProBalance, ProХвост, Orijen, ACANA, BWILD, Gemon, Simba, Versele Laga, Club4Paws, Гав։',
+     ru:'На сайте представлены: Delix BIO, Purina, Monge, ProBalance, ProХвост, Orijen, ACANA, BWILD, Gemon, Simba, Versele Laga, Club4Paws, Гав.'}},
+ {k:['հիգիեն','խնամք','աքսեսուար','ակսեսուար','аксессуар','гигиен','уход','shampoo','շամպուն','ошейник','игрушк'],
+  a:{hy:'Կան նաև խնամքի և հիգիենայի միջոցներ, աքսեսուարներ և դեղորայքի բաժին։ Դեղորայքի ընտրության համար լավ է խորհրդակցել անասնաբույժի հետ։',
+     ru:'Есть также средства по уходу и гигиене, аксессуары и раздел лекарств. Для выбора лекарств лучше посоветоваться с ветеринаром.'}},
+ {k:['դեղ','հիվանդ','ախտանիշ','փսխ','փորլուծ','ջերմ','վիրահատ','պատվաստ','բուժ','անասնաբույժ','կլինիկ','лекарств','медикамент','болезн','болеет','больн','симптом','рвота','понос','температур','прививк','лечени','вакцин','ветеринар','клиник','врач','укол'],
+  a:{hy:'Բուժման, ախտորոշման, պատվաստումների և դեղաչափերի հարցերում խորհուրդ չեմ տալիս՝ դա անասնաբույժի գործն է։ Լոգոյում նշված է անասնաբուժական կլինիկա, բայց կլինիկայի ծառայությունների և ընդունելության ժամերի մասին կայքում տվյալ չկա, դա կճշտի թիմը։ Զանգահարեք՝ +374 93 720088 կամ +374 41 720080։',
+     ru:'По лечению, диагнозам, прививкам и дозировкам советов не даю: это дело ветеринара. В логотипе указана ветеринарная клиника, но об услугах клиники и часах приёма на сайте данных нет, это уточнит команда. Звоните: +374 93 720088 или +374 41 720080.'}},
+ {k:['հասցե','որտեղ','հեռախոս','զանգ','կապ','փոստ','адрес','где','телефон','позвон','контакт','номер','почт','email','находит','расположен'],
+  a:{hy:'Երևան, Ազատության 9Ա։ Հեռախոս՝ +374 93 720088, +374 41 720080։ Էլ. փոստ՝ yanvetclinic@gmail.com։',
+     ru:'Ереван, Азатутян 9А. Телефон: +374 93 720088, +374 41 720080. E-mail: yanvetclinic@gmail.com.'}},
+ {k:['աշխատանքային ժամ','աշխատում','բաց է','բացվում','ժամերը','փակվում','часы','график','работает','открыт','режим','время работы','до скольки','закрыва'],
+  a:{hy:'Աշխատանքային ժամերը կայքում նշված չեն, դրանք կճշտի թիմը։ Զանգահարեք՝ +374 93 720088։',
+     ru:'Часы работы на сайте не указаны, их уточнит команда. Позвоните: +374 93 720088.'}},
+ {k:['շուն','շներ','շան','կատու','կատվ','կատուն','собак','щен','пес','кошк','кошач','кот','котен'],
+  a:{hy:'Կայքում առանձին բաժիններ կան շների և կատուների համար։ Եթե փնտրում եք կոնկրետ բան, սեղմեք «Թողնել հարցում», և թիմը կպատասխանի։',
+     ru:'На сайте отдельные разделы для собак и кошек. Если ищете что-то конкретное, нажмите «Оставить заявку», и команда ответит.'}},
+ {k:['ակցիա','զեղչ','скидк','акци','sale','discount','распродаж'],
+  a:{hy:'Կայքում կա «Ակցիա» բաժին՝ ընթացիկ առաջարկներով։ Ակցիաները փոխվում են, ճշգրիտ տվյալները՝ կայքում կամ թիմից։',
+     ru:'На сайте есть раздел «Акция» с текущими предложениями. Акции меняются, точные данные на сайте или у команды.'}},
+ {k:['արժույթ','դոլար','рубл','валют','язык','լեզու','english','русск','հայերեն','usd','amd','rub','доллар','драм'],
+  a:{hy:'Կայքը հասանելի է հայերեն, ռուսերեն և անգլերեն, իսկ գները կարելի է դիտել դրամով (AMD), դոլարով (USD) կամ ռուբլով (RUB)։',
+     ru:'Сайт доступен на армянском, русском и английском, а цены можно смотреть в драмах (AMD), долларах (USD) или рублях (RUB).'}},
+ {k:['բլոգ','նորություն','հոդված','блог','новост','стать'],
+  a:{hy:'Կայքում կա նորությունների բաժին՝ հոդվածներ կատուների և շների մասին և ընտանի կենդանիների խնամքի խորհուրդներ։',
+     ru:'На сайте есть раздел новостей: статьи о кошках и собаках и советы по уходу за питомцами.'}},
+ {k:['պատվիր','պատվեր','հարցում','թողնել','գնել','ուզում եմ','заказ','заказать','оставить','заявк','оформ','купить','хочу','order','buy'],
+  flow:true,
+  a:{hy:'Լավ, մի քանի հարց և հարցումը կձևակերպեմ թիմի համար։',ru:'Хорошо, несколько вопросов, и я оформлю заявку для команды.'}},
+ {k:['բարև','ողջույն','привет','здравств','добрый','hello','շնորհակալ','спасибо','благодар'],
+  a:{hy:'Բարև Ձեզ։ Ինչո՞վ կարող եմ օգնել՝ առաքում, վճարում, կեր, խնամքի միջոցներ։',ru:'Здравствуйте! Чем помочь: доставка, оплата, корм, средства по уходу?'}}
+],
+flow:{
+ doneTitle:{hy:'Հարցումը ձևակերպված է․',ru:'Заявка оформлена:'},
+ done:{hy:'Հարցումն ուղարկված է թիմին, նրանք կկապվեն Ձեզ հետ նշված համարով։ (Սա դեմո է՝ իրականում ոչինչ չի ուղարկվում։)',ru:'Заявка отправлена команде, с вами свяжутся по указанному номеру. (Это демо: на самом деле ничего не отправляется.)'},
+ steps:[
+  {label:{hy:'Կենդանի',ru:'Питомец'},q:{hy:'Ո՞ր կենդանու համար է։',ru:'Для кого товар?'},
+   opts:[{hy:'Շուն',ru:'Собака',k:['շուն','շան','собак','пес','щен']},{hy:'Կատու',ru:'Кошка',k:['կատու','կատվ','кошк','кот']},{hy:'Այլ',ru:'Другое',k:['այլ','другое','друг']}]},
+  {label:{hy:'Ինչ է պետք',ru:'Что нужно'},q:{hy:'Ի՞նչ եք փնտրում։',ru:'Что ищете?'},
+   opts:[{hy:'Կեր',ru:'Корм',k:['կեր','սնունդ','корм','еда']},{hy:'Հյուրասիրություն',ru:'Лакомства',k:['հյուրասիր','лакомств']},{hy:'Խնամք և հիգիենա',ru:'Уход и гигиена',k:['խնամք','հիգիեն','уход','гигиен']},{hy:'Աքսեսուարներ',ru:'Аксессуары',k:['աքսեսուար','ակսեսուար','аксессуар']},{hy:'Հարց թիմին',ru:'Вопрос команде',k:['հարց','вопрос','дру']}]},
+  {label:{hy:'Մանրամասներ',ru:'Подробности'},type:'text',q:{hy:'Գրեք մանրամասները՝ տարիք, քաշ, բրենդ կամ ինչ կոնկրետ բան եք փնտրում։',ru:'Напишите детали: возраст, вес, бренд или что именно ищете.'}},
+  {label:{hy:'Անուն',ru:'Имя'},type:'name',q:{hy:'Ինչպե՞ս դիմել Ձեզ։',ru:'Как к вам обращаться?'}},
+  {label:{hy:'Հեռախոս',ru:'Телефон'},type:'phone',q:{hy:'Ո՞ր համարով կապվի թիմը։',ru:'По какому номеру связаться?'}}
+ ]
+}
+};
+
+GEVBOT.mount(CFG);
+(function(){
+ var b=document.body;
+ function set(l){b.setAttribute('data-l',l);document.documentElement.lang=l;document.getElementById('bhy').className=l==='hy'?'on':'';document.getElementById('bru').className=l==='ru'?'on':'';GEVBOT.setLang(l);}
+ document.getElementById('bhy').onclick=function(){set('hy')};
+ document.getElementById('bru').onclick=function(){set('ru')};
+ document.getElementById('ask').onclick=function(){GEVBOT.open()};
+ document.getElementById('ask2').onclick=function(){GEVBOT.open()};
+})();
+</script>
+</body>
+</html>
