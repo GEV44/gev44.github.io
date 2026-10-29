@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wild Rover Tours · website concept</title>
+<meta name="description" content="Day tours, private tours and overnight trips from Dublin, with a driver and a separate guide on every day tour.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#001d63;--blue:#1f4fbe;--sky:#bbd9ff;--green:#4aa54a;--cream:#f4f8ff;--ink:#0d1530;--mute:#4b5677;--line:#d7e2f7;--wa:#1f4fbe;--wf:'Source Sans 3',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Source Sans 3',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.55;font-size:17px;overflow-x:hidden}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.08;margin:0}
+a{color:inherit}.wrap{max-width:1060px;margin:0 auto;padding:0 18px}
+header{background:var(--navy);position:sticky;top:0;z-index:20}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:62px}
+.brand{display:flex;align-items:center;height:62px}.brand img{height:34px;width:auto;max-width:62vw;display:block}
+nav{display:none;gap:22px;font-weight:600;font-size:15px;color:var(--sky)}nav a{text-decoration:none}
+.tel{background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:8px 11px;border-radius:99px;white-space:nowrap;flex:none}
+@media(min-width:820px){nav{display:flex}}
+.hero{background:linear-gradient(160deg,var(--navy) 0%,#07318f 70%,var(--blue) 100%);color:#fff;padding:54px 0 70px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-90px;bottom:-110px;width:340px;height:340px;border-radius:50%;border:2px dashed rgba(187,217,255,.35)}
+.hero .wrap{position:relative;z-index:1}
+.kick{display:inline-block;background:rgba(187,217,255,.16);color:var(--sky);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:99px;margin-bottom:18px}
+.hero h1{font-size:clamp(34px,7.4vw,62px);font-weight:800;max-width:760px;letter-spacing:-.02em}
+.hero p{font-size:19px;color:#dbe8ff;max-width:600px;margin:18px 0 26px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;border:0;cursor:pointer;font:700 16px 'Source Sans 3',sans-serif;padding:13px 22px;border-radius:12px;text-decoration:none}
+.b1{background:var(--green);color:#fff}.b2{background:transparent;color:#fff;border:2px solid var(--sky)}
+.facts{display:grid;grid-template-columns:1fr;gap:10px;margin-top:34px;max-width:760px}
+.facts div{background:rgba(255,255,255,.08);border-radius:12px;padding:12px 14px;font-size:15px;color:#dbe8ff}
+.facts b{display:block;color:#fff;font-size:16px}
+@media(min-width:640px){.facts{grid-template-columns:repeat(3,1fr)}}
+section{padding:60px 0}
+.tag{color:var(--blue);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px;margin-bottom:8px}
+h2{font-size:clamp(28px,5vw,40px);font-weight:800;letter-spacing:-.015em;margin-bottom:10px}
+.lead{color:var(--mute);max-width:620px;margin:0 0 28px}
+.tickets{display:grid;gap:14px}
+.tk{display:grid;grid-template-columns:1fr;background:var(--cream);border:1px solid var(--line);border-radius:16px;overflow:hidden;min-width:0}
+.tk .l{padding:18px 18px 14px;min-width:0}.tk h3{font-size:21px;font-weight:700;margin-bottom:6px}
+.tk p{margin:0;color:var(--mute);font-size:16px}
+.tk .r{border-top:2px dashed var(--line);padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;font-weight:700;color:var(--navy);font-size:15px}
+.tk .r a{background:var(--blue);color:#fff;text-decoration:none;padding:8px 14px;border-radius:10px;font-size:14px}
+@media(min-width:760px){.tickets{grid-template-columns:repeat(2,1fr)}}
+.two{background:var(--navy);color:#fff}
+.two h2{color:#fff}.two .lead{color:#c8d9fb}
+.duo{display:grid;gap:14px;grid-template-columns:1fr}
+.duo>div{background:rgba(255,255,255,.07);border:1px solid rgba(187,217,255,.25);border-radius:16px;padding:20px;min-width:0}
+.duo h3{font-size:22px;margin-bottom:6px;color:var(--sky)}.duo p{margin:0;color:#dbe8ff}
+@media(min-width:700px){.duo{grid-template-columns:1fr 1fr}}
+.pol{display:grid;gap:14px;grid-template-columns:1fr}
+.pol div{border-left:5px solid var(--green);background:var(--cream);padding:16px 18px;border-radius:0 14px 14px 0}
+.pol b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:19px;margin-bottom:4px}
+@media(min-width:760px){.pol{grid-template-columns:repeat(3,1fr)}}
+.priv{background:var(--cream)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{background:#fff;border:1px solid var(--line);padding:8px 14px;border-radius:99px;font-weight:600;font-size:15px;color:var(--navy)}
+details{border-bottom:1px solid var(--line);padding:14px 0}summary{cursor:pointer;font-weight:700;font-size:18px;color:var(--navy)}
+details p{margin:8px 0 0;color:var(--mute)}
+.contact{display:grid;gap:14px;grid-template-columns:1fr}
+.contact>div{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:20px;min-width:0;overflow-wrap:anywhere}
+.contact h3{font-size:20px;margin-bottom:8px}.contact p{margin:0 0 4px}
+@media(min-width:720px){.contact{grid-template-columns:1fr 1fr}}
+.places{display:grid;grid-template-columns:1fr;gap:10px}
+.places button{display:block;text-align:left;background:#fff;border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:12px;padding:13px 15px;font:inherit;cursor:pointer;min-width:0;color:var(--ink)}
+.places b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:18px;color:var(--navy)}.places span{font-size:14.5px;color:var(--mute)}
+.places button:hover{background:var(--cream)}
+@media(min-width:560px){.places{grid-template-columns:repeat(2,1fr)}}@media(min-width:900px){.places{grid-template-columns:repeat(3,1fr)}}
+footer{background:#000c2e;color:#9db4e8;padding:26px 0;font-size:14px;text-align:center}
+.we-btn{position:fixed;right:16px;bottom:16px;width:58px;height:58px;border-radius:var(--wr,50%);border:0;background:var(--wa);color:var(--wi,#fff);box-shadow:0 8px 24px rgba(0,0,0,.28);cursor:pointer;z-index:90;display:grid;place-items:center}
+.we-btn.hide{display:none}
+.we-panel{position:fixed;right:12px;bottom:12px;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:var(--wb,#fff);color:var(--wt,#1b1b1b);border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;z-index:100;font:15px/1.45 var(--wf,system-ui,sans-serif)}
+.we-panel.open{display:flex}
+.we-head{background:var(--wa);color:var(--wi,#fff);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.we-head b{display:block;font-size:16px}.we-head small{opacity:.85;font-size:12px}
+.we-x{background:transparent;border:0;color:inherit;font-size:28px;line-height:1;cursor:pointer;padding:0 4px}
+.we-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:0}
+.we-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere;font-size:14.5px}
+.we-m.bot{background:var(--ws,#f0f0f0);align-self:flex-start;border-bottom-left-radius:4px}
+.we-m.me{background:var(--wa);color:var(--wi,#fff);align-self:flex-end;border-bottom-right-radius:4px}
+.we-chips{display:flex;gap:6px;flex-wrap:wrap;padding:6px 12px;max-height:104px;overflow-y:auto}
+.we-chips button{border:1px solid var(--wa);background:transparent;color:var(--wa);border-radius:99px;padding:5px 11px;font:inherit;font-size:13px;cursor:pointer}
+.we-form{display:flex;gap:6px;padding:10px 12px;border-top:1px solid rgba(128,128,128,.25)}
+.we-form input{flex:1;min-width:0;border:1px solid rgba(128,128,128,.5);border-radius:10px;padding:10px;font:inherit;font-size:16px;background:transparent;color:inherit}
+.we-form button{border:0;background:var(--wa);color:var(--wi,#fff);border-radius:10px;padding:0 14px;font:inherit;font-weight:600;cursor:pointer}
+
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="#top" aria-label="Wild Rover Tours"><img src="img/wild-rover-tours-logo.png" alt="Wild Rover Tours" width="236" height="34"></a>
+<nav><a href="#tours">Day tours</a><a href="#private">Private &amp; overnight</a><a href="#crew">Driver + guide</a><a href="#policy">Policies</a><a href="#faq">FAQ</a></nav>
+<a class="tel" href="tel:+35312845560">+353 1 284 5560</a>
+</div></header>
+<main id="top">
+<section class="hero"><div class="wrap">
+<span class="kick">Dublin day tours since 2010</span>
+<h1>See Ireland with a driver on the road and a guide telling the stories.</h1>
+<p>Day trips, private tours and two-day journeys from Dublin. Ask the assistant about a route, or send a booking request in a minute.</p>
+<div class="btns"><a class="btn b1" href="#tours">See the day tours</a><button class="btn b2" type="button" onclick="document.querySelector('.we-btn').click()">Ask a question</button></div>
+<div class="facts"><div><b>Two crew on board</b>A professional driver plus a separate Irish guide</div><div><b>Free cancellation</b>Up to 24 hours before first departure</div><div><b>Best price guarantee</b>When you book direct</div></div>
+</div></section>
+
+<section id="tours"><div class="wrap">
+<div class="tag">Day tours from Dublin</div><h2>Pick your route</h2>
+<p class="lead">Full itineraries and live availability are on each tour page. These are the headline day trips.</p>
+<div class="tickets">
+<div class="tk"><div class="l"><h3>Cliffs of Moher, Galway City &amp; Wild Atlantic Way</h3><p>The most requested route: the Atlantic cliffs, the Burren and a stop in Galway.</p></div><div class="r"><span>Day trip</span><a href="#book">Book</a></div></div>
+<div class="tk"><div class="l"><h3>Belfast, Dunluce Castle &amp; Giant's Causeway</h3><p>Northern Ireland in a day, including the coastal drive.</p></div><div class="r"><span>Day trip</span><a href="#book">Book</a></div></div>
+<div class="tk"><div class="l"><h3>Kilkenny, Wicklow Mountains &amp; Glendalough</h3><p>A medieval city, a mountain valley and a working sheep farm with a live sheepdog herding demonstration of about 30 minutes.</p></div><div class="r"><span>Day trip</span><a href="#book">Book</a></div></div>
+<div class="tk"><div class="l"><h3>Belfast City Walking Tour &amp; Giant's Causeway</h3><p>City sights on foot, then the Causeway, Dunluce Castle and the coast road.</p></div><div class="r"><span>Day trip</span><a href="#book">Book</a></div></div>
+<div class="tk"><div class="l"><h3>Cliffs of Moher, Limerick &amp; Ennis</h3><p>About 1 hour 45 minutes at the Cliffs, 1 hour 15 in Ennis and 1 hour 45 in Limerick City.</p></div><div class="r"><span>Day trip</span><a href="#book">Book</a></div></div>
+</div></div></section>
+
+<section class="two" id="crew"><div class="wrap">
+<div class="tag" style="color:var(--sky)">Why two people</div><h2>One drives. One tells the story.</h2>
+<p class="lead">Every Wild Rover day tour runs with two dedicated staff members, so the driver can focus on the road and the guide on you.</p>
+<div class="duo"><div><h3>The driver</h3><p>A professional driver handles the roads, including the narrow Atlantic coast ones, and the timings.</p></div><div><h3>The guide</h3><p>A separate Irish guide shares history, folklore and local tips at every stop.</p></div></div>
+<p class="lead" style="margin-top:18px">Free Wi-Fi is available on all coaches (signal can vary in remote areas).</p>
+</div></section>
+
+<section class="priv" id="private"><div class="wrap">
+<div class="tag">Private &amp; overnight</div><h2>Your pace, your route</h2>
+<p class="lead">Private tours are tailored to your group, from cars for couples to coaches for larger groups. Start from a sample itinerary or ask for your own.</p>
+<ul class="chips"><li>Cliffs of Moher &amp; Galway</li><li>Belfast</li><li>Waterford &amp; Kilkenny</li><li>Glendalough &amp; Wicklow</li><li>Connemara &amp; Galway</li><li>Giant's Causeway &amp; Belfast</li><li>Cork, Blarney &amp; Rock of Cashel</li><li>Game of Thrones</li></ul>
+<h3 style="margin:28px 0 10px;font-size:24px">Overnight</h3>
+<ul class="chips"><li>Ring of Kerry &amp; Dingle Peninsula, 2 days</li><li>Connemara, Galway, Cliffs of Moher with boat trip &amp; Aran Island, 2 days</li></ul>
+</div></section>
+
+<section id="places"><div class="wrap">
+<div class="tag">Where the tours go</div><h2>Ireland's top attractions</h2>
+<p class="lead">The attraction pages on the Wild Rover site cover these places. Tap one to ask the assistant about it.</p>
+<div class="places">
+<button type="button" data-q="Aran Islands"><b>Aran Islands</b><span>Part of the two-day Connemara tour</span></button>
+<button type="button" data-q="Belfast"><b>Belfast City</b><span>Day trip and walking tour</span></button>
+<button type="button" data-q="Bunratty Castle"><b>Bunratty Castle &amp; Folk Park</b><span>See the attraction page</span></button>
+<button type="button" data-q="Cliffs of Moher"><b>Cliffs of Moher</b><span>Galway or Limerick &amp; Ennis routes</span></button>
+<button type="button" data-q="Dingle Peninsula"><b>Dingle Peninsula</b><span>Two-day Ring of Kerry tour</span></button>
+<button type="button" data-q="Galway"><b>Galway City</b><span>Stop on the Cliffs day trip</span></button>
+<button type="button" data-q="Giant's Causeway"><b>Giant's Causeway</b><span>Northern Ireland day trips</span></button>
+<button type="button" data-q="Kilkenny"><b>Kilkenny</b><span>With Wicklow and Glendalough</span></button>
+<button type="button" data-q="Waterford"><b>Waterford</b><span>Private tour with Kilkenny</span></button>
+<button type="button" data-q="Wicklow Mountains"><b>Wicklow Mountains</b><span>Sheepdog demonstration stop</span></button>
+<button type="button" data-q="Wild Atlantic Way"><b>Wild Atlantic Way</b><span>Cliffs &amp; Galway day trip</span></button>
+<button type="button" data-q="Dublin"><b>Dublin attractions</b><span>Ask the team for details</span></button>
+</div></div></section>
+
+<section id="policy"><div class="wrap">
+<div class="tag">Good to know</div><h2>Booking rules in plain words</h2><p class="lead">Taken from the Wild Rover cancellation and booking pages.</p>
+<div class="pol">
+<div><b>Cancel or amend</b>Up to 24 hours before the tour's first departure. Give notice by email for a full refund.</div>
+<div><b>Late or missed</b>Late arrivals, missed departures and no-shows are not eligible for a refund.</div>
+<div><b>Best price</b>A best price guarantee applies when you book direct.</div>
+</div></div></section>
+
+<section id="faq" class="priv"><div class="wrap">
+<div class="tag">FAQ</div><h2>Quick answers</h2>
+<details><summary>Is the driver also the guide?</summary><p>No. Every tour has a professional driver and a separate Irish guide.</p></details>
+<details><summary>How many people are on each tour?</summary><p>It varies with season and bookings. Busier months use full-size luxury coaches, quieter periods may use smaller vehicles. Every tour is fully guided.</p></details>
+<details><summary>Is there Wi-Fi on board?</summary><p>Yes, free Wi-Fi on all coaches, though the signal can vary in remote areas.</p></details>
+<details><summary>What is the sheep farm stop?</summary><p>A traditional working sheep farm where a local farmer explains how sheepdogs are trained and gives a live herding demonstration. Guests may be able to hold lambs. About 30 minutes.</p></details>
+</div></section>
+
+<section id="book"><div class="wrap">
+<div class="tag">Talk to the team</div><h2>Contact</h2>
+<div class="contact">
+<div><h3>Phone</h3><p>Ireland +353 1 284 5560</p><p>US +1 845 444 1218</p><p>UK +44 2038 686 779</p></div>
+<div><h3>Email and office</h3><p>info@wildrovertours.com</p><p>Wild Rover Tours Office, Unit 3, Stephen's Street Lower, Dublin 2, D02 RW74</p></div>
+</div>
+<p class="lead" style="margin-top:18px">Opening hours and pick-up points are on each tour page. The assistant will pass questions it cannot answer to the team.</p>
+</div></section>
+</main>
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+<script>
+var CFG={
+"title": "Wild Rover assistant",
+"sub": "Demo · answers from the website",
+"ph": "Ask about a tour",
+"hello": "Hi! I can answer questions about Wild Rover day tours, private tours, cancellation and contact details, or take a booking request.",
+"chips": [
+"Day tours",
+"Private tours",
+"Cancellation",
+"Contact",
+"Book a tour"
+],
+"fallback": "I don't have that detail from the website. The team will confirm it: info@wildrovertours.com or +353 1 284 5560.",
+"book": [
+"book",
+"reserve",
+"reservation",
+"booking request",
+"sign up",
+"i want to go",
+"join a tour",
+"enquiry",
+"inquiry",
+"availability",
+"available"
+],
+"flowIntro": "Happy to take a booking request. A few quick questions.",
+"flowDone": "Thank you. Your request has been sent to the team, who will confirm availability by email.",
+"flow": [
+{
+"label": "Tour",
+"q": "Which tour are you interested in?",
+"opts": [
+"Cliffs of Moher & Galway",
+"Belfast & Giant's Causeway",
+"Kilkenny & Wicklow",
+"Cliffs, Limerick & Ennis",
+"Private tour",
+"Overnight tour"
+]
+},
+{
+"label": "Date",
+"q": "Which date would you like to travel? (for example 14 May)",
+"ph": "Date",
+"re": "\\d|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|today|tomorrow|week",
+"err": "Please give a date, for example 14 May."
+},
+{
+"label": "Group size",
+"q": "How many people are in your group?",
+"ph": "Number of people",
+"re": "^\\s*\\d{1,3}\\s*(people|persons|guests|adults)?\\s*$",
+"err": "Please enter a number, for example 4."
+},
+{
+"label": "Email",
+"q": "What email should the team reply to?",
+"ph": "you@example.com",
+"re": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$",
+"err": "That does not look like an email address. Please try again.",
+"free": true
+}
+],
+"kb": [
+{
+"k": [
+"day tour",
+"day trip",
+"day tours",
+"routes",
+"which tours",
+"what tours",
+"tours from dublin",
+"itinerary",
+"options"
+],
+"a": "Day tours from Dublin: Cliffs of Moher, Galway City & Wild Atlantic Way; Belfast, Dunluce Castle & Giant's Causeway; Kilkenny, Wicklow Mountains & Glendalough with a sheepdog demonstration; Belfast City Walking Tour & Giant's Causeway; Cliffs of Moher, Limerick & Ennis. Full itineraries are on each tour page.",
+"c": [
+"Cliffs of Moher",
+"Belfast",
+"Private tours",
+"Book a tour"
+]
+},
+{
+"k": [
+"cliffs of moher",
+"cliffs",
+"galway",
+"burren",
+"wild atlantic way",
+"moher"
+],
+"a": "The Cliffs of Moher, Galway City & Wild Atlantic Way day trip is the most requested route (it includes the Burren). There is also a Cliffs of Moher, Limerick & Ennis day tour: about 1 hour 45 minutes at the Cliffs, 1 hour 15 in Ennis and 1 hour 45 in Limerick City.",
+"c": [
+"Book a tour",
+"Cancellation",
+"Driver and guide"
+]
+},
+{
+"k": [
+"belfast",
+"giant's causeway",
+"giants causeway",
+"causeway",
+"dunluce",
+"northern ireland",
+"titanic",
+"black taxi"
+],
+"a": "The Belfast, Dunluce Castle & Giant's Causeway day trip covers Northern Ireland in a day. There is also a Belfast City Walking Tour & Giant's Causeway version with the coastal drive. Details and itineraries are on the tour pages.",
+"c": [
+"Book a tour",
+"Private tours"
+]
+},
+{
+"k": [
+"kilkenny",
+"wicklow",
+"glendalough",
+"sheep",
+"sheepdog",
+"sheep dog",
+"lambs",
+"farm",
+"herding"
+],
+"a": "The Kilkenny Medieval City, Wicklow Mountains & Glendalough day tour includes a visit to a traditional working sheep farm: a local farmer explains how sheepdogs are trained and gives a live herding demonstration of about 30 minutes. Guests may be able to hold lambs.",
+"c": [
+"Book a tour",
+"Day tours"
+]
+},
+{
+"k": [
+"private tour",
+"private",
+"own route",
+"custom",
+"tailor",
+"group size",
+"couple",
+"family",
+"coach for",
+"bespoke",
+"game of thrones",
+"cork",
+"blarney",
+"rock of cashel",
+"connemara",
+"waterford"
+],
+"a": "Private tours are tailored to your group, from cars for couples to coaches for larger groups. Sample itineraries: Cliffs of Moher & Galway, Belfast, Waterford & Kilkenny, Glendalough & Wicklow, Connemara & Galway, Giant's Causeway & Belfast, Cork, Blarney & Rock of Cashel, and a Game of Thrones tour. You can also build your own.",
+"c": [
+"Book a tour",
+"Contact"
+]
+},
+{
+"k": [
+"overnight",
+"two day",
+"2 day",
+"multi day",
+"multiday",
+"ring of kerry",
+"kerry",
+"dingle",
+"aran island",
+"aran islands",
+"boat trip"
+],
+"a": "Two overnight tours are listed: Ring of Kerry & Dingle Peninsula (2 days), and Connemara, Galway, Cliffs of Moher with a boat trip & Aran Island (2 days).",
+"c": [
+"Book a tour",
+"Contact"
+]
+},
+{
+"k": [
+"cancel",
+"cancellation",
+"refund",
+"amend",
+"change booking",
+"cancel booking",
+"change my booking",
+"no show",
+"missed",
+"late"
+],
+"a": "You can cancel or amend up to 24 hours before the tour's first departure time. For a full refund, give notice by email. Wild Rover refunds 100% of the amount received, though card or bank fees from your payment provider are not refundable. Late arrivals, missed departures and no-shows are not eligible for a refund.",
+"c": [
+"Contact",
+"Book a tour"
+],
+"pri": 1
+},
+{
+"k": [
+"driver",
+"guide",
+"tour guide",
+"who is on",
+"staff",
+"crew",
+"two people",
+"storyteller"
+],
+"a": "Every Wild Rover day tour has two dedicated staff: a professional driver and a separate Irish tour guide. The driver focuses on the road, the guide shares stories, history and local tips.",
+"c": [
+"Wi-Fi",
+"Group size",
+"Book a tour"
+]
+},
+{
+"k": [
+"wifi",
+"wi-fi",
+"internet",
+"usb",
+"coach",
+"bus",
+"luxury",
+"vehicle",
+"onboard",
+"on board"
+],
+"a": "Free Wi-Fi is available on all coaches, though the signal may vary in remote areas.",
+"c": [
+"Driver and guide",
+"Day tours"
+]
+},
+{
+"k": [
+"group size",
+"how many people",
+"how many",
+"busy",
+"small group",
+"crowded",
+"people on tour"
+],
+"a": "Group sizes vary with the season and the number of bookings. In busier months tours run in full-size luxury coaches, in quieter periods smaller vehicles may be used. Every tour is fully guided by the driver and guide team.",
+"c": [
+"Driver and guide",
+"Book a tour"
+]
+},
+{
+"k": [
+"price",
+"cost",
+"how much",
+"fare",
+"discount",
+"offer",
+"special offer",
+"voucher",
+"gift",
+"gift voucher",
+"cheap",
+"best price",
+"guarantee"
+],
+"a": "Current fares and special offers are shown on each tour page. Wild Rover has a best price guarantee when you book direct, and gift vouchers are available. The team can confirm anything specific.",
+"c": [
+"Contact",
+"Book a tour"
+],
+"pri": 1
+},
+{
+"k": [
+"contact",
+"phone",
+"call",
+"telephone",
+"email",
+"e-mail",
+"address",
+"office",
+"where are you",
+"location",
+"number",
+"reach"
+],
+"a": "Phone: Ireland +353 1 284 5560, US +1 845 444 1218, UK +44 2038 686 779. Email: info@wildrovertours.com. Office: Unit 3, Stephen's Street Lower, Dublin 2, D02 RW74.",
+"c": [
+"Book a tour",
+"Cancellation"
+],
+"pri": 1
+},
+{
+"k": [
+"language",
+"languages",
+"french",
+"german",
+"italian",
+"spanish",
+"english",
+"translation"
+],
+"a": "The website is available in English, French, German, Italian and Spanish. For the language of the guide on a given tour, the team will confirm.",
+"c": [
+"Contact"
+]
+},
+{
+"k": [
+"pick up",
+"pickup",
+"pick-up",
+"meeting point",
+"meet",
+"depart",
+"departure",
+"start time",
+"what time",
+"time",
+"leave",
+"hotel pickup"
+],
+"a": "Departure times and meeting points are listed on each tour page. If you cannot find yours, the team will confirm: info@wildrovertours.com.",
+"c": [
+"Contact",
+"Book a tour"
+]
+},
+{
+"k": [
+"since",
+"history",
+"about",
+"who are you",
+"company",
+"founded",
+"how long",
+"experience",
+"award",
+"tripadvisor"
+],
+"a": "Wild Rover Tours has been running tours from Dublin since 2010 and describes its tours as award-winning on its website.",
+"c": [
+"Day tours",
+"Contact"
+]
+},
+{
+"k": [
+"hello",
+"hi",
+"hey",
+"good morning",
+"good afternoon"
+],
+"a": "Hello! Ask me about a tour, cancellation or contact details, or tap Book a tour.",
+"c": [
+"Day tours",
+"Private tours",
+"Book a tour"
+]
+},
+{
+"k": [
+"aran islands",
+"aran",
+"bunratty",
+"bunratty castle",
+"folk park",
+"dublin attractions",
+"dublin"
+],
+"a": "The Aran Islands are part of the two-day Connemara, Galway, Cliffs of Moher & Aran Island overnight tour. Bunratty Castle & Folk Park and the Dublin attractions have their own pages on the Wild Rover site; the team can tell you which tours include them.",
+"c": [
+"Overnight tours",
+"Contact"
+]
+}
+]
+};
+(function(root){
+function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,' ').trim();}
+function stem(w){if(w.length>4){if(/ies$/.test(w))return w.slice(0,-3)+'y';if(/(ing)$/.test(w)&&w.length>5)return w.slice(0,-3);if(/ed$/.test(w)&&w.length>5)return w.slice(0,-2);if(/es$/.test(w)&&/(ch|sh|x|ss|z)es$/.test(w))return w.slice(0,-2);if(/s$/.test(w)&&!/ss$/.test(w))return w.slice(0,-1);}return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;var p=[],i,j;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){var c=[i];for(j=1;j<=n;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));}p=c;}return p[n];}
+function tokScore(t,qs){var best=0;for(var i=0;i<qs.length;i++){var q=qs[i];if(q===t){return 2;}var l=Math.max(q.length,t.length);if(l>=5){var d=lev(q,t);if(d<=1)best=Math.max(best,1.4);else if(d<=2&&l>=9)best=Math.max(best,1.2);}if(t.length>=5&&q.length>=4&&(t.indexOf(q)===0||q.indexOf(t)===0)&&Math.abs(q.length-t.length)<=3)best=Math.max(best,1.3);}return best;}
+function scoreKw(kw,qs){var ts=toks(kw);if(!ts.length)return 0;var s=0;for(var i=0;i<ts.length;i++){var v=tokScore(ts[i],qs);if(!v)return 0;s+=v;}return s+(ts.length>1?1:0);}
+function scoreList(kws,qs){var best=0,n=0;for(var i=0;i<kws.length;i++){var v=scoreKw(kws[i],qs);if(v>0){n++;if(v>best)best=v;}}return best?best+0.3*(n-1):0;}
+function match(cfg,q){var qs=toks(q);if(!qs.length)return {type:'none'};var bs=scoreList(cfg.book||[],qs);if(bs>=2)bs+=1.5;var best=null,bv=0;for(var i=0;i<cfg.kb.length;i++){var v=scoreList(cfg.kb[i].k,qs);if(v>bv){bv=v;best=cfg.kb[i];}}if(bs>=2&&(bs>bv||(!(best&&best.pri)&&bv>0)))return {type:'book',score:bs};if(best&&bv>=1.2)return {type:'kb',entry:best,score:bv};return {type:'none'};}
+var api={norm:norm,toks:toks,match:match};
+if(typeof module!=='undefined'&&module.exports){module.exports=api;}
+root.WE=api;
+if(typeof document==='undefined')return;
+function init(cfg){
+var $=function(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;};
+var btn=$('button','we-btn');btn.setAttribute('aria-label','Open chat assistant');btn.innerHTML='<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/></svg>';
+var panel=$('div','we-panel');panel.setAttribute('role','dialog');panel.setAttribute('aria-label',cfg.title);
+var head=$('div','we-head');var ht=$('div','');ht.appendChild($('b','',cfg.title));ht.appendChild($('small','',cfg.sub||'Demo assistant'));var x=$('button','we-x','×');x.setAttribute('aria-label','Close');head.appendChild(ht);head.appendChild(x);
+var log=$('div','we-log');var chips=$('div','we-chips');var form=$('form','we-form');var inp=$('input','');inp.type='text';inp.placeholder=cfg.ph||'Type your question';inp.setAttribute('aria-label','Your message');inp.autocomplete='off';var send=$('button','',"Send");send.type='submit';form.appendChild(inp);form.appendChild(send);
+panel.appendChild(head);panel.appendChild(log);panel.appendChild(chips);panel.appendChild(form);document.body.appendChild(btn);document.body.appendChild(panel);
+function say(t,who){var d=$('div','we-m '+(who||'bot'));String(t).split('\n').forEach(function(l,i){if(i)d.appendChild(document.createElement('br'));d.appendChild(document.createTextNode(l));});log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.textContent='';(a||[]).forEach(function(c){var b=$('button','',c);b.type='button';b.onclick=function(){ask(c);};chips.appendChild(b);});}
+var flow=null;
+function startFlow(){flow={i:0,a:[]};say(cfg.flowIntro||'Happy to take a few details. You can type "cancel" at any time.');stepAsk();}
+function stepAsk(){var s=cfg.flow[flow.i];say(s.q);setChips((s.opts||[]).concat(['Cancel']));inp.placeholder=s.ph||'Type your answer';}
+function stepIn(v){if(/^(cancel|stop|exit|never ?mind)$/i.test(v.trim())){flow=null;say('No problem, nothing was saved. Ask me anything else.');setChips(cfg.chips);inp.placeholder=cfg.ph||'Type your question';return;}
+var s=cfg.flow[flow.i];if(s.opts&&!s.free){var m=s.opts.filter(function(o){return norm(o)===norm(v)||(norm(v).length>2&&norm(o).indexOf(norm(v))===0);});if(!m.length){say('Please pick one of the options below.');setChips(s.opts.concat(['Cancel']));return;}v=m[0];}
+if(s.re&&!s.re.test){s.re=new RegExp(s.re,'i');}if(s.re&&!s.re.test(v)){say(s.err||'Sorry, I could not read that. Please try again.');return;}
+flow.a.push([s.label,v]);flow.i++;if(flow.i<cfg.flow.length){stepAsk();return;}
+var sum=flow.a.map(function(p){return p[0]+': '+p[1];}).join('\n');say((cfg.flowDone||'Thank you. Your request has been sent to the team, who will confirm with you directly.')+'\n\n'+sum+'\n\nDemo only: nothing is actually sent.');flow=null;setChips(cfg.chips);inp.placeholder=cfg.ph||'Type your question';}
+function ask(v){v=String(v||'').trim();if(!v)return;say(v,'me');if(flow){stepIn(v);return;}var r=match(cfg,v);if(r.type==='book'){startFlow();return;}if(r.type==='kb'){say(r.entry.a);setChips(r.entry.c||cfg.chips);return;}say(cfg.fallback);setChips(cfg.chips);}
+form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';ask(v);};
+function open(o){panel.classList.toggle('open',o);btn.classList.toggle('hide',o);if(o){if(!log.children.length){say(cfg.hello);setChips(cfg.chips);}setTimeout(function(){inp.focus();},50);}}
+btn.onclick=function(){open(true);};x.onclick=function(){open(false);};
+var chipsBook=cfg.bookChip;
+}
+root.WE.init=init;
+})(typeof window!=='undefined'?window:globalThis);
+
+WE.init(CFG);
+document.querySelectorAll('.places button').forEach(function(b){b.addEventListener('click',function(){document.querySelector('.we-btn').click();setTimeout(function(){var i=document.querySelector('.we-form input');i.value=b.dataset.q;document.querySelector('.we-form').dispatchEvent(new Event('submit',{cancelable:true}));},80);});});
+</script>
+</body>
+</html>

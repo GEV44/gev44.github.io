@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ETC English Training Centre · Vancouver</title>
+<meta name="description" content="Demo page for ETC English Training Centre, Vancouver: classes, how they run, and an assistant that answers questions and takes a class request.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--y:#FFCC3A;--y2:#FFE08A;--ink:#1B2230;--ink2:#46506a;--cream:#FFF8E4;--w:#fff;--line:#EFE2B8;--wa:#1B2230;--wat:#FFCC3A;--wbg:#fff;--wtx:#1B2230;--wb:#FFF1C2;--wf:'Nunito Sans',system-ui,sans-serif;--wo:#1B2230}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.6 'Nunito Sans',system-ui,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(34px,8.5vw,62px);font-weight:800}
+h2{font-size:clamp(26px,5.5vw,40px);font-weight:800}
+h3{font-size:21px;font-weight:600}
+p{margin:0 0 1em}
+a{color:inherit}
+.wrap{width:100%;max-width:1060px;margin:0 auto;padding:0 16px}
+section{padding:56px 0;position:relative;overflow:hidden}
+.btn{display:inline-block;background:var(--ink);color:var(--y);font-weight:800;text-decoration:none;padding:14px 24px;border-radius:999px;border:0;cursor:pointer;font-size:16px;font-family:inherit}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+header.top{background:var(--w);border-bottom:3px solid var(--y);position:sticky;top:0;z-index:20}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 16px;max-width:1060px;margin:0 auto}
+.bar img{height:52px;width:auto;display:block}
+.bar nav{display:none;gap:18px;font-weight:600;font-size:15px}
+.bar nav a{text-decoration:none}
+.bar .btn{padding:10px 16px;font-size:14px}
+@media(min-width:820px){.bar nav{display:flex}}
+.hero{background:var(--y);padding:44px 0 90px}
+.hero .wrap{display:grid;gap:28px}
+.hero .eyebrow{display:inline-block;background:var(--ink);color:var(--y);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:16px}
+.hero p.lead{font-size:19px;max-width:560px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.bubble{position:relative;background:var(--w);border-radius:28px;padding:22px;box-shadow:8px 8px 0 var(--ink);min-width:0}
+.bubble:after{content:"";position:absolute;left:34px;bottom:-22px;border:12px solid transparent;border-top:12px solid var(--w);border-left-width:6px;border-right-width:22px;filter:drop-shadow(3px 3px 0 var(--ink))}
+.bubble b{display:block;font-family:'Fraunces',serif;font-size:22px;margin-bottom:6px}
+.bubble ul{margin:0;padding-left:20px}
+.hero:before{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;background:var(--y2);opacity:.7}
+.hero .wrap{position:relative}
+@media(min-width:820px){.hero .wrap{grid-template-columns:1.25fr 1fr;align-items:center}}
+.wave{position:absolute;left:0;right:0;bottom:-1px;height:46px;background:var(--cream);clip-path:ellipse(60% 100% at 50% 100%)}
+.tiles{display:grid;gap:16px;margin-top:22px}
+@media(min-width:700px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{background:var(--w);border:2px solid var(--ink);border-radius:22px;padding:22px;min-width:0;display:flex;flex-direction:column}
+.tile .tag{align-self:flex-start;background:var(--y);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:12px}
+.tile ul{padding-left:18px;margin:0 0 14px}
+.tile .btn{margin-top:auto;align-self:flex-start;padding:10px 18px;font-size:14px}
+.corp{margin-top:16px;background:var(--ink);color:#fff;border-radius:22px;padding:22px}
+.corp h3{color:var(--y)}
+.how{background:var(--w)}
+.steps{display:grid;gap:14px;counter-reset:s;margin-top:20px}
+@media(min-width:700px){.steps{grid-template-columns:repeat(2,1fr)}}
+.step{counter-increment:s;background:var(--cream);border-radius:18px;padding:18px 18px 18px 64px;position:relative;min-width:0}
+.step:before{content:counter(s);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:50%;background:var(--y);display:grid;place-items:center;font-weight:800;font-family:'Fraunces',serif}
+.step b{display:block}
+.founder{display:grid;gap:22px}
+@media(min-width:820px){.founder{grid-template-columns:1fr 1.4fr;align-items:start}}
+.quote{background:var(--y);border-radius:26px;padding:26px;font-family:'Fraunces',serif;font-size:22px;font-weight:600;position:relative}
+.quote small{display:block;font:600 14px 'Nunito Sans';margin-top:12px}
+.fees{background:var(--ink);color:#fff}
+.fees h2{color:var(--y)}
+.feegrid{display:grid;gap:14px;margin-top:20px}
+@media(min-width:700px){.feegrid{grid-template-columns:repeat(3,1fr)}}
+.fee{border:2px solid var(--y);border-radius:20px;padding:20px;min-width:0}
+.fee h3{color:var(--y)}
+.chipsrow{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0;padding:0;list-style:none}
+.chipsrow li{background:var(--y);color:var(--ink);border-radius:999px;padding:4px 12px;font-weight:800;font-size:14px}
+.tg{display:grid;gap:14px;margin-top:20px}
+@media(min-width:760px){.tg{grid-template-columns:repeat(2,1fr)}}
+.t{background:var(--w);border-left:8px solid var(--y);border-radius:16px;padding:18px;min-width:0}
+.t p{margin:0 0 8px;font-style:italic}
+.t b{font-size:14px}
+.two{display:grid;gap:16px;margin-top:20px}
+@media(min-width:760px){.two{grid-template-columns:repeat(2,1fr)}}
+.box{background:var(--w);border:2px solid var(--ink);border-radius:20px;padding:20px;min-width:0}
+details{background:var(--w);border:2px solid var(--ink);border-radius:16px;padding:12px 16px;margin-bottom:10px}
+summary{font-weight:800;cursor:pointer}
+details p{margin:10px 0 0}
+.book{background:var(--y)}
+.book .box{box-shadow:8px 8px 0 var(--ink)}
+.fields{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:12px 0 18px}
+.fields li{background:var(--cream);border-radius:999px;padding:4px 12px;font-size:14px;font-weight:600}
+footer{background:var(--ink);color:#cfd5e6;padding:26px 0 90px;font-size:14px}
+footer .wrap{display:flex;flex-direction:column;gap:6px}
+footer a{color:var(--y)}
+#wFab{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--wa);color:var(--wat);font:600 15px/1 var(--wf);padding:14px 18px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.22)}
+#wFab:focus-visible,#wPanel button:focus-visible,#wInp:focus-visible{outline:3px solid var(--wo,#000);outline-offset:2px}
+#wPanel{position:fixed;right:16px;bottom:78px;z-index:51;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 100px));background:var(--wbg);color:var(--wtx);border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--wf)}
+#wPanel.open{display:flex}
+#wHead{background:var(--wa);color:var(--wat);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+#wHead b{font-size:15px}#wHead small{display:block;opacity:.8;font-size:12px}
+#wClose{background:transparent;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1;padding:2px 8px}
+#wLog{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:0}
+.wm{max-width:86%;padding:9px 12px;border-radius:14px;overflow-wrap:anywhere}
+.wm.bot{background:var(--wb);align-self:flex-start;border-bottom-left-radius:4px}
+.wm.me{background:var(--wa);color:var(--wat);align-self:flex-end;border-bottom-right-radius:4px}
+#wChips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+#wChips button{border:1px solid var(--wa);background:transparent;color:var(--wtx);border-radius:999px;padding:6px 11px;font:13px var(--wf);cursor:pointer}
+#wChips button:hover{background:var(--wb)}
+#wForm{display:flex;gap:6px;padding:10px;border-top:1px solid var(--wb)}
+#wInp{flex:1;min-width:0;border:1px solid #bbb;border-radius:10px;padding:10px;font:15px var(--wf);background:#fff;color:#111}
+#wForm button{border:0;background:var(--wa);color:var(--wat);border-radius:10px;padding:0 14px;font:600 14px var(--wf);cursor:pointer}
+.wnote{font-size:11px;opacity:.6;padding:0 12px 8px}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="bar">
+<a href="#top" aria-label="ETC English Training Centre"><img src="img/etc-english-training-vancouver-logo.png" alt="ETC english training centre" width="165" height="95"></a>
+<nav><a href="#classes">Classes</a><a href="#how">How it works</a><a href="#jane">Jane</a><a href="#fees">Fees</a><a href="#faq">FAQ</a></nav>
+<a class="btn" href="#book">Book a class</a>
+</div></header>
+
+<main id="top">
+<section class="hero">
+<div class="wrap">
+<div>
+<span class="eyebrow">ETC English Training Centre · Vancouver</span>
+<h1>Learn the real English, and speak it with confidence.</h1>
+<p class="lead">One teaching method developed by founder Jane Solovyov, used by every ETC teacher: pronunciation, sentence structure, idioms and everyday expressions, for beginners up to advanced speakers. Taken one-to-one or in a small group, online from anywhere.</p>
+<div class="cta"><a class="btn" href="#book">Book your class</a><a class="btn alt" href="#classes">See the classes</a></div>
+</div>
+<div class="bubble">
+<b>Not sure which class you need?</b>
+<ul><li>Conversation: idioms, vocabulary, phrasal verbs</li><li>Language: IELTS, CELPIP, TOEFL, TOEIC, LPI</li><li>Business: interviews, resumes, emails, calls</li></ul>
+<p style="margin:12px 0 0"><a href="#book" data-ask="Which class is right for me?">Ask the assistant</a> and it will point you to the right one.</p>
+</div>
+</div>
+<div class="wave"></div>
+</section>
+
+<section id="classes">
+<div class="wrap">
+<h2>What classes do you need?</h2>
+<p>Every ETC class focuses on pronunciation, correct sentence structure and grammar, and on speaking naturally in all kinds of situations. The conversation section runs from beginner to advanced.</p>
+<div class="tiles">
+<article class="tile"><span class="tag">Conversation</span><h3>Conversational English</h3>
+<ul><li>Conversational idioms</li><li>Conversational vocabulary</li><li>Phrasal verbs</li><li>Tone and approach</li></ul>
+<p>Pronunciation, fluency, correcting sentence structure and explaining your thoughts and ideas naturally.</p>
+<a class="btn" href="#book" data-ask="Tell me about conversation classes">Ask about it</a></article>
+<article class="tile"><span class="tag">Language</span><h3>English Language &amp; exams</h3>
+<ul><li>IELTS (General and Academic)</li><li>CELPIP</li><li>TOEFL and TOEIC</li><li>LPI, editing, tutoring for specific needs</li></ul>
+<p>Customised ETC material for improving scores in reading, writing, listening and speaking.</p>
+<a class="btn" href="#book" data-ask="Tell me about exam preparation">Ask about it</a></article>
+<article class="tile"><span class="tag">Business</span><h3>Business English</h3>
+<ul><li>Preparation for a job interview</li><li>Resume and cover letter</li><li>Business writing and emails</li><li>Business communication, culture and tone</li></ul>
+<p>Natural telephone conversations and explaining yourself clearly and professionally.</p>
+<a class="btn" href="#book" data-ask="Tell me about business English">Ask about it</a></article>
+</div>
+<div class="corp">
+<h3>ETC Corporate English Program</h3>
+<p style="margin:0">For businesses with an international setting where employees do not speak English as a first language: specific ETC material and course methods for stronger, more cohesive teams and smoother interactions between employees and customers.</p>
+</div>
+</div>
+</section>
+
+<section class="how" id="how">
+<div class="wrap">
+<h2>How a class runs</h2>
+<div class="steps">
+<div class="step"><b>Online, from anywhere</b>All classes can be taken online on Zoom or Skype, wherever you are.</div>
+<div class="step"><b>One-to-one private classes</b>Private classes are one-on-one, and the fee page lists 1-hour and 1.5-hour classes.</div>
+<div class="step"><b>Small groups</b>Group classes with 2 learners run 1.5 hours; groups with 3 learners run 2 hours.</div>
+<div class="step"><b>A certificate for your level</b>Certificates recognizing your English level are available after taking 40 classes.</div>
+</div>
+</div>
+</section>
+
+<section id="jane">
+<div class="wrap founder">
+<div class="quote">“Our mission is to unite people all over the world with a common language and cultural understanding for one another.”<small>ETC, from the school's home page</small></div>
+<div>
+<h2>Meet Jane, the founder</h2>
+<p>Jane Solovyov completed her university education in Sapporo, Japan, in 1991 and opened ETC English Training Centre in September 2001. She developed the methodology and curriculum that every teacher at ETC follows.</p>
+<p>In her words, the special classes make every learner a confident and, over time, fluent speaker, and each tutorial builds understanding of culture and the skill to explain ideas and opinions naturally in English.</p>
+<p>She also publishes free English learning videos on YouTube, including a CELPIP guide and a series on business and professional communication.</p>
+</div>
+</div>
+</section>
+
+<section class="how" style="padding-top:10px">
+<div class="wrap">
+<h2>Inside the classes</h2>
+<div class="two">
+<div class="box"><h3>Business communication</h3>
+<ul style="padding-left:18px;margin:0">
+<li>ETC templates with standard business expressions for different circumstances, in writing and speaking.</li>
+<li>Expressing thoughts, getting clarity and asking questions in an assertive but professional manner.</li>
+<li>Recognizing the unspoken side of business culture, taught through role-playing business situations.</li>
+</ul></div>
+<div class="box"><h3>General communication</h3>
+<ul style="padding-left:18px;margin:0">
+<li>Building vocabulary and conversational idioms, and using them smoothly in conversation.</li>
+<li>Building confidence to share the thoughts and ideas you have.</li>
+<li>A variety of life situations with role-play to build expressions, confidence and cultural training.</li>
+</ul></div>
+<div class="box"><h3>Pronunciation course</h3>
+<ul style="padding-left:18px;margin:0">
+<li>Focus on the specific sounds that each culture finds challenging.</li>
+<li>Linking words and sentences.</li>
+</ul></div>
+<div class="box"><h3>Exam preparation</h3>
+<ul style="padding-left:18px;margin:0">
+<li>Customised ETC material for IELTS (General and Academic), CELPIP, TOEFL, TOEIC and other English proficiency exams.</li>
+<li>Improving your scores in reading, writing, listening and speaking.</li>
+</ul></div>
+</div>
+</div>
+</section>
+
+<section class="fees" id="fees">
+<div class="wrap">
+<h2>How fees are structured</h2>
+<p>The exact amounts are on the school's Course Fees page, and the team confirms the current ones when you ask. Here is how the structure works.</p>
+<div class="feegrid">
+<div class="fee"><h3>One-time registration</h3><p style="margin:0">Includes access to ongoing learning support, official education receipts, certificates and any correspondence you need from ETC.</p></div>
+<div class="fee"><h3>Material fee</h3><p style="margin:0">An additional fee applies to English Language classes, and it includes practice tests.</p></div>
+<div class="fee"><h3>Introductory class and packages</h3><p style="margin:0 0 8px">Start with an introductory class, then pick a package:</p>
+<ul class="chipsrow"><li>8 classes</li><li>12</li><li>16</li><li>20</li><li>40</li></ul></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2>What students write</h2>
+<div class="tg">
+<div class="t"><p>“At ETC you can learn a lot of useful phrases and idioms not taught at other ESL schools.”</p><b>Masako Wada, ETC alumni</b></div>
+<div class="t"><p>“The teachers are friendly and encouraging, and the teaching method is unique and effective.”</p><b>Mariko Nakamura, ETC alumni</b></div>
+<div class="t"><p>“I can make my own schedule and choose from a variety of classes.”</p><b>Young-Ju Kim, ETC alumni</b></div>
+<div class="t"><p>“At ETC I learned real English. I really recommend everyone to take a trial lesson.”</p><b>Kobong Choi, ETC alumni</b></div>
+</div>
+<div class="two">
+<div class="box"><h3>Free learning videos and podcast</h3><p style="margin:0">Teacher Jane's YouTube series, including a CELPIP guide and business and professional communication, plus a podcast page on the school's site.</p></div>
+<div class="box"><h3>Planning to study, work and live in Canada?</h3><p style="margin:0">ETC has joined forces with E-Visa, which helps with the pathway to enter Canada and the steps that follow. The school's site has an Apply for a Visa page.</p></div>
+</div>
+</div>
+</section>
+
+<section id="faq" style="padding-top:20px">
+<div class="wrap">
+<h2>Quick answers</h2>
+<details><summary>Can I take classes online?</summary><p>Yes. All ETC classes can be taken online from anywhere, using Zoom or Skype.</p></details>
+<details><summary>What is the difference between a private class and a group class?</summary><p>Private classes are one-on-one. Group classes have 2 learners for 1.5 hours or 3 learners for 2 hours.</p></details>
+<details><summary>Which exams do you prepare for?</summary><p>IELTS (General and Academic), CELPIP, TOEFL, TOEIC and other English proficiency exams, with ETC's customised material.</p></details>
+<details><summary>Can I get proof of my English level?</summary><p>Certificates recognizing your English level are available after taking 40 classes.</p></details>
+<details><summary>I am not sure about my level. What should I do?</summary><p>Conversation classes start at beginner level and go up to advanced. The booking form asks for your level, the schools you have studied at and your goal, so the team can place you.</p></details>
+<details><summary>Does ETC offer anything for companies?</summary><p>Yes, the ETC Corporate English Program is built for businesses with an international setting where employees do not speak English as a first language.</p></details>
+<details><summary>What does the registration fee cover?</summary><p>It is a one-time fee that includes access to ongoing learning support, official education receipts, certificates and any correspondence you need from ETC.</p></details>
+<details><summary>Where is the school, and what are the opening hours?</summary><p>The school's site does not list a street address or weekly timetable. The service advisory page says online Zoom classes run 7 days a week from 9:00 am to 6:30 pm, and the team will confirm the current schedule and in-person options.</p></details>
+</div>
+</section>
+
+<section class="book" id="book">
+<div class="wrap">
+<div class="box">
+<h2>Book a class</h2>
+<p>The school's booking form asks the same things the assistant will ask you, so nothing has to be repeated afterwards:</p>
+<ul class="fields"><li>Name, e-mail, phone</li><li>Conversation, Language or Business</li><li>Days and times you are free</li><li>Classes per week</li><li>Your level and goal</li></ul>
+<button class="btn" type="button" data-ask="Book a class">Start with the assistant</button>
+</div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">
+<div><b>ETC English Training Centre</b> · Vancouver · <a href="https://www.etcvancouver.ca/">etcvancouver.ca</a></div>
+<div>Demo · prepared by Gevorg Hovhannisyan</div>
+</div></footer>
+
+<button id="wFab" type="button" aria-expanded="false" aria-controls="wPanel">💬 Ask ETC</button>
+<div id="wPanel" role="dialog" aria-label="ETC assistant">
+<div id="wHead"><div><b>ETC assistant</b><small>Answers from the school's own site</small></div><button id="wClose" type="button" aria-label="Close">×</button></div>
+<div id="wLog" aria-live="polite"></div>
+<div id="wChips"></div>
+<form id="wForm"><input id="wInp" autocomplete="off" placeholder="Ask a question" aria-label="Your message"><button type="submit">Send</button></form>
+<div class="wnote">Demo assistant. Nothing is sent anywhere.</div>
+</div>
+
+<script>
+(function(root){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4){if(/ing$/.test(w))w=w.slice(0,-3);else if(/ed$/.test(w))w=w.slice(0,-2);else if(/es$/.test(w))w=w.slice(0,-2);else if(/s$/.test(w)&&!/ss$/.test(w))w=w.slice(0,-1);}
+ if(w.length>3&&/e$/.test(w))w=w.slice(0,-1);return w;}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;
+ for(i=1;i<=m;i++)for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));}return d[m][n];}
+var STOP=' do does did you your yours the a an is are am was i my me we our can could would should to of for what which whats it its any have has how there with on in at and or be this that please ';
+function toks(s){return norm(s).split(' ').filter(function(w){return w&&STOP.indexOf(' '+w+' ')<0;}).map(stem);}
+function tokMatch(a,b){if(a===b)return true;var L=Math.min(a.length,b.length);if(L<5)return false;var mx=L>=8?2:1;
+ if(a.length>=5&&b.length>=5&&(a.indexOf(b)===0||b.indexOf(a)===0)&&L>=5)return true;return lev(a,b)<=mx;}
+function phraseScore(qt,phrase){var pt=toks(phrase);if(!pt.length)return 0;
+ if(pt.length===1){for(var i=0;i<qt.length;i++){if(tokMatch(qt[i],pt[0]))return (qt[i]===pt[0]||pt[0].length>=7)?3:2;}return 0;}
+ var hit=0;for(var k=0;k<pt.length;k++){for(var i2=0;i2<qt.length;i2++){if(tokMatch(qt[i2],pt[k])){hit++;break;}}}
+ return hit===pt.length?2+pt.length*2:0;}
+function best(cfg,q){var qt=toks(q),top=null,ts=0;
+ for(var i=0;i<cfg.kb.length;i++){var e=cfg.kb[i],s=0;for(var j=0;j<e.k.length;j++){s+=phraseScore(qt,e.k[j]);}
+  if(s>0&&e.pri)s+=e.pri;if(s>ts){ts=s;top=e;}}
+ return ts>=2?top:null;}
+function isBook(cfg,q){var qt=toks(q);for(var i=0;i<cfg.book.length;i++){if(phraseScore(qt,cfg.book[i])>=2)return true;}return false;}
+function answer(cfg,q){var e=best(cfg,q);return e?e.a:cfg.fallback;}
+var api={norm:norm,stem:stem,best:best,answer:answer,isBook:isBook};
+root.Assist=api;
+if(typeof module!=='undefined')module.exports=api;
+if(typeof document==='undefined')return;
+root.AssistUI=function(cfg){
+ var $=function(id){return document.getElementById(id);};
+ var fab=$('wFab'),panel=$('wPanel'),log=$('wLog'),chips=$('wChips'),form=$('wForm'),inp=$('wInp');
+ var flow=null,data={};
+ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+ function say(t,who){var d=document.createElement('div');d.className='wm '+(who||'bot');d.innerHTML=esc(t).replace(/\n/g,'<br>');log.appendChild(d);log.scrollTop=log.scrollHeight;}
+ function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c);};chips.appendChild(b);});}
+ function startFlow(){flow={i:0};data={};say(cfg.flow.intro);ask();}
+ function ask(){var s=cfg.flow.steps[flow.i];say(s.ask);setChips((s.opts||[]).concat(['Cancel']));inp.placeholder=s.ph||'Type your answer';}
+ function finish(){var lines=cfg.flow.steps.map(function(s){return s.label+': '+(data[s.key]||'-');});
+  say(cfg.flow.done+'\n\n'+lines.join('\n'));flow=null;setChips(cfg.chips);inp.placeholder='Ask a question';}
+ function step(t){var s=cfg.flow.steps[flow.i];
+  if(/^(cancel|stop|never ?mind|exit)$/i.test(t.trim())){flow=null;say(cfg.flow.cancel);setChips(cfg.chips);return;}
+  if(s.type==='email'&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(t)){say('That does not look like an e-mail address. Could you check it?');return;}
+  if(s.type==='phone'&&t.replace(/\D/g,'').length<7){say('Could you type the number with the area code?');return;}
+  if(s.type==='skipok'&&/^(skip|no|none|-)$/i.test(t.trim()))t='-';
+  data[s.key]=t;flow.i++;if(flow.i>=cfg.flow.steps.length)finish();else ask();}
+ function send(t){t=t.trim();if(!t)return;say(t,'me');inp.value='';
+  if(flow){step(t);return;}
+  if(isBook(cfg,t)){startFlow();return;}
+  setTimeout(function(){var e=best(cfg,t);say(e?e.a:cfg.fallback);setChips(e&&e.chips?e.chips:cfg.chips);},180);}
+ fab.onclick=function(){var o=panel.classList.toggle('open');fab.setAttribute('aria-expanded',o);if(o&&!log.children.length){say(cfg.greeting);setChips(cfg.chips);}if(o)setTimeout(function(){inp.focus();},50);};
+ $('wClose').onclick=function(){panel.classList.remove('open');fab.setAttribute('aria-expanded','false');};
+ form.onsubmit=function(e){e.preventDefault();send(inp.value);};
+ document.querySelectorAll('[data-ask]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();if(!panel.classList.contains('open'))fab.click();send(b.getAttribute('data-ask'));});});
+};
+})(typeof window!=='undefined'?window:globalThis);
+
+var CFG={"greeting": "Hi! I can answer questions about ETC English Training Centre: classes, exams, business English, online lessons, fees and how to book. What would you like to know?", "chips": ["Classes", "Exam preparation", "Business English", "Online lessons", "Fees", "Book a class"], "fallback": "I only know what ETC publishes on its site, and I could not find that. The team can confirm it for you. Want to leave a class request so they can get back to you?", "book": ["book", "sign up", "register", "enrol", "enroll", "reserve", "trial", "try a class", "start classes", "apply for class", "join"], "kb": [{"k": ["hi", "hello", "hey", "good morning", "good evening", "greetings"], "a": "Hello! Ask me about classes, exams, business English, online lessons or fees, or say \"book a class\" and I will take your details for the team."}, {"k": ["thanks", "thank you", "thx", "great", "bye", "goodbye"], "a": "You are welcome! If you would like a class, just say \"book a class\" and I will take your details."}, {"k": ["classes", "courses", "lessons", "what do you offer", "programs", "teach", "subjects", "options"], "a": "ETC has three class families: Conversation (idioms, vocabulary, phrasal verbs, tone and approach), Language (IELTS, CELPIP, TOEFL, TOEIC, LPI, editing, tutoring for specific needs) and Business (job interviews, resumes, business writing and communication). There is also a Corporate English Program for companies.", "chips": ["Conversation", "Exam preparation", "Business English", "Fees"]}, {"k": ["conversation", "conversational", "speak", "speaking", "talk", "idioms", "idiom", "phrasal verbs", "vocabulary", "fluent", "fluency", "natural"], "a": "Conversation classes run from beginner to advanced. The focus is pronunciation, fluency, correcting sentence structure, common vocabulary, expressions and idioms, and explaining your thoughts and ideas naturally. Topics include conversational idioms, vocabulary, phrasal verbs, and tone and approach."}, {"k": ["pronunciation", "pronounce", "accent", "sounds", "linking words"], "a": "There is a Pronunciation course that focuses on the specific sounds each culture finds difficult, and on linking words and sentences. Pronunciation is also part of every ETC class."}, {"k": ["ielts", "celpip", "toefl", "toeic", "lpi", "exam", "exams", "test", "proficiency", "score", "language class", "exam preparation", "prepare"], "a": "The English Language classes use ETC's customised material for IELTS (General and Academic), CELPIP, TOEFL, TOEIC and other English proficiency exams, including LPI. You work on reading, writing, listening and speaking to improve your scores. A material fee that includes practice tests applies to these classes."}, {"k": ["business", "job interview", "interview", "resume", "cv", "cover letter", "email writing", "professional", "telephone", "phone call", "work", "workplace", "assertive"], "a": "Business English covers preparation for a job interview, resumes and cover letters, business writing and emails, natural telephone conversations, and business culture, tone and approach, so you can explain yourself clearly, professionally and assertively."}, {"k": ["corporate", "company", "companies", "employees", "staff", "team training", "organization", "organisation"], "a": "The ETC Corporate English Program is for businesses with an international setting where employees do not speak English as a first language. It uses ETC's own material and methods to build stronger teams and smoother communication with customers. The team can discuss your company's needs."}, {"k": ["online", "zoom", "skype", "remote", "video call", "from home", "abroad", "overseas", "outside canada", "virtual"], "a": "All ETC classes can be taken online from anywhere, on Zoom or Skype. Private students can also attend in person according to the fees page, and the team will confirm what is currently available."}, {"k": ["private", "one to one", "one on one", "individual", "personal", "group", "two learners", "three learners", "small group", "class size", "partner", "how long is a class", "duration", "1 hour", "hour and a half"], "a": "Private classes are one-on-one, either 1 hour or 1.5 hours. Group classes are small: 2 learners for 1.5 hours or 3 learners for 2 hours."}, {"k": ["fees", "fee", "cost", "price", "prices", "pay", "payment", "how much", "package", "packages", "registration", "material", "discount", "cheap", "expensive", "afford"], "a": "Fees have three parts: a one-time registration fee (it includes learning support, official education receipts, certificates and any correspondence you need), a material fee for English Language classes that includes practice tests, and the classes themselves. Classes start with an introductory class, then packages of 8, 12, 16, 20 or 40 classes, with a lower per-class rate in bigger packages. The exact amounts are on the Course Fees page and the team confirms the current ones.", "chips": ["Private or group?", "Book a class"]}, {"k": ["certificate", "certificates", "certification", "proof", "diploma", "recognizing", "recognition", "document"], "a": "Certificates recognizing your English level are available after taking 40 classes. The registration fee also covers official education receipts and any correspondence you need from ETC."}, {"k": ["level", "levels", "beginner", "intermediate", "advanced", "placement", "assessment", "my level", "not sure", "which class", "right for me", "recommend", "what class"], "a": "Conversation classes start at beginner and go up to advanced. If you are not sure what you need, tell the team your level, how many years you have studied English and your goal. The booking questions cover exactly that, so say \"book a class\" and I will take them. For exams choose Language, for work English choose Business, and for speaking confidence choose Conversation."}, {"k": ["teacher", "teachers", "jane", "founder", "owner", "who runs", "principal", "method", "methodology", "curriculum", "instructor"], "a": "ETC was founded by Jane Solovyov, who is the principal. She developed the methodology and curriculum that every ETC teacher follows. Learners and alumni describe the teachers as friendly, professional and encouraging."}, {"k": ["history", "since", "founded", "how long", "established", "started", "2001", "about", "story", "years open"], "a": "Jane Solovyov opened ETC English Training Centre in September 2001, after finishing her university education in Sapporo, Japan, in 1991. She says thousands of learners have been through ETC."}, {"k": ["hours", "schedule", "timetable", "when", "open", "opening", "time", "times", "day", "days", "weekend", "availability", "available", "evening", "morning"], "a": "The school's site does not publish a weekly timetable. Its service advisory page says online Zoom classes are available 7 days a week from 9:00 am to 6:30 pm, and the booking form lets you pick your days and the time of day (morning, afternoon or evening). The team will confirm what fits you."}, {"k": ["where", "address", "location", "in person", "directions", "office", "vancouver", "campus", "visit", "map", "street"], "a": "ETC is in Vancouver, Canada. I could not find a street address on the school's site, so the team will confirm in-person details when they reply. All classes are also available online."}, {"k": ["contact", "phone", "call", "email", "e-mail", "reach", "number", "message"], "a": "The simplest way is the booking form on the school's site, or say \"book a class\" here and I will take your details so the team can contact you."}, {"k": ["youtube", "videos", "video", "free", "podcast", "learn free", "watch"], "a": "Teacher Jane publishes free English learning videos on YouTube, for example a CELPIP guide and a series on business and professional communication, and the site has a podcast page."}, {"k": ["visa", "immigration", "e-visa", "evisa", "study permit", "pr", "move to canada", "work permit", "canada"], "a": "ETC has joined forces with E-Visa to help people who want to study, work and live in Canada. The school's site has an Apply for a Visa page, and E-Visa and ETC can answer questions about it."}, {"k": ["review", "reviews", "testimonial", "testimonials", "students say", "feedback", "alumni", "opinions", "recommend school"], "a": "The school's site shows testimonials from alumni. One says: \"At ETC you can learn a lot of useful phrases and idioms not taught at other ESL schools.\" Others praise the friendly teachers, the flexible schedule and the variety of classes."}, {"k": ["intro", "introductory", "first class", "first lesson", "trial lesson"], "a": "Classes start with an introductory class (private 1 hour, private 1.5 hours, or group), and then you can choose a package. Say \"book a class\" and I will take your details for the team."}], "flow": {"intro": "Happy to help. I will ask a few quick questions, the same ones as the school's booking form. You can type Cancel at any time.", "cancel": "No problem, I stopped the request. Ask me anything else.", "done": "Sent to the team (demo only, nothing is actually sent). They will contact you to confirm times and fees. Here is your request:", "steps": [{"key": "name", "label": "Name", "ask": "What is your name?", "ph": "Your name"}, {"key": "email", "label": "E-mail", "ask": "What e-mail should the team reply to?", "type": "email", "ph": "name@example.com"}, {"key": "phone", "label": "Phone", "ask": "A phone number? You can type Skip.", "type": "skipok", "opts": ["Skip"], "ph": "Phone or Skip"}, {"key": "kind", "label": "Class type", "ask": "Which classes are you interested in?", "opts": ["Conversation", "Language (exams)", "Business", "Not sure"]}, {"key": "format", "label": "Format", "ask": "One-to-one or a small group?", "opts": ["One-to-one", "Group of 2", "Group of 3", "Not sure"]}, {"key": "days", "label": "Days free", "ask": "Which days are you available?", "ph": "e.g. Mon, Wed, Fri"}, {"key": "time", "label": "Time of day", "ask": "What time of day suits you?", "opts": ["Morning", "Afternoon", "Evening"]}, {"key": "per", "label": "Classes per week", "ask": "How many classes per week?", "opts": ["1", "2", "3", "4", "5 or more"]}, {"key": "level", "label": "Level", "ask": "What is your English level?", "opts": ["Beginner", "Intermediate", "Advanced", "Not sure"]}, {"key": "goal", "label": "Goal", "ask": "What is your goal at ETC? A sentence is enough.", "ph": "e.g. IELTS score, job interviews"}]}};
+AssistUI(CFG);
+</script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Langara Veterinary Hospital · Oakridge, Vancouver</title>
+<meta name="description" content="Demo page for Langara Veterinary Hospital in Vancouver: services, team, hours, and an assistant that answers questions and takes an appointment request.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Mulish:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--sg:#89927D;--sg2:#9AAC7F;--dk:#4F5A40;--ink:#2B3224;--cream:#F6F4EC;--sand:#ECE8D8;--w:#fff;--wa:#4F5A40;--wat:#fff;--wbg:#fff;--wtx:#2B3224;--wb:#ECEFE3;--wf:'Mulish',system-ui,sans-serif;--wo:#2B3224}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.65 'Mulish',system-ui,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;line-height:1.08;margin:0 0 .45em}
+h1{font-size:clamp(40px,10vw,72px)}
+h2{font-size:clamp(30px,6.5vw,46px)}
+h3{font-size:26px}
+p{margin:0 0 1em}
+a{color:inherit}
+.wrap{width:100%;max-width:980px;margin:0 auto;padding:0 16px}
+section{padding:60px 0;position:relative;overflow:hidden}
+.btn{display:inline-block;background:var(--dk);color:#fff;text-decoration:none;font-weight:800;padding:14px 26px;border-radius:12px;border:0;font:800 16px 'Mulish';cursor:pointer}
+.btn.ghost{background:transparent;color:var(--dk);border:2px solid var(--dk)}
+header{background:#fff;border-bottom:1px solid var(--sand);position:sticky;top:0;z-index:20}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:980px;margin:0 auto;padding:6px 16px}
+.bar img{height:58px;width:auto;display:block}
+.bar nav{display:none;gap:22px;font-weight:600;font-size:15px}
+.bar nav a{text-decoration:none}
+.bar .btn{padding:10px 16px;font-size:14px}
+@media(min-width:760px){.bar nav{display:flex}}
+.hero{text-align:center;padding:56px 0 64px;background:radial-gradient(circle at 50% 0,#E4E9D7 0,var(--cream) 62%)}
+.hero:before,.hero:after{content:"";position:absolute;border:2px solid var(--sg2);border-radius:50%;opacity:.45}
+.hero:before{width:380px;height:380px;left:-190px;top:30px}
+.hero:after{width:260px;height:260px;right:-120px;bottom:-60px}
+.hero .wrap{position:relative;z-index:1}
+.kick{font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:13px;color:var(--dk);margin-bottom:12px}
+.hero p.lead{max-width:600px;margin:0 auto 24px;font-size:19px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.info{display:grid;gap:12px;margin-top:34px;text-align:left}
+@media(min-width:760px){.info{grid-template-columns:repeat(3,1fr)}}
+.info div{background:#fff;border-radius:16px;padding:16px 18px;border:1px solid var(--sand);min-width:0}
+.info b{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--dk);margin-bottom:4px}
+.sec-h{text-align:center;max-width:620px;margin:0 auto 30px}
+.approach{background:var(--dk);color:#fff}
+.approach h2{color:#fff}
+.apgrid{display:grid;gap:14px}
+@media(min-width:700px){.apgrid{grid-template-columns:repeat(2,1fr)}}
+.ap{background:rgba(255,255,255,.09);border-radius:16px;padding:18px 20px;min-width:0;border:1px solid rgba(255,255,255,.18)}
+.ap b{display:block;font-family:'Cormorant Garamond',serif;font-size:23px;margin-bottom:2px}
+.who{display:grid;gap:14px}
+@media(min-width:760px){.who{grid-template-columns:repeat(3,1fr)}}
+.pet{background:#fff;border-radius:20px;padding:22px;border-top:6px solid var(--sg2);min-width:0}
+.pet ul{margin:0;padding-left:18px}
+.svc{display:grid;gap:0;border-top:1px solid var(--sg)}
+.row{display:grid;grid-template-columns:48px 1fr;gap:6px 14px;padding:22px 0;border-bottom:1px solid var(--sg)}
+.row .n{font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--sg);line-height:1;font-weight:700}
+.row h3{margin:0 0 4px}
+.row p{margin:0}
+.row div{min-width:0}
+.team{display:grid;gap:14px}
+@media(min-width:760px){.team{grid-template-columns:repeat(2,1fr)}}
+.person{background:#fff;border-radius:20px;padding:22px;min-width:0;border:1px solid var(--sand)}
+.person.main{grid-column:1/-1;background:#EEF1E2}
+.person small{display:block;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--dk);font-size:12px;margin-bottom:6px}
+.person h3{margin-bottom:6px}
+.langs{display:inline-block;background:var(--sg2);color:#1f2615;border-radius:999px;padding:3px 12px;font-size:13px;font-weight:800;margin-top:6px}
+.hours{background:var(--sand)}
+.hgrid{display:grid;gap:18px}
+@media(min-width:760px){.hgrid{grid-template-columns:1fr 1fr}}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden}
+td{padding:12px 14px;border-bottom:1px solid var(--sand)}
+td:last-child{text-align:right;font-weight:800}
+.card{background:#fff;border-radius:18px;padding:20px;min-width:0}
+.after{border-left:6px solid var(--dk)}
+.after p{margin:0 0 .6em}
+.note{font-size:14px;opacity:.8}
+.cta-band{background:var(--sg);color:#fff;text-align:center}
+.cta-band h2{color:#fff}
+.cta-band .btn{background:#fff;color:var(--dk)}
+footer{background:#2B3224;color:#cdd5c0;font-size:14px;padding:26px 0 92px}
+footer .wrap{display:flex;flex-direction:column;gap:6px}
+footer a{color:#fff}
+#wFab{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--wa);color:var(--wat);font:600 15px/1 var(--wf);padding:14px 18px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.22)}
+#wFab:focus-visible,#wPanel button:focus-visible,#wInp:focus-visible{outline:3px solid var(--wo,#000);outline-offset:2px}
+#wPanel{position:fixed;right:16px;bottom:78px;z-index:51;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 100px));background:var(--wbg);color:var(--wtx);border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--wf)}
+#wPanel.open{display:flex}
+#wHead{background:var(--wa);color:var(--wat);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+#wHead b{font-size:15px}#wHead small{display:block;opacity:.8;font-size:12px}
+#wClose{background:transparent;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1;padding:2px 8px}
+#wLog{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:0}
+.wm{max-width:86%;padding:9px 12px;border-radius:14px;overflow-wrap:anywhere}
+.wm.bot{background:var(--wb);align-self:flex-start;border-bottom-left-radius:4px}
+.wm.me{background:var(--wa);color:var(--wat);align-self:flex-end;border-bottom-right-radius:4px}
+#wChips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+#wChips button{border:1px solid var(--wa);background:transparent;color:var(--wtx);border-radius:999px;padding:6px 11px;font:13px var(--wf);cursor:pointer}
+#wChips button:hover{background:var(--wb)}
+#wForm{display:flex;gap:6px;padding:10px;border-top:1px solid var(--wb)}
+#wInp{flex:1;min-width:0;border:1px solid #bbb;border-radius:10px;padding:10px;font:15px var(--wf);background:#fff;color:#111}
+#wForm button{border:0;background:var(--wa);color:var(--wat);border-radius:10px;padding:0 14px;font:600 14px var(--wf);cursor:pointer}
+.wnote{font-size:11px;opacity:.6;padding:0 12px 8px}
+
+</style>
+</head>
+<body>
+<header><div class="bar">
+<a href="#top" aria-label="Langara Veterinary Hospital"><img src="img/langara-veterinary-hospital-logo.jpg" alt="Langara Veterinary Hospital" width="61" height="58"></a>
+<nav><a href="#approach">Approach</a><a href="#services">Services</a><a href="#team">Team</a><a href="#visit">Visit</a></nav>
+<a class="btn" href="#visit">Book a visit</a>
+</div></header>
+
+<main id="top">
+<section class="hero">
+<div class="wrap">
+<div class="kick">Oakridge · Vancouver</div>
+<h1>Welcome to your pets' second home</h1>
+<p class="lead">Warm, family-style care at Langara Veterinary Hospital for dogs, cats, small mammals and reptiles, built on the idea of harmony in health.</p>
+<div class="cta"><a class="btn" href="#visit" data-ask="I would like to book an appointment">Request an appointment</a><a class="btn ghost" href="#services">Our services</a></div>
+<div class="info">
+<div><b>Address</b>6338 Cambie St<br>Vancouver, BC V5Z 0K2</div>
+<div><b>Opening hours</b>Tue to Fri 9:00 am to 6:00 pm<br>Sat 9:00 am to 12:00 pm<br>Sun 9:00 am to 5:00 pm</div>
+<div><b>Contact</b>604-245-3833<br>info@langaravet.com</div>
+</div>
+</div>
+</section>
+
+<section class="approach" id="approach">
+<div class="wrap">
+<div class="sec-h"><div class="kick" style="color:#cfe0b4">Our approach</div><h2>Harmony in health</h2>
+<p style="margin:0">Great veterinary care starts with trust, and healing works best when pets feel safe and their owners are supported. The hospital cares for the whole pet, not just their symptoms.</p></div>
+<div class="apgrid">
+<div class="ap"><b>Gentle handling</b>Low-stress handling techniques for every patient.</div>
+<div class="ap"><b>Your pet's pace</b>The team adapts to how fast your pet is comfortable going.</div>
+<div class="ap"><b>A calm hospital</b>A welcoming environment that keeps visits relaxed.</div>
+<div class="ap"><b>Shared decisions</b>Clear communication and shared decision-making with pet families.</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="sec-h"><h2>Companions we care for</h2><p style="margin:0">From the family dog to a bearded dragon, the clinic lists these patients on its services page.</p></div>
+<div class="who">
+<div class="pet"><h3>Dogs &amp; cats</h3><p style="margin:0">From puppies and kittens to senior pets.</p></div>
+<div class="pet"><h3>Small mammals</h3><ul><li>Rabbits</li><li>Guinea pigs</li><li>Ferrets</li><li>Hamsters</li><li>Chinchillas</li></ul></div>
+<div class="pet"><h3>Reptiles</h3><ul><li>Bearded dragons</li><li>Geckos</li><li>Turtles</li></ul></div>
+</div>
+</div>
+</section>
+
+<section id="services" style="background:#fff">
+<div class="wrap">
+<div class="sec-h"><h2>Services</h2><p style="margin:0">From routine wellness visits to ongoing medical care, supporting your pet's health at every stage of life.</p></div>
+<div class="svc">
+<div class="row"><span class="n">1</span><div><h3>Consultation</h3><p>Behavioural and nutritional consultation for puppies and kittens, and wellness examinations for senior pets.</p></div></div>
+<div class="row"><span class="n">2</span><div><h3>Surgery</h3><p>Elective surgeries including spaying and neutering, and other procedures such as brachycephalic breed nasal resection, with a focus on safety and post-operative comfort.</p></div></div>
+<div class="row"><span class="n">3</span><div><h3>Dental</h3><p>Essential dental procedures including cleanings, exams and extractions, using advanced techniques to keep your pet's mouth healthy.</p></div></div>
+<div class="row"><span class="n">4</span><div><h3>Grooming</h3><p>Nail trims, lion-cut grooming, ear cleaning, teeth trimming and anal gland expression.</p></div></div>
+<div class="row"><span class="n">5</span><div><h3>Traditional Chinese Veterinary Medicine</h3><p>TCVM includes acupuncture, herbal medicine and food therapy. It is often used to support chronic conditions, improve mobility and comfort, enhance overall wellness and complement conventional treatments.</p></div></div>
+</div>
+</div>
+</section>
+
+<section id="team">
+<div class="wrap">
+<div class="sec-h"><h2>The team</h2><p style="margin:0">Passionate animal lovers who enjoy getting to know patients and their families.</p></div>
+<div class="team">
+<div class="person main"><small>Founder and veterinarian</small><h3>Dr. Vivien Leung (Dr. Vi)</h3>
+<p>BSc, DVM, Certified Veterinary Acupuncturist, Certified Veterinary Chinese Herbalist, Certified Food Therapist. Dr. Vi graduated from the Western College of Veterinary Medicine in Saskatchewan and developed a passion for small animals and exotic pets. Her experience in Uganda, Hong Kong and Singapore shaped a compassionate, whole-patient approach, and she trained further in Traditional Chinese Veterinary Medicine at Chi University in Florida and in international animal welfare at the University of Edinburgh.</p>
+<p style="margin:0">She founded the hospital with a vision of harmony in health, and values lasting bonds with pets and their humans.</p>
+<span class="langs">English · Cantonese · Mandarin</span></div>
+<div class="person"><small>Hospital manager</small><h3>Heather</h3><p style="margin:0">In the veterinary industry since 2014 and a close colleague of the doctor for many years. Her senior dog, Sophie, often keeps her company at the clinic.</p><span class="langs">Korean · English</span></div>
+<div class="person"><small>Veterinary assistant</small><h3>Eva</h3><p style="margin:0">More than five years of patient-care experience in healthcare environments in Hong Kong. At home she shares her life with a Red-Eared Slider turtle named Shelly.</p><span class="langs">English · Cantonese · Mandarin</span></div>
+<div class="person"><small>Veterinary assistant</small><h3>Joshua</h3><p style="margin:0">A fourth-year Psychology student with volunteering experience and a particular interest in animal behaviour, who has also cared for animals on a farm.</p></div>
+</div>
+</div>
+</section>
+
+<section class="hours" id="visit">
+<div class="wrap">
+<div class="sec-h"><h2>Visit Langara Vet</h2><p style="margin:0">Contact the clinic to book an appointment or ask about services.</p></div>
+<div class="hgrid">
+<div>
+<table>
+<tr><td>Tuesday to Friday</td><td>9:00 am to 6:00 pm</td></tr>
+<tr><td>Saturday</td><td>9:00 am to 12:00 pm</td></tr>
+<tr><td>Sunday</td><td>9:00 am to 5:00 pm</td></tr>
+</table>
+<p class="note" style="margin-top:10px">Monday is not listed on the clinic's site, so the team will confirm it.</p>
+<div class="card" style="margin-top:14px"><b>6338 Cambie St, Vancouver, BC V5Z 0K2</b><br>604-245-3833<br>info@langaravet.com</div>
+</div>
+<div class="card after"><h3>After hours</h3>
+<p>For after hours, the clinic points owners to these emergency hospitals:</p>
+<p><b>VCA Canada Vancouver Animal Emergency and Referral Centre</b><br>2303 Alberta St, Vancouver, BC V5Y 4A7<br>(604) 879-3737</p>
+<p style="margin:0"><b>Intercity Animal Emergency Clinic</b><br>580 SE Marine Dr, V5X 2T4<br>(604) 321-8080</p></div>
+</div>
+</div>
+</section>
+
+<section style="background:#EEF1E2">
+<div class="wrap">
+<div class="sec-h"><h2>Care in your language</h2><p style="margin:0">The clinic's team speaks four languages between them, so many families can talk through their pet's care in the language they are most comfortable with.</p></div>
+<div class="who">
+<div class="pet"><h3>English</h3><p style="margin:0">Spoken by Dr. Vivien, Heather and Eva.</p></div>
+<div class="pet"><h3>Cantonese &amp; Mandarin</h3><p style="margin:0">Dr. Vivien (梁蘊恩 獸醫) and Eva are fluent in both.</p></div>
+<div class="pet"><h3>Korean</h3><p style="margin:0">Heather, the hospital manager, speaks Korean and English.</p></div>
+</div>
+</div>
+</section>
+
+<section id="faq">
+<div class="wrap">
+<div class="sec-h"><h2>Good to know</h2><p style="margin:0">Answers taken from the clinic's own pages. Anything not listed there, the team confirms.</p></div>
+<style>details{background:#fff;border:1px solid var(--sand);border-radius:14px;padding:14px 18px;margin-bottom:10px}summary{font-weight:800;cursor:pointer}details p{margin:10px 0 0}</style>
+<details><summary>Which animals does the clinic see?</summary><p>Dogs and cats, small mammals (rabbits, guinea pigs, ferrets, hamsters, chinchillas) and reptiles (bearded dragons, geckos, turtles).</p></details>
+<details><summary>My pet gets stressed at the vet. Is that a problem?</summary><p>The clinic's approach is gentle, low-stress handling, adapting to your pet's pace in a calm, welcoming environment, with clear communication and shared decision-making.</p></details>
+<details><summary>What is TCVM and when is it used?</summary><p>Traditional Chinese Veterinary Medicine includes acupuncture, herbal medicine and food therapy. It is often used to support chronic conditions, improve mobility and comfort, enhance overall wellness and complement conventional treatments. Dr. Vivien Leung is a certified veterinary acupuncturist, Chinese herbalist and food therapist.</p></details>
+<details><summary>Who can I talk to in my own language?</summary><p>Dr. Vivien is fluent in English, Cantonese and Mandarin. Eva speaks English, Cantonese and Mandarin, and Heather speaks Korean and English.</p></details>
+<details><summary>Is there a groomer on site?</summary><p>Grooming services are listed on the clinic's services page: nail trim, lion-cut grooming, ear cleaning, teeth trimming and anal gland expression.</p></details>
+<details><summary>What if my pet needs help when the clinic is closed?</summary><p>The clinic lists two emergency hospitals for after hours: VCA Canada Vancouver Animal Emergency and Referral Centre at (604) 879-3737 and Intercity Animal Emergency Clinic at (604) 321-8080.</p></details>
+<details><summary>Can I send a message instead of calling?</summary><p>Yes. The contact form asks for the owner's name, the pet's name, an e-mail and a message, and the clinic is also reachable at info@langaravet.com or 604-245-3833.</p></details>
+</div>
+</section>
+
+<section class="cta-band">
+<div class="wrap">
+<h2>Ready to book?</h2>
+<p style="max-width:520px;margin:0 auto 20px">The clinic's contact form asks for the owner's name, the pet's name, an e-mail and a message. The assistant asks the same, plus the kind of visit.</p>
+<button class="btn" type="button" data-ask="Book an appointment">Start the request</button>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">
+<div><b>Langara Veterinary Hospital</b> · 6338 Cambie St, Vancouver · <a href="https://www.langaravet.com/">langaravet.com</a></div>
+<div>Demo · prepared by Gevorg Hovhannisyan</div>
+</div></footer>
+
+<button id="wFab" type="button" aria-expanded="false" aria-controls="wPanel">🐾 Ask Langara</button>
+<div id="wPanel" role="dialog" aria-label="Langara Veterinary Hospital assistant">
+<div id="wHead"><div><b>Langara Vet assistant</b><small>Answers from the clinic's own site</small></div><button id="wClose" type="button" aria-label="Close">×</button></div>
+<div id="wLog" aria-live="polite"></div>
+<div id="wChips"></div>
+<form id="wForm"><input id="wInp" autocomplete="off" placeholder="Ask a question" aria-label="Your message"><button type="submit">Send</button></form>
+<div class="wnote">Demo assistant. It cannot give medical advice and sends nothing.</div>
+</div>
+
+<script>
+(function(root){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length>4){if(/ing$/.test(w))w=w.slice(0,-3);else if(/ed$/.test(w))w=w.slice(0,-2);else if(/es$/.test(w))w=w.slice(0,-2);else if(/s$/.test(w)&&!/ss$/.test(w))w=w.slice(0,-1);}
+ if(w.length>3&&/e$/.test(w))w=w.slice(0,-1);return w;}
+function lev(a,b){var m=a.length,n=b.length,i,j,d=[];for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;
+ for(i=1;i<=m;i++)for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));}return d[m][n];}
+var STOP=' do does did you your yours the a an is are am was i my me we our can could would should to of for what which whats it its any have has how there with on in at and or be this that please ';
+function toks(s){return norm(s).split(' ').filter(function(w){return w&&STOP.indexOf(' '+w+' ')<0;}).map(stem);}
+function tokMatch(a,b){if(a===b)return true;var L=Math.min(a.length,b.length);if(L<5)return false;var mx=L>=8?2:1;
+ if(a.length>=5&&b.length>=5&&(a.indexOf(b)===0||b.indexOf(a)===0)&&L>=5)return true;return lev(a,b)<=mx;}
+function phraseScore(qt,phrase){var pt=toks(phrase);if(!pt.length)return 0;
+ if(pt.length===1){for(var i=0;i<qt.length;i++){if(tokMatch(qt[i],pt[0]))return (qt[i]===pt[0]||pt[0].length>=7)?3:2;}return 0;}
+ var hit=0;for(var k=0;k<pt.length;k++){for(var i2=0;i2<qt.length;i2++){if(tokMatch(qt[i2],pt[k])){hit++;break;}}}
+ return hit===pt.length?2+pt.length*2:0;}
+function best(cfg,q){var qt=toks(q),top=null,ts=0;
+ for(var i=0;i<cfg.kb.length;i++){var e=cfg.kb[i],s=0;for(var j=0;j<e.k.length;j++){s+=phraseScore(qt,e.k[j]);}
+  if(s>0&&e.pri)s+=e.pri;if(s>ts){ts=s;top=e;}}
+ return ts>=2?top:null;}
+function isBook(cfg,q){var qt=toks(q);for(var i=0;i<cfg.book.length;i++){if(phraseScore(qt,cfg.book[i])>=2)return true;}return false;}
+function answer(cfg,q){var e=best(cfg,q);return e?e.a:cfg.fallback;}
+var api={norm:norm,stem:stem,best:best,answer:answer,isBook:isBook};
+root.Assist=api;
+if(typeof module!=='undefined')module.exports=api;
+if(typeof document==='undefined')return;
+root.AssistUI=function(cfg){
+ var $=function(id){return document.getElementById(id);};
+ var fab=$('wFab'),panel=$('wPanel'),log=$('wLog'),chips=$('wChips'),form=$('wForm'),inp=$('wInp');
+ var flow=null,data={};
+ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+ function say(t,who){var d=document.createElement('div');d.className='wm '+(who||'bot');d.innerHTML=esc(t).replace(/\n/g,'<br>');log.appendChild(d);log.scrollTop=log.scrollHeight;}
+ function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c);};chips.appendChild(b);});}
+ function startFlow(){flow={i:0};data={};say(cfg.flow.intro);ask();}
+ function ask(){var s=cfg.flow.steps[flow.i];say(s.ask);setChips((s.opts||[]).concat(['Cancel']));inp.placeholder=s.ph||'Type your answer';}
+ function finish(){var lines=cfg.flow.steps.map(function(s){return s.label+': '+(data[s.key]||'-');});
+  say(cfg.flow.done+'\n\n'+lines.join('\n'));flow=null;setChips(cfg.chips);inp.placeholder='Ask a question';}
+ function step(t){var s=cfg.flow.steps[flow.i];
+  if(/^(cancel|stop|never ?mind|exit)$/i.test(t.trim())){flow=null;say(cfg.flow.cancel);setChips(cfg.chips);return;}
+  if(s.type==='email'&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(t)){say('That does not look like an e-mail address. Could you check it?');return;}
+  if(s.type==='phone'&&t.replace(/\D/g,'').length<7){say('Could you type the number with the area code?');return;}
+  if(s.type==='skipok'&&/^(skip|no|none|-)$/i.test(t.trim()))t='-';
+  data[s.key]=t;flow.i++;if(flow.i>=cfg.flow.steps.length)finish();else ask();}
+ function send(t){t=t.trim();if(!t)return;say(t,'me');inp.value='';
+  if(flow){step(t);return;}
+  if(isBook(cfg,t)){startFlow();return;}
+  setTimeout(function(){var e=best(cfg,t);say(e?e.a:cfg.fallback);setChips(e&&e.chips?e.chips:cfg.chips);},180);}
+ fab.onclick=function(){var o=panel.classList.toggle('open');fab.setAttribute('aria-expanded',o);if(o&&!log.children.length){say(cfg.greeting);setChips(cfg.chips);}if(o)setTimeout(function(){inp.focus();},50);};
+ $('wClose').onclick=function(){panel.classList.remove('open');fab.setAttribute('aria-expanded','false');};
+ form.onsubmit=function(e){e.preventDefault();send(inp.value);};
+ document.querySelectorAll('[data-ask]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();if(!panel.classList.contains('open'))fab.click();send(b.getAttribute('data-ask'));});});
+};
+})(typeof window!=='undefined'?window:globalThis);
+
+var CFG={"greeting": "Hello! I can answer questions about Langara Veterinary Hospital: services, the team, hours and location, or take an appointment request for the team. I cannot give medical advice. What would you like to know?", "chips": ["Opening hours", "Services", "Which pets?", "TCVM", "Book an appointment"], "fallback": "I could not find that on the clinic's website, so I do not want to guess. The team can confirm it: 604-245-3833 or info@langaravet.com. Would you like to leave an appointment request?", "book": ["book", "appointment", "appointments", "schedule a visit", "make a visit", "reserve", "sign up", "register", "see the vet"], "kb": [{"k": ["hi", "hello", "hey", "good morning", "good afternoon", "greetings"], "a": "Hello! Ask me about services, hours, the team or which pets the clinic sees, or say \"book an appointment\" and I will take your details for the team."}, {"k": ["thanks", "thank you", "thx", "bye", "goodbye", "cheers"], "a": "You are welcome! Your pet is in good hands. Say \"book an appointment\" whenever you are ready."}, {"pri": 4, "k": ["sick", "ill", "vomit", "vomiting", "bleeding", "blood", "poison", "poisoned", "toxic", "swallowed", "seizure", "hurt", "injured", "injury", "limp", "limping", "symptom", "symptoms", "diagnose", "diagnosis", "not eating", "diarrhea", "emergency", "urgent", "dying", "breathing", "choking", "hit by a car", "is it serious", "what is wrong", "pain"], "a": "I cannot diagnose or give medical advice, and a pet who may be in danger should not wait for a chat. During opening hours please call the clinic at 604-245-3833 and the team will advise. After hours, the clinic lists two emergency hospitals: VCA Canada Vancouver Animal Emergency and Referral Centre, 2303 Alberta St, (604) 879-3737, and Intercity Animal Emergency Clinic, 580 SE Marine Dr, (604) 321-8080.", "chips": ["Opening hours", "After hours"]}, {"k": ["hours", "opening hours", "open", "opens", "close", "closes", "closed", "when", "time", "sunday", "saturday", "weekend", "monday", "tuesday", "friday", "schedule", "late", "evening", "today"], "a": "Opening hours: Tuesday to Friday 9:00 am to 6:00 pm, Saturday 9:00 am to 12:00 pm, Sunday 9:00 am to 5:00 pm. Monday is not listed on the clinic's site, so the team will confirm it.", "chips": ["After hours", "Where are you?", "Book an appointment"]}, {"k": ["after hours", "overnight", "night", "24 hour", "24/7", "outside hours", "out of hours", "emergency hospital", "emergency clinic", "weekend emergency"], "a": "For after hours, the clinic lists two emergency hospitals: VCA Canada Vancouver Animal Emergency and Referral Centre, 2303 Alberta St, Vancouver, (604) 879-3737, and Intercity Animal Emergency Clinic, 580 SE Marine Dr, (604) 321-8080."}, {"k": ["where", "address", "location", "located", "find you", "directions", "oakridge", "cambie", "street", "map", "parking", "how to get", "near"], "a": "Langara Veterinary Hospital is at 6338 Cambie St, Vancouver, BC V5Z 0K2, in the Oakridge area. Parking and transit details are not on the clinic's site, so the team can confirm those."}, {"k": ["phone", "call", "telephone", "number", "email", "e-mail", "contact", "reach", "message", "write"], "a": "Phone 604-245-3833 or e-mail info@langaravet.com. The contact form on the site asks for the owner's name, the pet's name, an e-mail and a message, or I can take an appointment request here."}, {"k": ["services", "service", "what services", "treatments", "treatment"], "a": "The clinic offers consultation (including behavioural and nutritional consultations and senior wellness exams), surgery, dental care, grooming and Traditional Chinese Veterinary Medicine (TCVM).", "chips": ["Surgery", "Dental", "Grooming", "TCVM"]}, {"k": ["pets", "animals", "species", "which pets", "what animals", "dog", "dogs", "cat", "cats", "puppy", "kitten", "puppies", "kittens", "rabbit", "rabbits", "bunny", "guinea pig", "guinea pigs", "ferret", "ferrets", "hamster", "hamsters", "chinchilla", "chinchillas", "small mammal", "small mammals", "exotic", "exotics", "reptile", "reptiles", "bearded dragon", "gecko", "geckos", "turtle", "turtles", "tortoise", "lizard"], "a": "The clinic cares for dogs and cats, small mammals (rabbits, guinea pigs, ferrets, hamsters, chinchillas) and reptiles (bearded dragons, geckos, turtles). For any other species, the team will confirm."}, {"k": ["consultation", "consult", "behaviour", "behavior", "behavioural", "nutrition", "nutritional", "diet", "senior", "elderly", "old pet", "wellness", "checkup", "check up", "exam", "examination", "new puppy", "new kitten", "first visit"], "a": "Consultations cover behavioural and nutritional advice for puppies and kittens, and wellness examinations for senior pets, so you can give them the best care. Say \"book an appointment\" to request one."}, {"k": ["surgery", "surgical", "spay", "spaying", "neuter", "neutering", "castrate", "sterilize", "sterilise", "operation", "brachycephalic", "nasal resection", "pug", "bulldog", "flat faced"], "a": "The clinic provides elective surgeries including spaying and neutering, and other procedures such as brachycephalic breed nasal resection. The team focuses on safety and post-operative comfort. For details about your pet, the veterinarian will advise at a consultation."}, {"k": ["dental", "dentist", "teeth", "tooth", "cleaning", "clean teeth", "extraction", "extractions", "gums", "oral", "mouth", "breath"], "a": "Dental care includes cleanings, exams and extractions, using advanced techniques to keep your pet's mouth healthy. What your pet needs is for the veterinarian to decide at an exam."}, {"k": ["grooming", "groom", "nail", "nails", "nail trim", "lion cut", "lion-cut", "ear cleaning", "anal gland", "anal glands", "teeth trimming", "bath", "haircut", "trim"], "a": "Grooming services include nail trims, lion-cut grooming, ear cleaning, teeth trimming and anal gland expression."}, {"k": ["tcvm", "traditional chinese", "chinese medicine", "acupuncture", "herbal", "herbs", "food therapy", "holistic", "alternative", "complementary", "integrative", "mobility", "chronic"], "a": "Traditional Chinese Veterinary Medicine (TCVM) includes acupuncture, herbal medicine and food therapy. It is often used to support chronic conditions, improve mobility and comfort, enhance overall wellness and complement conventional treatments. Dr. Vivien Leung is a certified veterinary acupuncturist, Chinese herbalist and food therapist."}, {"k": ["doctor", "vet", "veterinarian", "dr leung", "vivien", "dr vi", "leung", "founder", "owner", "who", "team", "staff", "heather", "eva", "joshua", "manager", "assistant"], "a": "The team: Dr. Vivien (Dr. Vi) Leung, veterinarian and founder; Heather, hospital manager; and veterinary assistants Eva and Joshua. Dr. Vi graduated from the Western College of Veterinary Medicine and trained further in Traditional Chinese Veterinary Medicine and international animal welfare."}, {"k": ["language", "languages", "speak", "cantonese", "mandarin", "chinese", "korean", "english", "translate", "interpreter"], "a": "Dr. Vivien is fluent in English, Cantonese and Mandarin, Eva speaks English, Cantonese and Mandarin, and Heather speaks Korean and English."}, {"k": ["hates the vet", "hate vet", "approach", "philosophy", "gentle", "low stress", "low-stress", "anxious", "nervous", "scared", "fear", "calm", "handling", "harmony", "whole pet", "shy"], "a": "The clinic's approach is called harmony in health: gentle, low-stress handling, adapting to your pet's pace, a calm and welcoming environment, and clear communication and shared decision-making with pet families. It cares for the whole pet, not only the symptoms."}, {"pri": 4, "k": ["price", "prices", "cost", "costs", "fee", "fees", "how much", "pay", "payment", "insurance", "quote", "estimate", "cheap", "afford", "credit card", "deposit"], "a": "Prices and payment options are not published on the clinic's site, so the team will confirm them. Call 604-245-3833 or leave a request and they will get back to you."}, {"k": ["vaccine", "vaccines", "vaccination", "vaccinations", "shots", "flea", "tick", "heartworm", "microchip", "blood test", "x-ray", "xray", "ultrasound", "lab", "medication", "prescription"], "a": "That is not listed on the clinic's site, so I will not guess. The team can tell you what is available for your pet. Call 604-245-3833 or say \"book an appointment\" and add it to your note."}, {"k": ["about", "about you", "tell me about", "hospital", "clinic", "who are you", "history", "story", "started", "family style", "family-style", "second home"], "a": "Langara Veterinary Hospital is a warm, family-style hospital in the Oakridge area of Vancouver, founded by Dr. Vivien Leung with a vision of harmony in health. The team cares for cats, dogs, small mammals and exotic pets, and enjoys getting to know patients and their families."}, {"k": ["senior pets", "older pet", "old dog", "old cat", "geriatric", "aging", "ageing", "puppy", "kitten", "young pet"], "a": "The clinic's consultations include behavioural and nutritional consultation for puppies and kittens and wellness examinations for senior pets. For anything specific about your pet's age, the team will advise at a visit."}, {"k": ["staff", "employees", "assistants", "technician", "tech", "nurse"], "a": "Besides Dr. Vivien Leung, the team includes Heather (hospital manager, in the veterinary industry since 2014) and veterinary assistants Eva (over five years of patient-care experience in Hong Kong) and Joshua (a Psychology student with a particular interest in animal behaviour)."}, {"k": ["new client", "new clients", "accepting", "register", "walk in", "walk-in", "walkins", "drop in", "need appointment", "do i need"], "a": "The clinic's site does not say whether it is accepting new clients or whether walk-ins are possible. Call 604-245-3833 or leave a request and the team will confirm."}], "flow": {"intro": "Happy to pass a request to the team. A few quick questions. You can type Cancel at any time. (No medical advice here: for an urgent problem please call the clinic.)", "cancel": "No problem, I stopped the request. Ask me anything else.", "done": "Sent to the team (demo only, nothing is actually sent). They will reply to confirm a time. Here is your request:", "steps": [{"key": "owner", "label": "Owner", "ask": "What is your name (the owner's name)?", "ph": "Your name"}, {"key": "pet", "label": "Pet's name", "ask": "And your pet's name?", "ph": "Pet's name"}, {"key": "species", "label": "Pet type", "ask": "What kind of pet is it?", "opts": ["Dog", "Cat", "Small mammal", "Reptile", "Other"]}, {"key": "visit", "label": "Type of visit", "ask": "What would you like to book?", "opts": ["Consultation / wellness exam", "Surgery", "Dental", "Grooming", "TCVM (acupuncture etc.)", "Not sure"]}, {"key": "day", "label": "Preferred day", "ask": "Which day would suit you? The clinic is open Tuesday to Sunday.", "ph": "e.g. next Saturday"}, {"key": "time", "label": "Time of day", "ask": "Morning or afternoon?", "opts": ["Morning", "Afternoon", "No preference"]}, {"key": "email", "label": "E-mail", "ask": "What e-mail can the team reply to?", "type": "email", "ph": "name@example.com"}, {"key": "phone", "label": "Phone", "ask": "A phone number? You can type Skip.", "type": "skipok", "opts": ["Skip"], "ph": "Phone or Skip"}, {"key": "note", "label": "Note", "ask": "Anything the team should know, such as a nervous pet or the reason for the visit? You can type Skip.", "type": "skipok", "opts": ["Skip"], "ph": "Short note or Skip"}]}};
+AssistUI(CFG);
+</script>
+</body>
+</html>
