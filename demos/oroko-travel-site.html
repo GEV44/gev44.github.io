@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OROKO Travel · Bespoke journeys from Dublin</title>
+<meta name="description" content="Tailor-made luxury holidays from Ireland. Demo page with an assistant that answers questions about OROKO Travel.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2f4a3f;--deep:#22362e;--cream:#F5F5F0;--sand:#ebebe0;--sage:#AAC3B4;--clay:#c37d49;--gold:#F0BE28;--ink:#1d2a25;--mute:#6a746f}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:300 17px/1.7 'Jost',system-ui,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.05;color:var(--green)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+header.top{background:var(--green);position:sticky;top:0;z-index:30}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px;gap:12px}
+.logo img{height:28px;width:auto;display:block}
+.top nav{display:none;gap:26px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream)}
+.top nav a{text-decoration:none;opacity:.9}
+.pill{display:inline-block;border:1px solid var(--cream);color:var(--cream);padding:9px 18px;border-radius:999px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;font-family:inherit}
+.pill.solid{background:var(--clay);border-color:var(--clay);color:#fff}
+.pill.dark{border-color:var(--green);color:var(--green)}
+@media(min-width:900px){.top nav{display:flex}}
+/* hero: type-led, no boxes */
+.hero{background:var(--green);color:var(--cream);padding:64px 0 0;position:relative;overflow:hidden}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--sage)}
+.hero h1{color:var(--cream);font-size:clamp(54px,17vw,168px);font-weight:400;letter-spacing:-.02em;margin:14px 0 6px}
+.hero h1 em{color:var(--clay);font-style:italic}
+.hero .row{display:grid;gap:22px;border-top:1px solid rgba(245,245,240,.3);padding:22px 0 56px;margin-top:20px}
+.hero p{max-width:30em;font-size:19px;color:#dfe6df}
+.hero .acts{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start}
+.arc{position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(170,195,180,.35)}
+.arc.b{right:-40px;top:-40px;width:200px;height:200px}
+@media(min-width:860px){.hero .row{grid-template-columns:1.4fr 1fr;align-items:end}.arc{width:520px;height:520px;right:-120px;top:-160px}.arc.b{width:380px;height:380px;right:-50px;top:-90px}}
+.ribbon{background:var(--deep);color:var(--sage);font-size:12px;letter-spacing:.2em;text-transform:uppercase;padding:11px 0}
+.ribbon .wrap{display:flex;gap:6px 24px;flex-wrap:wrap;justify-content:center}
+.sec{padding:70px 0}
+.lbl{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--clay);margin-bottom:10px;display:block}
+h2{font-size:clamp(34px,7vw,58px)}
+.lead{max-width:36em;margin-top:14px;color:#3a4741}
+/* standard: three columns separated by rules */
+.std{display:grid;gap:0;margin-top:34px;border-top:1px solid #cfd3c8}
+.std div{padding:22px 0;border-bottom:1px solid #cfd3c8}
+.std h3{font-size:27px;font-style:italic}
+@media(min-width:860px){.std{grid-template-columns:repeat(3,1fr);border-bottom:1px solid #cfd3c8}.std div{border-bottom:0;padding:26px 28px 26px 0}.std div+div{border-left:1px solid #cfd3c8;padding-left:28px}}
+/* journeys: index list */
+.jr{background:var(--sand)}
+.idx{list-style:none;margin-top:32px;border-top:1px solid #bfc4b8}
+.idx li{display:grid;grid-template-columns:40px 1fr;gap:6px 12px;padding:20px 0;border-bottom:1px solid #bfc4b8;align-items:baseline}
+.idx .n{font:italic 500 22px 'Cormorant Garamond',serif;color:var(--clay)}
+.idx h3{font-size:clamp(25px,5vw,36px)}
+.idx .route{font-size:14px;color:var(--mute);letter-spacing:.02em}
+.idx .desc{grid-column:2;color:#3a4741;max-width:40em}
+.idx .pr{grid-column:2;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.idx .pr b{font:500 26px 'Cormorant Garamond',serif;letter-spacing:0;text-transform:none;margin-left:4px}
+.idx button{grid-column:2;justify-self:start;margin-top:6px}
+@media(min-width:860px){.idx li{grid-template-columns:60px 1.2fr 1.4fr 190px;align-items:center}.idx .desc,.idx .pr{grid-column:auto}.idx .pr{text-align:right}.idx button{grid-column:2/5;margin-top:4px}}
+.tag{display:inline-block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;background:var(--green);color:var(--cream);padding:2px 9px;border-radius:999px;margin-bottom:6px}
+/* collections */
+.col5{display:grid;gap:14px;margin-top:30px}
+.col5 a{display:block;text-decoration:none;border:1px solid #bfc4b8;border-radius:4px;padding:20px 20px 24px;background:#fff;min-width:0}
+.col5 span{font:italic 500 40px 'Cormorant Garamond',serif;color:var(--clay);display:block}
+.col5 b{font:500 24px 'Cormorant Garamond',serif;color:var(--green);display:block;margin:2px 0 4px}
+@media(min-width:760px){.col5{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1000px){.col5{grid-template-columns:repeat(5,1fr)}}
+/* team */
+.team{background:var(--green);color:var(--cream)}
+.team h2{color:var(--cream)}
+.team .lbl{color:var(--sage)}
+.tm{display:grid;gap:0;margin-top:30px;border-top:1px solid rgba(245,245,240,.25)}
+.tm div{padding:16px 0;border-bottom:1px solid rgba(245,245,240,.25);display:grid;gap:2px}
+.tm b{font:500 26px 'Cormorant Garamond',serif}
+.tm i{font-style:normal;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)}
+.tm p{color:#d3ddd5;font-size:15px;max-width:44em}
+@media(min-width:860px){.tm{grid-template-columns:1fr 1fr;column-gap:46px}}
+.two{display:grid;gap:20px;margin-top:26px}.two div{border-top:1px solid #bfc4b8;padding-top:14px}.two h3{font-size:26px;margin-bottom:4px}@media(min-width:760px){.two{grid-template-columns:1fr 1fr}}
+/* how */
+.steps{display:grid;gap:22px;margin-top:30px;counter-reset:s}
+.steps div{counter-increment:s;padding-left:54px;position:relative}
+.steps div:before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:-6px;font:italic 500 36px 'Cormorant Garamond',serif;color:var(--clay)}
+.steps h3{font-size:25px}
+@media(min-width:860px){.steps{grid-template-columns:repeat(3,1fr)}}
+/* contact */
+.cta{background:var(--sand);text-align:center}
+.cta h2{max-width:14em;margin:0 auto}
+.cta .lead{margin-left:auto;margin-right:auto}
+.cinfo{display:grid;gap:12px;margin-top:30px;text-align:left}
+.cinfo div{border-top:1px solid #bfc4b8;padding-top:12px;min-width:0;overflow-wrap:anywhere}
+.cinfo b{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);font-weight:500}
+@media(min-width:760px){.cinfo{grid-template-columns:repeat(3,1fr)}}
+footer{background:var(--deep);color:#a9b8ae;font-size:13px;padding:24px 0 92px;text-align:center}
+</style>
+</head>
+<body>
+<header class="top">
+<div class="wrap">
+<a class="logo" href="#top" aria-label="OROKO Travel"><img src="img/oroko-travel-logo.svg" alt="OROKO" width="144" height="31"></a>
+<nav><a href="#journeys">Journeys</a><a href="#collections">Collections</a><a href="#how">How we work</a><a href="#team">Team</a><a href="#contact">Contact</a></nav>
+<a class="pill" href="#contact" data-open-assistant>Enquire now</a>
+</div>
+</header>
+
+<section class="hero" id="top">
+<span class="arc"></span><span class="arc b"></span>
+<div class="wrap">
+<span class="eyebrow">Luxury holidays from Ireland</span>
+<h1>Travel that <em>flows</em></h1>
+<div class="row">
+<p>Tailor-made holidays, with expert advice and personal care throughout. Your world to explore, our experience to guide you.</p>
+<div class="acts"><a class="pill solid" href="#contact" data-open-assistant>Speak to a Travel Designer</a><a class="pill" href="#journeys">See journeys</a></div>
+</div>
+</div>
+</section>
+<div class="ribbon"><div class="wrap"><span>Licensed by the Irish Aviation Authority, TA 0782</span><span>7 Terminus Mills, Clonskeagh Road, Dublin</span></div></div>
+
+<section class="sec" id="about"><div class="wrap">
+<span class="lbl">The OROKO standard</span>
+<h2>Time is limited. Travel shouldn't be.</h2>
+<p class="lead">First-hand knowledge and the collective experience of the team inform every holiday OROKO designs. Your Travel Designer takes time to understand what matters to you, then develops the plans with thoughtful preparation and personal support throughout.</p>
+<div class="std">
+<div><h3>Anticipated, not requested</h3><p>Service that meets you before you ask, from early check-ins to front-row seats. Your journey is shaped by insight, not a template.</p></div>
+<div><h3>Crafted, not claimed</h3><p>Comfort and quality proven in practice. If a hotel, guide or route doesn't meet the standard, it isn't included.</p></div>
+<div><h3>Meaningful, not manufactured</h3><p>Experiences that are sincere, not staged: thoughtful touches and rare local insight that make a journey personal.</p></div>
+</div>
+</div></section>
+
+<section class="sec jr" id="journeys"><div class="wrap">
+<span class="lbl">Featured journeys</span>
+<h2>Eight places to begin</h2>
+<p class="lead">Prices are per person, as published on the OROKO site. Every itinerary is then privately tailored.</p>
+<ol class="idx">
+<li><span class="n">01</span><div><h3>Egypt by Dahabiya</h3><div class="route">Giza · Cairo · Luxor · Valley of the Kings · Edfu · Kom Ombo · Philae · Aswan</div></div><p class="desc"><span class="tag">Slow travel</span><br>An 8-night slow journey down the Nile. Egypt leaves you looking at the ancient world, and perhaps the modern one, a little differently.</p><div class="pr">From<b>€5,535</b></div><button class="pill dark" data-ask="Tell me about Egypt">Ask about Egypt</button></li>
+<li><span class="n">02</span><div><h3>Timeless Japan</h3><div class="route">Tokyo · Hakone · Kyoto · Osaka</div></div><p class="desc">10 nights where ancient ritual meets tomorrow's precision: private guides, bullet trains, a ryokan in Hakone, and Etihad Airways flights included.</p><div class="pr">From<b>€8,999</b></div><button class="pill dark" data-ask="Tell me about Japan">Ask about Japan</button></li>
+<li><span class="n">03</span><div><h3>Australia and the Rugby World Cup 2027</h3><div class="route">Sydney · Blue Mountains · Perth and Rottnest · Port Douglas · optional Melbourne</div></div><p class="desc"><span class="tag">World Cup</span><br>13 nights following Ireland across Australia, from the roar of the stadium to the Great Barrier Reef.</p><div class="pr">From<b>€8,640</b></div><button class="pill dark" data-ask="Tell me about Australia and the rugby">Ask about Australia</button></li>
+<li><span class="n">04</span><div><h3>Norway: Into the Arctic Winter</h3><div class="route">Tromsø · Lyngen Alps · Oslo</div></div><p class="desc"><span class="tag">Northern lights</span><br>Six nights of blue Arctic light, deep snow across the Lyngen Alps and long nights beneath the aurora.</p><div class="pr">From<b>€4,699</b></div><button class="pill dark" data-ask="Tell me about Norway">Ask about Norway</button></li>
+<li><span class="n">05</span><div><h3>Finnish Lapland: Santa and the Arctic Circle</h3><div class="route">Rovaniemi · Santa Claus Secret Forest</div></div><p class="desc"><span class="tag">Santa experience</span><br>Three nights: glass igloos, huskies through snowy forest and a reindeer journey to meet Santa.</p><div class="pr">From<b>€3,749</b></div><button class="pill dark" data-ask="Tell me about Lapland">Ask about Lapland</button></li>
+<li><span class="n">06</span><div><h3>Lech: Skiing the Arlberg in Timeless Style</h3><div class="route">Ski Arlberg · Lech</div></div><p class="desc">Seven nights shaped by groomed pistes, long lunches, elegant dining and time together in the mountains.</p><div class="pr">From<b>€4,999</b></div><button class="pill dark" data-ask="Tell me about skiing in Lech">Ask about Lech</button></li>
+<li><span class="n">07</span><div><h3>Morocco: Marrakech, Atlas and Desert</h3><div class="route">Marrakech · Atlas Mountains · Agafay Desert</div></div><p class="desc"><span class="tag">Perfect for Easter</span><br>Seven nights from the hum of ancient medinas to the hush of desert nights.</p><div class="pr">From<b>€2,450</b></div><button class="pill dark" data-ask="Tell me about Morocco">Ask about Morocco</button></li>
+<li><span class="n">08</span><div><h3>Les Arcs: Family Skiing in Paradiski</h3><div class="route">Arc 1950 Le Village</div></div><p class="desc"><span class="tag">Perfect for families</span><br>Seven nights in the heart of the French Alps, where Arc 1950 captures the essence of mountain life.</p><div class="pr">From<b>€2,799</b></div><button class="pill dark" data-ask="Tell me about Les Arcs family skiing">Ask about Les Arcs</button></li>
+</ol>
+</div></section>
+
+<section class="sec" id="collections"><div class="wrap">
+<span class="lbl">Popular ways to travel</span>
+<h2>Holiday collections</h2>
+<div class="col5">
+<a href="#contact" data-ask="Adventures in nature"><span>i</span><b>Adventures in Nature</b>For those who seek the wild.</a>
+<a href="#contact" data-ask="Culture and connection"><span>ii</span><b>Cultural and Connection</b>Journeys that invite observation, reflection and true immersion.</a>
+<a href="#contact" data-ask="Family holidays with kids"><span>iii</span><b>Time Together</b>For families who want a holiday that works for everyone.</a>
+<a href="#contact" data-ask="Honeymoon or anniversary"><span>iv</span><b>Milestones and Moments</b>Poetic, private, and made for meaningful chapters.</a>
+<a href="#contact" data-ask="Ski holidays"><span>v</span><b>Ski Holidays</b>Lech, Les Arcs and more of the Alps.</a>
+</div>
+</div></section>
+
+<section class="sec" id="how" style="padding-top:0"><div class="wrap">
+<span class="lbl">How we work</span>
+<h2>It starts with a conversation</h2>
+<div class="steps">
+<div><h3>Tell us what matters</h3><p>Where you want to go, who is travelling, your pace and your passions. Choose a good time to chat: morning, midday or late afternoon.</p></div>
+<div><h3>Your designer shapes it</h3><p>Built from scratch, never templated, drawing on first-hand knowledge of the hotels, guides and routes, with flexibility built in.</p></div>
+<div><h3>Support at every step</h3><p>Thoughtful preparation before you leave and personal support throughout, whether it is a major adventure or a milestone moment.</p></div>
+</div>
+</div></section>
+
+<section class="sec" id="where" style="padding-top:0"><div class="wrap">
+<span class="lbl">Where we plan</span>
+<h2>Far beyond the featured eight</h2>
+<p class="lead">The enquiry form lets you choose from a long list of destinations, among them Armenia, Botswana, Cape Verde, Iceland, Japan, Jordan, Maldives, Namibia, Peru, Rwanda, Sri Lanka, Tanzania and Vietnam, as well as the Arctic, Antarctica and round-the-world journeys.</p>
+<div class="two">
+<div><h3>Who is travelling</h3><p>Family, couple, solo travel, multigenerational or a leisure group.</p></div>
+<div><h3>What you are drawn to</h3><p>Adventure, alpine summer, beach, cruise, culinary, culture, rail, road trip, sabbatical, safari, sailing and yachting, short break or ski.</p></div>
+</div>
+</div></section>
+
+<section class="sec team" id="team"><div class="wrap">
+<span class="lbl">Meet the team</span>
+<h2>Designers who have been there</h2>
+<p class="lead" style="color:#d3ddd5">The team explores the destinations it recommends, season after season: staying in the hotels, sailing the rivers, meeting the guides.</p>
+<div class="tm">
+<div><b>Bob Haugh</b><i>Founder</i><p>A lifelong passion for exploration, and an avid motorcyclist who values journeys where time feels well spent.</p></div>
+<div><b>Cailín Keaney</b><i>Managing Director</i><p>Drawn to travel that feels considered, shaped with intention and rhythm.</p></div>
+<div><b>Emilie Lynam</b><i>Head of Product Marketing</i><p>Seeks out the soul of a destination: the people, food and traditions.</p></div>
+<div><b>Mary Masterson</b><i>Senior Travel Designer</i><p>Balances discovery with ease, shaping experiences that feel intuitively right.</p></div>
+<div><b>Aisling O'Carroll</b><i>Senior Travel Designer</i><p>Has explored over 40 countries and curates itineraries that reveal culture in depth.</p></div>
+<div><b>Conor Magee</b><i>Senior Travel Designer</i><p>More than three decades in luxury travel, pairing wild landscapes with quiet refinement.</p></div>
+<div><b>Rhiannon Gleeson</b><i>Travel Designer</i><p>Believes true luxury lies in slowing the pace and discovering a destination's quieter layers.</p></div>
+</div>
+</div></section>
+
+<section class="sec cta" id="contact"><div class="wrap">
+<span class="lbl">Talk to a Travel Designer</span>
+<h2>Let us design your perfect journey</h2>
+<p class="lead">Speak to one of the Travel Designers and plan a holiday around what matters to you. The assistant can note your ideas first.</p>
+<p style="margin-top:24px"><a class="pill solid" href="#contact" data-open-assistant>Plan a journey</a></p>
+<div class="cinfo">
+<div><b>Visit</b>7 Terminus Mills, Clonskeagh Road, Dublin D06 W3P2, Ireland</div>
+<div><b>Call</b>+353 1 260 0240<br>Office hours are listed on the site (Thursday 9:00 to 18:00)</div>
+<div><b>Email</b>info@orokotravel.ie<br>Licensed by the Irish Aviation Authority, TA 0782</div>
+</div>
+</div></section>
+
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+<script>
+var Widget=(function(){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.length>4?w.replace(/(ings|ing|ers|er|ed|es|s)$/,''):w.replace(/s$/,'');}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){c=[i];for(j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[n];}
+function wm(q,k){if(q===k)return 1;if(k.length>=4&&q.length>=4&&(q.indexOf(k)===0||k.indexOf(q)===0)&&Math.abs(q.length-k.length)<=3)return .9;var m=k.length>=8?2:k.length>=5?1:0;if(m&&Math.abs(q.length-k.length)<=m&&lev(q,k)<=m)return .8;return 0;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function scoreEntry(qt,e){var tot=0;e.k.forEach(function(kp){var parts=toks(kp),s=0,ok=true;parts.forEach(function(pw){var b=0;qt.forEach(function(w){var v=wm(w,pw);if(v>b)b=v;});if(b===0)ok=false;s+=b;});if(ok)tot+=s*(parts.length>1?1.6:1)*(parts[0].length>=4?1.2:.8);});return tot;}
+function best(cfg,q){var qt=toks(q),bs=0,be=null;cfg.kb.forEach(function(e){var s=scoreEntry(qt,e);if(s>bs){bs=s;be=e;}});return bs>=1?be:null;}
+function isBook(cfg,q){var qt=toks(q);return cfg.bookWords.some(function(w){var p=toks(w);return p.every(function(x){return qt.some(function(y){return wm(y,x)>0;});});});}
+function init(cfg){
+var st=document.createElement('style');st.textContent='.wgt-b{position:fixed;right:16px;bottom:16px;z-index:99;border:0;border-radius:999px;padding:13px 18px;background:var(--wa);color:var(--wi);font:600 15px var(--wf);box-shadow:0 8px 24px rgba(0,0,0,.28);cursor:pointer;display:flex;gap:8px;align-items:center}.wgt-p{position:fixed;right:12px;bottom:12px;z-index:100;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:#fff;color:#1b1b1b;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--wf)}.wgt-p.on{display:flex}.wgt-h{background:var(--wa);color:var(--wi);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:600}.wgt-h small{display:block;font-weight:400;opacity:.85;font-size:12px}.wgt-x{background:none;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1}.wgt-m{flex:1;overflow:auto;padding:12px;background:#f5f5f2;display:flex;flex-direction:column;gap:8px}.wgt-m div{max-width:86%;padding:9px 12px;border-radius:14px;white-space:pre-line;word-wrap:break-word}.wgt-m .bot{background:#fff;border:1px solid #e4e4de;align-self:flex-start}.wgt-m .me{background:var(--wa);color:var(--wi);align-self:flex-end}.wgt-c{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 0;background:#f5f5f2}.wgt-c button{border:1px solid var(--wa);background:#fff;color:#1b1b1b;border-radius:999px;padding:6px 11px;font:13px var(--wf);cursor:pointer}.wgt-f{display:flex;gap:6px;padding:10px 12px;background:#f5f5f2;border-top:1px solid #e4e4de}.wgt-f input{flex:1;min-width:0;border:1px solid #cfcfc8;border-radius:10px;padding:10px;font:15px var(--wf)}.wgt-f button{border:0;border-radius:10px;padding:0 14px;background:var(--wa);color:var(--wi);font:600 14px var(--wf);cursor:pointer}';
+document.head.appendChild(st);
+var root=document.documentElement;root.style.setProperty('--wa',cfg.accent);root.style.setProperty('--wi',cfg.ink||'#fff');root.style.setProperty('--wf',cfg.font);
+var btn=document.createElement('button');btn.className='wgt-b';btn.setAttribute('aria-label',cfg.btn);btn.innerHTML='<span aria-hidden="true">✉</span><span>'+cfg.btn+'</span>';
+var p=document.createElement('div');p.className='wgt-p';p.setAttribute('role','dialog');
+p.innerHTML='<div class="wgt-h"><div>'+cfg.title+'<small>'+cfg.sub+'</small></div><button class="wgt-x" aria-label="Close">×</button></div><div class="wgt-m"></div><div class="wgt-c"></div><form class="wgt-f"><input type="text" autocomplete="off" aria-label="Message"><button type="submit">'+cfg.send+'</button></form>';
+document.body.appendChild(btn);document.body.appendChild(p);
+var M=p.querySelector('.wgt-m'),C=p.querySelector('.wgt-c'),F=p.querySelector('form'),I=p.querySelector('input');
+var flow=null,data={},started=false;
+function say(t,c){var d=document.createElement('div');d.className=c;d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight;}
+function chips(a){C.innerHTML='';(a||[]).forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){handle(t);};C.appendChild(b);});}
+function ask(){var s=cfg.flow.steps[flow];say(s.q,'bot');chips((s.opts||[]).concat(['Cancel']));I.placeholder=s.ph||'';}
+function startFlow(){flow=0;data={};say(cfg.flow.intro,'bot');ask();}
+function finish(){var t=cfg.flow.done(data);flow=null;say(t,'bot');chips(cfg.chips);I.placeholder='';}
+function handle(t){t=t.trim();if(!t)return;say(t,'me');I.value='';
+if(flow!==null){if(/^(cancel|stop|never ?mind)$/i.test(t)){flow=null;say(cfg.flow.cancel,'bot');chips(cfg.chips);return;}
+var s=cfg.flow.steps[flow];if(s.check&&!s.check(t)){say(s.err,'bot');return;}data[s.id]=t;flow++;if(flow>=cfg.flow.steps.length)finish();else ask();return;}
+if(isBook(cfg,t)&&!/(cancel|refund|policy|polic)/i.test(t)){startFlow();return;}
+var e=best(cfg,t);if(e){if(e.flow){startFlow();return;}say(e.a,'bot');chips(e.chips||cfg.chips);}else{say(cfg.fallback,'bot');chips(cfg.chips);}}
+function open(){p.classList.add('on');btn.style.display='none';if(!started){started=true;say(cfg.greet,'bot');chips(cfg.chips);}setTimeout(function(){I.focus();},50);}
+btn.onclick=open;p.querySelector('.wgt-x').onclick=function(){p.classList.remove('on');btn.style.display='flex';};
+F.onsubmit=function(ev){ev.preventDefault();handle(I.value);};
+document.querySelectorAll('[data-open-assistant]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();open();});});
+document.querySelectorAll('[data-ask]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();open();handle(a.getAttribute('data-ask'));});});
+}
+return {init:init,best:best,isBook:isBook};
+})();
+
+
+var CFG={
+accent:'#2f4a3f',ink:'#F5F5F0',font:"'Jost',system-ui,sans-serif",
+btn:'Talk to a designer',title:'OROKO Travel assistant',sub:'Answers from the OROKO site. A Travel Designer takes it from there.',send:'Send',
+greet:'Welcome to OROKO. Ask me about our journeys, the team, how we plan a trip, or tell me where you would like to go and I will pass it to a Travel Designer.',
+chips:['How does it work?','Featured journeys','Who is the team?','Ski holidays','Where are you based?','Plan a journey'],
+fallback:'I only have what is on the OROKO website, and that is not covered there, so I would rather not guess. A Travel Designer can answer it: call +353 1 260 0240 or email info@orokotravel.ie. Or choose "Plan a journey" and I will note your question for them.',
+bookWords:['plan a journey','plan a trip','plan a holiday','plan my trip','plan my holiday','book','booking','enquire','enquiry','inquiry','speak to a designer','talk to a designer','talk to an expert','get in touch','arrange a call','callback','call back','get a quote','design my trip','start planning'],
+kb:[
+{k:['how does it work','process','how it works','how do you work','tailor','tailor-made','bespoke','tailored','travel designer','designer','what do you do','approach','from scratch','template','personal','conversation'],a:'Every OROKO journey is built from scratch around you, your pace, passions and preferences. It starts with a conversation: you speak to a Travel Designer, who draws on first-hand knowledge of the destination, develops the plan with you and supports you personally through the trip.',chips:['Who is the team?','Plan a journey']},
+{k:['oroko standard','standard','anticipated','crafted','meaningful','values','philosophy','travel that flows','flows','flow','why oroko','different'],a:'The OROKO Standard has three parts: Anticipated, not requested (service that meets you before you ask); Crafted, not claimed (comfort proven in practice, and if a hotel, guide or route does not meet the standard it is left out); Meaningful, not manufactured (experiences that are sincere, not staged).',chips:['How does it work?','Plan a journey']},
+{k:['featured','journeys','itineraries','itinerary','destinations','destination','where can i go','ideas','inspiration','examples','holidays','what do you offer','offer'],a:'Featured journeys on the site, priced per person:\n- Egypt by Dahabiya, 8 nights, from €5,535\n- Timeless Japan, 10 nights, from €8,999 (Etihad flights included)\n- Australia and the Rugby World Cup 2027, 13 nights, from €8,640\n- Norway: Into the Arctic Winter, 6 nights, from €4,699\n- Finnish Lapland: Santa and the Arctic Circle, 3 nights, from €3,749\n- Lech, Austria, 7 nights, from €4,999\n- Morocco: Marrakech, Atlas and Desert, 7 nights, from €2,450\n- Les Arcs, France, 7 nights, from €2,799',chips:['Japan','Ski holidays','Family holidays','Plan a journey']},
+{k:['japan','tokyo','kyoto','hakone','osaka','ryokan','bullet train','etihad'],a:'Timeless Japan: 10 nights across Tokyo, Hakone, Kyoto and Osaka, from €8,999 per person. It includes luxury stays, bullet train journeys, private guides, tailored dining recommendations and international Etihad Airways flights. A night in a Hakone ryokan with an onsen is part of the route.',chips:['Featured journeys','Plan a journey']},
+{k:['egypt','nile','dahabiya','cairo','luxor','aswan','pyramids','valley of the kings'],a:'Egypt by Dahabiya: an 8-night slow journey down the Nile, from €5,535 per person, taking in the Pyramids of Giza, Cairo, Luxor, the Valley of the Kings, Edfu, Kom Ombo, Philae and Aswan.',chips:['Featured journeys','Plan a journey']},
+{k:['australia','rugby','world cup','sydney','perth','rottnest','port douglas','blue mountains','melbourne'],a:'Australia and the Rugby World Cup 2027: 13 nights from €8,640 per person through Sydney, the Blue Mountains, Perth and Rottnest Island and Port Douglas, with an optional extension to Melbourne. Follow Ireland across Australia, from stadium to Great Barrier Reef.',chips:['Featured journeys','Plan a journey']},
+{k:['norway','arctic','northern lights','aurora','tromso','lyngen','oslo'],a:'Norway: Into the Arctic Winter: 6 nights from €4,699 per person across Tromsø, the Lyngen Alps and Oslo, with long nights under the aurora and deep snow in northern Norway.',chips:['Featured journeys','Plan a journey']},
+{k:['lapland','santa','finland','finnish','rovaniemi','igloo','husky','huskies','reindeer','christmas'],a:'Finnish Lapland: Santa and the Arctic Circle: 3 nights from €3,749 per person in Rovaniemi and the Santa Claus Secret Forest: glass igloos, husky rides through snowy forest and a reindeer journey to meet Santa. Tagged as a family adventure.',chips:['Family holidays','Plan a journey']},
+{k:['ski','skiing','ski holiday','lech','arlberg','les arcs','paradiski','alps','winter','snow','piste','mountain','after ski'],a:'Ski holidays: Lech, Austria (7 nights from €4,999, skiing the Arlberg with long lunches and elegant dining) and Les Arcs, France (7 nights from €2,799, family skiing in Paradiski, based in Arc 1950 Le Village). There is a Ski Holidays collection on the site.',chips:['Family holidays','Plan a journey']},
+{k:['morocco','marrakech','atlas','agafay','desert','easter'],a:'Morocco: Marrakech, Atlas and Desert: 7 nights from €2,450 per person, from medina to Atlas Mountains to a night in the Agafay Desert. It is tagged on the site as perfect for Easter travel.',chips:['Featured journeys','Plan a journey']},
+{k:['family','families','kids','children','child','time together','multigenerational','grandparents','teen'],a:'The Time Together collection is for families who want a holiday that works for everyone. Examples on the site: Finnish Lapland (Santa and the Arctic Circle) and Les Arcs family skiing. You can also pick party type Family or Multigenerational when you speak to a designer.',chips:['Featured journeys','Plan a journey']},
+{k:['honeymoon','anniversary','milestone','milestones','birthday','wedding','romantic','couple','celebration','special occasion'],a:'The Milestones and Moments collection is for private, meaningful chapters: honeymoons, anniversaries and big occasions. Tell the designer the occasion when you get in touch and the journey is shaped around it.',chips:['Plan a journey']},
+{k:['adventure','nature','wild','wildlife','safari','trek','hiking','outdoors','adventures in nature'],a:'Adventures in Nature is the collection for those who seek the wild. On the enquiry form you can also choose interests such as Adventure, Safari, Sailing and Yachting, Rail or Road Trip.',chips:['Featured journeys','Plan a journey']},
+{k:['culture','cultural','history','art','galleries','culinary','food','connection','immersion'],a:'Cultural and Connection covers itineraries that invite observation, reflection and true immersion. Interests such as Culture and Culinary are on the enquiry form as well.',chips:['Featured journeys','Plan a journey']},
+{k:['peru','maldives','antarctica','kenya','tanzania','botswana','namibia','south africa','iceland','italy','greece','portugal','spain','thailand','vietnam','cambodia','india','bhutan','sri lanka','nepal','jordan','oman','mexico','brazil','argentina','chile','costa rica','canada','fiji','armenia','georgia','mauritius','seychelles','caribbean','bali','indonesia','dubai','turkey','croatia','switzerland','rwanda','uganda','galapagos','new zealand','round the world','other destinations','do you go to','do you plan trips to'],a:'That destination is among the ones you can choose on the OROKO enquiry form, which spans Africa, the Caribbean, Europe, the Indian Ocean, South Asia, South and Central America, the Middle East, North America, Asia, the Pacific, Australia and New Zealand, the Arctic and Antarctica, plus round-the-world trips. Tell a Travel Designer what you have in mind and they will take it from there.',chips:['Featured journeys','Plan a journey']},
+{k:['collection','collections','themes','ways to travel','types of holiday'],a:'Holiday collections: Adventures in Nature, Cultural and Connection, Time Together (families), Milestones and Moments, and Ski Holidays.',chips:['Featured journeys','Plan a journey']},
+{k:['team','who','staff','people','founder','bob','haugh','managing director','cailin','keaney','emilie','lynam','mary','masterson','rhiannon','gleeson','aisling','carroll','conor','magee','experts','meet'],a:'The team: Bob Haugh (Founder), Cailín Keaney (Managing Director), Emilie Lynam (Head of Product Marketing), and Travel Designers Mary Masterson, Aisling O\'Carroll (40+ countries explored), Conor Magee (over three decades in luxury travel) and Rhiannon Gleeson. They spend time on the ground each year in the destinations they recommend.',chips:['How does it work?','Plan a journey']},
+{k:['where','address','location','office','dublin','clonskeagh','terminus mills','find you','visit','based','directions','map','ireland'],a:'OROKO Travel is at 7 Terminus Mills, Clonskeagh Road, Dublin D06 W3P2, Ireland.',chips:['Contact details','Plan a journey']},
+{k:['contact','phone','call','email','number','reach','telephone','mail','get in touch','speak','talk','hours','opening','office hours','open'],a:'Phone +353 1 260 0240 · email info@orokotravel.ie · 7 Terminus Mills, Clonskeagh Road, Dublin D06 W3P2. The site lists office hours (Thursday shows 9:00 to 18:00); the team can confirm the other days.',chips:['Plan a journey']},
+{k:['licence','licensed','license','iaa','aviation','protected','bonding','tour operator','ta 0782','regulated','safe','trust'],a:'OROKO Travel is licensed by the Irish Aviation Authority, TA 0782. For anything about financial protection on a specific booking, a Travel Designer will confirm the details.',chips:['Contact details']},
+{k:['price','prices','cost','how much','budget','expensive','afford','per person','from','rate','pricing'],a:'Journeys on the site are shown "from" a price per person (for example Morocco from €2,450 and Timeless Japan from €8,999 with flights). The final cost depends on how the trip is tailored, so a Travel Designer gives you a proper figure after talking to you. The enquiry form also asks for a budget per person, or you can say you are undecided.',chips:['Featured journeys','Plan a journey']},
+{k:['flight','flights','fly','airline','air','include','included','inclusive','hotel','hotels','accommodation','transfers','guide','guides','private guide'],a:'It varies by journey. For example Timeless Japan includes luxury stays, bullet trains, private guides, tailored dining recommendations and Etihad flights. Each itinerary page lists what is included, and your designer confirms it for the trip you choose.',chips:['Japan','Plan a journey']},
+{k:['brochure','download','catalogue','catalog','pdf','magazine'],a:'There is a brochure to download on the website (the Brochure link in the menu).',chips:['Plan a journey']},
+{k:['newsletter','subscribe','sign up','inspiration emails','stay inspired','email list'],a:'You can sign up for the newsletter at the bottom of the site: curated inspiration, seasonal highlights and journey previews, direct to your inbox.'},
+{k:['review','reviews','rating','testimonial','feedback','press','irish times','sunday times','independent'],a:'The site mentions OROKO in the press, including The Irish Times, The Sunday Times, Irish Independent, Belfast Telegraph, The Currency, Irish Examiner and The Gloss, and shows customer reviews on the home page. I cannot quote them here, but you can read them on the site.'},
+{k:['hello','hi','hey','good morning','good afternoon','thanks','thank you'],a:'Hello. Ask me about a journey, the team, how planning works, or choose "Plan a journey".'}
+],
+flow:{intro:'Lovely. A few details so a Travel Designer can come back to you well prepared.',cancel:'No problem, nothing noted. Ask me anything else.',
+steps:[
+{id:'where',q:'Where would you like to go, or what are you dreaming of?',ph:'e.g. Japan, or a ski week',check:function(t){return t.length>=3;},err:'A destination or a theme is enough, e.g. "Morocco in spring".'},
+{id:'party',q:'Who is travelling?',opts:['Couple','Family','Solo travel','Multigenerational','Leisure group','Other']},
+{id:'when',q:'Roughly when, and for how long?',ph:'e.g. April, 10 nights',check:function(t){return t.length>=3;},err:'A month or season is fine.'},
+{id:'budget',q:'Do you have a budget per person in mind?',opts:['I am undecided'],ph:'Or type an amount'},
+{id:'chat',q:'When is a good time to chat?',opts:['08:00 to 12:00','12:00 to 15:00','15:00 to 18:00']},
+{id:'name',q:'Your name?',ph:'Name',check:function(t){return t.length>=2;},err:'Please type your name.'},
+{id:'contact',q:'Best phone number or email?',ph:'Phone or email',check:function(t){return /@|\d{6,}/.test(t.replace(/[ \-()+]/g,''));},err:'Please enter a phone number or an email.'}],
+done:function(d){return 'Thank you '+d.name+'. Noted for a Travel Designer:\n'+d.where+' · '+d.party+' · '+d.when+' · budget: '+d.budget+' · best time to chat: '+d.chat+'.\nThey will get back to you on '+d.contact+'. To speak sooner: +353 1 260 0240.\n(This is a demo: nothing is actually sent.)';}}
+};
+
+Widget.init(CFG);
+</script>
+</body>
+</html>

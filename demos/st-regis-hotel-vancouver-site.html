@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The St. Regis Hotel, Vancouver · Demo</title>
+<meta name="description" content="Demo page for The St. Regis Hotel, 602 Dunsmuir Street, Vancouver: rooms, free breakfast, Gotham Steakhouse and a booking assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#040f29;--navy2:#0b1c42;--gold:#bba16a;--gold2:#d9c590;--wine:#5a333a;
+  --cream:#f6f1e6;--ink:#1b2234;--mute:#5f6678;--line:#e3dccb;--white:#fff;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;--sans:'Jost',system-ui,Segoe UI,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:.2px}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.btn{display:inline-block;border:1px solid var(--gold);background:var(--gold);color:var(--navy);padding:13px 26px;font:600 13px var(--sans);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:.2s}
+.btn:hover{background:var(--gold2)}
+.btn.ghost{background:transparent;color:var(--gold2)}
+.btn.ghost:hover{background:rgba(187,161,106,.15)}
+
+/* header */
+.topbar{background:var(--wine);color:#f3e7d3;font-size:13px;text-align:center;padding:8px 14px;letter-spacing:.02em}
+.topbar b{color:var(--gold2);font-weight:600}
+header.nav{position:sticky;top:0;z-index:40;background:var(--navy);border-bottom:1px solid rgba(187,161,106,.35)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.logochip{background:var(--navy);border:1px solid rgba(187,161,106,.5);padding:2px 8px;display:flex;align-items:center}
+.logochip img{height:40px;width:auto}
+.nav nav{display:none;gap:24px}
+.nav nav a{color:#d8d3c4;text-decoration:none;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.nav nav a:hover{color:var(--gold2)}
+.nav .btn{padding:10px 16px;font-size:12px}
+@media(min-width:860px){.nav nav{display:flex}}
+
+/* hero: split */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;padding-top:44px;padding-bottom:56px}
+.hero h1{font-size:clamp(38px,9vw,70px);margin:14px 0 18px}
+.hero h1 em{color:var(--gold2);font-style:italic;font-weight:500}
+.hero p.lead{color:#cfd3de;max-width:520px;font-size:17px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.deco{position:relative;border:1px solid rgba(187,161,106,.45);padding:26px 22px;background:linear-gradient(160deg,rgba(11,28,66,.9),rgba(4,15,41,.95));min-width:0}
+.deco::before{content:"";position:absolute;inset:7px;border:1px solid rgba(187,161,106,.25);pointer-events:none}
+.deco .yr{font-family:var(--serif);font-size:clamp(60px,18vw,104px);color:var(--gold);line-height:.9;font-weight:500}
+.deco .cap{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#aab0c2;margin-top:8px}
+.deco ul{list-style:none;margin-top:20px;display:grid;gap:10px}
+.deco li{display:flex;gap:10px;color:#e8e6df;font-size:15px}
+.deco li::before{content:"";flex:0 0 7px;height:7px;margin-top:9px;background:var(--gold);transform:rotate(45deg)}
+.fan{position:absolute;right:-60px;bottom:-60px;width:260px;height:260px;border-radius:50%;border:1px solid rgba(187,161,106,.18);box-shadow:0 0 0 30px rgba(187,161,106,.05),0 0 0 62px rgba(187,161,106,.03)}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1.25fr .75fr;gap:56px;align-items:center;padding-top:80px;padding-bottom:90px}}
+
+/* facts band */
+.band{background:var(--navy2);color:#e9e3d2;border-top:1px solid rgba(187,161,106,.25);border-bottom:1px solid rgba(187,161,106,.25)}
+.band .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0}
+.band .it{padding:18px 10px;text-align:center;border-right:1px solid rgba(187,161,106,.2);border-bottom:1px solid rgba(187,161,106,.2)}
+.band .it b{display:block;font-family:var(--serif);font-size:30px;color:var(--gold2);font-weight:600;line-height:1.1}
+.band .it span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#aeb4c6}
+@media(min-width:760px){.band .wrap{grid-template-columns:repeat(4,minmax(0,1fr))}.band .it{border-bottom:0}}
+
+section{padding:64px 0}
+section h2{font-size:clamp(32px,6vw,48px);margin:8px 0 14px}
+.sub{color:var(--mute);max-width:620px}
+
+/* direct offer */
+.offer{background:var(--cream)}
+.offer .box{display:grid;gap:22px;grid-template-columns:minmax(0,1fr);background:var(--white);border:1px solid var(--line);padding:26px;position:relative;overflow:hidden}
+.offer .box::after{content:"";position:absolute;right:-40px;top:-40px;width:130px;height:130px;border:1px solid var(--gold);border-radius:50%;opacity:.35}
+.offer .pct{font-family:var(--serif);font-size:84px;color:var(--wine);line-height:.9}
+.offer .pct small{font-size:30px}
+.offer ul{list-style:none;display:grid;gap:8px;margin:12px 0 18px}
+.offer li{padding-left:22px;position:relative}
+.offer li::before{content:"\2713";position:absolute;left:0;color:var(--gold);font-weight:700}
+@media(min-width:820px){.offer .box{grid-template-columns:200px minmax(0,1fr);align-items:center;padding:38px}}
+
+/* rooms */
+.rooms{background:#efe8d7}
+.rgrid{display:grid;gap:16px;grid-template-columns:minmax(0,1fr);margin-top:30px}
+.room{background:var(--white);border:1px solid var(--line);padding:22px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.room h3{font-size:26px}
+.room .rate{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--wine);font-weight:600}
+.room p{font-size:15px;color:var(--mute)}
+.room .tag{align-self:flex-start;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:var(--navy);color:var(--gold2);padding:3px 9px}
+.room.suite{background:var(--navy);color:#e9e6dc;border-color:var(--navy)}
+.room.suite p{color:#b9bfd0}.room.suite .rate{color:var(--gold2)}.room.suite .tag{background:var(--gold);color:var(--navy)}
+@media(min-width:640px){.rgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:960px){.rgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.note{font-size:13px;color:var(--mute);margin-top:16px}
+.inc{margin-top:34px;display:grid;gap:8px 28px;grid-template-columns:minmax(0,1fr)}
+.inc div{padding-left:20px;position:relative;font-size:15px}
+.inc div::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+@media(min-width:700px){.inc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* dining */
+.dining{background:var(--wine);color:#f4eadb;position:relative;overflow:hidden}
+.dining .grid{display:grid;gap:22px;grid-template-columns:minmax(0,1fr);margin-top:28px}
+.dcard{border:1px solid rgba(217,197,144,.4);padding:26px;background:rgba(4,15,41,.18);min-width:0}
+.dcard h3{font-size:30px;color:var(--gold2);margin-bottom:8px}
+.dcard p{font-size:15px;color:#ecdfcb}
+.dcard .meta{margin-top:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
+.dining .sub{color:#d9c8b0}
+.dining .pk{margin-top:26px;padding:18px 20px;border-left:3px solid var(--gold);background:rgba(4,15,41,.3);font-size:15px}
+@media(min-width:760px){.dining .grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* history timeline */
+.hist{background:var(--cream)}
+.tl{margin-top:30px;border-left:2px solid var(--gold);padding-left:22px;display:grid;gap:22px}
+.tl .ev{position:relative}
+.tl .ev::before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;background:var(--cream);border:2px solid var(--gold);transform:rotate(45deg)}
+.tl .y{font-family:var(--serif);font-size:30px;color:var(--wine);line-height:1}
+.tl p{color:var(--mute);font-size:15px;max-width:640px}
+.art{margin-top:34px;padding:22px;background:var(--white);border:1px solid var(--line)}
+.art h3{font-size:26px;margin-bottom:6px}
+.art p{color:var(--mute);font-size:15px}
+
+/* area */
+.area{background:#efe8d7}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.chips span{border:1px solid var(--gold);padding:8px 16px;font-size:14px;background:var(--white)}
+.walk{margin-top:26px;display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+.walk div{padding:16px 18px;background:var(--white);border:1px solid var(--line);font-size:15px}
+.walk b{font-family:var(--serif);font-size:22px;display:block;color:var(--navy)}
+@media(min-width:700px){.walk{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* faq */
+.faq{background:var(--cream)}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-family:var(--serif);font-size:23px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:26px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:10px;color:var(--mute);max-width:700px}
+
+/* contact */
+.contact{background:var(--navy);color:#fff}
+.contact .grid{display:grid;gap:26px;grid-template-columns:minmax(0,1fr);margin-top:20px}
+.contact .info{display:grid;gap:14px}
+.contact .info div{border-top:1px solid rgba(187,161,106,.35);padding-top:12px}
+.contact .info small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.contact .info span{font-size:18px;word-break:break-word}
+.contact .sub{color:#b8bece}
+@media(min-width:760px){.contact .grid{grid-template-columns:1fr 1fr}}
+footer{background:#02081a;color:#8f96aa;font-size:13px;text-align:center;padding:22px 16px}
+footer b{color:var(--gold2);font-weight:500}
+
+/* assistant */
+#ast-btn{position:fixed;right:16px;bottom:16px;z-index:90;background:var(--gold);color:var(--navy);border:0;padding:0 20px;height:52px;font:600 13px var(--sans);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.35)}
+#ast{position:fixed;right:12px;bottom:78px;z-index:91;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 100px));background:#fff;border:1px solid var(--gold);display:none;flex-direction:column;box-shadow:0 14px 44px rgba(0,0,0,.4)}
+#ast.open{display:flex}
+.ah{background:var(--navy);color:#fff;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:2px solid var(--gold)}
+.ah b{font-family:var(--serif);font-size:20px;font-weight:600;display:block;line-height:1.1}
+.ah small{color:#aab0c2;font-size:12px}
+.ah button{background:none;border:0;color:#fff;font-size:24px;cursor:pointer;line-height:1}
+#log{flex:1;overflow-y:auto;padding:14px;background:#faf7ef;display:flex;flex-direction:column;gap:10px}
+.m{max-width:88%;padding:10px 13px;font-size:14.5px;line-height:1.45;white-space:pre-line;word-wrap:break-word}
+.m.b{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.m.u{background:var(--navy);color:#fff;align-self:flex-end}
+#chips{display:flex;gap:7px;flex-wrap:wrap;padding:8px 12px;background:#faf7ef;border-top:1px solid var(--line);max-height:96px;overflow-y:auto}
+#chips button{border:1px solid var(--gold);background:#fff;color:var(--navy);font:500 13px var(--sans);padding:6px 11px;cursor:pointer}
+#chips button:hover{background:var(--gold2)}
+#af{display:flex;border-top:1px solid var(--line)}
+#af input{flex:1;min-width:0;border:0;padding:14px;font:15px var(--sans);outline:none}
+#af button{border:0;background:var(--navy);color:var(--gold2);padding:0 18px;font:600 13px var(--sans);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+</style>
+</head>
+<body>
+
+<div class="topbar">Book direct by phone or email: <b>15% off</b> and <b>free full breakfast for two</b></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="The St. Regis Hotel Vancouver">
+      <span class="logochip"><img src="img/st-regis-hotel-vancouver-logo.png" alt="The St. Regis Hotel Vancouver" width="61" height="40"></span>
+    </a>
+    <nav>
+      <a href="#rooms">Rooms</a><a href="#dining">Dining</a><a href="#history">Since 1913</a><a href="#area">Area</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#contact" data-open-ast>Book</a>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="fan"></div>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">602 Dunsmuir Street · Downtown Vancouver</div>
+      <h1>Warm, personal service in a <em>boutique hotel</em> since 1913</h1>
+      <p class="lead">Independent, 100% Canadian-owned and operated. Steps from the Convention Centre, the Cruise Ship Terminal and the best of downtown shopping, with full breakfast for two included in every stay.</p>
+      <div class="cta">
+        <a class="btn" href="#rooms">See the rooms</a>
+        <a class="btn ghost" href="#" data-open-ast>Plan my stay</a>
+      </div>
+    </div>
+    <div class="deco">
+      <div class="yr">1913</div>
+      <div class="cap">Opened March 15</div>
+      <ul>
+        <li>65 rooms and suites</li>
+        <li>Gotham Steakhouse and Beaucoup Bakery in the building</li>
+        <li>Rooms refreshed every winter</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="band">
+  <div class="wrap">
+    <div class="it"><b>65</b><span>Rooms and suites</span></div>
+    <div class="it"><b>15%</b><span>Off when you book direct</span></div>
+    <div class="it"><b>2</b><span>Breakfasts included daily</span></div>
+    <div class="it"><b>3</b><span>Blocks to Gastown</span></div>
+  </div>
+</div>
+
+<section class="offer" id="direct">
+  <div class="wrap">
+    <div class="eyebrow">Direct booking</div>
+    <h2>Call or write, and the best rate is yours</h2>
+    <div class="box">
+      <div class="pct">15<small>%</small></div>
+      <div>
+        <p>Book directly by phone or email and the hotel takes 15% off any stay, no matter the length or season. Every visit includes:</p>
+        <ul>
+          <li>Free full breakfast for up to two guests</li>
+          <li>Bottled Canadian spring water, replenished daily</li>
+          <li>Wi-Fi, worldwide long distance calls and faxes</li>
+          <li>24-hour business centre access</li>
+        </ul>
+        <a class="btn" href="#" data-open-ast>Start a booking request</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rooms" id="rooms">
+  <div class="wrap">
+    <div class="eyebrow">Rooms and suites</div>
+    <h2>Marble washrooms, windows that open</h2>
+    <p class="sub">Every room has a large work area, a 4K Chromecast-enabled TV, individual climate control and a Nespresso system. Rates below are the "from" prices shown on the hotel's site.</p>
+    <div class="rgrid">
+      <article class="room"><span class="tag">Guest room</span><h3>Smart Queen</h3><div class="rate">From $229</div><p>Queen bed, large work desk, master electrical controls. Marble washroom with a walk-in shower or soaker tub.</p></article>
+      <article class="room"><span class="tag">Guest room</span><h3>Executive King</h3><div class="rate">From $249</div><p>King bed and a large work area. Marble washroom with a walk-in shower or soaker tub.</p></article>
+      <article class="room"><span class="tag">Guest room</span><h3>Smart Double</h3><div class="rate">From $279</div><p>Two double beds and a large work area, for friends, family or colleagues sharing.</p></article>
+      <article class="room suite"><span class="tag">Suite</span><h3>Junior Queen Suite</h3><div class="rate">From $329</div><p>Queen bed, separate living room with a double sofa bed, mini fridge, walk-in shower.</p></article>
+      <article class="room suite"><span class="tag">Suite</span><h3>Junior King Suite</h3><div class="rate">From $349</div><p>King or queen bed, separate living room with a double sofa bed, mini fridge, walk-in shower.</p></article>
+      <article class="room suite"><span class="tag">Suite</span><h3>Executive Suite</h3><div class="rate">From $409</div><p>King bed, living room with a double sofa bed behind sliding doors, large soaker tub and double sinks.</p></article>
+    </div>
+    <p class="note">Live rates and availability depend on your dates. The team confirms them when you send a request.</p>
+    <div class="inc">
+      <div>L'Occitane en Provence bath products</div>
+      <div>GROHE rain shower head and terry robes</div>
+      <div>Laptop-sized in-room safe</div>
+      <div>Alarm clock with wireless phone charging</div>
+      <div>Free movies, 200+ channels</div>
+      <div>Porter and concierge service</div>
+      <div>Secure pay underground parking, unlimited in and out</div>
+      <div>Umbrellas for guest use</div>
+    </div>
+  </div>
+</section>
+
+<section class="dining" id="dining">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--gold2)">Eat and drink downstairs</div>
+    <h2>Steaks, cocktails and croissants, without leaving the building</h2>
+    <p class="sub">Both venues open straight from the St. Regis.</p>
+    <div class="grid">
+      <div class="dcard">
+        <h3>Gotham Steakhouse and Cocktail Bar</h3>
+        <p>Tender steaks and stiff drinks in art deco-inspired surroundings, reached from the hotel lobby. Live music in the lounge five nights a week and a secluded urban garden patio in the warm months.</p>
+        <div class="meta">Lunch Mon to Fri · Dinner 7 days</div>
+      </div>
+      <div class="dcard">
+        <h3>Beaucoup Bakery and Cafe</h3>
+        <p>The award-winning bakery's downtown location: butter croissants, pastries, sandwiches and handmade coffee in a Parisian-style cafe with indoor and outdoor seating.</p>
+        <div class="meta">Cafe · Indoor and outdoor seating</div>
+      </div>
+    </div>
+    <div class="pk"><b>Gotham Dining Package:</b> a $150 dining credit at Gotham Steakhouse plus a complimentary upgrade to the next higher room category.</div>
+  </div>
+</section>
+
+<section class="hist" id="history">
+  <div class="wrap">
+    <div class="eyebrow">Our story</div>
+    <h2>A Vancouver address for over a century</h2>
+    <div class="tl">
+      <div class="ev"><div class="y">1913</div><p>Opened on March 15, designed by Canadian architect W.T. Whiteway, who also designed the Sun Tower. Lodging, dining and entertainment in one place, next to the new Hudson's Bay flagship.</p></div>
+      <div class="ev"><div class="y">1940s</div><p>Known as the Sportsman's Hotel. NHL players made it home, and owner Coleman Hall built a St. Regis hockey team before going on to own the first Vancouver Canucks.</p></div>
+      <div class="ev"><div class="y">2000s</div><p>Bought by the Macdonald family, who set out to marry the heritage with a contemporary, big city feel.</p></div>
+      <div class="ev"><div class="y">2008</div><p>The 100th anniversary year brought an $11 million top-to-bottom renovation. Every winter each room is taken out of service, stripped, deep cleaned and refurbished.</p></div>
+    </div>
+    <div class="art">
+      <h3>Art on the walls</h3>
+      <p>More than twenty-two original pieces by five artists hang through the public spaces, mostly abstract, from Hilario Gutierrez, Linda Murphy, Simon Addyman and others.</p>
+    </div>
+  </div>
+</section>
+
+<section class="area" id="area">
+  <div class="wrap">
+    <div class="eyebrow">Location</div>
+    <h2>Downtown, on foot</h2>
+    <p class="sub">The hotel sits at 602 Dunsmuir Street, within steps of the Convention Centre, the Cruise Ship Terminal and downtown shopping.</p>
+    <div class="walk">
+      <div><b>Gastown</b>Three blocks away. Vancouver's oldest neighbourhood, with cobbled streets and boutiques.</div>
+      <div><b>Chinatown</b>A short walk, centred on Pender Street. The largest in Canada.</div>
+      <div><b>Rogers Arena and BC Place</b>Home of the Canucks and Whitecaps, plus concerts and expos.</div>
+    </div>
+    <div class="chips"><span>Yaletown patios</span><span>Coal Harbour seawall</span><span>English Bay</span><span>Stanley Park</span><span>Capilano Suspension Bridge</span><span>Grouse Mountain</span></div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="eyebrow">Good to know</div>
+    <h2>Questions guests ask</h2>
+    <details><summary>Is breakfast really included?</summary><p>Yes. Every stay includes a full breakfast for up to two guests, with a menu you can view on the hotel's site.</p></details>
+    <details><summary>How do I get 15% off?</summary><p>Book directly by phone or email with the hotel. The discount applies to any stay, any season.</p></details>
+    <details><summary>Is there parking?</summary><p>Yes. Secure pay underground parking with unlimited in and out privileges.</p></details>
+    <details><summary>Is there a business centre?</summary><p>Yes, complimentary for all guests, with computers, printing, a lending library, television and a lounge area.</p></details>
+    <details><summary>Do the windows open?</summary><p>Yes, and each room also has individual climate control.</p></details>
+    <details><summary>What about check-in times, pets or cancellation terms?</summary><p>These are not listed on the website, so the team confirms them when you ask. Call 604-681-1135 or write to info@stregishotel.com.</p></details>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Reservations</div>
+    <h2>Ask the St. Regis team</h2>
+    <p class="sub">Phone and email bookings get the direct rate.</p>
+    <div class="grid">
+      <div class="info">
+        <div><small>Address</small><span>602 Dunsmuir Street, Vancouver, BC V6B 1Y6</span></div>
+        <div><small>Phone</small><span>604-681-1135</span></div>
+        <div><small>Toll free</small><span>1 (800) 770-7929</span></div>
+        <div><small>Email</small><span>info@stregishotel.com</span></div>
+      </div>
+      <div>
+        <p style="color:#cfd3de;margin-bottom:18px">Not sure what to ask? The assistant on this page collects your dates and guests, answers the common questions and hands the details to the team.</p>
+        <a class="btn" href="#" data-open-ast>Open the assistant</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+
+<button id="ast-btn" aria-label="Open assistant">Ask us</button>
+<div id="ast" role="dialog" aria-label="St. Regis assistant">
+  <div class="ah"><div><b>St. Regis assistant</b><small>Rooms, breakfast, dining, booking</small></div><button id="ast-x" aria-label="Close">&times;</button></div>
+  <div id="log"></div>
+  <div id="chips"></div>
+  <form id="af" autocomplete="off"><input id="ai" placeholder="Type your question" aria-label="Your message"><button>Send</button></form>
+</div>
+
+<script>
+(function(){
+var KB=[
+{id:"greet",k:["hello","hi","hey","hola","good morning","good evening","greetings"],a:"Hello, welcome to The St. Regis Hotel in downtown Vancouver. Ask me about rooms, breakfast, dining, location or send a booking request."},
+{id:"direct",k:["discount","direct","15","percent","deal","offer","special","promo","save","cheaper","best rate","book direct","member"],a:"Book directly by phone (604-681-1135 or 1 800 770 7929) or email (info@stregishotel.com) and the hotel takes 15% off any stay, any season. Breakfast for two is included either way."},
+{id:"breakfast",k:["breakfast","brunch","morning meal","included","free food","complimentary","inclusions"],a:"Every stay includes a free full breakfast for up to two guests. Also included: bottled Canadian spring water, Wi-Fi, worldwide long distance calls and faxes, and 24-hour business centre access."},
+{id:"rooms",k:["room","rooms","accommodation","stay","sleep","bed","types","category","categories","options","guestroom"],a:"There are 65 rooms and suites. Guest rooms: Smart Queen, Executive King, Smart Double. Suites: Junior Queen, Junior King, Executive Suite. Each has a marble washroom, work area, 4K Chromecast TV and individual climate control."},
+{id:"queen",k:["queen","smart queen","queen bed","one bed"],a:"Smart Queen: queen bed, large work desk, master electrical controls, 4K Chromecast TV, marble washroom with a walk-in shower or soaker tub. Rates from $229 on the hotel's site."},
+{id:"king",k:["king","executive king","king bed","big bed"],a:"Executive King: king bed, large work area, 4K Chromecast TV, marble washroom with a walk-in shower or soaker tub. Rates from $249 on the hotel's site."},
+{id:"double",k:["double","two beds","twin","two double","friends","share","sharing"],a:"Smart Double: two double-sized beds and a large work area, good for friends, family or colleagues. Rates from $279 on the hotel's site."},
+{id:"suite",k:["suite","suites","living room","sofa","separate","larger","spacious","extra space","family","kids","children","child"],a:"Suites: Junior Queen (from $329), Junior King (from $349) and Executive Suite (from $409). They have a separate living room with a double sofa bed and a mini fridge. The Executive Suite adds a soaker tub and double sinks. For exact bedding for children, the team will confirm."},
+{id:"price",k:["price","prices","cost","rate","rates","how much","expensive","tariff","cheapest room","cheap room","cheap","cheapest","affordable","budget","lowest","night","per night","pay","fee","fees"],a:"Rates from: Smart Queen $229, Executive King $249, Smart Double $279, Junior Queen Suite $329, Junior King Suite $349, Executive Suite $409. Live rates depend on dates, and booking direct by phone or email takes 15% off."},
+{id:"parking",k:["parking","park","car","garage","valet","underground","vehicle"],a:"Yes: secure pay underground parking with unlimited in and out privileges. The team can confirm the daily fee."},
+{id:"wifi",k:["wifi","wi-fi","internet","wireless","online","connection"],a:"Wi-Fi is complimentary in the rooms and public areas."},
+{id:"amen",k:["amenities","amenity","bathroom","shower","tub","soaker","bath","robe","robes","toiletries","l'occitane","occitane","coffee","nespresso","safe","tv","television","chromecast","movies","channels","window","windows","climate","air conditioning","aircon","conditioner","ac","heating","hot","cold"],a:"Rooms have marble washrooms (walk-in shower or soaker tub), L'Occitane bath products, terry robes, a GROHE rain shower, Nespresso coffee, a laptop-sized safe, a 4K Chromecast TV with free movies, windows that open, individual climate control and a wireless-charging alarm clock."},
+{id:"business",k:["business","work","desk","printing","print","computer","meeting","conference","centre","center","laptop"],a:"A complimentary business centre is open to all guests 24 hours, with computers, printing, a lending library, television and a lounge. Every room also has a large work area."},
+{id:"dining",k:["restaurant","dining","dinner","lunch","eat","food","steak","steakhouse","gotham","cocktail","bar","drinks","drink","live music","music","patio","hungry"],a:"Gotham Steakhouse and Cocktail Bar is reached from the lobby: lunch Monday to Friday, dinner 7 days, live music in the lounge five nights a week and a garden patio in the warm months. Reservations for the restaurant: the team will confirm."},
+{id:"bakery",k:["bakery","beaucoup","cafe","coffee shop","croissant","pastry","pastries","sandwich","sandwiches"],a:"Beaucoup Bakery and Cafe is in the hotel: pastries, butter croissants, sandwiches and handmade coffee, with indoor and outdoor seating."},
+{id:"package",k:["package","gotham package","dining credit","upgrade","credit"],a:"The Gotham Dining Package gives a $150 dining credit at Gotham Steakhouse and a complimentary upgrade to the next higher room category. Ask the team for dates and availability."},
+{id:"location",k:["where","location","address","located","downtown","dunsmuir","map","find","street","directions","get there","situated","close","near","nearby","walk","walking","distance"],a:"The hotel is at 602 Dunsmuir Street, Vancouver, BC V6B 1Y6, in the heart of downtown. Steps from the Convention Centre, the Cruise Ship Terminal and downtown shopping, and three blocks from Gastown."},
+{id:"attr",k:["attraction","attractions","see","visit","sightseeing","gastown","chinatown","yaletown","stanley","park","capilano","grouse","english bay","coal harbour","seawall","rogers","bc place","arena","stadium","canucks","things to do","tourist","tour"],a:"Close by: Gastown (three blocks), Chinatown on Pender Street, Rogers Arena and BC Place, Yaletown patios, the Coal Harbour seawall, English Bay and Stanley Park. Further out: Capilano Suspension Bridge and Grouse Mountain."},
+{id:"cruise",k:["cruise","ship","terminal","port","convention","canada place","alaska"],a:"The Cruise Ship Terminal and the Convention Centre are both within steps of the hotel."},
+{id:"history",k:["history","heritage","1913","old","century","historic","architect","whiteway","sportsman","hockey","owner","owned","family","independent","canadian"],a:"The St. Regis opened on March 15, 1913, designed by W.T. Whiteway. It is independent and 100% Canadian-owned and operated, bought by the Macdonald family in the early 2000s and renovated for its 100th anniversary."},
+{id:"art",k:["art","artwork","painting","paintings","artist","artists","gallery"],a:"Over twenty-two original works by five artists hang in the public spaces, mostly abstract."},
+{id:"awards",k:["award","awards","tripadvisor","forbes","rated","reviews","review","best","recommended","kayak"],a:"The hotel has received TripAdvisor Travellers' Choice awards, Forbes Recommended Hotel awards and a Kayak Travel Award."},
+{id:"contact",k:["phone","call","telephone","email","e-mail","mail","contact","number","reach","reservations","reservation","speak","human","staff","team","toll free"],a:"Phone 604-681-1135, toll free 1 (800) 770-7929, email info@stregishotel.com. Phone and email bookings get the direct rate."},
+{id:"unknown",k:["checkin","check-in","check in","checkout","check-out","check out","arrival","late","early","pet","pets","dog","cat","cancel","cancellation","refund","policy","deposit","smoking","gym","fitness","pool","spa","laundry","airport","shuttle","accessible","wheelchair","elevator","lift","extra bed","cot","crib","noise","soundproof","air"],a:"That is not listed on the hotel's website, so I will not guess. The team can confirm it: 604-681-1135 or info@stregishotel.com. I can also add the question to your booking request."},
+{id:"booking",k:["book","booking","reserve","availability","available","request","dates","tonight","weekend","stay with you","want to stay","make a reservation"],a:"__BOOK__"},
+{id:"thanks",k:["thanks","thank","thx","cheers","great","perfect","ok","okay","appreciate"],a:"You are welcome. Anything else about the hotel, or shall I start a booking request?"}
+];
+
+var CHIPS=["Book a stay","Rates","Breakfast included?","15% direct discount","Parking","Gotham Steakhouse","Location"];
+
+function norm(s){return s.toLowerCase().replace(/[’']/g,"'").replace(/[^a-z0-9' ]+/g," ").replace(/\s+/g," ").trim();}
+function lev(a,b){if(Math.abs(a.length-b.length)>1)return 9;var d=[],i,j;for(i=0;i<=a.length;i++){d[i]=[i];}for(j=1;j<=b.length;j++)d[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[a.length][b.length];}
+function stem(w){return w.replace(/(ing|ed|es|s)$/,"");}
+function tokMatch(t,k){
+  if(t===k)return 1;
+  var st=stem(t),sk=stem(k);
+  if(st.length>=3&&st===sk)return 0.9;
+  if(k.length>=5&&t.length>=5&&lev(t,k)<=1)return 0.8;
+  if(k.length>=7&&t.length>=6&&lev(stem(t),sk)<=2)return 0.6;
+  return 0;
+}
+function score(q){
+  var n=" "+norm(q)+" ",toks=n.trim().split(" "),res=[];
+  KB.forEach(function(e){
+    var s=0;
+    e.k.forEach(function(k){
+      var kn=norm(k);
+      if(kn.indexOf(" ")>-1||/^\d+$/.test(kn)){ if(n.indexOf(" "+kn+" ")>-1||(kn.indexOf(" ")>-1&&n.indexOf(kn)>-1)) s+=2+kn.split(" ").length*0.5; return; }
+      var best=0;
+      toks.forEach(function(t){var m=tokMatch(t,kn);if(m>best)best=m;});
+      s+=best*(kn.length>=6?1.4:1);
+    });
+    if(s>0)res.push({id:e.id,s:s,a:e.a});
+  });
+  res.sort(function(a,b){return b.s-a.s;});
+  return res;
+}
+function answer(q){
+  var r=score(q);
+  if(!r.length||r[0].s<0.8)return null;
+  // booking intent wins on verbs like book/reserve
+  var top=r[0];
+  if(/\b(book|reserve|reservation|booking|availability)\b/.test(norm(q))&&top.id!=="unknown"&&top.id!=="direct"&&top.id!=="price"&&top.id!=="package")top=r.filter(function(x){return x.id==="booking";})[0]||top;
+  return top;
+}
+window.__KB={answer:answer,score:score};
+if(typeof document==="undefined")return;
+
+var $=function(i){return document.getElementById(i)},log=$("log"),chips=$("chips"),inp=$("ai"),panel=$("ast");
+var flow=null,data={};
+function say(t,who){var d=document.createElement("div");d.className="m "+(who||"b");d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(list){chips.innerHTML="";list.forEach(function(c){var b=document.createElement("button");b.type="button";b.textContent=c;b.onclick=function(){handle(c);};chips.appendChild(b);});}
+function home(){setChips(CHIPS);}
+var STEPS=[
+ {key:"in",q:"Lovely. What is your check-in date? (for example 14 March)",chips:["This weekend","Next week","Flexible"]},
+ {key:"out",q:"And check-out, or how many nights?",chips:["1 night","2 nights","3 nights","A week"]},
+ {key:"guests",q:"How many guests?",chips:["1","2","3","4 or more"]},
+ {key:"room",q:"Which room do you prefer?",chips:["Smart Queen","Executive King","Smart Double","A suite","No preference"]},
+ {key:"name",q:"Your name, please.",chips:[]},
+ {key:"contact",q:"Best email or phone number for the team to reply?",chips:[]},
+ {key:"note",q:"Anything else for the team (parking, anniversary, arrival time, the Gotham package)?",chips:["Nothing else"]}
+];
+var si=0;
+function ask(){var s=STEPS[si];say(s.q);setChips(s.chips.length?s.chips:["Cancel request"]);}
+function startBooking(){flow="book";data={};si=0;say("Happy to help. I will collect a few details for the St. Regis team. Booking directly by phone or email gets 15% off and the team will confirm availability and rates.");ask();}
+function finish(){
+  flow=null;
+  say("Your request is ready for the team:\n"+
+   "Stay: "+data.in+" to "+data.out+"\nGuests: "+data.guests+"\nRoom: "+data.room+"\nName: "+data.name+"\nContact: "+data.contact+"\nNote: "+data.note+
+   "\n\nSent to the team. They will confirm availability, rates and the direct discount. For a faster answer call 604-681-1135.");
+  home();
+}
+function handle(t){
+  t=(t||"").trim();if(!t)return;
+  say(t,"u");
+  if(flow==="book"){
+    if(/^cancel/i.test(t)){flow=null;say("No problem, request cancelled.");home();return;}
+    data[STEPS[si].key]=t;si++;
+    if(si>=STEPS.length){finish();}else{ask();}
+    return;
+  }
+  var r=answer(t);
+  if(!r){say("I do not have that on the hotel's website, so I will not guess. The team can answer it: 604-681-1135 or info@stregishotel.com. Want me to start a booking request, or ask about rooms, breakfast, dining or location?");home();return;}
+  if(r.a==="__BOOK__"){startBooking();return;}
+  say(r.a);
+  if(r.id==="rooms"||r.id==="price"||r.id==="queen"||r.id==="king"||r.id==="double"||r.id==="suite"||r.id==="direct"||r.id==="package")setChips(["Book a stay","Breakfast included?","Parking","Location"]);else home();
+}
+function openAst(){panel.classList.add("open");if(!log.children.length){say("Hello, I am the St. Regis assistant. Ask about rooms, rates, breakfast, Gotham Steakhouse or the area, or send a booking request. Anything the website does not say, I leave to the team.");home();}setTimeout(function(){inp.focus();},50);}
+$("ast-btn").onclick=function(){panel.classList.contains("open")?panel.classList.remove("open"):openAst();};
+$("ast-x").onclick=function(){panel.classList.remove("open");};
+document.querySelectorAll("[data-open-ast]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();openAst();});});
+$("af").onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value="";handle(v);};
+})();
+</script>
+</body>
+</html>

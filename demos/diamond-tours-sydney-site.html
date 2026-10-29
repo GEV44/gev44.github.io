@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diamond Tours · Small group and private tours from Sydney</title>
+<meta name="description" content="Family-owned Blue Mountains and Sydney day tours since 2008. Demo page with an assistant that answers tour questions.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#04151F;--ink:#0d2c3d;--sky:#00b7ea;--sky2:#009ec3;--amber:#d98b2b;--haze:#eaf6fb;--mist:#cfe9f3;--line:#d6e4ea;--body:#33424d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.6 'Inter',system-ui,sans-serif;color:var(--body);background:#fff;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--sky2)}
+h1,h2,h3{font-family:'Poppins',sans-serif;color:var(--navy);line-height:1.15}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.promo{background:var(--amber);color:#1c1204;font-size:13px;text-align:center;padding:7px 12px;font-weight:600}
+.promo b{background:#fff;padding:1px 7px;border-radius:6px;font-family:monospace}
+header.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:8px;padding-bottom:8px}
+.brand img{height:40px;width:auto;max-width:62vw}
+.top nav{display:none;gap:18px;font-size:14px;font-weight:500}
+.top nav a{color:var(--navy);text-decoration:none}
+.btn{display:inline-block;border:0;border-radius:999px;padding:12px 22px;font:600 15px 'Inter',sans-serif;text-decoration:none;cursor:pointer;background:var(--amber);color:#1c1204}
+.btn.ghost{background:transparent;border:2px solid #fff;color:#fff}
+.btn.navy{background:var(--navy);color:#fff}
+.top .btn{padding:9px 16px;font-size:14px}
+@media(min-width:820px){.top nav{display:flex}}
+/* hero */
+.hero{position:relative;background:linear-gradient(180deg,#0a2d45 0%,#1b6c8f 55%,#9fd8ea 100%);color:#fff;overflow:hidden;padding:46px 0 0}
+.hero .wrap{position:relative;z-index:2;display:grid;gap:26px;padding-bottom:150px}
+.kicker{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:13px;margin-bottom:14px}
+.hero h1{color:#fff;font-size:clamp(30px,7.2vw,56px);font-weight:800;max-width:15em}
+.hero p.lead{margin:14px 0 22px;font-size:17px;max-width:34em;color:#e5f4fa}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.facts{background:rgba(4,21,31,.55);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:16px 18px;display:grid;gap:10px;align-self:start;backdrop-filter:blur(3px)}
+.facts div{display:flex;gap:10px;align-items:baseline;font-size:15px}
+.facts strong{font:700 22px 'Poppins',sans-serif;color:var(--amber);min-width:84px}
+.ridge{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:150px;z-index:1}
+@media(min-width:820px){.hero .wrap{grid-template-columns:1.5fr 1fr;align-items:center;padding-bottom:170px}.ridge{height:200px}}
+/* trust */
+.trust{background:var(--haze);padding:18px 0;border-bottom:1px solid var(--line)}
+.trust ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;font-size:14px;font-weight:500;color:var(--ink)}
+.sec{padding:56px 0}
+.sec h2{font-size:clamp(25px,5vw,36px);margin-bottom:8px}
+.sub{max-width:40em;margin-bottom:26px}
+/* tours */
+.tours{display:grid;gap:18px}
+.tour{border:1px solid var(--line);border-radius:18px;padding:22px;background:#fff;position:relative;box-shadow:0 6px 20px rgba(4,21,31,.06);min-width:0}
+.tour.pop{border:2px solid var(--amber)}
+.tour .tag{position:absolute;top:-12px;left:18px;background:var(--amber);color:#1c1204;font-size:12px;font-weight:700;padding:3px 11px;border-radius:999px}
+.tour .price{font:800 30px 'Poppins',sans-serif;color:var(--navy);margin:10px 0 2px}
+.tour .price small{font:500 14px 'Inter';color:var(--body)}
+.tour h3{font-size:19px}
+.tour .meta{font-size:13px;color:#5b6d79;margin-bottom:10px}
+.tour ul{list-style:none;margin:10px 0 14px}
+.tour li{padding-left:22px;position:relative;margin:6px 0;font-size:15px}
+.tour li:before{content:"\2713";position:absolute;left:0;color:var(--sky2);font-weight:700}
+.tour .code{font-size:13px;background:var(--haze);border-radius:8px;padding:6px 10px;margin-bottom:12px}
+@media(min-width:860px){.tours{grid-template-columns:1.1fr 1fr 1fr}}
+/* timeline */
+.day{background:var(--navy);color:#dcecf3}
+.day h2{color:#fff}
+.tl{list-style:none;border-left:3px solid var(--sky);margin-left:8px;padding-left:20px;display:grid;gap:18px}
+.tl li{position:relative}
+.tl li:before{content:"";position:absolute;left:-30px;top:5px;width:15px;height:15px;border-radius:50%;background:var(--amber);border:3px solid var(--navy)}
+.tl b{display:block;color:#fff;font:600 17px 'Poppins',sans-serif}
+.tl span.t{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--sky)}
+.pick{margin-top:30px;display:grid;gap:10px}
+.pick div{background:rgba(255,255,255,.07);border-radius:12px;padding:12px 14px;font-size:15px}
+.pick strong{color:var(--amber)}
+@media(min-width:760px){.pick{grid-template-columns:repeat(3,1fr)}}
+/* story */
+.story{display:grid;gap:26px;align-items:center}
+.quote{background:var(--haze);border-left:5px solid var(--sky);padding:22px;border-radius:0 16px 16px 0;font-family:'Poppins',sans-serif;font-weight:600;color:var(--navy);font-size:19px}
+.quote small{display:block;margin-top:10px;font:400 14px 'Inter';color:var(--body)}
+@media(min-width:820px){.story{grid-template-columns:1.2fr 1fr}}
+.why{display:grid;gap:14px;margin-top:30px}
+.why div{border-top:3px solid var(--amber);padding-top:10px}
+.why h3{font-size:17px;margin-bottom:4px}
+@media(min-width:760px){.why{grid-template-columns:repeat(4,1fr)}}
+.rate{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.rate div{border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center;background:var(--haze);min-width:0}
+.rate b{display:block;font:800 30px 'Poppins',sans-serif;color:var(--navy)}
+.rate span{display:block;font-weight:600;color:var(--ink)}
+.rate i{font-style:normal;font-size:13px}
+@media(min-width:760px){.rate{grid-template-columns:repeat(5,1fr)}}
+/* know */
+.know{background:var(--haze)}
+.know dl{display:grid;gap:10px}
+.know dt{font:600 16px 'Poppins';color:var(--navy)}
+.know dd{margin:0 0 8px}
+.cols{display:grid;gap:26px}
+@media(min-width:820px){.cols{grid-template-columns:1fr 1fr}}
+details{border:1px solid var(--line);border-radius:12px;padding:13px 16px;margin-bottom:10px;background:#fff}
+summary{cursor:pointer;font-weight:600;color:var(--navy)}
+details p{margin-top:8px;font-size:15px}
+/* contact */
+.contact{background:linear-gradient(135deg,#0a2d45,#1b6c8f);color:#e5f4fa}
+.contact h2{color:#fff}
+.cgrid{display:grid;gap:14px;margin-top:18px}
+.cgrid div{background:rgba(255,255,255,.1);border-radius:14px;padding:16px;min-width:0;overflow-wrap:anywhere}
+.cgrid b{display:block;color:var(--amber);margin-bottom:4px}
+.cgrid a{color:#fff}
+@media(min-width:760px){.cgrid{grid-template-columns:repeat(4,1fr)}}
+footer{background:var(--navy);color:#9fb6c2;font-size:13px;padding:22px 0 90px;text-align:center}
+</style>
+</head>
+<body>
+<div class="promo">Book direct and save: code <b>Diamond1</b> takes $25 off per adult · private tours code <b>PRIVATE</b> takes $100 off</div>
+<header class="top">
+<div class="wrap">
+<a class="brand" href="#top" aria-label="Diamond Tours"><img src="img/diamond-tours-sydney-logo.jpg" alt="Diamond Tours, small group tours" width="275" height="44"></a>
+<nav><a href="#tours">Tours</a><a href="#day">The day</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="btn" href="#contact" data-open-assistant>Enquire</a>
+</div>
+</header>
+
+<section class="hero" id="top">
+<div class="wrap">
+<div>
+<span class="kicker">Family-owned Blue Mountains tours · since 2008</span>
+<h1>Small-group and private tours from Sydney, run by a real local family</h1>
+<p class="lead">Join a small group of max 20 with an expert local guide, or make the day entirely yours with a private tour. Scenic World, Sydney Zoo and the ferry home included.</p>
+<div class="cta"><a class="btn" href="#tours">Compare our tours</a><a class="btn ghost" href="https://wa.me/61414917317" rel="noopener">WhatsApp us</a></div>
+</div>
+<div class="facts" aria-label="Quick facts">
+<div><strong>4.9</strong> from 12,800+ reviews across Google, TripAdvisor, Viator, GetYourGuide and Klook</div>
+<div><strong>20</strong> guests at most on every group tour</div>
+<div><strong>2008</strong> Rob and Alena Michail began sharing their backyard</div>
+</div>
+</div>
+<svg class="ridge" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
+<path d="M0 120 L120 70 L220 110 L360 40 L480 105 L600 60 L740 115 L880 50 L1010 100 L1120 70 L1200 105 L1200 200 L0 200Z" fill="#6bb9d3" opacity=".55"/>
+<path d="M0 150 L90 115 L210 145 L330 95 L470 150 L590 110 L720 155 L860 105 L990 150 L1100 120 L1200 150 L1200 200 L0 200Z" fill="#2f86a8" opacity=".8"/>
+<path d="M0 180 L140 150 L280 178 L420 140 L560 180 L700 150 L840 182 L980 148 L1100 175 L1200 160 L1200 200 L0 200Z" fill="#fff"/>
+</svg>
+</section>
+
+<div class="trust"><div class="wrap"><ul>
+<li>TripAdvisor Best of the Best, 3 years running</li>
+<li>No. 1 of 542 outdoor activities in Sydney</li>
+<li>Departs Sydney CBD daily</li>
+<li>All park and entry fees covered</li>
+</ul></div></div>
+
+<section class="sec" id="tours"><div class="wrap">
+<h2>Choose your day</h2>
+<p class="sub">Three ways to see the best of Sydney and the Blue Mountains. Not sure which suits you? <a href="#contact" data-ask="Which tour suits me?">Ask the assistant</a> or message the team on WhatsApp.</p>
+<div class="tours">
+<article class="tour pop"><span class="tag">Most popular</span>
+<h3>Blue Mountains Small Group Day Tour</h3>
+<div class="price">From $225 <small>/ adult · with lunch $250</small></div>
+<div class="meta">Full day, about 10 hours · departs daily · max 20 guests</div>
+<ul><li>Scenic World: Skyway, Cableway and Railway, all three rides</li><li>Three Sisters, Megalong Valley lookout and a village stop</li><li>Sydney Zoo entry and a relaxed ferry return to Circular Quay</li></ul>
+<div class="code">Book direct: code Diamond1 saves $25 per adult</div>
+<a class="btn" href="#contact" data-ask="Tell me about the small group tour">Ask about this tour</a></article>
+<article class="tour">
+<h3>Blue Mountains Private Day Tour</h3>
+<div class="price">From $1,900 <small>/ group of 1 to 6</small></div>
+<div class="meta">Full day · any day on request</div>
+<ul><li>Your own luxury vehicle, private expert guide, flexible itinerary</li><li>Hotel pickup and return, or finish with the ferry to Circular Quay</li><li>Made for honeymoons, anniversaries and multi-generation trips</li></ul>
+<div class="code">Code PRIVATE saves $100</div>
+<a class="btn navy" href="#contact" data-ask="Tell me about the private tour">Ask about this tour</a></article>
+<article class="tour">
+<h3>Sydney City Private Day Tour</h3>
+<div class="price">From $970 <small>/ group of 1 to 6</small></div>
+<div class="meta">About 4 hours · 8:00am hotel pickup</div>
+<ul><li>The Rocks, Mrs Macquarie's Chair, North Sydney, Watsons Bay and Bondi Beach</li><li>Customisable route, or stay on at Bondi for the afternoon</li><li>A first-day orientation or last-day wrap-up</li></ul>
+<div class="code">Code PRIVATE saves $100</div>
+<a class="btn navy" href="#contact" data-ask="Tell me about the Sydney city tour">Ask about this tour</a></article>
+</div>
+</div></section>
+
+<section class="sec day" id="day"><div class="wrap">
+<h2>A full day in the Blue Mountains, hour by hour</h2>
+<p class="sub">This is how the small group tour unfolds. Lunch is at your own expense at the village stop, or pick the lunch-included version.</p>
+<ol class="tl">
+<li><span class="t">From 6:40am</span><b>Early pickup in central Sydney</b>We collect you from one of three central points and head for the mountains over the ANZAC Bridge with harbour views, arriving before the crowds.</li>
+<li><span class="t">Morning</span><b>Megalong Valley</b>Sweeping valley views with a coffee or something to eat, at your own expense.</li>
+<li><span class="t">Morning</span><b>Scenic World, all three rides</b>The Skyway across the gorge, the steepest railway in the world down into the Jamison Valley, and the Cableway back up, plus a walk through ancient rainforest.</li>
+<li><span class="t">Midday</span><b>Mountains village</b>Browse the boutiques or grab lunch at a local cafe. The Three Sisters at Katoomba are on the route too.</li>
+<li><span class="t">Afternoon</span><b>Sydney Zoo</b>Kangaroos, koalas, wombats and Tasmanian devils at a relaxed hour.</li>
+<li><span class="t">About 5pm</span><b>Ferry home to Circular Quay</b>A scenic ride back across the harbour, in time to enjoy the rest of your evening in Sydney.</li>
+</ol>
+<div class="pick">
+<div><strong>6:40am</strong><br>Parkroyal Darling Harbour, 150 Day St</div>
+<div><strong>6:50am</strong><br>Sydney Harbour Marriott, 30 Pitt St</div>
+<div><strong>6:55am</strong><br>192 Pitt St, corner of Pitt and Market St (at Rolex)</div>
+</div>
+</div></section>
+
+<section class="sec" id="about"><div class="wrap">
+<div class="story">
+<div>
+<h2>The Blue Mountains aren't just the destination, they're family history</h2>
+<p>Diamond Tours is run by Rob and Alena Michail, and Alena's family story is woven through these mountains. Over a century ago her ancestor Victor Levitt ran the Hazelbrook General Store and Post Office, the heartbeat of the early mid-mountains community. He served in both World Wars, and locals named Victor Falls, a Hazelbrook waterfall, after him.</p>
+<p style="margin-top:10px">Since 2008 the family has shared its backyard with guests from around the world: small groups, comfortable vehicles, and guides who know every lookout, story and shortcut.</p>
+</div>
+<div class="quote">"When we say local, we mean it."<small>Millions of eucalyptus trees release a fine oil mist that scatters sunlight and gives the mountains their blue haze. The day is timed to reach the lookouts before the crowds.</small></div>
+</div>
+<div class="why">
+<div><h3>A real local family</h3><p>18 years of tours with roots from Hazelbrook to Victor Falls.</p></div>
+<div><h3>Proof you can check</h3><p>4.9 from 12,800+ reviews. Read them before you book.</p></div>
+<div><h3>Small group, done properly</h3><p>Max 20 guests, never a 50-seat coach.</p></div>
+<div><h3>One easy day</h3><p>Rides, zoo and ferry are in the price, no surprise costs at ticket counters.</p></div>
+</div>
+</div></section>
+
+<section class="sec" id="reviews"><div class="wrap">
+<h2>Read the reviews before you book</h2>
+<p class="sub">The team encourages it. Combined 4.9 rating across five platforms, and No. 1 of 542 outdoor activities in Sydney on TripAdvisor.</p>
+<div class="rate">
+<div><b>4.9</b><span>Google</span><i>650+ reviews</i></div>
+<div><b>4.9</b><span>TripAdvisor</span><i>5,400+ reviews</i></div>
+<div><b>4.9</b><span>Viator</span><i>4,900+ reviews</i></div>
+<div><b>4.8</b><span>GetYourGuide</span><i>1,600+ reviews</i></div>
+<div><b>4.8</b><span>Klook</span><i>230+ reviews</i></div>
+</div>
+<p class="sub" style="margin:22px 0 0">Guests on Google mention their guides by name: "Rodrigo was an excellent tour guide. Funny, experienced, and just what we needed."</p>
+</div></section>
+
+<section class="sec know" id="faq"><div class="wrap">
+<h2>Good to know</h2>
+<p class="sub">Straight from the Diamond Tours FAQ. Anything not listed here, the assistant will pass to the team.</p>
+<div class="cols">
+<div>
+<details open><summary>How far are the Blue Mountains from Sydney?</summary><p>About 90 minutes to 2 hours by road. On the tour it takes roughly 1 hour 45 minutes to reach the first stop, with stories from your guide on the way.</p></details>
+<details><summary>Are there entry fees to the National Park?</summary><p>All National Park and entrance fees are covered by Diamond Tours.</p></details>
+<details><summary>What should I wear?</summary><p>Layers and comfortable walking shoes. The tours include short walks to lookouts. Bring a camera, sunscreen, a hat and water.</p></details>
+<details><summary>Best time of year?</summary><p>It is a year-round destination. Spring and autumn are popular for mild weather and landscapes, and the day is tailored to the season.</p></details>
+</div>
+<div>
+<details open><summary>Is it suitable for children?</summary><p>Yes, children of all ages are welcome. All children require a seat and must be booked. No prams or strollers, as there is no luggage space.</p></details>
+<details><summary>Can I customise my tour?</summary><p>Both private tours can include specific stops or activities. Tell the team your preferences when booking.</p></details>
+<details><summary>What is the cancellation policy?</summary><p>Small group tours cancelled more than 24 hours before are fully refundable (within 24 hours a fee may apply). Private tours cancelled more than 7 days before are fully refundable (within 7 days a fee may apply).</p></details>
+<details><summary>Small group or private?</summary><p>Small groups are more social, max 20 guests. Private tours are tailored to your group alone.</p></details>
+</div>
+</div>
+</div></section>
+
+<section class="sec contact" id="contact"><div class="wrap">
+<h2>Ready to book, or have a question first?</h2>
+<p>A real local family, glad to help you plan your day. Check live availability online, or send an enquiry through the assistant.</p>
+<div class="cgrid">
+<div><b>WhatsApp</b><a href="https://wa.me/61414917317" rel="noopener">Message us</a><br>Fastest for a quick question</div>
+<div><b>Call</b>0414 917 317<br>International +61 414 917 317</div>
+<div><b>Email</b>reservations@diamondtours.com.au<br>Replies within a day</div>
+<div><b>Hours</b>Office 7am to 5pm, 7 days<br>Tours run 7 days; private tours any day on request</div>
+</div>
+<p style="margin-top:22px"><a class="btn" href="#contact" data-open-assistant>Start an enquiry</a></p>
+</div></section>
+
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan</div></footer>
+<script>
+var Widget=(function(){
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.length>4?w.replace(/(ings|ing|ers|er|ed|es|s)$/,''):w.replace(/s$/,'');}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){c=[i];for(j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[n];}
+function wm(q,k){if(q===k)return 1;if(k.length>=4&&q.length>=4&&(q.indexOf(k)===0||k.indexOf(q)===0)&&Math.abs(q.length-k.length)<=3)return .9;var m=k.length>=8?2:k.length>=5?1:0;if(m&&Math.abs(q.length-k.length)<=m&&lev(q,k)<=m)return .8;return 0;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function scoreEntry(qt,e){var tot=0;e.k.forEach(function(kp){var parts=toks(kp),s=0,ok=true;parts.forEach(function(pw){var b=0;qt.forEach(function(w){var v=wm(w,pw);if(v>b)b=v;});if(b===0)ok=false;s+=b;});if(ok)tot+=s*(parts.length>1?1.6:1)*(parts[0].length>=4?1.2:.8);});return tot;}
+function best(cfg,q){var qt=toks(q),bs=0,be=null;cfg.kb.forEach(function(e){var s=scoreEntry(qt,e);if(s>bs){bs=s;be=e;}});return bs>=1?be:null;}
+function isBook(cfg,q){var qt=toks(q);return cfg.bookWords.some(function(w){var p=toks(w);return p.every(function(x){return qt.some(function(y){return wm(y,x)>0;});});});}
+function init(cfg){
+var st=document.createElement('style');st.textContent='.wgt-b{position:fixed;right:16px;bottom:16px;z-index:99;border:0;border-radius:999px;padding:13px 18px;background:var(--wa);color:var(--wi);font:600 15px var(--wf);box-shadow:0 8px 24px rgba(0,0,0,.28);cursor:pointer;display:flex;gap:8px;align-items:center}.wgt-p{position:fixed;right:12px;bottom:12px;z-index:100;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));background:#fff;color:#1b1b1b;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 var(--wf)}.wgt-p.on{display:flex}.wgt-h{background:var(--wa);color:var(--wi);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:600}.wgt-h small{display:block;font-weight:400;opacity:.85;font-size:12px}.wgt-x{background:none;border:0;color:inherit;font-size:24px;cursor:pointer;line-height:1}.wgt-m{flex:1;overflow:auto;padding:12px;background:#f5f5f2;display:flex;flex-direction:column;gap:8px}.wgt-m div{max-width:86%;padding:9px 12px;border-radius:14px;white-space:pre-line;word-wrap:break-word}.wgt-m .bot{background:#fff;border:1px solid #e4e4de;align-self:flex-start}.wgt-m .me{background:var(--wa);color:var(--wi);align-self:flex-end}.wgt-c{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 0;background:#f5f5f2}.wgt-c button{border:1px solid var(--wa);background:#fff;color:#1b1b1b;border-radius:999px;padding:6px 11px;font:13px var(--wf);cursor:pointer}.wgt-f{display:flex;gap:6px;padding:10px 12px;background:#f5f5f2;border-top:1px solid #e4e4de}.wgt-f input{flex:1;min-width:0;border:1px solid #cfcfc8;border-radius:10px;padding:10px;font:15px var(--wf)}.wgt-f button{border:0;border-radius:10px;padding:0 14px;background:var(--wa);color:var(--wi);font:600 14px var(--wf);cursor:pointer}';
+document.head.appendChild(st);
+var root=document.documentElement;root.style.setProperty('--wa',cfg.accent);root.style.setProperty('--wi',cfg.ink||'#fff');root.style.setProperty('--wf',cfg.font);
+var btn=document.createElement('button');btn.className='wgt-b';btn.setAttribute('aria-label',cfg.btn);btn.innerHTML='<span aria-hidden="true">✉</span><span>'+cfg.btn+'</span>';
+var p=document.createElement('div');p.className='wgt-p';p.setAttribute('role','dialog');
+p.innerHTML='<div class="wgt-h"><div>'+cfg.title+'<small>'+cfg.sub+'</small></div><button class="wgt-x" aria-label="Close">×</button></div><div class="wgt-m"></div><div class="wgt-c"></div><form class="wgt-f"><input type="text" autocomplete="off" aria-label="Message"><button type="submit">'+cfg.send+'</button></form>';
+document.body.appendChild(btn);document.body.appendChild(p);
+var M=p.querySelector('.wgt-m'),C=p.querySelector('.wgt-c'),F=p.querySelector('form'),I=p.querySelector('input');
+var flow=null,data={},started=false;
+function say(t,c){var d=document.createElement('div');d.className=c;d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight;}
+function chips(a){C.innerHTML='';(a||[]).forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){handle(t);};C.appendChild(b);});}
+function ask(){var s=cfg.flow.steps[flow];say(s.q,'bot');chips((s.opts||[]).concat(['Cancel']));I.placeholder=s.ph||'';}
+function startFlow(){flow=0;data={};say(cfg.flow.intro,'bot');ask();}
+function finish(){var t=cfg.flow.done(data);flow=null;say(t,'bot');chips(cfg.chips);I.placeholder='';}
+function handle(t){t=t.trim();if(!t)return;say(t,'me');I.value='';
+if(flow!==null){if(/^(cancel|stop|never ?mind)$/i.test(t)){flow=null;say(cfg.flow.cancel,'bot');chips(cfg.chips);return;}
+var s=cfg.flow.steps[flow];if(s.check&&!s.check(t)){say(s.err,'bot');return;}data[s.id]=t;flow++;if(flow>=cfg.flow.steps.length)finish();else ask();return;}
+if(isBook(cfg,t)&&!/(cancel|refund|policy|polic)/i.test(t)){startFlow();return;}
+var e=best(cfg,t);if(e){if(e.flow){startFlow();return;}say(e.a,'bot');chips(e.chips||cfg.chips);}else{say(cfg.fallback,'bot');chips(cfg.chips);}}
+function open(){p.classList.add('on');btn.style.display='none';if(!started){started=true;say(cfg.greet,'bot');chips(cfg.chips);}setTimeout(function(){I.focus();},50);}
+btn.onclick=open;p.querySelector('.wgt-x').onclick=function(){p.classList.remove('on');btn.style.display='flex';};
+F.onsubmit=function(ev){ev.preventDefault();handle(I.value);};
+document.querySelectorAll('[data-open-assistant]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();open();});});
+document.querySelectorAll('[data-ask]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();open();handle(a.getAttribute('data-ask'));});});
+}
+return {init:init,best:best,isBook:isBook};
+})();
+
+
+var CFG={
+accent:'#d98b2b',ink:'#04151F',font:"'Inter',system-ui,sans-serif",
+btn:'Ask about a tour',title:'Diamond Tours helper',sub:'Answers from this website. The team confirms bookings.',send:'Send',
+greet:'G\'day! I can answer questions about the Diamond Tours day trips from Sydney, or take your tour enquiry for the team. What would you like to know?',
+chips:['Which tour suits me?','What is included?','Pickup points','Kids and families','Cancellation','Make an enquiry'],
+fallback:'I don\'t have that detail from the website, so I won\'t guess. The team can confirm it: WhatsApp or call +61 414 917 317, or email reservations@diamondtours.com.au (office 7am to 5pm, 7 days). Or tap "Make an enquiry" and I will pass your question on.',
+bookWords:['book','booking','reserve','reservation','enquire','enquiry','inquiry','availability','available dates','check availability','make an enquiry','sign up'],
+kb:[
+{k:['which tour','suit','recommend','compare','difference','choose','best tour','options','what tours are available','small group vs private'],a:'Three days out, each different:\n- Blue Mountains Small Group Day Tour: from $225 per adult, about 10 hours, max 20 guests, departs daily.\n- Blue Mountains Private Day Tour: from $1,900 per group of 1 to 6, any day on request.\n- Sydney City Private Day Tour: from $970 per group of 1 to 6, about 4 hours.\nSmall group is more social; private is fully flexible. Want me to take an enquiry?',chips:['What is included?','Private tour details','Make an enquiry']},
+{k:['small group','group tour','shared tour','join a group','max 20','twenty','how many people','group size','coach','bus'],a:'The small group tour keeps to a maximum of 20 guests (never a big coach), with an expert local guide in a modern air-conditioned vehicle. It leaves Sydney early so you reach the lookouts before the crowds.',chips:['What is included?','Pickup points','Make an enquiry']},
+{k:['included','include','inclusion','cover','what do i get','scenic world','zoo','ferry','skyway','cableway','railway','three sisters','entry fee','entrance','national park','park fee','ticket'],a:'Small group tour includes: all three Scenic World rides (Skyway, Cableway, Railway) plus a rainforest walk, the Three Sisters at Katoomba, the Megalong Valley lookout, a mountain village stop, Sydney Zoo entry, a ferry return to Circular Quay and an expert local guide. National Park and entrance fees are covered. Lunch is at your own expense, unless you pick the lunch-included version.',chips:['Lunch','Pickup points','Make an enquiry']},
+{k:['lunch','food','eat','meal','cafe','hungry','restaurant','coffee','drink'],a:'On the standard small group tour lunch is at your own expense in the mountain village, where there are cafes and restaurants. If you would rather have it sorted, there is a lunch-included small group tour from $250 per adult.',chips:['Prices','Make an enquiry']},
+{k:['price','prices','cost','how much','fee','fare','rate','pricing','dollar','expensive','cheap'],a:'From the website: small group tour from $225 per adult ($250 with lunch); Blue Mountains private day tour from $1,900 per group of 1 to 6; Sydney City private tour from $970 per group of 1 to 6. Booking direct saves $25 per adult with code Diamond1, or $100 on private tours with code PRIVATE.',chips:['Promo codes','Which tour suits me?','Make an enquiry']},
+{k:['promo','code','discount','coupon','deal','offer','save','diamond1','private code','cheaper'],a:'Book direct and use code Diamond1 to save $25 per adult on the small group tours, or code PRIVATE to save $100 per group on the private tours.',chips:['Prices','Make an enquiry']},
+{k:['pickup','pick up','pick-up','meeting point','depart','departure','where do you start','where does it start','start','collect','hotel pickup','marriott','darling harbour','parkroyal','pitt street','rolex'],a:'Blue Mountains Small Group Tour pickups:\n- 6:40am Parkroyal Darling Harbour (150 Day St)\n- 6:50am Sydney Harbour Marriott (30 Pitt St)\n- 6:55am 192 Pitt St, corner of Pitt and Market Street at Rolex\nPrivate tours collect from your nominated city hotel (Sydney city tour at 8:00am).',chips:['Finish time','Private tour details','Make an enquiry']},
+{k:['finish','end','return','back','what time','duration','how long','long is','hours','ten hours','home','circular quay','ferry home','5pm'],a:'The small group day is about 10 hours: from the early pickup (from 6:40am) to the ferry ride back across the harbour, finishing at Circular Quay at around 5pm. The Sydney City private tour is about 4 hours from an 8:00am hotel pickup, back by 12:00 or stay on at Bondi.',chips:['Pickup points','Make an enquiry']},
+{k:['private','private tour','luxury','own vehicle','honeymoon','anniversary','family trip','custom','customise','customize','tailor','flexible','specific stops','itinerary','private day'],a:'Private tours are fully flexible. Blue Mountains Private Day Tour: from $1,900 per group of 1 to 6, your own luxury vehicle and private expert guide, hotel pickup, and you can finish with the ferry to Circular Quay or be dropped at your hotel. Both private tours can include specific stops if you tell the team when booking. They run any day on request.',chips:['Sydney city tour','Promo codes','Make an enquiry']},
+{k:['city tour','sydney tour','sydney city','bondi','watsons bay','rocks','mrs macquarie','north sydney','city private','four hours','4 hour'],a:'The Sydney City Private Day Tour is about 4 hours from 8:00am hotel pickup, from $970 per group of 1 to 6. It covers The Rocks, Mrs Macquarie\'s Chair, North Sydney, Watsons Bay and Bondi Beach. The route can be customised, and you can stay at Bondi or be driven back to your hotel by 12:00.',chips:['Private tour details','Make an enquiry']},
+{k:['kids','child','children','family','families','baby','toddler','infant','pram','stroller','pushchair','age','teenager','year old','son','daughter','kid','minor'],a:'Family-friendly: children of all ages are welcome. All children need their own seat and must be booked. No prams or strollers please, as there is no luggage space in the vehicle.',chips:['Private tour details','Make an enquiry']},
+{k:['cancel','cancellation','refund','change booking','reschedule','amend','money back','postpone','policy'],a:'Small group tours cancelled more than 24 hours before the tour date are fully refundable; within 24 hours a fee may apply. Private tours cancelled more than 7 days before are fully refundable; within 7 days a fee may apply. The full terms are on the website, and the team can confirm your case.',chips:['Make an enquiry']},
+{k:['wear','bring','pack','clothes','shoes','weather','rain','sunscreen','hat','camera','layers','cold','warm','temperature'],a:'Dress in layers and wear comfortable walking shoes: the tours include short walks to lookouts and the weather in the mountains can change through the day. Bring a camera, sunscreen, a hat and a bottle of water.',chips:['Best time to visit','Make an enquiry']},
+{k:['best time','when to go','season','spring','autumn','fall','winter','summer','month','year round','blooming'],a:'The Blue Mountains are a year-round destination. Spring and autumn are especially popular for mild weather and colours, and the team tailors the day to the season. Tours run 7 days a week.',chips:['Make an enquiry']},
+{k:['distance','how far','drive','driving','far','travel time','1 hour 45'],a:'The mountains are roughly 90 minutes to 2 hours from Sydney depending on traffic. On the tour it is about 1 hour 45 minutes to the first stop, with the guide sharing stories about Sydney and the Blue Mountains on the way.',chips:['What is included?']},
+{k:['blue haze','why blue','name','eucalyptus','haze','why are they called blue'],a:'Eucalyptus trees release a fine mist of oil that scatters the sunlight, which gives the Blue Mountains their name and colour. The tour times the lookouts for early in the day to see it at its quietest.'},
+{k:['who','about','family owned','family-owned','owner','rob','alena','michail','history','since 2008','story','local','founded','guide','guides','victor falls','hazelbrook'],a:'Diamond Tours is a family-owned business run by Rob and Alena Michail, running tours since 2008. Alena\'s family history in the mountains goes back more than a century (her ancestor Victor Levitt ran the Hazelbrook General Store, and Victor Falls is named after him).',chips:['Reviews','Make an enquiry']},
+{k:['review','reviews','rating','rated','tripadvisor','trustworthy','good','award','best of the best','google','viator','getyourguide','klook','testimonial'],a:'Rated 4.9 from 12,800+ reviews across Google, TripAdvisor, Viator, GetYourGuide and Klook. TripAdvisor Best of the Best three years running, and No. 1 of 542 outdoor activities in Sydney on TripAdvisor.',chips:['Which tour suits me?']},
+{k:['contact','phone','call','whatsapp','email','reach','talk','speak','number','mobile','message','office','open','hours','opening'],a:'Phone or WhatsApp: +61 414 917 317 (in Australia 0414 917 317). Email: reservations@diamondtours.com.au (replies within a day). Office and enquiries 7am to 5pm, 7 days; tours run 7 days a week and private tours any day on request.',chips:['Make an enquiry']},
+{k:['wheelchair','accessible','accessibility','mobility','disabled','dietary','vegetarian','vegan','allergy','gluten','language','german','chinese','japanese','spanish','korean','insurance','tip','transfer','airport','cruise','pick up from cruise'],a:'I don\'t have that detail on the website. The team can confirm it: WhatsApp +61 414 917 317 or reservations@diamondtours.com.au. I can add it to an enquiry if you like.',chips:['Make an enquiry']},
+{k:['hello','hi','hey','gday','good morning','good afternoon','thanks','thank you'],a:'G\'day! Ask me about the tours, pickups, what is included, kids or cancellation, or tap "Make an enquiry".'}
+],
+flow:{intro:'Happy to pass an enquiry to the team. A few quick questions.',cancel:'No worries, enquiry cancelled. Ask me anything else.',
+steps:[
+{id:'tour',q:'Which tour?',opts:['Blue Mountains small group','Small group with lunch','Blue Mountains private','Sydney city private','Not sure yet']},
+{id:'date',q:'Preferred date or dates?',ph:'e.g. 14 November',check:function(t){return t.length>=3;},err:'Please type a date or a rough time, e.g. "mid November".'},
+{id:'size',q:'How many adults and children?',ph:'e.g. 2 adults, 1 child',check:function(t){return /\d|one|two|three|four|five|six|seven|eight|couple|solo|family/i.test(t);},err:'Please include a number, e.g. "2 adults".'},
+{id:'hotel',q:'Where are you staying in Sydney (hotel or area)?',ph:'Hotel or suburb'},
+{id:'name',q:'Your name?',ph:'Name',check:function(t){return t.length>=2;},err:'Please type your name.'},
+{id:'contact',q:'Best email or WhatsApp number for the reply?',ph:'Email or number',check:function(t){return /@|\d{6,}/.test(t.replace(/[ \-()]/g,''));},err:'Please enter an email or a phone number.'}],
+done:function(d){return 'Thanks '+d.name+'. Enquiry sent to the team:\n'+d.tour+', '+d.date+', '+d.size+', staying: '+d.hotel+'.\nThey reply within a day on '+d.contact+'. For something urgent, WhatsApp +61 414 917 317.\n(This is a demo: nothing is actually sent.)';}}
+};
+
+Widget.init(CFG);
+</script>
+</body>
+</html>
