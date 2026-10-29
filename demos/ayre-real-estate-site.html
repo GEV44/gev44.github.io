@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ayre Real Estate · Apartments. And you.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1C2F42;--navy2:#142230;--gold:#B1A17D;--sand:#E2DED2;--paper:#F5F3EC;--ink:#1C2F42;--mute:#5d6b78;--line:rgba(28,47,66,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Jost,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+section{position:relative;overflow:hidden}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(32px,7vw,54px)}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px;display:block}
+.btn{display:inline-block;border:1.5px solid var(--navy);padding:13px 24px;font-weight:500;text-decoration:none;font-size:15px;letter-spacing:.02em;cursor:pointer;background:var(--navy);color:#fff;font-family:inherit;transition:.2s}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.btn.ghost{background:transparent;color:var(--navy)}
+.btn.ghost:hover{background:var(--navy);color:#fff}
+.btn.light{background:var(--sand);border-color:var(--sand);color:var(--navy)}
+header{position:sticky;top:0;z-index:50;background:rgba(245,243,236,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.hd img{height:34px;width:auto}
+.hd nav{display:none;gap:22px;font-size:14px}
+.hd nav a{text-decoration:none;color:var(--mute)}
+.hd nav a:hover{color:var(--navy)}
+.hd .btn{padding:9px 16px;font-size:13px}
+@media(min-width:900px){.hd nav{display:flex}.hd{height:76px}.hd img{height:40px}}
+/* hero */
+.hero{padding:44px 0 0;background:var(--paper)}
+.hero .grid{display:grid;gap:34px;min-width:0}
+.hero h1{font-size:clamp(46px,12vw,98px);margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--gold);font-weight:500}
+.hero p.lead{font-size:18px;color:var(--mute);max-width:520px;margin-bottom:26px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.card-navy{background:var(--navy);color:#fff;padding:28px 24px;position:relative;overflow:hidden;min-width:0}
+.card-navy::before,.card-navy::after{content:"";position:absolute;right:-30px;height:10px;width:140px;background:var(--gold);opacity:.9}
+.card-navy::before{top:26px}.card-navy::after{bottom:26px}
+.card-navy .eyebrow{color:var(--gold)}
+.card-navy ul{list-style:none;margin:6px 0 18px}
+.card-navy li{display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:15px}
+.card-navy li span:last-child{color:var(--sand);text-align:right}
+.card-navy .ph{font-family:"Cormorant Garamond",serif;font-size:30px;color:var(--sand);text-decoration:none}
+@media(min-width:860px){.hero .grid{grid-template-columns:1.25fr .75fr;align-items:end;gap:60px}.hero{padding-top:70px}}
+.strip{margin-top:48px;background:var(--navy);color:var(--sand);overflow:hidden;white-space:nowrap;padding:14px 0;font-size:13px;letter-spacing:.2em;text-transform:uppercase}
+.strip div{display:inline-block;animation:slide 40s linear infinite;padding-left:100%}
+@keyframes slide{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.strip div{animation:none;padding-left:20px}}
+/* paths */
+.paths{padding:70px 0}
+.paths .intro{display:grid;gap:18px;margin-bottom:34px}
+.paths .intro p{color:var(--mute);max-width:560px}
+.pgrid{display:grid;gap:0;border-top:1px solid var(--line)}
+.pitem{display:grid;grid-template-columns:54px 1fr;gap:6px 14px;padding:24px 0;border-bottom:1px solid var(--line);min-width:0}
+.pitem b{font-family:"Cormorant Garamond",serif;font-size:36px;color:var(--gold);line-height:1;font-weight:600}
+.pitem h3{font-size:30px;margin-bottom:6px}
+.pitem p{color:var(--mute);font-size:15px}
+.pitem a{display:inline-block;margin-top:10px;font-size:14px;font-weight:500;text-decoration:none;border-bottom:1.5px solid var(--gold)}
+@media(min-width:760px){.pgrid{grid-template-columns:1fr 1fr;column-gap:50px}.paths .intro{grid-template-columns:1fr 1fr;align-items:end}}
+/* selling */
+.sell{background:var(--navy);color:#fff;padding:72px 0}
+.sell::before{content:"";position:absolute;right:-60px;top:70px;width:240px;height:12px;background:var(--gold);opacity:.35;box-shadow:0 40px 0 rgba(177,161,125,.35),0 80px 0 rgba(177,161,125,.35)}
+.sell h2{color:#fff;margin-bottom:12px}
+.sell .sub{color:var(--sand);max-width:620px;margin-bottom:36px;opacity:.9}
+.steps{display:grid;gap:18px;margin-bottom:42px}
+.step{border-left:3px solid var(--gold);padding:4px 0 4px 18px}
+.step small{color:var(--gold);letter-spacing:.2em;font-size:12px}
+.step h3{font-size:26px;margin:4px 0 6px}
+.step p{color:var(--sand);opacity:.85;font-size:15px}
+.smart{display:grid;gap:14px}
+.smart div{background:rgba(255,255,255,.06);padding:20px;min-width:0}
+.smart h4{font-family:"Cormorant Garamond",serif;font-size:22px;color:var(--gold);margin-bottom:6px;font-weight:600}
+.smart p{font-size:14.5px;color:var(--sand);opacity:.9}
+.smart .big{background:var(--gold);color:var(--navy)}
+.smart .big h4{color:var(--navy)}.smart .big p{color:var(--navy);opacity:1}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr);gap:30px}.smart{grid-template-columns:repeat(3,1fr)}}
+/* management */
+.mgmt{padding:72px 0;background:var(--sand)}
+.mgmt .two{display:grid;gap:30px;min-width:0}
+.mgmt p.t{color:var(--mute);margin-top:14px;max-width:440px}
+details{border-bottom:1px solid rgba(28,47,66,.25);padding:16px 0}
+details:first-of-type{border-top:1px solid rgba(28,47,66,.25)}
+summary{cursor:pointer;font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:26px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:10px;color:var(--mute);font-size:15px}
+@media(min-width:860px){.mgmt .two{grid-template-columns:.8fr 1.2fr;gap:70px}}
+/* offices */
+.offices{padding:72px 0}
+.ogrid{display:grid;gap:18px;margin-top:30px}
+.office{background:#fff;border:1px solid var(--line);padding:26px 22px;min-width:0;position:relative;overflow:hidden}
+.office::before{content:"";position:absolute;left:0;top:0;width:100%;height:5px;background:var(--gold)}
+.office h3{font-size:28px;margin-bottom:10px}
+.office p{font-size:15px;color:var(--mute);margin-bottom:4px;overflow-wrap:anywhere}
+.office p b{color:var(--navy);font-weight:500}
+.office .hrs{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);font-size:14px}
+.pyr{margin-top:18px;color:var(--mute);font-size:14.5px}
+@media(min-width:760px){.ogrid{grid-template-columns:repeat(3,1fr)}}
+/* team */
+.team{padding:72px 0;background:#fff}
+.pr{display:grid;gap:16px;margin:28px 0}
+.pr div{border:1px solid var(--navy);padding:22px;min-width:0}
+.pr h3{font-size:30px}
+.pr span{color:var(--gold);font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.pr p{margin-top:8px;font-size:14.5px;color:var(--mute);overflow-wrap:anywhere}
+.tg{display:grid;gap:22px}
+.tg h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.tg li{list-style:none;font-size:15px;padding:5px 0;border-bottom:1px solid var(--line)}
+.tg li small{color:var(--mute);display:block;font-size:12.5px}
+@media(min-width:760px){.pr{grid-template-columns:1fr 1fr}.tg{grid-template-columns:repeat(3,1fr);gap:34px}}
+/* reviews */
+.rev{padding:72px 0;background:var(--navy2);color:#fff}
+.rgrid{display:grid;gap:18px;margin-top:28px}
+.rev blockquote{border-top:2px solid var(--gold);padding-top:16px;font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.3;min-width:0}
+.rev cite{display:block;margin-top:12px;font-family:Jost,sans-serif;font-style:normal;font-size:13px;color:var(--gold);letter-spacing:.06em}
+.rev h2{color:#fff}
+.awards{margin-top:34px;display:flex;flex-wrap:wrap;gap:10px}
+.awards span{border:1px solid var(--gold);color:var(--sand);padding:8px 14px;font-size:13px}
+@media(min-width:760px){.rgrid{grid-template-columns:repeat(3,1fr);gap:34px}}
+/* faq */
+.faq{padding:72px 0}
+.faq .two{display:grid;gap:26px}
+@media(min-width:860px){.faq .two{grid-template-columns:.7fr 1.3fr;gap:70px}}
+.cta{padding:64px 0;background:var(--gold);color:var(--navy);text-align:left}
+.cta h2{margin-bottom:12px}
+.cta .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+footer{background:var(--navy2);color:var(--sand);padding:34px 0 90px;font-size:14px}
+footer .chip{background:#fff;display:inline-block;padding:8px 12px;margin-bottom:14px}
+footer .chip img{height:30px}
+footer p{opacity:.85;margin-bottom:4px}
+footer .demo{margin-top:16px;font-size:13px;opacity:.7}
+/* widget */
+#aw-btn{position:fixed;right:16px;bottom:16px;z-index:90;background:var(--navy);color:#fff;border:2px solid var(--gold);padding:13px 18px;font:500 15px Jost,sans-serif;cursor:pointer;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#aw{position:fixed;right:0;bottom:0;z-index:100;width:100%;max-width:400px;height:min(560px,86vh);background:#fff;display:none;flex-direction:column;box-shadow:0 10px 40px rgba(0,0,0,.35);border:1px solid var(--navy)}
+#aw.open{display:flex}
+@media(min-width:480px){#aw{right:16px;bottom:16px}}
+#aw header{position:static;background:var(--navy);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border:0}
+#aw header b{font-family:"Cormorant Garamond",serif;font-size:21px;font-weight:600}
+#aw header small{display:block;font-size:12px;color:var(--gold)}
+#aw header button{background:none;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1}
+#aw-log{flex:1;overflow-y:auto;padding:14px;background:var(--paper);display:flex;flex-direction:column;gap:9px}
+.m{max-width:86%;padding:10px 13px;font-size:14.5px;line-height:1.45;overflow-wrap:anywhere}
+.m.b{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.m.u{background:var(--navy);color:#fff;align-self:flex-end}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 14px 0;background:var(--paper)}
+.chips button{border:1px solid var(--navy);background:#fff;color:var(--navy);padding:6px 11px;font:13px Jost,sans-serif;cursor:pointer;border-radius:999px}
+.chips button:hover{background:var(--navy);color:#fff}
+#aw form{display:flex;border-top:1px solid var(--line);background:#fff}
+#aw input{flex:1;border:0;padding:14px;font:15px Jost,sans-serif;min-width:0;outline:none}
+#aw form button{border:0;background:var(--gold);color:var(--navy);padding:0 18px;font:600 14px Jost,sans-serif;cursor:pointer}
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+<a href="#top" aria-label="Ayre Real Estate"><img src="img/ayre-real-estate-logo.png" alt="Ayre Real Estate"></a>
+<nav><a href="#paths">Buy · Sell · Rent</a><a href="#selling">Selling</a><a href="#management">Management</a><a href="#offices">Offices</a><a href="#team">Team</a></nav>
+<button class="btn" data-ask="appraisal">Request appraisal</button>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+<div class="grid">
+<div>
+<span class="eyebrow">Sydney CBD and inner city</span>
+<h1>We're for apartments. <em>And you.</em></h1>
+<p class="lead">A real estate agency designed to get more out of your local market, with services built to serve you rather than the agent. Sales, leasing and property management across the City of Sydney.</p>
+<div class="cta"><button class="btn" data-ask="sales appraisal">Sales appraisal</button><button class="btn ghost" data-ask="rental appraisal">Rental appraisal</button></div>
+</div>
+<aside class="card-navy">
+<span class="eyebrow">Our offices</span>
+<ul>
+<li><span>Barangaroo</span><span>Watermans Quay</span></li>
+<li><span>Millers Point</span><span>Argyle Place</span></li>
+<li><span>Surry Hills</span><span>Crown Street</span></li>
+<li><span>Pyrmont</span><span>City of Sydney</span></li>
+</ul>
+<a class="ph" href="tel:+61283194488">+61 2 8319 4488</a>
+</aside>
+</div></div>
+<div class="strip"><div>Sydney City · Pyrmont · Millers Point · Barangaroo · Ultimo · Hyde Park · Darlinghurst · Surry Hills · Potts Point · Redfern · Alexandria · Zetland · Sydney City · Pyrmont · Millers Point · Barangaroo</div></div>
+</section>
+
+<section class="paths" id="paths"><div class="wrap">
+<div class="intro">
+<h2>Time for a breath of fresh Ayre.</h2>
+<p>There is something about apartments that is hard not to fall in love with: the location, the view or aspect, the sense of community, the investment potential. Ayre focuses on exactly that, whether you are buying, leasing, investing or selling.</p>
+</div>
+<div class="pgrid">
+<div class="pitem"><b>01</b><div><h3>Buying</h3><p>Browse what is for sale, check upcoming inspections and set up property alerts so new apartments reach you first.</p><a href="#" data-ask="buying">Ask about buying</a></div></div>
+<div class="pitem"><b>02</b><div><h3>Selling</h3><p>Off-market positioning, two-stage marketing plans, private treaty campaigns and competitive auctions, tailored to your timeframe.</p><a href="#selling">How we sell</a></div></div>
+<div class="pitem"><b>03</b><div><h3>Renting</h3><p>Apartments for lease across the CBD and inner city, upcoming inspections, and a tenancy app for repairs and rent.</p><a href="#" data-ask="renting">Ask about renting</a></div></div>
+<div class="pitem"><b>04</b><div><h3>Management</h3><p>Premium property management for landlords: tenant selection, arrears policies, inspections and reports.</p><a href="#management">What is included</a></div></div>
+</div>
+</div></section>
+
+<section class="sell" id="selling"><div class="wrap">
+<span class="eyebrow">Selling with Ayre</span>
+<h2>The right fit.</h2>
+<p class="sub">Selling well starts with a clear strategy that connects with the right buyers. Ayre tailors the approach to your needs and timeframe.</p>
+<div class="steps">
+<div class="step"><small>01</small><h3>Define a unique market position</h3><p>What makes your property special, and who are the key buyers? We help you find the selling points.</p></div>
+<div class="step"><small>02</small><h3>Reach your ideal audience</h3><p>Appeal to the broader market and to a specific target audience at the same time.</p></div>
+<div class="step"><small>03</small><h3>Make the property stand out</h3><p>Location, features, parking, accessibility and design: we know what attracts your ideal buyers.</p></div>
+</div>
+<div class="smart">
+<div class="big"><h4>Smarter open homes</h4><p>Two agents at every sales open home, so buyers get full attention, with details on hand via tablet or phone.</p></div>
+<div><h4>Smarter exposure</h4><p>Premium listing placement and eBrochures on leading property advertising websites.</p></div>
+<div><h4>Smarter technology</h4><p>CRM platforms, social media marketing and online analytics to target your advertising.</p></div>
+<div><h4>Smarter signage</h4><p>Digital window displays that capture enquiries in a high-profile location.</p></div>
+<div><h4>Smarter publicity</h4><p>Relationships with editors at leading real estate publications, including The Australian, Domain and the AFR.</p></div>
+<div><h4>Free to ask</h4><p>Want to know what your property is worth today? Request a confidential sales appraisal.</p></div>
+</div>
+</div></section>
+
+<section class="mgmt" id="management"><div class="wrap two">
+<div>
+<span class="eyebrow">Property management and leasing</span>
+<h2>Invest. Then rest.</h2>
+<p class="t">Premium management for landlords in the Sydney CBD, Pyrmont and the inner city, so you can invest without the daily load.</p>
+<p class="t"><button class="btn" data-ask="property management">Ask about management</button></p>
+</div>
+<div>
+<details open><summary>Tenant attraction and selection</summary><p>Leasing agents who treat your property like their own and only recommend the best tenants, looking past the surface of any application.</p></details>
+<details><summary>Sound financials</summary><p>Stringent arrears policies, current technology and accounting software keep the numbers in check. Repair details and invoices appear on your monthly statement.</p></details>
+<details><summary>Safe hands</summary><p>Only skilled and insured tradespeople, with the most competitive and cost-effective repairs arranged. Emergencies are attended to immediately.</p></details>
+<details><summary>Inspections and reports</summary><p>A condition report before each tenant moves in and out, routine inspections during the lease, and a written copy with photographs and notes.</p></details>
+<details><summary>Expert knowledge</summary><p>Legislation knowledge, an eye for trends and local insight, so landlords are not left reading the rules alone.</p></details>
+</div>
+</div></section>
+
+<section class="offices" id="offices"><div class="wrap">
+<span class="eyebrow">Offices</span>
+<h2>Four offices across the city.</h2>
+<div class="ogrid">
+<div class="office"><h3>Barangaroo</h3><p><b>Shop 1, 3 Watermans Quay</b><br>Barangaroo NSW 2000</p><p>02 8319 4488</p><p>barangaroo@ayre.com.au</p><p class="hrs">Mon to Fri 9:00am to 5:30pm<br>Sat and Sun closed</p></div>
+<div class="office"><h3>Millers Point</h3><p><b>12 Argyle Place</b><br>Millers Point NSW 2000</p><p>02 9037 2221</p><p>millerspoint@ayre.com.au</p><p class="hrs">Mon to Fri 9:00am to 5:30pm<br>Sat and Sun closed</p></div>
+<div class="office"><h3>Surry Hills</h3><p><b>Shop 7, 285A Crown Street</b><br>Surry Hills NSW 2010</p><p>02 9157 9888</p><p>surryhills@ayre.com.au</p><p class="hrs">Mon to Fri 9:00am to 5:00pm<br>Sat and Sun closed</p></div>
+</div>
+<p class="pyr">Ayre also has a Pyrmont office. Main line for all offices: +61 2 8319 4488 · info@ayre.com.au</p>
+</div></section>
+
+<section class="team" id="team"><div class="wrap">
+<span class="eyebrow">Meet the team</span>
+<h2>People you can call.</h2>
+<div class="pr">
+<div><span>Principal and Director</span><h3>Adrian Wilson</h3><p>02 8319 4488 · adrian@ayre.com.au</p></div>
+<div><span>Principal and Director</span><h3>Craig Donohue</h3><p>02 8319 4488 · craig@ayre.com.au</p></div>
+</div>
+<div class="tg">
+<div><h4>Sales</h4><ul><li>Kristian Nelson-Marshall<small>Licensed Real Estate Agent</small></li><li>Ying Ying Xu<small>Sales Agent</small></li><li>Noemi Guttmann<small>Sales Agent</small></li><li>Rylee Ritchie<small>Sales Agent</small></li></ul></div>
+<div><h4>Leasing and management</h4><ul><li>Chyeann Shannon<small>General Manager of Property Management and Partner</small></li><li>Kate-Louise McFarlin<small>Senior Property Manager and Partner</small></li><li>Nicola Turville-Ince<small>Head of Property Management, Surry Hills</small></li><li>Michael Hendricks<small>Leasing Consultant</small></li></ul></div>
+<div><h4>Marketing and operations</h4><ul><li>Tiffany Wilson<small>Head of Brand and Marketing</small></li><li>Tameika Jackson<small>General Manager of Operations</small></li><li>Jacqui McAuliffe<small>Client Services Manager</small></li></ul></div>
+</div>
+</div></section>
+
+<section class="rev"><div class="wrap">
+<span class="eyebrow">Client words</span>
+<h2>What clients say.</h2>
+<div class="rgrid">
+<blockquote>"He handled the negotiation with the utmost efficiency and civility."<cite>Purchaser, Kent Street, Sydney</cite></blockquote>
+<blockquote>"The team made the process from start to finish very easy."<cite>C. Bellette, tenant's parent</cite></blockquote>
+<blockquote>"Have been leasing through Ayre for several years and they have been nothing but exceptional."<cite>N. S, landlord</cite></blockquote>
+</div>
+<div class="awards"><span>REINSW 2023 · Best Medium-Sized Agency</span><span>Real Estate Business Awards 2024 · Sales Campaign of the Year</span></div>
+</div></section>
+
+<section class="faq"><div class="wrap two">
+<div><span class="eyebrow">Tenants and landlords</span><h2>Quick answers.</h2></div>
+<div>
+<details open><summary>How do I report a repair?</summary><p>Use the Tenancy Mobile App to submit a normal repair request; it is the fastest way. Photos of the issue help. Log in with your PropertyMe email and password.</p></details>
+<details><summary>What counts as an emergency?</summary><p>Something broken or damaged that causes immediate danger to you, others or the property. If you cannot reach the office, check your lease for emergency trades, then email your property manager.</p></details>
+<details><summary>What can the tenancy app do?</summary><p>View property and lease details, see when rent and invoices are due, log maintenance requests, message your property manager, see inspections and download documents.</p></details>
+<details><summary>Which suburbs do you cover?</summary><p>Sydney City, Pyrmont, Millers Point, Barangaroo, Ultimo, Hyde Park, Darlinghurst, Surry Hills, Potts Point, Redfern, Alexandria, Zetland and nearby inner-city suburbs.</p></details>
+<details><summary>Can I see what my property is worth?</summary><p>Yes. Request a sales appraisal or a rental appraisal and the team will have a confidential conversation with you.</p></details>
+</div>
+</div></section>
+
+<section class="cta"><div class="wrap">
+<h2>Elevate your result.</h2>
+<p>Thinking of selling or leasing an apartment, or curious what it is worth today?</p>
+<div class="row"><button class="btn" data-ask="appraisal">Request an appraisal</button><a class="btn ghost" href="tel:+61283194488">Call +61 2 8319 4488</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<div class="chip"><img src="img/ayre-real-estate-logo.png" alt="Ayre Real Estate"></div>
+<p>Barangaroo · Millers Point · Surry Hills · Pyrmont</p>
+<p>+61 2 8319 4488 · info@ayre.com.au</p>
+<p class="demo">Demo · prepared by Gevorg Hovhannisyan</p>
+</div></footer>
+
+<button id="aw-btn" aria-label="Open assistant">Ask Ayre</button>
+<div id="aw" role="dialog" aria-label="Ayre assistant">
+<header><div><b>Ayre assistant</b><small>Answers from this site, team confirms the rest</small></div><button id="aw-x" aria-label="Close">&times;</button></header>
+<div id="aw-log"></div>
+<div class="chips" id="aw-chips"></div>
+<form id="aw-form" autocomplete="off"><input id="aw-in" placeholder="Type your question" aria-label="Your message"><button>Send</button></form>
+</div>
+
+<script>
+(function(){
+var PHONE="+61 2 8319 4488",MAIL="info@ayre.com.au";
+var KB=[
+{id:"hours",k:"hours open opening close closed time weekend saturday sunday monday friday when",a:"Offices are open Monday to Friday. Barangaroo and Millers Point: 9:00am to 5:30pm. Surry Hills: 9:00am to 5:00pm. Closed Saturday and Sunday. For Pyrmont hours the team will confirm.",c:["Offices","Request appraisal"]},
+{id:"contact",k:"contact phone call number telephone email mail reach talk speak",a:"Main line for all offices: "+PHONE+". Email: "+MAIL+". Barangaroo 02 8319 4488, Millers Point 02 9037 2221, Surry Hills 02 9157 9888.",c:["Offices","Meet the team"]},
+{id:"offices",k:"office offices location locations address where find visit located map",a:"Barangaroo: Shop 1, 3 Watermans Quay. Millers Point: 12 Argyle Place. Surry Hills: Shop 7, 285A Crown Street. There is also a Pyrmont office; the team will confirm its address and hours.",c:["Opening hours","Contact"]},
+{id:"barangaroo",k:"barangaroo watermans quay",a:"Barangaroo office: Shop 1, 3 Watermans Quay, Barangaroo NSW 2000. Phone 02 8319 4488, barangaroo@ayre.com.au. Open Monday to Friday, 9:00am to 5:30pm.",c:["Opening hours"]},
+{id:"millers",k:"millers miller point argyle place",a:"Millers Point office: 12 Argyle Place, Millers Point NSW 2000. Phone 02 9037 2221, millerspoint@ayre.com.au. Open Monday to Friday, 9:00am to 5:30pm.",c:["Opening hours"]},
+{id:"surry",k:"surry hills crown street potts redfern",a:"Surry Hills office: Shop 7, 285A Crown Street, Surry Hills NSW 2010. Phone 02 9157 9888, surryhills@ayre.com.au. Open Monday to Friday, 9:00am to 5:00pm. It focuses on Surry Hills, Potts Point, Redfern, Alexandria, Zetland and Darlinghurst.",c:["Opening hours"]},
+{id:"pyrmont",k:"pyrmont ultimo",a:"Ayre has a Pyrmont office and covers Pyrmont and Ultimo. I do not have its address or hours here, so the team will confirm them. Call "+PHONE+".",c:["Contact"]},
+{id:"sell",k:"sell selling sale seller list listing market marketing campaign auction private treaty offmarket strategy",a:"Ayre tailors the sale to your needs and timeframe: off-market positioning, two-stage marketing plans, private treaty campaigns or competitive auctions. It starts with defining your property's unique position and reaching the right buyers.",c:["Sales appraisal","Open homes","Publicity"]},
+{id:"appraisal",k:"appraisal appraise valuation value worth estimate evaluate valuer",a:"You can request a confidential sales appraisal or a rental appraisal. I can take your details now and pass them to the team.",c:["Sales appraisal","Rental appraisal"]},
+{id:"openhome",k:"open home inspection inspect openhome viewing view",a:"Upcoming inspections are listed on the site for sale and for lease. At sales open homes there are two agents, so buyers get full attention. I can also take a viewing request for the team.",c:["Book a viewing","Buying"]},
+{id:"buy",k:"buy buying buyer purchase property apartment alert listings sale available",a:"Browse apartments for sale, check upcoming inspections, and set up property alerts so new listings reach you first. I can pass a viewing request or enquiry to the team.",c:["Book a viewing","Property alerts"]},
+{id:"alerts",k:"alert alerts newsletter subscribe notification email updates",a:"Ayre has property alerts and a newsletter you can subscribe to from the site menu. The team can also add you if you leave your details.",c:["Contact"]},
+{id:"rent",k:"rent renting lease leasing tenant rental let apartments",a:"Apartments for lease are listed across the CBD and inner city, with upcoming inspections. Current tenants use the Tenancy Mobile App. I can take a viewing request for the team.",c:["Book a viewing","Repairs"]},
+{id:"pm",k:"manage management manager landlord investor investment investing landlords",a:"Ayre offers premium property management and leasing in the Sydney CBD, Pyrmont and inner city: tenant selection, arrears policies, insured tradespeople, condition reports and routine inspections, with repairs shown on your monthly statement.",c:["Rental appraisal","Repairs"]},
+{id:"repair",k:"repair repairs maintenance fix broken leak plumbing plumber electrical electrician locksmith request",a:"Normal repairs: use the Tenancy Mobile App, ideally with photos. Emergencies (immediate danger to people or property): check your lease for emergency contacts, and email your property manager too.",c:["Emergency","Tenancy app"]},
+{id:"emergency",k:"emergency urgent urgently danger flood fire gas repair",a:"An emergency is something broken or damaged that causes immediate danger to you, others or the property. If you cannot reach the office, use the emergency trades listed in your lease and email your property manager. For life-threatening danger call emergency services first.",c:["Repairs","Contact"]},
+{id:"app",k:"app tenancy mobile propertyme portal login rent due invoice document",a:"The Tenancy Mobile App lets you view lease details, see when rent and invoices are due, log and track maintenance requests, message your property manager, see inspections and download documents. Log in with your PropertyMe email and password.",c:["Repairs"]},
+{id:"team",k:"team staff agent agents who principal director directors people manager meet adrian craig wilson donohue",a:"The principals and directors are Adrian Wilson and Craig Donohue. Sales agents include Ying Ying Xu, Noemi Guttmann and Rylee Ritchie. Property management is led by Chyeann Shannon with Kate-Louise McFarlin and Nicola Turville-Ince.",c:["Contact","Offices"]},
+{id:"awards",k:"award awards winner winning best reinsw recognised",a:"Ayre was named REINSW 2023 Best Medium-Sized Agency and won Sales Campaign of the Year at the Real Estate Business Awards 2024.",c:["Reviews"]},
+{id:"areas",k:"area areas suburb suburbs cover covered region sydney city darlinghurst alexandria zetland hyde balmain",a:"Sydney City, Pyrmont, Millers Point, Barangaroo, Ultimo, Hyde Park, Darlinghurst, Surry Hills, Potts Point, Redfern, Alexandria, Zetland and nearby inner-city suburbs, with a strong focus on apartments.",c:["Offices"]},
+{id:"apt",k:"apartment apartments specialist specialise specialize unit focus why choose different",a:"Ayre is built around apartments and vertical communities in the City of Sydney, so its sales and leasing knowledge is specific to buildings, aspect and local demand.",c:["Sales appraisal","Meet the team"]},
+{id:"publicity",k:"publicity press media exposure advertising domain publication technology signage window",a:"Ayre uses premium listing placement and eBrochures on leading property sites, social media and analytics, digital window displays, and publicity relationships with outlets such as The Australian, Domain and the AFR.",c:["Sell"]},
+{id:"reviews",k:"review reviews testimonial testimonials feedback recommend rating",a:"Client testimonials are on the site, from purchasers, sellers, landlords and tenants. Ask the team for more detail on a particular campaign or office.",c:["Awards"]},
+{id:"careers",k:"career careers job jobs work hiring vacancy join",a:"Ayre has a Careers page on the site. The team can tell you about current openings: "+MAIL+".",c:["Contact"]},
+{id:"fees",k:"fee fees commission cost charge charges price pricing rate quote",a:"Fees depend on the property and the service, and I do not have them here. The team will give you a clear answer after an appraisal.",c:["Request appraisal"]},
+{id:"hi",k:"hello hi hey hola greetings morning afternoon evening",a:"Hello. I can answer questions about Ayre's offices, hours, selling, renting, management and repairs, or take an appraisal or viewing request.",c:["Offices","Request appraisal","Repairs"]},
+{id:"thanks",k:"thanks thank cheers great ok okay perfect",a:"Happy to help. Anything else about Ayre?",c:["Offices","Contact"]},
+{id:"human",k:"human person agent speak someone real staff call back callback",a:"You can speak to the team on "+PHONE+" (Monday to Friday), or I can take your details for a call back.",c:["Request appraisal","Contact"]}
+];
+var CHIPMAP={"Opening hours":"hours","Offices":"offices","Contact":"contact","Meet the team":"team","Sell":"sell","Open homes":"open home","Publicity":"publicity","Buying":"buy","Property alerts":"alerts","Repairs":"repair","Emergency":"emergency","Tenancy app":"app","Awards":"awards","Reviews":"reviews"};
+function norm(s){return s.toLowerCase().replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim()}
+function stem(w){if(w.length>4){w=w.replace(/(ing|ed|es|s)$/,"")}return w}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i]}for(j=0;j<=n;j++){d[0][j]=j}for(i=1;i<=m;i++){for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1))}}return d[m][n]}
+var IDX=KB.map(function(e){return {e:e,t:norm(e.k).split(" ").map(stem)}});
+var STOP={the:1,a:1,an:1,is:1,are:1,do:1,you:1,i:1,to:1,of:1,and:1,for:1,in:1,on:1,my:1,me:1,can:1,what:1,how:1,about:1,it:1,your:1,does:1,with:1,have:1,there:1,this:1,that:1,at:1};
+function score(q){var toks=norm(q).split(" ").filter(function(w){return w&&!STOP[w]}).map(stem);var best=null,bs=0;
+IDX.forEach(function(x){var s=0;toks.forEach(function(w){var top=0;x.t.forEach(function(k){var v=0;if(k===w)v=2;else if(w.length>=4&&k.length>=4&&(k.indexOf(w)===0||w.indexOf(k)===0))v=1.5;else if(w.length>=5&&k.length>=5&&lev(w,k)<=(w.length>=8?2:1))v=1.3;if(v>top)top=v});if(top>=2&&/^(barangaroo|millers|surry|pyrmont)$/.test(x.e.id))top+=2.5;s+=top});
+if(s>bs){bs=s;best=x.e}});return bs>=1.3?best:null}
+var BOOK={
+"sales appraisal":{type:"Sales appraisal",steps:["addr","ptype","when","name","contact"]},
+"rental appraisal":{type:"Rental appraisal",steps:["addr","ptype","when","name","contact"]},
+"viewing":{type:"Viewing request",steps:["addr","when","name","contact"]},
+"pm":{type:"Property management enquiry",steps:["addr","ptype","name","contact"]}};
+var Q={addr:"Which street address or suburb is it about? (For a viewing, the listing address.)",ptype:{q:"What type of property is it?",chips:["Apartment","House","Terrace"]},when:"When suits you for a call or a visit? (for example weekday mornings)",name:"What is your name?",contact:"Best mobile number or email for the team to reach you?"};
+var st=null,log=document.getElementById("aw-log"),chipsEl=document.getElementById("aw-chips"),inp=document.getElementById("aw-in");
+function say(t,who){var d=document.createElement("div");d.className="m "+(who||"b");d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function chips(a){chipsEl.innerHTML="";(a||[]).forEach(function(c){var b=document.createElement("button");b.type="button";b.textContent=c;b.onclick=function(){handle(c)};chipsEl.appendChild(b)})}
+function startBook(key){st={key:key,i:0,data:{}};next()}
+function next(){var b=BOOK[st.key];if(st.i>=b.steps.length){var d=st.data;say("Thank you"+(d.name?", "+d.name:"")+". Your "+b.type.toLowerCase()+" for "+(d.addr||"your property")+" has been sent to the team, who will contact you on "+(d.contact||"the details given")+" during office hours (Monday to Friday). They will confirm any details I do not have.");st=null;chips(["Offices","Contact","Request appraisal"]);return}
+var q=Q[b.steps[st.i]];if(typeof q==="string"){say(q);chips([])}else{say(q.q);chips(q.chips)}}
+function intentBook(t){var n=norm(t);
+if(/(sales|sell).*(apprais|valu|worth)|(apprais|valu|worth).*(sales|sell)/.test(n))return "sales appraisal";
+if(/rental.*(apprais|valu)|(apprais|valu).*rent/.test(n))return "rental appraisal";
+if(/^(request )?(an )?apprais|^request apprais|^book a viewing|^book viewing|viewing request|book .*(view|inspect)|^(i want to|i d like to|id like to) (view|inspect)/.test(n)){if(/view|inspect/.test(n))return "viewing";return "appraisal"}
+if(/^ask about management|property management|manage my (property|apartment|unit)|management enquiry/.test(n)&&/enquir|ask|manage my|want|need|looking/.test(n))return "pm";
+return null}
+function handle(t){t=t.trim();if(!t)return;say(t,"u");inp.value="";
+if(st){var b=BOOK[st.key],step=b.steps[st.i];if(/^(cancel|stop|never ?mind)$/i.test(t)){say("No problem, nothing was sent.");st=null;chips(["Offices","Request appraisal"]);return}
+if(step==="contact"&&!(/@/.test(t)||t.replace(/\D/g,"").length>=8)){say("Please give a phone number or an email address so the team can reply.");return}
+st.data[step]=t;st.i++;next();return}
+if(/^request appraisal$|^appraisal$/i.test(t)){say("Which would you like?");chips(["Sales appraisal","Rental appraisal"]);return}
+var ib=intentBook(t);
+if(ib==="appraisal"){say("Which would you like?");chips(["Sales appraisal","Rental appraisal"]);return}
+if(ib){startBook(ib);return}
+if(/^book a viewing$/i.test(t)){startBook("viewing");return}
+var key=CHIPMAP[t];var e=null;if(key){e=KB.filter(function(x){return x.id===key||norm(x.k).indexOf(key)===0})[0]}
+if(!e)e=score(key||t);
+if(e){say(e.a);chips(e.c)}else{say("I do not have that here, so the team will confirm. You can call "+PHONE+" or email "+MAIL+", or I can take your details.");chips(["Request appraisal","Contact","Offices"])}}
+function intentAsk(w){open_();if(w==="appraisal"){handle("Request appraisal")}else if(w==="property management"){handle("I want property management")}else if(w==="buying"){handle("Buying")}else if(w==="renting"){handle("Renting")}else{handle(w)}}
+var box=document.getElementById("aw"),btn=document.getElementById("aw-btn"),started=false;
+function open_(){box.classList.add("open");btn.style.display="none";if(!started){started=true;say("Hello, I am the Ayre assistant. Ask about our offices, hours, selling, renting, property management or repairs, or request an appraisal or viewing. This is a demo and nothing is actually sent.");chips(["Request appraisal","Offices","Opening hours","Repairs","Book a viewing"])}inp.focus()}
+btn.onclick=open_;document.getElementById("aw-x").onclick=function(){box.classList.remove("open");btn.style.display="block"};
+document.getElementById("aw-form").onsubmit=function(e){e.preventDefault();handle(inp.value)};
+Array.prototype.forEach.call(document.querySelectorAll("[data-ask]"),function(el){el.addEventListener("click",function(e){e.preventDefault();intentAsk(el.getAttribute("data-ask"))})});
+if(typeof module!=="undefined"){module.exports={score:score,intentBook:intentBook}}
+})();
+</script>
+</body>
+</html>

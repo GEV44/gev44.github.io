@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MT Driving School · Houston, Texas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pur:#5a3a6e;--pur2:#3f2650;--lil:#9b5f9e;--gr:#2f8f3a;--yel:#ffd500;--ink:#241a2c;--mut:#675a70;--bg:#f6f3f8;--line:#ddd3e3}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Source Sans 3',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;overflow-x:hidden}
+h1,h2,h3,.hd{font-family:'Archivo',Arial Black,sans-serif}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header{background:#fff;position:sticky;top:0;z-index:30;border-bottom:5px solid var(--pur)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:54px;width:auto;display:block}
+.brand span{font:800 15px 'Archivo';color:var(--pur);line-height:1.1;display:none}
+nav{display:none;gap:18px}
+nav a{text-decoration:none;font-weight:700;color:var(--pur);font-size:15px}
+.tel{background:var(--pur);color:#fff;text-decoration:none;font-weight:800;padding:9px 14px;border-radius:8px;font-size:14px;white-space:nowrap}
+@media(min-width:420px){.brand span{display:block}}
+@media(min-width:820px){nav{display:flex}}
+/* hero */
+.hero{background:linear-gradient(160deg,var(--pur2),var(--pur) 70%,var(--lil));color:#fff;padding:40px 0 46px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;border:34px solid rgba(255,255,255,.06)}
+.hero .wrap{position:relative;display:grid;gap:26px;grid-template-columns:minmax(0,1fr)}
+.since{display:inline-block;border:2px solid var(--yel);color:var(--yel);font:800 13px 'Archivo';padding:3px 10px;border-radius:4px;letter-spacing:1px}
+.hero h1{font-size:clamp(34px,8.5vw,56px);line-height:1.02;font-weight:900;margin:12px 0;text-transform:uppercase}
+.hero h1 span{color:var(--yel)}
+.hero p{color:#eadff0;max-width:540px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{border:0;cursor:pointer;font:800 15px 'Archivo';padding:13px 20px;border-radius:8px;text-decoration:none;display:inline-block}
+.y{background:var(--yel);color:#2a1a00}.o{background:transparent;color:#fff;border:2px solid #fff}
+.sign{background:var(--gr);color:#fff;border:6px solid #fff;outline:3px solid var(--gr);border-radius:12px;padding:16px;align-self:start;max-width:420px}
+.sign small{font:700 12px 'Archivo';letter-spacing:1px;opacity:.9}
+.sign b{display:block;font:900 26px/1.1 'Archivo';margin:4px 0 8px}
+.sign ul{list-style:none;font-size:15px}
+.sign li{padding:3px 0;border-top:1px solid rgba(255,255,255,.35)}
+@media(min-width:820px){.hero .wrap{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);align-items:center}}
+section{padding:52px 0}
+h2{font-size:clamp(26px,6vw,38px);font-weight:900;color:var(--pur);line-height:1.1;text-transform:uppercase}
+.sub{color:var(--mut);margin:8px 0 22px;max-width:620px}
+/* paths tabs */
+.tabs{display:flex;gap:8px;margin-bottom:16px}
+.tabs button{flex:1;border:3px solid var(--pur);background:#fff;color:var(--pur);font:800 16px 'Archivo';padding:12px;border-radius:10px;cursor:pointer}
+.tabs button.on{background:var(--pur);color:#fff}
+.pane{display:none}.pane.on{display:block}
+.cards{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px;border-top:6px solid var(--lil)}
+.card h3{font-size:19px;color:var(--pur2)}
+.card .pr{font:900 30px 'Archivo';color:var(--gr)}
+.card ul{margin:4px 0 8px 18px;color:var(--mut);font-size:15px}
+.card .btn{margin-top:auto;background:var(--pur);color:#fff;padding:10px 14px}
+.card.feat{border-top-color:var(--yel);background:#fffbe0}
+@media(min-width:640px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:960px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.note{margin-top:14px;background:#efe6f3;border-left:6px solid var(--pur);padding:12px 14px;border-radius:6px;font-size:15px}
+/* DPS band */
+.dps{background:var(--pur2);color:#fff}
+.dps h2{color:#fff}
+.dps .two{display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+.dps p{color:#eadff0}
+.dps .big{background:var(--yel);color:#2a1a00;border-radius:14px;padding:20px;text-align:center}
+.dps .big b{display:block;font:900 54px/1 'Archivo'}
+.dps .big span{font-weight:700}
+.dps ul{margin:12px 0 0 20px;color:#eadff0}
+@media(min-width:800px){.dps .two{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);align-items:center}}
+/* why */
+.why{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+.why div{background:#fff;border-radius:10px;padding:14px 16px;border:1px solid var(--line);display:flex;gap:12px;align-items:flex-start}
+.why i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--gr);color:#fff;font-style:normal;display:flex;align-items:center;justify-content:center;font-weight:900}
+.why b{display:block;color:var(--pur2)}
+.why span{font-size:15px;color:var(--mut)}
+@media(min-width:700px){.why{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* visit */
+.visit{display:grid;gap:18px;grid-template-columns:minmax(0,1fr)}
+.box{background:#fff;border-radius:14px;padding:18px;border:1px solid var(--line)}
+.box h3{font-size:20px;color:var(--pur);margin-bottom:8px}
+.box table{width:100%;border-collapse:collapse}
+.box td{padding:6px 0;border-bottom:1px dashed var(--line)}
+.box td:last-child{text-align:right;font-weight:700}
+.towns{display:flex;flex-wrap:wrap;gap:8px}
+.towns span{background:var(--bg);border:2px solid var(--lil);color:var(--pur2);font-weight:700;padding:5px 12px;border-radius:999px;font-size:14px}
+@media(min-width:800px){.visit{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.rev{background:#fff}
+.rg{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+.rg blockquote{background:var(--bg);border-left:6px solid var(--lil);border-radius:10px;padding:16px;font-size:15.5px}
+.rg cite{display:block;margin-top:8px;font-style:normal;font-weight:700;color:var(--pur)}
+@media(min-width:800px){.rg{grid-template-columns:repeat(3,minmax(0,1fr))}}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:10px;padding:0 16px}
+summary{cursor:pointer;font-weight:700;padding:14px 0;color:var(--pur2);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";float:right;color:var(--pur);font-size:22px;line-height:1}
+details[open] summary:after{content:"–"}
+details p{padding:0 0 14px;color:var(--mut)}
+.end{background:var(--pur);color:#fff;text-align:center;padding:44px 0}
+.end h2{color:#fff}
+.end p{margin:8px 0;color:#eadff0}
+.end a{color:var(--yel);font-weight:800}
+footer{background:var(--pur2);color:#c9b9d3;text-align:center;padding:20px 16px 90px;font-size:14px}
+
+.cmp{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;font-size:14px;margin-top:6px}
+.cmp th,.cmp td{padding:9px 6px;border-bottom:1px solid var(--line);text-align:center}
+.cmp th{background:var(--pur);color:#fff;font:800 12px 'Archivo'}
+.cmp td:first-child,.cmp th:first-child{text-align:left;padding-left:10px}
+.cmp td b{color:var(--gr)}
+.split{display:flex;height:46px;border-radius:10px;overflow:hidden;margin:12px 0 6px;font:800 13px 'Archivo';color:#fff}
+.split div{display:flex;align-items:center;justify-content:center;text-align:center;padding:0 6px}
+.split .a{flex:7;background:var(--lil)}.split .b{flex:7;background:var(--gr)}
+.steps{display:grid;gap:12px;grid-template-columns:minmax(0,1fr);counter-reset:z}
+.steps div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 14px 14px 58px;position:relative}
+.steps div:before{counter-increment:z;content:counter(z);position:absolute;left:12px;top:12px;width:34px;height:34px;border-radius:8px;background:var(--yel);color:#2a1a00;font:900 18px 'Archivo';display:flex;align-items:center;justify-content:center}
+.steps b{display:block;color:var(--pur2)}
+.steps span{color:var(--mut);font-size:15px}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* widget */
+#wb{position:fixed;right:16px;bottom:16px;z-index:50;width:60px;height:60px;border-radius:50%;border:0;background:var(--gr);color:#fff;font-size:26px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+#wp{position:fixed;right:12px;bottom:84px;z-index:50;width:min(370px,calc(100vw - 24px));height:min(540px,calc(100vh - 110px));background:#fff;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.4);display:none;flex-direction:column;overflow:hidden}
+#wp.on{display:flex}
+#wh{background:var(--pur);color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+#wh b{font:800 16px 'Archivo'}
+#wh small{display:block;color:#e2d3ea;font-size:12px}
+#wx{background:none;border:0;color:#fff;font-size:22px;cursor:pointer}
+#wm{flex:1;overflow-y:auto;padding:12px;background:#f3eef6;display:flex;flex-direction:column;gap:8px}
+.m{max-width:86%;padding:9px 12px;border-radius:12px;font-size:14.5px;white-space:pre-line}
+.m.b{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.m.u{background:var(--pur);color:#fff;align-self:flex-end}
+#wc{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;background:#fff;border-top:1px solid var(--line);max-height:96px;overflow-y:auto}
+#wc button{background:#fff;border:1.5px solid var(--pur);color:var(--pur);border-radius:999px;padding:5px 11px;font:700 13px 'Source Sans 3';cursor:pointer}
+#wf{display:flex;gap:6px;padding:8px;border-top:1px solid var(--line)}
+#wi{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:8px;padding:9px;font:16px 'Source Sans 3'}
+#wf button{background:var(--gr);color:#fff;border:0;border-radius:8px;padding:0 14px;font-weight:700;cursor:pointer}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+<a class="brand" href="#top"><img src="img/mt-driving-school-logo.jpg" alt="MT Driving School"><span>MT Driving<br>School</span></a>
+<nav><a href="#paths">Classes and lessons</a><a href="#dps">DPS road test</a><a href="#visit">Visit us</a><a href="#faq">FAQ</a></nav>
+<a class="tel" href="tel:+18326409567">Call (832) 640-9567</a>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+<div>
+<span class="since">HOUSTON · SINCE 2002</span>
+<h1>Learn to drive. <span>Take the DPS road test</span> with us.</h1>
+<p>One-on-one lessons in small Toyota Camrys, driver education for teens and adults, and authorized third-party DPS road tests, all in one Houston school.</p>
+<div class="cta"><button class="btn y" onclick="openW('book')">Request enrollment</button><a class="btn o" href="#paths">See classes and lessons</a></div>
+</div>
+<div class="sign"><small>EXIT · WHAT YOU GET</small><b>Adult packages</b>
+<ul><li>Personal one-on-one training</li><li>Lessons matched to your level</li><li>Free pick-up and drop-off with a package</li><li>Unlimited road tests with a package</li></ul></div>
+</div></div>
+
+<section id="paths"><div class="wrap">
+<h2>Choose your path</h2>
+<p class="sub">Services published by the school. Teen package prices are given by phone, so the assistant will pass that question to the team.</p>
+<div class="tabs"><button class="on" id="tt" onclick="tab('t')">Teens</button><button id="ta" onclick="tab('a')">Adults</button></div>
+<div class="pane on" id="pt"><div class="cards">
+<div class="card"><h3>Teen Package No. 1</h3><ul><li>24-hour online class</li><li>14 hours in-car training (7 observation, 7 behind the wheel)</li><li>No pickup</li><li>No third-party DPS road test</li></ul><button class="btn" onclick="openW('book','Teen Package 1')">Ask about this</button></div>
+<div class="card"><h3>Teen Package No. 2</h3><ul><li>24-hour online class</li><li>14 hours in-car training with pickup</li><li>1 authorized third-party DPS road test</li></ul><button class="btn" onclick="openW('book','Teen Package 2')">Ask about this</button></div>
+<div class="card feat"><h3>Teen Package No. 3</h3><ul><li>24-hour online class</li><li>14 hours in-car training with pickup</li><li>Unlimited authorized third-party DPS road tests</li></ul><button class="btn" onclick="openW('book','Teen Package 3')">Ask about this</button></div>
+<div class="card"><h3>Parent Taught online course</h3><ul><li>Online course for teens</li><li>Ask the team how it works</li></ul><button class="btn" onclick="openW('book','Parent Taught course')">Ask about this</button></div>
+</div><div class="note">Please call for prices and promotions on all teen packages: (832) 640-9567 or (832) 640-9563.</div></div>
+<div class="pane" id="pa"><div class="cards">
+<div class="card"><h3>6-hour in-person permit class</h3><div class="pr">$175</div><ul><li>6 hours in class</li><li>Vision test and written test</li><li>Completion certificate</li></ul><button class="btn" onclick="openW('book','Adult in-person permit class')">Enroll</button></div>
+<div class="card"><h3>6-hour online permit class</h3><div class="pr">$75</div><ul><li>6 hours of class</li><li>Written test</li><li>Completion certificate</li></ul><button class="btn" onclick="openW('book','Adult online permit class')">Enroll</button></div>
+<div class="card"><h3>Hourly in-car training</h3><div class="pr">$100<small style="font-size:15px;color:var(--mut)"> / hour</small></div><ul><li>Teens or adults</li><li>No pickup</li></ul><button class="btn" onclick="openW('book','Hourly in-car training')">Book hours</button></div>
+<div class="card"><h3>Adult Package No. 1</h3><ul><li>6 hours in-car training</li><li>No pickup</li><li>No DPS road test</li></ul><button class="btn" onclick="openW('book','Adult Package 1')">Ask about this</button></div>
+<div class="card"><h3>Adult Package No. 2</h3><ul><li>3 hours in-car training</li><li>No pickup</li><li>1 authorized DPS road test</li></ul><button class="btn" onclick="openW('book','Adult Package 2')">Ask about this</button></div>
+<div class="card feat"><h3>Adult Package No. 3</h3><ul><li>6 hours in-car training with pickup</li><li>Unlimited authorized DPS road tests</li></ul><button class="btn" onclick="openW('book','Adult Package 3')">Ask about this</button></div>
+</div><div class="note">Adult package prices and promotions: please call. The school says it never charges hidden fees, so the price advertised is the price you pay.</div></div>
+</div></section>
+
+<section class="dps" id="dps"><div class="wrap two">
+<div><h2>Authorized third-party DPS road test</h2>
+<p style="margin-top:10px">Once students are driving safely, the school is authorized to give and grade the official DPS road test, which can save the wait and hassle at the DPS office.</p>
+<ul><li>Use the school car or your own car</li><li>By appointment only</li><li>Early Saturday appointments are possible, according to a student review</li></ul></div>
+<div class="big"><b>$75</b><span>per driving test<br>school car or student car</span></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<h2>Packages side by side</h2>
+<p class="sub">What each numbered package includes, taken from the school's list. Prices: please call.</p>
+<table class="cmp"><tr><th>Package</th><th>In-car hours</th><th>Pickup</th><th>DPS road tests</th></tr>
+<tr><td>Teen No. 1</td><td>14</td><td>No</td><td>None</td></tr>
+<tr><td>Teen No. 2</td><td>14</td><td><b>Yes</b></td><td>1</td></tr>
+<tr><td>Teen No. 3</td><td>14</td><td><b>Yes</b></td><td><b>Unlimited</b></td></tr>
+<tr><td>Adult No. 1</td><td>6</td><td>No</td><td>None</td></tr>
+<tr><td>Adult No. 2</td><td>3</td><td>No</td><td>1</td></tr>
+<tr><td>Adult No. 3</td><td>6</td><td><b>Yes</b></td><td><b>Unlimited</b></td></tr></table>
+<p class="sub" style="margin-top:18px;margin-bottom:0">The 14 teen in-car hours are split in two halves:</p>
+<div class="split"><div class="a">7 hours observation</div><div class="b">7 hours behind the wheel</div></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<h2 style="margin-bottom:16px">How it goes</h2>
+<div class="steps">
+<div><b>Choose a class or package</b><span>Teen, adult, online or in person.</span></div>
+<div><b>Learn with a one-on-one instructor</b><span>Lessons tailored to your driving level.</span></div>
+<div><b>Take the DPS road test with the school</b><span>Authorized third-party test, by appointment.</span></div>
+</div></div></section>
+
+<section><div class="wrap">
+<h2>Why Houston families choose MT</h2>
+<p class="sub">From the school's own description.</p>
+<div class="why">
+<div><i>1</i><p><b>Over 20 years of experience</b><span>Established in 2002 for teenagers and adults getting a Texas licence.</span></p></div>
+<div><i>2</i><p><b>One-on-one lessons</b><span>Private, personal and individual, paid hourly or by package.</span></p></div>
+<div><i>3</i><p><b>Small Toyota Camrys</b><span>Chosen to help a new student feel comfortable to start.</span></p></div>
+<div><i>4</i><p><b>Fully licensed, experienced instructors</b><span>Student-centered teaching for safe, responsible drivers.</span></p></div>
+<div><i>5</i><p><b>Special arrangements outside Houston city</b><span>Ask the team if you live further out.</span></p></div>
+<div><i>6</i><p><b>No hidden fees</b><span>The advertised price is the price you pay.</span></p></div>
+</div></div></section>
+
+<section id="visit" style="padding-top:0"><div class="wrap visit">
+<div class="box"><h3>Hours and contact</h3>
+<table><tr><td>Mon to Fri</td><td>7:30 am – 7:00 pm</td></tr><tr><td>Saturday</td><td>8:30 am – 3:00 pm</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table>
+<p style="margin-top:10px">Driving tests are by appointment only. If the office is empty when you arrive, call.</p>
+<p style="margin-top:10px"><b>6201 Corporate Dr, Houston, TX 77036</b><br>(832) 640-9567 · (832) 640-9563<br>mtdrivingschool.houston@gmail.com</p></div>
+<div class="box"><h3>Areas served</h3><div class="towns"><span>Houston</span><span>Spring</span><span>Tomball</span><span>Katy</span><span>Sugar Land</span><span>Stafford</span><span>Missouri City</span><span>Pearland</span></div>
+<p style="margin-top:12px;color:var(--mut)">If you live outside Houston city, the school says it can make a special arrangement.</p></div>
+</div></section>
+
+<section class="rev"><div class="wrap">
+<h2>What students say</h2>
+<p class="sub">Excerpts from the reviews on the school's Services page.</p>
+<div class="rg">
+<blockquote>The instructor at this school is very patient and nice with me. She helped me become a confident driver.<cite>Christine N.</cite></blockquote>
+<blockquote>I work a full time job, and DPS schedule is too hard to work around. They catered to my needs of an early Saturday appointment.<cite>Vee B.</cite></blockquote>
+<blockquote>You feel comfortable with the instructor and it is a really great place for wanting to get things done without the DPS hassle.<cite>Humberto L.</cite></blockquote>
+</div></div></section>
+
+<section id="faq"><div class="wrap">
+<h2 style="margin-bottom:18px">Quick answers</h2>
+<details><summary>Do you offer road tests, not just lessons?</summary><p>Yes. The school is an authorized third-party DPS road test provider, by appointment only.</p></details>
+<details><summary>Is there a class for adults?</summary><p>Yes: a 6-hour in-person permit class and a 6-hour online permit class. The published description notes the course is required for people aged 18 to 25.</p></details>
+<details><summary>Does a package include pickup?</summary><p>Free pick-up and drop-off is offered to students who select a package that includes it. Hourly in-car training is without pickup.</p></details>
+<details><summary>What car do I drive?</summary><p>Lessons use small Toyota Camrys.</p></details>
+<details><summary>Can I take the test in my own car?</summary><p>The road test price covers a test using the school car or the student car.</p></details>
+</div></section>
+
+<div class="end"><div class="wrap">
+<h2>Ready to start?</h2>
+<p>6201 Corporate Dr, Houston, TX 77036</p>
+<p><a href="tel:+18326409567">(832) 640-9567</a> · <a href="mailto:mtdrivingschool.houston@gmail.com">mtdrivingschool.houston@gmail.com</a></p>
+<div class="cta" style="justify-content:center"><button class="btn y" onclick="openW('book')">Request enrollment</button></div>
+</div></div>
+<footer>Demo · prepared by Gevorg Hovhannisyan</footer>
+
+<button id="wb" aria-label="Open chat" onclick="openW()">💬</button>
+<div id="wp" role="dialog" aria-label="MT Driving School assistant">
+<div id="wh"><div><b>MT Driving School assistant</b><small>Classes, road tests, hours</small></div><button id="wx" aria-label="Close" onclick="closeW()">×</button></div>
+<div id="wm"></div><div id="wc"></div>
+<form id="wf"><input id="wi" placeholder="Type your question" autocomplete="off"><button type="submit">Send</button></form>
+</div>
+
+<script>
+/*KB*/
+var KB=[
+{k:"price prices cost much fee fees rate rates cheap cheapest lowest charge pricing",a:"Published prices:\nAdult 6-hour in-person permit class: $175\nAdult 6-hour online permit class: $75\nThird-party DPS road test: $75 per test\nHourly in-car training: $100 per hour (no pickup)\nTeen and adult package prices and promotions: please call (832) 640-9567. The school says it has no hidden fees.",c:["Teen packages","Road test","Book"]},
+{k:"dps road driving test exam third party authorized skill appointment",a:"MT Driving School is an authorized third-party DPS road test provider. A test is $75, using the school car or your own car, by appointment only. It is meant to spare you the DPS office wait.",c:["Hours","Teen packages","Book"]},
+{k:"package packages teen teens teenager teenagers kid kids child daughter son under 18 parent",a:"Teen packages:\nNo. 1: 24-hour online class and 14 hours in-car (7 observation, 7 behind the wheel), no pickup, no road test\nNo. 2: same hours with pickup and 1 road test\nNo. 3: same hours with pickup and unlimited road tests\nThere is also a Parent Taught online course. Prices: please call (832) 640-9567.",c:["Adult packages","Prices","Book"]},
+{k:"adult adults package packages grown older permit",a:"Adult options:\n6-hour in-person permit class $175 (vision test, written test, certificate)\n6-hour online permit class $75\nPackage 1: 6 hours in-car, no pickup, no road test\nPackage 2: 3 hours in-car, no pickup, 1 road test\nPackage 3: 6 hours in-car with pickup, unlimited road tests\nPackage prices: please call.",c:["Prices","Road test","Book"]},
+{k:"online class course internet virtual remote 24",a:"Online options: a 24-hour online class for teens, a 6-hour online class for adults ($75), and a Parent Taught online course for teens.",c:["Teen packages","Adult packages","Book"]},
+{k:"hour hours open opening close closing time times when saturday sunday monday friday weekend weekday",a:"Monday to Friday 7:30 am to 7:00 pm, Saturday 8:30 am to 3:00 pm, Sunday closed. Driving tests are by appointment only.",c:["Book","Location"]},
+{k:"where address location located directions find office drive houston corporate",a:"MT Driving School is at 6201 Corporate Dr, Houston, TX 77036. The school also serves Spring, Tomball, Katy, Sugar Land, Stafford, Missouri City and Pearland.",c:["Hours","Pickup","Book"]},
+{k:"pickup pick drop dropoff collect home",a:"Free pick-up and drop-off is offered to students who choose a package that includes it. Hourly lessons are without pickup. The team confirms your pickup address.",c:["Teen packages","Adult packages","Book"]},
+{k:"car vehicle toyota camry own",a:"Instruction uses small Toyota Camrys. For the road test you can use the school car or your own car.",c:["Road test","Book"]},
+{k:"instructor teacher teachers experience licensed years patient",a:"The school has been established since 2002, with fully licensed, experienced instructors. Lessons are one-on-one. Students describe the instructors as patient and professional.",c:["Reviews","Book"]},
+{k:"review reviews rating testimonial google yelp",a:"The Services page shows student reviews that describe patient instructors, early Saturday test appointments and a smooth test. The school is also on Yelp.",c:["Instructor","Book"]},
+{k:"area areas serve cover katy spring tomball sugar land stafford missouri city pearland outside",a:"The school serves Houston, Spring, Tomball, Katy, Sugar Land, Stafford, Missouri City and Pearland. For students outside Houston city there is a special arrangement; the team will confirm details.",c:["Location","Pickup","Book"]},
+{k:"phone call number contact email mail reach talk text whatsapp",a:"Phone: (832) 640-9567 or (832) 640-9563\nEmail: mtdrivingschool.houston@gmail.com\nAddress: 6201 Corporate Dr, Houston, TX 77036",c:["Hours","Book"]},
+{k:"hidden fees extra surprise",a:"The school says it never charges hidden fees: the price advertised is the price you pay.",c:["Prices","Book"]},
+{k:"unlimited retake fail failed again",a:"Packages marked with unlimited road tests (Teen No. 3 and Adult No. 3) include unlimited authorized third-party DPS road tests. Otherwise a test is $75 each.",c:["Teen packages","Adult packages","Book"]},
+{k:"vision written certificate certificate completion 18 25 required",a:"The 6-hour adult in-person class ($175) includes a vision test, written test and a completion certificate, issued on the day of completion. The school notes it is required for people aged 18 to 25.",c:["Adult packages","Book"]},
+{k:"cancel cancellation reschedule refund policy payment pay card cash",a:"Payment methods and cancellation rules are not published on the site, so the team will confirm them for you.",c:["Contact","Book"]},
+{k:"spanish language vietnamese speak",a:"The site does not list the languages used in lessons, so the team will confirm that with you.",c:["Contact","Book"]},
+{k:"thanks thank ok okay great",a:"Happy to help. Want to send an enrollment request to the team?",c:["Book","Prices"]},
+{k:"hello hi hey howdy",a:"Hi! I can help with classes, road tests, hours and enrollment requests.",c:["Teen packages","Adult packages","Road test","Book"]}
+];
+var STOP="the a an of to is are do does you your i me my we can for in on at and or it be have has with about how what when where which".split(" ");
+function norm(s){return s.toLowerCase().replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim()}
+function stem(w){return w.length>4?w.replace(/(ing|ers|er|es|ed|s)$/,""):w}
+function lev(a,b){if(a==b)return 0;if(Math.abs(a.length-b.length)>1)return 2;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]==b[j-1]?0:1));p=c}return p[b.length]}
+function hit(w,kw){var s=stem(w);if(kw==w||stem(kw)==s)return 1;if(w.length>=5&&kw.length>=5){if(lev(w,kw)<=1||lev(s,stem(kw))<=1)return .9}if(w.length>=4&&(kw.indexOf(w)==0||w.indexOf(kw)==0)&&kw.length>=4)return .6;return 0}
+function answer(q){var ws=norm(q).split(" ").filter(function(w){return w&&STOP.indexOf(w)<0});var best=null,bs=0;KB.forEach(function(e){var kws=e.k.split(" "),sc=0;ws.forEach(function(w){var m=0;kws.forEach(function(kw){m=Math.max(m,hit(w,kw))});sc+=m});if(sc>bs){bs=sc;best=e}});return bs>=.9?best:null}
+var BOOKWORDS=/\b(book|booking|booked|appointment|reserve|reservation|enrol|enroll|enrollment|enrolment|sign up|schedule|register|registration)\b/;
+/*END*/
+function tab(x){['t','a'].forEach(function(k){document.getElementById('p'+k).classList.toggle('on',k==x);document.getElementById('t'+k).classList.toggle('on',k==x)})}
+var $=function(i){return document.getElementById(i)},M=$('wm'),C=$('wc'),I=$('wi'),flow=null,data={};
+function say(t,who){var d=document.createElement('div');d.className='m '+(who||'b');d.textContent=t;M.appendChild(d);M.scrollTop=M.scrollHeight}
+function chips(a){C.innerHTML='';a.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){handle(t)};C.appendChild(b)})}
+var HOME=["Teen packages","Adult packages","Road test","Hours","Book"];
+function openW(mode,svc){$('wp').classList.add('on');if(!M.children.length){say("Hi! I'm the assistant for MT Driving School. Ask about classes, packages, DPS road tests or hours, or send an enrollment request.");chips(HOME)}if(mode=='book'){startBook(svc)}}
+function closeW(){$('wp').classList.remove('on')}
+var STEPS=[
+{key:'who',q:"Who is the student?",chips:["Teen (under 18)","Adult (18+)"]},
+{key:'svc',q:"What do you need?",chips:["Teen package","Adult package","Permit class","Hourly in-car lessons","DPS road test"]},
+{key:'area',q:"Which area do you live in?",chips:["Houston","Spring","Katy","Sugar Land","Pearland","Other"]},
+{key:'when',q:"What day and time would suit you? (Mon to Fri 7:30 am to 7 pm, Sat 8:30 am to 3 pm)",chips:["Weekday","Saturday morning","Not sure yet"]},
+{key:'name',q:"Your name?",chips:[]},
+{key:'phone',q:"Best phone number for the team to reach you?",chips:[]}
+];
+var si=0;
+function startBook(svc){flow=1;data={};si=0;if(svc){data.svc=svc}ask()}
+function ask(){while(si<STEPS.length&&data[STEPS[si].key])si++;if(si>=STEPS.length){finish();return}say(STEPS[si].q);chips(STEPS[si].chips)}
+function finish(){flow=null;say("Thanks "+data.name+". Request noted:\n"+data.who+" · "+data.svc+"\nArea: "+data.area+" · "+data.when+"\nPhone: "+data.phone+"\n\nThis has been sent to the team, who will confirm prices, availability and next steps. (Demo: nothing is actually sent.)");chips(HOME)}
+function handle(t){say(t,'u');if(flow){if(/^(cancel|stop|exit)$/i.test(t.trim())){flow=null;say("No problem, request cancelled.");chips(HOME);return}data[STEPS[si].key]=t;si++;ask();return}
+if(BOOKWORDS.test(norm(t))||/^book/i.test(t)){startBook();return}
+var r=answer(t);if(r){say(r.a);chips(r.c)}else{say("I do not have that detail. The team will confirm it: (832) 640-9567 or mtdrivingschool.houston@gmail.com.");chips(HOME)}}
+$('wf').addEventListener('submit',function(e){e.preventDefault();var v=I.value.trim();if(!v)return;I.value='';handle(v)});
+</script>
+</body>
+</html>
