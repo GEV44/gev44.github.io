@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dviaje Travel | Agencia de viajes en Miami</title>
+<meta property="og:title" content="Dviaje Travel | Agencia de viajes en Miami"><meta property="og:type" content="website">
+<meta name="theme-color" content="#193d7b"><meta name="format-detection" content="telephone=yes"><meta name="robots" content="noindex">
+<meta name="description" content="Grupos por el mundo, hoteles todo incluido en Punta Cana y Cancún, paquetes desde Cuba, cruceros y eventos. Página de demostración con asistente de reservas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500;1,600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#193d7b;--navy2:#0f2a57;--red:#c01539;--sand:#fbf6ee;--sand2:#f2e8d8;--sea:#e6f0f7;--ink:#1d2433;--mut:#5a6272;--line:#e4dccd;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',system-ui,sans-serif;background:var(--sand);color:var(--ink);line-height:1.6;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.12;color:var(--navy2)}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 16px}
+/* top */
+.top{background:var(--navy2);color:#fff;font-size:.88rem}
+.top .wrap{display:flex;justify-content:space-between;gap:10px;padding-top:7px;padding-bottom:7px;flex-wrap:wrap}
+.top a{text-decoration:none;font-weight:700}
+header{background:#fff;position:sticky;top:0;z-index:30;box-shadow:0 2px 14px rgba(15,42,87,.1)}
+.hb{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1080px;margin:0 auto;padding:8px 16px}
+.logo{display:block;flex:0 0 auto}
+.logo img{height:46px;width:auto}
+nav{display:none;gap:20px;font-weight:700;font-size:.95rem}
+nav a{text-decoration:none;color:var(--navy)}
+nav a:hover{color:var(--red)}
+.pill{background:var(--red);color:#fff;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:999px;font-size:.92rem;white-space:nowrap}
+@media(min-width:900px){nav{display:flex}}
+/* hero */
+.hero{background:linear-gradient(160deg,var(--sea),var(--sand) 70%);position:relative;overflow:hidden}
+.hero .wrap{padding-top:46px;padding-bottom:56px;display:grid;gap:30px;min-width:0}
+.hero::before{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(192,21,57,.12),transparent 70%)}
+.kick{font-weight:700;color:var(--red);letter-spacing:.12em;text-transform:uppercase;font-size:.82rem}
+.hero h1{font-size:clamp(2.4rem,9vw,4.6rem);margin:10px 0 14px;font-weight:700}
+.hero h1 em{color:var(--red);font-weight:600}
+.hero p.lead{font-size:1.1rem;color:#3a4357;max-width:32em}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{border:0;cursor:pointer;font:inherit;font-weight:700;padding:13px 24px;border-radius:999px;text-decoration:none;display:inline-block}
+.btn.r{background:var(--red);color:#fff}
+.btn.n{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+.btn:hover{filter:brightness(.95)}
+.panel{background:#fff;border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(15,42,87,.12);min-width:0}
+.panel h3{font-size:1.3rem;margin-bottom:12px}
+.panel ul{list-style:none;display:grid;gap:10px}
+.panel li{display:flex;gap:10px;align-items:flex-start}
+.panel li i{font-style:normal;flex:0 0 28px;height:28px;border-radius:50%;background:var(--sea);color:var(--navy);display:grid;place-items:center;font-weight:700;font-size:.85rem}
+.panel li small{display:block;color:var(--mut);font-size:.86rem;line-height:1.35}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1.25fr 1fr;align-items:center}}
+section{padding:56px 0}
+.sec h2{font-size:clamp(1.8rem,5.5vw,2.7rem);margin:6px 0 12px}
+.sec .intro{max-width:40em;color:var(--mut);margin-bottom:28px}
+/* tabs */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tabs button{border:2px solid var(--navy);background:#fff;color:var(--navy);font:inherit;font-weight:700;padding:9px 18px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--navy);color:#fff}
+.tp{display:none}
+.tp.on{display:block}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;min-width:0;border-top:5px solid var(--navy)}
+.card:nth-child(3n+2){border-top-color:var(--red)}
+.card h4{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--navy2);line-height:1.2;margin-bottom:6px}
+.card .n{display:inline-block;margin-top:8px;background:var(--sea);color:var(--navy);font-weight:700;font-size:.8rem;padding:3px 11px;border-radius:999px}
+.card p{font-size:.9rem;color:var(--mut)}
+/* resort lists */
+.duo{display:grid;gap:16px;grid-template-columns:1fr;min-width:0}
+@media(min-width:760px){.duo{grid-template-columns:1fr 1fr}}
+.box{background:#fff;border-radius:18px;padding:24px;border:1px solid var(--line);min-width:0}
+.box h3{font-size:1.4rem;margin-bottom:4px}
+.box .s{color:var(--mut);font-size:.92rem;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chips span{background:var(--sand2);color:var(--navy2);padding:5px 12px;border-radius:999px;font-size:.87rem;font-weight:600}
+.chips.a span{background:var(--sea)}
+.sub{margin-top:14px;font-weight:700;color:var(--red);font-size:.85rem;text-transform:uppercase;letter-spacing:.08em}
+/* cuba */
+.cuba{background:var(--navy2);color:#fff}
+.cuba h2,.cuba h3{color:#fff}
+.cuba .intro{color:#cfd9ec}
+.steps{display:grid;gap:14px;grid-template-columns:1fr;counter-reset:s;min-width:0}
+@media(min-width:760px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{background:rgba(255,255,255,.08);border-radius:16px;padding:18px;counter-increment:s;min-width:0}
+.step::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--red);font-family:'Fraunces';font-weight:700;margin-bottom:10px}
+.step h3{font-size:1.1rem;margin-bottom:6px}
+.step p{font-size:.9rem;color:#d4def0}
+.inc{display:grid;gap:8px;margin-top:22px;grid-template-columns:1fr;min-width:0}
+@media(min-width:700px){.inc{grid-template-columns:1fr 1fr}}
+.inc div{background:#fff;color:var(--ink);border-radius:12px;padding:12px 16px;font-weight:600;min-width:0}
+.inc div::before{content:"\2713\00a0";color:var(--red);font-weight:800}
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:8px}
+summary{cursor:pointer;padding:15px 18px;font-weight:700;color:var(--navy2);list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";font-size:1.3rem;color:var(--red);line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 18px 16px;color:#464e60}
+/* contact */
+.contact{background:var(--sand2)}
+.cg{display:grid;gap:18px;grid-template-columns:1fr;min-width:0}
+@media(min-width:760px){.cg{grid-template-columns:1fr 1fr}}
+.cg .box a{color:var(--navy);font-weight:700;overflow-wrap:anywhere}
+footer{background:var(--navy2);color:#c9d3e8;padding:28px 0 96px;font-size:.9rem}
+footer .demo{margin-top:8px;font-size:.84rem;color:#9fb0d1}
+/* assistant */
+#dv-btn{position:fixed;right:14px;bottom:14px;z-index:50;background:var(--red);color:#fff;border:0;border-radius:999px;font:inherit;font-weight:700;padding:13px 20px;cursor:pointer;box-shadow:0 8px 24px rgba(192,21,57,.45)}
+#dv-panel{position:fixed;right:10px;bottom:10px;z-index:60;width:calc(100vw - 20px);max-width:380px;height:min(560px,calc(100vh - 20px));background:#fff;border-radius:20px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 14px 48px rgba(15,42,87,.4)}
+#dv-panel.open{display:flex}
+.dh{background:linear-gradient(120deg,var(--navy),var(--navy2));color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+.dh b{font-family:'Fraunces',serif;font-size:1.1rem}
+.dh small{display:block;font-size:.76rem;color:#c9d6f2}
+.dh button{background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer;line-height:1}
+#dv-log{flex:1;overflow-y:auto;padding:12px;background:var(--sand);display:flex;flex-direction:column;gap:8px}
+.m{max-width:88%;padding:9px 13px;border-radius:16px;font-size:.93rem;line-height:1.4;white-space:pre-wrap;overflow-wrap:anywhere}
+.m.b{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--navy);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+#dv-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;background:#fff;border-top:1px solid var(--line)}
+#dv-chips button{background:var(--sea);border:0;color:var(--navy2);font:inherit;font-weight:700;font-size:.8rem;padding:5px 11px;border-radius:999px;cursor:pointer}
+#dv-chips button:hover{background:var(--sand2)}
+#dv-form{display:flex;border-top:1px solid var(--line)}
+#dv-in{flex:1;border:0;padding:13px;font:inherit;font-size:16px;min-width:0;outline:none}
+#dv-form button{background:var(--red);color:#fff;border:0;padding:0 18px;font:inherit;font-weight:700;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><span>Agencia de viajes en Miami</span><a href="tel:+13053066637">(305) 306-6637</a></div></div>
+<header>
+ <div class="hb">
+  <a class="logo" href="#inicio" aria-label="Dviaje Travel"><img src="img/dviaje-travel-logo.png" alt="Dviaje Travel" width="103" height="46"></a>
+  <nav><a href="#viajes">Viajes</a><a href="#caribe">Caribe</a><a href="#cuba">Desde Cuba</a><a href="#eventos">Cruceros y eventos</a><a href="#blog">Blog</a><a href="#preguntas">Preguntas</a><a href="#contacto">Contacto</a></nav>
+  <a class="pill" href="#contacto">Solicitar información</a>
+ </div>
+</header>
+
+<div class="hero" id="inicio">
+ <div class="wrap">
+  <div>
+   <span class="kick">Dviaje Travel &middot; Miami</span>
+   <h1>&iexcl;Monta que <em>te quedas!</em></h1>
+   <p class="lead">Viajes en grupo por el mundo, hoteles todo incluido en Punta Cana y Cancún, paquetes desde Cuba, cruceros y viajes a la medida. Un equipo que te acompaña antes, durante y después del viaje.</p>
+   <div class="cta"><a class="btn r" href="#viajes">Ver los viajes</a><button type="button" class="btn n" id="heroBook">Pedir ayuda con mi viaje</button></div>
+  </div>
+  <div class="panel">
+   <h3>Lo que organizamos</h3>
+   <ul>
+    <li><i>1</i><div><b>Grupos de viaje</b><small>Circuitos por Europa, Medio Oriente, Lejano Oriente y América Latina</small></div></li>
+    <li><i>2</i><div><b>Hoteles todo incluido</b><small>Punta Cana, Cancún y Riviera Maya según tu estilo de viaje</small></div></li>
+    <li><i>3</i><div><b>Desde Cuba a Punta Cana</b><small>Vuelo, hotel, traslados y ayuda con la visa dominicana</small></div></li>
+    <li><i>4</i><div><b>Cruceros, bodas y eventos</b><small>Quinceañeras, familias, empresas y viajes personalizados</small></div></li>
+   </ul>
+  </div>
+ </div>
+</div>
+
+<section class="sec" id="viajes">
+ <div class="wrap">
+  <span class="kick">Nuestra selección de viajes</span>
+  <h2>Viajes a emocionantes destinos en grupo</h2>
+  <p class="intro">Elige por región o por fecha. Cada colección reúne varios viajes para comparar itinerarios y salidas.</p>
+  <div class="tabs" role="tablist">
+   <button role="tab" aria-selected="true" data-t="t1">Europa</button>
+   <button role="tab" aria-selected="false" data-t="t2">Oriente y Turquía</button>
+   <button role="tab" aria-selected="false" data-t="t3">América Latina</button>
+   <button role="tab" aria-selected="false" data-t="t4">Por fecha</button>
+  </div>
+  <div class="tp on" id="t1"><div class="cards">
+   <div class="card"><h4>Europa Occidental</h4><p>Circuitos por las grandes capitales del oeste europeo.</p><span class="n">18 viajes</span></div>
+   <div class="card"><h4>Europa Central, Este, Balcanes y Báltico</h4><p>Rutas por el centro y este del continente.</p><span class="n">5 viajes</span></div>
+   <div class="card"><h4>Países Ibéricos</h4><p>España y Portugal en circuito.</p><span class="n">16 viajes</span></div>
+   <div class="card"><h4>Italia y Suiza</h4><p>Itinerarios por Italia con Suiza.</p><span class="n">13 viajes</span></div>
+  </div></div>
+  <div class="tp" id="t2"><div class="cards">
+   <div class="card"><h4>Medio Oriente</h4><p>Viajes en grupo por la región.</p><span class="n">5 viajes</span></div>
+   <div class="card"><h4>Lejano Oriente</h4><p>Circuitos por Asia.</p><span class="n">5 viajes</span></div>
+   <div class="card"><h4>Turquía y Grecia</h4><p>Dos países en un mismo viaje.</p><span class="n">2 viajes</span></div>
+  </div></div>
+  <div class="tp" id="t3"><div class="cards">
+   <div class="card"><h4>Nuestra América Latina</h4><p>Viajes por Latinoamérica.</p><span class="n">12 viajes</span></div>
+  </div></div>
+  <div class="tp" id="t4"><div class="cards">
+   <div class="card"><h4>Calendario Dviaje</h4><p>Propuestas para cada mes del año.</p><span class="n">14 viajes</span></div>
+   <div class="card"><h4>Grupos para Fin de Año</h4><p>Salidas para despedir el año de viaje.</p><span class="n">3 viajes</span></div>
+   <div class="card"><h4>Grupos con el vuelo incluido</h4><p>Viajes en los que el vuelo ya va dentro.</p><span class="n">11 viajes</span></div>
+   <div class="card"><h4>Selección de Dviaje</h4><p>Los circuitos destacados del equipo.</p><span class="n">8 viajes</span></div>
+  </div></div>
+ </div>
+</section>
+
+<section class="sec" id="caribe" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+ <div class="wrap">
+  <span class="kick">Caribe y México</span>
+  <h2>Punta Cana y Cancún a tu manera</h2>
+  <p class="intro">Una selección de hoteles todo incluido según tu estilo de viaje: con niños, solo adultos, con buena playa, con parques de agua o con buena relación calidad precio. Hay 77 hoteles en República Dominicana en el catálogo.</p>
+  <div class="duo">
+   <div class="box">
+    <h3>Punta Cana</h3><p class="s">Hoteles recomendados por el equipo</p>
+    <div class="sub">Familiares</div>
+    <div class="chips"><span>Lopesan Costa Bávaro</span><span>Hard Rock Punta Cana</span><span>Riu Palace Bávaro</span><span>Zemi Miches by Hilton</span><span>Lopesan Splash Cove</span><span>Paradisus Palma Real</span><span>Dreams Flora</span><span>Iberostar Selection Bávaro</span><span>Bahía Príncipe Explore Legend</span></div>
+    <div class="sub">Solo adultos</div>
+    <div class="chips a"><span>Live Aqua Punta Cana</span><span>Lopesan Serenity Bay</span><span>Secrets Playa Esmeralda</span><span>JOIA Bávaro by Iberostar</span><span>Meliá Punta Cana</span></div>
+   </div>
+   <div class="box">
+    <h3>Cancún y Riviera Maya</h3><p class="s">Hoteles recomendados por el equipo</p>
+    <div class="sub">Familiares</div>
+    <div class="chips"><span>Hotel Xcaret México</span><span>Paradisus Playa del Carmen</span><span>Barceló Maya Palace</span><span>Royalton Splash</span><span>Generations Riviera Maya</span><span>Hard Rock Cancún</span></div>
+    <div class="sub">Solo adultos</div>
+    <div class="chips a"><span>Hotel Xcaret Arte</span><span>Paradisus La Perla</span><span>Live Aqua Cancún</span><span>El Dorado Maroma</span><span>Royalton CHIC Cancún</span></div>
+   </div>
+  </div>
+  <div class="cards" style="margin-top:18px">
+   <div class="card"><h4>Con niños en Punta Cana</h4><p>Hoteles con parques de agua y opciones familiares de varios presupuestos.</p></div>
+   <div class="card"><h4>Fiesta y entretenimiento</h4><p>Hoteles con ambiente y animación.</p></div>
+   <div class="card"><h4>Hoteles Lopesan</h4><p>Colección del gran complejo Lopesan en Punta Cana.</p></div>
+   <div class="card"><h4>Ofertas del momento</h4><p>Cambian con frecuencia. Pregunta al equipo.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec cuba" id="cuba">
+ <div class="wrap">
+  <span class="kick" style="color:#ff9bb0">Punta Cana desde Cuba</span>
+  <h2>Reunir a la familia en República Dominicana</h2>
+  <p class="intro">Tu familiar viaja desde La Habana y tú desde Miami u otro lugar. Dviaje coordina las reservas, los vuelos y la documentación de la visa. La mayoría de los clientes lo hace todo a distancia, sin pasar por la oficina.</p>
+  <div class="steps">
+   <div class="step"><h3>Reserva el paquete</h3><p>Se empieza con la reserva y un depósito. En algunos casos desde $250. El pago final suele ser 45 días antes del viaje.</p></div>
+   <div class="step"><h3>Prepara la visa</h3><p>Te facilitamos los formularios y te explicamos cada paso. Pasaporte vigente, foto 4 x 5 cm y formularios.</p></div>
+   <div class="step"><h3>Entrega en La Habana</h3><p>Una persona puede entregar la documentación de todo el grupo y recoger los pasaportes con visa.</p></div>
+   <div class="step"><h3>Viaja y encuéntrense</h3><p>Pueden llegar en vuelos distintos o en días diferentes. Nosotros lo coordinamos.</p></div>
+  </div>
+  <div class="inc">
+   <div>Vuelo de ida y vuelta desde Cuba</div><div>Hotel todo incluido</div>
+   <div>Traslados aeropuerto, hotel, aeropuerto</div><div>Asistencia antes, durante y después</div>
+   <div>Gestión y asesoría con la visa</div><div>Pagos por Zelle, transferencia, depósito o tarjeta</div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="eventos">
+ <div class="wrap">
+  <span class="kick">Cruceros y a la medida</span>
+  <h2>Cruceros, bodas y viajes personalizados</h2>
+  <div class="duo">
+   <div class="box"><h3>Cruceros</h3><p class="s">3 viajes en el catálogo</p><p>Viajes en crucero a excelentes precios. Pide las salidas disponibles y el equipo te las envía.</p></div>
+   <div class="box"><h3>Bodas y eventos</h3><p class="s">Bodas, quinceañeras, familias y empresas</p><p>Itinerarios personalizados para grupos privados. También viajes a la medida: tú eliges cómo viajar y el equipo se encarga de que todo salga bien.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="preguntas" style="background:#fff;border-top:1px solid var(--line)">
+ <div class="wrap">
+  <span class="kick">Preguntas frecuentes</span>
+  <h2>Visa, pagos y reservas</h2>
+  <details><summary>¿Los cubanos necesitan visa para viajar a Punta Cana?</summary><p>Sí, salvo excepciones. Con una visa vigente de Estados Unidos, Canadá, Reino Unido o el espacio Schengen puede no hacer falta la visa dominicana. Consulta tu caso antes de empezar.</p></details>
+  <details><summary>¿Cuánto tiempo antes debo empezar?</summary><p>Al menos 30 días antes del viaje, y lo ideal es 45 días o más. La visa suele estar lista cerca de la fecha del viaje y Dviaje avisa cuando el pasaporte está disponible.</p></details>
+  <details><summary>¿Cuánta vigencia debe tener el pasaporte?</summary><p>Al menos 6 meses después de la fecha prevista de fin del viaje.</p></details>
+  <details><summary>¿La aprobación de la visa está garantizada?</summary><p>No. Ninguna agencia puede garantizarla, porque la decisión final es de las autoridades consulares.</p></details>
+  <details><summary>¿Cuánto cuesta la visa?</summary><p>La tasa consular actual es de $160 por persona. Puede cambiar, y el equipo confirma el importe vigente al reservar. La visa turística dominicana vale 60 días.</p></details>
+  <details><summary>¿Qué formas de pago aceptan?</summary><p>Zelle, transferencias, depósitos bancarios y tarjetas de crédito. Puedes pagar poco a poco.</p></details>
+  <details><summary>¿Tengo que ir a la oficina?</summary><p>No. La mayoría de los clientes gestiona reserva, documentos y pagos a distancia.</p></details>
+  <details><summary>¿Quién puede invitar a una persona que vive en Cuba?</summary><p>Una persona que viva fuera de Cuba y tenga una reserva en República Dominicana con Dviaje, aunque sea solo el hotel. No tiene que ser familiar ni vivir en Estados Unidos.</p></details>
+ </div>
+</section>
+
+<section class="sec" id="blog">
+ <div class="wrap">
+  <span class="kick">Del blog de Dviaje</span>
+  <h2>Para elegir hotel con calma</h2>
+  <p class="intro">Guías del equipo sobre los grandes complejos de Punta Cana. Sirven para decidir entre la versión familiar y la de solo adultos antes de pedir una cotización.</p>
+  <div class="cards">
+   <div class="card"><h4>Lopesan Serenity Bay Resort, Spa &amp; Casino</h4><p>El hotel solo adultos del gran complejo Lopesan en Punta Cana.</p><span class="n">28 feb 2026</span></div>
+   <div class="card"><h4>Lopesan Splash Cove Resort, Spa &amp; Casino</h4><p>El hotel familiar del gran complejo Lopesan en Punta Cana.</p><span class="n">14 feb 2026</span></div>
+   <div class="card"><h4>Punta Cana: tejiendo recuerdos inolvidables</h4><p>Una mirada al destino y a lo que hace especial un viaje en familia.</p><span class="n">7 dic 2023</span></div>
+  </div>
+  <p class="intro" style="margin-top:22px;margin-bottom:0" id="cierre">Un viaje de reencuentro, un grupo por Europa o una semana de playa: cuéntale al equipo qué buscas y te propondrá hoteles y fechas concretas, con los precios confirmados por ellos.</p>
+ </div>
+</section>
+
+<section class="sec contact" id="contacto">
+ <div class="wrap">
+  <span class="kick">Contacto</span>
+  <h2>Habla con el equipo</h2>
+  <div class="cg">
+   <div class="box"><h3>Oficina en Miami</h3><p>8332 SW 40th St, Miami, FL 33155</p><p style="margin-top:8px"><a href="tel:+13053066637">(305) 306-6637</a></p><p style="margin-top:4px"><a href="mailto:info@dviajeonline.com">info@dviajeonline.com</a></p><p class="s" style="margin-top:10px;margin-bottom:0">El horario de la oficina no figura en la web. El equipo lo confirma.</p></div>
+   <div class="box"><h3>Cuéntanos tu viaje</h3><p>Dinos a dónde quieres ir, cuándo y cuántas personas viajan. Un miembro del equipo se pone en contacto contigo lo antes posible.</p><div class="cta"><button type="button" class="btn r" id="contactBook">Pedir información</button></div></div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <p><b>Dviaje Travel</b> &middot; Agencia de viajes en Miami</p>
+  <p class="demo">Demo · prepared by Gevorg Hovhannisyan</p>
+ </div>
+</footer>
+
+<button id="dv-btn" type="button" aria-label="Abrir asistente">Pregúntanos</button>
+<div id="dv-panel" role="dialog" aria-label="Asistente de Dviaje Travel">
+ <div class="dh"><div><b>Asistente Dviaje</b><small>Demo &middot; responde con los datos de esta página</small></div><button type="button" id="dv-x" aria-label="Cerrar">&times;</button></div>
+ <div id="dv-log" aria-live="polite"></div>
+ <div id="dv-chips"></div>
+ <form id="dv-form" autocomplete="off"><input id="dv-in" type="text" placeholder="Escribe tu pregunta o pide ayuda" aria-label="Mensaje"><button type="submit">Enviar</button></form>
+</div>
+
+<script>
+(function(){
+var tabs=document.querySelectorAll(".tabs button");
+for(var i=0;i<tabs.length;i++){(function(b){b.onclick=function(){for(var j=0;j<tabs.length;j++){tabs[j].setAttribute("aria-selected","false");document.getElementById(tabs[j].getAttribute("data-t")).className="tp"}b.setAttribute("aria-selected","true");document.getElementById(b.getAttribute("data-t")).className="tp on"}})(tabs[i])}
+})();
+(function(){
+var KB=[
+{k:"visa visado necesito necesitan cubanos cuba requisito requisitos documento documentos papeles pasaporte",a:"Los ciudadanos cubanos necesitan visa para República Dominicana, salvo excepciones: con una visa vigente de Estados Unidos, Canadá, Reino Unido o Schengen puede no hacer falta. Para el trámite se pide pasaporte cubano vigente (al menos 6 meses después del fin del viaje), foto 4 x 5 cm y los formularios, que Dviaje facilita. Si tu caso es particular, consúltalo con el equipo antes de empezar."},
+{k:"costo cuesta precio visa tasa consular cuanto vale",a:"La tasa consular actual es de $160 por persona y puede cambiar: el equipo confirma el importe vigente al reservar. La visa turística dominicana tiene vigencia de 60 días. Los precios de los paquetes dependen de fechas, hotel y vuelos, así que los confirma el equipo."},
+{k:"garantizada garantiza aprobacion aprobada aprueban negar negada rechazan",a:"No, ninguna agencia puede garantizar una visa porque la decisión final es de las autoridades consulares. Dviaje te guía durante todo el proceso."},
+{k:"cuanto antes tiempo anticipacion demora tarda dias empezar cuando",a:"Conviene empezar al menos 30 días antes del viaje, y lo ideal son 45 días o más. La visa suele estar lista cerca de la fecha del viaje y Dviaje avisa cuando el pasaporte visado está disponible."},
+{k:"pago pagos pagar pagos zelle tarjeta transferencia deposito depositos credito formas metodos cuotas abono abonar",a:"Se aceptan Zelle, transferencias, depósitos bancarios y tarjetas de crédito. Puedes empezar con el depósito de la reserva (en algunos casos desde $250) y pagar el resto poco a poco. El pago final suele ser 45 días antes del viaje."},
+{k:"incluye paquete paquetes incluido cuba habana vuelo traslado traslados",a:"El paquete desde Cuba normalmente incluye vuelo de ida y vuelta desde Cuba a República Dominicana, hotel todo incluido, traslados aeropuerto-hotel-aeropuerto, asistencia antes, durante y después del viaje y gestión y asesoría con la visa."},
+{k:"invitar invitacion invita familiar familiares amigo quien pueden invitado",a:"Puede invitar una persona que viva fuera de Cuba y tenga una reserva en República Dominicana con Dviaje, aunque sea solo la parte del hotel. No tiene que ser familiar ni vivir en Estados Unidos, y no tienen que compartir habitación."},
+{k:"encontrar encontrarme encontrarnos miami reunir reunirme familia mismo vuelo llegar llegada",a:"Sí. Tu familiar puede viajar desde La Habana y tú desde Miami u otro lugar. No tienen que llegar en el mismo vuelo ni el mismo día: Dviaje coordina las dos reservas."},
+{k:"oficina direccion ubicacion donde estan quedan miami visitar ir personalmente",a:"La oficina está en 8332 SW 40th St, Miami, FL 33155. No es obligatorio ir: la mayoría de los clientes gestiona reserva, documentos y pagos a distancia."},
+{k:"telefono llamar llamo numero contacto correo email escribir whatsapp hablar",a:"Teléfono: (305) 306-6637. Correo: info@dviajeonline.com. También puedes dejar tus datos aquí y el equipo se pone en contacto contigo lo antes posible."},
+{k:"horario abren abierto cierran hora horas atienden atencion sabado domingo",a:"El horario de la oficina no figura en la web, así que el equipo lo confirma. Puedes llamar al (305) 306-6637 o dejar tus datos aquí."},
+{k:"punta cana todo incluido dominicana republica resort resorts hotel hoteles",a:"Hay una selección de hoteles todo incluido en Punta Cana según tu estilo de viaje (familias, solo adultos, playa, parques de agua, calidad precio) y 77 hoteles en República Dominicana en el catálogo. Familiares recomendados: Lopesan Costa Bávaro, Hard Rock Punta Cana, Riu Palace Bávaro, Zemi Miches by Hilton, Paradisus Palma Real, Dreams Flora, Iberostar Selection Bávaro y otros."},
+{k:"hotel hoteles punta cana adultos solo pareja luna miel romantico parejas",a:"Solo adultos en Punta Cana: Live Aqua, Lopesan Serenity Bay, Secrets Playa Esmeralda, JOIA Bávaro by Iberostar y Meliá Punta Cana. En Cancún y Riviera Maya: Hotel Xcaret Arte, Paradisus La Perla, Live Aqua Cancún, El Dorado Maroma y Royalton CHIC."},
+{k:"hotel hoteles punta cana ninos nino ninos familia familiar familias hijos menores parque parques agua toboganes",a:"Para ir con niños hay colecciones de hoteles familiares y con parques de agua en Punta Cana, como Lopesan Splash Cove, y en Cancún y Riviera Maya como Royalton Splash, Hotel Xcaret México o Barceló Maya Palace. El equipo te recomienda según edades y presupuesto."},
+{k:"cancun riviera maya mexico playa carmen xcaret",a:"Cancún y Riviera Maya: hoteles familiares como Hotel Xcaret México, Paradisus Playa del Carmen, Barceló Maya Palace, Royalton Splash, Generations Riviera Maya y Hard Rock Cancún, además de opciones de buena relación calidad precio y económicas."},
+{k:"crucero cruceros barco navegar",a:"Hay una colección de cruceros con salidas a excelentes precios (3 viajes en el catálogo). Dime el mes y el destino y el equipo te envía las opciones."},
+{k:"boda bodas quince quinceanera quinceaneras evento eventos corporativo empresa empresas medida personalizado grupo privado",a:"Dviaje diseña itinerarios personalizados para bodas, quinceañeras, familias y empresas, y también viajes a la medida. Cuéntame qué tienes en mente y lo envío al equipo."},
+{k:"europa italia espana portugal suiza paris turquia grecia grupo grupos circuito circuitos asia medio oriente oriente latinoamerica america",a:"Hay circuitos en grupo por Europa Occidental (18 viajes), Países Ibéricos (16), Italia y Suiza (13), Europa Central, Este, Balcanes y Báltico (5), Medio Oriente (5), Lejano Oriente (5), Turquía y Grecia (2) y América Latina (12). También hay un calendario con propuestas para cada mes (14), grupos de fin de año (3) y grupos con el vuelo incluido (11)."},
+{k:"fin ano navidad nochevieja diciembre calendario mes meses fecha fechas salida salidas",a:"Hay grupos para fin de año (3 viajes), un calendario con propuestas para cada mes (14 viajes) y grupos con el vuelo incluido (11). Las fechas exactas las confirma el equipo."},
+{k:"santo domingo romana miches puerto plata otras zonas",a:"Sí, desde Cuba también se organizan viajes a Santo Domingo, La Romana, Miches, Puerto Plata y otras zonas turísticas de República Dominicana. Hay viajes durante todo el año, sujetos a disponibilidad de vuelos y hoteles."},
+{k:"nunca salido primera vez viajado entrevista ingresos trabajo propiedades",a:"No hace falta haber viajado antes fuera de Cuba y en el proceso actual no se hace entrevista individual ni se piden pruebas de ingresos o trabajo. El equipo te indica la documentación."}
+];
+var STOP="el la los las un una unos unas de del al en y o u a que es son por para con sin mi mis tu tus su sus me te se lo le les hay ya como cual cuales hola buenas buenos quiero puedo puede pueden tienen tiene ustedes usted favor".split(" ");
+function norm(s){return (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9$\s]/g," ").replace(/\s+/g," ").trim()}
+function stem(w){return w.replace(/(ciones|cion|mente|es|s)$/,"")}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 3;var d=[],i,j;for(i=0;i<=m;i++){d[i]=[i]}for(j=0;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1)}return d[m][n]}
+KB.forEach(function(e){e.w=e.k.split(" ").map(stem)});
+function toks(q){return norm(q).split(" ").filter(function(w){return w&&STOP.indexOf(w)<0}).map(stem)}
+function score(t,e){var s=0;t.forEach(function(w){e.w.forEach(function(k){if(w===k)s+=3;else if(w.length>=4&&k.length>=4&&(k.indexOf(w)===0||w.indexOf(k)===0))s+=2;else if(w.length>=5&&lev(w,k)<=1)s+=2;else if(w.length>=7&&lev(w,k)<=2)s+=1.5})});return s}
+function answer(q){var t=toks(q);if(!t.length)return null;var best=null,bs=0;KB.forEach(function(e){var s=score(t,e);if(s>bs){bs=s;best=e}});return bs>=2?best.a:null}
+window.__sgAnswer=answer;
+var $=function(i){return document.getElementById(i)};
+var log=$("dv-log"),chips=$("dv-chips"),panel=$("dv-panel"),inp=$("dv-in");
+function say(t,c){var d=document.createElement("div");d.className="m "+c;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function setChips(a){chips.innerHTML="";a.forEach(function(x){var b=document.createElement("button");b.type="button";b.textContent=x;b.onclick=function(){handle(x)};chips.appendChild(b)})}
+var HOME=["Pedir ayuda con mi viaje","Viajar desde Cuba","Hoteles Punta Cana","Viajes en grupo","Cruceros","Formas de pago","Contacto"];
+var flow=null,data={};
+var steps=[
+{q:"¿Qué tipo de viaje tienes en mente?",chips:["Punta Cana","Cancún o Riviera Maya","Grupo por Europa u Oriente","Desde Cuba a Punta Cana","Crucero","Boda o evento"],k:"tipo"},
+{q:"¿En qué fechas o mes te gustaría viajar?",chips:["Este mes","Próximos 3 meses","Fin de año","Aún no lo sé"],k:"fechas"},
+{q:"¿Cuántas personas viajan? Indica adultos y niños, por ejemplo: 2 adultos y 2 niños.",chips:[],k:"viajeros"},
+{q:"¿Algo más que debamos saber? Por ejemplo solo adultos, presupuesto, ciudad de salida.",chips:["Nada más"],k:"notas"},
+{q:"Tu nombre y un teléfono o correo para contactarte, por favor.",chips:[],k:"contacto"}
+];
+function startBook(){flow=0;data={};ask()}
+function ask(){say(steps[flow].q,"b");setChips(steps[flow].chips.concat(["Cancelar"]))}
+function stepIn(v){
+ if(/^cancel/i.test(v)){flow=null;say("De acuerdo, lo dejamos aquí. Pregúntame lo que quieras.","b");setChips(HOME);return}
+ data[steps[flow].k]=v;flow++;
+ if(flow<steps.length){ask();return}
+ flow=null;
+ say("Gracias. Esto es lo que enviamos al equipo:\n- Viaje: "+data.tipo+"\n- Fechas: "+data.fechas+"\n- Viajeros: "+data.viajeros+"\n- Notas: "+data.notas+"\n- Contacto: "+data.contacto+"\n\nSolicitud enviada al equipo, que se pondrá en contacto contigo con opciones y precios. (Demo: no se envía nada realmente.)","b");setChips(HOME)}
+function handle(v){
+ v=(v||"").trim();if(!v)return;say(v,"u");
+ if(flow!==null){stepIn(v);return}
+ var n=norm(v);
+ if(/\b(reservar|reserva|reservacion|cotizar|cotizacion|solicitar|solicitud|ayuda con mi viaje|quiero viajar|pedir)\b/.test(n)){startBook();return}
+ if(/^(hola|buenas|buenos dias|buenas tardes|buenas noches|hey)$/.test(n)){say("¡Hola! Soy el asistente de Dviaje Travel. Pregúntame por viajes, hoteles, visa desde Cuba o pagos, o pide ayuda con tu viaje.","b");setChips(HOME);return}
+ if(/\b(gracias|muchas gracias)\b/.test(n)){say("¡De nada!","b");setChips(HOME);return}
+ var a=answer(v);
+ if(a){say(a,"b")}else{say("Eso no lo tengo en la web. El equipo lo confirma: llama al (305) 306-6637 o escribe a info@dviajeonline.com, o pídeme ayuda con tu viaje y dejo tus datos.","b")}
+ setChips(HOME)}
+function open(){panel.classList.add("open");$("dv-btn").style.display="none";if(!log.children.length){say("¡Hola! Soy el asistente de Dviaje Travel. Pregúntame por viajes en grupo, hoteles todo incluido, paquetes desde Cuba, visa o pagos.","b");setChips(HOME)}setTimeout(function(){try{inp.focus()}catch(e){}},50)}
+$("dv-btn").onclick=open;
+$("heroBook").onclick=function(){open();if(flow===null)handle("Pedir ayuda con mi viaje")};
+$("contactBook").onclick=function(){open();if(flow===null)handle("Pedir ayuda con mi viaje")};
+$("dv-x").onclick=function(){panel.classList.remove("open");$("dv-btn").style.display=""};
+$("dv-form").onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value="";handle(v)};
+})();
+</script>
+</body>
+</html>

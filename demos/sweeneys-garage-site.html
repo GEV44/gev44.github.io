@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sweeneys Garage | Dublin City Centre, Ballyfermot, Finglas, Bray</title>
+<meta property="og:title" content="Sweeneys Garage | Dublin and Bray"><meta property="og:type" content="website">
+<meta name="description" content="Car servicing, tyres, brakes, NCT pre-checks and more at four Sweeneys Garage locations. Demo page with a booking assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2b2e33;--steel:#5c6066;--steel2:#464a50;--yel:#ffee00;--red:#e3202b;--paper:#f4f3ee;--line:#d9d7cc;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.02}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 16px}
+.hazard{height:12px;background:repeating-linear-gradient(-45deg,var(--yel) 0 22px,var(--red) 22px 44px)}
+/* header */
+header{background:var(--steel);color:#fff;position:sticky;top:0;z-index:30;border-bottom:4px solid var(--yel)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 16px;max-width:1120px;margin:0 auto}
+.brand{display:block;height:46px;flex:0 0 auto}
+.brand img{height:46px;width:auto;border-radius:4px}
+nav{display:none;gap:22px;font-family:'Barlow Condensed';font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:1.05rem}
+nav a{text-decoration:none;color:#fff;opacity:.9}
+nav a:hover{color:var(--yel)}
+.callbtn{background:var(--yel);color:var(--ink);font-family:'Barlow Condensed';font-weight:800;text-transform:uppercase;text-decoration:none;padding:9px 14px;border-radius:3px;font-size:1rem;white-space:nowrap}
+@media(min-width:860px){nav{display:flex}}
+/* hero */
+.hero{background:linear-gradient(180deg,var(--steel2),var(--ink));color:#fff;position:relative;overflow:hidden}
+.hero .wrap{padding-top:44px;padding-bottom:50px;display:grid;gap:30px;min-width:0}
+.hero::after{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border:46px solid rgba(255,238,0,.08);border-radius:50%}
+.tag{display:inline-block;background:var(--yel);color:var(--ink);font-family:'Barlow Condensed';font-weight:800;text-transform:uppercase;padding:3px 10px;letter-spacing:.06em;font-size:.95rem;transform:skew(-8deg)}
+.hero h1{font-size:clamp(2.6rem,10vw,5.2rem);font-weight:800;margin:14px 0 14px}
+.hero h1 em{font-style:normal;color:var(--yel)}
+.hero p.lead{font-size:1.1rem;max-width:34em;color:#e8e8e3}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-block;border:0;cursor:pointer;font-family:'Barlow Condensed';font-weight:800;font-size:1.15rem;text-transform:uppercase;letter-spacing:.04em;padding:13px 22px;border-radius:3px;text-decoration:none}
+.btn.y{background:var(--yel);color:var(--ink)}
+.btn.o{background:transparent;color:#fff;border:2px solid #fff}
+.btn:hover{filter:brightness(.93)}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;min-width:0}
+.fact{background:rgba(255,255,255,.08);border-left:5px solid var(--yel);padding:12px 14px;min-width:0}
+.fact b{display:block;font-family:'Barlow Condensed';font-size:2rem;color:var(--yel);line-height:1}
+.fact span{font-size:.9rem;color:#dcdcd5}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1.3fr 1fr;align-items:center}}
+/* sections */
+section{padding:54px 0}
+.eyebrow{font-family:'Barlow Condensed';font-weight:700;color:var(--red);letter-spacing:.14em;text-transform:uppercase;font-size:.95rem}
+h2{font-size:clamp(2rem,6vw,3.2rem);font-weight:800;margin:6px 0 18px}
+.sub{max-width:40em;color:#4a4d52;margin-bottom:26px}
+/* free check */
+.freecheck{background:var(--yel);padding:0}
+.freecheck .wrap{display:grid;gap:18px;padding-top:34px;padding-bottom:34px;min-width:0}
+.freecheck h2{margin:0 0 8px}
+.freecheck ul{list-style:none;display:grid;grid-template-columns:1fr;gap:6px;font-weight:500}
+.freecheck li::before{content:"\2713\00a0";font-weight:800}
+@media(min-width:760px){.freecheck .wrap{grid-template-columns:1fr 1.2fr;align-items:center}.freecheck ul{grid-template-columns:1fr 1fr}}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.svc a{background:#fff;border:1px solid var(--line);border-top:5px solid var(--steel);padding:16px;text-decoration:none;font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;font-size:1.25rem;line-height:1.1;display:flex;flex-direction:column;gap:6px;min-width:0}
+.svc a small{font-family:'Barlow';text-transform:none;font-weight:400;font-size:.88rem;color:#5b5e63;line-height:1.35}
+.svc a:hover{border-top-color:var(--red);transform:translateY(-2px)}
+/* prices */
+.price{background:var(--ink);color:#fff}
+.price h2{color:#fff}.price .sub{color:#d5d5cf}
+.tiers{display:grid;gap:14px;grid-template-columns:1fr;min-width:0}
+.tier{background:var(--steel2);border-top:6px solid var(--yel);padding:20px;position:relative;min-width:0}
+.tier.pop{border-top-color:var(--red)}
+.tier.pop::after{content:"Popular";position:absolute;right:12px;top:12px;background:var(--red);font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;padding:1px 9px;font-size:.85rem}
+.tier h3{font-size:1.6rem}
+.tier .from{font-family:'Barlow Condensed';font-size:3rem;font-weight:800;color:var(--yel);line-height:1;margin:8px 0}
+.tier .from small{font-size:1rem;color:#ccc;font-weight:600}
+.tier ul{list-style:none;font-size:.93rem;color:#e2e2dc;display:grid;gap:3px}
+.tier li::before{content:"\25B8\00a0";color:var(--yel)}
+@media(min-width:760px){.tiers{grid-template-columns:repeat(3,1fr)}}
+.eng{margin-top:22px;display:grid;gap:6px;min-width:0}
+.eng .row{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr 1fr;gap:6px;font-size:.92rem;min-width:0}
+.eng .row>div{background:rgba(255,255,255,.07);padding:8px 9px;text-align:center;min-width:0}
+.eng .row.h>div{background:var(--yel);color:var(--ink);font-family:'Barlow Condensed';font-weight:800;text-transform:uppercase;font-size:.85rem;line-height:1.1}
+.eng .row>div:first-child{text-align:left;font-weight:600}
+.note{font-size:.88rem;color:#cfcfc8;margin-top:14px;max-width:46em}
+.calc{margin-top:26px;background:var(--steel2);border-left:8px solid var(--yel);padding:20px;min-width:0}
+.calc h3{font-size:1.5rem;margin-bottom:10px}
+.calc label{display:block;font-weight:600;margin-bottom:4px}
+.calc select{width:100%;max-width:320px;font:inherit;font-size:16px;padding:10px;border:2px solid var(--yel);background:var(--ink);color:#fff;border-radius:3px}
+.calc .out{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;min-width:0}
+.calc .out div{background:rgba(255,255,255,.08);padding:10px;text-align:center;min-width:0}
+.calc .out b{display:block;font-family:'Barlow Condensed';font-size:1.9rem;color:var(--yel);line-height:1}
+.calc .out span{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
+@media(min-width:700px){.calc .out{grid-template-columns:repeat(4,1fr)}}
+.give{display:grid;gap:14px;grid-template-columns:1fr;min-width:0}
+@media(min-width:760px){.give{grid-template-columns:repeat(3,1fr)}}
+.give .box{background:#fff;border:1px solid var(--line);border-bottom:6px solid var(--red);padding:20px;min-width:0}
+.give h3{font-size:1.35rem;margin-bottom:8px}
+.give p{font-size:.95rem;color:#44474c}
+.stripe{margin-top:24px;font-size:.92rem;color:#44474c;max-width:46em}
+/* locations */
+.locs{display:grid;gap:14px;grid-template-columns:1fr;min-width:0}
+@media(min-width:700px){.locs{grid-template-columns:1fr 1fr}}
+.loc{background:#fff;border:1px solid var(--line);padding:20px;position:relative;min-width:0}
+.loc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:repeating-linear-gradient(180deg,var(--yel) 0 14px,var(--red) 14px 28px)}
+.loc h3{font-size:1.7rem;margin-left:8px}
+.loc p,.loc .hrs{margin-left:8px;font-size:.96rem}
+.loc .ph{display:inline-block;margin:8px 0 6px 8px;font-family:'Barlow Condensed';font-weight:800;font-size:1.5rem;text-decoration:none;background:var(--ink);color:var(--yel);padding:2px 12px}
+.loc .hrs{color:#52555a}
+.loc a.em{margin-left:8px;font-size:.9rem;overflow-wrap:anywhere}
+/* trust */
+.trust{display:grid;gap:20px;grid-template-columns:1fr;min-width:0}
+@media(min-width:760px){.trust{grid-template-columns:1fr 1fr}}
+.trust .box{background:#fff;border:1px solid var(--line);padding:22px;min-width:0}
+.trust h3{font-size:1.5rem;margin-bottom:8px}
+.brands{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.brands span{background:var(--ink);color:#fff;font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;padding:3px 12px;letter-spacing:.05em}
+/* faq */
+details{background:#fff;border:1px solid var(--line);margin-bottom:8px}
+summary{cursor:pointer;padding:14px 16px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";font-weight:800;color:var(--red)}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 16px 14px;color:#47494e}
+footer{background:var(--ink);color:#cfcfc8;padding:30px 0 90px;font-size:.92rem}
+footer .demo{margin-top:12px;font-size:.85rem;color:#a7a7a0}
+/* assistant */
+#sg-btn{position:fixed;right:14px;bottom:14px;z-index:50;background:var(--yel);color:var(--ink);border:3px solid var(--ink);border-radius:4px;font-family:'Barlow Condensed';font-weight:800;text-transform:uppercase;font-size:1.1rem;padding:11px 16px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+#sg-panel{position:fixed;right:10px;bottom:10px;z-index:60;width:calc(100vw - 20px);max-width:380px;height:min(540px,calc(100vh - 20px));background:#fff;border:3px solid var(--ink);border-radius:6px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 10px 36px rgba(0,0,0,.4)}
+#sg-panel.open{display:flex}
+.sg-h{background:var(--steel);color:#fff;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:5px solid var(--yel)}
+.sg-h b{font-family:'Barlow Condensed';text-transform:uppercase;font-size:1.2rem;letter-spacing:.04em}
+.sg-h small{display:block;font-size:.75rem;color:#dcdcd5}
+.sg-h button{background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer;line-height:1}
+#sg-log{flex:1;overflow-y:auto;padding:12px;background:var(--paper);display:flex;flex-direction:column;gap:8px}
+.m{max-width:88%;padding:9px 12px;border-radius:4px;font-size:.93rem;line-height:1.4;white-space:pre-wrap;overflow-wrap:anywhere}
+.m.b{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.m.u{background:var(--ink);color:#fff;align-self:flex-end}
+#sg-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;border-top:1px solid var(--line);background:#fff}
+#sg-chips button{background:#fff;border:2px solid var(--ink);color:var(--ink);font-family:'Barlow';font-weight:600;font-size:.82rem;padding:4px 10px;border-radius:14px;cursor:pointer}
+#sg-chips button:hover{background:var(--yel)}
+#sg-form{display:flex;border-top:3px solid var(--ink)}
+#sg-in{flex:1;border:0;padding:12px;font:inherit;font-size:16px;min-width:0;outline:none}
+#sg-form button{background:var(--ink);color:var(--yel);border:0;padding:0 16px;font-family:'Barlow Condensed';font-weight:800;text-transform:uppercase;cursor:pointer;font-size:1.05rem}
+</style>
+</head>
+<body>
+<div class="hazard"></div>
+<header>
+ <div class="bar">
+  <a class="brand" href="#top" aria-label="Sweeneys Garage"><img src="img/sweeneys-garage-logo.png" alt="Sweeneys Garage" width="183" height="46"></a>
+  <nav><a href="#services">Services</a><a href="#prices">Service prices</a><a href="#locations">Locations</a><a href="#why">About</a><a href="#faq">FAQ</a></nav>
+  <a class="callbtn" href="#locations" id="callTop">Book / Call</a>
+ </div>
+</header>
+
+<div class="hero" id="top">
+ <div class="wrap">
+  <div>
+   <span class="tag">Dublin and Bray since 2001</span>
+   <h1>Car and van servicing in <em>four</em> garages</h1>
+   <p class="lead">Ballyfermot, Dublin City Centre, Finglas and Bray. Servicing, tyres, brakes, exhausts, diagnostics, accident repair and a free 10 point pre-NCT check. Parts and work come with a 12 month guarantee.</p>
+   <div class="cta"><a class="btn y" href="#locations">Find your garage</a><button class="btn o" type="button" id="heroBook">Book with the assistant</button></div>
+  </div>
+  <div class="facts">
+   <div class="fact"><b>2001</b><span>year Sweeneys started trading</span></div>
+   <div class="fact"><b>4</b><span>garages: Dublin and Bray</span></div>
+   <div class="fact"><b>12 mo</b><span>guarantee on services and parts</span></div>
+   <div class="fact"><b>Free</b><span>10 point pre-NCT check, no appointment</span></div>
+  </div>
+ </div>
+</div>
+<div class="hazard"></div>
+
+<div class="freecheck">
+ <div class="wrap">
+  <div>
+   <span class="eyebrow" style="color:var(--ink)">Walk in, call or book online</span>
+   <h2>Free 10 point pre-NCT check</h2>
+   <p>Turn up at any of the four garages. No appointment needed.</p>
+  </div>
+  <ul>
+   <li>Lights and bulbs</li><li>Light alignment</li><li>Handbrake</li><li>Wiper blades and sprayers</li>
+   <li>Battery test and charging</li><li>Tyre tread and pressure</li><li>Brakes and suspension (visual)</li><li>Spare wheel and pressure</li>
+   <li>Coolant leaks and freezing point</li><li>Oil leaks</li>
+  </ul>
+ </div>
+</div>
+
+<section id="services">
+ <div class="wrap">
+  <span class="eyebrow">What we do</span>
+  <h2>Services</h2>
+  <p class="sub">Cars and light commercial vehicles. Tell us what is wrong, or just what is due, and the garage will quote before any extra work starts.</p>
+  <div class="svc">
+   <a href="#prices"><span>Car service</span><small>Oil and filter, small and full service. Pricing below.</small></a>
+   <a href="#faq"><span>Hybrid car service</span><small>Servicing for hybrid cars.</small></a>
+   <a href="#faq"><span>New tyres</span><small>Dunlop, Pirelli, Bridgestone, Enduro and Kuhmo.</small></a>
+   <a href="#faq"><span>Wheel alignment</span><small>Tracking and alignment checks.</small></a>
+   <a href="#faq"><span>Brake pads and discs</span><small>Replacement pads and discs.</small></a>
+   <a href="#faq"><span>Clutch repair</span><small>Repair and replacement.</small></a>
+   <a href="#faq"><span>Engine and gearbox</span><small>Full engine and gearbox rebuilds.</small></a>
+   <a href="#faq"><span>Exhaust repair</span><small>Repair and replacement.</small></a>
+   <a href="#faq"><span>Air conditioning</span><small>A/C checks and repair.</small></a>
+   <a href="#faq"><span>Auto electrics</span><small>Electrics, alternators and battery replacement.</small></a>
+   <a href="#faq"><span>Parts and diagnostics</span><small>Fault finding with quality parts.</small></a>
+   <a href="#faq"><span>Accident repair</span><small>Crash repairs and alloy wheel repair.</small></a>
+   <a href="#faq"><span>Pre and post NCT checks</span><small>Free 10 point check, plus NCT preparation.</small></a>
+   <a href="#faq"><span>Oil change and small items</span><small>Quick jobs while you wait or drop in.</small></a>
+   <a href="#faq"><span>Classic car restoration</span><small>Ask the garage about your project.</small></a>
+  </div>
+ </div>
+</section>
+
+<section class="price" id="prices">
+ <div class="wrap">
+  <span class="eyebrow" style="color:var(--yel)">Car service pricing, from</span>
+  <h2>Pick the service level</h2>
+  <p class="sub">Three levels, so you only pay for what your car is due. Prices below are the published starting prices for the engine size shown.</p>
+  <div class="tiers">
+   <div class="tier"><h3>Oil &amp; filter change</h3><div class="from"><small>from </small>&euro;120</div><ul><li>Oil change and oil filter</li><li>10 point check</li><li>Top up fluids</li><li>Reset service light</li></ul></div>
+   <div class="tier pop"><h3>Standard service</h3><div class="from"><small>from </small>&euro;160</div><ul><li>Oil and filter</li><li>25 point check</li><li>Air filter</li><li>Spark plugs (standard)</li><li>Fluids and service light reset</li></ul></div>
+   <div class="tier"><h3>Full service</h3><div class="from"><small>from </small>&euro;210</div><ul><li>Everything in standard</li><li>25 point check</li><li>Fuel filter</li><li>Diesel cars are priced from the same level</li></ul></div>
+  </div>
+  <div class="eng" role="table" aria-label="Price by engine size">
+   <div class="row h"><div>Engine size</div><div>Oil &amp; filter</div><div>Small service</div><div>Full service</div><div>Diesel</div></div>
+   <div class="row"><div>Up to 1.3L</div><div>&euro;120</div><div>&euro;160</div><div>&euro;210</div><div>&euro;210</div></div>
+   <div class="row"><div>Up to 1.6L</div><div>&euro;140</div><div>&euro;170</div><div>&euro;230</div><div>&euro;230</div></div>
+   <div class="row"><div>Up to 2.0L</div><div>&euro;150</div><div>&euro;180</div><div>&euro;240</div><div>&euro;240</div></div>
+   <div class="row"><div>Up to 2.5L</div><div>&euro;150</div><div>&euro;180</div><div>&euro;260</div><div>&euro;260</div></div>
+   <div class="row"><div>Up to 3.5L</div><div>&euro;169</div><div>&euro;195</div><div>&euro;290</div><div>&euro;290</div></div>
+  </div>
+  <p class="note">Based on 4 litres of Castrol 5W30 or 10W40. Long-life spark plugs, oil over 4 litres and cabin filters are charged extra, and the garage tells you before it goes ahead. Some diesels need a fuel filter every third service. Drop the car in the morning and it is normally ready by the end of the day; if a part is not in stock a second appointment is needed.</p>
+  <div class="calc" id="calc">
+   <h3>Check your price by engine size</h3>
+   <label for="eng">Engine size</label>
+   <select id="eng"><option value="0">Up to 1.3L</option><option value="1">Up to 1.6L</option><option value="2">Up to 2.0L</option><option value="3">Up to 2.5L</option><option value="4">Up to 3.5L</option></select>
+   <div class="out" id="engOut"></div>
+   <p class="note" style="margin-top:10px">Starting prices from the garage price list. The garage confirms the final figure for your car.</p>
+  </div>
+  <p class="note">Car collection is offered within 2 km of each garage, subject to availability, with a minimum charge of &euro;50.</p>
+ </div>
+</section>
+
+<section id="locations">
+ <div class="wrap">
+  <span class="eyebrow">Find us</span>
+  <h2>Four locations</h2>
+  <p class="sub">Call the garage nearest you or book online. Each location answers its own phone.</p>
+  <div class="locs">
+   <div class="loc"><h3>Dublin City Centre</h3><p>2 Bridgefoot St, Merchants Quay, Dublin D08 HPC9</p><a class="ph" href="tel:016725926">01 672 5926</a><div class="hrs">Mon to Fri 8:30am to 6pm<br>Sat 9am to 5pm &middot; Sun closed</div><a class="em" href="mailto:bridgefoot@sweeneysgarage.ie">bridgefoot@sweeneysgarage.ie</a></div>
+   <div class="loc"><h3>Ballyfermot</h3><p>Unit 5, Kylemore Park North, Ballyfermot, Dublin 10, D10 Y179</p><a class="ph" href="tel:016236017">01 623 6017</a><div class="hrs">Mon to Fri 8:30am to 6pm<br>Sat 9am to 5pm &middot; Sun closed</div><a class="em" href="mailto:ballyfermot@sweeneysgarage.ie">ballyfermot@sweeneysgarage.ie</a></div>
+   <div class="loc"><h3>Finglas</h3><p>Jamestown Rd, Finglas North, Dublin D11 EK79</p><a class="ph" href="tel:018340679">01 834 0679</a><div class="hrs">Mon to Fri 8:30am to 6pm<br>Sat 9am to 5pm &middot; Sun closed</div><a class="em" href="mailto:finglas@sweeneysgarage.ie">finglas@sweeneysgarage.ie</a></div>
+   <div class="loc"><h3>Bray</h3><p>Oldcourt Industrial Estate, 1a Boghall Rd, Oldcourt, Bray, Co. Wicklow A98 A9C3</p><a class="ph" href="tel:012866815">01 286 6815</a><div class="hrs">Mon to Fri 8:30am to 5pm<br>Saturday: please call to confirm &middot; Sun closed</div><a class="em" href="mailto:bray@sweeneysgarage.ie">bray@sweeneysgarage.ie</a></div>
+  </div>
+  <p class="sub" style="margin-top:16px;font-size:.92rem">Saturdays of bank holiday weekends the garages are closed. Holiday opening times are posted on the website, so check before a long weekend.</p>
+ </div>
+</section>
+
+<section id="why" style="background:#ebeae2">
+ <div class="wrap">
+  <span class="eyebrow">Why drivers stay</span>
+  <h2>Trained technicians, honest parts</h2>
+  <div class="trust">
+   <div class="box"><h3>Skills kept current</h3><p>Sweeneys is registered with Solas, the national training centre, and technician skills are updated every year. The garage uses parts from reputable manufacturers and tells you which parts went on your car.</p></div>
+   <div class="box"><h3>Tyres for over 30 years</h3><p>The Bridgefoot Street garage has been supplying tyres to Dubliners for more than 30 years. Sweeneys started in 2001 on the North Circular Road and has grown to four locations.</p><div class="brands"><span>Dunlop</span><span>Pirelli</span><span>Bridgestone</span><span>Enduro</span><span>Kuhmo</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="day" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+ <div class="wrap">
+  <span class="eyebrow">How a service day works</span>
+  <h2>Drop in the morning, collect by evening</h2>
+  <div class="give">
+   <div class="box"><h3>1. Book or call</h3><p>Choose the garage nearest you and tell them the car and the service level. Call, email or book online.</p></div>
+   <div class="box"><h3>2. Drop off</h3><p>Bring the car in the morning. The 10 point check is free, and the 25 point check is part of the standard and full service.</p></div>
+   <div class="box"><h3>3. Told before extras</h3><p>Long-life spark plugs, a cabin filter, extra oil or a fuel filter on some diesels are charged extra, and you are advised before any of it goes ahead.</p></div>
+  </div>
+  <p class="stripe">Ready for collection by the end of the day. If a part is not in stock, a separate appointment is arranged. Work and parts carry the 12 month guarantee, and the garage can tell you which parts were fitted.</p>
+ </div>
+</section>
+
+<section id="community">
+ <div class="wrap">
+  <span class="eyebrow">Beyond the workshop</span>
+  <h2>Causes Sweeneys supports</h2>
+  <div class="give">
+   <div class="box"><h3>Roundstone For Fun</h3><p>A fundraising event Sweeneys organised in August 2018 in support of the National Breast Cancer Research Institute, now Breast Cancer Research. It raised &euro;6,066.</p></div>
+   <div class="box"><h3>Kilnamanagh Rockets</h3><p>Sweeneys is one of the main sponsors of the Kilnamanagh Rockets soccer club in Dublin 24, founded in 1978 and run by volunteers.</p></div>
+   <div class="box"><h3>Local sport and charities</h3><p>The site also covers support for the Garda Siochana, a sponsored Formula Vee driver at Mondello Park, and a monthly prize giveaway with Camile Thai.</p></div>
+  </div>
+  <p class="stripe">Bank holiday weekends: the garages close on the Saturday only, as a thank-you to the team. Christmas and New Year opening notices are posted on the site each year.</p>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap">
+  <span class="eyebrow">Quick answers</span>
+  <h2>Questions</h2>
+  <details><summary>What days are you open?</summary><p>Monday to Friday 8:30am to 6pm and Saturday 9am to 5pm at Dublin City Centre, Ballyfermot and Finglas. Bray closes at 5pm on weekdays. Sunday is closed.</p></details>
+  <details><summary>Do I need an appointment for the free pre-NCT check?</summary><p>No. You can walk in, call or book online.</p></details>
+  <details><summary>Do you offer a guarantee?</summary><p>Yes, services and parts come with a 12 month guarantee.</p></details>
+  <details><summary>Can you collect my car?</summary><p>Within 2 km of the Ballyfermot, City Centre, Finglas and Bray garages, subject to availability, with a minimum charge of &euro;50.</p></details>
+  <details><summary>How long does a service take?</summary><p>Drop the car in the morning and it is normally ready by the end of the day. If a specific part is unavailable, a separate appointment is needed.</p></details>
+  <details><summary>Do you work on vans and hybrids?</summary><p>Yes, cars and light commercial vehicles, and there is a dedicated hybrid car service.</p></details>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <p><b>Sweeneys Garage</b> &middot; Dublin City Centre &middot; Ballyfermot &middot; Finglas &middot; Bray</p>
+  <p class="demo">Demo · prepared by Gevorg Hovhannisyan</p>
+ </div>
+</footer>
+
+<button id="sg-btn" type="button" aria-label="Open booking assistant">Ask / Book</button>
+<div id="sg-panel" role="dialog" aria-label="Sweeneys Garage assistant">
+ <div class="sg-h"><div><b>Garage assistant</b><small>Demo &middot; replies from the facts on this page</small></div><button type="button" id="sg-x" aria-label="Close">&times;</button></div>
+ <div id="sg-log" aria-live="polite"></div>
+ <div id="sg-chips"></div>
+ <form id="sg-form" autocomplete="off"><input id="sg-in" type="text" placeholder="Type a question or ask to book" aria-label="Message"><button type="submit">Send</button></form>
+</div>
+
+<script>
+var ENG=[["120","160","210","210"],["140","170","230","230"],["150","180","240","240"],["150","180","260","260"],["169","195","290","290"]];
+(function(){var s=document.getElementById("eng"),o=document.getElementById("engOut");if(!s||!o||!o.insertAdjacentHTML)return;function r(){var v=ENG[+s.value],n=["Oil &amp; filter","Small service","Full service","Diesel"];o.innerHTML="";v.forEach(function(x,i){o.insertAdjacentHTML("beforeend","<div><b>&euro;"+x+"</b><span>"+n[i]+"</span></div>")})}s.onchange=r;r()})();
+(function(){
+var KB=[
+{k:"hours open opening time close closing saturday sunday weekend monday friday day days when late early",a:"Dublin City Centre, Ballyfermot and Finglas: Monday to Friday 8:30am to 6pm, Saturday 9am to 5pm, Sunday closed.\nBray: Monday to Friday 8:30am to 5pm. Saturday hours differ on the site, so the team will confirm Bray on Saturdays. Garages are closed on Saturdays of bank holiday weekends."},
+{k:"location locations address where find garage garages branch branches map directions near nearest dublin bray ballyfermot finglas bridgefoot kylemore jamestown oldcourt wicklow",a:"Four garages:\n- Dublin City Centre: 2 Bridgefoot St, Merchants Quay, Dublin D08 HPC9\n- Ballyfermot: Unit 5, Kylemore Park North, Dublin 10, D10 Y179\n- Finglas: Jamestown Rd, Finglas North, Dublin D11 EK79\n- Bray: Oldcourt Industrial Estate, 1a Boghall Rd, Bray, Co. Wicklow A98 A9C3"},
+{k:"phone call number telephone ring contact email mail",a:"City Centre 01 672 5926\nBallyfermot 01 623 6017\nFinglas 01 834 0679\nBray 01 286 6815\nEmails: bridgefoot@, ballyfermot@, finglas@ and bray@sweeneysgarage.ie"},
+{k:"price prices cost how much service servicing oil filter change standard full cheap rate rates quote quotation fee charge",a:"Published starting prices: oil and filter change from €120, standard (small) service from €160, full service from €210. It depends on engine size, for example up to 1.6L is €140 / €170 / €230. Long-life spark plugs, oil over 4 litres and cabin filters cost extra and you are told first."},
+{k:"nct pre check free test inspection roadworthy 10 point ten",a:"The free 10 point pre-NCT check needs no appointment. Walk in, call or book online. It covers lights, light alignment, handbrake, wipers and sprayers, battery, tyres, brakes and suspension (visual), spare wheel, coolant and oil leaks."},
+{k:"tyre tyres tire tires new brand dunlop pirelli bridgestone enduro kuhmo puncture",a:"New tyres are available from Dunlop, Pirelli, Bridgestone, Enduro and Kuhmo. The Bridgefoot Street garage has been supplying tyres to Dubliners for over 30 years. For a tyre price, tell me the size or send your reg and the team will quote."},
+{k:"brake brakes pads discs disc braking",a:"Yes, brake pads and discs replacement is on the service list. The free pre-NCT check also looks at brakes visually. Book a slot and the garage will inspect before quoting."},
+{k:"guarantee warranty guaranteed 12 month months year",a:"Services and parts come with a 12 month guarantee."},
+{k:"collect collection pickup pick drop delivery courier",a:"Car collection is offered within 2 km of the Ballyfermot, City Centre, Finglas and Bray garages, subject to availability, with a minimum charge of €50."},
+{k:"how long take takes time ready same day wait waiting finish",a:"Drop the car in the morning and it is normally ready by the end of the day. If a specific part is unavailable, a separate appointment is needed."},
+{k:"van vans commercial light hybrid electric",a:"Sweeneys services cars and light commercial vehicles, and has a hybrid car service. For an electric vehicle the team will confirm."},
+{k:"clutch gearbox engine rebuild rebuilds exhaust alternator electrics electrical battery aircon air conditioning ac diagnostics diagnostic warning light",a:"Yes: clutch repair and replacement, engine and gearbox repair and rebuilds, exhaust repair, auto electrics and alternators, battery replacement, air conditioning and parts and diagnostics. Book a slot and describe the problem; the garage will confirm after looking at the car."},
+{k:"accident crash collision dent alloy wheel bodywork",a:"Accident (crash) repair and alloy wheel repair are on the service list."},
+{k:"wheel alignment tracking geometry",a:"Wheel alignment is on the service list. Book a slot at your nearest garage."},
+{k:"classic restoration vintage old",a:"Classic car restoration is listed. Describe the car and the team will say if they can take it on."},
+{k:"solas trained technician mechanic qualified training staff team who",a:"Sweeneys is registered with Solas, the national training centre, and technician skills are updated annually. Parts come from reputable manufacturers and the garage tells you what went on your car."},
+{k:"about history established since founded who story 2001 owner",a:"Sweeneys started in 2001 on the North Circular Road and has grown to four locations: Ballyfermot, Dublin City Centre, Finglas and Bray."},
+{k:"job jobs career careers hiring work vacancy apprentice",a:"There is a Careers page on the main website. I cannot take applications here, so please check that page or call a garage."}
+];
+var STOP="the a an is are do you your can i my me to of for in on at and or it we what how when where does have has please hi hello hey there with this that".split(" ");
+function norm(s){return (s||"").toLowerCase().replace(/[^a-z0-9€\s]/g," ").replace(/\s+/g," ").trim()}
+function stem(w){return w.replace(/(ing|ed|es|s)$/,"")}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 3;var d=[],i,j;for(i=0;i<=m;i++){d[i]=[i]}for(j=0;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1)),i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1]&&(d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1));return d[m][n]}
+KB.forEach(function(e){e.w=e.k.split(" ").map(stem)});
+function toks(q){return norm(q).split(" ").filter(function(w){return w&&STOP.indexOf(w)<0}).map(stem)}
+function score(t,e){var s=0;t.forEach(function(w){e.w.forEach(function(k){if(w===k)s+=3;else if(w.length>=4&&k.length>=4&&(k.indexOf(w)===0||w.indexOf(k)===0))s+=2;else if(w.length>=5&&lev(w,k)<=1)s+=2;else if(w.length>=7&&lev(w,k)<=2)s+=1.5})});return s}
+function answer(q){var t=toks(q);if(!t.length)return null;var best=null,bs=0;KB.forEach(function(e){var s=score(t,e);if(s>bs){bs=s;best=e}});return bs>=2?best.a:null}
+window.__sgAnswer=answer;
+/* UI */
+var $=function(i){return document.getElementById(i)};
+var log=$("sg-log"),chips=$("sg-chips"),panel=$("sg-panel"),inp=$("sg-in");
+function say(t,c){var d=document.createElement("div");d.className="m "+c;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function setChips(a){chips.innerHTML="";a.forEach(function(x){var b=document.createElement("button");b.type="button";b.textContent=x;b.onclick=function(){handle(x)};chips.appendChild(b)})}
+var HOME=["Book a service","Opening hours","Free NCT check","Service prices","Locations","Car collection"];
+/* booking flow */
+var flow=null,data={};
+var LOCS=["Dublin City Centre","Ballyfermot","Finglas","Bray"];
+var SERV=["Oil and filter change","Standard service","Full service","Free pre-NCT check","Tyres","Brakes","Something else"];
+var steps=[
+{q:"Which garage suits you?",chips:LOCS,k:"garage"},
+{q:"What do you need?",chips:SERV,k:"job"},
+{q:"What car is it? Make, model and engine size if you know it, for example Ford Focus 1.6 diesel.",chips:[],k:"car"},
+{q:"Which day would you like to come in? Weekdays 8:30am, Saturdays from 9am.",chips:["This week","Next week","Saturday","Any day"],k:"day"},
+{q:"Your name and a phone number, please.",chips:[],k:"contact"}
+];
+function startBook(){flow=0;data={};ask()}
+function ask(){say(steps[flow].q,"b");setChips(steps[flow].chips.length?steps[flow].chips.concat(["Cancel"]):["Cancel"])}
+function stepIn(v){
+ if(/^cancel/i.test(v)){flow=null;say("Okay, cancelled. Ask me anything else.","b");setChips(HOME);return}
+ data[steps[flow].k]=v;flow++;
+ if(flow<steps.length){ask();return}
+ flow=null;
+ say("Thank you. Your request is ready for the team:\n- Garage: "+data.garage+"\n- Job: "+data.job+"\n- Car: "+data.car+"\n- Day: "+data.day+"\n- Contact: "+data.contact+"\n\nIt has been sent to the team, who will confirm the slot and any quote by phone. (Demo: nothing is actually sent.)","b");setChips(HOME)}
+function handle(v){
+ v=(v||"").trim();if(!v)return;say(v,"u");
+ if(flow!==null){stepIn(v);return}
+ var n=norm(v);
+ if(/\b(book|booking|appointment|appoint|reserve|slot|schedule|make a booking)\b/.test(n)||/^book a service$/.test(n)){startBook();return}
+ if(/^(hi|hello|hey|hiya|good (morning|afternoon|evening))$/.test(n)){say("Hello! I can answer questions about the four garages or take a booking request.","b");setChips(HOME);return}
+ if(/\b(thanks|thank you|cheers)\b/.test(n)){say("You are welcome.","b");setChips(HOME);return}
+ var a=answer(v);
+ if(a){say(a,"b")}else{say("I do not have that on the site. The team will confirm it: call the nearest garage (City Centre 01 672 5926, Ballyfermot 01 623 6017, Finglas 01 834 0679, Bray 01 286 6815).","b")}
+ setChips(HOME)}
+function open(){panel.classList.add("open");$("sg-btn").style.display="none";if(!log.children.length){say("Hi, I am the Sweeneys Garage assistant. Ask about services, hours or the free pre-NCT check, or book a slot.","b");setChips(HOME)}setTimeout(function(){try{inp.focus()}catch(e){}},50)}
+$("sg-btn").onclick=open;$("heroBook").onclick=function(){open();if(flow===null)handle("Book a service")};
+$("sg-x").onclick=function(){panel.classList.remove("open");$("sg-btn").style.display=""};
+$("sg-form").onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value="";handle(v)};
+})();
+</script>
+</body>
+</html>

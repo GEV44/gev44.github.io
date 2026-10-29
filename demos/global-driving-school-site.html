@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Global Driving School | Driving lessons in Dublin, Gorey and Arklow</title>
+<meta name="description" content="Demo page for Global Driving School: manual and automatic lessons, EDT, pre-test and car hire, refresher lessons in Dublin, Gorey and Arklow.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0b7a68;--teal2:#0a5f52;--asph:#2f2c2d;--asph2:#3f3b3c;--yel:#ffe500;--mint:#e8f5f1;--paper:#fbfaf6;--ink:#232122;--mut:#5b5758;
+--wa:#0b7a68;--wa2:#0b7a68;--wf:#fff;--wbg:#fff;--wtx:#232122;--wb:#e8f5f1;--wbd:#d6e3de;--wh:#2f2c2d;--whf:#fff;--wfont:'Nunito Sans',system-ui,sans-serif;--wr:14px;--wr2:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Nunito Sans',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;font-size:16px;-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;line-height:1.05;margin:0;letter-spacing:.2px}
+.wrap{width:100%;max-width:1060px;margin:0 auto;padding:0 16px}
+section{padding:46px 0;position:relative;overflow:hidden}
+.kick{display:inline-block;background:var(--yel);color:var(--asph);font:800 13px 'Barlow Condensed';letter-spacing:1.4px;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:10px}
+h2{font-size:clamp(30px,7.5vw,46px);font-weight:800;color:var(--asph)}
+.lead{color:var(--mut);max-width:60ch;margin:10px 0 0}
+/* header */
+.top{background:var(--asph);color:#fff;position:sticky;top:0;z-index:40;border-bottom:4px solid var(--yel)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:8px;padding-bottom:8px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand img{width:62px;height:52px;object-fit:contain;flex:none}
+.brand span{font:800 19px/1 'Barlow Condensed';text-transform:uppercase;letter-spacing:.6px}
+.brand small{display:block;font:600 11px 'Nunito Sans';opacity:.75;letter-spacing:.3px;text-transform:none;margin-top:3px}
+.nav{display:none;gap:18px;font-weight:700;font-size:14px}
+.nav a{text-decoration:none;opacity:.88}.nav a:hover{opacity:1;color:var(--yel)}
+.call{background:var(--yel);color:var(--asph);font-weight:800;text-decoration:none;padding:9px 13px;border-radius:8px;font-size:14px;white-space:nowrap}
+@media(min-width:820px){.nav{display:flex}}
+/* hero: a stretch of road */
+.hero{background:var(--teal);color:#fff;padding:0;overflow:hidden}
+.hero .wrap{display:grid;gap:26px;padding-top:36px;padding-bottom:0}
+.hero h1{font-size:clamp(40px,11vw,76px);font-weight:800;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--yel)}
+.hero p{max-width:52ch;font-size:17px;margin:14px 0 20px;color:#e6f6f2}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;border:0;cursor:pointer;font:800 16px 'Nunito Sans';padding:13px 20px;border-radius:10px;text-decoration:none}
+.btn.y{background:var(--yel);color:var(--asph)}
+.btn.o{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tags span{background:rgba(0,0,0,.22);border-radius:99px;padding:5px 12px;font-size:13px;font-weight:700}
+.road{margin-top:30px;height:74px;background:var(--asph2);position:relative;border-top:5px solid var(--yel);border-bottom:5px solid var(--yel)}
+.road::before{content:"";position:absolute;left:0;right:0;top:50%;height:6px;margin-top:-3px;background:repeating-linear-gradient(90deg,#fff 0 46px,transparent 46px 92px);animation:dash 3s linear infinite}
+@keyframes dash{to{background-position:92px 0}}
+.road i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--yel);color:var(--asph);font:800 15px 'Barlow Condensed';letter-spacing:1px;padding:3px 12px;text-transform:uppercase;white-space:nowrap}
+@media(prefers-reduced-motion:reduce){.road::before{animation:none}}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fact{background:rgba(0,0,0,.2);border-radius:12px;padding:14px}
+.fact b{display:block;font:800 28px/1 'Barlow Condensed';color:var(--yel)}
+.fact span{font-size:13px;color:#d5efe9}
+@media(min-width:820px){.hero .wrap{grid-template-columns:1.25fr .75fr;align-items:center}.facts{grid-template-columns:1fr}}
+/* lessons as signs */
+.signs{display:grid;gap:14px;margin-top:24px}
+.sign{background:#fff;border:3px solid var(--asph);border-radius:14px;padding:18px;position:relative;min-width:0}
+.sign::after{content:"";position:absolute;inset:5px;border:1px dashed #c9c5c0;border-radius:9px;pointer-events:none}
+.sign h3{font-size:28px;color:var(--teal);font-weight:800}
+.sign p{margin:8px 0 12px;font-size:15px}
+.sign .go{font-weight:800;color:var(--asph);background:var(--yel);padding:6px 12px;border-radius:6px;border:0;cursor:pointer;font-family:'Nunito Sans';font-size:14px;position:relative;z-index:1}
+.sign .n{position:absolute;right:14px;top:10px;font:800 40px 'Barlow Condensed';color:#e9e6e0}
+@media(min-width:640px){.signs{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.signs{grid-template-columns:repeat(4,1fr)}}
+/* EDT */
+.edt{background:var(--asph);color:#fff}
+.edt h2{color:#fff}.edt .lead{color:#cfcac6}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:24px 0 18px}
+.steps div{aspect-ratio:1;display:grid;place-items:center;background:var(--asph2);border:2px solid #5a5557;border-radius:50%;font:800 clamp(18px,5vw,28px) 'Barlow Condensed'}
+.steps div:nth-child(12){background:var(--yel);color:var(--asph);border-color:var(--yel)}
+@media(min-width:700px){.steps{grid-template-columns:repeat(12,1fr);gap:6px}}
+.note{background:#fff;color:var(--ink);border-left:6px solid var(--yel);border-radius:8px;padding:14px 16px;margin-top:10px;font-size:15px}
+.note b{color:var(--teal2)}
+/* first lesson */
+.flow{display:grid;gap:12px;margin-top:22px;counter-reset:s}
+.flow li{list-style:none;background:#fff;border-radius:12px;padding:14px 14px 14px 62px;position:relative;border:1px solid #e4e0d8;min-width:0}
+.flow li::before{counter-increment:s;content:counter(s);position:absolute;left:12px;top:12px;width:38px;height:38px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font:800 20px 'Barlow Condensed'}
+.flow b{display:block;font:800 21px 'Barlow Condensed';color:var(--asph)}
+.flow ul{padding:0;margin:0}
+@media(min-width:760px){.flow{grid-template-columns:1fr 1fr}}
+/* areas */
+.areas{background:var(--mint)}
+.split{display:grid;gap:16px;margin-top:24px}
+.zone{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #cfe2dc;min-width:0}
+.zone header{background:var(--teal);color:#fff;padding:14px 16px}
+.zone header h3{font-size:28px;font-weight:800}
+.zone header small{opacity:.85}
+.zone .in{padding:16px}
+.pin{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start}
+.pin i{flex:none;width:26px;height:26px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--yel);border:2px solid var(--asph);margin-top:2px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chips span{background:var(--mint);color:var(--teal2);border-radius:99px;padding:4px 10px;font-size:13px;font-weight:700}
+@media(min-width:760px){.split{grid-template-columns:1fr 1fr}}
+/* pretest + pay */
+.two{display:grid;gap:18px;margin-top:22px}
+.card{background:#fff;border-radius:14px;padding:20px;border:1px solid #e4e0d8;min-width:0}
+.card h3{font-size:28px;color:var(--teal);font-weight:800;margin-bottom:6px}
+.card ul{margin:8px 0 0;padding-left:20px}
+.card li{margin:4px 0}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr}}
+.table{width:100%;border-collapse:collapse;font-size:15px;margin-top:8px}
+.table td{padding:9px 6px;border-bottom:1px solid #e4e0d8;vertical-align:top}
+.table td:first-child{font-weight:800;width:40%}
+/* faq */
+details{background:#fff;border:1px solid #e4e0d8;border-radius:10px;margin-top:10px;padding:0}
+summary{cursor:pointer;padding:14px 16px;font-weight:800;list-style:none;position:relative;padding-right:42px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--teal)}
+details[open] summary::after{content:"\2212"}
+details p{margin:0;padding:0 16px 16px;color:var(--mut)}
+/* cta */
+.cta{background:var(--teal);color:#fff;text-align:center}
+.cta h2{color:#fff}.cta p{max-width:50ch;margin:12px auto 20px;color:#e0f4ef}
+.cta .btns{justify-content:center}
+footer{background:var(--asph);color:#cfcac6;padding:26px 0 90px;font-size:14px}
+footer a{color:var(--yel)}
+.demo{margin-top:14px;font-size:13px;opacity:.85}
+@media(min-width:760px){.signature{display:flex;justify-content:space-between;gap:20px}}
+.ga-fab{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--wa);color:var(--wf);font:700 15px/1 var(--wfont);padding:14px 18px;border-radius:var(--wr);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.ga-fab.off{display:none}.ga-fab-i{font-size:18px}
+.ga-panel{position:fixed;right:12px;bottom:12px;z-index:70;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 24px));display:none;flex-direction:column;background:var(--wbg);color:var(--wtx);border-radius:var(--wr2);box-shadow:0 14px 44px rgba(0,0,0,.35);overflow:hidden;font:15px/1.45 var(--wfont);border:1px solid var(--wbd)}
+.ga-panel.on{display:flex}
+.ga-head{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--wh);color:var(--whf);padding:12px 14px}
+.ga-ht{min-width:0}.ga-ht b{display:block;font-size:16px}.ga-ht small{opacity:.8;font-size:12px}
+.ga-x{background:transparent;border:0;color:inherit;font-size:28px;line-height:1;cursor:pointer;padding:0 4px}
+.ga-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:0}
+.ga-m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.ga-m.bot{background:var(--wb);align-self:flex-start;border-bottom-left-radius:4px}
+.ga-m.me{background:var(--wa);color:var(--wf);align-self:flex-end;border-bottom-right-radius:4px}
+.ga-chips{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px;max-height:112px;overflow-y:auto}
+.ga-chip{border:1px solid var(--wa2);background:transparent;color:var(--wtx);border-radius:99px;padding:6px 12px;font:600 13px var(--wfont);cursor:pointer}
+.ga-chip:hover{background:var(--wa);color:var(--wf);border-color:var(--wa)}
+.ga-form{display:flex;gap:6px;padding:10px 12px;border-top:1px solid var(--wbd)}
+.ga-in{flex:1;min-width:0;border:1px solid var(--wbd);background:var(--wbg);color:var(--wtx);border-radius:10px;padding:10px 12px;font:15px var(--wfont)}
+.ga-send{border:0;background:var(--wa);color:var(--wf);border-radius:10px;padding:0 14px;font-size:16px;cursor:pointer}
+
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="wrap">
+  <a class="brand" href="#top"><img src="img/global-driving-school-logo.png" alt="Global Driving School logo" width="62" height="52"><span>Global Driving School<small>Dublin | Gorey | Arklow</small></span></a>
+  <nav class="nav" aria-label="Sections"><a href="#lessons">Lessons</a><a href="#edt">EDT</a><a href="#first">First lesson</a><a href="#areas">Where we meet</a><a href="#faq">FAQ</a></nav>
+  <a class="call" href="tel:0871342724">087 134 2724</a>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <h1>Your driver's licence is just <em>a click away</em></h1>
+   <p>Male and female RSA approved driving instructors teaching EDT, pre-test and car hire, and refresher lessons around the Dublin, Gorey and Arklow test centre areas. Manual or automatic, your choice.</p>
+   <div class="btns"><button class="btn y" data-ga-open="book">Book a lesson</button><a class="btn o" href="tel:0871342724">Call 087 134 2724</a></div>
+   <div class="tags"><span>Manual &amp; automatic</span><span>Male &amp; female instructors</span><span>Dual controlled cars</span><span>Fully insured</span></div>
+  </div>
+  <div class="facts">
+   <div class="fact"><b>7 days</b><span>lessons available every day, early mornings and late evenings too (booked in advance)</span></div>
+   <div class="fact"><b>08.00 - 22.00</b><span>hours of operation, Monday to Sunday</span></div>
+   <div class="fact"><b>12 lessons</b><span>of Essential Driver Training for first-time learner permit holders</span></div>
+  </div>
+ </div>
+ <div class="road" aria-hidden="true"><i>Learner today, licence tomorrow</i></div>
+</section>
+
+<section id="lessons">
+ <div class="wrap">
+  <span class="kick">What we offer</span>
+  <h2>Pick the lesson that fits where you are</h2>
+  <p class="lead">Safety comes first. Every part of learning to drive is covered, with a friendly and calm approach and full guidance up to driving test standard.</p>
+  <div class="signs">
+   <article class="sign"><span class="n">01</span><h3>EDT Lessons</h3><p>Essential Driver Training, the 12 compulsory lessons for first-time car learner permit holders. In manual and automatic cars.</p><button class="go" data-ga-open="EDT lessons">Ask about EDT</button></article>
+   <article class="sign"><span class="n">02</span><h3>Pre-test &amp; Car Hire</h3><p>A warm-up drive and mock test on the real test routes, then your instructor takes you to your test. Car hire for the test is available too.</p><button class="go" data-ga-open="Pre-test and car hire">Ask about pre-test</button></article>
+   <article class="sign"><span class="n">03</span><h3>Refresher Lessons</h3><p>For nervous drivers, people returning after a break, or anyone updating their skills to modern driving. Impartial advice from a pro.</p><button class="go" data-ga-open="Refresher lessons">Ask about refresher</button></article>
+   <article class="sign"><span class="n">04</span><h3>Gift Vouchers</h3><p>Driving lessons as a present, with package deals available. The voucher is posted to you or straight to the recipient.</p><button class="go" data-ga-open="Gift vouchers">Ask about vouchers</button></article>
+  </div>
+ </div>
+</section>
+
+<section id="edt" class="edt">
+ <div class="wrap">
+  <span class="kick">EDT</span>
+  <h2>Essential Driver Training, lesson by lesson</h2>
+  <p class="lead">EDT is a mandatory course of 12 lessons that teaches the fundamentals to learner car drivers. It is part of the RSA's Graduated Driver Licensing scheme and is meant to make the roads safer.</p>
+  <div class="steps" aria-label="Twelve EDT lessons"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div></div>
+  <div class="note"><b>Do you need it?</b> If the date of issue on your first Category B learner permit is on or after 4 April 2011, you must complete EDT before you can take the full driving test. If your first permit was issued before that date, EDT is not required.</div>
+  <div class="note"><b>Keep in mind:</b> EDT is only part of the learning process. You will need lots of practice, and you may need more lessons to become a safe driver.</div>
+ </div>
+</section>
+
+<section id="first">
+ <div class="wrap">
+  <span class="kick">Your time, your pace</span>
+  <h2>What happens on a lesson</h2>
+  <p class="lead">Learning to drive is not something to be rushed. Here is how your instructor works with you, in their own words.</p>
+  <ol class="flow" style="padding:0">
+   <li><b>An assessment first</b>Your first lesson starts with your instructor checking what you already know about the rules of the road and any driving experience you have.</li>
+   <li><b>A quiet spot to swap seats</b>You are driven to a quiet place where you can comfortably change places and get behind the wheel.</li>
+   <li><b>A plan for the day</b>At the start of each lesson you talk through the lesson plan for that day.</li>
+   <li><b>A review at the end</b>Each lesson closes with what was taught and what to practise before the next session. Areas of concern are checked so skills are fully developed.</li>
+  </ol>
+  <div class="note" style="margin-top:16px"><b>Your own car?</b> If it suits you better, lessons can also be taught in your own car. Tell the team when you book.</div>
+ </div>
+</section>
+
+<section id="areas" class="areas">
+ <div class="wrap">
+  <span class="kick">Where we meet</span>
+  <h2>Two regions, clear meeting points</h2>
+  <p class="lead">Lessons run around the Dublin, Gorey and Arklow test centre areas. Not on the list? Contact the team directly about other areas.</p>
+  <div class="split">
+   <div class="zone">
+    <header><h3>Dublin</h3><small>Near the Dun Laoghaire RSA test centre</small></header>
+    <div class="in">
+     <div class="pin"><i></i><div><b>Meeting point</b><br>Bakers Point, Pottery Road, near the RSA test centre, Deansgrange / Dun Laoghaire</div></div>
+     <div class="chips"><span>Churchtown</span><span>Dundrum</span><span>Blackrock</span><span>Tallaght</span><span>Sandyford</span><span>Rathfarnham</span><span>Templeogue</span><span>Knocklyon</span><span>Dun Laoghaire</span><span>and many more</span></div>
+    </div>
+   </div>
+   <div class="zone">
+    <header><h3>Wexford / Wicklow</h3><small>Gorey test centre area</small></header>
+    <div class="in">
+     <div class="pin"><i></i><div><b>Meeting point 1</b><br>Costa, near Iceland, Gorey Bridge</div></div>
+     <div class="pin"><i></i><div><b>Meeting point 2</b><br>Brooks Supermarket in Riverchapel</div></div>
+     <div class="chips"><span>Arklow</span><span>Inch</span><span>Gorey</span><span>Ballycanew</span><span>Clogh</span><span>Camolin</span><span>Ferns</span><span>Carnew</span><span>Enniscorthy</span><span>Kilmuckridge</span><span>Ballygarrett</span><span>and many more</span></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="test">
+ <div class="wrap">
+  <span class="kick">Test day</span>
+  <h2>Pre-test and car hire</h2>
+  <p class="lead">For learners who are ready to take the driving test. Available in manual and automatic at the Dun Laoghaire and Gorey test centres.</p>
+  <div class="two">
+   <div class="card"><h3>How it works</h3><ul><li>Your instructor meets you at the test centre before your test.</li><li>You drive a mock test on test routes while they mark a test sheet.</li><li>They flag any serious mistakes before the official test and help you focus.</li><li>They accompany you to be signed over to the assessor, and wait while you take the test.</li></ul></div>
+   <div class="card"><h3>Refresher lessons</h3><ul><li>The first 30 minutes gauge your skills and confidence.</li><li>Closer to test day it runs as two sessions of two hours on a simulated road course.</li><li>Feedback and suggestions at the end of each session.</li><li>Also for drivers returning after a break or feeling tense behind the wheel.</li></ul></div>
+  </div>
+  <div class="note" style="margin-top:16px">Using your own car for the pre-test and the exam? Say so when you book, and the price is adjusted accordingly.</div>
+ </div>
+</section>
+
+<section style="background:#fff">
+ <div class="wrap">
+  <span class="kick">Good to know</span>
+  <h2>Booking, payment and hours</h2>
+  <div class="two">
+   <div class="card"><h3>Hours</h3><table class="table"><tr><td>Monday - Sunday</td><td>08.00 - 22.00</td></tr><tr><td>Weekends</td><td>Available, booked in advance</td></tr><tr><td>Early / late</td><td>Early morning and late evening lessons offered</td></tr></table></div>
+   <div class="card"><h3>Payment</h3><table class="table"><tr><td>When</td><td>Bookings are paid in advance</td></tr><tr><td>Phone</td><td>Most debit and credit cards</td></tr><tr><td>Online</td><td>Bank transfer</td></tr><tr><td>In person</td><td>Cash, credit or debit card paid directly to your ADI</td></tr></table></div>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap">
+  <span class="kick">Questions</span>
+  <h2>Quick answers</h2>
+  <details><summary>Can I learn in an automatic car?</summary><p>Yes. Lessons, pre-test and car hire are all available in both manual and automatic vehicles.</p></details>
+  <details><summary>Can I choose a male or female instructor?</summary><p>The school has both male and female RSA approved driving instructors. Tell the team your preference when you book.</p></details>
+  <details><summary>Are the cars safe for a beginner?</summary><p>The cars are modern late-model vehicles with dual controls, fully insured, and well looked after.</p></details>
+  <details><summary>Do you teach theory?</summary><p>The school offers comprehensive theory tuition on the rules and regulations on Irish roads. Ask the team how it fits with your lessons.</p></details>
+  <details><summary>How do gift vouchers work?</summary><p>Vouchers cover lessons and package programs. After purchase the voucher is posted to you or to the recipient. They expire in 12 months unless otherwise stated, and are non-refundable and non-transferable. Pay by PayPal or bank transfer.</p></details>
+  <details><summary>How do I get a price?</summary><p>The team gives you a quote by phone or e-mail, and you can also ask for a call back by texting "call back" to 0871342724.</p></details>
+ </div>
+</section>
+
+<section class="cta">
+ <div class="wrap">
+  <h2>Call or e-mail today to book your first lesson</h2>
+  <p>Text "call back" to 0871342724 and the team rings you, or use the assistant to line up your request.</p>
+  <div class="btns"><button class="btn y" data-ga-open="book">Book a lesson</button><a class="btn o" href="mailto:info@globaldrivingschool.ie">info@globaldrivingschool.ie</a></div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="signature"><div><b style="color:#fff">Global Driving School</b><br>Driving lessons in Dublin, Gorey, Arklow and Wicklow<br>Tel <a href="tel:0871342724">087 134 2724</a> | <a href="mailto:info@globaldrivingschool.ie">info@globaldrivingschool.ie</a></div><div>Hours: Mon - Sun, 08.00 - 22.00</div></div>
+  <p class="demo">Demo &middot; prepared by Gevorg Hovhannisyan</p>
+ </div>
+</footer>
+
+<script>
+/* assistant engine: client-side only, sends nothing */
+function GAnorm(s){return String(s).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9+ ]+/g,' ').replace(/\s+/g,' ').trim();}
+function GAstem(w){if(w.length>4){w=w.replace(/(ing|ed|es|s)$/,'');}return w;}
+function GAlev(a,b){var m=a.length,n=b.length,i,j,d=[],c;if(Math.abs(m-n)>1)return 9;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++){d[0][j]=j;}
+for(i=1;i<=m;i++){for(j=1;j<=n;j++){c=a[i-1]===b[j-1]?0:1;d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);}}return d[m][n];}
+function GAtok(s){return GAnorm(s).split(' ').filter(Boolean).map(GAstem);}
+function GAmatch(kb,q){var toks=GAtok(q),qn=' '+GAnorm(q)+' ',best=null,bs=0,e,k,kn,ks,t,sc,x,y;
+for(x=0;x<kb.length;x++){e=kb[x];sc=0;
+for(y=0;y<e.k.length;y++){k=e.k[y];var w=1;if(k.charAt(k.length-1)==='!'){w=2;k=k.slice(0,-1);}kn=GAnorm(k);
+if(kn.indexOf(' ')>-1){if(qn.indexOf(' '+kn)>-1){sc+=3*w;}continue;}
+ks=GAstem(kn);
+for(var z=0;z<toks.length;z++){t=toks[z];
+if(t===ks){sc+=2*w;break;}
+if(ks.length>=4&&t.length>=4&&(t.indexOf(ks)===0||(ks.indexOf(t)===0&&t.length>=ks.length-2))){sc+=2*w;break;}
+if(ks.length>=5&&t.length>=5&&GAlev(t,ks)<=1){sc+=1.5*w;break;}}}
+if(sc>bs){bs=sc;best=e;}}
+return bs>=1.5?best:null;}
+function GAinit(cfg){
+if(typeof document==='undefined')return;
+var d=document,$=function(t,c,x){var e=d.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e;};
+var btn=$('button','ga-fab');btn.setAttribute('aria-label',cfg.fabLabel||'Chat');btn.appendChild($('span','ga-fab-i','✉'));btn.appendChild($('span','ga-fab-t',cfg.fabText||'Ask us'));
+var panel=$('div','ga-panel');panel.setAttribute('role','dialog');panel.setAttribute('aria-label',cfg.title);
+var head=$('div','ga-head');var ht=$('div','ga-ht');ht.appendChild($('b','',cfg.title));ht.appendChild($('small','',cfg.sub));
+var cl=$('button','ga-x','×');cl.setAttribute('aria-label','Close');head.appendChild(ht);head.appendChild(cl);
+var log=$('div','ga-log');log.setAttribute('aria-live','polite');var chips=$('div','ga-chips');
+var form=$('form','ga-form');var inp=$('input','ga-in');inp.type='text';inp.placeholder=cfg.placeholder||'Type your question';inp.setAttribute('aria-label',cfg.placeholder||'Message');
+var sb=$('button','ga-send','➤');sb.type='submit';sb.setAttribute('aria-label','Send');form.appendChild(inp);form.appendChild(sb);
+panel.appendChild(head);panel.appendChild(log);panel.appendChild(chips);panel.appendChild(form);
+d.body.appendChild(btn);d.body.appendChild(panel);
+var flow=null,data={},started=false;
+function say(t,who){var m=$('div','ga-m '+(who||'bot'));String(t).split('\n').forEach(function(p,i){if(i)m.appendChild(d.createElement('br'));m.appendChild(d.createTextNode(p));});log.appendChild(m);log.scrollTop=log.scrollHeight;}
+function setChips(a,cb){chips.textContent='';(a||[]).forEach(function(c){var b=$('button','ga-chip',c);b.type='button';b.onclick=function(){cb?cb(c):handle(c);};chips.appendChild(b);});}
+function home(){setChips(cfg.chips);}
+function open(){panel.classList.add('on');btn.classList.add('off');if(!started){started=true;say(cfg.hello);home();}setTimeout(function(){inp.focus();},50);}
+function close(){panel.classList.remove('on');btn.classList.remove('off');}
+btn.onclick=open;cl.onclick=close;
+d.querySelectorAll('[data-ga-open]').forEach(function(e){e.addEventListener('click',function(ev){ev.preventDefault();open();var a=e.getAttribute('data-ga-open');if(a==='book'){startFlow();}else if(a){handle(a);}});});
+function startFlow(){flow=0;data={};say(cfg.flowIntro,'bot');ask();}
+function ask(){var s=cfg.flow[flow];say(s.q,'bot');if(s.opts){setChips(s.opts,function(c){answerStep(c);});inp.placeholder=s.hint||'or type here';}else{setChips(['Cancel booking'],function(){cancelFlow();});inp.placeholder=s.hint||'Type here';}}
+function cancelFlow(){flow=null;say(cfg.cancelMsg||'No problem, nothing was sent. Ask me anything else.','bot');home();inp.placeholder=cfg.placeholder||'Type your question';}
+function answerStep(v){var s=cfg.flow[flow];v=v.trim();if(/^(cancel|stop|never ?mind)/i.test(v)){say(v,'me');cancelFlow();return;}
+if(s.re&&!s.re.test(v)){say(v,'me');say(s.err||'Could you check that and try again?','bot');return;}
+say(v,'me');data[s.key]=v;flow++;
+if(flow>=cfg.flow.length){var lines=cfg.flow.map(function(x){return x.label+': '+data[x.key];});say(cfg.done(data,lines),'bot');flow=null;setChips(cfg.afterChips||cfg.chips);inp.placeholder=cfg.placeholder||'Type your question';return;}
+ask();}
+function handle(v){v=v.trim();if(!v)return;if(flow!==null){answerStep(v);return;}
+say(v,'me');var e=GAmatch(cfg.kb,v);
+if(e&&e.flow){startFlow();return;}
+if(e){say(e.a,'bot');setChips(e.chips||cfg.chips);return;}
+say(cfg.fallback,'bot');home();}
+form.onsubmit=function(ev){ev.preventDefault();var v=inp.value;inp.value='';handle(v);};
+d.addEventListener('keydown',function(ev){if(ev.key==='Escape')close();});
+}
+if(typeof module!=='undefined'){module.exports={GAmatch:GAmatch,GAnorm:GAnorm};}
+
+var CFG={
+title:'Global Driving School',sub:'Lesson assistant (demo)',fabText:'Ask about lessons',placeholder:'Ask about lessons, areas, payment',
+hello:'Hi! I can answer questions about EDT, pre-test and car hire, refresher lessons, where we meet and how to pay. I can also line up a lesson request for the team.',
+chips:['Book a lesson','What is EDT?','Where do you meet?','Automatic cars?','How do I pay?','Opening hours'],
+fallback:'I do not have that detail, so the team will confirm it. You can call 087 134 2724 or e-mail info@globaldrivingschool.ie. Or ask me about EDT, pre-test, refresher lessons, areas or payment.',
+flowIntro:'Happy to help. A few quick questions, then the request goes to the team.',
+cancelMsg:'No problem, nothing was sent. Ask me anything else.',
+flow:[
+{key:'type',label:'Lesson',q:'Which lesson do you need?',opts:['EDT lessons','Pre-test & car hire','Refresher lesson','Gift voucher','Not sure yet']},
+{key:'gear',label:'Car',q:'Manual or automatic?',opts:['Manual','Automatic','Own car','Not sure']},
+{key:'area',label:'Area',q:'Where would you like lessons?',opts:['Dublin','Gorey / Arklow / Wicklow','Somewhere else']},
+{key:'who',label:'Instructor',q:'Do you prefer a male or a female instructor?',opts:['Male','Female','No preference']},
+{key:'when',label:'Preferred days and times',q:'Which days and times suit you? (lessons run 08.00 to 22.00, every day)',hint:'e.g. weekday evenings'},
+{key:'name',label:'Name',q:'What is your name?',re:/^.{2,}$/},
+{key:'phone',label:'Phone',q:'Best phone number for the team to reach you?',re:/^[+0-9 ()\-]{7,}$/,err:'That does not look like a phone number. Try something like 087 123 4567.'}],
+done:function(d,l){return 'Thanks '+d.name+'! Your request has been sent to the team:\n'+l.join('\n')+'\nThey will contact you to confirm times and the price. If you need to talk sooner, call 087 134 2724.';},
+afterChips:['Where do you meet?','How do I pay?','Opening hours'],
+kb:[
+{k:['book','booking','quote','enquiry','sign up','start lessons','reserve','appointment','schedule','get started'],flow:true},
+{k:['edt','essential','twelve','12 lessons','mandatory','compulsory','compulsary','permit','graduated'],a:'EDT (Essential Driver Training) is a mandatory course of 12 lessons for first-time car learner permit holders. If your first Category B learner permit was issued on or after 4 April 2011 you must complete it before the full driving test. Not required if it was issued before that date. It is available in manual and automatic cars in Dublin, Gorey, Arklow and surrounding areas.'},
+{k:['pretest','pre test','mock','test day','hire','rent','rental','car hire','warm up','assessor'],a:'The pre-test and car hire package suits learners ready for the driving test. Your instructor meets you at the test centre, drives a mock test with you on test routes, marks a test sheet, flags serious mistakes, then accompanies you to the assessor and waits during the test. Available at the Dun Laoghaire and Gorey test centres in manual and automatic. Using your own car? Tell the team and the price is adjusted.'},
+{k:['refresher','nervous','nerves','rusty','break','return','returning','confidence','confident','fear','scared','anxious','tense','intimidated','afraid','brush'],a:'Refresher lessons are for brushing up skills, updating your rules of the road knowledge, returning after a break or overcoming nerves. The first 30 minutes gauge your skills and confidence. Closer to test day it runs as two sessions of two hours on a simulated road course, with feedback at the end of each.'},
+{k:['manual','automatic','auto','gears','gearbox','stick','transmission','clutch'],a:'Both. Lessons, EDT, pre-test and car hire are all available in manual and automatic vehicles. The cars are modern, dual controlled and fully insured.'},
+{k:['male','female','woman','women','man','lady','instructor','instructors','adi','qualified','approved','certified'],a:'The school has both male and female driving instructors, all RSA approved (ADI), fully insured and experienced. Tell the team which you prefer when you book.'},
+{k:['own car','my car','my own','own vehicle'],a:'Yes, if it suits you better lessons can be taught in your own car. Let the team know when you book. For the pre-test and exam in your own car, the price is adjusted accordingly.'},
+{k:['pay','payment','card','cash','transfer','bank','deposit','advance','paypal','credit','debit','invoice'],a:'Bookings are paid in advance. You can pay over the phone with most debit and credit cards, online by bank transfer, or cash, credit or debit card paid directly to your ADI. Gift vouchers can be paid by PayPal or bank transfer.'},
+{k:['price','prices','cost','costs','much','fee','fees','rate','rates','cheap','afford','affordable','expensive','package','packages'],a:'The team gives a price by phone or e-mail, depending on the lesson and whether you use your car or theirs. Call 087 134 2724 or text "call back" to 0871342724 and they ring you.'},
+{k:['gift','voucher','vouchers','present','birthday','christmas','surprise'],a:'Gift vouchers cover driving lessons and package programs. After purchase the voucher is posted to you or the recipient. They expire in 12 months unless otherwise stated, and are non-refundable and non-transferable. Pay by PayPal or bank transfer.'},
+{k:['theory','rules','road rules','book of rules','knowledge'],a:'The school offers comprehensive theory tuition on the rules and regulations on Irish roads. Ask the team how to fit it with your lessons.'},
+{k:['hours','open','opening','time','times','available','availability','weekend','sunday','saturday','evening','morning','late','early','when'],a:'Hours of operation are Monday to Sunday, 08.00 to 22.00. Lessons are available every day including weekends, booked in advance, with early morning and late evening options.'},
+{k:['where','where do you','meeting point','meeting points','areas','area','location','locations','pick up','pickup','address','find you'],a:'Two regions. In Dublin we meet at Bakers Point, Pottery Road, near the RSA test centre, Deansgrange / Dun Laoghaire. In Wexford and Wicklow we meet at Costa near Iceland at Gorey Bridge, or at Brooks Supermarket in Riverchapel. Other areas: contact the team directly.'},
+{k:['near','dun laoghaire','deansgrange!','pottery!','bakers!','blackrock!','dundrum!','tallaght!','sandyford!','rathfarnham!','templeogue!','knocklyon!','churchtown!','dublin!','south dublin'],a:'In Dublin the meeting point is Bakers Point, Pottery Road, near the RSA test centre, Deansgrange / Dun Laoghaire. Areas include Churchtown, Dundrum, Blackrock, Tallaght, Sandyford, Rathfarnham, Templeogue, Knocklyon and Dun Laoghaire. Other areas: contact the team.'},
+{k:['gorey!','arklow!','wicklow!','wexford!','enniscorthy!','camolin!','ferns!','carnew!','inch','ballycanew','clogh','kilmuckridge','ballygarrett','costa!','brooks!','riverchapel!','iceland!'],a:'In Wexford and Wicklow there are two meeting points: Costa, near Iceland at Gorey Bridge, and Brooks Supermarket in Riverchapel. Areas include Arklow, Inch, Gorey, Ballycanew, Clogh, Camolin, Ferns, Carnew, Enniscorthy, Kilmuckridge and Ballygarrett. Other areas: contact the team.'},
+{k:['test centre','test center','centre','center','driving test','rsa test'],a:'Pre-test and car hire runs at the Dun Laoghaire and Gorey test centres. The Dublin meeting point is near the RSA test centre in Deansgrange / Dun Laoghaire.'},
+{k:['pass','passes','success','results','record','reviews','testimonials','reputation'],a:'The school says it has achieved over 95% RSA test passes a year and built its reputation by word of mouth in Dublin and Gorey. You can read testimonials on the school site and leave a Google or Facebook review.'},
+{k:['first lesson','first','assess','assessment','begin','beginner','never driven','what happens','pace','absolute'],a:'Your first lesson starts with an assessment of your road-rules knowledge and driving experience. Then you are driven to a quiet spot to swap seats and start. Each lesson opens with the plan for the day and closes with a review and things to practise.'},
+{k:['phone','call','number','telephone','mobile','contact','email','mail','text','callback','call back','reach','talk'],a:'Phone 087 134 2724 or e-mail info@globaldrivingschool.ie. You can also text "call back" to 0871342724 and the team rings you. By e-mail they reply as soon as they can.'},
+{k:['safe','safety','insured','insurance','dual','controls','modern'],a:'Safety is the priority. The cars are modern late-model vehicles with dual controls, fully insured and well looked after, and instructors are RSA approved.'},
+{k:['thanks','thank','cheers','great','perfect','ok','okay'],a:'You are welcome! Anything else about lessons, areas or payment?'},
+{k:['hello','hi','hey','hiya','morning'],a:'Hello! Ask me about EDT, pre-test, refresher lessons, where we meet or how to pay, or tap Book a lesson.'}
+]};
+GAinit(CFG);
+</script>
+</body>
+</html>
