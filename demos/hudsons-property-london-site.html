@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hudsons Property · Fitzrovia, London · Demo</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#111a2e;--navy2:#1b2742;--gold:#b4975a;--gold2:#d3bb86;--ivory:#faf6ee;--paper:#f1ebde;--mut:#5d6578;--wacc:#b4975a;--wink:#111a2e;--wfont:'Karla',system-ui,sans-serif;--wr:2px;--wr2:4px;--wbub:#f1ebde;--wtx:#111a2e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Karla',system-ui,sans-serif;background:var(--ivory);color:var(--navy);line-height:1.6;overflow-x:hidden}
+a{color:inherit}
+.wrap{width:100%;max-width:1040px;margin:0 auto;padding:0 18px}
+.top{background:var(--navy);color:#cfd4e0;font-size:13px}
+.top .wrap{display:flex;justify-content:space-between;gap:10px;padding-top:7px;padding-bottom:7px;flex-wrap:wrap}
+.top a{color:var(--gold2);text-decoration:none}
+header{background:var(--navy);border-bottom:1px solid #2a3556;position:sticky;top:0;z-index:40}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1040px;margin:0 auto;padding:8px 18px}
+.hd img{height:50px;width:auto}
+.hd nav{display:none;gap:22px;color:#e8e2d3;font-size:15px}
+.hd nav a{text-decoration:none}
+.hd nav a:hover{color:var(--gold2)}
+.cta{background:var(--gold);color:var(--navy);text-decoration:none;font-weight:700;padding:10px 16px;font-size:14px;letter-spacing:.02em;white-space:nowrap;border:0;cursor:pointer;font-family:inherit}
+@media(min-width:860px){.hd nav{display:flex}}
+.hero{background:linear-gradient(180deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;text-align:center;padding:60px 0 70px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;left:50%;top:-140px;width:520px;height:520px;margin-left:-260px;border:1px solid rgba(180,151,90,.28);border-radius:50%}
+.hero:after{content:"";position:absolute;left:50%;top:-80px;width:400px;height:400px;margin-left:-200px;border:1px solid rgba(180,151,90,.18);border-radius:50%}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{letter-spacing:.24em;text-transform:uppercase;font-size:12px;color:var(--gold2)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(36px,8.5vw,70px);line-height:1.05;margin:14px auto 16px;max-width:15ch}
+.hero h1 i{color:var(--gold2)}
+.hero p{max-width:50ch;margin:0 auto 26px;color:#d0d5e2;font-size:17px}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:0 auto;max-width:640px}
+.tabs button{background:transparent;border:1px solid #3a4770;color:#e8e2d3;padding:9px 14px;cursor:pointer;font:500 14px 'Karla',sans-serif}
+.tabs button.on{background:var(--gold);border-color:var(--gold);color:var(--navy);font-weight:700}
+.tabp{max-width:640px;margin:18px auto 0;background:rgba(255,255,255,.06);border:1px solid #2f3b60;padding:18px;text-align:left;min-height:116px}
+.tabp p{margin:0 0 12px;color:#e3e6f0;font-size:15.5px}
+section{padding:58px 0}
+h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,6vw,44px);line-height:1.08;margin-bottom:10px}
+h2 i{color:var(--gold)}
+.sub{color:var(--mut);max-width:58ch;margin-bottom:28px}
+.rule{width:54px;height:2px;background:var(--gold);margin:12px 0 18px}
+.paper{background:var(--paper)}
+.svc{display:grid;gap:0;border-top:1px solid #d9cfb8}
+@media(min-width:760px){.svc{grid-template-columns:1fr 1fr;column-gap:40px}}
+.svc>div{padding:18px 0;border-bottom:1px solid #d9cfb8;min-width:0}
+.svc h3{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:600}
+.svc p{color:var(--mut);font-size:15.5px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#2a3556}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stats div{background:var(--navy);color:#fff;padding:26px 14px;text-align:center;min-width:0}
+.stats b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(30px,7vw,46px);color:var(--gold2);line-height:1}
+.stats small{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:#aab2c8}
+.areas{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:620px){.areas{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.areas{grid-template-columns:repeat(5,1fr)}}
+.areas div{background:#fff;border:1px solid #e4dcc9;border-top:3px solid var(--gold);padding:16px;min-width:0}
+.areas b{font-family:'Cormorant Garamond',serif;font-size:22px;display:block}
+.areas span{font-size:13.5px;color:var(--mut)}
+.team{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:700px){.team{grid-template-columns:repeat(2,1fr);column-gap:40px}}
+.team>div{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #d9cfb8;min-width:0}
+.team b{display:block}.team span{color:var(--mut);font-size:14.5px}
+.team .grp{grid-column:1/-1;font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--gold);padding-top:22px;border-bottom:2px solid var(--gold);display:block}
+.steps{display:grid;gap:14px}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps>div{background:#fff;border:1px solid #e4dcc9;padding:22px;min-width:0}
+.steps span{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:var(--gold2);font:600 18px 'Cormorant Garamond',serif;margin-bottom:8px}
+.steps b{display:block;font-family:'Cormorant Garamond',serif;font-size:23px}
+.steps p{color:var(--mut);font-size:15.5px}
+.guides{display:grid;gap:10px}
+@media(min-width:700px){.guides{grid-template-columns:repeat(2,1fr)}}
+.guides>div{background:#fff;border-left:3px solid var(--gold);padding:14px 16px;min-width:0}
+.guides b{display:block;font-size:16px}.guides small{color:var(--mut)}
+.hub{display:grid;gap:12px}
+@media(min-width:760px){.hub{grid-template-columns:repeat(3,1fr)}}
+.hub>div{background:var(--navy);color:#e8e2d3;padding:20px;min-width:0}
+.hub b{font-family:'Cormorant Garamond',serif;font-size:25px;color:var(--gold2);display:block}
+.hub span{font-size:13px;color:#aab2c8;display:block;margin-bottom:8px}
+.hub p{font-size:15px}
+.rev{display:grid;gap:14px}
+@media(min-width:760px){.rev{grid-template-columns:repeat(3,1fr)}}
+.rev blockquote{background:#fff;padding:22px;border:1px solid #e4dcc9;font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.3;min-width:0}
+.rev cite{display:block;font:700 12px 'Karla',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:10px;font-style:normal}
+table{width:100%;border-collapse:collapse;margin-top:8px}
+td{padding:9px 0;border-bottom:1px solid #d9cfb8}
+td:last-child{text-align:right;font-weight:700}
+.two{display:grid;gap:30px}
+@media(min-width:820px){.two{grid-template-columns:1fr 1fr}}
+.faq details{border-bottom:1px solid #d9cfb8;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:700;font-size:16.5px}
+.faq p{color:var(--mut);margin-top:6px}
+footer{background:var(--navy);color:#aab2c8;padding:34px 0 96px;font-size:14px}
+footer a{color:var(--gold2)}
+#bot{position:fixed;right:14px;bottom:14px;z-index:99;font-family:var(--wfont,system-ui,sans-serif);font-size:14px;line-height:1.45}
+#bot .bfab{display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--wacc);color:var(--wink);padding:12px 16px;border-radius:var(--wr,999px);font:600 14px var(--wfont,system-ui);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#bot .bpanel{display:none;flex-direction:column;position:fixed;right:10px;bottom:10px;width:min(370px,calc(100vw - 20px));height:min(540px,calc(100vh - 20px));background:var(--wbg,#fff);color:var(--wtx,#222);border-radius:var(--wr2,16px);box-shadow:0 18px 50px rgba(0,0,0,.32);overflow:hidden}
+#bot.open .bpanel{display:flex}#bot.open .bfab{display:none}
+#bot .bh{background:var(--wacc);color:var(--wink);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+#bot .bh b{display:block;font-size:15px}#bot .bh small{opacity:.85;font-size:12px}
+#bot .bx{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}
+#bot .blog{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+#bot .bm{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+#bot .bm.bot{background:var(--wbub,#f1f1f1);align-self:flex-start;border-bottom-left-radius:4px}
+#bot .bm.me{background:var(--wacc);color:var(--wink);align-self:flex-end;border-bottom-right-radius:4px}
+#bot .bm a{color:inherit;text-decoration:underline}
+#bot .bchips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+#bot .bchips button{border:1px solid var(--wacc);background:transparent;color:var(--wtx,#222);padding:6px 10px;border-radius:999px;cursor:pointer;font:13px var(--wfont,system-ui)}
+#bot .bchips button:hover{background:var(--wacc);color:var(--wink)}
+#bot form{display:flex;gap:6px;padding:10px;border-top:1px solid rgba(0,0,0,.1)}
+#bot input{flex:1;min-width:0;padding:10px 12px;border:1px solid rgba(0,0,0,.2);border-radius:10px;font:14px var(--wfont,system-ui);background:#fff;color:#222}
+#bot form button{border:0;background:var(--wacc);color:var(--wink);padding:0 14px;border-radius:10px;cursor:pointer;font:600 14px var(--wfont,system-ui)}
+#bot .bnote{font-size:11px;opacity:.6;padding:0 12px 8px}
+
+</style></head><body>
+<div class="top"><div class="wrap"><span>24 Charlotte Street, Fitzrovia, London W1T 2ND</span><span><a href="tel:+442073232277">020 7323 2277</a> · <a href="mailto:hello@hudsonsproperty.com">hello@hudsonsproperty.com</a></span></div></div>
+<header><div class="hd"><a href="#top"><img src="img/hudsons-property-london-logo.svg" alt="Hudsons Property"></a><nav><a href="#services">Services</a><a href="#areas">Areas</a><a href="#team">Team</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a></nav><button class="cta" type="button" onclick="window.__ask('free valuation')">Free valuation</button></div></header>
+
+<div class="hero" id="top"><div class="wrap"><div class="eyebrow">Estate agents · West End &amp; Central London · since 2002</div><h1>Make your move. <i>Live your dream.</i></h1><p>Sales, lettings, property management and offices in London's most sought-after West End locations. Service is everything.</p>
+<div class="tabs" role="tablist"><button class="on" data-t="sell">Sell</button><button data-t="buy">Buy</button><button data-t="rent">Rent</button><button data-t="let">Landlords</button><button data-t="com">Commercial</button></div>
+<div class="tabp" id="tp"></div></div></div>
+
+<div class="stats"><div><b>2002</b><small>in the West End</small></div><div><b>60+</b><small>years combined experience</small></div><div><b>4.8</b><small>Google rating</small></div><div><b>7 days</b><small>office open a week</small></div></div>
+
+<section id="services"><div class="wrap"><h2>What we <i>do</i></h2><div class="rule"></div><p class="sub">Everything on the Hudsons site, grouped the way a client would ask for it.</p>
+<div class="svc">
+<div><h3>Sales</h3><p>Residential sales across the West End, with a London selling guide and an agent visit to value and plan the marketing.</p></div>
+<div><h3>New homes</h3><p>A dedicated New Homes section. The home page currently shows the last few units in Phase 1 and a registration for Phase 2.</p></div>
+<div><h3>Lettings</h3><p>Residential rentals, a guide to renting in London, a student guide and a separate page for tenant fees.</p></div>
+<div><h3>Property management</h3><p>Full tenancy management, popular with landlords based overseas or outside London who don't want to deal with legislation and repairs.</p></div>
+<div><h3>Block management</h3><p>Block management services for London buildings, alongside the private rental sector service.</p></div>
+<div><h3>Commercial</h3><p>Commercial investments, commercial rentals and serviced offices, with its own direct line.</p></div>
+<div><h3>Valuations</h3><p>Instant online valuations for sales and lettings, or a visit from an agent. Probate valuations have their own page.</p></div>
+<div><h3>Home staging</h3><p>A home staging service and a Property Marketing page showing how homes are presented.</p></div>
+</div></div></section>
+
+<section class="paper" id="areas"><div class="wrap"><h2>The <i>neighbourhoods</i></h2><div class="rule"></div><p class="sub">Area guides on the Hudsons site.</p>
+<div class="areas"><div><b>Fitzrovia</b><span>Home of the Charlotte Street office</span></div><div><b>Marylebone</b><span>High Street and Regent's Park side</span></div><div><b>Soho</b><span>Central, busy, close to Oxford Circus</span></div><div><b>Bloomsbury</b><span>Area guide on the site</span></div><div><b>Covent Garden</b><span>Theatreland and the Strand</span></div></div></div></section>
+
+<section><div class="wrap"><h2>Valuation, <i>step by step</i></h2><div class="rule"></div><p class="sub">The route the Hudsons site describes, from curiosity to a plan.</p>
+<div class="steps"><div><span>1</span><b>Get an indication</b><p>Use the instant online valuation for a sale or a lettings figure. Good for wondering, "what could it be worth?"</p></div><div><span>2</span><b>Book the visit</b><p>An expert from the Charlotte Street office comes to your home to give the most accurate valuation.</p></div><div><span>3</span><b>Hear the plan</b><p>They explain how they would market the property to get the best possible price, or the best rent.</p></div></div>
+<p class="sub" style="margin-top:18px">The valuation page also points to a page on proving identity and property ownership, plus a Stamp Duty calculator and mortgage services.</p></div></section>
+
+<section class="paper"><div class="wrap"><h2>Guides worth <i>bookmarking</i></h2><div class="rule"></div><p class="sub">Titles currently on the Hudsons site.</p>
+<div class="guides"><div><b>London Property Buying Guide</b><small>For first-time buyers and movers</small></div><div><b>London Property Selling Guide</b><small>Before you list</small></div><div><b>Guide to Renting a Property in London</b><small>For tenants</small></div><div><b>London Student Renting Guide</b><small>Studying in the city</small></div><div><b>Let Your London Property</b><small>For new landlords</small></div><div><b>London Buy To Let Guide</b><small>Landlord services</small></div><div><b>The Ultimate Guide to Purchasing a Leasehold Flat in Central London</b><small>Market update</small></div><div><b>Property Inspection Checklist for Landlords in Central London</b><small>Market update</small></div></div></div></section>
+
+<section id="team"><div class="wrap"><h2>The <i>team</i></h2><div class="rule"></div><p class="sub">Jon Hudson founded the agency. Many of the same professionals have been there for years.</p>
+<div class="team">
+<span class="grp">Sales</span>
+<div><div><b>Simon Bray</b><span>Director of Sales</span></div></div>
+<div><div><b>Spencer Botchin</b><span>Director of Residential</span></div></div>
+<div><div><b>Deshira Madjuni</b><span>Sales Support &amp; Content Creator</span></div></div>
+<div><div><b>Suki</b><span>Head of Glamour and Sniffing Out Deals</span></div></div>
+<span class="grp">Lettings and management</span>
+<div><div><b>Paul Thomson</b><span>Lettings Manager</span></div></div>
+<div><div><b>Kai Darragi</b><span>Assistant Lettings Manager</span></div></div>
+<div><div><b>Phoebe Baynham</b><span>Lettings Advisor</span></div></div>
+<div><div><b>Sarese Teji</b><span>Property Manager</span></div></div>
+<div><div><b>Holly Enright</b><span>Tenancy Manager</span></div></div>
+<div><div><b>Bianca</b><span>Head Lap Warmer and Property Spotter</span></div></div>
+<span class="grp">Commercial and head office</span>
+<div><div><b>Fin Clayson</b><span>Commercial Property Advisor</span></div></div>
+<div><div><b>Jon Hudson</b><span>Founder</span></div></div>
+<div><div><b>Luisa Cooper</b><span>Operations Manager</span></div></div>
+<div><div><b>Carl Byron</b><span>Head of Accounts</span></div></div>
+</div></div></section>
+
+<section class="paper" id="reviews"><div class="wrap"><h2>What clients <i>say</i></h2><div class="rule"></div><p class="sub">Two lines from the Google reviews shown on the Hudsons site, which lists a 4.8 rating from 389 reviews.</p>
+<div class="rev"><blockquote>"Very helpful agent, found ideal apartment at good price"<cite>Google review</cite></blockquote><blockquote>"Simon, what a star. As a FTB, he helped me throughout the whole process with professionalism and cheerfulness."<cite>Google review</cite></blockquote><blockquote>"Simon Bray saw through the sale of our flat with great care, professionalism and friendliness."<cite>Google review</cite></blockquote></div></div></section>
+
+<section id="visit"><div class="wrap two"><div><h2>Opening <i>hours</i></h2><div class="rule"></div><table><tr><td>Monday to Friday</td><td>8:00am to 8:00pm</td></tr><tr><td>Saturday</td><td>8:00am to 8:00pm</td></tr><tr><td>Sunday</td><td>10:00am to 4:00pm</td></tr></table></div>
+<div><h2>Find <i>us</i></h2><div class="rule"></div><p>24 Charlotte Street<br>Fitzrovia, London W1T 2ND</p><p style="margin-top:8px">Nearest tubes: Goodge Street and Tottenham Court Road.</p><p style="margin-top:8px">Residential <a href="tel:+442073232277">020 7323 2277</a><br>Commercial <a href="tel:+442076318702">020 7631 8702</a></p></div></div></section>
+
+<section><div class="wrap"><h2>The <i>Hud Hub</i></h2><div class="rule"></div><p class="sub">The team's favourite local haunts, from cafes to salons and florists, with discounts for Hudsons clients. A few from the site:</p>
+<div class="hub"><div><b>Carlotta</b><span>77-78 Marylebone High St, Marylebone W1U 5JX</span><p>Italian-American glamour behind a velvet curtain, with a lunchtime discount for Hudsons clients.</p></div><div><b>Cafe Koha</b><span>10-11 St Martin's Court, London WC2N 4AJ</span><p>A hidden gem in Theatreland, close to Covent Garden and Leicester Square.</p></div><div><b>Eyes on Soho</b><span>13 Ingestre Place, Soho W1F 0JG</span><p>Another local partner listed on the Hud Hub page.</p></div></div></div></section>
+
+<section class="paper faq"><div class="wrap"><h2>Good <i>questions</i></h2><div class="rule"></div>
+<details><summary>Can you value my flat without visiting?</summary><p>The site offers instant online valuations for sales and lettings as an indication. For the most accurate figure an agent visits your home and explains how it would be marketed.</p></details>
+<details><summary>I live abroad. Can you manage my rental?</summary><p>Yes, full tenancy management is popular with landlords living overseas or outside London. It covers legislation, repairs and issues during the tenancy.</p></details>
+<details><summary>Do you handle offices as well as homes?</summary><p>Yes. Commercial investments, commercial rentals and serviced offices, with a separate commercial line.</p></details>
+<details><summary>Where can I read about tenant fees?</summary><p>On the Tenant Fees page of the Hudsons website. I don't quote figures here.</p></details>
+<details><summary>I'm buying a leasehold flat. Any reading?</summary><p>The Guides section includes The Ultimate Guide to Purchasing a Leasehold Flat in Central London.</p></details>
+<details><summary>Is there anything for clients beyond property?</summary><p>The Hud Hub lists local cafes, restaurants and salons the team likes, with discounts for Hudsons clients.</p></details><details><summary>Are you open on Sundays?</summary><p>Yes. The office is open Sunday 10:00am to 4:00pm, and Monday to Saturday 8:00am to 8:00pm.</p></details>
+<details><summary>Which areas do you work in?</summary><p>The West End and Central London, with area guides for Soho, Marylebone, Fitzrovia, Bloomsbury and Covent Garden.</p></details>
+<details><summary>Do you help with probate property valuations?</summary><p>There is a Probate Valuations page on the site. Ring the office to talk it through with the team.</p></details>
+<details><summary>Can I speak to someone about block management?</summary><p>Block management services in London are listed under Landlord services. Ask the assistant to pass your details on, or ring 020 7323 2277.</p></details>
+</div></section>
+
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan<br>An unofficial preview built from the public Hudsons Property website. Logo, names and facts belong to Hudsons Property.<br><br>Hudsons Property · 24 Charlotte Street, London W1T 2ND · <a href="tel:+442073232277">020 7323 2277</a></div></footer>
+<div id="bot"><button class="bfab" type="button" aria-label="Open assistant">Ask Hudsons</button><div class="bpanel" role="dialog" aria-label="Hudsons assistant"><div class="bh"><div><b>Hudsons assistant</b><small>Charlotte Street, Fitzrovia</small></div><button class="bx" type="button" aria-label="Close">&times;</button></div><div class="blog"></div><div class="bchips"></div><div class="bnote">Demo assistant. Answers come from the public website.</div><form><input type="text" placeholder="Type your question..." aria-label="Message" autocomplete="off"><button type="submit">Send</button></form></div></div>
+<script>/*CORE*/
+var CFG={"greet": "Hello, I'm the Hudsons assistant. Ask me about selling, buying, letting, property management, our Charlotte Street office, or the team. Or I can pass a valuation or viewing request to the team.", "chips": ["Free valuation", "Letting my flat", "Renting a flat", "Opening hours", "Who is on the team"], "fallback": "I can't see that on the Hudsons website, so I won't guess. Please ring the office on <a href='tel:+442073232277'>020 7323 2277</a> or e-mail <a href='mailto:hello@hudsonsproperty.com'>hello@hudsonsproperty.com</a>.", "flow": {"trigger": ["book", "request", "arrange", "appointment", "viewing", "view a", "valuation", "valuer", "callback", "call me", "enquire", "enquiry", "inquire", "consultation", "speak", "talk to"], "intro": "Of course. A few questions and I'll pass it to the team at Charlotte Street.", "steps": [{"key": "need", "label": "Enquiry", "q": "What do you need help with?", "opts": ["Sell my property", "Buy a property", "Let my property", "Rent a property", "Property management", "Commercial or offices"]}, {"key": "area", "label": "Area", "q": "Which area is it in, or where would you like to be?", "opts": ["Fitzrovia", "Marylebone", "Soho", "Bloomsbury", "Covent Garden", "Elsewhere"]}, {"key": "beds", "label": "Bedrooms", "q": "How many bedrooms?", "opts": ["Studio", "1 bedroom", "2 bedrooms", "3 bedrooms", "4 or more"]}, {"key": "name", "label": "Name", "q": "What name should we ask for?"}, {"key": "contact", "label": "Contact", "q": "Best phone number or e-mail?", "val": "phone"}, {"key": "time", "label": "Best time", "q": "When is easiest to reach you?", "opts": ["Weekday daytime", "Weekday evening", "Saturday", "Sunday"]}], "doneTitle": "Passed to the team", "done": "The Hudsons team will come back to you. The office is open Monday to Saturday 8am to 8pm and Sunday 10am to 4pm, or ring <a href='tel:+442073232277'>020 7323 2277</a>."}, "kb": [{"id": "hours", "k": ["hours", "open", "opening", "closed", "close", "weekend", "saturday", "sunday", "late", "evening", "what time"], "a": "Office hours: Monday to Saturday 8:00am to 8:00pm, Sunday 10:00am to 4:00pm. The office is at 24 Charlotte Street, Fitzrovia."}, {"id": "where", "k": ["address", "where", "location", "office", "find you", "directions", "tube", "station", "goodge", "tottenham court road", "charlotte street", "postcode", "visit"], "a": "24 Charlotte Street, Fitzrovia, London W1T 2ND. The nearest tubes are Goodge Street and Tottenham Court Road."}, {"id": "contact", "k": ["phone", "number", "telephone", "ring", "email", "mail", "contact", "get in touch", "reach"], "a": "Residential: <a href='tel:+442073232277'>020 7323 2277</a>. Commercial: <a href='tel:+442076318702'>020 7631 8702</a>. E-mail: <a href='mailto:hello@hudsonsproperty.com'>hello@hudsonsproperty.com</a>."}, {"id": "sell", "k": ["sell", "selling", "seller", "sale", "list my flat", "market my", "selling guide", "put my flat on the market"], "a": "Hudsons sells across the West End and Central London. There's a London property selling guide on the site, and an agent from the office visits to value the home and explain how it would be marketed. Want me to request a valuation?"}, {"id": "value", "k": ["value", "valuation", "worth", "how much is my", "appraisal", "estimate", "instant valuation", "stamp duty"], "a": "The site offers a free valuation. There are instant online valuations for sales and for lettings, or you can ask for an agent to visit and give the most accurate figure. There's also a Stamp Duty calculator. I can't quote a value myself."}, {"id": "buy", "k": ["buy", "buying", "buyer", "purchase", "first time buyer", "ftb", "flat for sale", "properties for sale", "leasehold", "freehold"], "a": "The site has residential properties for sale, new homes and commercial investments, plus a London buying guide and a guide to purchasing a leasehold flat. Simon Bray, Director of Sales, is mentioned often in client reviews for first-time and leasehold purchases."}, {"id": "fees", "k": ["fee", "fees", "tenant fees", "charge", "commission", "cost", "price", "how much do you charge", "deposit"], "a": "Tenant fees have their own page on the website, and I can't quote any figures here. For fees on selling or letting, ask the team directly."}, {"id": "rent", "k": ["rent", "renting", "tenant", "tenants", "to let", "rental", "rentals", "student", "looking for a flat", "move in"], "a": "Residential rentals are listed on the site, with a guide to renting in London and a student renting guide. Tenant fees have their own page. Tell me the area and bedrooms and I'll pass it on."}, {"id": "let", "k": ["let", "letting", "landlord", "landlords", "let my flat", "rent out", "buy to let", "btl", "private rental"], "a": "For landlords there's lettings, a Let Your London Property guide, a buy-to-let guide and the private rental sector. Paul Thomson is Lettings Manager. Want a lettings valuation?"}, {"id": "manage", "k": ["manage", "management", "property management", "managed", "repairs", "maintenance", "overseas landlord", "living abroad", "live abroad", "abroad", "block management", "block"], "a": "Hudsons offers full tenancy management, popular with landlords living outside London or overseas, covering legislation, repairs and tenancy issues. There's also block management. Sarese Teji is Property Manager and Holly Enright is Tenancy Manager."}, {"id": "commercial", "k": ["commercial", "office", "offices", "serviced", "serviced offices", "investment", "commercial property", "business premises", "shop"], "a": "The commercial side covers commercial investments, commercial rentals and serviced offices. Fin Clayson is the Commercial Property Advisor and the commercial line is <a href='tel:+442076318702'>020 7631 8702</a>."}, {"id": "new", "k": ["new home", "new homes", "new build", "development", "phase", "phase 2", "off plan"], "a": "The home page currently mentions the last few units in Phase 1 of a new development and a Register for Phase 2 link. The New Homes section has the detail."}, {"id": "team", "k": ["team", "staff", "agent", "agents", "who", "simon", "spencer", "paul", "sarese", "holly", "phoebe", "kai", "deshira", "jon", "hudson", "founder", "fin", "luisa"], "a": "Jon Hudson is the founder. Sales: Simon Bray (Director of Sales), Spencer Botchin (Director of Residential), Deshira Madjuni. Lettings: Paul Thomson, Kai Darragi, Phoebe Baynham, Sarese Teji, Holly Enright. Commercial: Fin Clayson. Operations: Luisa Cooper, accounts: Carl Byron. Plus Suki, Bianca and Eric, the office dogs."}, {"id": "dogs", "k": ["dog", "dogs", "suki", "bianca", "eric", "pet", "pets"], "a": "Suki is Head of Glamour and Sniffing Out Deals, and Bianca is Head Lap Warmer and Property Spotter. Yes, they are dogs, and yes they are on the team page."}, {"id": "about", "k": ["about", "history", "since", "founded", "2002", "experience", "years", "established", "story", "timeline", "why", "how long"], "a": "Hudsons has been in the West End since 2002 and says the team has more than 60 years of combined Central London experience. Their line is \"Exceed expectations at every door\"."}, {"id": "reviews", "k": ["review", "reviews", "rating", "google", "testimonial", "feedback", "stars", "good"], "a": "Hudsons shows a 4.8 out of 5 Google rating based on 389 reviews, and says it has 250+ client reviews on the site."}, {"id": "areas", "k": ["area", "areas", "fitzrovia", "marylebone", "soho", "bloomsbury", "covent garden", "west end", "mayfair", "oxford circus", "regents park", "neighbourhood"], "a": "Area guides on the site: Soho, Marylebone, Fitzrovia, Bloomsbury and Covent Garden. The team works across the West End and Central London."}, {"id": "probate", "k": ["probate", "inheritance", "estate", "deceased", "executor", "probate valuation"], "a": "Hudsons has a Probate Valuations page. Call the office to talk it through."}, {"id": "staging", "k": ["staging", "home staging", "stage my", "presentation", "photos", "marketing", "photography"], "a": "There's a Home Staging Service on the site and a Property Marketing page describing how homes are presented."}, {"id": "hub", "k": ["hud hub", "discount", "offers", "restaurant", "cafe", "carlotta", "koha", "local businesses", "perks"], "a": "The Hud Hub is a hand-picked list of local businesses the team likes, such as Carlotta in Marylebone and Cafe Koha in Theatreland, with discounts for Hudsons clients."}, {"id": "awards", "k": ["award", "awards", "accreditation", "accreditations", "propertymark", "registered", "regulated", "protected", "cmp", "client money"], "a": "The site has an Awards and Accreditations page and shows the Propertymark logo, with a CMP certificate listed in the footer."}]};
+function norm(s){return String(s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){if(w.length<=3)return w;if(/ies$/.test(w))return w.slice(0,-3)+'y';if(/(ing|ed)$/.test(w)&&w.length>5)return w.replace(/(ing|ed)$/,'');if(/[^s]s$/.test(w))return w.slice(0,-1);return w;}
+function toks(s){return norm(s).split(' ').filter(Boolean).map(stem);}
+function lev(a,b){var m=a.length,n=b.length,i,j,p=[],c;for(j=0;j<=n;j++)p[j]=j;for(i=1;i<=m;i++){c=[i];for(j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[n];}
+function fuzzy(a,b){if(a===b)return true;var L=Math.max(a.length,b.length),S=Math.min(a.length,b.length);if(S>=4&&L-S<=3&&(a.indexOf(b)===0||b.indexOf(a)===0))return true;if(L<5||Math.abs(a.length-b.length)>2)return false;return lev(a,b)<=(L>=9?2:1);}
+function kwScore(kw,tk,tn){var k=norm(kw);if(!k)return 0;if(k.indexOf(' ')>-1){return(' '+tn+' ').indexOf(' '+k+' ')>-1?2:0;}var s=stem(k),i;for(i=0;i<tk.length;i++){if(fuzzy(s,tk[i]))return 1;}return 0;}
+function best(text,list){var tk=toks(text),tn=norm(text),bi=-1,bs=0,i,j,s;for(i=0;i<list.length;i++){s=0;for(j=0;j<list[i].k.length;j++)s+=kwScore(list[i].k[j],tk,tn);if(s>bs){bs=s;bi=i;}}return bi<0?null:list[bi];}
+function wantsFlow(text){var tk=toks(text),tn=norm(text),i;for(i=0;i<CFG.flow.trigger.length;i++){if(kwScore(CFG.flow.trigger[i],tk,tn)>0)return true;}return false;}
+function answer(text){return best(text,CFG.kb);}
+function optMatch(text,opts){var tn=norm(text),tk=toks(text),i,o,bi=-1,bs=0,s,w,j;for(i=0;i<opts.length;i++){o=opts[i];if(norm(o)===tn)return o;w=toks(o);s=0;for(j=0;j<w.length;j++){if(w[j].length>2&&kwScore(w[j],tk,tn)>0)s++;}if(s>bs){bs=s;bi=i;}}return bi<0?null:opts[bi];}
+/*ENDCORE*/
+(function(){
+var root=document.getElementById('bot');if(!root)return;
+var fab=root.querySelector('.bfab'),log=root.querySelector('.blog'),chips=root.querySelector('.bchips'),form=root.querySelector('form'),inp=root.querySelector('input');
+var flow=null;
+function add(t,who,html){var d=document.createElement('div');d.className='bm '+who;if(html)d.innerHTML=t;else d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(a){chips.innerHTML='';a.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){send(c);};chips.appendChild(b);});}
+function ask(){var s=CFG.flow.steps[flow.i];add(s.q,'bot',true);setChips(s.opts?s.opts.concat(['Cancel']):['Cancel']);}
+function startFlow(){flow={i:0,d:{}};add(CFG.flow.intro,'bot',true);ask();}
+function finish(){var d=flow.d,lines=[];CFG.flow.steps.forEach(function(s){lines.push(s.label+': '+d[s.key]);});add('<b>'+CFG.flow.doneTitle+'</b><br>'+lines.join('<br>')+'<br><br>'+CFG.flow.done,'bot',true);flow=null;setChips(CFG.chips);}
+function stepInput(t){var s=CFG.flow.steps[flow.i],v=null;
+if(/^(cancel|stop|never ?mind|exit)$/i.test(norm(t))){flow=null;add('No problem, cancelled. Anything else I can help with?','bot');setChips(CFG.chips);return;}
+if(s.opts){v=optMatch(t,s.opts);if(!v){var e=answer(t);if(e){add(e.a,'bot',true);ask();return;}add('Please pick one of the options below.','bot');setChips(s.opts.concat(['Cancel']));return;}}
+else if(s.val==='phone'){if(t.replace(/\D/g,'').length<7&&!/@/.test(t)){add('That does not look like a phone number or e-mail. Could you type it again?','bot');return;}v=t;}
+else{if(norm(t).length<2){add('Could you type that once more?','bot');return;}v=t;}
+flow.d[s.key]=v;flow.i++;if(flow.i>=CFG.flow.steps.length)finish();else ask();}
+function send(t){t=String(t).trim();if(!t)return;add(t,'me');inp.value='';
+if(flow){stepInput(t);return;}
+var n=norm(t);
+if(/^(hi|hello|hey|hola|good (morning|afternoon|evening))\b/.test(n)&&n.split(' ').length<4){add(CFG.greet,'bot',true);return;}
+if(/^(thanks|thank you|thx|ty|cheers)\b/.test(n)){add('You are welcome! Anything else?','bot');return;}
+if(wantsFlow(t)){startFlow();return;}
+var e=answer(t);
+if(e){add(e.a,'bot',true);setChips(CFG.chips);}else{add(CFG.fallback,'bot',true);setChips(CFG.chips);}}
+fab.onclick=function(){var o=root.classList.toggle('open');if(o&&!log.children.length){add(CFG.greet,'bot',true);setChips(CFG.chips);}};
+root.querySelector('.bx').onclick=function(){root.classList.remove('open');};
+form.onsubmit=function(ev){ev.preventDefault();send(inp.value);};
+})();
+</script>
+<script>
+window.__open=function(){var b=document.querySelector('#bot .bfab');if(b&&!document.getElementById('bot').classList.contains('open'))b.click();};
+window.__ask=function(t){window.__open();setTimeout(function(){var i=document.querySelector('#bot input');i.value=t;document.querySelector('#bot form button').click();},60);};
+(function(){var T={sell:["Thinking of selling? An agent from the Charlotte Street office visits, values the home and explains how it would be marketed. There is also a London selling guide on the site.","sell my property"],buy:["Residential sales, new homes and commercial investments are on the site, along with a buying guide and a leasehold guide.","buy a property"],rent:["Browse rentals, read the guide to renting in London, and check the tenant fees page. Tell the assistant your area and bedrooms.","rent a property"],let:["Full tenancy management, lettings valuations and block management for landlords, including those based overseas.","let my property"],com:["Commercial investments, rentals and serviced offices, with a dedicated commercial line on 020 7631 8702.","commercial offices"]};
+var p=document.getElementById('tp'),bs=document.querySelectorAll('.tabs button');
+function show(k){var t=T[k];p.innerHTML='';var a=document.createElement('p');a.textContent=t[0];var b=document.createElement('button');b.className='cta';b.type='button';b.textContent='Ask the assistant';b.onclick=function(){window.__ask(t[1]);};p.appendChild(a);p.appendChild(b);for(var i=0;i<bs.length;i++)bs[i].className=bs[i].getAttribute('data-t')===k?'on':'';}
+for(var i=0;i<bs.length;i++)bs[i].onclick=function(){show(this.getAttribute('data-t'));};show('sell');})();
+</script>
+</body></html>
