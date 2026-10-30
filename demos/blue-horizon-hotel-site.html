@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blue Horizon Hotel | Robson Street, Vancouver</title>
+<meta name="description" content="Demo page for Blue Horizon Hotel, a locally owned independent boutique hotel at 1225 Robson Street, Vancouver.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#10304a;--sea:#2b86b0;--sky:#d9ecf5;--sand:#f7f2e8;--coral:#e0714f;--ink:#1c2a36;--wf:'Raleway',system-ui,sans-serif;--wa:#10304a;--wb:#e6f1f7;--wtx:#1c2a36}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.65 'Lora',Georgia,serif;color:var(--ink);background:var(--sand);overflow-x:hidden}
+img{max-width:100%}
+a{color:var(--sea)}
+h1,h2,h3,h4{font-family:var(--wf);line-height:1.15;margin:0 0 .5em;letter-spacing:.01em}
+.wrap{max-width:1020px;margin:0 auto;padding:0 18px}
+.top{position:sticky;top:0;z-index:40;background:#fff;border-bottom:3px solid var(--sea);box-shadow:0 2px 10px rgba(16,48,74,.1)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:8px;padding-bottom:8px}
+.top img{height:42px;width:auto;display:block}
+.top nav{display:none;gap:18px;font:600 14px var(--wf);text-transform:uppercase;letter-spacing:.06em}
+.top nav a{text-decoration:none;color:var(--navy)}
+.btn{display:inline-block;background:var(--coral);color:#fff;border:0;border-radius:4px;padding:12px 20px;font:700 14px var(--wf);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;border:2px solid #fff}
+.hero{position:relative;background:linear-gradient(180deg,#0c2437 0%,#10304a 45%,#2b86b0 100%);color:#fff;overflow:hidden;padding:54px 0 0}
+.hero .wrap{position:relative;z-index:2}
+.hero small{font:700 12px var(--wf);letter-spacing:.22em;text-transform:uppercase;color:#9fd0e6}
+.hero h1{font-size:clamp(34px,8vw,64px);font-weight:800;margin:.25em 0}
+.hero p{max-width:600px;font-size:18px;color:#e5f1f7}
+.hero .row{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 30px}
+.sk{display:block;width:100%;height:120px;margin-top:10px}
+.facts{background:#fff;border-bottom:1px solid #e5dccb}
+.facts ul{list-style:none;margin:0;padding:14px 0;display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;font:600 14px var(--wf)}
+.facts li{min-width:0}
+.facts b{display:block;color:var(--sea);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+section{padding:46px 0}
+h2{font-size:clamp(26px,5vw,38px);color:var(--navy)}
+.lead{font-size:19px;max-width:700px}
+.ladder{position:relative;margin:26px 0 0;padding-left:0;list-style:none}
+.ladder li{position:relative;display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;padding:16px 0;border-top:1px dashed #b8cfdb}
+.ladder .fl{font:800 22px/1 var(--wf);color:var(--sea);text-align:right;padding-top:3px}
+.ladder .fl small{display:block;font:600 11px var(--wf);color:#6b8696;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px}
+.ladder h3{font-size:20px;margin-bottom:.25em;color:var(--navy)}
+.ladder p{margin:.2em 0}
+.tag{display:inline-block;font:600 12px var(--wf);background:var(--sky);color:var(--navy);padding:3px 9px;border-radius:99px;margin:4px 6px 0 0}
+.band{background:var(--navy);color:#e8f3f8}
+.band h2{color:#fff}
+.amen{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0;padding:0;list-style:none}
+.amen li{background:rgba(255,255,255,.08);border-left:3px solid var(--coral);padding:10px 12px;font:600 14px var(--wf);min-width:0}
+.two{display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+.card{background:#fff;border-radius:6px;padding:20px;box-shadow:0 2px 12px rgba(16,48,74,.08);min-width:0}
+.card h3{color:var(--navy)}
+.ev{width:100%;border-collapse:collapse;font:15px var(--wf);background:#fff}
+.ev th,.ev td{padding:10px 8px;border-bottom:1px solid #e3dccd;text-align:left;vertical-align:top}
+.ev th{background:var(--navy);color:#fff;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.ev td:first-child{font-weight:700;color:var(--navy)}
+details{background:#fff;border-radius:6px;margin:8px 0;box-shadow:0 1px 6px rgba(16,48,74,.07)}
+summary{cursor:pointer;padding:14px 16px;font:700 16px var(--wf);color:var(--navy);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";float:right;color:var(--coral);font-size:22px;line-height:1}
+details[open] summary:after{content:"-"}
+details p{padding:0 16px 14px;margin:0}
+.contact{display:grid;gap:12px}
+.contact a{color:#fff}
+footer{background:#0b2133;color:#b8cfdb;padding:28px 0 90px;font:14px/1.6 var(--wf)}
+footer a{color:#9fd0e6}
+@media(min-width:760px){.top nav{display:flex}.facts ul{grid-template-columns:repeat(4,1fr)}.two{grid-template-columns:1fr 1fr}.amen{grid-template-columns:repeat(3,1fr)}.ladder li{grid-template-columns:120px minmax(0,1fr)}.sk{height:170px}}
+#aFab{position:fixed;right:16px;bottom:16px;z-index:50;border:0;border-radius:999px;padding:13px 18px;background:var(--wa);color:var(--wt,#fff);font:600 15px/1 var(--wf);box-shadow:0 6px 22px rgba(0,0,0,.28);cursor:pointer}
+#aPan{position:fixed;right:16px;bottom:72px;z-index:51;width:min(370px,calc(100vw - 32px));max-height:min(560px,calc(100vh - 100px));display:none;flex-direction:column;background:var(--wbg,#fff);color:var(--wtx,#222);border-radius:16px;box-shadow:0 14px 44px rgba(0,0,0,.34);overflow:hidden;font:15px/1.45 var(--wf)}
+#aPan.open{display:flex}
+#aPan header{background:var(--wa);color:var(--wt,#fff);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}
+#aPan header small{display:block;font-weight:400;opacity:.85;font-size:12px}
+#aClose{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}
+#aLog{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:160px}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word;overflow-wrap:anywhere}
+.m.bot{background:var(--wb,#eef2f6);align-self:flex-start;border-bottom-left-radius:4px}
+.m.me{background:var(--wa);color:var(--wt,#fff);align-self:flex-end;border-bottom-right-radius:4px}
+#aChips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+#aChips button{border:1px solid var(--wa);background:transparent;color:var(--wa);border-radius:999px;padding:6px 11px;font:13px var(--wf);cursor:pointer}
+#aForm{display:flex;gap:6px;padding:10px;border-top:1px solid rgba(0,0,0,.1)}
+#aIn{flex:1;min-width:0;border:1px solid #bbb;border-radius:10px;padding:9px 10px;font:15px var(--wf)}
+#aForm button{border:0;background:var(--wa);color:var(--wt,#fff);border-radius:10px;padding:0 14px;font:600 14px var(--wf);cursor:pointer}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a href="#top" aria-label="Blue Horizon Hotel"><img src="img/blue-horizon-hotel-logo.png" alt="Blue Horizon Hotel" width="150" height="44"></a>
+<nav><a href="#rooms">Rooms</a><a href="#facilities">Facilities</a><a href="#events">Event space</a><a href="#faq">FAQ</a><a href="#visit">Visit</a></nav>
+<a class="btn" href="#visit" onclick="openAssistant(true);return false;">Enquire</a>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+<small>Locally owned and operated · Independent · Vancouver, BC</small>
+<h1>Thirty-one floors above Robson Street</h1>
+<p>A boutique-style hotel in the heart of Robson Street, the hub of shopping and dining. Live like a local in the West End, close to Stanley Park, English Bay, Davie Village, BC Place, Rogers Arena, the Convention Centre and Canada Place Cruise Terminal.</p>
+<div class="row"><a class="btn" href="#rooms">See the rooms</a><a class="btn ghost" href="tel:604-688-1411">Call 604-688-1411</a></div>
+<svg class="sk" viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><g fill="#0b2133" opacity=".55"><rect x="0" y="70" width="40" height="50"/><rect x="48" y="48" width="34" height="72"/><rect x="92" y="62" width="48" height="58"/><rect x="262" y="55" width="40" height="65"/><rect x="310" y="40" width="30" height="80"/><rect x="348" y="66" width="52" height="54"/></g><g fill="#fff" opacity=".95"><rect x="170" y="6" width="62" height="114" rx="2"/></g><g fill="#2b86b0"><rect x="178" y="16" width="10" height="8"/><rect x="194" y="16" width="10" height="8"/><rect x="210" y="16" width="10" height="8"/><rect x="178" y="32" width="10" height="8"/><rect x="194" y="32" width="10" height="8"/><rect x="210" y="32" width="10" height="8"/><rect x="178" y="48" width="10" height="8"/><rect x="194" y="48" width="10" height="8"/><rect x="210" y="48" width="10" height="8"/><rect x="178" y="64" width="10" height="8"/><rect x="194" y="64" width="10" height="8"/><rect x="210" y="64" width="10" height="8"/><rect x="178" y="80" width="10" height="8"/><rect x="194" y="80" width="10" height="8"/><rect x="210" y="80" width="10" height="8"/></g></svg>
+</div></div>
+
+<div class="facts"><div class="wrap"><ul>
+<li><b>Check-in</b>from 3:00pm</li>
+<li><b>Check-out</b>11:00am</li>
+<li><b>Address</b>1225 Robson Street, V6E 1C3</li>
+<li><b>Walk Score</b>100 out of 100</li>
+</ul></div></div>
+
+<section id="welcome"><div class="wrap">
+<h2>Welcome to the Blue Horizon</h2>
+<p class="lead">A locally owned and operated independent hotel in Vancouver, BC. The Blue Horizon has been awarded a 3 Green Key Eco-Rating by the Hotel Association of Canada, and a Certificate of Excellence by TripAdvisor.</p>
+<p>The hotel sits between downtown and the West End neighbourhood. Most of its 31 floors have some of Vancouver's finest views, and the entrance to the hotel car park is right off Robson beside the building.</p>
+</div></section>
+
+<section id="rooms" style="background:#fff"><div class="wrap">
+<h2>Choose your floor</h2>
+<p class="lead">All guest rooms are corner rooms with two walls of windows and private step-out balconies, many with views of English Bay, the North Shore mountains and the city. Beds are Queen-sized, King-sized or 2 Queen-sized depending on the room, perfect for a couple, family or individual traveller.</p>
+<ol class="ladder" reversed>
+<li><div class="fl"><small>Floors</small>31</div><div><h3>Summit event space</h3><p>Meeting and banquet rooms with panoramic ocean, city and North Shore mountain views. See <a href="#events">event space</a> below.</p></div></li>
+<li><div class="fl"><small>Floors</small>29-30</div><div><h3>Private Suites</h3><p>An ample living space, two bathrooms and a private bedroom, with a vantage point over Stanley Park, downtown Vancouver or the sunsets over English Bay. A King bed, sofa bed and day bed with trundle, water view or city view. Made for family or friends.</p><span class="tag">King + sofa bed + day bed</span><span class="tag">2 bathrooms</span></div></li>
+<li><div class="fl"><small>Floors</small>18-30</div><div><h3>Water View Rooms</h3><p>Stunning views of English Bay, mountains and city. Superior rooms, bright and spacious with lots of natural light.</p><span class="tag">1 or 2 beds</span><span class="tag">English Bay, mountain + city</span></div></li>
+<li><div class="fl"><small>Floors</small>15-30</div><div><h3>Superior Rooms</h3><p>Bright and spacious, with city, mountain or water views depending on the room type. Rooms with tubs are available upon request.</p><span class="tag">1 or 2 beds</span><span class="tag">City + mountain views</span></div></li>
+<li><div class="fl"><small>Floors</small>3-14</div><div><h3>Standard Rooms</h3><p>Bright and spacious rooms with lots of natural light, featuring city views. Rooms with tubs are available upon request.</p><span class="tag">1 or 2 beds</span><span class="tag">City views</span></div></li>
+<li><div class="fl"><small>Floors</small>3-5</div><div><h3>Accessible Rooms</h3><p>Bright and spacious with city views, a roll-in shower, roll-under sink, lowered hanging space in the closet and an automated room access option, among other features. All have 1 King-sized bed. Please contact the hotel directly to discuss your specific accessibility needs.</p><span class="tag">1 King bed</span><span class="tag">Contact the hotel directly</span></div></li>
+<li><div class="fl"><small>Floor</small>2</div><div><h3>Pool + Fitness area</h3><p>See facilities below.</p></div></li>
+</ol>
+<p style="margin-top:24px"><a class="btn" href="#visit" onclick="openAssistant(true);return false;">Start an enquiry</a></p>
+</div></section>
+
+<section class="band" id="facilities"><div class="wrap">
+<h2>In every room</h2>
+<ul class="amen">
+<li>Free Wi-Fi</li><li>Nespresso coffee machine</li><li>Bathrobes</li><li>In-room safe</li><li>Kettle</li><li>Mini-fridge</li><li>Air conditioning</li><li>Charging station</li><li>Flat-screen TV</li><li>Staycast streaming (Google Chromecast)</li><li>Complimentary UmbraCity umbrella rental</li>
+</ul>
+<div class="two">
+<div class="card" style="color:var(--ink)"><h3>Pool + Fitness area</h3><p>Two separate fitness areas: one with fitness equipment and free weights, and a quieter area focused on stretching, both looking out at a landscaped garden. A small indoor swimming pool, whirlpool and steam room for relaxing.</p><p><b>Open 6am-10pm</b>, closed daily from 2pm-3pm. The fitness area is on the 2nd floor.</p></div>
+<div class="card" style="color:var(--ink)"><h3>ABODE Restaurant</h3><p>Seasonal and fresh, with a patio that is perfect for people watching on the sunny side of Robson Street.</p><p>ABODE is open for brunch. Check <a href="https://aboderestaurant.ca" rel="noopener">aboderestaurant.ca</a> for hours.</p></div>
+</div>
+</div></section>
+
+<section id="events"><div class="wrap">
+<h2>Level 31: meetings and events</h2>
+<p class="lead">The Summit meeting and banquet rooms offer panoramic ocean, city and North Shore mountain views from the heart of downtown Vancouver. Wall-to-wall windows and natural lighting keep your guests energised through the day. A 360 degree tour and a PDF brochure are on the hotel's own site.</p>
+<div style="overflow-x:auto"><table class="ev"><thead><tr><th>Room</th><th>Size</th><th>Guests</th><th>Views</th></tr></thead><tbody>
+<tr><td>Garibaldi</td><td>1150 sq ft</td><td>100</td><td>English Bay and Stanley Park; north, south and west windows. Perfect for a sunset event.</td></tr>
+<tr><td>Seymour</td><td>745 sq ft</td><td>80</td><td>City and Coal Harbour</td></tr>
+<tr><td>Baker + Arrowsmith</td><td>375 sq ft each; 750 combined</td><td>30 max each; 60 combined</td><td>South facing, Robson Street and English Bay. One large space or two breakout rooms.</td></tr>
+<tr><td>Cypress + Hollyburn</td><td>315 sq ft each; 630 combined</td><td>25 max each; 50 combined</td><td>North facing, Coal Harbour and the North Shore mountains. One large space or two breakout rooms.</td></tr>
+</tbody></table></div>
+<p>Catering is run by the hotel's chef and kitchen team. Event enquiries (dates, food and beverage, attendees, guest rooms required) go to <a href="mailto:catering@bluehorizonhotel.com">catering@bluehorizonhotel.com</a>. Sales: <a href="mailto:dos@bluehorizonhotel.com">dos@bluehorizonhotel.com</a>.</p>
+</div></section>
+
+<section id="around"><div class="wrap">
+<h2>Getting around from Robson</h2>
+<p class="lead">The front door is on Robson Street, so most of what visitors come to Vancouver for is a walk or a short taxi ride away.</p>
+<div style="overflow-x:auto"><table class="ev"><thead><tr><th>From the hotel to</th><th>What the hotel says</th></tr></thead><tbody>
+<tr><td>SkyTrain City Centre Station</td><td>About 4 city blocks, a 12 minute walk. The SkyTrain leaves the airport every 5 minutes and takes about 30 minutes to reach City Centre.</td></tr>
+<tr><td>Canada Place cruise terminal</td><td>Approximately 10 blocks. No shuttle; a taxi runs to the terminal.</td></tr>
+<tr><td>Via Rail station and bus terminal</td><td>Approximately 3 km, a short taxi ride. The taxi stand is right in front of the hotel.</td></tr>
+<tr><td>Stanley Park, English Bay, Davie Village</td><td>Named by the hotel as close by in the West End neighbourhood.</td></tr>
+<tr><td>BC Place, Rogers Arena, the Convention Centre</td><td>Named by the hotel as close by.</td></tr>
+<tr><td>Local buses and bikes</td><td>A transit stop is in front of the hotel. Guests get discounts on SPOKES bike rentals; Mobi bike share is around the corner.</td></tr>
+</tbody></table></div>
+</div></section>
+
+<section style="background:#fff"><div class="wrap">
+<h2>What event guests wrote</h2>
+<div class="two">
+<div class="card"><p>"Our guests were consistently impressed, and we are especially grateful to the chef and kitchen team for nourishing our group so well. Everyone raved about the food!"</p></div>
+<div class="card"><p>"I wanted to reiterate how wonderful the Blue Horizon is as a venue. The food was fantastic, the staff friendly and of course we can't beat the view!"</p></div>
+</div>
+<p style="font:13px var(--wf);color:#6b8696">Testimonials as published on the hotel's own Event Space page.</p>
+</div></section>
+
+<section id="faq" style="background:#fff"><div class="wrap">
+<h2>Good to know</h2>
+<details><summary>What is check-in time?</summary><p>Check-in begins at 3:00pm. If your room is not ready, the hotel is able to store your luggage. Early check-in requests cannot be guaranteed.</p></details>
+<details><summary>What is check-out time?</summary><p>Check-out is 11:00am. The hotel is able to store your luggage. Late check-out requests cannot be guaranteed. Fees may apply.</p></details>
+<details><summary>Are guest rooms non-smoking?</summary><p>The hotel is 100% non-smoking, including the guest room balconies.</p></details>
+<details><summary>Do you allow pet dogs?</summary><p>The hotel is dog friendly. Please call 604-688-1411 or email info@bluehorizonhotel.com for more information.</p></details>
+<details><summary>Do you have accessible guest rooms?</summary><p>Yes. Please contact the hotel directly to find out more and for availability.</p></details>
+<details><summary>Do you have playpens or cribs?</summary><p>Playpens and cribs are available upon request and are not guaranteed. There are no rollaways or cots.</p></details>
+<details><summary>Is there parking?</summary><p>Parking is available at the hotel; the entrance is right off Robson beside the hotel. The parking height is 6 feet 2 inches. Please stop beside the side entrance before parking and register your vehicle with the Front Desk; your licence plate number is required. Rates are subject to change, so the team confirms the current one.</p></details>
+<details><summary>Is there an airport shuttle?</summary><p>No shuttle service. A taxi stand is right in front of the hotel. The SkyTrain departs the airport every 5 minutes and takes about 30 minutes to reach City Centre Station; the hotel is approximately 4 city blocks (12 minutes' walk) away.</p></details>
+<details><summary>How do I get to the cruise terminal, train or bus station?</summary><p>Canada Place cruise terminal is about 10 blocks away and there is no shuttle, but a taxi runs there. The Via Rail station and bus terminal are about 3 km from the hotel.</p></details>
+<details><summary>What about local transit and bikes?</summary><p>A transit stop is in front of the hotel; ask the Front Desk for SkyTrain and bus schedules. Hotel guests get discounts on bike rentals at SPOKES, and Mobi bike share is just around the corner.</p></details>
+<details><summary>What is the Green Key programme?</summary><p>The Green Key Eco-Rating Program recognises hotels committed to improving the environment and sustainable practices across five areas: corporate environment management, housekeeping, food and beverage operations, conference and meeting facilities, and engineering. The Blue Horizon holds a 3 Green Key Rating and is a Silver Level hotel in the TripAdvisor Green Leaders programme.</p></details>
+</div></section>
+
+<section class="band" id="visit"><div class="wrap">
+<h2>Find us on Robson</h2>
+<p class="lead" style="color:#e8f3f8">1225 Robson Street, Vancouver BC V6E 1C3. Nestled between downtown and the West End neighbourhood, with a 100 out of 100 Walk Score.</p>
+<div class="contact">
+<div>Reservations and general: <a href="mailto:info@bluehorizonhotel.com">info@bluehorizonhotel.com</a></div>
+<div>Tel <a href="tel:604-688-1411">604-688-1411</a> · Toll free <a href="tel:1-800-663-1333">1-800-663-1333</a> · Fax 604-688-4461</div>
+<div>Catering and events: <a href="mailto:catering@bluehorizonhotel.com">catering@bluehorizonhotel.com</a></div>
+<div>Sales: <a href="mailto:dos@bluehorizonhotel.com">dos@bluehorizonhotel.com</a></div>
+<div>Front Office Manager: <a href="mailto:fom@bluehorizonhotel.com">fom@bluehorizonhotel.com</a></div>
+<div>Pool + Fitness area on the 2nd floor, open 6am-10pm (closed daily 2pm-3pm). Check-in from 3:00pm, check-out 11:00am, luggage storage available.</div>
+</div>
+<p style="margin-top:20px"><button class="btn" type="button" onclick="openAssistant(true)">Start an enquiry with the assistant</button></p>
+</div></section>
+
+<footer><div class="wrap">Demo · prepared by Gevorg Hovhannisyan<br>An unofficial demo built from the hotel's public website. Nothing on this page is sent anywhere.</div></footer>
+
+<button id="aFab" type="button" aria-expanded="false" aria-controls="aPan">Ask us</button>
+<div id="aPan" role="dialog" aria-label="Blue Horizon assistant"><header><div>Blue Horizon assistant<small>Demo assistant. Sends nothing.</small></div><button id="aClose" type="button" aria-label="Close">&times;</button></header><div id="aLog" aria-live="polite"></div><div id="aChips"></div><form id="aForm"><input id="aIn" type="text" placeholder="Type your question" autocomplete="off" aria-label="Your question"><button type="submit">Send</button></form></div>
+
+<script>
+(function(root){
+function norm(s){return (s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function stem(w){return w.replace(/(ing|ed|es|s)$/,function(m){return w.length>4?'':m;});}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=1;j<=n;j++)d[0][j]=j;for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function wmatch(q,k){if(q===k)return 1;var sq=stem(q),sk=stem(k);if(sq===sk)return 0.95;if(k.length>=5&&q.length>=5&&(sq.indexOf(sk)===0||sk.indexOf(sq)===0)&&Math.abs(sq.length-sk.length)<=3)return 0.8;var t=k.length>=8?2:(k.length>=5?1:0);if(t&&Math.abs(q.length-k.length)<=t&&lev(sq,sk)<=t)return 0.7;return 0;}
+function score(text,entry){var q=norm(text),qw=q.split(' '),s=0,i,j,k;for(i=0;i<entry.k.length;i++){k=norm(entry.k[i]);if(!k)continue;var kw=k.split(' ');if(kw.length>1){if((' '+q+' ').indexOf(' '+k+' ')>-1){s+=2.5*kw.length;continue;}var all=0;for(j=0;j<kw.length;j++){var b=0;for(var x=0;x<qw.length;x++)b=Math.max(b,wmatch(qw[x],kw[j]));all+=b;}if(all>=kw.length*0.85)s+=1.8*kw.length;}else{var best=0;for(j=0;j<qw.length;j++)best=Math.max(best,wmatch(qw[j],k));s+=best*(k.length>=6?2:1.5);}}return s*(entry.w||1);}
+function answer(CFG,text){var best=null,bs=0,i;for(i=0;i<CFG.kb.length;i++){var s=score(text,CFG.kb[i]);if(s>bs){bs=s;best=CFG.kb[i];}}return bs>=1.4?best:null;}
+function wantsFlow(CFG,text){return score(text,{k:CFG.flowWords})>=1.4;}
+var api={norm:norm,answer:answer,wantsFlow:wantsFlow,score:score};
+if(typeof module!=='undefined'&&module.exports){module.exports=api;}else{root.Eng=api;}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+root.initWidget=function(CFG){
+var fab=document.getElementById('aFab'),pan=document.getElementById('aPan'),log=document.getElementById('aLog'),inp=document.getElementById('aIn'),chips=document.getElementById('aChips'),form=document.getElementById('aForm');
+var flow=null,data={};
+function add(t,who,html){var d=document.createElement('div');d.className='m '+who;if(html)d.innerHTML=t;else d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function setChips(list){chips.innerHTML='';list.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){handle(c);};chips.appendChild(b);});}
+function open(){pan.classList.add('open');fab.setAttribute('aria-expanded','true');if(!log.children.length){add(CFG.greet,'bot');setChips(CFG.chips);}inp.focus();}
+function close(){pan.classList.remove('open');fab.setAttribute('aria-expanded','false');}
+window.openAssistant=function(startFlow){open();if(startFlow)startF();};
+fab.onclick=function(){pan.classList.contains('open')?close():open();};
+document.getElementById('aClose').onclick=close;
+function startF(){flow=0;data={};ask();}
+function ask(){var st=CFG.flow[flow];add(st.q,'bot');setChips(st.opts||['Cancel']);}
+function finish(){var h='<b>'+CFG.doneTitle+'</b><br>';CFG.flow.forEach(function(s){h+=esc(s.label)+': '+esc(data[s.key]||'-')+'<br>';});h+=CFG.doneText;add(h,'bot',1);flow=null;setChips(CFG.chips);}
+function handle(t){t=(t||'').trim();if(!t)return;add(t,'me');inp.value='';
+if(flow!==null){if(/^(cancel|stop|never ?mind)$/i.test(t)){flow=null;add('No problem, nothing was sent. Ask me anything else.','bot');setChips(CFG.chips);return;}
+var st=CFG.flow[flow];if(st.need&&!new RegExp(st.need).test(t)){add(st.err,'bot');return;}data[st.key]=t;flow++;if(flow>=CFG.flow.length)finish();else ask();return;}
+if(wantsFlow(CFG,t)){startF();return;}
+var a=answer(CFG,t);
+if(a){add(a.a,'bot',1);setChips(a.chips||CFG.chips);}else{add(CFG.fallback,'bot',1);setChips(CFG.chips);}}
+form.onsubmit=function(e){e.preventDefault();handle(inp.value);};
+};
+})(typeof window!=='undefined'?window:this);
+
+initWidget({"greet":"Hello, I am the Blue Horizon assistant for this demo. Ask about rooms, check-in, parking, pets, the pool, events on Level 31, or start an enquiry.","chips":["Room types","Check-in and check-out","Pets","Pool and fitness","Event space","Parking and transit","Make an enquiry"],"flowWords":["book","booking","reserve","reservation","enquiry","inquiry","availability","available","stay with you","check rates","make an enquiry"],"doneTitle":"Enquiry sent to the front desk team.","doneText":"<br>The team will confirm availability and rates with you. This is a demo: nothing was actually sent. You can also call 604-688-1411.","fallback":"I do not have that in front of me, so the team will need to confirm it. Call 604-688-1411 (toll free 1-800-663-1333) or email <b>info@bluehorizonhotel.com<\/b>.","flow":[{"key":"dates","label":"Dates","q":"Which arrival and departure dates are you thinking of?","opts":["Cancel"]},{"key":"guests","label":"Guests","q":"How many guests, and are children travelling?","opts":["1 guest","2 guests","2 adults + children","Cancel"]},{"key":"room","label":"Room","q":"Which room type interests you?","opts":["Water View","Superior","Standard","Private Suite","Accessible","Not sure yet"]},{"key":"extras","label":"Notes","q":"Anything the team should know? A dog, a crib, a late arrival, accessibility needs.","opts":["No notes","Travelling with a dog","Need a crib","Accessibility needs"]},{"key":"contact","label":"Contact","q":"Last step: your name and an email or phone number so the team can reply.","need":"@|[0-9]{6,}","err":"Please add an email address or phone number so the team can reply."}],"kb":[{"k":["rooms","room types","accommodation","corner","balcony","balconies","bedrooms","beds","bed"],"a":"Every guest room is a corner room with two walls of windows and a private step-out balcony. Types: <b>Water View<\/b> (floors 18-30, English Bay, mountain and city views), <b>Superior<\/b> (floors 15-30), <b>Standard<\/b> (floors 3-14, city views) and <b>Private Suites<\/b> (floors 29-30). Beds are Queen, King or 2 Queens depending on the room."},{"k":["water view","english bay","ocean view","view","views","sunset"],"a":"Water View Rooms are on floors 18-30 with views of English Bay, the North Shore mountains and the city, in 1 or 2 beds. Superior rooms on floors 15-30 face city, mountain or water depending on the room type."},{"k":["suite","suites","private suite","family","two bathrooms","sofa bed","daybed","trundle"],"a":"The Private Bedroom Suites are on floors 29-30: a King bed, sofa bed and day bed with trundle, two bathrooms, a separate bedroom and water or city views."},{"k":["accessible","accessibility","wheelchair","disabled","disability","roll-in shower","mobility"],"a":"Accessible Rooms are on floors 3-5 with city views, 1 King bed, a roll-in shower, roll-under sink, lowered closet space and an automated room access option. Please contact the hotel directly to discuss your needs and availability."},{"k":["check in","check-in","checkin","arrive","arrival","early arrival","luggage","bags","store luggage"],"a":"Check-in begins at 3:00pm. If your room is not ready the hotel can store your luggage. Early check-in cannot be guaranteed."},{"k":["check out","check-out","checkout","leave","departure","late checkout","late check-out"],"a":"Check-out is 11:00am. The hotel can store your luggage. Late check-out cannot be guaranteed and fees may apply."},{"k":["smoking","smoke","smoker","non smoking","vape"],"a":"The hotel is 100% non-smoking, including the guest room balconies."},{"k":["pool","swimming","gym","fitness","whirlpool","steam","steam room","workout","exercise","sauna","hot tub"],"a":"The 2nd-floor Pool + Fitness area has a small indoor lap pool, whirlpool, steam room, a gym with cardio machines and free weights, and a quieter stretching area, both looking onto a landscaped garden. Open 6am-10pm and closed daily 2pm-3pm."},{"k":["dog","dogs","pet","pets","puppy","animal","cat","dog friendly"],"a":"The hotel is dog friendly. Please call 604-688-1411 or email info@bluehorizonhotel.com first so the team can go over the details with you."},{"k":["crib","cribs","playpen","baby","rollaway","cot","cots","infant","toddler"],"a":"Playpens and cribs are available on request but cannot be guaranteed. There are no rollaways or cots."},{"k":["parking","park","car","garage","vehicle","valet","height"],"a":"Parking is at the hotel, with the entrance right off Robson beside the hotel. Vehicle height limit is 6 feet 2 inches. Stop at the side entrance first and register your vehicle with the Front Desk (have your licence plate ready). The team will confirm the current rate."},{"k":["airport","shuttle","skytrain","sky train","transit","bus","train","taxi","get here","directions","transport"],"a":"There is no airport shuttle. A taxi stand is right in front of the hotel. The SkyTrain leaves the airport every 5 minutes (about 30 minutes to City Centre Station), then it is roughly 4 blocks / 12 minutes on foot. A local transit stop is in front of the hotel."},{"k":["cruise","canada place","cruise terminal","ship","alaska"],"a":"Canada Place cruise terminal is about 10 blocks from the hotel. There is no shuttle, but a taxi runs to the terminal."},{"k":["via rail","bus terminal","station","pacific central"],"a":"The Via Rail station and bus terminal are about 3 km from the hotel, a short taxi ride."},{"k":["bike","bikes","bicycle","cycling","spokes","mobi","bike share"],"a":"Hotel guests get discounts on bike rentals at SPOKES, and Mobi bike share is just around the corner. Ask the front desk for details."},{"k":["address","where","location","located","robson","find you","map","west end"],"a":"1225 Robson Street, Vancouver BC V6E 1C3, on Robson Street between downtown and the West End, with a Walk Score of 100. Near Stanley Park, English Bay, Davie Village, BC Place, Rogers Arena and the Convention Centre."},{"k":["phone","call","telephone","number","contact","email","reach","fax","toll free"],"a":"Tel 604-688-1411, toll free 1-800-663-1333, fax 604-688-4461. Email: info@bluehorizonhotel.com (reservations and general), catering@bluehorizonhotel.com (events), dos@bluehorizonhotel.com (sales)."},{"k":["wifi","wi-fi","internet","wireless","chromecast","streaming","tv","staycast"],"a":"Free Wi-Fi is included, plus wireless streaming through Staycast (Google Chromecast) and a flat-screen TV in each room."},{"k":["amenities","nespresso","coffee","kettle","robe","bathrobe","safe","fridge","air conditioning","umbrella","charging"],"a":"In every room: free Wi-Fi, Nespresso coffee machine, kettle, bathrobes, in-room safe, mini-fridge, air conditioning, charging station and flat-screen TV. Complimentary UmbraCity umbrella rental too."},{"k":["restaurant","abode","brunch","food","eat","breakfast","dining","patio","dinner","breakfast included"],"a":"ABODE is the hotel restaurant, seasonal and fresh, with a patio for people watching on the sunny side of Robson Street. It is open for brunch; see aboderestaurant.ca for hours."},{"k":["event","events","meeting","meetings","conference","banquet","wedding","function","level 31","summit","venue","catering","party"],"a":"Level 31 Summit meeting and banquet rooms have panoramic ocean, city and mountain views and wall-to-wall windows. Rooms: Garibaldi (1150 sq ft, up to 100 guests), Seymour (745 sq ft, 80), Baker + Arrowsmith (375 sq ft each, 30 max, or 750 combined for 60) and Cypress + Hollyburn (315 sq ft each, 25 max, or 630 combined for 50). Catering: catering@bluehorizonhotel.com."},{"k":["garibaldi","largest room","biggest room","biggest","largest","100 guests"],"a":"Garibaldi is the largest event room: 1150 sq ft, up to 100 guests, with north, south and west windows over English Bay, Stanley Park and the North Shore mountains."},{"k":["seymour"],"a":"Seymour: 745 sq ft, 80 guests, with city and Coal Harbour views."},{"k":["baker","arrowsmith","cypress","hollyburn","breakout"],"a":"Baker + Arrowsmith and Cypress + Hollyburn can each be used as one large room or split into two breakout rooms. Baker/Arrowsmith: 375 sq ft each (30 max each), 750 combined (60 max), south facing toward Robson Street and English Bay. Cypress/Hollyburn: 315 sq ft each (25 max each), 630 combined (50 max), north facing toward Coal Harbour and the North Shore."},{"k":["green key","eco","environment","sustainable","green","tripadvisor","award","awards","sustainability"],"a":"The hotel holds a 3 Green Key Eco-Rating from the Hotel Association of Canada, is a Silver Level TripAdvisor Green Leaders hotel, and has a TripAdvisor Certificate of Excellence."},{"k":["independent","owned","chain","about","who","boutique"],"a":"Blue Horizon is a boutique, locally owned and operated independent hotel in Vancouver's West End, on Robson Street, with 31 floors."},{"k":["price","prices","rate","rates","cost","how much","cheap","discount","fee","fees","tax","taxes"],"a":"Rates change by date and room, so the team confirms them. Use the enquiry flow or call 604-688-1411 / 1-800-663-1333."},{"k":["hello","hey","hola","thanks","thank you"],"a":"Hello! Ask me about rooms, check-in, pets, parking, events or start an enquiry."}]});
+</script>
+</body>
+</html>
