@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ArtStart homepage concept</title>
+<meta name="description" content="Homepage concept for ArtStart's website RFP. Not the live site.">
+<meta name="robots" content="noindex">
+<style>
+:root{--navy:#26346b;--ink:#1d2433;--green:#8cc63f;--green-d:#4d7a0a;--blue:#1874cd;--blue-d:#0f5aa6;--paper:#fff;--soft:#f4f7ee;--line:#d9dfcc;--sun:#ffd23f;--r:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--paper)}
+img{max-width:100%;height:auto}
+a{color:var(--blue-d)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:8px;top:-60px;background:var(--navy);color:#fff;padding:10px 16px;z-index:100;border-radius:0 0 8px 8px}
+.skip:focus{top:0}
+.note{background:var(--navy);color:#fff;font-size:14px;text-align:center;padding:8px 16px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+/* header */
+.hdr{position:sticky;top:0;z-index:50;background:#fff;border-bottom:3px solid var(--green);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.hdr .wrap{display:flex;align-items:center;gap:18px;min-height:72px}
+.logo img{display:block;width:200px;height:auto}
+.logo{display:block;flex:none}
+nav{margin-left:auto}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;align-items:center}
+nav a{display:block;padding:10px 12px;text-decoration:none;color:var(--navy);font-weight:600;border-radius:8px}
+nav a:hover{background:var(--soft)}
+nav a[aria-current]{box-shadow:inset 0 -3px 0 var(--green)}
+.btn{display:inline-block;background:var(--blue-d);color:#fff;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:999px;border:2px solid var(--blue-d);cursor:pointer;font:inherit;font-weight:700}
+.btn:hover{background:var(--navy);border-color:var(--navy)}
+.btn.alt{background:#fff;color:var(--navy);border-color:var(--navy)}
+.btn.alt:hover{background:var(--soft)}
+nav .support{background:var(--navy);color:#fff;border-radius:999px;padding:10px 20px;margin-left:6px}
+nav .support:hover{background:var(--blue-d)}
+.menu{display:none;margin-left:auto;background:#fff;border:2px solid var(--navy);color:var(--navy);border-radius:8px;padding:8px 14px;font:inherit;font-weight:700;cursor:pointer}
+/* hero */
+.hero{background:linear-gradient(135deg,var(--navy),#1b2a5a);color:#fff;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-80px;top:-80px;width:340px;height:340px;border-radius:50%;background:var(--green);opacity:.18}
+.tabs{display:flex;gap:8px;padding-top:22px;position:relative;z-index:1}
+.tabs [role=tab]{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55);border-radius:999px;padding:8px 18px;font:inherit;font-weight:700;cursor:pointer}
+.tabs [aria-selected=true]{background:var(--green);color:#16240a;border-color:var(--green)}
+.panel{padding:34px 0 56px;position:relative;z-index:1;max-width:760px}
+.panel[hidden]{display:none}
+.eyebrow{display:inline-block;background:var(--sun);color:#3a2e00;font-weight:800;font-size:14px;padding:4px 12px;border-radius:999px;letter-spacing:.02em}
+.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.1;margin:14px 0 12px}
+.hero p{font-size:19px;margin:0 0 24px;max-width:620px}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px}
+.hero .btn{background:var(--green);border-color:var(--green);color:#16240a}
+.hero .btn:hover{background:#fff;border-color:#fff;color:var(--navy)}
+.hero .btn.alt{background:transparent;color:#fff;border-color:#fff}
+.hero .btn.alt:hover{background:#fff;color:var(--navy)}
+/* sections */
+section{padding:56px 0}
+h2{font-size:clamp(26px,3.5vw,36px);color:var(--navy);margin:0 0 10px;line-height:1.15}
+.lead{color:#44506a;margin:0 0 28px;max-width:640px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border:2px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:10px}
+.card h3{margin:0;color:var(--navy);font-size:22px}
+.card p{margin:0;flex:1}
+.card .ic{width:48px;height:48px;border-radius:12px;background:var(--green);color:#16240a;display:grid;place-items:center;font-size:24px}
+.card a.more{font-weight:700}
+.soft{background:var(--soft)}
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.stat{background:var(--navy);color:#fff;border-radius:var(--r);padding:28px}
+.stat b{display:block;font-size:44px;color:var(--green);line-height:1}
+/* signup */
+.signup{background:var(--navy);color:#fff}
+.signup h2{color:#fff}
+.signup form{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;max-width:760px}
+.signup .f{flex:1 1 220px;display:flex;flex-direction:column;gap:6px}
+.signup label{font-weight:700}
+.signup input[type=email],.signup select{padding:12px 14px;border-radius:10px;border:2px solid #fff;font:inherit;width:100%;color:var(--ink);background:#fff}
+.signup .btn{background:var(--green);border-color:var(--green);color:#16240a}
+.signup .btn:hover{background:#fff;border-color:#fff}
+.msg{margin-top:14px;font-weight:700;min-height:1.5em}
+.small{font-size:14px}
+/* footer */
+footer{background:#10183a;color:#e8ecf7;padding:48px 0 24px}
+footer a{color:#fff}
+footer h3{margin:0 0 10px;font-size:17px;color:var(--green)}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.fg{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:28px}
+.fund{border-top:1px solid #34407a;margin-top:32px;padding-top:24px}
+.fund ul{display:flex;flex-wrap:wrap;gap:10px}
+.fund li{background:#fff;color:var(--navy);padding:8px 14px;border-radius:8px;font-weight:700;font-size:15px}
+.copy{margin-top:22px;font-size:14px;color:#b9c1dc}
+@media(max-width:900px){
+ .grid{grid-template-columns:1fr}.split{grid-template-columns:1fr}.fg{grid-template-columns:1fr 1fr}
+ .menu{display:block}
+ nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:3px solid var(--green);margin:0;padding:10px 20px 16px}
+ nav.open{display:block}
+ nav ul{flex-direction:column;align-items:stretch}
+ nav .support{text-align:center;margin:6px 0 0}
+ .logo img{width:150px}
+ .hdr .wrap{position:relative}
+ .hdr .cta-m{display:inline-block}
+}
+@media(min-width:901px){.cta-m{display:none}}
+.cta-m{margin-left:auto;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;padding:9px 16px;border-radius:999px;font-size:15px}
+@media(max-width:900px){.menu{margin-left:0}}
+@media(max-width:520px){.fg{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="note" role="note">Homepage concept prepared by Gevorg Hovhannisyan for ArtStart's website RFP. Not the live site.</div>
+
+<header class="hdr">
+ <div class="wrap">
+  <a class="logo" href="#top" aria-label="ArtStart home"><img src="img/artstart-logo.gif" width="960" height="118" alt="ArtStart: reusing and reimagining our world"></a>
+  <a class="cta-m" href="#support" data-evt="cta_support_header_mobile">Support</a>
+  <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Main">
+   <ul>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#artscraps">Visit ArtScraps</a></li>
+    <li><a href="#camps">Camps &amp; Classes</a></li>
+    <li><a href="#educators">For Educators</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a class="support" href="#support" data-evt="cta_support_header">Support</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+
+<main id="main">
+<div id="top"></div>
+<section class="hero" aria-label="Featured programs" style="padding:0">
+ <div class="wrap">
+  <div class="tabs" role="tablist" aria-label="Seasonal programs">
+   <button role="tab" id="t-summer" aria-selected="true" aria-controls="p-summer">Summer Camp</button>
+   <button role="tab" id="t-fall" aria-selected="false" aria-controls="p-fall" tabindex="-1">Fall classes</button>
+  </div>
+  <div class="panel" role="tabpanel" id="p-summer" aria-labelledby="t-summer">
+   <span class="eyebrow">Registration opens Jan 2, 2027 at 12:01 am</span>
+   <h1>Summer Arts Camp: make something wild.</h1>
+   <p>Youth Art Camps for ages 4-17, including Passport to Africa and Time Warp: Art &amp; Creative Writing in the Multiverse. Join the list and we'll tell you the minute registration opens.</p>
+   <div class="row">
+    <a class="btn" href="#signup" data-evt="hero_cta_camp_notify">Get registration reminder</a>
+    <a class="btn alt" href="#camps" data-evt="hero_cta_camp_details">See all camps</a>
+   </div>
+  </div>
+  <div class="panel" role="tabpanel" id="p-fall" aria-labelledby="t-fall" hidden>
+   <span class="eyebrow">Fall Arts Camp &amp; STUDIO A</span>
+   <h1>Fall classes for kids and grown-ups.</h1>
+   <p>Fall Arts Camp for youth, plus STUDIO A: group classes, private instruction and mini cultural immersion camps for youth and adults.</p>
+   <div class="row">
+    <a class="btn" href="#camps" data-evt="hero_cta_fall_classes">Browse fall classes</a>
+    <a class="btn alt" href="#signup" data-evt="hero_cta_fall_notify">Tell me about new classes</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="features" aria-labelledby="feat-h">
+ <div class="wrap">
+  <h2 id="feat-h">Start here</h2>
+  <p class="lead">Three ways to get creative with ArtStart this month.</p>
+  <div class="grid">
+   <article class="card" id="artscraps">
+    <div class="ic" aria-hidden="true">&#9851;</div>
+    <h3>ArtScraps ReUse Center</h3>
+    <p>Our store of reused art and craft materials, in St. Paul. Over 30 Creativity Kits for pickup or shipping, or let our staff do the shopping for you.</p>
+    <a class="more" href="#artscraps" data-evt="feature_artscraps">Visit ArtScraps</a>
+   </article>
+   <article class="card">
+    <div class="ic" aria-hidden="true">&#127912;</div>
+    <h3>Upcoming classes and camps</h3>
+    <p>Youth Art Camps, Camp Create for Teens, and STUDIO A classes for youth and adults.</p>
+    <a class="more" href="#camps" data-evt="feature_classes">See classes and camps</a>
+   </article>
+   <article class="card">
+    <div class="ic" aria-hidden="true">&#127881;</div>
+    <h3>Community events</h3>
+    <p>The ArtStart Block Party, community workshops and the children's concert bring neighbors together.</p>
+    <a class="more" href="#events" data-evt="feature_events">See events</a>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="soft" id="camps" aria-labelledby="camps-h">
+ <div class="wrap">
+  <h2 id="camps-h">Camps &amp; Classes</h2>
+  <p class="lead">Placeholder list. On the real site staff add or retire these in the CMS, no developer needed.</p>
+  <div class="grid">
+   <article class="card"><h3>Summer Arts Camp</h3><p>Ages 4-17. Passport to Africa and Time Warp.</p></article>
+   <article class="card"><h3>Fall, Winter and Spring camps</h3><p>Seasonal Youth Art Camps and Art &amp; Creative Writing Camp.</p></article>
+   <article class="card"><h3>STUDIO A</h3><p>Online arts programming: private instruction, group classes, mini immersion camps.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="educators" aria-labelledby="edu-h">
+ <div class="wrap split">
+  <div>
+   <h2 id="edu-h">For Educators</h2>
+   <p>Arts in the Classroom brings artists to your school: residencies, mini residencies, Arts + E-STEM residencies, an artist roster and professional development.</p>
+   <a class="btn alt" href="#educators" data-evt="educators_cta">Explore classroom programs</a>
+  </div>
+  <div class="stat" id="about"><b>30</b>years of reusing and reimagining our world through arts education for children and adults.</div>
+ </div>
+</section>
+
+<section class="soft" id="events" aria-labelledby="ev-h">
+ <div class="wrap">
+  <h2 id="ev-h">Events</h2>
+  <p class="lead">Placeholder entries. Dates come from the CMS events list.</p>
+  <div class="grid">
+   <article class="card"><h3>Block Party</h3><p>Our neighborhood celebration of art and reuse.</p></article>
+   <article class="card"><h3>Community Workshops</h3><p>Drop in, make something, meet your neighbors.</p></article>
+   <article class="card"><h3>Children's Concert</h3><p>A family-friendly show for young audiences.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="signup" id="signup" aria-labelledby="sg-h">
+ <div class="wrap">
+  <h2 id="sg-h">Stay in the loop</h2>
+  <p class="lead" style="color:#dfe5f7">Camp registration dates, new classes and ArtScraps news. No spam.</p>
+  <form id="f" novalidate>
+   <div class="f"><label for="em">Email address</label><input id="em" type="email" autocomplete="email" required aria-describedby="msg"></div>
+   <div class="f"><label for="int">I'm interested in</label>
+    <select id="int"><option>Everything</option><option>Camps &amp; Classes</option><option>ArtScraps</option><option>For Educators</option><option>Events</option></select></div>
+   <button class="btn" type="submit" data-evt="email_signup">Sign me up</button>
+  </form>
+  <p class="msg" id="msg" role="status" aria-live="polite"></p>
+  <p class="small">Concept only: nothing is sent or stored. The live build connects to the Mailchimp or Constant Contact list ArtStart already uses.</p>
+ </div>
+</section>
+
+<section id="support" aria-labelledby="sup-h">
+ <div class="wrap split">
+  <div>
+   <h2 id="sup-h">Support ArtStart</h2>
+   <p>Donate, give materials to ArtScraps, volunteer or become a member. Every route is one click from the header button.</p>
+  </div>
+  <div class="row"><a class="btn" href="#support" data-evt="cta_donate">Donate</a> <a class="btn alt" href="#support" data-evt="cta_volunteer">Volunteer</a></div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="fg">
+   <div>
+    <h3>ArtStart ArtScraps</h3>
+    <address style="font-style:normal">1459 St. Clair Ave<br>St. Paul, MN 55105<br><a href="tel:+16516982787">651-698-2787</a></address>
+   </div>
+   <div><h3>About</h3><ul><li><a href="#about">About Us</a></li><li><a href="#">Contact</a></li><li><a href="#">Opportunities</a></li><li><a href="#">Board</a></li></ul></div>
+   <div><h3>Programs</h3><ul><li><a href="#camps">Camps &amp; Classes</a></li><li><a href="#educators">For Educators</a></li><li><a href="#artscraps">ArtScraps</a></li><li><a href="#">Gift Cards</a></li></ul></div>
+   <div><h3>More</h3><ul><li><a href="#events">Events</a></li><li><a href="#">Press</a></li><li><a href="#">Account</a></li><li><a href="#">Site map</a></li></ul></div>
+  </div>
+  <div class="fund">
+   <h3>Funders &amp; acknowledgments</h3>
+   <p class="small" style="margin:0 0 12px">ArtStart's programs are made possible by the support of:</p>
+   <ul>
+    <li>Minnesota State Arts Board</li>
+    <li>Minnesota Legacy Fund (Arts and Cultural Heritage Fund)</li>
+    <li>National Endowment for the Arts</li>
+   </ul>
+   <p class="small" style="margin:12px 0 0">Placeholder: final acknowledgment wording and logos to be supplied by ArtStart.</p>
+  </div>
+  <p class="copy">Concept by Gevorg Hovhannisyan. ArtStart name and logo belong to ArtStart.</p>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+ function sel(t){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});}
+ tabs.forEach(function(t,i){
+  t.addEventListener('click',function(){sel(t)});
+  t.addEventListener('keydown',function(e){
+   var n=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;
+   if(n){var x=tabs[(i+n+tabs.length)%tabs.length];sel(x);x.focus();e.preventDefault()}
+  });
+ });
+ var m=document.querySelector('.menu'),nav=document.getElementById('nav');
+ m.addEventListener('click',function(){var o=nav.classList.toggle('open');m.setAttribute('aria-expanded',o)});
+ nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');m.setAttribute('aria-expanded','false')}});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');m.setAttribute('aria-expanded','false');m.focus()}});
+ var f=document.getElementById('f'),em=document.getElementById('em'),msg=document.getElementById('msg');
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value)){em.setAttribute('aria-invalid','true');msg.textContent='Please enter a valid email address.';em.focus();return}
+  em.removeAttribute('aria-invalid');msg.textContent='Thanks! (Concept only: nothing was sent.)';f.reset();
+ });
+ /* dataLayer events for the GTM plan (no tracking in this concept) */
+ document.addEventListener('click',function(e){var a=e.target.closest('[data-evt]');if(a)(window.dataLayer=window.dataLayer||[]).push({event:a.getAttribute('data-evt')})});
+})();
+</script>
+</body>
+</html>
