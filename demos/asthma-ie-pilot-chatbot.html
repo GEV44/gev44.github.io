@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pilot Chatbot Demo (asthma.ie content)</title>
+<meta name="description" content="Retrieval-only information chatbot demo using short approved extracts with links to asthma.ie. Not affiliated with the Asthma Society of Ireland.">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#1d2733;--muted:#4a5565;--line:#cfd6df;--accent:#14566b;--accent-ink:#fff;--soft:#e6f0f3;--warn-bg:#fff4e5;--warn-line:#b25e00;--emerg-bg:#fdecec;--emerg-line:#b3261e;--focus:#0b57d0}
+@media (prefers-color-scheme:dark){:root{--bg:#10151b;--card:#18202a;--ink:#e8edf2;--muted:#b4bfcc;--line:#364352;--accent:#7cc4d9;--accent-ink:#0c1a20;--soft:#1e2c36;--warn-bg:#3a2a10;--warn-line:#f0a850;--emerg-bg:#3c1a1a;--emerg-line:#ff8a80;--focus:#8ab4ff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.skip{position:absolute;left:-999px;top:0;background:var(--card);padding:8px 12px;z-index:10}
+.skip:focus{left:8px;top:8px}
+.note{background:var(--soft);border-bottom:1px solid var(--line);padding:12px 16px;font-size:.95rem}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+h1{font-size:1.5rem;margin:20px 0 4px}
+.sub{color:var(--muted);margin:0 0 16px}
+[role=tablist]{display:flex;gap:4px;margin:12px 0 0}
+[role=tab]{border:1px solid var(--line);border-bottom:none;background:var(--bg);color:var(--ink);padding:10px 16px;border-radius:8px 8px 0 0;font:inherit;cursor:pointer;min-height:44px}
+[role=tab][aria-selected=true]{background:var(--card);font-weight:600;border-bottom:2px solid var(--card);margin-bottom:-1px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:0 8px 8px 8px;padding:16px;margin-bottom:32px}
+#log{min-height:260px;max-height:55vh;overflow:auto;display:flex;flex-direction:column;gap:12px;padding:4px 2px 12px}
+.msg{max-width:92%;padding:10px 14px;border-radius:12px;border:1px solid var(--line)}
+.msg.user{align-self:flex-end;background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.msg.bot{align-self:flex-start;background:var(--bg)}
+.msg p{margin:0 0 6px}
+.src{font-size:.9rem}
+.tag{display:inline-block;font-size:.78rem;border:1px solid var(--warn-line);background:var(--warn-bg);padding:1px 8px;border-radius:99px;margin-bottom:6px}
+.emerg{border:2px solid var(--emerg-line);background:var(--emerg-bg);border-radius:10px;padding:12px 14px}
+.emerg h2{margin:0 0 6px;font-size:1.1rem}
+form{display:flex;gap:8px;margin-top:8px}
+input[type=text]{flex:1;min-width:0;font:inherit;padding:10px 12px;border:1px solid var(--muted);border-radius:8px;background:var(--card);color:var(--ink);min-height:44px}
+button.go{font:inherit;padding:10px 18px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer;min-height:44px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}
+.chip{font:inherit;font-size:.9rem;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 12px;border-radius:99px;cursor:pointer;min-height:36px}
+.small{font-size:.88rem;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:var(--soft)}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:8px 0 16px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:8px 14px;min-width:120px}
+.stat b{display:block;font-size:1.4rem}
+.tablewrap{overflow-x:auto}
+footer{padding:0 0 32px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the chat</a>
+<div class="note" role="note">Pilot demo prepared by Gevorg Hovhannisyan for the Asthma Society of Ireland RFQ. Not affiliated. Answers are short extracts from asthma.ie with links.</div>
+<main id="main" class="wrap">
+<h1>Information and Support Chatbot: pilot demo</h1>
+<p class="sub">Retrieval only. The bot picks the best matching pre-approved extract. It never writes new text and never gives medical advice of its own.</p>
+
+<div role="tablist" aria-label="Demo views">
+  <button role="tab" id="tab-chat" aria-selected="true" aria-controls="p-chat">Chat</button>
+  <button role="tab" id="tab-staff" aria-selected="false" aria-controls="p-staff" tabindex="-1">Staff view</button>
+  <button role="tab" id="tab-kb" aria-selected="false" aria-controls="p-kb" tabindex="-1">Approved content</button>
+</div>
+
+<section id="p-chat" class="panel" role="tabpanel" aria-labelledby="tab-chat">
+  <div id="log" role="log" aria-live="polite" aria-label="Conversation"></div>
+  <form id="f" autocomplete="off">
+    <label for="q" class="small" style="position:absolute;left:-999px">Ask a question about asthma</label>
+    <input type="text" id="q" placeholder="Ask a question, e.g. What is asthma?" maxlength="300">
+    <button class="go" type="submit">Ask</button>
+  </form>
+  <div class="chips" aria-label="Example questions"></div>
+  <p class="small">Do not type personal details. Nothing is sent anywhere: the matching runs in your browser and the conversation is lost when you close the page. In an emergency call 112 or 999.</p>
+</section>
+
+<section id="p-staff" class="panel" role="tabpanel" aria-labelledby="tab-staff" hidden>
+  <h2 style="margin-top:0">Staff view (mock analytics)</h2>
+  <p class="small">Built from this browser session only, to illustrate the reporting. In the pilot this is a staff-only dashboard over anonymised logs, with date filters and CSV export.</p>
+  <div class="stats" id="stats"></div>
+  <h3>Questions this session</h3>
+  <div class="tablewrap"><table><thead><tr><th>#</th><th>Question</th><th>Outcome</th><th>Approved answer used</th></tr></thead><tbody id="qrows"></tbody></table></div>
+  <h3>Unanswered-question queue</h3>
+  <p class="small">Staff review these and either add an approved answer or confirm the fallback is correct.</p>
+  <ul id="unans"></ul>
+  <h3>Most used approved answers</h3>
+  <ul id="top"></ul>
+</section>
+
+<section id="p-kb" class="panel" role="tabpanel" aria-labelledby="tab-kb" hidden>
+  <h2 style="margin-top:0">Approved content library</h2>
+  <p class="small">Every answer the bot can give is listed here with its source page. "Demo placeholder" entries are my own neutral wording, used only because asthma.ie content pages returned an access error (403) to my automated request; the Society's approved text would replace them. "From asthma.ie" entries are quoted from the public home page.</p>
+  <div class="tablewrap"><table><thead><tr><th>Topic</th><th>Extract</th><th>Status</th><th>Source</th></tr></thead><tbody id="kbrows"></tbody></table></div>
+</section>
+<footer class="small">No logo or branding of the Society is used. This page does not store or transmit anything. Source: <a href="https://www.asthma.ie/">asthma.ie</a>.</footer>
+</main>
+
+<script>
+(function(root){
+"use strict";
+var B="https://www.asthma.ie";
+var FALLBACK="I'm sorry, I don't have information on that question. Please contact the Asthma Society Adviceline for further support.";
+var DISCLAIMER="Please note: while all of the information provided on asthma.ie has been reviewed and approved by a healthcare professional, it is not intended as a substitute for consultation with your healthcare professional.";
+// st: "site" = quoted/closely paraphrased from public asthma.ie home page; "ph" = demo placeholder wording pending Society approval.
+var KB=[
+{id:"what",t:"What is asthma?",q:"what is asthma meaning definition explain asthma condition lungs airways",k:"asthma long-term condition airways lungs",
+ x:"Asthma is a long-term condition that affects the airways, the small tubes that carry air in and out of the lungs. Symptoms can come and go and can usually be controlled with the right treatment and support.",st:"ph",u:B+"/about-asthma/"},
+{id:"symptoms",t:"Signs and symptoms",q:"symptoms signs wheeze cough tight chest breathless shortness of breath",k:"symptoms signs wheezing coughing tightness chest breathlessness",
+ x:"Common asthma symptoms include wheezing, coughing, chest tightness and shortness of breath. If you notice these symptoms, talk to your GP or contact the Asthma Adviceline.",st:"ph",u:B+"/about-asthma/signs-symptoms/"},
+{id:"triggers",t:"Triggers",q:"triggers what makes asthma worse allergens pollen dust cold smoke",k:"triggers worse allergen pollen dust mite smoke cold air exercise infection pets mould",
+ x:"Asthma triggers are things that can irritate the airways and bring on symptoms. They differ from person to person, so it helps to learn what affects you and discuss it with your GP or asthma nurse.",st:"ph",u:B+"/about-asthma/triggers/"},
+{id:"meds",t:"Asthma medication",q:"medication medicine treatment treat asthma inhalers types",k:"medication medicine treatment inhaler inhalers tablets prescribed",
+ x:"Asthma is usually treated with inhalers, commonly a preventer taken regularly and a reliever used when symptoms appear. Your doctor or nurse decides what is right for you.",st:"ph",u:B+"/about-asthma/medication/"},
+{id:"preventer",t:"Preventer (controller) inhaler",q:"what is a preventer controller inhaler difference",k:"preventer controller inhaler daily regularly steroid inflammation brown",
+ x:"A preventer (also called a controller) inhaler is taken every day, as prescribed, to help keep the airways calm and reduce the chance of symptoms. It is not for quick relief during symptoms.",st:"ph",u:B+"/about-asthma/medication/"},
+{id:"reliever",t:"Reliever inhaler",q:"what is a reliever inhaler rescue blue",k:"reliever rescue inhaler blue quick relief symptoms",
+ x:"A reliever inhaler is used when you have symptoms, to open the airways quickly. If you need your reliever more often than usual, speak to your GP or asthma nurse.",st:"ph",u:B+"/about-asthma/medication/"},
+{id:"technique",t:"Using your inhaler",q:"how do i use my inhaler technique spacer correctly take puff",k:"inhaler technique spacer device use correctly puff dose check",
+ x:"How to use an inhaler depends on the device you have. Ask your pharmacist, GP or asthma nurse to check your technique, or contact the Asthma Adviceline, which can advise on taking inhalers properly.",st:"ph",u:B+"/about-asthma/medication/"},
+{id:"cure",t:"Can asthma be cured?",q:"can asthma be cured cure go away permanent grow out of",k:"cure cured go away permanent outgrow control managed",
+ x:"There is currently no cure for asthma, but it can be managed. With the right treatment and an asthma action plan, many people keep their symptoms under control.",st:"ph",u:B+"/about-asthma/"},
+{id:"attack",t:"Asthma attacks and flare-ups",q:"what to do in an asthma attack flare up flare-up steps rule",k:"attack flare-up flareup steps rule reliever ambulance first aid",
+ x:"An asthma attack can be serious. Follow the Society's 5-step asthma attack rule on asthma.ie, and call 112 or 999 if you are worried or the person does not improve.",st:"ph",u:B+"/about-asthma/asthma-attacks-flare-ups/"},
+{id:"children",t:"Asthma and children",q:"children kids child asthma my son daughter baby toddler",k:"children child kids parents son daughter school toddler",
+ x:"Asthma is common in children. The Society has information for parents and carers on recognising symptoms and supporting a child with asthma, including at school.",st:"ph",u:B+"/about-asthma/asthma-and-children/"},
+{id:"plan",t:"Asthma Action Plan",q:"asthma action plan written plan self management",k:"action plan written personal manage self-management",
+ x:"An Asthma Action Plan is a personal written plan, agreed with your doctor or nurse, that sets out your medicines and what to do if your asthma gets worse.",st:"ph",u:B+"/about-asthma/managing-your-asthma/asthma-action-plan/"},
+{id:"adviceline",t:"Free Asthma Adviceline",q:"adviceline advice line phone number call nurse helpline contact speak to someone",k:"adviceline helpline phone telephone call 1800 free nurse advice contact speak",
+ x:"The Asthma Society runs a FREE Asthma Adviceline on 1800 44 54 64, staffed by asthma nurses. The site reports 38,321 Adviceline calls answered.",st:"site",u:B+"/talk-to-an-expert/"},
+{id:"whatsapp",t:"Free WhatsApp nurse messaging",q:"whatsapp message nurse text chat with a nurse",k:"whatsapp message messaging nurse text free",
+ x:"You can also message an asthma nurse through the Society's free WhatsApp service, or book a nurse call. Details are on the Talk to our asthma nurse page.",st:"site",u:B+"/talk-to-an-expert/"},
+{id:"booknurse",t:"Book a nurse call",q:"book a nurse call appointment schedule phone appointment",k:"book appointment nurse call schedule callback",
+ x:"If you would like a scheduled phone conversation, you can book a call with an asthma nurse on the Society's website.",st:"site",u:B+"/book-a-nurse-call/"},
+{id:"exercise",t:"Asthma and exercise",q:"exercise sport running active gym fitness swimming",k:"exercise active sport running fitness booklet physical",
+ x:"Asthma shouldn't stop you from being active. The Society's Active with Asthma booklet provides practical information to help people with asthma stay active.",st:"site",u:B+"/life-with-asthma/exercise/"},
+{id:"hayfever",t:"Asthma and hay fever",q:"hay fever allergy pollen season rhinitis",k:"hayfever hay-fever allergy pollen sneezing season rhinitis",
+ x:"Hay fever and asthma are often linked, and pollen can make asthma symptoms worse for some people. The Society has a page on asthma and hay fever with practical information.",st:"ph",u:B+"/life-with-asthma/asthma-and-hay-fever/"},
+{id:"school",t:"Asthma and school",q:"school teacher classroom pupils student",k:"school teacher classroom pupil student",
+ x:"The Society has information for parents, teachers and schools on supporting a pupil with asthma.",st:"ph",u:B+"/life-with-asthma/asthma-and-school/"},
+{id:"webinar",t:"Free webinar: Winter-Proof Your Asthma",q:"webinar winter event talk online session",k:"webinar winter event register online practical evidence-based",
+ x:"Join the Society's free webinar offering practical, evidence-based advice to help you manage your asthma and stay well throughout the winter months.",st:"site",u:B+"/free-webinar-winter-proof-your-asthma/"},
+{id:"copd",t:"COPD Adviceline",q:"copd chronic obstructive pulmonary disease advice line",k:"copd chronic obstructive pulmonary adviceline",
+ x:"The Society also has a separate COPD Adviceline. See the COPD Adviceline page for details.",st:"site",u:B+"/copd-advice-line/"}
+];
+
+var STOP={}; "a an and are as at be but by can could did do does for from get got had has have how i if in into is it its me my of on or our so than that the their them then there these they this to us was we were what when where which who why will with would you your am im should about any some tell please want need know".split(" ").forEach(function(w){STOP[w]=1;});
+// words that look like stopwords but matter here are kept: "cured", "use"
+STOP["can"]=1;
+function stem(w){
+  if(w.length>5&&/ing$/.test(w))w=w.slice(0,-3);
+  else if(w.length>4&&/ed$/.test(w))w=w.slice(0,-2);
+  else if(w.length>3&&/s$/.test(w)&&!/ss$/.test(w))w=w.slice(0,-1);
+  if(w.length>4&&/e$/.test(w))w=w.slice(0,-1);
+  return w;
+}
+function tok(s){
+  s=String(s).toLowerCase().replace(/[’']/g,"").replace(/[^a-z0-9\s-]/g," ").replace(/-/g,"");
+  var o=[],p=s.split(/\s+/);
+  for(var i=0;i<p.length;i++){var w=p[i];if(!w||STOP[w])continue;o.push(stem(w));}
+  return o;
+}
+var docs=KB.map(function(d){
+  var toks=tok(d.t).concat(tok(d.t),tok(d.q),tok(d.q),tok(d.k),tok(d.x));
+  var tf={};toks.forEach(function(w){tf[w]=(tf[w]||0)+1;});
+  var tt={};tok(d.t).forEach(function(w){tt[w]=1;});
+  return {d:d,tf:tf,len:toks.length,tt:tt};
+});
+var N=docs.length,avg=docs.reduce(function(a,b){return a+b.len;},0)/N,df={};
+docs.forEach(function(o){for(var w in o.tf)df[w]=(df[w]||0)+1;});
+function idf(w){var n=df[w]||0;return Math.log(1+(N-n+0.5)/(n+0.5));}
+var K1=1.4,BB=0.6,MIN_SCORE=2.0;
+function match(query){
+  var qt=tok(query),seen={},best=null,second=0;
+  qt=qt.filter(function(w){if(seen[w])return false;seen[w]=1;return true;});
+  if(!qt.length)return null;
+  var qj=qt.slice().sort().join(" ");
+  for(var z=0;z<docs.length;z++){var tj=tok(docs[z].d.t).sort().filter(function(w,i,a){return a.indexOf(w)===i;}).join(" ");if(tj===qj)return {item:docs[z].d,score:99};}
+  docs.forEach(function(o){
+    var s=0,hit=0;
+    qt.forEach(function(w){var f=o.tf[w];if(!f)return;hit++;s+=idf(w)*(f*(K1+1))/(f+K1*(1-BB+BB*o.len/avg));if(o.tt[w]&&w!=="asthma")s+=1.2;});
+    o.s=s;o.hit=hit;
+  });
+  docs.forEach(function(o){if(!best||o.s>best.s){if(best)second=Math.max(second,best.s);best=o;}else if(o.s>second)second=o.s;});
+  if(!best||best.s<MIN_SCORE)return null;
+  return {item:best.d,score:best.s};
+}
+var EMERG=[
+ /\b(can'?t|cannot|can not|unable to|cant)\s+(breathe|breath)\b/i,
+ /\bstruggling to breathe\b/i,/\bnot breathing\b/i,/\bhard to breathe\b/i,/\bgasping\b/i,
+ /\bsevere (asthma )?attack\b/i,/\b(having|middle of) (a |an )?(bad |severe )?asthma attack\b/i,
+ /\b(blue|bluish|grey|gray) (lips|face|fingernails|skin)\b/i,
+ /\bemergency\b/i,/\bambulance\b/i,/\bcollaps(e|ed|ing)\b/i,/\bunconscious\b/i,/\bpassing out\b/i,/\bnot responding\b/i
+];
+var SELFHARM=[/\bsuicid/i,/\bkill (myself|me)\b/i,/\bend (my|it all|my life)\b/i,/\bself[- ]?harm/i,/\bhurt myself\b/i,/\bwant to die\b/i,/\bdon'?t want to (live|be here)\b/i,/\btake my own life\b/i];
+function risk(q){
+  for(var i=0;i<SELFHARM.length;i++)if(SELFHARM[i].test(q))return "selfharm";
+  for(var j=0;j<EMERG.length;j++)if(EMERG[j].test(q))return "emergency";
+  return null;
+}
+function answer(q){
+  var r=risk(q);
+  if(r)return {kind:r};
+  var m=match(q);
+  return m?{kind:"answer",item:m.item,score:m.score}:{kind:"fallback"};
+}
+var api={KB:KB,FALLBACK:FALLBACK,answer:answer,match:match,risk:risk,tok:tok};
+if(typeof module!=="undefined"&&module.exports){module.exports=api;}
+if(typeof document==="undefined")return;
+
+/* ---------- UI ---------- */
+var $=function(s){return document.querySelector(s);};
+var log=$("#log"),session=[];
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
+function link(href,txt){var a=el("a",null,txt);a.href=href;a.target="_blank";a.rel="noopener noreferrer";return a;}
+function add(kind,node){var m=el("div","msg "+kind);m.appendChild(node);log.appendChild(m);log.scrollTop=log.scrollHeight;return m;}
+function emergencyCard(selfharm){
+  var c=el("div","emerg");c.setAttribute("role","alert");
+  var h=el("h2",null,selfharm?"You are not alone. Please get help now.":"This may be an emergency.");c.appendChild(h);
+  var p=el("p");p.appendChild(document.createTextNode("If someone is in danger or having a severe asthma attack, "));
+  var b=el("strong",null,"call 112 or 999 now");p.appendChild(b);p.appendChild(document.createTextNode(" and ask for an ambulance."));c.appendChild(p);
+  if(selfharm){var s=el("p");s.appendChild(document.createTextNode("If you are thinking about harming yourself, you can talk to someone right now: Samaritans, free, 24 hours, "));s.appendChild(el("strong",null,"116 123")); s.appendChild(document.createTextNode(". If you are in immediate danger, call 112 or 999."));c.appendChild(s);}
+  var l=el("p");l.appendChild(link(B+"/about-asthma/asthma-attacks-flare-ups/","Read the 5-step asthma attack rule on asthma.ie"));c.appendChild(l);
+  c.appendChild(el("p","small","This message is shown automatically when certain words are detected. The wording will be supplied and approved by the Asthma Society."));
+  return c;
+}
+function respond(q){
+  q=q.trim();if(!q)return;
+  var u=el("p",null,q);add("user",u);
+  var a=answer(q),rec={q:q,out:a.kind,id:a.item?a.item.id:"",t:new Date()};
+  session.push(rec);
+  var w=el("div");
+  if(a.kind==="emergency"||a.kind==="selfharm"){w.appendChild(emergencyCard(a.kind==="selfharm"));
+    var f=el("p","small","I can't give medical advice. If you also want general information, ask another question.");f.style.marginTop="8px";w.appendChild(f);}
+  else if(a.kind==="answer"){
+    if(a.item.st==="ph")w.appendChild(el("span","tag","Demo placeholder wording, to be replaced by Society-approved text"));
+    var p1=el("p",null,a.item.x);w.appendChild(p1);
+    var s=el("p","src");s.appendChild(link(a.item.u,"Read more on asthma.ie"));w.appendChild(s);
+    w.appendChild(el("p","small","Need to talk to someone? The free Asthma Adviceline is 1800 44 54 64."));
+  } else {w.appendChild(el("p",null,FALLBACK));var s2=el("p","src");s2.appendChild(link(B+"/talk-to-an-expert/","Adviceline and WhatsApp nurse service on asthma.ie"));w.appendChild(s2);}
+  add("bot",w);render();
+}
+function render(){
+  var ans=session.filter(function(r){return r.out==="answer";}).length,
+      un=session.filter(function(r){return r.out==="fallback";}).length,
+      em=session.filter(function(r){return r.out==="emergency"||r.out==="selfharm";}).length;
+  var st=$("#stats");st.textContent="";
+  [["Questions",session.length],["Answered",ans],["Unanswered",un],["Emergency cards shown",em]].forEach(function(x){var d=el("div","stat");d.appendChild(el("b",null,String(x[1])));d.appendChild(document.createTextNode(x[0]));st.appendChild(d);});
+  var tb=$("#qrows");tb.textContent="";
+  session.forEach(function(r,i){var tr=el("tr");
+    [String(i+1),r.q,r.out==="answer"?"Answered":r.out==="fallback"?"Unanswered (fallback)":"Emergency card",r.id||"-"].forEach(function(c){tr.appendChild(el("td",null,c));});tb.appendChild(tr);});
+  if(!session.length){var tr0=el("tr"),td=el("td","small","No questions yet. Ask something in the Chat tab.");td.colSpan=4;tr0.appendChild(td);tb.appendChild(tr0);}
+  var ul=$("#unans");ul.textContent="";
+  session.filter(function(r){return r.out==="fallback";}).forEach(function(r){ul.appendChild(el("li",null,r.q));});
+  if(!ul.children.length)ul.appendChild(el("li",null,"None this session."));
+  var cnt={};session.forEach(function(r){if(r.id)cnt[r.id]=(cnt[r.id]||0)+1;});
+  var tp=$("#top");tp.textContent="";
+  Object.keys(cnt).sort(function(a,b){return cnt[b]-cnt[a];}).forEach(function(id){var k=KB.filter(function(x){return x.id===id;})[0];tp.appendChild(el("li",null,k.t+": "+cnt[id]));});
+  if(!tp.children.length)tp.appendChild(el("li",null,"None yet."));
+}
+var kb=$("#kbrows");
+KB.forEach(function(k){var tr=el("tr");tr.appendChild(el("td",null,k.t));tr.appendChild(el("td",null,k.x));tr.appendChild(el("td",null,k.st==="ph"?"Demo placeholder":"From asthma.ie"));var td=el("td");td.appendChild(link(k.u,k.u.replace(B,"asthma.ie")));tr.appendChild(td);kb.appendChild(tr);});
+var chips=document.querySelector(".chips");
+["What is asthma?","How do I use my inhaler?","What is a preventer inhaler?","Can asthma be cured?","How do I talk to a nurse?","What should I do in an asthma attack?"].forEach(function(t){var b=el("button","chip",t);b.type="button";b.addEventListener("click",function(){respond(t);});chips.appendChild(b);});
+$("#f").addEventListener("submit",function(e){e.preventDefault();var i=$("#q");respond(i.value);i.value="";i.focus();});
+var tabs=Array.prototype.slice.call(document.querySelectorAll("[role=tab]"));
+function sel(t){tabs.forEach(function(x){var on=x===t;x.setAttribute("aria-selected",on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute("aria-controls")).hidden=!on;});t.focus();}
+tabs.forEach(function(t,i){t.addEventListener("click",function(){sel(t);});t.addEventListener("keydown",function(e){if(e.key==="ArrowRight")sel(tabs[(i+1)%tabs.length]);if(e.key==="ArrowLeft")sel(tabs[(i+tabs.length-1)%tabs.length]);});});
+var hi=el("div");hi.appendChild(el("p",null,"Hello. I can point you to short, approved information from asthma.ie. Ask a question or pick an example below."));hi.appendChild(el("p","small",DISCLAIMER));add("bot",hi);
+render();
+})(typeof window!=="undefined"?window:this);
+</script>
+</body>
+</html>
