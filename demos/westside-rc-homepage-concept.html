@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Westside RC homepage concept</title>
+<meta name="description" content="Homepage concept for Westside Regional Center's website RFP. Not an official Westside page.">
+<meta name="robots" content="noindex">
+<style>
+:root{--ink:#14213d;--navy:#0b3a5b;--teal:#0a6b6b;--teal-d:#07504f;--sun:#ffd166;--paper:#fff;--soft:#eef5f5;--line:#b9cccc;--r:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:19px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--paper)}
+a{color:var(--teal-d)}
+:focus-visible{outline:4px solid #ff8f00;outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:8px;top:-80px;background:var(--ink);color:#fff;padding:12px 18px;z-index:100;border-radius:0 0 8px 8px;font-weight:700}
+.skip:focus{top:0}
+.note{background:var(--ink);color:#fff;font-size:16px;text-align:center;padding:10px 16px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.hdr{position:sticky;top:0;z-index:50;background:#fff;border-bottom:4px solid var(--teal);box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.hdr .wrap{display:flex;align-items:center;gap:14px;min-height:76px;flex-wrap:wrap}
+.brand{font-weight:800;font-size:22px;color:var(--navy);text-decoration:none;line-height:1.15}
+.brand small{display:block;font-weight:600;font-size:14px;color:#3d4f66}
+nav{margin-left:auto}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;align-items:center;flex-wrap:wrap}
+nav a{display:block;padding:12px 14px;text-decoration:none;color:var(--navy);font-weight:700;border-radius:8px}
+nav a:hover{background:var(--soft)}
+.lang{border:2px solid var(--navy);border-radius:999px;padding:8px 16px;background:#fff;color:var(--navy);font:inherit;font-weight:700;cursor:pointer}
+.lang:hover{background:var(--soft)}
+.menu{display:none;margin-left:auto;background:#fff;border:2px solid var(--navy);color:var(--navy);border-radius:8px;padding:10px 16px;font:inherit;font-weight:700;cursor:pointer}
+.btn{display:inline-block;background:var(--teal-d);color:#fff;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:999px;border:2px solid var(--teal-d);cursor:pointer;font:inherit;font-weight:700}
+.btn:hover{background:var(--ink);border-color:var(--ink)}
+.btn.alt{background:#fff;color:var(--navy);border-color:var(--navy)}
+.btn.alt:hover{background:var(--soft)}
+.hero{background:var(--navy);color:#fff;padding:48px 0 56px}
+.hero h1{font-size:clamp(34px,5.5vw,54px);line-height:1.1;margin:0 0 14px;max-width:760px}
+.hero p{font-size:21px;max-width:680px;margin:0 0 26px}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px}
+.hero .btn{background:var(--sun);border-color:var(--sun);color:#1b1500}
+.hero .btn:hover{background:#fff;border-color:#fff;color:var(--ink)}
+.hero .btn.alt{background:transparent;color:#fff;border-color:#fff}
+.hero .btn.alt:hover{background:#fff;color:var(--ink)}
+section{padding:52px 0}
+h2{font-size:clamp(28px,3.6vw,38px);color:var(--navy);margin:0 0 10px;line-height:1.15}
+h3{margin:0;color:var(--navy);font-size:24px}
+.lead{max-width:680px;margin:0 0 26px;color:#2f3f58}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{background:#fff;border:3px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:10px}
+.card ul{margin:0;padding-left:22px}
+.card li{margin:6px 0}
+.soft{background:var(--soft)}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ba .box{border-radius:var(--r);padding:22px;border:3px solid var(--line);background:#fff}
+.ba .before{border-style:dashed}
+.ba ul{margin:8px 0 0;padding-left:22px}
+.tag{display:inline-block;background:var(--sun);color:#1b1500;font-weight:800;font-size:15px;padding:3px 12px;border-radius:999px}
+.helper{background:#fff;border:3px solid var(--navy);border-radius:var(--r);padding:24px;max-width:760px}
+.helper label{font-weight:700;display:block;margin-bottom:6px}
+.helper .r{display:flex;flex-wrap:wrap;gap:10px}
+.helper input{flex:1 1 240px;padding:14px;border:3px solid var(--navy);border-radius:10px;font:inherit;color:var(--ink)}
+.res{margin-top:16px}
+.res ul{padding-left:22px}
+.small{font-size:16px}
+footer{background:#0c1830;color:#eef2fa;padding:44px 0 24px}
+footer a{color:#fff}
+footer h3{color:var(--sun);font-size:19px;margin-bottom:8px}
+.fg{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.copy{margin-top:22px;font-size:15px;color:#c3cde4}
+@media(max-width:900px){
+ .menu{display:block}
+ nav{display:none;width:100%;margin:0;order:5;padding-bottom:12px}
+ nav.open{display:block}
+ nav ul{flex-direction:column;align-items:stretch}
+ .grid,.ba,.fg{grid-template-columns:1fr}
+}
+@media(max-width:420px){body{font-size:18px}.brand{font-size:19px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="note" role="note">Concept prepared by Gevorg Hovhannisyan for Westside Regional Center's website RFP. Not an official Westside page.</div>
+
+<header class="hdr">
+ <div class="wrap">
+  <a class="brand" href="#top" aria-label="Westside Regional Center home">Westside Regional Center<small>El Segundo, California</small></a>
+  <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Main">
+   <ul>
+    <li><a href="#families">Families</a></li>
+    <li><a href="#served">People we serve</a></li>
+    <li><a href="#providers">Providers</a></li>
+    <li><a href="#jobs">Jobs</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><button class="lang" id="lang" type="button" aria-describedby="langnote" lang="es">Español</button></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+
+<main id="main">
+<div id="top"></div>
+<section class="hero" aria-labelledby="h1">
+ <div class="wrap">
+  <h1 id="h1">Support for people with developmental disabilities and their families.</h1>
+  <p>Westside Regional Center helps people find the services and supports they need. Most services are free, no matter your age or income.</p>
+  <div class="row">
+   <a class="btn" href="#families">I am a family member</a>
+   <a class="btn alt" href="#helper">Help me find a service</a>
+  </div>
+ </div>
+</section>
+
+<section aria-labelledby="who-h">
+ <div class="wrap">
+  <h2 id="who-h">Start with who you are</h2>
+  <p class="lead">Four doors, one click each. Every page you need is one more click from there. That is two clicks from this page.</p>
+  <div class="grid">
+   <article class="card" id="families">
+    <h3>Families</h3>
+    <p>Information for parents and caregivers of infants, children and young adults.</p>
+    <ul>
+     <li><a href="https://westsiderc.org/westside-family-resource-empowerment-center/">Family Resource and Empowerment Center: support groups and workshops</a></li>
+     <li><a href="https://westsiderc.org/wp-content/uploads/2026/03/ServicesAndSupports_03to10_Trifold_may2025_V04.pdf">Services and supports for ages 3 to 10 (PDF)</a></li>
+     <li><a href="https://westsiderc.org/es/resources-3/">Community resources (in Spanish)</a></li>
+     <li><a href="https://westsiderc.org/wrcs-new-home/">Our new location in El Segundo</a></li>
+    </ul>
+   </article>
+   <article class="card" id="served">
+    <h3>People we serve</h3>
+    <p>Adults and young people who use WRC supports. Short pages, big text, simple words.</p>
+    <ul>
+     <li><a href="https://westsiderc.org/westside-family-resource-empowerment-center/">Meet other people and families</a></li>
+     <li><a href="https://westsiderc.org/es/resources-3/">Resources: housing, work, health, transportation (Spanish page)</a></li>
+     <li><a href="#contact">Call or email us</a></li>
+    </ul>
+   </article>
+   <article class="card" id="providers">
+    <h3>Providers</h3>
+    <p>Updates and guidelines for service providers and vendors.</p>
+    <ul>
+     <li><a href="https://westsiderc.org/wp-content/uploads/2025/06/WRC-SERVICE-PROVIDER-DIRECTORY-Updated-6.2.2025.pdf">Service provider directory (PDF, updated June 2025)</a></li>
+     <li><a href="#contact">Contact WRC</a></li>
+    </ul>
+   </article>
+   <article class="card" id="jobs">
+    <h3>Jobs at WRC</h3>
+    <p>See open positions and how to apply.</p>
+    <ul>
+     <li><a href="https://westsiderc.org/employment/wrc-employment-career-opportunities/">Open positions and how to apply</a></li>
+    </ul>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="soft" aria-labelledby="ba-h">
+ <div class="wrap">
+  <h2 id="ba-h">From a crowded menu to four clear doors</h2>
+  <p class="lead">The RFP describes a cluttered menu that overwhelms visitors, and a hard mobile experience. This concept shows the direction. The audit would confirm the exact pages.</p>
+  <div class="ba">
+   <div class="box before"><span class="tag">Before (as described in the RFP)</span>
+    <ul><li>Cluttered menu interface</li><li>Content-heavy pages</li><li>Hard to use on a phone</li><li>No style guide, so colors and banners vary</li></ul></div>
+   <div class="box"><span class="tag">After (this concept)</span>
+    <ul><li>Four doors: Families, People we serve, Providers, Jobs</li><li>Contact and language always visible</li><li>Key pages no more than two clicks from home</li><li>One purpose per page, plain English</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section id="helper" aria-labelledby="hp-h">
+ <div class="wrap">
+  <h2 id="hp-h">Find the right service <span class="tag">Optional</span></h2>
+  <p class="lead">Not sure where to look? Type a few words. This helper only points to pages already on WRC's site. It does not give advice and it does not replace talking to a service coordinator.</p>
+  <form class="helper" id="hf" role="search" aria-label="Find the right service (optional)">
+   <label for="hq">What are you looking for?</label>
+   <div class="r"><input id="hq" type="text" placeholder="for example: support group, jobs, respite" autocomplete="off"><button class="btn" type="submit">Show pages</button></div>
+   <div class="res" id="hr" role="status" aria-live="polite"></div>
+   <p class="small">Concept only. Runs in your browser; nothing is sent or stored. Answers come from a fixed list of WRC pages. If nothing matches, it says so and shows the contact details.</p>
+  </form>
+ </div>
+</section>
+
+<section class="soft" id="contact" aria-labelledby="c-h">
+ <div class="wrap">
+  <h2 id="c-h">Contact us</h2>
+  <p>Westside Regional Center<br>777 S. Aviation Boulevard, Suite 105<br>El Segundo, CA 90245</p>
+  <p>Phone: <a href="tel:+13102584000">310-258-4000</a><br>Email: <a href="mailto:Info-WRC@WestsideRC.org">Info-WRC@WestsideRC.org</a><br>Business hours: 8:00 AM to 5:00 PM</p>
+  <p class="small" id="langnote">Language toggle placeholder: WRC's site already has a Spanish version (for example the Recursos page). On the real build the Español button switches to the matching Spanish page for every page, and the language setup is checked with WRC's Language Access plan.</p>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="fg">
+   <div><h3>Westside Regional Center</h3><p>A nonprofit that supports people with developmental disabilities, their families, and communities of choice through person-centered, culturally responsive services.</p></div>
+   <div><h3>Quick links</h3><ul><li><a href="#families">Families</a></li><li><a href="#providers">Providers</a></li><li><a href="#jobs">Jobs</a></li><li><a href="#contact">Contact</a></li></ul></div>
+   <div><h3>Visit</h3><address style="font-style:normal">777 S. Aviation Blvd, Suite 105<br>El Segundo, CA 90245<br><a href="tel:+13102584000">310-258-4000</a></address></div>
+  </div>
+  <p class="copy">Concept by Gevorg Hovhannisyan. Westside Regional Center's name belongs to WRC. Colors and type here are placeholders, to be replaced by WRC's brand in the moodboard phase. No cookies, no tracking.</p>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var m=document.querySelector('.menu'),nav=document.getElementById('nav');
+ function close(f){nav.classList.remove('open');m.setAttribute('aria-expanded','false');if(f)m.focus()}
+ m.addEventListener('click',function(){var o=nav.classList.toggle('open');m.setAttribute('aria-expanded',o)});
+ nav.addEventListener('click',function(e){if(e.target.tagName==='A')close()});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open'))close(true)});
+ document.getElementById('lang').addEventListener('click',function(){var n=document.getElementById('langnote');n.scrollIntoView({behavior:'smooth',block:'center'});n.setAttribute('tabindex','-1');n.focus();});
+ var D=[
+  {k:['support','group','parent','family','empowerment','workshop','training','siempre'],t:'Family Resource and Empowerment Center',u:'https://westsiderc.org/westside-family-resource-empowerment-center/'},
+  {k:['service','services','respite','behavior','day care','social','recreation','navigator','ages','child','school','iep','supplies'],t:'Services and supports for ages 3 to 10 (PDF)',u:'https://westsiderc.org/wp-content/uploads/2026/03/ServicesAndSupports_03to10_Trifold_may2025_V04.pdf'},
+  {k:['job','jobs','work','career','employment','apply','hiring','position'],t:'Open positions and how to apply',u:'https://westsiderc.org/employment/wrc-employment-career-opportunities/'},
+  {k:['provider','vendor','directory','providers'],t:'Service provider directory (PDF)',u:'https://westsiderc.org/wp-content/uploads/2025/06/WRC-SERVICE-PROVIDER-DIRECTORY-Updated-6.2.2025.pdf'},
+  {k:['housing','food','health','transport','legal','benefits','resource','resources','recursos','mental','dental','education'],t:'Community resources (Spanish page)',u:'https://westsiderc.org/es/resources-3/'},
+  {k:['address','location','where','parking','metro','bus','move','moved','culver','directions','visit'],t:'Our new location in El Segundo',u:'https://westsiderc.org/wrcs-new-home/'}
+ ];
+ document.getElementById('hf').addEventListener('submit',function(e){
+  e.preventDefault();
+  var q=document.getElementById('hq').value.toLowerCase(),out=document.getElementById('hr'),hit=D.filter(function(d){return d.k.some(function(w){return q.indexOf(w)>-1})});
+  if(!q.trim()){out.textContent='Please type a few words first.';return}
+  if(!hit.length){out.innerHTML='<p>I could not find a matching page. Please call <a href="tel:+13102584000">310-258-4000</a> or email <a href="mailto:Info-WRC@WestsideRC.org">Info-WRC@WestsideRC.org</a>.</p>';return}
+  out.innerHTML='<p>These WRC pages may help:</p><ul>'+hit.map(function(d){return '<li><a href="'+d.u+'">'+d.t+'</a></li>'}).join('')+'</ul>';
+ });
+})();
+</script>
+</body>
+</html>
