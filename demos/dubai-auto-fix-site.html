@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dubai Auto Fix · mobile car repair and battery change</title>
+<meta name="description" content="Dubai Auto Fix: a mobile mechanic that changes car batteries and fixes brakes, A/C and electrics at your location in Dubai, 24/7. Demo page.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoRepair","name":"Dubai Auto Fix","telephone":"+971501421173","email":"info@dubaiautofix.com","address":{"@type":"PostalAddress","addressLocality":"Dubai","addressCountry":"AE"},"openingHours":"Mo-Su 00:00-23:59","areaServed":"Dubai"}</script>
+<style>
+:root{--or:#ff5e14;--or2:#ff8a50;--bk:#0e0d14;--bk2:#1c1b26;--gy:#6c6a76;--ln:#e8e4df;--cr:#faf7f3;--wh:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.6 "DM Sans",system-ui,sans-serif;background:var(--wh);color:var(--bk);overflow-x:hidden;padding-bottom:60px}
+h1,h2,h3,.ou{font-family:Outfit,"DM Sans",sans-serif;font-weight:800;line-height:1.02;letter-spacing:-.025em}
+a{color:inherit}
+.w{max-width:1060px;margin:0 auto;padding:0 18px}
+header.hd{background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--ln);position:sticky;top:0;z-index:30}
+header.hd .w{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:8px;padding-bottom:8px}
+.brand{display:block;line-height:0;min-width:0}
+.brand img{height:46px;width:auto;max-width:58vw;display:block}
+nav.mn{display:none;gap:24px;font-weight:700;font-size:15px}
+nav.mn a{text-decoration:none;color:var(--gy)}nav.mn a:hover{color:var(--or)}
+.tel{background:var(--bk);color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:10px 16px;border-radius:10px;white-space:nowrap}
+.tel .nm{display:none}
+@media(min-width:520px){.tel .nm{display:inline}}
+@media(min-width:900px){nav.mn{display:flex}.brand img{height:54px}}
+/* hero */
+.hero{padding:34px 0 20px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-90px;top:20px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(255,94,20,.16),transparent 68%)}
+.hero .w{position:relative;display:grid;gap:30px}
+.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.pillrow span{border:1px solid var(--ln);background:var(--cr);border-radius:99px;padding:5px 12px;font-weight:700;font-size:13px}
+.pillrow span:first-child{background:var(--or);border-color:var(--or);color:#fff}
+.hero h1{font-size:clamp(40px,12vw,84px)}
+.hero h1 em{font-style:normal;color:var(--or)}
+.lead{color:var(--gy);font-size:19px;margin:16px 0 24px;max-width:520px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.b1,.b2{display:inline-block;text-decoration:none;font:700 16px "DM Sans";padding:15px 24px;border-radius:12px;cursor:pointer}
+.b1{background:var(--or);color:#fff}.b2{background:var(--bk);color:#fff}
+/* battery graphic */
+.batt{position:relative;margin:6px 14px 0 0;justify-self:start;width:100%;max-width:420px}
+.batt .shell{border:6px solid var(--bk);border-radius:22px;background:var(--bk);padding:14px;position:relative}
+.batt .shell::after{content:"";position:absolute;right:-20px;top:32%;width:14px;height:36%;background:var(--bk);border-radius:0 8px 8px 0}
+.cells{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.cells i{display:block;height:92px;border-radius:10px;background:linear-gradient(180deg,var(--or2),var(--or))}
+.cells i:last-child{background:repeating-linear-gradient(135deg,#2a2935 0 10px,#1c1b26 10px 20px)}
+.batt .lab{margin-top:14px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.batt .lab b{font:800 clamp(42px,13vw,66px)/1 Outfit;letter-spacing:-.04em}
+.batt .lab span{color:var(--gy);font-weight:700}
+.batt small{display:block;color:var(--gy);font-size:14px;margin-top:4px}
+@media(min-width:900px){.hero .w{grid-template-columns:1.25fr 1fr;align-items:center;gap:50px}.hero{padding:60px 0 40px}}
+section{padding:54px 0;position:relative;overflow:hidden}
+.kick{font:700 13px "DM Sans";letter-spacing:.18em;text-transform:uppercase;color:var(--or);margin-bottom:8px}
+h2{font-size:clamp(30px,7.5vw,52px);margin-bottom:14px}
+.sub{color:var(--gy);max-width:640px;margin-bottom:26px}
+/* 3 step swap */
+.sw{background:var(--bk);color:#fff}
+.sw h2{color:#fff}.sw .sub{color:#b8b6c2}
+.sg{display:grid;gap:12px}
+.sg>div{background:var(--bk2);border-radius:16px;padding:20px;min-width:0;border:1px solid #2c2b38}
+.sg b{font:800 54px/1 Outfit;color:var(--or);display:block;margin-bottom:6px}
+.sg h3{font-size:22px;margin-bottom:6px}
+.sg p{color:#b8b6c2;font-size:15px}
+@media(min-width:760px){.sg{grid-template-columns:repeat(3,1fr)}}
+.sw .note{margin-top:16px;color:#8d8b99;font-size:14px}
+/* services index */
+.ix{border-top:2px solid var(--bk);list-style:none}
+.ix a{display:grid;grid-template-columns:44px 1fr 24px;gap:8px;align-items:center;padding:15px 2px;border-bottom:1px solid var(--ln);text-decoration:none;min-width:0}
+.ix .n{font:700 14px Outfit;color:var(--or)}
+.ix .t{font:700 clamp(19px,5vw,26px)/1.15 Outfit;letter-spacing:-.01em;overflow-wrap:anywhere}
+.ix .d{display:block;font:400 14px "DM Sans";color:var(--gy);margin-top:2px;letter-spacing:0}
+.ix .ar{font-size:20px;color:var(--gy);text-align:right}
+.ix a:hover .t,.ix a:hover .ar{color:var(--or)}
+@media(min-width:760px){.ix{columns:2;column-gap:44px}.ix li{break-inside:avoid}}
+.sg2{display:grid;gap:12px}
+.sg2>div{border:1px solid var(--ln);border-radius:16px;padding:20px;background:#fff;min-width:0;border-top:5px solid var(--or)}
+.sg2 h3{font-size:21px;margin-bottom:6px}
+.sg2 p{color:var(--gy);font-size:15px}
+.mis{margin-top:20px;padding:16px;background:var(--cr);border-radius:12px;color:var(--gy);font-size:15px}
+.mis b{color:var(--bk)}
+@media(min-width:760px){.sg2{grid-template-columns:repeat(4,1fr)}}
+.rdy{list-style:none;display:grid;gap:10px}
+.rdy li{display:grid;gap:2px;padding:14px 16px;border-left:5px solid var(--or);background:var(--cr);border-radius:0 12px 12px 0;min-width:0}
+.rdy b{font:700 18px Outfit}
+.rdy span{color:var(--gy);font-size:15px}
+@media(min-width:760px){.rdy{grid-template-columns:1fr 1fr}}
+/* areas */
+.ar2{background:var(--cr)}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tiles div{background:#fff;border:1px solid var(--ln);border-radius:14px;padding:16px 14px;font:700 18px Outfit;min-width:0;overflow-wrap:anywhere}
+.tiles small{display:block;font:400 13px "DM Sans";color:var(--gy);margin-top:2px}
+@media(min-width:760px){.tiles{grid-template-columns:repeat(4,1fr)}}
+/* compare */
+.cmp{width:100%;border-collapse:collapse;font-size:15px}
+.cmp th,.cmp td{padding:12px 10px;border-bottom:1px solid var(--ln);text-align:left;vertical-align:top}
+.cmp th{font:700 14px "DM Sans";color:var(--gy);text-transform:uppercase;letter-spacing:.08em}
+.cmp td:first-child{font-weight:700;width:30%}
+.cmp td:nth-child(2){color:var(--or);font-weight:700}
+.cmp-note{font-size:13px;color:var(--gy);margin-top:10px}
+/* faq */
+details{border-bottom:1px solid var(--ln);padding:16px 0}
+summary{font:700 20px Outfit;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--or);font-size:28px;line-height:.9}
+details[open] summary::after{content:"-"}
+details p{color:var(--gy);margin-top:8px}
+/* contact */
+.ct{background:var(--or);color:#fff}
+.ct h2{color:#fff}.ct .kick{color:#ffe1d1}
+.cg{display:grid;gap:12px}
+.cg>div{background:#fff;color:var(--bk);border-radius:16px;padding:20px;min-width:0;overflow-wrap:anywhere}
+.cg h3{font:700 13px "DM Sans";letter-spacing:.14em;text-transform:uppercase;color:var(--or);margin-bottom:6px}
+.cg a,.cg p{font:800 clamp(22px,6vw,30px)/1.15 Outfit;text-decoration:none;display:block}
+.cg small{display:block;font:400 14px "DM Sans";color:var(--gy);margin-top:6px}
+@media(min-width:760px){.cg{grid-template-columns:repeat(3,1fr)}}
+footer{padding:24px 0;background:var(--bk);color:#a09eab;font-size:14px}
+footer .w{display:grid;gap:6px}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:80;display:flex;gap:8px;background:#fff;border-top:1px solid var(--ln);padding:8px}
+.dock a{flex:1;text-align:center;padding:12px 6px;font-weight:700;border-radius:12px;text-decoration:none;background:var(--or);color:#fff}
+.dock a+a{background:var(--bk)}
+@media(min-width:900px){.dock{display:none}body{padding-bottom:0}}
+@media(max-width:899px){#bot-btn{bottom:72px}}
+:root{--bb:#ff5e14;--bt:#fff;--bf:"DM Sans",system-ui,sans-serif;--pb:#fff;--pt:#0e0d14;--bd:#e6e3df;--ba:#f5f2ee;--ua:#0e0d14;--ut:#fff}
+#bot-btn{position:fixed;right:14px;bottom:14px;z-index:90;background:var(--bb);color:var(--bt);border:0;border-radius:999px;padding:13px 18px;font:700 15px var(--bf);cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.35)}
+#bot-panel{position:fixed;right:8px;bottom:8px;z-index:100;width:min(380px,calc(100vw - 16px));height:min(560px,calc(100vh - 16px));background:var(--pb);color:var(--pt);border:1px solid var(--bd);border-radius:14px;display:none;flex-direction:column;overflow:hidden;font:15px/1.4 var(--bf);box-shadow:0 10px 40px rgba(0,0,0,.45)}
+#bot-panel.open{display:flex}
+.bh{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:11px 14px;background:var(--bb);color:var(--bt)}
+.bh b{display:block;font-size:15px}.bh small{opacity:.8;font-size:12px}
+#bot-x{background:none;border:0;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+#bot-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:0}
+.bm{max-width:86%;padding:9px 12px;border-radius:12px;overflow-wrap:anywhere}
+.bm.b{background:var(--ba);color:var(--pt);align-self:flex-start;border-bottom-left-radius:3px}
+.bm.u{background:var(--ua);color:var(--ut);align-self:flex-end;border-bottom-right-radius:3px}
+#bot-chips{display:flex;gap:6px;flex-wrap:wrap;padding:6px 12px 8px;max-height:96px;overflow-y:auto}
+.chip{background:transparent;color:var(--pt);border:1px solid var(--bd);border-radius:999px;padding:6px 11px;font:13px var(--bf);cursor:pointer}
+.chip:hover{background:var(--ba)}
+#bot-form{display:flex;gap:6px;padding:8px 10px;border-top:1px solid var(--bd)}
+#bot-in{flex:1;min-width:0;padding:10px 12px;border-radius:999px;border:1px solid var(--bd);background:var(--ba);color:var(--pt);font:15px var(--bf)}
+#bot-form button{background:var(--bb);color:var(--bt);border:0;border-radius:999px;padding:0 16px;font:700 14px var(--bf);cursor:pointer}
+@media(max-width:480px){#bot-panel{right:0;bottom:0;width:100vw;height:82vh;border-radius:14px 14px 0 0}}
+
+</style>
+</head>
+<body>
+<header class="hd"><div class="w">
+ <a class="brand" href="#top" aria-label="Dubai Auto Fix"><img src="img/dubai-auto-fix-logo.svg" alt="Dubai Auto Fix" width="180" height="50"></a>
+ <nav class="mn"><a href="#battery">Battery</a><a href="#services">Services</a><a href="#areas">Areas</a><a href="#faq">FAQ</a></nav>
+ <a class="tel" href="tel:+971501421173">Call<span class="nm"> +971 50 142 1173</span></a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="w">
+ <div>
+  <div class="pillrow"><span>24/7</span><span>Mobile mechanic</span><span>Dubai</span></div>
+  <h1>Flat battery? <em>We come to you.</em></h1>
+  <p class="lead">Dubai Auto Fix tests and replaces car batteries at your home, office or roadside, then handles the rest of the usual trouble too: A/C, brakes, electrics, oil.</p>
+  <div class="row"><a class="b1" href="#" data-bot="flow">Request a mechanic</a><a class="b2" href="tel:+971501421173">Call now</a></div>
+ </div>
+ <div class="batt">
+  <div class="shell"><div class="cells"><i></i><i></i><i></i><i></i></div></div>
+  <div class="lab"><b>10–15</b><span>minutes</span></div>
+  <small>Their stated battery swap time once the technician arrives, with a quick system check included.</small>
+ </div>
+</div></div>
+
+<section class="sw" id="battery"><div class="w">
+ <div class="kick">Battery replacement</div>
+ <h2>The swap, in three moves</h2>
+ <p class="sub">Their site describes battery change as on-site, for regular and emergency situations, around the clock.</p>
+ <div class="sg">
+  <div><b>1</b><h3>Call</h3><p>+971 50 142 1173. Say where the car is and what it is doing.</p></div>
+  <div><b>2</b><h3>They arrive</h3><p>The technician comes to you, so no tow truck and no garage queue for a battery job.</p></div>
+  <div><b>3</b><h3>Fit and check</h3><p>Most swaps take 10 to 15 minutes, followed by a quick check that everything works.</p></div>
+ </div>
+ <p class="note">Batteries: "trusted brands" for Japanese, American, European and luxury cars. Brand names are not on the site, so ask which one will be fitted. A key fob battery change is also listed.</p>
+ <div class="row" style="margin-top:20px"><a class="b1" href="#" data-bot="flow">Ask for a battery</a></div>
+</div></section>
+
+<section id="services"><div class="w">
+ <div class="kick">Service index</div>
+ <h2>Fifteen things they fix</h2>
+ <p class="sub">The service pages on their site, in one list. Tap any line and the assistant starts a request for it. The team then replies with arrival time and a quote, since the site gives no price list.</p>
+ <ul class="ix">
+  <li><a href="#" data-bot="flow"><span class="n">01</span><span class="t">Car battery replacement<span class="d">On-site testing and fitting</span></span><span class="ar">&rarr;</span></a></li>
+  <li><a href="#" data-bot="flow"><span class="n">02</span><span class="t">Car electrical service<span class="d">Troubleshooting, wiring, fuses, component tests</span></span><span class="ar">&rarr;</span></a></li>
+  <li><a href="#" data-bot="flow"><span class="n">03</span><span class="t">Alternator repair and change</span><span class="ar">&rarr;</span></a></li>
+  <li><a href="#" data-bot="flow"><span class="n">04</span><span class="t">Car mechanic service<span class="d">Engines, suspension, brakes and more</span></span><span class="ar">&rarr;</span></a></li>
+  <li><a href="#" data-bot="flow"><span class="n">05</span><span class="t">Car A/C service<span class="d">Gas refill, compressor repair, system cleaning</span></span><span class="ar">&rarr;</span></a></li>
+  <li><a href="#" data-bot="flow"><span class="n">06</span><span class="t">Brake pad change<span class="d">For better stopping power</span></span><span class="ar">&rarr;</span></a></li>
+  <li><a href="#" data-bot="flow"><span class="n">07</span><span class="t">Radiator service</span><span class="ar">&rarr;</span></a></li>
+  <li><a href="#" data-bot="flow"><span class="n">08</span><span class="t">Ignition coil service</span><span class="ar">&rarr;</span></a></li>
+  <li><a href="#" data-bot="flow"><span class="n">09</span><span class="t">Self starter change</span><span class="ar">&rarr;</span></a></li>
+  <li><a href="#" data-bot="flow"><span class="n">10</span><span class="t">Headlight change</span><span class="ar">&rarr;</span></a></li>
+  <li><a href="#" data-bot="flow"><span class="n">11</span><span class="t">Engine belt change</span><span class="ar">&rarr;</span></a></li>
+  <li><a href="#" data-bot="flow"><span class="n">12</span><span class="t">Car oil change</span><span class="ar">&rarr;</span></a></li>
+  <li><a href="#" data-bot="flow"><span class="n">13</span><span class="t">Transmission oil change</span><span class="ar">&rarr;</span></a></li>
+  <li><a href="#" data-bot="flow"><span class="n">14</span><span class="t">Car inspection service</span><span class="ar">&rarr;</span></a></li>
+  <li><a href="#" data-bot="flow"><span class="n">15</span><span class="t">Dent and paint service</span><span class="ar">&rarr;</span></a></li>
+ </ul>
+</div></section>
+
+<section style="padding-top:10px"><div class="w">
+ <div class="kick">Beyond the battery</div>
+ <h2>Four ways they work</h2>
+ <div class="sg2">
+  <div><h3>Car repair at home</h3><p>Flat tyres, engine problems, battery replacements and more at your doorstep.</p></div>
+  <div><h3>Mobile maintenance</h3><p>Oil changes, fluid checks and brake inspections to keep the car in shape.</p></div>
+  <div><h3>Car service at home</h3><p>From regular servicing to complex repairs, at your location.</p></div>
+  <div><h3>Emergency repair</h3><p>If the car breaks down unexpectedly, the mobile service comes to the rescue.</p></div>
+ </div>
+ <p class="mis"><b>Their mission:</b> "To provide convenient, trustworthy, and high-quality automotive services that keep our customers' vehicles running smoothly."</p>
+</div></section>
+
+<section class="ar2" id="areas"><div class="w">
+ <div class="kick">Where they work</div>
+ <h2>Named areas across Dubai</h2>
+ <p class="sub">The site lists these as "some of the areas we cover" and promises service anywhere in Dubai.</p>
+ <div class="tiles">
+  <div>Dubai Marina</div><div>Al Barsha</div><div>Downtown Dubai</div><div>Jumeirah</div><div>Business Bay</div><div>Al Karama</div><div>Al Mankhool</div><div>Al Safa</div>
+ </div>
+</div></section>
+
+<section><div class="w">
+ <div class="kick">Why mobile</div>
+ <h2>A mechanic at your car, not the other way round</h2>
+ <p class="sub">Their own comparison, boiled down.</p>
+ <table class="cmp">
+  <thead><tr><th></th><th>Dubai Auto Fix</th><th>Garage visit</th></tr></thead>
+  <tbody>
+   <tr><td>Where</td><td>At your home, office or roadside</td><td>You drive or tow the car in</td></tr>
+   <tr><td>Time</td><td>No waiting around at a shop</td><td>Hours at the shop</td></tr>
+   <tr><td>Emergencies</td><td>24/7 mobile service</td><td>Depends on opening hours</td></tr>
+   <tr><td>Tow truck</td><td>Not needed for small jobs</td><td>Often needed</td></tr>
+  </tbody>
+ </table>
+ <p class="cmp-note">The right column is the generic garage case the website argues against, not a named competitor.</p>
+</div></section>
+
+<section><div class="w">
+ <div class="kick">Speeds things up</div>
+ <h2>What to have ready when you call</h2>
+ <ul class="rdy">
+  <li><b>The car</b><span>Make, model and year, so the right battery or part is brought along.</span></li>
+  <li><b>The symptom</b><span>Won't start, dim lights, warm A/C, soft brakes. Plain words are fine.</span></li>
+  <li><b>The place</b><span>Home, office or roadside, with the area or building name in Dubai.</span></li>
+  <li><b>A phone number</b><span>The team calls back to confirm the arrival time and the quote.</span></li>
+ </ul>
+ <div class="row" style="margin-top:20px"><a class="b1" href="#" data-bot="flow">Send these to the team</a></div>
+</div></section>
+
+<section id="faq" style="background:var(--cr)"><div class="w">
+ <div class="kick">Their FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>Do you do mobile battery and repair service in Dubai?</summary><p>Yes, 24/7 mobile service anywhere in Dubai. The technician comes to you for battery replacement, inspections, A/C repair and other services.</p></details>
+ <details><summary>How long does a battery replacement take?</summary><p>Most take 10 to 15 minutes once the technician arrives, plus a quick system check.</p></details>
+ <details><summary>Which battery brands do you use?</summary><p>High-quality, trusted brands suitable for all car types, including Japanese, American, European and luxury vehicles.</p></details>
+ <details><summary>What do the services cost?</summary><p>The site calls the pricing transparent and affordable but does not list figures. Ask for a free quote when you call.</p></details>
+ <details><summary>Is there a warranty?</summary><p>The About page says all services come with a warranty. The terms are not published, so ask the team what is covered.</p></details>
+<details><summary>What if my area is not in your list?</summary><p>The list on the site says "some of the areas we cover", and the text promises service anywhere in Dubai. Other emirates are not mentioned, so ask before you count on it.</p></details>
+ <details><summary>Do you fix flat tyres at the roadside?</summary><p>The site mentions flat tyres under car repair at home. The details of what they can do on the spot are best checked by phone.</p></details>
+ <details><summary>Can you replace a car key battery?</summary><p>Yes, car key battery replacement is on their battery page.</p></details>
+</div></section>
+
+<section class="ct" id="contact"><div class="w">
+ <div class="kick">Contact</div>
+ <h2>Call, write or request</h2>
+ <div class="cg">
+  <div><h3>Phone</h3><a href="tel:+971501421173">+971 50 142 1173</a><small>24/7</small></div>
+  <div><h3>E-mail</h3><a href="mailto:info@dubaiautofix.com" style="font-size:clamp(18px,5vw,24px)">info@dubaiautofix.com</a></div>
+  <div><h3>Based in</h3><p>Dubai, UAE</p><small>Mobile service, so the mechanic comes to you.</small></div>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="w"><span>Dubai Auto Fix · mobile car repair and battery change, Dubai · +971 50 142 1173</span><span>Demo · prepared by Gevorg Hovhannisyan</span></div></footer>
+<div class="dock"><a href="tel:+971501421173">Call</a><a href="#" data-bot="flow">Request a mechanic</a></div>
+<button id="bot-btn" type="button" aria-label="Open assistant">Ask Dubai Auto Fix</button><div id="bot-panel" role="dialog" aria-label="Assistant"><div class="bh"><div><b>Dubai Auto Fix</b><small>Mobile mechanics and battery service · demo assistant</small></div><button id="bot-x" type="button" aria-label="Close">&times;</button></div><div id="bot-log" aria-live="polite"></div><div id="bot-chips"></div><form id="bot-form"><input id="bot-in" autocomplete="off" placeholder="Ask about Dubai Auto Fix..."><button type="submit">Send</button></form></div>
+<script>var CFG={"short": "Dubai Auto Fix", "btn": "Ask Dubai Auto Fix", "title": "Dubai Auto Fix", "sub": "Mobile mechanics and battery service · demo assistant", "greet": "Hi! I can answer questions about Dubai Auto Fix (battery swaps, mobile repairs, areas, services) or pass a request to the team. What is the car doing?", "chips": ["Battery replacement", "Services", "Areas you cover", "How long does a battery take?", "Request a mechanic"], "flowKeys": ["book", "booking", "appointment", "request", "request a mechanic", "send a mechanic", "need a mechanic", "schedule", "quote", "free quote", "estimate", "come to me", "send someone", "arrange", "make an appointment"], "fallback": "I don't have that on their website, so I won't guess. The team can confirm it on +971 50 142 1173 or at info@dubaiautofix.com. Or tap \"Request a mechanic\" and leave the details.", "kb": [{"id": "batterytime", "w": 8, "k": ["how long", "how long does a battery take", "10 minutes", "15 minutes", "10-15", "battery time", "takes", "duration", "fast battery", "quick", "minutes"], "a": "Their FAQ says most battery replacements take 10 to 15 minutes once the technician arrives, plus a quick system check to make sure everything works.", "chips": ["Battery replacement", "Request a mechanic"]}, {"id": "battery", "w": 3, "k": ["battery", "batteries", "batary", "battry", "battery replacement", "battery change", "new battery", "dead battery", "flat battery", "jump start", "jumpstart", "wont start", "car wont start", "not starting", "battery test", "installation"], "a": "Battery testing and replacement is done on site: they come to your location, for regular and emergency situations, 24/7. They say the batteries are high-quality, trusted brands for Japanese, American, European and luxury cars. They can also replace the battery in a key fob.", "chips": ["How long does a battery take?", "Request a mechanic"]}, {"id": "brandsbat", "w": 5, "k": ["brand", "brands", "what batteries", "what battery", "batteries do you use", "which battery", "battery brand", "battery brands", "japanese", "american", "european", "luxury", "toyota", "nissan", "bmw", "mercedes", "audi", "lexus", "honda", "which cars", "all cars"], "a": "The site says they supply trusted battery brands suitable for all car types, including Japanese, American, European and luxury vehicles. It does not name the battery makers, so ask the team which one they would fit.", "chips": ["Request a mechanic"]}, {"id": "keyfob", "k": ["key", "key fob", "fob", "remote", "key battery", "car key", "smart key", "key battery replacement"], "a": "Yes, car key battery replacement is listed: if your key fob is not working properly, they replace its battery.", "chips": ["Request a mechanic"]}, {"id": "mobile", "k": ["mobile", "come to me", "at home", "home", "my house", "office", "work", "on site", "onsite", "at my location", "my location", "where i am", "roadside", "road side", "stranded", "stuck", "broke down", "breakdown", "emergency", "tow", "towing", "doorstep", "flat tyre", "flat tire", "puncture"], "a": "That is how they work: a mobile mechanic comes to your home, office or wherever the car is in Dubai. The site mentions flat tyres, engine problems, battery replacement, oil changes, fluid checks, brake inspections and emergency breakdowns. No need to wait for a tow truck for the small jobs.", "chips": ["Services", "Request a mechanic"]}, {"id": "services", "k": ["services", "service", "what do you do", "what do you fix", "offer", "list", "everything", "repairs", "repair", "all services", "do you fix"], "a": "The service pages: battery replacement, electrical service, alternator repair and change, car mechanic service (engines, suspension, brakes), A/C service, brake pad change, radiator service, ignition coil service, self starter change, headlight change, engine belt change, oil change, transmission oil change, car inspection service, and dent and paint service.", "chips": ["Battery replacement", "Request a mechanic"]}, {"id": "ac", "k": ["ac", "a/c", "air conditioning", "air conditioner", "aircon", "cooling", "not cold", "gas", "ac gas", "refill", "compressor", "warm air"], "a": "Car A/C service covers gas refilling, compressor repair and system cleaning, so the air is cool again.", "chips": ["Request a mechanic"]}, {"id": "brakes", "k": ["brake", "brakes", "brake pad", "brake pads", "pads", "squeak", "squeaking", "stopping power", "braking"], "a": "Brake pad change is a listed service, for better stopping power. They also mention brake inspections as part of mobile maintenance.", "chips": ["Request a mechanic"]}, {"id": "electrical", "k": ["electrical", "electric", "wiring", "fuse", "fuses", "alternator", "starter", "self starter", "starter motor", "ignition", "ignition coil", "coil", "headlight", "headlights", "light", "lights", "charging"], "a": "Electrical service means troubleshooting, wiring repairs, fuse replacement and component testing. Alternator repair, self-starter change, ignition coil service and headlight change are separate pages.", "chips": ["Request a mechanic"]}, {"id": "engine", "k": ["engine", "motor", "belt", "engine belt", "radiator", "overheating", "suspension", "mechanic", "mechanical", "diagnostic", "diagnostics", "inspection", "inspect", "check"], "a": "Car mechanic service covers general repairs for engines, suspension, brakes and more. Separate pages exist for radiator service, engine belt change and a car inspection service.", "chips": ["Request a mechanic"]}, {"id": "oil", "k": ["oil", "oil change", "transmission oil", "gear oil", "fluids", "fluid", "fluid check", "maintenance", "regular service"], "a": "Oil change and transmission oil change are both listed, and mobile maintenance includes fluid checks.", "chips": ["Request a mechanic"]}, {"id": "body", "k": ["dent", "denting", "paint", "painting", "body", "bodywork", "scratch", "bumper", "car body", "body repair"], "a": "There is a dent and paint service page, and the site mentions car dent repair and body painting. Ask the team what can be done at your location and what needs the workshop.", "chips": ["Request a mechanic"]}, {"id": "areas", "k": ["areas", "area", "cover", "coverage", "serve", "which areas", "where do you work", "marina", "dubai marina", "barsha", "al barsha", "downtown", "jumeirah", "business bay", "karama", "al karama", "mankhool", "al mankhool", "safa", "al safa", "sharjah", "abu dhabi", "ajman"], "a": "Areas named on the site: Dubai Marina, Al Barsha, Downtown Dubai, Jumeirah, Business Bay, Al Karama, Al Mankhool and Al Safa, with \"some of the areas we cover\" and \"anywhere in Dubai\" for the rest. Other emirates are not mentioned.", "chips": ["Request a mechanic"]}, {"id": "hours", "k": ["hours", "open", "opening", "close", "closed", "24/7", "24 hours", "night", "midnight", "weekend", "friday", "sunday", "holiday", "late", "around the clock", "when"], "a": "The site says 24/7 availability and around-the-clock emergency service.", "chips": ["Request a mechanic"]}, {"id": "price", "w": 6, "k": ["price", "prices", "cost", "how much", "charge", "charges", "fee", "fees", "cheap", "affordable", "payment", "pay", "card", "cash", "free quote", "estimate", "quote", "rates"], "a": "The website says pricing is transparent and affordable but does not publish figures, so I won't invent any. Ask for a free quote on +971 50 142 1173 or leave a request here.", "chips": ["Request a mechanic"]}, {"id": "warranty", "k": ["warranty", "guarantee", "guaranteed", "parts", "genuine", "quality", "original"], "a": "The About page says all services come with a warranty and that they use high-quality parts. It does not state the terms, so ask the team what is covered and for how long.", "chips": ["Call or WhatsApp"]}, {"id": "contact", "k": ["phone", "call", "whatsapp", "number", "contact", "email", "mail", "telephone", "reach", "address", "location", "where are you", "office"], "a": "Phone: +971 50 142 1173.\nE-mail: info@dubaiautofix.com.\nThe site gives \"Dubai, UAE\" as the address, since the service is mobile.", "chips": ["Request a mechanic"]}, {"id": "experience", "k": ["experience", "experienced", "years", "team", "technicians", "mechanics", "who are you", "about", "skilled", "professional"], "a": "The site says 7 to 8 years of experience, with trained mechanics who bring the workshop to you.", "chips": ["Request a mechanic"]}, {"id": "reviews", "k": ["reviews", "review", "rating", "ratings", "reputation", "trust", "trustworthy", "reliable", "customers", "feedback", "google"], "a": "Dubai Auto Fix shows a 5.0 rating on Google Maps from 41 reviews.", "chips": ["Request a mechanic"]}, {"id": "hello", "k": ["hello", "hi", "hey", "salam", "assalam", "good morning", "good evening", "help"], "a": "Hello! Ask about battery replacement, services or areas, or tap \"Request a mechanic\".", "chips": ["Battery replacement", "Services", "Request a mechanic"]}, {"id": "thanks", "k": ["thanks", "thank you", "thx", "great", "perfect"], "a": "You're welcome. The team is on +971 50 142 1173 any hour.", "chips": ["Request a mechanic"]}], "flow": {"intro": "Sure, a few quick questions and I'll pass it to the team.", "steps": [{"key": "svc", "label": "Need", "q": "What does the car need?", "opts": ["Battery", "Won't start", "A/C", "Brakes", "Oil change", "Electrical", "Something else"]}, {"key": "car", "label": "Car", "q": "Make, model and year?", "ph": "e.g. Toyota Corolla 2016"}, {"key": "where", "label": "Area", "q": "Where is the car?", "opts": ["Dubai Marina", "Al Barsha", "Downtown Dubai", "Jumeirah", "Business Bay", "Al Karama"], "ph": "Or type your area / building"}, {"key": "when", "label": "When", "q": "How soon do you need the mechanic?", "opts": ["Right now", "Today", "Tomorrow"], "ph": "Or type a date and time"}, {"key": "name", "label": "Name", "q": "Your name?", "ph": "Name"}, {"key": "phone", "label": "Phone", "q": "Best phone or WhatsApp number?", "num": 1, "ph": "+971 ..."}], "done": "Request sent to the team. Here is what I passed on:\n{summary}\nThey will call to confirm the arrival time and the quote. If it is urgent, call +971 50 142 1173 directly."}};
+function norm(s){return String(s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9؀-ۿ\s]/g,' ').replace(/\s+/g,' ').trim()}
+function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;var m=[],i,j;for(i=0;i<=a.length;i++){m[i]=[i]}for(j=0;j<=b.length;j++){m[0][j]=j}for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return m[a.length][b.length]}
+function stem(w){return w.length>4?w.replace(/(ing|ed|es|s)$/,''):w}
+function score(q,e){var t=norm(q),qt=t.split(' ').filter(Boolean),sc=0;
+ e.k.forEach(function(k){var kn=norm(k);if(!kn)return;
+  if(kn.indexOf(' ')>0){if((' '+t+' ').indexOf(' '+kn+' ')>-1)sc+=4;else{var ps=kn.split(' '),hit=0;ps.forEach(function(p){if(qt.some(function(w){return w==p||(p.length>3&&stem(w)==stem(p))}))hit++});if(hit==ps.length)sc+=3}return}
+  var best=0;qt.forEach(function(w){if(w==kn)best=Math.max(best,3);else if(kn.length>3&&stem(w)==stem(kn))best=Math.max(best,2.5);else if(kn.length>4&&w.length>4&&lev(stem(w),stem(kn))<=(kn.length>=7?2:1))best=Math.max(best,2);else if(kn.length>4&&w.length>=5&&(w.indexOf(kn)==0||kn.indexOf(w)==0))best=Math.max(best,1.8)});sc+=best});
+ return sc}
+function answer(q,CFG){var best=null,bs=0;
+ if(CFG.flowKeys&&score(q,{k:CFG.flowKeys})>=2.5)return{flow:1};
+ CFG.kb.forEach(function(e){var s=score(q,e);if(s>0)s+=(e.w||0);if(s>bs){bs=s;best=e}});
+ if(best&&bs>=1.8)return{a:best.a,id:best.id,chips:best.chips};
+ return{a:CFG.fallback}}
+if(typeof module!=='undefined')module.exports={answer:answer,norm:norm};
+
+(function(){
+var el=function(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+var btn=document.getElementById('bot-btn'),panel=document.getElementById('bot-panel'),log=document.getElementById('bot-log'),chips=document.getElementById('bot-chips'),form=document.getElementById('bot-form'),inp=document.getElementById('bot-in');
+var flow=null,data={};
+function say(t,who){var m=el('div','bm '+(who||'b'));t.split('\n').forEach(function(l,i){if(i)m.appendChild(document.createElement('br'));m.appendChild(document.createTextNode(l))});log.appendChild(m);log.scrollTop=log.scrollHeight}
+function setChips(a){chips.innerHTML='';(a||[]).forEach(function(c){var b=el('button','chip',c);b.type='button';b.onclick=function(){handle(c)};chips.appendChild(b)})}
+function start(){flow={i:0};data={};ask()}
+function ask(){var s=CFG.flow.steps[flow.i];say(s.q);setChips(s.opts||[]);inp.placeholder=s.ph||'Type here';inp.setAttribute('inputmode',s.num?'tel':'text')}
+function finish(){var lines=CFG.flow.steps.map(function(s){return s.label+': '+data[s.key]}).join('\n');say(CFG.flow.done.replace('{summary}',lines));flow=null;setChips(CFG.chips);inp.placeholder='Ask about '+CFG.short+'...'}
+function handle(t){t=String(t).trim();if(!t)return;say(t,'u');
+ if(flow){var s=CFG.flow.steps[flow.i];if(/^(cancel|stop|never ?mind|exit)$/i.test(t)){flow=null;say('No problem, request cancelled. Anything else?');setChips(CFG.chips);return}
+  if(s.num&&t.replace(/\D/g,'').length<7){say('That doesn\'t look like a full phone number. Could you retype it with the country code?');return}
+  data[s.key]=t;flow.i++;if(flow.i>=CFG.flow.steps.length)finish();else ask();return}
+ var r=answer(t,CFG);if(r.flow){say(CFG.flow.intro);start();return}
+ say(r.a);setChips(r.chips||CFG.chips)}
+btn.onclick=function(){panel.classList.toggle('open');if(panel.classList.contains('open')&&!log.children.length){say(CFG.greet);setChips(CFG.chips)}};
+document.getElementById('bot-x').onclick=function(){panel.classList.remove('open')};
+document.querySelectorAll('[data-bot]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();if(!panel.classList.contains('open'))btn.click();if(a.dataset.bot=='flow'&&!flow){say(CFG.flow.intro);start()}})});
+form.onsubmit=function(e){e.preventDefault();var v=inp.value;inp.value='';handle(v)};
+})();
+</script>
+</body>
+</html>
