@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Цифровий асистент громади: демонстраційний прототип</title>
+<meta name="description" content="Демонстраційний прототип асистента, що відповідає лише з бази знань офіційних публічних джерел і завжди показує посилання. Не є офіційним ресурсом громади.">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#1d2733;--muted:#4a5565;--line:#cfd6df;--accent:#14566b;--accent-ink:#fff;--soft:#e6f0f3;--warn-bg:#fff4e5;--warn-line:#b25e00;--emerg-bg:#fdecec;--emerg-line:#b3261e;--focus:#0b57d0}
+@media (prefers-color-scheme:dark){:root{--bg:#10151b;--card:#18202a;--ink:#e8edf2;--muted:#b4bfcc;--line:#364352;--accent:#7cc4d9;--accent-ink:#0c1a20;--soft:#1e2c36;--warn-bg:#3a2a10;--warn-line:#f0a850;--emerg-bg:#3c1a1a;--emerg-line:#ff8a80;--focus:#8ab4ff}}
+*{box-sizing:border-box}
+html{font-size:100%}
+html.big{font-size:125%}
+body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.skip{position:absolute;left:-999px;top:0;background:var(--card);padding:8px 12px;z-index:10}
+.skip:focus{left:8px;top:8px}
+.note{background:var(--warn-bg);border-bottom:2px solid var(--warn-line);padding:12px 16px;font-size:.95rem}
+.wrap{max-width:780px;margin:0 auto;padding:0 16px}
+h1{font-size:1.5rem;margin:20px 0 4px}
+.sub{color:var(--muted);margin:0 0 12px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+.tg{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 14px;border-radius:8px;cursor:pointer;min-height:44px}
+.tg[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+[role=tablist]{display:flex;gap:4px;margin:12px 0 0}
+[role=tab]{border:1px solid var(--line);border-bottom:none;background:var(--bg);color:var(--ink);padding:10px 16px;border-radius:8px 8px 0 0;font:inherit;cursor:pointer;min-height:44px}
+[role=tab][aria-selected=true]{background:var(--card);font-weight:600;border-bottom:2px solid var(--card);margin-bottom:-1px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:0 8px 8px 8px;padding:16px;margin-bottom:32px}
+.topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:0 0 14px}
+.topic{font:inherit;text-align:left;border:1px solid var(--line);background:var(--soft);color:var(--ink);padding:10px 12px;border-radius:10px;cursor:pointer;min-height:48px}
+.topic[aria-pressed=true]{outline:3px solid var(--accent)}
+#log{min-height:240px;max-height:55vh;overflow:auto;display:flex;flex-direction:column;gap:12px;padding:4px 2px 12px}
+.msg{max-width:94%;padding:10px 14px;border-radius:12px;border:1px solid var(--line)}
+.msg.user{align-self:flex-end;background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.msg.bot{align-self:flex-start;background:var(--bg)}
+.msg p{margin:0 0 6px}
+.src{font-size:.9rem;word-break:break-word}
+.tag{display:inline-block;font-size:.78rem;border:1px solid var(--warn-line);background:var(--warn-bg);padding:1px 8px;border-radius:99px;margin-bottom:6px}
+.emerg{border:2px solid var(--emerg-line);background:var(--emerg-bg);border-radius:10px;padding:12px 14px}
+.emerg h2{margin:0 0 6px;font-size:1.1rem}
+form.ask{display:flex;gap:8px;margin-top:8px}
+input[type=text],input[type=url],input[type=date],select,textarea{font:inherit;padding:10px 12px;border:1px solid var(--muted);border-radius:8px;background:var(--card);color:var(--ink);min-height:44px;width:100%}
+form.ask input{flex:1;min-width:0}
+button.go{font:inherit;padding:10px 18px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer;min-height:44px}
+button.sm{font:inherit;font-size:.85rem;padding:4px 10px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;min-height:32px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chip{font:inherit;font-size:.9rem;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 12px;border-radius:99px;cursor:pointer;min-height:36px;text-align:left}
+.small{font-size:.88rem;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:var(--soft)}
+.tablewrap{overflow-x:auto}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 14px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:8px 14px;min-width:110px}
+.stat b{display:block;font-size:1.3rem}
+.grid{display:grid;gap:8px;grid-template-columns:1fr;margin:10px 0}
+label{font-weight:600;font-size:.9rem}
+footer{padding:0 0 32px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Перейти до чату</a>
+<div class="note" role="note"><strong>Демонстраційний прототип, підготовлений Геворгом Оганесяном для ITB 25/10/26. Не є офіційним ресурсом громади.</strong> Використано лише публічні відкриті дані; дата перевірки джерел: 2 листопада 2026.</div>
+<main id="main" class="wrap">
+<h1>Цифровий асистент для мешканців громади (демо)</h1>
+<p class="sub">Відповідає лише з бази знань, де кожен запис має посилання на офіційне джерело. Якщо підтвердженої інформації немає, асистент чесно про це каже і не вигадує.</p>
+
+<div class="bar">
+  <button class="tg" id="big" type="button" aria-pressed="false">Великий шрифт</button>
+</div>
+
+<div role="tablist" aria-label="Розділи демо">
+  <button role="tab" id="tab-chat" aria-selected="true" aria-controls="p-chat">Чат</button>
+  <button role="tab" id="tab-admin" aria-selected="false" aria-controls="p-admin" tabindex="-1">Вигляд адміністратора</button>
+</div>
+
+<section id="p-chat" class="panel" role="tabpanel" aria-labelledby="tab-chat">
+  <p class="small" style="margin-top:0">Оберіть тему або поставте запитання своїми словами.</p>
+  <div class="topics" id="topics" role="group" aria-label="Теми"></div>
+  <div id="log" role="log" aria-live="polite" aria-label="Розмова"></div>
+  <form class="ask" id="f" autocomplete="off">
+    <label for="q" class="small" style="position:absolute;left:-999px">Ваше запитання</label>
+    <input type="text" id="q" placeholder="Напр.: Де працює ЦНАП?" maxlength="300">
+    <button class="go" type="submit">Запитати</button>
+  </form>
+  <div class="chips" id="chips" aria-label="Приклади запитань"></div>
+  <p class="small">Не вводьте особисті дані (ПІБ, номери документів, адреси). Нічого не надсилається на жоден сервер: пошук працює у вашому браузері, розмова зникає після закриття сторінки. У надзвичайній ситуації телефонуйте 112.</p>
+</section>
+
+<section id="p-admin" class="panel" role="tabpanel" aria-labelledby="tab-admin" hidden>
+  <h2 style="margin-top:0">Вигляд адміністратора (макет)</h2>
+  <p class="small">Так адміністратор бачить базу знань: джерело, дату перевірки, тему. Він може додати, змінити чи прибрати запис без програмування. У демо зміни зберігаються лише в пам’яті цієї сторінки і зникають після оновлення. У готовому рішенні це захищена паролем панель із журналом змін і резервними копіями.</p>
+  <h3>Анонімна статистика тем (лише ця сесія)</h3>
+  <p class="small">Зберігається тільки лічильник тем та кількість відповідей без підтвердженого джерела. Тексти запитань не записуються.</p>
+  <div class="stats" id="stats"></div>
+  <h3>База знань</h3>
+  <div class="tablewrap"><table><thead><tr><th>Тема</th><th>Запис</th><th>Дата перевірки</th><th>Джерело</th><th></th></tr></thead><tbody id="kbrows"></tbody></table></div>
+  <h3>Додати запис (демонстрація)</h3>
+  <form id="addf" autocomplete="off">
+    <div class="grid">
+      <div><label for="a-t">Назва</label><input type="text" id="a-t" required maxlength="120"></div>
+      <div><label for="a-x">Текст відповіді</label><textarea id="a-x" rows="3" required maxlength="700"></textarea></div>
+      <div><label for="a-tp">Тема</label><select id="a-tp"></select></div>
+      <div><label for="a-u">Посилання на джерело (https://…)</label><input type="url" id="a-u" required placeholder="https://"></div>
+      <div><label for="a-d">Дата перевірки</label><input type="date" id="a-d" required></div>
+    </div>
+    <button class="go" type="submit">Додати до бази</button>
+  </form>
+</section>
+
+<footer class="small">Логотипи та брендинг громади, фонду чи донорів не використовуються. Сторінка нічого не зберігає і не передає. Це демонстрація підходу: у пілоті база формується разом із громадою з її затверджених документів.</footer>
+</main>
+
+<script>
+(function(root){
+"use strict";
+var D="2026-11-02";
+var TOPICS=[
+ {id:"social",n:"Соціальна підтримка"},
+ {id:"cnap",n:"Адміністративні послуги (ЦНАП)"},
+ {id:"work",n:"Працевлаштування"},
+ {id:"edu",n:"Освіта"},
+ {id:"health",n:"Охорона здоров’я"},
+ {id:"housing",n:"Житло"},
+ {id:"return",n:"Повернення та реінтеграція"}
+];
+var FALLBACK="У базі знань немає підтвердженої інформації з цього питання. Щоб не вводити вас в оману, я не вгадую відповідь. Зверніться, будь ласка, до ЦНАП Дубенської міської ради (вул. Замкова, 4; тел. +38 (03656) 3-21-74) або на гарячу лінію міської ради: (03656) 3-22-00.";
+var FB_URL="https://dubno-adm.gov.ua/prozore-misto/pro-cnap.html";
+var CN="https://dubno-adm.gov.ua";
+// Кожен запис: тема, назва, текст, офіційне джерело, дата перевірки, ключові слова.
+var KB=[
+{id:"cnap-addr",tp:"cnap",t:"ЦНАП: адреса та телефони",
+ x:"Центр надання адміністративних послуг Дубенської міської ради: м. Дубно, вул. Замкова, 4, 1 поверх міської ради. Телефони: +38 (03656) 3-21-74; +38 (068) 396-03-08 (реєстрація місця проживання, паспортні послуги, звернення громадян, реєстрація бізнесу); +38 (099) 522-67-27 (соціальні послуги, земельні та будівельні питання, реєстрація речових прав). Сайт ЦНАП: https://cnap.dubno-adm.gov.ua/",
+ u:CN+"/prozore-misto/pro-cnap.html",d:D,kw:"цнап адреса де знаходиться телефон контакти замкова центр надання адміністративних послуг"},
+{id:"cnap-hours",tp:"cnap",t:"ЦНАП: графік роботи",
+ x:"За даними сторінки «Про ЦНАП»: понеділок 8:00–16:00, вівторок 8:00–17:00, середа 8:00–20:00, четвер 8:00–16:00, п’ятниця 8:00–16:00, субота і неділя вихідні. Графік може змінюватися, уточнюйте за телефоном або на сайті ЦНАП.",
+ u:CN+"/prozore-misto/pro-cnap.html",d:D,kw:"цнап графік роботи години працює відкрито вихідний субота середа"},
+{id:"cnap-about",tp:"cnap",t:"Скільки послуг надає ЦНАП",
+ x:"Оновлений ЦНАП у Дубні відкрито 27.12.2017. Сторінка ради повідомляє, що там можна отримати понад 160 різних адміністративних послуг; є система електронної черги. Актуальний перелік послуг розміщено на сайті ЦНАП.",
+ u:CN+"/prozore-misto/pro-cnap.html",d:D,kw:"цнап перелік послуг скільки які послуги електронна черга"},
+{id:"hotline",tp:"cnap",t:"Гаряча лінія міської ради",
+ x:"Телефон гарячої лінії Дубенської міської ради: (03656) 3-22-00. Працює з 8:00 до 17:15, у п’ятницю до 16:00; субота і неділя вихідні.",
+ u:CN+"/miska-rada/zvernennja-ta-priiom-gromadjan/garjacha-linija.html",d:D,kw:"гаряча лінія телефон міська рада звернення зв’язок скарга"},
+{id:"phones",tp:"cnap",t:"Телефони екстрених і аварійних служб",
+ x:"За даними сторінки «Телефони першої необхідності»: швидка допомога 103; поліція 102; пожежна служба 101; газова аварійна служба 104. Аварійна служба водоканалу: (03656) 45496. Аварійна служба теплопостачання КП «Дубнокомуненергія»: (03656) 42956.",
+ u:CN+"/pro-misto/gostjam-mista/telefoni-pershoji-neobkhidnosti.html",d:D,kw:"телефони екстрені аварійні газ вода тепло пожежа поліція швидка номери"},
+{id:"soc-apply",tp:"social",t:"Як отримати соціальні послуги",
+ x:"Соціальні послуги надаються особам із вразливих груп та у складних життєвих обставинах за результатами оцінювання потреб. Заяву подають до органу соціального захисту за місцем проживання (письмово або електронно через Єдиний державний веб-портал електронних послуг); заяви також може приймати ЦНАП. Управління соціального захисту населення: м. Дубно, вул. К. і Мефодія, 16.",
+ u:CN+"/dubenchaninu/socialnii-zakhist/socialni-poslugi.html",d:D,kw:"соціальні послуги як отримати заява складні життєві обставини соціальний захист управління"},
+{id:"soc-free",tp:"social",t:"Кому соціальні послуги безкоштовні",
+ x:"Незалежно від доходу всі соціальні послуги надаються, зокрема, особам, яким завдано шкоди воєнними (бойовими) діями, збройним конфліктом чи тимчасовою окупацією, вимушеним внутрішнім переміщенням, а також особам, які постраждали від домашнього насильства, дітям з інвалідністю, особам з інвалідністю I групи, дітям-сиротам. Повний перелік наведено на сторінці джерела.",
+ u:CN+"/dubenchaninu/socialnii-zakhist/socialni-poslugi.html",d:D,kw:"безкоштовно безоплатно соціальні послуги ВПО переміщені інвалідність діти сироти воєнні дії"},
+{id:"soc-list",tp:"social",t:"Які соціальні послуги є в громаді",
+ x:"У громаді надаються, зокрема: догляд вдома, соціальна адаптація, екстрене (кризове) втручання, консультування, представництво інтересів, соціальна профілактика, натуральна допомога, транспортні послуги, посередництво, стаціонарний догляд, соціальний супровід сімей у складних життєвих обставинах. Для кожної послуги на сторінці джерела описано, для кого вона і що роблять фахівці.",
+ u:CN+"/dubenchaninu/socialnii-zakhist/socialni-poslugi.html",d:D,kw:"які соціальні послуги перелік догляд вдома транспорт натуральна допомога консультування"},
+{id:"terc",tp:"social",t:"Територіальний центр соціального обслуговування",
+ x:"Територіальний центр соціального обслуговування (надання соціальних послуг) м. Дубно: вул. Грушевського, 171; тел. (03656) 2-13-33, (03656) 2-21-23. Графік: пн–чт 8:00–17:15, пт 8:00–16:00, обідня перерва 13:00–14:00. Обслуговує громадян похилого віку та осіб з інвалідністю (від 18 років), які потребують сторонньої допомоги: догляд вдома, адресна натуральна і грошова допомога, пункт прокату технічних засобів реабілітації. Є електронна форма подання документів на сторінці центру.",
+ u:CN+"/dubenchaninu/socialnii-zakhist/teritorialnii-centr-socialnogo-obslugovuvannja.html",d:D,kw:"територіальний центр пенсіонери похилого віку інвалід догляд вдома соціальні працівники прокат засобів реабілітації"},
+{id:"mcss",tp:"social",t:"Міський центр соціальних служб",
+ x:"Дубенський міський центр соціальних служб: м. Дубно, вул. Драгоманова, 12; тел. (03656) 3-23-94. Працює із сім’ями, дітьми та молоддю у складних життєвих обставинах: консультування, кризове втручання, супровід сімей, медіація, соціальна інтеграція та реінтеграція. У громаді діє спеціалізована служба первинного соціально-психологічного консультування осіб, які постраждали від домашнього насильства.",
+ u:CN+"/dubenchaninu/socialnii-zakhist/dubenskii-miskii-centr-socialnikh-sluzhb.html",d:D,kw:"центр соціальних служб сім’ї діти молодь домашнє насильство психолог кризове консультування"},
+{id:"matdop",tp:"social",t:"Матеріальна допомога жителям",
+ x:"Міська матеріальна допомога може надаватися на лікування, у складних життєвих ситуаціях, вимушено переміщеним особам, військовослужбовцям, сім’ям загиблих захисників, на поховання; є також натуральна допомога (дрова). Виплачується один раз на рік. Звернутися із заявою та документами потрібно до ЦНАП (вул. Замкова, 4). Умови визначає Програма матеріальної підтримки населення міста Дубно на 2026–2030 роки (рішення міськради від 12.12.2025 № 4942).",
+ u:CN+"/dubenchaninu/socialnii-zakhist/materialna-dopomoga.html",d:D,kw:"матеріальна допомога гроші виплата скрутне становище лікування поховання дрова програма"},
+{id:"pakunok",tp:"social",t:"«Пакунок малюка»",
+ x:"«Пакунок малюка» це безповоротна допомога при народженні дитини. Жінка може звернутися з 36 тижня вагітності, або один із батьків чи опікуни після народження. Можна обрати бебі-бокс (понад 90 речей) або, відмовившись від пакунка в пологовому будинку, отримати грошову компенсацію через ЦНАП. Заяву подають до управління соціального захисту за місцем проживання (для ВПО за місцем проживання внутрішньо переміщеної особи).",
+ u:CN+"/dubenchaninu/socialnii-zakhist/simji-z-ditmi.html",d:D,kw:"пакунок малюка новонароджений дитина народження допомога вагітність породілля бебі-бокс"},
+{id:"carecomp",tp:"social",t:"Компенсація за догляд (непрофесійний)",
+ x:"Компенсацію може отримати фізична особа, яка без підприємницької діяльності доглядає члена сім’ї з-поміж: осіб з інвалідністю I групи, дітей з інвалідністю, літніх людей з когнітивними порушеннями, невиліковно хворих та деяких тяжко хворих дітей. Документи подаються через ЦНАП або поштою; призначає і виплачує управління соціального захисту. Не призначається, якщо середньомісячний сукупний дохід того, хто доглядає, перевищує прожитковий мінімум на одну особу.",
+ u:CN+"/dubenchaninu/socialnii-zakhist/socialni-poslugi.html",d:D,kw:"компенсація догляд інвалідність хворий родич непрофесійний"},
+{id:"pfu",tp:"social",t:"Пенсійний фонд: контакти",
+ x:"Головне управління Пенсійного фонду України у Рівненській області: м. Рівне, вул. Короленка, 7; e-mail info@rv.pfu.gov.ua. Контакт-центр Пенсійного фонду: 0 800 503 753. Сервісні центри області перелічено на офіційній сторінці Фонду.",
+ u:"https://www.pfu.gov.ua/rv/107220-servisni-tsentry-golovnogo-upravlinnya-pensijnogo-fondu-ukrayiny-v-rivnenskij-oblasti/",d:D,kw:"пенсія пенсійний фонд контакт-центр рівне виплата пенсіонер"},
+{id:"jobs",tp:"work",t:"Центр зайнятості в Дубні",
+ x:"Дубенська філія Рівненського обласного центру зайнятості: м. Дубно, вул. Данила Галицького, 26; тел. (0362) 460583. Структура: відділ працевлаштування та відділ надання послуг роботодавцям.",
+ u:CN+"/dubenchaninu/socialnii-zakhist/centr-zainjatosti.html",d:D,kw:"центр зайнятості безробіття робота вакансії адреса телефон служба зайнятості"},
+{id:"jobs-serv",tp:"work",t:"Послуги служби зайнятості",
+ x:"Служба зайнятості, зокрема, надає: професійну підготовку чи перепідготовку, профорієнтацію, індивідуальне планування працевлаштування, пошук підходящої роботи, організацію громадських робіт та робіт тимчасового характеру для безробітних, консультації, допомогу по частковому безробіттю та ваучер для підтримання конкурентоспроможності деяких категорій громадян.",
+ u:CN+"/dubenchaninu/socialnii-zakhist/centr-zainjatosti.html",d:D,kw:"послуги зайнятості навчання перепідготовка ваучер профорієнтація громадські роботи часткове безробіття"},
+{id:"jobs-vpo",tp:"work",t:"Сприяння зайнятості ВПО",
+ x:"Серед послуг Дубенської філії центру зайнятості зазначено заходи сприяння зайнятості внутрішньо переміщених осіб відповідно до статті 24-1 Закону України «Про зайнятість населення». Деталі та умови уточнюйте в центрі зайнятості за телефоном (0362) 460583.",
+ u:CN+"/dubenchaninu/socialnii-zakhist/centr-zainjatosti.html",d:D,kw:"ВПО переміщені особи працевлаштування робота зайнятість переселенці"},
+{id:"edu-dept",tp:"edu",t:"Управління освіти: контакти",
+ x:"Управління освіти Дубенської міської ради: м. Дубно, вул. Тараса Бульби, 4; тел. 03656 32214. Графік: пн–чт 8:00–17:15, пт 8:00–16:00, обідня перерва 13:00–14:00. Керівник: Іваницька Наталія Олександрівна. На сайті управління є форма електронного звернення.",
+ u:"https://dubno.osv.org.ua/feedback/",d:D,kw:"освіта управління освіти школа садочок контакти адреса телефон звернення зарахування"},
+{id:"edu-incl",tp:"edu",t:"Інклюзивне навчання у громаді",
+ x:"За даними аналізу потреб станом на 01.01.2026, у закладах освіти громади в інклюзивних класах навчається 122 школярі з особливими освітніми потребами, ще 3 мають індивідуальну форму навчання; в інклюзивних групах закладів дошкільної освіти 87 дітей. Щодо конкретного закладу звертайтеся до управління освіти.",
+ u:CN+"/dubenchaninu/socialnii-zakhist/socialni-poslugi.html",d:D,kw:"інклюзія особливі освітні потреби інклюзивний клас діти навчання садок"},
+{id:"pmsd",tp:"health",t:"Центр первинної медичної допомоги (сімейні лікарі)",
+ x:"КНП «Центр первинної медико-санітарної допомоги» Дубенської міської ради: м. Дубно, вул. Грушевського, 105; сайт https://dubno.pmsd.org.ua/. Запис: амбулаторії № 1 і № 2 (Грушевського, 105) 03656-22011, 050-4009095; дитяча амбулаторія № 3 (Грушевського, 103) 03656-22066, 050-4009065. Графіки лікарів і запис онлайн на платформі Helsi. Якщо лікаря не обрано, реєстратура порадить лікаря.",
+ u:CN+"/dubenchaninu/medicina/knp-centr-pmsd.html",d:D,kw:"лікар сімейний лікар поліклініка амбулаторія запис на прийом декларація педіатр дитячий helsi"},
+{id:"ambulance",tp:"health",t:"Швидка допомога",
+ x:"Загальноміський номер швидкої допомоги: 103. Дубенська станція екстреної швидкої допомоги: (03656) 42209. У небезпеці для життя телефонуйте 103 або 112.",
+ u:CN+"/pro-misto/gostjam-mista/telefoni-pershoji-neobkhidnosti.html",d:D,kw:"швидка допомога екстрена 103 невідкладна лікар виклик"},
+{id:"health-dept",tp:"health",t:"Відділ охорони здоров’я міської ради",
+ x:"Питання охорони здоров’я у міській раді закріплено за відділом охорони здоров’я. Контакт, указаний на сторінці ради: e-mail vozdmr3@gmail.com. Телефон на сторінці не вказано.",
+ u:CN+"/dubenchaninu/medicina.html",d:D,kw:"відділ охорони здоров’я управління медицина міська рада лікарня контакт"},
+{id:"housing-q",tp:"housing",t:"Квартирний облік (черга на житло)",
+ x:"Щоб розглянути можливість постановки на квартирний облік за місцем реєстрації, потрібно звернутися до ЦНАП (вул. Замкова, 4, 1 поверх; тел. (03656) 32174) із заявою встановленого зразка та документами. Є електронна форма подання. Списки черги станом на 01.08.2024 (позачергова, першочергова, загальна) оприлюднено на сторінці «Житлова політика». Додаткову інформацію надає управління ЖКГ: вул. Замкова, 4, каб. 407, тел. (03656) 32294.",
+ u:CN+"/dubenchaninu/komunalne-maino-ta-zemelni-resursi/zhitlova-politika.html",d:D,kw:"квартирний облік черга на житло житло квартира постановка на облік заява комісія"},
+{id:"housing-repair",tp:"housing",t:"Заявки на ремонт житлових будинків",
+ x:"За даними сторінки ради, обслуговуванням багатоквартирних житлових будинків займається ТОВ «Житловик-Дубно»; заявки на капітальний та поточний ремонт і відстеження їх черги подаються на сайті http://zhytlovyk.com.ua/",
+ u:CN+"/dubenchaninu/komunalne-maino-ta-zemelni-resursi/zhitlova-politika.html",d:D,kw:"ремонт будинку дах під’їзд заявка житловик обслуговування багатоквартирний"},
+{id:"evidn",tp:"housing",t:"єВідновлення: компенсація за пошкоджене житло",
+ x:"єВідновлення це державна програма допомоги за пошкоджене та знищене житло. Контакти місцевої комісії: тел. (03656) 32219; звернення через ЦНАП (пн–чт 8:00–17:00, пт 8:00–16:00). Питання по програмі: урядова гаряча лінія 15-45; технічна підтримка Дії: https://chat.diia.gov.ua/",
+ u:CN+"/elektronni-servisi/jevidnovlennja.html",d:D,kw:"єВідновлення пошкоджене знищене житло компенсація обстріл дім відновлення"},
+{id:"rez",tp:"return",t:"Центр життєстійкості",
+ x:"Дубенський центр життєстійкості: м. Дубно, вул. Драгоманова, 12; соціальний менеджер Лободзінська Світлана; тел. 099 348 03 06. Усі послуги безкоштовні: психологічна підтримка, навчання стресостійкості, інформація про соціальні послуги в громаді. Запрошуються всі мешканці, зокрема захисники та члени їхніх сімей, родини зниклих безвісти, внутрішньо переміщені особи, постраждалі від війни.",
+ u:CN+"/dubenchaninu/socialnii-zakhist/dubenskii-centr-zhittjestiikosti.html",d:D,kw:"центр життєстійкості психологічна допомога стрес тривога ветерани родини зниклих безвісти ВПО психічне здоров’я"},
+{id:"reint",tp:"return",t:"Соціальна інтеграція та реінтеграція",
+ x:"Дубенський міський центр соціальних служб надає послугу соціальної інтеграції та реінтеграції (у 2025 році нею скористалися 228 осіб за даними аналізу потреб громади). Контакти: вул. Драгоманова, 12; тел. (03656) 3-23-94.",
+ u:CN+"/dubenchaninu/socialnii-zakhist/socialni-poslugi.html",d:D,kw:"реінтеграція інтеграція повернення адаптація після повернення ветеран переселенець"},
+{id:"vpo-info",tp:"return",t:"Внутрішньо переміщені особи у громаді",
+ x:"За даними аналізу потреб станом на 01.01.2026 у громаді було 167 внутрішньо переміщених осіб. Сторінка «Внутрішньо переміщені особи» на сайті міської ради на дату перевірки не містить опису порядку допомоги, тому конкретні умови я не наводжу: уточніть їх у ЦНАП за тел. +38 (03656) 3-21-74.",
+ u:CN+"/dubenchaninu/socialnii-zakhist/vnutrishno-peremishcheni-osobi.html",d:D,kw:"ВПО внутрішньо переміщені особи переселенці довідка облік допомога виплати прибули"}
+];
+
+var STOP={};
+"і й та в у на з із до по за від для що як це цей ця ці є не чи але або а ж ми ви ти я він вона вони мене мені мій моя моє де коли хто чому яка який які яке скільки можна треба потрібно мені нас вас їх про при під над без між бути був була були буде щодо там тут ось дубно дубні дубенської дубенська громаді громада".split(" ").forEach(function(w){STOP[w]=1;});
+function stem(w){return w.length>=5?w.slice(0,4):w;}
+function tok(s){
+  s=String(s).toLowerCase().replace(/[’ʼ'`]/g,"");
+  var p=s.split(/[^\p{L}\p{N}]+/u),o=[];
+  for(var i=0;i<p.length;i++){var w=p[i];if(!w||STOP[w]||w.length<2)continue;o.push(stem(w));}
+  return o;
+}
+var docs=[],N=0,avg=1,df={};
+function build(){
+  docs=KB.map(function(d){
+    var tt=tok(d.t),toks=tt.concat(tt,tok(d.kw),tok(d.kw),tok(d.x));
+    var tf={};toks.forEach(function(w){tf[w]=(tf[w]||0)+1;});
+    var ts={};tt.forEach(function(w){ts[w]=1;});
+    return {d:d,tf:tf,len:toks.length,tt:ts};
+  });
+  N=docs.length;avg=docs.reduce(function(a,b){return a+b.len;},0)/Math.max(N,1);df={};
+  docs.forEach(function(o){for(var w in o.tf)df[w]=(df[w]||0)+1;});
+}
+function idf(w){var n=df[w]||0;return Math.log(1+(N-n+0.5)/(n+0.5));}
+var K1=1.4,BB=0.6,MIN_SCORE=2.2;
+function match(query){
+  var qt=tok(query),seen={};
+  qt=qt.filter(function(w){if(seen[w])return false;seen[w]=1;return true;});
+  if(!qt.length)return null;
+  var best=null;
+  docs.forEach(function(o){
+    var s=0,hit=0;
+    qt.forEach(function(w){var f=o.tf[w];if(!f)return;hit++;s+=idf(w)*(f*(K1+1))/(f+K1*(1-BB+BB*o.len/avg));if(o.tt[w])s+=1.0;});
+    o.s=s;o.hit=hit;
+    if(!best||s>best.s)best=o;
+  });
+  if(!best||best.s<MIN_SCORE)return null;
+  return {item:best.d,score:best.s};
+}
+var EMERG=[/\b(швидк[ау]|терміново|рятуйте|допоможіть)\b/i,/не\s+дихає/i,/задихаю/i,/втратив\s+свідомість/i,/серцев\w*\s+напад/i,/пожежа/i,/нападає|під\s+загрозою\s+життя/i,/хочу\s+померти|самогубств/i];
+function risk(q){for(var i=0;i<EMERG.length;i++)if(EMERG[i].test(q))return true;return false;}
+function answer(q){
+  if(risk(q))return {kind:"emergency"};
+  var m=match(q);
+  return m?{kind:"answer",item:m.item}:{kind:"fallback"};
+}
+build();
+var api={KB:KB,TOPICS:TOPICS,answer:answer,match:match,tok:tok};
+if(typeof module!=="undefined"&&module.exports){module.exports=api;}
+if(typeof document==="undefined")return;
+
+/* ---------- UI ---------- */
+var $=function(s){return document.querySelector(s);};
+var log=$("#log");
+var counts={};TOPICS.forEach(function(t){counts[t.id]=0;});
+var nonAnswered=0,total=0,emergShown=0;
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
+function link(href,txt){var a=el("a",null,txt);a.href=href;a.target="_blank";a.rel="noopener noreferrer";return a;}
+function topicName(id){for(var i=0;i<TOPICS.length;i++)if(TOPICS[i].id===id)return TOPICS[i].n;return id;}
+function fmtDate(s){var p=s.split("-");return p.length===3?p[2]+"."+p[1]+"."+p[0]:s;}
+function add(kind,node){var m=el("div","msg "+kind);m.appendChild(node);log.appendChild(m);log.scrollTop=log.scrollHeight;return m;}
+function emergencyCard(){
+  var c=el("div","emerg");c.setAttribute("role","alert");
+  c.appendChild(el("h2",null,"Це може бути надзвичайна ситуація"));
+  var p=el("p");p.appendChild(document.createTextNode("Якщо життю чи здоров’ю загрожує небезпека, "));
+  p.appendChild(el("strong",null,"негайно телефонуйте 112"));
+  p.appendChild(document.createTextNode(". Швидка допомога: 103, поліція: 102, пожежна служба: 101."));
+  c.appendChild(p);
+  c.appendChild(el("p","small","Це повідомлення показується автоматично на певні слова. У пілоті текст погоджується з громадою."));
+  return c;
+}
+function showAnswer(it){
+  var w=el("div");
+  w.appendChild(el("span","tag",topicName(it.tp)));
+  w.appendChild(el("p",null,it.x));
+  var s=el("p","src");s.appendChild(document.createTextNode("Джерело: "));s.appendChild(link(it.u,it.u));s.appendChild(document.createTextNode(" (перевірено "+fmtDate(it.d)+")"));
+  w.appendChild(s);
+  return w;
+}
+function respond(q){
+  q=q.trim();if(!q)return;
+  add("user",el("p",null,q));
+  var a=answer(q);total++;
+  var w=el("div");
+  if(a.kind==="emergency"){emergShown++;w.appendChild(emergencyCard());}
+  else if(a.kind==="answer"){counts[a.item.tp]=(counts[a.item.tp]||0)+1;w=showAnswer(a.item);}
+  else{nonAnswered++;w.appendChild(el("p",null,FALLBACK));var s=el("p","src");s.appendChild(link(FB_URL,"Сторінка ЦНАП на сайті міської ради"));w.appendChild(s);}
+  add("bot",w);renderAdmin();
+}
+function showTopic(id){
+  var items=KB.filter(function(k){return k.tp===id;});
+  var w=el("div");
+  w.appendChild(el("p",null,"Тема: "+topicName(id)+"."));
+  if(!items.length){w.appendChild(el("p",null,FALLBACK));nonAnswered++;total++;}
+  else{
+    w.appendChild(el("p",null,"Оберіть питання:"));
+    var c=el("div","chips");
+    items.forEach(function(k){var b=el("button","chip",k.t);b.type="button";b.addEventListener("click",function(){add("user",el("p",null,k.t));counts[k.tp]++;total++;add("bot",showAnswer(k));renderAdmin();});c.appendChild(b);});
+    w.appendChild(c);
+  }
+  add("bot",w);renderAdmin();
+}
+function renderTopics(){
+  var tp=$("#topics");tp.textContent="";
+  TOPICS.forEach(function(t){var b=el("button","topic",t.n);b.type="button";b.addEventListener("click",function(){Array.prototype.forEach.call(tp.children,function(x){x.setAttribute("aria-pressed","false");});b.setAttribute("aria-pressed","true");showTopic(t.id);});tp.appendChild(b);});
+  var sel=$("#a-tp");sel.textContent="";
+  TOPICS.forEach(function(t){var o=el("option",null,t.n);o.value=t.id;sel.appendChild(o);});
+}
+function renderAdmin(){
+  var st=$("#stats");st.textContent="";
+  [["Усього запитань",total],["Без підтвердженої відповіді",nonAnswered],["Екстрені картки",emergShown]].forEach(function(x){var d=el("div","stat");d.appendChild(el("b",null,String(x[1])));d.appendChild(document.createTextNode(x[0]));st.appendChild(d);});
+  TOPICS.forEach(function(t){var d=el("div","stat");d.appendChild(el("b",null,String(counts[t.id]||0)));d.appendChild(document.createTextNode(t.n));st.appendChild(d);});
+  var kb=$("#kbrows");kb.textContent="";
+  KB.forEach(function(k,i){
+    var tr=el("tr");
+    tr.appendChild(el("td",null,topicName(k.tp)));
+    tr.appendChild(el("td",null,k.t));
+    tr.appendChild(el("td",null,fmtDate(k.d)));
+    var td=el("td");td.appendChild(link(k.u,k.u.replace(/^https?:\/\//,"")));tr.appendChild(td);
+    var tdd=el("td");var del=el("button","sm","Прибрати");del.type="button";del.setAttribute("aria-label","Прибрати запис: "+k.t);
+    del.addEventListener("click",function(){KB.splice(i,1);build();renderAdmin();});
+    tdd.appendChild(del);tr.appendChild(tdd);
+    kb.appendChild(tr);
+  });
+}
+$("#f").addEventListener("submit",function(e){e.preventDefault();var i=$("#q");respond(i.value);i.value="";i.focus();});
+$("#addf").addEventListener("submit",function(e){
+  e.preventDefault();
+  var t=$("#a-t").value.trim(),x=$("#a-x").value.trim(),u=$("#a-u").value.trim();
+  if(!/^https:\/\//.test(u))return;
+  KB.push({id:"new-"+KB.length,tp:$("#a-tp").value,t:t,x:x,u:u,d:$("#a-d").value||D,kw:t});
+  build();renderAdmin();this.reset();
+});
+var ch=$("#chips");
+["Де знаходиться ЦНАП?","Як стати на квартирний облік?","Як записатися до сімейного лікаря?","Де центр зайнятості?","Пакунок малюка","Допомога для переселенців"].forEach(function(t){var b=el("button","chip",t);b.type="button";b.addEventListener("click",function(){respond(t);});ch.appendChild(b);});
+$("#big").addEventListener("click",function(){var on=!document.documentElement.classList.contains("big");document.documentElement.classList.toggle("big",on);this.setAttribute("aria-pressed",on?"true":"false");});
+var tabs=Array.prototype.slice.call(document.querySelectorAll("[role=tab]"));
+function sel(t){tabs.forEach(function(x){var on=x===t;x.setAttribute("aria-selected",on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute("aria-controls")).hidden=!on;});t.focus();}
+tabs.forEach(function(t,i){t.addEventListener("click",function(){sel(t);});t.addEventListener("keydown",function(e){if(e.key==="ArrowRight")sel(tabs[(i+1)%tabs.length]);if(e.key==="ArrowLeft")sel(tabs[(i+tabs.length-1)%tabs.length]);});});
+renderTopics();
+var hi=el("div");
+hi.appendChild(el("p",null,"Вітаю! Я допоможу знайти перевірену інформацію про послуги громади. Оберіть тему вище або поставте запитання."));
+hi.appendChild(el("p","small","Я відповідаю тільки за записами бази знань і завжди показую джерело. Якщо підтвердженої інформації немає, я скажу про це і вкажу, до кого звернутися. Це демонстрація, а не офіційний ресурс."));
+add("bot",hi);
+renderAdmin();
+})(typeof window!=="undefined"?window:this);
+</script>
+</body>
+</html>
