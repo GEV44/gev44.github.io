@@ -159,7 +159,7 @@ footer a{color:var(--mut)}
 </header>
 
 <div class="proof">
-  <div><b>0.10 m</b><span>mean depth error, stereo vision from first principles</span></div>
+  <div><b>52</b><span>parameters in a hand-derived stereo lens model, gradients verified</span></div>
   <div><b>843 / 843</b><span>LLM evidence quotes re-matched to source text</span></div>
   <div><b>~460</b><span>tests guarding a 24/7 research engine</span></div>
   <div><b>~800</b><span>automated tests across my public repos</span></div>
@@ -173,14 +173,14 @@ footer a{color:var(--mut)}
   <!-- Stereo -->
   <article class="case">
     <div class="media duo">
-      <video src="img/stereo/demo.mp4" poster="img/stereo/demo-poster.png" autoplay muted loop playsinline aria-label="Stereo distance measurement demo"></video>
-      <span class="cap">synthetic scene · real model</span>
+      <video src="img/stereo/demo.mp4" preload="metadata" poster="img/stereo/demo-poster.png" autoplay muted loop playsinline aria-label="Stereo distance measurement demo"></video>
+      <img src="img/stereo/accuracy.png" alt="Predicted vs measured distance on 27 real calibration points, with residuals" loading="lazy" width="1650" height="840" style="background:#fff">
     </div>
     <div class="body">
       <div class="tags"><span class="tag oss">OPEN SOURCE</span><span class="tag">COMPUTER VISION</span><span class="tag">PURE NUMPY</span></div>
       <h3>Stereo vision: metric distance from two cameras, from scratch</h3>
       <p>Measures real-world distance in metres from a calibrated camera pair with no deep learning and no OpenCV calibration. The lens model, the gradients and the triangulation are derived by hand and written in NumPy.</p>
-      <div class="nums" id="stereo-nums"><div><b>27</b>real measured points</div><div><b>0.10 m</b>mean abs. error</div><div><b>52</b>model parameters</div><div><b>11</b>tests in CI</div></div>
+      <div class="nums" id="stereo-nums"><div><b>27</b>real measured points</div><div><b>0.095 m</b>fit error (MAE)</div><div><b>0.32 m</b>leave-one-out error</div><div><b>11</b>tests in CI</div></div>
       <ul>
         <li>A learnable 5×5 Γ grid per camera encodes focal length and lens distortion; a frozen centre node removes the scale degeneracy.</li>
         <li>Analytic gradients through bilinear interpolation, verified against finite differences in the test suite.</li>
