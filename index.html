@@ -159,9 +159,9 @@ footer a{color:var(--mut)}
 </header>
 
 <div class="proof">
+  <div><b>0.10 m</b><span>mean depth error, stereo vision from first principles</span></div>
   <div><b>843 / 843</b><span>LLM evidence quotes re-matched to source text</span></div>
   <div><b>~460</b><span>tests guarding a 24/7 research engine</span></div>
-  <div><b>0.10 m</b><span>mean depth error, stereo vision from first principles</span></div>
   <div><b>~800</b><span>automated tests across my public repos</span></div>
 </div>
 
@@ -170,26 +170,8 @@ footer a{color:var(--mut)}
   <h2>Systems, not demos</h2>
   <p class="sub">Each project states its numbers and its limits. Public code is linked; private systems are described from their own test and run reports.</p>
 
-  <!-- Silent Stakeholder -->
-  <article class="case">
-    <div class="media"><img src="img/work/silent-stakeholder.webp" alt="Silent Stakeholder evidence report: five roadmap gaps with verified evidence" loading="lazy" width="1280" height="800"></div>
-    <div class="body">
-      <div class="tags"><span class="tag live">LIVE REPORT</span><span class="tag">LLM PIPELINE</span><span class="tag">NLP</span></div>
-      <h3>Silent Stakeholder: evidence-grounded product intelligence</h3>
-      <p>Joins thousands of app reviews with a product's public GitHub roadmap and finds the user needs the roadmap ignores, parks or misunderstands. Every claim opens into the exact quotes behind it.</p>
-      <div class="nums"><div><b>3,200</b>reviews processed</div><div><b>774</b>roadmap records</div><div><b>843/843</b>quotes verified</div><div><b>252</b>tests</div></div>
-      <ul>
-        <li>Stable IDs at ingestion; generated evidence may only cite IDs present in its own input batch.</li>
-        <li>Deterministic verdict gate instead of model opinion; confidence is feature-derived and never a model's verbal percentage.</li>
-        <li>Ships a model card, data card, evaluation protocol and threat model. CI runs ruff, security lint, mypy and pylint on a Python matrix.</li>
-      </ul>
-      <div class="stack">Python · embeddings · clustering · Streamlit · pytest · mypy</div>
-      <div class="links"><a href="https://gev44.github.io/silent-stakeholder-demo/">Open live report ↗</a><a href="https://github.com/GEV44/silent-stakeholder">Code</a></div>
-    </div>
-  </article>
-
   <!-- Stereo -->
-  <article class="case flip">
+  <article class="case">
     <div class="media duo">
       <video src="img/stereo/demo.mp4" poster="img/stereo/demo-poster.png" autoplay muted loop playsinline aria-label="Stereo distance measurement demo"></video>
       <span class="cap">synthetic scene · real model</span>
@@ -206,6 +188,24 @@ footer a{color:var(--mut)}
       </ul>
       <div class="stack">NumPy · Pygame · OpenCV (matching only) · <a href="https://github.com/GEV44/stereo-distance-calculator/blob/main/docs/MATHEMATICAL_FOUNDATION.pdf">math derivation (PDF)</a></div>
       <div class="links"><a href="https://github.com/GEV44/stereo-distance-calculator">Code ↗</a><a href="https://github.com/GEV44/stereo-distance-calculator#results">Results</a></div>
+    </div>
+  </article>
+
+  <!-- Silent Stakeholder -->
+  <article class="case flip">
+    <div class="media"><img src="img/work/silent-stakeholder.webp" alt="Silent Stakeholder evidence report: five roadmap gaps with verified evidence" loading="lazy" width="1280" height="800"></div>
+    <div class="body">
+      <div class="tags"><span class="tag live">LIVE REPORT</span><span class="tag">LLM PIPELINE</span><span class="tag">NLP</span></div>
+      <h3>Silent Stakeholder: evidence-grounded product intelligence</h3>
+      <p>Joins thousands of app reviews with a product's public GitHub roadmap and finds the user needs the roadmap ignores, parks or misunderstands. Every claim opens into the exact quotes behind it.</p>
+      <div class="nums"><div><b>3,200</b>reviews processed</div><div><b>774</b>roadmap records</div><div><b>843/843</b>quotes verified</div><div><b>252</b>tests</div></div>
+      <ul>
+        <li>Stable IDs at ingestion; generated evidence may only cite IDs present in its own input batch.</li>
+        <li>Deterministic verdict gate instead of model opinion; confidence is feature-derived and never a model's verbal percentage.</li>
+        <li>Ships a model card, data card, evaluation protocol and threat model. CI runs ruff, security lint, mypy and pylint on a Python matrix.</li>
+      </ul>
+      <div class="stack">Python · embeddings · clustering · Streamlit · pytest · mypy</div>
+      <div class="links"><a href="https://gev44.github.io/silent-stakeholder-demo/">Open live report ↗</a><a href="https://github.com/GEV44/silent-stakeholder">Code</a></div>
     </div>
   </article>
 
@@ -226,47 +226,8 @@ footer a{color:var(--mut)}
     </div>
   </article>
 
-  <!-- doc-rag-api -->
-  <article class="case flip">
-    <div class="media">
-      <div class="term-bar"><i></i><i></i><i></i></div>
-<div class="term"><span class="c"># real output against the bundled sample documents</span>
-<span class="k">$</span> curl -s localhost:8000/ask -d <span class="s">'{"question":"How long do I have
-  to return an item for a refund?","top_k":2}'</span>
-{
-  <span class="p">"answer"</span>: <span class="s">"Unused items can be returned within 30 days
-    of delivery for a full refund. [1] Original shipping
-    costs are not refunded unless the return is due to
-    our error. [2]"</span>,
-  <span class="p">"mode"</span>: <span class="s">"extractive"</span>,
-  <span class="p">"sources"</span>: [
-    {<span class="p">"ref"</span>: <span class="n">1</span>, <span class="p">"source"</span>: <span class="s">"returns_policy.md"</span>, <span class="p">"score"</span>: <span class="n">5.9404</span>},
-    {<span class="p">"ref"</span>: <span class="n">2</span>, <span class="p">"source"</span>: <span class="s">"returns_policy.md"</span>, <span class="p">"score"</span>: <span class="n">5.8196</span>}
-  ]
-}
-
-<span class="k">$</span> curl -s localhost:8000/ask -d <span class="s">'{"question":"Who won the 1998
-  football world cup?"}'</span>
-{<span class="p">"answer"</span>: <span class="s">"I could not find anything relevant to that
-  question in the ingested documents."</span>, <span class="p">"mode"</span>: <span class="s">"no_match"</span>}</div>
-    </div>
-    <div class="body">
-      <div class="tags"><span class="tag oss">OPEN SOURCE</span><span class="tag">RAG</span><span class="tag">FASTAPI</span></div>
-      <h3>doc-rag-api: document Q&amp;A that cites or refuses</h3>
-      <p>Upload PDF, Markdown or text, ask questions over HTTP, and get answers with the exact chunks and scores they came from. Questions the documents don't cover get a refusal, not a guess.</p>
-      <div class="nums"><div><b>13/13</b>direct questions answered from the right source</div><div><b>2/2</b>out-of-scope correctly refused</div><div><b>25</b>tests + eval in CI</div></div>
-      <ul>
-        <li>BM25 works fully offline; hybrid BM25 + embeddings and an LLM answer step plug in through any OpenAI-compatible endpoint, including local Ollama.</li>
-        <li>The retrieval eval is honest about limits: BM25 alone finds 1 of 3 paraphrased questions, which is exactly what the optional embeddings are for.</li>
-        <li>Batch ingest is atomic: if any file is rejected, nothing from the batch is stored.</li>
-      </ul>
-      <div class="stack">Python · FastAPI · BM25 · embeddings · Docker · GitHub Actions</div>
-      <div class="links"><a href="https://github.com/GEV44/doc-rag-api">Code ↗</a></div>
-    </div>
-  </article>
-
   <!-- Resume -->
-  <article class="case">
+  <article class="case flip">
     <div class="media"><img src="img/work/resume.webp" alt="Resume Constructor showing AI changes with an add-only-if-true guardrail" loading="lazy" width="1280" height="720"></div>
     <div class="body">
       <div class="tags"><span class="tag live">LIVE PRODUCT</span><span class="tag">FULL-STACK AI</span></div>
@@ -279,7 +240,7 @@ footer a{color:var(--mut)}
   </article>
 
   <!-- Wardrobe -->
-  <article class="case flip">
+  <article class="case">
     <div class="media"><img src="img/work/wardrobe.webp" alt="Wardrobe Intelligence Lab recommending an outfit with a factor breakdown" loading="lazy" width="1280" height="800"></div>
     <div class="body">
       <div class="tags"><span class="tag live">LIVE APP</span><span class="tag">RECOMMENDER</span><span class="tag">LOCAL LLM</span></div>
@@ -297,6 +258,13 @@ footer a{color:var(--mut)}
   </article>
 
   <div class="grid">
+    <div class="mini">
+      <div class="tags"><span class="tag oss">OPEN SOURCE</span><span class="tag">RAG</span></div>
+      <h3>doc-rag-api: document Q&amp;A that cites or refuses</h3>
+      <p>FastAPI service: upload PDF, Markdown or text and get answers with the exact source chunks and scores, or a refusal when the documents don't cover the question. BM25 offline, optional hybrid embeddings and LLM via any OpenAI-compatible endpoint. 25 tests plus a retrieval eval in CI.</p>
+      <div class="stack">Python · FastAPI · BM25 · embeddings</div>
+      <div class="links"><a href="https://github.com/GEV44/doc-rag-api">Code ↗</a></div>
+    </div>
     <div class="mini">
       <div class="tags"><span class="tag priv">PRIVATE · LIVE BOT</span><span class="tag">ML</span></div>
       <h3>EdgeFinder: an FX signal bot that says "no trade"</h3>
