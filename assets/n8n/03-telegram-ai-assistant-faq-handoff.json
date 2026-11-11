@@ -1,0 +1,382 @@
+{
+  "name": "03 Telegram AI Assistant - FAQ + Human Handoff",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "Answers customer questions in Telegram from your FAQ (any URL returning plain text or markdown). Edit the FAQ URL, handoff keywords and staff chat ID. Each chat keeps its own memory window.",
+        "width": 520,
+        "height": 200
+      },
+      "id": "48cca0c0-78df-50b1-b7e4-b6cb9af455df",
+      "name": "Setup Notes",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "id": "77c9568d-f35c-5dae-a016-fc75697b15e1",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "credentials": {
+        "telegramApi": {
+          "name": "Telegram bot"
+        }
+      },
+      "webhookId": "df6dd884-ba0c-5c7e-9313-1dd680e020ea"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "204d63c8-9b76-53a6-9b41-f05585debfac",
+              "leftValue": "={{ $json.message.text }}",
+              "rightValue": "human",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "9fdf84ee-729e-5fc7-b00c-8f0f7e6e862d",
+              "leftValue": "={{ $json.message.text }}",
+              "rightValue": "operator",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "f873024d-306d-5409-8985-f139404972b4",
+              "leftValue": "={{ $json.message.text }}",
+              "rightValue": "оператор",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "3cb4a902-3903-5df9-af65-9489f8160028",
+              "leftValue": "={{ $json.message.text }}",
+              "rightValue": "менеджер",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "211b01f2-350f-5ec3-871e-0307ac15846e",
+      "name": "Handoff Keyword?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        240,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "YOUR_STAFF_CHAT_ID",
+        "text": "=Customer needs a human\nChat: {{ $('Telegram Trigger').item.json.message.chat.id }}\nUser: {{ $('Telegram Trigger').item.json.message.from.first_name }} (@{{ $('Telegram Trigger').item.json.message.from.username }})\nMessage: {{ $('Telegram Trigger').item.json.message.text }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "235d690a-8d96-5047-808b-af5a722bab3b",
+      "name": "Notify Staff",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        500,
+        -140
+      ],
+      "credentials": {
+        "telegramApi": {
+          "name": "Telegram bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "A team member will write to you here shortly.",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "0f3f1449-9462-5eb1-ab1c-49352a161026",
+      "name": "Tell Customer Handoff",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        740,
+        -140
+      ],
+      "credentials": {
+        "telegramApi": {
+          "name": "Telegram bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://example.com/faq.txt",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "ae7effa6-861e-5a9c-9222-51cef222caeb",
+      "name": "Fetch Business FAQ",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4afd476c-2769-5841-9e55-973fcc586626",
+              "name": "faq",
+              "value": "={{ $json.data }}",
+              "type": "string"
+            },
+            {
+              "id": "ef91527e-f2e2-5f2b-ab13-20d218b3b7e8",
+              "name": "question",
+              "value": "={{ $('Telegram Trigger').item.json.message.text }}",
+              "type": "string"
+            },
+            {
+              "id": "f3f11f30-24d6-5756-9bb7-919daf511c1c",
+              "name": "chat_id",
+              "value": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "54bfd7b0-17b4-5aa0-acdd-6b1312cf476c",
+      "name": "Prepare Context",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        740,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.question }}",
+        "options": {
+          "systemMessage": "=You are the customer assistant of a business. Answer ONLY from the FAQ below, briefly and politely, in the customer's language. If the answer is not in the FAQ, say you will pass the question to a team member and ask them to type 'human'. Never invent prices, hours or policies.\n\nFAQ:\n{{ $json.faq }}"
+        }
+      },
+      "id": "00103f89-3acf-589e-b9e0-545c3afdfc05",
+      "name": "FAQ Assistant",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        980,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list"
+        },
+        "options": {
+          "temperature": 0.2
+        }
+      },
+      "id": "a5f44094-92e0-5c3c-831a-e068894f20fa",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        940,
+        360
+      ],
+      "credentials": {
+        "openAiApi": {
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Prepare Context').item.json.chat_id }}",
+        "contextWindowLength": 8
+      },
+      "id": "6659bd47-1190-59ce-b2de-8ea473da03f0",
+      "name": "Chat Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1120,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Prepare Context').item.json.chat_id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "dbd16204-7781-5900-a132-10a436b75748",
+      "name": "Send Answer",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1260,
+        140
+      ],
+      "credentials": {
+        "telegramApi": {
+          "name": "Telegram bot"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "FAQ Assistant",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "FAQ Assistant",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Handoff Keyword?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handoff Keyword?": {
+      "main": [
+        [
+          {
+            "node": "Notify Staff",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Fetch Business FAQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notify Staff": {
+      "main": [
+        [
+          {
+            "node": "Tell Customer Handoff",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Business FAQ": {
+      "main": [
+        [
+          {
+            "node": "Prepare Context",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Context": {
+      "main": [
+        [
+          {
+            "node": "FAQ Assistant",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FAQ Assistant": {
+      "main": [
+        [
+          {
+            "node": "Send Answer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": []
+}

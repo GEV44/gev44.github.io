@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI automations — Gevorg Hovhannisyan</title>
+<meta name="description" content="Six n8n workflows that run real business work: lead qualification, Gmail triage, a Telegram FAQ assistant, bookings, a daily competitor digest and review analysis. Each has a diagram and a downloadable JSON file.">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://gev44.github.io/automations.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI automations — Gevorg Hovhannisyan">
+<meta property="og:description" content="Six n8n workflows that run real business work, each with a diagram and a downloadable JSON file.">
+<meta property="og:url" content="https://gev44.github.io/automations.html">
+<style>
+:root{
+  --bg:#0b1020;--bg-grad:linear-gradient(165deg,#0b1020 0%,#111a35 45%,#1a1240 100%);
+  --surface:rgba(255,255,255,.04);--surface-2:rgba(255,255,255,.07);--line:rgba(148,163,184,.2);
+  --ink:#f8fafc;--body:#cbd5e1;--mut:#94a3b8;
+  --acc:#38bdf8;--acc2:#a78bfa;--glow:#6366f1;
+  --grad:linear-gradient(100deg,#38bdf8,#a78bfa);
+  --tg1:#38bdf8;--tg2:#a78bfa;
+  --btn-ink:#0b1020;--ok:#4ade80;--nav:rgba(11,16,32,.8);
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+  --bg:#f8fafc;--bg-grad:linear-gradient(165deg,#ffffff 0%,#f8fafc 50%,#eef0ff 100%);
+  --surface:#ffffff;--surface-2:#f1f5f9;--line:#d6dce8;
+  --ink:#0b1020;--body:#26304d;--mut:#4a5675;
+  --acc:#0369a1;--acc2:#6d28d9;--glow:#6366f1;
+  --tg1:#0369a1;--tg2:#6d28d9;--ok:#15803d;--nav:rgba(248,250,252,.85);
+}}
+:root[data-theme="light"]{
+  --bg:#f8fafc;--bg-grad:linear-gradient(165deg,#ffffff 0%,#f8fafc 50%,#eef0ff 100%);
+  --surface:#ffffff;--surface-2:#f1f5f9;--line:#d6dce8;
+  --ink:#0b1020;--body:#26304d;--mut:#4a5675;
+  --acc:#0369a1;--acc2:#6d28d9;--glow:#6366f1;
+  --tg1:#0369a1;--tg2:#6d28d9;--ok:#15803d;--nav:rgba(248,250,252,.85);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:var(--bg)}
+body{margin:0;background:var(--bg-grad);background-color:var(--bg);color:var(--body);font:400 16px/1.65 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:6px;z-index:20;font-weight:600}
+.skip:focus{top:12px}
+.w{width:min(1120px,100% - 32px);margin-inline:auto}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mut);display:flex;align-items:center;gap:10px;margin:0 0 18px}
+.eyebrow::before{content:"";width:26px;height:2px;border-radius:2px;background:var(--grad)}
+h1,h2,h3{font-family:var(--sans);color:var(--ink);margin:0;font-weight:700;letter-spacing:-.025em;line-height:1.1}
+h2{font-size:clamp(30px,4.6vw,46px)}
+h3{font-size:20px;line-height:1.25;letter-spacing:-.015em;font-weight:650}
+.grad-t{background:linear-gradient(100deg,var(--tg1),var(--tg2));-webkit-background-clip:text;background-clip:text;color:transparent}
+section{padding:clamp(56px,9vw,100px) 0;border-top:1px solid var(--line)}
+.sec-head{display:grid;gap:14px;margin-bottom:40px;max-width:720px}
+.sec-head p{margin:0;color:var(--body);font-size:17px}
+
+nav{position:sticky;top:0;z-index:5;background:var(--nav);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .w{display:flex;align-items:center;justify-content:space-between;gap:16px;height:58px}
+.brand{font:500 14px var(--mono);text-decoration:none;white-space:nowrap;color:var(--ink)}
+.brand b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav ul{display:flex;gap:22px;list-style:none;margin:0 0 0 auto;padding:0;font-size:14px}
+nav ul a{text-decoration:none;color:var(--mut);font-weight:500}
+nav ul a:hover{color:var(--ink)}
+@media (max-width:720px){nav ul{display:none}nav .w{justify-content:space-between}}
+.theme{background:transparent;border:1px solid var(--line);color:var(--body);border-radius:999px;font:500 12px var(--mono);padding:7px 12px;cursor:pointer}
+.theme:hover{border-color:var(--acc);color:var(--ink)}
+
+.hero{border-top:0;padding-top:clamp(40px,7vw,88px);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:640px;height:640px;right:-200px;top:-180px;border-radius:50%;background:radial-gradient(circle,var(--glow) 0,transparent 68%);opacity:.28;z-index:-1;pointer-events:none}
+.hero-grid{display:grid;gap:48px;grid-template-columns:1fr 1.05fr;align-items:center}
+@media (max-width:920px){.hero-grid{grid-template-columns:1fr}}
+.avail{display:inline-flex;align-items:center;gap:10px;font:500 12.5px var(--mono);color:var(--body);border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;margin:0 0 22px}
+.avail i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+h1{font-size:clamp(42px,7.4vw,80px);line-height:1;font-weight:800;letter-spacing:-.035em}
+.role{font:500 14px var(--mono);color:var(--mut);margin:22px 0 14px}
+.promise{font-size:clamp(17px,2vw,20px);line-height:1.55;max-width:34em;margin:0 0 30px;color:var(--body)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid var(--line);color:var(--ink);transition:transform .18s,border-color .18s,box-shadow .18s}
+.btn.pri{background:var(--grad);border-color:transparent;color:var(--btn-ink);box-shadow:0 10px 30px -12px var(--glow)}
+.btn:hover{transform:translateY(-2px)}
+.btn.sec:hover{border-color:var(--acc)}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:32px;font:400 13px var(--mono);color:var(--mut)}
+.meta-row .hyru a{color:var(--acc);text-underline-offset:4px}
+.meta-row span::before{content:"→ ";color:var(--acc)}
+
+.frame{margin:0;border-radius:18px;padding:1px;background:linear-gradient(135deg,var(--acc),var(--acc2));box-shadow:0 30px 80px -30px var(--glow);display:flex;flex-direction:column}
+.frame>a{display:block;background:#0a0d18;border-radius:17px 17px 0 0;overflow:hidden}
+.frame img{width:100%;aspect-ratio:1280/700;object-fit:cover;object-position:bottom}
+.frame figcaption{background:var(--bg);border-radius:0 0 17px 17px;padding:12px 16px;font:400 12.5px/1.5 var(--mono);color:var(--body);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.frame figcaption a{color:var(--acc);text-underline-offset:4px;font-weight:500}
+
+.nums{border-top:1px solid var(--line);padding:clamp(36px,5vw,56px) 0}
+.nums h2{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin:0 0 22px;display:flex;align-items:center;gap:10px}
+.nums h2::before{content:"";width:26px;height:2px;border-radius:2px;background:var(--grad)}
+.nums ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.nums li{background:var(--bg);padding:20px 18px;display:grid;gap:6px;align-content:start}
+.nums b{font:800 clamp(30px,4vw,40px)/1 var(--sans);letter-spacing:-.03em;background:linear-gradient(100deg,var(--tg1),var(--tg2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nums span{font-size:13.5px;line-height:1.45;color:var(--body)}
+.nums small{font:400 11.5px var(--mono);color:var(--mut)}
+
+.offers{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.offer{background:var(--bg);padding:28px 26px;display:grid;gap:10px;align-content:start;transition:background .2s}
+.offer:hover{background:var(--surface-2)}
+.offer .n{font:500 12px var(--mono);color:var(--acc)}
+.offer p{margin:0;color:var(--body)}
+.offer .out{color:var(--ink);font-weight:500;border-top:1px dashed var(--line);padding-top:10px;margin-top:4px}
+
+.work{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s}
+.card:hover{border-color:var(--acc2)}
+.card.big{grid-column:1/-1;display:grid;grid-template-columns:1.05fr 1fr}
+.card.big h3{font-size:26px}
+@media (max-width:820px){.card.big{grid-template-columns:1fr}}
+.shot{aspect-ratio:16/10;background:#0a0d18;overflow:hidden;display:block}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover .shot img{transform:scale(1.03)}
+.card.big .shot{aspect-ratio:auto;min-height:260px;position:relative}
+.card.big .shot img{position:absolute;left:0;bottom:0;width:100%;height:auto}
+@media (max-width:820px){.card.big .shot{aspect-ratio:1280/700;min-height:0}}
+.body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:14px;flex:1}
+.story{margin:-4px 0 0;color:var(--ink);font-weight:500}
+.status{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--mut)}
+.tag.live{color:var(--ok);border-color:currentColor}
+.tag.live::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:currentColor;margin-right:6px;vertical-align:1px}
+.tag.code{color:var(--body)}
+.steps{margin:0;display:grid;gap:8px;font-size:14.5px}
+.steps div{display:grid;grid-template-columns:70px 1fr;gap:10px}
+.steps dt{font:500 11px/1.9 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--acc)}
+.steps dd{margin:0;color:var(--body)}
+.steps dd strong{color:var(--ink);font-weight:600}
+.stack{font:400 12px var(--mono);color:var(--mut);margin:0;margin-top:auto;padding-top:4px}
+.links{display:flex;flex-wrap:wrap;gap:8px 18px;font-weight:600;font-size:14.5px}
+.links a{color:var(--acc);text-underline-offset:4px}
+.links a:hover{text-decoration-thickness:2px}
+.sub-h{margin:56px 0 20px;font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+
+.proc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px;counter-reset:s}
+.proc li{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px 22px 24px;counter-increment:s}
+.proc li::before{content:"0" counter(s);font:500 12px var(--mono);color:var(--acc);display:block;margin-bottom:14px}
+.proc li::after{content:"";position:absolute;left:22px;right:22px;top:0;height:2px;background:var(--grad);border-radius:0 0 2px 2px}
+.proc h3{margin-bottom:8px}
+.proc p{margin:0;color:var(--body);font-size:15px}
+
+.tl{list-style:none;margin:0;padding:0;border-left:1px solid var(--line);margin-left:6px}
+.tl li{position:relative;padding:0 0 36px 30px;display:grid;grid-template-columns:200px 1fr;gap:6px 28px}
+.tl li::before{content:"";position:absolute;left:-6px;top:9px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--acc)}
+.tl li:first-child::before{background:var(--grad);border-color:transparent}
+.tl time{font:500 13px/1.9 var(--mono);color:var(--mut)}
+.tl h3{font-size:18px;line-height:1.35}
+.tl .org{color:var(--body)}
+.tl p{margin:6px 0 0;color:var(--body);max-width:60ch}
+@media (max-width:640px){.tl li{grid-template-columns:1fr;gap:2px}}
+
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:28px}
+.how div{border-top:2px solid var(--acc2);padding-top:16px}
+.how h3{margin-bottom:8px}
+.how p{margin:0;color:var(--body)}
+.langs{margin-top:44px;display:flex;flex-wrap:wrap;gap:10px}
+.langs span{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 16px;font:500 13px var(--mono);color:var(--ink)}
+.langs b{color:var(--acc);font-weight:500}
+
+.faq{max-width:820px;display:grid;gap:10px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 20px}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;color:var(--ink);display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:500 20px var(--mono);color:var(--acc);flex:none}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:0 0 18px;color:var(--body)}
+
+.contact h2{font-size:clamp(36px,6.4vw,72px);max-width:12em;font-weight:800;letter-spacing:-.035em}
+.contact .cta-row{margin:30px 0 40px}
+.ln{display:flex;flex-wrap:wrap;gap:8px 24px;font:400 14px var(--mono)}
+.ln a{text-underline-offset:4px;color:var(--body)}
+.ln a:hover{color:var(--acc)}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--mut);font:400 13px var(--mono)}
+
+@media (prefers-reduced-motion:no-preference){
+  .js .rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+  .js .rv.in{opacity:1;transform:none}
+  .hero h1,.hero .avail,.hero .role,.hero .promise,.hero .cta-row,.hero .frame,.hero .meta-row{animation:up .8s both}
+  .hero .role{animation-delay:.08s}.hero .promise{animation-delay:.16s}.hero .cta-row{animation-delay:.24s}.hero .meta-row{animation-delay:.3s}.hero .frame{animation-delay:.32s}
+  .avail i{animation:pulse 2.4s infinite}
+  @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(74,222,128,.5)}70%,100%{box-shadow:0 0 0 8px rgba(74,222,128,0)}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.shot img,.card,.offer{transition:none}}
+
+.svc{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:clamp(20px,3vw,32px);margin-bottom:18px}
+.svc h3{font-size:clamp(20px,2.4vw,25px);margin:4px 0 8px}
+.svc .k{font:500 12px var(--mono);color:var(--acc);letter-spacing:.12em}
+.svc>p{margin:0 0 14px}
+.dl{display:grid;grid-template-columns:1fr 1fr;gap:14px 32px;margin:0}
+.dl div{min-width:0}
+.dl dt{font:500 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:4px}
+.dl dd{margin:0;font-size:15.5px}
+.dl ul{margin:0;padding-left:18px}.dl li{margin:0 0 3px}
+@media(max-width:760px){.dl{grid-template-columns:1fr}}
+.tri{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.audit{border:1.5px solid var(--acc);background:linear-gradient(135deg,var(--surface-2),var(--surface));box-shadow:0 18px 50px -28px var(--glow)}.audit .sizes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:18px 0}.audit .sizes div{border:1px solid var(--line);border-radius:8px;padding:14px 16px;background:var(--surface)}.audit .sizes b{display:block;color:var(--ink);margin-bottom:4px}
+.tri div{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:18px}
+.tri h3{font-size:17px;margin-bottom:6px}.tri p{margin:0;font-size:15px}
+.tri .n{font:500 12px var(--mono);color:var(--acc);display:block;margin-bottom:8px}
+.pl{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.pl li{border-bottom:1px solid var(--line);padding-bottom:10px}
+.pl a{color:var(--acc);font-weight:600;text-underline-offset:4px}
+
+
+.wf{border:1px solid var(--line);background:var(--surface);border-radius:16px;padding:28px 26px;margin:0 0 22px}
+.wf .k{font:500 12px var(--mono);color:var(--acc)}
+.wf h3{margin:6px 0 8px;font-size:24px}
+.outc{margin:0 0 20px;color:var(--ink);font-weight:500}
+.wf ol{margin:0;padding-left:20px}.wf ol li{margin:0 0 4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chips span{font:500 12px var(--mono);border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--body)}
+.fd{display:block;font:500 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin:22px 0 8px}
+.flow{display:grid;gap:10px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:16px}
+.fl-row{display:grid;grid-template-columns:84px 1fr;gap:10px;align-items:start}
+.fl-l{font:500 11px/2.2 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--acc)}
+.fl-c{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.fl-n{font:500 12.5px var(--mono);color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+.fl-arr{color:var(--acc);font:500 14px var(--mono)}
+@media(max-width:560px){.fl-row{grid-template-columns:1fr;gap:2px}}
+.wf .links{margin:18px 0 0}
+.imp{border:1.5px solid var(--acc);border-radius:14px;padding:24px 26px;background:linear-gradient(135deg,var(--surface-2),var(--surface))}
+.imp ol{margin:0;padding-left:22px}.imp li{margin:0 0 6px}
+.imp code{font-family:var(--mono);font-size:.92em;color:var(--ink)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav aria-label="Main"><div class="w">
+<a class="brand" href="index.html"><b>GH</b> / gevorg hovhannisyan</a>
+<ul><li><a href="#workflows">Workflows</a></li><li><a href="#import">Import</a></li><li><a href="ai-ml-services.html">AI / ML services</a></li><li><a href="services.html">All services</a></li><li><a href="#contact">Contact</a></li></ul>
+<button class="theme" id="theme" type="button" aria-label="Switch colour theme">theme</button></div></nav>
+<main id="main">
+<section class="hero"><div class="w">
+<p class="eyebrow">n8n · LLM workflows · Yerevan (GMT+4)</p>
+<h1>AI automations that run <span class="grad-t">real business work</span>.</h1>
+<p class="promise" style="margin-top:22px">Six n8n workflows for tasks that eat office hours: sorting enquiries, answering the same questions, checking bookings, reading reviews. An LLM is used only where judgement is needed. Each workflow below has its diagram and a JSON file you can download and import.</p>
+<div class="cta-row"><a class="btn pri" href="#workflows">See the workflows &rarr;</a><a class="btn sec" href="#contact">Set one up for my business</a></div>
+</div></section>
+<section id="workflows"><div class="w"><div class="sec-head"><p class="eyebrow">Workflows</p><h2>Six workflows, ready to import</h2><p>Each file passed a structural check (valid nodes and connections, no embedded secrets). Credentials are referenced by name only, so you connect your own accounts.</p></div>
+<article class="wf" id="wf1"><span class="k">01</span><h3>Website lead qualification</h3><p class="outc">Every website enquiry is scored, logged and the hot ones reach your phone in seconds.</p>
+<dl class="dl"><div><dt>The business problem</dt><dd>Enquiries from the contact form sit in an inbox until someone reads them, and the serious ones wait as long as the weak ones.</dd><dt style="margin-top:14px">What it does</dt><dd><ol><li>A form on your site posts the enquiry to an n8n webhook.</li><li>An LLM scores intent and fit from 1 to 10 and returns a structured answer: score, priority, reason, next step.</li><li>The result is written as a new row in Google Sheets.</li><li>If the lead is marked hot, a Telegram message reaches you straight away.</li><li>The webhook answers the form so the visitor sees a confirmation.</li></ol></dd></div>
+<div><dt>Tools and nodes</dt><dd class="chips"><span>Webhook</span><span>LLM chain with output schema</span><span>Google Sheets</span><span>If</span><span>Telegram</span><span>Respond to Webhook</span></dd><dt style="margin-top:14px">What you need</dt><dd>Credentials, selected in n8n by name: OpenAI, Google Sheets, Telegram. A sheet tab named Leads with the columns name, email, company, message, score, priority, reason, next_step, received_at; your sheet ID and Telegram chat ID.</dd></div></dl>
+<span class="fd">Flow</span><div class="flow" role="img" aria-label="Workflow diagram"><div class="fl-row"><span class="fl-l">Main</span><div class="fl-c"><span class="fl-n">Website form</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Lead webhook</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Qualify lead (LLM)</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Build row</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Sheets append</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Hot lead?</span></div></div><div class="fl-row"><span class="fl-l">Hot</span><div class="fl-c"><span class="fl-n">Telegram alert</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Respond OK</span></div></div><div class="fl-row"><span class="fl-l">Not hot</span><div class="fl-c"><span class="fl-n">Respond OK</span></div></div></div>
+<p class="links"><a href="assets/n8n/01-website-lead-ai-qualification.json" download>Download workflow JSON &darr;</a></p></article>
+<article class="wf" id="wf2"><span class="k">02</span><h3>Gmail triage with reply drafts</h3><p class="outc">The inbox sorts itself and every new lead already has a reply draft waiting.</p>
+<dl class="dl"><div><dt>The business problem</dt><dd>Sales enquiries, support questions, invoices and spam arrive in one inbox, and the person reading it spends the first hour sorting.</dd><dt style="margin-top:14px">What it does</dt><dd><ol><li>A Gmail trigger picks up each new message.</li><li>An LLM returns a category (lead, support, invoice, spam) with a confidence value.</li><li>A switch applies the matching Gmail label.</li><li>For leads, a second LLM writes a reply and saves it as a draft in the same thread.</li><li>Nothing is sent automatically; you read the draft and press send.</li></ol></dd></div>
+<div><dt>Tools and nodes</dt><dd class="chips"><span>Gmail Trigger</span><span>LLM chain with output schema</span><span>Switch</span><span>Gmail</span><span>Gmail draft</span></dd><dt style="margin-top:14px">What you need</dt><dd>Credentials, selected in n8n by name: OpenAI, Gmail. Four Gmail labels (lead, support, invoice, spam), selected in the label nodes.</dd></div></dl>
+<span class="fd">Flow</span><div class="flow" role="img" aria-label="Workflow diagram"><div class="fl-row"><span class="fl-l">Main</span><div class="fl-c"><span class="fl-n">New e-mail</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Classify (LLM)</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Route by category</span></div></div><div class="fl-row"><span class="fl-l">Lead</span><div class="fl-c"><span class="fl-n">Label lead</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Draft reply (LLM)</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Save draft</span></div></div><div class="fl-row"><span class="fl-l">Support</span><div class="fl-c"><span class="fl-n">Label support</span></div></div><div class="fl-row"><span class="fl-l">Invoice</span><div class="fl-c"><span class="fl-n">Label invoice</span></div></div><div class="fl-row"><span class="fl-l">Spam</span><div class="fl-c"><span class="fl-n">Label spam</span></div></div></div>
+<p class="links"><a href="assets/n8n/02-gmail-triage-classify-label-draft.json" download>Download workflow JSON &darr;</a></p></article>
+<article class="wf" id="wf3"><span class="k">03</span><h3>Telegram FAQ assistant with human handoff</h3><p class="outc">Customers get instant answers from your FAQ and a human steps in when they ask.</p>
+<dl class="dl"><div><dt>The business problem</dt><dd>The same ten questions arrive in your messenger all day, and the questions that need a person get buried among them.</dd><dt style="margin-top:14px">What it does</dt><dd><ol><li>A Telegram bot receives the customer message.</li><li>If the text contains a handoff keyword, staff are notified and the customer is told a person will reply.</li><li>Otherwise the workflow fetches your FAQ from a URL.</li><li>An AI agent with per-chat memory (last 8 messages) answers strictly from that FAQ.</li><li>The answer is sent back in the same chat.</li></ol></dd></div>
+<div><dt>Tools and nodes</dt><dd class="chips"><span>Telegram Trigger</span><span>If</span><span>HTTP Request</span><span>AI Agent</span><span>Window buffer memory</span><span>Telegram</span></dd><dt style="margin-top:14px">What you need</dt><dd>Credentials, selected in n8n by name: OpenAI, Telegram. A bot token from BotFather, your FAQ hosted as plain text or markdown at a URL, and the staff chat ID.</dd></div></dl>
+<span class="fd">Flow</span><div class="flow" role="img" aria-label="Workflow diagram"><div class="fl-row"><span class="fl-l">Handoff</span><div class="fl-c"><span class="fl-n">Telegram message</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Keyword found?</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Notify staff</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Tell customer</span></div></div><div class="fl-row"><span class="fl-l">Answer</span><div class="fl-c"><span class="fl-n">No keyword</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Fetch FAQ</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Prepare context</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">FAQ agent + memory</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Send answer</span></div></div></div>
+<p class="links"><a href="assets/n8n/03-telegram-ai-assistant-faq-handoff.json" download>Download workflow JSON &darr;</a></p></article>
+<article class="wf" id="wf4"><span class="k">04</span><h3>Booking with availability check</h3><p class="outc">Booking requests are checked against your availability sheet and confirmed automatically.</p>
+<dl class="dl"><div><dt>The business problem</dt><dd>Customers ask for a time slot, someone checks the calendar by hand, and double bookings happen when two requests overlap.</dd><dt style="margin-top:14px">What it does</dt><dd><ol><li>A booking request arrives at a webhook with name, e-mail, slot and service.</li><li>The workflow reads your availability sheet and checks the requested slot.</li><li>If the slot is available it is marked booked in the sheet.</li><li>The customer gets a confirmation e-mail and you get a Telegram alert.</li><li>If the slot is taken, the webhook answers with up to three alternative slots.</li></ol></dd></div>
+<div><dt>Tools and nodes</dt><dd class="chips"><span>Webhook</span><span>Google Sheets</span><span>Code</span><span>If</span><span>Gmail</span><span>Telegram</span><span>Respond to Webhook</span></dd><dt style="margin-top:14px">What you need</dt><dd>Credentials, selected in n8n by name: Google Sheets, Gmail, Telegram. A sheet tab named Availability with the columns slot, status and booked_by, one row per bookable slot.</dd></div></dl>
+<span class="fd">Flow</span><div class="flow" role="img" aria-label="Workflow diagram"><div class="fl-row"><span class="fl-l">Available</span><div class="fl-c"><span class="fl-n">Booking webhook</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Read sheet</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Check slot</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Available?</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Mark booked</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">E-mail customer</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Telegram alert</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Respond confirmed</span></div></div><div class="fl-row"><span class="fl-l">Taken</span><div class="fl-c"><span class="fl-n">Slot taken</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Respond 409 + alternatives</span></div></div></div>
+<p class="links"><a href="assets/n8n/04-booking-availability-confirmation.json" download>Download workflow JSON &darr;</a></p></article>
+<article class="wf" id="wf5"><span class="k">05</span><h3>Daily competitor and news digest</h3><p class="outc">A short morning digest of what competitors and your industry did, without opening ten tabs.</p>
+<dl class="dl"><div><dt>The business problem</dt><dd>Keeping an eye on competitors and industry news means a daily round of tabs that is skipped as soon as the week gets busy.</dd><dt style="margin-top:14px">What it does</dt><dd><ol><li>A schedule trigger runs every morning at 08:00 in the workflow timezone.</li><li>It reads a news RSS feed and fetches a competitor page in parallel.</li><li>The two sources are merged into one input.</li><li>An LLM writes a five-bullet digest with one suggested action.</li><li>The digest is delivered to Telegram.</li></ol></dd></div>
+<div><dt>Tools and nodes</dt><dd class="chips"><span>Schedule Trigger</span><span>RSS Read</span><span>HTTP Request</span><span>Merge</span><span>Code</span><span>LLM chain</span><span>Telegram</span></dd><dt style="margin-top:14px">What you need</dt><dd>Credentials, selected in n8n by name: OpenAI, Telegram. Your own RSS feed and competitor URLs, and the Telegram chat ID.</dd></div></dl>
+<span class="fd">Flow</span><div class="flow" role="img" aria-label="Workflow diagram"><div class="fl-row"><span class="fl-l">Sources</span><div class="fl-c"><span class="fl-n">Every morning</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Read news RSS</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Fetch competitor page</span></div></div><div class="fl-row"><span class="fl-l">Digest</span><div class="fl-c"><span class="fl-n">Combine sources</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Build input</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Summarise (LLM)</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Send to Telegram</span></div></div></div>
+<p class="links"><a href="assets/n8n/05-competitor-news-monitor-digest.json" download>Download workflow JSON &darr;</a></p></article>
+<article class="wf" id="wf6"><span class="k">06</span><h3>Customer review analyzer</h3><p class="outc">Every review is tagged by sentiment and topic, and you get a weekly report on what customers think.</p>
+<dl class="dl"><div><dt>The business problem</dt><dd>Reviews pile up in a spreadsheet or inbox, and patterns only become visible when someone has time to read them all.</dd><dt style="margin-top:14px">What it does</dt><dd><ol><li>A Google Sheets trigger fires on each new review row.</li><li>An LLM returns sentiment, topic, urgency and a one-line summary.</li><li>The analysis is stored in a second tab.</li><li>Urgent negative reviews trigger an immediate Telegram alert.</li><li>Every Monday a second branch aggregates the last 7 days and an LLM writes the weekly summary, sent to Telegram.</li></ol></dd></div>
+<div><dt>Tools and nodes</dt><dd class="chips"><span>Google Sheets Trigger</span><span>Google Sheets</span><span>LLM chain with output schema</span><span>If</span><span>Schedule Trigger</span><span>Code</span><span>Telegram</span></dd><dt style="margin-top:14px">What you need</dt><dd>Credentials, selected in n8n by name: OpenAI, Google Sheets, Telegram. Two sheet tabs: Reviews (review, author, date) and Analysis (review, author, sentiment, topic, urgency, summary, analysed_at).</dd></div></dl>
+<span class="fd">Flow</span><div class="flow" role="img" aria-label="Workflow diagram"><div class="fl-row"><span class="fl-l">Each review</span><div class="fl-c"><span class="fl-n">New review row</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Analyse (LLM)</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Build row</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Save analysis</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Urgent negative?</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Telegram alert</span></div></div><div class="fl-row"><span class="fl-l">Weekly</span><div class="fl-c"><span class="fl-n">Every Monday</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Read analysis</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Aggregate 7 days</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Write summary (LLM)</span><span class="fl-arr" aria-hidden="true">&rarr;</span><span class="fl-n">Send summary</span></div></div></div>
+<p class="links"><a href="assets/n8n/06-review-analyzer-sentiment-weekly-summary.json" download>Download workflow JSON &darr;</a></p></article>
+</div></section>
+<section id="import"><div class="w"><div class="sec-head"><p class="eyebrow">Import</p><h2>How to import into n8n</h2></div>
+<div class="imp"><ol><li>Download the workflow JSON from its card.</li><li>In n8n open <code>Workflows</code>, then <code>Import from file</code>, and choose the file.</li><li>Open each node that shows a credential warning and select your own credential.</li><li>Replace the placeholders marked <code>YOUR_...</code> (sheet ID, chat ID) and create the sheet tabs listed on the card.</li><li>Run it once with sample input, check the output of each node, then switch the workflow to Active.</li></ol></div></div></section>
+<section id="contact"><div class="w"><div class="sec-head"><p class="eyebrow">Contact</p><h2>Want this set up for your business?</h2><p>Send the process you want to automate and the tools you already use. You receive a written scope before any work starts.</p></div>
+<div class="cta-row"><a class="btn pri" href="https://t.me/hovhannisyan77">Telegram @hovhannisyan77 &rarr;</a><a class="btn sec" href="ai-ml-services.html#auto">Workflow automation service</a></div>
+<div class="ln" style="margin-top:22px"><a href="ai-ml-services.html">AI / ML services</a><a href="index.html">gev44.github.io</a><a href="https://github.com/GEV44">GitHub / GEV44</a></div></div></section>
+</main>
+<footer><div class="w" style="padding:28px 0">&copy; Gevorg Hovhannisyan · Yerevan, Armenia (GMT+4)</div></footer>
+<script>
+(function(){
+  var d=document.documentElement;
+  var b=document.getElementById('theme');
+  function cur(){var t=d.getAttribute('data-theme');if(t)return t;return window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark'}
+  try{var s=localStorage.getItem('theme');if(s)d.setAttribute('data-theme',s)}catch(e){}
+  function lab(){b.textContent=cur()==='dark'?'light mode':'dark mode'}
+  lab();
+  b.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';d.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}lab()});
+})();
+</script>
+</body></html>

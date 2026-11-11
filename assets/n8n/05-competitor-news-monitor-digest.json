@@ -1,0 +1,262 @@
+{
+  "name": "05 Daily Competitor and News Monitor - Telegram Digest",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "Every morning: reads an RSS feed and a competitor page, summarises what matters with an LLM and sends a digest to Telegram. Edit the RSS URL, page URL and chat ID.",
+        "width": 520,
+        "height": 200
+      },
+      "id": "4bf7fb3e-5fba-583d-aecf-a4d70b39ce9d",
+      "name": "Setup Notes",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1,
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "57c9d87d-f00a-5e72-ab8e-565b7fbec804",
+      "name": "Every Morning",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://example.com/feed.xml",
+        "options": {}
+      },
+      "id": "105ce8c9-712c-55d9-89ba-684f0aed2242",
+      "name": "Read News RSS",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        240,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://example.com/competitor/news",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "09a16ecc-6e76-5938-9df0-f2db9c69533e",
+      "name": "Fetch Competitor Page",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "append",
+        "options": {}
+      },
+      "id": "3d1d197d-56a7-58eb-9c49-367df01baff8",
+      "name": "Combine Sources",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        480,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "const items = $input.all().map(i => i.json);\nconst news = items.filter(j => j.title).slice(0, 10).map(j => `- ${j.title} (${j.link || ''}): ${(j.contentSnippet || '').slice(0, 200)}`);\nconst pages = items.filter(j => typeof j.data === 'string').map(j => j.data.replace(/<script[\\s\\S]*?<\\/script>|<style[\\s\\S]*?<\\/style>|<[^>]+>/g, ' ').replace(/\\s+/g, ' ').slice(0, 3500));\nreturn [{ json: { material: 'NEWS:\\n' + news.join('\\n') + '\\n\\nCOMPETITOR PAGE:\\n' + pages.join('\\n') } }];"
+      },
+      "id": "13956737-a4ea-5e8e-adcc-ff12077f3b78",
+      "name": "Build Digest Input",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.material }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You prepare a morning intelligence digest for a business owner. From the material, write at most 5 bullets: what changed at competitors, what news matters for the industry, and one suggested action. Short, concrete, no filler. Under 900 characters."
+            }
+          ]
+        }
+      },
+      "id": "95540ab1-79e8-5a31-acae-11761e396f0f",
+      "name": "Summarise Digest",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        960,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list"
+        },
+        "options": {
+          "temperature": 0.2
+        }
+      },
+      "id": "3fc9c076-8c26-500a-a0fc-8f5c2e39518b",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        960,
+        220
+      ],
+      "credentials": {
+        "openAiApi": {
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
+        "text": "=Morning digest\n\n{{ $json.text }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "da78fd1e-af33-5af0-8454-fd57ed2a3a81",
+      "name": "Send Digest",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1220,
+        0
+      ],
+      "credentials": {
+        "telegramApi": {
+          "name": "Telegram bot"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Summarise Digest",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Every Morning": {
+      "main": [
+        [
+          {
+            "node": "Read News RSS",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch Competitor Page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read News RSS": {
+      "main": [
+        [
+          {
+            "node": "Combine Sources",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Competitor Page": {
+      "main": [
+        [
+          {
+            "node": "Combine Sources",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Combine Sources": {
+      "main": [
+        [
+          {
+            "node": "Build Digest Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Digest Input": {
+      "main": [
+        [
+          {
+            "node": "Summarise Digest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summarise Digest": {
+      "main": [
+        [
+          {
+            "node": "Send Digest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": []
+}

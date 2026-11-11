@@ -1,0 +1,388 @@
+{
+  "name": "01 Website Lead - AI Qualification",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "Website lead intake. POST JSON {name, email, company, message} to the webhook. Set credentials (OpenAI, Google Sheets, Telegram), the sheet ID and the Telegram chat ID, then activate.",
+        "width": 520,
+        "height": 200
+      },
+      "id": "795d1842-c26c-54ba-9760-1d4455611c15",
+      "name": "Setup Notes",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lead-intake",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "85b72839-ccc8-52ed-bd40-f9209c008036",
+      "name": "Lead Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "106048c9-cefe-5b65-a732-fa525e4cd070"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Name: {{ $json.body.name }}\nCompany: {{ $json.body.company }}\nEmail: {{ $json.body.email }}\nMessage: {{ $json.body.message }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You qualify inbound website leads for a service business. Score 1-10 for buying intent and fit, set priority (hot/warm/cold), give a one-sentence reason and a suggested next step. Be strict: vague or spam messages score low."
+            }
+          ]
+        },
+        "hasOutputParser": true
+      },
+      "id": "b818e139-be1f-5bce-a687-71f6c3f580de",
+      "name": "Qualify Lead",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        240,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list"
+        },
+        "options": {
+          "temperature": 0.2
+        }
+      },
+      "id": "fbc69dc1-0545-5fb0-894f-a4fb2e3e33bc",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        220
+      ],
+      "credentials": {
+        "openAiApi": {
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "fromJson",
+        "jsonSchemaExample": "{\n  \"score\": 8,\n  \"priority\": \"hot\",\n  \"reason\": \"Clear need and budget signal\",\n  \"next_step\": \"Call within 2 hours\"\n}"
+      },
+      "id": "23d74bb6-32d4-54b5-b52f-3530dfbc74f4",
+      "name": "Lead Schema",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        420,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "36dd52a0-4f86-5b5e-aecb-43ce2c380097",
+              "name": "name",
+              "value": "={{ $('Lead Webhook').item.json.body.name }}",
+              "type": "string"
+            },
+            {
+              "id": "03dffb2a-781c-506b-a13c-5defb03e3514",
+              "name": "email",
+              "value": "={{ $('Lead Webhook').item.json.body.email }}",
+              "type": "string"
+            },
+            {
+              "id": "00840cf8-40eb-5e82-b9ac-bb650458023a",
+              "name": "company",
+              "value": "={{ $('Lead Webhook').item.json.body.company }}",
+              "type": "string"
+            },
+            {
+              "id": "3bcdbf86-b4a8-5df0-83dd-fbc67ad51840",
+              "name": "message",
+              "value": "={{ $('Lead Webhook').item.json.body.message }}",
+              "type": "string"
+            },
+            {
+              "id": "47384b90-979c-5bad-b359-07b0b46d9071",
+              "name": "score",
+              "value": "={{ $json.output.score }}",
+              "type": "string"
+            },
+            {
+              "id": "d9c53aa1-e4e9-535f-95b8-2cab2fe0ad13",
+              "name": "priority",
+              "value": "={{ $json.output.priority }}",
+              "type": "string"
+            },
+            {
+              "id": "5e4879c7-c9f3-567f-b658-855c7acdb6a3",
+              "name": "reason",
+              "value": "={{ $json.output.reason }}",
+              "type": "string"
+            },
+            {
+              "id": "23543bdb-3d8c-52c5-afd8-3e58b35ebfb2",
+              "name": "next_step",
+              "value": "={{ $json.output.next_step }}",
+              "type": "string"
+            },
+            {
+              "id": "899efbd9-1651-503b-9d51-9a5061aacfa5",
+              "name": "received_at",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7e7fa849-8a98-5029-8f06-461fd762eda4",
+      "name": "Build Row",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        480,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "sheet",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Leads",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "name": "={{ $json.name }}",
+            "email": "={{ $json.email }}",
+            "company": "={{ $json.company }}",
+            "message": "={{ $json.message }}",
+            "score": "={{ $json.score }}",
+            "priority": "={{ $json.priority }}",
+            "reason": "={{ $json.reason }}",
+            "next_step": "={{ $json.next_step }}",
+            "received_at": "={{ $json.received_at }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "f29b7f65-13a5-501c-8a97-e694c774fbaa",
+      "name": "Append to Leads Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        720,
+        0
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "329bf24d-98a4-59f8-9d53-c875270ea96d",
+              "leftValue": "={{ $('Build Row').item.json.priority }}",
+              "rightValue": "hot",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "068b2254-405f-5e78-a7fa-fbbb028bb936",
+      "name": "Hot Lead?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        960,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
+        "text": "=New hot lead ({{ $('Build Row').item.json.score }}/10)\n{{ $('Build Row').item.json.name }} - {{ $('Build Row').item.json.company }}\n{{ $('Build Row').item.json.reason }}\nNext: {{ $('Build Row').item.json.next_step }}\n{{ $('Build Row').item.json.email }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "6f9dddd9-abca-5089-b101-4357b6ebe472",
+      "name": "Telegram Alert",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1200,
+        -100
+      ],
+      "credentials": {
+        "telegramApi": {
+          "name": "Telegram bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"status\": \"received\" } }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "cf2534a4-78d6-50f7-9332-4a84f6f0c5df",
+      "name": "Respond OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1440,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Qualify Lead",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lead Schema": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Qualify Lead",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lead Webhook": {
+      "main": [
+        [
+          {
+            "node": "Qualify Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qualify Lead": {
+      "main": [
+        [
+          {
+            "node": "Build Row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Row": {
+      "main": [
+        [
+          {
+            "node": "Append to Leads Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append to Leads Sheet": {
+      "main": [
+        [
+          {
+            "node": "Hot Lead?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hot Lead?": {
+      "main": [
+        [
+          {
+            "node": "Telegram Alert",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond OK",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Alert": {
+      "main": [
+        [
+          {
+            "node": "Respond OK",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": []
+}

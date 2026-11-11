@@ -1,0 +1,559 @@
+{
+  "name": "06 Customer Review Analyzer - Sentiment, Topics, Weekly Summary",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "Branch 1 analyses each new row of the Reviews sheet (columns: review, author, date). Branch 2 sends a weekly summary every Monday from the Analysis sheet. Set sheet IDs, credentials and chat ID.",
+        "width": 520,
+        "height": 200
+      },
+      "id": "59f9f476-a701-5e98-be6f-38313d7aa074",
+      "name": "Setup Notes",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Reviews",
+          "mode": "name"
+        },
+        "event": "rowAdded",
+        "options": {}
+      },
+      "id": "a1de7939-63a9-56d0-94e4-7566a2056622",
+      "name": "New Review Row",
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.review }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You analyse customer reviews. Return sentiment (positive/neutral/negative), the main topic (one of: service, price, quality, delivery, staff, other), urgency (low/high; high only if the customer is upset and at risk of leaving) and a one-line summary in English."
+            }
+          ]
+        },
+        "hasOutputParser": true
+      },
+      "id": "68756bcd-6db4-594f-9528-9d1c43cb2242",
+      "name": "Analyse Review",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        240,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list"
+        },
+        "options": {
+          "temperature": 0.2
+        }
+      },
+      "id": "a3df2339-24b3-5e24-8523-a4efc8b49502",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        220
+      ],
+      "credentials": {
+        "openAiApi": {
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "fromJson",
+        "jsonSchemaExample": "{\n  \"sentiment\": \"negative\",\n  \"topic\": \"delivery\",\n  \"urgency\": \"high\",\n  \"summary\": \"Order arrived two days late\"\n}"
+      },
+      "id": "ef579f7b-d156-5086-8be3-225b5172e001",
+      "name": "Review Schema",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        420,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d650636f-110d-5cb1-add2-55a5a6d08b3a",
+              "name": "review",
+              "value": "={{ $('New Review Row').item.json.review }}",
+              "type": "string"
+            },
+            {
+              "id": "b0ac68f9-b8a0-5569-acf7-2ca1efb749c1",
+              "name": "author",
+              "value": "={{ $('New Review Row').item.json.author }}",
+              "type": "string"
+            },
+            {
+              "id": "bed233ab-f5cd-532c-9c32-be47cbfcaebd",
+              "name": "sentiment",
+              "value": "={{ $json.output.sentiment }}",
+              "type": "string"
+            },
+            {
+              "id": "a431d259-1c40-5e1f-ba31-a8022e333e81",
+              "name": "topic",
+              "value": "={{ $json.output.topic }}",
+              "type": "string"
+            },
+            {
+              "id": "fdf7d5d9-c5c6-53ca-8348-31caa573fd67",
+              "name": "urgency",
+              "value": "={{ $json.output.urgency }}",
+              "type": "string"
+            },
+            {
+              "id": "bc281f2e-88f9-5cc4-b55d-b4fc95f8fa9a",
+              "name": "summary",
+              "value": "={{ $json.output.summary }}",
+              "type": "string"
+            },
+            {
+              "id": "aa7a93a9-ccf9-5906-afa8-024098eae269",
+              "name": "analysed_at",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a43ab250-ac62-5d63-84c8-0bccc37e255d",
+      "name": "Build Analysis Row",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        500,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "sheet",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Analysis",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "review": "={{ $json.review }}",
+            "author": "={{ $json.author }}",
+            "sentiment": "={{ $json.sentiment }}",
+            "topic": "={{ $json.topic }}",
+            "urgency": "={{ $json.urgency }}",
+            "summary": "={{ $json.summary }}",
+            "analysed_at": "={{ $json.analysed_at }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "4d3fbe69-bbf8-5e64-bebf-f33a7e3e187e",
+      "name": "Save Analysis",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        740,
+        0
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "fa43bd3a-ed1f-53f5-89d9-4b47520fb88d",
+              "leftValue": "={{ $('Build Analysis Row').item.json.sentiment }}",
+              "rightValue": "negative",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "ab7d748e-0bcf-54df-a57d-26a72c33500c",
+              "leftValue": "={{ $('Build Analysis Row').item.json.urgency }}",
+              "rightValue": "high",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "572e7a37-9ad8-5de0-a726-14c7da25a1aa",
+      "name": "Urgent Negative?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        980,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
+        "text": "=Unhappy customer\n{{ $('Build Analysis Row').item.json.author }}: {{ $('Build Analysis Row').item.json.summary }}\nTopic: {{ $('Build Analysis Row').item.json.topic }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "478069b6-4f96-57da-8dad-3ca70fbe53fd",
+      "name": "Telegram Urgent Alert",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1220,
+        0
+      ],
+      "credentials": {
+        "telegramApi": {
+          "name": "Telegram bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "weeksInterval": 1,
+              "triggerAtDay": [
+                1
+              ],
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "id": "4a27434d-74ec-522e-a6b2-951e650ac161",
+      "name": "Every Monday",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "sheet",
+        "operation": "read",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Analysis",
+          "mode": "name"
+        },
+        "options": {}
+      },
+      "id": "8f12214c-34f0-5b51-9841-30c1704dcbef",
+      "name": "Read Analysis",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        240,
+        400
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "const since = Date.now() - 7 * 24 * 3600 * 1000;\nconst rows = $input.all().map(i => i.json).filter(r => new Date(r.analysed_at).getTime() >= since);\nconst count = (key) => rows.reduce((a, r) => { a[r[key]] = (a[r[key]] || 0) + 1; return a; }, {});\nreturn [{ json: { total: rows.length, sentiment: count('sentiment'), topics: count('topic'), negatives: rows.filter(r => r.sentiment === 'negative').slice(0, 8).map(r => r.summary) } }];"
+      },
+      "id": "878e2f9e-d9c1-5365-9c9e-acf2e89ef3fa",
+      "name": "Aggregate Last 7 Days",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ JSON.stringify($json) }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You write a weekly customer-feedback summary for a business owner from aggregated stats. Give: overall mood in one line, top 2 recurring complaints, top 2 things customers like, and 2 concrete actions for next week. Max 900 characters, plain text."
+            }
+          ]
+        }
+      },
+      "id": "55676a49-e8d1-567b-a727-28dffb109ace",
+      "name": "Write Weekly Summary",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        720,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list"
+        },
+        "options": {
+          "temperature": 0.2
+        }
+      },
+      "id": "c52a68b7-13f0-586f-8399-3e4421c46929",
+      "name": "OpenAI Chat Model (Weekly)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        720,
+        620
+      ],
+      "credentials": {
+        "openAiApi": {
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
+        "text": "=Weekly review summary\n\n{{ $json.text }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "b5f3a961-95e8-5187-9f0d-e5da0ab02c37",
+      "name": "Send Weekly Summary",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        980,
+        400
+      ],
+      "credentials": {
+        "telegramApi": {
+          "name": "Telegram bot"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Analyse Review",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Review Schema": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Analyse Review",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "New Review Row": {
+      "main": [
+        [
+          {
+            "node": "Analyse Review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyse Review": {
+      "main": [
+        [
+          {
+            "node": "Build Analysis Row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Analysis Row": {
+      "main": [
+        [
+          {
+            "node": "Save Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Analysis": {
+      "main": [
+        [
+          {
+            "node": "Urgent Negative?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Urgent Negative?": {
+      "main": [
+        [
+          {
+            "node": "Telegram Urgent Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model (Weekly)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Write Weekly Summary",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Every Monday": {
+      "main": [
+        [
+          {
+            "node": "Read Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Analysis": {
+      "main": [
+        [
+          {
+            "node": "Aggregate Last 7 Days",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate Last 7 Days": {
+      "main": [
+        [
+          {
+            "node": "Write Weekly Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write Weekly Summary": {
+      "main": [
+        [
+          {
+            "node": "Send Weekly Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": []
+}

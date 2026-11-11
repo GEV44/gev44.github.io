@@ -1,0 +1,336 @@
+{
+  "name": "04 Booking Request - Availability Check + Confirmation",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "POST JSON {name, email, slot, service} to the webhook. The 'Availability' sheet has columns slot, status (free/booked). Confirms by e-mail to the customer and Telegram to the owner.",
+        "width": 520,
+        "height": 200
+      },
+      "id": "97f854ba-b3b7-526a-ba53-8bc517b2f18b",
+      "name": "Setup Notes",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "booking-request",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "b7347193-8f46-5903-8599-573f8740ff0c",
+      "name": "Booking Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "f1455e13-4f4a-5b3d-b557-ee315a00bbbd"
+    },
+    {
+      "parameters": {
+        "resource": "sheet",
+        "operation": "read",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Availability",
+          "mode": "name"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "slot",
+              "lookupValue": "={{ $json.body.slot }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "aaa3de3a-109c-5ff7-89f3-b856bb577d3b",
+      "name": "Read Availability",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        240,
+        0
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "name": "Google Sheets account"
+        }
+      },
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "const req = $('Booking Webhook').first().json.body;\nconst rows = $input.all().map(i => i.json).filter(r => r.slot);\nconst row = rows.find(r => String(r.status).toLowerCase() === 'free');\nconst free = rows.filter(r => String(r.status).toLowerCase() === 'free').map(r => r.slot);\nreturn [{ json: { ...req, available: Boolean(row), alternatives: free.slice(0, 3) } }];"
+      },
+      "id": "39ceae08-0b6d-5cba-8bb6-6c820808ad2b",
+      "name": "Check Slot",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "5c797675-0108-51bd-97ef-6cb97b509ab5",
+              "leftValue": "={{ $json.available }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e9dc632d-825c-564c-a52f-dc5ccfd63dd1",
+      "name": "Slot Free?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "sheet",
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Availability",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "slot": "={{ $json.slot }}",
+            "status": "booked",
+            "booked_by": "={{ $json.name }}"
+          },
+          "matchingColumns": [
+            "slot"
+          ],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "b8d0ec34-59f4-54f8-9143-8e200b8f76dc",
+      "name": "Mark Slot Booked",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        960,
+        -120
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "send",
+        "sendTo": "={{ $('Check Slot').item.json.email }}",
+        "subject": "=Your booking is confirmed: {{ $('Check Slot').item.json.slot }}",
+        "message": "=Hello {{ $('Check Slot').item.json.name }},\n\nYour booking for {{ $('Check Slot').item.json.service }} on {{ $('Check Slot').item.json.slot }} is confirmed. Reply to this e-mail if you need to change it.",
+        "options": {}
+      },
+      "id": "3c3ba6c8-b176-5466-b6af-7902cac61523",
+      "name": "E-mail Customer",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1200,
+        -120
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
+        "text": "=New booking: {{ $('Check Slot').item.json.name }} - {{ $('Check Slot').item.json.service }} - {{ $('Check Slot').item.json.slot }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "9b79d2ac-11e1-5c51-a5fb-2efe9db5b10d",
+      "name": "Telegram Owner Alert",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1440,
+        -120
+      ],
+      "credentials": {
+        "telegramApi": {
+          "name": "Telegram bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"status\": \"confirmed\", \"slot\": $('Check Slot').item.json.slot } }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "4a013209-d312-5085-8b45-d98926a38478",
+      "name": "Respond Confirmed",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1680,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"status\": \"unavailable\", \"alternatives\": $json.alternatives } }}",
+        "options": {
+          "responseCode": 409
+        }
+      },
+      "id": "30678dbc-225c-5435-9afb-263079e4f7d2",
+      "name": "Respond Slot Taken",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        960,
+        140
+      ]
+    }
+  ],
+  "connections": {
+    "Booking Webhook": {
+      "main": [
+        [
+          {
+            "node": "Read Availability",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Availability": {
+      "main": [
+        [
+          {
+            "node": "Check Slot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Slot": {
+      "main": [
+        [
+          {
+            "node": "Slot Free?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slot Free?": {
+      "main": [
+        [
+          {
+            "node": "Mark Slot Booked",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond Slot Taken",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark Slot Booked": {
+      "main": [
+        [
+          {
+            "node": "E-mail Customer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "E-mail Customer": {
+      "main": [
+        [
+          {
+            "node": "Telegram Owner Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Owner Alert": {
+      "main": [
+        [
+          {
+            "node": "Respond Confirmed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": []
+}
