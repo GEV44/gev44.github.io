@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIrealty — новые клиенты для агентств недвижимости</title>
+<meta name="description" content="AIrealty каждый день приводит агентам новых клиентов, которые прямо сейчас ищут жильё, и сразу подбирает варианты от собственников. Подключение за один день.">
+<meta property="og:title" content="AIrealty — новые клиенты для агентств недвижимости">
+<meta property="og:description" content="Клиенты, которые ищут жильё прямо сейчас, у вашего агента раньше конкурентов. Подключение $300, дальше $150 в месяц.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gev44.github.io/airealty/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f1b2d'/%3E%3Cpath d='M8 16.5 16 9l8 7.5V24h-5.5v-5h-5v5H8z' fill='none' stroke='%23d4b35f' stroke-width='2' stroke-linejoin='round'/%3E%3Ccircle cx='23.5' cy='9' r='2.2' fill='%233fb6a8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+Armenian:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --navy:#0f1b2d; --ink:#132033; --text:#2b3645; --muted:#667385; --line:#e4e1da;
+  --paper:#f7f5f1; --card:#ffffff; --gold:#c9a24a; --gold-soft:#f5ecd6; --teal:#2f9e91; --teal-soft:#e2f3f0;
+  --head:"Inter Tight","Noto Sans Armenian",system-ui,sans-serif; --body:"Inter","Noto Sans Armenian",system-ui,sans-serif;
+  --r:16px; --shadow:0 1px 2px rgba(15,27,45,.06),0 12px 32px -12px rgba(15,27,45,.18);
+}
+@media (prefers-color-scheme:dark){:root{--ink:#eef2f7;--text:#d3dae4;--muted:#93a0b2;--line:#26324a;--paper:#0d1522;--card:#131e30;--gold-soft:#2c2616;--teal-soft:#122b2a;--shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px -12px rgba(0,0,0,.6)}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--text);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--head);color:var(--ink);line-height:1.12;margin:0;letter-spacing:-.02em;text-wrap:balance}
+h1{font-size:clamp(32px,5.2vw,58px);font-weight:700}
+h2{font-size:clamp(26px,3.4vw,40px);font-weight:700}
+h3{font-size:18px;font-weight:600;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:600 12px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.kicker::before{content:"";width:18px;height:2px;background:var(--gold);border-radius:2px}
+.muted{color:var(--muted)}
+section{padding:96px 0}
+.sec-head{max-width:720px}
+.sec-head p{margin-top:14px;font-size:18px;color:var(--muted)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:8px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font:700 20px var(--head);color:var(--ink);text-decoration:none;letter-spacing:-.02em}
+.logo b{color:var(--gold);font-weight:700}
+nav.links{display:flex;gap:26px;font-size:15px}
+nav.links a{text-decoration:none;color:var(--muted)}
+nav.links a:hover{color:var(--ink)}
+.right{display:flex;align-items:center;gap:10px}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--card)}
+.lang button{border:0;background:transparent;color:var(--muted);font:600 12px var(--body);padding:6px 11px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 22px;border-radius:12px;font:600 15px var(--body);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-wa{background:#1f9d55;color:#fff;box-shadow:0 8px 20px -10px rgba(31,157,85,.7)}
+.btn-tg{background:var(--card);color:var(--ink);border-color:var(--line)}
+.btn-gold{background:var(--gold);color:#1a1405}
+.btn-sm{padding:10px 16px;font-size:14px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:72px 0 88px}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:720px;height:720px;background:radial-gradient(closest-side,color-mix(in srgb,var(--gold) 18%,transparent),transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 70% 30%,#000 0%,transparent 60%);opacity:.5;pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero-grid>*{min-width:0}
+.lead{font-size:19px;margin-top:22px;color:var(--text);max-width:560px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.stats{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px;padding-top:28px;border-top:1px solid var(--line)}
+.stat b{display:block;font:700 28px/1 var(--head);color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stat span{display:block;font-size:13px;color:var(--muted);margin-top:6px;max-width:170px}
+
+/* radar card */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}
+.radar{padding:18px}
+.radar-top{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);margin-bottom:14px}
+.live{display:inline-flex;align-items:center;gap:8px;color:var(--teal);font-weight:600}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--teal);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--teal) 55%,transparent)}100%{box-shadow:0 0 0 10px transparent}}
+.feed{display:grid;gap:10px}
+.req{border:1px solid var(--line);border-radius:14px;padding:13px 14px;display:grid;gap:7px;background:var(--paper)}
+.req .meta{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.req .q{font-size:14.5px;color:var(--ink)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font:600 11.5px var(--body);padding:4px 9px;border-radius:999px;background:var(--teal-soft);color:var(--teal)}
+.tag.g{background:var(--gold-soft);color:#9a7a2c}
+@media (prefers-color-scheme:dark){.tag.g{color:var(--gold)}}
+.req.new{animation:in .5s ease-out}
+@keyframes in{from{opacity:.2;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+/* results band */
+.band-dark{background:var(--navy);color:#cfd8e6}
+.band-dark h2{color:#fff}
+.band-dark .kicker{color:var(--gold)}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;border:1px solid rgba(255,255,255,.1);border-radius:var(--r);overflow:hidden}
+.num{padding:28px 24px;border-right:1px solid rgba(255,255,255,.1)}
+.num:last-child{border-right:0}
+.num b{display:block;font:700 clamp(30px,3.6vw,44px)/1 var(--head);color:#fff;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.num span{display:block;margin-top:10px;font-size:14px;color:#9fb0c6}
+.note{margin-top:16px;font-size:13px;color:#8496ad}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:10px;align-content:start}
+.ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--gold-soft);color:#9a7a2c}
+@media (prefers-color-scheme:dark){.ico{color:var(--gold)}}
+.ico svg{width:22px;height:22px}
+.step p{font-size:15px;color:var(--muted)}
+
+/* inside */
+.tabs{display:inline-flex;flex-wrap:wrap;gap:4px;margin-top:32px;padding:4px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.tabs button{border:0;background:transparent;color:var(--muted);border-radius:9px;padding:10px 16px;font:600 14px var(--body);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--navy);color:#fff}
+.screen{margin-top:16px;overflow:hidden}
+.screen-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 18px;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+.dots{display:flex;gap:6px}.dots i{width:10px;height:10px;border-radius:50%;background:var(--line);display:block}
+#panel{padding:18px;display:grid;gap:10px;min-height:280px;align-content:start}
+.lead-row{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:var(--paper)}
+.lead-row>*{min-width:0}
+.lead-row .t{font-weight:600;color:var(--ink)}
+.lead-row .m{font-size:13px;color:var(--muted);margin-top:3px}
+.take{border:0;border-radius:10px;padding:10px 16px;font:600 14px var(--body);background:var(--navy);color:#fff;cursor:pointer;white-space:nowrap}
+.take[disabled]{background:var(--teal-soft);color:var(--teal);cursor:default}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:var(--paper)}
+.tile b{display:block;font:700 28px/1.1 var(--head);color:var(--ink);font-variant-numeric:tabular-nums}
+.tile span{font-size:13px;color:var(--muted)}
+table.ag{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+table.ag th,table.ag td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line)}
+table.ag th{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+table.ag .n{text-align:right;font-variant-numeric:tabular-nums}
+.barrow{display:grid;grid-template-columns:110px 1fr auto;gap:12px;align-items:center;font-size:14px}
+.barrow>*{min-width:0}
+.track{height:10px;border-radius:6px;background:var(--teal-soft);overflow:hidden}
+.fill{height:100%;background:linear-gradient(90deg,var(--teal),color-mix(in srgb,var(--teal) 60%,var(--gold)));border-radius:6px}
+.v{font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink)}
+.demo-note{padding:0 18px 16px;font-size:12.5px;color:var(--muted)}
+
+/* agent card */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.split>*{min-width:0}
+ul.ticks{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px}
+ul.ticks li{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start}
+ul.ticks li::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--teal-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232f9e91' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/14px no-repeat;margin-top:2px}
+.cardmock{padding:22px;max-width:460px;justify-self:end;width:100%}
+.cm-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.cm-head b{font:600 16px var(--head);color:var(--ink)}
+.badge{font:600 12px var(--body);padding:4px 10px;border-radius:999px;background:var(--gold-soft);color:#9a7a2c}
+.cm-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
+.cm-row span:last-child{font-weight:600;color:var(--ink);text-align:right}
+.cm-actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.cm-actions span{font:600 13px var(--body);padding:8px 12px;border-radius:9px;border:1px solid var(--line)}
+.cm-actions span:first-child{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* price */
+.price{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.price>*{min-width:0}
+.ticket{background:var(--navy);color:#cfd8e6;border-radius:22px;padding:32px;position:relative;overflow:hidden}
+.ticket::after{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--gold) 35%,transparent),transparent)}
+.amt{display:flex;align-items:baseline;gap:10px;font:700 clamp(40px,5vw,56px)/1 var(--head);color:#fff;letter-spacing:-.03em}
+.amt small{font:500 16px var(--body);color:#9fb0c6;letter-spacing:0}
+.ticket hr{border:0;border-top:1px solid rgba(255,255,255,.12);margin:22px 0}
+.ticket ul{margin:0;padding-left:18px;display:grid;gap:9px;font-size:15px}
+.ticket .btn{margin-top:26px;width:100%}
+
+/* faq */
+.faq{display:grid;gap:10px;margin-top:36px;max-width:820px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.faq summary{cursor:pointer;font:600 16px var(--head);color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;line-height:1;color:var(--gold)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin-top:10px;color:var(--muted)}
+
+/* final cta */
+.final{background:linear-gradient(135deg,var(--navy),#1b3050);color:#cfd8e6;border-radius:28px;padding:56px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.final h2{color:#fff}
+.final p{margin-top:14px;font-size:17px}
+.final .contacts{display:grid;gap:12px}
+.final .btn-tg{background:transparent;color:#fff;border-color:rgba(255,255,255,.25)}
+.phone{font:600 15px var(--body);color:#fff;text-decoration:none;opacity:.85}
+footer{padding:48px 0 56px;color:var(--muted);font-size:14px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+.me{display:flex;align-items:center;gap:14px}
+.me img{width:48px;height:48px;border-radius:50%;border:1px solid var(--line)}
+.me b{display:block;color:var(--ink);font-family:var(--head)}
+.foot nav{display:flex;gap:18px;flex-wrap:wrap}
+.foot nav a{color:var(--muted);text-decoration:none}
+.foot nav a:hover{color:var(--ink)}
+
+@media (max-width:920px){
+  nav.links{display:none}
+  .hero-grid,.split,.price,.final{grid-template-columns:1fr}
+  .cardmock{justify-self:start}
+  .nums{grid-template-columns:repeat(2,1fr)}
+  .num:nth-child(2){border-right:0}.num:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.1)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .final{padding:40px 28px}
+}
+@media (max-width:560px){
+  section{padding:64px 0}
+  .hero{padding:40px 0 56px}
+  .right .btn-sm{display:none}
+  .lead{font-size:17px}
+  .ctas .btn{width:100%}
+  .stats{gap:20px}
+  .steps,.tiles{grid-template-columns:1fr}
+  .nums{grid-template-columns:1fr}.num{border-right:0;border-bottom:1px solid rgba(255,255,255,.1)}.num:last-child{border-bottom:0}
+  .lead-row{grid-template-columns:1fr}.take{width:100%}
+  .barrow{grid-template-columns:80px 1fr auto;font-size:13px}
+  .feed .req:nth-child(n+3){display:none}
+  .ticket{padding:26px}
+  .final{padding:32px 22px;border-radius:22px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="AIrealty">
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0f1b2d"/><path d="M8 16.5 16 9l8 7.5V24h-5.5v-5h-5v5H8z" fill="none" stroke="#d4b35f" stroke-width="2" stroke-linejoin="round"/><circle cx="23.5" cy="9" r="2.2" fill="#3fb6a8"/></svg>
+      <span>AI<b>realty</b></span>
+    </a>
+    <nav class="links" aria-label="Разделы">
+      <a href="#how" data-i18n="nav1">Как работает</a>
+      <a href="#inside" data-i18n="nav2">Изнутри</a>
+      <a href="#price" data-i18n="nav3">Стоимость</a>
+      <a href="#faq" data-i18n="nav4">Вопросы</a>
+    </nav>
+    <div class="right">
+      <div class="lang" role="group" aria-label="Язык">
+        <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-lang="hy" aria-pressed="false">ՀՅ</button>
+      </div>
+      <a class="btn btn-gold btn-sm" href="#contact" data-i18n="hdr_cta">Показать систему</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker" data-i18n="kicker">Для агентств недвижимости</span>
+      <h1 style="margin-top:18px" data-i18n="h1">Новые клиенты каждый день, у вашего агента раньше конкурентов</h1>
+      <p class="lead" data-i18n="lead">AIrealty круглосуточно находит людей, которые прямо сейчас ищут квартиру или дом, понимает их бюджет и район, сразу подбирает варианты от собственников и отдаёт клиента вашему агенту первым.</p>
+      <div class="ctas">
+        <a class="btn btn-wa" href="https://wa.me/37444772541" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg><span data-i18n="cta_wa">Написать в WhatsApp</span></a>
+        <a class="btn btn-tg" href="https://t.me/hovhannisyan77" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2 1.8 11.7c-1-.3-1-1 .2-1.5l18.4-7.1c.9-.3 1.6.2 1.5 1.2z"/></svg><span data-i18n="cta_tg">Telegram</span></a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>1 103</b><span data-i18n="st1">человека искали жильё за неделю в Ереване</span></div>
+        <div class="stat"><b>&lt; 1 c</b><span data-i18n="st2">от запроса до карточки у агента</span></div>
+        <div class="stat"><b>HY · RU · EN</b><span data-i18n="st3">понимает три языка</span></div>
+      </div>
+    </div>
+    <div class="panel radar" aria-label="Пример ленты запросов">
+      <div class="radar-top"><span class="live"><i></i><span data-i18n="live">Новые запросы · сейчас</span></span><span data-i18n="sample">пример</span></div>
+      <div class="feed" id="feed"></div>
+    </div>
+  </div>
+</section>
+
+<section class="band-dark">
+  <div class="wrap">
+    <span class="kicker" data-i18n="r_k">Результат</span>
+    <h2 style="margin-top:14px" data-i18n="r_h">Одна неделя работы системы в Ереване</h2>
+    <div class="nums">
+      <div class="num"><b>1 103</b><span data-i18n="n1">человека, которые искали жильё</span></div>
+      <div class="num"><b>19 024</b><span data-i18n="n2">предложения от собственников</span></div>
+      <div class="num"><b>24/7</b><span data-i18n="n3">работает без выходных</span></div>
+      <div class="num"><b>1 день</b><span data-i18n="n4">на подключение агентства</span></div>
+    </div>
+    <p class="note" data-i18n="r_note">Неделя по 8 ноября 2026, рабочая установка в Ереване.</p>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-i18n="h_k">Как это работает</span>
+      <h2 style="margin-top:14px" data-i18n="h_h">Что меняется в работе агентства</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M17 8v6M14 11h6"/></svg></div><h3 data-i18n="s1h">Клиенты приходят сами</h3><p data-i18n="s1p">Каждый день агент получает свежих людей, которые ищут квартиру или дом прямо сейчас.</p></div>
+      <div class="step"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg></div><h3 data-i18n="s2h">Запрос уже разобран</h3><p data-i18n="s2p">Бюджет, район, комнаты, сроки и пожелания понятны сразу. Переспрашивать не нужно.</p></div>
+      <div class="step"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></div><h3 data-i18n="s3h">Варианты от собственников</h3><p data-i18n="s3p">Подходящие квартиры с фото, ценой и сравнением с рынком района.</p></div>
+      <div class="step"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><h3 data-i18n="s4h">Вы первые</h3><p data-i18n="s4p">Агент пишет клиенту раньше конкурентов, а директор видит работу каждого агента.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="inside" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-i18n="in_k">Изнутри</span>
+      <h2 style="margin-top:14px" data-i18n="in_h">Так система выглядит у вас в агентстве</h2>
+      <p data-i18n="in_p">Переключайте экраны и нажмите «Взять». Это макет на примерах, без реальных клиентов и контактов.</p>
+    </div>
+    <div class="tabs" role="tablist">
+      <button type="button" role="tab" aria-selected="true" data-tab="agent" data-i18n="tab1">Экран агента</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="dir" data-i18n="tab2">Панель директора</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="mkt" data-i18n="tab3">Цены по районам</button>
+    </div>
+    <div class="panel screen">
+      <div class="screen-bar"><span class="dots"><i></i><i></i><i></i></span><span id="screen-title">AIrealty</span><span class="live"><i></i><span data-i18n="online">онлайн</span></span></div>
+      <div id="panel"></div>
+      <div class="demo-note" data-i18n="demo_note">Пример интерфейса. Цифры и имена условные.</div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap split">
+    <div>
+      <span class="kicker" data-i18n="c_k">Что получает агент</span>
+      <h2 style="margin-top:14px" data-i18n="c_h">Готовая карточка вместо сотни сообщений</h2>
+      <ul class="ticks">
+        <li data-i18n="c1">Кто ищет и что именно ему нужно</li>
+        <li data-i18n="c2">Подходящие квартиры от собственников с фото</li>
+        <li data-i18n="c3">Рыночная цена района и насколько бюджет клиента от неё отличается</li>
+        <li data-i18n="c4">Кнопки «Взял», «Написал», «Не подходит», чтобы директор видел работу каждого агента</li>
+      </ul>
+    </div>
+    <div class="panel cardmock" aria-label="Пример карточки клиента">
+      <div class="cm-head"><b data-i18n="cm_t">Новый клиент</b><span class="badge" data-i18n="cm_b">аренда</span></div>
+      <div class="cm-row"><span data-i18n="cm1">Запрос</span><span data-i18n="cm1v">2 комнаты, Арабкир</span></div>
+      <div class="cm-row"><span data-i18n="cm2">Бюджет</span><span>≤ 300 000 ֏</span></div>
+      <div class="cm-row"><span data-i18n="cm3">Заезд</span><span data-i18n="cm3v">с 1 декабря, с котом</span></div>
+      <div class="cm-row"><span data-i18n="cm4">Рынок района</span><span>320 000 ֏ · −6%</span></div>
+      <div class="cm-row"><span data-i18n="cm5">От собственников</span><span data-i18n="cm5v">3 варианта</span></div>
+      <div class="cm-actions"><span data-i18n="a_take">Взял</span><span data-i18n="a_flats">Квартиры</span><span data-i18n="a_no">Не подходит</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="price" style="padding-top:0">
+  <div class="wrap price">
+    <div>
+      <span class="kicker" data-i18n="p_k">Стоимость</span>
+      <h2 style="margin-top:14px" data-i18n="p_h">Дешевле одного упущенного клиента в месяц</h2>
+      <p style="margin-top:16px;font-size:18px" class="muted" data-i18n="p_p">Комиссия с одной сделки аренды обычно больше месячной оплаты. Подключаю систему под ваше агентство: ваши районы и ваши агенты.</p>
+      <ul class="ticks">
+        <li data-i18n="p1">Настройка под агентство и обучение агентов за один день</li>
+        <li data-i18n="p2">Личный экран для каждого агента и панель для директора</li>
+        <li data-i18n="p3">Индекс цен по районам и проверка справедливой цены</li>
+        <li data-i18n="p4">Поддержка и доработки по вашим запросам</li>
+      </ul>
+    </div>
+    <div class="ticket">
+      <div class="amt">$300 <small data-i18n="once">подключение</small></div>
+      <div class="amt" style="margin-top:12px">$150 <small data-i18n="month">в месяц</small></div>
+      <hr>
+      <ul>
+        <li data-i18n="t1">Без долгого договора, отключить можно в любой месяц</li>
+        <li data-i18n="t2">Первые клиенты в карточках в день запуска</li>
+      </ul>
+      <a class="btn btn-gold" href="#contact" data-i18n="t_cta">Назначить показ на 15 минут</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-i18n="f_k">Вопросы</span>
+      <h2 style="margin-top:14px" data-i18n="f_h">Перед подключением обычно спрашивают</h2>
+    </div>
+    <div class="faq">
+      <details><summary data-i18n="q1">Можно посмотреть систему до оплаты?</summary><p data-i18n="a1">Да. На 15-минутном звонке покажу её вживую на ваших районах и на сегодняшних запросах. Доступ для агентов открываю после подключения.</p></details>
+      <details><summary data-i18n="q2">Откуда берутся клиенты?</summary><p data-i18n="a2">Это реальные люди, которые прямо сейчас ищут жильё. Как система их находит, остаётся нашей технологией. Вы получаете готового клиента с запросом и вариантами.</p></details>
+      <details><summary data-i18n="q3">Работает в моём городе?</summary><p data-i18n="a3">Настраиваю под ваш город и районы. В Ереване система работает каждый день с октября 2026.</p></details>
+      <details><summary data-i18n="q4">Что нужно от агентства?</summary><p data-i18n="a4">Список агентов и районов, с которыми вы работаете. Всё остальное настраиваю я за один день.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="final">
+      <div>
+        <h2 data-i18n="fc_h">Покажу систему за 15 минут на ваших районах</h2>
+        <p data-i18n="fc_p">Напишите удобное время, и я покажу, сколько клиентов AIrealty находит для вашего агентства уже сегодня.</p>
+      </div>
+      <div class="contacts">
+        <a class="btn btn-wa" href="https://wa.me/37444772541" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg><span data-i18n="cta_wa">Написать в WhatsApp</span></a>
+        <a class="btn btn-tg" href="https://t.me/hovhannisyan77" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2 1.8 11.7c-1-.3-1-1 .2-1.5l18.4-7.1c.9-.3 1.6.2 1.5 1.2z"/></svg><span>Telegram @hovhannisyan77</span></a>
+        <a class="phone" href="tel:+37444772541">+374 44 772541</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="me">
+      <img src="https://github.com/GEV44.png?size=96" alt="Геворг Ованнисян" width="48" height="48" loading="lazy">
+      <div><b data-i18n="me_n">Геворг Ованнисян</b><span data-i18n="me_r">ИИ-инженер, Ереван. Сам строю и поддерживаю систему.</span></div>
+    </div>
+    <nav aria-label="Контакты">
+      <a href="https://wa.me/37444772541" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://t.me/hovhannisyan77" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://github.com/GEV44" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://gev44.github.io" target="_blank" rel="noopener">gev44.github.io</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+const HY={nav1:"Ինչպես է աշխատում",nav2:"Ներսից",nav3:"Արժեք",nav4:"Հարցեր",hdr_cta:"Ցույց տալ համակարգը",kicker:"Անշարժ գույքի գործակալությունների համար",
+h1:"Նոր հաճախորդներ ամեն օր՝ ձեր գործակալի մոտ մրցակիցներից շուտ",
+lead:"AIrealty-ն շուրջօրյա գտնում է մարդկանց, ովքեր հենց հիմա բնակարան կամ տուն են փնտրում, հասկանում է նրանց բյուջեն և թաղամասը, անմիջապես առաջարկում է սեփականատերերի տարբերակներ և հաճախորդին առաջինը տալիս ձեր գործակալին։",
+cta_wa:"Գրել WhatsApp-ով",cta_tg:"Telegram",st1:"մարդ փնտրել է բնակարան մեկ շաբաթում Երևանում",st2:"հարցումից մինչև գործակալի քարտ",st3:"հասկանում է երեք լեզու",live:"Նոր հարցումներ · հիմա",sample:"օրինակ",
+r_k:"Արդյունք",r_h:"Համակարգի մեկ շաբաթը Երևանում",n1:"մարդ, ով փնտրում էր բնակարան",n2:"առաջարկ սեփականատերերից",n3:"աշխատում է առանց հանգստյան օրերի",n4:"գործակալության միացման համար",r_note:"Շաբաթ՝ մինչև 2026-ի նոյեմբերի 8, աշխատող տեղադրում Երևանում։",
+h_k:"Ինչպես է աշխատում",h_h:"Ինչ է փոխվում գործակալության աշխատանքում",s1h:"Հաճախորդներն իրենք են գալիս",s1p:"Ամեն օր գործակալը ստանում է թարմ մարդկանց, ովքեր հենց հիմա բնակարան կամ տուն են փնտրում։",s2h:"Հարցումն արդեն պարզ է",s2p:"Բյուջեն, թաղամասը, սենյակները, ժամկետն ու ցանկությունները միանգամից պարզ են։ Կրկին հարցնել պետք չէ։",s3h:"Տարբերակներ սեփականատերերից",s3p:"Համապատասխան բնակարաններ՝ լուսանկարով, գնով և թաղամասի շուկայի համեմատությամբ։",s4h:"Դուք առաջինն եք",s4p:"Գործակալը գրում է հաճախորդին մրցակիցներից շուտ, իսկ տնօրենը տեսնում է յուրաքանչյուր գործակալի աշխատանքը։",
+in_k:"Ներսից",in_h:"Այսպես է համակարգը երևում ձեր գործակալությունում",in_p:"Փոխեք էկրանները և սեղմեք «Վերցնել»։ Սա օրինակներով մակետ է՝ առանց իրական հաճախորդների և կոնտակտների։",tab1:"Գործակալի էկրան",tab2:"Տնօրենի վահանակ",tab3:"Գներն ըստ թաղամասերի",online:"առցանց",demo_note:"Ինտերֆեյսի օրինակ։ Թվերն ու անունները պայմանական են։",
+c_k:"Ինչ է ստանում գործակալը",c_h:"Պատրաստ քարտ՝ հարյուր հաղորդագրության փոխարեն",c1:"Ով է փնտրում և ինչ է հենց պետք",c2:"Համապատասխան բնակարաններ սեփականատերերից՝ լուսանկարով",c3:"Թաղամասի շուկայական գինը և որքան է բյուջեն տարբերվում",c4:"Կոճակներ՝ «Վերցրի», «Գրեցի», «Չի համապատասխանում», որ տնօրենը տեսնի յուրաքանչյուր գործակալի աշխատանքը",
+cm_t:"Նոր հաճախորդ",cm_b:"վարձ",cm1:"Հարցում",cm1v:"2 սենյակ, Արաբկիր",cm2:"Բյուջե",cm3:"Տեղափոխվում է",cm3v:"դեկտեմբերի 1-ից, կատվով",cm4:"Թաղամասի շուկա",cm5:"Սեփականատերերից",cm5v:"3 տարբերակ",a_take:"Վերցրի",a_flats:"Բնակարաններ",a_no:"Չի համապատասխանում",
+p_k:"Արժեք",p_h:"Ավելի էժան, քան ամսական մեկ կորցրած հաճախորդ",p_p:"Վարձակալության մեկ գործարքի միջնորդավճարը սովորաբար ավելին է, քան ամսական վճարը։ Համակարգը կարգավորում եմ ձեր գործակալության համար՝ ձեր թաղամասերով և ձեր գործակալներով։",p1:"Կարգավորում և գործակալների ուսուցում մեկ օրում",p2:"Անձնական էկրան յուրաքանչյուր գործակալի համար և վահանակ տնօրենի համար",p3:"Գների ինդեքս ըստ թաղամասերի և արդար գնի ստուգում",p4:"Աջակցություն և լրամշակումներ ձեր պահանջով",once:"միացում",month:"ամսական",t1:"Առանց երկար պայմանագրի, կարող եք անջատել ցանկացած ամիս",t2:"Առաջին հաճախորդները քարտերով՝ գործարկման օրը",t_cta:"Նշանակել 15 րոպեանոց ցուցադրություն",
+f_k:"Հարցեր",f_h:"Միացումից առաջ սովորաբար հարցնում են",q1:"Կարելի՞ է համակարգը տեսնել վճարելուց առաջ",a1:"Այո։ 15 րոպեանոց զանգի ժամանակ ցույց կտամ այն իրական ժամանակում՝ ձեր թաղամասերով և այսօրվա հարցումներով։ Գործակալների մուտքը բացում եմ միացումից հետո։",q2:"Որտեղի՞ց են գալիս հաճախորդները",a2:"Սրանք իրական մարդիկ են, ովքեր հենց հիմա բնակարան են փնտրում։ Թե ինչպես է համակարգը նրանց գտնում, մեր տեխնոլոգիան է։ Դուք ստանում եք պատրաստ հաճախորդ՝ հարցումով և տարբերակներով։",q3:"Կաշխատի՞ իմ քաղաքում",a3:"Կարգավորում եմ ձեր քաղաքի և թաղամասերի համար։ Երևանում համակարգն աշխատում է ամեն օր՝ 2026-ի հոկտեմբերից։",q4:"Ի՞նչ է պետք գործակալությունից",a4:"Ձեր գործակալների և թաղամասերի ցանկը։ Մնացածը կարգավորում եմ ես մեկ օրում։",
+fc_h:"Ցույց կտամ համակարգը 15 րոպեում՝ ձեր թաղամասերով",fc_p:"Գրեք ձեզ հարմար ժամը, և ցույց կտամ, թե քանի հաճախորդ է AIrealty-ն գտնում ձեր գործակալության համար հենց այսօր։",me_n:"Գևորգ Հովհաննիսյան",me_r:"ԱԲ ինժեներ, Երևան։ Համակարգը ինքս եմ կառուցում և սպասարկում։"};
+const RU={}; document.querySelectorAll('[data-i18n]').forEach(e=>{if(!(e.dataset.i18n in RU)) RU[e.dataset.i18n]=e.textContent;});
+const FEED={ru:[["Аренда","2 мин","Ищу 2к в Арабкире до 300к, с котом, с 1 декабря",["3 от собственников","рынок −6%"]],["Аренда","4 мин","Փնտրում եմ 1 սենյականոց Կենտրոնում, մինչև 250 000",["2 от собственников","HY"]],["Покупка","6 мин","Хотим купить 3к у метро, до $125 000, не 1 этаж",["5 вариантов","покупка"]],["Аренда","9 мин","Looking for a 2-bedroom in Kentron for 6 months",["4 от собственников","EN"]]],
+ hy:[["Վարձ","2 րոպե","Ищу 2к в Арабкире до 300к, с котом, с 1 декабря",["3 սեփականատիրոջից","շուկա −6%"]],["Վարձ","4 րոպե","Փնտրում եմ 1 սենյականոց Կենտրոնում, մինչև 250 000",["2 սեփականատիրոջից","HY"]],["Գնում","6 րոպե","Хотим купить 3к у метро, до $125 000, не 1 этаж",["5 տարբերակ","գնում"]],["Վարձ","9 րոպե","Looking for a 2-bedroom in Kentron for 6 months",["4 սեփականատիրոջից","EN"]]]};
+const MOCK={ru:{titles:{agent:"Экран агента · новые клиенты",dir:"Панель директора · сегодня",mkt:"Цены по районам · неделя"},leads:[["2 комнаты, Арабкир · до 300 000 ֏","аренда · с 1 декабря · с котом · 3 варианта от собственников · 2 мин назад"],["3 комнаты у метро · до $125 000","покупка · не 1 этаж · 5 вариантов · 6 мин назад"],["Студия, Кентрон · до 250 000 ֏","аренда · на 6 месяцев · 2 варианта · 11 мин назад"]],take:"Взять",taken:"У вас ✓",tiles:[[41,"новых клиентов сегодня"],[33,"взято агентами"],[2,"ждут ответа больше 15 мин"]],th:["Агент","Взял","Написал","Показы"],agents:[["Ани",12,9,2],["Арам",10,8,1],["Мариам",11,7,3]],mktTitle:"Аренда 2 комнаты, медиана за неделю",dist:[["Кентрон",420000],["Арабкир",330000],["Давташен",260000],["Ачапняк",230000],["Шенгавит",210000]]},
+ hy:{titles:{agent:"Գործակալի էկրան · նոր հաճախորդներ",dir:"Տնօրենի վահանակ · այսօր",mkt:"Գներն ըստ թաղամասերի · շաբաթ"},leads:[["2 սենյակ, Արաբկիր · մինչև 300 000 ֏","վարձ · դեկտեմբերի 1-ից · կատվով · 3 տարբերակ սեփականատերերից · 2 րոպե առաջ"],["3 սենյակ մետրոյի մոտ · մինչև $125 000","գնում · ոչ 1-ին հարկ · 5 տարբերակ · 6 րոպե առաջ"],["Ստուդիա, Կենտրոն · մինչև 250 000 ֏","վարձ · 6 ամսով · 2 տարբերակ · 11 րոպե առաջ"]],take:"Վերցնել",taken:"Ձերն է ✓",tiles:[[41,"նոր հաճախորդ այսօր"],[33,"վերցրել են գործակալները"],[2,"սպասում են պատասխանի 15 րոպեից ավելի"]],th:["Գործակալ","Վերցրել","Գրել","Դիտումներ"],agents:[["Անի",12,9,2],["Արամ",10,8,1],["Մարիամ",11,7,3]],mktTitle:"2 սենյականոցի վարձ, շաբաթվա միջին",dist:[["Կենտրոն",420000],["Արաբկիր",330000],["Դավթաշեն",260000],["Աջափնյակ",230000],["Շենգավիթ",210000]]}};
+let lang="ru", tab="agent"; const taken=new Set();
+const el=(t,c,x)=>{const e=document.createElement(t); if(c) e.className=c; if(x!=null) e.textContent=x; return e;};
+function renderFeed(){const f=document.getElementById('feed'); f.innerHTML=""; FEED[lang].forEach(r=>{const d=el('div','req'); const m=el('div','meta'); m.append(el('span',null,r[0]),el('span',null,r[1])); const tg=el('div','tags'); r[3].forEach((t,i)=>tg.append(el('span','tag'+(i?' g':''),t))); d.append(m,el('div','q',r[2]),tg); f.append(d);});}
+function renderPanel(){const M=MOCK[lang], p=document.getElementById('panel'); p.innerHTML=""; document.getElementById('screen-title').textContent=M.titles[tab];
+ document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===tab)));
+ if(tab==="agent"){M.leads.forEach((l,i)=>{const r=el('div','lead-row'); const d=el('div'); d.append(el('div','t',l[0]),el('div','m',l[1])); const b=el('button','take',taken.has(i)?M.taken:M.take); b.type='button'; b.disabled=taken.has(i); b.onclick=()=>{taken.add(i); renderPanel();}; r.append(d,b); p.append(r);});}
+ else if(tab==="dir"){const t=el('div','tiles'); M.tiles.forEach((x,i)=>{const d=el('div','tile'); d.append(el('b',null,String(i===1?x[0]+taken.size:x[0])),el('span',null,x[1])); t.append(d);}); p.append(t); const tb=el('table','ag'); const hr=el('tr'); M.th.forEach((h,i)=>hr.append(el('th',i?'n':null,h))); const th=el('thead'); th.append(hr); const bd=el('tbody'); M.agents.forEach(a=>{const tr=el('tr'); a.forEach((v,i)=>tr.append(el('td',i?'n':null,String(v)))); bd.append(tr);}); tb.append(th,bd); p.append(tb);}
+ else {p.append(el('div','muted',M.mktTitle)); const mx=Math.max(...M.dist.map(d=>d[1])); M.dist.forEach(d=>{const r=el('div','barrow'); const tr=el('div','track'); const f=el('div','fill'); f.style.width=Math.round(d[1]/mx*100)+'%'; tr.append(f); r.append(el('span',null,d[0]),tr,el('span','v',d[1].toLocaleString('ru-RU').replace(/ /g,' ')+' ֏')); p.append(r);});}}
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{tab=b.dataset.tab; renderPanel();}));
+function setLang(l){lang=l; const dict=l==='hy'?HY:RU; document.querySelectorAll('[data-i18n]').forEach(e=>{const v=dict[e.dataset.i18n]; if(v) e.textContent=v;}); document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===l))); document.documentElement.lang=l; renderFeed(); renderPanel(); try{localStorage.setItem('air-lang',l)}catch(e){}}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+let saved=null; try{saved=localStorage.getItem('air-lang')}catch(e){}
+const qp=new URLSearchParams(location.search).get('lang');
+setLang(qp==='hy'||saved==='hy'?'hy':'ru');
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){setInterval(()=>{const a=FEED.ru,b=FEED.hy; a.unshift(a.pop()); b.unshift(b.pop()); renderFeed(); document.querySelector('#feed .req')?.classList.add('new');},4200);}
+</script>
+</body>
+</html>
