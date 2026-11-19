@@ -1112,7 +1112,11 @@ document.addEventListener("keydown", ev => { if (ev.key === "Escape" && $("#owne
 
 (function init() {
   const savedUi = store("bd-ui"), savedTheme = store("bd-theme");
-  if (savedUi && UI[savedUi]) ui = savedUi;
+  let qp = null; try { qp = new URLSearchParams(location.search).get("lang"); } catch (e) {}
+  const nav = ((navigator.language || "") + "").slice(0, 2).toLowerCase();
+  if (qp && UI[qp]) ui = qp;
+  else if (savedUi && UI[savedUi]) ui = savedUi;
+  else if (UI[nav]) ui = nav;
   if (savedTheme === "light" || savedTheme === "dark") setTheme(savedTheme);
   applyUi(); resetDemo(true);
 })();
