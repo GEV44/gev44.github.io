@@ -1,0 +1,1121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Telegram Bot Demo</title>
+<meta name="description" content="Try a Telegram AI assistant for a dental clinic in your browser: FAQ in three languages, booking, reminders and the owner's view.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --page:#eef2f6; --surface:#ffffff; --surface-2:#f4f7fa; --text:#0f1d2a; --muted:#566676; --line:#d9e1e8;
+  --accent:#1b74bf; --accent-ink:#ffffff; --accent-soft:#e3f0fb;
+  --chat-bg:#cfe2d3; --chat-bg-2:#bcd5c6; --bubble-in:#ffffff; --bubble-out:#e7fbd3; --bubble-ink:#0f1d2a;
+  --kb:#ffffffcc; --kb-ink:#165a96; --kb-hover:#ffffff; --ok:#1f8a4c; --warn:#b3261e; --gold:#8a5a00;
+  --banner:#0f2a43; --banner-ink:#eaf3fb; --banner-link:#9fd0ff; --shadow:0 8px 28px rgba(15,29,42,.12);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --page:#0a1118; --surface:#17212b; --surface-2:#0e1621; --text:#eaf0f6; --muted:#9db0c0; --line:#26343f;
+    --accent:#5eb0f0; --accent-ink:#06121d; --accent-soft:#17324a;
+    --chat-bg:#0e1621; --chat-bg-2:#0b121a; --bubble-in:#182533; --bubble-out:#2b5278; --bubble-ink:#f2f6fa;
+    --kb:#2a3d52cc; --kb-ink:#a8d6fb; --kb-hover:#34495f; --ok:#5fd18b; --warn:#ff8a80; --gold:#f0c060;
+    --banner:#07121c; --banner-ink:#dfeaf4; --banner-link:#8ec9ff; --shadow:0 8px 28px rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0a1118; --surface:#17212b; --surface-2:#0e1621; --text:#eaf0f6; --muted:#9db0c0; --line:#26343f;
+  --accent:#5eb0f0; --accent-ink:#06121d; --accent-soft:#17324a;
+  --chat-bg:#0e1621; --chat-bg-2:#0b121a; --bubble-in:#182533; --bubble-out:#2b5278; --bubble-ink:#f2f6fa;
+  --kb:#2a3d52cc; --kb-ink:#a8d6fb; --kb-hover:#34495f; --ok:#5fd18b; --warn:#ff8a80; --gold:#f0c060;
+  --banner:#07121c; --banner-ink:#dfeaf4; --banner-link:#8ec9ff; --shadow:0 8px 28px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--text);font:15px/1.45 Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Armenian","Noto Sans",sans-serif;
+  min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;overflow-x:hidden}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* top banner */
+.banner{background:var(--banner);color:var(--banner-ink);padding:8px 16px;font-size:13px;line-height:1.4}
+.banner-in{max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;gap:4px 18px;align-items:center;justify-content:space-between}
+.banner p{margin:0;min-width:0;overflow-wrap:anywhere}
+.banner a{color:var(--banner-link);font-weight:600;overflow-wrap:anywhere}
+.banner .sep{opacity:.5;margin:0 4px}
+.tools{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid #ffffff44;border-radius:8px;overflow:hidden}
+.seg button{background:transparent;border:0;padding:4px 10px;color:var(--banner-ink);font-weight:600;font-size:12px;min-height:30px}
+.seg button[aria-pressed="true"]{background:var(--banner-link);color:#06121d}
+.iconbtn{background:transparent;border:1px solid #ffffff44;color:var(--banner-ink);border-radius:8px;min-height:32px;padding:4px 10px;font-size:12px;font-weight:600}
+
+/* layout */
+.app{flex:1;min-height:0;width:100%;max-width:1080px;margin:0 auto;padding:18px 16px 24px;display:grid;grid-template-columns:minmax(0,430px) minmax(0,1fr);gap:20px;align-items:start}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.chat{height:min(740px,calc(100vh - 150px));height:min(740px,calc(100dvh - 150px));min-height:520px}
+
+/* chat header */
+.chead{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--surface);border-bottom:1px solid var(--line)}
+.avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#5ec3f0,#2f7fd0);color:#fff;font-weight:700;display:grid;place-items:center;flex:none}
+.chead .who{min-width:0;flex:1}
+.chead .name{font-weight:700;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chead .status{font-size:12px;color:var(--muted);display:block;min-height:17px}
+.chead .status.typing{color:var(--accent)}
+.ownerbtn{display:none;position:relative;background:var(--accent-soft);color:var(--accent);border:0;border-radius:10px;padding:7px 10px;font-weight:600;font-size:13px;min-height:36px}
+.badge{position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;border-radius:9px;background:var(--warn);color:#fff;font-size:11px;display:none;place-items:center;padding:0 4px}
+.badge.on{display:grid}
+
+/* chat log */
+.log{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:12px 10px 8px;display:flex;flex-direction:column;gap:6px;
+  background:radial-gradient(circle at 20% 15%,#ffffff22 0 2px,transparent 3px) 0 0/34px 34px,linear-gradient(160deg,var(--chat-bg),var(--chat-bg-2));scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){.log{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+.msg{max-width:88%;display:flex;flex-direction:column;gap:4px;min-width:0;animation:pop .18s ease-out}
+.msg.user{align-self:flex-end;align-items:flex-end}
+.msg.bot{align-self:flex-start;align-items:flex-start}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.bubble{padding:7px 10px 5px;border-radius:14px;color:var(--bubble-ink);box-shadow:0 1px 1px #0000001f;white-space:pre-wrap;overflow-wrap:anywhere;min-width:0;max-width:100%}
+.bot .bubble{background:var(--bubble-in);border-bottom-left-radius:4px}
+.user .bubble{background:var(--bubble-out);border-bottom-right-radius:4px}
+.bubble time{display:block;text-align:right;font-size:11px;color:var(--muted);margin-top:2px}
+.bubble a.cmd{color:var(--accent);text-decoration:none;font-weight:600}
+.bubble a.cmd:hover{text-decoration:underline}
+.meta{font-size:11px;color:var(--muted);margin-top:3px;white-space:normal}
+.sys{align-self:center;background:#00000033;color:#fff;font-size:12px;border-radius:12px;padding:3px 10px;max-width:92%;text-align:center}
+.human .bubble{border-left:3px solid var(--ok)}
+
+/* inline keyboards */
+.kb{display:grid;gap:4px;width:100%;grid-template-columns:repeat(auto-fit,minmax(var(--kbmin,104px),1fr));min-width:0}
+.kb button{background:var(--kb);color:var(--kb-ink);border:0;border-radius:9px;padding:8px 6px;font-weight:600;font-size:14px;min-height:40px;backdrop-filter:blur(4px);box-shadow:0 1px 1px #0000001a;overflow-wrap:anywhere}
+.kb button:hover:not(:disabled){background:var(--kb-hover)}
+.kb button:disabled{opacity:.55;cursor:not-allowed}
+.kb button.taken{text-decoration:line-through;color:var(--muted);background:#ffffff55;opacity:.7}
+.kb.used button{opacity:.45;pointer-events:none}
+
+/* ticket */
+.ticket{margin:4px 0 2px;border:1px dashed var(--accent);border-radius:12px;padding:8px 10px;background:var(--accent-soft);color:var(--text);white-space:normal}
+.ticket b{display:block;margin-bottom:2px}
+.ticket dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:2px 10px;font-size:13px}
+.ticket dt{color:var(--muted)}
+.ticket dd{margin:0;overflow-wrap:anywhere}
+
+/* composer */
+.chips{display:flex;gap:6px;overflow-x:auto;padding:6px 10px;background:var(--surface);border-top:1px solid var(--line);scrollbar-width:thin}
+.chips button{flex:none;background:var(--accent-soft);color:var(--accent);border:0;border-radius:14px;padding:5px 11px;font-weight:600;font-size:13px;min-height:32px}
+.composer{display:flex;gap:8px;padding:8px 10px;background:var(--surface);border-top:1px solid var(--line);padding-bottom:max(8px,env(safe-area-inset-bottom))}
+.composer input{flex:1;min-width:0;border:1px solid var(--line);border-radius:20px;padding:9px 14px;background:var(--surface-2);color:var(--text);font:inherit;min-height:42px}
+.composer input::placeholder{color:var(--muted)}
+.send{width:42px;height:42px;border-radius:50%;border:0;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;flex:none}
+.send svg{width:20px;height:20px;fill:currentColor}
+
+/* owner panel */
+.owner{height:min(740px,calc(100vh - 150px));height:min(740px,calc(100dvh - 150px));min-height:520px}
+.ohead{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.ohead .avatar{background:linear-gradient(135deg,#f0b35e,#d0742f)}
+.ohead h2{margin:0;font-size:15px}
+.ohead small{color:var(--muted);display:block}
+.closebtn{display:none;margin-left:auto;background:var(--accent-soft);color:var(--accent);border:0;border-radius:10px;padding:7px 12px;font-weight:600;min-height:36px}
+.olog{flex:1;min-height:0;overflow-y:auto;padding:12px 10px;display:flex;flex-direction:column;gap:8px;background:var(--surface-2)}
+.empty{color:var(--muted);text-align:center;margin:auto;padding:16px;font-size:14px}
+.note{align-self:flex-start;max-width:94%;background:var(--bubble-in);color:var(--bubble-ink);border-radius:12px;border-bottom-left-radius:4px;padding:7px 10px;box-shadow:0 1px 1px #0000001f;animation:pop .18s ease-out;min-width:0}
+.note.out{align-self:flex-end;background:var(--bubble-out);border-radius:12px;border-bottom-right-radius:4px}
+.note .tag{display:inline-block;font-size:11px;font-weight:700;border-radius:6px;padding:1px 7px;margin-bottom:3px;color:#fff}
+.tag.booking{background:#1f8a4c}.tag.cancel{background:#b3261e}.tag.handoff{background:#8a5a00}.tag.lead{background:#1b74bf}.tag.confirm{background:#2e7d6b}.tag.resched{background:#6a4fb3}.tag.digest{background:#475569}
+.note .body{white-space:pre-wrap;overflow-wrap:anywhere}
+.note .body strong{display:inline-block;margin-top:4px}
+.note time{display:block;text-align:right;font-size:11px;color:var(--muted);margin-top:2px}
+.oact{display:flex;flex-wrap:wrap;gap:8px;padding:8px 10px;border-top:1px solid var(--line);background:var(--surface)}
+.btn{background:var(--accent);color:var(--accent-ink);border:0;border-radius:10px;padding:9px 14px;font-weight:600;min-height:42px}
+.btn.sec{background:var(--accent-soft);color:var(--accent)}
+.oreply{display:flex;gap:8px;padding:0 10px 10px;background:var(--surface)}
+.oreply input{flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:var(--surface-2);color:var(--text);font:inherit;min-height:42px}
+.oreply input:disabled,.oreply button:disabled{opacity:.55;cursor:not-allowed}
+.tip{padding:0 12px 10px;margin:0;color:var(--muted);font-size:12px;background:var(--surface)}
+
+@media (max-width:860px){
+  body{height:100vh;height:100dvh;overflow:hidden}
+  .banner{padding:6px 12px;font-size:12px}
+  .app{display:block;padding:0;max-width:none}
+  .chat{height:100%;min-height:0;border-radius:0;border:0;box-shadow:none}
+  .ownerbtn{display:inline-block}
+  .owner{position:fixed;inset:0;z-index:20;height:auto;min-height:0;border-radius:0;transform:translateY(102%);visibility:hidden;transition:transform .22s ease,visibility 0s .22s}
+  .owner.open{transform:none;visibility:visible;transition:transform .22s ease}
+  .closebtn{display:inline-block}
+  .app{height:100%}
+  main.app{overflow:hidden}
+}
+</style>
+</head>
+<body>
+<header class="banner" role="banner">
+  <div class="banner-in">
+    <p>
+      <strong data-i18n="b_demo">Demo of telegram-ai-assistant-bot</strong> · <span data-i18n="b_runs">runs in your browser, no data leaves the page</span>
+      <span class="sep" aria-hidden="true">|</span><a href="https://github.com/GEV44/telegram-ai-assistant-bot" target="_blank" rel="noopener" data-i18n="b_repo">GitHub repo</a><br>
+      <span data-i18n="b_want">Want this for your business?</span>
+      WhatsApp <a href="https://wa.me/37444772541" target="_blank" rel="noopener">https://wa.me/37444772541</a> ·
+      Telegram <a href="https://t.me/hovhannisyan77" target="_blank" rel="noopener">https://t.me/hovhannisyan77</a>
+    </p>
+    <div class="tools">
+      <div class="seg" role="group" aria-label="Interface language">
+        <button type="button" data-ui="en" aria-pressed="true">EN</button>
+        <button type="button" data-ui="ru" aria-pressed="false">RU</button>
+        <button type="button" data-ui="hy" aria-pressed="false">HY</button>
+      </div>
+      <button type="button" class="iconbtn" id="theme" aria-label="Toggle light and dark theme">◐ <span data-i18n="theme">Theme</span></button>
+    </div>
+  </div>
+</header>
+
+<main class="app" id="main">
+  <section class="card chat" aria-label="Telegram chat with Smile Studio">
+    <div class="chead">
+      <div class="avatar" aria-hidden="true">SS</div>
+      <div class="who">
+        <span class="name">Smile Studio</span>
+        <span class="status" id="status" aria-live="polite" data-i18n="status_bot">bot</span>
+      </div>
+      <button type="button" class="ownerbtn" id="ownerOpen" aria-expanded="false" aria-controls="owner">
+        <span data-i18n="owner_short">Owner</span><span class="badge" id="badge" aria-hidden="true">0</span>
+      </button>
+    </div>
+    <div class="log" id="log" role="log" aria-live="polite" aria-label="Chat messages" tabindex="0"></div>
+    <div class="chips" id="chips" role="group" aria-label="Bot commands"></div>
+    <form class="composer" id="form" autocomplete="off">
+      <label class="sr" for="input" data-i18n="placeholder">Message</label>
+      <input id="input" type="text" enterkeyhint="send" maxlength="300" data-i18n-ph="placeholder" placeholder="Message">
+      <button class="send" type="submit" aria-label="Send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 21.5 23 12 2.5 2.5 2.5 10l14 2-14 2z"/></svg></button>
+    </form>
+  </section>
+
+  <aside class="card owner" id="owner" aria-label="Owner admin chat">
+    <div class="ohead">
+      <div class="avatar" aria-hidden="true">👤</div>
+      <div><h2 data-i18n="o_title">Owner admin chat</h2><small data-i18n="o_sub">What the clinic owner sees in Telegram</small></div>
+      <button type="button" class="closebtn" id="ownerClose" data-i18n="close">Close</button>
+    </div>
+    <div class="olog" id="olog" role="log" aria-live="polite" aria-label="Owner notifications" tabindex="0"></div>
+    <div class="oact">
+      <button type="button" class="btn" id="digest" data-i18n="digest">Daily digest</button>
+      <button type="button" class="btn sec" id="reset" data-i18n="reset">Reset demo</button>
+    </div>
+    <form class="oreply" id="oform" autocomplete="off">
+      <label class="sr" for="oinput" data-i18n="o_reply_label">Reply to the customer</label>
+      <input id="oinput" type="text" maxlength="200" disabled data-i18n-ph="o_reply_ph" placeholder="Reply to the customer">
+      <button class="btn sec" id="osend" type="submit" disabled data-i18n="o_send">Send</button>
+    </form>
+    <p class="tip" data-i18n="o_tip">Notifications appear here when the customer books, cancels or asks for a human (/human). After a handoff you can answer from here.</p>
+  </aside>
+</main>
+
+<script>
+"use strict";
+// ======================= PURE LOGIC (also exercised by the node test) =======================
+// PURE-START
+const BUSINESS = { name: "Smile Studio", defaultLang: "en" };
+
+const SERVICES = [
+  { id: "checkup", names: { en: "Check-up and consultation", ru: "Осмотр и консультация", hy: "Զննում և խորհրդատվություն" } },
+  { id: "cleaning", names: { en: "Professional cleaning", ru: "Профессиональная чистка", hy: "Մասնագիտական մաքրում" } },
+  { id: "whitening", names: { en: "Teeth whitening", ru: "Отбеливание зубов", hy: "Ատամների սպիտակեցում" } },
+  { id: "filling", names: { en: "Filling treatment", ru: "Лечение кариеса", hy: "Կարիեսի բուժում" } }
+];
+
+// Same schedule as config/smile_studio.yaml; the horizon is 7 days for the demo.
+const SCHEDULE = { open: "09:00", close: "18:00", slotMinutes: 60, openWeekdays: [0, 1, 2, 3, 4, 5], horizonDays: 6, breaks: [["13:00", "14:00"]] };
+const REMINDER_OFFSETS = [1440, 120];
+
+const MESSAGES = {
+  en: {
+    welcome: "Hi! I'm the virtual assistant of {business}. Ask me anything about us, or use /book to make an appointment.",
+    help: "I can answer questions, book an appointment (/book), show your bookings (/mybookings), take your contact for a call back (/lead) or call a human (/human). /cancel stops the current dialog.",
+    ask_service: "Which service would you like?",
+    bad_service: "Please pick one of the services from the list.",
+    ask_date: "Choose a date:",
+    bad_date: "That date is not available. Please pick one of the suggested dates.",
+    no_dates: "Sorry, there are no free dates in the coming days. Use /human and we will find a time for you.",
+    ask_time: "Free times on {date}:",
+    bad_time: "That time is not free. Please pick one of the suggested times.",
+    no_slots: "That day just filled up. Please choose another date.",
+    ask_name: "What is your name?",
+    bad_name: "Please enter your name (at least 2 letters).",
+    ask_phone: "Your phone number, so we can confirm the visit?",
+    bad_phone: "That doesn't look like a phone number. Example: +374 77 123456",
+    confirm_summary: "Please confirm:\n{service}\n{date} at {time}\n{name}, {phone}",
+    confirm_yes: "Confirm",
+    confirm_no: "Cancel",
+    booked: "Done! You are booked: {service}, {date} at {time}. See you at {business}!",
+    slot_taken: "Sorry, that time was just taken. Please choose another one.",
+    cancelled: "Okay, cancelled. Ask me anything or type /book any time.",
+    lead_saved: "Thank you, {name}! We will contact you shortly.",
+    handoff_ok: "I have passed your request to a human. They will reply here as soon as possible.",
+    no_answer: "I don't have a reliable answer to that. I can connect you with a human (/human) or leave your contact for a call back (/lead).",
+    services_title: "Our services:",
+    hours_text: "Working hours: {open} - {close}, {days}.",
+    days: "Mon,Tue,Wed,Thu,Fri,Sat,Sun",
+    reminder: "Reminder: {service} at {business}, {date} at {time}.",
+    reminder_confirm: "Reminder: your visit ({service}) at {business} is on {date} at {time}. Are you coming?",
+    btn_confirm: "Confirm",
+    btn_cancel: "Cancel",
+    btn_reschedule: "Reschedule",
+    mybookings_title: "Your upcoming bookings:",
+    no_bookings: "You have no upcoming bookings. Use /book to make one.",
+    status_confirmed: "Confirmed",
+    booking_cancelled: "Your booking ({service}, {date} at {time}) is cancelled. The time is free again.",
+    booking_rescheduled: "Done! New time: {service}, {date} at {time}.",
+    reschedule_start: "Let's move your booking ({service}, {date} at {time}).",
+    visit_confirmed: "Thank you, your visit is confirmed. See you on {date} at {time}!",
+    booking_not_found: "This booking no longer exists.",
+    digest_title: "Daily digest, {business}, {date}",
+    digest_today: "Today",
+    digest_tomorrow: "Tomorrow",
+    digest_unconfirmed: "Not confirmed for tomorrow",
+    digest_leads: "New leads",
+    digest_handoffs: "Open handoffs",
+    digest_confirmed: "confirmed",
+    digest_upcoming: "Later this week (demo extra)",
+    human_reply: "Smile Studio team"
+  },
+  ru: {
+    welcome: "Здравствуйте! Я виртуальный помощник {business}. Спросите меня о чём угодно или нажмите /book, чтобы записаться.",
+    help: "Я отвечаю на вопросы, записываю на приём (/book), показываю ваши записи (/mybookings), принимаю контакты для обратного звонка (/lead) и зову человека (/human). /cancel прерывает диалог.",
+    ask_service: "Какая услуга вас интересует?",
+    bad_service: "Выберите, пожалуйста, услугу из списка.",
+    ask_date: "Выберите дату:",
+    bad_date: "Эта дата недоступна. Выберите одну из предложенных.",
+    no_dates: "К сожалению, в ближайшие дни нет свободных дат. Нажмите /human, и мы подберём время.",
+    ask_time: "Свободное время на {date}:",
+    bad_time: "Это время занято. Выберите одно из предложенных.",
+    no_slots: "На этот день места только что закончились. Выберите другую дату.",
+    ask_name: "Как вас зовут?",
+    bad_name: "Введите имя (минимум 2 буквы).",
+    ask_phone: "Ваш номер телефона для подтверждения визита?",
+    bad_phone: "Это не похоже на номер телефона. Пример: +374 77 123456",
+    confirm_summary: "Подтвердите, пожалуйста:\n{service}\n{date} в {time}\n{name}, {phone}",
+    confirm_yes: "Подтвердить",
+    confirm_no: "Отмена",
+    booked: "Готово! Вы записаны: {service}, {date} в {time}. Ждём вас в {business}!",
+    slot_taken: "Это время только что заняли. Выберите другое.",
+    cancelled: "Хорошо, отменено. Задайте вопрос или напишите /book в любой момент.",
+    lead_saved: "Спасибо, {name}! Мы скоро с вами свяжемся.",
+    handoff_ok: "Я передал ваш запрос человеку. Он ответит здесь как можно скорее.",
+    no_answer: "У меня нет надёжного ответа на этот вопрос. Могу позвать человека (/human) или записать ваш контакт для звонка (/lead).",
+    services_title: "Наши услуги:",
+    hours_text: "Часы работы: {open} - {close}, {days}.",
+    days: "пн,вт,ср,чт,пт,сб,вс",
+    reminder: "Напоминание: {service}, {business}, {date} в {time}.",
+    reminder_confirm: "Напоминание: ваш визит ({service}) в {business} {date} в {time}. Вы придёте?",
+    btn_confirm: "Подтвердить",
+    btn_cancel: "Отменить",
+    btn_reschedule: "Перенести",
+    mybookings_title: "Ваши ближайшие записи:",
+    no_bookings: "У вас нет предстоящих записей. Нажмите /book, чтобы записаться.",
+    status_confirmed: "Подтверждена",
+    booking_cancelled: "Ваша запись ({service}, {date} в {time}) отменена. Время снова свободно.",
+    booking_rescheduled: "Готово! Новое время: {service}, {date} в {time}.",
+    reschedule_start: "Перенесём вашу запись ({service}, {date} в {time}).",
+    visit_confirmed: "Спасибо, визит подтверждён. Ждём вас {date} в {time}!",
+    booking_not_found: "Эта запись больше не существует.",
+    digest_title: "Сводка дня, {business}, {date}",
+    digest_today: "Сегодня",
+    digest_tomorrow: "Завтра",
+    digest_unconfirmed: "Не подтверждены на завтра",
+    digest_leads: "Новые заявки",
+    digest_handoffs: "Открытые обращения к человеку",
+    digest_confirmed: "подтверждена",
+    digest_upcoming: "Позже на неделе (доп. для демо)",
+    human_reply: "Команда Smile Studio"
+  },
+  hy: {
+    welcome: "Բարև ձեզ։ Ես {business}-ի վիրտուալ օգնականն եմ։ Հարցրեք ինչ ուզում եք կամ սեղմեք /book՝ գրանցվելու համար։",
+    help: "Ես պատասխանում եմ հարցերին, գրանցում եմ այցի (/book), ցույց եմ տալիս ձեր գրանցումները (/mybookings), ընդունում եմ կոնտակտ հետ զանգի համար (/lead) և կանչում եմ մարդու (/human)։ /cancel-ը դադարեցնում է զրույցը։",
+    ask_service: "Ո՞ր ծառայությունն է ձեզ հետաքրքրում։",
+    bad_service: "Խնդրում ենք ընտրել ծառայություն ցուցակից։",
+    ask_date: "Ընտրեք ամսաթիվը՝",
+    bad_date: "Այս ամսաթիվը հասանելի չէ։ Ընտրեք առաջարկվածներից։",
+    no_dates: "Ցավոք, առաջիկա օրերին ազատ ամսաթվեր չկան։ Սեղմեք /human, և մենք ժամ կընտրենք։",
+    ask_time: "Ազատ ժամերը {date}-ին՝",
+    bad_time: "Այս ժամը զբաղված է։ Ընտրեք առաջարկվածներից։",
+    no_slots: "Այդ օրվա տեղերը նոր ավարտվեցին։ Ընտրեք այլ ամսաթիվ։",
+    ask_name: "Ինչպե՞ս եք կոչվում։",
+    bad_name: "Մուտքագրեք անունը (առնվազն 2 տառ)։",
+    ask_phone: "Ձեր հեռախոսահամարը՝ այցը հաստատելու համար։",
+    bad_phone: "Սա հեռախոսահամարի նման չէ։ Օրինակ՝ +374 77 123456",
+    confirm_summary: "Խնդրում ենք հաստատել՝\n{service}\n{date}, {time}\n{name}, {phone}",
+    confirm_yes: "Հաստատել",
+    confirm_no: "Չեղարկել",
+    booked: "Պատրաստ է։ Դուք գրանցված եք՝ {service}, {date}, {time}։ Սպասում ենք ձեզ՝ {business}։",
+    slot_taken: "Այս ժամը նոր զբաղեցրին։ Ընտրեք մեկ այլ ժամ։",
+    cancelled: "Լավ, չեղարկված է։ Հարցրեք կամ գրեք /book ցանկացած պահի։",
+    lead_saved: "Շնորհակալություն, {name}։ Մենք շուտով կկապվենք ձեզ հետ։",
+    handoff_ok: "Ձեր հարցումը փոխանցեցի մեր աշխատակցին։ Նա կպատասխանի այստեղ հնարավորինս շուտ։",
+    no_answer: "Այս հարցի համար վստահելի պատասխան չունեմ։ Կարող եմ միացնել մեր աշխատակցին (/human) կամ գրանցել ձեր կոնտակտը (/lead)։",
+    services_title: "Մեր ծառայությունները՝",
+    hours_text: "Աշխատանքային ժամեր՝ {open} - {close}, {days}։",
+    days: "երկ,երք,չրք,հնգ,ուրբ,շբթ,կիր",
+    reminder: "Հիշեցում՝ {service}, {business}, {date}, ժամը {time}։",
+    reminder_confirm: "Հիշեցում՝ ձեր այցը ({service}) {business}-ում {date}-ին է, ժամը {time}։ Կգա՞ք։",
+    btn_confirm: "Հաստատել",
+    btn_cancel: "Չեղարկել",
+    btn_reschedule: "Տեղափոխել",
+    mybookings_title: "Ձեր առաջիկա գրանցումները՝",
+    no_bookings: "Առաջիկա գրանցումներ չունեք։ Սեղմեք /book՝ գրանցվելու համար։",
+    status_confirmed: "Հաստատված է",
+    booking_cancelled: "Ձեր գրանցումը ({service}, {date}, {time}) չեղարկվեց։ Ժամը նորից ազատ է։",
+    booking_rescheduled: "Պատրաստ է։ Նոր ժամը՝ {service}, {date}, {time}։",
+    reschedule_start: "Տեղափոխենք ձեր գրանցումը ({service}, {date}, {time})։",
+    visit_confirmed: "Շնորհակալություն, ձեր այցը հաստատված է։ Սպասում ենք ձեզ {date}-ին, ժամը {time}։",
+    booking_not_found: "Այս գրանցումն այլևս գոյություն չունի։",
+    digest_title: "Օրվա ամփոփում, {business}, {date}",
+    digest_today: "Այսօր",
+    digest_tomorrow: "Վաղը",
+    digest_unconfirmed: "Վաղվա չհաստատված գրանցումներ",
+    digest_leads: "Նոր դիմումներ",
+    digest_handoffs: "Աշխատակցին փոխանցված բաց հարցումներ",
+    digest_confirmed: "հաստատված",
+    digest_upcoming: "Շաբաթվա հաջորդ օրերին (դեմոյի հավելում)",
+    human_reply: "Smile Studio-ի թիմ"
+  }
+};
+
+// Inlined from config/smile_studio_faq.yaml (all 24 entries; `lang` is detected from the question like the Python bot).
+const FAQ = [
+  { q: "What are your opening hours?", a: "Smile Studio is open Monday to Saturday, 09:00 to 18:00, with a lunch break from 13:00 to 14:00. We are closed on Sundays." },
+  { q: "Where is the clinic located and how do I get there?", a: "We are at 12 Example Street, Sample City (fictional address). There is free parking in the courtyard and a bus stop 2 minutes away." },
+  { q: "Does teeth cleaning hurt? What does professional cleaning include?", a: "Professional cleaning uses ultrasound and air polishing and is painless for most patients. It removes plaque and tartar and takes about an hour." },
+  { q: "How does teeth whitening work and is it safe?", a: "We use a dentist-supervised gel system. After an exam we confirm it is suitable for you. Sensitivity for a day or two is possible." },
+  { q: "Do you treat children?", a: "Yes. Our paediatric dentist sees children from 3 years old, and the first visit is a friendly introduction without treatment." },
+  { q: "What payment methods do you accept? Do you offer installments?", a: "We accept cash and cards. Installment plans for larger treatments are discussed individually at the consultation." },
+  { q: "What should I bring to my first visit?", a: "Just an ID and any previous X-rays if you have them. Please arrive 10 minutes early to fill in a short form." },
+  { q: "Can I cancel or reschedule my appointment?", a: "Yes, please let us know at least 24 hours ahead via this bot (/human) so another patient can use the time." },
+  { q: "Do you have emergency appointments for toothache?", a: "We keep a few slots free each day for acute pain. Use /human and describe the problem; we will answer as fast as possible." },
+  { q: "Do you speak English, Russian and Armenian?", a: "Yes, our team speaks Armenian, Russian and English." },
+
+  { q: "Какие у вас часы работы?", a: "Smile Studio работает с понедельника по субботу с 09:00 до 18:00, обед с 13:00 до 14:00. Воскресенье - выходной." },
+  { q: "Где находится клиника и как добраться?", a: "Мы находимся по адресу ул. Пример, 12, Город Образец (вымышленный адрес). Во дворе бесплатная парковка, остановка в двух минутах." },
+  { q: "Больно ли делать чистку зубов? Что входит в профессиональную чистку?", a: "Профессиональная чистка выполняется ультразвуком и Air Flow и для большинства пациентов безболезненна. Убирает налёт и камень, занимает около часа." },
+  { q: "Как проходит отбеливание зубов и безопасно ли оно?", a: "Мы используем систему с гелем под контролем врача. После осмотра подтверждаем, что она вам подходит. Возможна чувствительность на день-два." },
+  { q: "Вы лечите детей?", a: "Да. Детский стоматолог принимает с трёх лет, первый визит - знакомство без лечения." },
+  { q: "Как можно оплатить? Есть ли рассрочка?", a: "Принимаем наличные и карты. Рассрочка на крупное лечение обсуждается индивидуально на консультации." },
+  { q: "Что взять с собой на первый приём?", a: "Только документ и прежние снимки, если есть. Приходите за 10 минут, чтобы заполнить короткую анкету." },
+  { q: "Можно ли отменить или перенести запись?", a: "Да, предупредите нас минимум за 24 часа через этого бота (/human), чтобы время смог занять другой пациент." },
+  { q: "Есть ли срочный приём при зубной боли?", a: "Каждый день мы оставляем несколько окон для острой боли. Нажмите /human и опишите проблему, ответим как можно быстрее." },
+
+  { q: "Ինչ աշխատանքային ժամեր ունեք։", a: "Smile Studio-ն աշխատում է երկուշաբթիից շաբաթ, 09:00-ից 18:00, ճաշի ընդմիջում՝ 13:00-14:00։ Կիրակի օրը փակ ենք։" },
+  { q: "Որտեղ եք գտնվում և ինչպես հասնել։", a: "Մենք գտնվում ենք Օրինակ փողոց 12, Նմուշ քաղաք (պայմանական հասցե)։ Բակում անվճար կայանատեղի կա, կանգառը երկու րոպեի վրա է։" },
+  { q: "Ատամների մաքրումը ցավոտ է։ Ինչ է ներառում մասնագիտական մաքրումը։", a: "Մասնագիտական մաքրումը կատարվում է ուլտրաձայնով և շատ հիվանդների համար ցավազուրկ է։ Հեռացնում է փառը և քարը, տևում է մոտ մեկ ժամ։" },
+  { q: "Երեխաներին բուժում եք։", a: "Այո։ Մանկական ատամնաբույժը ընդունում է 3 տարեկանից, առաջին այցը ծանոթացում է առանց բուժման։" },
+  { q: "Ինչպես կարելի է վճարել, կա՞ մասնաբաժին։", a: "Ընդունում ենք կանխիկ և քարտ։ Խոշոր բուժման դեպքում տարաժամկետ վճարումը քննարկվում է խորհրդատվության ժամանակ։" }
+];
+
+function t(lang, key, params) {
+  const table = MESSAGES[lang] || MESSAGES.en;
+  const tpl = table[key] !== undefined ? table[key] : MESSAGES.en[key];
+  return params ? tpl.replace(/\{(\w+)\}/g, (m, k) => (k in params ? String(params[k]) : m)) : tpl;
+}
+
+// ---- language detection by script (port of lang.py) ----
+function detectLanguage(text, def) {
+  const c = { en: 0, ru: 0, hy: 0 };
+  for (const ch of text) {
+    const code = ch.codePointAt(0);
+    if (code >= 0x0530 && code <= 0x058f) c.hy++;
+    else if (code >= 0x0400 && code <= 0x04ff) c.ru++;
+    else if (/\p{L}/u.test(ch) && code < 0x0250) c.en++;
+  }
+  let best = "en";
+  for (const k of ["en", "ru", "hy"]) if (c[k] > c[best]) best = k;
+  return c[best] > 0 ? best : (def || "en");
+}
+
+// ---- BM25 retriever (port of knowledge.py) ----
+const STOP = new Set(("a an the is are do does i you we of to for in on at and or my me it your " +
+  "what how can s there this that with by be have has " + // extra English fillers (demo tweak)
+  "и в во не на я с со как что это у по а но или мне вы ли же бы для от до " +
+  "եմ է և ու որ ի մի թե").split(" "));
+const STEM_LEN = 6;
+
+function tokenize(text) {
+  const out = [];
+  for (const word of (text.toLowerCase().match(/[\p{L}\p{N}_]+/gu) || [])) {
+    if (STOP.has(word) || word.length < 2) continue;
+    out.push(word.slice(0, STEM_LEN));
+  }
+  return out;
+}
+
+class BM25 {
+  constructor(docs, k1 = 1.5, b = 0.75) {
+    this.docs = docs; this.k1 = k1; this.b = b; this.n = docs.length;
+    this.avgdl = this.n ? docs.reduce((s, d) => s + d.length, 0) / this.n : 0;
+    this.tf = docs.map(d => { const m = new Map(); for (const w of d) m.set(w, (m.get(w) || 0) + 1); return m; });
+    const df = new Map();
+    for (const d of docs) for (const w of new Set(d)) df.set(w, (df.get(w) || 0) + 1);
+    this.idf = new Map();
+    for (const [w, c] of df) this.idf.set(w, Math.log(1 + (this.n - c + 0.5) / (c + 0.5)));
+  }
+  scores(query) {
+    const res = new Array(this.n).fill(0);
+    const terms = new Set(query);
+    for (let i = 0; i < this.n; i++) {
+      const dl = this.docs[i].length;
+      const norm = this.avgdl ? this.k1 * (1 - this.b + this.b * dl / this.avgdl) : this.k1;
+      for (const term of terms) {
+        const f = this.tf[i].get(term) || 0;
+        if (f) res[i] += this.idf.get(term) * f * (this.k1 + 1) / (f + norm);
+      }
+    }
+    return res;
+  }
+}
+
+class KnowledgeBase {
+  constructor(items) {
+    this.entries = items.map(x => ({ question: x.q, answer: x.a, lang: x.lang || detectLanguage(x.q) }));
+    // The question is repeated so it outweighs the answer body (same as the Python bot).
+    this.bm25 = new BM25(this.entries.map(e => tokenize(e.question + " " + e.question + " " + e.answer)));
+  }
+  // The Python bot defaults to 0.3; the demo uses 3.0 so unrelated questions abstain instead of matching one stray word.
+  search(query, lang, topK = 3, minScore = 3.0) {
+    const q = tokenize(query);
+    if (!q.length || !this.entries.length) return [];
+    const raw = this.bm25.scores(q);
+    let pool = [];
+    this.entries.forEach((e, i) => { if (!lang || e.lang === lang) pool.push(i); });
+    if (!pool.length || pool.every(i => raw[i] < minScore)) pool = this.entries.map((_, i) => i);
+    pool.sort((a, b) => raw[b] - raw[a]);
+    return pool.slice(0, topK).filter(i => raw[i] >= minScore).map(i => ({ entry: this.entries[i], score: raw[i] }));
+  }
+}
+
+// ---- dates / schedule ----
+const pad2 = n => String(n).padStart(2, "0");
+const isoDate = d => d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
+const parseIso = s => { const [y, m, d] = s.split("-").map(Number); return new Date(y, m - 1, d); };
+const weekday = d => (d.getDay() + 6) % 7; // Monday = 0, like Python
+const toMin = hhmm => { const [h, m] = hhmm.split(":").map(Number); return h * 60 + m; };
+const fromMin = n => pad2(Math.floor(n / 60)) + ":" + pad2(n % 60);
+const startOf = (date, time) => { const d = parseIso(date); const m = toMin(time); d.setHours(Math.floor(m / 60), m % 60, 0, 0); return d; };
+
+function daySlots(day) {
+  if (!SCHEDULE.openWeekdays.includes(weekday(day))) return [];
+  const out = [];
+  for (let c = toMin(SCHEDULE.open); c + SCHEDULE.slotMinutes <= toMin(SCHEDULE.close); c += SCHEDULE.slotMinutes) {
+    const inBreak = SCHEDULE.breaks.some(([s, e]) => c < toMin(e) && c + SCHEDULE.slotMinutes > toMin(s));
+    if (!inBreak) out.push(fromMin(c));
+  }
+  return out;
+}
+
+function dateLabel(iso, lang) {
+  const d = parseIso(iso);
+  return t(lang, "days").split(",")[weekday(d)] + " " + pad2(d.getDate()) + "." + pad2(d.getMonth() + 1);
+}
+
+function normalizePhone(raw) {
+  const text = raw.trim();
+  if (!/^\+?[\d\s\-().]+$/.test(text)) return null;
+  const digits = text.replace(/\D/g, "");
+  if (digits.length < 7 || digits.length > 15) return null;
+  return (text.startsWith("+") ? "+" : "") + digits;
+}
+
+const YES = new Set(["yes", "y", "ok", "okay", "confirm", "да", "ок", "подтверждаю", "այո", "հաստատում եմ"]);
+const NO = new Set(["no", "n", "cancel", "нет", "отмена", "ոչ", "չեղարկել"]);
+const strip = s => s.trim().toLowerCase().replace(/[!.]+$/, "");
+const isYes = s => { const l = strip(s); return YES.has(l) || Object.values(MESSAGES).some(m => m.confirm_yes.toLowerCase() === l); };
+const isNo = s => { const l = strip(s); return NO.has(l) || Object.values(MESSAGES).some(m => m.confirm_no.toLowerCase() === l); };
+
+// ---- state: bookings in memory only ----
+class SlotTakenError extends Error {}
+
+function hashStr(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+
+const PATIENTS = ["Anna K.", "Davit M.", "Lilit S.", "Armen G.", "Mariam T.", "Karen B.", "Nare A.", "Tigran H.", "Sona P.", "Hayk V."];
+
+function createState(now, seed = true) {
+  const s = { bookings: [], nextId: 1, seedId: 1000, leads: [], nextLead: 1 };
+  if (seed) {
+    // Other patients already hold some slots, so some times are shown as taken (deterministic per date).
+    for (let i = 0; i <= SCHEDULE.horizonDays; i++) {
+      const day = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+      for (const time of daySlots(day)) {
+        const h = hashStr(isoDate(day) + time);
+        if (h % 100 < 30) {
+          s.bookings.push({ id: s.seedId++, userId: 100 + (h % 50), service: SERVICES[h % 4].id, date: isoDate(day), time,
+            name: PATIENTS[h % PATIENTS.length], phone: "+37455" + String(100000 + (h % 899999)), lang: "en", confirmed: h % 3 === 0, seeded: true });
+        }
+      }
+    }
+  }
+  return s;
+}
+
+function bookedTimes(state, date) { return new Set(state.bookings.filter(b => b.date === date).map(b => b.time)); }
+
+function showSlots(state, day, now) {
+  const taken = bookedTimes(state, isoDate(day));
+  return daySlots(day).filter(sl => startOf(isoDate(day), sl) > now).map(sl => ({ time: sl, taken: taken.has(sl) }));
+}
+function freeSlots(state, day, now) { return showSlots(state, day, now).filter(x => !x.taken).map(x => x.time); }
+function openDates(state, now) {
+  const out = [];
+  for (let i = 0; i <= SCHEDULE.horizonDays; i++) {
+    const day = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+    if (freeSlots(state, day, now).length) out.push(isoDate(day));
+  }
+  return out;
+}
+
+function addBooking(state, rec) {
+  if (bookedTimes(state, rec.date).has(rec.time)) throw new SlotTakenError("slot taken");
+  const b = Object.assign({ id: state.nextId++, confirmed: false }, rec);
+  state.bookings.push(b);
+  return b;
+}
+function moveBooking(state, id, date, time) {
+  const b = state.bookings.find(x => x.id === id);
+  if (!b) return null;
+  if (state.bookings.some(x => x.id !== id && x.date === date && x.time === time)) throw new SlotTakenError("slot taken");
+  b.date = date; b.time = time; b.confirmed = false;
+  return b;
+}
+
+const GREETINGS = new Set(["hi", "hello", "hey", "привет", "здравствуйте", "добрый", "բարև", "ողջույն", "/start"]);
+const BOOK_STEMS = ["book", "appoint", "reserv", "запис", "бронир", "ամրագր", "գրանցվ", "գրանցում"];
+const kb = () => new KnowledgeBase(FAQ);
+
+function reply(text, extra) {
+  return Object.assign({ text, options: [], cards: [], buttons: [], adminNotice: null }, extra || {});
+}
+const serviceName = (id, lang) => { const s = SERVICES.find(x => x.id === id); return s ? s.names[lang] || s.names.en : id; };
+
+// ---- the assistant brain (port of assistant.py + booking.py) ----
+class Assistant {
+  constructor(state, nowFn) {
+    this.s = state; this.now = nowFn || (() => new Date());
+    this.kb = kb(); this.lang = null; this.defaultLang = BUSINESS.defaultLang;
+    this.flow = null; this.lastText = ""; this.userId = 1; this.username = "demo_user"; this.fullName = "Demo User";
+    this.handoffs = [];
+  }
+  langOf() { return this.lang || this.defaultLang; }
+  who() { return "@" + this.username; }
+
+  wantsBooking(text) {
+    const words = text.toLowerCase().split(/\s+/).filter(Boolean);
+    return words.length <= 6 && words.some(w => BOOK_STEMS.some(st => w.startsWith(st)));
+  }
+
+  onMessage(text) {
+    const flow = this.flow;
+    if (flow && flow.active) {
+      const r = this.submit(flow, text);
+      if (!flow.active) this.flow = null;
+      return r;
+    }
+    const lang = detectLanguage(text, this.langOf());
+    this.lang = lang; this.lastText = text;
+    if (GREETINGS.has(strip(text))) return reply(t(lang, "welcome", { business: BUSINESS.name }), { menu: true });
+    if (this.wantsBooking(text)) return this.startFlow("booking");
+    return this.answer(text, lang);
+  }
+
+  answer(text, lang) {
+    const hits = this.kb.search(text, lang);
+    if (!hits.length) return reply(t(lang, "no_answer"), { abstain: true });
+    return reply(hits[0].entry.answer, { meta: { question: hits[0].entry.question, score: hits[0].score } });
+  }
+
+  onCommand(cmd) {
+    const lang = this.langOf();
+    if (cmd === "cancel") { this.flow = null; return reply(t(lang, "cancelled")); }
+    if (cmd === "start" || cmd === "help") {
+      this.flow = null;
+      return reply(t(lang, cmd === "start" ? "welcome" : "help", { business: BUSINESS.name }), { menu: true });
+    }
+    if (cmd === "book") return this.startFlow("booking");
+    if (cmd === "mybookings") return this.myBookings();
+    if (cmd === "lead" || cmd === "contact") return this.startFlow("lead");
+    if (cmd === "human") return this.handoff();
+    if (cmd === "services") {
+      return reply([t(lang, "services_title")].concat(SERVICES.map((s, i) => (i + 1) + ". " + s.names[lang])).join("\n"));
+    }
+    if (cmd === "hours") {
+      const days = t(lang, "days").split(",");
+      return reply(t(lang, "hours_text", { open: SCHEDULE.open, close: SCHEDULE.close, days: SCHEDULE.openWeekdays.map(d => days[d]).join(",") }));
+    }
+    return reply(t(lang, "help", { business: BUSINESS.name }), { menu: true });
+  }
+
+  onCallback(data) {
+    const p = data.split(":");
+    const lang = this.langOf();
+    if (p.length !== 3 || p[0] !== "bk" || !/^\d+$/.test(p[2])) return reply("");
+    const id = Number(p[2]);
+    const b = this.s.bookings.find(x => x.id === id);
+    const missing = reply(t(lang, "booking_not_found"));
+    if (!b || b.userId !== this.userId) return missing;
+    if (p[1] === "cancel") { this.flow = null; return this.cancelBooking(b, lang); }
+    if (p[1] === "ok") {
+      b.confirmed = true;
+      return reply(t(lang, "visit_confirmed", { date: b.date, time: b.time }), {
+        adminNotice: { kind: "confirm", text: "Booking #" + b.id + " confirmed by customer: " + b.date + " " + b.time + "\n" + b.service + ", " + b.name + ", " + b.phone + " (" + this.who() + ")" } });
+    }
+    if (p[1] === "resched") {
+      const flow = { kind: "reschedule", lang, step: "date", service: SERVICES.find(x => x.id === b.service), name: b.name, phone: b.phone,
+        bookingId: b.id, oldSlot: b.date + " " + b.time, date: "", time: "", get active() { return this.step !== "done" && this.step !== "cancelled"; } };
+      const r = this.prompt(flow);
+      r.text = t(lang, "reschedule_start", { service: serviceName(b.service, lang), date: b.date, time: b.time }) + "\n" + r.text;
+      if (flow.active) this.flow = flow;
+      return r;
+    }
+    return reply("");
+  }
+
+  startFlow(kind) {
+    const lang = this.langOf();
+    const flow = { kind, lang, step: kind === "lead" ? "name" : "service", service: null, date: "", time: "", name: "", phone: "", bookingId: 0, oldSlot: "",
+      get active() { return this.step !== "done" && this.step !== "cancelled"; } };
+    const r = this.prompt(flow);
+    if (flow.active) this.flow = flow;
+    return r;
+  }
+
+  prompt(flow) {
+    const lang = flow.lang;
+    if (flow.step === "service") return reply(t(lang, "ask_service"), { options: SERVICES.map(s => ({ label: s.names[lang], value: s.names[lang] })), kbMin: 160 });
+    if (flow.step === "date") {
+      const dates = openDates(this.s, this.now());
+      if (!dates.length) { flow.step = "cancelled"; return reply(t(lang, "no_dates")); }
+      return reply(t(lang, "ask_date"), { options: dates.map(d => ({ label: dateLabel(d, lang), value: d })) });
+    }
+    if (flow.step === "time") {
+      const slots = showSlots(this.s, parseIso(flow.date), this.now());
+      if (!slots.some(x => !x.taken)) { flow.step = "date"; const r = this.prompt(flow); r.text = t(lang, "no_slots") + "\n" + r.text; return r; }
+      return reply(t(lang, "ask_time", { date: flow.date }), { options: slots.map(x => ({ label: x.time, value: x.time, disabled: x.taken })), kbMin: 84 });
+    }
+    if (flow.step === "name") return reply(t(lang, "ask_name"));
+    if (flow.step === "phone") return reply(t(lang, "ask_phone"));
+    if (flow.step === "confirm") {
+      const summary = t(lang, "confirm_summary", { service: flow.service ? flow.service.names[lang] : "", date: flow.date, time: flow.time, name: flow.name, phone: flow.phone });
+      return reply(summary, { options: [{ label: t(lang, "confirm_yes"), value: t(lang, "confirm_yes") }, { label: t(lang, "confirm_no"), value: t(lang, "confirm_no") }] });
+    }
+    return reply("");
+  }
+
+  retry(flow, key) {
+    const r = this.prompt(flow);
+    if (key !== "confirm_summary") r.text = (t(flow.lang, key) + "\n" + r.text).trim();
+    return r;
+  }
+
+  matchService(value, lang) {
+    if (/^\d+$/.test(value) && Number(value) >= 1 && Number(value) <= SERVICES.length) return SERVICES[Number(value) - 1];
+    const low = value.toLowerCase();
+    for (const s of SERVICES) if (s.id === low || Object.values(s.names).some(n => n.toLowerCase() === low)) return s;
+    if (low.length >= 3) for (const s of SERVICES) if (Object.values(s.names).some(n => n.toLowerCase().includes(low))) return s;
+    return null;
+  }
+
+  parseDate(value) {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(value)) { const d = parseIso(value); return isNaN(d) ? null : d; }
+    const m = value.match(/^(\d{1,2})[./](\d{1,2})(?:[./](\d{4}))?$/);
+    if (!m) return null;
+    const now = this.now();
+    const d = new Date(m[3] ? Number(m[3]) : now.getFullYear(), Number(m[2]) - 1, Number(m[1]));
+    if (d.getMonth() !== Number(m[2]) - 1) return null;
+    return d;
+  }
+
+  submit(flow, text) {
+    const lang = flow.lang, value = text.trim(), step = flow.step;
+    if (step === "service") {
+      const s = this.matchService(value, lang);
+      if (!s) return this.retry(flow, "bad_service");
+      flow.service = s; flow.step = "date";
+    } else if (step === "date") {
+      const d = this.parseDate(value);
+      if (!d || !openDates(this.s, this.now()).includes(isoDate(d))) return this.retry(flow, "bad_date");
+      flow.date = isoDate(d); flow.step = "time";
+    } else if (step === "time") {
+      if (!freeSlots(this.s, parseIso(flow.date), this.now()).includes(value)) return this.retry(flow, "bad_time");
+      flow.time = value;
+      if (flow.kind === "reschedule") return this.finishReschedule(flow);
+      flow.step = "name";
+    } else if (step === "name") {
+      if (value.replace(/[^\p{L}\p{N}_]/gu, "").length < 2 || value.length > 60) return this.retry(flow, "bad_name");
+      flow.name = value; flow.step = "phone";
+    } else if (step === "phone") {
+      const ph = normalizePhone(value);
+      if (!ph) return this.retry(flow, "bad_phone");
+      flow.phone = ph;
+      if (flow.kind === "lead") return this.finishLead(flow);
+      flow.step = "confirm";
+    } else if (step === "confirm") {
+      if (isYes(value)) return this.finishBooking(flow);
+      if (isNo(value)) { flow.step = "cancelled"; return reply(t(lang, "cancelled")); }
+      return this.retry(flow, "confirm_summary");
+    }
+    return this.prompt(flow);
+  }
+
+  finishBooking(flow) {
+    let b;
+    try {
+      b = addBooking(this.s, { userId: this.userId, service: flow.service.id, date: flow.date, time: flow.time, name: flow.name, phone: flow.phone, lang: flow.lang });
+    } catch (e) {
+      if (!(e instanceof SlotTakenError)) throw e;
+      flow.step = "time";
+      const r = this.prompt(flow);
+      r.text = t(flow.lang, "slot_taken") + "\n" + r.text;
+      return r;
+    }
+    flow.step = "done";
+    return reply(t(flow.lang, "booked", { service: flow.service.names[flow.lang], date: flow.date, time: flow.time, business: BUSINESS.name }), {
+      bookingId: b.id,
+      ticket: { id: b.id, service: flow.service.names[flow.lang], date: b.date, time: b.time, name: b.name, phone: b.phone },
+      adminNotice: { kind: "booking", text: "New booking #" + b.id + ": " + b.service + ", " + b.date + " " + b.time + "\n" + b.name + ", " + b.phone + " (" + this.who() + ")" }
+    });
+  }
+
+  finishReschedule(flow) {
+    let moved;
+    try { moved = moveBooking(this.s, flow.bookingId, flow.date, flow.time); }
+    catch (e) {
+      if (!(e instanceof SlotTakenError)) throw e;
+      flow.step = "time";
+      const r = this.prompt(flow);
+      r.text = t(flow.lang, "slot_taken") + "\n" + r.text;
+      return r;
+    }
+    flow.step = "done";
+    if (!moved) return reply(t(flow.lang, "booking_not_found"));
+    return reply(t(flow.lang, "booking_rescheduled", { service: serviceName(moved.service, flow.lang), date: moved.date, time: moved.time }), {
+      bookingId: moved.id,
+      adminNotice: { kind: "resched", text: "Booking #" + moved.id + " rescheduled: " + flow.oldSlot + " -> " + moved.date + " " + moved.time + "\n" + moved.service + ", " + moved.name + ", " + moved.phone + " (" + this.who() + ")" }
+    });
+  }
+
+  finishLead(flow) {
+    this.s.leads.push({ id: this.s.nextLead++, name: flow.name, phone: flow.phone, username: this.username, source: "lead", note: "", resolved: false });
+    flow.step = "done";
+    return reply(t(flow.lang, "lead_saved", { name: flow.name }), { adminNotice: { kind: "lead", text: "New lead: " + flow.name + ", " + flow.phone + " (" + this.who() + ")" } });
+  }
+
+  cancelBooking(b, lang) {
+    const r = reply(t(lang, "booking_cancelled", { service: serviceName(b.service, lang), date: b.date, time: b.time }), {
+      adminNotice: { kind: "cancel", text: "Booking #" + b.id + " cancelled by customer: " + b.date + " " + b.time + "\n" + b.service + ", " + b.name + ", " + b.phone + " (id " + b.userId + ")" } });
+    this.s.bookings = this.s.bookings.filter(x => x.id !== b.id);
+    return r;
+  }
+
+  myBookings() {
+    const lang = this.langOf(), now = this.now();
+    const mine = this.s.bookings.filter(b => b.userId === this.userId && startOf(b.date, b.time) > now)
+      .sort((a, b) => startOf(a.date, a.time) - startOf(b.date, b.time));
+    if (!mine.length) return reply(t(lang, "no_bookings"));
+    return reply(t(lang, "mybookings_title"), {
+      cards: mine.map(b => ({
+        text: [serviceName(b.service, lang), b.date + " " + b.time].concat(b.confirmed ? [t(lang, "status_confirmed")] : []).join("\n"),
+        buttons: [{ label: t(lang, "btn_cancel"), data: "bk:cancel:" + b.id }, { label: t(lang, "btn_reschedule"), data: "bk:resched:" + b.id }]
+      }))
+    });
+  }
+
+  handoff() {
+    const lang = this.langOf();
+    this.flow = null;
+    const last = this.lastText;
+    this.s.leads.push({ id: this.s.nextLead++, name: this.fullName, phone: "", username: this.username, source: "handoff", note: last, resolved: false });
+    return reply(t(lang, "handoff_ok"), {
+      adminNotice: { kind: "handoff", text: "Human requested by " + this.who() + " (id " + this.userId + ").\nLast message: " + (last || "-") + "\nReply with: /reply " + this.userId + " <text>" } });
+  }
+
+  openHandoffs() { return this.s.leads.filter(l => l.source === "handoff" && !l.resolved); }
+  resolveHandoffs() { this.s.leads.forEach(l => { if (l.source === "handoff") l.resolved = true; }); }
+
+  // The 2-hours-before reminder for a booking (the last offset carries Confirm / Cancel unless already confirmed).
+  reminderFor(bookingId) {
+    const b = this.s.bookings.find(x => x.id === bookingId);
+    if (!b) return null;
+    const lang = this.langOf();
+    const confirm = !b.confirmed;
+    return reply(t(lang, confirm ? "reminder_confirm" : "reminder", { service: serviceName(b.service, lang), business: BUSINESS.name, date: b.date, time: b.time }), {
+      buttons: confirm ? [{ label: t(lang, "btn_confirm"), data: "bk:ok:" + b.id }, { label: t(lang, "btn_cancel"), data: "bk:cancel:" + b.id }] : []
+    });
+  }
+
+  digest(lang) {
+    const now = this.now();
+    const today = isoDate(now);
+    const tomorrow = isoDate(new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1));
+    const byTime = (a, b) => (a.date + a.time).localeCompare(b.date + b.time);
+    const on = d => this.s.bookings.filter(b => b.date === d).sort(byTime);
+    const line = b => "• " + b.time + " " + serviceName(b.service, lang) + ", " + b.name + ", " + b.phone + (b.confirmed ? " (" + t(lang, "digest_confirmed") + ")" : "");
+    const leadLine = l => "• " + l.name + (l.phone ? ", " + l.phone : "") + " (@" + l.username + ")" + (l.note ? ": " + l.note : "");
+    const sec = (title, lines) => title + ":\n" + (lines.length ? lines.join("\n") : "-");
+    const tom = on(tomorrow);
+    const parts = [
+      t(lang, "digest_title", { business: BUSINESS.name, date: today }),
+      sec(t(lang, "digest_today"), on(today).map(line)),
+      sec(t(lang, "digest_tomorrow"), tom.map(line))
+    ];
+    const unconfirmed = tom.filter(b => !b.confirmed);
+    if (unconfirmed.length) parts.push(sec(t(lang, "digest_unconfirmed"), unconfirmed.map(line)));
+    parts.push(sec(t(lang, "digest_leads"), this.s.leads.filter(l => l.source === "lead").map(leadLine)));
+    parts.push(sec(t(lang, "digest_handoffs"), this.openHandoffs().map(leadLine)));
+    const mine = this.s.bookings.filter(b => b.userId === this.userId && b.date > tomorrow).sort(byTime);
+    if (mine.length) parts.push(sec(t(lang, "digest_upcoming"), mine.map(b => "• " + b.date + " " + line(b).slice(2))));
+    return parts.join("\n\n");
+  }
+}
+// PURE-END
+
+// ======================= UI =======================
+const UI = {
+  en: { b_demo: "Demo of telegram-ai-assistant-bot", b_runs: "runs in your browser, no data leaves the page", b_repo: "GitHub repo", b_want: "Want this for your business?",
+    theme: "Theme", status_bot: "bot", typing: "typing…", owner_short: "Owner", placeholder: "Message", o_title: "Owner admin chat", o_sub: "What the clinic owner sees in Telegram",
+    close: "Close", digest: "Daily digest", reset: "Reset demo", o_reply_label: "Reply to the customer", o_reply_ph: "Reply to the customer", o_send: "Send",
+    o_tip: "Notifications appear here when the customer books, cancels or asks for a human (/human). After a handoff you can answer from here.",
+    o_empty: "No notifications yet. Book a visit or type /human in the chat.", sim: "Simulated reminder: 2 hours before the visit", taken: "taken",
+    fe_match: "FAQ match", abstain: "No confident match: the bot says so instead of guessing", tag_booking: "New booking", tag_cancel: "Cancelled", tag_handoff: "Handoff", tag_lead: "New lead", tag_confirm: "Confirmed", tag_resched: "Rescheduled", tag_digest: "Daily digest",
+    t_id: "Booking", t_service: "Service", t_when: "When", t_who: "Name", t_phone: "Phone",
+    m_book: "Book a visit", m_my: "My bookings", m_hours: "Opening hours", m_services: "Services", m_human: "Talk to a human", m_lead: "Leave contact",
+    ask: ["What are your opening hours?", "Does teeth cleaning hurt?", "Do you treat children?", "What's the weather on Mars?"], try: "Try asking", reset_note: "Demo reset", sent: "sent" },
+  ru: { b_demo: "Демо telegram-ai-assistant-bot", b_runs: "работает в вашем браузере, данные не покидают страницу", b_repo: "Репозиторий на GitHub", b_want: "Хотите такого бота для своего бизнеса?",
+    theme: "Тема", status_bot: "бот", typing: "печатает…", owner_short: "Владелец", placeholder: "Сообщение", o_title: "Админ-чат владельца", o_sub: "Что видит владелец клиники в Telegram",
+    close: "Закрыть", digest: "Сводка дня", reset: "Сбросить демо", o_reply_label: "Ответ клиенту", o_reply_ph: "Ответить клиенту", o_send: "Отправить",
+    o_tip: "Здесь появляются уведомления, когда клиент записывается, отменяет запись или зовёт человека (/human). После обращения можно ответить отсюда.",
+    o_empty: "Пока нет уведомлений. Запишитесь на приём или напишите /human в чате.", sim: "Имитация напоминания: за 2 часа до визита", taken: "занято",
+    fe_match: "Совпадение в FAQ", abstain: "Уверенного совпадения нет: бот честно об этом говорит, а не выдумывает", tag_booking: "Новая запись", tag_cancel: "Отмена", tag_handoff: "Нужен человек", tag_lead: "Новая заявка", tag_confirm: "Подтверждено", tag_resched: "Перенос", tag_digest: "Сводка дня",
+    t_id: "Запись", t_service: "Услуга", t_when: "Когда", t_who: "Имя", t_phone: "Телефон",
+    m_book: "Записаться", m_my: "Мои записи", m_hours: "Часы работы", m_services: "Услуги", m_human: "Позвать человека", m_lead: "Оставить контакт",
+    ask: ["Какие у вас часы работы?", "Больно ли делать чистку зубов?", "Вы лечите детей?", "Какая погода на Марсе?"], try: "Попробуйте спросить", reset_note: "Демо сброшено", sent: "отправлено" },
+  hy: { b_demo: "telegram-ai-assistant-bot-ի դեմո", b_runs: "աշխատում է ձեր բրաուզերում, տվյալները չեն լքում էջը", b_repo: "GitHub-ի պահոց", b_want: "Ուզո՞ւմ եք նույնը ձեր բիզնեսի համար։",
+    theme: "Թեմա", status_bot: "բոտ", typing: "գրում է…", owner_short: "Սեփականատեր", placeholder: "Հաղորդագրություն", o_title: "Սեփականատիրոջ ադմին-չատ", o_sub: "Ինչ է տեսնում կլինիկայի սեփականատերը Telegram-ում",
+    close: "Փակել", digest: "Օրվա ամփոփում", reset: "Վերակայել դեմոն", o_reply_label: "Պատասխան հաճախորդին", o_reply_ph: "Պատասխանել հաճախորդին", o_send: "Ուղարկել",
+    o_tip: "Այստեղ հայտնվում են ծանուցումներ, երբ հաճախորդը գրանցվում է, չեղարկում կամ կանչում է մարդու (/human)։ Դրանից հետո կարող եք պատասխանել այստեղից։",
+    o_empty: "Ծանուցումներ դեռ չկան։ Գրանցվեք այցի կամ գրեք /human չատում։", sim: "Հիշեցման նմանակում՝ այցից 2 ժամ առաջ", taken: "զբաղված",
+    fe_match: "FAQ համընկնում", abstain: "Վստահ համընկնում չկա. բոտը դա ասում է, այլ ոչ թե հորինում", tag_booking: "Նոր գրանցում", tag_cancel: "Չեղարկված", tag_handoff: "Մարդ է պետք", tag_lead: "Նոր դիմում", tag_confirm: "Հաստատված", tag_resched: "Տեղափոխված", tag_digest: "Օրվա ամփոփում",
+    t_id: "Գրանցում", t_service: "Ծառայություն", t_when: "Երբ", t_who: "Անուն", t_phone: "Հեռախոս",
+    m_book: "Գրանցվել", m_my: "Իմ գրանցումները", m_hours: "Աշխատանքային ժամեր", m_services: "Ծառայություններ", m_human: "Կանչել մարդու", m_lead: "Թողնել կոնտակտ",
+    ask: ["Ինչ աշխատանքային ժամեր ունեք։", "Ատամների մաքրումը ցավոտ է։", "Երեխաներին բուժում եք։", "Ինչպիսի՞ եղանակ է Մարսի վրա։"], try: "Փորձեք հարցնել", reset_note: "Դեմոն վերակայվեց", sent: "ուղարկված" }
+};
+
+const $ = s => document.querySelector(s);
+const logEl = $("#log"), ologEl = $("#olog"), statusEl = $("#status"), inputEl = $("#input");
+let ui = "en", theme = "auto", state, bot, activity = 0, unread = 0, chain = Promise.resolve(), timers = [];
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const hhmm = () => { const d = new Date(); return pad2(d.getHours()) + ":" + pad2(d.getMinutes()); };
+const tr = k => UI[ui][k];
+
+function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+
+function el(tag, cls, text) { const n = document.createElement(tag); if (cls) n.className = cls; if (text !== undefined) n.textContent = text; return n; }
+
+const CMD_RE = /(\/(?:book|mybookings|human|lead|cancel|start|help|services|hours)\b)/g;
+function linkify(node, text) {
+  text.split(CMD_RE).forEach((part, i) => {
+    if (i % 2) {
+      const a = el("a", "cmd", part); a.href = "#"; a.setAttribute("role", "button");
+      a.addEventListener("click", ev => { ev.preventDefault(); runCommand(part.slice(1)); });
+      node.appendChild(a);
+    } else if (part) node.appendChild(document.createTextNode(part));
+  });
+}
+
+function scrollDown(box) { box.scrollTop = box.scrollHeight; }
+
+function keyboard(items, onPick, min) {
+  const kbEl = el("div", "kb");
+  if (min) kbEl.style.setProperty("--kbmin", min + "px");
+  items.forEach(it => {
+    const b = el("button", it.disabled ? "taken" : "", it.disabled ? it.label + " ✕" : it.label);
+    b.type = "button";
+    if (it.disabled) { b.disabled = true; b.setAttribute("aria-label", it.label + ", " + tr("taken")); }
+    else b.addEventListener("click", () => { onPick(it); });
+    kbEl.appendChild(b);
+  });
+  return kbEl;
+}
+
+function addUser(text) {
+  const m = el("div", "msg user"), b = el("div", "bubble");
+  b.appendChild(document.createTextNode(text));
+  b.appendChild(el("time", "", hhmm()));
+  m.appendChild(b); logEl.appendChild(m); scrollDown(logEl);
+}
+
+function addSys(text) { logEl.appendChild(el("div", "sys", text)); scrollDown(logEl); }
+
+function lockOld() { logEl.querySelectorAll(".kb.opt:not(.used)").forEach(k => k.classList.add("used")); }
+
+function addBot(r, extraCls) {
+  lockOld();
+  const m = el("div", "msg bot" + (extraCls ? " " + extraCls : ""));
+  if (r.text) {
+    const b = el("div", "bubble");
+    linkify(b, r.text);
+    if (r.ticket) {
+      const tk = el("div", "ticket"); tk.appendChild(el("b", "", "✅ " + tr("t_id") + " #" + r.ticket.id));
+      const dl = el("dl");
+      [["t_service", r.ticket.service], ["t_when", r.ticket.date + " " + r.ticket.time], ["t_who", r.ticket.name], ["t_phone", r.ticket.phone]].forEach(([k, v]) => { dl.appendChild(el("dt", "", tr(k))); dl.appendChild(el("dd", "", v)); });
+      tk.appendChild(dl); b.appendChild(tk);
+    }
+    if (r.meta) b.appendChild(el("div", "meta", "🔎 " + tr("fe_match") + ": " + r.meta.question + " · BM25 " + r.meta.score.toFixed(2)));
+    if (r.abstain) b.appendChild(el("div", "meta", "🔎 " + tr("abstain")));
+    b.appendChild(el("time", "", hhmm()));
+    m.appendChild(b);
+  }
+  if (r.options && r.options.length) {
+    const k = keyboard(r.options, it => sendUser(it.label, it.value), r.kbMin); k.classList.add("opt"); m.appendChild(k);
+  }
+  const menu = r.menu ? menuButtons() : r.buttons;
+  if (menu && menu.length) m.appendChild(keyboard(menu, it => handleButton(it), r.menu ? 150 : 110));
+  logEl.appendChild(m);
+  (r.cards || []).forEach(c => {
+    const cm = el("div", "msg bot"), cb = el("div", "bubble");
+    cb.appendChild(document.createTextNode(c.text)); cb.appendChild(el("time", "", hhmm())); cm.appendChild(cb);
+    cm.appendChild(keyboard(c.buttons, it => handleButton(it), 110)); logEl.appendChild(cm);
+  });
+  scrollDown(logEl);
+}
+
+function menuButtons() {
+  const a = [{ label: "📅 " + tr("m_book"), data: "cmd:book" }, { label: "📋 " + tr("m_my"), data: "cmd:mybookings" }, { label: "🕒 " + tr("m_hours"), data: "cmd:hours" },
+    { label: "🦷 " + tr("m_services"), data: "cmd:services" }, { label: "🧑 " + tr("m_human"), data: "cmd:human" }, { label: "✉️ " + tr("m_lead"), data: "cmd:lead" }];
+  UI[ui].ask.forEach((q, i) => a.push({ label: "❓ " + q, data: "ask:" + i }));
+  return a;
+}
+
+function handleButton(it) {
+  const d = it.data || "";
+  if (d.startsWith("cmd:")) return runCommand(d.slice(4));
+  if (d.startsWith("ask:")) return sendUser(UI[ui].ask[Number(d.slice(4))]);
+  deliver(bot.onCallback(d));
+}
+
+function addNote(kind, text, out) {
+  if (ologEl.querySelector(".empty")) ologEl.textContent = "";
+  const n = el("div", "note" + (out ? " out" : ""));
+  if (kind) n.appendChild(el("span", "tag " + kind, tr("tag_" + kind)));
+  const body = el("div", "body");
+  text.split("\n").forEach((ln, i) => { if (i) body.appendChild(document.createElement("br")); if (/:$/.test(ln) && kind === "digest") body.appendChild(el("strong", "", ln)); else body.appendChild(document.createTextNode(ln)); });
+  n.appendChild(body); n.appendChild(el("time", "", hhmm()));
+  ologEl.appendChild(n); scrollDown(ologEl);
+  if (!out && !$("#owner").classList.contains("open")) { unread++; $("#badge").textContent = unread; $("#badge").classList.add("on"); }
+  syncOwnerForm();
+}
+
+function syncOwnerForm() {
+  const on = bot.openHandoffs().length > 0;
+  $("#oinput").disabled = !on; $("#osend").disabled = !on;
+}
+
+function deliver(r) {
+  chain = chain.then(async () => {
+    if (!r.text && !r.cards.length) return;
+    statusEl.textContent = tr("typing"); statusEl.classList.add("typing");
+    await sleep(420);
+    statusEl.textContent = tr("status_bot"); statusEl.classList.remove("typing");
+    addBot(r);
+    if (r.adminNotice) addNote(r.adminNotice.kind, r.adminNotice.text);
+    if (r.bookingId) scheduleReminder(r.bookingId);
+  });
+}
+
+function scheduleReminder(id) {
+  // Simulated: the real bot sends this 2 hours before the visit; here it arrives after 3 seconds.
+  timers.push(setTimeout(() => {
+    const rem = bot.reminderFor(id);
+    if (!rem) return;
+    chain = chain.then(() => { addSys("⏰ " + tr("sim")); addBot(rem); });
+  }, 3000));
+}
+
+function runCommand(cmd) {
+  activity++;
+  addUser("/" + cmd);
+  deliver(bot.onCommand(cmd));
+}
+
+function sendUser(shown, value) {
+  const text = (value !== undefined ? value : shown).trim();
+  if (!text) return;
+  activity++;
+  addUser(shown);
+  if (/^\/\w+$/.test(text)) return deliver(bot.onCommand(text.slice(1).toLowerCase()));
+  deliver(bot.onMessage(text));
+}
+
+function ownerSend(text) {
+  const msg = text.trim();
+  if (!msg || !bot.openHandoffs().length) return;
+  addNote("", "/reply " + bot.userId + " " + msg, true);
+  bot.resolveHandoffs(); syncOwnerForm();
+  chain = chain.then(async () => { await sleep(300); const r = reply(t(bot.langOf(), "human_reply") + ":\n" + msg); addBot(r, "human"); });
+}
+
+function resetDemo(silent) {
+  timers.forEach(clearTimeout); timers = [];
+  state = createState(new Date()); bot = new Assistant(state);
+  bot.defaultLang = ui; activity = 0; unread = 0; $("#badge").classList.remove("on");
+  logEl.textContent = ""; ologEl.textContent = ""; chain = Promise.resolve();
+  const e = el("div", "empty", tr("o_empty")); ologEl.appendChild(e);
+  syncOwnerForm();
+  addUser("/start"); activity = 0;
+  deliver(bot.onCommand("start"));
+}
+
+function applyUi() {
+  document.documentElement.lang = ui;
+  document.querySelectorAll("[data-i18n]").forEach(n => { n.textContent = tr(n.dataset.i18n); });
+  document.querySelectorAll("[data-i18n-ph]").forEach(n => { n.placeholder = tr(n.dataset.i18nPh); });
+  document.querySelectorAll("[data-ui]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.ui === ui)));
+  const chips = $("#chips"); chips.textContent = "";
+  ["book", "mybookings", "services", "hours", "human", "lead", "cancel"].forEach(c => {
+    const b = el("button", "", "/" + c); b.type = "button"; b.addEventListener("click", () => runCommand(c)); chips.appendChild(b);
+  });
+}
+
+function setUi(lang) {
+  ui = lang; store("bd-ui", lang); applyUi();
+  if (activity === 0) resetDemo(true); else bot.defaultLang = bot.lang || lang;
+}
+
+function setTheme(m) {
+  theme = m;
+  if (m === "auto") document.documentElement.removeAttribute("data-theme"); else document.documentElement.setAttribute("data-theme", m);
+  store("bd-theme", m);
+}
+
+document.querySelectorAll("[data-ui]").forEach(b => b.addEventListener("click", () => setUi(b.dataset.ui)));
+$("#theme").addEventListener("click", () => {
+  const dark = document.documentElement.dataset.theme === "dark" || (theme === "auto" && matchMedia("(prefers-color-scheme: dark)").matches);
+  setTheme(dark ? "light" : "dark");
+});
+$("#form").addEventListener("submit", ev => { ev.preventDefault(); const v = inputEl.value; inputEl.value = ""; sendUser(v); inputEl.focus(); });
+$("#oform").addEventListener("submit", ev => { ev.preventDefault(); const i = $("#oinput"); ownerSend(i.value); i.value = ""; });
+$("#digest").addEventListener("click", () => addNote("digest", bot.digest(ui)));
+$("#reset").addEventListener("click", () => resetDemo());
+function ownerToggle(open) {
+  $("#owner").classList.toggle("open", open); $("#ownerOpen").setAttribute("aria-expanded", String(open));
+  if (open) { unread = 0; $("#badge").classList.remove("on"); $("#ownerClose").focus(); } else $("#ownerOpen").focus();
+}
+$("#ownerOpen").addEventListener("click", () => ownerToggle(true));
+$("#ownerClose").addEventListener("click", () => ownerToggle(false));
+document.addEventListener("keydown", ev => { if (ev.key === "Escape" && $("#owner").classList.contains("open")) ownerToggle(false); });
+
+(function init() {
+  const savedUi = store("bd-ui"), savedTheme = store("bd-theme");
+  if (savedUi && UI[savedUi]) ui = savedUi;
+  if (savedTheme === "light" || savedTheme === "dark") setTheme(savedTheme);
+  applyUi(); resetDemo(true);
+})();
+</script>
+</body>
+</html>
